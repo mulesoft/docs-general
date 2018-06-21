@@ -1,0 +1,54 @@
+= Getting Started with Anypoint Platform
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:keywords: getting started, how to, platform, mule, api
+:noindex:
+
+Welcome to the Getting Started section, where you can familiarize yourself with the most popular Anypoint Platform tools that support everything you do with APIs and integration applications. The documentation in this section helps you work toward building reusable code to manage integration of your digital assets. The key to integrating digital assets is the https://www.mulesoft.com/lp/whitepaper/api/api-led-connectivity[API-led approach].
+
+[TIP]
+If you have prior knowledge of APIs, you may want to know about xref:3.8@mule-runtime::index.adoc[Mule Runtime], MuleSoft's flagship integration platform. APIs can work with Mule applications in many ways. Try out xref:apikit::index.adoc[APIkit] or create a  https://anypoint.mulesoft.com/apiplatform/anypoint-platform/#/portals[public developer portal] for customized access of APIs and other assets in your organization.
+
+== Getting Started with APIs
+
+. Find out xref:design-an-api.adoc[How to Design an API].
+. After designing the API, learn xref:implement-and-test-api.adoc[How to Implement and Test an API].
+. To bring your API to your organization or a larger audience, see xref:sync-api.adoc[How to Sync an API to the Platform].
+
+== Getting Started with Mule Applications
+
+The documentation for Mule application development requires some familiarity with xref:6@studio::index.adoc[Anypoint Studio]. Make sure you have it installed and get acquainted with it using the xref:6@studio::basic-studio-tutorial.adoc[Basic Studio Tutorial].
+
+[NOTE]
+Install the xref:6@studio::setting-up-your-development-environment.adoc[Anypoint Studio hardware and software requirements]. Browse xref:2.0@exchange::index.adoc[Anypoint Exchange] to get resources or examples for the integration you want. You can access Exchange from the browser or within Anypoint Studio to retrieve any MuleSoft and partner-supported xref:3.8@mule-runtime::anypoint-connectors.adoc[connectors] to help you hook into SaaS applications like ServiceNow and Salesforce, or generic data structures like databases, files and object stores.
+
+. xref:build-a-hello-world-application.adoc[How to Create a Mule App]
+. Try out the xref:anypoint-connector.adoc[Anypoint Connector Tutorial] where you find out Mule applications can do anything you already do with SaaS apps with greater efficiency. The tutorial uses the Twitter service as an example, but you can plug in another connector of your choice.
+. In a Mule application, it is important to be able to route messages to different places depending on their contents. See how to interact with a Mule message in xref:3.8@mule-runtime::messages/mule-message.adoc[How to Work with a Mule Message] and learn about the xref:3.8@mule-runtime::mule-message-structure.adoc[Mule 3.x message structure].
+. Learn more about routing based on Mule message contents in xref:content-based-routing.adoc[How to Route Mule Messages Based on Content].
+
+[TIP]
+xref:3.8@mule-runtime::dataweave.adoc[DataWeave] is an essential tool that lets you weave complex data transformations into your Mule applications to quickly transform and map Mule message payloads to other data structures.
+
+=== Getting Started with Deployment
+
+. Use Runtime Manager to xref:runtime-manager::deploying-to-your-own-servers.adoc[Deploy to Your Own Servers].
++
+[NOTE]
+Runtime Manager is more flexible in that it allows xref:runtime-manager::managing-servers.adoc[hybrid] management of apps on-prem or in the cloud.
++
+. Deploy apps to the MuleSoft cloud service in the CloudHub UI in the xref:deploy-to-cloudhub.adoc[Deploy to CloudHub Tutorial].
+
+Dive into more strategies to control how your Mule applications are run and managed starting from the xref:3.8@mule-runtime::installing.adoc[Installing and Deploying] documentation for Mule runtime.
+
+== Resources
+
+* xref:2.0@exchange::index.adoc[Anypoint Exchange]
+* xref:3.8@mule-runtime::index.adoc[Mule Runtime]
+* xref:6@studio::index.adoc[Anypoint Studio]
+* xref:api-manager::index.adoc[API Manager]
+* xref:cloudhub::index.adoc[CloudHub]
+* xref:runtime-manager::index.adoc[Runtime Manager]
+* Access xref:release-notes::index.adoc[Release Notes] for the release history of any MuleSoft product.
+* https://anypoint.mulesoft.com/login/[Sign into Anypoint Platform]

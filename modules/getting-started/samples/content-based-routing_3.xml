@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd">
+    <http:listener-config name="HTTP_Listener_Configuration" host="localhost" port="8081" doc:name="HTTP Listener Configuration"/>
+    <flow name="cbr_tutorialFlow">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/" doc:name="HTTP"/>
+        <expression-filter expression="#[message.inboundProperties.'http.request.uri' != '/favicon.ico']" doc:name="Expression"/>
+        <set-variable doc:name="Set Language Variable" value="#[message.inboundProperties.'http.query.params'.language]" variableName="language"/>
+        <choice doc:name="Choice">
+            <when expression="#[flowVars.language == 'Spanish']">
+                <set-payload doc:name="Reply in Spanish" value="Hola!"/>
+            </when>
+            <when expression="#[flowVars.language == 'French']">
+                <set-payload doc:name="Reply in French" value="Bonjour!"/>
+            </when>
+            <otherwise>
+                <flow-ref name="cbr_tutorialSub_Flow" doc:name="cbr_tutorialSub_Flow"/>
+            </otherwise>
+        </choice>
+        <logger level="INFO" doc:name="Logger" message="The reply &quot;#[payload]&quot; means &quot;hello&quot; in #[flowVars.language]."/>
+    </flow>
+    <sub-flow name="cbr_tutorialSub_Flow">
+        <round-robin doc:name="Round Robin">
+            <processor-chain>
+                <logger message="No language specified. Using Klingon." level="INFO" doc:name="Logger"/>
+                <set-variable variableName="language" value="Klingon" doc:name="Set Language to Klingon"/>
+                <set-payload value="tlhIngan mah!" doc:name="Reply in Klingon"/>
+            </processor-chain>
+             <processor-chain>
+                <logger message="No language specified. Using Turkish." level="INFO" doc:name="Logger"/>
+                <set-variable variableName="language" value="Turkish" doc:name="Set Language to Turkish"/>
+                <set-payload value="Merhaba!" doc:name="Reply in Turkish"/>
+            </processor-chain>
+             <processor-chain>
+                <logger message="No language specified. Using Basque." level="INFO" doc:name="Logger"/>
+                <set-variable variableName="language" value="Basque" doc:name="Set Language to Basque"/>
+                <set-payload value="Kaixo!" doc:name="Reply in Basque"/>
+            </processor-chain>
+        </round-robin>
+    </sub-flow>
+</mule>
