@@ -2,6 +2,9 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
+:custom-product: Home
+:custom-version: 
+:custom-goal: Oops!
 :page-aliases: 1.3@munit::munit-1.3-migration-guide.adoc
 :version-info: 3.7.0 and later
 :keywords: munit, testing, unit testing, migration

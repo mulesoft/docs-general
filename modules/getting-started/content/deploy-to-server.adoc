@@ -2,6 +2,9 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
+:custom-product: Home
+:custom-version: 
+:custom-goal: Oops!
 :keywords: cloudhub, tutorial, connectors, arm, runtime manager
 :noindex:
 

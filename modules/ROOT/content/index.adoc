@@ -2,6 +2,9 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
+:custom-product: Home
+:custom-version: 
+:custom-goal: Oops!
 :keywords: platform, arm, rest, soa, saas, api, proxy, design, develop, anypoint platform, studio, mule, devkit, studio, connectors, auth, exchange, api design, apikit, raml, application network, anypoint, arm, rest, soa, saas, api, proxy
 
 MuleSoft provides the Anypoint Platform to help your organization create integrations and APIs, simplifying the task of connecting multiple data sources.
