@@ -1,0 +1,23 @@
+= To Design an API
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:keywords: api, define, creator, create, raml
+:noindex:
+
+This procedure covers one way to create a RAML-based API in Anypoint Platform. You can create a RAML-based API from an existing SOAP-based API or start with just an idea and design the API from start to finish using RAML. In this procedure, you design the API from start to finish.
+
+== Prerequisites
+
+To create an API in Anypoint Platform, you need an account and permissions. If you do not have an account, you can sign up for a free one.
+
+`+https://anypoint.mulesoft.com/login/#/signin+`
+
+If you set up your account in the cloud, you have permissions to create an API. If you’re using your organization’s account, you might not have these permissions. In that case, your administrator needs to grant permission to you.
+
+== Build an API Specification
+
+In Design Center, you create an API in RESTful API Modeling Language (RAML).
+
+. link:/design-center/v/1.0/design-raml-api-task[Design a RAML API Specification].
+. link:/design-center/v/1.0/simulate-api-task[Simulate Calling a RAML API].

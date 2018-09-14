@@ -1,0 +1,274 @@
+= Deploy to CloudHub
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:keywords: cloudhub, tutorial, connectors, arm, runtime manager
+:noindex:
+
+This tutorial covers how to create an Anypoint Platform organization, how to modify a Mule project to make it CloudHub-ready and then how to deploy it to the cloud via the Anypoint Platform, via Anypoint Studio. It also includes a section on how to do the same via the command line.
+
+
+Completing this tutorial should take about 20 minutes. You will accomplish the following:
+
+* Create an account and organization in the Anypoint Platform
+* Optionally modify a simple hello world example mule application so that it runs on CloudHub
+* Upload, deploy, and run a Mule project
+
+[TIP]
+Take a look at xref:runtime-manager::deployment-strategies.adoc[Deployment Strategies] and xref:runtime-manager::cloudhub.adoc[CloudHub] so that you're familiar with what CloudHub is vs other alternatives for deploying your Mule applications.
+
+== Create an Anypoint Platform Organization
+
+To deploy applications to CloudHub, you first need to create an Anypoint Platform account and organization.
+
+
+. Go to https://anypoint.mulesoft.com[https://anypoint.mulesoft.com] to create a new account in a new organization.
++
+[NOTE]
+Otherwise, if you want your account to be part of an existing organization, ask the administrator of that organization to invite you to join it, then create your account via the link she sends to you.
+
+. Enter your information, choose a username and password, then click *Create account*. Your new user account is now created, if you aren't joining an existing organization, then a new organization is created too and your user is made its administrator.
+
+[NOTE]
+After you've created your account, you can use CloudHub for one month with a single resource unit, or "worker". If you need additional resources or would like to continue using CloudHub, you can sign up for a paid subscription.
+
+
+
+== Edit the Hello World Tutorial for CloudHub
+
+The application built on the xref:build-a-hello-world-application.adoc[How to Create a Mule App] needs some slight adjustments to be able to run on CloudHub, you must modify its HTTP connector so that:
+
+* Its host is set to `0.0.0.0`
+* Its port is set to the property `${http.port}`
+
+[TIP]
+====
+Any application that includes HTTP connectors needs to have its *host* set to `0.0.0.0` and its *port* to `${http.port}`. CloudHub can then dynamically allocate a port at deployment time.
+
+See xref:runtime-manager::developing-applications-for-cloudhub.adoc[Developing Applications for CloudHub] for more details.
+====
+
+
+You can either:
+
+* Take the original link:{attachmentsdir}/basic-tutorial.zip[Hello World project] and modify it yourself, following the steps below, or
+* Skip to <<Deploy Via Anypoint Platform>>, and download the modified CloudHub-ready Hello World project that already includes these changes, by clicking link:{attachmentsdir}/basic-tutorial-cloudhub.zip[here].
+
+
+To make these changes to the project, you must:
+
+. Open the project in Studio. If you've created the hello world example yourself by following the tutorial, then you should already have this in an Anypoint Studio project. Otherwise, download the link:{attachmentsdir}/basic-tutorial.zip[Hello World project] and then import it into Anypoint Studio as a *general deployable archive*.
+
++
+[TIP]
+See xref:6@studio::importing-and-exporting-in-studio.adoc#importing-projects-into-studio[Importing into Studio] for more detailed instructions.
+
+. Find the *HTTP Connector* in the flow and click it to view its properties editor
++
+image::http1.png[]
+
+. Click the green plus sign next to the *Connector Configuration* field to open its global element settings.
+. Edit the *Host* and *Port* fields:
+** Set the *Host* to `0.0.0.0.`
+** Set the *Port* to: `${http.port}`
+
++
+[%header,cols="30a,70a"]
+|===
+| Field | Value
+|*Name* |`HTTP_Listener_Configuration`
+|*Host* |`0.0.0.0`
+|*Port* |`${http.port}`
+|===
+
+
+. Click *Ok* to close this dialog.
+
++
+[NOTE]
+====
+*Optional step: to Deploy Your App Anywhere*
+
+Because you've put a xref:3.8@mule-runtime::configuring-properties.adoc[property placeholder] in the *Port* field, your app is now compatible with CloudHub, but not with other xref:runtime-manager::deployment-strategies.adoc[Deployment Strategies].
+
+CloudHub dynamically allocates a value to this property at deploy time, but for other deployment strategies you need to assign it a default concrete value. To do so, you must edit the `mule-app.properties` file, found in the *src/main/app* folder of your project.
+
+. In your Package Explorer (on the left of the Studio screen), open the node *src/main/app*.
+. Double-click the `mule-app.properties` file to open it.
+. In this file, type in the line `http.port=8081` and save it.
+====
+
+. Save your changes to the project.
+
+== Deploy Via Studio
+
+If you have your project open in Studio, then the easiest way to deploy it to CloudHub is to do so directly from the editor:
+
+. Right-click on the project node, `basicTutorial` in the Package Explorer, and then select *CloudHub* > *Deploy to Anypoint Platform > Cloud*.
++
+image::deploy-to-cloudhub-b8f65.png[]
++
+. If this is your first time deploying in this way, a popup menu asks you to provide your login credentials for the Anypoint Platform. Studio stores your credentials and uses them automatically the next time you deploy to CloudHub.
++
+[TIP]
+You can manage these credentials through the Studio *Preferences* menu, in *Anypoint Studio* > *Authentication*.
+
+. Choose a unique domain under which to deploy the application, for example *helloworld*.
++
+The domain name can be up to 42 characters. A green confirmation check mark is displayed.
+. Select an environment to deploy your application (such as PRODUCTION or QA).
+. Select the Mule *Runtime*
++
+[TIP]
+To reduce compatibility risks, you should always deploy to the runtime version in which your Mule project is created or the closest alternative. If in doubts, you can check your project's `mule-project.xml` file.
+
+. Click *Deploy Application*.
++
+image::studio-to-cloudhub2-1.png[studio+to+cloudhub2-1]
++
+. Anypoint Studio packages, uploads, and deploys your application to CloudHub.
+
+[TIP]
+For more details about the different deployment settings, see xref:runtime-manager::deploying-to-cloudhub.adoc[Deploying to CloudHub].
+
+
+
+== Deploy Via Anypoint Platform
+
+[NOTE]
+====
+If you create the project yourself in Studio by following the tutorial, you must then export it as a deployable .zip file. To do so, go to *File > Export* and then select *Anypoint Studio Project to Mule Deployable Archive*.
+
+See xref:6@studio::importing-and-exporting-in-studio.adoc#exporting-projects-from-studio[Exporting from Studio] for more detailed instructions.
+====
+
+
+. Log into your Anypoint Platform account. You'll be directed to the landing page.
+
++
+image::hello-world-on-cloudhub-6df18.png[]
+
+. Click the *Runtime Manager* link to reach the Runtime Manager dashboard.
+
+. On the *Applications tab* (selected by default), Click *Deploy application*.
++
+image::hello-world-on-cloudhub-45c14.png[]
+
+. Choose a unique domain under which to deploy the application, for example *helloworld*.
++
+The domain name can be up to 42 characters. A green confirmation check mark is displayed.
+. Select an environment to deploy your application (such as PRODUCTION or QA).
+. Select the Mule *Runtime*
++
+[TIP]
+To reduce compatibility risks, you should always deploy to the runtime version in which your Mule project is created or the closest alternative.
+
+. Click *Choose File* and select the link:{attachmentsdir}/basic-tutorial.zip[.zip file that you downloaded] from this tutorial or that you exported from Studio.
+
+. Click *Deploy Application*.
++
+image::studio-to-cloudhub2-1.png[studio+to+cloudhub2-1]
++
+. Anypoint Studio packages, uploads, and deploys your application to CloudHub.
+
+[TIP]
+For more details about the different deployment settings, see xref:runtime-manager::deploying-to-cloudhub.adoc[Deploying to CloudHub].
+
+== Running Your App
+
+
+Once the deployment is complete (which could take a few minutes), browse to the URL of *_yourdomain_.cloudhub.io*.
+
+In this example, it should be `helloworld.cloudhub.io`. You should see the text "Hello World!"; recall that the application listens for HTTP calls on the root address, sets the payload to the string "Hello World!" and then returns this string as a response to the requester.
+
+image::ch-helloworld-displayed-1.png[CH_HelloWorld_displayed-1]
+
+This proves you have successfully deployed a Mule application to your new Anypoint Platform account!
+
+[TIP]
+Visit https://anypoint.mulesoft.com/[https://anypoint.mulesoft.com] to manage your application through the Runtime Manager, access its dashboard, view logs and alerts, and more.
+
+
+
+
+
+== Deploying via the Command Line
+
+This section explains how to perform the same deployment actions as shown above, but all via the CloudHub CLI (Command Line Utility).
+
+Before starting, make sure you https://www.mulesoft.com/platform/saas/cloudhub-ipaas-cloud-based-integration[enable CloudHub access] on your Anypoint Platform account.
+
+[TIP]
+You can see a reference to a full list of CLI commands for Anypoint Platform xref:runtime-manager::anypoint-platform-cli.adoc[here]
+
+. Download the modified CloudHub-ready Hello World project, by clicking link:{attachmentsdir}/basic-tutorial-cloudhub.zip[here].
+
+. If you do not already have access to the Anypoint-CLI command line tool, follow the brief xref:runtime-manager::anypoint-platform-cli.adoc#installation[Anypoint Platform CLI installation instructions].
+. Log into your Anypoint Platform account from the command line, providing your username: `anypoint-cli --username="user"`. Next you enter your password.
+. Use the `runtime-mgr application deploy` command providing the *name* of the app and the *location* of the deployable archive (`.zip`) file on your file system, for example:
++
+----
+runtime-mgr cloudhub-application deploy helloworld /Users/exported-app-folder/hello-world.zip
+----
++
+. If there are no issues with the name, location or any optional parameters provided, you should see a table like this:
++
+----
+Deploying helloworld ...
+┌──────────────────────────────┬────────────────────────────────────────┐
+│ Domain                       │ helloworld.cloudhub.io             │
+├──────────────────────────────┼────────────────────────────────────────┤
+│ Status                       │ UNDEPLOYED                             │
+├──────────────────────────────┼────────────────────────────────────────┤
+│ Updated                      │ a few seconds ago                      │
+├──────────────────────────────┼────────────────────────────────────────┤
+│ Runtime                      │ 3.8.2                                  │
+├──────────────────────────────┼────────────────────────────────────────┤
+│ File name                    │ hello-world.zip                        │
+├──────────────────────────────┼────────────────────────────────────────┤
+│ Persistent queues            │ false                                  │
+├──────────────────────────────┼────────────────────────────────────────┤
+│ Persistent queues encrypted  │ false                                  │
+├──────────────────────────────┼────────────────────────────────────────┤
+│ Static IPs enabled           │ false                                  │
+├──────────────────────────────┼────────────────────────────────────────┤
+│ Monitoring                   │ Enabled. Auto-restart if not responding│
+├──────────────────────────────┼────────────────────────────────────────┤
+│ Workers                      │ 1 vCore * 1                            │
+----
+
++
+. Congratulations, your app is now deployed on CloudHub!
+
++
+[TIP]
+Applications that are deployed via the CLI can be viewed and managed on Runtime Manager like any other application. See the <<Running Your App>> section.
+
+. If you then want to stop the app, on the command line type `runtime-mgr cloudhub-application stop <app-name>`.
+. To exit the command line tool, hit `ctrl + c` twice.
+
+[TIP]
+For more information on these or other commands see xref:runtime-manager::anypoint-platform-cli.adoc[Anypoint Platform CLI].
+
+
+
+
+== See Also
+
+* xref:runtime-manager::deploying-to-cloudhub.adoc[Deploy to CloudHub]
+* Learn the xref:6@studio::index.adoc[Anypoint Studio Essentials].
+* xref:runtime-manager::developing-applications-for-cloudhub.adoc[Developing Applications for CloudHub]
+* xref:runtime-manager::deployment-strategies.adoc[Deployment Strategies]
+* xref:runtime-manager::managing-deployed-applications.adoc[Managing Deployed Applications]
+* xref:runtime-manager::managing-applications-on-cloudhub.adoc[Managing Applications on CloudHub]
+* Read more about what xref:runtime-manager::cloudhub.adoc[CloudHub] is and what features it has
+* xref:runtime-manager::cloudhub-architecture.adoc[CloudHub architecture]
+* xref:runtime-manager::monitoring.adoc[Monitoring Applications]
+* xref:runtime-manager::cloudhub-fabric.adoc[CloudHub Fabric]
+* xref:runtime-manager::managing-queues.adoc[Managing Queues]
+* xref:runtime-manager::managing-schedules.adoc[Managing Schedules]
+* xref:runtime-manager::managing-application-data-with-object-stores.adoc[Managing Application Data with Object Stores]
+* xref:runtime-manager::anypoint-platform-cli.adoc[Command Line Tools]
+* xref:runtime-manager::secure-application-properties.adoc[Secure Application Properties]
+* xref:runtime-manager::virtual-private-cloud.adoc[Virtual Private Cloud]
+* xref:runtime-manager::penetration-testing-policies.adoc[Penetration Testing Policies]
