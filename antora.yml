@@ -1,5 +1,5 @@
 name: general
 title: Home
-version: master
+version: 'latest'
 nav:
 - modules/getting-started/nav.adoc
