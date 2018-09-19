@@ -20,13 +20,13 @@ Anypoint Studio is the Eclipse-based IDE to help you create Mule apps and APIs, 
 | link:/design-center/v/1.0/create-basic-app-task[Building Apps in Design Center]  | link:/design-center/v/1.0/design-create-publish-api-specs[Creating APIs in Design Center]
 |===
 
-Studio 7 includes xref:4.1@mule4-runtime::index.adoc[Mule Runtime (Mule) 4], the runtime environment where you deploy Mule apps and APIs.
+Studio 7 includes xref:4.1@mule-runtime::index.adoc[Mule Runtime (Mule) 4], the runtime environment where you deploy Mule apps and APIs.
 Earlier versions of Studio include xref:3.9@mule-runtime::index.adoc[Mule 3].
 
 |===
 | **Mule 3**    | **Mule 4**
 | xref:3.9@mule-runtime::anypoint-connectors.adoc[Connectors for Mule 3] | xref:connectors::index.adoc[Connectors for Mule 4]
-| xref:3.9@mule-runtime::dataweave.adoc[DataWeave 1 for Mule 3]  | xref:4.1@mule4-runtime::dataweave.adoc[DataWeave 2 for Mule 4]
+| xref:3.9@mule-runtime::dataweave.adoc[DataWeave 1 for Mule 3]  | xref:4.1@mule-runtime::dataweave.adoc[DataWeave 2 for Mule 4]
 | xref:3.x@apikit::index.adoc[APIkit 3] | xref:4.x@apikit::overview-4.adoc[APIkit 4]
 | xref:3.9@connector-devkit::index.adoc[Connector DevKit] | xref:1.1@mule-sdk::index.adoc[Mule SDKs]
 |===
@@ -37,7 +37,7 @@ You can test and run the Mule apps and APIs you build from Studio or the Design 
 
 * xref:runtime-manager::deployment-strategies.adoc[Choosing a deployment strategy]
 * xref:3.9@mule-runtime::installing.adoc#mule-installation-procedure[Installing Standalone Mule 3]
-* xref:4.1@mule4-runtime::runtime-installation-task.adoc[Installing Standalone Mule 4]
+* xref:4.1@mule-runtime::runtime-installation-task.adoc[Installing Standalone Mule 4]
 
 == Test Integrations
 
