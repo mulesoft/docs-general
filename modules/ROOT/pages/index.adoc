@@ -46,7 +46,7 @@ You can test and run the Mule apps and APIs you build from Studio or the Design 
 
 == Manage Integrations
 
-* xref:anypoint-monitoring::index.adoc[Anypoint Monitoring]
+* xref:monitoring::index.adoc[Anypoint Monitoring]
 * xref:api-functional-monitoring::index.adoc[API Functional Monitoring]
 * xref:runtime-manager::monitoring.adoc[Runtime Monitoring]
 
