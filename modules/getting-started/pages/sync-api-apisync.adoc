@@ -18,4 +18,4 @@ You can select the `placeholder.raml` file and click Upload to submit your chang
 == See Also
 
 * xref:6@studio::api-sync-reference.adoc[API Sync reference page]
-* link:/apikit/apikit-using#define-the-raml-or-wsdl-in-studio[RAML Editor]
+* xref:3.x@apikit::apikit-using.adoc#define-the-raml-or-wsdl-in-studio[RAML Editor]

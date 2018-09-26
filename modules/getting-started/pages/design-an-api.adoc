@@ -19,5 +19,5 @@ If you set up your account in the cloud, you have permissions to create an API. 
 
 In Design Center, you create an API in RESTful API Modeling Language (RAML).
 
-. link:/design-center/v/1.0/design-raml-api-task[Design a RAML API Specification].
-. link:/design-center/v/1.0/simulate-api-task[Simulate Calling a RAML API].
+. xref:design-center::design-create-publish-api-raml-editor.adoc[Design a RAML API Specification].
+. xref:design-center::design-mocking-service.adoc[Simulate Calling a RAML API].

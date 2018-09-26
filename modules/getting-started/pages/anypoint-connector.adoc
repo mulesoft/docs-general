@@ -132,7 +132,7 @@ The following instructions walk you through how to configure each building block
 [discrete.view]
 === Studio Visual Editor
 
-. Click the HTTP building block in your flow to open its link:/mule-user-guide/v/3.8/the-properties-editor[Properties Editor].  For this element to work, we set an abstract element called a _Connector Configuration_, which contains several of the high-level necessary configuration properties. A single Connector Configuration element can be referenced by as many HTTP connectors as you like. Create a new Connector Configuration element by clicking the green plus sign next to the *Connector Configuration* field.
+. Click the HTTP building block in your flow to open its xref:6@studio::index.adoc#properties-editor[Properties Editor].  For this element to work, we set an abstract element called a _Connector Configuration_, which contains several of the high-level necessary configuration properties. A single Connector Configuration element can be referenced by as many HTTP connectors as you like. Create a new Connector Configuration element by clicking the green plus sign next to the *Connector Configuration* field.
 +
 image::twitter-http-properties.png[]
 +
