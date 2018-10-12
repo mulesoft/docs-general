@@ -1,1 +1,3 @@
 = Check Published RAML API Specifications Starting November 1, 2018
+
+include::../../../../docs-design-center/modules/ROOT/pages/_partial/content-for-amf.adoc[]
