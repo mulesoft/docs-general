@@ -4,7 +4,4 @@ As of November 1, 2018, Mule Runtime requires that APIs written in RAML conform 
 
 Check your published APIs by opening them in the API editor. You have until November 1, 2019 to correct any invalid RAML that they might include. After that date, you will be unable to republish and redeploy uncorrected APIs.
 
-The following two topics list common RAML errors in APIs that are already published, and describe how to fix them.
-
-* xref:design-center::design-common-errors-08.adoc[Common Errors in Conforming to RAML 0.8]
-* xref:design-center::design-common-errors-10.adoc[Common Errors in Conforming to RAML 1.0]
+See xref:design-center::design-modify-raml-specs-conform.adoc[Modify Published RAML API Specifications to Conform Completely to RAML 0.8 or 1.0] for help with correcting invalid RAML.
