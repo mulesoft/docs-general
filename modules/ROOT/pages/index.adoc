@@ -4,13 +4,17 @@ include::_attributes.adoc[]
 endif::[]
 :keywords: platform, arm, rest, soa, saas, api, proxy, design, develop, anypoint platform, studio, mule, devkit, studio, connectors, auth, exchange, api design, apikit, raml, application network, anypoint, arm, rest, soa, saas, api, proxy
 
-Use the Anypoint Platform to build an application network, a structured set of integrations between apps and services that are secure and easy to reuse.
+Use Anypoint Platform to build an application network, which is a structured network of applications, data, and devices connected by reusable APIs.
 
-== Explore the Platform with Exchange
+== Explore Anypoint Exchange
 
-https://www.anypoint.mulesoft.com/exchange/[Exchange] hosts elements created by MuleSoft and others that you can use to build your own integration apps (Mule apps) and APIs. The site includes connectors with examples and templates. Most connectors also have helpful links where you can explore reference guides and user guides. RAML fragments, custom packages, videos, and other items are available here.
+The APIs you build in Mulesoft to integrate applications and services are, by design, reusable and built with enterprise security in mind.
+You can discover these APIs, as well connectors (connections to external data sources), samples, and templates on 
+https://www.anypoint.mulesoft.com/exchange/[Exchange]. These assets include helpful links to reference guides and user guides. 
 
-== Design and Build Integration Apps and APIs
+RAML fragments, custom packages, videos, and other items are also available.
+
+== Design and Build Integrations
 
 Anypoint Studio is the Eclipse-based IDE to help you create Mule apps and APIs, and Design Center is the cloud-based tool.
 
@@ -31,7 +35,7 @@ Earlier versions of Studio include xref:3.9@mule-runtime::index.adoc[Mule 3].
 | xref:3.9@connector-devkit::index.adoc[Connector DevKit] | xref:1.1@mule-sdk::index.adoc[Mule SDKs]
 |===
 
-You can test and run the Mule apps and APIs you build from Studio or the Design Center.
+You can test and run the apps and APIs you build from Studio or Design Center.
 
 == Deploy Integrations
 
@@ -50,7 +54,7 @@ You can test and run the Mule apps and APIs you build from Studio or the Design 
 * xref:api-functional-monitoring::index.adoc[API Functional Monitoring]
 * xref:runtime-manager::monitoring.adoc[Runtime Monitoring]
 
-== Manage Platform Features
+== Manage Anypoint Platform Features
 
 * xref:design-center::index.adoc[Design Center]
 * xref:2.x@api-manager::latest-overview-concept.adoc[API Manager]
@@ -68,7 +72,9 @@ You can test and run the Mule apps and APIs you build from Studio or the Design 
 
 == Contributing to the Documentation
 
-MuleSoft welcomes contributions to our documentation. To make a contribution, use the instructions in  our GitHub https://github.com/mulesoft/mulesoft-docs/blob/master/README.adoc[README]. Your improvements to MuleSoft documentation are appreciated by the entire community. Thank you!
+MuleSoft welcomes contributions to our documentation. To make a contribution, select the *Edit in Github* on the page you wish to modify, and submit a pull request to the git repo. Your improvements to MuleSoft documentation are appreciated by the entire community. Thank you!
+
+'''
 
 == Archived Documentation
 
