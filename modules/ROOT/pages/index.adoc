@@ -2,17 +2,18 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
+:linkattrs:
 :keywords: platform, arm, rest, soa, saas, api, proxy, design, develop, anypoint platform, studio, mule, devkit, studio, connectors, auth, exchange, api design, apikit, raml, application network, anypoint, arm, rest, soa, saas, api, proxy
 
-Use Anypoint Platform to build an application network, which is a structured network of applications, data, and devices connected by reusable APIs.
+Use Anypoint Platform to build a structured application network that connects applications, data, and devices with reusable APIs.
 
 == Explore Anypoint Exchange
 
 The APIs you build in Mulesoft to integrate applications and services are, by design, reusable and built with enterprise security in mind.
-You can discover these APIs, as well connectors (connections to external data sources), samples, and templates on 
-https://www.anypoint.mulesoft.com/exchange/[Exchange]. These assets include helpful links to reference guides and user guides. 
+You can discover these APIs, as well as connectors, samples, and templates on 
+https://www.anypoint.mulesoft.com/exchange/[Exchange^].
 
-RAML fragments, custom packages, videos, and other items are also available.
+RAML fragments, custom packages, videos, links to documentation, and other assets are also available.
 
 == Design and Build Integrations
 
@@ -60,22 +61,18 @@ You can test and run the apps and APIs you build from Studio or Design Center.
 * xref:2.x@api-manager::latest-overview-concept.adoc[API Manager]
 * xref:access-management::index.adoc[Access Management]
 
-'''
-
 == More Resources
 
 * xref:release-notes::index.adoc[Release Notes]
-* http://developer.mulesoft.com[MuleSoft developer site]
-* https://training.mulesoft.com/[Training]
+* http://developer.mulesoft.com[MuleSoft developer site^]
+* https://training.mulesoft.com/[Training^]
 
 '''
 
 == Contributing to the Documentation
 
-MuleSoft welcomes contributions to our documentation. To make a contribution, select the *Edit in Github* on the page you wish to modify, and submit a pull request to the git repo. Your improvements to MuleSoft documentation are appreciated by the entire community. Thank you!
-
-'''
+To contribute to this documentation, select *Edit in Github* on the page you wish to modify, and submit a pull request to the git repo. Your improvements to MuleSoft documentation are appreciated by the entire community. Thank you!
 
 == Archived Documentation
 
-When an older version of a product is no longer supported, including products with end-of-life status, the documentation moves to https://docs.archive.mulesoft.com/.
+When an older version of a product is no longer supported, including products with end-of-life status, the documentation moves to an https://docs.archive.mulesoft.com/[archive site^].
