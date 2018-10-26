@@ -4,4 +4,4 @@ As of November 1, 2018, the API editor Design Center is now more precise in ensu
 
 Check your published APIs by opening them in the API editor in Design Center. You can use the guide on xref:design-center::design-modify-raml-specs-conform.adoc[this page] to correct a number of errors that MuleSoft has found while testing the current API editor on a large number of RAML API specifications. If you see errors that this guide does not include, refer to the specifications for RAML 0.8 and 1.0, which you can read on https://raml.org/[raml.org].
 
-You have until November 1, 2019 to correct any invalid RAML that your published API specifications might include. After that date, you will be unable to republish and redeploy uncorrected APIs.
+You have until November 1, 2019 to correct any invalid RAML that your published API specifications might include. After that date, you will be unable to republish and redeploy APIs in which there is invalid RAML.
