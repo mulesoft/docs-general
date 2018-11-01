@@ -1,4 +1,4 @@
-= Check Published RAML API Specifications Starting November 1, 2018
+= Check Published RAML API Specifications Starting Soon
 
 Soon, the API editor in Design Center will be more precise in ensuring that the RAML in your API specifications is valid. However, it will be possible that one or more of the APIs that you used previous versions of the API editor to create and publish to Anypoint Exchange will include invalid RAML that those previous versions did not flag.
 
