@@ -14,8 +14,9 @@ Learn to create a "Hello World" Mule project, then deploy it as a Mule applicati
 
 == Create a New Project
 
-. In Anypoint Studio, choose File > New > Mule Project.
-. Studio opens the New Mule Project wizard. In the Name field, enter the value *Basic Tutorial*, then click Finish.
+. In Anypoint Studio, select *File > New > Mule Project*. +
+Studio opens the New Mule Project wizard.
+. In the *Name* field, enter the value *Basic Tutorial*, then click *Finish*.
 +
 image::new.png[]
 +
@@ -27,7 +28,7 @@ image::blank-canvas.png[blank+canvas]
 +
 image::add-http.png[add+http]
 +
-Studio automatically wraps the connector with a flow, thus saving you the step of manually creating one. There will be a red error dot overlaid on the HTTP connector because you have not configured it yet.
+Studio automatically wraps the connector with a flow, so you don't have to manually create one. There will be a red error dot overlaid on the HTTP Listener because you have not configured it yet.
 +
 . Add a Set Payload component to the flow by dragging it to the right of the HTTP connector, as shown here.
 +
@@ -37,8 +38,8 @@ Anypoint Studio positions the Set Payload component next to the HTTP connector. 
 +
 The Set Payload component sets the message payload to a value you define.
 +
-. Click Message Flow (Visual Editor) and then Configuration XML (XML Editor) tabs below the canvas to alternate between the editors so that you can see how Studio provides both a visual and code representation of your project.
-. Click the Message Flow tab to return to the graphical editor.
+. Click the *Message Flow* (Visual Editor) and then *Configuration XML* (XML Editor) tabs below the canvas to alternate between the editors so that you can see how Studio provides both a visual and code representation of your project.
+. Click the *Message Flow* tab to return to the graphical editor.
 +
 . Click Save image:save-icon.png[studio-save-button].
 
@@ -56,23 +57,24 @@ The HTTP connector allows your Mule application to connect to Web resources thro
 
 . In the canvas, click the HTTP connector to open its Properties Editor.
 . Click the plus sign image:plus-1.png[plus] to add a Connector Configuration with a host and port number.
-. In the Global Element Properties dialog, set Host to *localhost*, accept the default port *8081*, click OK.
+. In the Global Element Properties dialog, set Host to *localhost*, accept the default port *8081*, click *OK*.
 +
 image::http-global-config.png[]
 +
-The properties window opens, with Path populated with " / " and Connector Configuration populated with a reference to the global element you just created.
+The properties window opens, with Path populated with " / " with *Connector Configuration* populated with a reference to the global element you just created.
 +
+. In *Path*, enter " / ".
 . In the canvas, click the HTTP connector.
 +
 The red warning marks disappear from the properties editor and the connector on the canvas.
 +
-. Click the Set Payload component on the canvas to open its properties editor in the console.
+. Click the *Set Payload* component on the canvas to open its properties editor in the console.
 +
-. Set the Value field to *Hello World!* for example.
+. Set the *Value* field to *Hello World!*, for example.
 +
 image::set-payload-hello-world.png[set+payload+hello+world]
 +
-. Click the Configuration XML to view your changes in XML:
+. Click the *Configuration XML* to view your changes in XML:
 +
 [source,xml,linenums]
 ----
@@ -81,41 +83,37 @@ include::{examplesdir}/build-a-hello-world-application.xml[]
 +
 . Click the *Save* icon to save your changes.
 
-You have now built a simple Mule application.
+You have now created a simple Mule application.
 
 == Deploy and Test Your Project Locally
 
-Anypoint Studio has an embedded Mule runtime that you use to test deployments. You can deploy your application on the embedded server to see it working and perform any debugging activities before deploying to a production environment, such as an on-prem server or Runtime Manager.
+Anypoint Studio has an embedded Mule runtime that you can use to test deployments. You can deploy your application on the embedded server to see it working and perform any debugging activities before deploying to a production environment, such as an on-premises server or Runtime Manager.
 
-. In the Package Explorer, right-click the project name, then select Run As > Mule Application.
+. In the Package Explorer, right-click the project name, then select *Run As > Mule Application*.
 +
-Studio launches the application on the embedded server, displaying its actions in the console. When complete, the console message reads:
-+
-"Started app 'basic_tutorial'"
+Studio launches the application on the embedded server, displaying its actions in the Console. When complete, the console message displays:
 +
 image::console1.png[console output]
 +
 . Open your favorite Web browser.
 . Navigate to the URL of your application.
 +
-This address is the result of the default settings of the HTTP connector:
+The URL is the result of the default settings of the HTTP connector:
 +
 `+http://localhost:8081+`
 +
-The application accepts the request via its HTTP endpoint, then the Set Payload component sets the payload to "Hello World!", and then HTTP connector returns the payload as the response you see in your browser.
+The application flow is as follows:
+* The application accepts the request through its HTTP endpoint.
+* The Set Payload component sets the payload to "Hello World!".
+* The HTTP connector returns the payload as the response you see in your browser.
 +
 image::hello-world.png[hello+world]
 +
-. In Studio, stop the application from running by clicking Terminate image:stop-icon.png[] above the console.
-
+. In Studio, click Terminate image:stop-icon.png[] above the console to stop the application.
 
 
 
 == See Also
 
-* xref:3.8@mule-runtime::mule-concepts.adoc[Mule Concepts]
-* xref:6@studio::basic-studio-tutorial.adoc[Anypoint Studio Tutorial]
-* xref:3.8@mule-runtime::global-elements.adoc[Global Elements]
-* xref:3.8@mule-runtime::dataweave-quickstart.adoc[DataWeave Quickstart]
-* xref:3.8@mule-runtime::starting-and-stopping-mule-esb.adoc[Starting and Stopping Mule]
-* xref:3.8@mule-runtime::about-the-xml-configuration-file.adoc[XML Configuration File]
+* xref:4.1@mule-runtime::mule-concepts.adoc[Mule Concepts]
+* xref:4.1@mule-runtime::dataweave-quickstart.adoc[DataWeave Tutorial]
