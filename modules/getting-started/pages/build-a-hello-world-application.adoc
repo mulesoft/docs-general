@@ -9,7 +9,7 @@ Learn to create a "Hello World" Mule project, then deploy it as a Mule applicati
 
 == Prerequisites
 
-* You should have already downloaded, installed, and launched Anypoint Studio, which comes with an embedded Mule runtime instance.
+* Download, install, and launch Anypoint Studio, which comes with an embedded Mule runtime instance.
 * You should understand the concepts of Mule Runtime and Mule application design.
 
 == Create a New Project
