@@ -28,7 +28,7 @@ image::blank-canvas.png[blank+canvas]
 +
 image::add-http.png[add+http]
 +
-Studio automatically wraps the connector with a flow, so you don't have to manually create one. There will be a red error dot overlaid on the HTTP Listener because you have not configured it yet.
+Studio automatically wraps the connector with a flow, so you don't have to manually create one. A red error dot overlays on the HTTP Listener because you have not configured it yet.
 +
 . Add a Set Payload component to the flow by dragging it to the right of the HTTP connector, as shown here.
 +
@@ -61,7 +61,9 @@ The HTTP connector allows your Mule application to connect to Web resources thro
 +
 image::http-global-config.png[]
 +
-The properties window opens, with Path populated with " / " with *Connector Configuration* populated with a reference to the global element you just created.
+The properties window opens, with: +
+ * The Path populated with " / "
+ * *Connector Configuration* populated with a reference to the global element you just created
 +
 . In *Path*, enter " / ".
 . In the canvas, click the HTTP connector.
