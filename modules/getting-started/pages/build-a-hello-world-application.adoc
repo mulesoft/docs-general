@@ -70,13 +70,13 @@ The properties window opens, with: +
 +
 The red warning marks disappear from the properties editor and the connector on the canvas.
 +
-. Click the *Set Payload* component on the canvas to open its properties editor in the console.
+. On the canvas, click *Set Payload* to open its properties editor in the console.
 +
 . Set the *Value* field to *Hello World!*, for example.
 +
 image::set-payload-hello-world.png[set+payload+hello+world]
 +
-. Click the *Configuration XML* to view your changes in XML:
+. Click *Configuration XML* to view your changes in XML:
 +
 [source,xml,linenums]
 ----
@@ -89,7 +89,7 @@ You have now created a simple Mule application.
 
 == Deploy and Test Your Project Locally
 
-Anypoint Studio has an embedded Mule runtime that you can use to test deployments. You can deploy your application on the embedded server to see it working and perform any debugging activities before deploying to a production environment, such as an on-premises server or Runtime Manager.
+Anypoint Studio has an embedded Mule runtime that you can use to test deployments. Deploy your application on the embedded server to see it working and perform any debugging activities before deploying to a production environment, such as an on-premises server or Runtime Manager.
 
 . In the Package Explorer, right-click the project name, then select *Run As > Mule Application*.
 +
@@ -100,11 +100,11 @@ image::console1.png[console output]
 . Open your favorite Web browser.
 . Navigate to the URL of your application.
 +
-The URL is the result of the default settings of the HTTP connector:
+The URL is created using the values of the related default settings of the HTTP connector:
 +
 `+http://localhost:8081+`
 +
-The application flow is as follows:
+The application processes a request as follows:
 * The application accepts the request through its HTTP endpoint.
 * The Set Payload component sets the payload to "Hello World!".
 * The HTTP connector returns the payload as the response you see in your browser.
