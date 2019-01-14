@@ -1,6 +1,6 @@
 = Check Published RAML API Specifications Starting January 10, 2019
 
-As of January 10, 2019, the API editor (one of the two editors in Design Center's API Designer) uses stricter validation for specifications that are written in RAML. However, it is possible that one or more of the APIs that you used previous versions of the API editor to create include invalid RAML that those previous versions did not flag.
+As of January 10, 2019, the API editor (one of the two editors in Design Center's API Designer) uses stricter validation for specifications that are written in RAML. Therefore, it is possible that one or more of the APIs that you used previous versions of the API editor to create include invalid RAML that those previous versions did not flag.
 
 You need to check your published APIs by opening them in the API editor in Design Center. You can use the guide on on xref:design-center::design-modify-raml-specs-conform.adoc[Modify Published RAML API Specifications to Conform Completely to RAML 0.8 or 1.0] to correct a number of errors that were validated by the API editor in the past. If, after these changes to the API editor are released, you see errors that this guide does not include, refer to the specifications for RAML 0.8 and 1.0, which you can read on https://raml.org/[raml.org].
 
