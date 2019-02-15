@@ -5,7 +5,7 @@ endif::[]
 
 Authorized short versions of some product names are presented in parentheses, for example: Anypoint Design Center (Design Center).
 
-= A
+== A
 access management::
 Anypoint Platform features that help you manage your account and configure access and permissions within your organization. A REST API provides programmatic control of access-related resources.​
 
@@ -75,7 +75,7 @@ application network::
 A network that connects applications, data, and devices through APIs.
 The network allows consumers from other parts of the business to discover and use assets.
 
-= C
+== C
 
 component::
 1. In Anypoint Platform, a POJO, Spring bean, Java bean, or a script such as Groovy, Ruby, Python, or JavaScript that contains the business logic for processing messages passing through Mule. These components typically take the whole message - or just the payload - as input. They return an object that becomes the message payload for the next element in the message processor chain.
@@ -97,7 +97,7 @@ A class that parses a configuration file. The default configuration builder is t
 control plane::
 Programmatic access to network administration. In Anypoint Platform, the control plane consists of Anypoint Design Center, Anypoint Management Center, and Anypoint Exchange.
 
-= D
+== D
 dataloader.io::
 The data loader for Salesforce.
 
@@ -107,22 +107,22 @@ A feature of Anypoint Studio that uses message metadata to facilitate applicatio
 DataWeave::
 The DataWeave Language queries and transforms data for integrations.
 
-= E
+== E
 
 Edge::
 Anypoint Security feature to help you manage edge security.
 
-= F
+== F
 
 flow::
 A simple, flexible mechanism that enables orchestration of services using the sophisticated message flow capabilities of Mule® runtime engine.   Also referred to as service orchestration.
 
-= H
+== H
 
 hybrid deployment::
 Deploying a Mule Application via the cloud console of the Anypoint Runtime Manager to an on-premises server that hosts Mule runtime engine. This deployment is hybrid in the sense that the hosting of your application is on-premises, while application management is in the cloud.
 
-= M
+== M
 message filter::
 A message processor that controls whether a message is processed by a filter.
 
@@ -130,7 +130,7 @@ message processor::
 A basic building block used to construct flows. A message processor controls how messages are sent and received within a flow. 
 
 message receiver::
-A Java class used by a connector to read the incoming data, package it as a message, and passes it to a service component’s inbound router. The message receiver can use a transformer if necessary to convert the data.
+A Java class used by a connector to read the incoming data, package it as a message, and pass it to a service component’s inbound router. The message receiver can use a transformer if necessary to convert the data.
 
 mocking service::
 Provides a public URI to test or explore an API.  
@@ -147,12 +147,12 @@ The enterprise version of Mule, available for 30-day trial download. The Enterpr
 Mule® runtime engine (Mule® or Mule)::
 Java-based integration runtime engine for Anypoint Platform. 
 
-= O
+== O
 
 organization::
 The container for everything in your Anypoint Platform account. 
 
-= P
+== P
 
 Pivotal Cloud Foundry::
 A cloud computing platform as a service (PaaS) provided by the company Pivotal. Anypoint Platform integrates with Pivotal Cloud Foundry, allowing you to deploy Mule applications to dynamically created virtual machines on your own private network. See deployment strategies. Previously referred to as PCF.
@@ -160,7 +160,7 @@ A cloud computing platform as a service (PaaS) provided by the company Pivotal. 
 policy::
 An object that controls authentication, access, consumption rates, and service level access (SLA) to API resources. Anypoint Platform provides both preconfigured and tools to create custom policies.
 
-= R
+== R
 
 RAML®::
 RESTful API Modeling Language (RAML) provides a specification language that you use to define an API.
@@ -171,12 +171,12 @@ The Runtime Manager agent mediates communication between the Anypoint Runtime Ma
 runtime plane::
 The contract between the control plane and data plane for runtime control. In Anypoint Platform, the runtime plane consists of Mule runtime engine and runtime services managed with tools like Anypoint Runtime Fabric.
 
-= S
+== S
 
 secrets manager::
 A features that stores and controls access to private keys, passwords, certificates, and other secrets.
 
-= T
+== T
 
 tokenization::
 Substituting a non-sensitive equivalent for a sensitive data element.
@@ -187,12 +187,12 @@ A feature that transforms message payloads (data) to and from different types, s
 transport::
 A feature that carries messages on a specific messaging protocol, such as FTP. Several connectors incorporate transports.
 
-= U
+== U
 
 universal message object (UMO)::
 Obsolete name for service component. UMO is still visible in some MuleSoft APIs.
 
-= X
+== X
 
 XA transaction:: 
 A transaction that enlists multiple managed resources and provides guaranteed reliability. Mule runtime engine also supports multi-resource transactions that are not XA transactions. These transactions do not have guaranteed reliability.
