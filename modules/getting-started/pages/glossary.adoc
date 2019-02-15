@@ -7,7 +7,7 @@ Authorized short versions of some product names are presented in parentheses, fo
 
 = A
 access management::
-Anypoint Platform features that help you manage your account, configure access and permissions within your organization. A REST API provides programmatic control of access-related resources.​
+Anypoint Platform features that help you manage your account and configure access and permissions within your organization. A REST API provides programmatic control of access-related resources.​
 
 agent::
 A service, such as the Runtime Manager agent, that is used by or associated with Mule but is not a Mule-managed service component. An agent is registered with the Anypoint Runtime Manager and has the same lifecycle as the corresponding Mule instance, so you can initialize and destroy resources when the Mule instance starts or stops. 
@@ -19,7 +19,7 @@ Anypoint Design Center’s API designer (API designer)::
 Web-based graphical environment for designing, documenting, and testing APIs.
 
 Anypoint Exchange (Exchange)::
-MuleSoft repository for connectors, templates, examples and RAML APIs. Discover and use proven assets built by the MuleSoft ecosystem. You can create your own Exchange and add assets to it for collaboration and sharing among a group.
+MuleSoft repository for connectors, templates, examples, and RAML APIs. Discover and use proven assets built by the MuleSoft ecosystem. You can create your own Exchange and add assets to it for collaboration and sharing among a group.
 
 Anypoint Management Center (Management Center)::
 A single web interface to administer Anypoint Platform, both on-premises and in the cloud. Manage APIs and users, analyze traffic, monitor SLAs, and troubleshoot underlying integration flows.
@@ -31,7 +31,7 @@ Anypoint Object Store v2::
 Storage for data and states across batch processes and Mule components from within a single application.
 
 Anypoint Partner Manager v2::
-The web-based user interface for partner configuration, document flow  and transaction monitoring.
+The web-based user interface for partner configuration, document flow,  and transaction monitoring.
 
 Anypoint Platform™::
 MuleSoft’s product to design, build, and manage APIs and integrations.
@@ -43,7 +43,7 @@ Anypoint Runtime Fabric::
 A container service that automates the configuration, coordination, and management (orchestration), and deployment of your Mule applications and gateways. Runtime Fabric runs on customer-managed infrastructure on AWS, Azure, virtual machines (VMs) or bare-metal servers.
 
 Anypoint Runtime Manager (Runtime Manager)::
-The Runtime Manager is a console where you to deploy and manage applications built with any Mule. From the console, deploy to servers in the cloud (currently handled by CloudHub) or on premises. Access the console in Anypoint Platform or download it as a standalone program that runs in a local server. Previously referred to as ARM.
+A console where you deploy and manage applications built with any Mule. Deploy to servers in the cloud (currently handled by CloudHub) or on premises. s the console in Anypoint Platform or download it as a standalone program that runs in a local server. Previously referred to as ARM.
 
 Anypoint Security::
 Layers of features that secure your application network.
@@ -133,19 +133,19 @@ message receiver::
 A Java class used by a connector to read the incoming data, package it as a message, and passes it to a service component’s inbound router. The message receiver can use a transformer if necessary to convert the data.
 
 mocking service::
-Provides a public URI to an API being designed. Exercising the URI returns the responses defined in the API specification for testing or exploring an API.
+Provides a public URI to test or explore an API.  
 
 Mule® application::
 An app that is configured to run in Mule runtime engine.
 
 module::
-A construct that groups together components. Modules add flexibility to your apps by allowing you to aggregate values, compress data, use Java features, and use extra features for processing JSON.
+A group of components. Modules add flexibility to your apps by allowing you to aggregate values, compress data, use Java features, and process JSON.
 
 Mule Enterprise Edition (EE)::
-The enterprise version of Mule, available for 30-day trial download. The Enterprise Edition includes full development cycles, testing, technical support, maintenance releases and hot fixes, and management and monitoring tools from MuleSoft. If you are deploying Mule in a mission-critical environment, want to ensure that you always have a stable, high-quality release, and want additional tools for managing and monitoring your deployment, you should purchase a subscription to Mule Enterprise Edition.
+The enterprise version of Mule, available for 30-day trial download. The Enterprise Edition includes full development cycles, testing, technical support, maintenance releases and hot fixes, and management and monitoring tools from MuleSoft.
 
 Mule® runtime engine (Mule® or Mule)::
-Java-based integration runtime engine for Anypoint Platform. uses a staged event-driven architecture (SEDA) to enqueue messages and process them inside of flows in separate stages. Mule is the engine for Anypoint Platform™ and the only runtime that combines data and application integration across legacy systems, SaaS applications, and APIs.
+Java-based integration runtime engine for Anypoint Platform. 
 
 = O
 
@@ -163,7 +163,7 @@ An object that controls authentication, access, consumption rates, and service l
 = R
 
 RAML®::
-RESTful API Modeling Language (RAML) provides a specification language that you can use to define an API.
+RESTful API Modeling Language (RAML) provides a specification language that you use to define an API.
 
 Runtime Manager agent::
 The Runtime Manager agent mediates communication between the Anypoint Runtime Manager console and the Mule instances running on servers. Using the Mule agent, you can monitor and control Mule servers. Previously referred to as Runtime agent.
@@ -174,7 +174,7 @@ The contract between the control plane and data plane for runtime control. In An
 = S
 
 secrets manager::
-Construct to store and control access to private keys, passwords, certificates, and other secrets.
+A features that stores and controls access to private keys, passwords, certificates, and other secrets.
 
 = T
 
@@ -182,20 +182,15 @@ tokenization::
 Substituting a non-sensitive equivalent for a sensitive data element.
 
 transformer::
-A construct that transforms message payloads (data) to and from different types, such as the XSLT Transformer. Transformations can also be defined using DataWeave.
+A feature that transforms message payloads (data) to and from different types, such as the XSLT Transformer. Transformations can also be defined using DataWeave.
 
 transport::
-A construct that handles and carries messages on a specific messaging protocol, such as FTP. Several connectors incorporate transports.
+A feature that carries messages on a specific messaging protocol, such as FTP. Several connectors incorporate transports.
 
 = U
 
 universal message object (UMO)::
 Obsolete name for service component. UMO is still visible in some MuleSoft APIs.
-
-= V
-
-Virtual Private Cloud::
-A virtual, private, and isolated network segment in the cloud that hosts CloudHub instances of Mule (CloudHub workers). Previously referred to as VPC.
 
 = X
 
