@@ -7,7 +7,7 @@ Authorized short versions of some product names are presented in parentheses, fo
 
 == A
 access management::
-Anypoint Platform features that help you manage your account and configure access and permissions within your organization. A REST API provides programmatic control of access-related resources.​
+Anypoint Platform features that help you manage your account and configure access and permissions within your organization. A REST API provides programmatic control of access-related resources.
 
 agent::
 A service, such as the Runtime Manager agent, that is used by or associated with Mule but is not a Mule-managed service component. An agent is registered with the Anypoint Runtime Manager and has the same lifecycle as the corresponding Mule instance, so you can initialize and destroy resources when the Mule instance starts or stops. 
@@ -37,13 +37,13 @@ Anypoint Platform™::
 MuleSoft’s product to design, build, and manage APIs and integrations.
 
 Anypoint Platform Private Cloud Edition::
-A special packaging of the Anypoint Platform is available for running on your own local servers. This implementation runs on Docker and Kubernetes, and is also compatible with Pivotal Cloud Foundry, and  includes versions of Runtime Manager, API Manager and Anypoint Exchange. 
+A special packaging of the Anypoint Platform is available for running on your own local servers. This implementation runs on Docker and Kubernetes, and is also compatible with Pivotal Cloud Foundry, and includes versions of Runtime Manager, API Manager and Anypoint Exchange. 
 
 Anypoint Runtime Fabric::
 A container service that automates the configuration, coordination, and management (orchestration), and deployment of your Mule applications and gateways. Runtime Fabric runs on customer-managed infrastructure on AWS, Azure, virtual machines (VMs) or bare-metal servers.
 
 Anypoint Runtime Manager (Runtime Manager)::
-A console where you deploy and manage applications built with any Mule. Deploy to servers in the cloud (currently handled by CloudHub) or on premises. s the console in Anypoint Platform or download it as a standalone program that runs in a local server. Previously referred to as ARM.
+A console where you deploy and manage applications built with any Mule. Deploy to servers in the cloud (currently handled by CloudHub) or on premises. Access the console the console in Anypoint Platform or download it as a standalone program that runs in a local server. Previously referred to as ARM.
 
 Anypoint Security::
 Layers of features that secure your application network.
@@ -62,7 +62,10 @@ API Manager::
 Part of the Anypoint Platform that allows you to design and manage your APIs. It includes the [API Designer], which allows you to write a [RAML] definition of your API. It also includes tools to monitor usage metrics, apply [policies] and to expose interactive documentation through an [API Portal]
 
 API Portal::
-An access point where you can present an API to attract users. How is this different from a private Exchange portal?
+An access point where you can present an API to attract users.
+////
+How is this different from a private Exchange portal?
+////
 
 API proxy::
 A feature of Anypoint API Manager that supplies a layer of protection against attacks on MuleSoft APIs.
@@ -77,22 +80,22 @@ The network allows consumers from other parts of the business to discover and us
 
 == C
 
-component::
-1. In Anypoint Platform, a POJO, Spring bean, Java bean, or a script such as Groovy, Ruby, Python, or JavaScript that contains the business logic for processing messages passing through Mule. These components typically take the whole message - or just the payload - as input. They return an object that becomes the message payload for the next element in the message processor chain.
-
-2. Generically, an architecturally specific portion of a software package.
-
-connector::
-A self-contained component that allows you to integrate Mule applications with the APIs of other, external applications, such as SalesForce, CMIS, and Twitter. A set of connectors is included in Mule version 4. Other connectors created by MuleSoft or third parties are available on Anypoint Exchange.
-
 CloudHub::
 Integration platform as a service that lets you manage applications in the cloud. When deploying an application to the cloud through the Runtime Manager console, CloudHub is used in the background.
 
 clustering::
 Using a set of Mule instances that act as, and can be managed as, a unit. A cluster is a virtual server composed of multiple nodes. You can manage cluster instances from the cloud.
 
+component::
+1. In Anypoint Platform, a POJO, Spring bean, Java bean, or a script such as Groovy, Ruby, Python, or JavaScript that contains the business logic for processing messages passing through Mule. These components typically take the whole message - or just the payload - as input. They return an object that becomes the message payload for the next element in the message processor chain.
+
+2. Generically, an architecturally specific portion of a software package.
+
 configuration builder:: 
 A class that parses a configuration file. The default configuration builder is the `org.mule.config.MuleXmlConfigurationBuilder` class, which parses a Mule XML configuration file.
+
+connector::
+A self-contained component that allows you to integrate Mule applications with the APIs of other, external applications, such as Salesforce, CMIS, and Twitter. A set of connectors is included in Mule version 4. Other connectors created by MuleSoft or third parties are available on Anypoint Exchange.
 
 control plane::
 Programmatic access to network administration. In Anypoint Platform, the control plane consists of Anypoint Design Center, Anypoint Management Center, and Anypoint Exchange.
@@ -135,11 +138,11 @@ A Java class used by a connector to read the incoming data, package it as a mess
 mocking service::
 Provides a public URI to test or explore an API.  
 
-Mule® application::
-An app that is configured to run in Mule runtime engine.
-
 module::
 A group of components. Modules add flexibility to your apps by allowing you to aggregate values, compress data, use Java features, and process JSON.
+
+Mule® application::
+An app that is configured to run in Mule runtime engine.
 
 Mule Enterprise Edition (EE)::
 The enterprise version of Mule, available for 30-day trial download. The Enterprise Edition includes full development cycles, testing, technical support, maintenance releases and hot fixes, and management and monitoring tools from MuleSoft.
