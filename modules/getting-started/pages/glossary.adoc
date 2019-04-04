@@ -43,7 +43,7 @@ Anypoint Runtime Fabric::
 A container service that automates the configuration, coordination, and management (orchestration), and deployment of your Mule applications and gateways. Runtime Fabric runs on customer-managed infrastructure on AWS, Azure, virtual machines (VMs) or bare-metal servers.
 
 Anypoint Runtime Manager (Runtime Manager)::
-A console where you deploy and manage applications built with any Mule. Deploy to servers in the cloud (currently handled by CloudHub) or on premises. Access the console the console in Anypoint Platform or download it as a standalone program that runs in a local server. Previously referred to as ARM.
+A console where you deploy and manage applications built with any Mule. Deploy to servers in the cloud (currently handled by CloudHub) or on premises. Access the console in Anypoint Platform or download it as a standalone program that runs in a local server. Previously referred to as ARM.
 
 Anypoint Security::
 Layers of features that secure your application network.
@@ -59,7 +59,11 @@ Anypoint Visualizer::
 Dynamically generated views of different aspects of an application network graph. 
 
 API Manager::
-Part of the Anypoint Platform that allows you to design and manage your APIs. It includes the [API Designer], which allows you to write a [RAML] definition of your API. It also includes tools to monitor usage metrics, apply [policies] and to expose interactive documentation through an [API Portal]
+Part of the Anypoint Platform that allows you to design and manage your APIs. 
+
+////
+It includes the [API Designer], which allows you to write a [RAML] definition of your API. It also includes tools to monitor usage metrics, apply [policies] and to expose interactive documentation through an [API Portal]
+////
 
 API Portal::
 An access point where you can present an API to attract users.
@@ -95,7 +99,7 @@ configuration builder::
 A class that parses a configuration file. The default configuration builder is the `org.mule.config.MuleXmlConfigurationBuilder` class, which parses a Mule XML configuration file.
 
 connector::
-A self-contained component that allows you to integrate Mule applications with the APIs of other, external applications, such as Salesforce, CMIS, and Twitter. A set of connectors is included in Mule version 4. Other connectors created by MuleSoft or third parties are available on Anypoint Exchange.
+A self-contained component that allows you to integrate Mule applications with the APIs of other, external applications, such as Salesforce, CMIS, and Twitter. A set of connectors is included in Mule 4. Other connectors created by MuleSoft or third parties are available on Anypoint Exchange.
 
 control plane::
 Programmatic access to network administration. In Anypoint Platform, the control plane consists of Anypoint Design Center, Anypoint Management Center, and Anypoint Exchange.
