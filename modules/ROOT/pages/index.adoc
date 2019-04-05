@@ -9,7 +9,7 @@ Use Anypoint Platform to build a structured application network that connects ap
 == Explore Anypoint Exchange
 
 The APIs you build in MuleSoft to integrate applications and services are, by design, reusable and built with enterprise security in mind.
-You can discover these APIs, as well as connectors, samples, and templates in 
+You can discover these APIs, as well as connectors, samples, and templates in
 https://www.anypoint.mulesoft.com/exchange/[Exchange^].
 
 RAML fragments, custom packages, videos, links to documentation, and other assets are also available.
@@ -21,7 +21,7 @@ Anypoint Studio is an Eclipse-based IDE that helps you create Mule apps and APIs
 |===
 | **Creating Mule Apps** | **Creating APIs**
 | xref:7.1@studio::index.adoc[Building Mule Apps in Anypoint Studio] | xref:7.1@studio::import-api-def-dc.adoc[Importing APIs from Design Center to Anypoint Studio]
-| xref:design-center::create-basic-app-task.adoc[Building Apps in Design Center]  | xref:design-center::design-create-publish-api-specs.adoc[Creating APIs in Design Center]
+| xref:design-center::about-designing-a-mule-application.adoc[Building Apps in Design Center]  | xref:design-center::design-create-publish-api-specs.adoc[Creating APIs in Design Center]
 |===
 
 Studio 7 includes xref:4.1@mule-runtime::index.adoc[Mule Runtime (Mule) 4], the runtime environment where you deploy Mule apps and APIs.
