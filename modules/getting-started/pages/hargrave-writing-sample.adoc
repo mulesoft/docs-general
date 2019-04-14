@@ -1,0 +1,43 @@
+= Transportation to Salesforce Tower
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:noindex:
+
+In San Francisco, you have several transportation options for getting to Salesforce Tower:
+
+* https://github.com/mulesoft/docs-general/new/latest/modules/getting-started/pages#rideshare-service[Rideshare service]
+* https://github.com/mulesoft/docs-general/new/latest/modules/getting-started/pages#bus[Bus]  
+* https://github.com/mulesoft/docs-general/new/latest/modules/getting-started/pages#personal-vehicle[Personal vehicle] (car, motorcycle, bicycle)
+
+== Rideshare service
+
+Rideshare service is the most convenient transportation option if you have a smartphone and cost is not an issue.
+
+To get to Salesforce Tower using a ride share service:
+
+. Open the lyft app. It's a pink app with the word *lyft* in white type.
+ - If you don't have lyft, https://www.wikihow.com/Join-Lyft[download the app and create an account].
+
+. Tap *Pickup location*.
+ - To change your location, start typing a new address and tap the correct location from the autopoplated list that is displayed.
+ - If prompted, give lyft permission to use your location.
+
+. Tap *Set pickup*.
+
+. Tap *Add destination*.
+ - Start typing *415 Mission Street San Francisco*, then select it from the autopopluated list that is displayed.
+
+. Tap *Request lyft*.
+ - The nearest available lyft driver's details, including name and a picture of the car, are displayed. An estimated time of arrival is also displayed.
+ 
+== Bus
+
+http://tjpa.org/[San Francisco bus routes and schedules]
+
+== Personal vehicle
+
+https://www.spotangels.com/san-francisco/salesforce-tower-parking[Salesforce Tower parking information]
+
+http://www.salesforcewest.com/tenant-handbook/sustainability/bicycle-parking/[Salesforce Tower bicycle rack information]
+ 
