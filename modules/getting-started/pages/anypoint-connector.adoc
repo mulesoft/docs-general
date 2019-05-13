@@ -2,7 +2,6 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:keywords: connectors, tutorial, fundamentals
 :noindex:
 
 After learning some of the basic functionality in the xref:6@studio::basic-studio-tutorial.adoc[Basic Studio Tutorial] and xref:build-a-hello-world-application.adoc[How to Create a Mule App Tutorial], it's time to try your hand at enriching your application with an *Anypoint Connector*.
@@ -31,7 +30,7 @@ Much of the functionality of each individual connector is dependent upon its tar
 
 This tutorial assumes that you have xref:6@studio::download-and-launch-anypoint-studio.adoc[downloaded and installed Anypoint Studio]. If you do not have any previous experience with Eclipse or an Eclipse-based IDE, you can review the brief introduction to the xref:6@studio::index.adoc[Anypoint Studio interface] and the document describing xref:3.8@mule-runtime::global-elements.adoc[Global Elements in Mule]. Further, consider following the xref:6@studio::basic-studio-tutorial.adoc[Basic] and xref:content-based-routing.adoc[Content-Based Routing] tutorials.
 
-NOTE: You must obtain Twitter developer access to a Twitter app that you create to complete this tutorial. See <<Obtaining Access to the Twitter API>> for how to get Twitter developer access and create a simple app.
+NOTE: You must obtain Twitter developer access to a Twitter app that you create to complete this tutorial. See <<Obtain Access to the Twitter API>> for how to get Twitter developer access and create a simple app.
 
 == Goals
 
@@ -191,7 +190,7 @@ For this element to work, you must reference an abstract element called a *Conne
 
 === Configure the Twitter Connector
 
-*Note*: To complete this section, you need Twitter developer access to an app you created. See <<Obtaining Access to the Twitter API>>.
+*Note*: To complete this section, you need Twitter developer access to an app you created. See <<Obtain Access to the Twitter API>>.
 
 [.ex]
 =====
