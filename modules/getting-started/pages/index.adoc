@@ -38,7 +38,6 @@ xref:3.8@mule-runtime::dataweave.adoc[DataWeave] is an essential tool that lets 
 [NOTE]
 Runtime Manager is more flexible in that it allows xref:runtime-manager::managing-servers.adoc[hybrid] management of apps on-prem or in the cloud.
 +
-. Deploy apps to the MuleSoft cloud service in the CloudHub UI in the xref:deploy-to-cloudhub.adoc[Deploy to CloudHub Tutorial].
 
 Dive into more strategies to control how your Mule applications are run and managed starting from the xref:3.8@mule-runtime::installing.adoc[Installing and Deploying] documentation for Mule runtime.
 
