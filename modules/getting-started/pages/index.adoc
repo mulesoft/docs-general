@@ -18,27 +18,16 @@ If you have prior knowledge of APIs, you may want to know about xref:mule-runtim
 
 == Getting Started with Mule Applications
 
-The documentation for Mule application development requires some familiarity with xref:studio::index.adoc[Anypoint Studio]. Make sure you have it installed and get acquainted with it using the xref:studio::basic-studio-tutorial.adoc[Basic Studio Tutorial].
-
-[NOTE]
-Install the xref:tudio::setting-up-your-development-environment.adoc[Anypoint Studio hardware and software requirements]. Browse xref:exchange::index.adoc[Anypoint Exchange] to get resources or examples for the integration you want. You can access Exchange from the browser or within Anypoint Studio to retrieve any MuleSoft and partner-supported connectors to help you integrate SaaS applications like ServiceNow and Salesforce, or generic data structures like databases, files and object stores.
-
-. xref:mule-runtime::mule-app-tutorial.adoc[Create a Mule App with Studio]
-. Try out the xref:anypoint-connector.adoc[Anypoint Connector Tutorial] where you find out Mule applications can do anything you already do with SaaS apps with greater efficiency. The tutorial uses the Twitter service as an example, but you can plug in another connector of your choice.
+. The documentation for Mule application development requires some familiarity with xref:studio::index.adoc[Anypoint Studio]. Make sure you have it installed.
+. xref:mule-runtime::mule-app-tutorial.adoc[Create a Mule app with Studio].
+. Use the xref:anypoint-connector.adoc[Anypoint Connector tutorial] to integrate with the Twitter service.
 
 [TIP]
 xref:mule-runtime::dataweave.adoc[DataWeave] is an essential tool that lets you weave complex data transformations into your Mule applications to quickly transform and map Mule message payloads to other data structures.
 
 === Getting Started with Deployment
 
-. Use Runtime Manager to xref:runtime-manager::deploying-to-your-own-servers.adoc[Deploy to Your Own Servers].
-+
-[NOTE]
-Runtime Manager is more flexible in that it allows xref:runtime-manager::managing-servers.adoc[hybrid] management of apps on-prem or in the cloud.
-+
-. Deploy apps to the MuleSoft cloud service in the CloudHub UI in the xref:deploy-to-cloudhub.adoc[Deploy to CloudHub Tutorial].
-
-Dive into more strategies to control how your Mule applications are run and managed starting from the xref:mule-runtime::mule-standalone.adoc[Installing and Deploying] documentation for Mule runtime.
+Use Runtime Manager to xref:runtime-manager::deployment-strategies.adoc[deploy to your chosen target].
 
 == Resources
 
@@ -46,7 +35,5 @@ Dive into more strategies to control how your Mule applications are run and mana
 * xref:mule-runtime::index.adoc[Mule Runtime]
 * xref:studio::index.adoc[Anypoint Studio]
 * xref:api-manager::index.adoc[API Manager]
-* xref:runtime-manager::cloudhub.adoc[CloudHub]
-* xref:runtime-manager::index.adoc[Runtime Manager]
 * Access xref:release-notes::index.adoc[Release Notes] for the release history of any MuleSoft product.
 * https://anypoint.mulesoft.com/login/[Sign into Anypoint Platform]
