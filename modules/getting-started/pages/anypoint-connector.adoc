@@ -4,7 +4,7 @@ include::_attributes.adoc[]
 endif::[]
 :noindex:
 
-After learning some of the basic functionality in the xref:6@studio::basic-studio-tutorial.adoc[Basic Studio Tutorial] and xref:build-a-hello-world-application.adoc[How to Create a Mule App Tutorial], it's time to try your hand at enriching your application with an *Anypoint Connector*.
+After learning some of the basic functionality in the xref:mule-runtime::mule-app-tutorial.adoc[Mule app tutorial], enrich your application with an *Anypoint Connector*.
 
 [NOTE]
 xref:6@studio::index.adoc[Anypoint Studio] comes with a set of connectors that you can easily add to your Studio flow to connect your application. You can find all certified connectors in xref:exchange::index.adoc[Anypoint Exchange].
