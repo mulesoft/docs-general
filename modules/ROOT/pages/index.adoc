@@ -4,7 +4,7 @@ include::_attributes.adoc[]
 endif::[]
 :linkattrs:
 
-Use Anypoint Platform to build a structured application network that connects applications, data, and devices with reusable APIs.
+Use Anypoint Mysti to build a structured application network that connects applications, data, and devices with reusable APIs.
 
 == Explore Anypoint Exchange
 
