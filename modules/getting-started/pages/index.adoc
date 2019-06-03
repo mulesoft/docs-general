@@ -14,7 +14,6 @@ If you have prior knowledge of APIs, you may want to know about xref:mule-runtim
 
 . Find out xref:design-an-api.adoc[How to Design an API].
 . After designing the API, learn xref:implement-and-test.adoc[How to Implement and Test an API].
-. To bring your API to your organization or a larger audience, see xref:sync-api-apisync.adoc[How to Sync an API to the Platform].
 
 == Getting Started with Mule Applications
 
