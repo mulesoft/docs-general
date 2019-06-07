@@ -181,7 +181,7 @@ The contract between the control plane and data plane for runtime control. In An
 == S
 
 secrets manager::
-A features that stores and controls access to private keys, passwords, certificates, and other secrets.
+A feature that stores and controls access to private keys, passwords, certificates, and other secrets.
 
 == T
 
