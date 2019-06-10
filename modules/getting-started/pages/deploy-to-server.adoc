@@ -70,9 +70,7 @@ image::deploy-to-server-08d58.png[]
 
 == Deploy Via Anypoint Platform
 
-In this tutorial, you will deploy a simple Hello World project. You can either download the finished project archive link:{attachmentsdir}/basic-tutorial.zip[Here], or you can build it yourself by following the steps on xref:build-a-hello-world-application.adoc[Build a Hello World Application].
-
-*Note*: If you create the project yourself in Studio by following the tutorial, you must then export it as a deployable .zip file. To do so, go to *File > Export* and then select *Anypoint Studio Project to Mule Deployable Archive*.
+In this tutorial, you will deploy a simple Hello World project. You can download the finished project archive link:{attachmentsdir}/basic-tutorial.zip[Here].
 
 See xref:6@studio::importing-and-exporting-in-studio.adoc#exporting-projects-from-studio[Exporting from Studio] for more detailed instructions.
 
@@ -122,11 +120,6 @@ This proves you have successfully deployed a Mule application to your new Anypoi
 
 [TIP]
 You can now manage your application through the xref:runtime-manager::index.adoc[Runtime Manager], access its dashboard, view logs and alerts, and more.
-
-
-
-
-
 
 == See Also
 
