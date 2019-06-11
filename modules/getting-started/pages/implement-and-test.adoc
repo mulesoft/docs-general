@@ -93,8 +93,8 @@ The result of every test is shown in the MUnit View in Anypoint Studio.
 
 == See Also
 
-* xref:sync-api-apisync.adoc[Sync an API]
-* xref:3.8@mule-runtime::reference-exception-strategy.adoc[Reference Exception Strategy]
-* xref:3.x@apikit::apikit-basic-anatomy.adoc[APIkit Router]
+* xref:3.8@mule-runtime::reference-exception-strategy.adoc[Reference Exception Strategy for Mule 3]
+* xref:3.x@apikit::apikit-basic-anatomy.adoc[APIkit Router for Mule 3]
 * https://docs.archive.mulesoft.com/munit/v/1.2/[MUnit]
-* https://docs.archive.mulesoft.com/munit/v/1.2/munit-suite[MUnit test suite].
+* https://docs.archive.mulesoft.com/munit/v/1.2/munit-suite[MUnit test suite]
+* xref:mule-runtime::migration-munit.adoc[Munit Migration for Mule 4]
