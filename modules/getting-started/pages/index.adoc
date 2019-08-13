@@ -13,8 +13,7 @@ If you have prior knowledge of APIs, you may want to know about xref:mule-runtim
 == Getting Started with APIs
 
 . https://developer.mulesoft.com/guides/quick-start/designing-your-first-api[Design an API].
-. After designing the API, learn xref:implement-and-test.adoc[Implement and Test an API].
-. To share an API, see xref:exchange::about-sharing-assets.adoc[Share Assets]
+. xref:exchange::about-sharing-assets.adoc[Share an API].
 
 
 == Getting Started with Mule Applications
