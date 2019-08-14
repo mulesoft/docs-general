@@ -28,7 +28,7 @@ Much of the functionality of each individual connector is dependent upon its tar
 
 == Prerequisites
 
-This tutorial assumes that you have xref:6@studio::download-and-launch-anypoint-studio.adoc[downloaded and installed Anypoint Studio]. If you do not have any previous experience with Eclipse or an Eclipse-based IDE, you can review the brief introduction to the xref:6@studio::index.adoc[Anypoint Studio interface] and the document describing xref:3.8@mule-runtime::global-elements.adoc[Global Elements in Mule]. Further, consider following the xref:6@studio::basic-studio-tutorial.adoc[Basic] and xref:content-based-routing.adoc[Content-Based Routing] tutorials.
+This tutorial assumes that you have xref:6@studio::download-and-launch-anypoint-studio.adoc[downloaded and installed Anypoint Studio]. If you do not have any previous experience with Eclipse or an Eclipse-based IDE, you can review the brief introduction to the xref:6@studio::index.adoc[Anypoint Studio interface] and the document describing xref:3.8@mule-runtime::global-elements.adoc[Global Elements in Mule]. Further, consider following the xref:6@studio::basic-studio-tutorial.adoc[Basic] tutorial.
 
 NOTE: You must obtain Twitter developer access to a Twitter app that you create to complete this tutorial. See <<Obtain Access to the Twitter API>> for how to get Twitter developer access and create a simple app.
 

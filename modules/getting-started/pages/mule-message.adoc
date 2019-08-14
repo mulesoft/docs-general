@@ -9,7 +9,7 @@ image::mulestudioa.png[mulestudio]
 
 This tutorial walks you through how you can access information about the content, data structure, and environment of Mule Messages using various tools in Anypoint Studio and Mule runtime. It also teaches you how to access that information within your applications using *Mule Expression Language (MEL)*.
 
-If you completed the xref:6@studio::basic-studio-tutorial.adoc[Basic Studio Tutorial] or the xref:content-based-routing.adoc[How to Route Mule Messages Tutorial], you have already encountered and used some MEL expressions. Work through this tutorial to orient yourself further to MEL and how you can use it within your Mule applications to extract information from your message, set or manipulate values, or perform operations based on data extracted from the message at runtime.
+If you completed the xref:6@studio::basic-studio-tutorial.adoc[Basic Studio Tutorial], you have already encountered and used some MEL expressions. Work through this tutorial to orient yourself further to MEL and how you can use it within your Mule applications to extract information from your message, set or manipulate values, or perform operations based on data extracted from the message at runtime.
 
 == Prerequisites
 
@@ -456,5 +456,4 @@ include::{examplesdir}/mule-message_3.xml[]
 * Learn more about xref:6@studio::studio-visual-debugger.adoc[Visual Debugger], the xref:3.8@mule-runtime::logger-component-reference.adoc[Logger], and xref:6@studio::datasense.adoc[DataSense].
 * If you haven't already, try some of our other tutorials, all of which involve using MEL expressions:
 ** xref:6@studio::basic-studio-tutorial.adoc[Basic Studio Tutorial]
-** xref:content-based-routing.adoc[Content-Based Routing Tutorial]
 ** xref:anypoint-connector.adoc[Anypoint Connector quickstart]
