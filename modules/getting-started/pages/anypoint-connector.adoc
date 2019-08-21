@@ -564,6 +564,5 @@ include::{examplesdir}/anypoint-connector-tutorial_2.xml[]
 == See Also
 
 * https://www.anypoint.mulesoft.com/exchange/?type=connector[Install Connectors from Anypoint Exchange].
-* xref:mule-message.adoc[Mule Message Tutorial]
 * Import xref:3.8@mule-runtime::installing-connectors.adoc[additional connectors] into your instance of Anypoint Studio.
 * Learn how to create your own Anypoint Connectors using the xref:3.8@connector-devkit::index.adoc[Anypoint Connector DevKit].
