@@ -5,7 +5,7 @@ endif::[]
 
 Your customers and employees need data-rich, delightful experiences on a variety of devices. To implement the digital transformations needed to deliver these experiences, systems must be integrated and connected.
 
-The MuleSoft approach, xref:https://blogs.mulesoft.com/dev/api-dev/what-is-api-led-connectivity/[API-led integration of data from different systems], allows you to spend less time on IT projects and more time on your core business. Whenever you turn a business process into an API, you make it easier to implement that process in the next project. And APIs have proven to be the best size of reusable code. 
+The MuleSoft approach, https://blogs.mulesoft.com/dev/api-dev/what-is-api-led-connectivity/[API-led integration of data from different systems], allows you to spend less time on IT projects and more time on your core business. Whenever you turn a business process into an API, you make it easier to implement that process in the next project. And APIs have proven to be the best size of reusable code. 
 
 The unified Anypoint Platform makes it easy to discover, create, and manage APIs in a modular, organized layer that replaces brittle spaghetti code. Instead of retrieving random and possibly unstable code snippets, you can “shop” for APIs created using the industry’s best practices.
 
