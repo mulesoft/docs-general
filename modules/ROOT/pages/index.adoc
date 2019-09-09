@@ -3,13 +3,12 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-Your customers and employees need data-rich, delightful experiences on a variety of devices. To implement the digital transformations needed to deliver these experiences, systems must be integrated and connected.
+Your customers and employees need data-rich, delightful digital experiences on a variety of devices from smart watches to desktop computers. To deliver these experiences, your systems must be connected to each other, and the data must flow among those systems (integration).
 
-The MuleSoft approach, https://blogs.mulesoft.com/dev/api-dev/what-is-api-led-connectivity/[API-led integration of data from different systems], allows you to spend less time on IT projects and more time on your core business. Whenever you turn a business process into an API, you make it easier to implement that process in the next project. And APIs have proven to be the best size of reusable code. 
+The MuleSoft approach to integration, https://blogs.mulesoft.com/dev/api-dev/what-is-api-led-connectivity/[integration of data from different systems using a layer of APIs], allows you to spend less time on IT projects and more time on your core business. Whenever you turn a business process into an API, you make it easier to implement that process in the next project. And APIs have proven to be the best size of reusable code. 
 
-The unified Anypoint Platform makes it easy to discover, create, and manage APIs in a modular, organized layer that replaces brittle spaghetti code. Instead of retrieving random and possibly unstable code snippets, you can “shop” for APIs created using the industry’s best practices.
-
-Use Anypoint Platform to build a structured application network that connects applications, data, and devices with reusable APIs.
+Anypoint Platform helps you build a structured application network that connects applications, data, and devices with reusable APIs.
+The unified Anypoint Platform makes it easy to discover, create, and manage APIs in a modular, organized layer. Instead of retrieving random and possibly unstable code snippets, you can “shop” for APIs created using the industry’s best practices.
 
 == Explore Anypoint Exchange
 
@@ -22,7 +21,7 @@ Exchange also provides RAML fragments, custom packages, videos, links to documen
 [HINT]
 Discover Anypoint Platform APIs on https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/[the MuleSoft developer portal^].
 
-== Design and Build Integrations
+== Design and Build API-based Integrations
 
 Anypoint Studio is an Eclipse-based IDE that helps you create integrations. Design Center, a web-based tool, helps you create API specifications, the foundation for data integrations.
 
@@ -82,7 +81,7 @@ During development or after deployment, you can make changes to your integration
 
 == Contributing to the Documentation
 
-To contribute to this documentation, select *Edit in Github* on the page you wish to modify, and submit a pull request to the git repo. Your improvements to MuleSoft documentation are appreciated by the entire community. Thank you!
+To contribute to the English version of this documentation, select *Edit in Github* on the page you wish to modify, and submit a pull request to the git repo. Your improvements to MuleSoft documentation are appreciated by the entire community. Thank you!
 
 == Archived Documentation
 
