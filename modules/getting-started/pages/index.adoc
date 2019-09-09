@@ -9,8 +9,7 @@ Your customers and employees need data-rich, delightful digital experiences on a
 
 The MuleSoft approach to integration, https://blogs.mulesoft.com/dev/api-dev/what-is-api-led-connectivity/[integration of data from different systems using a layer of APIs], allows you to spend less time on IT projects and more time on your core business. Whenever you turn a business process into an API, you make it easier to implement that process in the next project. And APIs have proven to be the best size of reusable code. 
 
-image::flow-extra-credit.png[]
-//image::api-led-archicture.png[]
+image::api-led-archicture.png[]
 
 Anypoint Platform helps you build a structured application network that connects applications, data, and devices with reusable APIs.
 The unified Anypoint Platform makes it easy to discover, create, and manage APIs in a modular, organized layer. Instead of retrieving random and possibly unstable code snippets, you can “shop” for APIs created using the industry’s best practices.
