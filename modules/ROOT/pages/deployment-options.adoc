@@ -63,7 +63,7 @@ The following tables summarize the options for control and runtime plane locatio
 | Managed by | MuleSoft | MuleSoft manages runtime planes in global regions. | You manage runtimes in your environment. | You | You
 |===
 
-== Deployment Components
+== Deployments and Components
 Anypoint Platform control plane and runtime components are listed in the following tables with their 
 availability across deployment options. Deployment options include:
 
