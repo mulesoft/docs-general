@@ -70,13 +70,13 @@ availability across deployment options. Deployment options include:
 * US cloud
 The complete Anypoint Platform. All data is hosted within the US.
 * EU cloud
-Includes all US cloud components, but differs from the US cloud in that all data is hosted within the EU. Refer to https://docs.mulesoft.com/eu-control-plane/ for additional information.
+Includes all US cloud components, but differs from the US cloud in that all data is hosted within the EU. Refer to xref:https://docs.mulesoft.com/eu-control-plane/[About the EU Control Plane] for additional information.
 * MuleSoft Government Cloud
-FedRAMP moderate authorized version of US cloud. Refer to https://docs.mulesoft.com/gov-cloud/ for additional information.
+FedRAMP moderate authorized version of US cloud. Refer to xref:https://docs.mulesoft.com/gov-cloud/[About Government Cloud] for additional information.
 * Anypoint Platform Private Cloud Edition (Anypoint Platform PCE)
-A single-tenant version of US cloud managed by your IT team. Anypoint Platform PCE supports on-premises and cloud installation and is specifically designed for customers with strict regulatory or compliance requirements that limit the use of cloud solutions. Refer to https://docs.mulesoft.com/private-cloud/2.0/ for additional information.
+A single-tenant version of US cloud managed by your IT team. Anypoint Platform PCE supports on-premises and cloud installation and is specifically designed for customers with strict regulatory or compliance requirements that limit the use of cloud solutions. Refer to https://docs.mulesoft.com/private-cloud/2.0/[About Anypoint Platform Private Cloud Edition] for additional information.
 
-Refer to https://www.mulesoft.com/anypoint-pricing for detailed information about component availability based on your subscription.
+Refer to xref:https://www.mulesoft.com/anypoint-pricing[Anypoint Platform pricing] for detailed information about component availability based on your subscription.
 
 === Control Plane Components and Availability Across Deployment Options
 [%header,cols="5*a"]
