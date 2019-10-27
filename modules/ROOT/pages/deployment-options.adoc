@@ -73,9 +73,9 @@ availability across deployment options. Deployment options include:
 * US cloud
 The complete Anypoint Platform. All data is hosted within the US.
 * EU cloud
-Includes all US cloud components, but differs from the US cloud in that all data is hosted within the EU. Refer to xref:eu-control-plane/index.adoc[About the EU Control Plane] for additional information.
+Includes all US cloud components, but differs from the US cloud in that all data is hosted within the EU. Refer to xref:eu-control-plane::index.adoc[About the EU Control Plane] for additional information.
 * MuleSoft Government Cloud
-FedRAMP moderate authorized version of US cloud. Refer to xref:gov-cloud/index.adoc[About Government Cloud] for additional information.
+FedRAMP moderate authorized version of US cloud. Refer to xref:gov-cloud::index.adoc[About Government Cloud] for additional information.
 * Anypoint Platform Private Cloud Edition (Anypoint Platform PCE)
 A single-tenant version of US cloud managed by your IT team. Anypoint Platform PCE supports on-premises and cloud installation and is specifically designed for customers with strict regulatory or compliance requirements that limit the use of cloud solutions. Refer to xref:private-cloud::index.adoc[About Anypoint Platform Private Cloud Edition] for additional information.
 
