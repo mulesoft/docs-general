@@ -2,6 +2,7 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
+:page-aliases: general:getting-started:glossary.adoc
 
 Authorized short versions of some product names are presented in parentheses, for example: Anypoint Design Center (Design Center).
 
