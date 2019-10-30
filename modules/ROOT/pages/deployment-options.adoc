@@ -29,6 +29,7 @@ a|
 * Flow Designer 
 * Anypoint Exchange 
 * Anypoint API Community Manager 
+* Anypoint Partner Manager
 * Access management
 * Analytics
 * Anypoint API Manager
@@ -89,6 +90,7 @@ Refer to https://www.mulesoft.com/anypoint-pricing for Anypoint Platform compone
 | Flow Designer | Y | Y | N | N
 | Anypoint Exchange | Y | Y | Y | Y
 | Anypoint API Community Manager* | Y | Y | N | N
+| Anypoint Partner Manager | Y | Y | N | N
 | Access management | Y | Y | Y | Y
 | Analytics | Y | Y | N | N
 | Anypoint API Manager | Y | Y | Y | Y
