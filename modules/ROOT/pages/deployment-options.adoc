@@ -10,10 +10,10 @@ mission-critical use cases.
 
 Anypoint Platform functionality can be classified into two main categories:
 
-* xref:glossary.adoc[Control plane]
+* xref:glossary#c[Control plane]
 + 
 The Anypoint Platform control plane provides design, engagement, and management capabilities.
-* xref:glossary.adoc[Runtime plane] 
+* xref:glossary#r[Runtime plane] 
 + 
 The Anypoint Platform runtime plane is where applications are deployed, and also where Mule runtime engine (Mule)
 and other application-related services, such as Anypoint Connectors, Anypoint Object Store, and messaging, run. 
