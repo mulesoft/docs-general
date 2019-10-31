@@ -10,10 +10,10 @@ mission-critical use cases.
 
 Anypoint Platform functionality can be classified into two main categories:
 
-* Control plane
+* xref:glossary.adoc[Control plane]
 + 
 The Anypoint Platform control plane provides design, engagement, and management capabilities.
-* Runtime plane. 
+* xref:glossary.adoc[Runtime plane] 
 + 
 The Anypoint Platform runtime plane is where applications are deployed, and also where Mule runtime engine (Mule)
 and other application-related services, such as Anypoint Connectors, Anypoint Object Store, and messaging, run. 
@@ -43,16 +43,17 @@ a|
 * Anypoint Security tokenization
 * Anypoint MQ
 * Anypoint Object Store
+* Connectors
 |===
 
 == Control and Runtime Plane Locations and Management
 With Anypoint Platform, you choose where to host your control and runtime planes and whether you want to 
-manage them, which then determines the Anypoint Platform deployment option that is right for you. 
+manage them, which then determines the xref: deployment-options#runtime-plane-options-and-deployments[Anypoint Platform deployment option] that is right for you. 
 The following tables summarize the options for control and runtime plane locations and management: 
 
 [%header,cols="5*a"]
 |===
-| Plane | CloudHub | Hybrid | On-Premises | On-Premises Using Private Cloud Edition
+| Plane | CloudHub | Hybrid | On-Premises Not Using Private Cloud Edition | On-Premises Using Private Cloud Edition
 | Control plane | Located in the US, EU, and US-based FedRAMP certified regions. | Located in the US and EU regions. | Located in the US and EU regions. | Located on-premises.
 | Control plane managed by | MuleSoft | MuleSoft | MuleSoft | You
 | Runtime plane | Located in 13 regions globally. 
@@ -71,12 +72,16 @@ a|
 Anypoint Platform control plane and runtime components, and their availability across deployment options, are listed in the following tables. Deployment options include:
 
 * US cloud
++
 The complete Anypoint Platform. All data is hosted within the US.
 * EU cloud
++
 Includes all US cloud components, but differs from the US cloud in that all data is hosted within the EU. Refer to xref:eu-control-plane::index.adoc[About the EU Control Plane] for additional information.
 * MuleSoft Government Cloud
++
 FedRAMP moderate authorized version of US cloud. Refer to xref:gov-cloud::index.adoc[About Government Cloud] for additional information.
 * Anypoint Platform Private Cloud Edition (Anypoint Platform PCE)
++
 A single-tenant version of US cloud managed by your IT team. Anypoint Platform PCE supports on-premises and cloud installation and is specifically designed for customers with strict regulatory or compliance requirements that limit the use of cloud solutions. Refer to xref:private-cloud::index.adoc[About Anypoint Platform Private Cloud Edition] for additional information.
 
 Refer to https://www.mulesoft.com/anypoint-pricing for Anypoint Platform component availability based on your subscription.
@@ -134,6 +139,7 @@ Runtime Plane | US Cloud | EU Cloud | MuleSoft Government Cloud | Private Cloud 
 | Anypoint Security tokenization | N | Y | N
 | Anypoint MQ | Y | N | N
 | Anypoint Object Store | Y | N | N
+| Connectors | Y | N | Y
 |===
 
 == How to Identify Your Anypoint Platform Control and Runtime Planes
