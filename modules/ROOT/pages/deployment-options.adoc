@@ -48,7 +48,7 @@ a|
 
 == Control and Runtime Plane Locations and Management
 With Anypoint Platform, you choose where to host your control and runtime planes and whether you want to 
-manage them, which then determines the xref: deployment-options#runtime-plane-options-and-deployments[Anypoint Platform deployment option] that is right for you. 
+manage them, which then determines the xref:deployment-options#runtime-plane-options-and-deployments[Anypoint Platform deployment option] that is right for you. 
 The following tables summarize the options for control and runtime plane locations and management: 
 
 [%header,cols="5*a"]
