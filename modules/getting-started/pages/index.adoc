@@ -7,7 +7,7 @@ endif::[]
 
 Your customers and employees need data-rich, delightful digital experiences on a variety of devices from smart watches to desktop computers. To deliver these experiences, your systems must be connected to each other, and the data must flow among those systems (integration).
 
-The MuleSoft approach to integration, https://blogs.mulesoft.com/dev/api-dev/what-is-api-led-connectivity/[integration of data from different systems using a layer of APIs], allows you to spend less time on IT projects and more time on your core business. Whenever you turn a business process into an API, you make it easier to implement that process in the next project. And APIs have proven to be the best size of reusable code. 
+The MuleSoft approach to integration, https://blogs.mulesoft.com/dev/api-dev/what-is-api-led-connectivity/[integration of data from different systems using a layer of APIs], allows you to spend less time on IT projects and more time on your core business. Whenever you turn a business process into an API, you make it easier to implement that process in the next project. And APIs have proven to be the best size of reusable code.
 
 image::api-led-architecture.png[]
 
@@ -31,7 +31,7 @@ Anypoint Studio is an Eclipse-based IDE that helps you create integrations. Desi
 
 |===
 | **Creating Integrations** | **Creating API Specifications**
-| xref:studio::index.adoc[Building Integrations with Anypoint Studio] | xref:studio::import-api-def-dc.adoc[Importing APIs from Design Center to Anypoint Studio]
+| xref:studio::index.adoc[Building Integrations with Anypoint Studio] | xref:studio::import-api-specification-exchange.adoc[Importing APIs from Exchange to Anypoint Studio]
 | xref:design-center::about-designing-a-mule-application.adoc[Building Integrations in Design Center]  | xref:design-center::design-create-publish-api-specs.adoc[Creating API specifications in Design Center]
 |===
 
