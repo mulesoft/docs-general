@@ -11,7 +11,7 @@ as well as connecting APIs with applications, data, and devices. Anypoint Platfo
 Anypoint Platform control plane functionality includes the design, engagement, and management capabilities of Anypoint Platform, such as Anypoint Design Center, Anypoint Management Center, and Anypoint Exchange.
 * Runtime plane functionality 
 + 
-Anypoint Platform runtime plane functionality includes the runtime engine (Mule) and runtime services, such as Anypoint Connectors, Anypoint Object Store, and messaging, that allow you to scale the power of Mule and Anypoint Platform and where applications are deployed.
+Anypoint Platform runtime plane functionality includes the runtime engine (Mule) and runtime services, such as Anypoint Connectors, Anypoint Object Store, and messaging that allow you to scale the power of Mule and Anypoint Platform, and is where applications are deployed.
 
 == Plane Functionality Location and Management
 The needs of your organization determine where Anypoint Platform control plane and runtime plane functionality is deployed: on-premises, in the cloud, or in a hybrid environment, and also determine who manages and maintains it. Anypoint Platform control and runtime plane functionality location and management options include:
