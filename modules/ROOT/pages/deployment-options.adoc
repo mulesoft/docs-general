@@ -4,72 +4,52 @@ include::_attributes.adoc[]
 endif::[]
 
 Anypoint Platform is an advanced enterprise platform for designing, developing, and managing APIs, 
-as well as for connecting APIs with applications, data, and devices. It enables you to deploy applications 
-anywhere on-premises, in the cloud, or in a hybrid environment to reliably address both small-scale and 
-mission-critical use cases.
+as well as connecting APIs with applications, data, and devices. Anypoint Platform functionality can be classified into two main categories:
 
-Anypoint Platform functionality can be classified into two main categories:
-
-* xref:glossary#c[Control plane]
+* Control plane functionality
 + 
-The Anypoint Platform control plane provides design, engagement, and management capabilities.
-* xref:glossary#r[Runtime plane] 
+Anypoint Platform control plane functionality includes the design, engagement, and management capabilities of Anypoint Platform, such as Design Center, Management Center, and Exchange.
+* Runtime plane functionality 
 + 
-The Anypoint Platform runtime plane is where applications are deployed, and also where Mule runtime engine (Mule)
-and other application-related services, such as Anypoint Connectors, Anypoint Object Store, and messaging, run. 
+Anypoint Platform runtime plane functionality includes the runtime engine (Mule) and runtime services, such as Anypoint Connectors, Anypoint Object Store, and messaging, that allow you to scale the power of Mule and Anypoint Platform and where applications are deployed.
 
-The following table lists Anypoint Platform control and runtime plane components: 
+== Plane Functionality Location and Management
+The needs of your organization determine where Anypoint Platform control plane and runtime plane functionality are deployed: on-premises, in the cloud, or in a hybrid environment, and also determine who manages and maintains the control and runtime plane functionality. Anypoint Platform control and runtime plane location and management options include:
 
-[%header,cols="2*a"]
-|===
-| Anypoint Platform Control Plane Components | Anypoint Platform Runtime Plane Components
-a|
-* API Designer 
-* Anypoint Studio 
-* Flow Designer 
-* Anypoint Exchange 
-* Anypoint API Community Manager 
-* Anypoint Partner Manager
-* Access management
-* Analytics
-* Anypoint API Manager
-* Anypoint Runtime Manager 
-* Anypoint Monitoring
-* Secrets manager
-* Anypoint Visualizer 
-a|
-* Mule runtime engine
-* Anypoint Security edge policies
-* Anypoint Security tokenization
-* Anypoint MQ
-* Anypoint Object Store
-* Connectors
-|===
+* CloudHub
++
+MuleSoft hosts and manages public cloud infrastructure for both control and runtime planes. 
+* Hybrid
++
+MuleSoft hosts and manages public cloud infrastructure for the control plane, with the runtime plane deployed in a hybrid configuration: both Anypoint Runtime Fabric and on CloudHub.
+* On-premises
++
+MuleSoft hosts and manages public cloud infrastructure for the control plane, with the runtime plane deployed to customer-owned and operated datacenter infrastructure. This can include traditional “bare-metal”, virtualized, on-prem, private cloud (PaaS), and public cloud environments. 
+* Anypoint Platform Private Cloud Edition (Anypoint Platform PCE)
++
+Control plane and runtime plane are both hosted on the customer’s premises. This does not include Mule ESB on-prem, either with MMC or without management.
 
-== Control and Runtime Plane Locations and Management
-With Anypoint Platform, you choose where to host your control and runtime planes and whether you want to 
-manage them, which then determines the xref:deployment-options#runtime-plane-options-and-deployments[Anypoint Platform deployment option] that is right for you. 
-The following tables summarize the options for control and runtime plane locations and management: 
+The following table summarizes Anypoint Platform plane functionality location and management options:
 
 [%header,cols="5*a"]
 |===
-| Plane | CloudHub | Hybrid | On-Premises Using Private Cloud Edition | On-Premises Not Using Private Cloud Edition
+| Plane | CloudHub | Hybrid | On-Premises | Anypoint Platform PCE
 | Control plane | Located in the US, EU, and US-based FedRAMP certified regions | Located in the US and EU regions | Located in the US and EU regions | Located on-premises
-| Control plane managed by | MuleSoft | MuleSoft | MuleSoft | You
+| Control plane managed and maintained by | MuleSoft | MuleSoft | MuleSoft | You (either on-premises or in a cloud environment)
 | Runtime plane | Located in 13 regions globally 
 a| 
 
 * Located in 13 regions globally 
-* Located in your environment (using Anypoint Runtime Fabric or virtual machines) | Located in your environment (using Anypoint Runtime Fabric or virtual machines) | Located in your environment (on virtual machines)
-| Runtime plane managed by | MuleSoft 
+* Located in your datacenters (using Anypoint Runtime Fabric or virtual machines) | Located in your datacenters (using Anypoint Runtime Fabric or virtual machines) | Located in your datacenters
+| Runtime plane managed and maintained by | MuleSoft 
 a| 
 
 * MuleSoft manages runtime planes in global regions. 
-* You manage runtimes in your environment. | You | You
+* You manage runtimes in your datacenters (either on-premises or in a cloud environment. | You | You
 |===
 
-== Deployments and Components
-Anypoint Platform control plane and runtime components, and their availability across deployment options, are listed in the following tables. Deployment options include:
+== Anypoint Platform Deployment Options
+Your Anypoint Platform deployment option is based on both control and runtime plane location and management as well as data hosting requirements, as shown in the following list:
 
 * US cloud
 +
@@ -80,66 +60,74 @@ Includes all US cloud components, but differs from the US cloud in that all data
 * MuleSoft Government Cloud
 +
 FedRAMP moderate authorized version of US cloud. Refer to xref:gov-cloud::index.adoc[About Government Cloud] for additional information.
-* Anypoint Platform Private Cloud Edition (Anypoint Platform PCE)
+* Anypoint Platform PCE
 +
 A single-tenant version of US cloud managed by your IT team. Anypoint Platform PCE supports on-premises and cloud installation and is specifically designed for customers with strict regulatory or compliance requirements that limit the use of cloud solutions. Refer to xref:private-cloud::index.adoc[About Anypoint Platform Private Cloud Edition] for additional information.
 
-Refer to https://www.mulesoft.com/anypoint-pricing for Anypoint Platform component availability based on your subscription.
+== Deployment Components
 
-=== Control Plane Components and Availability Across Deployment Options
-[%header,cols="5*a"]
+Each Anypoint Platform deployment supports a different set of individual Anypoint Platform components, but the actual components in your deployment is dependent on your Anypoint Platform subscription. Refer to https://www.mulesoft.com/anypoint-pricing for detailed Anypoint Platform subscription information.
+
+=== Control Plane Components
+The following table summarizes Anypoint Platform control plane components and their overall availability across deployment options: 
+
+[%header,cols="4*a"]
 |===
-| Anypoint Platform Component | US Cloud | EU Cloud | MuleSoft Government Cloud | Anypoint Platform PCE
-| API Designer | Y | Y | Y | Y
-| Anypoint Studio | Y | Y | Y | Y
-| Flow Designer | Y | Y | N | N
-| Anypoint Exchange | Y | Y | Y | Y
-| Anypoint API Community Manager* | Y | Y | N | N
-| Anypoint Partner Manager | Y | Y | N | N
-| Access management | Y | Y | Y | Y
-| Analytics | Y | Y | N | N
-| Anypoint API Manager | Y | Y | Y | Y
-| Anypoint Runtime Manager | Y | Y | Y | Y (excluding Insights)
-| Anypoint Monitoring | Y | Y | N | N
-| Secrets manager | Y | Y | N | N
-| Anypoint Visualizer | Y | Y | N | N
+| Anypoint Platform Component | US/EU Cloud | MuleSoft Government Cloud | Anypoint Platform PCE
+| API Designer | Y  | Y | Y
+| Anypoint Studio | Y  | Y | Y
+| Flow Designer | Y  | N | N
+| Anypoint Exchange | Y  | Y | Y
+| Anypoint API Community Manager* | Y  | N | N
+| Anypoint Partner Manager | Y  | N | N
+| Access management | Y  | Y | Y
+| Analytics | Y  | N | N
+| Anypoint API Manager | Y  | Y | Y
+| Anypoint Runtime Manager | Y  | Y | Y (excluding Insights)
+| Anypoint Monitoring | Y  | N | N
+| Secrets manager | Y  | N | N
+| Anypoint Visualizer | Y  | N | N
+| Anypoint Security edge policies | Y | N | N
+| Anypoint Security tokenization | Y | N | N
 |===
 
-*Anypoint API Community Manager (API Community Manager) is powered by the Salesforce platform.
+* xref:api-community-manager/index.adoc[Anypoint API Community Manager] (API Community Manager) is designed to leverage the capabilities and functionality of the Salesforce platform.
 
-=== Runtime Plane Options and Deployments
-For the Anypoint Platform runtime plane, you have three options: CloudHub, Anypoint Runtime Fabric (Runtime Fabric), 
-or on-premises Mule runtime engine instances (Mule instances). Hybrid environments include both CloudHub and on-premises Mule functionality.
+=== Runtime Plane Components
+The individual Anypoint Platform runtime plane components in your deployment is dependent on which of the following runtime plane options applies to your environment:
 
 * CloudHub
 +
-With CloudHub, MuleSoft hosts and manages the infrastructure. Enterprise-grade capabilities, such as 99.99% uptime, one-click scalability, and automatic updates, are provided as a service.
-* Runtime Fabric
+MuleSoft hosts and manages the runtime plane.
+* Anypoint Runtime Fabric (Runtime Fabric)
 +
-Use Anypoint Runtime Fabric (Runtime Fabric) if you have requirements to deploy Mule runtimes on your own infrastructure, whether it’s in a private IaaS (Microsoft Azure or AWS) or in an on-premises data center. You can still reap the benefits of CloudHub, such as horizontal scalability and zero downtime redeployments, while keeping your runtimes on-premises.
-* On-premises Mule runtime engine instances
+You deploy Mule runtimes on your own infrastructure, whether it’s in a private IaaS (Microsoft Azure or AWS) or in an on-premises data center. You can still reap the benefits of CloudHub, such as horizontal scalability and zero downtime redeployments, while keeping your runtimes on-premises.
+* On-premises Mule runtime engine instances (Mule instances)
 +
-Use standalone Mule instances when you want to host and manage your own infrastructure.
+You host and manage your own infrastructure.
+* Hybrid
++
+Hybrid environments include both CloudHub and on-premises Mule functionality.
 
-==== Runtime Plane Availability Across Deployment Options
-[%header,cols="5*a"]
+The following table summarizes Anypoint Platform runtime plane components and their overall availability across deployment options:
+
+[%header,cols="4*a"]
 |===
-Runtime Plane | US Cloud | EU Cloud | MuleSoft Government Cloud | Private Cloud Edition
-| CloudHub | Y | Y | Y | N
-| Runtime Fabric | Y | Y | N | N
-| On-premises Mule instances | Y | Y | N | Y
+Runtime Plane | US/EU Cloud | MuleSoft Government Cloud | Anypoint Platform PCE
+| CloudHub | Y | Y | N
+| Runtime Fabric | Y | N | N
+| On-premises Mule instances | Y | N | Y
 |===
 
-==== Runtime Plane Component Availability Across Runtime Plane Options
+The following table summarizes individual Anypoint Platform runtime plane components and their availability across runtime plane options:
+
 [%header,cols="4*a"]
 |===
 | Anypoint Platform Component | CloudHub | Runtime Fabric | On-premises Mule instances 
-| Mule runtime engine | Y | Y | Y (excluding DataWeave)
-| Anypoint Security edge policies  | N | Y | N 
-| Anypoint Security tokenization | N | Y | N
+| Mule runtime engine | Y | Y | Y
 | Anypoint MQ | Y | N | N
-| Anypoint Object Store | Y | N | N
-| Connectors | Y | N | Y
+| Anypoint Object Store | Y | N | Y
+| Connectors | Y | Y | Y
 |===
 
 == How to Identify Your Anypoint Platform Control and Runtime Planes
