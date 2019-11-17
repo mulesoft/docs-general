@@ -53,7 +53,7 @@ The following tables summarize the options for control and runtime plane locatio
 
 [%header,cols="5*a"]
 |===
-| Plane | CloudHub | Hybrid | On-Premises Not Using Private Cloud Edition | On-Premises Using Private Cloud Edition
+| Plane | CloudHub | Hybrid | On-Premises Using Private Cloud Edition | On-Premises Not Using Private Cloud Edition
 | Control plane | Located in the US, EU, and US-based FedRAMP certified regions | Located in the US and EU regions | Located in the US and EU regions | Located on-premises
 | Control plane managed by | MuleSoft | MuleSoft | MuleSoft | You
 | Runtime plane | Located in 13 regions globally 
