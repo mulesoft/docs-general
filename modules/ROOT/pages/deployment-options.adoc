@@ -3,7 +3,7 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-Anypoint Platform provides multiple deployment options, each of which differs based on data hosting requirements and the location and management of Anypoint Platform functionality: 
+Anypoint Platform provides multiple deployment options, each of which differs based on data hosting requirements and the location and management of Anypoint Platform: 
 
 * US cloud
 +
@@ -18,13 +18,13 @@ FedRAMP moderate authorized version of US cloud. Refer to xref:gov-cloud::index.
 +
 A single-tenant version of US cloud managed by your IT team. Anypoint Platform PCE supports on-premises and cloud installation and is specifically designed for customers with strict regulatory or compliance requirements that limit the use of cloud solutions. Refer to xref:private-cloud::index.adoc[About Anypoint Platform Private Cloud Edition] for additional information.  
 
-== Anypoint Platform Functionality Location and Management
-To understand the options for Anypoint Platform functionality location and management, it's important to understand that Anypoint Platform functionality can be classified into two main categories:
+== Anypoint Platform Location and Management
+Anypoint Platform functionality can be classified into two main categories:
 
-* Control plane functionality
+* Control plane
 + 
 Anypoint Platform control plane functionality includes the design, engagement, and management capabilities of Anypoint Platform, such as Anypoint Design Center, Anypoint Management Center, and Anypoint Exchange.
-* Runtime plane functionality
+* Runtime plane
 +
 Anypoint Platform runtime plane functionality includes the runtime engine (Mule) and runtime services, such as Anypoint Connectors, Anypoint Object Store, and messaging that allow you to scale the power of Mule and Anypoint Platform, and is where applications are deployed.
 
@@ -43,7 +43,7 @@ MuleSoft hosts and manages public cloud infrastructure for the control plane, wi
 +
 Control plane and runtime plane are both hosted on the customer’s premises. This does not include Mule ESB on-premises, either with or without Mule Management Console (MMC).
 
-The following table compares Anypoint Platform functionality configuration options:
+The following table compares Anypoint Platform configurations:
 
 [%header,cols="5*a"]
 |===
