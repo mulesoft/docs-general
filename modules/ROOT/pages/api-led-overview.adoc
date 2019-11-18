@@ -1,0 +1,19 @@
+= API-Led Connectivity: The End-to-End Journey
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+Your customers and employees need data-rich, delightful experiences on a variety of devices.
+https://blogs.mulesoft.com/dev/api-dev/what-is-api-led-connectivity/[API-led connectivity]
+ensures you can adapt to changes, reuse solutions efficiently, 
+and build security into the digital touchpoints of your business.
+
+Take your first end-to-end, API-led journey in MuleSoft:
+
+. xref:api-led-prerequisites.adoc[Prerequisites]
+. xref:api-led-design.adoc[Design Your API]
+. xref:api-led-develop-and-test.adoc[Develop and Test Your API]
+. xref:api-led-deploy.adoc[Deploy Your API]
+. xref:api-led-operate.adoc[Operate Your API]
+
+Once you've experienced the end-to-end journey with a single-resource API, use the model to plan your own connectivity projects.

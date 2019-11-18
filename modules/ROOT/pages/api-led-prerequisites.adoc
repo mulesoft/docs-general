@@ -1,0 +1,10 @@
+= API-Led Connectivity: Prerequisites
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:experimental:
+
+Before you begin your API-led journey, verify that you have the basic tools and access needed.
+
+* https://anypoint.mulesoft.com/login/#/signup[Create a trial Anypoint Platform organization.]
+* https://www.mulesoft.com/lp/dl/studio[Download Studio 7, an an Eclipse-based IDE.]
