@@ -3,7 +3,7 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-Anypoint Platform provides multiple deployment options, each of which differs based on data hosting requirements and the location and management of Anypoint Platform: 
+Anypoint Platform provides multiple deployment options, each of which differs based on data hosting requirements, the location and management of Anypoint Platform, and the individual Anypoint Platform components included: 
 
 * US cloud
 +
