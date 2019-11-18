@@ -26,16 +26,16 @@ Your organization's needs determine where Anypoint Platform functionality is dep
 Anypoint Platform control plane functionality includes the design, engagement, and management capabilities of Anypoint Platform, such as Anypoint Design Center, Anypoint Management Center, and Anypoint Exchange.
 * Runtime plane
 +
-Anypoint Platform runtime plane functionality includes the runtime engine (Mule) and runtime services, such as Anypoint Connectors, Anypoint Object Store, and messaging that allow you to scale the power of Mule and Anypoint Platform, and is where applications are deployed.
+Anypoint Platform runtime plane is where applications are deployed. Its functionality includes the runtime engine (Mule) and runtime services, such as Anypoint Connectors, Anypoint Object Store, and messaging, that enable you to scale the power of Mule and Anypoint Platform.
 
-Anypoint Platform control plane and runtime plane functionality can be deployed on-premises, in the cloud, or in a hybrid environment in the following configurations:
+You can deploy Anypoint Platform control plane and runtime plane functionality in the cloud, in a hybrid environment, or on-premises:
 
 * CloudHub
 +
 MuleSoft hosts and manages public cloud infrastructure for both control and runtime planes. 
 * Hybrid
 +
-MuleSoft hosts and manages public cloud infrastructure for the control plane, with the runtime plane deployed in a hybrid configuration: both Anypoint Runtime Fabric and on CloudHub.
+MuleSoft hosts and manages public cloud infrastructure for the control plane, with the runtime plane deployed in a hybrid configuration: both in Anypoint Runtime Fabric and on CloudHub.
 * On-premises
 +
 MuleSoft hosts and manages public cloud infrastructure for the control plane, with the runtime plane deployed to customer-owned and operated datacenter infrastructure. This can include traditional bare-metal, virtualized, on-premises, private cloud (PaaS), and public cloud environments. 
