@@ -62,7 +62,7 @@ a|
 * You manage runtimes in your datacenters (either on-premises or in a cloud environment. | You | You
 |===
 
-== Deployment Components
+== Anypoint Platform Components
 
 Each Anypoint Platform deployment supports a different set of individual Anypoint Platform components, but the specific components in your deployment depends on your Anypoint Platform subscription. Refer to https://www.mulesoft.com/anypoint-pricing for detailed Anypoint Platform subscription information.
 
