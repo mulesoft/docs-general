@@ -19,7 +19,7 @@ FedRAMP moderate authorized version of US cloud. Refer to xref:gov-cloud::index.
 A single-tenant version of US cloud managed by your IT team. Anypoint Platform PCE supports on-premises and cloud installation and is specifically designed for customers with strict regulatory or compliance requirements that limit the use of cloud solutions. Refer to xref:private-cloud::index.adoc[About Anypoint Platform Private Cloud Edition] for additional information.  
 
 == Anypoint Platform Location and Management
-Anypoint Platform functionality can be classified into two main categories:
+Your organization's needs determine where Anypoint Platform functionality is deployed and who manages it. Anypoint Platform functionality can be classified into two main categories:
 
 * Control plane
 + 
