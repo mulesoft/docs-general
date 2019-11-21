@@ -48,13 +48,13 @@ The following table compares Anypoint Platform configurations:
 [%header,cols="5*a"]
 |===
 | Plane | CloudHub | Hybrid | On-Premises | Anypoint Platform PCE
-| Control plane | Located in the US, EU, and US-based FedRAMP certified regions | Located in the US and EU regions | Located in the US and EU regions | Located on-premises
+| Control plane location | US, EU, and US-based FedRAMP certified regions | US and EU regions | US and EU regions | On-premises
 | Control plane managed and maintained by | MuleSoft | MuleSoft | MuleSoft | You (either on-premises or in a cloud environment)
-| Runtime plane | Located in 13 regions globally 
+| Runtime plane location | 13 regions globally 
 a| 
 
-* Located in 13 regions globally 
-* Located in your datacenters (using Anypoint Runtime Fabric or virtual machines) | Located in your datacenters (using Anypoint Runtime Fabric or virtual machines) | Located in your datacenters
+* 13 regions globally 
+* Your datacenters (using Anypoint Runtime Fabric or virtual machines) | Your datacenters (using Anypoint Runtime Fabric or virtual machines) | Your datacenters
 | Runtime plane managed and maintained by | MuleSoft 
 a| 
 
