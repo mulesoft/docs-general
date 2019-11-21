@@ -89,7 +89,7 @@ The following table summarizes Anypoint Platform control plane component availab
 | Anypoint Security tokenization | Y | Y | N | N
 |===
 
-* xref:api-community-manager/index.adoc[Anypoint API Community Manager] (API Community Manager) is designed to leverage the capabilities and functionality of the Salesforce platform.
+* Anypoint API Community Manager (API Community Manager) is designed to leverage the capabilities and functionality of the Salesforce platform.
 
 === Runtime Plane Components
 Anypoint Platform runtime plane component availability is based on your runtime plane functionality:
