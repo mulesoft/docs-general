@@ -5,7 +5,7 @@ endif::[]
 
 Anypoint Platform provides multiple deployment options, each of which differs based on data hosting requirements, the location and management of Anypoint Platform, and the individual Anypoint Platform components included: 
 
-* US cloud
+* US cloud (CloudHub)
 +
 The complete Anypoint Platform. All data is hosted within the US.
 * EU cloud
@@ -13,7 +13,7 @@ The complete Anypoint Platform. All data is hosted within the US.
 The complete Anypoint Platform. All data is hosted within the EU. Refer to xref:eu-control-plane::index.adoc[About the EU Control Plane] for additional information.
 * MuleSoft Government Cloud
 +
-FedRAMP moderate authorized version of US cloud. Refer to xref:gov-cloud::index.adoc[About Government Cloud] for additional information.
+FedRAMP moderate impact level authorized version of US cloud. Refer to xref:gov-cloud::index.adoc[About Government Cloud] for additional information.
 * Anypoint Platform PCE
 +
 A single-tenant version of US cloud managed by your IT team. Anypoint Platform PCE supports on-premises and cloud installation and is specifically designed for customers with strict regulatory or compliance requirements that limit the use of cloud solutions. Refer to xref:private-cloud::index.adoc[About Anypoint Platform Private Cloud Edition] for additional information.  
@@ -26,22 +26,22 @@ Your organization's needs determine where Anypoint Platform functionality is dep
 Anypoint Platform control plane functionality includes the design, engagement, and management capabilities of Anypoint Platform, such as Anypoint Design Center, Anypoint Management Center, and Anypoint Exchange.
 * Runtime plane
 +
-Anypoint Platform runtime plane is where applications are deployed. Its functionality includes the runtime engine (Mule) and runtime services, such as Anypoint Connectors, Anypoint Object Store, and messaging, that enable you to scale the power of Mule and Anypoint Platform.
+Anypoint Platform runtime plane functionality includes the runtime engine (Mule) and runtime services, such as Anypoint Connectors, Anypoint Object Store, and Anypoint MQ that enable you to scale the power of Mule and Anypoint Platform, and is where applications are deployed.
 
-You can deploy Anypoint Platform control plane and runtime plane functionality in the cloud, in a hybrid environment, or on-premises:
+Anypoint Platform control plane and runtime plane functionality can be deployed on-premises, in the cloud, or in a hybrid environment in the following configurations:
 
 * CloudHub
 +
 MuleSoft hosts and manages public cloud infrastructure for both control and runtime planes. 
 * Hybrid
 +
-MuleSoft hosts and manages public cloud infrastructure for the control plane, with the runtime plane deployed in a hybrid configuration: both in Anypoint Runtime Fabric and on CloudHub.
+MuleSoft hosts and manages public cloud infrastructure for the control plane. The runtime plane is deployed in a hybrid configuration: a combination of Anypoint Runtime Fabric, virtual machines, and CloudHub.
 * On-premises
 +
-MuleSoft hosts and manages public cloud infrastructure for the control plane, with the runtime plane deployed to customer-owned and operated datacenter infrastructure. This can include traditional bare-metal, virtualized, on-premises, private cloud (PaaS), and public cloud environments. 
+MuleSoft hosts and manages public cloud infrastructure for the control plane, with the runtime plane deployed to customer-owned and operated datacenter infrastructure. This can include traditional bare-metal, virtualized, private cloud (PaaS), and public cloud environments. 
 * Anypoint Platform Private Cloud Edition (Anypoint Platform PCE)
 +
-Control plane and runtime plane are both hosted on the customer’s premises. This does not include Mule ESB on-premises, either with or without Mule Management Console (MMC).
+The control and runtime planes are both hosted on the customer’s premises. This does not include Mule ESB on-premises, either with or without Mule Management Console (MMC).
 
 The following table compares Anypoint Platform configurations:
 
@@ -92,32 +92,22 @@ The following table summarizes Anypoint Platform control plane component availab
 * xref:api-community-manager/index.adoc[Anypoint API Community Manager] (API Community Manager) is designed to leverage the capabilities and functionality of the Salesforce platform.
 
 === Runtime Plane Components
-Anypoint Platform runtime plane component availability is based on runtime plane configuration:
+Anypoint Platform runtime plane component availability is based on your runtime plane functionality:
 
 * CloudHub
 +
-MuleSoft hosts and manages the runtime plane.
+MuleSoft hosts the runtime plane.
 * Anypoint Runtime Fabric (Runtime Fabric)
 +
-You deploy Mule runtimes on your own infrastructure, whether it’s in a private IaaS (Microsoft Azure or AWS) or in an on-premises data center. You can still reap the benefits of CloudHub, such as horizontal scalability and zero downtime redeployments, while keeping your runtimes on-premises.
+Your runtime plane is hosted on your infrastructure, whether it’s in a private IaaS (Microsoft Azure or AWS) or on traditional bare-metal servers.
 * On-premises Mule runtime engine instances (Mule instances)
 +
-You host and manage your own infrastructure.
+Your runtime plane is hosted on your infrastructure, including, virtualized, private cloud (PaaS), public cloud, and traditional bare-metal environments.
 * Hybrid
 +
 Hybrid environments include both CloudHub and on-premises Mule functionality.
 
-The following table summarizes Anypoint Platform runtime plane configuration availability across deployment options:
-
-[%header,cols="4*a"]
-|===
-Runtime Plane | US/EU Cloud | MuleSoft Government Cloud | Anypoint Platform PCE
-| CloudHub | Y | Y | N
-| Runtime Fabric | Y | N | N
-| On-premises Mule instances | Y | N | Y
-|===
-
-The following table summarizes Anypoint Platform runtime plane component availability across runtime plane configurations:
+The following table summarizes Anypoint Platform runtime plane component availability across runtime plane functionality:
 
 [%header,cols="4*a"]
 |===
