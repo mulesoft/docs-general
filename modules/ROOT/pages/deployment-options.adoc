@@ -10,7 +10,7 @@ Anypoint Platform provides multiple deployment options, each of which differs ba
 The complete Anypoint Platform. All data is hosted within the US.
 * EU cloud
 +
-The complete Anypoint Platform. All data is hosted within the EU. Refer to xref:eu-control-plane::index.adoc[About the EU Control Plane] for additional information.
+Contains most Anypoint Platform components. All data is hosted within the EU. Refer to xref:eu-control-plane::index.adoc[About the EU Control Plane] for additional information.
 * MuleSoft Government Cloud
 +
 FedRAMP moderate impact level authorized version of US cloud. Refer to xref:gov-cloud::index.adoc[About Government Cloud] for additional information.
