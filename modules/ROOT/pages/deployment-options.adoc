@@ -81,7 +81,7 @@ The following table summarizes Anypoint Platform control plane component availab
 | Access management | Y | Y | Y | Y
 | Analytics | Y | Y | N | N
 | Anypoint API Manager | Y | Y | Y | Y
-| Anypoint Runtime Manager | Y | Y | Y | Y (excluding Insights)
+| Anypoint Runtime Manager | Y | Y | Y | Y (excluding Insight)
 | Anypoint Monitoring | Y | Y | N | N
 | Secrets manager | Y | Y | N | N
 | Anypoint Visualizer | Y | Y | N | N
