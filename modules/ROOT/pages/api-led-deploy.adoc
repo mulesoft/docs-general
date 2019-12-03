@@ -4,3 +4,25 @@ include::_attributes.adoc[]
 endif::[]
 
 Content coming soon.
+
+Outline:
+
+3.1 Deploy application	Import API version to API Manager
+3.1 Deploy application	Set policies
+3.1 Deploy application	Set SLA tiers
+3.1 Deploy application	Set API monitoring alerts
+3.1 Deploy application	Configure the application and infrastructure for deployment
+3.1 Deploy application	Deploy an application version
+3.1 Deploy application	Sanity test the deployment
+3.1 Deploy application	Update portal with implementation URL
+3.2 Secure non-Mule APIs with an API proxy	Import proxy application version to API Manager
+3.2 Secure non-Mule APIs with an API proxy	Apply policies
+3.2 Secure non-Mule APIs with an API proxy	Set SLA tiers
+3.2 Secure non-Mule APIs with an API proxy	Set API monitoring alerts
+3.2 Secure non-Mule APIs with an API proxy	Set a proxy consumer endpoint
+3.2 Secure non-Mule APIs with an API proxy	Deploy the API proxy
+3.2 Secure non-Mule APIs with an API proxy	Sanity test the deployment
+3.3 Manage application	Approve, reject, revoke access to APIs by consumers
+3.3 Manage application	Scale capacity
+3.3 Manage application	Test performance and failure scenarios with 3rd party tools
+3.3 Manage application	Promote app and policies
