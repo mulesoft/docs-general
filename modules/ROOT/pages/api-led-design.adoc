@@ -11,8 +11,7 @@ Designing the API you'll build:
 
 Once the scope and flow of your integration project is understood,
 take the first step and define an API specification in RAML (or import to RAML from OAS).
-Then, develop the apps that access the API resources. 
-
+Then, develop the apps that access the API resources.  
 
 == API Specifications and APIs
 An API is a published interface to a resource that anyone with the correct permissions
@@ -32,13 +31,7 @@ Looking for an API specification that already does what you need is easy:
 
 * Look at the public Exchange]. You’ll see some of the most popular API specifications, connectors, and other assets displayed.
 +
-btn:[https://www.mulesoft.com/exchange/^[Take me there]]
-
-* Review your own organization’s internal offerings.
-+
-btn[https://anypoint.mulesoft.com/exchange/^[Take me there]]
-+
-If you've created a public developer portal, you can look there as well, just click *Public portal*.
+btn:[https://www.mulesoft.com/exchange/[Take me there]]
  
 Click Training: American Flights API or any other API specification  and inspect it. You can see the data types and the HTTP requests defined for the API. 
 
@@ -100,7 +93,50 @@ types:
 <3> HTTP response
 <4> Error message and error handling
 
-== Developer Deep Dive: Creating API Spec
+== Test Your API Specification
+Now that you’ve created a Hello World specification, test it by sending a request. The mocking service handles the creation of a functioning endpoint from your API specification and provides a simple UI for managing authentication, request headers, and response headers.
+
+. Open the Hello World API spec that you created in Create Your API Specification<link>.
+. In Design Center, click the X next to Mocking service to enable the mocking service. If you see a checkmark instead of an X, it’s already enabled.
+. You can see all the API endpoints defined. The HTTP requests appear in green boxes.
+. Find the green GET button and click it to display the GET endpoint. 
+. Review the request code examples for each protocol.
+. Find the security method (basic authentication in this case).
+. Review the URI parameters. 
+. Click the blue Try it button.
+. Enter the username and password needed to access this endpoint.
+. Click the parameters tab and enter Hello World.
+. Click the blue Send button to send your request to the temporary request URL created from your specification for the mocking service. If the request is successful, you’ll see the HTTP message 200 OK displayed. 
+. Examine the response headers and request headers in the mocking service to help diagnose issues or understand the behavior of your API specification.
+. When you have finished testing, click the Mocking service checkmark to exit.
+
+== Publish Your API Specification
+
+Publish your new API specification to your private Exchange so others in your organization can reuse your work.
+
+. Click the blue button under Design Center to open API Designer.
+[Deep Link to API Designer]
+. Click Hello-World to open your API specification.
+. Click Publish.
+. Click Publish to Exchange. 
+
+Now anyone in your organization can see Hello-World.
+
+== Developer Deep Dives
+
+If you're curious about the details, dive right in.
+
+=== Deep Dive: Exchange
+
+* In addition to the public Exchange, you can review your own organization’s internal offerings.
++
+btn:[https://anypoint.mulesoft.com/exchange/^[Take me there]]
++
+* If you've created a public developer portal, you can look there as well, just click *Public portal*.
+
+* You can publish assets to the public Exchange, your internal exchange or your public developer portal.
+
+=== Deep Dive: Creating an API Specification
 
 In a typical integration project, you’d have a few more steps to complete:
 
@@ -110,47 +146,8 @@ In a typical integration project, you’d have a few more steps to complete:
 * Modularize your specifications for reuse <link>
 * Test Your API Specification in a Mock Environment
 
-Now that you’ve created a Hello World specification, test it by sending a request. The mocking service handles the creation of a functioning endpoint from your API specification and provides a simple UI for managing authentication, request headers, and response headers.
 
-Open the Hello World API spec that you created in Create Your API Specification<link>.
-In Design Center, click the X next to Mocking service to enable the mocking service. If you see a checkmark instead of an X, it’s already enabled.
-You can see all the API endpoints defined. The HTTP requests appear in green boxes.
-Find the green GET button and click it to display the GET endpoint. 
-Review the request code examples for each protocol.
-Find the security method (basic authentication in this case).
-Review the URI parameters. 
-Click the blue Try it button.
-Enter the username and password needed to access this endpoint.
-Click the parameters tab and enter Hello World.
-Click the blue Send button to send your request to the temporary request URL created from your specification for the mocking service. If the request is successful, you’ll see the HTTP message 200 OK displayed. 
-Examine the response headers and request headers in the mocking service to help diagnose issues or understand the behavior of your API specification.
-When you have finished testing, click the Mocking service checkmark to exit.
-Publish Your API Specification
-Publish your new API specification to Exchange so others in your organization, or anywhere in the world, can reuse your work.
-Publish to Your Private Exchange
-To allow anyone in your organization to see and download Hello-World, publish to your organization’s private Exchange:
-
-Log in to your organization.
-Click the blue button under Design Center to open API Designer.
-[Deep Link to API Designer]
-Click Hello-World to open your API specification.
-Click Publish.
-Click Publish to Exchange. 
-
-Now anyone in your organization can see Hello-World.
-Publish to Your Public Exchange
-To allow anyone with Internet access to see and download Hello-World, publish to your organization’s public Exchange:
-Navigate to anypoint.mulesoft.com.
-Click Exchange to see your assets displayed.
-Click Hello-World to open the API specification.
-Click Share, then click Add to the public portal.
-Select a version, in this case likely v1, and click Save.
-To verify that your asset is now visible to anyone with your organization’s Exchange URL, visit https://anypoint.mulesoft.com/exchange/portals/My-Domain-Name/ and you should see your asset displayed. If you need to find your domain name:
-Return to anypoint.mulesoft.com.
-Select Access Management.
-Select the name of your organization.
-In the Organization info page, look for your Domain name.
-Developer and Partner Deep-Dive
+=== Developer and Partner Deep-Dive
 To share and support your API specification, collect feedback about your API specification for the next version. <link to collect feedback topics and versioning topics>
 What’s Next
 Now that you have designed an API and specified it so that anyone can use it, you will create an app that controls the flow of data from the API.
