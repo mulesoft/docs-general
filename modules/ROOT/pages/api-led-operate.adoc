@@ -5,23 +5,28 @@ endif::[]
 
 Content coming soon.
 
-Outline
+4.1 Verify the health of production system
+* Navigate through deployed assets to check overview of health metrics (Review failures, cpu, memory, etc)
+* Notice errors for an asset
+* Drill into errors to view the activity of interest
+* Capture evidence (i.e. from log files)
+* Communicate findings
 
-4.1 Verify the health of production system	Navigate through deployed assets to check overview of health metrics (Review failures, cpu, memory, etc)
-4.1 Verify the health of production system	Notice errors for an asset
-4.1 Verify the health of production system	Drill into errors to view the activity of interest
-4.1 Verify the health of production system	Capture evidence (i.e. from log files)
-4.1 Verify the health of production system	Communicate findings
-4.2 Diagnose root cause of an issue	Open Visualizer to view metrics overlaid on the graph
-4.2 Diagnose root cause of an issue	Open Reports to view all applications in your fleet
-4.2 Diagnose root cause of an issue	Sort to identify problematic application
-4.2 Diagnose root cause of an issue	Capture evidence (i.e. from log files)
-4.2 Diagnose root cause of an issue	Communicate findings
-4.3 Understand performance of all applications	Inspect visual overview of resource data
-4.3 Understand performance of all applications	Open Reports to view all applications in your fleet
-4.3 Understand performance of all applications	Sort to identify problematic application
-4.4 Create customized views and alerts for performance and health	Create or modify a dashboard
-4.4 Create customized views and alerts for performance and health	Visualize custom metrics for business needs
-4.4 Create customized views and alerts for performance and health	Define communication targets and channel for alerts
-4.4 Create customized views and alerts for performance and health	Organize components within the dashboard
-4.4 Create customized views and alerts for performance and health	Bookmark dashboard
+4.2 Diagnose root cause of an issue
+* Open Visualizer to view metrics overlaid on the graph
+* Open Reports to view all applications in your fleet
+* Sort to identify problematic application
+* Capture evidence (i.e. from log files)
+* Communicate findings
+
+4.3 Understand performance of all applications
+* Inspect visual overview of resource data
+* Open Reports to view all applications in your fleet
+* Sort to identify problematic application
+
+4.4 Create customized views and alerts for performance and health	
+* Create or modify a dashboard
+* Visualize custom metrics for business needs
+* Define communication targets and channel for alerts
+* Organize components within the dashboard
+* Bookmark dashboard

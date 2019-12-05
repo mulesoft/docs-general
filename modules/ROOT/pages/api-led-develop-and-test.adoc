@@ -1,24 +1,31 @@
-= API-Led Connectivity: Develop and Test Your API
+= API-Led Connectivity: Develop and Test the API
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
 Content coming soon.
 
-2.1 Build the integration	Access learning resources
-2.1 Build the integration	Discover available existing assets
-2.1 Build the integration	Create new project
-2.1 Build the integration	Find and assemble connectors, transformers, and choice routes
-2.1 Build the integration	Transform data with DataWeave
-2.1 Build the integration	Log Mule event messages
-2.1 Build the integration	Structure Mule applications using flows, subflows, asynchronous queues, properties files, and configuration files
-2.1 Build the integration	Define and manage application metadata (schemas)
-2.1 Build the integration	Implement KPIs for realtime insights (Mule Operational Analytics capability)
-2.1 Build the integration	Conditionally route events, validate events, and handle messaging errors
-2.1 Build the integration	Add unit tests
-2.2 Validate, test, debug	Validate published assets for syntax and malicious files*
-2.2 Validate, test, debug	Test and debug functionality
-2.2 Validate, test, debug	Validate enforcement of applied resource-based policies
-2.2 Validate, test, debug	Add unit tests as errors are encountered
-2.3 Publish API implementation	Publish API implementation to Exchange
-2.3 Publish API implementation	Publish template, example, or reference integration to Exchange
+== 2.1 Build the integration
+
+* Access learning resources
+* Discover available existing assets
+* Create new project
+* Find and assemble connectors, transformers, and choice routes
+* Transform data with DataWeave
+* Log Mule event messages
+* Structure Mule applications using flows, subflows, asynchronous queues, properties files, and configuration files
+* Define and manage application metadata (schemas)
+* Implement KPIs for realtime insights (Mule Operational Analytics capability)
+* Conditionally route events, validate events, and handle messaging errors
+* Add unit tests
+
+== 2.2 Validate, test, debug
+
+* Validate published assets for syntax and malicious files*
+* Test and debug functionality
+* Validate enforcement of applied resource-based policies
+* Add unit tests as errors are encountered
+
+== 2.3 Publish API implementation
+* Publish API implementation to Exchange
+* Publish template, example, or reference integration to Exchange
