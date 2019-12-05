@@ -30,14 +30,15 @@ If you look at existing API specifications before writing your own, you can lear
 Looking for an API specification that already does what you need is easy:
 
 * Look at the public Exchange]. You’ll see some of the most popular API specifications, connectors, and other assets displayed.
-+
-btn:[https://www.mulesoft.com/exchange/[Take me there]]
+
+link:https://www.mulesoft.com/exchange["Take me there^", role="button-primary"]
  
 Click Training: American Flights API or any other API specification  and inspect it. You can see the data types and the HTTP requests defined for the API. 
 
 * To look at just the items in your organization (account) Exchange, 
-btn:[https://anypoint.mulesoft.com/login/^[log in to your Anypoint Platform account (your account).]] 
-You are automatically routed to your organization’s Exchange URL: \https://anypoint.mulesoft.com/exchange/portals/my-domain-name.
+log in to your Anypoint Platform account (your account).
+
+link:https://anypoint.mulesoft.com/login["Take me there^", role="button-primary"] 
 
 == Create Your API Specification
 . Log in to your organization.
