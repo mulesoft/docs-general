@@ -11,9 +11,9 @@ and build security into the digital touchpoints of your business.
 Take your first end-to-end, API-led journey in MuleSoft:
 
 . xref:api-led-prerequisites.adoc[Prerequisites]
-. xref:api-led-design.adoc[Design Your API]
-. xref:api-led-develop-and-test.adoc[Develop and Test Your API]
-. xref:api-led-deploy.adoc[Deploy Your API]
-. xref:api-led-operate.adoc[Operate Your API]
+. xref:api-led-design.adoc[Design an API]
+. xref:api-led-develop-and-test.adoc[Develop and Test the API]
+. xref:api-led-deploy.adoc[Deploy the API]
+. xref:api-led-operate.adoc[Operate the API]
 
 Once you've experienced the end-to-end journey with a single-resource API, use the model to plan your own connectivity projects.
