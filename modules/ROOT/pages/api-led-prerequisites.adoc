@@ -6,9 +6,9 @@ endif::[]
 
 Before you begin your API-led journey, verify that you have the basic tools and access needed.
 
-* btn:[https://anypoint.mulesoft.com/login/#/signup[Create a trial Anypoint Platform organization.^]]
-* btn:[https://www.mulesoft.com/lp/dl/studio[Download Studio 7, an an Eclipse-based IDE.]]
+* link:https://anypoint.mulesoft.com/login/#/signup["Create a trial Anypoint Platform organization.^", role="button-primary"]
+* link:https://www.mulesoft.com/lp/dl/studio["Download Studio 7, an an Eclipse-based IDE.^", role="button-primary"]
 * xref:api-led-overview["Testing xref as button in new window^", role="button-primary"]
-* link:https://mulesoft.com["Testing link as button in new window^", role="button-primary"]
+// * link:https://mulesoft.com["Testing link as button in new window^", role="button-primary"]
 
 We recommend you use two browser windows--one to read instructions and one to perform the tasks.
