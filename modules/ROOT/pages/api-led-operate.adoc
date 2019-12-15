@@ -7,6 +7,7 @@ Content coming soon.
 
 4.1 Verify the health of production system
 
+* Implement KPIs for real-time insights (Mule Operational Analytics capability) <Mysti moved from 2.1>
 * Navigate through deployed assets to check overview of health metrics (Review failures, cpu, memory, etc)
 * Notice errors for an asset
 * Drill into errors to view the activity of interest
