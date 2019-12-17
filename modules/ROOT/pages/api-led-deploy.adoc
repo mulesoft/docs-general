@@ -1,4 +1,4 @@
-= API-Led Connectivity: Deploy the API with CloudHub
+= Build an API Tutorial: Deploy the API with CloudHub
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]

@@ -1,4 +1,4 @@
-= API-Led Connectivity: Prerequisites
+= Build an API Tutorial: Prerequisites
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
@@ -6,9 +6,10 @@ endif::[]
 
 Before you begin your API-led journey, verify that you have the basic tools and access needed.
 
-* Username and password for your Anypoint Platform organization. If you don't have one yet, link:https://anypoint.mulesoft.com/login/#/signup["create a trial Anypoint Platform organization.^", role="button-primary"]
-* link:https://www.mulesoft.com/lp/dl/studio["Download Studio 7, an an Eclipse-based IDE.^", role="button-primary"] 
-* xref:api-led-overview["Testing xref as button in new window^", role="button-primary"]
+* Username and password for your Anypoint Platform organization. If you don't have one yet, create a Trial organization on Anypoint Platform.
++
+link:https://anypoint.mulesoft.com/login/#/signup["Create a Trial organization^", role="button-primary"]
+* link:https://www.mulesoft.com/lp/dl/studio["Download Studio (version 7.4.1 or later), an an Eclipse-based IDE.^", role="button-primary"] 
 // * link:https://mulesoft.com["Testing link as button in new window^", role="button-primary"]
 * Use two browser windows--one to read instructions and one to perform the tasks.
 * Ensure that you are able to run test REST requests on a client such as Postman or Advanced REST Client.

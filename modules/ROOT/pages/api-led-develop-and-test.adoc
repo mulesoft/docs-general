@@ -1,4 +1,4 @@
-= API-Led Connectivity: Develop and Test the API
+= Build an API Tutorial: Develop and Test the API
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
@@ -7,9 +7,9 @@ Now that you have created an API specification, you can build and test the API y
 We'll build the business logic into an implementation XML file, and then import the API specification
 to take advantage of the automated scaffolding that Studio and APIkit provide, in order to complete the API interface.
 
-Finally, we'll add unit tests and test the API all from Studio.
+Finally, we'll add unit tests and test the API, all from Studio.
 
-== 2.1 Build the API
+== Build the API
 
 You've created an API specification--now it's time to create the API (or connect to an existing one using the information in the specification).
 In MuleSoft, you package the business logic (implementation) and the interface in an application that is deployed to a Mule runtime engine instance.
@@ -28,7 +28,7 @@ Add your Anypoint Platform credentials in Studio once, and they'll be available 
 
 These credentials are available for the duration indicated when you entered them, seven days by default.
 
-=== Step 2: Create a New Project
+=== Step 2: Create a New Project with an Imported API Specification
 
 To deploy an API to the Mule runtime engine in the target of your choice, 
 build the interface and implementation in a Mule app using Studio. In this step,
@@ -38,68 +38,84 @@ we'll create the project.
 . In the dialog box, provide the following values:
   ** *Project Name*: Hello-World
   ** *Runtime*: If there is a choice, select the latest version of Mule. This is the Mule runtime engine that is hosted within Studio for testing.
+  ** Select the *From Design Center or local files* tab.
+    . Click the button to the right of the *Location* field.
+    . Select *Design Center*.
+    . If the correct username for your Anypoint Platform org appears, you'll see a list of API specifications.
+    . Choose *Hello World*.
+    . Click *OK*.
+    . Make sure the checkbox *Scaffold flows from these API specifications* is selected.
+    . To verify the import, check Package Explorer for `hello-world/src/main/resources/api/hello-world.raml`.
 
-The Package Explorer displays the Mule project *hello-world*, and opens the main implementation (business logic)
-XML file. We'll add some business logic in the next step.
+Studio opens the *hello-world.xml* XML file,
+which contains some of the basic elements you'll need for the API interface. Next, we'll configure these elements,
+and later on we'll create the business logic in a separate XML file for the implementation. 
 
-=== Step 2: Find and Assemble Basic Elements
+=== Step 3: Configure the RESTful API Interface
 
-Find and assemble connectors, transformers, and choice routes to
-define the business logic of your API:
+Using the scaffolding provided by Studio, complete the RESTful API interface:
 
+. In Studio, right-click `hello-world/src/main/mule/hello-world.xml` and select *Refactor > Rename*.
+. Rename the file: `interface.xml`.
+. Configure the main listener:
+  .. In the canvas, click the *hello-world-main* Listener to display the General configuration tab.
+  .. Click the green plus sign to create a global configuration for HTTP listeners in this project.
+  .. Verify that the host is `0.0.0.0` and the port is `8081`.
+  .. Set *Path* to `/`.
+  .. Click *Test Connection*, and then click *OK* when the connection is successful.
+  .. If you click *Global Elements* at the bottom of the canvas, you'll see this configuration is a global configuration.
+. Click *Configuration XML* at the bottom of the canvas to see the XML that has been created.
+
+Once we have an implementation set up, we'll return to `interface.xml`.
+
+=== Step 4: Create the RESTful API Implementation
+
+Find and assemble the elements needed to define the business logic of your API:
+
+. In Studio, select *File > New > Mule Configuration File*.
+. Select the project `hello-world`, and then name the file `implementation.xml`.
+. Click *Finish*.
 . Add an HTTP connector endpoint to receive requests:
   .. In the *Mule Palette*, select *HTTP*, the HTTP module.
   .. Drag *Listener* from the *Mule Palette* to the canvas. This action creates a flow containing the listener.
 . Specify the global properties that the Listener needs:
   .. Double-click HTTP Listener.
-  .. In the General tab of the Listener properties, click the green Add button.
-  .. In the Global Element Properties dialog, enter local host and port values:
-    ... *Host*: 0.0.0.0
-    ... *Port*: 8081
-    ... Click *OK*.
-  .. Return to the General tab of the Listener properties, and set *Path* to */greeting*, the resource we defined in the API specification.
+  .. In the General tab of the Listener properties, notice that the global configuration that you created in Step 3 is displayed. If it is not, select it.
+  .. Set *Path* to */greetings*, the resource we specified in xref:api-led-design.adoc[Design an API specification].
   .. Save your changes.
 . Specify logic to display the data from Hello World:
   .. Return to the *Mule Palette* and select *Favorites* or *Core* to display the *Set Payload* transformer.
   .. Find and drag *Set Payload* into the flow and leave it selected.
-  .. In the *General* tab, set *Value* under *Settings* to *Today's greeting*. This value is for testing; you'll replace it later.
-. Review the XML generated by your work in *Configuration XML*, and then return to *Message Flow*.
+  .. In the *General* tab, set *Value* under *Settings* to *Today's greeting is Hello.*.
+. Save your work, and then review the XML generated by your work in *Configuration XML*, and then return to *Message Flow*.
 
-You have created a simple Mule app with some business logic.
-Studio provides a Mule runtime engine in which you can deploy and run your app for testing.
+You have created a simple Mule app with an interface and an implementation.
+Studio provides a Mule runtime engine wher you can deploy and run your app for testing.
 
-To run the app:
-. Right-click anywhere on the canvas and select *run project Hello World*.
+To run the app in the Mule runtime engine included in Studio:
+
+. Right-click anywhere on the canvas and select *Run project Hello World*.
 . The console opens and displays status messages as the app is deployed.
 . To exercise the app, open a REST client (Postman) and issue a GET request:
-* Log Mule event messages
-* Structure Mule applications using flows, subflows, asynchronous queues, properties files, and configuration files
-* Define and manage application metadata (schemas)
-* Implement KPIs for real-time insights (Mule Operational Analytics capability)
-* Conditionally route events, validate events, and handle messaging errors
-* <<Does this belong after add the api interface?>> Add unit tests
+  `\http://localhost:8081/greeting`.
+. Your REST client should return a `200 OK` message and the body `Today's greeting is Hello.`.
+. Right-click in the canvas and select *Stop project hello-word*.
 
-=== Step 3: Add the API Interface
+Next we'll add basic even logging, error handling, and a unit test.
 
-To generate project scaffolding for your API, import Hello-World API specification into a new Studio project.
-Once complete, you'll deploy your project as a Mule app to your target environment. The Mule app contains the interface and implementation of your API.
+== Test the API
 
-Create the API interface from your Hello World API specification, created in <link to topic>:
+______ BETA READERS________
+Do not read beyond this line. The remainder of this page contains notes to the author.
+_________________________________________
 
-. Import Hello World API specification: <missing some steps>
-  . Select *API Implementation* and *Scaffold selected API specifications*.
-  . On the *Add API specification dependency* tab, click the plus sign.
-  . Select *From Exchange* (Exchange for your Anypoint Platform organization). 
-  . Verify that the username from Step 1 is displayed, then search for Hello in the search box.
-  . Select *Hello-World* from *Available Modules*, then click *Add* to move it to *Selected modules*.
-  . Click *Finish*.
+=== Step 5: Add Logging, Error Handling, and a Unit Test or Validate, Test, and Debug the Mule App
 
-== 2.2 Validate, Test, and Debug the Mule App
+* Add Mule Event Message Logging
+*  Add unit tests 
 
 * Validate published assets for syntax and malicious files
 * Test and debug functionality
-* Validate enforcement of applied resource-based policies
-* Add unit tests as errors are encountered
 
 == 2.3 Publish the API Implementation
 
@@ -109,3 +125,14 @@ Create the API interface from your Hello World API specification, created in <li
 == Developer Deep Dives
 
 * Transform data with DataWeave
+* Structure Mule applications using flows, subflows, asynchronous queues, properties files, and configuration files
+* Define and manage application metadata (schemas)
+* Implement KPIs for real-time insights (Mule Operational Analytics capability)
+* Conditionally route events, validate events, and handle messaging errors
+
+Move to next section?
+* Validate enforcement of applied resource-based policies
+______________________________________
+
+
+
