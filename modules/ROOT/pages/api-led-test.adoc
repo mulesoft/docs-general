@@ -1,0 +1,16 @@
+= Build an API Tutorial: Test the API
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+INTRO TEXT, we'll add unit tests and test the API, all from Studio.
+
+* Publish API implementation to Exchange
+* Publish template, example, or reference integration to Exchange
+
+Move to operate chapter?
+* Validate enforcement of applied resource-based policies
+______________________________________
+
+
+

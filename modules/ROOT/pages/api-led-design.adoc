@@ -139,7 +139,7 @@ You can publish assets to the public Exchange, your internal exchange or your pu
 
 * In addition to the public Exchange, you can review your own organization’s internal offerings.
 +
-link:https://anypoint.mulesoft.com/exchange/[Take me to Exchange^]
+link:https://anypoint.mulesoft.com/exchange/["Take me to Exchange^", role="button-primary"]
 +
 * If you've created a public developer portal, you can look there as well; click *Public portal*.
 
@@ -147,7 +147,9 @@ link:https://anypoint.mulesoft.com/exchange/[Take me to Exchange^]
 
 In a typical API project, you’d likely want to do a few more things:
 
-* link:https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/#annotations["Add annotations^", role="button-primary"]
+* Add annotations.
++
+link:https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/#annotations["Take me to the RAML specification^", role="button-primary"]
 * xref:design-center::design-import-files.adoc[Add assets from Exchange using API Designer or Studio.]
 * xref:studio::import-api-specification-design-center.adoc[Model the data your API specification exposes, using Studio.]
 * xref:design-center::design-create-publish-api-fragment.adoc[Modularize your specifications for reuse with API fragments.]

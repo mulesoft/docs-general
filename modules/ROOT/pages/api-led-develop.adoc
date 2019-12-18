@@ -1,4 +1,4 @@
-= Build an API Tutorial: Develop and Test the API
+= Develop the API Interface and Implementation
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
@@ -103,25 +103,6 @@ To run the app in the Mule runtime engine included in Studio:
 
 Next we'll add basic even logging, error handling, and a unit test.
 
-== Test the API
-
-______ BETA READERS________
-Do not read beyond this line. The remainder of this page contains notes to the author.
-_________________________________________
-
-=== Step 5: Add Logging, Error Handling, and a Unit Test or Validate, Test, and Debug the Mule App
-
-* Add Mule Event Message Logging
-*  Add unit tests 
-
-* Validate published assets for syntax and malicious files
-* Test and debug functionality
-
-== 2.3 Publish the API Implementation
-
-* Publish API implementation to Exchange
-* Publish template, example, or reference integration to Exchange
-
 == Developer Deep Dives
 
 * Transform data with DataWeave
@@ -129,10 +110,3 @@ _________________________________________
 * Define and manage application metadata (schemas)
 * Implement KPIs for real-time insights (Mule Operational Analytics capability)
 * Conditionally route events, validate events, and handle messaging errors
-
-Move to next section?
-* Validate enforcement of applied resource-based policies
-______________________________________
-
-
-
