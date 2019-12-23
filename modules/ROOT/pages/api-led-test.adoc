@@ -1,12 +1,21 @@
-= Build an API Tutorial: Test the API
+= Build an API Tutorial: Validation, Error Handling, and Unit Tests for the API
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-INTRO TEXT, we'll add unit tests and test the API, all from Studio.
+So far, we've created an API interface and implementation and tested the HTTP request with a third-party client.
+Now, we'll use Studio to add error handling and a unit test. In Studio, we'll use the scaffolding already created to:
 
-* Publish API implementation to Exchange
-* Publish template, example, or reference integration to Exchange
+* Validate input using the Validation module
+* Handle one type of error.
+* Create a unit test on the payload value. 
+
+== Validation
+
+Add the Validation module to the API and test for the presence of any query parameters.
+Since none are supported, we want to let the user know that instead of silently accepting any query.
+
+. 
 
 Move to operate chapter?
 * Validate enforcement of applied resource-based policies

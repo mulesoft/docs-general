@@ -92,7 +92,9 @@ Find and assemble the elements needed to define the business logic of your API:
 You have created a simple Mule app with an interface and an implementation.
 Studio provides a Mule runtime engine wher you can deploy and run your app for testing.
 
-To run the app in the Mule runtime engine included in Studio:
+=== Step 5. Test the API
+
+Run the Studio project that contains your API in the Mule runtime engine and then test with a third-party client:
 
 . Right-click anywhere on the canvas and select *Run project Hello World*.
 . The console opens and displays status messages as the app is deployed.
@@ -101,12 +103,17 @@ To run the app in the Mule runtime engine included in Studio:
 . Your REST client should return a `200 OK` message and the body `Today's greeting is Hello.`.
 . Right-click in the canvas and select *Stop project hello-word*.
 
-Next we'll add basic even logging, error handling, and a unit test.
+== What's Next
+
+The simple test you just performed can be expanded with validation, event logging to support debugging, error handling, and a unit test.
 
 == Developer Deep Dives
 
-* Transform data with DataWeave
-* Structure Mule applications using flows, subflows, asynchronous queues, properties files, and configuration files
-* Define and manage application metadata (schemas)
-* Implement KPIs for real-time insights (Mule Operational Analytics capability)
-* Conditionally route events, validate events, and handle messaging errors
+APIs can do so much more than this simple HTTP request in the API you just created and tested.
+You can:
+
+* Transform data with DataWeav: xref:mule-runtime::dataweave-quickstart.adoc[Quickstart], xref:mule-runtime::mule-app-tutorial.adoc[Tutorial]
+* Structure Mule applications using xref:mule-runtime::about-flows.adoc[flows, subflows, and asynchronous queues].
+* Define and manage application metadata (schemas): xref:studio::metadata-editor-concept.adoc[Metadata Editor].
+* Implement key-performance indicators using xref:api-manager::analytics-landing-page.adoc[API Manager analytics].
+* Conditionally route events.
