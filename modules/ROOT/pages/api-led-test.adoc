@@ -12,14 +12,110 @@ Now, we'll use Studio to add error handling and a unit test. In Studio, we'll us
 
 == Validation
 
-Add the Validation module to the API and test for the presence of any query parameters.
-Since none are supported, we want to let the user know that instead of silently accepting any query.
+Add an operation from the Validation module to the API implementation to ensure user input is appropriate for the API.
+In our case, the APi is very simple. We'll test that the size of the payload is within an acceptable range.
+Even though the payload is currently written directly into the project, in a real-world API the payload value 
+would come from another source.
 
-. 
+To add the *Validate size* operation to our project:
 
-Move to operate chapter?
-* Validate enforcement of applied resource-based policies
-______________________________________
+. In the `Hello-World` project in Studio, open `implementation.xml`.
+. In the Mule Palette, select *Add Modules > Validation* and drag it to the drag-n-drop area. 
+. From the list of operations displayed, drag *Validate size* to the canvas and drop to the right of *Set Payload*, inside *implementationFlow*.
+. Double-click *Validate size* and then set these values in the *General* tab:
+  .. *Value:*: Click the *fx* button to change from literal mode to expression mode, and then enter `payload` after *\#\[*. Don't enter a closing bracket.
+  .. *Min:*: Enter `6`
+  .. *Max:* Enter `30`
+  .. *Error options > Message:* `The specified message is either too small or too large. Edit message to be 6-29 characters.`
+. Save your changes, and then right-click in the canvas and choose *Run project hello-world*.
+. After you see the console message indicating `hello-world` has deployed, send a request using AdvancedRestClient or similar:
++
+`http://localhost:8081/greeting`
+. Your request client should report response headers containing `200 OK` and `Today the greeting is Hello.`
+. Right-click the canvas and choose *Stop project hello-world*.
+
+To test that the validation works when the payload is too large, use the debugger to step through each event before the validation failure triggers the error handlers 
+
+. In the `Hello-World` project in Studio, open `implementation.xml`.
+. Click *Set Payload*, and then change the value to `Hi.`
+. Right-click *Set Payload* and choose *Toggle breakpoint*.
+. Righ-click *Validate size* and choose *Toggle breakpoint*.
+. Right-click the canvas and choose *Debug project hello-world*. If you are asked to open the Mule Debug perspect, select the *Remember my decision* checkbox and click *Yes*.
+. After the applciation deploys, open AdvancedRestClient or similar and send a request to the `/greeting` endpoint:
++ 
+`http://localhost:8081/greeting`
+. Return to Studio and look at the *Mule Debugger* pane above the canvas.
+. In the canvas, Click *Set Payload* to open the *Set Payload* node in the debugger and see the payload value is `Hi.`, three characters.
+. Click the Resume icon (green arrow above the debugger window).
+. The debugger pane now shows the Validate size operation. Open the node to see the setting you created in the previous step.
+. Click the Resume icon again, and notice that that an error has been thrown.
+. Click Resume again, and look at AdvancedRestClient or the tool you used to issue the request. You should see `500 Server Error` and the message indicating the payload size is wrong.
+. Right-click on the canvas and select *Stop project hello-world*.
+. Select *Window > Perspective > Open Perspective > Mule Design* to exit the debugger view.
+. You can remove the breakpoint toggles.
+. In *Set Payload*, reset the payload to `Today the greeting is Hello.`
+
+== Error Handling
+
+When you imported the API specification into this Studio project, a number of error handlers
+were automatically created in `interface.xml` for `hello-world-main`:
+
+* *APIKIT:BAD_REQUEST*
+* *APIKIT:NOT_FOUND*
+* *APIKIT:METHOD_NOT_ALLOWED*
+* *APIKIT:NOT_ACCEPTABLE*
+* *APIKIT_UNSUPPORTED_MEDIA_TYPE*
+* *APIKIT:NOT_IMPLEMENTED*
+
+Delete the last three.
+
+To see how the error handling works, we'll send a request with the error condition for each handler.
+
+=== Error: Bad Request
+
+To exercise the bad-request error handler, send a GET request that specifies a non-existent endpoint:
+
+*The error handlers in interface.xml don't seem to work. Need help to complete this section.*
+
+== Unit Testing with MUnit
+
+Studio makes it easy to create unit tests with MUnit. 
+
+We'll create one unit test that verifies the payload is the hard-coded value we expect.
+
+To create an MUnit test for the payload contents:
+
+. In Studio, in the `hello-world` project, navigate to `src/test/munit` in the Package Explorer. The folder is empty.
+. Right-click on `src/test/munit` and select *New > MUnit Test*.
+. Name the test file `hello-world-test-suite.xml`.
+. Select the checkbox for `implementationFlow`.
+. Click *Finish*. `hello-world-test-suite.xml` opens in the *Message Flow* tab. 
+. Select the *Configuration XML* tab, and then insert this line between `<flow-ref>` and `</munit:execution>`: +
+`<munit-tools:assert-that expression="#[payload]" is="#[MunitTools::equalTo('whathever is expected')]" message="Payload is not the same"/>`
+. Save your changes, then return to *Package Explorer*:
+  .. Right-click `hello-world-test-suite.xml`.
+  .. Select *MUnit > Run Tests*.
+  .. Watch the *Console* tab as messages are displayed. Studio builds a zip file, executes the tests, and reports the results.
+  .. When you see a line similar to the following, you'll know the MUnit test has completed and, since the text we supplied doesn't match the payload, the test failed as expected: +
+  `ERROR 2020-01-15 10:39:19,194 [munit.01] org.mule.munit.runner.model.Suite: FAILURE - test: hello-world-test-suite-implementationFlowTest - Time elapsed: 5.03 sec`
+. To verify that the test will succeed with the correct value:
+  .. In `hello-world-test-suite.xml`, find `whathever is expected` and replace it with the payload value: `Today the greeting is Hello.`
+  .. Save your changes, then return to *Package Explorer*:
+  .. Right-click `hello-world-test-suite.xml`.
+  .. Select *MUnit > Run Tests*.
+  .. Watch the *Console* tab as before, and look for the message indicating success: +
+  `INFO  2020-01-15 11:28:30,316 [munit.01] org.mule.munit.runner.model.Suite: SUCCESS - test: hello-world-test-suite-implementationFlowTest - Time elapsed: 4.23 sec`
+
+If you return to the canvas for `implementation.xml`, you'll notice green checkmarks on *Set Payload* and *Validate size*, indicating that they have passed unit testing.
+
+== Developer Deep Dives
+
+There's a lot to learn about unit testing, error handling, and validation. 
+Explore the details:
+
+* xref:munit::index.adoc[MUnit]
+* xref:connectors::validation/validation-connector.adoc[Validation module and operations]
+* xref:mule-runtime::intro-error-handlers.adoc[Error Handlers in Mule 4]
 
 
 

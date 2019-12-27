@@ -11,10 +11,9 @@ and build security into the digital touchpoints of your business.
 Take your first end-to-end, API-led journey in MuleSoft:
 
 . xref:api-led-prerequisites.adoc[Prerequisites]
-. xref:api-led-design.adoc[Design an API]
+. xref:api-led-design.adoc[Design an API Specification]
 . xref:api-led-develop.adoc[Develop the Interface and Implementation]
 . xref:api-led-test.adoc[Test the API]
-. xref:api-led-publish.adoc[Publish the API to Exchange]
 . xref:api-led-deploy.adoc[Deploy to CloudHub]
 . xref:api-led-operate.adoc[Operate the API]
 
