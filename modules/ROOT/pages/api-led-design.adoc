@@ -9,24 +9,26 @@ To design an API, assess the purpose and requirements:
 * Understand the data flows: one-way, two-way, or more.
 * Explore the security requirements.
 
-Once the scope and flow of your integration project is understood,
-take the first step and define an API specification in RAML (or import to RAML from OAS).
-Then, develop the apps that access the API resources.  
+After you define the scope and flow of your integration project,
+define an API specification in RAML (or import to RAML from OAS).
+Then, in later steps, you'll use the API specification to quickly develop an API.  
 
 == API Specifications and APIs
 An API is a published interface to a resource that anyone with the correct permissions
-and properly structured request can access. 
+and a properly structured request can access. 
 
 An API specification details the functional and expected behavior of an API, 
 as well as the fundamental design philosophy and supported data types.
 It contains both documentation and API definitions 
-to create a contract that humans and software can read. 
+to create a contract that people and software can read. 
 
-MuleSoft provides tools that make it easy to create an API specification that you can then share with your team or publicly.
+MuleSoft provides tools that make it easy to create an API specification that you can then share with your team, your customers, or the general public.
 The API specification increases adoption and speeds up project completion. 
 
 == Step 1: Explore Existing API Specifications
-If you look at existing API specifications before writing your own, you can learn how other people have approached similar problems. You can also check whether an asset with the same objectives is not already in development, and reuse it if appropriate.
+If you look at existing API specifications before writing your own,
+you can learn how other people have approached situations similar to yours.
+You can also check whether an API specification with the same objectives is not already in development, and reuse it if appropriate.
 
 Looking for an API specification that already does what you need is easy:
 
@@ -36,20 +38,23 @@ link:https://www.mulesoft.com/exchange["Take me there^", role="button-primary"]
  +
 Select *REST APIs* from the *Type* dropdown to display only REST API specifications. Click on any specification to see the data types and the HTTP requests defined for the API. 
 +
-* To look at just the items in your organization (account) Exchange, 
-log in to your Anypoint Platform account (your account).
+* To look at just the items in Exchange for your organization (account), 
+log in to Anypoint Platform.
 +
 link:https://anypoint.mulesoft.com/login["Take me there^", role="button-primary"] 
 
+After exploring Exchange, return to Anypoint Platform to create a new API specification that defines what our tutorial API can do.
+
 == Step 2: Create Your API Specification
+
 In link:https://anypoint.mulesoft.com/login/["Anypoint Platform^", role="button-primary"]:
 
-. Click the blue button under Design Center to open the API Designer.
+. Click the blue button under Design Center to open API Designer.
 . Click *Create* to open the API Designer editor.
 . Click *Create API specification*.
-. Enter Hello-World for *Name* and leave the other default values.
+. Enter `Hello-World` for *Name* and leave the other default values.
 . Click *Create Specification*.
-. The API Designer editor displays starter text. Replace it with RAML that specifies the API:
+. The API Designer editor displays a sample RAML definition. Replace it with RAML that specifies the API:
 
 [source,raml]
 ----
@@ -92,27 +97,27 @@ types:
                  }
 ----
 <1> A single HTTP request, GET
-<2> A single `dataType`, `greeting`, with a single property, `todays-greeting` (today’s greeting message). 
+<2> A single `dataType`, `greeting`, with a single property, `todays-greeting` 
 <3> HTTP response
 <4> Error message and error handling
 
 == Step 3: Test Your API Specification
-Now that you’ve created a Hello World specification, test it by sending a request.
-The mocking service handles the creation of a functioning endpoint from your API specification
+The API specification `hello-world.raml` is complete. Now test it by sending a request.
+The mocking service creates a functioning endpoint from your API specification
 and provides a simple UI for managing authentication, request headers, and response headers.
 
-To test your Hello World specification:
+To test the API specification:
 
-. link:https://anypoint.mulesoft.com/designcenter/#/projects["Open the Hello World API specification that you created in Step 2.^" role="button-primary"]
+. link:https://anypoint.mulesoft.com/designcenter/#/projects["Open `hello-world.raml`.^" role="button-primary"]
 . Click the X next to *Mocking service* to enable the mocking service. If you see a checkmark instead of an X, the mocking service is already enabled.
 . Inspect the *API endpoints* that you defined. HTTP requests appear in green boxes.
 . Click *GET* to display the GET endpoint.
 . Review the *Code examples* for each protocol.
-. Review the *Security* method. *Basic Authentication* is the only option.
+. Review the *Security* section. *Basic Authentication* is the only option for this API; normally others would be available here.
 . Click *Try it*.
-. Enter values in the Authorization and Parameters tab: 
+. Enter values in the Authorization and Parameters tabs: 
   .. In the Authorization tab, enter the *User name* and *Password* needed to access this endpoint. In this example, you can enter any string.
-  .. In the Parameters tab, enter a value for *todays-greeting*: `Hello World`. 
+  .. In the Parameters tab, enter a value for *todays-greeting*: `The greeting for today is Hello.`. 
 . Click *Send* to send your request to the temporary request URL that the mocking service creates from your specification. If the request is successful, you’ll see `*HTTP message 200 OK*`. 
 . Click *Details* to examine the response headers and request headers in the mocking service to help diagnose issues or understand the behavior of your API specification.
 . When you have finished testing, click the mocking service checkmark to exit.
@@ -120,15 +125,16 @@ To test your Hello World specification:
 == Step 4. Publish Your API Specification
 After you have tested your API, publish it to your private Exchange so others in your organization can reuse your work.
 
-. link:https://anypoint.mulesoft.com/designcenter/#/projects["Open the Hello World API specification.^" role="button-primary"]
-. Click Publish.
-. Click Publish to Exchange. 
+. link:https://anypoint.mulesoft.com/designcenter/#/projects["Open `hello-world.raml`.^" role="button-primary"]
+. Click *Publish*.
+. Click *Publish to Exchange*. 
 
-Now anyone in your organization can see the Hello-World API specification and reuse it.
+After publication, anyone in your organization can see the Hello-World API specification and reuse it.
 
 == What’s Next
 
-Now that you have designed an API and specified it so that anyone can use it, create a Mule app that contains the implementation and interface for the API, using Anypoint Studio.
+Now that you have designed an API and created an API specification for it, 
+use Anypoint Studio (Studio) to create a Mule app that contains the implementation and interface for the API.
 
 == Developer Deep Dives
 
