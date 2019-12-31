@@ -127,7 +127,7 @@ After you have tested your API, publish it to your private Exchange so others in
 
 . link:https://anypoint.mulesoft.com/designcenter/#/projects["Open `hello-world.raml`.^" role="button-primary"]
 . Click *Publish*.
-. Click *Publish to Exchange*. 
+. Click *Publish to Exchange*.
 
 After publication, anyone in your organization can see the Hello-World API specification and reuse it.
 

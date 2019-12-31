@@ -3,20 +3,76 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-Content coming soon.
+THIS TOPIC IS INCOMPLETE.  
 
-Outline:
+Now that you've created and tested the Mule app that contains your new API from
+within Studio, let's deploy the API to CloudHub. We'll set up policies and tiers of service,
+and perform basic management tasks, such as approving or rejecting access.
 
-3.1 Deploy application
+This topic will also explain the steps for securing an API that isn't deployed as a Mule app.
 
-* Import API version to API Manager
-* Set policies
-* Set SLA tiers
-* Set API monitoring alerts
-* Configure the application and infrastructure for deployment
-* Deploy an application version
-* Sanity test the deployment
-* Update portal with implementation URL
+=== Step 1: Import API to API Manager
+
+. From Studio, in the Mule Design perspective, right-click hello-world project in Package Explorer,
+and then select *Anypoint Platform > Deploy to CloudHub*.
+. If prompted, enter your Anypoint Platform username and password and click *Sign in*.
+. You must be in your account's sandbox to deploy the API:
+  .. Click *Design* to launch the Switch Environment dialog.
+  .. Click *Sandbox*.
+  .. Click *Switch*.
+. Hover over the API name `hello-world` and the list of name requirements is displayed.
+. Enter `hello-world-greeting` or similar; every app and API name must be unique in the account.
+. Verify that *Deployment Target* is `CloudHub`.
+. Don't change any of the other default values.
+. Click *Deploy Application*.
+
+A window displays the status of the deployment. When you see a message that the
+project has been successfully deployed, click *Close Window*.
+
+To verify that the API works as expected:
+
+. link:https://anypoint.mulesoft.com/cloudhub/#/console/home/applications["Take me to Runtime Manager^" role="button-primary"]
+. In the Sandbox environment, click *Applications* and look for `hello-world-greeting`. It should show the `Started` status.
+. To test the API deployment, send a request from AdvancedRestClient or a similar REST API tool:
+  .. While still on the Applications page, click *hello-world-greeting*.
+  .. Copy the Domain value.
+  .. In AdvancedRestClienbt or a similar REST API tool, send a request:+
+  
+  `GET http://hello-world-greeting.us-w1.cloudhub.io/greeting`
+
+  .. If you see `200 OK` and the greeting you specified, `Today the greeting is Hello.`, then you have successfully deployed the API you created.
+
+Now we need to restrict API access to keep the service protected: add policies, specify service level agreements (SLA) tiers, and create monitoring alerts.
+We can do this while the API is running.
+
+=== Step 2: Add a rate limit policy
+ 
+ . link:https://anypoint.mulesoft.com["Log in to Anypoint Platform^" "role=button-primary"]
+ . Click *API Manager*.
+ . Switch to the sandbox environment.
+ . 
+
+
+=== Step 3: Set SLA tiers
+
+=== Step 4: Set API monitoring alerts
+
+=== Step 5: Configure the application and infrastructure for deployment
+
+=== Step 6: Deploy an application version
+
+=== Step 7: Sanity test the deployment
+
+=== Step 8: Update portal with implementation URL
+
+3.3 Manage application
+
+* Approve, reject, revoke access to APIs by consumers
+* Scale capacity
+* Test performance and failure scenarios with third-party tools
+* Promote app and policies
+
+== Developer Deep Dive
 
 3.2 Secure non-Mule APIs with an API proxy
 
@@ -27,10 +83,3 @@ Outline:
 * Set a proxy consumer endpoint
 * Deploy the API proxy
 * Sanity test the deployment
-
-3.3 Manage application
-
-* Approve, reject, revoke access to APIs by consumers
-* Scale capacity
-* Test performance and failure scenarios with third-party tools
-* Promote app and policies

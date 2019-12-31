@@ -104,6 +104,24 @@ When the following message is displayed, the app containing your API has been de
 . Your REST client should return a `200 OK` message and the body `Today the greeting is Hello.`.
 . Right-click in the canvas and select *Stop project hello-word*.
 
+=== Step 6. Publish the API to Exchange
+
+Publish the API to Exchange so it can serve as a template or example for others.
+
+. From the Package Explorer in Studio, right-click the `hello-world` project.
+. Select *Anypoint Platform > Publish to Exchange*.
+. Select the username and business group who will serve as the publishers of record. After you select values that have permission to publish to Exchange, the *Finish* button is enabled.
+. The *Version* number is incremented for you, based on the previous version published. You can change the number.
+. Click *Finish*.
+. Click *Yes* when asked to proceed.
+
+After the project deploys and is uploaded to Exchange, you are provided with a direct link to the project.
+
+. Click the link to view the project in Exchange. 
+. You can add documentation, descriptions, and tags that aid search.
+. Review the listed dependencies. In this case Validation Module, Sockets Connector, and HTTP Connector are listed as dependencies.
+. When you are satisfied with the publication, return to Studio and click *OK* to close the open dialog windows.
+
 == What's Next
 
 Add validation, event logging to support debugging, error handling, and a unit test to your API.
