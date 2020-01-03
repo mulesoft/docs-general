@@ -108,7 +108,7 @@ and provides a simple UI for managing authentication, request headers, and respo
 
 To test the API specification:
 
-. link:https://anypoint.mulesoft.com/designcenter/#/projects["Open hello-world.raml^" role="button-primary"]
+. link:https://anypoint.mulesoft.com/designcenter/#/projects["Open `hello-world.raml`^" role="button-primary"]
 . Click the X next to *Mocking service* to enable the mocking service. If you see a checkmark instead of an X, the mocking service is already enabled.
 . Inspect the *API endpoints* that you defined. HTTP requests appear in green boxes.
 . Click *GET* to display the GET endpoint.
@@ -125,7 +125,7 @@ To test the API specification:
 == Step 4. Publish Your API Specification
 After you have tested your API, publish it to your private Exchange so others in your organization can reuse your work.
 
-. link:https://anypoint.mulesoft.com/designcenter/#/projects["Open hello-world.raml^" role="button-primary"]
+. link:https://anypoint.mulesoft.com/designcenter/#/projects["Open `hello-world.raml`^" role="button-primary"]
 . Click *Publish*.
 . Click *Publish to Exchange*.
 
