@@ -6,10 +6,11 @@ endif::[]
 THIS TOPIC IS INCOMPLETE.  
 
 Now that you've created and tested the Mule app that contains your new API from
-within Studio, let's deploy the API to CloudHub. We'll set up policies and tiers of service,
+within Studio, let's deploy the API to CloudHub. First, we'll create an API proxy,
+which then enables us to test the API from Exchange. We'll then set up policies and tiers of service,
 and perform basic management tasks, such as approving or rejecting access.
 
-This topic will also explain the steps for securing an API that isn't deployed as a Mule app.
+??This topic will also explain the steps for securing an API that isn't deployed as a Mule app.??
 
 === Step 1: Import API to API Manager
 
@@ -45,13 +46,66 @@ To verify that the API works as expected:
 Now we need to restrict API access to keep the service protected: add policies, specify service level agreements (SLA) tiers, and create monitoring alerts.
 We can do this while the API is running.
 
-=== Step 2: Add a rate limit policy
- 
- . link:https://anypoint.mulesoft.com["Log in to Anypoint Platform^" "role=button-primary"]
- . Click *API Manager*.
- . Switch to the sandbox environment.
- . 
+=== Step 2: Create an API Proxy Application
 
+ 
+In order to add a rate limit policy to our deployed API, we must first create an API proxy. 
+
+. link:https://anypoint.mulesoft.com["Log in to Anypoint Platform^" "role=button-primary"]
+. Click *API Manager*.
+. Switch to the sandbox environment.
+. Click *Manage API > Manage API from Exchange*.
+. Enter `Hello` and select `Hello-World` from the drop-down.
+. Verify the following values are selected:
+  ** Asset type: RAML/OAS
+  ** API version: v1
+  ** Asset version: 1.0.1
+  ** Managing type: Endpoint with Proxy
+  ** Proxy deployment target: CloudHub
+  ** Mule version: check the checkbox
+  ** Implementation URI: `+http://hello-world-greeting.us-w1.cloudhub.io/`
+  ** You can ignore TLS context since our API simply returns a hard-coded value.
+  ** Path: `/`
+  ** Ignore Advanced options.
+. Click *Save*.
+
+API Manager shows you a status page for your new proxy.
+
+To set the deployment configuration options and deploy the new proxy:
+
+. In the Deployment Configuration section, enter *Runtime version* 4.2.2.
+. For *Proxy application name*, which is the name displayed in Runtime Manager, enter *hello-world-greeting-us-proxy*.
+. Select *Update application if exists*.
+. Click *Deploy*. 
+
+A progress window displays. You can view the logs as deployment progresses by clicking *Click here*.
+Scroll through the log until you see `Your application has started successfully.`
+
+Provide a label and consumer endpoint for the proxy:
+
+. Return to Anypoint Platform if you aren't already there:
++
+link:https://anypoint.mulesoft.com/login["Take me there^", role="button-primary"] 
+. Click *API Manager*.
+. Hello-World is still active. Click *v1* to open the Hello-World v1 settings page.
+. Click *Add a label*.
+. Enter *No policy instance* and press Return to save the label.
+. In the Proxy section, right-click the Proxy URL and copy the link.
+. Back at the top of the API Manager settings page, click *Add consumer endpoint*.
+. Paste in the link you just copied, and press Return to save the link.
+
+Now you can exercise the proxy endpoint from Exchange.
+
+. Return to Exchange:
++
+link:https://anypoint.mulesoft.com/exchange["Take me there^", role="button-primary"]
+. Click Hello-World (REST API) to open it.
+. On the left side, click */{todays-greeting}* to open it, then click *GET*.
+. On the right side, toward the top of the column, click *Mocking Service* to open the drop-down menu.
+. Select *Sandbox: No policy instance*
+THIS DOESN'T WORK. SOMETHING WRONG WITH CONFIG.
+
+=== Step 3: Add a Rate Limit Policy
 
 === Step 3: Set SLA tiers
 
