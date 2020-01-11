@@ -1,4 +1,4 @@
-= Build an API Tutorial: Operate the Deployed API
+= Build an API: Operate the Deployed API
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]

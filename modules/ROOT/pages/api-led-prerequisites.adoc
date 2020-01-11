@@ -1,4 +1,4 @@
-= Build an API Tutorial: Prerequisites
+= Build an API: Prerequisites
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
@@ -6,11 +6,11 @@ endif::[]
 
 Before you begin your API-led journey, verify that you have the basic tools and access needed.
 
-* Username and password for your Anypoint Platform organization. If you don't have one yet, create a Trial organization on Anypoint Platform.
+* Username and password for your Anypoint Platform organization. If you don't have Anypoint Platform yet, create a Trial organization on Anypoint Platform.
 +
 link:https://anypoint.mulesoft.com/login/#/signup["Create a Trial organization^", role="button-primary"]
-* Download Studio (version 7.4.1 or later), an Eclipse-based IDE. 
+* Download Studio version 7.4.1 or later, an Eclipse-based IDE. 
 +
 link:https://www.mulesoft.com/lp/dl/studio["Download Studio^", role="button-primary"]
-* Use two browser windows--one to read instructions and one to perform the tasks.
+* Use two browser windows: one to read instructions and one to perform the tasks.
 * To test REST requests, obtain a client such as Postman or Advanced REST Client.

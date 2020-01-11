@@ -1,4 +1,4 @@
-= Build an API Tutorial: Deploy the API to CloudHub
+= Build an API: Deploy the API to CloudHub
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
@@ -32,12 +32,14 @@ project has been successfully deployed, click *Close Window*.
 
 To verify that the API works as expected:
 
-. link:https://anypoint.mulesoft.com/cloudhub/#/console/home/applications["Take me to Runtime Manager^" role="button-primary"]
+. Open Runtime Manager.
++
+link:https://anypoint.mulesoft.com/cloudhub/#/console/home/applications["Take me there^" role="button-primary"]
 . In the Sandbox environment, click *Applications* and look for `hello-world-greeting`. It should show the `Started` status.
-. To test the API deployment, send a request from AdvancedRestClient or a similar REST API tool:
+. To test the API deployment, send a request from Advanced Rest Client or a similar REST API tool:
   .. While still on the Applications page, click *hello-world-greeting*.
   .. Copy the Domain value.
-  .. In AdvancedRestClienbt or a similar REST API tool, send a request. Be sure to add the API endpoint `/greeting`: +
+  .. In Advanced Rest Client or a similar REST API tool, send a request. Be sure to add the API endpoint `/greeting`: +
   
   GET http://hello-world-greeting.us-w1.cloudhub.io/greeting
 
@@ -52,7 +54,9 @@ We can do this while the API is running.
  
 In order to add a rate limit policy to our deployed API, we must first create an API proxy. 
 
-. link:https://anypoint.mulesoft.com["Log in to Anypoint Platform^" "role=button-primary"]
+. Log in to Anypoint Platform.
++
+link:https://anypoint.mulesoft.com["Take me there^" "role=button-primary"]
 . Click *API Manager*.
 . Switch to the sandbox environment.
 . Click *Manage API > Manage API from Exchange*.
@@ -75,7 +79,7 @@ API Manager shows you a status page for your new proxy. The status is *Unregiste
 === Step 3. Deploy the API Proxy
 
 . To set deployment configuration options and deploy the new proxy:
-  .. In the Deployment Configuration section, choose *Runtime version: 4.2.2*.
+  .. In the Deployment Configuration section, select *Runtime version: 4.2.2*.
   .. For *Proxy application name*, which is the name displayed in Runtime Manager, enter *hello-world-greeting-us-proxy*.
   .. Select *Update application if exists*.
   .. Click *Deploy*. 
@@ -96,7 +100,7 @@ link:https://anypoint.mulesoft.com/login["Take me there^", role="button-primary"
   .. Paste in the link you just copied, and press Return to save the link.
 
 . Now you can exercise the proxy endpoint from Exchange.
-*THIS DOESN'T WORK with exchange or AdvancedRestClient. Why can't I just send /greeting, not /greeting/{todays message}?*
+*THIS DOESN'T WORK with exchange or Advanced Rest Client. Why can't I just send /greeting, not /greeting/{todays message}?*
   .. Return to Exchange:
 +
 link:https://anypoint.mulesoft.com/exchange["Take me there^", role="button-primary"]
@@ -106,7 +110,7 @@ link:https://anypoint.mulesoft.com/exchange["Take me there^", role="button-prima
   .. Select *Sandbox: No policy instance*
 
 . Set your API to public on Exchange.
-  .. link:https://anypoint.mulesoft.com/exchange["Take me to Exchange^", role="button-primary"]
+  .. link:https://anypoint.mulesoft.com/exchange["Take me there^", role="button-primary"]
   .. Select your API.
   .. Click *API Instances*.
   .. Set the *No policy instance*, the proxy you created, to *Public*.
@@ -116,9 +120,78 @@ link:https://anypoint.mulesoft.com/exchange["Take me there^", role="button-prima
 To add a rate limit policy:
 
 . Return to API Manager.
+. Return to the *Settings* page for Hello-World API.
+. In the navigation on the left, select *Policies*.
+. Click *Apply New Policy*.
+. Select the latest Mule version for your Mule version (4 or 3).
+. Click *Configure Policy*.
+. In the Apply Rate limiting policy page, set the limit values:
+  ** *# of Reqs*: `3`
+  ** *Time Period*: `1`
+  ** *Time Unit*: *Minute*
+  ** *Method & Resource conditions*: *Apply configurations to all API methods & resources*
+. Select *Expose Headers*.
+. Click *Apply*.
 
+The new policy is displayed at the bottom of the Policies home page.
 
-=== Step 5: Set SLA tiers
+Change the API instance label so it reflects the fact that we now have a policy on the proxy:
+
+. Click *Settings*.
+. Click the edit pencil next to *Label* and change the value to `Rate-limiting policy`. 
+
+Test the new policy:
+
+. Exercise the API proxy `http://hello-world-greeting-us-proxy.us-w1.cloudhub.io/greeting` from Advanced Rest Client multiple times, until you receive the response `429 Too Many Requests`.
+ 
+=== Step 5: Set SLA Tiers
+
+To add service-level agreement tiers, so that different customer groups have different rate limits applied:
+
+. Open Hello-World in API Manager by clicking `v1`.
+. Click *Add SLA tier*.
+. Set the following values:
+  ** *Name*: `Free`
+  ** *Approval*: *Automatic*
+  ** *# of Reqs*: `1`
+  ** *Time Period*: `1`
+  ** *Time Unit*: *Minute*
+. Click *Add*.
+. Create a second tier:
+  ** *Name*: `Silver`
+  ** *Approval*: *Manual*
+  ** *# of Reqs*: `1`
+  ** *Time Period*: `1`
+  ** *Time Unit*: *Second*
+
+Change the policy used by this API proxy to be rate limiting that is SLA based:
+
+. Select *Policies*.
+. Open *Rate limiting*.
+. Select *Actions > Remove* and then confirm the removal.
+. Create a new rate limiting policy based on SLA:
+  .. Click Apply New Policy.
+  .. Open *Rate limiting - SLA based*.
+  .. Select the latest version.
+  .. Click *Configure Policy*.
+  .. Notice that you must supply a client ID expression and client secret expression in the API request headers.
+  .. Select *Expose Headers*.
+  .. Click *Apply*.
+  .. Select *Settings*.
+  .. Click the pencil next to *Label* and then change the value to `Rate limiting - SLA-based policy`.
+
+Test the rate limiting by sending a single GET request in Advanced Rest Client or similar. You should receive a `401 Unauthorized` error because you didn't supply a client ID and client secret.
+
+Customers must now request access to the API.
+
+To test access request:
+
+. Open Exchange for your organization.
++
+link:https://anypoint.mulesoft.com/exchange["Take me there^", role="button-primary"]
+. Click *Hello-World* (Rest API).
+. Click the green GET button.
+. Click *Request access*.
 
 === Step 6: Set API monitoring alerts
 

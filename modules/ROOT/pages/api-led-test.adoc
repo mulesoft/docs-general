@@ -1,59 +1,61 @@
-= Build an API Tutorial: Validation, Error Handling, and Unit Tests for the API
+= Build an API: Validation, Error Handling, and Unit Tests
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
 So far, we've created an API interface and implementation and tested the HTTP request with a third-party client.
-Now, we'll use Studio to add error handling and a unit test. In Studio, we'll use the scaffolding already created to:
+Now we'll use Studio to add error handling and a unit test. In Studio, we'll use the scaffolding already created to:
 
-* Validate input using the Validation module
+* Validate input using the Validation module.
 * Handle one type of error.
 * Create a unit test on the payload value. 
 
 == Validation
 
-Add an operation from the Validation module to the API implementation to ensure user input is appropriate for the API.
-In our case, the APi is very simple. We'll test that the size of the payload is within an acceptable range.
+Add an operation from the Validation module to the API implementation to ensure that user input is appropriate for the API.
+Our API is very simple, so our testing will be simple. We'll test that the size of the payload is within an acceptable range.
 Even though the payload is currently written directly into the project, in a real-world API the payload value 
 would come from another source.
 
 To add the *Validate size* operation to our project:
 
 . In the `Hello-World` project in Studio, open `implementation.xml`.
-. In the Mule Palette, select *Add Modules > Validation* and drag it to the drag-n-drop area. 
-. From the list of operations displayed, drag *Validate size* to the canvas and drop to the right of *Set Payload*, inside *implementationFlow*.
+. In *Mule Palette*, select *Add Modules > Validation* and drag it to the drag and drop area. 
+. From the list of operations displayed, drag *Validate size* to the canvas and drop it to the right of *Set Payload*, inside *implementationFlow*.
 . Double-click *Validate size* and then set these values in the *General* tab:
-  .. *Value:*: Click the *fx* button to change from literal mode to expression mode, and then enter `payload` after *\#\[*. Don't enter a closing bracket.
-  .. *Min:*: Enter `6`
-  .. *Max:* Enter `30`
-  .. *Error options > Message:* `The specified message is either too small or too large. Edit message to be 6-29 characters.`
-. Save your changes, and then right-click in the canvas and choose *Run project hello-world*.
-. After you see the console message indicating `hello-world` has deployed, send a request using AdvancedRestClient or similar:
+  .. *Value*: Click the *fx* button to change from literal mode to expression mode, and then enter `payload` after *\#\[*. Don't enter a closing bracket.
+  .. *Min*: `6`
+  .. *Max*: `30`
+  .. *Error options > Message*: `The specified message is either too small or too large. Edit message to be 6-29 characters.`
+. Save your changes.
+. Right-click in the canvas and select *Run project hello-world*.
+. After you see the console message indicating `hello-world` has deployed, send a request using Advanced Rest Client or similar:
 +
 `http://localhost:8081/greeting`
-. Your request client should report response headers containing `200 OK` and `Today the greeting is Hello.`
-. Right-click the canvas and choose *Stop project hello-world*.
++
+Your request client should report response headers containing `200 OK` and `Today the greeting is Hello.`.
+. Right-click the canvas and select *Stop project hello-world*.
 
-To test that the validation works when the payload is too large, use the debugger to step through each event before the validation failure triggers the error handlers 
+To test that the validation works when the payload is too large, use the debugger to step through each event before the error is triggered.
 
-. In the `Hello-World` project in Studio, open `implementation.xml`.
-. Click *Set Payload*, and then change the value to `Hi.`
-. Right-click *Set Payload* and choose *Toggle breakpoint*.
-. Righ-click *Validate size* and choose *Toggle breakpoint*.
-. Right-click the canvas and choose *Debug project hello-world*. If you are asked to open the Mule Debug perspect, select the *Remember my decision* checkbox and click *Yes*.
-. After the applciation deploys, open AdvancedRestClient or similar and send a request to the `/greeting` endpoint:
+. In the `hello-world` project in Studio, open `implementation.xml`.
+. Click *Set Payload*, and then change the value to `Hi.`.
+. Right-click *Set Payload* and select *Toggle breakpoint*.
+. Right-click *Validate size* and select *Toggle breakpoint*.
+. Right-click the canvas and select *Debug project hello-world*. If you are asked to open the Mule Debug perspect, select the *Remember my decision* checkbox and click *Yes*.
+. After the applciation deploys, open Advanced Rest Client or similar and send a request to the `/greeting` endpoint:
 + 
 `http://localhost:8081/greeting`
-. Return to Studio and look at the *Mule Debugger* pane above the canvas.
+. Return to Studio and notice that there's a dashed line around *Set Payload*.
 . In the canvas, Click *Set Payload* to open the *Set Payload* node in the debugger and see the payload value is `Hi.`, three characters.
-. Click the Resume icon (green arrow above the debugger window).
+. Click the curved yellow arrow above the debugger window. If you hover over it to ensure you have the right control, the label *Next processor (F6)* appears.
 . The debugger pane now shows the Validate size operation. Open the node to see the setting you created in the previous step.
-. Click the Resume icon again, and notice that that an error has been thrown.
-. Click Resume again, and look at AdvancedRestClient or the tool you used to issue the request. You should see `500 Server Error` and the message indicating the payload size is wrong.
+. Click the curved yellow arrow again, and notice that that an error has been thrown.
+. Click Resume again, and look at Advanced Rest Client or the tool you used to issue the request. You should see `500 Server Error` and the message indicating the payload size is wrong.
 . Right-click on the canvas and select *Stop project hello-world*.
 . Select *Window > Perspective > Open Perspective > Mule Design* to exit the debugger view.
 . You can remove the breakpoint toggles.
-. In *Set Payload*, reset the payload to `Today the greeting is Hello.`
+. In *Set Payload*, reset the payload to `Today the greeting is Hello.`.
 
 == Error Handling
 
@@ -90,17 +92,18 @@ To create an MUnit test for the payload contents:
 . Name the test file `hello-world-test-suite.xml`.
 . Select the checkbox for `implementationFlow`.
 . Click *Finish*. `hello-world-test-suite.xml` opens in the *Message Flow* tab. 
-. Select the *Configuration XML* tab, and then insert this line between `<flow-ref>` and `</munit:execution>`: +
-`<munit-tools:assert-that expression="#[payload]" is="#[MunitTools::equalTo('whathever is expected')]" message="Payload is not the same"/>`
-. Save your changes, then return to *Package Explorer*:
+. Select the *Configuration XML* tab, and then insert the MUnit assertion between `<flow-ref>` and `</munit:execution>`: +
+`<munit-tools:assert-that expression="#[payload]" is="#[MunitTools::equalTo('whatever is expected')]" message="Payload is not the same"/>`
+. Save your changes, and then return to *Package Explorer*:
   .. Right-click `hello-world-test-suite.xml`.
   .. Select *MUnit > Run Tests*.
   .. Watch the *Console* tab as messages are displayed. Studio builds a zip file, executes the tests, and reports the results.
-  .. When you see a line similar to the following, you'll know the MUnit test has completed and, since the text we supplied doesn't match the payload, the test failed as expected: +
+  +
+  When you see a line similar to the following, you'll know the MUnit test has completed and, since the text we supplied doesn't match the payload, the test failed as expected: +
   `ERROR 2020-01-15 10:39:19,194 [munit.01] org.mule.munit.runner.model.Suite: FAILURE - test: hello-world-test-suite-implementationFlowTest - Time elapsed: 5.03 sec`
 . To verify that the test will succeed with the correct value:
-  .. In `hello-world-test-suite.xml`, find `whathever is expected` and replace it with the payload value: `Today the greeting is Hello.`
-  .. Save your changes, then return to *Package Explorer*:
+  .. In `hello-world-test-suite.xml`, find `whatever is expected` and replace it with the payload value: `Today the greeting is Hello.`.
+  .. Save your changes, and then return to *Package Explorer*:
   .. Right-click `hello-world-test-suite.xml`.
   .. Select *MUnit > Run Tests*.
   .. Watch the *Console* tab as before, and look for the message indicating success: +
