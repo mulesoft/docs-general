@@ -14,6 +14,7 @@ define an API specification in RAML (or import to RAML from OAS).
 Then, in later steps, you'll use the API specification to quickly develop an API.  
 
 == API Specifications and APIs
+
 An API is a published interface to a resource that anyone with the correct permissions
 and a properly structured request can access. 
 
@@ -26,6 +27,7 @@ MuleSoft provides tools that make it easy to create an API specification that yo
 Using an API specification increases adoption and shortens project completion time. 
 
 == Step 1: Explore Existing API Specifications
+
 If you look at existing API specifications before writing your own,
 you can learn how other people have approached situations similar to yours.
 You can also check whether an API specification with the same objectives is not already in development, and reuse it if appropriate.
@@ -104,6 +106,7 @@ types:
 <4> Error message and error handling
 
 == Step 3: Test Your API Specification
+
 The API specification `hello-world.raml` is complete. Now test it by sending a request.
 The mocking service creates a functioning endpoint from your API specification
 and provides a simple UI for managing authentication, request headers, and response headers.
@@ -127,8 +130,10 @@ link:https://anypoint.mulesoft.com/designcenter/#/projects["Take me there^" role
 . When you have finished testing, click the mocking service checkmark to exit.
 
 == Step 4. Publish Your API Specification
+
 After you have tested your API, publish it to your private Exchange so others in your organization can reuse your work.
-. Open `hello-world.raml` if it isn't already open.
+
+. Open `hello-world.raml` if it isn't already open:
 +
 link:https://anypoint.mulesoft.com/designcenter/#/projects["Take me there^" role="button-primary"]
 . Click *Publish*.
@@ -167,4 +172,5 @@ link:https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.
 * xref:design-center::design-create-publish-api-fragment.adoc[Modularize your specifications for reuse with API fragments.]
 
 === Developer and Partner Deep-Dive
+
 To share and support your API specification, collect feedback about your API specification for xref:exchange::to-change-raml-version.adoc[the next version]. 
