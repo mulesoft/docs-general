@@ -23,7 +23,7 @@ To add the *Validate size* operation to our project:
 . In *Mule Palette*, select *Add Modules > Validation* and drag it to the drag and drop area. 
 . From the list of operations displayed, drag *Validate size* to the canvas and drop it to the right of *Set Payload*, inside *implementationFlow*.
 . Double-click *Validate size* and then set these values in the *General* tab:
-  .. *Value*: Click the *fx* button to change from literal mode to expression mode, and then enter `payload` after *\#\[*. Don't enter a closing bracket.
+  .. *Value*: Click the *fx* button to change from literal mode to expression mode, and then enter `payload` after the characters in the text box. Don't enter a closing bracket.
   .. *Min*: `6`
   .. *Max*: `30`
   .. *Error options > Message*: `The specified message is either too small or too large. Edit message to be 6-29 characters.`
@@ -93,7 +93,10 @@ To create an MUnit test for the payload contents:
 . Select the checkbox for `implementationFlow`.
 . Click *Finish*. `hello-world-test-suite.xml` opens in the *Message Flow* tab. 
 . Select the *Configuration XML* tab, and then insert the MUnit assertion between `<flow-ref>` and `</munit:execution>`: +
-`<munit-tools:assert-that expression="#[payload]" is="#[MunitTools::equalTo('whatever is expected')]" message="Payload is not the same"/>`
++
+[source, xml]
+`<munit-tools:assert-that expression="#[payload]" is="#[MunitTools::equalTo('Today the greeting is Hello.')]" message="Payload is not the same"/>`
++
 . Save your changes, and then return to *Package Explorer*:
   .. Right-click `hello-world-test-suite.xml`.
   .. Select *MUnit > Run Tests*.
