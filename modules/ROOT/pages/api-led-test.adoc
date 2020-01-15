@@ -100,18 +100,15 @@ To create an MUnit test for the payload contents:
 . Save your changes, and then return to *Package Explorer*:
   .. Right-click `hello-world-test-suite.xml`.
   .. Select *MUnit > Run Tests*.
-  .. Watch the *Console* tab as messages are displayed. Studio builds a zip file, executes the tests, and reports the results.
-  +
+  .. Watch the *Console* tab as messages are displayed. Studio builds a zip file, executes the tests, and reports the results.+
   When you see a line similar to the following, you'll know the MUnit test has completed and, since the text we supplied doesn't match the payload, the test failed as expected:
-  +
   `ERROR 2020-01-15 10:39:19,194 [munit.01] org.mule.munit.runner.model.Suite: FAILURE - test: hello-world-test-suite-implementationFlowTest - Time elapsed: 5.03 sec`
 . To verify that the test will succeed with the correct value:
   .. In `hello-world-test-suite.xml`, find `whatever is expected` and replace it with the payload value: `Today the greeting is Hello.`.
   .. Save your changes, and then return to *Package Explorer*:
   .. Right-click `hello-world-test-suite.xml`.
   .. Select *MUnit > Run Tests*.
-  .. Watch the *Console* tab as before, and look for the message indicating success:
-  +
+  .. Watch the *Console* tab as before, and look for the message indicating success: +
   `INFO  2020-01-15 11:28:30,316 [munit.01] org.mule.munit.runner.model.Suite: SUCCESS - test: hello-world-test-suite-implementationFlowTest - Time elapsed: 4.23 sec`
 
 If you return to the canvas for `implementation.xml`, you'll notice green checkmarks on *Set Payload* and *Validate size*, indicating that they have passed unit testing.
