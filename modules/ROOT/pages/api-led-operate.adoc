@@ -3,39 +3,28 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-Content coming soon.
+MuleSoft provides tools to help you manage your deployed API. 
 
-4.1 Verify the health of production system
+image::runtime-overview.png[]
 
-* Implement KPIs for real-time insights (Mule Operational Analytics capability) <Mysti moved from 2.1>
-* Navigate through deployed assets to check overview of health metrics (Review failures, cpu, memory, etc)
-* Notice errors for an asset
-* Drill into errors to view the activity of interest
-* Capture evidence (i.e. from log files)
-* Communicate findings
+To check the health of your API:
 
-4.2 Diagnose root cause of an issue
+. From your Anypoint Platform organization, navigate to the Runtime Manager.
++
+link:https://anypoint.mulesoft.com/cloudhub/#/console/home/applications["Take me to Runtime Manager^", role="button-primary"]
++
+Runtime Manager displays a list of apps in the Design environment by default.
+. Switch to the Sandbox environment:
+  .. Click the *Design* environment button.
+  .. Click *Sandbox*, and then click the *Switch* button.
+. Click anywhere in the row for *hello-world-greeting-us-proxy*. 
+. If you've sent a few test requests to the proxy, you can see the traffic in the form of Mule messages in the interface. 
 
-* Open Visualizer to view metrics overlaid on the graph
-* Open Reports to view all applications in your fleet
-* Sort to identify problematic application
-* Capture evidence (i.e. from log files)
-* Communicate findings
+Other information you can obtain from Runtime Manager:
 
-4.3 Understand performance of all applications
+* Click *Logs* to review every transaction for the selected app for the last 30 days (up to 100 MB).
+* Click *Settings* to review the settings for this app. You can also enable Monitoring and Visualizer from the Settings page. 
 
-* Inspect visual overview of resource data
-* Open Reports to view all applications in your fleet
-* Sort to identify problematic application
+== Developer Deep Dive
 
-4.4 Create customized views and alerts for performance and health
-	
-* Create or modify a dashboard
-* Visualize custom metrics for business needs
-* Define communication targets and channel for alerts
-* Organize components within the dashboard
-* Bookmark dashboard
-
-??? Move to operate chapter?
-* Validate enforcement of applied resource-based policies
-______________________________________
+* The more work your API does, the more data Runtime Manager can provide. To learn more, visit xref:runtime-manager::monitoring[the Runtime Manager documentation].
