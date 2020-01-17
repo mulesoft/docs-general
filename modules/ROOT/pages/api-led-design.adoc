@@ -40,7 +40,7 @@ link:https://www.mulesoft.com/exchange["Take me there^", role="button-primary"]
  +
 Select *REST APIs* from the *Type* dropdown to display only REST API specifications. Click on any specification to see the data types and the HTTP requests defined for the API. 
 +
-* To see only the items your organization (account), log in to Anypoint Platform, and then click the buttom under *Exchange*. Logging in changes the view to your organization's private Exchange.
+* To see only the items in your organization (account), log in to Anypoint Platform, and then click the buttom under *Exchange*. Logging in changes the view to your organization's private Exchange.
 +
 link:https://anypoint.mulesoft.com/login["Take me there^", role="button-primary"] 
 

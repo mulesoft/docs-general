@@ -42,7 +42,7 @@ To test that the validation works when the payload is too large, use the debugge
 . Click *Set Payload*, and then change the value to `Hi.`.
 . Right-click *Set Payload* and select *Toggle breakpoint*.
 . Right-click *Validate size* and select *Toggle breakpoint*.
-. Right-click the canvas and select *Debug project hello-world*. If you are asked to open the Mule Debug perspect, select the *Remember my decision* checkbox and click *Yes*.
+. Right-click the canvas and select *Debug project hello-world*. If you are asked to open the Mule Debug perspective, select the *Remember my decision* checkbox and click *Yes*.
 . After the applciation deploys, open Advanced Rest Client or similar and send a request to the `/greeting` endpoint:
 + 
 `http://localhost:8081/greeting`

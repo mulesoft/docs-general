@@ -18,7 +18,8 @@ Runtime Manager displays a list of apps in the Design environment by default.
   .. Click the *Design* environment button.
   .. Click *Sandbox*, and then click the *Switch* button.
 . Click anywhere in the row for *hello-world-greeting-us-proxy*. 
-. If you've sent a few test requests to the proxy, you can see the traffic in the form of Mule messages in the interface. 
+
+If you've sent a few test requests to the proxy, you can see the traffic in the form of Mule messages in the interface. 
 
 Other information you can obtain from Runtime Manager:
 
