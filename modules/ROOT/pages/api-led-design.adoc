@@ -38,11 +38,18 @@ Looking for an API specification that already does what you need is easy:
 +
 link:https://www.mulesoft.com/exchange["Take me there^", role="button-primary"]
  +
-Select *REST APIs* from the *Type* dropdown to display only REST API specifications. Click on any specification to see the data types and the HTTP requests defined for the API. 
+  .. Click *Discover and share* under *Exchange*.
+  .. Select *REST APIs* from the *Type* dropdown to display only REST API specifications.
+  .. Click on any specification to see the data types and the HTTP requests defined for the API. 
 +
-* To see only the items in your organization (account), log in to Anypoint Platform, and then click the buttom under *Exchange*. Logging in changes the view to your organization's private Exchange.
+* Look at the Exchange for your organization (account).
 +
 link:https://anypoint.mulesoft.com/login["Take me there^", role="button-primary"] 
+  +
+  .. Log in to Anypoint Platform
+  .. Click *Discover and share* under *Exchange*. Logging in changes the view to your organization's private Exchange.
+  .. Click on any specification to see the data types and the HTTP requests defined for the API.
+
 
 After exploring Exchange, return to Anypoint Platform to create a new API specification that defines what our tutorial API can do.
 
@@ -63,17 +70,9 @@ link:https://anypoint.mulesoft.com/login/["Take me there^", role="button-primary
 [source,raml]
 ----
 #%RAML 1.0
-title: Hello, World
+title: Hello World
 version: v1
 description: A greeting for the world
-
-securitySchemes:
- basic:
-   description: |
-     This API supports Basic Authentication.
-   type: Basic Authentication
- 
-securedBy: [basic]
 
 types:
  greeting: # <2>
@@ -81,15 +80,12 @@ types:
      todays-greeting: string
 
 /greeting:
- /{todays-greeting}:
-     uriParameters:
-       todays-greeting: string
      get: # <1>
        responses: # <3>
          200:
            body:
              application/json:
-               type: greeting
+               type: todays-greeting
          404: # <4>
            body:
              application/json:
@@ -102,8 +98,10 @@ types:
 ----
 <1> A single HTTP request, GET
 <2> A single data type, `greeting`, with a single property, `todays-greeting` 
-<3> HTTP response
-<4> Error message and error handling
+<3> An HTTP success response
+<4> An HTTP error response
+
+We don't authentication to keep this tutorial simple.
 
 == Step 3: Test Your API Specification
 

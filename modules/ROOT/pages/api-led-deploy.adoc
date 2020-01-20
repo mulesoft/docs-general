@@ -3,8 +3,6 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-THIS TOPIC IS INCOMPLETE.  
-
 Now that you've created and tested the Mule app that contains your new API from
 within Studio, let's deploy the API to CloudHub. First, we'll create an API proxy,
 which then enables us to test the API from Exchange. We'll then set up policies and tiers of service,
@@ -21,7 +19,6 @@ and then select *Anypoint Platform > Deploy to CloudHub*.
   .. Click *Design* to launch the Switch Environment dialog.
   .. Click *Sandbox*.
   .. Click *Switch*.
-. Hover over the API name `hello-world` and the list of name requirements is displayed.
 . Enter `hello-world-greeting` or similar; every app and API name must be unique in the account.
 . Verify that *Deployment Target* is `CloudHub`.
 . Don't change any of the other default values.
@@ -37,11 +34,11 @@ To verify that the API works as expected:
 link:https://anypoint.mulesoft.com/cloudhub/#/console/home/applications["Take me there^" role="button-primary"]
 . In the Sandbox environment, click *Applications* and look for `hello-world-greeting`. It should show the `Started` status.
 . To test the API deployment, send a request from Advanced Rest Client or a similar REST API tool:
-  .. While still on the Applications page, click *hello-world-greeting*.
-  .. Copy the Domain value.
-  .. In Advanced Rest Client or a similar REST API tool, send a request. Be sure to add the API endpoint `/greeting`: +
+  .. While still on the Applications page, click *hello-world-greeting* (but don't click the arrow next to the name).
+  .. Copy the *App url* value. This is the base URI.
+  .. In Advanced Rest Client or a similar REST API tool, send a request to the base URI that you just copied. Be sure to add the API endpoint `/greeting`: +
   
-  GET http://hello-world-greeting.us-w1.cloudhub.io/greeting
+  GET +http://hello-world-greeting.us-w1.cloudhub.io/greeting
 
   .. If you see `200 OK` and the greeting you specified, `Today the greeting is Hello.`, then you have successfully deployed the API you created.
 
@@ -51,7 +48,6 @@ We can do this while the API is running.
 
 === Step 2: Create an API Proxy Application
 
- 
 In order to add a rate limit policy to our deployed API, we must first create an API proxy. 
 
 . Log in to Anypoint Platform.

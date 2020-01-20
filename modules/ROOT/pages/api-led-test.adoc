@@ -31,7 +31,7 @@ To add the *Validate size* operation to our project:
 . Right-click in the canvas and select *Run project hello-world*.
 . After you see the console message indicating `hello-world` has deployed, send a request using Advanced Rest Client or similar:
 +
-`http://localhost:8081/greeting`
+`+http://localhost:8081/greeting`
 +
 Your request client should report response headers containing `200 OK` and `Today the greeting is Hello.`.
 . Right-click the canvas and select *Stop project hello-world*.
@@ -45,7 +45,7 @@ To test that the validation works when the payload is too large, use the debugge
 . Right-click the canvas and select *Debug project hello-world*. If you are asked to open the Mule Debug perspective, select the *Remember my decision* checkbox and click *Yes*.
 . After the applciation deploys, open Advanced Rest Client or similar and send a request to the `/greeting` endpoint:
 + 
-`http://localhost:8081/greeting`
+`+http://localhost:8081/greeting`
 . Return to Studio and notice that there's a dashed line around *Set Payload*.
 . In the canvas, Click *Set Payload* to open the *Set Payload* node in the debugger and see the payload value is `Hi.`, three characters.
 . Click the curved yellow arrow above the debugger window. If you hover over it to ensure you have the right control, the label *Next processor (F6)* appears.
@@ -95,7 +95,7 @@ To create an MUnit test for the payload contents:
 . Select the *Configuration XML* tab, and then insert the MUnit assertion between `<flow-ref>` and `</munit:execution>`: +
 +
 [source, xml]
-`<munit-tools:assert-that expression="#[payload]" is="#[MunitTools::equalTo('Today the greeting is Hello.')]" message="Payload is not the same"/>`
+`<munit-tools:assert-that expression="#[payload]" is="#[MunitTools::equalTo('Value that makes the test fail.')]" message="Payload is not the same"/>`
 +
 . Save your changes, and then return to *Package Explorer*:
   .. Right-click `hello-world-test-suite.xml`.
@@ -104,7 +104,7 @@ To create an MUnit test for the payload contents:
      When you see a line similar to the following, you'll know the MUnit test has completed and, since the text we supplied doesn't match the payload, the test failed as expected: +
      `ERROR 2020-01-15 10:39:19,194 [munit.01] org.mule.munit.runner.model.Suite: FAILURE - test: hello-world-test-suite-implementationFlowTest - Time elapsed: 5.03 sec`
 . To verify that the test will succeed with the correct value:
-  .. In `hello-world-test-suite.xml`, find `whatever is expected` and replace it with the payload value: `Today the greeting is Hello.`.
+  .. In `hello-world-test-suite.xml`, find `Value that makes the test fail.` and replace it with the payload value: `Today the greeting is Hello.`.
   .. Save your changes, and then return to *Package Explorer*:
   .. Right-click `hello-world-test-suite.xml`.
   .. Select *MUnit > Run Tests*.
