@@ -37,7 +37,7 @@ Looking for an API specification that already does what you need is easy:
 * Look at the public Exchange. You’ll see some of the most popular API specifications, connectors, and other assets displayed.
 +
 link:https://www.mulesoft.com/exchange["Take me there^", role="button-primary"]
- +
++
   .. Click *Discover and share* under *Exchange*.
   .. Select *REST APIs* from the *Type* dropdown to display only REST API specifications.
   .. Click on any specification to see the data types and the HTTP requests defined for the API. 
@@ -45,7 +45,7 @@ link:https://www.mulesoft.com/exchange["Take me there^", role="button-primary"]
 * Look at the Exchange for your organization (account).
 +
 link:https://anypoint.mulesoft.com/login["Take me there^", role="button-primary"] 
-  +
++
   .. Log in to Anypoint Platform
   .. Click *Discover and share* under *Exchange*. Logging in changes the view to your organization's private Exchange.
   .. Click on any specification to see the data types and the HTTP requests defined for the API.
@@ -63,9 +63,9 @@ link:https://anypoint.mulesoft.com/login/["Take me there^", role="button-primary
 . Click the blue button under Design Center to open API Designer.
 . Click *Create* to open the API Designer editor.
 . Click *Create API specification*.
-. Enter `Hello-World` for *Name* and leave the other default values.
-. Click *Create Specification*.
-. The API Designer editor displays a sample RAML definition. Replace all the text with RAML that specifies the API:
+. Enter `hello-world` for *Name* and leave the other default values.
+. Click *Create Specification*. The API Designer editor displays a sample RAML definition.
+. Replace all the text with RAML that specifies the API:
 
 [source,raml]
 ----
@@ -111,9 +111,12 @@ and provides a simple UI for managing authentication, request headers, and respo
 
 To test the API specification:
 
-. Open `hello-world.raml` in Design Center if it isn't already open:
+. Open `hello-world.raml` if it isn't already open:
 +
 link:https://anypoint.mulesoft.com/designcenter/#/projects["Take me there^" role="button-primary"]
++
+image:api-spec1.png[]
++
 . Click the X next to *Mocking service* to enable the mocking service. If you see a checkmark instead of an X, the mocking service is already enabled.
 . Look for the label *API endpoints*. You can see the endpoints you defined. HTTP requests appear in green boxes.
 . Click *GET* to display the GET request.
