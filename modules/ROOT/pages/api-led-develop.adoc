@@ -1,4 +1,4 @@
-= Build an API: Develop the API Interface and Implementation
+= Build an API: Develop the API
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
@@ -10,16 +10,27 @@ In MuleSoft, you package the business logic (implementation) and the interface i
 . Build business logic into an implementation XML file, which is separate from the interface XML file.
 . Add unit tests and test the API, all from Studio.
 
+When you work in Studio, you create a project that contains your API and all related assets.
+
+image:empty-studio.png[]
+
+<1> The Package Explorer helps you navigate the files created for each project.
+<2> The canvas is where you drag and drop elements of your project and connect them, creating a flow.
+<3> The Mule Palette provides quick access to standard or custom assets such as connectors and modules.
+<4> The tabs in the bottom section provide access to configuration dialogs, the Mule debugger, and other developer dialogs.
+
 === Step 1: Add Your Anypoint Platform Credentials to Studio
 
 Add your Anypoint Platform credentials in Studio once, and they'll be available for all the projects you create.
 
-. In Studio, click *Preferences*.
+. Open Studio, and then click *Anypoint Studio > Preferences*.
 . Select *Anypoint Studio > Authentication*.
 . Enter your Anypoint Platform username and password.
 . Optionally, enter a duration in days for how long this authentication is valid.
 . Click *Sign in*.
 . Click *Apply and Close*.
+
+These credentials are automatically used for many operations in Studio.
 
 === Step 2: Create a New Studio Project with an Imported API Specification
 
@@ -30,66 +41,62 @@ In this step, we'll create the project.
 
 . In Studio, select *File > New > Mule Project*.
 . In the dialog box, provide the following values:
-  ** *Project Name*: `Hello-World`
+  ** *Project Name*: `hello-world`
   ** *Runtime*: If there is a choice, select the latest version of Mule. This is the Mule runtime engine that is hosted within Studio for testing.
   ** Select the *From Design Center or local files* tab.
     ... Click the button to the right of the *Location* field.
-    ... Select *Design Center*. If the correct username for your Anypoint Platform organization appears, you'll see a list of API specifications.
-    ... Select *Hello World*.
+    ... Select *Design Center* to display a list of API specifications created in your organization.
+    ... Select *hello-world*.
     ... Click *OK*.
 . Verify that the checkbox *Scaffold flows from these API specifications* is selected.
 . Click *Finish*.
-. To verify the import, verify that *Package Explorer > `src/main/resources/api`* contains `hello-world/src/main/resources/api/hello-world.raml`.
+. To verify the import, look in *Package Explorer > `src/main/resources/api`*. It should contain `hello-world.raml`.
 
-Studio opens the `hello-world.xml` XML file,
-which contains some of the basic elements you'll need for the API interface. 
-Next, we'll configure the elements we need for this API.
-We'll also create the business logic in a separate XML file for the API implementation. 
+Studio opens the `hello-world.xml` XML file in the canvas *Message Flow* view,
+displaying some of the basic elements you'll need for the API interface:
 
-=== Step 3: Configure the REST API Interface
+image:my-first-project.png[]
 
-Using the scaffolding provided by Studio, complete the REST API interface:
+Notice that there are three different views of the canvas:
 
-. In Studio, right-click `hello-world/src/main/mule/hello-world.xml` and select *Refactor > Rename*.
-. Rename the file to `interface.xml`.
-. Configure the interface listener:
-  .. In the canvas, click the *hello-world-main* Listener to display the General configuration tab.
-  .. Click the green plus sign to create a global configuration for HTTP listeners in this project.
+image:canvas-tabs.png[]
+
+* *Message Flow* view makes it easy to drag and drop modules, connectors, and other assets and create the relationships between them.
+* *Global Elements* view makes it easy to specify global elements used in multiple projects.
+* *Configuration XML* view makes it easy to edit the XML of a project directly. 
+
+In the next step, we'll create business logic and configure the elements we need for this API.
+
+=== Step 3: Configure the API
+
+Using the scaffolding provided by Studio, complete the API:
+
+. In Studio, configure the listener:
+  .. In the canvas, click the *hello-world-main* listener to display the *General* configuration tab below the canvas.
+  .. You may see a Connector configuration *hello-world-httpListenerConfig* already displayed. Click the edit icon to open it.
+  +
+  If you don't see that configuration displayed, click the green plus sign to create a global configuration for HTTP listeners in this project, and name it `hello-world-httpListenerConfig`.
   .. Verify that the host is `0.0.0.0` and the port is `8081`.
-  .. Click *Test Connection*, and then click *OK* when the connection is successful.
-  .. Click *OK* to close the dialog.
-. Click *Global Elements* at the bottom of the canvas. This configuration is a global configuration.
-. Click *Configuration XML* at the bottom of the canvas to see the XML that has been created.
-
-Once we have an implementation set up, we'll return to `interface.xml`.
-
-=== Step 4: Create the RESTful API Implementation
-
-Find and assemble the elements needed to define the business logic of your API, the implementation, separate from the interface:
-
-. In Studio, select *File > New > Mule Configuration File*.
-. Select the project `hello-world`, and then name the file `implementation.xml`.
-. Click *Finish*.
-. Add an HTTP connector endpoint to receive requests:
-  .. In *Mule Palette*, select *HTTP*, the HTTP module.
-  .. Drag *Listener* from *Mule Palette* to the canvas. This action creates a flow containing the listener.
-. Specify the global properties that the Listener needs:
-  .. Double-click the HTTP listener (Listener).
-  .. In the General tab of the Listener properties, the global configuration that you created in Step 3 is displayed. If it is not, select it from the *Connector configuration* dropdown.
-  .. Set *Path* to */greeting*, the resource we specified in xref:api-led-design.adoc[Design an API specification].
+  .. Leave *Path* as */api/**. This best practice ensures that all endpoints will be of the form `base-URI+/api/endpoint`.
   .. Save your changes.
+  .. Click *Test Connection*, and then click *OK* when a successful test connection is reported.
+  .. Click *OK* to close the dialog.
+  .. Click *Global Elements* at the bottom of the canvas. Notice that this configuration is a global configuration and can be used in more than one API.
+  .. Click *Configuration XML* at the bottom of the canvas to see the XML that has been created as a result of our work in the user interface.
 . Specify logic to display the data sent in a response from Hello World API:
-  .. Return to the *Mule Palette* and select *Favorites* or *Core* to display the *Set Payload* transformer.
-  .. Find and drag *Set Payload* into the flow and leave it selected.
-  .. In the *General* tab, click the *fx* (function) button to deselect it. For this simple exercise, we are hard-coding the value.
+  .. In the *Mule Palette*, select *Favorites* or *Core* to display the *Set Payload* transformer.
+  .. Find and drag *Set Payload* into the flow and leave it selected. Drag it to the right of *APIkit Router* but inside the lines that define the flow. +
+     image:set-payload.png[]
+  .. Below the canvas, in the *General* tab, click the *fx* (function) button to deselect it. For this simple exercise, we are hard-coding the value.
   .. Set *Value* under *Settings* to *Today the greeting is Hello.*
-. Save your work.
-. Review the XML generated by your work in *Configuration XML*.
-. Return to *Message Flow* for the next step.
+. Save your work by selecting *File > Save All*.
+. Click *Configuration XML* at the bottom of the canvas to review the XML generated by your work.
+. Click *Message Flow* to set the canvas for the next step.
 
-You have created a simple Mule app with an interface and an implementation.
+You have created a project that contains a simple Mule app which you can deploy to expose your API.
+Most production APIs separate the interface and implementation into separate XML files, but we have skipped this step to keep things simple.
 
-=== Step 5. Test the API
+=== Step 4. Test the API
 
 Run the Studio project that contains your API in the Mule runtime engine and then test with a third-party client:
 
@@ -99,12 +106,34 @@ The console opens and displays status messages as the app is deployed to the Mul
 When the following message is displayed, the app containing your API has been deployed to Mule:
 +
 `* hello-world       * default       * DEPLOYED`    
-. To test the app, open a REST client (Postman) and issue a GET request:
+. To test the app, open a REST client (Advanced Rest Client) and issue a GET request:
 +
-`\http://localhost:8081/greeting`.
+`\http://localhost:8081/api/greeting`.
 +
 Your REST client should return a `200 OK` message and the body `Today the greeting is Hello.`.
 . Right-click in the canvas and select *Stop project hello-word*.
+
+=== Step 5. Create a Business Group in Your Organization
+
+Before you can publish your API to Exchange to share it with others, you must create a Business Group in your trial organization.
+Assets in Exchange must belong to a Business Group in order to manage access properly.
+
+If you've already created a business group in your organization, you can skip this step.
+
+To create a Business Group:
+
+. Log in to Anypoint Platform.
++
+link:https://anypoint.mulesoft.com/login/#/signup["Take me there^", role="button-primary"]
+. Find *Management Center* on the landing page and underneath it, click *Access Management*.
+. Click *Add Business Group* and enter these values:
+  ** *Business Group name*: `My Top Business Group`
+  ** *Owner*: Search for your name and select it.
+  ** Select *Owner can create environment*.
+  ** Leave the default for all other values.
+. Click *Add Business Group*.
+
+Your new business group is listed underneath the organization name in the Access Management screen.
 
 === Step 6. Publish the API to Exchange
 
@@ -112,15 +141,20 @@ Publish the API to Exchange so it can serve as a template or example for others.
 
 . From the Package Explorer in Studio, right-click the `hello-world` project.
 . Select *Anypoint Platform > Publish to Exchange*.
-. Select the username and business group who will serve as the publishers of record. After you select values that have permission to publish to Exchange, the *Finish* button is enabled.
-. The *Version* number is incremented for you, based on the previous version published. You can change the number.
+. For *User*, select your name.
+. For *Business group*, select the business group you created, *My Top Business Group*. If your credentials have expired, click *Add account* to add them again.
+. Leave *Version* as *1.0.0*.
+. Select *Project type > Example*. The *Finish* button is now enabled.
 . Click *Finish*.
 . Click *Yes* when asked to proceed.
 +
 After the project is uploaded to Exchange, you are provided with a direct link to the project.
-. Click the link to view the project in Exchange. 
+. Click the link to view the project in Exchange.
++
+image:published-in-exchange.png[]
+
 . You can add documentation, descriptions, and tags that aid search.
-. Review the listed dependencies. In this case Validation Module, Sockets Connector, and HTTP Connector are listed as dependencies.
+. Notice that HTTP Connector and Sockets Connector are listed as dependencies.
 . When you are satisfied with the publication, return to Studio and click *OK* to close the open dialog windows.
 
 == What's Next
@@ -132,11 +166,9 @@ To finish developing the API, you will add:
 * Error handling
 * A unit test to your API
 
-== Developer Deep Dives
+== Developer Deep Dive
 
-APIs can do much more than this simple HTTP request in the API you just created and tested.
-
-You can:
+To explore some of the capabilities of Anypoint Platform and Studio:
 
 * Transform data with DataWeave: xref:mule-runtime::dataweave-quickstart.adoc[Quickstart], xref:mule-runtime::mule-app-tutorial.adoc[Tutorial].
 * Structure Mule applications using xref:mule-runtime::about-flows.adoc[flows, subflows, and asynchronous queues].

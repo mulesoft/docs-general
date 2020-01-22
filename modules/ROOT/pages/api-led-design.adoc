@@ -159,11 +159,11 @@ link:https://anypoint.mulesoft.com/exchange/["Take me to Exchange^", role="butto
 +
 * If you've created a public developer portal, you can look there as well; click *Public portal*.
 
-=== Deep Dive: Creating an API Specification
+=== Developer Deep Dives
 
 In a typical API project, you’d likely want to do a few more things:
 
-* Add authentication.
+* Add xref:studio::set-credentials-in-studio-to.adoc[authentication].
 * Add annotations.
 +
 link:https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/#annotations["Take me to the RAML specification^", role="button-primary"]
@@ -173,4 +173,4 @@ link:https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.
 
 === Developer and Partner Deep-Dive
 
-To share and support your API specification, collect feedback about your API specification for xref:exchange::to-change-raml-version.adoc[the next version]. 
+To share and support your API specification, collect feedback about your API specification for xref:exchange::to-change-raml-version.adoc[the next version.] 
