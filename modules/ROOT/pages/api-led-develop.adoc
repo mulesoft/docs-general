@@ -4,13 +4,12 @@ include::_attributes.adoc[]
 endif::[]
 
 You've created an API specification. Use it to create the API.
-In MuleSoft, you package the business logic (implementation) and the interface in an application that is deployed to a Mule runtime engine instance.
+In MuleSoft, developers will package an API in an application that is deployed to a Mule runtime engine (Mule) instance.
+When you use Studio, you can build, test, and deploy to an embedded Mule in Studio.
 
-. Import the API specification to take advantage of the automated scaffolding that Studio and APIkit provide, in order to complete the API interface.
-. Build business logic into an implementation XML file, which is separate from the interface XML file.
+. Import the API specification that you created. Studio provides automated scaffolding to help you complete the API.
+. Build business logic into your API.
 . Add unit tests and test the API, all from Studio.
-
-When you work in Studio, you create a project that contains your API and all related assets.
 
 image:empty-studio.png[]
 
