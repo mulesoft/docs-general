@@ -97,10 +97,11 @@ types:
                    "message" : "Greeting not found"
                  }
 ----
-<1> A single HTTP request, GET
-<2> A single data type, `greeting`, with a single property, `todays-greeting` 
-<3> An HTTP success response
-<4> An HTTP error response
+This API contains:
+* A single HTTP request, GET
+* A single data type, `greeting`, with a single property, `todays-greeting` and a sample value
+* An HTTP success response
+* An HTTP error response
 
 == Step 3: Test Your API Specification
 
