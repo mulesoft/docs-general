@@ -1,11 +1,13 @@
-= Build an API: Develop the API
+= Step 3. Develop the API
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
 You've created an API specification. Use it to create the API.
-In MuleSoft, developers will package an API in an application that is deployed to a Mule runtime engine (Mule) instance.
+In MuleSoft, developers will package an API in an application that is deployed to a Mule runtime engine (Mule)
+in one of several environments, called targets.
 When you use Studio, you can build, test, and deploy to an embedded Mule in Studio.
+Using Studio in this way ensures that your API works as you expect before deploying it to its final destination (target).
 
 . Import the API specification that you created. Studio provides automated scaffolding to help you complete the API.
 . Build business logic into your API.
@@ -33,9 +35,6 @@ These credentials are automatically used for many operations in Studio.
 
 === Step 2: Create a New Studio Project with an Imported API Specification
 
-Before you deploy an API to the Mule runtime engine in the target of your choice, 
-build the API interface and implementation in a Mule app within a Studio project. 
-
 In this step, we'll create the project.
 
 . In Studio, select *File > New > Mule Project*.
@@ -47,10 +46,11 @@ In this step, we'll create the project.
     ... Select *Design Center* to display a list of API specifications created in your organization.
     ... Select *hello-world*.
     ... Click *OK*.
-. Verify that the checkbox *Scaffold flows from these API specifications* is selected.
+. Verify that the checkbox *Scaffold flows from these API specifications* is selected. This ensures that Studio will add default error handling and other helpful items to your project.
 . Click *Finish*.
-. To verify the import, look in *Package Explorer > `src/main/resources/api`*. It should contain `hello-world.raml`.
+. To verify the import, look in *Package Explorer > hello-world > src/main/resources > api*. This folder should contain the file `hello-world.raml`, which is the specification file you created and imported into the project.
 
+To open the project file, open *Package Explorer > hello-world > src/main/mule*, and then double-click `hello-world.xml`.
 Studio opens the `hello-world.xml` XML file in the canvas *Message Flow* view,
 displaying some of the basic elements you'll need for the API interface:
 
@@ -64,6 +64,12 @@ image:canvas-tabs.png[]
 * *Global Elements* view makes it easy to specify global elements used in multiple projects.
 * *Configuration XML* view makes it easy to edit the XML of a project directly. 
 
+//The scaffolding provides tools that we won't use in this tutorial, so delete the unnecessary elements:
+//
+//. Right-click on *APIkit Router* and select *Delete*.
+//. Right-click on each error handler except *APIKIT:BAD_REQUEST*, and select *Delete*.
+//. Right-click on *hello-world-console* and select *Delete*.
+//
 In the next step, we'll create business logic and configure the elements we need for this API.
 
 === Step 3: Configure the API
@@ -72,17 +78,15 @@ Using the scaffolding provided by Studio, complete the API:
 
 . In Studio, configure the listener:
   .. In the canvas, click the *hello-world-main* listener to display the *General* configuration tab below the canvas.
-  .. You may see a Connector configuration *hello-world-httpListenerConfig* already displayed. Click the edit icon to open it.
-  +
-  If you don't see that configuration displayed, click the green plus sign to create a global configuration for HTTP listeners in this project, and name it `hello-world-httpListenerConfig`.
-  .. Verify that the host is `0.0.0.0` and the port is `8081`.
-  .. Leave *Path* as */api/**. This best practice ensures that all endpoints will be of the form `base-URI+/api/endpoint`.
+  .. In *Basic Settings > Connector configuration* you can see the configuration *hello-world-httpListenerConfig* has been created for you.
+  .. Click the edit icon next to the configuration name, and verify that the host is `0.0.0.0` and the port is `8081`, and then close the configuration.
+  .. Leave *Path* as */api/**. This best practice ensures that all endpoints will be of the form `base-URI/api/endpoint`.
   .. Save your changes.
   .. Click *Test Connection*, and then click *OK* when a successful test connection is reported.
   .. Click *OK* to close the dialog.
   .. Click *Global Elements* at the bottom of the canvas. Notice that this configuration is a global configuration and can be used in more than one API.
   .. Click *Configuration XML* at the bottom of the canvas to see the XML that has been created as a result of our work in the user interface.
-. Specify logic to display the data sent in a response from Hello World API:
+. Specify the logic that displays the data sent in a response from hello-world API:
   .. In the *Mule Palette*, select *Favorites* or *Core* to display the *Set Payload* transformer.
   .. Find and drag *Set Payload* into the flow and leave it selected. Drag it to the right of *APIkit Router* but inside the lines that define the flow. +
      image:set-payload.png[]
@@ -93,7 +97,13 @@ Using the scaffolding provided by Studio, complete the API:
 . Click *Message Flow* to set the canvas for the next step.
 
 You have created a project that contains a simple Mule app which you can deploy to expose your API.
-Most production APIs separate the interface and implementation into separate XML files, but we have skipped this step to keep things simple.
+
+[NOTE]
+====
+This API has been simplified compared to a typical production-ready API:
+* The payload (what's delivered by the GET request) is hard coded in the project configuration. In a production-ready API the payload value would typically come from another source.
+* The best practice of separating the interface and implementation (business logic) into separate XML files has been skipped for the sake of brevity.
+====
 
 === Step 4. Test the API
 
@@ -104,10 +114,16 @@ Run the Studio project that contains your API in the Mule runtime engine and the
 The console opens and displays status messages as the app is deployed to the Mule runtime engine (Mule) contained within Studio.
 When the following message is displayed, the app containing your API has been deployed to Mule:
 +
-`* hello-world       * default       * DEPLOYED`    
+----
+*******************************************************************************************************
+*            - - + APPLICATION + - -            *       - - + DOMAIN + - -       * - - + STATUS + - - *
+*******************************************************************************************************
+* hello-world                                   * default                        * DEPLOYED           *
+*******************************************************************************************************
+----    
 . To test the app, open a REST client (Advanced Rest Client) and issue a GET request:
 +
-`\http://localhost:8081/api/greeting`.
+`\http://localhost:8081/api/greeting`
 +
 Your REST client should return a `200 OK` message and the body `Today the greeting is Hello.`.
 . Right-click in the canvas and select *Stop project hello-word*.
@@ -123,7 +139,7 @@ To create a Business Group:
 
 . Log in to Anypoint Platform.
 +
-link:https://anypoint.mulesoft.com/login/#/signup["Take me there^", role="button-primary"]
+link:https://anypoint.mulesoft.com/login/#/signup["Take me to Anypoint Platform^", role="button-primary"]
 . Find *Management Center* on the landing page and underneath it, click *Access Management*.
 . Click *Add Business Group* and enter these values:
   ** *Business Group name*: `My Top Business Group`

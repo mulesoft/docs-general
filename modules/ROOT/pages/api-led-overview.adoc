@@ -12,8 +12,8 @@ Take your first end-to-end, API-led journey in MuleSoft:
 
 . xref:api-led-prerequisites.adoc[Prerequisites]
 . xref:api-led-design.adoc[Design an API Specification]
-. xref:api-led-develop.adoc[Develop the Interface and Implementation]
-. xref:api-led-test.adoc[Test the API]
+. xref:api-led-develop.adoc[Develop the API]
+. xref:api-led-test.adoc[Validation and Error Handling in the API]
 . xref:api-led-deploy.adoc[Deploy to CloudHub]
 . xref:api-led-operate.adoc[Operate the API]
 

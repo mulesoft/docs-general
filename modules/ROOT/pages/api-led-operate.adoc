@@ -1,4 +1,4 @@
-= Build an API: Operate the Deployed API
+= Step 6. Operate the Deployed API
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]

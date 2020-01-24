@@ -1,4 +1,4 @@
-= Build an API: Deploy the API to CloudHub
+= Step 5. Deploy the API to CloudHub
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]

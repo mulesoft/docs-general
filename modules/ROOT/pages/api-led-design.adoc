@@ -1,4 +1,4 @@
-= Build an API: Design an API Specification
+= Step 2. Design an API Specification
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
@@ -39,12 +39,12 @@ Looking for an API specification that already does what you need is easy:
 link:https://www.mulesoft.com/exchange["Take me there^", role="button-primary"]
 +
   .. Click *Discover and share* under *Exchange*.
-  .. Select *REST APIs* from the *Type* dropdown to display only REST API specifications.
+  .. Select *All Types > REST APIs* (next to the search bar) to display only REST API specifications.
   .. Click on any specification to see the data types and the HTTP requests defined for the API. 
 +
 * Look at Exchange for your organization (account). Logging in changes the view to your organization's private Exchange.
 +
-link:https://anypoint.mulesoft.com/login["Take me there^", role="button-primary"] 
+link:https://anypoint.mulesoft.com/login["Take me to Anypoint Platform^", role="button-primary"] 
 +
   .. Log in to Anypoint Platform.
   .. Click *Discover and share* under *Exchange*. 
@@ -57,13 +57,12 @@ After exploring Exchange, return to Anypoint Platform to create a new API specif
 
 Create your own API specification for a simple Hello World API that responds to a simple GET request:
 
-. Open Anypoint Platform if it isn't open already:
+. Open the Design Center to the API Designer:
 +
-link:https://anypoint.mulesoft.com/login/["Take me there^", role="button-primary"]
-. Click the blue button under Design Center to open API Designer.
+link:https://anypoint.mulesoft.com/designcenter/designer/["Take me to API Designer^", role="button-primary"]
 . Click *Create* to open the API Designer editor.
 . Click *Create API specification*.
-. Enter `hello-world` for *Name* and leave the other default values.
+. Enter `hello-world` for *Name* and don't change the other default values.
 . Click *Create Specification*. The API Designer editor displays a sample RAML definition.
 . Replace all the text with RAML that specifies the API:
 
@@ -113,7 +112,7 @@ To test the API specification:
 
 . Open `hello-world.raml` if it isn't already open:
 +
-link:https://anypoint.mulesoft.com/designcenter/#/projects["Take me there^" role="button-primary"]
+link:https://anypoint.mulesoft.com/designcenter/#/projects["Take me to API Designer^" role="button-primary"]
 +
 image:api-spec1.png[]
 +
@@ -132,7 +131,7 @@ After you have tested your API, publish it to your private Exchange so others in
 
 . Open `hello-world.raml` if it isn't already open:
 +
-link:https://anypoint.mulesoft.com/designcenter/#/projects["Take me there^" role="button-primary"]
+link:https://anypoint.mulesoft.com/designcenter/#/projects["Take me to API Designer^" role="button-primary"]
 . Click *Publish*. 
 . Click *Publish to Exchange*.
 . Accept all the default values, and verify that you see the message *Valid Specification*.
