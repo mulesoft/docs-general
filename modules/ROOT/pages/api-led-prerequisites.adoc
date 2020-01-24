@@ -16,10 +16,9 @@ link:https://www.mulesoft.com/lp/dl/studio["Download Anypoint Studio^", role="bu
 +
 link:https://install.advancedrestclient.com/install["Install Advanced REST Client^", role=button-primary"]
 
-HINTS
-====
+== Helpful Hints
+
 * Use two browser windows: one to read instructions and one to perform the tasks.
 * Set your REST client to have a long timeout. At times, we'll be stepping through the processes one at a time.
 +
 You don't want your REST request to time out before you've stepped through the entire request.
-====
