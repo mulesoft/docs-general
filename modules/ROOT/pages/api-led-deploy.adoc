@@ -8,14 +8,14 @@ within Studio, let's deploy the API to CloudHub. First, we'll create an API prox
 which then enables us to test the API from Exchange. We'll then set up policies and tiers of service,
 and perform basic management tasks, such as approving or rejecting access.
 
-??This topic will also explain the steps for securing an API that isn't deployed as a Mule app.??
-
 === Step 1: Deploy API to CloudHub
 
 . From Studio, in the Mule Design perspective, right-click the `hello-world` project in Package Explorer,
 and then select *Anypoint Platform > Deploy to CloudHub*.
 . If prompted, enter your Anypoint Platform username and password and click *Sign in*.
-. You must be in your account's sandbox to deploy the API:
++
+image:deploy1.png[dialog for deploying to CloudHub]
+. You must be in your account's sandbox to deploy the API. If you see *Design* instead of *Sandbox*:
   .. Click *Design* to launch the Switch Environment dialog.
   .. Click *Sandbox*.
   .. Click *Switch*.
@@ -29,16 +29,25 @@ project has been successfully deployed, click *Close Window*.
 
 To verify that the API works as expected:
 
-. Open Runtime Manager.
+. Open Runtime Manager and log in if you aren't already.
 +
 link:https://anypoint.mulesoft.com/cloudhub/#/console/home/applications["Take me there^" role="button-primary"]
 . In the Sandbox environment, click *Applications* and look for `hello-world-greeting`. It should show the `Started` status.
++
+image:runtime-mgr1.png
+
 . To test the API deployment, send a request from Advanced Rest Client or a similar REST API tool:
   .. While still on the Applications page, click *hello-world-greeting* (but don't click the arrow next to the name).
-  .. Copy the *App url* value. This is the base URI.
-  .. In Advanced Rest Client or a similar REST API tool, send a request to the base URI that you just copied. Be sure to add the API endpoint `/greeting`: +
-  
-  GET +http://hello-world-greeting.us-w1.cloudhub.io/greeting
++
+image:runtime-mgr2.png
+
+  .. Copy the *Domain* value: `hello-world-greeting.us-e2.cloudhub.io` or similar. This is the base URI.
+  .. In Advanced Rest Client or a similar REST API tool, send a request to the base URI that you just copied. Be sure to add the API endpoint `/greeting`:
++
+[source, xml]
+---- 
+GET http://hello-world-greeting.us-e2.cloudhub.io/greeting
+----
 
   .. If you see `200 OK` and the greeting you specified, `Today the greeting is Hello.`, then you have successfully deployed the API you created.
 
@@ -199,12 +208,7 @@ link:https://anypoint.mulesoft.com/exchange["Take me there^", role="button-prima
 
 === Step 10: Update portal with implementation URL
 
-3.3 Manage application
-
-* Approve, reject, revoke access to APIs by consumers
-* Scale capacity
-* Test performance and failure scenarios with third-party tools
-* Promote app and policies
+== What's Next
 
 == Developer Deep Dive
 
@@ -217,3 +221,10 @@ link:https://anypoint.mulesoft.com/exchange["Take me there^", role="button-prima
 * Set a proxy consumer endpoint
 * Deploy the API proxy
 * Sanity test the deployment
+
+3.3 Manage application
+
+* Approve, reject, revoke access to APIs by consumers
+* Scale capacity
+* Test performance and failure scenarios with third-party tools
+* Promote app and policies

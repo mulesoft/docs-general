@@ -117,14 +117,30 @@ link:https://anypoint.mulesoft.com/designcenter/#/projects["Take me to API Desig
 +
 image:api-spec1.png[]
 +
-. Click the X next to *Mocking service* to enable the mocking service. If you see a checkmark instead of an X, the mocking service is already enabled.
-. Look for the label *API endpoints*. You can see the endpoints you defined. HTTP requests appear in green boxes.
-. Click *GET* to display the GET request.
+. Click the X next to *Mocking service* to enable it. 
++
+image:mocking-service.png[]
++
+If you see a checkmark instead of an X, the mocking service is already enabled.
+. Look for the label *API endpoints*. You can see the endpoint you defined. HTTP requests appear in green boxes.
++
+image:get-button.png[]
+. Click *GET* to display the GET request and more information about the specification.
++
+image:code-response1.png[]
 . Click *Code examples* to review samples for each protocol.
-. Click *Try it*.
-. Click *Send* to send your request to the temporary request URL that the mocking service creates from your specification. If the request is successful, you’ll see *HTTP message 200 OK* and the sample message defined in the API specification. 
+. Click *200* and *404* under *Responses* to review the responses defined in the API specification.
+. Click the blue *Try it* button.
++
+image:send-me.png[]
+. Click *Send* to send your request to the temporary request URL that the mocking service creates from your specification.
++
+image:successful-test1.png[]
 . Click *Details* to examine the response headers and request headers in the mocking service to help diagnose issues or understand the behavior of your API specification.
 . When you have finished testing, click the mocking service checkmark to exit.
+image:ignore-me.png[]
++
+It's safe to ignore any error messages on this screen.
 
 == Step 4. Publish Your API Specification
 
@@ -135,10 +151,12 @@ After you have tested your API, publish it to your private Exchange so others in
 link:https://anypoint.mulesoft.com/designcenter/#/projects["Take me to API Designer^" role="button-primary"]
 . Click *Publish*. 
 . Click *Publish to Exchange*.
++
+image:publish-to-exchange1.png[]
 . Accept all the default values, and verify that you see the message *Valid Specification*.
 . Click *Publish*, and then *Done*.
 
-After publication, anyone in your organization can see the Hello-World API specification and reuse it.
+After publication, anyone in your organization can see the hello-world API specification and reuse it.
 
 == What’s Next
 
@@ -159,7 +177,7 @@ link:https://anypoint.mulesoft.com/exchange/["Take me to Exchange^", role="butto
 +
 * If you've created a public developer portal, you can look there as well; click *Public portal*.
 
-=== Developer Deep Dives
+=== Deep Dive: API Features
 
 In a typical API project, you’d likely want to do a few more things:
 
