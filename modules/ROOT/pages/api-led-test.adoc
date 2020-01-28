@@ -169,6 +169,7 @@ Make your improved API available on Exchange:
 . Select *Anypoint Platform > Publish to Exchange*.
 . Be sure to select the same Business Group as you did before. The *Finish* button won't be active until you select a valid business group.
 . Accept the version number, which automatically increments for you.
+. In *Project type*, select *Example*.
 . Click *Finish*.
 
 Studio shows you the direct link to your newly published API version. You can copy it to share with others.
