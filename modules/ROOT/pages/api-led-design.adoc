@@ -10,7 +10,7 @@ To design an API, assess the purpose and requirements:
 * Explore the security requirements.
 
 After you define the scope and flow of your integration project,
-define an API specification in xref:http://https://raml.org/[RAML] or xref:https://openautomationsoftware.com/[OAS].
+define an API specification in link:https://raml.org/[RAML] or link:https://openautomationsoftware.com/[OAS].
 Then, in later steps, you'll use the API specification to quickly develop an API.  
 
 == API Specifications and APIs
@@ -56,7 +56,7 @@ After exploring Exchange, return to Anypoint Platform to create a new API specif
 == Step 2.2: Create Your API Specification
 
 Create your own API specification for a simple Hello World API that responds to a simple GET request.
-To do this, we'll use xref:design-create-publish-api-specs.adoc[API Designer], a part of xref:design-center::index.adoc[Design Center].
+To do this, we'll use xref:design-center::design-create-publish-api-specs.adoc[API Designer], a part of xref:design-center::index.adoc[Design Center].
 
 . Open API Designer:
 +
@@ -119,30 +119,30 @@ To test the API specification:
 +
 link:https://anypoint.mulesoft.com/designcenter/#/projects["Take me to API Designer^" role="button-primary"]
 +
-image:api-spec1.png[]
+image:api-spec1.png[Completed specification]
 +
 . Click the X next to *Mocking service* to enable it. 
 +
-image:mocking-service.png[]
+image:mocking-service.png[Enabled mocking service]
 +
 If you see a checkmark instead of an X, the mocking service is already enabled.
 . Look for the label *API endpoints*. You can see the endpoint you defined. HTTP requests appear in green boxes.
 +
-image:get-button.png[]
+image:get-button.png[GET button]
 . Click *GET* to display the GET request and more information about the specification.
 +
-image:code-response1.png[]
+image:code-response1.png[Response field]
 . Click *Code examples* to review samples for each protocol.
 . Click *200* and *404* under *Responses* to review the responses defined in the API specification.
 . Click the blue *Try it* button.
 +
-image:send-me.png[]
+image:send-me.png[The Send button]
 . Click *Send* to send your request to the temporary request URL that the mocking service creates from your specification.
 +
-image:successful-test1.png[]
+image:successful-test1.png[Results of a successful test]
 . Click *Details* to examine the response headers and request headers in the mocking service to help diagnose issues or understand the behavior of your API specification.
 . When you have finished testing, click the mocking service checkmark to disable the mocking service again.
-image:ignore-me.png[]
+image:ignore-this.png[Error messages you can ignore]
 +
 It's safe to ignore any error messages on this screen.
 
@@ -186,7 +186,7 @@ link:https://anypoint.mulesoft.com/exchange/["Take me to Exchange^", role="butto
 In a typical API project, you’d likely want to do a few more things:
 
 * Add xref:studio::set-credentials-in-studio-to.adoc[authentication].
-* Add annotations.
+* Add annotations as defined in the RAML specification.
 +
 link:https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/#annotations["Take me to the RAML specification^", role="button-primary"]
 * xref:design-center::design-import-files.adoc[Add assets from Exchange using API Designer or Studio.]
