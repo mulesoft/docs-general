@@ -3,24 +3,23 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-You've created an API specification, now use it to create the API.
+You've created an API specification, now use it to create an API.
 
-In Anypoint Platform, developers package an API in an application that is deployed to Mule runtime engine (Mule)
-in one of several environments, called targets. One target is the Mule embedded in Studio, which you use for
-development and testing. Another target, CloudHub, is managed by MuleSoft and is cloud based.
-
-Mule is a lightweight integration engine that runs Mule apps.
+In Anypoint Platform, developers package an API in an application that is deployed to an instance of xref:mule-runtime::index.adoc[Mule runtime engine (Mule)].
+Mule is a lightweight integration engine that runs Mule apps. Instances of Mule are embedded in Studio, and in the environments where you will deploy Mule apps and APIs.
+These environments are called targets. One target is the Mule embedded in Studio, which you use for
+development and testing. Another target, xref:runtime-manager::cloudhub.adoc[CloudHub], is managed by MuleSoft and is cloud based.
 
 This tutorial shows you how to deploy first to Mule in Studio. When the API is complete, you'll deploy it to Mule in CloudHub.
 
-image:empty-studio.png[]
+image:empty-studio.png[Studio without any projects]
 
 . The Package Explorer helps you navigate the files created for each project.
 . The canvas is where you drag and drop elements of your project and connect them, creating a flow.
 . The Mule Palette provides quick access to standard or custom assets such as connectors and modules.
 . The tabs in the bottom section provide access to configuration dialogs, the Mule debugger, and other developer dialogs.
 
-=== Step 1: Add Your Anypoint Platform Credentials to Studio
+=== Step 3.1: Add Your Anypoint Platform Credentials to Studio
 
 Add your Anypoint Platform credentials in Studio once, and they'll be available for all the projects you create.
 
@@ -33,7 +32,7 @@ Add your Anypoint Platform credentials in Studio once, and they'll be available 
 
 These credentials are automatically used for many operations in Studio.
 
-=== Step 2: Create a New Studio Project with an Imported API Specification
+=== Step 3.2: Create a New Studio Project with an Imported API Specification
 
 In this step, we'll create the project.
 
@@ -84,7 +83,7 @@ Let's verify the values set in the Listener at the top of your flow in the canva
 
 In the next step, we'll create business logic and configure the elements we need for this API.
 
-=== Step 3: Configure the API
+=== Step 3.3: Configure the API
 
 Using the scaffolding provided by Studio, complete the API:
 
@@ -116,7 +115,7 @@ This API has been simplified compared to a typical production-ready API:
 * The best practice of separating the interface and implementation (business logic) into separate XML files has been skipped for the sake of brevity.
 ====
 
-=== Step 4. Test the API
+=== Step 3.4. Test the API
 
 Run the Studio project that contains your API in the Mule runtime engine and then test with a third-party client:
 
@@ -139,7 +138,7 @@ When the following message is displayed, the app containing your API has been de
 Your REST client should return a `200 OK` message and the body `Today the greeting is Hello.`.
 . Right-click in the canvas and select *Stop project hello-word*.
 
-=== Step 5. Create a Business Group in Your Organization
+=== Step 3.5. Create a Business Group in Your Organization
 
 Before you can publish your API to Exchange to share it with others, you must create a Business Group in your trial organization.
 Assets in Exchange must belong to a Business Group in order to manage access properly.
@@ -161,7 +160,7 @@ link:https://anypoint.mulesoft.com/login/#/signup["Take me to Anypoint Platform^
 
 Your new business group is listed underneath the organization name in the Access Management screen.
 
-=== Step 6. Publish the API to Exchange
+=== Step 3.6. Publish the API to Exchange
 
 Publish the API to Exchange so it can serve as a template or example for others.
 
