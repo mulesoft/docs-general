@@ -10,7 +10,7 @@ To design an API, assess the purpose and requirements:
 * Explore the security requirements.
 
 After you define the scope and flow of your integration project,
-define an API specification in RAML (or import to RAML from OAS).
+define an API specification in xref:http://https://raml.org/[RAML] or xref:https://openautomationsoftware.com/[OAS].
 Then, in later steps, you'll use the API specification to quickly develop an API.  
 
 == API Specifications and APIs
@@ -34,9 +34,10 @@ You can also check whether an API specification with the same objectives is not 
 
 Looking for an API specification that already does what you need is easy:
 
-* Look at the public Exchange. You’ll see some of the most popular API specifications, connectors, and other assets displayed.
+* Look at the public Exchange, which is a portal hosted by MuleSoft that contains API specifications, connectors and other assets that you can download and use.
+You’ll see some of the most popular API specifications, connectors, and other assets displayed on the landing page.
 +
-link:https://www.mulesoft.com/exchange["Take me there^", role="button-primary"]
+link:https://www.mulesoft.com/exchange["Take me to Exchange^", role="button-primary"]
 +
   .. Click *Discover and share* under *Exchange*.
   .. Select *All Types > REST APIs* (next to the search bar) to display only REST API specifications.
@@ -48,20 +49,22 @@ link:https://anypoint.mulesoft.com/login["Take me to Anypoint Platform^", role="
 +
   .. Log in to Anypoint Platform.
   .. Click *Discover and share* under *Exchange*. 
-  .. Click on any specification to see the data types and the HTTP requests defined for the API.
-
+  .. Click on any specification to see the data types and the HTTP requests defined for the API. If this is a trial org, you may not see anything yet.
 
 After exploring Exchange, return to Anypoint Platform to create a new API specification that defines what our tutorial API can do.
 
 == Step 2.2: Create Your API Specification
 
-Create your own API specification for a simple Hello World API that responds to a simple GET request:
+Create your own API specification for a simple Hello World API that responds to a simple GET request.
+To do this, we'll use xref:design-create-publish-api-specs.adoc[API Designer], a part of xref:design-center::index.adoc[Design Center].
 
-. Open the Design Center to the API Designer:
+. Open API Designer:
 +
 link:https://anypoint.mulesoft.com/designcenter/designer/["Take me to API Designer^", role="button-primary"]
 . Click *Create* to open the API Designer editor.
 . Click *Create API specification*.
++
+image:new-api-spec.png[Blank API specification in API Designer]
 . Enter `hello-world` for *Name* and don't change the other default values.
 . Click *Create Specification*. The API Designer editor displays a sample RAML definition.
 . Delete the existing text and paste in the following RAML:
@@ -98,6 +101,7 @@ types:
                  }
 ----
 This API specification contains:
+
 * A single HTTP request, GET
 * A single data type, `greeting`, with a single property, `todays-greeting` and a sample value
 * An HTTP success response
