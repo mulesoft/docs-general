@@ -52,7 +52,7 @@ In this step, we'll create the project.
 . Studio creates an XML file, `hello-world.xml` and opens it in the canvas *Message Flow* view,
 displaying some of the basic elements you'll need for the API interface:
 
-image:my-first-project.png[]
+image:my-first-project.png[View in Studio after importing API specification with scaffolding]
 
 If you scroll down the canvas, you can see all the scaffolding that has been added to your API specification
 to create an API:
@@ -65,7 +65,7 @@ to create an API:
 
 Notice that there are three different views of the canvas:
 
-image:canvas-tabs.png[]
+image:canvas-tabs.png[One canvas and links to all three views]
 
 * *Message Flow* view makes it easy to drag and drop modules, connectors, and other assets and create the relationships between them.
 * *Global Elements* view makes it easy to specify global elements used in multiple projects.
@@ -85,20 +85,18 @@ In the next step, we'll create business logic and configure the elements we need
 
 === Step 3.3: Configure the API
 
-Using the scaffolding provided by Studio, complete the API:
-
-In Studio, configure the `/greeting` endpoint module:
+Using the scaffolding provided by Studio, complete the API by configuring the `/greeting` endpoint module:
 
 . In *Message Flow* tab of the canvas, scroll down until you see the `/greeting` endpoint module:
 +
-image:greeting-module.png[]
+image:greeting-module.png[View of GET connector as created by scaffolding]
 . Right-click the *Transform Message* and delete it.
 . In *Mule Palette*, select *Favorites* to display a list of core connectors.
 . Click *Set Payload* to select it, and then drag it into the space where you deleted Transform Message, to the right of the area labeled *Source*.
 . Specify the logic that displays the data sent in a response from hello-world API:
   .. Click the Set Payload connector you just added to the flow.
 +
-image:set-payload.png[]
+image:set-payload.png[View of canvas and configuration dialog for Set Payload connector]
   .. Below the canvas, in the *General* tab, click the *fx* (function) button to deselect it. For this tutorial, we are hard-coding the value.
   .. Set *Value* under *Settings* to `Today the greeting is Hello.`
 . Save your work by selecting *File > Save All*.
@@ -141,7 +139,7 @@ Your REST client should return a `200 OK` message and the body `Today the greeti
 === Step 3.5. Create a Business Group in Your Organization
 
 Before you can publish your API to Exchange to share it with others, you must create a Business Group in your trial organization.
-Assets in Exchange must belong to a Business Group in order to manage access properly.
+Assets in Exchange must belong to a Business Group.
 
 If you've already created a business group in your organization, you can skip this step.
 
@@ -167,7 +165,7 @@ Publish the API to Exchange so it can serve as a template or example for others.
 . From the Package Explorer in Studio, right-click the `hello-world` project.
 . Select *Anypoint Platform > Publish to Exchange*.
 +
-image:pub-to-exchange.png[]
+image:pub-to-exchange.png[Dialog to publish API to Exchange]
 
 . Enter values for your project:
   ** For *User*, select your name.
@@ -180,7 +178,7 @@ image:pub-to-exchange.png[]
 After the project is uploaded to Exchange, you are provided with a direct link to the project.
 . Click the link to view the project in Exchange.
 +
-image:published-in-exchange.png[]
+image:published-in-exchange.png[API viewed from Exchange]
 
 . You can add documentation, descriptions, and tags that aid search.
 . Notice that HTTP Connector and Sockets Connector are listed as dependencies.
