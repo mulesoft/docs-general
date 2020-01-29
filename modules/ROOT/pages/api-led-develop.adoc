@@ -5,11 +5,13 @@ endif::[]
 
 You've created an API specification, now use it to create the API.
 
-In MuleSoft, developers package an API in an application that is deployed to a Mule runtime engine (Mule)
+In Anypoint Platform, developers package an API in an application that is deployed to Mule runtime engine (Mule)
 in one of several environments, called targets. One target is the Mule embedded in Studio, which you use for
 development and testing. Another target, CloudHub, is managed by MuleSoft and is cloud based.
 
-This tutorial shows you how to deploy first to Mule in Studio. When the API is ready, you'll deploy it to CloudHub.
+Mule is a lightweight integration engine that runs Mule apps.
+
+This tutorial shows you how to deploy first to Mule in Studio. When the API is complete, you'll deploy it to Mule in CloudHub.
 
 image:empty-studio.png[]
 
@@ -46,7 +48,7 @@ In this step, we'll create the project.
     ... Click *hello-world* to select it.
     ... Click *Add* to move it to the *Selected modules* list.
     ... Click *Finish*.
-. Scroll down to verify that the checkbox *Scaffold flows from these API specifications* is selected. This ensures that Studio will add default error handling and other helpful items to your project.
+. Scroll down to verify that the checkbox *Scaffold flows from these API specifications* is selected. This ensures that Studio adds default error handling and other helpful items to your project.
 . Click *Finish*.
 . Studio creates an XML file, `hello-world.xml` and opens it in the canvas *Message Flow* view,
 displaying some of the basic elements you'll need for the API interface:

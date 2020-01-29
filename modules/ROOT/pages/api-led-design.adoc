@@ -26,7 +26,7 @@ to create a contract that people and software can read.
 MuleSoft provides tools that make it easy to create an API specification that you can then share with your team, your customers, or the general public.
 Using an API specification increases adoption and shortens project completion time. 
 
-== Step 1: Explore Existing API Specifications
+== Step 2.1: Explore Existing API Specifications
 
 If you look at existing API specifications before writing your own,
 you can learn how other people have approached situations similar to yours.
@@ -53,7 +53,7 @@ link:https://anypoint.mulesoft.com/login["Take me to Anypoint Platform^", role="
 
 After exploring Exchange, return to Anypoint Platform to create a new API specification that defines what our tutorial API can do.
 
-== Step 2: Create Your API Specification
+== Step 2.2: Create Your API Specification
 
 Create your own API specification for a simple Hello World API that responds to a simple GET request:
 
@@ -64,7 +64,7 @@ link:https://anypoint.mulesoft.com/designcenter/designer/["Take me to API Design
 . Click *Create API specification*.
 . Enter `hello-world` for *Name* and don't change the other default values.
 . Click *Create Specification*. The API Designer editor displays a sample RAML definition.
-. Replace all the text with RAML that specifies the API:
+. Delete the existing text and paste in the following RAML:
 
 [source,raml]
 ----
@@ -97,13 +97,13 @@ types:
                    "message" : "Greeting not found"
                  }
 ----
-This API contains:
+This API specification contains:
 * A single HTTP request, GET
 * A single data type, `greeting`, with a single property, `todays-greeting` and a sample value
 * An HTTP success response
 * An HTTP error response
 
-== Step 3: Test Your API Specification
+== Step 2.3: Test Your API Specification
 
 The API specification `hello-world.raml` is complete. Now test it by sending a request.
 The mocking service creates a functioning endpoint from your API specification
@@ -137,12 +137,12 @@ image:send-me.png[]
 +
 image:successful-test1.png[]
 . Click *Details* to examine the response headers and request headers in the mocking service to help diagnose issues or understand the behavior of your API specification.
-. When you have finished testing, click the mocking service checkmark to exit.
+. When you have finished testing, click the mocking service checkmark to disable the mocking service again.
 image:ignore-me.png[]
 +
 It's safe to ignore any error messages on this screen.
 
-== Step 4. Publish Your API Specification
+== Step 2.4. Publish Your API Specification
 
 After you have tested your API, publish it to your private Exchange so others in your organization can reuse your work.
 

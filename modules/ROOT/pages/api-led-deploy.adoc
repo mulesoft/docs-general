@@ -8,7 +8,7 @@ within Studio, let's deploy the API to CloudHub. First, we'll create an API prox
 which then enables us to test the API from Exchange. We'll then set up policies and tiers of service,
 and perform basic management tasks, such as approving or rejecting access.
 
-=== Step 1: Deploy API to CloudHub
+=== Step 5.1: Deploy API to CloudHub
 
 After we deploy this API, in the form of a Mule app, to the CloudHub target, we can create a proxy, apply policies, and perform other management tasks.
 
@@ -47,7 +47,7 @@ Now we need to create an API proxy application for this API, to restrict access 
 We'll add policies, specify service level agreement (SLA) tiers, and create monitoring alerts.
 We can do this while the API is running.
 
-=== Step 2: Create an API Proxy Application
+=== Step 5.2: Create an API Proxy Application
 
 In order to add a rate limit policy to our deployed API, we must first add our API to API Manager, and create an API proxy. 
 
@@ -77,13 +77,14 @@ image:proxy1.png[status page for API before proxy]
 
 Now that our API is managed in API Manager, we can create a proxy in the next step.
 
-=== Step 3. Create the API Proxy
+=== Step 5.3. Create the API Proxy
 
 To create a proxy for the API:
 
 . If you aren't on the API Manager hello-world API settings page from the previous step, navigate there:
 +
-link:https://anypoint.mulesoft.com/login["Take me there^", role="button-primary"] 
+link:https://anypoint.mulesoft.com/login["Take me there^", role="button-primary"]
+
   .. Click *API Manager*.
   .. Click *hello-world* to open the drop-down.
   .. Click *v1* to display the proxy settings page.
@@ -98,7 +99,7 @@ link:https://anypoint.mulesoft.com/login["Take me there^", role="button-primary"
 A progress window displays. 
 +
 image:proxy-deploy.png[deployment progress dialog]
-+
+
 . When deployment is complete, close the progress dialog to return to the settings page.
 +
 image:deployed-proxy-progress.png[settings page for deployed proxy]
@@ -131,7 +132,7 @@ Finish configuring the proxy:
 . Select your API.
 . Click *Private* and then choose *Public*.
 
-=== Step 4: Add a Rate Limit Policy
+=== Step 5.4: Add a Rate Limit Policy
 
 To add a rate limit policy:
 
@@ -161,84 +162,24 @@ Test the new policy:
 
 . In Advanced Rest client, send GET requests to the API proxy `http://hello-world-greeting-proxy.us-e2.cloudhub.io/greeting` (the consumer endpoint plus `/greeting`) multiple times, until you receive the response `429 Too Many Requests`.
  
-=== Step 5: Set SLA Tiers
-
-Add service-level agreement tiers, so that different customer groups have different rate limits applied:
-
-. Open Hello-World in API Manager by clicking `v1`.
-. Click *SLA Tiers*.
-. Click *Add SLA tier*.
-. Set the following values:
-  ** *Name*: `Free`
-  ** *Approval*: *Automatic*
-  ** *# of Reqs*: `1`
-  ** *Time Period*: `1`
-  ** *Time Unit*: *Minute*
-. Click *Add*.
-. Create a second tier:
-  ** *Name*: `Silver`
-  ** *Approval*: *Manual*
-  ** *# of Reqs*: `1`
-  ** *Time Period*: `1`
-  ** *Time Unit*: *Second*
-
-Change the policy used by this API proxy use rate limiting that is SLA based:
-
-. Select *Policies*.
-. Open *Rate limiting*.
-. Select *Actions > Remove* and then confirm the removal.
-. Create a new rate limiting policy based on SLA:
-  .. Click Apply New Policy.
-  .. Open *Rate limiting - SLA based*.
-  .. Select the latest version.
-  .. Click *Configure Policy*.
-  .. Notice that you must supply a client ID expression and client secret expression in the API request headers.
-  .. Select *Expose Headers*.
-  .. Select *Method & Resource conditions > Apply configurations to all API methods & resources*.
-  .. Click *Apply*.
-  .. Select *Settings*.
-  .. Click the pencil next to *Label* and then change the value to `Rate limiting - SLA-based policy`.
-
-Test the rate limiting by sending a single GET request in Advanced Rest Client or similar. You should receive a `401 Unauthorized` error because you didn't supply a client ID and client secret.
-
-Customers must now request access to the API.
-
-To test access request:
-
-. Open Exchange for your organization.
-+
-link:https://anypoint.mulesoft.com/exchange["Take me there^", role="button-primary"]
-. Click *Hello-World* (Rest API).
-. Click the green GET button.
-. Click *Request access*.
-
-=== Step 6: Set API monitoring alerts
-
-=== Step 7: Configure the application and infrastructure for deployment
-
-=== Step 8: Deploy an application version
-
-=== Step 9: Sanity test the deployment
-
-=== Step 10: Update portal with implementation URL
+//Now that you've protected your API from a denial-of-service attack, let's set up some monitoring.
+//
+// === Step 5.6: Set API Monitoring Alerts
+//
+// === Step 5.7: Configure the application and infrastructure for deployment
+//
+// === Step 5.8: Deploy an application version
+//
+// === Step 5.9: Sanity test the deployment
+//
+// === Step 5.10: Update portal with implementation URL
 
 == What's Next
 
+Now that your API is deployed as a Mule app to Mule in CloudHub, you can manage it using Anypoint Platform tools.
+
 == Developer Deep Dive
 
-3.2 Secure non-Mule APIs with an API proxy
+MuleSoft provides many deployment options:
 
-* Import proxy application version to API Manager
-* Apply policies
-* Set SLA tiers
-* Set API monitoring alerts
-* Set a proxy consumer endpoint
-* Deploy the API proxy
-* Sanity test the deployment
-
-3.3 Manage application
-
-* Approve, reject, revoke access to APIs by consumers
-* Scale capacity
-* Test performance and failure scenarios with third-party tools
-* Promote app and policies
+* xref:mule-runtime/deploying.adoc[Deploy Mule Applications]
