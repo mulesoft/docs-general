@@ -1,4 +1,4 @@
-= Step 4. Validation, Error Handling, and Unit Tests
+= Step 4. Add Validation, Error Handling, and Unit Tests
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
@@ -19,13 +19,13 @@ Add the *Validate size* operation to the `hello-world` project:
 . In the `hello-world` project in Studio, open `hello-world.xml` if it isn't already open, and make sure you are viewing the *Message Flow* tab of the canvas.
 . In *Mule Palette*, select *Add Modules > Validation* and drag it to the drag and drop area in the left side of Mule Palette. 
 +
-image:validation-module.png[]
+image:validation-module.png[View of Mule Palette with Validation selected]
 . From the list of operations displayed, drag *Validate size* to the canvas and drop it to the right of *Set Payload*, inside the endpoint module.
 +
-image:validate-size.png[]
+image:validate-size.png[Validate size dropped into GET module]
 . Click *Validate size* to display the General configuration tab.
 +
-image:configure-validate.png[]
+image:configure-validate.png[Validate size configuration tab]
 . Set these values in the *General* tab:
   .. *Value*: Click the *fx* button to change from literal mode to expression mode, and then enter `payload` after the characters in the text box. Notice the closing bracket is supplied for you.
   .. *Min*: `6`
@@ -53,7 +53,7 @@ To test that the validation works when the payload is too short, use the debugge
 . Right-click *Validate size* and select *Toggle breakpoint*.
 . Right-click the canvas and select *Debug project hello-world*. If you are asked to open the Mule Debug perspective, select the *Remember my decision* checkbox and click *Yes*.
 +
-image:mule-debugger-view.png[]
+image:mule-debugger-view.png[Studio in Debugger view]
 . After the application deploys, open Advanced Rest Client and send a request to the `/greeting` endpoint:
 +
 [source, xml]
@@ -65,13 +65,13 @@ http://localhost:8081/api/greeting
 . In the canvas, Click *Set Payload* to open the *Set Payload* node in the debugger and see the payload value is `Hi.`, three characters.
 . Click the curved yellow arrow above the debugger window. 
 +
-image:next-toggle.png[]
+image:next-toggle.png[Control to move to next toggle point]
 +
 If you hover over it to ensure you have the right control, the label *Next processor (F6)* appears. The debugger pane now shows the Logger connector.
 . Click the curved yellow arrow again to move to the Validate size connector. 
 . Click the curved yellow arrow again, and notice that that an error message you defined is now in the *error* object in the debugger pane, and a red dotted-line shows in the Validate size connector.
 +
-image:validation-error.png[]
+image:validation-error.png[View of debugger displaying error for Validate size]
 . Click the curved yellow arrow again, and notice that the canvas now displays the top of your message flow, with a red dotted-line around the APIkit Router. The router handles the error.
 . Click the curved yellow arrow again to complete the flow. Notice that the Mule debugger pane is now empty because the process has completed.   
 . Look at Advanced Rest Client. You should see `500 Server Error` and the payload value.
@@ -86,7 +86,7 @@ Now we'll add an error handler for the validation we've set up.
 
 . In Studio *Mule Palette*, select *Core > On Error Propagate*, and then drag and drop the error handler on *Error handling* in *get:\greeting:hello-world-config*.
 +
-image:on-error.png[]
+image:on-error.png[Adding an error handler to GET module and configuring it]
 . In the *General* tab below the canvas, configure the error handler:
 +
   ** *Display Name:* `On Error Proagate`
@@ -102,10 +102,10 @@ image:on-error.png[]
 . After the app is deployed, send the query `\http://localhost:8081/api/greeting` from Advanced Rest Client, and step through each breakpoint using the curved yellow arrow. 
 . When you reach *Set Payload* in *On Error Propagate*, you can see that payload set to the error message we created in Validate size is now the payload.
 +
-image:payload-message.png[]
+image:payload-message.png[Debugger messages for Set Payload in error handler]
 . When you reach *APIkit Router*, you can see the error message replaces the original payload `Hi.`.
 +
-image:payload-response.png[]
+image:payload-response.png[Breakpoint at APIkit Router showing error message in payload]
 . When you have stepped all the way through and look at the response in Advanced Rest Client, you'll see that a *500 Server Error* is returned along with the error message.
 . Set the original payload back to `Today the greeting is Hello.`.
 . Set the view in Studio to *Window > Perspective > Open Perspective > Mule Design*.
