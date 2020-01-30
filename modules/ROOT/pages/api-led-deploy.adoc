@@ -64,7 +64,7 @@ link:https://anypoint.mulesoft.com/login["Take me to Anypoint Platform^", role="
   ** *Managing type: Endpoint with Proxy*
   ** *Proxy deployment target: CloudHub*
   ** *Mule version:* Check the checkbox for Mule 4
-  ** Implementation URI: `http://hello-world-greeting-sandy-kim.us-e2.cloudhub.io/api`. This is the same value as the *App url* from Step 1, with `/api` appended.
+  ** Implementation URI: `\http://hello-world-greeting-sandy-kim.us-e2.cloudhub.io/api`. This is the same value as the *App url* from Step 1, with `/api` appended.
   ** You can ignore TLS context since our API simply returns a hard-coded value.
   ** Path: `/`
   ** Ignore Advanced options.
@@ -153,7 +153,7 @@ Change the API instance label so it reflects the fact that we now have a policy 
 
 Test the new policy:
 
-In Advanced Rest Client, send GET requests to the API proxy `http://hello-world-greeting-proxy.us-e2.cloudhub.io/greeting` (the consumer endpoint plus `/greeting`) multiple times, until you receive the response `429 Too Many Requests`.
+In Advanced Rest Client, send GET requests to the API proxy `\http://hello-world-greeting-proxy.us-e2.cloudhub.io/greeting` (the consumer endpoint plus `/greeting`) multiple times, until you receive the response `429 Too Many Requests`.
 
 == What's Next
 
