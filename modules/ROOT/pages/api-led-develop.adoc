@@ -19,7 +19,7 @@ image:empty-studio.png[Studio without any projects]
 . The Mule Palette provides quick access to standard or custom assets such as connectors and modules.
 . The tabs in the bottom section provide access to configuration dialogs, the Mule debugger, and other developer dialogs.
 
-=== Step 3.1: Add Your Anypoint Platform Credentials to Studio
+== Step 3.1: Add Your Anypoint Platform Credentials to Studio
 
 Add your Anypoint Platform credentials in Studio once, and they'll be available for all the projects you create.
 
@@ -32,7 +32,7 @@ Add your Anypoint Platform credentials in Studio once, and they'll be available 
 
 These credentials are automatically used for many operations in Studio.
 
-=== Step 3.2: Create a New Studio Project with an Imported API Specification
+== Step 3.2: Create a New Studio Project with an Imported API Specification
 
 In this step, we'll create the project.
 
@@ -78,14 +78,14 @@ Let's verify the values set in the Listener at the top of your flow in the canva
 . Double-click Listener to display its general configuration values.
 . Click the edit icon next to the configuration name, and verify that the host is `0.0.0.0` and the port is `8081`.
 . Click *Test Connection*, and then click *OK* when a successful test connection is reported.
-. Click *Finish* to close the configuration. This leaves you in the *Global Elements* tab.
+. Click *OK* to close the configuration. This leaves you in the *Global Elements* tab.
 . Click *Message Flow* to return to the previous tab. General configuration values for Listener should still be displayed.
 . Verify that *Path* is set as */api/**. This best practice ensures that all endpoints will be of the form `base-URI/api/endpoint`.
 . Click *File > Save All* to save your work.
 
 In the next step, we'll create business logic and configure the elements we need for this API.
 
-=== Step 3.3: Configure the API
+== Step 3.3: Configure the API
 
 Using the scaffolding provided by Studio, complete the API by configuring the `/greeting` endpoint module:
 
@@ -96,7 +96,7 @@ image:greeting-module.png[View of GET connector as created by scaffolding]
 . In *Mule Palette*, select *Favorites* to display a list of core connectors.
 . Click *Set Payload* to select it, and then drag it into the space where you deleted Transform Message, to the right of the area labeled *Source*.
 . Specify the logic that displays the data sent in a response from hello-world API:
-  .. Click the Set Payload connector you just added to the flow.
+  .. Click the Set Payload transformer you just added to the flow.
 +
 image:set-payload.png[View of canvas and configuration dialog for Set Payload connector]
   .. Below the canvas, in the *General* tab, click the *fx* (function) button to deselect it. For this tutorial, we are hard-coding the value.
@@ -115,7 +115,7 @@ This API has been simplified compared to a typical production-ready API:
 * The best practice of separating the interface and implementation (business logic) into separate XML files has been skipped for the sake of brevity.
 ====
 
-=== Step 3.4. Test the API
+== Step 3.4. Test the API
 
 Run the Studio project that contains your API in the Mule runtime engine and then test with a third-party client:
 
@@ -138,7 +138,7 @@ When the following message is displayed, the app containing your API has been de
 Your REST client should return a `200 OK` message and the body `Today the greeting is Hello.`.
 . Right-click in the canvas and select *Stop project hello-word*.
 
-=== Step 3.5. Create a Business Group in Your Organization
+== Step 3.5. Create a Business Group in Your Organization
 
 Before you can publish your API to Exchange to share it with others, you must create a Business Group in your trial organization.
 Assets in Exchange must belong to a Business Group that is not the master Business Group.
@@ -160,7 +160,7 @@ link:https://anypoint.mulesoft.com/login/#/signup["Take me to Anypoint Platform^
 
 Your new business group is listed underneath the organization name in the Access Management screen.
 
-=== Step 3.6. Publish the API to Exchange
+== Step 3.6. Publish the API to Exchange
 
 Publish the API to Exchange so it can serve as a template or example for others.
 

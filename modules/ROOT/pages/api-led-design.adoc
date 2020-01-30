@@ -39,7 +39,6 @@ You’ll see some of the most popular API specifications, connectors, and other 
 +
 link:https://www.mulesoft.com/exchange["Take me to Exchange^", role="button-primary"]
 +
-  .. Click *Discover and share* under *Exchange*.
   .. Select *All Types > REST APIs* (next to the search bar) to display only REST API specifications.
   .. Click on any specification to see the data types and the HTTP requests defined for the API. 
 +
@@ -47,11 +46,11 @@ link:https://www.mulesoft.com/exchange["Take me to Exchange^", role="button-prim
 +
 link:https://anypoint.mulesoft.com/login["Take me to Anypoint Platform^", role="button-primary"] 
 +
-  .. Log in to Anypoint Platform.
-  .. Click *Discover and share* under *Exchange*. 
+  .. Log in to Anypoint Platform if needed.
+  .. In the Anypoint Platform landing page, click *Discover and share* under *Exchange*. 
   .. Click on any specification to see the data types and the HTTP requests defined for the API. If this is a trial org, you may not see anything yet.
 
-After exploring Exchange, return to Anypoint Platform to create a new API specification that defines what our tutorial API can do.
+After exploring Exchange to see the range of assets available, we return to Anypoint Platform and use web-based tools create a new API specification that defines what our tutorial API can do.
 
 == Step 2.2: Create Your API Specification
 
@@ -136,15 +135,18 @@ image:code-response1.png[Response field]
 . Click *200* and *404* under *Responses* to review the responses defined in the API specification.
 . Click the blue *Try it* button.
 +
-image:send-me.png[The Send button]
+image:try-it.png[The Try It button]
 . Click *Send* to send your request to the temporary request URL that the mocking service creates from your specification.
++
+image:ignore-this.png[Error messages you can ignore]
++
+It's safe to ignore any error messages on this screen. A successful request returns `200 OK` and the test message:
 +
 image:successful-test1.png[Results of a successful test]
 . Click *Details* to examine the response headers and request headers in the mocking service to help diagnose issues or understand the behavior of your API specification.
 . When you have finished testing, click the mocking service checkmark to disable the mocking service again.
-image:ignore-this.png[Error messages you can ignore]
 +
-It's safe to ignore any error messages on this screen.
+image:enabled-service.png[Mocking service control before being disabled]
 
 == Step 2.4. Publish Your API Specification
 

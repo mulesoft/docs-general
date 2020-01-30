@@ -12,11 +12,13 @@ link:https://anypoint.mulesoft.com/login/#/signup["Create a Trial organization^"
 * Download Anypoint Studio version 7.4.1 or later. Anypoint Studio is an Eclipse-based IDE with rich functionality for building and deploying to Anypoint Platform. 
 +
 link:https://www.mulesoft.com/lp/dl/studio["Download Anypoint Studio^", role="button-primary"]
-* To test REST requests, obtain a client such as Advanced REST Client or Postman if you don't already have one.
+* To test REST requests, obtain a client such as Advanced REST Client or Postman if you don't already have one. This tutorial uses Advanced REST Client.
 +
 link:https://install.advancedrestclient.com/install["Install Advanced REST Client^", role=button-primary"]
++
+Depending on your platform, you may need to install a different client, or https://github.com/advanced-rest-client/arc-electron/releases/tag/v15.0.0[install Advanced REST Client from GitHub].
 
 == Helpful Hints
 
 * Use two browser windows: one to read instructions and one to perform the tasks.
-* Set your REST client to have a long timeout. When we step through the processes one at a time, you don't want your REST request to time out.
+* Set Advanced REST Client to have a long timeout. When you step through the processes during debugging, you don't want the REST request to time out.
