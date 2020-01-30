@@ -1,0 +1,200 @@
+= Step 2. Design an API Specification
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+To design an API, assess the purpose and requirements:
+
+* Identify the type of API. Is it a simple API, part of an integration, or part of a back-end system?
+* Understand the data flows: one-way, two-way, or more.
+* Explore the security requirements.
+
+After you define the scope and flow of your integration project,
+define an API specification in link:https://raml.org/[RAML] or link:https://openautomationsoftware.com/[OAS].
+Then, in later steps, you'll use the API specification to quickly develop an API.  
+
+== API Specifications and APIs
+
+An API is a published interface to a resource that anyone with the correct permissions
+and a properly structured request can access. 
+
+An API specification details the functional and expected behavior of an API, 
+as well as the fundamental design philosophy and supported data types.
+It contains both documentation and API definitions 
+to create a contract that people and software can read. 
+
+MuleSoft provides tools that make it easy to create an API specification that you can then share with your team, your customers, or the general public.
+Using an API specification increases adoption and shortens project completion time. 
+
+== Step 2.1: Explore Existing API Specifications
+
+If you look at existing API specifications before writing your own,
+you can learn how other people have approached situations similar to yours.
+You can also check whether an API specification with the same objectives is not already in development, and reuse it if appropriate.
+
+Looking for an API specification that already does what you need is easy:
+
+* Look at the public Exchange, which is a portal hosted by MuleSoft that contains API specifications, connectors and other assets that you can download and use.
+You’ll see some of the most popular API specifications, connectors, and other assets displayed on the landing page.
++
+link:https://www.mulesoft.com/exchange["Take me to Exchange^", role="button-primary"]
++
+  .. Select *All Types > REST APIs* (next to the search bar) to display only REST API specifications.
+  .. Click on any specification to see the data types and the HTTP requests defined for the API. 
++
+* Look at Exchange for your organization (account). Logging in changes the view to your organization's private Exchange.
++
+link:https://anypoint.mulesoft.com/login["Take me to Anypoint Platform^", role="button-primary"] 
++
+  .. Log in to Anypoint Platform if needed.
+  .. In the Anypoint Platform landing page, click *Discover and share* under *Exchange*. 
+  .. Click on any specification to see the data types and the HTTP requests defined for the API. If this is a trial org, you may not see anything yet.
+
+After exploring Exchange to see the range of assets available, we return to Anypoint Platform and use web-based tools create a new API specification that defines what our tutorial API can do.
+
+== Step 2.2: Create Your API Specification
+
+Create your own API specification for a simple Hello World API that responds to a simple GET request.
+To do this, we'll use xref:design-center::design-create-publish-api-specs.adoc[API Designer], a part of xref:design-center::index.adoc[Design Center].
+
+. Open API Designer:
++
+link:https://anypoint.mulesoft.com/designcenter/designer/["Take me to API Designer^", role="button-primary"]
+. Click *Create* to open the API Designer editor.
+. Click *Create API specification*.
++
+image:new-api-spec.png[Blank API specification in API Designer]
+. Enter `hello-world` for *Name* and don't change the other default values.
+. Click *Create Specification*. The API Designer editor displays a sample RAML definition.
+. Delete the existing text and paste in the following RAML:
+
+[source,raml]
+----
+#%RAML 1.0
+title: hello, world
+version: v1
+description: A greeting for the world
+
+types:
+ greeting: 
+   properties:
+     todays-greeting: string
+
+/greeting:
+     get: 
+       responses: 
+         200:
+           body:
+             application/json:
+               type: greeting
+               example:
+                 {todays-greeting: "test-greeting"}
+         404: 
+           body:
+             application/json:
+               properties:
+                 message: string
+               example: |
+                 {
+                   "message" : "Greeting not found"
+                 }
+----
+This API specification contains:
+
+* A single HTTP request, GET
+* A single data type, `greeting`, with a single property, `todays-greeting` and a sample value
+* An HTTP success response
+* An HTTP error response
+
+== Step 2.3: Test Your API Specification
+
+The API specification `hello-world.raml` is complete. Now test it by sending a request.
+The mocking service creates a functioning endpoint from your API specification
+and provides a simple UI for managing authentication, request headers, and response headers.
+
+To test the API specification:
+
+. Open `hello-world.raml` if it isn't already open:
++
+link:https://anypoint.mulesoft.com/designcenter/#/projects["Take me to API Designer^" role="button-primary"]
++
+image:api-spec1.png[Completed specification]
++
+. Click the X next to *Mocking service* to enable it. 
++
+image:mocking-service.png[Enabled mocking service]
++
+If you see a checkmark instead of an X, the mocking service is already enabled.
+. Look for the label *API endpoints*. You can see the endpoint you defined. HTTP requests appear in green boxes.
++
+image:get-button.png[GET button]
+. Click *GET* to display the GET request and more information about the specification.
++
+image:code-response1.png[Response field]
+. Click *Code examples* to review samples for each protocol.
+. Click *200* and *404* under *Responses* to review the responses defined in the API specification.
+. Click the blue *Try it* button.
++
+image:try-it.png[The Try It button]
+. Click *Send* to send your request to the temporary request URL that the mocking service creates from your specification.
++
+image:ignore-this.png[Error messages you can ignore]
++
+It's safe to ignore any error messages on this screen. A successful request returns `200 OK` and the test message:
++
+image:successful-test1.png[Results of a successful test]
+. Click *Details* to examine the response headers and request headers in the mocking service to help diagnose issues or understand the behavior of your API specification.
+. When you have finished testing, click the mocking service checkmark to disable the mocking service again.
++
+image:enabled-service.png[Mocking service control before being disabled]
+
+== Step 2.4. Publish Your API Specification
+
+After you have tested your API, publish it to your private Exchange so others in your organization can reuse your work.
+
+. Open `hello-world.raml` if it isn't already open:
++
+link:https://anypoint.mulesoft.com/designcenter/#/projects["Take me to API Designer^" role="button-primary"]
+. Click *Publish*. 
+. Click *Publish to Exchange*.
++
+image:publish-to-exchange1.png[]
+. Accept all the default values, and verify that you see the message *Valid Specification*.
+. Click *Publish*, and then *Done*.
+
+After publication, anyone in your organization can see the hello-world API specification and reuse it.
+
+== What’s Next
+
+Now that you have designed an API and created an API specification for it, 
+use Anypoint Studio (Studio) to create a Mule app that contains the implementation and interface for the API.
+
+== Developer Deep Dives
+
+If you're curious about the details, dive right in.
+
+=== Deep Dive: Exchange
+
+You can publish assets to the public Exchange, your internal Exchange, or your public developer portal.
+
+* In addition to the public Exchange, you can review your own organization’s internal offerings.
++
+link:https://anypoint.mulesoft.com/exchange/["Take me to Exchange^", role="button-primary"]
++
+* If you've created a public developer portal, you can look there as well; click *Public portal*.
+
+=== Deep Dive: API Features
+
+In a typical API project, you’d likely want to do a few more things:
+
+* Add xref:studio::set-credentials-in-studio-to.adoc[authentication].
+* Add annotations as defined in the RAML specification.
++
+link:https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/#annotations["Take me to the RAML specification^", role="button-primary"]
+* xref:design-center::design-import-files.adoc[Add assets from Exchange using API Designer or Studio.]
+* xref:studio::import-api-specification-design-center.adoc[Model the data your API specification exposes, using Studio.]
+* xref:design-center::design-create-publish-api-fragment.adoc[Modularize your specifications for reuse with API fragments.]
+
+=== Developer and Partner Deep-Dive
+
+To share and support your API specification, collect feedback about your API specification for xref:exchange::to-change-raml-version.adoc[the next version.] 
