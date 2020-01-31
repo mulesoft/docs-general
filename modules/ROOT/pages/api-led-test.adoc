@@ -126,7 +126,7 @@ Make your improved API available on Exchange:
 
 Studio shows you the direct link to your newly published API version. You can copy it to share with others.
 
-== What Next
+== What's Next
 
 Let's deploy our API so that anyone can send a request to the `/greeting` endpoint.
 
