@@ -50,7 +50,7 @@ MuleSoft also enables you to host the control plane within your own data center.
 +
 Anypoint Platform PCE supports deploying to Mule runtime servers hosted in a standalone environment. You can host the control plane in a physical server, a virtual server, or a 3rd-party cloud environment such as Amazon Web Services. 
 +
-See xref:private-cloud::/latest/index.adoc[About Anypoint Platform PCE] for more information.
+See xref:private-cloud::index.adoc[About Anypoint Platform PCE] for more information.
 +
 Some Anypoint Platform components are not supported in Anypoint Platform PCE. See the <<Support Matrix for Control Plane Hosting Options>> for details.
 
@@ -97,7 +97,7 @@ CloudHub can only be managed only by version of the cloud control plane that exi
 +
 Runtime Fabric is a container service that enables you to run Mule applications and API gateways within a data center or third-party cloud environment that you control and manage. You can install Runtime Fabric on a set of physical servers, virtual machines, or within Amazon Web Services and Microsoft Azure.
 +
-Runtime Fabric comes bundled with technology such as Docker and Kubernetes, which offer benefits such as high availability, failover, clustering, and load balancing. See xref:runtime-fabric::/latest/index.adoc[Anypoint Runtime Fabric Overview] for more information.
+Runtime Fabric comes bundled with technology such as Docker and Kubernetes, which offer benefits such as high availability, failover, clustering, and load balancing. See xref:runtime-fabric::index.adoc[Anypoint Runtime Fabric Overview] for more information.
 +
 Runtime Fabric can be managed only by Cloud control planes (US cloud, EU cloud). MuleSoft Government Cloud and Anypoint Platform PCE do not support Runtime Fabric.
 
@@ -105,7 +105,7 @@ Runtime Fabric can be managed only by Cloud control planes (US cloud, EU cloud).
 +
 The standalone option enables you to host Mule runtime engine server and related services in an environment that you manage. Using standalone runtimes, the Mule runtime server can run on a physical server, a virtual machine, or within a third-party cloud installation like Amazon Web Services or Microsoft Azure.
 +
-When using standalone runtimes, you are also responsible for providing the framework for high availability, failover, clustering and load balancing. See xref:mule-runtime::latest/mule-standalone[Run Mule Runtime Engine On-Premises].
+When using standalone runtimes, you are also responsible for providing the framework for high availability, failover, clustering and load balancing. See xref:mule-runtime::mule-standalone[Run Mule Runtime Engine On-Premises].
 +
 You can manage standalone runtimes by using cloud control planes (US Cloud, EU Cloud) or a customer-hosted control plane (Anypoint Platform PCE). MuleSoft Government Cloud does not support standalone runtimes.
 
