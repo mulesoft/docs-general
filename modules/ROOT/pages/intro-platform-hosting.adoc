@@ -4,19 +4,19 @@ You can host different parts of Anypoint Platform in different locations, either
 
 == Control Plane vs Runtime Plane
 
-To understand the different hosting options, it is important to understand the concepts of control plane and runtime plane within the context of Anypoint Platform.
+To understand the different hosting options that MuleSoft supports, it is important to understand the control plane and runtime plane within the context of Anypoint Platform.
 
 image::intro-control-vs-runtime-planes.png[]
 
 * Control plane
 +
-Control plane refers to the components of the Anypoint Platform architecture you use to design, deploy, and manage APIs and Mule applications. The control plane contains product features and components that are part of the Anypoint Design Center, Anypoint Management Center and Exchange.
+The components of the Anypoint Platform architecture that you use to design, deploy, and manage APIs and Mule applications. The control plane contains product features and components that are part of the Anypoint Design Center, Anypoint Management Center, and Anypoint Exchange.
 
 * Runtime plane
 +
-Runtime plane refers to the components of the Anypoint Platform architecture where your APIs and Mule applications are deployed and made available to your users. The runtime plane includes the Mule runtime server and supporting services.
+The components of the Anypoint Platform architecture to which your APIs and Mule applications are deployed and made available to your users. The runtime plane includes the Mule runtime server and supporting services.
 
-=== Which Hosting Option is Right for You?
+=== Choosing a Hosting Option
 
 Anypoint Platform is designed to enable the control plane and runtime plane to be hosted independently. Depending on your requirements, you can choose from the following: 
 
@@ -107,7 +107,7 @@ The standalone option enables you to host Mule runtime engine server and related
 +
 When using standalone runtimes, you are also responsible for providing the framework for high-availability, failover, clustering and load balancing. See xref:mule-runtime::latest/mule-standalone[Run Mule Runtime Engine On-Premises]
 +
-Standalone runtimes can be managed by Cloud control plans (US Cloud, EU Cloud) or a customer-hosted control plane (PCE). MuleSoft Government Cloud does not support standalone runtimes.
+You can manage standalone runtimes by using cloud control planes (US Cloud, EU Cloud) or a customer-hosted control plane (Anypoint Platform PCE). MuleSoft Government Cloud does not support standalone runtimes.
 
 === Support Matrix for Runtime Plane Hosting Options
 
@@ -131,7 +131,7 @@ See xref:mule-runtime::choosing-the-right-clustering-topology[Cluster Runtime In
 
 * Connector Support
 +
-Connectors that retrieve and manipulate files on the file system are not supported, for example the file connector. Mule applications deployed to Runtime Fabric do not have access to the file system of the virtual machine nor the network mount. 
+Connectors that retrieve and manipulate files on the file system are not supported, for example Anypoint Connector for File (File Connector). Mule applications deployed to Runtime Fabric do not have access to the file system of the virtual machine or the network mount. 
 
 == Control Plane and Runtime Plane Support Matrix
 
@@ -141,6 +141,6 @@ The following table lists which runtime plane options are supported in each cont
 |===
 | Runtime Plane | US Cloud | EU Cloud| Government Cloud | Private Cloud Edition
 | CloudHub | Y | Y | Y | N
-| Standalone Runtimes | Y | Y | N | N
+| Standalone runtimes | Y | Y | N | N
 | Runtime Fabric | Y | Y | N | N
 |===
