@@ -1,20 +1,27 @@
-= Tutorial: Build an API from Start to Finish
+= Browser Support for Anypoint Platform
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-Your customers and employees need data-rich, delightful experiences on a variety of devices.
-https://blogs.mulesoft.com/dev/api-dev/what-is-api-led-connectivity/[API-led connectivity]
-ensures you can adapt to changes, reuse solutions efficiently, 
-and build security into the digital touchpoints of your business.
+page-aliases:
 
-Take your first end-to-end, API-led journey in MuleSoft:
+Use Anypoint Platform with any of the supported browsers:
 
-. xref:api-led-prerequisites.adoc[Prerequisites]
-. xref:api-led-design.adoc[Design an API Specification]
-. xref:api-led-develop.adoc[Develop the API]
-. xref:api-led-test.adoc[Add Validation and Error Handling]
-. xref:api-led-deploy.adoc[Deploy to CloudHub]
-. xref:api-led-operate.adoc[Operate the API]
+. Microsoft Edge with Chromium
+. Google Chrome
+. Mozilla Firefox
+. Safari
 
-Once you've experienced the end-to-end journey with a single-resource API that you create, use the model to plan your own connectivity projects.
+MuleSoft supports the latest version of these browsers.
+
+MuleSoft's browser support matche the policy of Salesforce Lightning Experience
+with the following exceptions:
+
+. Internet Explorer 11 (IE11) is not supported.
++ IE11 may work with Anypoint Platform, however, you may experience issues.
+. Microsoft Edge without Chromium, latest version, is supported through December 31, 2020.
+
+== See Also
+
+https://help.salesforce.com/articleView?id=getstart_browsers_sfx.htm&type=5[Supported Browsers for Lightning Experience^]
+
