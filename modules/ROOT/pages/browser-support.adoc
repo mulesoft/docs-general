@@ -3,18 +3,18 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-page-aliases:
+// page-aliases:
 
-Use Anypoint Platform with any of the supported browsers:
+Use Anypoint Platform with the latest version of any supported browser:
 
-. Microsoft Edge with Chromium
-. Google Chrome
-. Mozilla Firefox
-. Safari
+* Microsoft Edge with Chromium
+* Google Chrome
+* Mozilla Firefox
+* Safari
 
-MuleSoft supports the latest version of these browsers.
+== Unsupported Browsers
 
-MuleSoft's browser support matche the policy of Salesforce Lightning Experience
+MuleSoft's browser support matches the policy of Salesforce Lightning Experience
 with the following exceptions:
 
 . Internet Explorer 11 (IE11) is not supported.
