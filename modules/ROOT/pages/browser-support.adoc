@@ -17,9 +17,8 @@ Use Anypoint Platform with the latest version of any supported browser:
 MuleSoft's browser support matches the policy of Salesforce Lightning Experience
 with the following exceptions:
 
-. Internet Explorer 11 (IE11) is not supported.
-+ IE11 may work with Anypoint Platform, however, you may experience issues.
-. Microsoft Edge without Chromium, latest version, is supported through December 31, 2020.
+* Internet Explorer 11 (IE11) is not supported. IE11 may work with Anypoint Platform, however, you may experience issues.
+* Microsoft Edge without Chromium, latest version, is supported through December 31, 2020.
 
 == See Also
 
