@@ -18,7 +18,7 @@ The components of the Anypoint Platform architecture to which your APIs and Mule
 
 === Choosing a Hosting Option
 
-Anypoint Platform is designed to enable the control plane and runtime plane to be hosted independently. Depending on your requirements, you can choose from the following: 
+Anypoint Platform is designed to enable the control plane and runtime plane to be hosted independently. Depending on your requirements, you can choose from the following:
 
 * Use Anypoint Platform in the MuleSoft-managed control plane and runtime plane.
 * Host and manage the runtime plane within your own infrastructure while connecting it with the MuleSoft-managed control plane.
@@ -48,7 +48,7 @@ See xref:gov-cloud::index.adoc[About Government Cloud] for more information.
 +
 MuleSoft also enables you to host the control plane within your own data center. Anypoint Platform Private Cloud Edition (Anypoint Platform PCE) is a version of Anypoint Platform that supports hosting the control plane within a user-managed data center. This enables you to control the environment where your assets and metadata are stored.
 +
-Anypoint Platform PCE supports deploying to Mule runtime servers hosted in a standalone environment. You can host the control plane in a physical server, a virtual server, or a 3rd-party cloud environment such as Amazon Web Services. 
+Anypoint Platform PCE supports deploying to Mule runtime servers hosted in a standalone environment. You can host the control plane in a physical server, a virtual server, or a 3rd-party cloud environment such as Amazon Web Services.
 +
 See xref:private-cloud::index.adoc[About Anypoint Platform PCE] for more information.
 +
@@ -127,11 +127,11 @@ Not all Anypoint Platform components are supported in each of the Runtime Plane 
 +
 Runtime Fabric and standalone runtimes do not support Anypoint MQ or Anypoint Object Store. Instead, Runtime Fabric and standalone runtimes support Mule clustering. On Runtime Fabric, multiple replicas of the same application can share objects. On standalone runtimes, multiple Mule runtime engines can share objects with each other.
 +
-See xref:mule-runtime::choosing-the-right-clustering-topology[Cluster Runtime Instances]
+See xref:mule-runtime::choosing-the-right-clustering-topology.adoc[Cluster Runtime Instances]
 
 * Connector Support
 +
-Connectors that retrieve and manipulate files on the file system are not supported, for example Anypoint Connector for File (File Connector). Mule applications deployed to Runtime Fabric do not have access to the file system of the virtual machine or the network mount. 
+Connectors that retrieve and manipulate files on the file system are not supported, for example Anypoint Connector for File (File Connector). Mule applications deployed to Runtime Fabric do not have access to the file system of the virtual machine or the network mount.
 
 == Control Plane and Runtime Plane Support Matrix
 
