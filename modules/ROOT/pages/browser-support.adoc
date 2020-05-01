@@ -18,7 +18,7 @@ The Anypoint Platform browser support follows the Salesforce Lightning Experienc
 == Unsupported Browsers
 
 Internet Explorer 11 is not supported by MuleSoft.
-While the browser may work with Anypoint Platform, you may experience issues.
+If you use the browser with Anypoint Platform, you might experience issues.
 
 == See Also
 
