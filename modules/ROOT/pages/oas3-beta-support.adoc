@@ -1,1 +1,15 @@
 = Beta Support for OAS 3.0._x_
+
+API Designer
+* Create API specifications in OAS 3.0._x_.
+* Import API specifications that are written in OAS 3.0._x_ from Anypoint Exchange or from a file system.
+* View documentation that is written into API specifications that are in OAS 3.0._x_.
+* Simulate calls to API specifications that are written in OAS 3.0._x_.
+* Publish API specifications that are written in OAS 3.0._x_ to Anypoint Exchange.
+
+Anypoint Exchange
+* Share API specifications that are written in OAS 3.0._x_.
+* Publish API specifications that are written in OAS 3.0._x_ to Anypoint Community Manager.
+
+Anypoint Community Manager
+* Share API specifications that are written in OAS 3.0._x_.
