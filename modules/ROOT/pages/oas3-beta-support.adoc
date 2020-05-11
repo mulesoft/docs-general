@@ -11,6 +11,9 @@ When creating a new API-specificatinon project, select *OAS 3.0 (Beta)* in the *
 * Publish API specifications to Anypoint Exchange.
 
 Anypoint Exchange
+* Publish an existing specification.
++
+On the Publish a new asset page, select *REST API - OAS* in the *Asset type* field.
 * Share API specifications.
 * View documentation that is written into API specifications.
 * Publish API specifications to Anypoint Community Manager.
