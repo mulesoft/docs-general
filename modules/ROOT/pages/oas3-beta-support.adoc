@@ -1,5 +1,7 @@
 = Beta Support for OAS 3.0._x_
 
+Phase 1 of the support for OAS 3.0._x_ lets you use these products for the listed purposes:
+
 == API Designer
 
 * Create API specifications
@@ -10,6 +12,7 @@ When creating a new API-specificatinon project, select *OAS 3.0 (Beta)* in the *
 * View documentation that is written into API specifications.
 * Simulate calls to API specifications.
 * Publish API specifications to Anypoint Exchange.
+* Duplicate an OAS 3 specification as a RAML or OAS 2 specification and then download. Then, can import into Anypoint Studio or into API Manager.
 
 == Anypoint Exchange
 
