@@ -1,6 +1,7 @@
 = Beta Support for OAS 3.0._x_
 
-API Designer
+== API Designer
+
 * Create API specifications
 +
 When creating a new API-specificatinon project, select *OAS 3.0 (Beta)* in the *Language* field.
@@ -10,7 +11,8 @@ When creating a new API-specificatinon project, select *OAS 3.0 (Beta)* in the *
 * Simulate calls to API specifications.
 * Publish API specifications to Anypoint Exchange.
 
-Anypoint Exchange
+== Anypoint Exchange
+
 * Publish an existing specification.
 +
 On the Publish a new asset page, select *REST API - OAS* in the *Asset type* field.
@@ -18,6 +20,7 @@ On the Publish a new asset page, select *REST API - OAS* in the *Asset type* fie
 * View documentation that is written into API specifications.
 * Publish API specifications to Anypoint Community Manager.
 
-Anypoint Community Manager
+== Anypoint Community Manager
+
 * Showcase specifications to partners and customers.
 * View documentation that is written into API specifications.
