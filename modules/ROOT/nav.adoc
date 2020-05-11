@@ -1,5 +1,6 @@
 .xref:index.adoc[Anypoint Platform]
 * xref:index.adoc[MuleSoft Documentation]
+* xref:oas3-beta-support.adoc[Beta Support for OAS 3.0._x_]
 * xref:api-led-overview.adoc[Build an API from Start to Finish]
   ** xref:api-led-prerequisites.adoc[Step 1. Prerequisites]
   ** xref:api-led-design.adoc[Step 2. Design an API Specification]
