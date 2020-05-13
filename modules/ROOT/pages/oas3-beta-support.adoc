@@ -7,7 +7,11 @@ endif::[]
 
 Phase 1 of the support for OAS 3.0 is included in Anypoint Exchange, API Community Manager, and API Designer.
 
-== Anypoint Exchange
+Perhaps the most important aspect of this beta support is that it lets you publish OAS 3 specifications to your API community, so that you can share them with partners and customers to help drive their adoption.
+
+If you want to implement or deploy API specifications written in OAS 3, however, during this beta you must first convert them to RAML or OAS 2.
+
+== Beta Features in Anypoint Exchange
 
 * Publish an existing OAS 3 specification.
 +
@@ -15,13 +19,26 @@ On the *Publish a new asset* page, select *REST API - OAS* in the *Asset type* f
 * Share OAS 3 specifications.
 * View documentation that is written into OAS 3 specifications.
 * Publish OAS 3 specifications to Anypoint Community Manager.
+* Share OAS 3 specifications as RAML specifications with Anypoint Studio and API Manager.
++
+.How to convert OAS 3.0 files to RAML for import into Anypoint Studio or API Manager
+image::aex-download.png[The Download option]
++
+. In the top-right corner of Anypoint Exchange, click *Download*.
+. Select *As RAML*.
+. After downloading the file, import it into Anypoint Studio or into API Manager.
++
+[NOTE]
+====
+If you want to share an OAS 3 specification in OAS 2, download your OAS 3 specification as-is, and then convert it to OAS 2 by using a tool such as APIMatic.
+====
 
-== API Community Manager
+== Beta Features in API Community Manager
 
 * Publish OAS 3 specifications to your API community, sharing them with partners and customers to help drive their adoption.
 * View documentation that is written into OAS 3 specifications.
 
-== API Designer
+== Beta Features in API Designer
 
 * Create API specifications in OAS 3.
 +
@@ -39,12 +56,17 @@ image::apid-import.png[Options for importing]
 * View documentation that is written into OAS 3 specifications.
 * Simulate calls to methods that are in OAS 3 specifications.
 * Publish OAS 3 specifications to Anypoint Exchange.
-* Share OAS 3 specifications with Anypoint Studio and API Manager.
+* Share OAS 3 specifications as RAML specifications with Anypoint Studio and API Manager.
 +
-.How to download OAS 3.0 files for import into Anypoint Studio or API Manager
-image::apid-duplicate.png[The Duplicate As option]
+.How to convert OAS 3.0 files to RAML for import into Anypoint Studio or API Manager
+image::apid-duplicate.png[The Download As option]
 +
 . Next to the name of the file, click the three dots.
-. Click *Download As*.
-. (Not pictured) In the *Download As* dialog, select *OAS 2.0* or *RAMl 1.0*.
+. Select *Download As*.
+. (Not pictured) In the *Download As* dialog, select *RAMl 1.0*.
 . After downloading the file, import it into Anypoint Studio or into API Manager.
++
+[NOTE]
+====
+If you want to share an OAS 3 specification in OAS 2, download your OAS 3 specification as-is, and then convert it to OAS 2 by using a tool such as APIMatic.
+====
