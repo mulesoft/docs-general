@@ -5,17 +5,16 @@ endif::[]
 
 :imagesdir: ../assets/images
 
-
 Phase 1 of the support for OAS 3.0 is included in Anypoint Exchange, API Community Manager, and API Designer.
 
 == Anypoint Exchange
 
-* Publish an existing specification.
+* Publish an existing OAS 3 specification.
 +
-On the Publish a new asset page, select *REST API - OAS* in the *Asset type* field.
-* Share API specifications.
-* View documentation that is written into API specifications.
-* Publish API specifications to Anypoint Community Manager.
+On the *Publish a new asset* page, select *REST API - OAS* in the *Asset type* field.
+* Share OAS 3 specifications.
+* View documentation that is written into OAS 3 specifications.
+* Publish OAS 3 specifications to Anypoint Community Manager.
 
 == API Community Manager
 
