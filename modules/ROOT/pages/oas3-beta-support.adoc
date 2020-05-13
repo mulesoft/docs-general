@@ -1,4 +1,10 @@
 = Beta Support for OAS 3.0._x_
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+:imagesdir: ../assets/images
+
 
 Phase 1 of the support for OAS 3.0._x_ lets you use these products for the listed purposes:
 
@@ -8,7 +14,15 @@ Phase 1 of the support for OAS 3.0._x_ lets you use these products for the liste
 +
 When creating a new API-specificatinon project, select *OAS 3.0 (Beta)* in the *Language* field.
 * Import API specifications from Anypoint Exchange or from your file system.
-* Develop and edit specficiations.
++
+.How to import files into an API-specification project in API Designer
+image::apid-import.png[Options for importing]
++
+. Click the gear icon in the top-right corner of the text editor.
+. Select either of these options:
+** Select *Import from Exchange* to see a list of the API specifications that are available from the business organization that your user ID belongs to in Anypoint Platform and a list of the API specifications that are published by MuleSoft.
+** Select *Import* to import an API specification from your local filesystem.
+* Develop and edit specfications.
 * View documentation that is written into API specifications.
 * Simulate calls to API specifications.
 * Publish API specifications to Anypoint Exchange.
@@ -27,3 +41,5 @@ On the Publish a new asset page, select *REST API - OAS* in the *Asset type* fie
 
 * Showcase specifications to partners and customers.
 * View documentation that is written into API specifications.
+
+More features are coming in Phase 2!
