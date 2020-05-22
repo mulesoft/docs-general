@@ -36,8 +36,6 @@ To make an OAS 3.0 API specification available for downloading as RAML from Anyp
 . Publish the project to Anypoint Exchange.
 
 
-
-
 == Beta Features in API Community Manager
 
 * Publish OAS 3.0 specifications to your API community, sharing them with partners and customers to help drive their adoption.
@@ -61,28 +59,17 @@ image::apid-import.png[Options for importing]
 * View documentation that is written into OAS 3.0 API specifications.
 * Simulate calls to methods that are in OAS 3.0 API specifications.
 * Publish OAS 3.0 API specifications to Anypoint Exchange.
+* Share OAS 3.0 specifications as RAML specifications for scaffolding and implementation with 3rd party IDEs.
 +
-[NOTE]
-====
-If you want to publish an OAS 3.0 API specification to Anypoint Exchange as a RAML API specification, follow these steps:
+To make an OAS 3.0 API specification available for downloading as RAML from Anypoint Exchange for use in Anypoint Studio and API Manager:
 +
-. Next to the name of the file, click the three dots.
-. Select *Duplicate As*.
-. In the *Duplicate As* dialog, select *RAMl 1.0*.
-. Set the new duplicate as the root file in the project.
+. Import the OAS 3.0 API specification into API Designer.
+. Click the three dots next to the filename in the *Files* pane and select *Duplicate*.
+. In the *Duplicate As* dialog, select *RAML*.
+. Set the root file of the project to the RAML version of the API specification.
 . Publish the project to Anypoint Exchange.
-====
-* Share OAS 3.0 specifications as RAML specifications with Anypoint Studio and API Manager.
-+
-.How to convert OAS 3.0 files to RAML for import into Anypoint Studio or API Manager
-image::apid-duplicate.png[The Download As option]
-+
-. Next to the name of the file, click the three dots.
-. Select *Download As*.
-. (Not pictured) In the *Download As* dialog, select *RAMl 1.0*.
-. After downloading the file, import it into Anypoint Studio or into API Manager.
-+
+
 [NOTE]
 ====
-If you want to share an OAS 3.0 specification in OAS 2, download your OAS 3.0 specification as-is, and then convert it to OAS 2.0by using a tool such as APIMatic transformer.
+If you want to share an OAS 3.0 specification in OAS 2, download your OAS 3.0 specification from API Designer as-is, and then convert it to OAS 2.0 by using a tool such as APIMatic transformer.
 ====
