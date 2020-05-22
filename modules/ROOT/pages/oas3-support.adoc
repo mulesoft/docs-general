@@ -53,7 +53,9 @@ image::apid-import.png[Options for importing]
 +
 . Click the gear icon in the top-right corner of the text editor.
 . Select either of these options:
-** Select *Import from Exchange* to see a list of the API specifications that are available from the business organization that your user ID belongs to in Anypoint Platform and a list of the API specifications that are published by MuleSoft.
+** Select *Import from Exchange* to see both of these lists:
+*** A list of the API specifications that are available from the business organization that your user ID belongs to in Anypoint Platform *** A list of the API specifications that are published by MuleSoft.
+
 ** Select *Import* to import an API specification from your local filesystem.
 * Develop and edit OAS 3.0 specfications.
 * View documentation that is written into OAS 3.0 API specifications.
