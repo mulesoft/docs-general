@@ -46,7 +46,7 @@ To make an OAS 3.0 API specification available for downloading as RAML from Anyp
 * Create API specifications in OAS 3.
 +
 When creating a new API-specification project, select *OAS 3.0 (Beta)* in the *Language* field.
-* Import OAS 3.0 specifications from Anypoint Exchange or from your file system.
+* Import OAS 3.0 specifications from Anypoint Exchange or from your filesystem.
 +
 .How to import files into an API-specification project in API Designer
 image::apid-import.png[Options for importing]
