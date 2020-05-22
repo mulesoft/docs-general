@@ -18,7 +18,7 @@ If you want to implement or deploy API specifications written in OAS 3, however,
 On the *Publish a new asset* page, select *REST API - OAS* in the *Asset type* field.
 * Share OAS 3.0 API specifications.
 * View documentation that is written into OAS 3.0 API specifications.
-* Publish OAS 3.0 API specifications to Anypoint Community Manager.
+* Publish OAS 3.0 API specifications to API Community Manager.
 * Share OAS 3.0 API specifications as RAML specifications with Anypoint Studio and API Manager.
 +
 .How to convert OAS 3.0 files to RAML for import into Anypoint Studio or API Manager
