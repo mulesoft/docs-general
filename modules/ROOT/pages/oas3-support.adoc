@@ -59,7 +59,7 @@ image::apid-import.png[Options for importing]
 * View documentation that is written into OAS 3.0 API specifications.
 * Simulate calls to methods that are in OAS 3.0 API specifications.
 * Publish OAS 3.0 API specifications to Anypoint Exchange.
-* Share OAS 3.0 specifications as RAML specifications for scaffolding and implementation with 3rd party IDEs.
+* Share OAS 3.0 specifications as RAML specifications for scaffolding and implementation with third-party IDEs.
 +
 To make an OAS 3.0 API specification available for downloading as RAML from Anypoint Exchange for use in Anypoint Studio and API Manager:
 +
