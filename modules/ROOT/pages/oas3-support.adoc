@@ -5,11 +5,11 @@ endif::[]
 
 :imagesdir: ../assets/images
 
-Phase 1 of the support for OAS 3.0 is included in Anypoint Exchange, API Community Manager, and API Designer. You can catalog existing OAS 3.0 API specifications to enable partner and customer collaboration scenarios. You can also create and edit API specifications in OAS 3.
+Phase 1 of the support for OAS 3.0 is included in Anypoint Exchange, API Community Manager, and API Designer. You can catalog existing OAS 3.0 API specifications to enable partner- and customer-collaboration scenarios. You can also create and edit API specifications in OAS 3.
 
-Perhaps the most important aspect of this beta support is that it lets you publish OAS 3.0 specifications to your API community, so that you can share them with partners and customers to help drive their adoption.
+Perhaps the most important aspect of this beta support is that it enables you publish OAS 3.0 specifications to your API community, so that you can share them with partners and customers to help drive their adoption.
 
-If you want to implement or deploy API specifications written in OAS 3.0, however, during this beta you must first convert them to RAML or OAS 2.
+If you want to implement or deploy API specifications written in OAS 3.0 during this beta, you must first convert them to RAML or OAS 2.
 
 == Beta Features in Anypoint Exchange
 
@@ -17,15 +17,15 @@ If you want to implement or deploy API specifications written in OAS 3.0, howeve
 +
 On the *Publish a new asset* page, select *REST API - OAS* in the *Asset type* field.
 * Share OAS 3.0 API specifications.
-
++
 [NOTE]
 ====
 If you want to share an OAS 3.0 API specification as OAS 2, download your OAS 3.0 API specification from Anypoint Exchange as-is, and then convert it to OAS 2.0 by using a tool such as APIMatic transformer.
 ====
 
-* View documentation that is written into OAS 3.0 API specifications.
+* View documentation that is written in OAS 3.0 API specifications.
 * Publish OAS 3.0 API specifications to API Community Manager.
-* Download OAS 3.0 API specifications as RAML API specifications for scaffolding and implementation with 3rd party IDEs.
+* Download OAS 3.0 API specifications as RAML API specifications for scaffolding and implementation with third-party IDEs.
 +
 To make an OAS 3.0 API specification available for downloading as RAML from Anypoint Exchange for use in Anypoint Studio and API Manager:
 +
