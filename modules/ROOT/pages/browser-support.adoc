@@ -1,0 +1,24 @@
+= Browser Support for Anypoint Platform
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:page-aliases: api-community-manager::browser-support.adoc
+
+Use Anypoint Platform with the latest version of any supported browser:
+
+* Microsoft Edge with Chromium
+* Microsoft Edge without Chromium (supported through December 31, 2020)
+* Google Chrome
+* Mozilla Firefox
+* Safari
+
+The Anypoint Platform browser support follows the Salesforce Lightning Experience policy.
+
+== Unsupported Browsers
+
+Internet Explorer versions 11 and earlier are not supported by MuleSoft.
+If you use the browser with Anypoint Platform, you might experience issues.
+
+== See Also
+
+https://help.salesforce.com/articleView?id=getstart_browsers_sfx.htm&type=5[Supported Browsers for Lightning Experience^]
