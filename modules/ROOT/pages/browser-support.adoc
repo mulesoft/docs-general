@@ -12,11 +12,18 @@ Use Anypoint Platform with the latest version of any supported browser:
 * Mozilla Firefox
 * Safari
 
-The Anypoint Platform browser support follows the Salesforce Lightning Experience policy.
+Browser support for Anypoint Platform follows the Salesforce Lightning Experience policy.
+
+== Exceptions to Browser Support Policy
+
+API Community Manager and Partner Manager 2.0 each modify the browser support policy:
+
+* xref:api-community-manager::data-sheets.adoc[API Community Manager]
+* xref:release-notes::partner-manager/anypoint-partner-manager-2.0-release-notes#browser-compatibility.adoc[Partner Manager 2.0]
 
 == Unsupported Browsers
 
-Internet Explorer versions 11 and earlier are not supported by MuleSoft.
+Internet Explorer versions 11 and earlier are not supported.
 If you use the browser with Anypoint Platform, you might experience issues.
 
 == See Also
