@@ -141,6 +141,6 @@ The following table lists which runtime plane options are supported in each cont
 |===
 | Runtime Plane | US Cloud | EU Cloud| Government Cloud | Anypoint Platform PCE
 | CloudHub | Y | Y | Y | N
-| Standalone runtimes | Y | Y | N | Y
+| Standalone runtimes | Y | Y | Y | Y
 | Runtime Fabric | Y | Y | N | N
 |===
