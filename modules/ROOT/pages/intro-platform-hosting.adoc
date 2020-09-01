@@ -78,7 +78,7 @@ Not all Anypoint Platform components are supported in all cloud environments. Th
 | Anypoint Security tokenization | Y | Y | N | N
 | CloudHub runtimes | Y | Y | Y | N
 | Runtime Fabric | Y | Y | N | N
-| Customer-hosted Runtimes | Y | Y | Y | Y
+| Customer-hosted runtimes | Y | Y | Y | Y
 |===
 
 == Runtime Plane Hosting Options
