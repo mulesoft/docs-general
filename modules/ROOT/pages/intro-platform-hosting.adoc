@@ -78,7 +78,7 @@ Not all Anypoint Platform components are supported in all cloud environments. Th
 | Anypoint Security tokenization | Y | Y | N | N
 | CloudHub runtimes | Y | Y | Y | N
 | Runtime Fabric | Y | Y | N | N
-| Customer-hosted Runtimes | Y | Y | N | Y
+| Customer-hosted runtimes | Y | Y | Y | Y
 |===
 
 == Runtime Plane Hosting Options
@@ -107,7 +107,7 @@ The standalone option enables you to host Mule runtime engine server and related
 +
 When using standalone runtimes, you are also responsible for providing the framework for high availability, failover, clustering and load balancing. See xref:mule-runtime::mule-standalone[Run Mule Runtime Engine On-Premises].
 +
-You can manage standalone runtimes by using cloud control planes (US Cloud, EU Cloud) or a customer-hosted control plane (Anypoint Platform PCE). MuleSoft Government Cloud does not support standalone runtimes.
+You can manage standalone runtimes by using cloud control planes (US Cloud, EU Cloud, MuleSoft Government Cloud) or a customer-hosted control plane (Anypoint Platform PCE).
 
 === Support Matrix for Runtime Plane Hosting Options
 
