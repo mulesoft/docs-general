@@ -62,7 +62,7 @@ Not all Anypoint Platform components are supported in all cloud environments. Th
 |===
 | Anypoint Platform Component | US Cloud | EU Cloud | MuleSoft Government Cloud | Anypoint Platform PCE
 | API Designer | Y | Y | Y | Y
-| Anypoint Studio | Y | Y | Y | Y
+| Anypoint Studio | Y | Y | N | Y
 | Flow Designer | Y | Y | N | N
 | Anypoint Exchange | Y | Y | Y | Y
 | Anypoint API Community Manager | Y | Y | N | N
