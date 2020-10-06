@@ -158,7 +158,7 @@ link:https://anypoint.mulesoft.com/designcenter/#/projects["Take me to API Desig
 . Click *Publish*. 
 . Click *Publish to Exchange*.
 +
-image:publish-to-exchange1.png[]
+image:publish-to-exchange1.png[User interface for publishing to Exchange]
 . Accept all the default values, and verify that you see the message *Valid Specification*.
 . Click *Publish*, and then *Done*.
 
