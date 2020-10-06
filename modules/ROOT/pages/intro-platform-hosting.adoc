@@ -6,7 +6,7 @@ You can host different parts of Anypoint Platform in different locations, either
 
 To understand the different hosting options that MuleSoft supports, it is important to understand the control plane and runtime plane within the context of Anypoint Platform.
 
-image:intro-control-runtime-planes.png[]
+image:intro-control-runtime-planes.png[Diagram of contents of the control plane and runtime plane]
 
 * Control plane
 +
