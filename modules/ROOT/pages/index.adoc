@@ -1,4 +1,4 @@
-= MuleSoft Documentation
+= Welcome to the Anypoint Platform
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
@@ -80,10 +80,6 @@ During development or after deployment, you can make changes to your integration
 * xref:release-notes::index.adoc[Release Notes]
 * http://developer.mulesoft.com[MuleSoft developer site^]
 * https://training.mulesoft.com/[Training^]
-
-== Contributing to the Documentation
-
-To contribute to the English version of this documentation, select *Edit in Github* on the page you wish to modify, and submit a pull request to the git repo. Your improvements to MuleSoft documentation are appreciated by the entire community. Thank you!
 
 == Archived Documentation
 
