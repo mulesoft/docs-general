@@ -9,9 +9,10 @@ To contribute to the English version of this documentation:
 
 . Select *Edit in Github* on the page you wish to modify.
 . Submit a pull request to the git repository.
-. If it is the first time you are submitting a pull request:
-  .. Read https://github.com/mulesoft/docs-connectors/blob/latest/README.adoc[the contributor's agreement].
-  .. Run the https://api-notebook.anypoint.mulesoft.com/notebooks/#d28e8f95e739ee1e1e30d5ec577f4a27[API Notebook].
+. If it is the first time you are submitting a pull request,
+run the https://api-notebook.anypoint.mulesoft.com/notebooks/#d28e8f95e739ee1e1e30d5ec577f4a27[API Notebook].
 If you aren't already logged in to your GitHub account, you can do so using the link provided.
+
+image:api-notebook1.png[User interface for running the API notebook to become a contributor]
 
 The Documentation team will either accept your PR or reach out if there are questions.
