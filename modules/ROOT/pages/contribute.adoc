@@ -1,0 +1,18 @@
+= Contribute to MuleSoft Documentation
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+Many of our documentation repositories are open and we welcome your contributions!
+
+To contribute to the English version of this documentation:
+
+. Select *Edit in Github* on the page you want to modify.
+. Submit a pull request to the Git repository.
+. If this is the first time you are submitting a pull request,
+run the https://api-notebook.anypoint.mulesoft.com/notebooks/#d28e8f95e739ee1e1e30d5ec577f4a27[API Notebook].
+If you aren't already logged in to your GitHub account, you can do so using a link provided in the API Notebook.
+
+image:api-notebook1.png[User interface for running the API notebook to become a contributor]
+
+The Documentation team will either accept your PR or reach out if there are questions.
