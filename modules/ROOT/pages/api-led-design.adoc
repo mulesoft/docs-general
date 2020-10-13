@@ -118,7 +118,7 @@ To test the API specification:
 +
 link:https://anypoint.mulesoft.com/designcenter/#/projects["Take me to API Designer^" role="button-primary"]
 +
-image:api-spec1.png[Completed specification, 150]
+image:api-spec1.png[Completed specification, 25]
 +
 . Click the X next to *Mocking service* to enable it. 
 +
