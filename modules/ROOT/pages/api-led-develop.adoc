@@ -67,7 +67,7 @@ to create an API:
 
 Notice that there are three different views of the canvas:
 
-image:canvas-tabs.png[One canvas and links to all three views]
+image:canvas-tabs.png[One canvas and links to all three views, 500]
 
 * *Message Flow* view makes it easy to drag and drop modules, connectors, and other assets and create the relationships between them.
 * *Global Elements* view makes it easy to specify global elements used in multiple projects.
@@ -91,14 +91,14 @@ Using the scaffolding provided by Studio, complete the API by configuring the `/
 
 . In *Message Flow* tab of the canvas, scroll down until you see the `/greeting` endpoint module:
 +
-image:greeting-module.png[View of GET connector as created by scaffolding]
+image:greeting-module.png[View of GET connector as created by scaffolding, 500]
 . Right-click the *Transform Message* and delete it.
 . In *Mule Palette*, select *Favorites* to display a list of core connectors.
 . Click *Set Payload* to select it, and then drag it into the space where you deleted Transform Message, to the right of the area labeled *Source*.
 . Specify the logic that displays the data sent in a response from hello-world API:
   .. Click the Set Payload transformer you just added to the flow.
 +
-image:set-payload.png[View of canvas and configuration dialog for Set Payload connector]
+image:set-payload.png[View of canvas and configuration dialog for Set Payload connector, 500]
   .. Below the canvas, in the *General* tab, click the *fx* (function) button to deselect it. For this tutorial, we are hard-coding the value.
   .. Set *Value* under *Settings* to `Today the greeting is Hello.`
 . Save your work by selecting *File > Save All*.
@@ -179,7 +179,7 @@ image:pub-to-exchange.png[Dialog to publish API to Exchange]
 +
 After the project is uploaded to Exchange, you are provided with a direct link to the project.
 +
-image:link-to-published-api.png[Dialog showing link to API published in Exchange]
+image:link-to-published-api.png[Dialog showing link to API published in Exchange, 600]
 . Click the link to view the project in Exchange.
 +
 image:published-in-exchange.png[API viewed from Exchange]

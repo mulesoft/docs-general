@@ -72,7 +72,7 @@ link:https://anypoint.mulesoft.com/login["Take me to Anypoint Platform^", role="
 
 API Manager shows you a status page for your new proxy. 
 
-image:proxy1.png[status page for API before proxy]
+image:proxy1.png[status page for API before proxy, 600]
 
 Now that our API is managed in API Manager, we can create a proxy in the next step.
 
@@ -98,7 +98,7 @@ link:https://anypoint.mulesoft.com/login["Take me to Anypoint Platform^", role="
 
 Now you have an implmentation URL that you don't want to share with the world, and a proxy URL which will be safe to share with the world once we configure it.
 
-image:proxy-deploy2.png[settings page showing URLs]
+image:proxy-deploy2.png[settings page showing URLs, 600]
 
 To configure the proxy:
 
@@ -110,7 +110,7 @@ Now you can test the proxy endpoint from Exchange:
 
 . Click *View API in Exchange*.
 +
-image:exchange-page-for-proxy.png[Exchange page for hello-world proxy]
+image:exchange-page-for-proxy.png[Exchange page for hello-world proxy, 600]
 
 . Click *API instances*. You can see the Mocking Service version and the new proxy you just created in the Sandbox environment, labeled "no policy". 
 . On the left side, click */greeting* to open, then click *GET*.
