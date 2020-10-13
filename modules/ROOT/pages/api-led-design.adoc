@@ -118,11 +118,11 @@ To test the API specification:
 +
 link:https://anypoint.mulesoft.com/designcenter/#/projects["Take me to API Designer^" role="button-primary"]
 +
-image:api-spec1.png[Completed specification, 25]
+image:api-spec1.png[Completed specification]
 +
 . Click the X next to *Mocking service* to enable it. 
 +
-image:mocking-service.png[Enabled mocking service]
+image:mocking-service.png[Enabled mocking service, 150]
 +
 If you see a checkmark instead of an X, the mocking service is already enabled.
 . Look for the label *API endpoints*. You can see the endpoint you defined. HTTP requests appear in green boxes.
