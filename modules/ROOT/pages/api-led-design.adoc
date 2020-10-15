@@ -122,31 +122,31 @@ image:api-spec1.png[Completed specification]
 +
 . Click the X next to *Mocking service* to enable it. 
 +
-image:mocking-service.png[Enabled mocking service]
+image:mocking-service.png[Enabled mocking service, 500]
 +
 If you see a checkmark instead of an X, the mocking service is already enabled.
 . Look for the label *API endpoints*. You can see the endpoint you defined. HTTP requests appear in green boxes.
 +
-image:get-button.png[GET button]
+image:get-button.png[GET button, 500]
 . Click *GET* to display the GET request and more information about the specification.
 +
-image:code-response1.png[Response field]
+image:code-response1.png[Response field, 500]
 . Click *Code examples* to review samples for each protocol.
 . Click *200* and *404* under *Responses* to review the responses defined in the API specification.
 . Click the blue *Try it* button.
 +
-image:try-it.png[The Try It button]
+image:try-it.png[The Try It button, 500]
 . Click *Send* to send your request to the temporary request URL that the mocking service creates from your specification.
 +
-image:ignore-this.png[Error messages you can ignore]
+image:ignore-this.png[Error messages you can ignore, 500]
 +
 It's safe to ignore any error messages on this screen. A successful request returns `200 OK` and the test message:
 +
-image:successful-test1.png[Results of a successful test]
+image:successful-test1.png[Results of a successful test, 500]
 . Click *Details* to examine the response headers and request headers in the mocking service to help diagnose issues or understand the behavior of your API specification.
 . When you have finished testing, click the mocking service checkmark to disable the mocking service again.
 +
-image:enabled-service.png[Mocking service control before being disabled]
+image:enabled-service.png[Mocking service control before being disabled, 500]
 
 == Step 2.4. Publish Your API Specification
 
@@ -158,7 +158,7 @@ link:https://anypoint.mulesoft.com/designcenter/#/projects["Take me to API Desig
 . Click *Publish*. 
 . Click *Publish to Exchange*.
 +
-image:publish-to-exchange1.png[User interface for publishing to Exchange]
+image:publish-to-exchange1.png[User interface for publishing to Exchange, 500]
 . Accept all the default values, and verify that you see the message *Valid Specification*.
 . Click *Publish*, and then *Done*.
 
