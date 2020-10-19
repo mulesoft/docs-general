@@ -15,7 +15,7 @@ If you aren't already logged in to your GitHub account, you can do so using a li
 
 image:api-notebook1.png[User interface for running the API notebook to become a contributor]
 
-A Salesforce bot asks you in your pull request to complete this process if you submit the pull request without running the API Notebook first.
-Normally you'll only have to run the API Notebook once per GitHub account.
+If you submit the pull request without running the API Notebook first, you will receive a message in the pull request asking you to do so.
+The API Notebook only needs to run once per GitHub account.
 
 The Documentation team will either accept your PR or reach out if there are questions.
