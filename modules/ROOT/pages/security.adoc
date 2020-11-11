@@ -7,5 +7,5 @@ Anypoint Platform builds in security at every stage:
 
 * In xref:access-management::index.adoc[the Access Management user interface], manage access for users, groups, environments, client providers, identity providers, connected apps, and external access.
 You can also manage access with https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/access-management-api/[Access Management APIs].
-* In xref:api-manager::index.adoc[the API Manager user interface], build security into your APIs with policies.
+* In xref:2@api-manager::index.adoc[the API Manager user interface], build security into your APIs with policies.
 * In xref:monitoring::index.adoc[the Anypoint Monitoring user interface], monitor Anypoint Platform for DoS attacks and other security issues.
