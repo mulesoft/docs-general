@@ -1,0 +1,11 @@
+= Anypoint Platform Security
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+Use Anypoint Platform to build security into your application network:
+
+* Manage access for users, groups, environments, client providers, identity providers, connected apps, and external access with xref:access-management::index.adoc[the Access Management user interface].
+You can also manage access programmatically with https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/access-management-api/[Access Management APIs].
+* Apply policies to your APIs with xref:2.x@api-manager::latest-overview-concept.adoc[the API Manager user interface].
+* Monitor Anypoint Platform for denial-of-service attacks and other security issues with xref:monitoring::index.adoc[the Anypoint Monitoring user interface].
