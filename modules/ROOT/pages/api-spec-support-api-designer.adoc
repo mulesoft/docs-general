@@ -5,34 +5,50 @@ endif::[]
 :keywords: api, instance, manager
 
 
-[%header%autowidth.spread,cols="a,a,a,a,a"]
+[%header%autowidth.spread,cols="a,a,a,a"]
 |===
-| Feature | Description | RAML Implementation | OAS Implementation | API Designer Support 
-| Modularity | The ability to break an API specification into reusable and shared units. | Not applicable  | Not applicable  | Not applicable 
-| API Document | The main API specification description metadata, which is the entry point for the specification. | RAML doc | OAS doc | The design of the API project console is rendered and the document and examples are validated. |
-| Libraries | The unit containing collections of related reusable description elements. | RAML library | Implemented indirectly using an empty specification. Only components are supported in the OAS doc. | Edited as a stand-alone project. Supports the reuse of the module in an API project.
-| Fragments | Stand-alone component of the specification that describes a specific element. | RAML fragment | Implemented indirectly using an empty specification with only one declaration
-or an OAS doc with a single component.| Edited as a stand-alone project and reuse of the module enabled in an API project. |
-| Overlays | A partial description of the API specification that you can use to overwrite non-functional aspects of the API specification by composing it with the original specification, for example, translating the documentation to other languages. | RAML overlay | Can be simulated with JSON patch or merge tooling. | Can be edited and rendered correctly if used as main the project file.|
-| Extensions | Partial description of the API spec that can be used to overwrite non-functional aspects of the API spec composing it with the original specification, like for example adding the security information for a managed API | RAML extension | Can be simulated with JSON patch or merge tooling. | Can be edited and rendered correctly if used as main the project file.
-| Reusability | Ability to reuse of the API description in multiple specifications. | Not applicable | Not applicable  | Not applicable 
-| Inline declarations and references | Ability to declare and reference elements from multiple documents. | Inclusion and name refs, RAML type, traits, resource types, and annotations declarations. | JSON-Refs and OAS components. | Autocompletion when editing and dedicated rendering provided in the console.
-| Traits | Macros that extend operations in the functional model, such as pagination, that can be reused in multiple specifications for consistency | Operation macros and RAML traits | Not applicable | Autocompletion when editing and dedicated rendering in console.
-| Resource types | Macros that extend resources in the functional model with complex behavior and data definition that can be reused in multiple specifications for consistency | Endpoint macros
-and RAML resource types | Not applicable | Autocompletion when editing and dedicated rendering in console.
-| API Metadata | *Do we need this?*| | |
-| API Entrypoint | The main entry point for the API description, mostly human-readable information, such as title, version, license, and so forth. | RAML document top level information | OAS Open API object| Can be edited and validated and enables console rendering.
-| Server and protocols | Actual connectivity to the service | RAML base URI information | OAS Server object | Small differences in the supported protocols 
-| Terms of service & licensing | User agreement and licensing information of the API | Only plain documentation | OAS Info object | 
-| User documentation | ? | RAML description properties in different parts of the spec | OAS different 'description' properties in the spec 'objects' 
-| Localized documentation | Multi-lingual descriptions | Through overlays | Not applicable | Not applicable 
-| Tags | Classification of parts of the specification | Only use annotations | OAS Tag object | Not applicable
-| Endpoints | Resources and RPC invocations in the API | RAML resources | OAS Path Item objects under the Paths object | RAML is more RESTful, which makes it explicit in its working with resources and allowing the nesting of those resources | Allows editing and validations, and enables console rendering
-| Methods and bindings to HTTP uniform interface | Operations over the resource and information about how to invoke the RPC operation | Get, Patch, Put, Post, Delete, Options, and head RAML operations | Get, Put, Post, Delete, Options, Head, Patch, Trace and fixed fields under the OAS Path Item object | Allows editing and validations, and enables console rendering
-| Input parameters and HTTP bindings | Input parameters and HTTP bindings | RAML parameters | OAS Parameter object | Allows editing and validations, and enables console rendering
-| Responses with multiple media types | Output parameter for the operation | RAML responses | OAS Response object | Allows editing and validations, and enables console rendering
-| Responses with bindings to HTTP status codes | Binding to the HTTP status code | RAML responses | OAS Response object | Allows editing and validations, and enables console rendering
-| Callbacks | Asynchronous invocations and webhooks | Not applicable | OAS Callback object | Allows editing and validations, and enables console rendering
-| Links | Static connections between endpoints in the specification, excluding hyperlinks in the data |  Not applicable | OAS Link object | Allows editing and validations, and enables console rendering
-| 
+| Feature: Description| RAML Implementation | OAS Implementation | API Designer Support 
+| Modularity: The ability to break an API specification into reusable and shared units. | Not applicable  | Not applicable  | Not applicable 
+| API Document: The main API specification description metadata, which is the entry point for the specification. | RAML doc | OAS doc | The design of the API project console is rendered and the document and examples are validated. 
+| Libraries: The unit containing collections of related reusable description elements. | RAML library | Implemented indirectly using an empty specification. Only components are supported in the OAS doc. | Edited as a stand-alone project. Supports the reuse of the    module in an API project.
+| Fragments: Stand-alone component of the specification that describes a specific element. | RAML fragment | Implemented indirectly using an empty specification with only one declaration
+or an OAS doc with a single component.| Edited as a stand-alone project and reuse of the module enabled in an API project. 
+| Overlays: A partial description of the API specification that you can use to overwrite non-functional aspects of the API specification by composing it with the original specification, for example, translating the documentation to other languages. | RAML overlay | Can be simulated with JSON patch or merge tooling. | Can be edited and rendered correctly if used as main the project file.
+| Extensions: A partial description of the API spec that can be used to overwrite non-functional aspects of the API spec composing it with the original specification, like for example adding the security information for a managed API | RAML extension | Can be simulated with JSON patch or merge tooling. | Can be edited and rendered correctly if used as main the project file.
+| Reusability: The ability to reuse of the API description in multiple specifications. | Not applicable | Not applicable  | Not applicable 
+| Inline declarations and references: The ability to declare and reference elements from multiple documents. | Inclusion and name refs, RAML type, traits, resource types, and annotations declarations. | JSON-Refs and OAS components. | Autocompletion when editing and dedicated rendering provided in the console.
+| Traits: Macros that extend operations in the functional model, such as pagination, that can be reused in multiple specifications for consistency | Operation macros and RAML traits | Not applicable | Autocompletion when editing and dedicated rendering in console.
+| Resource types: Macros that extend resources in the functional model with complex behavior and data definition that can be reused in multiple specifications for consistency | Endpoint macros and RAML resource types | Not applicable | Autocompletion when editing and dedicated rendering in console.
+| API Metadata | *Do we need this?*| | 
+| API Entrypoint: The main entry point for the API description, mostly human-readable information, such as title, version, license, and so forth. | RAML document top level information | OAS Open API object| Can be edited and validated and enables console rendering.
+| Server and protocols: Denotes the actual connectivity to the service | RAML base URI information | OAS Server object | Small differences in the supported protocols.
+| Terms of service & licensing: The user agreement and licensing information of the API | Only plain documentation | OAS Info object | 
+| User documentation: ? | RAML description properties in different parts of the spec | OAS different 'description' properties in the spec 'objects' | Can be edited and validated and enables console rendering.
+| Localized documentation: Specifies multi-lingual descriptions | Using overlays | Not applicable | Not applicable 
+| Tags: Classification of parts of the specification | Only use annotations | OAS Tag object | Not applicable
+| Endpoints: Refers to the resources and RPC invocations in the API | RAML resources--RAML is more RESTful, which makes it explicit in its working with resources and allowing the nesting of those resources | OAS Path Item objects under the Paths object | Allows editing and validations, and enables console rendering.
+| Methods and bindings to HTTP uniform interface: Includes operations over the resource and information about how to invoke the RPC operation. | Get, Patch, Put, Post, Delete, Options, and head RAML operations | Get, Put, Post, Delete, Options, Head, Patch, Trace and fixed fields under the OAS Path Item object | Allows editing and validations, and enables console rendering.
+| Input parameters and HTTP bindings: Specifies the input parameters for the operation. | RAML parameters | OAS Parameter object | Allows editing and validations, and enables console rendering.
+| Responses with multiple media types: Specifies the output parameter for the operation. | RAML responses | OAS Response object | Allows editing and validations, and enables console rendering.
+| Responses with bindings to HTTP status codes: Specifies the binding to the HTTP status code. | RAML responses | OAS Response object | Allows editing and validations, and enables console rendering.
+| Callbacks: Specifies the asynchronous invocations and webhooks. | Not applicable | OAS Callback object | Allows editing and validations, and enables console rendering.
+| Links: Specifies the static connections between endpoints in the specification, excluding hyperlinks in the data. |  Not applicable | OAS Link object | Allows editing and validations, and enables console rendering.
+| OAuth 1.0: ? | RAML security schemes | Not applicable |  Allows editing and validations, and enables console rendering. Note that the security schemes might be out-of-sync with actual policy in API Manager.
+| OAuth 2.0: ? | RAML security schemes | OAS Security Scheme object |  Allows editing and validations, and enables console rendering. Note that the security schemes might be out-of-sync with actual policy in API Manager.
+| Basic: ? | RAML security schemes | OAS Security Scheme object |  Allows editing and validations, and enables console rendering. Note that the security schemes might be out-of-sync with actual policy in API Manager.
+| Digest: ? | RAML security schemes | Not applicable |  Allows editing and validations, and enables console rendering. Note that the security schemes might be out-of-sync with actual policy in API Manager.
+| API Key: ? | Not applicable | OAS Security Scheme object |  Allows editing and validations, and enables console rendering. Note that the security schemes might be out-of-sync with actual policy in API Manager.
+| Open ID Connect: ? | Not applicable | OAS Security Scheme object |  Allows editing and validations, and enables console rendering. Note that the security schemes might be out-of-sync with actual policy in API Manager.
+| Pass through: ? | RAML security schemes | Not applicable |  Allows editing and validations, and enables console rendering. Note that the security schemes might be out-of-sync with actual policy in API Manager.
+| Custom: ? | RAML security schemes | OAS Security Scheme object |  Allows editing and validations, and enables console rendering. Note that the security schemes might be out-of-sync with actual policy in API Manager.
+| JSON schema constraints and support: ? This is the base for both. RAML Types is a superset | RAML JSON support | OAS Schema object | Allows editing and validations, and enables console rendering.
+| Schema Inheritance: ? RAML types specific | RAML type inheritance | *Simulated with `$allOf`, not proper inheritance, murky situation in OAS Schema??* | Allows editing and validations, and enables console rendering.
+| Type expressions: ? RAML types specific| RAML type expressions | Not applicable |  Allows editing and validations, and enables console rendering.
+| XML Schema constraints and support: ? | RAML XML support provided indirectly through RAML 'xml' facets for RAML types. | Support provided indirectly through XML properties for the `Schema object` | Limited editing support provided.
+| Examples: ? | RAML examples | OAS `Example object` | Allows editing and validations, and enables console rendering.
+| Mandatory valid examples: ? | Not applicable | Not applicable | Allows validation
+| Custom property extensions: ? | Annotations | OAS specification extensions | Allows editing and validations, and enables console rendering.
+| Custom node extensions: ? | Complex annotations | Not applicable | Allows editing and validations, and enables console rendering.
+| Extensions schema: ? | Annotations can have a schema and can be validated |Not applicable | Allows editing and validations, and enables console rendering.
+| Extensions semantics: ? |  Not applicable | Not applicable | Not applicable
 |===
