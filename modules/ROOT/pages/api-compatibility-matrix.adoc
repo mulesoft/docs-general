@@ -3,15 +3,21 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-You can design an API in Anypoint Platform using a RESTful API Modeling Language (RAML) or an OpenAPI Specification (OAS) format based on your needs. Both RAML and OAS specifications implement an almost-RESTful API model and provide the same features, except for the callback support in OAS 3.0. 
+You can design an API in Anypoint Platform using the RESTful API Modeling Language (RAML) or the OpenAPI Specification (OAS) format based on your needs. Both RAML and OAS specifications implement a similar API model and provide the same features, except for the callback support in OAS 3.0. 
 
 RAML, which is optimized for design and reusability, implements _syntactic sugar_ to make descriptions smaller. Conversely, OAS enables you to simulate the components and libraries.
 
 MuleSoft API Tooling, which includes parser AMF and Language server (ALS), provides interoperability using common metadata model and enables data definition reuse, use of linting rules, and provides translation in both RAML and OAS specifications.
 
-Before you start designing an API, learn more about how each of the specification features are implemented in Anypoint Platform products:
+//Jonathan--Why are we talking about API Tooling here suddenly? also, we need to give the users any best practice guidance here?
 
-* xref:api-spec-support-api-designer.adoc[API Specifications Support in API Designer]
-//* xref:api-spec-support-api-designer.adoc[check]
+Before you start designing an API, learn more about how each of the specification features are implemented and supported in Anypoint Platform products:
+
+* xref:api-spec-support-api-designer.adoc[API Designer]
+* xref:api-spec-support-exchange.adoc[Anypoint Exchange]
+* xref:api-spec-support-api-manager.adoc[API Manager]
+* xref:api-spec-support-datagraph.adoc[Anypoint Datagraph]
+* xref:api-spec-support-api-kit.adoc[API Kit]
+* xref:api-spec-support-rest-connect.adoc[REST Connect]
 
 

@@ -4,6 +4,7 @@ include::_attributes.adoc[]
 endif::[]
 :keywords: api, instance, manager
 
+You can implement your API specification in a way that best suits your needs. The following table explains how each of the features of the API specification is best implemented and the level of support provided for the specification in API Designer.
 
 [%header%autowidth.spread,cols="a,a,a,a"]
 |===
