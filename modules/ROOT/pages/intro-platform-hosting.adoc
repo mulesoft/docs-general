@@ -145,7 +145,7 @@ The following table lists the runtime plane options that are supported in each c
 | Runtime Fabric | Y | Y | N | N
 |===
 
-= See Also
+== See Also
 
 * xref:runtime-manager::cloudhub.adoc[CloudHub]
 * xref:mule-runtime::mule-standalone.adoc[Run Mule Runtime Engine On-Premises]
