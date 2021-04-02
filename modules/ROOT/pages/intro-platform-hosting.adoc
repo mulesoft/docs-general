@@ -66,7 +66,7 @@ Not all Anypoint Platform components are supported in all cloud environments. Th
 | Flow Designer | Y | Y | N | N
 | Anypoint Exchange | Y | Y | Y | Y
 | Anypoint API Community Manager | Y | Y | N | N
-| Anypoint Partner Manager | Y | N | N | N
+| Anypoint Partner Manager | Y | Y | N | N
 | Access management | Y | Y | Y | Y
 | Analytics | Y | Y | N | N
 | Anypoint API Manager | Y | Y | Y | Y
