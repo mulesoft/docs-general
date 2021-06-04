@@ -76,6 +76,7 @@ Not all Anypoint Platform components are supported in all cloud environments. Th
 | Anypoint Visualizer | Y | Y | N | Y
 | Anypoint Security edge policies | Y | Y | N | N
 | Anypoint Security tokenization | Y | Y | N | N
+| Anypoint DataGraph | Y | Y | N | N
 | CloudHub runtimes | Y | Y | Y | N
 | Runtime Fabric | Y | Y | N | N
 | Customer-hosted runtimes | Y | Y | Y | Y
@@ -119,6 +120,7 @@ Not all Anypoint Platform components are supported in each of the Runtime Plane 
 | Mule runtime engine | Y | Y | Y
 | Anypoint MQ | Y | N | N
 | Anypoint Object Store | Y | N | N
+| Anypoint DataGraph | Y | N | N
 | Connectors | Y | Y | Y
 |===
 
