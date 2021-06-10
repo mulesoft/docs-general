@@ -3,6 +3,8 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
+[Contribution test]
+
 Many of our documentation repositories are open and we welcome your contributions!
 
 To contribute to the English version of this documentation:
