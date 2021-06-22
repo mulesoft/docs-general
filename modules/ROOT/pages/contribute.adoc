@@ -7,15 +7,11 @@ Many of our documentation repositories are open and we welcome your contribution
 
 To contribute to the English version of this documentation:
 
-. Select *Edit in Github* on the page you want to modify.
-. Submit a pull request to the Git repository.
-. If this is the first time you are submitting a pull request,
-run the https://api-notebook.anypoint.mulesoft.com/notebooks/#d28e8f95e739ee1e1e30d5ec577f4a27[API Notebook].
-If you aren't already logged in to your GitHub account, you can do so using a link provided in the API Notebook.
+. If this is your first time contributing, sign the https://cla.salesforce.com/sign-cla[Salesforce.com Contributor License Agreement (CLA)]. The CLA needs to be signed only once per GitHub account.
+. Navigate to the page that you want to modify and click *Edit in Github*.
+. Make your edits.
+. Submit a pull request to the GitHub repository.
 
-image:api-notebook1.png[User interface for running the API notebook to become a contributor]
+The Documentation team then either accepts your pull request or contacts you for clarification.
 
-If you submit the pull request without running the API Notebook first, you will receive a message in the pull request asking you to do so.
-The API Notebook only needs to run once per GitHub account.
-
-The Documentation team will either accept your PR or reach out if there are questions.
+If your pull request results in an error, verify that you signed the CLA in Step 1.
