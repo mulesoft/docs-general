@@ -7,12 +7,11 @@ Many of our documentation repositories are open and we welcome your contribution
 
 To contribute to the English version of this documentation:
 
-. If this is your first time contributing, sign the https://cla.salesforce.com/sign-cla[Salesforce.com Contributor License Agreement (CLA)]. The CLA only needs to be signed once per GitHub account.
-. Click *Edit in Github* on the page you want to modify.
+. If this is your first time contributing, sign the https://cla.salesforce.com/sign-cla[Salesforce.com Contributor License Agreement (CLA)]. The CLA needs to be signed only once per GitHub account.
+. Navigate to the page that you want to modify and click *Edit in Github*.
 . Make your edits.
-. Submit a pull request to the Git repository.
+. Submit a pull request to the GitHub repository.
 
-If you submit the pull request without signing the CLA first, you will receive an error in the pull request. Sign the CLA to remove this error.
+The Documentation team then either accepts your pull request or contacts you for clarification.
 
-
-The Documentation team will either accept your pull request or reach out if there are questions.
+If your pull request results in an error, verify that you signed the CLA in Step 1.
