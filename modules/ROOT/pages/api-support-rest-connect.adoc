@@ -10,7 +10,7 @@ You can implement your API specification in a way that best suits your needs. Th
 |===
 | Feature: Description| RAML Implementation | OAS Implementation | REST Connect Support
 4+| *Modularity:* The ability to break an API specification into reusable and shared units.
-| API Document: The main API specification description metadata, which is the entry point for the specification. | RAML root document | OAS root document | Generates a simple connector.
+| API Document: The main API specification description metadata, which is the entry point for the specification. | RAML root document | OAS root document | Can Generate a simple connector.
 | Libraries: The unit containing collections of related reusable description elements. | RAML library | Can be implemented using an empty OAS specification containing multiple components. | Not applicable
 | Fragments: Stand-alone component of the specification that describes a specific element. | RAML fragment | Can be implemented using an empty OAS specification containing a single component.| Not applicable
 | Overlays: A partial description of the API specification that you can use to overwrite non-functional aspects of the API specification by composing it with the original specification, for example, translating the documentation to other languages. | RAML overlay | Can be simulated with JSON patch or merge preprocessing. | Connectors can be generated for modified APIs.
