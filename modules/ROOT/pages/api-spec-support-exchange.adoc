@@ -4,17 +4,17 @@ include::_attributes.adoc[]
 endif::[]
 :keywords: api, instance, manager
 
-You can implement your API specification in a way that best suits your needs. The following table explains how each of the features of the API specification is best implemented and the level of support provided for the specification in API Designer.
+You can implement your API specification in a way that best suits your needs. The following table explains how each of the features of the API specification is best implemented and the level of support provided for the specification in Anypoint Exchange.
 
 [%header%autowidth.spread,cols="a,a,a,a"]
 |===
 | Feature: Description| RAML Implementation | OAS Implementation | Exchange Support
 4+| *Modularity:* The ability to break an API specification into reusable and shared units.
-| API Document: The main API specification description metadata, which is the entry point for the specification. | RAML root document | OAS root document | Allows publication and versioning of an API asset in Exchange console rendering.
-| Libraries: The unit containing collections of related reusable description elements. | RAML library | Can be implemented using an empty OAS specification containing multiple components. | Allows publication of a RAML API fragment asset.
-| Fragments: Stand-alone component of the specification that describes a specific element. | RAML fragment | Can be implemented using an empty OAS specification containing a single component.| Allows publication of a RAML API fragment asset.
-| Overlays: A partial description of the API specification that you can use to overwrite non-functional aspects of the API specification by composing it with the original specification, for example, translating the documentation to other languages. | RAML overlay | Can be simulated with JSON patch or merge preprocessing. | Modified APIs can be published as an API asset.
-| Extensions: A partial description of the API spec that can be used to overwrite non-functional aspects of the API spec composing it with the original specification, like for example adding the security information for a managed API | RAML extension | Can be simulated with JSON patch or merge preprocessing. | Modified APIs can be published as an API asset.
+| API Document: The main API specification description metadata, which is the entry point for the specification. | RAML root document | OAS root document | Allows publication and versioning of an API asset in Exchange console rendering. Additionally, advanced search is supported.
+| Libraries: The unit containing collections of related reusable description elements. | RAML library | Can be implemented using an empty OAS specification containing multiple components. | Allows publication of a RAML API fragment asset (only RAML). Console rendering and advanced search are not supported.
+| Fragments: Stand-alone component of the specification that describes a specific element. | RAML fragment | Can be implemented using an empty OAS specification containing a single component.| Allows publication of a RAML API fragment asset (only RAML). Console rendering and advanced search are not supported.
+| Overlays: A partial description of the API specification that you can use to overwrite non-functional aspects of the API specification by composing it with the original specification, for example, translating the documentation to other languages. | RAML overlay | Can be simulated with JSON patch or merge preprocessing. | Allows publishing modified APIs as an API asset.
+| Extensions: A partial description of the API spec that can be used to overwrite non-functional aspects of the API spec composing it with the original specification, like for example adding the security information for a managed API | RAML extension | Can be simulated with JSON patch or merge preprocessing. | Allows publishing modified APIs as an API asset.
 4+| *Reusability:* The ability to reuse the API description in multiple specifications.
 | Inline declarations and references: The ability to declare and reference elements from multiple documents. | Inclusion and named references to: datatypes, traits, resource types, and annotations declarations. | JSON reference and OAS components. | Allows advanced searches when defined in an API document. Does not support advanced searches of fragments.
 | Traits: Macros that extend operations in the functional model, such as pagination, that can be reused in multiple specifications for consistency | Operation macros and RAML traits | Not applicable | Allows advanced searches when defined in an API document. Does not support advanced searches of fragments.
