@@ -16,9 +16,8 @@ Browser support for Anypoint Platform follows the Salesforce Lightning Experienc
 
 == Exceptions to Browser Support Policy
 
-API Community Manager and Partner Manager 2.0 each modify the browser support policy:
+Partner Manager 2.0 modifies the browser support policy:
 
-* xref:api-community-manager::data-sheets.adoc[API Community Manager]
 * xref:release-notes::partner-manager/anypoint-partner-manager-2.0-release-notes.adoc#browser-compatibility[Partner Manager 2.0]
 
 == Unsupported Browsers
