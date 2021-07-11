@@ -1,0 +1,58 @@
+= API Specifications Support in API Designer
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:keywords: api, instance, manager
+
+You can implement your API specification in a way that best suits your needs. The following table explains how each of the features of the API specification is best implemented and the level of support provided for the specification in API Designer.
+
+[%header%autowidth.spread,cols="a,a,a,a"]
+|===
+| Feature: Description| RAML Implementation | OAS Implementation | API Designer Support
+4+| *Modularity:* The ability to break an API specification into reusable and shared units.
+| API Document: The main API specification description metadata, which is the entry point for the specification. | RAML root document | OAS root document | The design of the API project console is rendered and the document and examples are validated.
+| Libraries: The unit containing collections of related reusable description elements. | RAML library | Can be implemented using an empty OAS specification containing multiple components. | Edited as a stand-alone project. Supports the reuse of the module in an API project.
+| Fragments: Stand-alone component of the specification that describes a specific element. | RAML fragment | Can be implemented using an empty OAS specification containing a single component.| Edited as a stand-alone project. Supports the reuse of the module in an API project.
+| Overlays: A partial description of the API specification that you can use to overwrite non-functional aspects of the API specification by composing it with the original specification, for example, translating the documentation to other languages. | RAML overlay | Can be simulated with JSON patch or merge preprocessing. | Can be edited and rendered correctly if used as main the project file.
+| Extensions: A partial description of the API spec that can be used to overwrite non-functional aspects of the API spec composing it with the original specification, like for example adding the security information for a managed API | RAML extension | Can be simulated with JSON patch or merge preprocessing. | Can be edited and rendered correctly if used as main the project file.
+4+| *Reusability:* The ability to reuse the API description in multiple specifications.
+| Inline declarations and references: The ability to declare and reference elements from multiple documents. | Inclusion and named references to: datatypes, traits, resource types, and annotations declarations. | JSON reference and OAS components. | Autocompletion when editing and dedicated rendering provided in the console.
+| Traits: Macros that extend operations in the functional model, such as pagination, that can be reused in multiple specifications for consistency | Operation macros and RAML traits | Not applicable | Autocompletion when editing and dedicated rendering in console.
+| Resource types: Macros that extend resources in the functional model with complex behavior and data definition that can be reused in multiple specifications for consistency | Endpoint macros and RAML resource types | Not applicable | Autocompletion when editing and dedicated rendering in console.
+4+| *API Metadata:* Provides metadata about the API that might be used by tooling as required.
+| API Entrypoint: The main entry point for the API description, mostly human-readable information, such as title, version, license, and so forth. | RAML document top level information | OAS Open API object| Can be edited and validated and enables console rendering.
+| Server and protocols: Denotes the actual connectivity to the service | RAML base URI information | OAS Server object | Small differences in the supported protocols.
+| Terms of service & licensing: The user agreement and licensing information of the API | Only plain documentation | OAS Info object |
+| User documentation: Includes user guide and reference material that clarifies how the API works. | RAML description properties in different parts of the specification | OAS description properties in the specification objects | Can be edited and validated and enables console rendering.
+| Localized documentation: Specifies multi-lingual descriptions | Using overlays | Not applicable | Not applicable
+| Tags: Classification of parts of the specification | Only use annotations | OAS Tag object | Not applicable
+4+| *Functional model:* A declaration of the resources to use when RPCs are invoked.
+| Endpoints: Refers to the resources and RPC invocations in the API | Because RAML is more RESTful, the RAML resources are more explicit in its working and allows for the nesting of those resources. | OAS Path Item objects under the Paths object | Allows editing and validations, and enables console rendering.
+| Methods and bindings to HTTP uniform interface: Includes operations over the resource and information about how to invoke the RPC operation. | Get, Patch, Put, Post, Delete, Options, and head RAML operations | Get, Put, Post, Delete, Options, Head, Patch, Trace and fixed fields under the OAS Path Item object | Allows editing and validations, and enables console rendering.
+| Input parameters and HTTP bindings: Specifies the input parameters for the operation. | RAML parameters | OAS Parameter object | Allows editing and validations, and enables console rendering.
+| Responses with multiple media types: Specifies the output parameter for the operation. | RAML responses | OAS Response object | Allows editing and validations, and enables console rendering.
+| Responses with bindings to HTTP status codes: Specifies the binding to the HTTP status code. | RAML responses | OAS Response object | Allows editing and validations, and enables console rendering.
+| Callbacks: Specifies the asynchronous invocations and webhooks. | Not applicable | OAS Callback object | Allows editing and validations, and enables console rendering.
+| Links: Specifies the static connections between endpoints in the specification, excluding hyperlinks in the data. |  Not applicable | OAS Link object | Allows editing and validations, and enables console rendering.
+4+| *Security model:* A declaration of which security mechanisms you can used across the APIs.
+| OAuth 1.0: The API authentication requires using OAuth 1.0 as described in https://tools.ietf.org/html/rfc5849[RFC5849]. | RAML security schemes | Not applicable | Allows editing and validations, and enables console rendering. Note that the security schemes might be out-of-sync with actual policy in API Manager.
+| OAuth 2.0: The API authentication requires using OAuth 2.0 as described in https://tools.ietf.org/html/rfc6749[RFC6749]. | RAML security schemes | OAS Security Scheme object | Allows editing and validations, and enables console rendering. Note that the security schemes might be out-of-sync with actual policy in API Manager.
+| Basic: The API authentication relies on using Basic Access Authentication as described in https://tools.ietf.org/html/rfc2617[RFC2617]. | RAML security schemes | OAS Security Scheme object | Allows editing and validations, and enables console rendering. Note that the security schemes might be out-of-sync with actual policy in API Manager.
+| Digest: The API authentication relies on using Digest Access Authentication as described in https://tools.ietf.org/html/rfc2617[RFC2617] | RAML security schemes | Not applicable | Allows editing and validations, and enables console rendering. Note that the security schemes might be out-of-sync with actual policy in API Manager.
+| API Key: The API authentication relies on using API key (either as a header, a cookie parameter, or as a query parameter). | Not applicable | OAS Security Scheme object | Allows editing and validations, and enables console rendering. Note that the security schemes might be out-of-sync with actual policy in API Manager.
+| Open ID Connect: The API authentication relies on using OAuth2's common flows (implicit, password, client credentials and authorization code) defined in https://tools.ietf.org/html/draft-ietf-oauth-discovery-06[OpenID Connect Discovery]. | Not applicable | OAS Security Scheme object | Allows editing and validations, and enables console rendering. Note that the security schemes might be out-of-sync with actual policy in API Manager.
+| Pass through: Headers or query parameters are passed through to the API based on a defined mapping. | RAML security schemes | Not applicable | Allows editing and validations, and enables console rendering. Note that the security schemes might be out-of-sync with actual policy in API Manager.
+| Custom: The API authentication relies on another custom authentication method. | RAML security schemes | OAS Security Scheme object | Allows editing and validations, and enables console rendering. Note that the security schemes might be out-of-sync with actual policy in API Manager.
+4+| *Data description and validation:* Validation of any XML or JSON instance against inner elements follows the same restrictions as the validation against a regular XML or JSON schema.
+| JSON schema constraints and support: The level of support or constraints on JSON schemas. This is the base for both. RAML Types is a superset | RAML JSON support | OAS Schema object | Allows editing and validations, and enables console rendering.
+| Schema Inheritance: The combining and extending of model definitions by using properties of JSON Schema.| RAML type inheritance | *Simulated with `$allOf`, not proper inheritance, murky situation in OAS Schema* | Allows editing and validations, and enables console rendering.
+| Type expressions: Type expressions can be used wherever a type is expected. Using type expressions, you can devise type unions, arrays, maps, and other things.| RAML type expressions | Not applicable | Allows editing and validations, and enables console rendering.
+| XML Schema constraints and support: The level of support or constraints on XML schemas. | RAML XML support provided indirectly through RAML XML facets for RAML types. | Support provided indirectly through XML properties for the `Schema object` | Limited editing support provided.
+| Examples: RAML or OAS examples of implementing validations. | RAML examples | OAS `Example object` | Allows editing and validations, and enables console rendering.
+| Mandatory valid examples: Required examples that are valid. | Not applicable | Not applicable | Allows validation
+4+| *Meta-model extensibility:* Defines the ability to extend the format to describe additional details or objects.
+| Custom property extensions: Extensions and additional details for custom properties. | Annotations | OAS specification extensions | Allows editing and validations, and enables console rendering.
+| Custom node extensions: Additional details for custom node extensions. | Complex annotations | Not applicable | Allows editing and validations, and enables console rendering.
+| Extensions schema: Additional details about extension schemas | Annotations can have a schema and can be validated | Not applicable | Allows editing and validations, and enables console rendering.
+| Extensions semantics: Semantics to be used for defining extensions. | Not applicable | Not applicable | Not applicable
+|===
