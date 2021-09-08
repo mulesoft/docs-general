@@ -1,11 +1,8 @@
 = Step 2. Design an API Specification
-ifndef::env-site,env-github[]
-include::_attributes.adoc[]
-endif::[]
 
 To design an API, assess the purpose and requirements:
 
-* Identify the type of API. Is it a simple API, part of an integration, or part of a back-end system?
+* Identify the type of API: Is it a simple API, part of an integration, or part of a backend system?
 * Understand the data flows: one-way, two-way, or more.
 * Explore the security requirements.
 
@@ -15,13 +12,11 @@ Then, in later steps, you'll use the API specification to quickly develop an API
 
 == API Specifications and APIs
 
-An API is a published interface to a resource that anyone with the correct permissions
-and a properly structured request can access. 
+An API is a published interface to a resource that anyone with the correct permissions and a properly structured request can access. 
 
 An API specification details the functional and expected behavior of an API, 
 as well as the fundamental design philosophy and supported data types.
-It contains both documentation and API definitions 
-to create a contract that people and software can read. 
+It contains both documentation and API definitions to create a contract that people and software can read. 
 
 MuleSoft provides tools that make it easy to create an API specification that you can then share with your team, your customers, or the general public.
 Using an API specification increases adoption and shortens project completion time. 
@@ -34,7 +29,7 @@ You can also check whether an API specification with the same objectives is not 
 
 Looking for an API specification that already does what you need is easy:
 
-* Look at the public Exchange, which is a portal hosted by MuleSoft that contains API specifications, connectors and other assets that you can download and use.
+* Look at the public Exchange, which is a portal hosted by MuleSoft that contains API specifications, connectors, and other assets that you can download and use.
 You’ll see some of the most popular API specifications, connectors, and other assets displayed on the landing page.
 +
 link:https://www.mulesoft.com/exchange["Take me to Exchange^", role="button-primary"]
@@ -48,24 +43,22 @@ link:https://anypoint.mulesoft.com/login["Take me to Anypoint Platform^", role="
 +
   .. Log in to Anypoint Platform if needed.
   .. In the Anypoint Platform landing page, click *Discover and share* under *Exchange*. 
-  .. Click on any specification to see the data types and the HTTP requests defined for the API. If this is a trial org, you may not see anything yet.
+  .. Click on any specification to see the data types and the HTTP requests defined for the API. If this is a trial org, you might not see anything yet.
 
-After exploring Exchange to see the range of assets available, we return to Anypoint Platform and use web-based tools create a new API specification that defines what our tutorial API can do.
+After exploring Exchange to see the range of assets available, return to Anypoint Platform and use web-based tools to create a new API specification that defines what this tutorial API can do.
 
 == Step 2.2: Create Your API Specification
 
 Create your own API specification for a simple Hello World API that responds to a simple GET request.
-To do this, we'll use xref:design-center::design-create-publish-api-specs.adoc[API Designer], a part of xref:design-center::index.adoc[Design Center].
+To do this, use xref:design-center::design-create-publish-api-specs.adoc[API Designer], a part of xref:design-center::index.adoc[Design Center].
 
 . Open API Designer:
 +
 link:https://anypoint.mulesoft.com/designcenter/designer/["Take me to API Designer^", role="button-primary"]
-. Click *Create* to open the API Designer editor.
-. Click *Create API specification*.
-+
-image:new-api-spec.png[Blank API specification in API Designer]
-. Enter `hello-world` for *Name* and don't change the other default values.
-. Click *Create Specification*. The API Designer editor displays a sample RAML definition.
+. Click *Create new* to open the API Designer editor.
+. Click *New API Spec*.
+. Enter `hello-world` for *API Title* and don't change the other default values.
+. Click *Create API Spec*. The API Designer editor displays a sample RAML definition.
 . Delete the existing text and paste in the following RAML:
 
 [source,raml]
@@ -120,11 +113,10 @@ link:https://anypoint.mulesoft.com/designcenter/#/projects["Take me to API Desig
 +
 image:api-spec1.png[Completed specification]
 +
-. Click the X next to *Mocking service* to enable it. 
+. Click the Documentation icon. 
 +
-image:mocking-service.png[Enabled mocking service, 500]
+image:api-documentation-icon.png[API Designer Documentation icon]
 +
-If you see a checkmark instead of an X, the mocking service is already enabled.
 . Look for the label *API endpoints*. You can see the endpoint you defined. HTTP requests appear in green boxes.
 +
 image:get-button.png[GET button, 500]
