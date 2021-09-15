@@ -9,7 +9,7 @@ Add 1-2 introductory sentences that provide an overview of the task—what it is
 If you can do this in a few sentences for the task, you can omit the concept topic. Otherwise, provide an introduction that is fully developed in a separate Concept topic in the same doc set as the task.
 ////
 
-// == (Optional) Task Topic
+// == Task Topic (Heading is optional if task is short)
 ////
 For Task Topic, use imperative verbs and singular nouns, for example: Deploy an Application to Runtime Manager, Set Up A Project in Studio, Upgrade Runtime Fabric, and so on.
 ////
