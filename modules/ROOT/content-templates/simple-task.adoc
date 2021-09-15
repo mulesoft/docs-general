@@ -62,6 +62,8 @@ Can contain links to external information where necessary
 Can contain tables with version numbers, permissions, and so on 
 ////
 
+////
+task steps:
 If necessary, add intro phrase: To <complete task>:
 
 When possible, use a navigational starting point.
@@ -72,15 +74,16 @@ When possible, use a navigational starting point.
 OR
 
 . From <starting point>, <perform this first action>.
-.
-.
+. 
+. 
+
 
 (Optional) After the task, add 1-2 sentences to indicate expected results or next steps. 
 ////
 
-// == (Optional) Related Resources
-//// 
-
+////
+== (Optional) Related Resources
+ 
 Note: Do not change heading
 
 Don’t use this section as filler. Link only to relevant related info and not just any info that is “kinda” related.
