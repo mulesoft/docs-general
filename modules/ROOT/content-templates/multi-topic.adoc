@@ -1,0 +1,152 @@
+//Use the MultiTopic template to document subjects that include a combination of topic types. This template includes all three topic types. Remove topic types that aren’t needed, or add additional topic types when needed. 
+
+= Page Title
+////
+For page titles, use imperative verb forms, and plural nouns(unless it’s incorrect to do so) for example: Deploy Applications to Runtime Manager, Set Up Projects in Studio, Upgrade Runtime Fabric, etc.
+
+Add 1-2 introductory sentences that provide an overview of the full feature—what it is and why the reader cares
+////
+
+== Concept Topic 
+////
+
+For concept topic titles, use a noun phrase that describes the content, for example: 
+
+Schema Element Visibility in Anypoint DataGraph 
+OR
+Benefits of Custom Ingress Resource Templates
+OR
+How Ingress Resources Templates Work in Runtime Fabric
+
+
+Add 1-2 sentences to introduce concept 
+Must contain: paragraphs, a list, or diagram
+Must not contain: reference table
+Must not contain: steps
+Can contain ===
+////
+
+== Before You Begin 
+
+////
+Note: Do not change heading
+
+Add introductory phrase to prerequisite list, followed by a 
+colon and a list of items in parallel construction, for example:  
+
+Before getting started, ensure you have:
+
+* Familiarity with Anypoint Platform and Exchange, including    permissions to use Exchange to publish and view RAML or OAS specifications in your business group
+* An Anypoint Platform account
+* Admin or Contribute permissions
+
+OR
+
+To add an API to the unified schema, ensure you have:
+
+* Created a REST API using either a RAML or OAS specification
+* Published the API in Exchange in the same organization as your unified schema
+* Initiated an instance of the API with an accessible URL
+
+OR
+
+Your <product> installation must meet the following hardware and software requirements.
+
+If the list of requirements is simple, remove the headings and use an unordered list.
+
+=== Hardware Requirements
+
+*
+*
+*
+
+=== Software Requirements
+
+*
+*
+*
+
+
+Add any permissions, version numbers, or tools needed 
+Must contain: ordered or unordered list or table
+Can contain links to external information where necessary
+Can contain tables with version numbers, permissions, etc. 
+https://www.url.com[link-text^]
+////
+
+== Task Topic 1
+////
+For Task Topic, use imperative verbs and singular nouns, for example: Deploy an Application to Runtime Manager, Set Up A Project in Studio, Upgrade Runtime Fabric, etc. 
+
+Add 1-2 sentences to introduce the task. 
+
+Consider adding context provided by a statement about the previous required task or the following required task:
+
+Before you <achieve this>, <do this> task
+
+Or 
+
+After you <finish previous task>, <perform this task>
+////
+
+////
+=== (Optional) Before You <perform task>
+
+Note: Do not change heading
+
+Use if there are additional prerequisites for the task not covered by the prerequisites to the entire FullFeature prerequisites. 
+
+Add introductory phrase to prerequisite list, followed by a 
+colon and a list of items in parallel construction.
+
+If necessary, add intro phrase: To <complete task>:
+
+When possible, use a navigational starting point.
+
+. Navigate to *here* > *here* > *here*.
+
+
+OR
+
+. From <starting point>, <perform this first action>.
+.
+.
+
+(Optional) After the task, add 1-2 sentences to indicate expected results or next steps. 
+////
+
+
+== Task Topic 2
+// Copy elements from the previous task.
+
+== Reference Topic
+////
+For reference topic titles, use a noun phrase that describes the content: DataWeave Operators or HTTPS Send Configuration
+
+Add 1-2 sentences to introduce reference
+Must contain: list or table of items or code examples
+Must not contain: steps
+Can contain ===
+
+Note: When possible avoid headings like “Notes” for columns in reference tables. Aim for a specific column heading that explains the function of the notes. Alternatively, if they’re short and scannable, add notes that don’t fit a column as notes within the relevant cell.
+
+[%header%autowidth.spread]
+|===
+|Column Title |Column Title |Column Title
+|entry 1      |entry 2      |entry 3
+|===
+////
+
+//== (Optional)Related Resources
+////
+
+Note: Do not change heading
+
+Don’t use this section as filler. Link only to relevant related info and not just any info that is “kinda” related.
+
+Must contain: unordered list
+* xref:file-name.adoc[link-text]
+* xref:file-name.adoc#paragraph-target[link text]
+* xref:repo-name::filename.adoc[link text]
+* https://www.url.com[link-text^]
+////
