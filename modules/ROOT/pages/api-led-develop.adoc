@@ -71,7 +71,7 @@ image:canvas-tabs.png[One canvas and links to all three views, 500]
 
 * *Message Flow* view makes it easy to drag and drop modules, connectors, and other assets and create the relationships between them.
 * *Global Elements* view makes it easy to specify global elements used in multiple projects.
-* *Configuration XML* view makes it easy to edit the XML of a project directly. 
+* *Configuration XML* view makes it easy to edit the XML of a project directly.
 
 Let's verify the values set in the Listener at the top of your flow in the canvas:
 
@@ -130,7 +130,7 @@ When the following message is displayed, the app containing your API has been de
 *******************************************************************************************************
 * hello-world                                   * default                        * DEPLOYED           *
 *******************************************************************************************************
-----    
+----
 . To test the app, open a REST client (Advanced Rest Client) and issue a GET request:
 +
 `\http://localhost:8081/api/greeting`
@@ -203,7 +203,7 @@ We'll publish the updated version after it is complete.
 
 To explore some of the capabilities of Anypoint Platform and Studio:
 
-* Transform data with DataWeave: xref:mule-runtime::dataweave-quickstart.adoc[Quickstart], xref:mule-runtime::mule-app-tutorial.adoc[Tutorial].
+* Transform data with DataWeave: xref:dataweave::dataweave-quickstart.adoc[Quickstart], xref:mule-runtime::mule-app-tutorial.adoc[Tutorial].
 * Structure Mule applications using xref:mule-runtime::about-flows.adoc[flows, subflows, and asynchronous queues].
 * Define and manage application metadata (schemas): xref:studio::metadata-editor-concept.adoc[Metadata Editor].
 * Implement key-performance indicators using xref:api-manager::analytics-landing-page.adoc[API Manager analytics].
