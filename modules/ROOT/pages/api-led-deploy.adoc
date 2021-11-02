@@ -89,14 +89,14 @@ link:https://anypoint.mulesoft.com/login["Take me to Anypoint Platform^", role="
 . In the top section:
   ** Click *Add a label*.
   ** Enter *No policy* and press Return to save the label.
-. In the Deployment Configuration section:
+. In the *Deployment Configuration* section:
   ** Select *Runtime version: 4.2.2* or a later version if available.
   ** For *Proxy application name*, which is the name displayed in Runtime Manager, enter *hello-world-greeting-proxy*, but append your last name or other unique string to ensure the proxy name is unique. The deploy button won't be enabled until you enter a valid value here.
   ** Select *Update application if exists*.
 . Click *Deploy*. A progress window displays. 
 . When deployment is complete, close the progress dialog to return to the settings page.
 
-Now you have an implmentation URL that you don't want to share with the world, and a proxy URL which will be safe to share with the world once we configure it.
+Now you have an implementation URL that you don't want to share with the world, and a proxy URL which will be safe to share with the world once we configure it.
 
 image:proxy-deploy2.png[settings page showing URLs, 600]
 
@@ -135,7 +135,7 @@ To add a rate limit policy:
 . Click *Apply New Policy*.
 . Don't change the default *All Mule Versions*.
 . Scroll to locate *Rate limiting* (not *Rate limiting - SLA based*).
-. Click *Rate limiting*, select *1.3.3*, and click *Configure Policy*.
+. Click *Rate limiting*, select *1.3.5* or a later version if available, and click *Configure Policy* at the bottom of the dialog box.
 . In the Apply Rate limiting policy page, set the limit values:
   ** *# of Reqs*: `3`
   ** *Time Period*: `1`
