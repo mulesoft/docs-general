@@ -22,6 +22,9 @@ image:deploy1.png[dialog for deploying to CloudHub]
   .. Click *Switch*.
 . Enter `hello-world-greeting-firstname-lastname`; every app and API name must be unique across CloudHub. This example uses `hello-world-greeting-sandy-kim`.
 . Verify that *Deployment Target* is `CloudHub`.
++
+image:steps.png[Steps for this instruction]
++
 . Don't change any of the other default values.
 . Click *Deploy Application*. After a brief pause, a window displays the status of the deployment.
 . Click *Open in Browser* to see the status displayed in Runtime Manager.
