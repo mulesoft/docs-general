@@ -27,7 +27,7 @@ Add your Anypoint Platform credentials in Studio once, and they'll be available 
 . Select *Anypoint Studio > Authentication*.
 . Enter your Anypoint Platform username and password.
 . Optionally, enter a duration in days for how long this authentication is valid.
-. Click *Sign in*, then close the pop-up window.
+. Click *Sign in*.
 . Click *Apply and Close*.
 
 These credentials are automatically used for many operations in Studio.
