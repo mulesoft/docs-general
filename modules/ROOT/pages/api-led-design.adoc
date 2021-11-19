@@ -154,7 +154,7 @@ link:https://anypoint.mulesoft.com/designcenter/#/projects["Take me to API Desig
 +
 image:publish-to-exchange1.png[User interface for publishing to Exchange, 500]
 . Accept all the default values, and enter a version number in the Asset version field.
-. Click *Publish*, and then *Done*.
+. Click *Publish to Exchange*, and then *Done*.
 
 After publication, anyone in your organization can see the hello-world API specification and reuse it.
 
