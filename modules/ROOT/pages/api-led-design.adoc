@@ -135,8 +135,8 @@ image:ignore-this.png[Error messages you can ignore, 500]
 It's safe to ignore any error messages on this screen. A successful request returns `200 OK` and the test message:
 +
 image:successful-test1.png[Results of a successful test, 500]
-. Click *Details* to examine the response headers and request headers in the mocking service to help diagnose issues or understand the behavior of your API specification.
-. When you have finished testing, click the mocking service checkmark to disable the mocking service again.
+. Click *Response details* in the kebab menu to examine the response headers and request headers in the mocking service to help diagnose issues or understand the behavior of your API specification.
+. When you have finished testing, open the Mocking Service Configuration panel and click the *Select By Default* checkmark to disable the mocking service again.
 +
 image:enabled-service.png[Mocking service control before being disabled, 500]
 
