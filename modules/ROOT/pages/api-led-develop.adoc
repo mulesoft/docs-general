@@ -46,7 +46,7 @@ image:new-project-dialog.png[New project dialog]
     ... Click the green plus sign, and then select *From Exchange*.
     ... Log in to your organization if needed.
     ... Type `hello-world` in the search box.
-    ... Click *hello-world* to select it.
+    ... Click *GitHub RAML* to select it.
     ... Click *Add* to move it to the *Selected modules* list.
     ... Click *Finish*.
 . Scroll down to verify that the checkbox *Scaffold flows from these API specifications* is selected. This ensures that Studio adds default error handling and other helpful items to your project.
