@@ -42,7 +42,7 @@ image:new-project-dialog.png[New project dialog]
 . In the dialog box, provide the following values:
   ** *Project Name*: `hello-world`
   ** *Runtime*: If there is a choice, select the latest version of Mule. This is the Mule runtime engine that is hosted within Studio for testing.
-  ** Select the *From Exchange or Maven* tab.
+  ** Select the *Import a published API* tab.
     ... Click the green plus sign, and then select *From Exchange*.
     ... Log in to your organization if needed.
     ... Type `hello-world` in the search box.
