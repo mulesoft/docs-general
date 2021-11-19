@@ -138,7 +138,9 @@ image:successful-test1.png[Results of a successful test, 500]
 . Click *Response details* in the kebab menu to examine the response headers and request headers in the mocking service to help diagnose issues or understand the behavior of your API specification.
 . When you have finished testing, open the Mocking Service Configuration panel and click the *Select By Default* checkmark to disable the mocking service again.
 +
-image:enabled-service.png[Mocking service control before being disabled, 500]
+image:api-mocking-service-configuration-icon.png[Mocking service icon]
++
+image:disable-mocking-service.png[Mocking service control before being disabled, 500]
 
 == Step 2.4. Publish Your API Specification
 
