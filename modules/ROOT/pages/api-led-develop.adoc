@@ -49,6 +49,7 @@ image:new-project-dialog.png[New project dialog]
     ... Click *hello-world* to select it.
     ... Click *Add* to move it to the *Selected modules* list.
     ... Click *Finish*.
+    ... Click *Finish* in the New Mule Projects pop-up.
 . Scroll down to verify that the checkbox *Scaffold flows from these API specifications* is selected. This ensures that Studio adds default error handling and other helpful items to your project.
 . Click *Finish*.
 . Studio creates an XML file, `hello-world.xml` and opens it in the canvas *Message Flow* view,
