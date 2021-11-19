@@ -51,7 +51,7 @@ image:new-project-dialog.png[New project dialog]
     ... Click *Finish*.
 . Scroll down to verify that the checkbox *Scaffold flows from these API specifications* is selected. This ensures that Studio adds default error handling and other helpful items to your project.
 . Click *Finish*.
-. Studio creates an XML file, `hello-world.xml` and opens it in the canvas *Message Flow* view,
+. Studio creates an XML file, `api.xml` and opens it in the canvas *Message Flow* view,
 displaying some of the basic elements you'll need for the API interface:
 
 image:my-first-project.png[View in Studio after importing API specification with scaffolding]
