@@ -49,9 +49,9 @@ To test that the validation works when the payload is too short, use the debugge
 . In the `hello-world` project in Studio, open `hello-world.xml`.
 . Click *Set Payload*, and then change the value to `Hi.`.
 . In *Mule Palette*, select *Favorites > Logger*, and then drag and drop the logger in between *Set Payload* and *Validate size*. The logger will help us stop the process to help debugging. No configuration of the logger is needed.
-. Right-click *Set Payload* and select *Toggle breakpoint*.
-. Right-click *Logger* and select *Toggle breakpoint*.
-. Right-click *Validate size* and select *Toggle breakpoint*.
+. Right-click *Set Payload* and select *Add breakpoint*.
+. Right-click *Logger* and select *Add breakpoint*.
+. Right-click *Validate size* and select *Add breakpoint*.
 . Right-click the canvas and select *Debug project hello-world*. If you are asked to open the Mule Debug perspective, select the *Remember my decision* checkbox and click *Yes*.
 +
 image:mule-debugger-view.png[Studio in Debugger view]
