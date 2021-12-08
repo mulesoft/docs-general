@@ -42,7 +42,7 @@ image:new-project-dialog.png[New project dialog]
 . In the dialog box, provide the following values:
   ** *Project Name*: `hello-world`
   ** *Runtime*: If there is a choice, select the latest version of Mule. This is the Mule runtime engine that is hosted within Studio for testing.
-  ** Select the *From Exchange or Maven* tab.
+  ** Select the *Import a published API* tab.
     ... Click the green plus sign, and then select *From Exchange*.
     ... Log in to your organization if needed.
     ... Type `hello-world` in the search box.
@@ -185,7 +185,7 @@ image:link-to-published-api.png[Dialog showing link to API published in Exchange
 image:published-in-exchange.png[API viewed from Exchange]
 
 . You can add documentation, descriptions, and tags that aid search.
-. Notice that HTTP Connector and Sockets Connector are listed as dependencies.
+. Notice that HTTP Connector and Sockets Connector are listed as dependencies, which is viewed by clicking *Version detail* from the dropdown menu in the *Asset versions* section.
 . When you are satisfied with the publication, return to Studio and click *OK* to close the open dialog windows.
 
 == What's Next
