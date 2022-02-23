@@ -96,7 +96,7 @@ link:https://anypoint.mulesoft.com/login["Take me to Anypoint Platform^", role="
 . Click *Deploy*. A progress window displays.
 . When deployment is complete, close the progress dialog to return to the settings page.
 
-Now you have an implmentation URL that you don't want to share with the world, and a proxy URL which will be safe to share with the world once we configure it.
+Now you have an implementation URL that you don't want to share with the world, and a proxy URL which will be safe to share with the world once we configure it.
 
 image:proxy-deploy2.png[settings page showing URLs, 600]
 
