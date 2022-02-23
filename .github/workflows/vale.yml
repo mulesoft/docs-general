@@ -19,8 +19,8 @@ jobs:
         # Optional
         config: https://raw.githubusercontent.com/errata-ai/vale/master/.vale.ini
 
-        # Optional
-        files: modules/ROOT/pages
+        # # Optional
+        # files: modules/ROOT/pages
       env:
         # Required, set by GitHub actions automatically:
         # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret
