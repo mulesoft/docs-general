@@ -12,7 +12,7 @@ jobs:
       uses: errata-ai/vale-action@v1.5.0
       with:
         styles: |
-          https://github.com/mulesoft/dev-docs-writing-style/releases/download/v0.1.0/mulesoft.zip
+          https://github.com/mulesoft/docs-beta/releases/download/gc-test/mulesoft.zip
         debug: true
       env:
         # Required, set by GitHub actions automatically:
