@@ -40,9 +40,9 @@ image::design.png[]
 
 Create and publish new API specifications from scratch.
 
-* xref:#[Create a reusable API specification]
-* xref:#[Plan for access]
-* xref:#[Plan for security]
+* xref:design-center::design-create-publish-api-specs.adoc[Create a reusable API specification]
+* xref:access-management::index.adoc[Plan for access]
+* xref:general::security.adoc[Plan for security]
 --
 
 image::develop-and-test.png[]
@@ -53,10 +53,11 @@ image::develop-and-test.png[]
 
 Build and test APIs and integrations.
 
-* xref:#[Develop your API]
-* xref:#[Connect your data, systems, and apps]
-* xref:#[Develop the Mule app that integrates systems, services, APIs, and devices]
-* xref:#[Build automated tests for your APIs and integrations]
+* xref:studio::index.adoc[Develop your API]
+* xref:connectors::index.adoc[Connect your data, systems, and apps]
+* xref:mule-runtime::mule-app-dev.adoc[Develop the Mule app that integrates systems, services, APIs, and devices]
+* xref:dataweave::index.adoc[Access and transform data within the Mule app]
+* xref:munit::index.adoc[Build automated tests for your APIs and integrations]
 --
 
 image::deploy.png[]
@@ -67,9 +68,9 @@ image::deploy.png[]
 
 Deploy APIs and apps to your hosting targets, and secure them with policies.
 
-* xref:#[Deployment options]
-* xref:#[Configure a proxy for your API]
-* xref:#[Create policies for your API]
+* xref:runtime-manager::deployment-strategies.adoc[Deployment options]
+* xref:api-manager::getting-started-proxy.adoc[Configure a proxy for your API]
+* xref:api-manager::policies-landing-page.adoc[Create policies to secure your API]
 --
 
 image::monitor.png[]
@@ -80,9 +81,9 @@ image::monitor.png[]
 
 Monitor your APIs and integrations using dashboards, metrics, and visualization.
 
-* xref:#[Monitor Mule app performance]
-* xref:#[Monitor deployed API performance]
-* xref:#[Monitor deployed Mule app performance]
+* xref:monitoring::index.adoc[Monitor Anypoint Platform performance from a single user interface]
+* xref:api-functional-monitoring::index.adoc[Monitor your deployed API performance]
+* xref:runtime-manager::monitoring.adoc[Monitor your deployed apps]
 --
 
 == Quick Links
@@ -90,33 +91,33 @@ Monitor your APIs and integrations using dashboards, metrics, and visualization.
 [#popular-topics]
 === Popular Topics
 
-* xref:#[CloudHub]
-* xref:#[Connectors]
-* xref:#[DataWeave Language]
-* xref:#[Design Center]
-* xref:#[Exchange]
-* xref:#[Mule Runtime 4.3]
-* xref:#[Studio 7.4]
+* xref:dataweave::dw-core-functions-filter.adoc[Dataweave Function: filter]
+* xref:dataweave::dataweave-cookbook-format-dates.adoc[Format Dates and Times]
+* xref:dataweave::dw-operators.adoc[DataWeave Operators]
+* xref:connectors::index.adoc[Connectors]
+* xref:mule-runtime::mule-error-concept[Mule Errors]
+* xref:mule-runtime::secure-configuration-properties.adoc[Secure Configuration Properties]
+* xref:dataweave::dw-core-functions-map.adoc[Dataweave Function: map]
 
 [#latest-releases]
 === Latest Releases
 
 [cols=10;90]
 |===
-|June 4
-|xref:#[Anypoint Security Edge]
+|April 11
+|xref:api-functional-monitoring/api-functional-monitoring-release-notes.adoc[API Functional Monitoring 2.1]
 
-|June 2
-|xref:#[Mule runtime engine for CloudHub]
+|April 11
+|xref:connector/connector-db.adoc#1-13-0[Database Connector 1.13]
 
-|June 1
-|xref:#[API Designer 2.17.2]
+|April 2
+|xref:design-center/design-center-release-notes-api_specs.adoc#2-41-0[API Designer (Crowd) Release Notes 2.41]
 
-|June 1
-|xref:#[MUnit Studio Plugin 2.5.1a]
+|April 2
+|xref:api-mocking-service/api-mocking-service-release-notes.adoc#2-38-0[API Mocking Service Release Notes 2.38]
 
-|May 30
-|xref:#[API Designer 2.17.0a]
+|March 31
+|xref:studio/anypoint-studio-7.12-with-4.4-runtime-release-notes.adoc[Anypoint Studio 7.12]
 |===
 
 xref:#[View all release notes,role=view-all]
@@ -124,7 +125,7 @@ xref:#[View all release notes,role=view-all]
 [#more-resources]
 === More Resources
 
-* xref:#[MuleSoft Help Center]
-* xref:#[Developer Resources]
-* xref:#[MuleSoft Training]
-* xref:#[MuleSoft Basics on Trailhead]
+* https://help.mulesoft.com/s/[MuleSoft Help Center^]
+* https://developer.mulesoft.com/tutorials-and-howtos/getting-started/hello-mule[Developer Tutorials^]
+* https://training.mulesoft.com/[Training^]
+* https://trailhead.salesforce.com/content/learn/modules/mulesoft-basics[Learn the Basics of MuleSoft^]
