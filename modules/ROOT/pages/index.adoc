@@ -25,7 +25,7 @@ Discover Anypoint Platform APIs on https://anypoint.mulesoft.com/exchange/portal
 
 == Design and Build API-Based Integrations
 
-Anypoint Studio is an Eclipse-based IDE that enables you to create integrations. Design Center, a web-based tool, enables you to create API specifications, which are the foundation for data integrations.
+Anypoint Studio is an Eclipse-based IDE that enables you to create integrations. Design Center, a web-based tool, enables you to create API specifications, which are the foundation for these integrations.
 
 [%header%autowidth.spread]
 |===
