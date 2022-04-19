@@ -16,7 +16,7 @@ Anypoint Platform makes it easy to discover, create, and manage APIs in a modula
 == Explore Anypoint Exchange
 
 The APIs you build in Anypoint Platform to integrate applications and services are reusable and include enterprise-level security.
-You can discover these APIs, as well as connectors, samples, and templates in
+You can discover these APIs, as well as connectors, samples, and templates, in
 https://www.anypoint.mulesoft.com/exchange/[Exchange^].
 
 Exchange also provides RAML fragments, custom packages, videos, links to documentation, and other assets.
