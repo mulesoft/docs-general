@@ -71,7 +71,7 @@ After your integration is running in production, monitor its performance:
 
 == Manage Anypoint Platform Features
 
-During the development cycle, or after deployment, you can make changes to your integration:
+Either during the development cycle or after deployment, you can make changes to your integration:
 
 * xref:design-center::index.adoc[Design Center]
 * xref:2.x@api-manager::latest-overview-concept.adoc[API Manager]
