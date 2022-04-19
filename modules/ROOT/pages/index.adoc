@@ -34,7 +34,7 @@ Anypoint Studio is an Eclipse-based IDE that enables you to create integrations.
 | xref:design-center::about-designing-a-mule-application.adoc[Building Integrations in Design Center]  | xref:design-center::design-create-publish-api-specs.adoc[Creating API specifications in Design Center]
 |===
 
-Anypoint Studio 7.0 and later includes xref:mule-runtime::index.adoc[Mule Runtime (Mule) 4], the runtime environment where you deploy Mule apps and APIs.
+Anypoint Studio 7.0 and later includes xref:mule-runtime::index.adoc[Mule runtime engine (Mule) 4], the runtime environment in which you deploy Mule apps and APIs.
 Earlier versions of Studio include xref:3.9@mule-runtime::index.adoc[Mule 3].
 
 [%header%autowidth.spread]
