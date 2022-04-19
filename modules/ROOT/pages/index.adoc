@@ -63,7 +63,7 @@ After you test your integration, deploy it to a production environment:
 
 == Manage Integrations
 
-After your integration is running in production, you can monitor its performance:
+After your integration is running in production, monitor its performance:
 
 * xref:monitoring::index.adoc[Anypoint Monitoring]
 * xref:api-functional-monitoring::index.adoc[API Functional Monitoring]
