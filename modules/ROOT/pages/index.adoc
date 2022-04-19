@@ -57,7 +57,7 @@ It is best practice to test the integrations you create before you deploy them:
 
 After you test your integration, deploy it to a production environment:
 
-* xref:runtime-manager::deployment-strategies.adoc[Choosing a deployment strategy]
+* xref:runtime-manager::deployment-strategies.adoc[Choosing a Deployment Strategy]
 * xref:3.9@mule-runtime::installing.adoc#mule-installation-procedure[Installing Standalone Mule 3]
 * xref:mule-runtime::runtime-installation-task.adoc[Installing Standalone Mule 4]
 
