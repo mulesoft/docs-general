@@ -174,17 +174,17 @@ image:pub-to-exchange.png[Dialog to publish API to Exchange]
   ** Leave *Version* with the default value.
   ** Select *Project type > Example*. The *Finish* button is now enabled.
 . Click Next.
-. Do not add any Tags or Categories. Click *Finish*.
+. You can add documentation, descriptions, and tags that aid search.
+. Click *Finish*.
 . Click *Yes* when asked to proceed.
 +
 After the project is uploaded to Exchange, you are provided with a direct link to the project.
 +
-image:link-to-published-api.png[Dialog showing link to API published in Exchange, 600]
+image:link-to-published-api.png[Dialog showing link to API published in Exchange, 600] 
 . Click the link to view the project in Exchange.
 +
-image:published-in-exchange.png[API viewed from Exchange]
+image:published-in-exchange.png[API viewed from Exchange] //update with new UI screenshots
 
-. You can add documentation, descriptions, and tags that aid search.
 . Notice that HTTP Connector and Sockets Connector are listed as dependencies, which is viewed by clicking *Version detail* from the dropdown menu in the *Asset versions* section.
 . When you are satisfied with the publication, return to Studio and click *OK* to close the open dialog windows.
 
