@@ -183,7 +183,7 @@ After the project is uploaded to Exchange, you are provided with a direct link t
 image:link-to-published-api.png[Dialog showing link to API published in Exchange, 600] 
 . Click the link to view the project in Exchange.
 +
-image:published-in-exchange.png[API viewed from Exchange] //update with new UI screenshots
+image:published-in-exchange.png[API viewed from Exchange]
 
 . Notice that HTTP Connector and Sockets Connector are listed as dependencies, which is viewed by clicking *Version detail* from the dropdown menu in the *Asset versions* section.
 . When you are satisfied with the publication, return to Studio and click *OK* to close the open dialog windows.
