@@ -7,7 +7,7 @@ So far, we've created an API and tested the HTTP request with a third-party clie
 Now we'll use Studio to add validation and a unit test. In Studio, we'll use the scaffolding already created to:
 
 * Validate input using the Validation module.
-* Create an error handler for one error condition. 
+* Create an error handler for one error condition.
 
 == Step 4.1: Validation
 
@@ -17,7 +17,7 @@ Our API is very simple, so our testing will be simple. We'll test that the size 
 Add the *Validate size* operation to the `hello-world` project:
 
 . In the `hello-world` project in Studio, open `hello-world.xml` if it isn't already open, and make sure you are viewing the *Message Flow* tab of the canvas.
-. In *Mule Palette*, select *Add Modules > Validation* and drag it to the drag and drop area in the left side of Mule Palette. 
+. In *Mule Palette*, select *Add Modules > Validation* and drag it to the drag and drop area in the left side of Mule Palette.
 +
 image:validation-module.png[View of Mule Palette with Validation selected, 500]
 . From the list of operations displayed, drag *Validate size* to the canvas and drop it to the right of *Set Payload*, inside the endpoint module.
@@ -49,9 +49,9 @@ To test that the validation works when the payload is too short, use the debugge
 . In the `hello-world` project in Studio, open `hello-world.xml`.
 . Click *Set Payload*, and then change the value to `Hi.`.
 . In *Mule Palette*, select *Favorites > Logger*, and then drag and drop the logger in between *Set Payload* and *Validate size*. The logger will help us stop the process to help debugging. No configuration of the logger is needed.
-. Right-click *Set Payload* and select *Toggle breakpoint*.
-. Right-click *Logger* and select *Toggle breakpoint*.
-. Right-click *Validate size* and select *Toggle breakpoint*.
+. Right-click *Set Payload* and select *Add breakpoint*.
+. Right-click *Logger* and select *Add breakpoint*.
+. Right-click *Validate size* and select *Add breakpoint*.
 . Right-click the canvas and select *Debug project hello-world*. If you are asked to open the Mule Debug perspective, select the *Remember my decision* checkbox and click *Yes*.
 +
 image:mule-debugger-view.png[Studio in Debugger view]
@@ -59,23 +59,23 @@ image:mule-debugger-view.png[Studio in Debugger view]
 . In Advanced REST Client, send a request to the `/greeting` endpoint:
 +
 [source, xml]
----- 
+----
 http://localhost:8081/api/greeting
 ----
 
 . Return to Studio and notice that there's a dashed line around *Set Payload*.
 . In the canvas, click *Set Payload* to open the *Set Payload* node in the *Mule Debugger* above the canvas. Open *Set Payload* and see that the payload value is `Hi.`, three characters.
-. Click the curved yellow arrow above the debugger window. 
+. Click the curved yellow arrow above the debugger window.
 +
 image:next-toggle.png[Control to move to next toggle point, 500]
 +
 If you hover over it to ensure you have the right control, the label *Next processor (F6)* appears. The debugger pane now shows the Logger connector.
-. Click the curved yellow arrow again to move to the Validate size connector. 
+. Click the curved yellow arrow again to move to the Validate size connector.
 . Click the curved yellow arrow again, and notice that that an error message you defined is now in the *error* object in the debugger pane, and a red dotted-line shows in the Validate size connector.
 +
 image:validation-error.png[View of debugger displaying error for Validate size, 500]
 . Click the curved yellow arrow again, and notice that the canvas now displays the top of your message flow, with a red dotted-line around the APIkit Router, one of the scaffolding items added during import. The router handles the error.
-. Click the curved yellow arrow again to complete the flow. Notice that the Mule debugger pane is now empty because the process has completed.   
+. Click the curved yellow arrow again to complete the flow. Notice that the Mule debugger pane is now empty because the process has completed.
 . Look at Advanced Rest Client. You should see `500 Server Error` and the payload value.
 +
 To see the error we defined returned instead of the payload, we'll need to configure one of the error handlers.
@@ -100,7 +100,7 @@ image:on-error.png[Adding an error handler to GET module and configuring it, 500
 . Click *File > Save All* to save your changes.
 . Add breakpoints to *Set Payload*, *Logger*, and *Validate size* if you previously removed them.
 . Righ-click in the canvas and select *Debug project hello-world*.
-. After the app is deployed, send the query `\http://localhost:8081/api/greeting` from Advanced Rest Client, and step through each breakpoint using the curved yellow arrow. 
+. After the app is deployed, send the query `\http://localhost:8081/api/greeting` from Advanced Rest Client, and step through each breakpoint using the curved yellow arrow.
 . When you reach *Set Payload* in *On Error Propagate*, you can see that payload set to the error message we created in Validate size is now the payload.
 +
 image:payload-message.png[Debugger messages for Set Payload in error handler, 500]
@@ -113,16 +113,18 @@ image:payload-response.png[Breakpoint at APIkit Router showing error message in 
 
 Next, we'll publish our revised API.
 
-== Step 4.4: Publish Your Revised API
+== Step 4.3: Publish Your Revised API
 
 Make your improved API available on Exchange:
 
 . From the Package Explorer in Studio, right-click the `hello-world` project.
 . Select *Anypoint Platform > Publish to Exchange*.
-. Be sure to select the same Business Group as you did before. The *Finish* button won't be active until you select a valid business group.
+. Be sure to select the same Business Group as you did before. The *Next* button won't be active until you select a valid business group.
 . Accept the version number, which automatically increments for you.
 . In *Project type*, select *Example*.
+. Click *Next*.
 . Click *Finish*.
+
 
 Studio shows you the direct link to your newly published API version. You can copy it to share with others.
 
@@ -132,7 +134,7 @@ Let's deploy our API so that anyone can send a request to the `/greeting` endpoi
 
 == Developer Deep Dives
 
-There's a lot to learn about unit testing, error handling, and validation. 
+There's a lot to learn about unit testing, error handling, and validation.
 Explore the details:
 
 * xref:munit::index.adoc[MUnit]

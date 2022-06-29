@@ -23,7 +23,7 @@ image:deploy1.png[dialog for deploying to CloudHub]
 . Enter `hello-world-greeting-firstname-lastname`; every app and API name must be unique across CloudHub. This example uses `hello-world-greeting-sandy-kim`.
 . Verify that *Deployment Target* is `CloudHub`.
 . Don't change any of the other default values.
-. Click *Deploy Application*. After a brief pause, a window displays the status of the deployment. 
+. Click *Deploy Application*. After a brief pause, a window displays the status of the deployment.
 . Click *Open in Browser* to see the status displayed in Runtime Manager.
 +
 image:open-in-browser.png[Runtime Manager displaying app deployment status]
@@ -36,7 +36,7 @@ When the project has been successfully deployed, Runtime Manager displays the st
   .. In Advanced Rest Client, send a request to the base URI that you just copied. Be sure to add the API endpoint `/greeting`:
 +
 [source, xml]
----- 
+----
 GET http://hello-world-greeting.sandy-kim.us-e2.cloudhub.io/api/greeting
 ----
 
@@ -47,11 +47,11 @@ We'll add a rate-limiting policy, which we can do this while the API is running.
 
 == Step 5.2: Create an API Proxy Application
 
-In order to add a rate limit policy to our deployed API, we must first add our API to API Manager, and create an API proxy. 
+In order to add a rate limit policy to our deployed API, we must first add our API to API Manager, and create an API proxy.
 
 . Log in to Anypoint Platform.
 +
-link:https://anypoint.mulesoft.com/login["Take me to Anypoint Platform^", role="button-primary"] 
+link:https://anypoint.mulesoft.com/login["Take me to Anypoint Platform^", role="button-primary"]
 
 . Click *API Manager*.
 . Switch to the sandbox environment.
@@ -70,7 +70,7 @@ link:https://anypoint.mulesoft.com/login["Take me to Anypoint Platform^", role="
   ** Ignore Advanced options.
 . Click *Save*.
 
-API Manager shows you a status page for your new proxy. 
+API Manager shows you a status page for your new proxy.
 
 image:proxy1.png[status page for API before proxy, 600]
 
@@ -93,7 +93,7 @@ link:https://anypoint.mulesoft.com/login["Take me to Anypoint Platform^", role="
   ** Select *Runtime version: 4.2.2* or a later version if available.
   ** For *Proxy application name*, which is the name displayed in Runtime Manager, enter *hello-world-greeting-proxy*, but append your last name or other unique string to ensure the proxy name is unique. The deploy button won't be enabled until you enter a valid value here.
   ** Select *Update application if exists*.
-. Click *Deploy*. A progress window displays. 
+. Click *Deploy*. A progress window displays.
 . When deployment is complete, close the progress dialog to return to the settings page.
 
 Now you have an implementation URL that you don't want to share with the world, and a proxy URL which will be safe to share with the world once we configure it.
@@ -112,7 +112,7 @@ Now you can test the proxy endpoint from Exchange:
 +
 image:exchange-page-for-proxy.png[Exchange page for hello-world proxy, 600]
 
-. Click *API instances*. You can see the Mocking Service version and the new proxy you just created in the Sandbox environment, labeled "no policy". 
+. Click *API instances*. You can see the Mocking Service version and the new proxy you just created in the Sandbox environment, labeled "no policy".
 . On the left side, click */greeting* to open, then click *GET*.
 . On the right side, toward the top of the column, click *Mocking Service* to open the drop-down menu.
 . Select *Sandbox: No policy instance*
@@ -149,7 +149,7 @@ The new policy is displayed at the bottom of the Policies home page.
 Change the API instance label so it reflects the fact that we now have a policy on the proxy:
 
 . Click *Settings*.
-. Click the edit pencil next to *Label* and change the value to `Rate-limiting policy`. 
+. Click the edit pencil next to *Label* and change the value to `Rate-limiting policy`.
 
 Test the new policy:
 
@@ -162,4 +162,3 @@ Now that your API is deployed as a Mule app to Mule in CloudHub, you can manage 
 == Developer Deep Dive
 
 MuleSoft provides many deployment options, described in xref:mule-runtime::deploying.adoc[Deploy Mule Applications].
-

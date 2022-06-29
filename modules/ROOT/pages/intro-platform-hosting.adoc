@@ -71,11 +71,11 @@ Not all Anypoint Platform components are supported in all cloud environments. Th
 | Analytics | Y | Y | N | N
 | Anypoint API Manager | Y | Y | Y | Y
 | Anypoint Runtime Manager | Y | Y | Y | Y
-| Anypoint Monitoring | Y | Y | N | Y
+| Anypoint Monitoring | Y | Y | Y | Y
 | Secrets manager | Y | Y | N | N
-| Anypoint Visualizer | Y | Y | N | Y
-| Anypoint Security edge policies | Y | Y | N | N
-| Anypoint Security tokenization | Y | Y | N | N
+| Anypoint Visualizer | Y | Y | Y | Y
+| Anypoint Security edge policies | N | N | N | N
+| Anypoint Security tokenization | N | N | N | N
 | Anypoint DataGraph | Y | Y | N | N
 | CloudHub runtimes | Y | Y | Y | N
 | Runtime Fabric | Y | Y | N | N

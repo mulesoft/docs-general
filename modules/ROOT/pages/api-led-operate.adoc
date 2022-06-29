@@ -13,8 +13,7 @@ To check the health of your API:
 +
 link:https://anypoint.mulesoft.com/cloudhub/#/console/home/applications["Take me to Runtime Manager^", role="button-primary"]
 +
-Runtime Manager displays a list of apps in the Design environment by default.
-. Switch to the Sandbox environment:
+. Select the Sandbox environment. If the Design environment is automatically displayed, switch to the Sandbox environment:
   .. Click the *Design* environment button.
   .. Click *Sandbox*, and then click the *Switch* button.
 . Click anywhere in the row for *hello-world-greeting-us-proxy*.
@@ -24,7 +23,8 @@ If you've sent a few test requests to the proxy, you can see the traffic in the 
 Other information you can obtain from Runtime Manager:
 
 * Click *Logs* to review every transaction for the selected app for the last 30 days (up to 100 MB).
-* Click *Settings* to review the settings for this app. You can also enable Monitoring and Visualizer from the Settings page.
+* Click *Manage application* to review the settings for this app.
+* Click *Insight* to enable Monitoring and Visualizer.
 
 == Developer Deep Dive
 
