@@ -1,9 +1,3 @@
-= Contributions Welcome
+= Please do not delete this branch
 
-Before creating a pull request review the following:
-
-* xref:LICENSE.txt[LICENSE.txt]
-* xref:SECURITY.adoc[SECURITY.adoc]
-* xref:CODE_OF_CONDUCT.adoc[CODE_OF_CONDUCT.adoc]
-
-When you submit your pull request, you are asked to sign a contributor license agreement (CLA) if we don't have one on file for you.
+This branch is used as part of the Quickstart on Confluence. Please do not delete or modify it, thank you!
