@@ -10,40 +10,43 @@ It is for reference purposes only and will not be updated.
 
 |===
 
-| Anypoint Platform for PCF Doc Archives |
-  xref:1.5@anypoint-platform-pcf::index.adoc[v1.5 Archive]
-
 | Anypoint Connector DevKit Doc Archives |
-  xref:3.4@connector-devkit::index.adoc[v3.4 Archive] - +
-  xref:3.3@connector-devkit::index.adoc[v3.3 Archive] - +
+  xref:3.4@connector-devkit::index.adoc[v3.4 Archive] +
+  xref:3.3@connector-devkit::index.adoc[v3.3 Archive] +
   xref:3.2@connector-devkit::index.adoc[v3.2 Archive]
 
 | Anypoint Data Gateway Doc Archives |
   xref:latest@data-gateway::index.adoc[Archive]
 
 | Healthcare Toolkit Doc Archives |
+  xref:3.1@healthcare-toolkit/[v3.1 Archive] +
+  xref:3.0@healthcare-toolkit/[v3.0 Archive] +
+  xref:2.0@healthcare-toolkit/[v2.0 Archive] +
   xref:1.3@healthcare-toolkit/[v1.3 Archive]
 
 | Mule Management Console Doc Archives |
-  xref:3.7@mule-management-console::index.adoc[v3.7 Archive] - +
-  xref:3.6@mule-management-console::index.adoc[v3.6 Archive] - +
-  xref:3.5@mule-management-console::index.adoc[v3.5 Archive] - +
-  xref:3.4@mule-management-console::index.adoc[v3.4 Archive] - +
-  xref:3.3@mule-management-console::index.adoc[v3.3 Archive] - +
+  xref:3.7@mule-management-console::index.adoc[v3.7 Archive] +
+  xref:3.6@mule-management-console::index.adoc[v3.6 Archive] +
+  xref:3.5@mule-management-console::index.adoc[v3.5 Archive] +
+  xref:3.4@mule-management-console::index.adoc[v3.4 Archive] +
+  xref:3.3@mule-management-console::index.adoc[v3.3 Archive] +
   xref:3.2@mule-management-console::index.adoc[v3.2 Archive]
 
 | Mule Runtime Doc Archives (Mule User Guide) |
-  xref:3.7@mule-runtime::index.adoc[v3.7 Archive] - +
-  xref:3.6@mule-runtime::index.adoc[v3.6 Archive] - +
-  xref:3.5@mule-runtime::index.adoc[v3.5 Archive] - +
-  xref:3.4@mule-runtime::index.adoc[v3.4 Archive] - +
-  xref:3.3@mule-runtime::index.adoc[v3.3 Archive] - +
+  xref:3.7@mule-runtime::index.adoc[v3.7 Archive] +
+  xref:3.6@mule-runtime::index.adoc[v3.6 Archive] +
+  xref:3.5@mule-runtime::index.adoc[v3.5 Archive] +
+  xref:3.4@mule-runtime::index.adoc[v3.4 Archive] +
+  xref:3.3@mule-runtime::index.adoc[v3.3 Archive] +
   xref:3.2@mule-runtime::index.adoc[v3.2 Archive]
 
 | MUnit Doc Archives |
-  xref:1.2@munit::index.adoc[v1.2 Archive] - +
-  xref:1.1@munit::index.adoc[v1.1 Archive] - +
+  xref:1.2@munit::index.adoc[v1.2 Archive] +
+  xref:1.1@munit::index.adoc[v1.1 Archive] +
   xref:1.0@munit::index.adoc[v1.0 Archive]
+
+| Tcat Server Doc Archives |
+  xref:7.1@tcat-server::index.adoc[v7.1 Archive]
 |===
 
 == Current MuleSoft Documentation
