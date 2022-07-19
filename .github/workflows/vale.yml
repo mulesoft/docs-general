@@ -7,13 +7,11 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@master
-
     - name: Vale
-      uses: errata-ai/vale-action@v1.5.0
+      uses: errata-ai/vale-action@v1
       with:
         styles: |
-          https://github.com/mulesoft/docs-beta/releases/download/gc-test/mulesoft.zip
-        debug: true
+          https://github.com/mulesoft/dev-docs-writing-style/releases/download/v0.1.1-alpha/mulesoft.zip
       env:
         # Required, set by GitHub actions automatically:
         # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret
