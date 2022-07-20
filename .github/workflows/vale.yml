@@ -10,7 +10,7 @@ jobs:
     - name: Download and extract
       uses: schmiddim/action-wget-unzip@master
       with:
-        url: https://github.com/mulesoft/dev-docs-writing-style/releases/download/v0.1.0-beta.5/Mulesoft.zip
+        url: https://github.com/mulesoft/dev-docs-writing-style/releases/download/latest/Mulesoft.zip
         destination: Mulesoft
     - name: Vale
       uses: errata-ai/vale-action@reviewdog
