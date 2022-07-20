@@ -1,4 +1,4 @@
-= MuleSoft Documentation
+= MuleSoft Documentation Resources
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
@@ -6,70 +6,72 @@ endif::[]
 
 Your customers and employees need data-rich, delightful digital experiences on a variety of devices from smart watches to desktop computers. To deliver these experiences, your systems must be connected to each other, and the data must flow among those systems (integration).
 
-The MuleSoft approach to integration, https://blogs.mulesoft.com/dev/api-dev/what-is-api-led-connectivity/[integration of data from different systems using a layer of APIs], allows you to spend less time on IT projects and more time on your core business. Whenever you turn a business process into an API, you make it easier to implement that process in the next project. And APIs have proven to be the best size of reusable code.
+The MuleSoft approach to integration, https://blogs.mulesoft.com/dev/api-dev/what-is-api-led-connectivity/[integration of data from different systems using a layer of APIs], allows you to spend less time on IT projects and more time on your core business. Whenever you turn a business process into an API, you make it easier to implement that process in the next project.
 
 image::api-led-architecture.png[Diagram of structured API layers for experience, process, and system APIs that can be easily added or removed]
 
-Anypoint Platform helps you build a structured application network that connects applications, data, and devices with reusable APIs.
-The unified Anypoint Platform makes it easy to discover, create, and manage APIs in a modular, organized layer. Instead of retrieving random and possibly unstable code snippets, you can “shop” for APIs created using the industry’s best practices.
+Anypoint Platform enables you to build a structured application network that uses reusable APIs to connect applications, data, and devices.
+Anypoint Platform makes it easy to discover, create, and manage APIs in a modular, organized layer. Instead of retrieving random (and possibly unstable) code snippets, you can discover and use APIs that are created using the industry’s best practices.
 
-== Explore Anypoint Exchange
+== Exploring Anypoint Exchange
 
-The APIs you build in MuleSoft to integrate applications and services are, by design, reusable and built with enterprise security in mind.
-You can discover these APIs, as well as connectors, samples, and templates in
-https://www.anypoint.mulesoft.com/exchange/[Exchange^].
+The APIs you build in Anypoint Platform to integrate applications and services are reusable and include enterprise-level security.
+You can discover these APIs, as well as connectors, samples, and templates, in
+https://anypoint.mulesoft.com/exchange/[Exchange^].
 
 Exchange also provides RAML fragments, custom packages, videos, links to documentation, and other assets.
 
 Discover Anypoint Platform APIs on https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/[the MuleSoft developer portal^].
 
-== Design and Build API-based Integrations
+== Designing and Building API-Based Integrations
 
-Anypoint Studio is an Eclipse-based IDE that helps you create integrations. Design Center, a web-based tool, helps you create API specifications, the foundation for data integrations.
+Anypoint Studio is an Eclipse-based IDE that enables you to create integrations. Design Center, a web-based tool, enables you to create API specifications, which are the foundation for these integrations.
 
+[%header%autowidth.spread]
 |===
-| **Creating Integrations** | **Creating API Specifications**
+| Creating Integrations | Creating API Specifications
 | xref:studio::index.adoc[Building Integrations with Anypoint Studio] | xref:studio::import-api-specification-exchange.adoc[Importing APIs from Exchange to Studio]
 | xref:design-center::about-designing-a-mule-application.adoc[Building Integrations in Design Center]  | xref:design-center::design-create-publish-api-specs.adoc[Creating API specifications in Design Center]
 |===
 
-Studio 7 includes xref:mule-runtime::index.adoc[Mule Runtime (Mule) 4], the runtime environment where you deploy Mule apps and APIs.
+Anypoint Studio 7.0 and later includes xref:mule-runtime::index.adoc[Mule runtime engine (Mule) 4], the runtime environment in which you deploy Mule apps and APIs.
 Earlier versions of Studio include xref:3.9@mule-runtime::index.adoc[Mule 3].
 
+[%header%autowidth.spread]
 |===
-| **Mule 3**    | **Mule 4**
+| Mule 3    | Mule 4
 | xref:3.9@mule-runtime::anypoint-connectors.adoc[Connectors for Mule 3] | xref:connectors::index.adoc[Connectors for Mule 4]
 | xref:3.9@mule-runtime::dataweave.adoc[DataWeave 1 for Mule 3]  | xref:mule-runtime::dataweave.adoc[DataWeave 2 for Mule 4]
 | xref:3.x@apikit::index.adoc[APIkit 3] | xref:4.x@apikit::overview-4.adoc[APIkit 4]
-| xref:3.9@connector-devkit::index.adoc[Connector DevKit] | xref:1.1@mule-sdk::index.adoc[Mule SDKs]
+| xref:3.9@connector-devkit::index.adoc[Connector DevKit] | xref:1.1@mule-sdk::index.adoc[Mule SDK]
 |===
 
-== Test Integrations
+== Testing Integrations
 
-Test the integrations you create before you deploy them.
+It is best practice to test the integrations you create before you deploy them:
 
 * xref:2.1@munit::index.adoc[Testing with MUnit]
 * xref:runtime-manager::troubleshooting.adoc[Troubleshooting]
 
-== Deploy Integrations
+== Deploying Integrations
 
-Deploy your integration into a production environment.
+After you test your integration, deploy it to a production environment:
 
-* xref:runtime-manager::deployment-strategies.adoc[Choosing a deployment strategy]
+* xref:runtime-manager::deployment-strategies.adoc[Choosing a Deployment Strategy]
 * xref:3.9@mule-runtime::installing.adoc#mule-installation-procedure[Installing Standalone Mule 3]
 * xref:mule-runtime::runtime-installation-task.adoc[Installing Standalone Mule 4]
 
-== Manage Integrations
+== Managing Integrations
 
-Once your integration is running in production, you can monitor its performance.
+After your integration is running in production, monitor its performance:
 
 * xref:monitoring::index.adoc[Anypoint Monitoring]
 * xref:api-functional-monitoring::index.adoc[API Functional Monitoring]
 * xref:runtime-manager::monitoring.adoc[Runtime Monitoring]
 
-== Manage Anypoint Platform Features
+== Managing Anypoint Platform Features
 
-During development or after deployment, you can make changes to your integration.
+Either during the development cycle or after deployment, you can make changes to your integration:
 
 * xref:design-center::index.adoc[Design Center]
 * xref:2.x@api-manager::latest-overview-concept.adoc[API Manager]
@@ -78,9 +80,9 @@ During development or after deployment, you can make changes to your integration
 == More Resources
 
 * xref:release-notes::index.adoc[Release Notes]
-* https://developer.mulesoft.com/tutorials-and-howtos/getting-started/hello-mule[MuleSoft developer tutorial "Getting Started with MuleSoft"^]
+* https://developer.mulesoft.com/tutorials-and-howtos/getting-started/hello-mule[MuleSoft Developer Tutorial "Getting Started with MuleSoft"^]
 * https://training.mulesoft.com/[Training^]
 
 == Archived Documentation
 
-When an older version of a product is no longer supported, including products with end-of-life status, the documentation moves to an https://docs.archive.mulesoft.com/[archive site^].
+When a product version is no longer supported, including products with end-of-life status, its documentation moves to an https://docs.archive.mulesoft.com/[archive site^].
