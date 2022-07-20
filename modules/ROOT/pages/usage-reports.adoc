@@ -1,0 +1,32 @@
+= Viewing Usage Reports
+
+If you’ve signed up for usage-based pricing, usage reports provide insights into your monthly usage of Anypoint Platform products. Reports are based on different metrics across products. [rewrite as desired]
+
+== How Usage Info is Collected 
+
+
+Reports are updated on the fifth day of each month.
+
+== Usage Reports Overview
+
+Usage reports are available for the following Anypoint Platform products:
+
+* Flex Gateway
++
+Flex Gateway usage reports track monthly API calls. You can view monthly API calls by business group, environment, and registration. 
+
+* API Manager
++
+API Manager usage reports track the maximum number of APIs managed in a given month. You can view the maximum APIs managed by business group, environment, and runtime. 
+
+The maximum APIs managed are counted on an hourly basis. The count includes both unique and non-unique APIs.  
+
+* API Governance
+
+
+== View Usage Reports
+
+Access your reports via the username icon on the top-right navigation bar in Anypoint Platform.
+
+To access usage reports, an admin must grant you the *Usage Viewer* permission in Access Management.
+
