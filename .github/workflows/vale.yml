@@ -1,15 +1,18 @@
-name: Linting
+name: reviewdog
 on: [push]
 
 jobs:
-  prose:
+  vale:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@master
+      uses: actions/checkout@v2
     - name: Vale
-      uses: errata-ai/vale-action@v1
+      uses: errata-ai/vale-action@reviewdog
       with:
+        version: 2.17.0
+        fail_on_error: true
+        files: modules/ROOT/pages
         styles: |
           https://github.com/mulesoft/dev-docs-writing-style/releases/download/v0.1.0-beta.5/Mulesoft.zip
       env:
