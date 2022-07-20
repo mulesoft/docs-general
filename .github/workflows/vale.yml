@@ -7,14 +7,16 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+    - name: Download and extract
+      uses: schmiddim/action-wget-unzip@master
+      with:
+        url: https://github.com/mulesoft/dev-docs-writing-style/releases/download/v0.1.0-beta.5/Mulesoft.zip
+        destination: Mulesoft
     - name: Vale
       uses: errata-ai/vale-action@reviewdog
       with:
         version: 2.17.0
         fail_on_error: true
-        files: modules/ROOT/pages
-        styles: |
-          https://github.com/mulesoft/dev-docs-writing-style/releases/download/v0.1.0-beta.5/Mulesoft.zip
       env:
         # Required, set by GitHub actions automatically:
         # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret
