@@ -11,7 +11,7 @@ jobs:
       uses: errata-ai/vale-action@v1
       with:
         styles: |
-          https://github.com/mulesoft/dev-docs-writing-style/releases/download/latest/mulesoft.zip
+          https://github.com/mulesoft/dev-docs-writing-style/releases/download/v0.1.0-beta.2/mulesoft.zip
       env:
         # Required, set by GitHub actions automatically:
         # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret
