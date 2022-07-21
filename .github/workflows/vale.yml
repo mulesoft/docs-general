@@ -1,7 +1,7 @@
-name: Linting
+name: autolint
 on: [ pull_request, push ]
 jobs:
-  prose:
+  lint:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -13,7 +13,6 @@ jobs:
         excludes: prerelease, draft
         repository: mulesoft/dev-docs-writing-style
     - name: Download and extract
-      if: ${{ github.event_name == 'pull_request' }}
       uses: schmiddim/action-wget-unzip@v2
       with:
         url: https://github.com/mulesoft/dev-docs-writing-style/releases/download/${{steps.style_version.outputs.release}}/Mulesoft.zip
