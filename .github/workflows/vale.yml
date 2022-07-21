@@ -1,5 +1,7 @@
 name: autolint
-on: [ push, pull_request ]
+on:
+  push:
+  pull_request:
 jobs:
   lint-push:
     runs-on: ubuntu-latest
