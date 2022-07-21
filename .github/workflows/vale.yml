@@ -16,7 +16,7 @@ jobs:
     - uses: actions/github-script@v6
       with:
         script: |
-          console.log(context)
+          console.log(context.payload.repository.pulls_url)
     # - name: Setup Output for Branch in PR
     #   id: inprcheck
     #   run: |
