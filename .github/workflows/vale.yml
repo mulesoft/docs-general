@@ -1,4 +1,4 @@
-name: autolint
+name: reviewdog
 on:
   push:
     branches:
@@ -6,7 +6,11 @@ on:
       - master
       - main
       - v**.**
+    paths:
+      - '**.adoc'
   pull_request:
+    paths:
+      - '**.adoc'
 jobs:
   lint:
     runs-on: ubuntu-latest
