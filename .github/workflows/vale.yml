@@ -1,18 +1,25 @@
-name: reviewdog
-on: [pull_request]
-
+name: Linting
+on: 
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
 jobs:
-  vale:
+  prose:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Download and extract
-      uses: schmiddim/action-wget-unzip@master
+      if: ${{ github.event_name == 'pull_request' }}
+      uses: schmiddim/action-wget-unzip@v2
       with:
         url: https://github.com/mulesoft/dev-docs-writing-style/releases/download/v0.1.0-beta.5/Mulesoft.zip
         destination: Mulesoft
     - name: Vale
+      if: ${{ github.event_name == 'pull_request' }}
       uses: errata-ai/vale-action@reviewdog
       with:
         version: 2.17.0
@@ -21,3 +28,17 @@ jobs:
         # Required, set by GitHub actions automatically:
         # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    # - name: Get latest version
+    #   id: style_version
+    #   uses: pozetroninc/github-action-get-latest-release@master
+    #   with:
+    #     repository: mulesoft/dev-docs-writing-style
+    # - name: Vale
+    #   uses: errata-ai/vale-action@v1
+    #   with:
+    #     styles: |
+    #       https://github.com/mulesoft/dev-docs-writing-style/releases/download/${{ steps.style_version.outputs.release }}/Mulesoft.zip
+    #   env:
+    #     # Required, set by GitHub actions automatically:
+    #     # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret
+    #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
