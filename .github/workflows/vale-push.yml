@@ -1,8 +1,6 @@
 name: autolint
 on:
   push:
-    branches:
-      - latest
   pull_request:
 jobs:
   lint:
