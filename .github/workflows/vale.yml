@@ -23,8 +23,8 @@ jobs:
           check_branch_pr = require('./.github/scripts/check_branch_pr.js')
           return await check_branch_pr({github, context, core})
       env:
-        GITHUB_USERNAME: ${{ steps.secrets.outputs.GITHUB_USERNAME }}
-        GITHUB_TOKEN: ${{ steps.secrets.outputs.GITHUB_TOKEN }}
+        GITHUB_USERNAME: ${{ secrets.GITHUB_USERNAME }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GITHUB_ACTOR: ${{ github.actor }}
         GITHUB_EVENT_NAME: ${{ github.event_name }}
         BRANCH_NAME: ${{ steps.extract_branch.outputs.BRANCH_NAME }}
