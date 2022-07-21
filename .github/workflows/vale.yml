@@ -1,6 +1,6 @@
 name: reviewdog
 on:
-  workflow_dispatch:
+  push:
   pull_request:
 jobs:
   lint:
@@ -8,6 +8,32 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+    - name: Extract branch name
+      id: extract_branch
+      run: |
+        echo ${GITHUB_REF##*/}
+        echo ::set-output name=BRANCH_NAME::${GITHUB_REF#refs/*/}
+    - name: Check if Branch is in PR
+      if: github.event_name == 'push'
+      id: checkbranch
+      uses: actions/github-script@v4
+      with:
+        github-token: ${{ env.GITHUB_TOKEN }}
+        script: |
+          check_branch_pr = require('./.github/scripts/check_branch_pr.js')
+          return await check_branch_pr({github, context, core})
+      env:
+        GITHUB_USERNAME: ${{ steps.secrets.outputs.GITHUB_USERNAME }}
+        GITHUB_TOKEN: ${{ steps.secrets.outputs.GITHUB_TOKEN }}
+        GITHUB_ACTOR: ${{ github.actor }}
+        GITHUB_EVENT_NAME: ${{ github.event_name }}
+        BRANCH_NAME: ${{ steps.extract_branch.outputs.BRANCH_NAME }}
+    - name: Setup Output for Branch in PR
+      id: inprcheck
+      run: |
+        echo '::set-output name=BRANCH_IN_PR::${{ env.BRANCH_IN_PR }}'
+      env:
+        BRANCH_IN_PR: ${{ steps.checkbranch.outputs.result }}
     - name: Get latest release version
       id: style_version
       uses: pozetroninc/github-action-get-latest-release@master
@@ -20,7 +46,7 @@ jobs:
         url: https://github.com/mulesoft/dev-docs-writing-style/releases/download/${{steps.style_version.outputs.release}}/Mulesoft.zip
         destination: .github/Mulesoft
     - name: Vale (push)
-      if: github.ref != 'refs/pull/**/merge'
+      if: steps.inprcheck.outputs.BRANCH_IN_PR != 'true'
       uses: errata-ai/vale-action@reviewdog
       with:
         version: 2.17.0
@@ -31,7 +57,7 @@ jobs:
         # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
     - name: Vale (PR)
-      if: github.ref == 'refs/pull/**/merge'
+      if: steps.inprcheck.outputs.BRANCH_IN_PR == 'true'
       uses: errata-ai/vale-action@reviewdog
       with:
         version: 2.17.0
