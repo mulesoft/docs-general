@@ -1,0 +1,18 @@
+name: Linting
+on: [push]
+
+jobs:
+  prose:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+    - name: Vale
+      uses: errata-ai/vale-action@v1
+      with:
+        styles: |
+          https://github.com/mulesoft/dev-docs-writing-style/releases/download/latest/Mulesoft.zip
+      env:
+        # Required, set by GitHub actions automatically:
+        # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
