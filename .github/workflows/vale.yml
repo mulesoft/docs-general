@@ -1,5 +1,5 @@
 name: Linting
-on: [ pull_request,push ]
+on: [ pull_request, push ]
 jobs:
   prose:
     runs-on: ubuntu-latest
@@ -11,13 +11,12 @@ jobs:
       uses: schmiddim/action-wget-unzip@v2
       with:
         url: https://github.com/mulesoft/dev-docs-writing-style/releases/download/v0.1.0-beta.5/Mulesoft.zip
-        destination: Mulesoft
+        destination: ../dev-docs-writing-style
     - name: Vale
       if: ${{ github.event_name == 'pull_request' }}
       uses: errata-ai/vale-action@reviewdog
       with:
         version: 2.17.0
-        fail_on_error: true
       env:
         # Required, set by GitHub actions automatically:
         # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret
