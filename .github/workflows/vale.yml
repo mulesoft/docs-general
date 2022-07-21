@@ -17,23 +17,12 @@ jobs:
       with:
         url: https://github.com/mulesoft/dev-docs-writing-style/releases/download/${{steps.style_version.outputs.release}}/Mulesoft.zip
         destination: .github/Mulesoft
-    - name: Vale (push)
-      if: ${{ github.ref != 'refs/pull/**/merge' }}
-      uses: errata-ai/vale-action@reviewdog
-      with:
-        version: 2.17.0
-        fail_on_error: true
-        reporter: local
-      env:
-        # Required, set by GitHub actions automatically:
-        # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-    - name: Vale (PR)
-      if: ${{ github.ref == 'refs/pull/**/merge' }}
+    - name: Vale
       uses: errata-ai/vale-action@reviewdog
       with:
         version: 2.17.0
         fail_on_error: false
+        reporter: local
       env:
         # Required, set by GitHub actions automatically:
         # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret
