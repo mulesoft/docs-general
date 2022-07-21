@@ -1,16 +1,7 @@
 name: reviewdog
 on:
-  push:
-    branches:
-      - latest
-      - master
-      - main
-      - v**.**
-    paths:
-      - '**.adoc'
+  workflow_dispatch:
   pull_request:
-    paths:
-      - '**.adoc'
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -29,7 +20,7 @@ jobs:
         url: https://github.com/mulesoft/dev-docs-writing-style/releases/download/${{steps.style_version.outputs.release}}/Mulesoft.zip
         destination: .github/Mulesoft
     - name: Vale (push)
-      if: github.ref == 'refs/heads/latest'
+      if: github.ref != 'refs/pull/**/merge'
       uses: errata-ai/vale-action@reviewdog
       with:
         version: 2.17.0
@@ -40,7 +31,7 @@ jobs:
         # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
     - name: Vale (PR)
-      if: github.ref != 'refs/heads/latest'
+      if: github.ref == 'refs/pull/**/merge'
       uses: errata-ai/vale-action@reviewdog
       with:
         version: 2.17.0
