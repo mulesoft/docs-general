@@ -24,7 +24,7 @@ jobs:
       if: ${{ github.event_name == 'pull_request' }}
       uses: errata-ai/vale-action@reviewdog
       with:
-        version: $VALE_ACTION_REVIEWDOG_VER
+        version: "$VALE_ACTION_REVIEWDOG_VER"
         fail_on_error: false
       env:
         # Required, set by GitHub actions automatically:
@@ -34,7 +34,7 @@ jobs:
       if: ${{ github.event_name != 'pull_request' }}
       uses: errata-ai/vale-action@reviewdog
       with:
-        version: $VALE_ACTION_REVIEWDOG_VER
+        version: "$VALE_ACTION_REVIEWDOG_VER"
       env:
         fail_on_error: true
         # Required, set by GitHub actions automatically:
