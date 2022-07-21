@@ -6,6 +6,17 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+    - name: Get latest release version
+      id: style_version
+      uses: pozetroninc/github-action-get-latest-release@master
+      with:
+        excludes: prerelease, draft
+        repository: mulesoft/dev-docs-writing-style
+    - name: Download and extract
+      uses: schmiddim/action-wget-unzip@v2
+      with:
+        url: https://github.com/mulesoft/dev-docs-writing-style/releases/download/${{steps.style_version.outputs.release}}/Mulesoft.zip
+        destination: .github/Mulesoft
     - name: Vale (push)
       if: ${{ github.ref != 'refs/pull/**/merge' }}
       uses: errata-ai/vale-action@reviewdog
