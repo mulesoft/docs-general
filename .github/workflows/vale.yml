@@ -6,12 +6,17 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+    - name: Get latest version
+      id: style_version
+      uses: pozetroninc/github-action-get-latest-release@master
+      with:
+        repository: mulesoft/dev-docs-writing-style
     - name: Download and extract
       if: ${{ github.event_name == 'pull_request' }}
       uses: schmiddim/action-wget-unzip@v2
       with:
-        url: https://github.com/mulesoft/dev-docs-writing-style/releases/download/v0.1.0-beta.5/Mulesoft.zip
-        destination: ../dev-docs-writing-style
+        url: https://github.com/mulesoft/dev-docs-writing-style/releases/download/${{ steps.style_version.outputs.release }}/Mulesoft.zip
+        destination: ../dev-docs-writing-style/Mulesoft
     - name: Vale
       if: ${{ github.event_name == 'pull_request' }}
       uses: errata-ai/vale-action@reviewdog
@@ -21,11 +26,6 @@ jobs:
         # Required, set by GitHub actions automatically:
         # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-    # - name: Get latest version
-    #   id: style_version
-    #   uses: pozetroninc/github-action-get-latest-release@master
-    #   with:
-    #     repository: mulesoft/dev-docs-writing-style
     # - name: Vale
     #   uses: errata-ai/vale-action@v1
     #   with:
