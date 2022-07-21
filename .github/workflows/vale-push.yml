@@ -1,9 +1,9 @@
 name: autolint
-on: push
+on: [push, pull_request]
 jobs:
   lint:
     runs-on: ubuntu-latest
-    if: ${{ github.event_name != 'pull_request' }}
+    # if: ${{ github.event_name != 'pull_request' }}
     steps:
     - name: Dump GitHub context
       env:
