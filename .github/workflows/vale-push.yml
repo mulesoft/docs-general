@@ -1,13 +1,13 @@
 name: autolint
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - latest
+  pull_request:
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-    - name: Dump GitHub context
-      env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
-      run: echo "$GITHUB_CONTEXT"
     - name: Checkout
       uses: actions/checkout@v2
     - name: Get latest release version
@@ -22,11 +22,22 @@ jobs:
         url: https://github.com/mulesoft/dev-docs-writing-style/releases/download/${{steps.style_version.outputs.release}}/Mulesoft.zip
         destination: .github/Mulesoft
     - name: Vale (push)
+      if: github.ref == 'refs/heads/latest'
       uses: errata-ai/vale-action@reviewdog
       with:
         version: 2.17.0
         fail_on_error: true
         reporter: local
+      env:
+        # Required, set by GitHub actions automatically:
+        # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    - name: Vale (PR)
+      if: github.ref != 'refs/heads/latest'
+      uses: errata-ai/vale-action@reviewdog
+      with:
+        version: 2.17.0
+        fail_on_error: false
       env:
         # Required, set by GitHub actions automatically:
         # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret
