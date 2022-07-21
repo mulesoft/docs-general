@@ -12,13 +12,11 @@ jobs:
       with:
         excludes: prerelease, draft
         repository: mulesoft/dev-docs-writing-style
-    - name: Make directory
-      run: mkdir -p ../dev-docs-writing-style/Mulesoft
     - name: Download and extract
       uses: schmiddim/action-wget-unzip@v2
       with:
         url: https://github.com/mulesoft/dev-docs-writing-style/releases/download/${{steps.style_version.outputs.release}}/Mulesoft.zip
-        destination: ../dev-docs-writing-style/Mulesoft
+        destination: .github/Mulesoft
     - name: Vale
       uses: errata-ai/vale-action@reviewdog
       with:
