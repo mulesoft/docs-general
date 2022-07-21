@@ -17,7 +17,6 @@ jobs:
       with:
         script: |
           console.log(context)
-
     # - name: Setup Output for Branch in PR
     #   id: inprcheck
     #   run: |
