@@ -1,5 +1,5 @@
 name: reviewdog
-on: [ push, pull_request ]
+on: [ push ]
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -22,7 +22,6 @@ jobs:
       with:
         version: 2.17.0
         fail_on_error: false
-        reporter: local
       env:
         # Required, set by GitHub actions automatically:
         # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret
