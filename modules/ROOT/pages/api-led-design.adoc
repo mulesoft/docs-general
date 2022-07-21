@@ -8,7 +8,7 @@ To design an API, assess the purpose and requirements:
 
 After you define the scope and flow of your integration project,
 define an API specification in link:https://raml.org/[RAML] or link:https://openautomationsoftware.com/[OAS].
-Then, in later steps, you'll use the API specification to quickly develop an API, etc. Haha
+Then, in later steps, you'll use the API specification to quickly develop an API.
 
 == API Specifications and APIs
 
