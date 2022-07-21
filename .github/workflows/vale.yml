@@ -1,11 +1,5 @@
 name: Linting
-on: 
-  pull_request:
-    branches:
-      - master
-  push:
-    branches:
-      - master
+on: [ pull_request,push ]
 jobs:
   prose:
     runs-on: ubuntu-latest
