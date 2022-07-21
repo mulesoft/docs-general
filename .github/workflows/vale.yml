@@ -12,6 +12,8 @@ jobs:
       with:
         excludes: prerelease, draft
         repository: mulesoft/dev-docs-writing-style
+    - name: Make directory
+      run: mkdir -p ../dev-docs-writing-style/Mulesoft
     - name: Download and extract
       uses: schmiddim/action-wget-unzip@v2
       with:
