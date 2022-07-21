@@ -1,57 +1,29 @@
 name: reviewdog
-on:
-  push:
-  pull_request:
+on: [ push, pull_request ]
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    # - name: Extract branch name
-    #   id: extract_branch
-    #   run: |
-    #     echo ${GITHUB_REF##*/}
-    #     echo ::set-output name=BRANCH_NAME::${GITHUB_REF#refs/*/}
-    - uses: actions/github-script@v6
+    - name: Vale (push)
+      if: github.ref != "refs/pull/**/merge"
+      uses: errata-ai/vale-action@reviewdog
       with:
-        script: |
-          console.log(context.payload.repository.pulls_url)
-    # - name: Setup Output for Branch in PR
-    #   id: inprcheck
-    #   run: |
-    #     echo '::set-output name=BRANCH_IN_PR::${{ env.BRANCH_IN_PR }}'
-    #   env:
-    #     BRANCH_IN_PR: ${{ steps.checkbranch.outputs.result }}
-    # - name: Get latest release version
-    #   id: style_version
-    #   uses: pozetroninc/github-action-get-latest-release@master
-    #   with:
-    #     excludes: prerelease, draft
-    #     repository: mulesoft/dev-docs-writing-style
-    # - name: Download and extract
-    #   uses: schmiddim/action-wget-unzip@v2
-    #   with:
-    #     url: https://github.com/mulesoft/dev-docs-writing-style/releases/download/${{steps.style_version.outputs.release}}/Mulesoft.zip
-    #     destination: .github/Mulesoft
-    # - name: Vale (push)
-    #   if: steps.inprcheck.outputs.BRANCH_IN_PR != 'true'
-    #   uses: errata-ai/vale-action@reviewdog
-    #   with:
-    #     version: 2.17.0
-    #     fail_on_error: true
-    #     reporter: local
-    #   env:
-    #     # Required, set by GitHub actions automatically:
-    #     # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret
-    #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-    # - name: Vale (PR)
-    #   if: steps.inprcheck.outputs.BRANCH_IN_PR == 'true'
-    #   uses: errata-ai/vale-action@reviewdog
-    #   with:
-    #     version: 2.17.0
-    #     fail_on_error: false
-    #   env:
-    #     # Required, set by GitHub actions automatically:
-    #     # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret
-    #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        version: 2.17.0
+        fail_on_error: true
+        reporter: local
+      env:
+        # Required, set by GitHub actions automatically:
+        # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    - name: Vale (PR)
+      if: github.ref == "refs/pull/**/merge"
+      uses: errata-ai/vale-action@reviewdog
+      with:
+        version: 2.17.0
+        fail_on_error: false
+      env:
+        # Required, set by GitHub actions automatically:
+        # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
