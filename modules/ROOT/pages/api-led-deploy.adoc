@@ -5,7 +5,7 @@ endif::[]
 
 Now that you've created and tested the Mule app that contains your new API from
 within Studio, let's deploy the API to CloudHub. First, we'll create an API proxy,
-which then enables us to test the API from Exchange. Then, we'll then set up a rate-limiting policy to protect our API from a denial-of-service attack.
+which then enables us to test the API from Exchange. Then, we'll then set up a rate-limiting policy to protect our API from a denial-of-service attack, etc.
 
 == Step 5.1: Deploy API to CloudHub
 
