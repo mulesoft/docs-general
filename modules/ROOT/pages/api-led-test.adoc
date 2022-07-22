@@ -71,7 +71,7 @@ image:next-toggle.png[Control to move to next toggle point, 500]
 +
 If you hover over it to ensure you have the right control, the label *Next processor (F6)* appears. The debugger pane now shows the Logger connector.
 . Click the curved yellow arrow again to move to the Validate size connector.
-. Click the curved yellow arrow again, and notice that that an error message you defined is now in the *error* object in the debugger pane, and a red dotted-line shows in the Validate size connector.
+. Click the curved yellow arrow again, and notice that an error message you defined is now in the *error* object in the debugger pane, and a red dotted-line shows in the Validate size connector.
 +
 image:validation-error.png[View of debugger displaying error for Validate size, 500]
 . Click the curved yellow arrow again, and notice that the canvas now displays the top of your message flow, with a red dotted-line around the APIkit Router, one of the scaffolding items added during import. The router handles the error.
@@ -99,7 +99,7 @@ image:on-error.png[Adding an error handler to GET module and configuring it, 500
   .. In *Settings > Value:*, replace `payload` with `error.description`.
 . Click *File > Save All* to save your changes.
 . Add breakpoints to *Set Payload*, *Logger*, and *Validate size* if you previously removed them.
-. Righ-click in the canvas and select *Debug project hello-world*.
+. Right-click in the canvas and select *Debug project hello-world*.
 . After the app is deployed, send the query `\http://localhost:8081/api/greeting` from Advanced Rest Client, and step through each breakpoint using the curved yellow arrow.
 . When you reach *Set Payload* in *On Error Propagate*, you can see that payload set to the error message we created in Validate size is now the payload.
 +
