@@ -7,7 +7,7 @@ MuleSoft provides tools to help you manage your deployed API.
 
 image::runtime-overview.png[Runtime Manager user interface showing the Dashboard]
 
-To check the health of your API:
+To check the health of your APIdf:
 
 . From your Anypoint Platform organization, navigate to the Runtime Manager.
 +
