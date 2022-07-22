@@ -2,7 +2,7 @@ name: reviewdog
 on:
   push:
   pull_request:
-    types: [ synchronize ]
+    types: [ opened, synchronize ]
 jobs:
   lint:
     runs-on: ubuntu-latest
