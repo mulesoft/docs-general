@@ -163,7 +163,7 @@ Your new business group is listed underneath the organization name in the Access
 
 Publish the API to Exchange so it can serve as a template or example for others.
 
-. From the Package Explorer in Studio, right-click the `hello-world` project.
+. From the Package Explorer in Studio, right-click the `hello-world` project, etc.
 . Select *Anypoint Platform > Publish to Exchange*.
 +
 image:pub-to-exchange.png[Dialog to publish API to Exchange]
