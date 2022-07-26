@@ -1,32 +1,30 @@
 = Viewing Usage Reports
 
-If you’ve signed up for usage-based pricing, usage reports provide insights into your monthly usage of Anypoint Platform products. Reports are based on different metrics across products. [rewrite as desired]
-
-== How Usage Info is Collected 
-
-
-Reports are updated on the fifth day of each month.
+If you have a usage-based contract, the usage report provides insights into your monthly usage of Anypoint Platform products. 
 
 == Usage Reports Overview
 
+When you use an Anypoint Platform product, MuleSoft meters your usage and aggregates the records on a monthly basis. Usage reports are updated on the fifth day of each month and are split by product.
+
 Usage reports are available for the following Anypoint Platform products:
 
-* Flex Gateway
-+
+=== Flex Gateway
 Flex Gateway usage reports track monthly API calls. You can view monthly API calls by business group, environment, and registration. 
 
-* API Manager
-+
-API Manager usage reports track the maximum number of APIs managed in a given month. You can view the maximum APIs managed by business group, environment, and runtime. 
+How usage is calculated: MuleSoft meters the hourly APIs calls you make and aggregates the number of API calls on a monthly basis. 
+ 
+=== API Governance
+API Governance usage reports track the maximum number of governed APIs in a given month per business group. 
 
-The maximum APIs managed are counted on an hourly basis. The count includes both unique and non-unique APIs.  
+How usage is calculated: Mulesoft identifies the maximum number of APIs a business group uses in a month. The total comprises the maximum number of APIs you have used per business group. 
 
-* API Governance
-
+Note that the number of governed APIs (both conformant and non-conformant) shown in the API governance console represent a current snapshot of your usage per business group while the usage report shows the maximum number of APIs you used in a given month per business group.
 
 == View Usage Reports
 
-Access your reports via the username icon on the top-right navigation bar in Anypoint Platform.
+To access usage reports, you must have the Usage Viewer permission in Access Management.
 
-To access usage reports, an admin must grant you the *Usage Viewer* permission in Access Management.
+Access your reports via the username icon in the navigation bar in Anypoint Platform. 
+
+To see reports for a particular month, click the *Monthly Usage Reports* drop-down list.
 
