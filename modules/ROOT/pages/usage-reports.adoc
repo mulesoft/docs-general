@@ -27,6 +27,12 @@ MuleSoft identifies the maximum number of APIs each business group uses in a mon
 
 Note that the number of governed APIs (both conformant and non-conformant) shown in the API governance console represent a current snapshot of your usage per business group while the usage report shows the maximum number of APIs you used in a given month per business group.
 
+=== API Manager
+
+API Manager usage report tracks the maximum number of APIs managed in a given month per business group, environment, and runtime. 
+
+To calculate usage, MuleSoft identifies the maximum number of APIs each business group, environment, and runtime use in a month. To calculate the total count for API Manager, MuleSoft adds the maximum number of APIs used per business group, environment, and runtime.
+
 == Access Usage Reports
 
 To access usage reports, you must have the Usage Viewer permission in Access Management.
@@ -40,3 +46,4 @@ To access usage reports, you must have the Usage Viewer permission in Access Man
 
 * xref:gateway::flex-gateway-overview.adoc[]
 * xref:api-governance::index.adoc[]
+* xref:api-manager::index.adoc[]
