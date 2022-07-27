@@ -9,14 +9,16 @@ When you use an Anypoint Platform product, MuleSoft meters your usage and aggreg
 Usage reports are available for the following Anypoint Platform products:
 
 === Flex Gateway
+
 Flex Gateway usage reports track monthly API calls. You can view monthly API calls by business group, environment, and registration. 
 
-How usage is calculated: MuleSoft meters the hourly APIs calls you make and aggregates the number of API calls on a monthly basis. 
+To calculate usage, MuleSoft meters the hourly APIs calls you make and aggregates the number of API calls on a monthly basis. 
  
 === API Governance
+
 API Governance usage reports track the maximum number of governed APIs in a given month per business group. 
 
-How usage is calculated: Mulesoft identifies the maximum number of APIs a business group uses in a month. The total comprises the maximum number of APIs you have used per business group. 
+To calculate usage, Mulesoft identifies the maximum number of APIs a business group uses in a month. The total comprises the maximum number of APIs you have used per business group. 
 
 Note that the number of governed APIs (both conformant and non-conformant) shown in the API governance console represent a current snapshot of your usage per business group while the usage report shows the maximum number of APIs you used in a given month per business group.
 
@@ -28,3 +30,8 @@ Access your reports via the username icon in the navigation bar in Anypoint Plat
 
 To see reports for a particular month, click the *Monthly Usage Reports* drop-down list.
 
+
+See Also
+
+* xref:gateway::flex-gateway-overview.adoc[]
+* xref:api-governance::index.adoc[]
