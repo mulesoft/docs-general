@@ -29,9 +29,9 @@ Note that the number of governed APIs (both conformant and non-conformant) shown
 
 === API Manager
 
-API Manager usage report tracks the maximum number of APIs managed in a given month per business group, environment, and runtime. 
+API Manager usage reports track the maximum number of APIs managed in a given month per business group, environment, and runtime. 
 
-To calculate usage, MuleSoft identifies the maximum number of APIs each business group, environment, and runtime use in a month. To calculate the total count for API Manager, MuleSoft adds the maximum number of APIs used per business group, environment, and runtime.
+To calculate usage, MuleSoft lists the maximum number of APIs each business group, environment, and runtime use in a month. To calculate the total count for API Manager, MuleSoft adds the maximum number of APIs used per business group, environment, and runtime.
 
 == Access Usage Reports
 
