@@ -2,6 +2,11 @@
 
 If you have a usage-based contract, the usage report provides insights into your monthly usage of Anypoint Platform products. 
 
+[NOTE]
+--
+Use the usage report to compare your actual usage against your existing contract. The report is not for billing purposes. 
+--
+
 == Usage Reports Overview
 
 When you use an Anypoint Platform product, MuleSoft meters your usage and aggregates the records on a monthly basis. Usage reports are updated on the fifth day of each month and are split by product.
@@ -18,7 +23,7 @@ To calculate usage, MuleSoft meters the hourly APIs calls you make and aggregate
 
 API Governance usage reports track the maximum number of governed APIs in a given month per business group. 
 
-To calculate usage, Mulesoft identifies the maximum number of APIs a business group uses in a month. The total comprises the maximum number of APIs you have used per business group. 
+MuleSoft identifies the maximum number of APIs each business group uses in a month. To calculate the total count for API Governance, MuleSoft adds the maximum number of APIs used per business group. 
 
 Note that the number of governed APIs (both conformant and non-conformant) shown in the API governance console represent a current snapshot of your usage per business group while the usage report shows the maximum number of APIs you used in a given month per business group.
 
