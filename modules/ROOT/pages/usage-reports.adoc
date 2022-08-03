@@ -22,7 +22,7 @@ To calculate usage, MuleSoft meters the hourly API calls you make and aggregates
  
 === API Governance
 
-API Governance usage reports track the maximum number of APIs governed in a given month per business group. 
+API Governance usage reports track the maximum number of xref:api-governance::index.adoc#governed-apis[APIs governed] in a given month per business group. 
 
 MuleSoft tracks the number of APIs each business group uses per hour and identifies the maximum number of APIs each business group uses in a month. To calculate the total count for API Governance, MuleSoft adds the maximum number of APIs used per business group. 
 
@@ -30,7 +30,7 @@ Note that the number of governed APIs (both conformant and non-conformant) shown
 
 === API Manager
 
-API Manager usage reports track the maximum number of API instances deployed in a given month per business group, environment, and runtime. 
+API Manager usage reports track the maximum number of xref:api-manager::latest-overview-concept.adoc#api-instances[API instances] deployed in a given month per business group, environment, and runtime. 
 
 To calculate usage, MuleSoft tracks the number of APIs each business group, environment, and runtime use per hour and identifies the maximum number of APIs each business group, environment, and runtime use in a month. To calculate the total count for API Manager, MuleSoft adds the maximum number of APIs used per business group, environment, and runtime.
 
