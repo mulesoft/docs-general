@@ -3,6 +3,8 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
+include::reuse::partial$non-inclusive-banner.adoc[]
+
 You've created an API specification, now use it to create an API.
 
 In Anypoint Platform, developers package an API in an application that is deployed to an instance of xref:mule-runtime::index.adoc[Mule runtime engine (Mule)].
