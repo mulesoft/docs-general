@@ -34,7 +34,7 @@ You’ll see some of the most popular API specifications, connectors, and other 
 +
 link:https://www.mulesoft.com/exchange["Take me to Exchange^", role="button-primary"]
 +
-  .. Select *All Types > REST APIs* (next to the search bar) to display only REST API specifications.
+  .. Select *Any Type > REST APIs* (below the search bar) to display only REST API specifications.
   .. Click on any specification to see the data types and the HTTP requests defined for the API.
 +
 * Look at Exchange for your organization (account). Logging in changes the view to your organization's private Exchange.
