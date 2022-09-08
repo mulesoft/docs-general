@@ -129,7 +129,7 @@ Not all Anypoint Platform components are supported in each of the Runtime Plane 
 | Mule runtime engine | Y | Y | Y | Y
 | Anypoint MQ | N | Y | N | N
 | Anypoint Object Store | Y | Y | N | N
-| Anypoint DataGraph | Y | Y | N | N
+| Anypoint DataGraph | N | Y | N | N
 | Connectors | Y | Y | Y | Y
 |===
 
