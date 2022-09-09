@@ -76,7 +76,7 @@ image:canvas-tabs.png[One canvas and links to all three views, 500]
 Let's verify the values set in the Listener at the top of your flow in the canvas:
 
 . Double-click Listener to display its general configuration values.
-. Click the edit icon next to the configuration name, and verify that the host is `0.0.0.0` and the port is `8081`.
+. Click the edit icon image:edit-module-version-icon.png[Pencil on notebook] next to the configuration name, and verify that the host is `0.0.0.0` and the port is `8081`.
 . Click *Test Connection*, and then click *OK* when a successful test connection is reported.
 . Click *OK* to close the configuration. This leaves you in the *Global Elements* tab.
 . Click *Message Flow* to return to the previous tab. General configuration values for Listener should still be displayed.
