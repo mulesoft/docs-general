@@ -13,6 +13,15 @@ image::api-led-architecture.png[Diagram of structured API layers for experience,
 Anypoint Platform enables you to build a structured application network that uses reusable APIs to connect applications, data, and devices.
 Anypoint Platform makes it easy to discover, create, and manage APIs in a modular, organized layer. Instead of retrieving random (and possibly unstable) code snippets, you can discover and use APIs that are created using the industry’s best practices.
 
+== Hosting Anypoint Platform
+
+Depending on your security, data privacy, and legal requirements, you can host Anypoint Platform in the cloud, in a physical data center, or in both locations.
+
+Choose a hosting option that is most appropriate for your requirements. To learn more, see:
+
+* xref:intro-platform-hosting.adoc#control-plane-hosting-options[Control Plane Hosting Options]
+* xref:intro-platform-hosting.adoc#runtime-plane-hosting-options[Runtime Plane Hosting Options]
+
 == Exploring Anypoint Exchange
 
 The APIs you build in Anypoint Platform to integrate applications and services are reusable and include enterprise-level security.
