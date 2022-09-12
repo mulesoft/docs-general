@@ -17,7 +17,7 @@ Anypoint Platform makes it easy to discover, create, and manage APIs in a modula
 
 Depending on your security, data privacy, and legal requirements, you can host components of Anypoint Platform in the cloud, in a physical data center, or in both locations. 
 
-The control plane consists of Anypoint Platform components that you use to design, deploy, and manage APIs and Mule applications. The runtime plane consists of Anypoint Platform components where your APIs and Mule applications are deployed and made available to your users.
+The control plane consists of Anypoint Platform components that you use to design, deploy, and manage APIs and Mule applications. The runtime plane hosts your APIs and Mule application deployments and makes them available to your users.
 
 Choose a hosting option that is most appropriate for your requirements. To learn more, see:
 
