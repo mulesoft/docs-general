@@ -8,10 +8,21 @@ Your customers and employees need data-rich, delightful digital experiences on a
 
 The MuleSoft approach to integration, https://blogs.mulesoft.com/dev/api-dev/what-is-api-led-connectivity/[integration of data from different systems using a layer of APIs], allows you to spend less time on IT projects and more time on your core business. Whenever you turn a business process into an API, you make it easier to implement that process in the next project.
 
-image::api-led-architecture.png[Diagram of structured API layers for experience, process, and system APIs that can be easily added or removed]
+image::api-led-architecture.png["Diagram of structured API layers for experience, process, and system APIs that can be easily added or removed"]
 
 Anypoint Platform enables you to build a structured application network that uses reusable APIs to connect applications, data, and devices.
 Anypoint Platform makes it easy to discover, create, and manage APIs in a modular, organized layer. Instead of retrieving random (and possibly unstable) code snippets, you can discover and use APIs that are created using the industry’s best practices.
+
+== Hosting Anypoint Platform
+
+Depending on your security, data privacy, and legal requirements, you can host components of Anypoint Platform in the cloud, in a physical data center, or in both locations. 
+
+The control plane consists of Anypoint Platform components that you use to design, deploy, and manage APIs and Mule applications. The runtime plane hosts your APIs and Mule application deployments and makes them available to your users.
+
+Choose a hosting option that is most appropriate for your requirements. To learn more, see:
+
+* xref:intro-platform-hosting.adoc#control-plane-hosting-options[Control Plane Hosting Options]
+* xref:intro-platform-hosting.adoc#runtime-plane-hosting-options[Runtime Plane Hosting Options]
 
 == Exploring Anypoint Exchange
 

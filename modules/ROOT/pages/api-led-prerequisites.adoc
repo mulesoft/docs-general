@@ -14,9 +14,9 @@ link:https://anypoint.mulesoft.com/login/#/signup["Create a Trial organization^"
 link:https://www.mulesoft.com/lp/dl/studio["Download Anypoint Studio^", role="button-primary"]
 * To test REST requests, obtain a client such as Advanced REST Client or Postman if you don't already have one. This tutorial uses Advanced REST Client.
 +
-link:https://install.advancedrestclient.com/install["Install Advanced REST Client^", role=button-primary"]
+link:https://github.com/advanced-rest-client/arc-electron/releases["Install Advanced REST Client^", role=button-primary"]
 +
-Depending on your platform, you might need to install a different client, or https://github.com/advanced-rest-client/arc-electron/releases/tag/v15.0.0[install Advanced REST Client from GitHub].
+Depending on your platform, you might need to install a different client, or https://github.com/advanced-rest-client/arc-electron/releases[install Advanced REST Client from GitHub].
 
 == Helpful Hints
 
