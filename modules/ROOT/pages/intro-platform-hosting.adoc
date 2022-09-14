@@ -93,7 +93,7 @@ CloudHub 2.0 is MuleSoft's new default cloud-hosted environment for hosting the 
 +
 CloudHub 2.0 also provides high availability, ingress load balancers, AWS role-based access controls, and endpoint configuration. See xref:cloudhub-2::index.adoc[CloudHub 2.0] for more information.
 +
-CloudHub 2.0 can only be managed only by the version of the cloud control plane that exists in the same environment (US cloud or EU cloud).
+CloudHub 2.0 can be managed only by the version of the cloud control plane that exists in the same environment (US cloud or EU cloud).
 
 * CloudHub
 +
