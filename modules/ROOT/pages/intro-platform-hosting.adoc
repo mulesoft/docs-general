@@ -77,6 +77,7 @@ Not all Anypoint Platform components are supported in all cloud environments. Th
 | Anypoint Security edge policies | N | N | N | N
 | Anypoint Security tokenization | N | N | N | N
 | Anypoint DataGraph | Y | Y | N | N
+| CloudHub 2.0 runtimes | Y | Y | N | N 
 | CloudHub runtimes | Y | Y | Y | N
 | Runtime Fabric | Y | Y | N | N
 | Customer-hosted runtimes | Y | Y | Y | Y
@@ -86,13 +87,21 @@ Not all Anypoint Platform components are supported in all cloud environments. Th
 
 MuleSoft provides three different options for hosting the Anypoint Platform runtime plane:
 
+* CloudHub 2.0
++
+CloudHub 2.0 is MuleSoft's default cloud-hosted environment for hosting the Mule runtime and related services. CloudHub 2.0 enables you to deploy an API or a Mule application into a container-based platform that's managed by MuleSoft. You can deploy to MuleSoft's shared spaces or your own configurable single-tenant private spaces for more control over what can interact with your applications.
++
+CloudHub 2.0 also provides high availability, ingress load balancers, AWS role-based access controls, and endpoint configuration. See xref:cloudhub-2::index.adoc[CloudHub 2.0] for more information.
++
+CloudHub 2.0 can be managed only by the version of the cloud control plane that exists in the same environment (US cloud or EU cloud).
+
 * CloudHub
 +
-CloudHub is MuleSoft's cloud-based environment for hosting the Mule runtime server and related services. CloudHub enables you to deploy an API or a Mule application on a platform that’s managed by MuleSoft.
+CloudHub is MuleSoft's original cloud environment for hosting the Mule runtime and related services. CloudHub enables you to deploy an API or a Mule application on a VM-based platform that’s managed by MuleSoft.
 +
 CloudHub also provides high availability, clustering and failover of your APIs and Mule applications and performs load balancing for them. See xref:runtime-manager::cloudhub.adoc[CloudHub] for more information.
 +
-CloudHub can only be managed only by version of the cloud control plane that exists in the same environment (US cloud, EU cloud, or MuleSoft Government Cloud).
+CloudHub can be managed only by the version of the cloud control plane that exists in the same environment (US cloud, EU cloud, or MuleSoft Government Cloud).
 
 * Runtime Fabric
 +
@@ -114,14 +123,14 @@ You can manage standalone runtimes by using cloud control planes (US Cloud, EU C
 
 Not all Anypoint Platform components are supported in each of the Runtime Plane hosting options:
 
-[%header,cols="4*a"]
+[%header,cols="5*a"]
 |===
-| Anypoint Platform Component | CloudHub | Runtime Fabric | Standalone
-| Mule runtime engine | Y | Y | Y
-| Anypoint MQ | Y | N | N
-| Anypoint Object Store | Y | N | N
-| Anypoint DataGraph | Y | N | N
-| Connectors | Y | Y | Y
+| Anypoint Platform Component | CloudHub 2.0 | CloudHub | Runtime Fabric | Standalone
+| Mule runtime engine | Y | Y | Y | Y
+| Anypoint MQ | N | Y | N | N
+| Anypoint Object Store | Y | Y | N | N
+| Anypoint DataGraph | N | Y | N | N
+| Connectors | Y | Y | Y | Y
 |===
 
 
@@ -142,6 +151,7 @@ The following table lists the runtime plane options that are supported in each c
 [%header,cols="5*a"]
 |===
 | Runtime Plane | US Cloud | EU Cloud| Government Cloud | Anypoint Platform PCE
+| CloudHub 2.0 | Y | Y | N | N 
 | CloudHub | Y | Y | Y | N
 | Standalone runtimes | Y | Y | Y | Y
 | Runtime Fabric | Y | Y | N | N
@@ -149,6 +159,7 @@ The following table lists the runtime plane options that are supported in each c
 
 == See Also
 
+* xref:cloudhub-2::index.adoc[]
 * xref:runtime-manager::cloudhub.adoc[CloudHub]
 * xref:mule-runtime::mule-standalone.adoc[Run Mule Runtime Engine On-Premises]
 * xref:runtime-fabric::index.adoc[Anypoint Runtime Fabric Overview]
