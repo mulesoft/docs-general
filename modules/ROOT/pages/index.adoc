@@ -10,9 +10,8 @@ It is for reference purposes only and will not be updated.
 
 |===
 
-| Anypoint Platform for Pivotal Cloud Foundry Doc Archives |
-  xref:1.6@anypoint-platform-pcf::index.adoc[v1.6 Archive] +
-  xref:1.5@anypoint-platform-pcf::index.adoc[v1.5 Archive]
+| Release Notes Archives |
+  xref:release-notes::index.adoc[Release Notes]
 
 | Connector DevKit Doc Archives |
   xref:3.4@connector-devkit::index.adoc[v3.4 Archive] +
@@ -21,6 +20,10 @@ It is for reference purposes only and will not be updated.
 
 | Data Gateway Doc Archives |
   xref:data-gateway::index.adoc[Archive]
+
+| Anypoint Platform for Pivotal Cloud Foundry Doc Archives |
+  xref:1.6@anypoint-platform-pcf::index.adoc[v1.6 Archive] +
+  xref:1.5@anypoint-platform-pcf::index.adoc[v1.5 Archive]
 
 | Healthcare Toolkit Doc Archives |
   xref:3.1@healthcare-toolkit::index.adoc[v3.1 Archive] +
