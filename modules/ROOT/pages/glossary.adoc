@@ -123,7 +123,7 @@ Anypoint Security feature to help you manage edge security.
 == F
 
 flow::
-In a Mule application, a flow is a block of executable components, including any connector operations, that Mule runtime executes sequentially on a Mule event. A flow can also contain an event source, which triggers the creation of the event and the execution of the flow. 
+Within a Mule application, a flow is a block of executable components, including any connector operations, that Mule runtime executes sequentially on a Mule event. A flow can also contain an event source, which triggers the creation of the event and the execution of the flow. 
 
 == H
 
