@@ -4,26 +4,29 @@ include::_attributes.adoc[]
 endif::[]
 :linkattrs:
 
-This site provides archived MuleSoft documentation. In general, this documentation covers products and product versions that have reached their end of life and are no longer supported.
+This site provides archived MuleSoft documentation for products and product versions that have reached their end of life and are no longer supported.
 
-It is for reference purposes only and will not be updated.
+This documentation is for reference purposes only and will not be updated.
 
 |===
 
 | Release Notes Archives |
   xref:release-notes::index.adoc[Release Notes]
 
+| Anypoint Platform for Pivotal Cloud Foundry Doc Archives |
+  xref:1.6@anypoint-platform-pcf::index.adoc[v1.6 Archive] +
+  xref:1.5@anypoint-platform-pcf::index.adoc[v1.5 Archive]
+
 | Connector DevKit Doc Archives |
+  xref:3.7@connector-devkit::index.adoc[v3.7 Archive] +
+  xref:3.6@connector-devkit::index.adoc[v3.6 Archive] +
+  xref:3.5@connector-devkit::index.adoc[v3.5 Archive] +
   xref:3.4@connector-devkit::index.adoc[v3.4 Archive] +
   xref:3.3@connector-devkit::index.adoc[v3.3 Archive] +
   xref:3.2@connector-devkit::index.adoc[v3.2 Archive]
 
 | Data Gateway Doc Archives |
   xref:data-gateway::index.adoc[Archive]
-
-| Anypoint Platform for Pivotal Cloud Foundry Doc Archives |
-  xref:1.6@anypoint-platform-pcf::index.adoc[v1.6 Archive] +
-  xref:1.5@anypoint-platform-pcf::index.adoc[v1.5 Archive]
 
 | Healthcare Toolkit Doc Archives |
   xref:3.1@healthcare-toolkit::index.adoc[v3.1 Archive] +
