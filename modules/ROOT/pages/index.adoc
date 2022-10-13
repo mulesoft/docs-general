@@ -28,6 +28,9 @@ This documentation is for reference purposes only and will not be updated.
 | Data Gateway Doc Archives |
   xref:data-gateway::index.adoc[Archive]
 
+| DataWeave Doc Archives |
+  xref:1.0@dataweave::index.adoc[v1.0 Archive]
+
 | Healthcare Toolkit Doc Archives |
   xref:3.1@healthcare-toolkit::index.adoc[v3.1 Archive] +
   xref:3.0@healthcare-toolkit::index.adoc[v3.0 Archive] +
