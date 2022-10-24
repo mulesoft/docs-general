@@ -1,0 +1,166 @@
+= Anypoint Platform Hosting Options
+
+You can host different parts of Anypoint Platform in different locations, either in the cloud or in a physical data center. The best hosting option for your Anypoint Platform environment depends on your security, data privacy, and legal requirements. Different hosting options enable you to control the location where your and your customer's data is stored, processed, and managed. The data remains segregated within the physical location required by your companies IT policies and requirements.
+
+== Control Plane vs Runtime Plane
+
+To understand the different hosting options that MuleSoft supports, it is important to understand the control plane and runtime plane within the context of Anypoint Platform.
+
+image:intro-control-runtime-planes.png[Diagram of contents of the control plane and runtime plane]
+
+* Control plane
++
+The components of the Anypoint Platform architecture that you use to design, deploy, and manage APIs and Mule applications. The control plane contains product features and components that are part of the Anypoint Design Center, Anypoint Management Center, and Anypoint Exchange.
+
+* Runtime plane
++
+The components of the Anypoint Platform architecture where your APIs and Mule applications are deployed and made available to your users. The runtime plane includes the Mule runtime server and supporting services.
+
+=== Choosing a Hosting Option
+
+Anypoint Platform is designed to enable the control plane and runtime plane to be hosted independently. Depending on your requirements, you can choose from the following:
+
+* Use Anypoint Platform in the MuleSoft-managed control plane and runtime plane.
+* Host and manage the runtime plane within your own infrastructure while connecting it with the MuleSoft-managed control plane.
+* Host both the control plane and runtime plane locally within your infrastructure.
+
+See <<Control Plane and Runtime Plane Support Matrix>> for information about which runtime plane hosting options are supported in each control plane option.
+
+== Control Plane Hosting Options
+
+MuleSoft provides the following environments for the control plane:
+
+* US Cloud (default)
++
+In US Cloud, the control plane is physically hosted within the United States.
+
+* EU Cloud
++
+In the EU Cloud, the control plane is physically hosted within the European Union.
+
+* MuleSoft Government Cloud
++
+MuleSoft Government Cloud is a FedRAMP-compliant instance of the control plane that’s managed by MuleSoft and is suitable for government agencies.
++
+See xref:gov-cloud::index.adoc[About Government Cloud] for more information.
+
+* Customer-Hosted Control Plane
++
+MuleSoft also enables you to host the control plane within your own data center. Anypoint Platform Private Cloud Edition (Anypoint Platform PCE) is a version of Anypoint Platform that supports hosting the control plane within a user-managed data center. This enables you to control the environment where your assets and metadata are stored.
++
+Anypoint Platform PCE supports deploying to Mule runtime servers hosted in a standalone environment. You can host the control plane in a physical server, a virtual server, or a 3rd-party cloud environment such as Amazon Web Services.
++
+See xref:private-cloud::index.adoc[About Anypoint Platform PCE] for more information.
++
+Some Anypoint Platform components are not supported in Anypoint Platform PCE. See the <<Support Matrix for Control Plane Hosting Options>> for details.
+
+=== Support Matrix for Control Plane Hosting Options
+
+Not all Anypoint Platform components are supported in all cloud environments. The following table shows which environments support each component:
+
+[%header,cols="5*a"]
+|===
+| Anypoint Platform Component | US Cloud | EU Cloud | MuleSoft Government Cloud | Anypoint Platform PCE
+| API Designer | Y | Y | Y | Y
+| Anypoint Studio | Y | Y | Y | Y
+| Flow Designer | Y | Y | N | N
+| Anypoint Exchange | Y | Y | Y | Y
+| Anypoint API Community Manager | Y | Y | Y | N
+| Anypoint Partner Manager | Y | Y | N | N
+| Access management | Y | Y | Y | Y
+| Analytics | Y | Y | N | N
+| Anypoint API Manager | Y | Y | Y | Y
+| Anypoint Runtime Manager | Y | Y | Y | Y
+| Anypoint Monitoring | Y | Y | Y | Y
+| Secrets manager | Y | Y | N | N
+| Anypoint Visualizer | Y | Y | Y | Y
+| Anypoint Security edge policies | N | N | N | N
+| Anypoint Security tokenization | N | N | N | N
+| Anypoint DataGraph | Y | Y | N | N
+| CloudHub 2.0 runtimes | Y | Y | N | N 
+| CloudHub runtimes | Y | Y | Y | N
+| Runtime Fabric | Y | Y | N | N
+| Customer-hosted runtimes | Y | Y | Y | Y
+|===
+
+== Runtime Plane Hosting Options
+
+MuleSoft provides three different options for hosting the Anypoint Platform runtime plane:
+
+* CloudHub 2.0
++
+CloudHub 2.0 is MuleSoft's default cloud-hosted environment for hosting the Mule runtime and related services. CloudHub 2.0 enables you to deploy an API or a Mule application into a container-based platform that's managed by MuleSoft. You can deploy to MuleSoft's shared spaces or your own configurable single-tenant private spaces for more control over what can interact with your applications.
++
+CloudHub 2.0 also provides high availability, ingress load balancers, AWS role-based access controls, and endpoint configuration. See xref:cloudhub-2::index.adoc[CloudHub 2.0] for more information.
++
+CloudHub 2.0 can be managed only by the version of the cloud control plane that exists in the same environment (US cloud or EU cloud).
+
+* CloudHub
++
+CloudHub is MuleSoft's original cloud environment for hosting the Mule runtime and related services. CloudHub enables you to deploy an API or a Mule application on a VM-based platform that’s managed by MuleSoft.
++
+CloudHub also provides high availability, clustering and failover of your APIs and Mule applications and performs load balancing for them. See xref:runtime-manager::cloudhub.adoc[CloudHub] for more information.
++
+CloudHub can be managed only by the version of the cloud control plane that exists in the same environment (US cloud, EU cloud, or MuleSoft Government Cloud).
+
+* Runtime Fabric
++
+Runtime Fabric is a container service that enables you to run Mule applications and API gateways within a data center or third-party cloud environment that you control and manage. You can install Runtime Fabric on a set of physical servers, virtual machines, or within Amazon Web Services and Microsoft Azure.
++
+Runtime Fabric comes bundled with technology such as Docker and Kubernetes, which offer benefits such as high availability, failover, clustering, and load balancing. See xref:runtime-fabric::index.adoc[Anypoint Runtime Fabric Overview] for more information.
++
+Runtime Fabric can be managed only by Cloud control planes (US cloud, EU cloud). MuleSoft Government Cloud and Anypoint Platform PCE do not support Runtime Fabric.
+
+* Standalone Runtimes
++
+The standalone option enables you to host Mule runtime engine server and related services in an environment that you manage. Using standalone runtimes, the Mule runtime server can run on a physical server, a virtual machine, or within a third-party cloud installation like Amazon Web Services or Microsoft Azure.
++
+When using standalone runtimes, you are also responsible for providing the framework for high availability, failover, clustering and load balancing. See xref:mule-runtime::mule-standalone.adoc[Run Mule Runtime Engine On-Premises].
++
+You can manage standalone runtimes by using cloud control planes (US Cloud, EU Cloud, MuleSoft Government Cloud) or a customer-hosted control plane (Anypoint Platform PCE).
+
+=== Support Matrix for Runtime Plane Hosting Options
+
+Not all Anypoint Platform components are supported in each of the Runtime Plane hosting options:
+
+[%header,cols="5*a"]
+|===
+| Anypoint Platform Component | CloudHub 2.0 | CloudHub | Runtime Fabric | Standalone
+| Mule runtime engine | Y | Y | Y | Y
+| Anypoint MQ | N | Y | N | N
+| Anypoint Object Store | Y | Y | N | N
+| Anypoint DataGraph | N | Y | N | N
+| Connectors | Y | Y | Y | Y
+|===
+
+
+* Anypoint MQ and Anypoint Object Store
++
+Runtime Fabric and standalone runtimes do not support Anypoint MQ or Anypoint Object Store. Instead, Runtime Fabric and standalone runtimes support Mule clustering. On Runtime Fabric, multiple replicas of the same application can share objects. On standalone runtimes, multiple Mule runtime engines can share objects with each other.
++
+See xref:mule-runtime::choosing-the-right-clustering-topology.adoc[Cluster Runtime Instances]
+
+* Connector Support
++
+Connectors that retrieve and manipulate files on the file system are not supported, for example Anypoint Connector for File (File Connector). Mule applications deployed to Runtime Fabric do not have access to the file system of the virtual machine or the network mount.
+
+== Control Plane and Runtime Plane Support Matrix
+
+The following table lists the runtime plane options that are supported in each control plane hosting option.
+
+[%header,cols="5*a"]
+|===
+| Runtime Plane | US Cloud | EU Cloud| Government Cloud | Anypoint Platform PCE
+| CloudHub 2.0 | Y | Y | N | N 
+| CloudHub | Y | Y | Y | N
+| Standalone runtimes | Y | Y | Y | Y
+| Runtime Fabric | Y | Y | N | N
+|===
+
+== See Also
+
+* xref:cloudhub-2::index.adoc[]
+* xref:runtime-manager::cloudhub.adoc[CloudHub]
+* xref:mule-runtime::mule-standalone.adoc[Run Mule Runtime Engine On-Premises]
+* xref:runtime-fabric::index.adoc[Anypoint Runtime Fabric Overview]
+* xref:private-cloud::supported-cluster-config.adoc[Supported Configurations for Anypoint Platform PCE]
