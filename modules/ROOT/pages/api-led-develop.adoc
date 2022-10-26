@@ -1,4 +1,4 @@
-= Step 3. Develop the API
+= Step 3. Develop the API 
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
@@ -76,12 +76,11 @@ image:canvas-tabs.png[One canvas and links to all three views, 500]
 Let's verify the values set in the Listener at the top of your flow in the canvas:
 
 . Double-click Listener to display its general configuration values.
-. Click the edit icon next to the configuration name, and verify that the host is `0.0.0.0` and the port is `8081`.
+. Click the edit icon image:edit-module-version-icon.png[Pencil on notebook] next to the configuration name, and verify that the host is `0.0.0.0` and the port is `8081`.
 . Click *Test Connection*, and then click *OK* when a successful test connection is reported.
 . Click *OK* to close the configuration. This leaves you in the *Global Elements* tab.
 . Click *Message Flow* to return to the previous tab. General configuration values for Listener should still be displayed.
 . Verify that *Path* is set as */api/**. This best practice ensures that all endpoints will be of the form `base-URI/api/endpoint`.
-. Click *File > Save All* to save your work.
 
 In the next step, we'll create business logic and configure the elements we need for this API.
 
@@ -170,21 +169,22 @@ Publish the API to Exchange so it can serve as a template or example for others.
 image:pub-to-exchange.png[Dialog to publish API to Exchange]
 
 . Enter values for your project:
-  ** For *User*, select your name.
+  ** For *User*, select your username.
   ** For *Business group*, select the business group you created, *My Top Business Group*. You can't use the master business group, which appears by default in this field. If your credentials have expired, click *Add account* to add them again.
   ** Leave *Version* with the default value.
   ** Select *Project type > Example*. The *Finish* button is now enabled.
+. Click *Next*.
+. You can add documentation, descriptions, and tags that aid search.
 . Click *Finish*.
 . Click *Yes* when asked to proceed.
 +
 After the project is uploaded to Exchange, you are provided with a direct link to the project.
 +
-image:link-to-published-api.png[Dialog showing link to API published in Exchange, 600]
+image:link-to-published-api.png[Dialog showing link to API published in Exchange, 600] 
 . Click the link to view the project in Exchange.
 +
 image:published-in-exchange.png[API viewed from Exchange]
 
-. You can add documentation, descriptions, and tags that aid search.
 . Notice that HTTP Connector and Sockets Connector are listed as dependencies, which is viewed by clicking *Version detail* from the dropdown menu in the *Asset versions* section.
 . When you are satisfied with the publication, return to Studio and click *OK* to close the open dialog windows.
 
