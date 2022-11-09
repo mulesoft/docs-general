@@ -18,6 +18,7 @@ This documentation is for reference purposes only and will not be updated.
   xref:1.5@anypoint-platform-pcf::index.adoc[v1.5 Archive]
 
 | Connector DevKit Doc Archives |
+  xref:3.8@connector-devkit::index.adoc[v3.8 Archive] +
   xref:3.7@connector-devkit::index.adoc[v3.7 Archive] +
   xref:3.6@connector-devkit::index.adoc[v3.6 Archive] +
   xref:3.5@connector-devkit::index.adoc[v3.5 Archive] +
@@ -32,6 +33,7 @@ This documentation is for reference purposes only and will not be updated.
   xref:data-gateway::index.adoc[Archive]
 
 | DataWeave Doc Archives |
+  xref:1.1@dataweave::index.adoc[v1.1 Archive] +
   xref:1.0@dataweave::index.adoc[v1.0 Archive]
 
 | Healthcare Toolkit Doc Archives |
@@ -50,6 +52,7 @@ This documentation is for reference purposes only and will not be updated.
   xref:3.2@mule-management-console::index.adoc[v3.2 Archive]
 
 | Mule Runtime Doc Archives (Mule User Guide) |
+  xref:3.8@mule-runtime::index.adoc[v3.8 Archive] +
   xref:3.7@mule-runtime::index.adoc[v3.7 Archive] +
   xref:3.6@mule-runtime::index.adoc[v3.6 Archive] +
   xref:3.5@mule-runtime::index.adoc[v3.5 Archive] +
