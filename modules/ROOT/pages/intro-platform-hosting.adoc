@@ -60,7 +60,7 @@ Not all Anypoint Platform components are supported in all cloud environments. Th
 
 [%header,cols="5*a"]
 |===
-| Anypoint Platform Component | US Cloud | EU Cloud | MuleSoft Government Cloud | Anypoint Platform PCE
+| Anypoint Platform Component | US control plane | EU control plane | MuleSoft Government Cloud | Anypoint Platform PCE
 | API Designer | Y | Y | Y | Y
 | Anypoint Studio | Y | Y | Y | Y
 | Flow Designer | Y | Y | N | N
@@ -77,7 +77,7 @@ Not all Anypoint Platform components are supported in all cloud environments. Th
 | Anypoint Security edge policies | N | N | N | N
 | Anypoint Security tokenization | N | N | N | N
 | Anypoint DataGraph | Y | Y | N | N
-| CloudHub 2.0 runtimes | Y | Y | N | N 
+| CloudHub 2.0 runtimes | Y | Y | N | N
 | CloudHub runtimes | Y | Y | Y | N
 | Runtime Fabric | Y | Y | N | N
 | Customer-hosted runtimes | Y | Y | Y | Y
@@ -127,16 +127,16 @@ Not all Anypoint Platform components are supported in each of the Runtime Plane 
 |===
 | Anypoint Platform Component | CloudHub 2.0 | CloudHub | Runtime Fabric | Standalone
 | Mule runtime engine | Y | Y | Y | Y
-| Anypoint MQ | N | Y | N | N
-| Anypoint Object Store | Y | Y | N | N
+| Anypoint MQ | Y | Y | N | N
+| Anypoint Object Store v2 | Y | Y | N | N
 | Anypoint DataGraph | N | Y | N | N
 | Connectors | Y | Y | Y | Y
 |===
 
 
-* Anypoint MQ and Anypoint Object Store
+* Anypoint MQ and Anypoint Object Store v2
 +
-Runtime Fabric and standalone runtimes do not support Anypoint MQ or Anypoint Object Store. Instead, Runtime Fabric and standalone runtimes support Mule clustering. On Runtime Fabric, multiple replicas of the same application can share objects. On standalone runtimes, multiple Mule runtime engines can share objects with each other.
+Runtime Fabric and standalone runtimes do not support Anypoint MQ or Anypoint Object Store v2. Instead, Runtime Fabric and standalone runtimes support Mule clustering. On Runtime Fabric, multiple replicas of the same application can share objects. On standalone runtimes, multiple Mule runtime engines can share objects with each other.
 +
 See xref:mule-runtime::choosing-the-right-clustering-topology.adoc[Cluster Runtime Instances]
 
@@ -150,8 +150,8 @@ The following table lists the runtime plane options that are supported in each c
 
 [%header,cols="5*a"]
 |===
-| Runtime Plane | US Cloud | EU Cloud| Government Cloud | Anypoint Platform PCE
-| CloudHub 2.0 | Y | Y | N | N 
+| Runtime Plane | US control plane | EU control plane| MuleSoft Government Cloud | Anypoint Platform PCE
+| CloudHub 2.0 | Y | Y | N | N
 | CloudHub | Y | Y | Y | N
 | Standalone runtimes | Y | Y | Y | Y
 | Runtime Fabric | Y | Y | N | N
