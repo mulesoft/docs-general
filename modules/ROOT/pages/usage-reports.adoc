@@ -10,7 +10,7 @@ Use the usage report to compare your actual usage against your existing contract
 
 == Usage Reports Overview
 
-When you use an Anypoint Platform product, MuleSoft meters your usage and aggregates the records on a monthly basis. Usage reports are updated on the fifth day of each month and are split by product.
+When you use an Anypoint Platform product, MuleSoft meters your usage and aggregates the records on a monthly basis. Usage reports are updated on the second day of each month and are split by product. All reports are calculated using the UTC time standard.
 
 Usage reports are available for the following Anypoint Platform products:
 
