@@ -66,7 +66,7 @@ image::deploy.png[alt=" "]
 [discrete]
 === Deploy
 
-Deploy APIs and apps to your hosting targets, and secure them with policies.
+Choose a deployment option, deploy APIs and apps, and secure them with policies.
 
 * xref:runtime-manager::deployment-strategies.adoc[Choose a deployment option.]
 * xref:api-manager::api-proxy-landing-page.adoc[Configure a proxy for your API.]
