@@ -127,7 +127,7 @@ Not all Anypoint Platform components are supported in each of the Runtime Plane 
 |===
 | Anypoint Platform Component | CloudHub 2.0 | CloudHub | Runtime Fabric | Standalone
 | Mule runtime engine | Y | Y | Y | Y
-| Anypoint MQ | Y | Y | N | N
+| Anypoint MQ | Y | Y | Y | Y
 | Anypoint Object Store v2 | Y | Y | N | N
 | Anypoint DataGraph | N | Y | N | N
 | Connectors | Y | Y | Y | Y
