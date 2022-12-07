@@ -70,7 +70,7 @@ Choose a deployment option, deploy APIs and apps, and secure them with policies.
 
 * xref:runtime-manager::deployment-strategies.adoc[Choose a deployment option.]
 * xref:api-manager::api-proxy-landing-page.adoc[Configure a proxy for your API.]
-* xref:gateway::policies-overview.adoc[Create policies to secure your API.]
+* xref:policies::policies-policy-overview.adoc[Create policies to secure your API.]
 --
 
 image::monitor.png[alt=" "]
