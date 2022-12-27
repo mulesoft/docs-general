@@ -140,7 +140,7 @@ Your REST client should return a `200 OK` message and the body `Today the greeti
 == Step 3.5. Create a Business Group in Your Organization
 
 Before you can publish your API to Exchange to share it with others, you must create a Business Group in your trial organization.
-Assets in Exchange must belong to a Business Group that is not the master Business Group.
+Assets in Exchange must belong to a Business Group that is not the root Business Group.
 
 If you've already created a business group in your organization, you can skip this step.
 
@@ -170,7 +170,7 @@ image:pub-to-exchange.png[Dialog to publish API to Exchange]
 
 . Enter values for your project:
   ** For *User*, select your username.
-  ** For *Business group*, select the business group you created, *My Top Business Group*. You can't use the master business group, which appears by default in this field. If your credentials have expired, click *Add account* to add them again.
+  ** For *Business group*, select the business group you created, *My Top Business Group*. You can't use the root business group, which appears by default in this field. If your credentials have expired, click *Add account* to add them again.
   ** Leave *Version* with the default value.
   ** Select *Project type > Example*. The *Finish* button is now enabled.
 . Click *Next*.
