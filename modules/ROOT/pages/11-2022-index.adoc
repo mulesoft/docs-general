@@ -1,0 +1,116 @@
+= [.brand]#MuleSoft# Documentation
+:page-layout: home
+:page-fragmentize:
+:!sectids:
+ifndef::env-site[:imagesdir: ../images]
+
+[#cta]
+xref:api-led-overview.adoc[New to MuleSoft? Start here.]
+
+[#the-road]
+== The Road to Digital Transformation
+
+image::getting-started.png[alt=" "]
+
+--
+[discrete]
+=== Getting Started
+
+Build the digital transformation your business needs.
+
+* xref:api-led-overview.adoc[Tutorial: Build an API from start to finish.]
+--
+
+image::discover.png[alt=" "]
+
+--
+[discrete]
+=== Discover
+
+Browse Exchange to find existing API specifications, templates, examples, and other assets that you can reuse for your projects.
+
+* https://www.anypoint.mulesoft.com/exchange/[Discover reusable assets.^]
+--
+
+image::design.png[alt=" "]
+
+--
+[discrete]
+=== Design
+
+Create and publish new API specifications from scratch.
+
+* xref:design-center::design-create-publish-api-specs.adoc[Create a reusable API specification.]
+* xref:access-management::index.adoc[Manage access to your Anypoint Platform account.]
+* xref:general::security.adoc[Build security into your application network.]
+--
+
+image::develop.png[alt=" "]
+
+--
+[discrete]
+=== Develop & Test
+
+Build and test APIs and integration apps.
+
+* xref:studio::index.adoc[Develop your API.]
+* xref:connectors::index.adoc[Connect your data, systems, and apps.]
+* xref:mule-runtime::mule-app-dev.adoc[Develop the Mule app that integrates systems, services, APIs, and devices.]
+* xref:dataweave::index.adoc[Access and transform data within the Mule app.]
+* xref:munit::index.adoc[Build automated tests for your APIs and integrations.]
+--
+
+image::deploy.png[alt=" "]
+
+--
+[discrete]
+=== Deploy
+
+Choose a deployment option, deploy APIs and apps, and secure them with policies.
+
+* xref:runtime-manager::deployment-strategies.adoc[Choose a deployment option.]
+* xref:api-manager::api-proxy-landing-page.adoc[Configure a proxy for your API.]
+* xref:policies::policies-policy-overview.adoc[Create policies to secure your API.]
+--
+
+image::monitor.png[alt=" "]
+
+--
+[discrete]
+=== Monitor
+
+Monitor your APIs and integrations using dashboards, metrics, and visualization.
+
+* xref:monitoring::index.adoc[View metrics for integration apps and APIs.]
+* xref:api-functional-monitoring::index.adoc[Test the functional behavior and performance of your API.]
+* xref:runtime-manager::monitoring.adoc[Monitor your deployed apps.]
+--
+
+== Quick Links
+
+[#popular-topics]
+=== Popular Topics
+
+//Date Range 5/01/2022 - 6/01/2022 (omits #1 ranking link to landing page, of course)
+* xref:dataweave::dataweave-cookbook-format-dates.adoc[Format Dates and Times]
+* xref:dataweave::dw-operators.adoc[DataWeave Operators]
+* xref:dataweave::dw-core-functions-filter.adoc[DataWeave Function: filter]
+* xref:dataweave::dw-core-functions-map.adoc[DataWeave Function: map]
+* xref:mule-runtime::batch-processing-concept.adoc[Batch Processing]
+* xref:dataweave::dataweave-functions.adoc[DataWeave Reference]
+* xref:connectors::index.adoc[Connectors]
+// rank #8-10:
+// * xref:mule-runtime::mule-error-concept.adoc[Mule Errors]
+// * xref:mule-runtime::cloudhub-architecture.adoc[CloudHub Architecture]
+// * xref:dataweave::dw-core-functions-contains.adoc[DataWeave Function: contains]
+
+
+[#more-resources]
+=== More Resources
+
+* https://developer.mulesoft.com/learn/dataweave/[DataWeave Playground^]
+* https://help.mulesoft.com/s/[MuleSoft Help Center^]
+* https://developer.mulesoft.com/tutorials-and-howtos/getting-started/hello-mule[Developer Tutorials^]
+* https://training.mulesoft.com/[Mulesoft Training^]
+* https://trailhead.salesforce.com/content/learn/modules/mulesoft-basics[Trailhead: API Lifecycle Management with Anypoint Platform^]
+* https://archive.docs.mulesoft.com/[Archived Documentation^]
