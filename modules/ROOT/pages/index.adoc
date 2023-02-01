@@ -13,6 +13,9 @@ This documentation is for reference purposes only and will not be updated.
 | Release Notes Archives |
   xref:release-notes::index.adoc[Release Notes]
 
+| Anypoint CLI Archives |
+  xref:2.x@anypoint-cli::index.adoc[v2.x Archive]
+
 | Anypoint Platform for Pivotal Cloud Foundry Doc Archives |
   xref:1.6@anypoint-platform-pcf::index.adoc[v1.6 Archive] +
   xref:1.5@anypoint-platform-pcf::index.adoc[v1.5 Archive]
