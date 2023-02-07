@@ -10,7 +10,7 @@ xref:api-led-overview.adoc[New to MuleSoft? Start here.]
 [#the-road]
 == The Road to Digital Transformation
 
-image::getting-started.png[alt=" "]
+image::getting-started.png[alt=""]
 
 --
 [discrete]
@@ -21,7 +21,7 @@ Build the digital transformation your business needs.
 * xref:api-led-overview.adoc[Tutorial: Build an API from start to finish.]
 --
 
-image::discover.png[alt=" "]
+image::discover.png[alt=""]
 
 --
 [discrete]
@@ -32,7 +32,7 @@ Browse Exchange to find existing API specifications, templates, examples, and ot
 * https://www.anypoint.mulesoft.com/exchange/[Discover reusable assets.^]
 --
 
-image::design.png[alt=" "]
+image::design.png[alt=""]
 
 --
 [discrete]
@@ -45,7 +45,7 @@ Create and publish new API specifications from scratch.
 * xref:general::security.adoc[Build security into your application network.]
 --
 
-image::develop.png[alt=" "]
+image::develop.png[alt=""]
 
 --
 [discrete]
@@ -60,7 +60,7 @@ Build and test APIs and integration apps.
 * xref:munit::index.adoc[Build automated tests for your APIs and integrations.]
 --
 
-image::deploy.png[alt=" "]
+image::deploy.png[alt=""]
 
 --
 [discrete]
@@ -73,7 +73,7 @@ Choose a deployment option, deploy APIs and apps, and secure them with policies.
 * xref:policies::policies-policy-overview.adoc[Create policies to secure your API.]
 --
 
-image::monitor.png[alt=" "]
+image::monitor.png[alt=""]
 
 --
 [discrete]
