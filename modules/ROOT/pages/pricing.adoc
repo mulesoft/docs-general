@@ -12,7 +12,7 @@ If you want to xref:cloudhub-2::ch2-update-apps.adoc#roll-back-to-a-previous-suc
 
 For information about pricing concepts within Anypoint Platform, see the xref:general::usage-reports.adoc[Usage Reports documentation].
 
-//WIP
+// WIP
 
 == Global Resource Pool Limits
 
@@ -22,7 +22,7 @@ Root organizations provisioned with the new pricing and packaging receive a glob
 
 CloudHub 2.0 now uses replica sizing for application deployment. You can choose from the following replica sizes based on the application’s profile or size and display the equivalent in terms of vCores. Replica sizes with the suffix `.mem` are memory-intensive options with the same compute. During the monthly patching cycle, your applications are automatically migrated to an equivalent replica size. Application deployment through the Mule Maven Plugin is not yet supported. However, you can deploy using the Runtime Manager UI and the Application Manager Experience APIs by leveraging a new field under target.deploymentSettings called instanceType.
 
-//table
+// table
 
 == Access Management Entitlements
 
