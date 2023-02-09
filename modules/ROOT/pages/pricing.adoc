@@ -1,0 +1,33 @@
+= Anypoint Platform Pricing
+
+// do we need exposition here?
+
+== Supported Mule Runtime Versions
+
+All of your applications (in production and sandbox) must use Mule Runtime versions 4.1.x or later, and on a date-patch version later than Feb-2023, in order to benefit from the new pricing and packaging model. After your organization has been onboarded onto the new pricing and packaging model, you must redeploy your apps with a supported version, either manually or during the monthly patching cycle. The monthly patching cycle is applicable only for CloudHub 1.0 and CloudHub 2.0 applications. You must manually redeploy Runtime Fabric applications (with a supported date-patch version) after your organization has been onboarded onto the new pricing and packaging model.
+
+If you want to xref:cloudhub-2::ch2-update-apps.adoc#roll-back-to-a-previous-successful-configuration[roll back] to a previous successful configuration of existing applications that use a Mule Runtime version that is not supported by the new pricing and packaging model, you must choose a compliant version before deploying changes. After deploy, a new configuration with the previously chosen settings and a supported runtime is created.
+
+== Metrics Definitions
+
+For information about pricing concepts within Anypoint Platform, see the xref:general::usage-reports.adoc[Usage Reports documentation].
+
+//WIP
+
+== Global Resource Pool Limits
+
+Root organizations provisioned with the new pricing and packaging receive a global pool of shared CPU and memory resources that is shared for deployments into CloudHub 1.0 and CloudHub 2.0 across all business groups and environments in the organization. The pool of resources is sufficiently large to consume all the purchased flows and messages without interruption. If an organization runs out of resources, actions that consume more resources such as deploying new applications or starting stopped applications are blocked until sufficient resources are available. You can free up resources by stopping or deleting unused applications, or reducing the replica size or resources that an existing application consumes. You receive a warning each time your organization approaches the resource limit on the Applications List UI, Application Deployment UI, and Manage Application UI. To avoid hitting limits, allocate only what you need by using granular replica sizes in CloudHub 1.0 and 2.0. Contact support if you require an exception when you reach the limit. 
+
+== CloudHub 2.0 Application Deployment
+
+CloudHub 2.0 now uses replica sizing for application deployment. You can choose from the following replica sizes based on the application’s profile or size and display the equivalent in terms of vCores. Replica sizes with the suffix `.mem` are memory-intensive options with the same compute. During the monthly patching cycle, your applications are automatically migrated to an equivalent replica size. Application deployment through the Mule Maven Plugin is not yet supported. However, you can deploy using the Runtime Manager UI and the Application Manager Experience APIs by leveraging a new field under target.deploymentSettings called instanceType.
+
+//table
+
+== Access Management Entitlements
+
+Accounts provisioned with the new pricing and packaging show flows, messages, and throughput entitlements on Access Management instead of vCores. These entitlements are available at the root organization level and cannot be allocated among business groups. Since vCores are no longer the purchased entity, they can no longer be tracked or allocated among business groups. To view your monthly usage of flows, messages, and throughput, xref:general::usage-reports.adoc#access-usage-reports[access usage reports] using the Access Management UI. 
+
+== See Also
+
+* xref:general::usage-reports.adoc[Usage Reports]
