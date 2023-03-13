@@ -63,7 +63,7 @@ API Governance::
 Part of Anypoint Platform that enables you to apply governance rules to your APIs as part of the API lifecycle.
 
 API Manager::
-Part of Anypoint Platform that allows you to design and manage your APIs.
+Part of Anypoint Platform that enables you to manage, govern, and secure  your APIs.
 
 ////
 It includes the [API Designer], which allows you to write a [RAML] definition of your API. It also includes tools to monitor usage metrics, apply [policies] and to expose interactive documentation through an [API Portal]
