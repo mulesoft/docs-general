@@ -22,6 +22,9 @@ Web-based graphical environment for designing, documenting, and testing APIs.
 Anypoint Exchange (Exchange)::
 MuleSoft repository for connectors, templates, examples, and RAML APIs. Discover and use proven assets built by the MuleSoft ecosystem. You can create your own Exchange and add assets to it for collaboration and sharing among a group.
 
+Anypoint Flex Gateway::
+An Envoy-based, ultrafast lightweight API gateway designed to manage and secure APIs running anywhere.
+
 Anypoint Management Center (Management Center)::
 A single web interface to administer Anypoint Platform, both on-premises and in the cloud. Manage APIs and users, analyze traffic, monitor SLAs, and troubleshoot underlying integration flows.
 
@@ -38,7 +41,7 @@ Anypoint Platform™::
 MuleSoft’s product to design, build, and manage APIs and integrations.
 
 Anypoint Platform Private Cloud Edition::
-A special packaging of the Anypoint Platform is available for running on your own local servers. This implementation runs on Docker and Kubernetes, and is also compatible with Pivotal Cloud Foundry, and includes versions of Runtime Manager, API Manager and Anypoint Exchange.
+A special packaging of Anypoint Platform that is available for running on your own local servers. This implementation runs on Docker and Kubernetes, is compatible with Pivotal Cloud Foundry, and includes versions of Runtime Manager, API Manager, and Anypoint Exchange.
 
 Anypoint Runtime Fabric::
 A container service that automates the configuration, coordination, and management (orchestration), and deployment of your Mule applications and gateways. Runtime Fabric runs on customer-managed infrastructure on AWS, Azure, virtual machines (VMs) or bare-metal servers.
