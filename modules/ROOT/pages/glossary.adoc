@@ -16,7 +16,7 @@ A service, such as the Runtime Manager agent, that is used by or associated with
 Anypoint Design Center (Design Center)::
 A cloud-based development environment for Mule runtime engine (Mule) applications and API definitions.
 
-Anypoint Design Center’s API designer (API designer)::
+Anypoint Design Center’s API Designer (API Designer)::
 Web-based graphical environment for designing, documenting, and testing APIs.
 
 Anypoint Exchange (Exchange)::
@@ -59,8 +59,11 @@ Features that help you create a virtual, private, and isolated network segment i
 Anypoint Visualizer::
 Dynamically generated views of different aspects of an application network graph.
 
+API Governance::
+Part of Anypoint Platform that enables you to apply governance rules to your APIs as part of the API lifecycle.
+
 API Manager::
-Part of the Anypoint Platform that allows you to design and manage your APIs.
+Part of Anypoint Platform that allows you to design and manage your APIs.
 
 ////
 It includes the [API Designer], which allows you to write a [RAML] definition of your API. It also includes tools to monitor usage metrics, apply [policies] and to expose interactive documentation through an [API Portal]
