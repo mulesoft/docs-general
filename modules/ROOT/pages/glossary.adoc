@@ -23,7 +23,7 @@ Anypoint Design Center’s API Designer (API Designer)::
 Web-based graphical environment for designing, documenting, and testing APIs.
 
 Anypoint Exchange (Exchange)::
-MuleSoft repository for connectors, templates, examples, and RAML APIs. Discover and use proven assets built by the MuleSoft ecosystem. You can create your own Exchange and add assets to it for collaboration and sharing among a group.
+A curated catalog of reusable assets such as APIs, policies, API spec fragments, API groups, GraphQL APIs, templates, examples, custom assets, rulesets, and integration assets such as connectors. 
 
 Anypoint Flex Gateway::
 An Envoy-based, ultrafast lightweight API gateway designed to manage and secure APIs running anywhere.
