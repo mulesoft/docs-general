@@ -13,6 +13,9 @@ Anypoint Platform features that help you manage your account and configure acces
 agent::
 A service, such as the Runtime Manager agent, that is used by or associated with Mule but is not a Mule-managed service component. An agent is registered with the Anypoint Runtime Manager and has the same lifecycle as the corresponding Mule instance, so you can initialize and destroy resources when the Mule instance starts or stops.
 
+Anypoint CLI::
+A scripting and command-line tool for Anypoint Platform and Anypoint Platform Private Cloud Edition (Anypoint Platform PCE).
+
 Anypoint Design Center (Design Center)::
 A cloud-based development environment for Mule runtime engine (Mule) applications and API definitions.
 
@@ -38,7 +41,7 @@ Anypoint Partner Manager v2::
 The web-based user interface for partner configuration, document flow,  and transaction monitoring.
 
 Anypoint Platform™::
-MuleSoft’s product to design, build, and manage APIs and integrations.
+A MuleSoft product to design, build, and manage APIs and integrations.
 
 Anypoint Platform Private Cloud Edition::
 A special packaging of Anypoint Platform that is available for running on your own local servers. This implementation runs on Docker and Kubernetes, is compatible with Pivotal Cloud Foundry, and includes versions of Runtime Manager, API Manager, and Anypoint Exchange.
