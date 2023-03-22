@@ -34,7 +34,7 @@ You’ll see some of the most popular API specifications, connectors, and other 
 +
 link:https://www.mulesoft.com/exchange["Take me to Exchange^", role="button-primary"]
 +
-  .. Select *All Types > REST APIs* (next to the search bar) to display only REST API specifications.
+  .. Select *Any Type > REST APIs* (below the search bar) to display only REST API specifications.
   .. Click on any specification to see the data types and the HTTP requests defined for the API.
 +
 * Look at Exchange for your organization (account). Logging in changes the view to your organization's private Exchange.
@@ -58,7 +58,7 @@ link:https://anypoint.mulesoft.com/designcenter/designer/["Take me to API Design
 . Click *Create new* to open the API Designer editor.
 . Click *New API Spec*.
 . Enter `hello-world` for *API Title* and don't change the other default values.
-. Click *Create API Spec*. The API Designer editor displays a sample RAML definition.
+. Click *Create API*. The API Designer editor displays a sample RAML definition.
 . Delete the existing text and paste in the following RAML:
 
 [source,raml]
@@ -136,7 +136,7 @@ It's safe to ignore any error messages on this screen. A successful request retu
 +
 image:successful-test1.png[Results of a successful test, 500]
 . Click *Response details* in the kebab menu to examine the response headers and request headers in the mocking service to help diagnose issues or understand the behavior of your API specification.
-. When you have finished testing, open the *Mocking Service Configuration* panel and click the *Select By Default* checkmark to disable the mocking service again.
+. When you have finished testing, open the *Mocking Service Configuration* panel, then in *Local Settings* enable *Select By Default*.
 +
 image:api-mocking-service-configuration-icon.png[Mocking service icon]
 +
