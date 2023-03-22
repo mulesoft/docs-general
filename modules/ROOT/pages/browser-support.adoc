@@ -6,11 +6,19 @@ endif::[]
 
 Use Anypoint Platform with the latest version of any supported browser:
 
-* Microsoft Edge with Chromium
-* Microsoft Edge without Chromium (supported through December 31, 2020)
-* Google Chrome
-* Mozilla Firefox
-* Safari
+[tabs]
+====
+Microsoft Edge::
+* with Chromium
+* without Chromium (supported through December 31, 2020)
+Google Chrome::
+* stable
+* dev
+Mozilla Firefox::
+* latest release
+Safari::
+* macOS Ventura
+====
 
 Browser support for Anypoint Platform follows the Salesforce Lightning Experience policy.
 
