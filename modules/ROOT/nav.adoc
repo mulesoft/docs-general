@@ -1,7 +1,6 @@
-.HelloQuickstart
+.The Ultimate Animal Survey
 * xref:index.adoc[]
-* xref:team.adoc[]
-  ** xref:mascots.adoc[]
-  ** xref:management.adoc[]
-  ** xref:writers.adoc[]
-  ** xref:engineers.adoc[]
+* xref:example-page.adoc[]
+* xref:team-cats.adoc[]
+* xref:team-dogs.adoc[]
+* xref:team-others.adoc[]

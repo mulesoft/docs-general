@@ -2,10 +2,14 @@
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:page-aliases: general:getting-started:index.adoc
 
-Welcome to the MuleSoft Content Experience (CX) Team! We are a team of managers, writers, and engineers that work on docs.mulesoft.com.
+Welcome, animal enthusiasts! We're thrilled to have you here, and we hope you're ready to unleash your love for furry friends of all kinds! Whether you're a meow-velous cat person, a paw-some dog lover, or a wild card who prefers other animals, this page is the purr-fect place for you. We won't be lion when we say that we have a ton of fun in store for you, so don't be sheep-ish - join the flock and let's get this paw-ty started!
 
-To get started, select one of the choices available on the left-hand side navigation menu.
+Tell me, friend - which team are you on?
 
-image:writing-hand.png[alt="A Writing Hand",width=300]
+[cols="a,a,a",frame="none",grid="none"]
+|===
+| xref:team-cats.adoc[Team Cats] image:team-cats.png[]
+| xref:team-dogs.adoc[Team Dogs] image:team-dogs.png[]
+| xref:team-others.adoc[Team Others] image:team-others.png[]
+|===

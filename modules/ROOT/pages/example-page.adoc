@@ -1,0 +1,25 @@
+= Example Page
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+This is an example page of how the team pages should look like. Here are some basic guidelines:
+
+- Names should be sorted alphabetically
+- The image can either be in the `image::name-of-image.png[]` format, or  https://docs.asciidoctor.org/asciidoc/latest/macros/image-url/[be inserted from a URL]
+- The image can be a real animal, or a cartoon, or an AI art, or anything! Be creative and have fun!
+
+.Team Roster (in alphabetical order)
+[%header,caption="",cols="2,2,1"]
+|===
+|First Name + Last Initial (for example, Sam S.)|Fun Fact|Show us a picture of your favorite animal!
+
+|Max M.
+|I can’t deny a good salt lick.
+|image:mascot-max-the-mule.png[alt="picture of Max the Mule"]
+
+|Genie R.
+|I am magical. 🪄
+|image:mascot-genie.png[alt="picture of Genie the Rabbit"]
+
+|===
