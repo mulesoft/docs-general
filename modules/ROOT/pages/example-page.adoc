@@ -3,10 +3,12 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-This is an example page of how the team pages should look like. Here are some basic guidelines:
+This is an example page of how the team pages should look like. Please add a row for yourself in the team that you are on.
 
-- Names should be sorted alphabetically
-- The image can either be in the `image::name-of-image.png[]` format, or  https://docs.asciidoctor.org/asciidoc/latest/macros/image-url/[be inserted from a URL]
+Here are some basic guidelines when adding yourself onto a team:
+
+- Names are be sorted alphabetically by first name
+- The image can either be in the `image::name-of-image.png[]` format, or  https://docs.asciidoctor.org/asciidoc/latest/macros/image-url/[be inserted from a URL,window=_blank]
 - The image can be a real animal, or a cartoon, or an AI art, or anything! Be creative and have fun!
 
 .Team Roster (in alphabetical order)
