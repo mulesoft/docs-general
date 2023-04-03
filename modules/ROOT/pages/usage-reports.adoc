@@ -1,7 +1,7 @@
 = Viewing Usage Reports
 :page-aliases: gateway::flex-view-usage-reports.adoc
 
-If you have a usage-based contract, the usage report provides insights into your monthly usage of Anypoint Platform products. 
+Usage reports provide insights into your monthly usage of Anypoint Platform products. 
 
 [NOTE]
 --
@@ -10,7 +10,7 @@ Use the usage report to compare your actual usage against your existing contract
 
 == Usage Reports Overview
 
-When you use an Anypoint Platform product, MuleSoft meters your usage and aggregates the records on a monthly basis. Usage reports are updated on the second day of each month and are split by product. All reports are calculated using the UTC time standard.
+When you use an Anypoint Platform product, MuleSoft meters your usage and aggregates the records on a monthly basis. Usage reports are updated on the third day of each month and are split by product. All reports are calculated using the UTC time standard.
 
 Usage reports are available for the following Anypoint Platform products:
 
@@ -24,7 +24,7 @@ To calculate usage, MuleSoft meters the hourly API calls you make and aggregates
 
 API Governance usage reports track the maximum number of xref:api-governance::index.adoc#governed-apis[APIs governed] in a given month per business group. 
 
-MuleSoft tracks the number of APIs each business group uses per hour and identifies the maximum number of APIs each business group uses in a month. To calculate the total count for API Governance, MuleSoft adds the maximum number of APIs used per business group. 
+To calculate usage, MuleSoft tracks the number of governed APIs each business group uses per hour and then identifies the maximum number of APIs governed in a month for each business group. To calculate the total count for API Governance, MuleSoft adds the maximum number of governed APIs per month used across all business groups. 
 
 Note that the number of governed APIs (both conformant and non-conformant) shown in the API governance console represents a current snapshot of your usage per business group, while the usage report shows the maximum number of APIs you used in a given month per business group.
 
@@ -32,7 +32,22 @@ Note that the number of governed APIs (both conformant and non-conformant) shown
 
 API Manager usage reports track the maximum number of xref:api-manager::latest-overview-concept.adoc#api-instances[API instances] deployed in a given month per business group, environment, and runtime. 
 
-To calculate usage, MuleSoft tracks the number of APIs each business group, environment, and runtime use per hour and identifies the maximum number of APIs each business group, environment, and runtime use in a month. To calculate the total count for API Manager, MuleSoft adds the maximum number of APIs used per business group, environment, and runtime.
+To calculate usage, MuleSoft tracks the number of managed API instances each business group, environment, and runtime uses per hour and identifies the maximum number of managed API instances used in a month for each business group, environment, and runtime. To calculate the total count for API Manager, MuleSoft adds the maximum number of managed API instances per month used across business groups, environments, and runtimes.
+
+=== Mule Runtime
+
+Runtime reports track your use of Mule messages, Mule flows, and data throughput. 
+
+To track Mule message usage, the report counts the number of times a Mule event source triggers a Mule message. You can view the number of these messages in a given month by business group, environment, and application. To calculate usage, MuleSoft meters and aggregates the number of messages on a monthly basis. After a message is triggered, the report does not track changes to the message because it is processed within the application’s flows.
+
+A Mule flow is a sequence of logical operations configured within the XML <flow/> element of a Mule application. The report tracks the Mule flows within a deployed and running Mule application that contains a Mule event source or route APIKit requests. The report does not track other Mule flows. You can view the maximum number of Mule flows in a given month in the usage report. To calculate usage, MuleSoft tracks the number of Mule flows for all business groups, environments, and applications. The maximum number of Mule flows within a month is identified based on the peak hour across the month. For the detailed breakdown, MuleSoft shows the peak hour usage per business group, environment, and application. 
+
+Data throughput is all the network I/O bytes produced by the infrastructure that starts and runs the Mule runtime engine that runs a Mule application. You can view the total amount of GB usage in a given month by business group, environment, and application. To calculate usage, MuleSoft tracks GB usage and aggregates the number of tracked Mule messages on a monthly basis.
+
+[NOTE]
+--
+The report lists the IDs of applications and environments. 
+--
 
 == Access Usage Reports
 
