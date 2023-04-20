@@ -4,7 +4,7 @@ include::_attributes.adoc[]
 endif::[]
 :page-aliases: api-community-manager::browser-support.adoc
 
-Use Anypoint Platform with the latest version of any supported browser:
+[test] Use Anypoint Platform with the latest version of any supported browser:
 
 * Microsoft Edge with Chromium
 * Microsoft Edge without Chromium (supported through December 31, 2020)
