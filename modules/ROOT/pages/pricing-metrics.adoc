@@ -7,7 +7,7 @@ MuleSoft offers a pricing and packaging model for Anypoint Platform that allots 
 [[mule-flows]]
 == Mule Flows
 
- A _Mule flow_ is a sequence of logical operations configured in XML using the `<flow>` element. A Mule app can consist of a single Mule Flow, or it can break up processing into discrete xref:mule-runtime::about-flows.adoc[Mule Flows and subflows] that you add to the app and connect together. Mule apps in production environments typically use multiple Mule Flows and subflows to divide the app into functional modules or for error-handling purposes. For example, one Mule flow might receive a record and transform data into a given format that another flow processes in some special way. 
+A _Mule flow_ is a sequence of logical operations configured in XML using the `<flow>` element. A Mule app can consist of a single Mule Flow, or it can break up processing into discrete xref:mule-runtime::about-flows.adoc[Mule Flows and subflows] that you add to the app and connect together. Mule apps in production environments typically use multiple Mule Flows and subflows to divide the app into functional modules or for error-handling purposes. For example, one Mule flow might receive a record and transform data into a given format that another flow processes in some special way. 
 
 === Which Mule Message Scenarios Count towards your Anypoint Platform Package Allotment?
 
