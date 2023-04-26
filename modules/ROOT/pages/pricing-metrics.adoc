@@ -30,72 +30,44 @@ The following Mule flow contains an event source as the first element. In this c
 </flow>
 ----
 
-////
+
 === Examples of Event Sources
 
-WIP
 
+[cols="2*",options="header"]
 | Connector | Source
+
 | aggregators | aggregator-listener
 | amqp | listener
 | anypoint-mq | subscriber
-| apikit-odata | request-entity-collection-listener and request-entity-listener
-| as2-mule4 | as2-listener and as2-mdn-listener and non-repudiation-listener
+.2+| apikit-odata | request-entity-collection-listener | request-entity-listener
+.3+| as2-mule4 | as2-listener | as2-mdn-listener | non-repudiation-listener
 | azure-service-bus-messaging | message-listener
 | core | scheduler
 | db | listener
-| email | listener-imap and listener-pop3
+.2+| email | listener-imap | listener-pop3
 | file | listener
 | ftp | listener
 | ftps | listener
-| google-sheets | new-row-listener and new-spreadsheet-listener and updated-row-listener
+.3+| google-sheets | new-row-listener | new-spreadsheet-listener | updated-row-listener
 | http | listener
 | ibm-mq| listener
 | jms | listener
-| kafka | batch-message-listener and message-listener
+.2+| kafka | batch-message-listener | message-listener
 | mllp | mllp-listener
-
-| netsuite | deleted-object-listener and modified-object-listener and modified-record-listener and new-record-listener
-
+.4+| netsuite | deleted-object-listener | modified-object-listener | modified-record-listener | new-record-listener
 | pubsub | message-listener
-
-| salesforce | deleted-object-listener
-modified-object-listener
-new-object-listener
-replay-channel-listener
-replay-topic-listener
-subscribe-channel-listener
-subscribe-topic-listener
-
-
-| sap | document-listener
-function-listener
-
-
+.7+| salesforce | deleted-object-listener | modified-object-listener | new-object-listener | replay-channel-listener | replay-topic-listener | subscribe-channel-listener | subscribe-topic-listener
+.2+| sap | document-listener | function-listener
 | servicebus | listener
-sftp | listener
-
+| sftp | listener
 | sockets | listener
-| solace |
-queue-listener
-topic-listener
+.2+| solace | queue-listener | topic-listener
+.2+| sqs | receive-messages | receivemessages
+.3+ | stripe | citizen-on-new-charge-listener | on-new-charge-listener | on-new-event-listener
+| vm | listener
+.2+| websocket | inbound-listener | outbound-listener
 
-| sqs |
-receive-messages
-receivemessages
-
-| stripe |
-citizen-on-new-charge-listener
-on-new-charge-listener
-on-new-event-listener
-
-| vm |
-listener
-
-| websocket |
-inbound-listener
-outbound-listener
-////
 
 
 [[mule-messages]]
