@@ -18,7 +18,9 @@ If you want to xref:cloudhub-2::ch2-update-apps.adoc#roll-back-to-a-previous-suc
 
 == Metrics Definitions
 
-For information about pricing concepts within Anypoint Platform, see xref:general::usage-reports.adoc[Usage Reports].
+Anypoint Platform has a pricing package that is based on consumption of allotted Mule components.
+
+// For information about pricing concepts within Anypoint Platform, see xref:general::pricing-metrics.adoc[Pricing and Usage Metrics].
 
 // WIP
 
