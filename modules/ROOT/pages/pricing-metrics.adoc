@@ -33,8 +33,8 @@ The following Mule flow contains an event source as the first element. In this c
 
 === Examples of Event Sources
 
-
 [cols="2*",options="header"]
+|===
 | Connector | Source
 
 | aggregators | aggregator-listener
@@ -64,10 +64,10 @@ The following Mule flow contains an event source as the first element. In this c
 | sockets | listener
 .2+| solace | queue-listener | topic-listener
 .2+| sqs | receive-messages | receivemessages
-.3+ | stripe | citizen-on-new-charge-listener | on-new-charge-listener | on-new-event-listener
+.3+| stripe | citizen-on-new-charge-listener | on-new-charge-listener | on-new-event-listener
 | vm | listener
 .2+| websocket | inbound-listener | outbound-listener
-
+|===
 
 
 [[mule-messages]]
