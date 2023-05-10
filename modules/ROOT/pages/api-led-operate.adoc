@@ -9,7 +9,7 @@ image::runtime-overview.png[Runtime Manager user interface showing the Dashboard
 
 To check the health of your API:
 
-. From your Anypoint Platform organization, navigate to the Runtime Manager.
+. From your Anypoint Platform organization, navigate to Runtime Manager.
 +
 link:https://anypoint.mulesoft.com/cloudhub/#/console/home/applications["Take me to Runtime Manager^", role="button-primary"]
 +
