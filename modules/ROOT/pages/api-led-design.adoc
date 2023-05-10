@@ -49,7 +49,7 @@ After exploring Exchange to see the range of assets available, return to Anypoin
 
 == Step 2.2: Create Your API Specification
 
-Create your own API specification for a simple Hello World API that responds to a simple GET request.
+Create your own API specification for a simple Hello World API that responds to a GET request.
 To do this, use xref:design-center::design-create-publish-api-specs.adoc[API Designer], a part of xref:design-center::index.adoc[Design Center].
 
 . Open API Designer:
