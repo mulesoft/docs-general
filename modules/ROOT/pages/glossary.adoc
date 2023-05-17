@@ -13,14 +13,20 @@ Anypoint Platform features that help you manage your account and configure acces
 agent::
 A service, such as the Runtime Manager agent, that is used by or associated with Mule but is not a Mule-managed service component. An agent is registered with the Anypoint Runtime Manager and has the same lifecycle as the corresponding Mule instance, so you can initialize and destroy resources when the Mule instance starts or stops.
 
+Anypoint CLI::
+A scripting and command-line tool for Anypoint Platform and Anypoint Platform Private Cloud Edition (Anypoint Platform PCE).
+
 Anypoint Design Center (Design Center)::
 A cloud-based development environment for Mule runtime engine (Mule) applications and API definitions.
 
-Anypoint Design Center’s API designer (API designer)::
+Anypoint Design Center’s API Designer (API Designer)::
 Web-based graphical environment for designing, documenting, and testing APIs.
 
 Anypoint Exchange (Exchange)::
-MuleSoft repository for connectors, templates, examples, and RAML APIs. Discover and use proven assets built by the MuleSoft ecosystem. You can create your own Exchange and add assets to it for collaboration and sharing among a group.
+A curated catalog of reusable assets such as APIs, policies, API spec fragments, API groups, GraphQL APIs, templates, examples, custom assets, rulesets, and integration assets such as connectors. 
+
+Anypoint Flex Gateway::
+An Envoy-based, ultrafast lightweight API gateway designed to manage and secure APIs running anywhere.
 
 Anypoint Management Center (Management Center)::
 A single web interface to administer Anypoint Platform, both on-premises and in the cloud. Manage APIs and users, analyze traffic, monitor SLAs, and troubleshoot underlying integration flows.
@@ -35,10 +41,10 @@ Anypoint Partner Manager v2::
 The web-based user interface for partner configuration, document flow,  and transaction monitoring.
 
 Anypoint Platform™::
-MuleSoft’s product to design, build, and manage APIs and integrations.
+A MuleSoft product to design, build, and manage APIs and integrations.
 
 Anypoint Platform Private Cloud Edition::
-A special packaging of the Anypoint Platform is available for running on your own local servers. This implementation runs on Docker and Kubernetes, and is also compatible with Pivotal Cloud Foundry, and includes versions of Runtime Manager, API Manager and Anypoint Exchange.
+A special packaging of Anypoint Platform that is available for running on your own local servers. This implementation runs on Docker and Kubernetes, is compatible with Pivotal Cloud Foundry, and includes versions of Runtime Manager, API Manager, and Anypoint Exchange.
 
 Anypoint Runtime Fabric::
 A container service that automates the configuration, coordination, and management (orchestration), and deployment of your Mule applications and gateways. Runtime Fabric runs on customer-managed infrastructure on AWS, Azure, virtual machines (VMs) or bare-metal servers.
@@ -59,8 +65,11 @@ Features that help you create a virtual, private, and isolated network segment i
 Anypoint Visualizer::
 Dynamically generated views of different aspects of an application network graph.
 
+API Governance::
+Part of Anypoint Platform that enables you to apply governance rules to your APIs as part of the API lifecycle.
+
 API Manager::
-Part of the Anypoint Platform that allows you to design and manage your APIs.
+Part of Anypoint Platform that enables you to manage, govern, and secure  your APIs.
 
 ////
 It includes the [API Designer], which allows you to write a [RAML] definition of your API. It also includes tools to monitor usage metrics, apply [policies] and to expose interactive documentation through an [API Portal]
