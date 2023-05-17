@@ -49,6 +49,10 @@ Data throughput is all the network I/O bytes produced by the infrastructure that
 The report lists the IDs of applications and environments. 
 --
 
+== Enable Access to Usage Reports
+
+To grant user access to usage reports, an organization administrator must grant the View Usage Reports permission.
+
 == Access Usage Reports
 
 To access usage reports, you must have the Usage Viewer permission in Access Management.
@@ -56,7 +60,6 @@ To access usage reports, you must have the Usage Viewer permission in Access Man
 . From the Anypoint Platform navigation bar, click your username icon.
 . Click *Usage*.
 . To see reports for a particular month, click the *Monthly Usage Reports* drop-down list.
-
 
 == See Also
 
