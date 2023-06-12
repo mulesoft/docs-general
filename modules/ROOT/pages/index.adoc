@@ -83,6 +83,10 @@ This documentation is for reference purposes only and will not be updated.
 | Studio Doc Archives |
   xref:5.x@tcat-server::index.adoc[v5 Archive]
 
+| Service Mesh Doc Archives |
+  xref:1.1@service-mesh::index.adoc[v1.1 Archive] +
+  xref:1.0@service-mesh::index.adoc[v1.0 Archive]
+
 | Tcat Server Doc Archives |
   xref:7.1@tcat-server::index.adoc[v7.1 Archive]
 |===
