@@ -14,20 +14,32 @@ CloudHub 2.0, Anypoint Runtime Fabric, and Access Management to support the new 
 
 To benefit from the new pricing and packaging model, all of your applications (in production and sandbox) must use the following Mule versions:
 
-Mule 4 Images version:
+[cols="2*"]
+|===
+|Deployment Type |Version Requirements
 
+|CloudHub 2.0
+|Latest runtime version
+
+|CloudHub 1.0
+|Latest runtime version
+
+|Runtime Fabric
+| Mule 4 images version for Runtime Fabric:
 * 4.4.0-20230111-1
 * 4.3.0-20221212-2
 * 4.2.2-20221027-7
 * 4.2.1-20221027-7
 * 4.2.0-20221027-6
 
-Mule 3 Images version:
+Mule 3 images version for Runtime Fabric:
 * 3.9.5-20230424-2
 * 3.9.4-20230424-1
 * 3.9.3-20230424-1
 * 3.9.2-20230424-1
 * 3.9.1-20230424-1
+
+|=== 
 
  After your organization is onboarded to the new pricing and packaging model, you must redeploy your apps with a supported version, either manually or during the monthly patching cycle. The monthly patching cycle is applicable only for CloudHub 1.0 and CloudHub 2.0 applications. RTF customers must be using RTF agent version 1.13.112 or 2.1.30 or newer. You must also manually redeploy Runtime Fabric applications (with a supported date-patch version) after your organization is onboarded to the new pricing and packaging model.
 
