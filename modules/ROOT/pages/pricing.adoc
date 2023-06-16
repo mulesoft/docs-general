@@ -19,13 +19,13 @@ To benefit from the new pricing and packaging model, all of your applications (i
 |Deployment Type |Version Requirements
 
 |CloudHub 2.0
-|Latest runtime version
+|The latest date-patch versions for 4.3 and 4.4
 
 |CloudHub 1.0
-|Latest runtime version
+|The latest date-patch versions for 3.9, 4.2, 4.3 and 4.4
 
 |Runtime Fabric
-a|Mule 4 Images version:
+a|Mule 4 images version:
 
 * 4.4.0-20230111-1
 * 4.3.0-20221212-2
@@ -33,7 +33,7 @@ a|Mule 4 Images version:
 * 4.2.1-20221027-7
 * 4.2.0-20221027-6
 
-Mule 3 Images version:
+Mule 3 images version:
 
 * 3.9.5-20230424-2
 * 3.9.4-20230424-1
