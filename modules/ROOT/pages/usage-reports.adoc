@@ -49,7 +49,7 @@ Data throughput is all the network I/O bytes produced by the infrastructure that
 The report lists the IDs of applications and environments. 
 --
 
-== Supported Mule Runtime Versions
+==== Supported Mule Runtime Versions
 
 To view usage reports for Mule Runtime, all of your relevant applications (in production and sandbox) must use the following Mule versions:
 
