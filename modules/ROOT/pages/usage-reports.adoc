@@ -44,6 +44,44 @@ A Mule flow is a sequence of logical operations configured within the XML <flow/
 
 Data throughput is all the network I/O bytes produced by the infrastructure that starts and runs the Mule runtime engine that runs a Mule application. You can view the total amount of GB usage in a given month by business group, environment, and application. To calculate usage, MuleSoft tracks GB usage and aggregates the number of tracked Mule messages on a monthly basis.
 
+==== Supported Mule Runtime Versions
+
+To view usage reports for Mule Runtime, all of your relevant applications (in production and sandbox) must use the following Mule versions:
+
+[cols="2*"]
+|===
+|Deployment Type |Version Requirements
+
+|CloudHub 2.0
+|The latest date-patch versions for 4.3 and 4.4
+
+|CloudHub 1.0
+|The latest date-patch versions for 3.9, 4.2, 4.3 and 4.4
+
+|Runtime Fabric
+a| One of the following versions or any later date-patch:
+
+Mule 4 images version:
+
+* 4.4.0-20230111-1
+* 4.3.0-20221212-2
+* 4.2.2-20221027-7
+* 4.2.1-20221027-7
+* 4.2.0-20221027-6
+
+Mule 3 images version:
+
+* 3.9.5-20230424-2
+* 3.9.4-20230424-1
+* 3.9.3-20230424-1
+* 3.9.2-20230424-1
+* 3.9.1-20230424-1
+
+|=== 
+
+You must redeploy your apps with a supported version, either manually or during the monthly patching cycle. The monthly patching cycle is applicable only for CloudHub 1.0 and CloudHub 2.0 applications. Runtime Fabric customers must be using Runtime Fabric agent version 1.13.112 or 2.1.30 or later. If usage reports do not appear properly, you must also manually redeploy Runtime Fabric applications (with a supported date-patch version).
+
+If you want to xref:cloudhub-2::ch2-update-apps.adoc#roll-back-to-a-previous-successful-configuration[roll back] to a previous successful configuration of existing applications that use a Mule version that usage reports do not support, you must choose a compliant version before deploying changes. After deployment, a new configuration with the previously chosen settings and a supported runtime is created.
 
 == Enable Access to Usage Reports
 
