@@ -23,7 +23,9 @@ To view usage reports, all of your relevant applications (in production and sand
 |The latest date-patch versions for 3.9, 4.2, 4.3 and 4.4
 
 |Runtime Fabric
-a|Mule 4 images version:
+a| One of the following versions or any later date-patch:
+
+Mule 4 images version:
 
 * 4.4.0-20230111-1
 * 4.3.0-20221212-2
@@ -41,7 +43,7 @@ Mule 3 images version:
 
 |=== 
 
-You must redeploy your apps with a supported version, either manually or during the monthly patching cycle. The monthly patching cycle is applicable only for CloudHub 1.0 and CloudHub 2.0 applications. Runtime Fabric customers must be using Runtime Fabric agent version 1.13.112 or 2.1.30 or newer. If usage reports do not appear properly, you must also manually redeploy Runtime Fabric applications (with a supported date-patch version).
+You must redeploy your apps with a supported version, either manually or during the monthly patching cycle. The monthly patching cycle is applicable only for CloudHub 1.0 and CloudHub 2.0 applications. Runtime Fabric customers must be using Runtime Fabric agent version 1.13.112 or 2.1.30 or later. If usage reports do not appear properly, you must also manually redeploy Runtime Fabric applications (with a supported date-patch version).
 
 If you want to xref:cloudhub-2::ch2-update-apps.adoc#roll-back-to-a-previous-successful-configuration[roll back] to a previous successful configuration of existing applications that use a Mule version that usage reports do not support, you must choose a compliant version before deploying changes. After deployment, a new configuration with the previously chosen settings and a supported runtime is created.
 
