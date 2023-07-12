@@ -44,6 +44,11 @@ A Mule flow is a sequence of logical operations configured within the XML <flow/
 
 Data throughput is all the network I/O bytes produced by the infrastructure that starts and runs the Mule runtime engine that runs a Mule application. You can view the total amount of GB usage in a given month by business group, environment, and application. To calculate usage, MuleSoft tracks GB usage and aggregates the number of tracked Mule messages on a monthly basis.
 
+[NOTE]
+--
+The report lists the IDs of applications and environments. 
+--
+
 ==== Supported Mule Runtime Versions
 
 To view usage reports for Mule Runtime, all of your relevant applications (in production and sandbox) must use the following Mule versions:
