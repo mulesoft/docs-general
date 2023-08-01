@@ -1,0 +1,177 @@
+// Partial reused in index.adoc and monitor-api-conformance.adoc
+
+// tag::governance-profiles[]
+
+[[gov-profiles]]
+= Governance Profiles
+
+A governance profile applies chosen governance rulesets to a selected group of APIs. The API specifications are validated
+against the governance rulesets.
+
+// end::governance-profiles[]
+
+// tag::governance-profile-status[]
+
+[[gov-profile-status]]
+= Governance Profile Status
+
+You can view profile statuses in the console. Governance profile statuses are based on the percentage of conformant APIs in the profile:
+
+* *Normal:* More than 70% of APIs are conformant.
+* *At Risk:* Less than 70% of APIs are conformant.
+
+// end::governance-profile-status[]
+
+// tag::governance-rulesets[]
+
+[[gov-rulesets]]
+= Governance Rulesets
+
+Governance rulesets are collections of rules, or guidelines, that can be applied over the metadata extracted from API specifications in the Anypoint Platform. Some examples of governance rulesets are internal and external best
+practice guidelines, such as naming conventions, and industry-specific government standards, such as making sure your APIs that have sensitive data are encrypted (HTTPS).
+
+// end::governance-rulesets[]
+
+// tag::governed-apis[]
+
+[[governed-apis]]
+= Governed APIs
+
+APIs are governed if they are identified by the selection criteria of at least one of the governance profiles. If an API is governed, all versions of that API are considered one governed API. Subscription limits are set based on your organization's purchased capacity and the UI gives information about usage and alerts when you are nearing or exceeding your subscription capacity. 
+
+// end::governed-apis[]
+
+// tag::governance-status[]
+
+[[governance-status]]
+= Governance Status
+
+Governance status on the console shows the number of governed APIs, total number of APIs of supported API types, and subscription limit information.
+
+// end::governance-status[]
+
+// tag::api-conformance[]
+
+[[api-conformance]]
+= API Conformance
+
+API conformance indicates whether a validated API specification passes all of the required rules in one or more governance rulesets. If an API specification is included in multiple governance profiles, it must pass all of the rulesets in all of those profiles to be conformant.
+
+// end::api-conformance[]
+
+// tag::api-conformance-status[]
+
+[[conformance-status]]
+= API Conformance Status
+
+API conformance status indicates whether the API specifications that are included in your governance profiles pass all applied governance rulesets: 
+
+* *Conformant:* The APIs pass all applied governance rulesets.
+* *Not Conformant:* The APIs fail at least one governance ruleset.
+* *Not Validated:* The APIs are not validated because they are not included in a governance profile.
+
+Versions of an API might have different conformance statuses. Total version conformance status counts are shown in the API Governance console and conformance status indicators are shown for API versions in API Governance and in Exchange. 
+
+NOTE: API conformance applies only to API types supported by API Governance, such as REST API and AsyncAPI. 
+
+// end::api-conformance-status[]
+
+// tag::nonconformance-severity[]
+
+[[nonconformance-severity]]
+= Nonconformance Severity
+
+Nonconformance severity is categorized by percentage of passed rulesets among all required rulesets.
+
+High Severity:: 0 - 40% rulesets passed
+
+Medium Severity:: 41% - 80% rulesets passed
+
+Low Severity:: 81% - 99% rulesets passed
+
+// end::nonconformance-severity[]
+
+// tag::project-errors[]
+
+[[project-errors]]
+= Project Errors
+
+Project errors are shown in the Design Center API Designer text editor page. The *Project Errors* section of the page shows functional issues and nonconformance messages found in the API specification that is open in the text editor.
+
+// end::project-errors[]
+
+// tag::api-governance-usage-reports[]
+
+[[api-governance-usage-reports]]
+= API Governance Usage Reports
+
+You can view usage reports to gain insight into your monthly usage of API Governance. See xref:general::usage-reports.adoc#api-governance[Viewing Usage Reports for API Governance].
+
+// end::api-governance-usage-reports[]
+
+// tag::api-entire[]
+
+[[api-entire]]
+= API
+
+The entire API, including all its aspects. In Anypoint Platform, aspects of an API might also be called just API in context with the product that is managing them. For example, in Exchange, API might refer to the API specification, documentation, and catalog. In API Designer, API might refer to the API specification. In API Catalog, API might refer to the API instance, policies, and contracts. 
+
+// end::api-entire[]
+
+// tag::api-aspects[]
+
+[[api-aspects]]
+= API Aspects
+
+Parts of an API. API Governance governs the entire API, including all of its aspects. Aspects of APIs include specifications, implementations, instances, and documentation.
+
+// end::api-aspects[]
+
+// tag::api-specifications[]
+
+[[api-specifications]]
+= API Specifications
+
+Describes the functional and expected behavior of an API, such as endpoints, operations, requests and responses.
+
+// end::api-specifications[]
+
+// tag::api-implementation[]
+
+[[api-implementation]]
+= API Implementation
+
+A realization of the API specification to make the API functional.
+
+// end::api-implementation[]
+
+// tag::api-instances[]
+
+[[api-instances]]
+= API Instances
+
+Instantiations of the API implementation. An API can have multiple instances across different environments and gateways, which can be used by clients to make API calls. Instances that are configured but not deployed are also captured as part of this aspect.
+
+An instance can be either a proxy of an API that serves the upstream or an application endpoint.
+
+// end::api-instances[]
+
+// tag::api-documentation[]
+
+[[api-documentation]]
+= API Documentation
+
+Helps consumers understand and use the API, with content such as examples, use cases, and tutorials.
+
+// end::api-documentation[]
+
+// tag::api-catalog-info[]
+
+[[api-catalog-info]]
+= API Catalog Information
+
+Properties related to an API's entry in an API catalog, such as name, version, owner (contact), tags and categories. 
+
+In Anypoint Platform, most of these properties are tied to the API asset in Exchange.
+
+// end::api-catalog-info[]
