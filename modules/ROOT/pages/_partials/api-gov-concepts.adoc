@@ -13,8 +13,7 @@ against the governance rulesets.
 // tag::governance-profile-status[]
 
 [[gov-profile-status]]
-= Governance Profile Status
-
+governance profile status::
 You can view profile statuses in the console. Governance profile statuses are based on the percentage of conformant APIs in the profile:
 
 * *Normal:* More than 70% of APIs are conformant.
