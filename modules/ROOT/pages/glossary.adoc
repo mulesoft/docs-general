@@ -65,6 +65,46 @@ Features that help you create a virtual, private, and isolated network segment i
 Anypoint Visualizer::
 Dynamically generated views of different aspects of an application network graph.
 
+// Definition of API
+
+include::partial$api-gov-concepts.adoc[tag=api-entire,leveloffset=+2]
+
+// Definition of API Aspects
+
+include::partial$api-gov-concepts.adoc[tag=api-aspects,leveloffset=+2]
+
+// Definition of API Catalog Information
+
+include::partial$api-gov-concepts.adoc[tag=api-catalog-info,leveloffset=+3]
+
+// Definition of API Conformance
+
+include::partial$api-gov-concepts.adoc[tag=api-conformance,leveloffset=+2]
+
+// Definition of API Conformance Status
+
+include::partial$api-gov-concepts.adoc[tag=api-conformance-status,leveloffset=+2]
+
+// Definition of API Documentation
+
+include::partial$api-gov-concepts.adoc[tag=api-documentation,leveloffset=+3]
+
+// Definition of API Governance Usage Reports
+
+include::partial$api-gov-concepts.adoc[tag=api-governance-usage-reports,leveloffset=+2]
+
+// Definition of API Implementation
+
+include::partial$api-gov-concepts.adoc[tag=api-implementation,leveloffset=+3]
+
+// Definition of API Instances
+
+include::partial$api-gov-concepts.adoc[tag=api-instances,leveloffset=+3]
+
+// Definition of API Specifications
+
+include::partial$api-gov-concepts.adoc[tag=api-specifications,leveloffset=+3]
+
 API Governance::
 Part of Anypoint Platform that enables you to apply governance rules to your APIs as part of the API lifecycle.
 
@@ -127,6 +167,28 @@ Anypoint Security feature to help you manage edge security.
 flow::
 Within a Mule application, a flow is a block of executable components, including any connector operations, that Mule runtime executes sequentially on a Mule event. A flow can also contain an event source, which triggers the creation of the event and the execution of the flow. 
 
+== G
+
+// Definition of Governed APIs
+
+include::partial$api-gov-concepts.adoc[tag=governed-apis,leveloffset=+2]
+
+// Definition of Governance Profiles
+
+include::partial$api-gov-concepts.adoc[tag=governance-profiles,leveloffset=+2]
+
+// Definition of Governance Profile Status
+
+include::partial$api-gov-concepts.adoc[tag=governance-profile-status,leveloffset=+2]
+
+// Definition of Governance Rulesets
+
+include::partial$api-gov-concepts.adoc[tag=governance-rulesets,leveloffset=+2]
+
+// Definition of Governance Status
+
+include::partial$api-gov-concepts.adoc[tag=governance-status,leveloffset=+2]
+
 == H
 
 hybrid deployment::
@@ -157,6 +219,12 @@ The enterprise version of Mule, available for 30-day trial download. The Enterpr
 Mule® runtime engine (Mule® or Mule)::
 Java-based integration runtime engine for Anypoint Platform.
 
+== N
+
+// Definition of Nonconformance Severity
+
+include::partial$api-gov-concepts.adoc[tag=nonconformance-severity,leveloffset=+2]
+
 == O
 
 organization::
@@ -169,6 +237,10 @@ A cloud computing platform as a service (PaaS) provided by the company Pivotal. 
 
 policy::
 An object that controls authentication, access, consumption rates, and service level access (SLA) to API resources. Anypoint Platform provides both preconfigured and tools to create custom policies.
+
+// Definition of Project Errors
+
+include::partial$api-gov-concepts.adoc[tag=project-errors,leveloffset=+2]
 
 == R
 
