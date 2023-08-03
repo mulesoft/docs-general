@@ -1,4 +1,4 @@
-// Partial reused in index.adoc and monitor-api-conformance.adoc
+// Partial reused in index.adoc and monitor-api-conformance.adoc; part of governance rulesets reused in create-custom-rulesets.adoc
 
 // tag::governance-profiles[]
 
@@ -26,6 +26,10 @@ You can view profile statuses in the console. Governance profile statuses are ba
 governance rulesets::
 Governance rulesets are collections of rules, or guidelines, that can be applied over the metadata extracted from API specifications in the Anypoint Platform. Some examples of governance rulesets are internal and external best
 practice guidelines, such as naming conventions, and industry-specific government standards, such as making sure your APIs that have sensitive data are encrypted (HTTPS).
++
+//tag::governance-rulesets-subset[]
+MuleSoft provides several rulesets in Exchange, such as Anypoint API Best Practices, OpenAPI Best Practices, OWASP API Security Top 10, and Authentication Security Best Practices governance rulesets. You can discover rulesets published in Exchange by filtering the search in Exchange by the *Rulesets* type. See xref:exchange::to-find-info.adoc[Search for Assets].
+//end::governance-rulesets-subset[]
 
 // end::governance-rulesets[]
 
