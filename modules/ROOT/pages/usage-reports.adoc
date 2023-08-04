@@ -38,9 +38,9 @@ To calculate usage, MuleSoft tracks the number of managed API instances each bus
 
 Runtime reports track your use of Mule messages, Mule flows, and data throughput. 
 
-To track Mule message usage, the report counts the number of times a Mule event source triggers a Mule message. You can view the number of these messages in a given month by business group, environment, and application. To calculate usage, MuleSoft meters and aggregates the number of messages on a monthly basis. After a message is triggered, the report does not track changes to the message as it is processed within the application’s flows.
+To track Mule message usage, the runtime report counts the number of times a Mule event source triggers a Mule message. You can view the number of these messages in a given month by business group, environment, and application. To calculate usage, MuleSoft meters and aggregates the number of messages on a monthly basis. After a message is triggered, the report does not track changes to the message because the message is processed within the application’s flows.
 
-A Mule flow is a sequence of logical operations configured within the XML <flow/> element of a Mule application. The report tracks the Mule flows within a deployed and running Mule application that contain a Mule event source or route APIKit requests. The report does not track other Mule flows. You can view the maximum number of Mule flows in a given month in the usage report. To calculate usage, MuleSoft tracks the number of Mule flows for all business groups, environments, and applications. The maximum number of Mule flows within a month is identified based on the peak hour across the month. For the detailed breakdown, MuleSoft shows the peak hour usage per business group, environment, and application. 
+A Mule flow is a sequence of logical operations configured within the XML `<flow/>` element of a Mule application. The runtime report tracks the Mule flows within a deployed and running Mule application that contains a Mule event source or APIKit route requests. This report does not track other Mule flows. You can view the maximum number of Mule flows in a given month in the usage report. To calculate usage, MuleSoft tracks the number of Mule flows for all business groups, environments, and applications. The maximum number of Mule flows within a month is identified based on the peak hour across the month. For the detailed breakdown, MuleSoft shows the peak hour usage per business group, environment, and application. 
 
 Data throughput is all the network I/O bytes produced by the infrastructure that starts and runs the Mule runtime engine that runs a Mule application. You can view the total amount of GB usage in a given month by business group, environment, and application. To calculate usage, MuleSoft tracks GB usage and aggregates the number of tracked Mule messages on a monthly basis.
 
@@ -86,11 +86,11 @@ Mule 3 images version:
 
 You must redeploy your apps with a supported version, either manually or during the monthly patching cycle. The monthly patching cycle is applicable only for CloudHub 1.0 and CloudHub 2.0 applications. Runtime Fabric customers must be using Runtime Fabric agent version 1.13.112 or 2.1.30 or later. If usage reports do not appear properly, you must also manually redeploy Runtime Fabric applications (with a supported date-patch version).
 
-If you want to xref:cloudhub-2::ch2-update-apps.adoc#roll-back-to-a-previous-successful-configuration[roll back] to a previous successful configuration of existing applications that use a Mule version that usage reports do not support, you must choose a compliant version before deploying changes. After deployment, a new configuration with the previously chosen settings and a supported runtime is created.
+To xref:cloudhub-2::ch2-update-apps.adoc#roll-back-to-a-previous-successful-configuration[roll back] to a previous successful configuration of existing applications that use a Mule version that usage reports do not support, choose a compliant version before deploying changes. After deployment, MuleSoft creates a new configuration with the previously chosen settings and a supported runtime.
 
 == Enable Access to Usage Reports
 
-To grant user access to usage reports, an organization administrator must grant the View Usage Reports permission.
+To grant user access to usage reports, an organization administrator must grant the Usage Viewer permission.
 
 == Access Usage Reports
 
