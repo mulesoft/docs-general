@@ -127,7 +127,7 @@ To xref:cloudhub-2::ch2-update-apps.adoc#roll-back-to-a-previous-successful-conf
 To access usage reports, you need the xref:access-management::permissions-by-product.adoc#usage[Usage Viewer permission]. If you do not have the Usage Viewer permission, contact your organization administrator to request access. The Usage Viewer permission must be xref:access-management::managing-permissions.adoc[applied at the root organization level] rather than the business group level. Usage reports are available only when you are accessing the root organization and do not appear at the business group level.
 
 . Log in to Anypoint Platform using an account that has the Usage Viewer permission over your root organization.
-. Click the circle with your organization name's initial in it and ensure you are at the root level of tour organization and not a business group.
+. Click the circle with your organization name's initial in it and ensure you are at the root level of your organization and not in a business group.
 . From the Anypoint Platform navigation bar, click your username icon.
 . Click *Usage*.
 . To see reports for a particular month, click the *Monthly Usage Reports* drop-down list.
