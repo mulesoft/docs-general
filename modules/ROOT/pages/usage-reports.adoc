@@ -3,23 +3,40 @@
 
 Usage reports provide insights into your monthly usage of Anypoint Platform products. 
 
-[NOTE]
---
-Use the usage report to compare your actual usage against your existing contract. The report is not for billing purposes. 
---
-
-== Usage Reports Overview
 
 When you use an Anypoint Platform product, MuleSoft meters your usage and aggregates the records on a monthly basis. Usage reports are updated on the third day of each month and are split by product. All reports are calculated using the UTC time standard.
 
+Use the usage report to compare your actual usage against your existing contract. The report is not for billing purposes. 
+
+* xref:pricing.adoc[]
+* xref:pricing-metrics.adoc[]
+
+== Access Usage Reports
+
+To access usage reports, you must have the Usage Viewer permission in Access Management.
+
+. From the Anypoint Platform navigation bar, click your username icon.
+. Click *Usage*.
+. To see reports for a particular month, click the *Monthly Usage Reports* drop-down list.
+
+== Usage Report Availability
+
 Usage reports are available for the following Anypoint Platform products:
 
+* <<flex-gateway>>
+* <<api-govern>>
+* <<api-manager>>
+* <<mule-runtime>>
+
+
+[[flex-gateway]]
 === Flex Gateway
 
 Flex Gateway usage reports track monthly API calls. You can view monthly API calls by business group, environment, and registration.
 
 To calculate usage, MuleSoft meters the hourly API calls you make and aggregates the number of API calls on a monthly basis. 
  
+[[api-govern]]
 === API Governance
 
 API Governance usage reports track the maximum number of xref:api-governance::index.adoc#governed-apis[APIs governed] in a given month per business group. 
@@ -28,15 +45,17 @@ To calculate usage, MuleSoft tracks the number of governed APIs each business gr
 
 Note that the number of governed APIs (both conformant and non-conformant) shown in the API governance console represents a current snapshot of your usage per business group, while the usage report shows the maximum number of APIs you used in a given month per business group.
 
+[[api-manager]]
 === API Manager
 
 API Manager usage reports track the maximum number of xref:api-manager::latest-overview-concept.adoc#api-instances[API instances] deployed in a given month per business group, environment, and runtime. 
 
 To calculate usage, MuleSoft tracks the number of managed API instances each business group, environment, and runtime uses per hour and identifies the maximum number of managed API instances used in a month for each business group, environment, and runtime. To calculate the total count for API Manager, MuleSoft adds the maximum number of managed API instances per month used across business groups, environments, and runtimes.
 
+[[mule-runtime]]
 === Mule Runtime
 
-Runtime reports track your use of Mule messages, Mule flows, and data throughput. 
+Mule runtime reports track your use of Mule messages, Mule flows, and data throughput. 
 
 To track Mule message usage, the runtime report counts the number of times a Mule event source triggers a Mule message. You can view the number of these messages in a given month by business group, environment, and application. To calculate usage, MuleSoft meters and aggregates the number of messages on a monthly basis. After a message is triggered, the report does not track changes to the message because the message is processed within the application’s flows.
 
@@ -82,57 +101,6 @@ Mule 3 images version:
 You must redeploy your apps with a supported version, either manually or during the monthly patching cycle. The monthly patching cycle is applicable only for CloudHub 1.0 and CloudHub 2.0 applications. Runtime Fabric customers must be using Runtime Fabric agent version 1.13.112 or 2.1.30 or later. If usage reports do not appear properly, you must also manually redeploy Runtime Fabric applications (with a supported date-patch version).
 
 If you want to xref:cloudhub-2::ch2-update-apps.adoc#roll-back-to-a-previous-successful-configuration[roll back] to a previous successful configuration of existing applications that use a Mule version that usage reports do not support, you must choose a compliant version before deploying changes. After deployment, a new configuration with the previously chosen settings and a supported runtime is created.
-
-==== Supported Mule Runtime Versions
-
-To view usage reports for Mule Runtime, all of your relevant applications (in production and sandbox) must use the following Mule versions:
-
-[cols="2*"]
-|===
-|Deployment Type |Version Requirements
-
-|CloudHub 2.0
-|The latest date-patch versions for 4.3 and 4.4
-
-|CloudHub 1.0
-|The latest date-patch versions for 3.9, 4.2, 4.3 and 4.4
-
-|Runtime Fabric
-a| One of the following versions or any later date-patch:
-
-Mule 4 images version:
-
-* 4.4.0-20230111-1
-* 4.3.0-20221212-2
-* 4.2.2-20221027-7
-* 4.2.1-20221027-7
-* 4.2.0-20221027-6
-
-Mule 3 images version:
-
-* 3.9.5-20230424-2
-* 3.9.4-20230424-1
-* 3.9.3-20230424-1
-* 3.9.2-20230424-1
-* 3.9.1-20230424-1
-
-|=== 
-
-You must redeploy your apps with a supported version, either manually or during the monthly patching cycle. The monthly patching cycle is applicable only for CloudHub 1.0 and CloudHub 2.0 applications. Runtime Fabric customers must be using Runtime Fabric agent version 1.13.112 or 2.1.30 or later. If usage reports do not appear properly, you must also manually redeploy Runtime Fabric applications (with a supported date-patch version).
-
-To xref:cloudhub-2::ch2-update-apps.adoc#roll-back-to-a-previous-successful-configuration[roll back] to a previous successful configuration of existing applications that use a Mule version that usage reports do not support, choose a compliant version before deploying changes. After deployment, MuleSoft creates a new configuration with the previously chosen settings and a supported runtime.
-
-== Enable Access to Usage Reports
-
-To grant user access to usage reports, an organization administrator must grant the Usage Viewer permission.
-
-== Access Usage Reports
-
-To access usage reports, you must have the Usage Viewer permission in Access Management.
-
-. From the Anypoint Platform navigation bar, click your username icon.
-. Click *Usage*.
-. To see reports for a particular month, click the *Monthly Usage Reports* drop-down list.
 
 == See Also
 
