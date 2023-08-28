@@ -4,8 +4,8 @@
 
 [[gov-profiles]]
 governance profiles::
-A governance profile applies chosen governance rulesets to a selected group of APIs. The API specifications are validated
-against the governance rulesets.
+A governance profile applies selected governance rulesets to a filtered group of APIs. API Governance then validates the APIs
+against the rulesets to determine governance conformance.
 
 // end::governance-profiles[]
 
@@ -13,7 +13,7 @@ against the governance rulesets.
 
 [[gov-profile-status]]
 governance profile status::
-You can view profile statuses in the console. Governance profile statuses are based on the percentage of conformant APIs in the profile:
+You can view profile statuses in the API Governance console. Governance profile statuses are based on the percentage of conformant APIs in the profile:
 +
 * *Normal:* More than 70% of APIs are conformant.
 * *At Risk:* Less than 70% of APIs are conformant.
@@ -24,7 +24,7 @@ You can view profile statuses in the console. Governance profile statuses are ba
 
 [[gov-rulesets]]
 governance rulesets::
-Governance rulesets are collections of rules, or guidelines, that can be applied over the metadata extracted from API specifications in the Anypoint Platform. Some examples of governance rulesets are internal and external best
+Governance rulesets are collections of rules, or guidelines, that can be applied over the metadata extracted from APIs in Anypoint Platform. Some examples of governance rulesets are internal and external best
 practice guidelines, such as naming conventions, and industry-specific government standards, such as making sure your APIs that have sensitive data are encrypted (HTTPS).
 +
 //tag::governance-rulesets-subset[]
@@ -45,7 +45,7 @@ APIs are governed if they are identified by the selection criteria of at least o
 
 [[governance-status]]
 governance status::
-Governance status on the console shows the number of governed APIs, total number of APIs of supported API types, and subscription limit information.
+Governance status in the API Governance console shows the number of governed APIs, total number of APIs of supported API types, and subscription limit information.
 
 // end::governance-status[]
 
@@ -61,13 +61,13 @@ API conformance indicates whether a validated API specification passes all of th
 
 [[conformance-status]]
 API conformance status::
-API conformance status indicates whether the API specifications that are included in your governance profiles pass all applied governance rulesets: 
+API conformance status indicates whether the APIs that are included in your governance profiles pass all applied governance rulesets: 
 +
 * *Conformant:* The APIs pass all applied governance rulesets.
 * *Not Conformant:* The APIs fail at least one governance ruleset.
 * *Not Validated:* The APIs are not validated because they are not included in a governance profile.
 +
-Versions of an API might have different conformance statuses. Total version conformance status counts are shown in the API Governance console and conformance status indicators are shown for API versions in API Governance and in Exchange. 
+Versions of an API might have different conformance statuses. Total version conformance status counts are shown in the API Governance console and conformance status indicators are shown for API versions in API Governance, Exchange, and API Manager. 
 +
 NOTE: API conformance applies only to API types supported by API Governance, such as REST API and AsyncAPI. 
 
@@ -120,8 +120,8 @@ Parts of an API. API Governance governs the entire API, including all of its asp
 // tag::api-specifications[]
 
 [[api-specifications]]
-API specifications::
-Describes the functional and expected behavior of an API, such as endpoints, operations, requests and responses.
+API specification::
+Details the functional and expected behavior of an API, as well as the fundamental design philosophy and supported data types. It contains both documentation and API definitions to create a contract that people and software can read.
 
 // end::api-specifications[]
 
@@ -136,8 +136,8 @@ A realization of the API specification to make the API functional.
 // tag::api-instances[]
 
 [[api-instances]]
-API instances::
-Instantiations of the API implementation. An API can have multiple instances across different environments and gateways, which can be used by clients to make API calls. Instances that are configured but not deployed are also captured as part of this aspect.
+API instance::
+An instantiation of the API implementation. An API can have multiple instances across different environments and gateways, which can be used by clients to make API calls. Instances that are configured but not deployed are also captured as part of this aspect.
 +
 An instance can be either a proxy of an API that serves the upstream or an application endpoint.
 
