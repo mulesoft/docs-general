@@ -106,7 +106,7 @@ include::partial$api-gov-concepts.adoc[tag=api-instances,leveloffset=+3]
 include::partial$api-gov-concepts.adoc[tag=api-specifications,leveloffset=+3]
 
 API Governance::
-Part of Anypoint Platform that enables you to apply governance rules to your APIs as part of the API lifecycle.
+Part of Anypoint Platform that enables you to apply governance rules to your APIs and monitor conformance to those rules.
 
 API Manager::
 Part of Anypoint Platform that enables you to manage, govern, and secure  your APIs.
