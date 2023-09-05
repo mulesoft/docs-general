@@ -110,12 +110,10 @@ Part of Anypoint Platform that enables you to apply governance rules to your API
 
 API Manager::
 Part of Anypoint Platform that enables you to manage, govern, and secure  your APIs.
-
 // It includes the [API Designer], which allows you to write a [RAML] definition of your API. It also includes tools to monitor usage metrics, apply [policies] and to expose interactive documentation through an [API Portal]
 
 API Portal::
 An access point where you can present an API to attract users.
-
 // How is this different from a private Exchange portal?
 
 API proxy::
