@@ -89,7 +89,7 @@ Monitor your APIs and integrations using dashboards, metrics, and visualization.
 == Quick Links
 
 [#popular-topics]
-=== Popular Topics
+== Popular Topics
 
 //Date Range 5/01/2022 - 6/01/2022 (omits #1 ranking link to landing page, of course)
 * xref:dataweave::dataweave-cookbook-format-dates.adoc[Format Dates and Times]
@@ -106,7 +106,7 @@ Monitor your APIs and integrations using dashboards, metrics, and visualization.
 
 
 [#more-resources]
-=== More Resources
+== More Resources
 
 * https://developer.mulesoft.com/learn/dataweave/[DataWeave Playground^]
 * https://help.mulesoft.com/s/[MuleSoft Help Center^]
