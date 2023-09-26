@@ -9,6 +9,14 @@ Details in this document are subject to change.
 This document describes the changes introduced in Runtime Manager for CloudHub 1.0, 
 CloudHub 2.0, Anypoint Runtime Fabric, and Access Management to support the new pricing and packaging model.
 
+== Usage Reports Changes from vCore to the New Pricing and Packaging Model
+
+When your organization opts in to the new usage pricing and packaging model, your usage reports temporarily display both vCore-based usage and the new usage metrics for your apps. Your apps must be redeployed after your organization implements the new usage pricing and packaging. Because a usage report covers an entire month, during the month that redeploy happens, usage reports appear for both usage pricing and vCore pricing.
+
+For CloudHub and CloudHub 2.0, apps are automatically redeployed during the monthly runtime patch update cycle. See xref:runtime-manager::cloudhub-app-runtime-version-updates.adoc[CloudHub Runtime Continuous Updates] and xref:cloudhub-2::ch2-patch-updates.adoc[CloudHub 2.0 Operating System Patch Updates] for more details.
+
+For Runtime Fabric, you must redeploy apps manually. After you redeploy all RTF apps, usage reporting shifts from a mix of usage and vCore reports to all usage-based reporting. You must redeploy RTF apps in a timely manner to remain in compliance with your Anypoint Platform contract.
+
 == Supported Mule Runtime Versions
 
 To benefit from the new pricing and packaging model, all of your applications (in production and sandbox) must use the following Mule versions:
