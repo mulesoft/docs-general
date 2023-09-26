@@ -11,7 +11,7 @@ CloudHub 2.0, Anypoint Runtime Fabric, and Access Management to support the new 
 
 == Usage Reports Changes from vCore to the New Pricing and Packaging Model
 
-When your organization opts in to the new usage pricing and packaging model, your usage reports temporarily display both vCore-based usage and the new usage metrics for your apps. Your apps must be redeployed after your organization implements the new usage pricing and packaging. Because a usage report covers an entire month, during the month that redeploy happens, usage reports appear for both usage pricing and vCore pricing.
+When your organization opts into the new usage pricing and packaging model, your apps must be redeployed. After redeploying of your apps, your usage reports temporarily display both vCore-based usage and the new usage metrics for your apps. Usage reports cover an entire month, so usage reports appear for both the new usage pricing model and the vCore-based usage pricing for that month.
 
 For CloudHub and CloudHub 2.0, apps are automatically redeployed during the monthly runtime patch update cycle. See xref:runtime-manager::cloudhub-app-runtime-version-updates.adoc[CloudHub Runtime Continuous Updates] and xref:cloudhub-2::ch2-patch-updates.adoc[CloudHub 2.0 Operating System Patch Updates] for more details.
 
