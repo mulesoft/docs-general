@@ -3,7 +3,6 @@
 
 Usage reports provide insights into your monthly usage of Anypoint Platform products. 
 
-
 When you use an Anypoint Platform product, MuleSoft meters your usage and aggregates the records on a monthly basis. Usage reports are updated on the third day of each month and are split by product. All reports are calculated using the UTC time standard.
 
 Use the usage report to compare your actual usage against your existing contract. The report is not for billing purposes. 
@@ -57,38 +56,45 @@ To calculate usage, MuleSoft tracks the number of managed API instances each bus
 
 Mule runtime reports track your use of Mule messages, Mule flows, and data throughput. 
 
-To track Mule message usage, the runtime report counts the number of times a Mule event source triggers a Mule message. You can view the number of these messages in a given month by business group, environment, and application. To calculate usage, MuleSoft meters and aggregates the number of messages on a monthly basis. After a message is triggered, the report does not track changes to the message because the message is processed within the application’s flows.
+To track Mule message usage, the runtime report counts the number of times a Mule event source triggers a Mule message. You can view the number of these messages in a given month by business group, environment, and application. 
 
-A Mule flow is a sequence of logical operations configured within the XML `<flow/>` element of a Mule application. The runtime report tracks the Mule flows within a deployed and running Mule application that contains a Mule event source or APIKit route requests. This report does not track other Mule flows. You can view the maximum number of Mule flows in a given month in the usage report. To calculate usage, MuleSoft tracks the number of Mule flows for all business groups, environments, and applications. The maximum number of Mule flows within a month is identified based on the peak hour across the month. For the detailed breakdown, MuleSoft shows the peak hour usage per business group, environment, and application. 
+To calculate usage, MuleSoft meters and aggregates the number of messages on a monthly basis. After a message is triggered, the report does not track changes to the message because the message is processed within the application’s flows.
 
-Data throughput is all the network I/O bytes produced by the infrastructure that starts and runs the Mule runtime engine that runs a Mule application. You can view the total amount of GB usage in a given month by business group, environment, and application. To calculate usage, MuleSoft tracks GB usage and aggregates the number of tracked Mule messages on a monthly basis.
+A Mule flow is a sequence of logical operations configured within the XML `<flow/>` element of a Mule application. The runtime report tracks the Mule flows within a deployed and running Mule application that contains a Mule event source or APIKit route requests. This report does not track other Mule flows. You can view the maximum number of Mule flows in a given month in the usage report. 
+
+To calculate usage, MuleSoft tracks the number of Mule flows for all business groups, environments, and applications. The maximum number of Mule flows within a month is identified based on the peak hour across the month. For the detailed breakdown, MuleSoft shows the peak hour usage per business group, environment, and application. 
+
+Data throughput is all the network I/O bytes produced by the infrastructure that starts and runs the Mule runtime engine that runs a Mule application. You can view the total amount of GB usage in a given month by business group, environment, and application. 
+
+To calculate usage, MuleSoft tracks GB usage and aggregates the number of tracked Mule messages on a monthly basis.
 
 ==== Supported Mule Runtime Versions
 
-To view usage reports for Mule Runtime, all of your relevant applications (in production and sandbox) must use the following Mule versions:
+To view usage reports for Mule runtime, all of your relevant applications (in production and sandbox) must use the following Mule versions:
 
 [cols="2*"]
 |===
 |Deployment Type |Version Requirements
 
 |CloudHub 2.0
-|The latest date-patch versions for 4.3 and 4.4
+|The latest date-patch versions for 4.3, 4.4, and 4.5
 
 |CloudHub 1.0
-|The latest date-patch versions for 3.9, 4.2, 4.3 and 4.4
+|The latest date-patch versions for 3.9, 4.2, 4.3, 4.4, and 4.5
 
 |Runtime Fabric
 a| One of the following versions or any later date-patch:
 
-Mule 4 images version:
+Mule 4 image versions:
 
+* 4.5.0:23e
 * 4.4.0-20230111-1
 * 4.3.0-20221212-2
 * 4.2.2-20221027-7
 * 4.2.1-20221027-7
 * 4.2.0-20221027-6
 
-Mule 3 images version:
+Mule 3 image versions:
 
 * 3.9.5-20230424-2
 * 3.9.4-20230424-1
