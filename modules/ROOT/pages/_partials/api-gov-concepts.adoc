@@ -24,11 +24,16 @@ You can view profile statuses in the API Governance console. Governance profile 
 
 [[gov-rulesets]]
 governance rulesets::
-Governance rulesets are collections of rules, or guidelines, that can be applied over the metadata extracted from APIs in Anypoint Platform. Some examples of governance rulesets are internal and external best
-practice guidelines, such as naming conventions, and industry-specific government standards, such as making sure your APIs that have sensitive data are encrypted (HTTPS).
+Governance rulesets are collections of rules, or guidelines, that can be applied over the metadata extracted from APIs in Anypoint Platform. Governance rulesets help enforce:
++
+--
+* Internal and external best
+practice guidelines, such as naming conventions
+* Industry-specific government standards, such as encryption for  sensitive API data (HTTPS)
+--
 +
 //tag::governance-rulesets-subset[]
-MuleSoft provides several rulesets in Exchange, such as Anypoint API Best Practices, OpenAPI Best Practices, OWASP API Security Top 10, and Authentication Security Best Practices governance rulesets. You can discover rulesets published in Exchange by filtering the search in Exchange by the *Rulesets* type. See xref:exchange::to-find-info.adoc[Search for Assets].
+MuleSoft provides several rulesets in Exchange, such as Anypoint API Best Practices, OpenAPI Best Practices, Authentication Security Best Practices, and Mule API Management Best Practices. Discover rulesets in Exchange by filtering the search by the *Rulesets* type. See xref:exchange::to-find-info.adoc[Search for Assets].
 //end::governance-rulesets-subset[]
 
 // end::governance-rulesets[]
