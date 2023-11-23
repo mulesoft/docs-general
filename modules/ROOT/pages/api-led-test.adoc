@@ -17,10 +17,10 @@ Your API is very simple, so your testing will be simple. You'll test whether the
 Add the *Validate size* operation to the `hello-world` project:
 
 . In the `hello-world` project in Studio, open `hello-world.xml` if it isn't already open, and make sure you are viewing the *Message Flow* tab of the canvas.
-. In *Mule Palette*, select *Add Modules > Validation* and drag it to the Studio canvas.
+. In *Mule Palette*, click *Add Modules > Validation* and drag it to the *Mule Palette*.
 +
 image:validation-module.png[View of Mule Palette with the Validation module selected]
-. From the list of operations displayed, drag *Validate size* to the Studio canvas and drop it to the right of *Set Payload*, inside the endpoint module.
+. From the list of operations displayed, drag *Validate size* to the Studio canvas and drop it inside the endpoint module to the right of *Set Payload*.
 +
 image:validate-size.png[Validate size dropped into GET module]
 . Click *Validate size* to display the *General* configuration tab.
@@ -32,7 +32,7 @@ image:configure-validate.png[Validate size configuration tab]
   .. *Max*: `30`
   .. *Error options > Message*: `The specified message is either too long or too short.`
 . From the Studio main menu, select *File > Save All* to save your changes.
-. Right-click in the canvas and select *Run project hello-world*.
+. Right-click in the canvas and select *Run project hello-world-2*.
 . After you see the console message indicating `hello-world` is deployed, send a request using Advanced Rest Client or a similar tool:
 +
 [source, xml]
@@ -42,7 +42,7 @@ http://localhost:8081/api/greeting
 +
 Your request client should report response headers containing `200 OK` and `Today the greeting is Hello.`. This demonstrates the expected behavior when the greeting is within the limits you set in the Validate size operation.
 
-. Right-click the canvas and select *Stop project hello-world*.
+. Right-click the canvas and select *Stop project hello-world-2*.
 
 To test that the validation works when the payload is too short, use the debugger to step through each event before the error is triggered.
 
@@ -52,7 +52,7 @@ To test that the validation works when the payload is too short, use the debugge
 . Right-click *Set Payload* and select *Add breakpoint*.
 . Right-click *Logger* and select *Add breakpoint*.
 . Right-click *Validate size* and select *Add breakpoint*.
-. Right-click the canvas and select *Debug project hello-world*. If you are asked to open the Mule Debug perspective, select the *Remember my decision* checkbox and click *Yes*.
+. Right-click the canvas and select *Debug project hello-world-2*. If you are asked to open the Mule Debug perspective, select the *Remember my decision* checkbox and click *Yes*.
 +
 image:mule-debugger-view.png[Studio in Debugger view]
 
@@ -71,7 +71,7 @@ image:next-toggle.png[Control to move to next toggle point, 500]
 +
 If you hover over it to ensure you have the correct control, the label *Next processor (F6)* appears. The debugger pane now shows the Logger connector.
 . Click the curved yellow arrow again to move to the Validate size operation.
-. Click the curved yellow arrow again, and notice that that an error message you defined is now in the *error* object in the debugger pane, and a red dotted-line shows in the Validate size operation.
+. Click the curved yellow arrow again, and notice that an error message you defined is now in the *error* object in the debugger pane, and a red dotted-line shows in the Validate size operation.
 +
 image:validation-error.png[View of debugger displaying error for Validate size, 500]
 . Click the curved yellow arrow again, and notice that the canvas now displays the top of your message flow, with a red dotted-line around the APIkit Router, one of the scaffolding items added during import. The router handles the error.
@@ -79,14 +79,14 @@ image:validation-error.png[View of debugger displaying error for Validate size, 
 . Look at Advanced Rest Client. You should see `500 Server Error` and the payload value.
 +
 To see the error you defined returned instead of the payload, you'll need to configure one of the error handlers.
-. Right-click on the canvas and select *Stop project hello-world*.
+. Right-click on the canvas and select *Stop project hello-world-2*.
 . Select *Window > Perspective > Open Perspective > Mule Design* to exit the debugger view.
 
 == Step 4.2: Error Handling
 
 Now you'll add an error handler for the validation you've set up.
 
-. In Studio *Mule Palette*, select *Core > On Error Propagate*, and then drag and drop the error handler on *Error handling* in *get:\greeting:hello-world-config*.
+. In Studio *Mule Palette*, select *Core > On Error Propagate*, and then drag and drop the error handler on *Error handling* in *get:\greeting:hello-world-2-config*.
 +
 image:on-error.png[Adding an error handler to GET module and configuring it]
 . In the *General* tab below the canvas, configure the error handler:
@@ -101,13 +101,13 @@ image:on-error.png[Adding an error handler to GET module and configuring it]
 . Add breakpoints to *Set Payload*, *Logger*, and *Validate size* if you previously removed them.
 . Righ-click in the canvas and select *Debug project hello-world*.
 . After the app is deployed, send the query `\http://localhost:8081/api/greeting` from Advanced Rest Client, and step through each breakpoint using the curved yellow arrow.
-. When you reach *Set Payload* in *On Error Propagate*, you can see that payload set to the error message we created in Validate size is now the payload.
+. When you reach *Set Payload* in *On Error Propagate*, you can see that payload is set to the error message you created in Validate size.
 +
 image:payload-message.png[Debugger messages for Set Payload in error handler]
 . When you reach *APIkit Router* at the top of the message flow, you can see the error message replaces the original payload `Hi.`.
 +
 image:payload-response.png[Breakpoint at APIkit Router showing error message in payload]
-. When you have stepped all the way through and look at the response in Advanced Rest Client, you'll see that a *500 Server Error* is returned along with the error message.
+. When you have stepped all the way through and looked at the response in Advanced Rest Client, you'll see that a *500 Server Error* is returned along with the error message.
 . Set the original payload back to `Today the greeting is Hello.`.
 . Set the view in Studio to *Window > Perspective > Open Perspective > Mule Design*.
 

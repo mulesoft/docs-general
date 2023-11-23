@@ -11,7 +11,7 @@ which then enables you to test the API from Exchange. You will then set up a rat
 
 To deploy this API in the form of a Mule app:
 
-. From Studio, in the Mule Design perspective, right-click the `hello-world` project in Package Explorer,
+. From Studio, in the Mule Design perspective, right-click the `hello-world-2` project in Package Explorer,
 and then select *Anypoint Platform > Deploy to CloudHub*.
 . If prompted, enter your Anypoint Platform username and password and click *Sign in*.
 +
