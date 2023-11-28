@@ -97,7 +97,7 @@ NOTE: API conformance applies only to API types supported by API Governance, suc
 
 [[nonconformance-severity]]
 nonconformance severity::
-Nonconformance severity is categorized by percentage of passed rulesets among all required rulesets.
+Nonconformance severity is categorized by percentage of passed rulesets among all required rulesets:
 +
 * High Severity:
 +
