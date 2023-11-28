@@ -15,8 +15,13 @@ against the rulesets to determine governance conformance.
 governance profile status::
 You can view profile statuses in the API Governance console. Governance profile statuses are based on the percentage of conformant APIs in the profile:
 +
-* *Normal:* More than 70% of APIs are conformant.
-* *At Risk:* Less than 70% of APIs are conformant.
+* Normal: 
++ 
+More than 70% of APIs are conformant.
++
+* At Risk:
++
+Less than 70% of APIs are conformant.
 
 // end::governance-profile-status[]
 
@@ -67,10 +72,18 @@ API conformance indicates whether a validated API specification passes all of th
 [[conformance-status]]
 API conformance status::
 API conformance status indicates whether the APIs that are included in your governance profiles pass all applied governance rulesets: 
+
+* Conformant:
 +
-* *Conformant:* The APIs pass all applied governance rulesets.
-* *Not Conformant:* The APIs fail at least one governance ruleset.
-* *Not Validated:* The APIs are not validated because they are not included in a governance profile.
+The APIs pass all applied governance rulesets.
++
+* Not Conformant:
++
+The APIs fail at least one governance ruleset.
++
+* Not Validated:
++
+The APIs are not validated because they are not included in a governance profile.
 +
 Versions of an API might have different conformance statuses. Total version conformance status counts are shown in the API Governance console and conformance status indicators are shown for API versions in API Governance, Exchange, and API Manager. 
 +
@@ -84,9 +97,17 @@ NOTE: API conformance applies only to API types supported by API Governance, suc
 nonconformance severity::
 Nonconformance severity is categorized by percentage of passed rulesets among all required rulesets.
 +
-* High Severity: 0 - 40% rulesets passed
-* Medium Severity: 41% - 80% rulesets passed
-* Low Severity: 81% - 99% rulesets passed
+* High Severity:
++
+0 - 40% rulesets passed
++
+* Medium Severity:
++
+41% - 80% rulesets passed
++
+* Low Severity: 
++
+81% - 99% rulesets passed
 
 // end::nonconformance-severity[]
 
