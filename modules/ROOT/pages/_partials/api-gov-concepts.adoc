@@ -15,8 +15,13 @@ against the rulesets to determine governance conformance.
 governance profile status::
 You can view profile statuses in the API Governance console. Governance profile statuses are based on the percentage of conformant APIs in the profile:
 +
-* *Normal:* More than 70% of APIs are conformant.
-* *At Risk:* Less than 70% of APIs are conformant.
+* Normal: 
++ 
+More than 70% of APIs are conformant.
++
+* At Risk:
++
+Less than 70% of APIs are conformant.
 
 // end::governance-profile-status[]
 
@@ -24,11 +29,16 @@ You can view profile statuses in the API Governance console. Governance profile 
 
 [[gov-rulesets]]
 governance rulesets::
-Governance rulesets are collections of rules, or guidelines, that can be applied over the metadata extracted from APIs in Anypoint Platform. Some examples of governance rulesets are internal and external best
-practice guidelines, such as naming conventions, and industry-specific government standards, such as making sure your APIs that have sensitive data are encrypted (HTTPS).
+Governance rulesets are collections of rules, or guidelines, that can be applied over the metadata extracted from APIs in Anypoint Platform. Examples of things you can use governance rulesets to help enforce are:
++
+--
+* Internal and external best
+practice guidelines, such as naming conventions
+* Industry-specific government standards, such as encryption for  sensitive API data (HTTPS)
+--
 +
 //tag::governance-rulesets-subset[]
-MuleSoft provides several rulesets in Exchange, such as Anypoint API Best Practices, OpenAPI Best Practices, OWASP API Security Top 10, and Authentication Security Best Practices governance rulesets. You can discover rulesets published in Exchange by filtering the search in Exchange by the *Rulesets* type. See xref:exchange::to-find-info.adoc[Search for Assets].
+MuleSoft provides several rulesets in Exchange, such as Anypoint API Best Practices, OpenAPI Best Practices, Authentication Security Best Practices, and Mule API Management Best Practices. Discover rulesets in Exchange by filtering the search by the *Rulesets* type. See xref:exchange::to-find-info.adoc[Search for Assets].
 //end::governance-rulesets-subset[]
 
 // end::governance-rulesets[]
@@ -63,9 +73,19 @@ API conformance indicates whether a validated API specification passes all of th
 API conformance status::
 API conformance status indicates whether the APIs that are included in your governance profiles pass all applied governance rulesets: 
 +
-* *Conformant:* The APIs pass all applied governance rulesets.
-* *Not Conformant:* The APIs fail at least one governance ruleset.
-* *Not Validated:* The APIs are not validated because they are not included in a governance profile.
+--
+* Conformant:
++
+The APIs pass all applied governance rulesets.
++
+* Not Conformant:
++
+The APIs fail at least one governance ruleset.
++
+* Not Validated:
++
+The APIs are not validated because they are not included in a governance profile.
+--
 +
 Versions of an API might have different conformance statuses. Total version conformance status counts are shown in the API Governance console and conformance status indicators are shown for API versions in API Governance, Exchange, and API Manager. 
 +
@@ -77,11 +97,19 @@ NOTE: API conformance applies only to API types supported by API Governance, suc
 
 [[nonconformance-severity]]
 nonconformance severity::
-Nonconformance severity is categorized by percentage of passed rulesets among all required rulesets.
+Nonconformance severity is categorized by percentage of passed rulesets among all required rulesets:
 +
-* High Severity: 0 - 40% rulesets passed
-* Medium Severity: 41% - 80% rulesets passed
-* Low Severity: 81% - 99% rulesets passed
+* High Severity:
++
+0 - 40% rulesets passed
++
+* Medium Severity:
++
+41% - 80% rulesets passed
++
+* Low Severity: 
++
+81% - 99% rulesets passed
 
 // end::nonconformance-severity[]
 
@@ -156,7 +184,6 @@ Helps consumers understand and use the API, with content such as examples, use c
 [[api-catalog-info]]
 API catalog information::
 Properties related to an API's entry in an API catalog, such as name, version, owner (contact), tags and categories. 
-+
 In Anypoint Platform, these properties are tied to the API asset in Exchange.
 
 // end::api-catalog-info[]
