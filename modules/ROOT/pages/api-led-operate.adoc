@@ -3,7 +3,7 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-MuleSoft provides tools to help you manage your deployed API.
+MuleSoft provides tools to help you manage your deployed APIs.
 
 image::runtime-overview.png[Runtime Manager user interface showing the Dashboard]
 

@@ -4,7 +4,7 @@ include::_attributes.adoc[]
 endif::[]
 
 So far, you've created an API and tested the HTTP request with a third-party client, and then published the API to Exchange.
-Now you'll use Studio to add validation and a unit test. In Studio, you'll use the scaffolding already created to:
+Now you'll use Studio to add validation and a unit test. In Studio, you'll use the scaffolding that's already created to:
 
 * Validate input using the Validation module.
 * Create an error handler for one error condition.
@@ -14,9 +14,9 @@ Now you'll use Studio to add validation and a unit test. In Studio, you'll use t
 Add an operation from the Validation module to the API implementation to ensure that user input is appropriate for the API.
 Your API is very simple, so your testing will be simple. You'll test whether the size of the payload is within an acceptable range.
 
-Add the *Validate size* operation to the `hello-world` project:
+Add the *Validate size* operation to the `hello-world-2` project:
 
-. In the `hello-world` project in Studio, open `hello-world.xml` if it isn't already open, and make sure you are viewing the *Message Flow* tab of the canvas.
+. In the `hello-world-2` project in Studio, open `hello-world.xml` if it isn't already open, and make sure you are viewing the *Message Flow* tab of the canvas.
 . In *Mule Palette*, click *Add Modules > Validation* and drag it to the *Mule Palette*.
 +
 image:validation-module.png[View of Mule Palette with the Validation module selected]
@@ -33,7 +33,7 @@ image:configure-validate.png[Validate size configuration tab]
   .. *Error options > Message*: `The specified message is either too long or too short.`
 . From the Studio main menu, select *File > Save All* to save your changes.
 . Right-click in the canvas and select *Run project hello-world-2*.
-. After you see the console message indicating `hello-world` is deployed, send a request using Advanced Rest Client or a similar tool:
+. After you see the console message indicating `hello-world-2` is deployed, send a request using Advanced Rest Client or a similar tool:
 +
 [source, xml]
 ----
@@ -46,7 +46,7 @@ Your request client should report response headers containing `200 OK` and `Toda
 
 To test that the validation works when the payload is too short, use the debugger to step through each event before the error is triggered.
 
-. In the `hello-world` project in Studio, open `hello-world.xml`.
+. In the `hello-world-2` project in Studio, open `hello-world.xml`.
 . Click *Set Payload*, and then change the value to `Hi.`.
 . In *Mule Palette*, select *Favorites > Logger*, and then drag and drop the logger in between *Set Payload* and *Validate size*. The logger will help stop the process to help debugging. No configuration of the logger is needed.
 . Right-click *Set Payload* and select *Add breakpoint*.
@@ -99,9 +99,9 @@ image:on-error.png[Adding an error handler to GET module and configuring it]
   .. In *Settings > Value:*, replace `payload` with `error.description`.
 . Click *File > Save All* to save your changes.
 . Add breakpoints to *Set Payload*, *Logger*, and *Validate size* if you previously removed them.
-. Righ-click in the canvas and select *Debug project hello-world*.
+. Right-click in the canvas and select *Debug project hello-world-2*.
 . After the app is deployed, send the query `\http://localhost:8081/api/greeting` from Advanced Rest Client, and step through each breakpoint using the curved yellow arrow.
-. When you reach *Set Payload* in *On Error Propagate*, you can see that payload is set to the error message you created in Validate size.
+. When you reach *Set Payload* in *On Error Propagate*, you can see that the payload is set to the error message you created in Validate size.
 +
 image:payload-message.png[Debugger messages for Set Payload in error handler]
 . When you reach *APIkit Router* at the top of the message flow, you can see the error message replaces the original payload `Hi.`.
@@ -117,7 +117,7 @@ Next, you'll publish the revised API.
 
 Make your improved API available on Exchange:
 
-. From *Package Explorer* in Studio, right-click the `hello-world` project.
+. From *Package Explorer* in Studio, right-click the `hello-world-2` project.
 . Select *Anypoint Platform > Publish to Exchange*.
 . Be sure to select the same Business Group as you did before. The *Next* button won't be active until you select a valid business group.
 . Accept the version number, which automatically increments for you.
@@ -130,7 +130,7 @@ Studio shows you the direct link to your newly published API version. You can co
 
 == What's Next
 
-Now you can deploy your API so that anyone can send a request to the `/greeting` endpoint.
+Now you can xref:api-led-deploy.adoc[deploy your API] so that anyone can send a request to the `/greeting` endpoint.
 
 == Developer Deep Dives
 

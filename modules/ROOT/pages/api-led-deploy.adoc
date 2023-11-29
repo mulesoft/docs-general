@@ -4,7 +4,7 @@ include::_attributes.adoc[]
 endif::[]
 
 Now that you've created and tested the Mule app that contains your new API from
-within Studio, you can deploy it to the API to CloudHub. First, you will create an API proxy,
+within Studio, you can deploy the API to CloudHub. First, you will create an API proxy,
 which then enables you to test the API from Exchange. You will then set up a rate-limiting policy to protect your API from a denial-of-service attack.
 
 == Step 5.1: Deploy API to CloudHub
@@ -18,8 +18,7 @@ and then select *Anypoint Platform > Deploy to CloudHub*.
 image:deploy1.png[dialog for deploying to CloudHub]
 . You must be in your account's sandbox to deploy the API. If you see *Design* instead of *Sandbox*:
   .. Click *Design* to launch the Switch Environment dialog.
-  .. Click *Sandbox*.
-  .. Click *Switch*.
+  .. Click *Sandbox*, and then click *Switch*.
 . Enter `hello-world-greeting-firstname-lastname`; every app and API name must be unique across CloudHub. This example uses `hello-world-greeting-sandy-kim`.
 . Verify that *Deployment Target* is `CloudHub`.
 . Don't change any of the other default values.
@@ -33,7 +32,7 @@ When the project is successfully deployed, Runtime Manager displays the status *
 . To test the API deployment, send a request from Advanced Rest Client:
   .. Click *Started* to display the *App url*.
   .. Copy the value: `hello-world-greeting.sandy-kim.us-e2.cloudhub.io` for this example.
-  .. In Advanced Rest Client, send a request to the base URI that you just copied. Be sure to add the API endpoint `/greeting`:
+  .. In Advanced Rest Client, send a request to the base URI that you just copied. Be sure to add the API endpoint `/api/greeting`:
 +
 [source, xml]
 ----
@@ -45,111 +44,83 @@ GET http://hello-world-greeting.sandy-kim.us-e2.cloudhub.io/api/greeting
 Now you need to create an API proxy application for this API, to restrict access and keep the service protected.
 You will add a rate-limiting policy, which you can do while the API is running.
 
-== Step 5.2: Create an API Proxy Application
+== Step 5.2: Create and Deploy an API Proxy Application
 
-To add a rate limit policy to your deployed API, you must first add your API to API Manager, and create an API proxy.
+You must add your API to API Manager and create an API proxy before you add a rate limit policy to your endpoint.
 
 . Log in to Anypoint Platform.
 +
 link:https://anypoint.mulesoft.com/login["Take me to Anypoint Platform^", role="button-primary"]
 
 . Click *API Manager*.
-. Switch to the sandbox environment.
-. Click *Manage API > Manage API from Exchange*.
-. Enter `hello` and select `hello-world` from the drop-down. Note that you are working with the API, not the deployed app named `hello-world-greeting`.
-. Verify the following values are selected:
+. Click *Sandbox* to switch to the sandbox environment.
+. Click *Add API > Add new API*.
+. In the New API page, select *Mule gateway* and select the following values:
+  ** For *Proxy type*, select *Deploy a proxy application*.
+  ** For *Target type*, select *CloudHub*.
+. For *Proxy application name*, which is the name displayed in Runtime Manager, enter *hello-world-greeting-proxy*, but append your last name or other unique string to ensure the proxy name is unique, and then click *Next*.
+. Click *Select API from Exchange* if it's not already selected.
+. In the *Select API* search box, enter `hello` and select `hello-world-2` from the drop-down. Note that you are working with the API, not the deployed app named `hello-world-greeting`.
+. Leave the following default values and click *Next*.
   ** *Asset type: RAML/OAS*
-  ** *API version: v1*
+  ** *API version: v1 (Latest)*
   ** *Asset version: 1.0.1*
-  ** *Managing type: Endpoint with Proxy*
-  ** *Proxy deployment target: CloudHub*
-  ** *Mule version:* Check the checkbox for Mule 4
-  ** Implementation URI: `\http://hello-world-greeting-sandy-kim.us-e2.cloudhub.io/api`. This is the same value as the *App url* from Step 1, with `/api` appended.
-  ** You can ignore TLS context since your API simply returns a hard-coded value.
-  ** Path: `/`
-  ** Ignore Advanced options.
-. Click *Save*.
-
-API Manager shows you a status page for your new proxy.
-
-image:proxy1.png[status page for API before proxy, 600]
+. In the Downstream page, enter an *Instance label*.
+. In the Upstream page, enter the upstream URL, and click *Next*.
+. Click *Save & Deploy*.
+. After the API instance is deployed, a confirmation message appears with a link to Anypoint Runtime Manager. Click the link to view the details of your API instance
 
 Now that your API is managed in API Manager, you can create a proxy in the next step.
 
 == Step 5.3. Configure the API Proxy
 
-To create a proxy for the API:
-
-. If you aren't on the API Manager `hello-world` API settings page from the previous step, navigate there:
-+
-link:https://anypoint.mulesoft.com/login["Take me to Anypoint Platform^", role="button-primary"]
-. Click *API Manager*.
-. Click *hello-world* to open the drop-down.
-. Click *v1* to display the proxy settings page.
-. In the top section:
-  ** Click *Add a label*.
-  ** Enter *No policy* and press Return to save the label.
-. In the *Deployment Configuration* section:
-  ** Select *Runtime version: 4.2.2* or a later version if available.
-  ** For *Proxy application name*, which is the name displayed in Runtime Manager, enter *hello-world-greeting-proxy*, but append your last name or other unique string to ensure the proxy name is unique. The deploy button won't be enabled until you enter a valid value here.
-  ** Select *Update application if exists*.
-. Click *Deploy*. A progress window displays.
-. When deployment is complete, close the progress dialog to return to the settings page.
-
 Now you have an implementation URL that you don't want to share with the world, and a proxy URL that is safe to share with the world after you configure it.
-
-image:proxy-deploy2.png[settings page showing URLs, 600]
 
 To configure the proxy:
 
-. In the *Proxy* section, right-click the link after *Proxy URL* and copy the link.
-. At the top of the page, click *Add consumer endpoint*.
-. Paste in the link you just copied, and press Return to save the link.
+. In the *API Summary* section, right-click the *Proxy URL* link and copy it. 
+. Click the pencil icon to edit the API instance. 
+. In the Downstream section, paste in the link you just copied in to *Consumer endpoint*, and then click *Save & Apply*.
 
 Now you can test the proxy endpoint from Exchange:
 
-. Click *View API in Exchange*.
-+
-image:exchange-page-for-proxy.png[Exchange page for hello-world proxy, 600]
-
-. Click *API instances*. You can see the Mocking Service version and the new proxy you just created in the Sandbox environment, labeled "no policy."
+. Select *Actions > View API in Exchange*.
+. Click the Expand icon, then click *Manage versions.* You can see the Mocking Service version and the new proxy you just created in the Sandbox environment.
+. Click *Close*.
 . Click */greeting* to open, then click *GET*.
-. Click *Mocking Service* to open the drop-down menu.
-. Select *Sandbox: No policy instance*.
+. In the Select server section, click *^* to open the drop-down menu, and then select *Sandbox - v1:<version>*.
 . Click *Send*. The response should be `200 OK` with the greeting `Today the greeting is Hello.`
 
 Finish configuring the proxy:
 
-. Click *API instances* to return to the list of API instances in Exchange.
-. Select your API.
-. Click *Private* and then choose *Public*.
+. Click *Home* to return to the API summary.
+. Click *Shar*.
+. Click *Public* and then select the API version to make available on the public Exchange portal.
+. Click *Save*.
 
 == Step 5.4: Add a Rate Limit Policy
 
 To add a rate limit policy:
 
 . Return to API Manager.
-. Click *hello-world*.
-. Click *v1*.
-. In the navigation, select *Policies*.
-. Click *Apply New Policy*.
-. Don't change the default *All Mule Versions*.
-. Scroll to locate *Rate limiting* (not *Rate limiting - SLA based*).
-. Click *Rate limiting*, select *1.3.5* or a later version if available, and click *Configure Policy* at the bottom of the dialog box.
-. In the Apply Rate limiting policy page, set the limit values:
-  ** *# of Reqs*: `3`
+. Click *hello-world-2*.
+. In the navigation, click *Policies*.
+. Click *+ Add policy*.
+. Scroll to the *Quality of service* section, select *Rate limiting* (not *Rate limiting - SLA based*), and click *Next*.
+. In the Configure Rate limiting policy page, set the limit values:
+  ** *Number of Requests*: `3`
   ** *Time Period*: `1`
   ** *Time Unit*: *Minute*
 . Select *Expose Headers*.
-. Select  *Method & Resource conditions*: *Apply configurations to all API methods & resources*.
-. Click *Apply*.
+. In the *Advanced options* section, select the latest version.
+. Select  *Method & Resource conditions*: *Apply configurations to all API methods & resources*, and click *Apply*.
 
 The new policy is displayed on the Policies home page.
 
 Change the API instance label so it reflects the fact that you now have a policy on the proxy:
 
 . Click *Settings*.
-. Click the edit pencil next to *Label* and change the value to `Rate-limiting policy`.
+. Change the value in *Instance Label* to `Rate-limiting policy`.
 
 Test the new policy:
 

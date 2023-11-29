@@ -184,7 +184,7 @@ image:link-to-published-api.png[Dialog showing link to API published in Exchange
 image:published-in-exchange.png[API viewed from Exchange]
 
 . In the *Asset Versions* section, click the three vertical dots and select *Version detail*. Notice that HTTP Connector, Sockets Connector, and APIKit module are listed as dependencies.
-. After you have explored the published asset on Exchange, return to Studio and click *OK* to close the open dialog windows.
+. After you explore the published asset on Exchange, return to Studio and click *OK* to close the open dialog windows.
 
 == What's Next
 
@@ -196,6 +196,8 @@ To finish developing the API, next you will add:
 * A unit test to your API
 
 You will publish the updated version after it is complete.
+
+xref:api-led-test.adoc[Next]
 
 == Developer Deep Dive
 
