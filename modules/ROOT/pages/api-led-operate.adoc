@@ -23,7 +23,7 @@ If you've sent a few test requests to the proxy, you can see the traffic in the 
 Other information you can obtain from Runtime Manager:
 
 * Click *Logs* to review every transaction for the selected app for the last 30 days (up to 100 MB).
-* Click *Manage application* to review the settings for this app.
+* Click *Settings* to review the settings for this app.
 * Click *Insight* to enable Monitoring and Visualizer.
 
 == Developer Deep Dive
