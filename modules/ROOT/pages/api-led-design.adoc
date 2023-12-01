@@ -125,7 +125,7 @@ image:get-button.png[GET button, 500]
 image:code-response1.png[Response field, 500]
 . Click *Show* to review code examples for each protocol.
 . Click the *200* and *404* tabs to review the responses defined in the API specification.
-. Click the blue *Try it* button.
+. Click the *Try it* button.
 +
 image:try-it.png[The Try It button, 500]
 . Click *Send* to send your request to the temporary request URL that the mocking service creates from your specification.
@@ -160,7 +160,7 @@ After publication, anyone in your organization can see the hello-world-api API s
 == What’s Next
 
 Now that you have designed an API and created an API specification for it,
-use Anypoint Studio (Studio) to xref:api-led-design.adoc[create a Mule app] that contains the implementation and interface for the API.
+use Anypoint Studio (Studio) to xref:api-led-develop.adoc[create a Mule app] that contains the implementation and interface for the API.
 
 == Developer Deep Dives
 
