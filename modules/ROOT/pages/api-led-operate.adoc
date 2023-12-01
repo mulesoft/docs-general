@@ -16,7 +16,7 @@ link:https://anypoint.mulesoft.com/cloudhub/#/console/home/applications["Take me
 . Select the Sandbox environment. If the Design environment is automatically displayed, switch to the Sandbox environment:
   .. Click the *Design* environment button.
   .. Click *Sandbox*, and then click the *Switch* button.
-. Click anywhere in the row for *hello-world-greeting-us-proxy*.
+. Click the link for your deployed API proxy. 
 
 If you've sent a few test requests to the proxy, you can see the traffic in the form of Mule messages in the interface.
 

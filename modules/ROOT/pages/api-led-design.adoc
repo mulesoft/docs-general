@@ -55,16 +55,17 @@ To do this, use xref:design-center::design-create-publish-api-specs.adoc[API Des
 . Open API Designer:
 +
 link:https://anypoint.mulesoft.com/designcenter/#/projects["Take me to API Designer^", role="button-primary"]
-. Click *Create +* to open the API Designer editor.
-. Click *New API Specification*.
-. In *Project name*, enter `hello-world` and don't change the other default values.
-. Click *Create API*. The API Designer editor displays a sample RAML definition.
+. Select *Create + > New API Specification* to open the API Designer editor.
+. In the *New API specification* dialog, enter `hello-world-api` in *Project Name*, don't change the other default values, and then click *Create API*. 
++
+The API Designer editor displays a sample RAML definition.
++
 . Delete the existing text and paste in the following RAML:
 
 [source,raml]
 ----
 #%RAML 1.0
-title: hello, world
+title: hello world
 version: v1
 description: A greeting for the world
 
@@ -92,6 +93,7 @@ types:
                    "message" : "Greeting not found"
                  }
 ----
+
 This API specification contains:
 
 * A single HTTP request, GET
@@ -101,13 +103,11 @@ This API specification contains:
 
 == Step 2.3: Test Your API Specification
 
-The API specification `hello-world.raml` is complete. Now test it by sending a request.
-The mocking service creates a functioning endpoint from your API specification
-and provides a simple UI for managing authentication, request headers, and response headers.
+Now test your `hello-world-api` API specification by sending a request using the mocking service. The mocking service creates a functioning endpoint from your API specification and provides a simple UI for managing authentication, request headers, and response headers.
 
 To test the API specification:
 
-. Open `hello-world.raml` if it isn't already open:
+. Open `hello-world-api.raml` if it isn't already open:
 +
 link:https://anypoint.mulesoft.com/designcenter/#/projects["Take me to API Designer^" role="button-primary"]
 +
@@ -123,8 +123,8 @@ image:get-button.png[GET button, 500]
 . Click *GET* to display the GET request and more information about the specification.
 +
 image:code-response1.png[Response field, 500]
-. Click *Code examples* to review samples for each protocol.
-. Click *200* and *404* under *Responses* to review the responses defined in the API specification.
+. Click *Show* to review code examples for each protocol.
+. Click the *200* and *404* tabs to review the responses defined in the API specification.
 . Click the blue *Try it* button.
 +
 image:try-it.png[The Try It button, 500]
@@ -133,8 +133,9 @@ image:try-it.png[The Try It button, 500]
 It's safe to ignore any error messages on this screen. A successful request returns `200 OK` and the test message:
 +
 image:successful-test1.png[Results of a successful test, 500]
-. Click *Response details* in the kebab menu to examine the response headers and request headers in the mocking service to help diagnose issues or understand the behavior of your API specification.
-. When you have finished testing, open the *Mocking Service Configuration* panel, then in *Local Settings* enable *Select By Default*.
+. Select *Response details* in the more menu to examine the response headers and request headers in the mocking service to help diagnose issues or understand the behavior of your API specification.
+. When you have finished testing, open the *Mocking Service Configuration* panel.
+. In *Local Settings*, enable *Select By Default*.
 +
 image:api-mocking-service-configuration-icon.png[Mocking service icon]
 +
@@ -144,22 +145,22 @@ image:disable-mocking-service.png[Mocking service control before being disabled,
 
 After testing your API, publish it to your private Exchange so others in your organization can reuse your work.
 
-. Open `hello-world.raml` if it isn't already open:
+. Open `hello-world-api.raml` if it isn't already open:
 +
 link:https://anypoint.mulesoft.com/designcenter/#/projects["Take me to API Designer^" role="button-primary"]
 . Click *Publish*.
-. Click *Publish to Exchange*.
+. In the Publishing to Exchange dialog window, accept the defaults and click *Publish to Exchange*.
 +
 image:publish-to-exchange1.png[User interface for publishing to Exchange, 500]
-. Accept all the default values, click *Publish to Exchange*. 
++
 . Click *Close* in the confirmation dialog.
 
-After publication, anyone in your organization can see the hello-world API specification and reuse it.
+After publication, anyone in your organization can see the hello-world-api API specification and reuse it.
 
 == What’s Next
 
 Now that you have designed an API and created an API specification for it,
-use Anypoint Studio (Studio) to create a Mule app that contains the implementation and interface for the API.
+use Anypoint Studio (Studio) to xref:api-led-design.adoc[create a Mule app] that contains the implementation and interface for the API.
 
 == Developer Deep Dives
 
