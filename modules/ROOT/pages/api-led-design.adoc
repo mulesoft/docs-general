@@ -34,7 +34,7 @@ You’ll see some of the most popular API specifications, connectors, and other 
 +
 link:https://www.mulesoft.com/exchange["Take me to Exchange^", role="button-primary"]
 +
-  .. Select *Any Type > REST APIs* (below the search bar) to display only REST API specifications.
+  .. Select *Any Type > REST APIs* to display only REST API specifications.
   .. Click on any specification to see the data types and the HTTP requests defined for the API.
 +
 * Look at Exchange for your organization (account). Logging in changes the view to your organization's private Exchange.
@@ -45,7 +45,7 @@ link:https://anypoint.mulesoft.com/login["Take me to Anypoint Platform^", role="
   .. In the Anypoint Platform landing page, go to the *Exchange* section and click *Discover and share*.
   .. Click on any specification to see the data types and the HTTP requests defined for the API. If this is a trial org, you might not see anything yet.
 
-After exploring Exchange to see the range of assets available, return to Anypoint Platform and use web-based tools to create a new API specification that defines what this tutorial API can do.
+After exploring Exchange to see the range of assets available, return to Anypoint Platform and use web-based tools to create a new API specification.
 
 == Step 2.2: Create Your API Specification
 

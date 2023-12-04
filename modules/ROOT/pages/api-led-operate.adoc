@@ -24,7 +24,7 @@ Other information you can obtain from Runtime Manager:
 
 * Click *Logs* to review every transaction for the selected app for the last 30 days (up to 100 MB).
 * Click *Settings* to review the settings for this app.
-* Click *Insight* to enable Monitoring and Visualizer.
+* Click *Insight* to enable Anypoint Monitoring and Anypoint Visualizer.
 
 == Developer Deep Dive
 

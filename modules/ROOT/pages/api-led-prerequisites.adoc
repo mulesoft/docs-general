@@ -9,7 +9,7 @@ Before you begin your API-led journey, verify that you have the required tools a
 * Username and password for your Anypoint Platform organization. If you don't have Anypoint Platform yet, create a Trial organization on Anypoint Platform.
 +
 link:https://anypoint.mulesoft.com/login/#/signup["Create a Trial organization^", role="button-primary"]
-* Download Anypoint Studio 7.4.1 or later. Anypoint Studio is an Eclipse-based IDE with rich functionality for building and deploying apps to Anypoint Platform. 
+* Download Anypoint Studio 7.16.0 or later. Anypoint Studio is an Eclipse-based IDE with rich functionality for building and deploying apps to Anypoint Platform. 
 +
 link:https://www.mulesoft.com/lp/dl/studio["Download Anypoint Studio^", role="button-primary"]
 * To test REST requests, obtain a client such as Advanced REST Client or Postman if you don't already have one. This tutorial uses Advanced REST Client.

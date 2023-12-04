@@ -33,7 +33,7 @@ When the project is successfully deployed, Runtime Manager displays the status *
   .. Click *Started* to display the *App url*.
   .. Copy the app URL value, which in this case is `hello-world-greeting.sandy-kim.us-e2.cloudhub.io`.
   +
-  This URL will also be used later when you configure the proxy API.
+  This URL is also be used later when you configure the proxy API.
   +
   .. In Advanced Rest Client, send a request to the base URI that you just copied. Be sure to add the API endpoint `/api/greeting`:
 +
@@ -63,7 +63,7 @@ link:https://anypoint.mulesoft.com/login["Take me to Anypoint Platform^", role="
   ** For *Target type*, select *CloudHub*.
 . For *Proxy app name*, which is the name displayed in Runtime Manager, enter *hello-world-greeting-proxy*, but append your last name or other unique string to ensure the proxy name is unique, and then click *Next*.
 . Click *Select API from Exchange* if it's not already selected.
-. In the *Select API* search box, enter `hello` and select *hello-world-api* from the drop-down. Note that you are working with the API, not the deployed app named `hello-world-greeting`.
+. In the *Select API* search box, enter `hello` and select *hello-world-api* from the drop-down. Here, you are working with the API, not the deployed app named `hello-world-greeting`.
 . Leave the following default values and click *Next*.
   ** *Asset type: RAML/OAS*
   ** *API version: v1 (Latest)*
