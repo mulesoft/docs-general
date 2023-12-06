@@ -23,7 +23,7 @@ image:empty-studio.png[Studio without any projects]
 
 Add your Anypoint Platform credentials in Studio once, and they'll be available for all the future projects you create.
 
-. Open Studio, and then click *Anypoint Studio > Settings*.
+. Open Studio, and then select *Anypoint Studio > Settings*.
 . In the Preferences window, click *Anypoint Studio*, and then *Authentication*.
 . Click *Add* and enter your Anypoint Platform username and password.
 . Click *Sign in*. 
