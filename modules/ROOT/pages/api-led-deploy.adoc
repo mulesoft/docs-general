@@ -61,7 +61,7 @@ link:https://anypoint.mulesoft.com/login["Take me to Anypoint Platform^", role="
 . In the New API page, select *Mule gateway* and select the following values:
   ** For *Proxy type*, select *Deploy a proxy application*.
   ** For *Target type*, select *CloudHub*.
-. For *Proxy app name*, which is the name displayed in Runtime Manager, enter *hello-world-greeting-proxy*, but append your last name or other unique string to ensure the proxy name is unique, and then click *Next*.
+. For *Proxy app name*, which is the name displayed in Runtime Manager, enter *hello-world-greeting-proxy* and append your last name or another unique string to ensure the proxy name is unique, and then click *Next*.
 . Click *Select API from Exchange* if it's not already selected.
 . In the *Select API* search box, enter `hello` and select *hello-world-api* from the drop-down. Here, you are working with the API, not the deployed app named `hello-world-greeting`.
 . Leave the following default values and click *Next*.
