@@ -64,7 +64,9 @@ http://localhost:8081/api/greeting
 
 . Return to Studio and notice that there's a dashed line around *Set Payload*.
 . In the canvas, click *Set Payload* to open the *Set Payload* node in the *Mule Debugger*. 
-. Open *Set Payload* and see that the payload value is `Hi.`, three characters.
+. Open *Set Payload* and see that the payload value is `Hi.`, which is three characters.
++
+Since you configured the *Validate size* operation to have a minimum of 6 characters, this will trigger an error.
 . Click the *Next processor* (curved yellow arrow) above the debugger window.
 +
 image:next-toggle.png[Next processor control to move to next toggle point, 500]
