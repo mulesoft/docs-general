@@ -62,7 +62,7 @@ Scroll down the canvas to see the scaffolding that was added to your app:
 * APIkit Router routes messages
 * Error handlers for different error conditions
 * A console, *hello-world-app-console*, which you won't use for this project
-* The GET request to endpoint `/greeting`, where you do the bulk of your configuration.
+* The GET request to endpoint `/greeting`, where you do the bulk of your configuration
 
 There are three different views of the canvas:
 
