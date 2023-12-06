@@ -155,7 +155,7 @@ image:publish-to-exchange1.png[User interface for publishing to Exchange, 500]
 +
 . Click *Close* in the confirmation dialog.
 
-After publication, anyone in your organization can see the hello-world-api API specification and reuse it.
+After publication, anyone in your organization can see the `hello-world-api` API specification and reuse it.
 
 == What’s Next
 
