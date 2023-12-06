@@ -13,7 +13,7 @@ development and testing. Another target, xref:runtime-manager::cloudhub.adoc[Clo
 First, you'll deploy the app to Mule in Studio and then, you'll deploy it to Mule in CloudHub.
 
 image:empty-studio.png[Studio without any projects]
-[callout list]
+
 . Package Explorer helps you navigate the files created for each project.
 . The canvas is where you drag elements of your project and connect them, creating a flow.
 . The Mule Palette provides quick access to standard or custom assets such as connectors and modules.
