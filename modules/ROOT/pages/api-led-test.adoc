@@ -4,7 +4,7 @@ include::_attributes.adoc[]
 endif::[]
 
 So far, you've created an API and tested the HTTP request with a third-party client, and then published the API to Exchange.
-Now you'll use Studio to add validation and a unit test. In Studio, you'll use the scaffolding already created to:
+Now you'll use Studio to add validation and a unit test. In Studio, you'll use the scaffolding that's already created to:
 
 * Validate input using the Validation module.
 * Create an error handler for one error condition.
@@ -12,15 +12,15 @@ Now you'll use Studio to add validation and a unit test. In Studio, you'll use t
 == Step 4.1: Validation
 
 Add an operation from the Validation module to the API implementation to ensure that user input is appropriate for the API.
-Your API is very simple, so your testing will be simple. You'll test whether the size of the payload is within an acceptable range.
+Your API is very simple, so your testing is also simple. You'll test whether the size of the payload is within an acceptable range.
 
-Add the *Validate size* operation to the `hello-world` project:
+Add the *Validate size* operation to the `hello-world-app` project:
 
-. In the `hello-world` project in Studio, open `hello-world.xml` if it isn't already open, and make sure you are viewing the *Message Flow* tab of the canvas.
-. In *Mule Palette*, select *Add Modules > Validation* and drag it to the Studio canvas.
+. In the `hello-world-app` project in Studio, open `hello-world-api.xml` if it isn't already open, and make sure you are viewing the *Message Flow* tab of the canvas.
+. In *Mule Palette*, select *Add Modules > Validation* and drag it to the *Mule Palette*.
 +
 image:validation-module.png[View of Mule Palette with the Validation module selected]
-. From the list of operations displayed, drag *Validate size* to the Studio canvas and drop it to the right of *Set Payload*, inside the endpoint module.
+. From the list of operations, drag *Validate size* to the Studio canvas and drop it inside the endpoint module to the right of *Set Payload*.
 +
 image:validate-size.png[Validate size dropped into GET module]
 . Click *Validate size* to display the *General* configuration tab.
@@ -32,27 +32,26 @@ image:configure-validate.png[Validate size configuration tab]
   .. *Max*: `30`
   .. *Error options > Message*: `The specified message is either too long or too short.`
 . From the Studio main menu, select *File > Save All* to save your changes.
-. Right-click in the canvas and select *Run project hello-world*.
-. After you see the console message indicating `hello-world` is deployed, send a request using Advanced Rest Client or a similar tool:
+. Right-click in the canvas and select *Run project hello-world-app*.
+. After you see the console message indicating `hello-world-app` is deployed, send a request using Advanced Rest Client or a similar tool:
 +
 [source, xml]
 ----
 http://localhost:8081/api/greeting
 ----
 +
-Your request client should report response headers containing `200 OK` and `Today the greeting is Hello.`. This demonstrates the expected behavior when the greeting is within the limits you set in the Validate size operation.
+Your request client reports response headers containing `200 OK` and `Today the greeting is Hello.`. This demonstrates the expected behavior when the greeting is within the limits you set in the *Validate size* operation.
 
-. Right-click the canvas and select *Stop project hello-world*.
+. Right-click the canvas and select *Stop project hello-world-app*.
 
 To test that the validation works when the payload is too short, use the debugger to step through each event before the error is triggered.
 
-. In the `hello-world` project in Studio, open `hello-world.xml`.
+. In the `hello-world-app` project in Studio, open `hello-world-api.xml`.
 . Click *Set Payload*, and then change the value to `Hi.`.
-. In *Mule Palette*, select *Favorites > Logger*, and then drag and drop the logger in between *Set Payload* and *Validate size*. The logger will help stop the process to help debugging. No configuration of the logger is needed.
+. In *Mule Palette*, select *Favorites > Logger*, and then drag the logger between *Set Payload* and *Validate size*. The logger stops the process to help debugging. No configuration of the logger is needed.
 . Right-click *Set Payload* and select *Add breakpoint*.
-. Right-click *Logger* and select *Add breakpoint*.
-. Right-click *Validate size* and select *Add breakpoint*.
-. Right-click the canvas and select *Debug project hello-world*. If you are asked to open the Mule Debug perspective, select the *Remember my decision* checkbox and click *Yes*.
+. Repeat the previous step for *Logger* and *Validate size*.
+. Right-click the canvas and select *Debug project hello-world-app*. If prompted to open the Mule Debug perspective, select the *Remember my decision* checkbox and click *Yes*.
 +
 image:mule-debugger-view.png[Studio in Debugger view]
 
@@ -64,34 +63,37 @@ http://localhost:8081/api/greeting
 ----
 
 . Return to Studio and notice that there's a dashed line around *Set Payload*.
-. In the canvas, click *Set Payload* to open the *Set Payload* node in the *Mule Debugger* above the canvas. Open *Set Payload* and see that the payload value is `Hi.`, three characters.
-. Click the curved yellow arrow above the debugger window.
+. In the canvas, click *Set Payload* to open the *Set Payload* node in the *Mule Debugger*. 
+. Open *Set Payload* and see that the payload value is `Hi.`, which is three characters.
 +
-image:next-toggle.png[Control to move to next toggle point, 500]
+Since you configured the *Validate size* operation to have a minimum of 6 characters, this will trigger an error.
+. Click the *Next processor* (curved yellow arrow) above the debugger window.
++
+image:next-toggle.png[Next processor control to move to next toggle point, 500]
 +
 If you hover over it to ensure you have the correct control, the label *Next processor (F6)* appears. The debugger pane now shows the Logger connector.
-. Click the curved yellow arrow again to move to the Validate size operation.
-. Click the curved yellow arrow again, and notice that that an error message you defined is now in the *error* object in the debugger pane, and a red dotted-line shows in the Validate size operation.
+. Click the curved yellow arrow again to move to the *Validate size* operation.
+. Click the curved yellow arrow again, and notice that an error message you defined is now in the *error* object in the debugger pane, and a dotted-line shows in the *Validate size* operation.
 +
 image:validation-error.png[View of debugger displaying error for Validate size, 500]
-. Click the curved yellow arrow again, and notice that the canvas now displays the top of your message flow, with a red dotted-line around the APIkit Router, one of the scaffolding items added during import. The router handles the error.
-. Click the curved yellow arrow again to complete the flow. Notice that the Mule debugger pane is now empty because the process has completed.
+. Click the *Next processor* again, and notice that the canvas now displays the beginning of your message flow, with a red dotted-line around the APIkit Router, one of the scaffolding items added during import. The router handles the error.
+. Click the *Next processor* again to complete the flow. The Mule debugger pane is now empty because the process is complete.
 . Look at Advanced Rest Client. You should see `500 Server Error` and the payload value.
 +
 To see the error you defined returned instead of the payload, you'll need to configure one of the error handlers.
-. Right-click on the canvas and select *Stop project hello-world*.
+. Right-click on the canvas and select *Stop project hello-world-app*.
 . Select *Window > Perspective > Open Perspective > Mule Design* to exit the debugger view.
 
-== Step 4.2: Error Handling
+== Step 4.2: Add Error Handling
 
 Now you'll add an error handler for the validation you've set up.
 
-. In Studio *Mule Palette*, select *Core > On Error Propagate*, and then drag and drop the error handler on *Error handling* in *get:\greeting:hello-world-config*.
+. In Studio *Mule Palette*, select *Core > On Error Propagate*, and then drag the error handler on to *Error handling* in *get:\greeting:hello-world-app-config*.
 +
 image:on-error.png[Adding an error handler to GET module and configuring it]
-. In the *General* tab below the canvas, configure the error handler:
+. In the *General* configuration tab, configure the error handler:
   ** *Display Name:* `On Error Propagate`
-  ** *Settings Type:* Click the search icon and select *VALIDATION:INVALID_SIZE* from the drop-down menu.
+  ** *Type:* Click the search icon and select *VALIDATION:INVALID_SIZE*.
   ** Don't change the other default values.
 . Drag a *Set Payload* operation into the new *On Error Propagate* error handler.
 . Configure the new Set Payload operation:
@@ -99,25 +101,25 @@ image:on-error.png[Adding an error handler to GET module and configuring it]
   .. In *Settings > Value:*, replace `payload` with `error.description`.
 . Click *File > Save All* to save your changes.
 . Add breakpoints to *Set Payload*, *Logger*, and *Validate size* if you previously removed them.
-. Righ-click in the canvas and select *Debug project hello-world*.
+. Right-click in the canvas and select *Debug project hello-world-app*.
 . After the app is deployed, send the query `\http://localhost:8081/api/greeting` from Advanced Rest Client, and step through each breakpoint using the curved yellow arrow.
-. When you reach *Set Payload* in *On Error Propagate*, you can see that payload set to the error message we created in Validate size is now the payload.
+. When you reach *Set Payload* in *On Error Propagate*, you can see that the payload is set to the error message you created in *Validate size*.
 +
 image:payload-message.png[Debugger messages for Set Payload in error handler]
-. When you reach *APIkit Router* at the top of the message flow, you can see the error message replaces the original payload `Hi.`.
+. When you reach the *APIkit Router* in the message flow, you see that the error message replaces the original payload `Hi.`.
 +
 image:payload-response.png[Breakpoint at APIkit Router showing error message in payload]
-. When you have stepped all the way through and look at the response in Advanced Rest Client, you'll see that a *500 Server Error* is returned along with the error message.
+. After you step through and look at the response in Advanced Rest Client, you see that a *500 Server Error* is returned along with the error message.
 . Set the original payload back to `Today the greeting is Hello.`.
 . Set the view in Studio to *Window > Perspective > Open Perspective > Mule Design*.
 
-Next, you'll publish the revised API.
+Next, you'll publish the revised app.
 
-== Step 4.3: Publish Your Revised API
+== Step 4.3: Publish Your Revised App
 
 Make your improved API available on Exchange:
 
-. From *Package Explorer* in Studio, right-click the `hello-world` project.
+. From *Package Explorer* in Studio, right-click the `hello-world-app` project.
 . Select *Anypoint Platform > Publish to Exchange*.
 . Be sure to select the same Business Group as you did before. The *Next* button won't be active until you select a valid business group.
 . Accept the version number, which automatically increments for you.
@@ -130,7 +132,7 @@ Studio shows you the direct link to your newly published API version. You can co
 
 == What's Next
 
-Now you can deploy your API so that anyone can send a request to the `/greeting` endpoint.
+Now you can xref:api-led-deploy.adoc[deploy your API] so that anyone can send a request to the `/greeting` endpoint.
 
 == Developer Deep Dives
 

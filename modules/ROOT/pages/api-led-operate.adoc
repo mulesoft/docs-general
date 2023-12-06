@@ -3,7 +3,7 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-MuleSoft provides tools to help you manage your deployed API.
+MuleSoft provides tools to help you manage your deployed APIs.
 
 image::runtime-overview.png[Runtime Manager user interface showing the Dashboard]
 
@@ -16,15 +16,15 @@ link:https://anypoint.mulesoft.com/cloudhub/#/console/home/applications["Take me
 . Select the Sandbox environment. If the Design environment is automatically displayed, switch to the Sandbox environment:
   .. Click the *Design* environment button.
   .. Click *Sandbox*, and then click the *Switch* button.
-. Click anywhere in the row for *hello-world-greeting-us-proxy*.
+. Click the link for your deployed API proxy. 
 
 If you've sent a few test requests to the proxy, you can see the traffic in the form of Mule messages in the interface.
 
 Other information you can obtain from Runtime Manager:
 
 * Click *Logs* to review every transaction for the selected app for the last 30 days (up to 100 MB).
-* Click *Manage application* to review the settings for this app.
-* Click *Insight* to enable Monitoring and Visualizer.
+* Click *Settings* to review the settings for this app.
+* Click *Insight* to enable Anypoint Monitoring and Anypoint Visualizer.
 
 == Developer Deep Dive
 
