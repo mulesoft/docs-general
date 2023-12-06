@@ -77,7 +77,9 @@ Verify the values set in the *Listener* component in the canvas:
 . Double-click *Listener* to display its general configuration values.
 . Click the edit icon image:edit-module-version-icon.png[Pencil on notebook] next to the configuration name, and verify that the host is `0.0.0.0` and the port is `8081`.
 . Click *Test Connection*, and then click *OK* when a successful test connection is reported.
-. Click *OK* to close the configuration. This leaves you in the *Global Configuration Elements* tab.
+. Click *OK* to close the configuration.
++
+You return to the *Global Configuration Elements* tab.
 . Click *Message Flow* to return to the canvas. The general configuration values for the Listener component are still displayed.
 . Verify that *Path* is set as */api/**. This best practice ensures that all endpoints are formed like `base-URI/api/endpoint`.
 
