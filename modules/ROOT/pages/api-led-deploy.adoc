@@ -137,7 +137,7 @@ The new policy is displayed on the Policies home page.
 Change the API instance label so it reflects the fact that you now have a policy on the proxy:
 
 . In the navigation, click *API Summary*.
-. Click the pencil icon to edit, and change the value in *Instance Label* to `Rate-limiting policy`.
+. Click the pencil icon and change the value for *Instance Label* to `Rate-limiting policy`.
 . Click *Save & Apply*.
 
 Test the new policy:
