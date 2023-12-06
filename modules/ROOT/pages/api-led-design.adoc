@@ -125,7 +125,7 @@ image:get-button.png[GET button, 500]
 image:code-response1.png[Response field, 500]
 . Click *Show* to review code examples for each protocol.
 . Click the *200* and *404* tabs to review the responses defined in the API specification.
-. Click the *Try it* button.
+. Click the *Try it* button:
 +
 image:try-it.png[The Try It button, 500]
 . Click *Send* to send your request to the temporary request URL that the mocking service creates from your specification.
