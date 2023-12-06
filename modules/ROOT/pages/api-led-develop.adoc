@@ -56,7 +56,7 @@ Studio creates a `hello-world.xml` XML file and opens it in the canvas *Message 
 
 image:my-first-project.png[View in Studio after importing API specification with scaffolding]
 
-If you scroll down the canvas, you can see all the scaffolding that has been added to your app:
+Scroll down the canvas to see the scaffolding that was added to your app:
 
 * HTTP Listener is ready to receive requests
 * APIkit Router routes messages
