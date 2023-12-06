@@ -50,7 +50,7 @@ image:new-project-dialog.png[New project dialog]
     ... Click *Add* to move it to the *Selected modules* list, and then click *Finish*.
 . Verify that the checkbox *Scaffold flows from these API specifications* is selected, and click *Finish*. 
 +
-This ensures that Studio adds default error handling and other helpful items to your project
+This setting ensures that Studio adds default error handling and other helpful items to your project
 
 Studio creates a `hello-world.xml` XML file and opens it in the canvas *Message Flow* view, showing the basic elements you'll need for the API interface:
 
