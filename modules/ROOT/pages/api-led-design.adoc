@@ -55,7 +55,7 @@ To do this, use xref:design-center::design-create-publish-api-specs.adoc[API Des
 . Open API Designer:
 +
 link:https://anypoint.mulesoft.com/designcenter/#/projects["Take me to API Designer^", role="button-primary"]
-. Select *Create + > New API Specification* to open the API Designer editor.
+. Select *Create > New API Specification* to open the API Designer editor.
 . In the *New API specification* dialog, enter `hello-world-api` in *Project Name*, don't change the other default values, and then click *Create API*. 
 +
 The API Designer editor displays a sample RAML definition.
@@ -133,7 +133,7 @@ image:try-it.png[The Try It button, 500]
 It's safe to ignore any error messages on this screen. A successful request returns `200 OK` and the test message:
 +
 image:successful-test1.png[Results of a successful test, 500]
-. Select *Response details* in the more menu to examine the response headers and request headers in the mocking service to help diagnose issues or understand the behavior of your API specification.
+. Select *Response details* in the more (...) menu to examine the response headers and request headers in the mocking service to help diagnose issues or understand the behavior of your API specification.
 . When you have finished testing, open the *Mocking Service Configuration* panel.
 . In *Local Settings*, enable *Select By Default*.
 +

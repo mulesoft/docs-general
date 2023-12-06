@@ -13,11 +13,11 @@ development and testing. Another target, xref:runtime-manager::cloudhub.adoc[Clo
 You are going to deploy first to Mule in Studio, then, when the app is complete, you'll deploy it to Mule in CloudHub.
 
 image:empty-studio.png[Studio without any projects]
-
-. Package Explorer helps you navigate the files created for each project.
-. The canvas is where you drag elements of your project and connect them, creating a flow.
-. The Mule Palette provides quick access to standard or custom assets such as connectors and modules.
-. The tabs in the configuration section provide access to configuration dialogs, the Mule debugger, and other developer dialogs.
+[callout list]
+.. Package Explorer helps you navigate the files created for each project.
+.. The canvas is where you drag elements of your project and connect them, creating a flow.
+.. The Mule Palette provides quick access to standard or custom assets such as connectors and modules.
+.. The tabs in the configuration section provide access to configuration dialogs, the Mule debugger, and other developer dialogs.
 
 == Step 3.1: Add Your Anypoint Platform Credentials to Studio
 
@@ -64,13 +64,13 @@ If you scroll down the canvas, you can see all the scaffolding that has been add
 * A console, *hello-world-app-console*, which you won't use for this project
 * The GET request to endpoint `/greeting`, where you do the bulk of your configuration.
 
-Notice that there are three different views of the canvas:
+There are three different views of the canvas:
 
 image:canvas-tabs.png[One canvas and links to all three views, 500]
 
-* *Message Flow* makes it easy to drag modules, connectors, and other assets and create the relationships between them.
-* *Global Elements* makes it easy to specify global elements used in multiple projects.
-* *Configuration XML* makes it easy to edit the XML of a project directly.
+* Use *Message Flow* to drag modules, connectors, and other assets on to the canvas and create the relationships between them.
+* Use *Global Elements* to specify global elements used in multiple projects.
+* Use the *Configuration XML* to directly edit the XML of a project.
 
 Verify the values set in the *Listener* component in the canvas:
 
@@ -133,7 +133,7 @@ The following message displays when the app containing your API is deployed to M
 +
 `\http://localhost:8081/api/greeting`
 +
-Your REST client returns a `200 OK` message and the body `Today the greeting is Hello.`.
+Your REST client returns a `200 OK` message and the body `Today the greeting is Hello`.
 . Right-click in the canvas and select *Stop project hello-word-app*.
 
 == Step 3.5. Create a Business Group in Your Organization
@@ -151,7 +151,7 @@ link:https://anypoint.mulesoft.com/login/#/signup["Take me to Anypoint Platform^
 . Find *Management Center* on the landing page and click *Access Management*.
 . In the navigation panel, click *Business Groups*.
 . Click *Create business group* and enter `My Top Business Group` in *Name*. 
-. In the *Parent business group* dropdown, select a business group you are an administrator for.
+. Select a business group you are the administrator for from the *Parent business group* dropdown.
 . In *Owner*, enter your user name and select it when it is found. 
 . Select the *Can create environments* checkbox, and click *Create*.
 
@@ -188,7 +188,7 @@ image:api-led-assets-list-arrow.png[Home page of the hello-world-app you deploye
 You can now see the Exchange tile for the asset you just published. 
 . (Optional) Sign out of Exchange and search for the asset you just created. 
   .. Click the tile for your *hello-world-app*. 
-  .. In the *Asset Versions* section, click the three vertical dots and select *Version detail*. Notice that HTTP Connector, Sockets Connector, and APIKit module are listed as dependencies.
+  .. In the *Asset Versions* section, click the more (...) menu and select *Version detail*. The HTTP Connector, Sockets Connector, and APIKit module are listed as dependencies.
   +
   image:published-in-exchange.png[Version details of app page as viewed in Exchange]
 . After you explore the published asset on Exchange, return to Studio and click *OK* to close the open dialog windows.
