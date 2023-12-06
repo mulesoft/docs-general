@@ -179,7 +179,7 @@ image:pub-to-exchange.png[Dialog to publish API to Exchange]
 After the project is uploaded to Exchange, you are provided with a direct link to the project.
 +
 image:link-to-published-api.png[Dialog showing link to API published in Exchange, 600] 
-. Click the link to view the project in Exchange.
+. Click the link to view the project in Exchange:
 +
 image:api-led-assets-list-arrow.png[Home page of the hello-world-app you deployed]
 +
