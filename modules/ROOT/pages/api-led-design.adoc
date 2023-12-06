@@ -149,7 +149,7 @@ After testing your API, publish it to your private Exchange so others in your or
 +
 link:https://anypoint.mulesoft.com/designcenter/#/projects["Take me to API Designer^" role="button-primary"]
 . Click *Publish*.
-. In the Publishing to Exchange dialog window, accept the defaults and click *Publish to Exchange*.
+. In the *Publishing to Exchange* dialog, accept the defaults and click *Publish to Exchange*:
 +
 image:publish-to-exchange1.png[User interface for publishing to Exchange, 500]
 +
