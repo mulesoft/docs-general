@@ -97,7 +97,7 @@ image:greeting-module.png[View of GET connector as created by scaffolding, 500]
 . Right-click the *Transform Message* component and delete it.
 . In *Mule Palette*, select *Favorites* to display a list of components, services, transformers, and routers.
 . Click *Set Payload* to select it, and then drag it into the *Process* space, where you deleted Transform Message.
-. Specify the logic that displays the data sent in a response from the hello-world-api API:
+. Specify the logic that displays the data sent in a response from the `hello-world-api` API:
   .. Click the *Set Payload* transformer you just added to the flow.
 +
 image:set-payload.png[View of canvas and configuration dialog for Set Payload connector, 500]
