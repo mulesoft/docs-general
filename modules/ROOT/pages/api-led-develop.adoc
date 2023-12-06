@@ -80,7 +80,9 @@ Verify the values set in the *Listener* component in the canvas:
 . Click *OK* to close the configuration.
 +
 You return to the *Global Configuration Elements* tab.
-. Click *Message Flow* to return to the canvas. The general configuration values for the Listener component are still displayed.
+. Click *Message Flow* to return to the canvas.
++
+The general configuration values for the Listener component are still displayed.
 . Verify that *Path* is set as */api/**. This best practice ensures that all endpoints are formed like `base-URI/api/endpoint`.
 
 In the next step, you'll create business logic and configure the elements you need for this API.
