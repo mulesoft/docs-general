@@ -176,7 +176,7 @@ image:pub-to-exchange.png[Dialog to publish API to Exchange]
   ** Leave *Version* with the default value.
   ** Select *Project type > Example*. 
 . Click *Next*.
-. You can add documentation, descriptions, and tags that aid users in searching Exchange for available assets.
+. You can add documentation, descriptions, and tags to help users find available assets in Exchange.
 . Click *Finish*.
 . Click *Yes* when asked to proceed.
 +
