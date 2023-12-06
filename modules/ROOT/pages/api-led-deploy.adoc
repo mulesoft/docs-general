@@ -96,7 +96,7 @@ Now you can test the proxy endpoint from Exchange:
 You can see the Mocking Service version and the new proxy you just created in the Sandbox environment.
 . Click *Close*.
 . Click */greeting* to open, then click *GET*.
-. In *Select server*, expand the menu and select *Sandbox - v1:<version>*.
+. In *Select server*, expand the menu and select *Sandbox - v1:<version>*:
 +
 image:api-led-select-server-exchange.png[Expanded server menu showing the list of available servers]
 +
