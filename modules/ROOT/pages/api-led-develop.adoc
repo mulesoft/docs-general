@@ -85,7 +85,7 @@ You return to the *Global Configuration Elements* tab.
 The general configuration values for the Listener component are still displayed.
 . Verify that *Path* is set as */api/**. This best practice ensures that all endpoints are formed like `base-URI/api/endpoint`.
 
-In the next step, you'll create business logic and configure the elements you need for this API.
+In the next step, you create business logic and configure the elements you need for this API.
 
 == Step 3.3: Configure the API
 
