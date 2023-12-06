@@ -34,7 +34,7 @@ These credentials are automatically used for many operations in Studio.
 
 == Step 3.2: Create a New Studio Project with an Imported API Specification
 
-In this step, you'll create the project.
+In this step, you create the project.
 
 . In Studio, select *File > New > Mule Project*.
 +
