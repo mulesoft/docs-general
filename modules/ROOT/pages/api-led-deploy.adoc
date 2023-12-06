@@ -86,7 +86,7 @@ To configure the proxy:
 . In *Anypoint Manager > API Administration*, click the *hello-world-api* link.
 . In *API Summary*, right-click the *Proxy URL* link and copy it. 
 . Click the pencil icon to edit the API instance. 
-. In the *Downstream* section, paste in the link you just copied in to *Consumer endpoint*, and then click *Save & Apply*.
+. In the *Downstream* section, paste the link you just copied to *Consumer endpoint*, and then click *Save & Apply*.
 
 Now you can test the proxy endpoint from Exchange:
 
