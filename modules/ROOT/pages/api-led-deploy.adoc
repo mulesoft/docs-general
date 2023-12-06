@@ -98,7 +98,7 @@ You can see the Mocking Service version and the new proxy you just created in th
 . Click */greeting* to open, then click *GET*.
 . In *Select server*, expand the menu and select *Sandbox - v1:<version>*.
 +
-image:api-led-select-server-exchange.png[Expanded more menu to show the list of available servers]
+image:api-led-select-server-exchange.png[Expanded server menu showing the list of available servers]
 +
 . Click *Send*. The response should be `200 OK` with the greeting `Today the greeting is Hello.`
 
