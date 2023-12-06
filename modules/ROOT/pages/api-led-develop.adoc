@@ -52,7 +52,7 @@ image:new-project-dialog.png[New project dialog]
 +
 This setting ensures that Studio adds default error handling and other helpful items to your project
 
-Studio creates a `hello-world.xml` XML file and opens it in the canvas *Message Flow* view, showing the basic elements you'll need for the API interface:
+Studio creates a `hello-world.xml` XML file and opens it in the canvas *Message Flow* view, showing the basic elements you need for the API interface:
 
 image:my-first-project.png[View in Studio after importing API specification with scaffolding]
 
