@@ -10,7 +10,7 @@ Mule is a lightweight integration engine that runs Mule apps. Instances of Mule 
 These environments are called targets. One target is the Mule embedded in Studio, which you use for
 development and testing. Another target, xref:runtime-manager::cloudhub.adoc[CloudHub], is managed by MuleSoft and is cloud based.
 
-You are going to deploy first to Mule in Studio, then, when the app is complete, you'll deploy it to Mule in CloudHub.
+First, you'll deploy the app to Mule in Studio and then, you'll deploy it to Mule in CloudHub.
 
 image:empty-studio.png[Studio without any projects]
 [callout list]
