@@ -106,7 +106,7 @@ Finish configuring the proxy:
 
 . Click *Home* to return to the API summary.
 . Click *Share*.
-. In the *Share* dialog window, click *Public* and then select the API version to make available on the public Exchange portal.
+. In the *Share* dialog, click *Public* and then select the API version to make available on the public Exchange portal:
 +
 image:api-led-share-api.png[Share window with Public and the version v1 checkbox selected]
 +
