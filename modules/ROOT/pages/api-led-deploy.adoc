@@ -130,7 +130,7 @@ To add a rate limit policy:
 image:api-led-rate-limiting-config.png["Rate limiting policy configuration page with selected rate limit values"]
 +
 . In the *Advanced options* section, select the latest version.
-. Select  *Method & Resource conditions*: *Apply configurations to all API methods & resources*, and then click *Apply*.
+. Select *Method & Resource conditions*: *Apply configurations to all API methods & resources*, and then click *Apply*.
 
 The new policy is displayed on the Policies home page.
 
