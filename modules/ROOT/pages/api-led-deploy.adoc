@@ -127,7 +127,7 @@ To add a rate limit policy:
   ** *Time Unit*: *Minute*
 . Select *Expose Headers*.
 +
-image:api-led-rate-limiting-config.png["Rate limiting Limits configuration with number of requests 3, time period 1, time unit minute, and the Expose Headers checkbox selected"]
+image:api-led-rate-limiting-config.png["Rate limiting policy configuration page with selected rate limit values"]
 +
 . In the *Advanced options* section, select the latest version.
 . Select  *Method & Resource conditions*: *Apply configurations to all API methods & resources*, and then click *Apply*.
