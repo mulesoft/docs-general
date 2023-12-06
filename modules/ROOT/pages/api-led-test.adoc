@@ -104,7 +104,7 @@ image:on-error.png[Adding an error handler to GET module and configuring it]
 . When you reach *Set Payload* in *On Error Propagate*, you can see that the payload is set to the error message you created in *Validate size*.
 +
 image:payload-message.png[Debugger messages for Set Payload in error handler]
-. When you reach the *APIkit Router* in the message flow, you can see the error message replaces the original payload `Hi.`.
+. When you reach the *APIkit Router* in the message flow, you see that the error message replaces the original payload `Hi.`.
 +
 image:payload-response.png[Breakpoint at APIkit Router showing error message in payload]
 . After you step all the way through and look at the response in Advanced Rest Client, you'll see that a *500 Server Error* is returned along with the error message.
