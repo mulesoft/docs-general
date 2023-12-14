@@ -215,6 +215,9 @@ A group of components. Modules add flexibility to your apps by allowing you to a
 Mule® application::
 An app that is configured to run in Mule runtime engine.
 
+Mule configuration file (configuration XML)::
+An XML file in which you configure Mule applications, domains, and policies. 
+
 Mule Enterprise Edition (EE)::
 The enterprise version of Mule, available for 30-day trial download. The Enterprise Edition includes full development cycles, testing, technical support, maintenance releases and hot fixes, and management and monitoring tools from MuleSoft.
 
