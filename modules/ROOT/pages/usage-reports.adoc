@@ -108,6 +108,15 @@ You must redeploy your apps with a supported version, either manually or during 
 
 If you want to xref:cloudhub-2::ch2-update-apps.adoc#roll-back-to-a-previous-successful-configuration[roll back] to a previous successful configuration of existing applications that use a Mule version that usage reports do not support, you must choose a compliant version before deploying changes. After deployment, a new configuration with the previously chosen settings and a supported runtime is created.
 
+==== Runtime Fabric Apps in Usage Reports
+
+If usage reports do not display data from Runtime Fabric apps, ensure the following requirements are met:
+
+* You are using Runtime Fabric agent version 1.13.112, 2.1.30, or later. 
+* After updating the Runtime Fabric agent, you have manually redeployed each Runtime Fabric app with a supported date-patch version.
+
+If you are still missing Runtime Fabric apps in your usage reports, contact your account executive to request a report of apps that are not upgraded and what actions need to be taken to update them.
+
 == See Also
 
 * xref:gateway::flex-gateway-getting-started.adoc[]
