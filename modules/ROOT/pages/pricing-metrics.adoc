@@ -2,8 +2,43 @@
 
 MuleSoft captures usage data for Mule flows, Mule messages, and data throughput, but not all of this data is aggregated in usage reports. 
 
+For select customers in the US control plane, MuleSoft offers a pricing and packaging model for Anypoint Platform that alots a number of Mule flows, Mule messages, and data throughput (measured as network I/O bytes). Not all types of Mule flows and messages count toward the allotments in a package. 
 
-For select customers in the US control plane, MuleSoft offers a pricing and packaging model for Anypoint Platform that allots a number of Mule flows, Mule messages, and data throughput (measured as network I/O bytes). Not all types of Mule flows and messages count toward the allotments in a package. 
+== Metrics Collected in Anypoint Platform
+
+Anypoint Platform captures usage metrics across products, but not all metrics are billable or are reflected in usage reports.
+
+[cols=2*]
+|===
+.3+|Mule Runtime	
+|_Mule flow_: A flow within a deployed and running Mule app that contains a Mule event source or route APIKit request. Flows are aggregated using a Max Concurrent model. The usage for a month is the highest number of flows that exist in a single given hour during a month.
+|_Mule message_: The container of the core information processed by the runtime. A Mule message counts as a single unit when an event source triggers it. Messages are aggregated using a sum of all messages sent during a month.
+|_Data throughput_: The total amount of data transferred in and out of the infrastructure that runs Mule where the Mule app is deployed. Data throughput counts when the deployed application transfers data to execute its business logic, including but not limited to internal operational network traffic for monitoring, logs, and health checks.  Data throughput is aggregated as a sum of all bytes during a month. 
+
+|API Manager	
+|_API instance under management_: API instances that are managed by API Manager after they are created using add, promote, or import options. API instances remain under management until they are deleted. Instances of API Manager are aggregated using a Max Concurrent model. The usage for a month is the highest number of APIs Managed in a single given hour during a month.
+
+|API Governance	
+|_API under Governance_: APIs that are identified by the selection criteria of at least one of the governance profiles. If an API is governed, all versions of that API are considered one governed API. Instances of API Governance are aggregated using a Max Concurrent model. The usage for a month is the highest number of APIs governed in a single given hour during a month.
+
+|Flex Gateway	
+|_Flex Gateway API call_: Any access request received by Anypoint Flex Gateway regardless of whether the response to the request is successful or not. Flex Gateway requests are aggregated as a sum of all requests during a month.
+
+|Composer	
+|_Composer task_: Any action executed on a Composer connector, including but not limited to read, create, update, and delete. Composer tasks are aggregated as a sum of all actions during a month.
+
+|RPA	
+|_Robotic Process Automation (“RPA”) bot minutes_: The number of minutes running process automations across all bot sessions. A single bot may run multiple parallel sessions, with RPA bot minutes counting for each parallel session. Multiple bots may be configured to run the same process, with RPA bot minutes counting for each of these separate bot sessions. Test runs or process runs in the test phase are also counted towards RPA bot minutes.
+
+|Message Queue	
+|_Anypoint MQ API request_: A request made to retrieve one or more messages from the Anypoint MQ APIs. Each Anypoint MQ API request includes up to 100 kilobytes of data. An Anypoint MQ API request over 100 kilobytes counts as multiple requests with no fractional units. Anypoint MQ API requests are calculated in the aggregate across all environments (including production, pre-production, sandbox, and design). MQ API requests are currently available via API and are not currently aggregated on usage reports.
+
+|Object Store	
+|_Object Store API request_: A request made to retrieve one or more messages from the Object Store APIs as further defined in the Object Store Documentation. Each Object Store API Request includes up to 100 kilobytes of data. Object Store API Requests over 100 kilobytes will count as multiple requests with no fractional units. OS API requests are currently available via API and are not currently aggregated on usage reports.
+
+|Data Graph	
+|_DataGraph orchestration_: An API request made by Anypoint DataGraph to the source APIs to get data for the GraphQL API request made to Anypoint DataGraph. Orchestrations are not currently aggregated on usage reports.
+|===
 
 [[mule-flows]]
 == Mule Flows
