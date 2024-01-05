@@ -44,14 +44,14 @@ Custom connectors are any connectors that are not developed and maintained by Mu
 
 If you are using a custom connector in your app, you must update your connector to run on Java 17 and MuleSoft Runtime 4.6 and later. After you update your connector using Mule SDK, XML SDK, or REST Connect, you must test your app and deploy it. 
 
-image:java-upgrade.png[Java upgrade steps for connectors]
+image:java-upgrade-connectors.png[Java upgrade steps for connectors]
 
-. Upgrade Mule Runtime
+. Upgrade xref:mule-runtime/updating-mule-4-versions.adoc[Mule Runtime]
 . Update your connector using:
 * xref:mule-sdk/getting-started.adoc[Mule Java SDK]
 * xref:mule-sdk/xml-sdk.adoc[Mule XML SDK]
 * xref:exchange/to-deploy-using-rest-connect.adoc[REST Connect]
-. Test your connector using MUnit.
+. Test your connector using xref:munit/index.adoc[MUnit].
 . Deploy your Mule application:
 .. xref:runtime-fabric::/deploy-to-runtime-fabric.adoc[Deploying Apps to Runtime Fabric]
 .. xref:cloudhub::/deploy-mule-application-task.adoc[Deploying Apps to CloudHub]
