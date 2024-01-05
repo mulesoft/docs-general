@@ -32,9 +32,35 @@ Along with the end of support for Java 8 with the Mule Runtime 4.9 release in Fe
 
 Before you upgrade your integration apps or Mule Gateway policies and proxies to Java 17, all extensions, modules, and connectors used within those apps and policies must first be Java 17-compatible. 
 
-=== Anypoint Connectors
+== Anypoint Connectors and Modules
 
-Anypoint Connectors are certified by MuleSoft to run on Java 17. For information about Java 17 support for each connector, see the Release Notes for that connector. The most commonly used Anypoint Connectors are Java 17-compatible now, and others are being released regularly. 
+Anypoint Connectors and modules are certified by MuleSoft to run on Java 17. For information about Java 17 support for each connector and module, see the xref:release-notes::connector/anypoint-connector-release-notes.adoc[Release Notes] for that connector or module. Java compatibility information is also provided on the Exchange tiles for connectors and modules. 
 
-xref:release-notes::connector/anypoint-connector-release-notes.adoc[]
+The most commonly used Anypoint Connectors and modules are Java 17-compatible now, and others are being released regularly. 
+
+== Custom Connectors
+
+Custom connectors are any connectors that are not developed and maintained by MuleSoft, including connectors that are built by MuleSoft partners using REST Connect, Mule SDK, or XML SDK.
+
+If you are using a custom connector in your app, you must update your connector to run on Java 17 and MuleSoft Runtime 4.6 and later. After you update your connector using Mule SDK, XML SDK, or REST Connect, you must test your app and deploy it. 
+
+image:java-upgrade.png[Java upgrade steps for connectors]
+
+. Upgrade Mule Runtime
+. Update your connector using:
+* xref:mule-sdk/getting-started.adoc[Mule Java SDK]
+* xref:mule-sdk/xml-sdk.adoc[Mule XML SDK]
+* xref:exchange/to-deploy-using-rest-connect.adoc[REST Connect]
+. Test your connector using MUnit.
+. Deploy your Mule application:
+.. xref:runtime-fabric::/deploy-to-runtime-fabric.adoc[Deploying Apps to Runtime Fabric]
+.. xref:cloudhub::/deploy-mule-application-task.adoc[Deploying Apps to CloudHub]
+.. xref:hosting::/ch2-deploy.adoc[Deploying Apps to CloudHub 2.0]
+
+
+
+
+
+
+
 
