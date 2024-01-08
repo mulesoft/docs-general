@@ -46,6 +46,7 @@ If you are using a custom connector in your app, you must update your connector 
 
 image:java-upgrade-connectors.png[Java upgrade steps for connectors]
 
+[calloutlist]
 . Upgrade xref:mule-runtime/mule-upgrade-tool.adoc[Mule Runtime]
 . Update your connector using:
   * xref:mule-sdk/getting-started.adoc[Mule Java SDK]
@@ -78,15 +79,7 @@ If you are using OOTB MuleSoft policies and proxies, updating to Java 17 is stra
 === Upgrade Flow for Custom Policies and Proxies
 
 
-== CloudHub and CloudHub 2.0 Deployment Flow
 
-== Runtime Fabric Deployment Flow
-
-== Standalone (on-premises) Deployment Flow
-
-. Deploy Mule Runtime 4.6 on a server running on Java 17. 
-. Deploy apps to Mule Runtime 4.6. 
-. 
 
 
 
