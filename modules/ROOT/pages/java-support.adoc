@@ -47,7 +47,6 @@ If you are using a custom connector in your app, you must update your connector 
 image:java-upgrade-connectors.png[Java upgrade steps for connectors]
 
 [calloutlist]
-. Upgrade xref:mule-runtime/mule-upgrade-tool.adoc[Mule Runtime]
 . Update your connector using:
   * xref:mule-sdk/getting-started.adoc[Mule Java SDK]
   * xref:mule-sdk/xml-sdk.adoc[Mule XML SDK]
