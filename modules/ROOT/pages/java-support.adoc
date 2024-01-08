@@ -77,8 +77,9 @@ Updating your policies to be compatible with Java 17 is straightforward when you
 . Update and apply the policies. 
 +
 Policies that are compatible with Java 17 are listed in:
-  * *Automated Policies* > *Add a policy* page if you are using xref:mule-gateway/policies-automated-applying.adoc[automated policies]
-  * *API Administration* > *<API-name>* > *Policies* > *Add a policy* page to xref:mule-gateway/policies-included-apply.adoc[apply policies] at the individual API level 
++
+* *Automated Policies* > *Add a policy* page if you are using xref:mule-gateway/policies-automated-applying.adoc[automated policies]
+* *API Administration* > *<API-name>* > *Policies* > *Add a policy* page to xref:mule-gateway/policies-included-apply.adoc[apply policies] at the individual API level 
 . In Runtime Manager, deploy the updated app to Mule Runtime 4.6 or later instance running on a Java-17 server.
   * xref:runtime-manager::cloudhub/deploy-mule-application-task.adoc[Deploying Apps to CloudHub]
   * xref:hosting::/ch2-deploy.adoc[Deploying Apps to CloudHub 2.0]
