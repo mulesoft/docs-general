@@ -69,33 +69,37 @@ See xref:exhange/to-deploy-using-rest-connect.adoc[REST Connect Connector Genera
 The MuleSoft-provided out-of-the-box (OOTB) Mule Gateway and Flex Gateway policies and proxies are compatible with Java 17 beginning with the Mule Runtime 4.6 release. These policies and proxies continue to be compatible with Java 8 until February 2025, so it's best to start updating your policies and proxies as soon as possible. 
 
 
-=== Upgrading OOTB Policies and Proxies
+=== Upgrading OOTB Policies
 
-If you are using OOTB MuleSoft or automated policies and proxies, updating your policies to be compatible with Java 17 is straightforward. 
+Updating your policies to be compatible with Java 17 is straightforward when you are using included MuleSoft policies. 
 
 . In API Manager *API Administration* > *Settings*, xref:api-manager/edit-api-endpoint-task.adoc[edit the API instance's configuration settings] to use Mule Runtime 4.6 or later, and select the *Java 17* option. 
 . Save and apply the changes to the API instance.
 . Update and apply the policies. 
 +
-Policies that are compatible with Java 17 are listed in the *Automated Policies* > *Add a policy* page if you are using automated policies, or the *API Administration* > *<API-name>* > *Policies* > *Add a policy* page to apply policies at the individual API level. 
+Policies that are compatible with Java 17 are listed in:
+  * *Automated Policies* > *Add a policy* page if you are using xref:mule-gateway/policies-automated-applying.adoc[automated policies]
+  * *API Administration* > *<API-name>* > *Policies* > *Add a policy* page to xref:mule-gateway/policies-included-apply.adoc[apply policies] at the individual API level 
 . In Runtime Manager, deploy the updated app to Mule Runtime 4.6 or later instance running on a Java-17 server.
   * xref:runtime-manager::cloudhub/deploy-mule-application-task.adoc[Deploying Apps to CloudHub]
   * xref:hosting::/ch2-deploy.adoc[Deploying Apps to CloudHub 2.0]
 
 
-=== Upgrading Custom Policies and Proxies
+=== Upgrading Custom Policies
 
 . Upgrade the required extensions and connectors. 
-. Annotate the custom policy. 
-. Upload the custom policy to API Manager. 
-. Publish the custom policy to Exchange. 
-. Update the API instance with the updated policy.
+. Annotate the custom policy definition files. 
+. xref:mule-gateway/policies-custom-package.adoc[Package the policy].
+. xref:mule-gateway/policies-custom-upload-to-exchange[Upload the custom policy] to API Manager. 
+. xref:mule-gateway/policies-custom-flex-getting-started[Publish the custom policy to Exchange]. 
+. Apply the policy to the API instance.
 . In Runtime Manager, deploy the updated app to Mule Runtime 4.6 or later instance running on a Java-17 server.
   * xref:runtime-manager::cloudhub/deploy-mule-application-task.adoc[Deploying Apps to CloudHub]
   * xref:hosting::/ch2-deploy.adoc[Deploying Apps to CloudHub 2.0]
 
-  
+== Proxies 
 
+NEED INFO
 
 
 
