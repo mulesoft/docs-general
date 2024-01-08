@@ -46,16 +46,53 @@ If you are using a custom connector in your app, you must update your connector 
 
 image:java-upgrade-connectors.png[Java upgrade steps for connectors]
 
-. Upgrade xref:mule-runtime/updating-mule-4-versions.adoc[Mule Runtime]
+. Upgrade xref:mule-runtime/mule-upgrade-tool.adoc[Mule Runtime]
 . Update your connector using:
-* xref:mule-sdk/getting-started.adoc[Mule Java SDK]
-* xref:mule-sdk/xml-sdk.adoc[Mule XML SDK]
-* xref:exchange/to-deploy-using-rest-connect.adoc[REST Connect]
+  * xref:mule-sdk/getting-started.adoc[Mule Java SDK]
+  * xref:mule-sdk/xml-sdk.adoc[Mule XML SDK]
+  * xref:exchange/to-deploy-using-rest-connect.adoc[REST Connect]
 . Test your connector using xref:munit/index.adoc[MUnit].
 . Deploy your Mule application:
-.. xref:runtime-fabric::/deploy-to-runtime-fabric.adoc[Deploying Apps to Runtime Fabric]
-.. xref:cloudhub::/deploy-mule-application-task.adoc[Deploying Apps to CloudHub]
-.. xref:hosting::/ch2-deploy.adoc[Deploying Apps to CloudHub 2.0]
+  * xref:runtime-fabric::/deploy-to-runtime-fabric.adoc[Deploying Apps to Runtime Fabric]
+  * xref:runtime-manager::cloudhub/deploy-mule-application-task.adoc[Deploying Apps to CloudHub]
+  * xref:hosting::/ch2-deploy.adoc[Deploying Apps to CloudHub 2.0]
+
+== Gateway Policies
+
+The MuleSoft-provided out-of-the-box (OOTB) Mule Gateway and Flex Gateway policies and proxies are compatible with Java 17 beginning with the Mule Runtime 4.6 release. These policies and proxies continue to be compatible with Java 8 until February 2025, so it's best to start updating your policies and proxies as soon as possible. 
+
+
+=== Upgrade Flow for OOTB Policies and Proxies
+
+If you are using OOTB MuleSoft policies and proxies, updating to Java 17 is straightforward, as shown in the following steps: 
+
+
+. Deploy apps to Mule Runtime 4.6 or later.
+  * xref:runtime-manager::cloudhub/deploy-mule-application-task.adoc[Deploying Apps to CloudHub]
+  * xref:hosting::/ch2-deploy.adoc[Deploying Apps to CloudHub 2.0]
+. In API Manager, update your policies and proxies in the API instance.  
+. Deploy the updated API instances to the target running Java 17. 
+. In CloudHub, shift the traffic to the server running on Java 17. 
+. Turn off the old server after all of your apps are migrated. 
+
+=== Upgrade Flow for Custom Policies and Proxies
+
+
+== CloudHub and CloudHub 2.0 Deployment Flow
+
+== Runtime Fabric Deployment Flow
+
+== Standalone (on-premises) Deployment Flow
+
+. Deploy Mule Runtime 4.6 on a server running on Java 17. 
+. Deploy apps to Mule Runtime 4.6. 
+. 
+
+
+
+
+
+
 
 
 
