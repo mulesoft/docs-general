@@ -60,7 +60,7 @@ To track Mule message usage, the runtime report counts the number of times a Mul
 
 To calculate usage, MuleSoft meters and aggregates the number of messages on a monthly basis. After a message is triggered, the report does not track changes to the message because the message is processed within the application’s flows.
 
-A Mule flow is a sequence of logical operations configured within the XML `<flow/>` element of a Mule application. The runtime report tracks the Mule flows within a deployed and running Mule application that contains a Mule event source or APIKit route requests. This report does not track other Mule flows. You can view the maximum number of Mule flows in a given month in the usage report. 
+A Mule flow is a sequence of logical operations configured within the XML `<flow/>` element of a Mule application. The runtime report tracks the Mule flows within a deployed and running Mule application that contains a Mule event source or APIkit route requests. This report does not track other Mule flows. You can view the maximum number of Mule flows in a given month in the usage report. 
 
 To calculate usage, MuleSoft tracks the number of Mule flows for all business groups, environments, and applications. The maximum number of Mule flows within a month is identified based on the peak hour across the month. For the detailed breakdown, MuleSoft shows the peak hour usage per business group, environment, and application. 
 
