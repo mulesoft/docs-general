@@ -36,7 +36,16 @@ Before you upgrade your integration apps or Mule Gateway policies and proxies to
 
 Anypoint Connectors and modules are certified by MuleSoft to run on Java 17. For information about Java 17 support for each connector and module, see the xref:release-notes::connector/anypoint-connector-release-notes.adoc[Release Notes] for that connector or module. Java compatibility information is also provided on the Exchange tiles for connectors and modules. 
 
-The most commonly used Anypoint Connectors and modules are Java 17-compatible now, and others are being released regularly. 
+The most commonly used Anypoint Connectors and modules are Java 17-compatible now, and others are being released regularly.
+
+To upgrade Anypoint Connectors:
+
+. Update your Mule app to run on Mule Runtime 4.6 or later. 
+. In Anypoint Studio, update the connectors in your app to the latest version. 
+. Deploy your Mule application:
+  * xref:runtime-fabric::/deploy-to-runtime-fabric.adoc[Deploying Apps to Runtime Fabric]
+  * xref:runtime-manager::cloudhub/deploy-mule-application-task.adoc[Deploying Apps to CloudHub]
+  * xref:hosting::/ch2-deploy.adoc[Deploying Apps to CloudHub 2.0]
 
 == Upgrading Custom Connectors
 
