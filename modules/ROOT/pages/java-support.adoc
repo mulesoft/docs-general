@@ -67,15 +67,21 @@ See xref:exhange/to-deploy-using-rest-connect.adoc[REST Connect Connector Genera
 
 The MuleSoft-provided out-of-the-box (OOTB) Mule Gateway and Flex Gateway policies and proxies are compatible with Java 17 beginning with the Mule Runtime 4.6 release. These policies and proxies continue to be compatible with Java 8 until February 2025, so it's best to start updating your policies and proxies as soon as possible. 
 
-
 === Upgrading OOTB Policies
 
-Updating your policies to be compatible with Java 17 is straightforward when you are using included MuleSoft policies. 
+Updating your policies to be compatible with Java 17 is straightforward when you are using included MuleSoft policies. The steps to upgrade are a little different, depending on which deployment model you use. 
 
-. In API Manager *API Administration* > *Settings*, xref:api-manager/edit-api-endpoint-task.adoc[edit the API instance's configuration settings] to use Mule Runtime 4.6 or later, and select the *Java 17* option. 
-. Save and apply the changes to the API instance.
-. Update and apply the policies. 
-+
+
+. For CloudHub and CloudHub 2.0 deployments:
+ .. Upgrade the policy to the latest version in API Manager.
+ .. In API Manager *API Administration* > *Settings*, xref:api-manager/edit-api-endpoint-task.adoc[edit the API instance's configuration settings] to use Mule Runtime 4.6 or later, and select the *Java 17* option.
+
+. For Runtime Fabric and Hybrid deployments:
+ .. Create a new server running on Java 17 and connect it to runtime engine agent.
+ .. Upgrade the policy to the latest version in API Manager.
+ .. Select the new target you created, running on Java 17.
+ In API Manager *API Administration* > *Settings*, xref:api-manager/edit-api-endpoint-task.adoc[edit the API instance's configuration settings] to use Mule Runtime 4.6 or later, and select the *Java 17* option. 
+
 Policies that are compatible with Java 17 are listed in:
 +
 * *Automated Policies* > *Add a policy* page if you are using xref:mule-gateway/policies-automated-applying.adoc[automated policies]
@@ -87,6 +93,7 @@ Policies that are compatible with Java 17 are listed in:
 
 === Upgrading Custom Policies
 
+
 . Upgrade the required extensions and connectors. 
 . Annotate the custom policy definition files. 
 . xref:mule-gateway/policies-custom-package.adoc[Package the policy].
@@ -96,6 +103,7 @@ Policies that are compatible with Java 17 are listed in:
 . In Runtime Manager, deploy the updated app to Mule Runtime 4.6 or later instance running on a Java-17 server.
   * xref:runtime-manager::cloudhub/deploy-mule-application-task.adoc[Deploying Apps to CloudHub]
   * xref:hosting::/ch2-deploy.adoc[Deploying Apps to CloudHub 2.0]
+
 
 == Proxies 
 
