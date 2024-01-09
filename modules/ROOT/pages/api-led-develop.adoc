@@ -192,7 +192,7 @@ image:api-led-assets-list-arrow.png[Home page of the hello-world-app you deploye
 You can now see the Exchange tile for the asset you just published. 
 . (Optional) Sign out of Exchange and search for the asset you just created. 
   .. Click the tile for your *hello-world-app*. 
-  .. In the *Asset Versions* section, click the more (...) menu and select *Version detail*. The HTTP Connector, Sockets Connector, and APIKit module are listed as dependencies.
+  .. In the *Asset Versions* section, click the more (...) menu and select *Version detail*. The HTTP Connector, Sockets Connector, and APIkit module are listed as dependencies.
   +
   image:published-in-exchange.png[Version details of app page as viewed in Exchange]
 . After you explore the published asset on Exchange, return to Studio and click *OK* to close the open dialog windows.
