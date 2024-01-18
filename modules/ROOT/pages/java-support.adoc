@@ -41,7 +41,7 @@ The most commonly used Anypoint Connectors and modules are Java 17-compatible no
 To upgrade Anypoint Connectors:
 
 . Update your Mule app to run on Mule Runtime 4.6 or later. 
-. In Anypoint Studio, update the connectors in your app to the latest version. 
+. In Anypoint Studio, update the connectors in your app to the latest Java 17-compatible version. 
 . Deploy your Mule application:
   * xref:runtime-fabric::/deploy-to-runtime-fabric.adoc[Deploying Apps to Runtime Fabric]
   * xref:runtime-manager::cloudhub/deploy-mule-application-task.adoc[Deploying Apps to CloudHub]
@@ -49,9 +49,9 @@ To upgrade Anypoint Connectors:
 
 == Upgrading Custom Connectors
 
-Custom connectors are any connectors that are not developed and maintained by MuleSoft, including connectors that are built by MuleSoft partners using REST Connect, Mule SDK, or XML SDK.
+Custom connectors are any connectors that are not developed and maintained by MuleSoft, including connectors that are built by MuleSoft partners using Mule SDK, or XML SDK.
 
-If you are using a custom connector in your app, you must update your connector to run on Java 17 and MuleSoft Runtime 4.6 and later. After you update your connector using Mule SDK, XML SDK, or REST Connect, you must test your app and deploy it. 
+If you are using a custom connector in your app, you must update your connector to run on Java 17 and MuleSoft Runtime 4.6 and later. After you update your connector using Mule Java SDK or XML SDK, you must test your app and deploy it. 
 
 image:java-upgrade-connectors.png[Java upgrade steps for connectors]
 
@@ -59,7 +59,6 @@ image:java-upgrade-connectors.png[Java upgrade steps for connectors]
 . Update your connector using:
   * xref:mule-sdk/getting-started.adoc[Mule Java SDK]
   * xref:mule-sdk/xml-sdk.adoc[Mule XML SDK]
-  * xref:exchange/to-deploy-using-rest-connect.adoc[REST Connect]
 . Test your connector using xref:munit/index.adoc[MUnit].
 . Deploy your Mule application:
   * xref:runtime-fabric::/deploy-to-runtime-fabric.adoc[Deploying Apps to Runtime Fabric]
@@ -68,18 +67,17 @@ image:java-upgrade-connectors.png[Java upgrade steps for connectors]
 
 == Upgrading REST Connect Generated Connectors
 
-For connectors that are generated from an API specification, all you have to do to make the connector Java 17-compatible is republish the API specification to Exchange. 
+For connectors that are generated from an API specification using the REST Connect connector generator tool, all you have to do to make the connector Java 17-compatible is republish the API specification to Exchange. 
 
 See xref:exhange/to-deploy-using-rest-connect.adoc[REST Connect Connector Generator].
 
-== Gateway Policies
+== Gateway Policies and Proxies
 
 The MuleSoft-provided out-of-the-box (OOTB) Mule Gateway and Flex Gateway policies and proxies are compatible with Java 17 beginning with the Mule Runtime 4.6 release. These policies and proxies continue to be compatible with Java 8 until February 2025, so it's best to start updating your policies and proxies as soon as possible. 
 
-=== Upgrading OOTB Policies
+=== Upgrading OOTB Policies and Proxies
 
-Updating your policies to be compatible with Java 17 is straightforward when you are using included MuleSoft policies. The steps to upgrade are a little different, depending on which deployment model you use. 
-
+When you are using xref:gateway::policies/policies-availability-by-gateway.adoc[MuleSoft included policies], updating your policies and proxies to be compatible with Java 17 is straightforward. The steps to upgrade are a little different, depending on which deployment model you use. 
 
 . For CloudHub and CloudHub 2.0 deployments:
  .. Upgrade the policy to the latest version in API Manager.
@@ -95,15 +93,14 @@ Policies that are compatible with Java 17 are listed in:
 +
 * *Automated Policies* > *Add a policy* page if you are using xref:mule-gateway/policies-automated-applying.adoc[automated policies]
 * *API Administration* > *<API-name>* > *Policies* > *Add a policy* page to xref:mule-gateway/policies-included-apply.adoc[apply policies] at the individual API level 
-. In Runtime Manager, deploy the updated app to Mule Runtime 4.6 or later instance running on a Java-17 server.
+. In Runtime Manager, deploy the updated app to Mule Runtime 4.6 or later instance running on a Java 17 server.
   * xref:runtime-manager::cloudhub/deploy-mule-application-task.adoc[Deploying Apps to CloudHub]
   * xref:hosting::/ch2-deploy.adoc[Deploying Apps to CloudHub 2.0]
 
 
 === Upgrading Custom Policies
 
-
-. Upgrade the required extensions and connectors. 
+. Upgrade the required extensions and connectors to Java 17. [Link to connector upgrade topic]
 . Annotate the custom policy definition files. 
 . xref:mule-gateway/policies-custom-package.adoc[Package the policy].
 . xref:mule-gateway/policies-custom-upload-to-exchange[Upload the custom policy] to API Manager. 
@@ -114,9 +111,8 @@ Policies that are compatible with Java 17 are listed in:
   * xref:hosting::/ch2-deploy.adoc[Deploying Apps to CloudHub 2.0]
 
 
-== Proxies 
 
-NEED INFO
+
 
 
 
