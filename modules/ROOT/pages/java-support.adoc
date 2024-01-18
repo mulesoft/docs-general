@@ -29,7 +29,7 @@ Along with the end of support for Java 8 with the Mule Runtime 4.9 release in Fe
 
 == Upgrading Mule Runtime
 
-To take advantage of the improved performance and security of Java 17 xref:mule-runtime::updating-mule-4-versions.adoc[Upgrade Mule runtime to 4.6 or later].
+To take advantage of the improved performance and security of Java 17 xref:mule-runtime::updating-mule-4-versions.adoc[Upgrade to Mule runtime 4.6 or later].
 
 Follow these best practices:
 
@@ -108,7 +108,7 @@ Policies that are compatible with Java 17 are listed in:
   * xref:runtime-manager::cloudhub/deploy-mule-application-task.adoc[Deploying Apps to CloudHub]
   * xref:hosting::/ch2-deploy.adoc[Deploying Apps to CloudHub 2.0]
 
-=== Upgrading Custom Policies
+=== Upgrading Custom Policies and Proxies
 
 . Upgrade the required extensions and connectors to Java 17. [Link to connector upgrade topic]
 . Annotate the custom policy definition files. 
