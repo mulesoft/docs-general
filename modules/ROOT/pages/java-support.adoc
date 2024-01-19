@@ -152,6 +152,11 @@ POJOs are required from now on and you must also ensure that POJOs have:
 See the Dataweave documentation for more information. [LINK TO DATAWEAVE DOCS]
 
 
+== See Also
+
+* https://help.salesforce.com/s/articleView?id=000782248&type=1[Java 17 Compatible Anypoint Connectors^]
+* https://help.salesforce.com/s/articleView?id=000396936&type=1[MuleSoft Java 17 Upgrade FAQ^]
+
 
 
 
