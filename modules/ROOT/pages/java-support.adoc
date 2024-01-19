@@ -46,7 +46,7 @@ The majority of Mule applications currently in use can be updated, tested, and r
 
 Anypoint Connectors and modules are certified by MuleSoft to run on Java 17. For information about Java 17 support for each connector and module, see the xref:release-notes::connector/anypoint-connector-release-notes.adoc[Release Notes] for that connector or module. Java compatibility information is also provided on the Exchange tiles for connectors and modules. 
 
-The most commonly used Anypoint Connectors and modules are Java 17-compatible now, and others are being released regularly.
+The most commonly used Anypoint Connectors and modules are Java 17-compatible now, and others are being released regularly. See https://help.salesforce.com/s/articleView?id=000782248&type=1[Java 17 Compatible Anypoint Connectors^] for a list of Java 17-compatible connectors.
 
 To upgrade Anypoint Connectors:
 
