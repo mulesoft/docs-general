@@ -1,0 +1,31 @@
+= Upgrade Java for API Policies and Proxies 
+
+
+== Upgrading Automated Policies
+
+To upgrade automated policies to Java 17:
+
+. In Anypoint Manager, go to Automated Policies.
+. Upgrade your automated policies:
+ .. If your automated policies are xref:gateway::policies/policies-availability-by-gateway.adoc[MuleSoft included policies], in *Policy version*, select the latest version of the included policy.
+ .. In *Rule of application*:
+ +
+  * To apply automated policies to all Mule runtimes, select *All runtimes* and click *Apply*.
+  * To apply the automated policies to Flex Gateways only, select *Flex Gateways only* and click *Apply*.
+  * To apply automated policies to Mule Gateways only, select *Mule Gateways only*:
+  +
+  .. In *From version* and *To*, enter the Mule version range and in *Java versions*, select *All Java versions* or choose specific Java versions. 
+  .. Click *Apply*.
+. If your automated policies are custom policies:
+ .. Upgrade the required extensions and connectors to Java 17.
+ .. If your custom policy has Anypoint Connectors, refer to <<Upgrading Anypoint Connectors and Modules>>.
+ .. If your custom policy has custom connectors, refer to <<Upgrading Custom Connectors>>.
+<<Annotate the custom policy (link to new page in Gateway)>>.
+ .. Package the custom policy.
+ .. Republish the custom policy to Exchange.
+ .. Apply the new version of the custom policy that is compatible with Java 17 to the API instance:
+ .. Go to *Policies*.
+ .. In *Applied policy status*, verify that latest definition is applied.
+ .. If the latest definition is applied, click on the three dots menu and select *Check for implementation updates*.
+ +
+If the latest definition is not applied, update to the latest definition.

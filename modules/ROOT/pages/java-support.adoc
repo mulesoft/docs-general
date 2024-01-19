@@ -42,7 +42,8 @@ Follow these best practices:
 
 The majority of Mule applications currently in use can be updated, tested, and redeployed. However, any apps and connectors that are running custom Java code require additional work to certify these components. Before you upgrade your integration apps or Mule Gateway policies and proxies to Java 17, all extensions, modules, and connectors used within those apps and policies must first be Java 17-compatible. 
 
-=== Upgrading Anypoint Connectors and Modules
+[upgrading-anypoint-connectors-and-modules]
+== Upgrading Anypoint Connectors and Modules
 
 Anypoint Connectors and modules are certified by MuleSoft to run on Java 17. For information about Java 17 support for each connector and module, see the xref:release-notes::connector/anypoint-connector-release-notes.adoc[Release Notes] for that connector or module. Java compatibility information is also provided on the Exchange tiles for connectors and modules. 
 
@@ -58,6 +59,7 @@ To upgrade Anypoint Connectors:
   * xref:runtime-manager::cloudhub/deploy-mule-application-task.adoc[Deploying Apps to CloudHub]
   * xref:hosting::/ch2-deploy.adoc[Deploying Apps to CloudHub 2.0]
 
+[upgrading-custom-connectors]
 === Upgrading Custom Connectors
 
 Custom connectors are any connectors that are not developed and maintained by MuleSoft, including connectors that are built by MuleSoft partners using Mule SDK, or XML SDK.
@@ -82,9 +84,15 @@ For connectors that are generated from an API specification using the REST Conne
 
 See xref:exhange/to-deploy-using-rest-connect.adoc[REST Connect Connector Generator].
 
-== Upgrading Gateway Policies and Proxies
+== Upgrading API Policies and Proxies
 
 The MuleSoft-provided out-of-the-box (OOTB) Mule Gateway and Flex Gateway policies and proxies are compatible with Java 17 beginning with the Mule Runtime 4.6 release. These policies and proxies continue to be compatible with Java 8 until February 2025, so it's best to start updating your policies and proxies as soon as possible. 
+
+[IMPORTANT]
+To ensure your API proxies or Mule apps are protected when upgrading, upgrade your policies first before upgrading your API proxies or Mule apps.
+
+See xref:upgrade-policies-proxies.adoc[Upgrade Java for API Policies and Proxies]
+
 
 === Upgrading OOTB Policies and Proxies
 
