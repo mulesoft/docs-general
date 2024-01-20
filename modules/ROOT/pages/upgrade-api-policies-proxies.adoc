@@ -1,31 +1,122 @@
 = Upgrade Java for API Policies and Proxies 
 
-
+[upgrading-automated-policies]
 == Upgrading Automated Policies
 
-To upgrade automated policies to Java 17:
+== Upgrading Included Automated Policies
 
-. In Anypoint Manager, go to Automated Policies.
+To upgrade xref:gateway::policies/policies-availability-by-gateway.adoc[MuleSoft included policies]o Java 17:
+
+. In API Manager, go to *Automated Policies*.
 . Upgrade your automated policies:
- .. If your automated policies are xref:gateway::policies/policies-availability-by-gateway.adoc[MuleSoft included policies], in *Policy version*, select the latest version of the included policy.
+ .. In *Policy version*, select the latest version of the included policy.
  .. In *Rule of application*:
- +
   * To apply automated policies to all Mule runtimes, select *All runtimes* and click *Apply*.
   * To apply the automated policies to Flex Gateways only, select *Flex Gateways only* and click *Apply*.
   * To apply automated policies to Mule Gateways only, select *Mule Gateways only*:
-  +
-  .. In *From version* and *To*, enter the Mule version range and in *Java versions*, select *All Java versions* or choose specific Java versions. 
-  .. Click *Apply*.
-. If your automated policies are custom policies:
- .. Upgrade the required extensions and connectors to Java 17.
- .. If your custom policy has Anypoint Connectors, refer to <<Upgrading Anypoint Connectors and Modules>>.
- .. If your custom policy has custom connectors, refer to <<Upgrading Custom Connectors>>.
+. In *From version* and *To*, enter the Mule version range and in *Java versions*, select *All Java versions* or choose specific Java versions. 
+. Click *Apply*.
+
+== Upgrading Custom Policies
+
+To upgrade automated custom policies:
+
+. In API Manager, go to *Automated Policies*.
+. Upgrade the required extensions and connectors to Java 17.
+ * If your custom policy has Anypoint Connectors, refer to <<Upgrading Anypoint Connectors and Modules>>.
+ * If your custom policy has custom connectors, refer to <<Upgrading Custom Connectors>>.
 <<Annotate the custom policy (link to new page in Gateway)>>.
- .. Package the custom policy.
- .. Republish the custom policy to Exchange.
- .. Apply the new version of the custom policy that is compatible with Java 17 to the API instance:
+. Package the custom policy.
+. Republish the custom policy to Exchange.
+. Apply the new version of the custom policy that is compatible with Java 17 to the API instance:
  .. Go to *Policies*.
  .. In *Applied policy status*, verify that latest definition is applied.
  .. If the latest definition is applied, click on the three dots menu and select *Check for implementation updates*.
  +
 If the latest definition is not applied, update to the latest definition.
+. Click *Apply*.
+
+[upgrading-api-level-policies]
+== Upgrading API-Level Policies
+
+=== Upgrading Included Policies
+
+To upgrade xref:gateway::policies/policies-availability-by-gateway.adoc[MuleSoft included policies] API-level policies to Java 17:
+
+. In API Manager, go to *API Administration > <API Name> > Policies > Add a policy* to apply policies at the individual API level. 
+. Upgrade each of your API-level policies:
+. In *Policy version*, select the latest version of the included policy.
+. In *Method & resource conditions*, select either *Apply configuration to all API method & resources* or *Apply configuration to specific API method & resources*.
+. Click *Apply*.
+
+=== Upgrading Custom API-level Policies
+
+To upgrade policies at the API level that include customizations:
+
+. In API Manager, go to *API Administration > <API Name> > Policies > Add a policy* to apply policies at the individual API level. 
+. Upgrade the required extensions and connectors to Java 17.
+* If your custom policy has Anypoint Connectors, refer to: <<Upgrading Anypoint Connectors and Modules (section from J17 landing page)>>.
+* If your custom policy has custom connectors, refer to <<Upgrading Custom Connectors (section from J17 landing page)>> or <<Upgrading Rest Connect Connectors (section from J17 landing page)>>.
+. <<Annotate the custom policy (link to new page in Gateway)>>.
+. Package the custom policy.
+. Republish the custom policy to Exchange.
+. Apply the new version of the custom policy that is compatible with Java 17 to the API instance:
+ .. Go to *Policies*.
+ .. In *Applied policy status*, verify that the latest definition is applied.
+ .. If the latest definition is applied, click the three dots menu and select *Check for implementation updates*.
+ .. If the latest definition is not applied, update to the latest definition.
+. Click *Apply*.
+
+[upgrading-api-proxies]
+== Upgrading API Proxies
+
+The steps to upgrade API proxies to Java 17 are a little different, depending on which deployment model you use. 
+
+* If you use Basic endpoint, deploy the adapted application to the server from Mule runtime and connect it to API Manager using autodiscovery. For more information, refer to <<Update Mule runtime docs in J17 landing page>>
+* If you use a Basic endpoint API instance to update your instance, update the Mule application connecting to your API instance.
+
+[IMPORTANT]
+To ensure your API proxies or Mule apps are protected when upgrading, upgrade your API policies *before* upgrading your API proxies or Mule apps.
+
+[cloudhub-and-cloudhub2-deployments]
+== CloudHub and CloudHub 2.0 deployments
+
+Before following these steps, ensure your policies are updated. For more information, see <<Upgrading Policies>>. 
+
+. In API Manager, go to *API Administration > Settings*.
+. Edit the API instance's configuration settings:  
+ .. In *Runtime Channel*, select the runtime channel to use.
+ .. In *Version*, select *4.6.0*.
+ .. In *Java version*, select *Java 17*.
+ .. Click *Save & Apply*.
+
+[hybrid-deployments]
+== Hybrid deployments
+
+Before following these steps, ensure your policies are updated. For more information, refer to Upgrading Policies. 
+
+. Deploy Mule runtime engine 4.6 in a new server running on Java 17 and start the server.
+. Add your proxy to the target running on Java 17.
+. Select the new target you created running on Java 17 and in API Manager, go to *API Administration > Settings*.
+. Edit the API instance’s configuration settings:
+ .. In *Select target*, select the server running on Java 17 as the target.
+ .. *Click Save & Apply*.
+. After the server successfully runs on Java 17, shift your traffic gradually to the new server using load balancer and turn off the old server after all of its apps are migrated.
+
+[runtime-fabric-deployments]
+== Runtime Fabric deployments 
+
+Before following these steps, ensure your policies are updated. For more information, refer to Upgrading Policies. 
+
+. Deploy Mule runtime engine 4.6 to a new server running on Java 17 and start the server.
+. Add your proxy to the target running on Java 17.
+. Select the new target you created running on Java 17 and in API Manager, go to *API Administration > Settings*.
+. Edit the API instance’s configuration settings:
+ .. In *Runtime Channel*, select the runtime channel to use.
+ .. In *Version*, select *4.6.0*.
+ .. In *Java version*, select *Java 17*.
+ .. Click *Save & Apply*.
+. After the server successfully runs on Java 17, shift your traffic gradually to the new server using load balancer and turn off the old server after all of its apps are migrated.
+
+
+
