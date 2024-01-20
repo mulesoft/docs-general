@@ -3,9 +3,9 @@
 [upgrading-automated-policies]
 == Upgrading Automated Policies
 
-== Upgrading Included Automated Policies
+=== Upgrading Included Automated Policies
 
-To upgrade xref:gateway::policies/policies-availability-by-gateway.adoc[MuleSoft included policies]o Java 17:
+To upgrade xref:gateway::policies/policies-availability-by-gateway.adoc[MuleSoft included policies] to Java 17:
 
 . In API Manager, go to *Automated Policies*.
 . Upgrade your automated policies:
@@ -17,7 +17,7 @@ To upgrade xref:gateway::policies/policies-availability-by-gateway.adoc[MuleSoft
 . In *From version* and *To*, enter the Mule version range and in *Java versions*, select *All Java versions* or choose specific Java versions. 
 . Click *Apply*.
 
-== Upgrading Custom Policies
+=== Upgrading Custom Automated Policies
 
 To upgrade automated custom policies:
 
@@ -79,7 +79,7 @@ The steps to upgrade API proxies to Java 17 are a little different, depending on
 To ensure your API proxies or Mule apps are protected when upgrading, upgrade your API policies *before* upgrading your API proxies or Mule apps.
 
 [cloudhub-and-cloudhub2-deployments]
-== CloudHub and CloudHub 2.0 deployments
+=== CloudHub and CloudHub 2.0 deployments
 
 Before following these steps, ensure your policies are updated. For more information, see <<Upgrading Policies>>. 
 
@@ -91,7 +91,7 @@ Before following these steps, ensure your policies are updated. For more informa
  .. Click *Save & Apply*.
 
 [hybrid-deployments]
-== Hybrid deployments
+=== Hybrid deployments
 
 Before following these steps, ensure your policies are updated. For more information, refer to Upgrading Policies. 
 
@@ -104,7 +104,7 @@ Before following these steps, ensure your policies are updated. For more informa
 . After the server successfully runs on Java 17, shift your traffic gradually to the new server using load balancer and turn off the old server after all of its apps are migrated.
 
 [runtime-fabric-deployments]
-== Runtime Fabric deployments 
+=== Runtime Fabric deployments 
 
 Before following these steps, ensure your policies are updated. For more information, refer to Upgrading Policies. 
 
