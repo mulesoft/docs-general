@@ -8,7 +8,7 @@ This change has no immediate impact to Mule applications and Mule Gateway polici
 
 Java 17 upgrade planning includes evaluating connectors, integration apps, Mule Gateway policies, and proxies, as all of these components rely on Java. 
 
-[mule-runtime-java-support]
+[[mule-runtime-java-support]]
 == Mule Runtime Java Support
 
 The following table shows the timeline for Java 8 and Java 17 support:
@@ -28,7 +28,7 @@ The following table shows the timeline for Java 8 and Java 17 support:
 [NOTE]
 Along with the end of support for Java 8 with the Mule Runtime 4.9 release in February 2025, Java 11 will also no longer be available. Plan your upgrade path for apps that are running on both Java 8 and Java 11.
 
-[mule-runtime]
+[[mule-runtime]]
 == Mule Runtime
 
 To take advantage of the improved performance and security of Java 17 xref:mule-runtime::updating-mule-4-versions.adoc[Upgrade to Mule runtime 4.6 or later].
@@ -48,7 +48,7 @@ The majority of Mule applications currently in use can be updated, tested, and r
 [IMPORTANT]
 To ensure your API proxies or Mule apps are protected when upgrading, upgrade your API policies *before* upgrading your API proxies or Mule apps.
 
-[anypoint-connectors-and-modules]
+[[anypoint-connectors-and-modules]]
 == Anypoint Connectors and Modules
 
 Anypoint Connectors and modules are certified by MuleSoft to run on Java 17. For information about Java 17 support for each connector and module, see the xref:release-notes::connector/anypoint-connector-release-notes.adoc[Release Notes] for that connector or module. Java compatibility information is also provided on the Exchange tiles for connectors and modules. 
@@ -65,7 +65,7 @@ To upgrade Anypoint Connectors:
   * xref:runtime-manager::cloudhub/deploy-mule-application-task.adoc[Deploying Apps to CloudHub]
   * xref:hosting::/ch2-deploy.adoc[Deploying Apps to CloudHub 2.0]
 
-[custom-connectors]
+[[custom-connectors]]
 === Custom Connectors
 
 Custom connectors are any connectors that are not developed and maintained by MuleSoft, including connectors that are built by MuleSoft partners using Mule SDK, or XML SDK.
@@ -84,14 +84,14 @@ image:java-upgrade-connectors.png[Java upgrade steps for connectors]
   * xref:runtime-manager::cloudhub/deploy-mule-application-task.adoc[Deploying Apps to CloudHub]
   * xref:hosting::/ch2-deploy.adoc[Deploying Apps to CloudHub 2.0]
 
-[rest-connect-generated-connectors]
+[[rest-connect-generated-connectors]]
 === REST Connect Generated Connectors
 
 For connectors that are generated from an API specification using the REST Connect connector generator tool, all you have to do to make the connector Java 17-compatible is republish the API specification to Exchange. 
 
 See xref:exhange/to-deploy-using-rest-connect.adoc[REST Connect Connector Generator].
 
-[api-policies]
+[[api-policies]]
 == API Policies
 
 The MuleSoft-included Mule Gateway and Flex Gateway policies and proxies are compatible with Java 17 beginning with the Mule Runtime 4.6 release. These policies and proxies continue to be compatible with Java 8 until February 2025, so it's best to start updating your policies and proxies as soon as possible. 
@@ -101,7 +101,7 @@ To ensure your API proxies or Mule apps are protected when upgrading, upgrade yo
 
 See xref:upgrade-api-policies-proxies.adoc[Upgrade Java for API Policies and Proxies]
 
-[api-proxies]
+[[api-proxies]]
 == API Proxies
 
 MuleSoft-included API proxies are compatible with Java 17 beginning with the Mule runtime 4.6 release. These API proxies continue to be compatible with Java 8 until February 2025, so it’s best to start updating your API proxies as soon as possible. 
@@ -116,7 +116,7 @@ To ensure your API proxies or Mule apps are protected when upgrading, upgrade yo
 
 For details about how to upgrade your API proxies, see xref:upgrade-api-policies-proxies.adoc[]
 
-[mule-maven-plugin]
+[[mule-maven-plugin]]
 == Mule Maven Plugin 
 (REVIEWERS: For this section, is there a dependency on Studio, so this should wait until the Studio release?)
 
@@ -131,8 +131,8 @@ See the following documentation for more information:
 * xref:cloudhub-2/ch2-deploy-maven.adoc[Deploying apps to CloudHub 2.0 using the Maven Plugin]
 * xref:runtime-fabric/latest/deploy-maven-4.x.adoc[Deploying Applications to Runtime Fabric Using Maven]
 
-[dataweave]
-== Dataweave
+[[dataweave]]
+== DataWeave
 
 DataWeave uses Java’s reflection API to read and write Java objects and Java 17 adds some restrictions in encapsulation and reflective access that affect the Java Data Format.
 
@@ -146,7 +146,7 @@ POJOs are required from now on and you must also ensure that POJOs have:
 * Getters for all properties
 * Setters for all properties
 
-See the Dataweave documentation for more information. [LINK TO DATAWEAVE DOCS]
+See the DataWeave documentation for more information. [LINK TO DATAWEAVE DOCS]
 
 
 == See Also
