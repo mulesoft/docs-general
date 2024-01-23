@@ -146,7 +146,7 @@ POJOs are required from now on and you must also ensure that POJOs have:
 * Getters for all properties
 * Setters for all properties
 
-See the DataWeave documentation for more information. [LINK TO DATAWEAVE DOCS]
+See xref:dataweave::dataweave-formats-java.adoc#java-support[Java Support] for more information.
 
 
 == See Also
