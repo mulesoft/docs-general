@@ -4,7 +4,7 @@ MuleSoft is adopting Java’s long-term-support (LTS) release cadence, beginning
 
 Many third-party vendors are discontinuing support for Java 8, which impacts the MuleSoft product stack. Adopting this new release cadence provides greater security, compliance, and performance.
 
-This change has no immediate impact to Mule applications and Mule Gateway policies and proxies that are running on currently supported Mule versions, or on applications that are upgraded to Mule Runtime 4.6, as existing Java 8 apps will continue to run on Java 8 until February 2026, giving you time to plan for your upgrade to Java 17.
+This change has no immediate impact to Mule applications and Mule Gateway policies and proxies that are running on currently supported Mule versions, or on applications that are upgraded to Mule runtime 4.6, as existing Java 8 apps will continue to run on Java 8 until February 2026, giving you time to plan for your upgrade to Java 17.
 
 Java 17 upgrade planning includes evaluating connectors, integration apps, Mule Gateway policies, and proxies, as all of these components rely on Java. 
 
