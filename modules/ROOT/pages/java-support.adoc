@@ -1,6 +1,6 @@
 = Java Support
 
-MuleSoft is adopting Java’s long-term-support (LTS) release cadence, beginning with Mule runtime 4.6, which adds support for Java 17 LTS. 
+MuleSoft is adopting Java's long-term-support (LTS) release cadence, beginning with Mule runtime 4.6, which adds support for Java 17 LTS. 
 
 Many third-party vendors are discontinuing support for Java 8, which impacts the MuleSoft product stack. Adopting this new release cadence provides greater security, compliance, and performance.
 
@@ -16,13 +16,13 @@ The following table shows the timeline for Java 8 and Java 17 support:
 [%header%autowidth.spread]
 |===
 |Mule Version| Release Date |Java Version | End of Standard Support | End of Extended Support
-|4.5 Edge | October 2023 |8 | February 2024 | June 2024
-|4.6 LTS | February 2024 | 8 and 17 | February 2025 | February 2026
-|4.6 Edge | February 2024 |8 and 17| June 2024 | October 2024
-|4.7 Edge | June 2024 | 8 and 17 | October 2024 | February 2026 ?
-| 4.8 Edge | October 2024 | 8 and 17 | February 2025 | June 2025
-| 4.9 LTS | February 2025 | 17 | February 2026 | February 2027
-| 4.9 Edge | February 2025 | 17 | June 2025 | October 2025
+|4.5 Edge | October 2023 |8 and 11 | February 2024 | June 2024
+|4.6 LTS | February 2024 | 8, 11, and 17 | February 2025 | February 2026
+|4.6 Edge | February 2024 |8, 11, and 17 | June 2024 | October 2024
+|4.7 Edge | June 2024 | 8, 11, and 17 | October 2024 | February 2025
+|4.8 Edge | October 2024 | 8, 11, and 17 | February 2025 | June 2025
+|4.9 LTS | February 2025 | 17 | February 2026 | February 2027
+|4.9 Edge | February 2025 | 17 | June 2025 | October 2025
 |===
 
 [NOTE]
@@ -94,7 +94,7 @@ See xref:exhange/to-deploy-using-rest-connect.adoc[REST Connect Connector Genera
 [[api-policies]]
 == API Policies
 
-The MuleSoft-included Mule Gateway and Flex Gateway policies and proxies are compatible with Java 17 beginning with the Mule Runtime 4.6 release. These policies and proxies continue to be compatible with Java 8 until February 2025, so it's best to start updating your policies and proxies as soon as possible. 
+The MuleSoft-included Mule Gateway and Flex Gateway policies and proxies are compatible with Java 17 beginning with the Mule runtime 4.6 release. These policies and proxies continue to be compatible with Java 8 until February 2025, so it's best to start updating your policies and proxies as soon as possible. 
 
 [IMPORTANT]
 To ensure your API proxies or Mule apps are protected when upgrading, upgrade your API policies *before* upgrading your API proxies or Mule apps.
@@ -153,22 +153,3 @@ See xref:dataweave::dataweave-formats-java.adoc#java-support[Java Support] for m
 
 * https://help.salesforce.com/s/articleView?id=000782248&type=1[Java 17 Compatible Anypoint Connectors^]
 * https://help.salesforce.com/s/articleView?id=000396936&type=1[MuleSoft Java 17 Upgrade FAQ^]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
