@@ -1,6 +1,6 @@
 = Java Support
 
-MuleSoft is adopting Java’s long-term-support (LTS) release cadence, beginning with Mule Runtime 4.6, which adds support for Java 17 LTS. 
+MuleSoft is adopting Java’s long-term-support (LTS) release cadence, beginning with Mule runtime 4.6, which adds support for Java 17 LTS. 
 
 Many third-party vendors are discontinuing support for Java 8, which impacts the MuleSoft product stack. Adopting this new release cadence provides greater security, compliance, and performance.
 
