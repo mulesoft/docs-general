@@ -57,7 +57,7 @@ The most commonly used Anypoint Connectors and modules are Java 17-compatible no
 
 To upgrade Anypoint Connectors:
 
-. Update your Mule app to run on Mule Runtime 4.6 or later. 
+. Update your Mule app to run on Mule runtime 4.6 or later. 
 . Change the target JVM at the project property level. This includes both upgrades and downgrades of the JVM version.
 . In Anypoint Studio, update the connectors in your app to the latest Java 17-compatible version. 
 . Deploy your Mule application:
