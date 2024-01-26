@@ -66,7 +66,7 @@ To upgrade Anypoint Connectors:
   * xref:hosting::/ch2-deploy.adoc[Deploying Apps to CloudHub 2.0]
 
 [[custom-connectors]]
-=== Custom Connectors
+== Custom Connectors
 
 Custom connectors are any connectors that are not developed and maintained by MuleSoft, including connectors that are built by MuleSoft partners using Mule SDK, or XML SDK.
 
@@ -85,36 +85,36 @@ image:java-upgrade-connectors.png[Java upgrade steps for connectors]
   * xref:hosting::/ch2-deploy.adoc[Deploying Apps to CloudHub 2.0]
 
 [[rest-connect-generated-connectors]]
-=== REST Connect Generated Connectors
+== REST Connect Generated Connectors
 
 For connectors that are generated from an API specification using the REST Connect connector generator tool, all you have to do to make the connector Java 17-compatible is republish the API specification to Exchange. 
 
 See xref:exhange/to-deploy-using-rest-connect.adoc[REST Connect Connector Generator].
 
-[[api-policies]]
-== API Policies
+[[policies]]
+== Policies
 
-The MuleSoft-included Mule Gateway and Flex Gateway policies and proxies are compatible with Java 17 beginning with the Mule runtime 4.6 release. These policies and proxies continue to be compatible with Java 8 until February 2025, so it's best to start updating your policies and proxies as soon as possible. 
+The MuleSoft-included Mule Gateway and Flex Gateway policies are compatible with Java 17 beginning with the Mule runtime 4.6 release. These policies continue to be compatible with Java 8 until February 2025, so it's best to start updating your policies as soon as possible. 
 
 [IMPORTANT]
-To ensure your API proxies or Mule apps are protected when upgrading, upgrade your API policies *before* upgrading your API proxies or Mule apps.
+To ensure your API proxies or Mule apps are protected when upgrading, upgrade your policies *before* upgrading your API proxies or Mule apps.
 
-See xref:upgrade-api-policies-proxies.adoc[Upgrade Java for API Policies and Proxies]
+See xref:upgrade-policies-proxies.adoc[].
 
 [[api-proxies]]
 == API Proxies
 
-MuleSoft-included API proxies are compatible with Java 17 beginning with the Mule runtime 4.6 release. These API proxies continue to be compatible with Java 8 until February 2025, so it’s best to start updating your API proxies as soon as possible. 
+The MuleSoft-included API proxies are compatible with Java 17 beginning with the Mule runtime 4.6 release. These API proxies continue to be compatible with Java 8 until February 2025, so it’s best to start updating your API proxies as soon as possible. 
 
 The steps to upgrade are a little different, depending on which deployment model you use. 
 
-* If you use Basic endpoint, deploy the adapted application to the server from Mule runtime and connect it to API Manager using autodiscovery. For more information, refer to <<Update Mule runtime docs in J17 landing page>>
+* If you use Basic endpoint, deploy the adapted application to the server from Mule runtime and connect it to API Manager using autodiscovery. For more information, refer to <<Update Mule runtime docs in J17 landing page>>.
 * If you use a Basic endpoint API instance to update your instance, update the Mule application connecting to your API instance.
 
 [IMPORTANT]
 To ensure your API proxies or Mule apps are protected when upgrading, upgrade your API policies *before* upgrading your API proxies or Mule apps.
 
-For details about how to upgrade your API proxies, see xref:upgrade-api-policies-proxies.adoc[]
+For details about how to upgrade your API proxies, see xref:upgrade-policies-proxies.adoc[].
 
 [[mule-maven-plugin]]
 == Mule Maven Plugin 
