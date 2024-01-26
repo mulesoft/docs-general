@@ -99,7 +99,7 @@ The MuleSoft-included Mule Gateway and Flex Gateway policies are compatible with
 [IMPORTANT]
 To ensure your API proxies or Mule apps are protected when upgrading, upgrade your policies *before* upgrading your API proxies or Mule apps.
 
-See xref:upgrade-policies-proxies.adoc[].
+For details about how to upgrade your policies, see xref:upgrade-policies-proxies.adoc[].
 
 [[api-proxies]]
 == API Proxies
