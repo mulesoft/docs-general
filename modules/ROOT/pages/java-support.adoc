@@ -40,7 +40,7 @@ Follow these best practices:
 * Update the Mule version used to build your Mule applications.
 * xref:mule-runtime::deploying.adoc[Deploy your applications] to a target running on Mule 4.6 or later.
 
-[mule-apps]
+[[mule-apps]]
 == Mule Apps
 
 The majority of Mule applications currently in use can be updated, tested, and redeployed. However, any apps and connectors that are running custom Java code require additional work to certify these components. Before you upgrade your integration apps or Mule Gateway policies and proxies to Java 17, all extensions, modules, and connectors used within those apps and policies must first be Java 17-compatible. 
@@ -108,7 +108,7 @@ The MuleSoft-included API proxies are compatible with Java 17 beginning with the
 
 The steps to upgrade are a little different, depending on which deployment model you use. 
 
-* If you use Basic endpoint, deploy the adapted application to the server from Mule runtime and connect it to API Manager using autodiscovery. For more information, refer to <<Update Mule runtime docs in J17 landing page>>.
+* If you use Basic endpoint, deploy the adapted application to the server from Mule runtime and connect it to API Manager using autodiscovery. For more information, refer to <<mule-runtime>>.
 * If you use a Basic endpoint API instance to update your instance, update the Mule application connecting to your API instance.
 
 [IMPORTANT]
