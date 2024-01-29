@@ -38,7 +38,7 @@ To upgrade custom automated policies to Java 17:
 . Apply the new version of the custom policy that is compatible with Java 17 to the API instance:
  .. Go to *Policies*.
  .. In *Applied policy status*, verify that the latest definition is applied.
- * If the latest definition is applied, click on the three dots menu and select *Check for implementation updates*.
+ * If the latest definition is applied, click on the More (...) menu and select *Check for implementation updates*.
  * If the latest definition is not applied, update to the latest definition.
 
 [[upgrading-api-level-policies]]
@@ -72,19 +72,19 @@ To upgrade custom API-level policies to Java 17:
 . Apply the new version of the custom policy that is compatible with Java 17 to the API instance:
  .. Go to *Policies*.
  .. In *Applied policy status*, verify that the latest definition is applied.
- * If the latest definition is applied, click on the three dots menu and select *Check for implementation updates*.
+ * If the latest definition is applied, click on the More (...) menu and select *Check for implementation updates*.
  * If the latest definition is not applied, update to the latest definition.
 
 [[upgrading-api-proxies]]
 == Upgrading API Proxies
 
+[IMPORTANT]
+To ensure your API proxies or Mule apps are protected when upgrading, upgrade your API policies *before* upgrading your API proxies or Mule apps.
+
 The steps to upgrade API proxies to Java 17 are a little different, depending on which deployment model you use. 
 
 * If you use Basic endpoint, deploy the adapted application to the server from Mule runtime and connect it to API Manager using autodiscovery. For more information, refer to xref:java-support.adoc#mule-runtime[].
 * If you use a Basic endpoint API instance to update your instance, update the Mule application connecting to your API instance.
-
-[IMPORTANT]
-To ensure your API proxies or Mule apps are protected when upgrading, upgrade your API policies *before* upgrading your API proxies or Mule apps.
 
 [[cloudhub-and-cloudhub2-deployments]]
 === CloudHub and CloudHub 2.0 Deployments
