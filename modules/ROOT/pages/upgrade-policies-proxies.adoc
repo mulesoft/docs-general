@@ -10,7 +10,7 @@ Upgrade your automated policies (included and custom) to Java 17.
 [[upgrading-included-automated-policies]]
 === Upgrading Included Automated Policies
 
-To upgrade xref:gateway::policies/policies-availability-by-gateway.adoc[MuleSoft included policies] that are automated to Java 17:
+To upgrade automated xref:gateway::policies/policies-availability-by-gateway.adoc[MuleSoft included policies] to Java 17:
 
 . In API Manager, go to *Automated Policies*.
 . Upgrade your included policies:
