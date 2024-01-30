@@ -1,4 +1,4 @@
-= Viewing Usage Reports
+= Usage Reports
 :page-aliases: gateway::flex-view-usage-reports.adoc
 
 Usage reports provide comprehensive monthly and daily usage reports that provide valuable insights into your resource consumption across Anypoint Platform products. Usage reports enable you to track and understand your usage patterns, which helps you optimize your resource allocation. By correlating your usage patterns with billing cycles, you can gain insights into the factors influencing your costs, which enables you to proactively manage your budget and make informed decisions to optimize your resource allocation.
@@ -22,23 +22,23 @@ include::partial$usage-reports-tasks.adoc[tag=accessUsageReports]
 
 When you navigate to the *Usage Reports* page in Anypoint Plaform, the selection of products you see varies based on the view you are using. Products that have usage reports only on a monthly basis are viewable only in the legacy usage reports view, while products that have both daily and monthly usage reports are available only in the new usage reports view. To switch between views, click the *Switch View* button in the banner. 
 
-The following products have both daily and monthly usage reports:
-
-* <<mule-runtime>>
-* <<flex-gateway>>
-* <<api-experience-hub>>
-
 The following products have only monthly usage reports:
 
 * <<api-manager>>
 * <<api-govern>>
 
-[[flex-gateway]]
-=== Flex Gateway
+The following products have both daily and monthly usage reports:
 
-Flex Gateway usage reports track daily and monthly API calls. You can view API calls by business group, environment, and registration.
+* <<api-experience-hub>>
+* <<flex-gateway>>
+* <<mule-runtime>>
 
-To calculate usage, MuleSoft meters the hourly API calls you make and aggregates the number of API calls on a daily and monthly basis. 
+[[api-manager]]
+=== API Manager
+
+API Manager usage reports track the maximum number of xref:api-manager::latest-overview-concept.adoc#api-instances[API instances] deployed in a given month per business group, environment, and runtime. 
+
+To calculate usage, MuleSoft tracks the number of managed API instances each business group, environment, and runtime uses per hour and identifies the maximum number of managed API instances used in a month for each business group, environment, and runtime. To calculate the total count for API Manager, MuleSoft adds the maximum number of managed API instances per month used across business groups, environments, and runtimes.
  
 [[api-govern]]
 === API Governance
@@ -49,19 +49,19 @@ To calculate usage, MuleSoft tracks the number of governed APIs each business gr
 
 Note that the number of governed APIs (both conformant and non-conformant) shown in the API governance console represents a current snapshot of your usage per business group, while the usage report shows the maximum number of APIs you used in a given month per business group.
 
-[[api-manager]]
-=== API Manager
-
-API Manager usage reports track the maximum number of xref:api-manager::latest-overview-concept.adoc#api-instances[API instances] deployed in a given month per business group, environment, and runtime. 
-
-To calculate usage, MuleSoft tracks the number of managed API instances each business group, environment, and runtime uses per hour and identifies the maximum number of managed API instances used in a month for each business group, environment, and runtime. To calculate the total count for API Manager, MuleSoft adds the maximum number of managed API instances per month used across business groups, environments, and runtimes.
-
 [[api-experience-hub]]
 === API Experience Hub
 
 API Experience Hub usage reports track the number of approved access requests on a daily and monthly basis by Salesforce org ID and Salesforce portal name. 
 
 // need information about data aggregation
+
+[[flex-gateway]]
+=== Flex Gateway
+
+Flex Gateway usage reports track daily and monthly API calls. You can view API calls by business group, environment, and registration.
+
+To calculate usage, MuleSoft meters the hourly API calls you make and aggregates the number of API calls on a daily and monthly basis. 
 
 [[mule-runtime]]
 === Mule Runtime
