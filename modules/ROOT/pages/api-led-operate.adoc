@@ -33,3 +33,5 @@ The more work your API does, the more data Runtime Manager can provide. To learn
 == Testing Github Gists
 
 This is an example AsciiDoc document that includes a GitHub Gist.
+
+gist::https://gist.github.com/agansop/2f05859231e13800fac0f7ce25472019[]
