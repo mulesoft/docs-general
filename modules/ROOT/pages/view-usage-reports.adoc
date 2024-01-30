@@ -1,0 +1,84 @@
+= Viewing Usage Reports
+
+== Products Available for Usage Reports
+
+The following products have both daily and monthly usage reports:
+
+* <<api-experience-hub>>
+* <<mule-runtime>>
+* <<flex-gateway>>
+
+The following products have only monthly usage reports:
+
+* <<api-manager>>
+* <<api-governance>>
+
+[[flex-gateway]]
+=== Flex Gateway
+
+Flex Gateway usage reports track daily and monthly API calls. You can view API calls by business group, environment, and registration.
+
+To calculate usage, MuleSoft meters the hourly API calls you make and aggregates the number of API calls on a daily and monthly basis. 
+ 
+[[api-govern]]
+=== API Governance
+
+API Governance usage reports track the maximum number of xref:api-governance::index.adoc#governed-apis[APIs governed] in a given month per business group. 
+
+To calculate usage, MuleSoft tracks the number of governed APIs each business group uses per hour and then identifies the maximum number of APIs governed in a month for each business group. To calculate the total count for API Governance, MuleSoft adds the maximum number of governed APIs per month used across all business groups. 
+
+Note that the number of governed APIs (both conformant and non-conformant) shown in the API governance console represents a current snapshot of your usage per business group, while the usage report shows the maximum number of APIs you used in a given month per business group.
+
+[[api-manager]]
+=== API Manager
+
+API Manager usage reports track the maximum number of xref:api-manager::latest-overview-concept.adoc#api-instances[API instances] deployed in a given month per business group, environment, and runtime. 
+
+To calculate usage, MuleSoft tracks the number of managed API instances each business group, environment, and runtime uses per hour and identifies the maximum number of managed API instances used in a month for each business group, environment, and runtime. To calculate the total count for API Manager, MuleSoft adds the maximum number of managed API instances per month used across business groups, environments, and runtimes.
+
+[[api-experience-hub]]
+=== API Experience Hub
+
+API Experience Hub usage reports track the number of approved access requests on a daily and monthly basis by Salesforce org ID and Salesforce portal name. 
+
+// need information about data aggregation
+
+[[mule-runtime]]
+=== Mule Runtime
+
+Mule runtime reports track your use of Mule messages, Mule flows, and data throughput. 
+
+To track Mule message usage, the runtime report counts the number of times a Mule event source triggers a Mule message. You can view the number of these messages in a given day or month by business group, environment, and application. 
+
+To calculate usage, MuleSoft meters and aggregates the number of messages on a daily and monthly basis. After a message is triggered, the report does not track changes to the message because the message is processed within the application’s flows.
+
+A Mule flow is a sequence of logical operations configured within the XML `<flow/>` element of a Mule application. The runtime report tracks the Mule flows within a deployed and running Mule application that contains a Mule event source or APIkit route requests. This report does not track other Mule flows. You can view the maximum number of Mule flows in a given day or month in the usage report. 
+
+To calculate usage, MuleSoft tracks the number of Mule flows for all business groups, environments, and applications. The maximum number of Mule flows within a day or month is identified based on the peak hour across the day or month. For the detailed breakdown, MuleSoft shows the peak hour usage per business group, environment, and application. 
+
+Data throughput is all the network I/O bytes produced by the infrastructure that starts and runs the Mule runtime engine that runs a Mule application. You can view the total amount of GB usage in a given day or month by business group, environment, and application. 
+
+To calculate usage, MuleSoft tracks GB usage and aggregates the total GBs on a daily and monthly basis.
+
+== Access Usage Reports
+
+. Log in to Anypoint Platform using an account that has the Usage Viewer permission over your root organization.
+. Click the circle with your organization name's initial in it and ensure you are at the root level of your organization and not in a business group.
+. From the Anypoint Platform navigation bar, click your username icon.
+. Click *Usage*.
+. Select the product for which you want to view a usage report. +
+If you do not see the product listed, click *Switch View*. +
+. If applicable, click *Monthly Usage Report* or *Daily Usage Report*. +
+Note that API Manager and API governance do not have daily usage reports.
+. Select the month or day of the usage report you want to view. +
+Only dates that Anypoint Platform collected data for the selected product are available.
++
+The usage report appears, displaying an assortment of usage metrics that are xref:pricing-metrics.adoc[dependent on the product you selected]. 
+
+== Export Usage Reports to CSV
+
+You can export both daily and monthly usage reports to CSV files. When you open the CSV file from your exported usage report, [what do they see?]
+
+== Query Data using the Metering API and Anypoint Metric Query Language
+
+Anypoint Platform offers the Metering API [link!] that enables you to access your usage data, which is stored in a domain-specific language. Using the Anypoint Monitoring Query Language [link!], you can construct simple, flexible, and secure queries to peruse your data. For more information, see [the Metering API link] and [the link to the subsection for the query language] in Exchange. 
