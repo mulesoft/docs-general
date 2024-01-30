@@ -4,5 +4,3 @@ include::_attributes.adoc[]
 endif::[]
 
 This is an example AsciiDoc document that includes a GitHub Gist.
-
-gist::https://gist.github.com/agansop/2f05859231e13800fac0f7ce25472019[]
