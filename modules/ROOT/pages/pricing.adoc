@@ -60,7 +60,7 @@ To xref:cloudhub-2::ch2-update-apps.adoc#roll-back-to-a-previous-successful-conf
 
 Usage-based pricing packages and their usage reports are based on your organization's use of allotted Mule components.
 
-For information about pricing concepts within Anypoint Platform, see xref:general::pricing-metrics.adoc[Usage and Pricing Metrics].
+To understand the technical aspects of metering and pricing concepts within Anypoint Platform, see xref:general::usage-metrics.adoc[Usage and Pricing Metrics] documentation.
 
 == Global Resource Pool Limits
 

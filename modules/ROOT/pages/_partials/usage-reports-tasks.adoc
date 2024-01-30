@@ -11,6 +11,6 @@ Note that API Manager and API governance do not have daily usage reports.
 . Select the month or day of the usage report you want to view. +
 Only dates that Anypoint Platform collected data for the selected product are available.
 +
-The usage report appears, displaying an assortment of usage metrics that are xref:pricing-metrics.adoc[dependent on the product you selected]. 
+The usage report appears, displaying an assortment of usage metrics that are xref:usage-metrics.adoc[dependent on the product you selected]. 
 
 // end::accessUsageReports[]
