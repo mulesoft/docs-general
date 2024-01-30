@@ -1,0 +1,33 @@
+To view usage reports for Mule runtime, all of your relevant applications (in production and sandbox) must use the following Mule versions:
+
+[cols="2*"]
+|===
+|Deployment Type |Version Requirements
+
+|CloudHub 2.0
+|The latest date-patch versions for 4.3, 4.4, and 4.5
+
+|CloudHub 
+|The latest date-patch versions for 3.9, 4.2, 4.3, 4.4, and 4.5
+
+|Runtime Fabric
+a| One of the following versions or any later date-patch:
+
+Mule 4 image versions:
+
+* 4.5.0:23e
+* 4.4.0-20230111-1
+* 4.3.0-20221212-2
+* 4.2.2-20221027-7
+* 4.2.1-20221027-7
+* 4.2.0-20221027-6
+
+Mule 3 image versions:
+
+* 3.9.5-20230424-2
+* 3.9.4-20230424-1
+* 3.9.3-20230424-1
+* 3.9.2-20230424-1
+* 3.9.1-20230424-1
+
+|=== 

@@ -18,18 +18,7 @@ The following products have both daily and monthly usage reports and are availab
 
 == Access Usage Reports
 
-. Log in to Anypoint Platform using an account that has the Usage Viewer permission over your root organization.
-. Click the circle with your organization name's initial in it and ensure you are at the root level of your organization and not in a business group.
-. From the Anypoint Platform navigation bar, click your username icon.
-. Click *Usage*.
-. Select the product for which you want to view a usage report. +
-If you do not see the product listed, click *Switch View*. +
-. If applicable, click *Monthly Usage Report* or *Daily Usage Report*. +
-Note that API Manager and API governance do not have daily usage reports.
-. Select the month or day of the usage report you want to view. +
-Only dates that Anypoint Platform collected data for the selected product are available.
-+
-The usage report appears, displaying an assortment of usage metrics that are xref:pricing-metrics.adoc[dependent on the product you selected]. 
+include::partial$usage-reports-tasks.adoc[tag=accessUsageReports]
 
 == Export Usage Reports to CSV
 
@@ -41,11 +30,11 @@ Anypoint Platform offers the Metering API [link!] that enables you to access you
 
 == Troubleshoot Usage Reports
 
-Because platform data varies by the day, there might be instances in which usage reports are unavailable. 
+Because platform data availability depends on activity in your organization, there might be instances in which usage reports are unavailable. 
 
 [cols="^1,^1,^1"]
 |===
-| Problem | Explanation | Action Required
+| Issue | Explanation | Action Required
 
 | I can't access the *Usage Reports* section in Anypoint Platform.
 | You do not have the Usage Viewer permission, which is to view usage reports. 
@@ -69,5 +58,9 @@ a| * Switch views
 | After selecting a month in legacy usage reports, the report says `No report available for this time period` instead of showing data.
 | Data is unavailable or not collected for this month.
 | None
+
+| A deployed Mule app is not listed in the Mule Runtime usage report.
+| The Mule app is not a deployed to a supported version of Mule Runtime. For more information, see xref:usage-reports.adoc#supported-runtime-versions[supported runtime versions].
+| Redeploy your apps with a supported runtime version, either manually or during a monthly patching cycle.
 
 |===
