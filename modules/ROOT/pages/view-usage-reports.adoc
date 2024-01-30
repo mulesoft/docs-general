@@ -24,6 +24,10 @@ include::partial$usage-reports-tasks.adoc[tag=accessUsageReports]
 
 You can export both daily and monthly usage reports to CSV files. When you open the CSV file from your exported usage report, a table appears, listing a table of metrics available for the product and time period you selected. These metrics match the data available in usage reports.
 
+include::partial$usage-reports-tasks.adoc[tag=accessUsageReports]
+
+. Click *Export as CSV*.
+
 == Query Data using the Metering API and Anypoint Metric Query Language
 
 Anypoint Platform offers the Metering API [link!] that enables you to access your usage data, which is stored in a domain-specific language. Using the Anypoint Monitoring Query Language [link!], you can construct simple, flexible, and secure queries to peruse your data. For more information, see [the Metering API link] and [the link to the subsection for the query language] in Exchange.
