@@ -29,3 +29,9 @@ Other information you can obtain from Runtime Manager:
 == Developer Deep Dive
 
 The more work your API does, the more data Runtime Manager can provide. To learn more, visit xref:runtime-manager::index.adoc[the Runtime Manager documentation].
+
+== Testing Github Gists
+
+This is an example AsciiDoc document that includes a GitHub Gist.
+
+gist::https://gist.github.com/agansop/2f05859231e13800fac0f7ce25472019[]
