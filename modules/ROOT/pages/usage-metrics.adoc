@@ -1,4 +1,5 @@
 = Usage and Pricing Metrics
+:page-aliases: pricing-metrics.adoc
 
 MuleSoft captures usage data for Mule flows, Mule messages, and data throughput, but not all of this data is aggregated in usage reports. 
 

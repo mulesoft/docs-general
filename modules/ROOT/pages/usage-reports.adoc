@@ -8,7 +8,7 @@ When you use an Anypoint Platform product, MuleSoft meters your usage and aggreg
 Metrics and data availability in usage reports are also influenced by your pricing and packaging model. For more information about usage metrics and pricing, read the following:
 
 * xref:pricing.adoc[]
-* xref:pricing-metrics.adoc[]
+* xref:usage-metrics.adoc[]
 
 Use the usage report to compare your actual usage against your existing contract. The report is not for billing purposes.
 
