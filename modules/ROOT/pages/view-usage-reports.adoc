@@ -51,20 +51,23 @@ Because platform data varies by the day, there might be instances in which usage
 | You do not have the Usage Viewer permission, which is to view usage reports. 
 | Contact your organization administrator to request Usage Viewer permission.
 
-| A month or day is unavailable in the date picker.
-| Data was unavailable or not collected for this day or month.
-| None
-
-| After selecting a product, length of time, and month or date, the report says `No Data`
-| Data was unavailable or not collected for this day or month.
-| None
-
 | When I open the product list to view a usage report, a supported product is not listed.
-a| * Your current usage report view does not contain the product you want to view. For more information on product availability by view, see <<available-products>>.
+a| * Your current usage report view does not contain the product you want to view. For more information about product availability by view, see <<available-products>>.
 * You do not have an active license for this product in Anypoint Platform.
 
 a| * Switch views
 * Review which products your organization is licensed to use.
 
+| A month or day is unavailable in the date picker.
+| Data is unavailable or not collected for this day or month.
+| None
+
+| After selecting a product and daily or monthly report in new usage reports, the report says `No Data`
+| Data is unavailable or not collected for this day or month.
+| None
+
+| After selecting a month in legacy usage reports, the report says `No report available for this time period` instead of showing data.
+| Data is unavailable or not collected for this month.
+| None
 
 |===

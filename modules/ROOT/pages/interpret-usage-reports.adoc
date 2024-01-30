@@ -1,0 +1,73 @@
+= Interpreting New Usage Reports by Product
+
+This content applies only to new usage reports.
+
+== Mule Runtime 
+
+Usage reports for Mule Runtime display information about Mule apps deployed to xref:usage-reports.adoc#supported-runtime-versions[supported versions] of CloudHub, CloudHub 2.0, and Runtime Fabric. 
+
+=== Mule Runtime Cards
+
+Total Data Throughput::
+The sum of data in gigabytes (GB) transmitted across all Mule apps and business groups during the selected time period. For more information about how this metric is billed, see xref:usage-metrics.adoc#data-throughput[data throughput].  
+
+Total Mule Messages:: 
+The sum of all Mule messages transmitted across all Mule apps and business groups during the selected time period. For more information about how this metric is billed, see xref:usage-metrics.adoc#mule-messages[Mule messages].  
+
+Max Flows::
+The maximum number of concurrent flows across all Mule apps and business groups during the selected time period. For more information about how this metric is billed, see xref:usage-metrics.adoc#mule-flows[Mule flows].  
+
+=== Mule Runtime Table
+
+Business Group:: 
+The business group in which a Mule app is deployed.
+
+Environment:: 
+The environment in which a Mule app is deployed.
+
+Application::
+The name of the Mule application.
+
+Deployment:: 
+The runtime plane to which the Mule app is deployed. CloudHub (abbreviated as CH), CloudHub 2.0 (abbreviated as CH2), and Runtime Fabric (abbreviated as RTF) are supported. 
+
+Flows:: 
+The sum of flows in the Mule app. This number is calculated by multiplying flows by the number of workers (CloudHub) or replicas (CloudHub 2.0). For more information about how this metric is billed, see xref:usage-metrics.adoc#mule-flows[Mule flows].
+
+Messages::
+The sum of inbound and outbound Mule messages in the Mule app. For more information about how this metric is billed, see xref:usage-metrics.adoc#mule-messages[Mule messages].  
+
+Data Throughput::
+The sum of inbound and outbound data in gigabytes (GB) transmitted by the Mule app. For more information about how this metric is billed, see xref:usage-metrics.adoc#data-throughput[data throughput].  
+
+Number of Workers::
+The sum of all workers (CloudHub) or replicas (CloudHub 2.0) of a Mule app. Apps that do not have workers or replicas display a value of `N/A` in this column.
+
+== Flex Gateway
+
+Usage reports for Flex Gateway display information about API calls per gateway.
+
+Business Group:: 
+The business group in which the Flex Gateway is registered.
+
+Environment:: 
+The environment in which the Flex Gateway is registered.
+
+Registration::
+The name of the registered Flex Gateway.
+
+# of API Calls::
+The sum of API calls made by APIs that are deployed within the Flex Gateway.
+
+== API Experience Hub
+
+Usage reports for API Experience Hub display information about access requests for APIs. 
+
+Salesforce Organization ID::
+The orgID for the Salesforce organization in which the API is deployed.
+
+Salesforce Portal Name::
+The name of the Salesforce portal to which the API is deployed. 
+
+# of Approved Request Access::
+The sum of approved access requests for the API.
