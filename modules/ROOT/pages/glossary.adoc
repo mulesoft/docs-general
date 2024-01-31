@@ -19,7 +19,7 @@ A scripting and command-line tool for Anypoint Platform and Anypoint Platform Pr
 Anypoint Design Center (Design Center)::
 A cloud-based development environment for Mule runtime engine (Mule) applications and API definitions.
 
-Anypoint Design Center’s API Designer (API Designer)::
+Anypoint Design Center API Designer (API Designer)::
 Web-based graphical environment for designing, documenting, and testing APIs.
 
 Anypoint Exchange (Exchange)::
@@ -179,17 +179,9 @@ include::partial$api-gov-concepts.adoc[tag=governed-apis,leveloffset=+2]
 
 include::partial$api-gov-concepts.adoc[tag=governance-profiles,leveloffset=+2]
 
-// Definition of Governance Profile Status
-
-include::partial$api-gov-concepts.adoc[tag=governance-profile-status,leveloffset=+2]
-
 // Definition of Governance Rulesets
 
-include::partial$api-gov-concepts.adoc[tag=governance-rulesets,leveloffset=+2]
-
-// Definition of Governance Status
-
-include::partial$api-gov-concepts.adoc[tag=governance-status,leveloffset=+2]
+include::partial$api-gov-concepts.adoc[tag=governance-rulesets-definition,leveloffset=+2]
 
 == H
 
@@ -223,12 +215,6 @@ The enterprise version of Mule, available for 30-day trial download. The Enterpr
 
 Mule® runtime engine (Mule® or Mule)::
 Java-based integration runtime engine for Anypoint Platform.
-
-== N
-
-// Definition of Nonconformance Severity
-
-include::partial$api-gov-concepts.adoc[tag=nonconformance-severity,leveloffset=+2]
 
 == O
 

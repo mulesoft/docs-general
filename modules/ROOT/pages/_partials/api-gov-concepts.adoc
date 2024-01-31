@@ -27,9 +27,13 @@ Less than 70% of APIs are conformant.
 
 // tag::governance-rulesets[]
 
+//tag::governance-rulesets-definition[]
 [[gov-rulesets]]
 governance rulesets::
-Governance rulesets are collections of rules, or guidelines, that can be applied over the metadata extracted from APIs in Anypoint Platform. Examples of things you can use governance rulesets to help enforce are:
+Governance rulesets are collections of rules, or guidelines, that can be applied over the metadata extracted from APIs in Anypoint Platform. 
++
+//end::governance-rulesets-definition[]
+Examples of things you can use governance rulesets to help enforce are:
 +
 --
 * Internal and external best
