@@ -81,17 +81,9 @@ include::partial$api-gov-concepts.adoc[tag=api-catalog-info,leveloffset=+3]
 
 include::partial$api-gov-concepts.adoc[tag=api-conformance,leveloffset=+2]
 
-// Definition of API Conformance Status
-
-include::partial$api-gov-concepts.adoc[tag=api-conformance-status,leveloffset=+2]
-
 // Definition of API Documentation
 
 include::partial$api-gov-concepts.adoc[tag=api-documentation,leveloffset=+3]
-
-// Definition of API Governance Usage Reports
-
-include::partial$api-gov-concepts.adoc[tag=api-governance-usage-reports,leveloffset=+2]
 
 // Definition of API Implementation
 
