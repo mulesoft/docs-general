@@ -2,7 +2,7 @@
 
 Usage reports contain different information per product to identify data sources and explain resource use of each. While Anypoint Platform collects a xref:usage-metrics.adoc#metrics-collected-in-anypoint-platform[variety of usage metrics], usage reports show breakdowns of metered data types in tiled or tabular formats to disambiguate assets with high traffic so that you can tailor your configurations accordingly.
 
-This content applies only to new usage reports.
+This content applies only to new usage reports. 
 
 == Mule Runtime 
 
