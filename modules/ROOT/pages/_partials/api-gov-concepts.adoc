@@ -184,6 +184,6 @@ Helps consumers understand and use the API, with content such as examples, use c
 [[api-catalog-info]]
 API catalog information::
 Properties related to an API's entry in an API catalog, such as name, version, owner (contact), tags and categories. 
-In Anypoint Platform, these properties are added to the API asset's portal in Exchange.
+In Anypoint Exchange, this is referred to as asset portal information.
 
 // end::api-catalog-info[]
