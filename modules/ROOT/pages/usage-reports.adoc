@@ -1,7 +1,7 @@
 = Usage Reports
 :page-aliases: gateway::flex-view-usage-reports.adoc
 
-Usage reports provide comprehensive monthly and daily usage reports that provide valuable insights into your resource consumption across Anypoint Platform products. Usage reports enable you to track and understand your usage patterns, which helps you optimize your resource allocation. By correlating your usage patterns with billing cycles, you can gain insights into the factors influencing your costs, which enables you to proactively manage your budget and make informed decisions to optimize your resource allocation.
+Usage reports provide comprehensive monthly and daily summaries that provide valuable insights into your resource consumption across Anypoint Platform products. Usage reports enable you to track and understand your usage patterns, which helps you optimize your resource allocation. By correlating your usage with billing cycles, you can gain insights into the factors influencing your costs, which enables you to proactively manage your budget and make informed decisions to optimize your resource allocation.
 
 When you use an Anypoint Platform product, MuleSoft meters your usage and aggregates the records on a daily and monthly basis. Currently, some products have only monthly usage reports available. Monthly usage reports are updated on the third day of each month and are split by product. All reports are calculated using the UTC time standard. Daily usage reports are available two days after the current date. A daily report contains data that is aggregated from (time) to (time).  
 
