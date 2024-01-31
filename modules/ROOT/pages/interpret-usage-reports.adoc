@@ -1,12 +1,16 @@
 = Interpreting New Usage Reports by Product
 
+Usage reports contain different information per product to identify data sources and explain resource use of each. While Anypoint Platform collects a xref:usage-metrics.adoc#metrics-collected-in-anypoint-platform[variety of usage metrics], usage reports show breakdowns of metered data types in tiled or tabular formats to disambiguate assets with high traffic so that you can tailor your configurations accordingly.
+
 This content applies only to new usage reports.
 
 == Mule Runtime 
 
 Usage reports for Mule Runtime display information about Mule apps deployed to xref:usage-reports.adoc#supported-runtime-versions[supported versions] of CloudHub, CloudHub 2.0, and Runtime Fabric. 
 
-=== Mule Runtime Cards
+=== Mule Runtime Tiles
+
+When you view a usage report for Mule Runtime, the following tiles appear, displaying usage data:
 
 Total Data Throughput::
 The sum of data in gigabytes (GB) transmitted across all Mule apps and business groups during the selected time period. For more information about how this metric is billed, see xref:usage-metrics.adoc#data-throughput[data throughput].  
@@ -18,6 +22,8 @@ Max Flows::
 The maximum number of concurrent flows across all Mule apps and business groups during the selected time period. For more information about how this metric is billed, see xref:usage-metrics.adoc#mule-flows[Mule flows].  
 
 === Mule Runtime Table
+
+When you view a usage report for Mule Runtime, a table appears, displaying the following columns and corresponding data:
 
 Business Group:: 
 The business group in which a Mule app is deployed.
@@ -47,6 +53,8 @@ The sum of all workers (CloudHub) or replicas (CloudHub 2.0) of a Mule app. Apps
 
 Usage reports for Flex Gateway display information about API calls per gateway.
 
+When you view a usage report for Flex Gateway, a table appears, displaying the following columns and corresponding data:
+
 Business Group:: 
 The business group in which the Flex Gateway is registered.
 
@@ -62,6 +70,8 @@ The sum of API calls made by APIs that are deployed within the Flex Gateway.
 == API Experience Hub
 
 Usage reports for API Experience Hub display information about access requests for APIs. 
+
+When you view a usage report for API Experience Hub, a table appears, displaying the following columns and corresponding data:
 
 Salesforce Organization ID::
 The orgID for the Salesforce organization in which the API is deployed.
