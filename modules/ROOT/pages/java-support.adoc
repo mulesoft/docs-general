@@ -87,6 +87,8 @@ image:java-upgrade-connectors.png[Java upgrade steps for connectors]
 [[rest-connect-generated-connectors]]
 == REST Connect Generated Connectors
 
+REST Connect Connector Generator <version> is compatible with Java 17 and also adds support for TLS. To save time, enable TLS at the same time you update your generated connector for Java 17 so that you need to generate the connector and test your apps only once.
+
 For connectors that are generated from an API specification using the REST Connect connector generator tool, all you have to do to make the connector Java 17-compatible is republish the API specification to Exchange. 
 
 See xref:exhange/to-deploy-using-rest-connect.adoc#upgrade-rest-connector[REST Connect Connector Generator].
@@ -118,7 +120,7 @@ For details about how to upgrade your API proxies, see xref:upgrade-policies-pro
 
 [[mule-maven-plugin]]
 == Mule Maven Plugin 
-(REVIEWERS: For this section, is there a dependency on Studio, so this should wait until the Studio release?)
+(QUESTION FOR REVIEWERS: For this section, is there a dependency on Studio, so this should wait until the Studio release?)
 
 If you are using Mule Maven Plugin (MMP) to deploy your apps, configure the deployment to use Java 17.  
 
@@ -129,7 +131,7 @@ When deploying to Runtime Fabric (RTF) and CloudHub 2.0, MMP accepts the entire 
 See the following documentation for more information:
 
 * xref:cloudhub-2/ch2-deploy-maven.adoc[Deploying apps to CloudHub 2.0 using the Maven Plugin]
-* xref:runtime-fabric/latest/deploy-maven-4.x.adoc[Deploying Applications to Runtime Fabric Using Maven]
+* xref:runtime-fabric/deploy-maven-4.x.adoc[Deploying Applications to Runtime Fabric Using Maven]
 
 [[dataweave]]
 == DataWeave
