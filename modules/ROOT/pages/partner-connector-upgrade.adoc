@@ -36,7 +36,7 @@ Upgrade your custom connector’s third-party libraries to be compatible with Ja
 * Java EE libraries
 +
 Mule 4.6 exposes Java EE libraries differently. You must add the following BOM dependency to your custom connector and, if applicable, ensure the provided conflicting library is properly excluded. You can also add the libraries in the BOM dependency separately.
-
++
 [source,java,linenums]
 ----
 <muleJavaEeBomVersion>4.6.0-20231025</muleJavaEeBomVersion>
@@ -107,11 +107,8 @@ REST SDK 0.8.0-RC4 generates Java 17-compatible connectors and maintains backwar
 
 When upgrading REST SDK connectors to Java 17:
 
-* For REST SDK version 0.8.0-RC3 and earlier connectors with Java customizations:
+* For REST SDK version 0.8.0-RC3 and earlier connectors with Java customizations, regenerate the connector with REST SDK 0.8.0-RC4 and port over any Java customizations. 
 +
-. Regenerate the connector with REST SDK 0.8.0-RC4. 
-. Port over any Java customizations. 
-
 The resulting connector will likely break compatibility with the previous version of the connector.
 
 * For REST SDK  0.8.0-RC3 and earlier connectors without Java customizations, regenerate the connector with REST SDK 0.8.0-RC4. 
@@ -306,6 +303,35 @@ Run your MTF tests to test compatibility of your custom connector against Java 1
 
 As mentioned previously, you can have a single build pipeline that runs against all supported Java versions. You can also choose to set up another temporary build pipeline for Java 17 so your main build pipeline doesn't become unstable. After you upgrade to Java 17, you can discard the temporary build pipeline and converge on your main build pipeline.
 
+. Set the path to your JVM installation in the MUNIT_JVM variable (you must install it yourself). You must also set JAVA_HOME to Java 8. 
+. Ensure the following MTF dependencies are set in your custom connector’s `pom.xml` file:
++
+* munit 3.1.0
+* munit-extensions-maven-plugin 1.2.0
+* mtf-tools 1.2.0
+* mule-maven-plugin 4.1.0
+* mule-extensions-maven-plugin 1.6.0-rc1
++
+. These MTF dependencies have a minimum Mule version of 4.3.0. To ensure your MTF tests do not validate against Mule runtime versions earlier than 4.3.0, add this to the munit-plugin configuration of your custom connector’s `pom.xml` file: 
++
+[source,xml,linenums]
+----
+<configuration>
+	[...]
+<runtimeConfiguration>
+    <discoverRuntimes>
+        <minMuleVersion>${minVersion}</minMuleVersion>
+        <includeSnapshots>false</includeSnapshots>
+        <product>EE</product>
+    </discoverRuntimes>
+</runtimeConfiguration>
+</configuration>
+----
+
+You can run MTF tests against Java 17 only with Mule runtime 4.6.0 and later. For Mule runtime 4.5.x and earlier, you can run MTF tests only against Java 8 and Java 11. 
+
+MUnit 3.1 is compatible only with Mule runtime 4.3.0 and later. If your connector is compatible with Mule runtime 4.2.0 and earlier, you must create a legacy profile that overrides the MUnit version.
+
 Use the following bash script to test your custom connector against Java 17: 
 
 [source,bash]
@@ -323,36 +349,6 @@ mvn verify \
    -Dmule.jvm.version.extension.enforcement=LOOSE > ./target/test.log
 ----
 
-Set the path to your JVM installation in the MUNIT_JVM variable, but you must install it yourself. You must also set JAVA_HOME to Java 8. 
-
-You must also ensure the following MTF dependencies are set in your custom connector’s `pom.xml` file:
-
-* munit 3.1.0
-* munit-extensions-maven-plugin 1.2.0
-* mtf-tools 1.2.0
-* mule-maven-plugin 4.1.0
-* mule-extensions-maven-plugin 1.6.0-rc1
-
-These MTF dependencies have a minimum Mule version of 4.3.0. To ensure your MTF tests do not validate against Mule runtime versions earlier than 4.3.0, you must add this to the munit-plugin configuration of your custom connector’s `pom.xml` file: 
-
-[source,xml,linenums]
-----
-<configuration>
-	[...]
-<runtimeConfiguration>
-    <discoverRuntimes>
-        <minMuleVersion>${minVersion}</minMuleVersion>
-        <includeSnapshots>false</includeSnapshots>
-        <product>EE</product>
-    </discoverRuntimes>
-</runtimeConfiguration>
-</configuration>
-----
-
-You can only run MTF tests against Java 17 with Mule runtime 4.6.0 and later. For Mule runtime versions earlier than 4.6.0, you can only run MTF tests against Java 8 and Java 11. 
-
-MUnit 3.1 is only compatible with Mule runtime 4.3.0 and later. If your connector is compatible with Mule runtime 4.2.0 and earlier, you must create a legacy profile that overrides the MUnit version.
-
 === Read Your Tests 
 
 After you run your MTF tests, your build has either of the following outcomes:
@@ -367,10 +363,10 @@ Either your custom connector does not require any major changes or your test sui
 
 === Communicate the Support Level of Your Custom Connector
 
-After you update your code and your tests are green, you are ready to release a new Java 17 compatible version of your custom connector. 
+After you update your code and your tests are green, you are ready to release a new Java 17-compatible version of your custom connector. 
 
 . To communicate Java 17 compatibility, you must generate metadata for Java compatibility of your custom connector by adding or upgrading the custom connector’s mule-sdk-api dependency to the latest version: 
-
++
 [source,xml,linenums]
 ----
 <dependency>
@@ -381,7 +377,7 @@ After you update your code and your tests are green, you are ready to release a 
 ----
 
 . Add the `@JavaVersionSupport` annotation in the same class that has the `@Extension` annotation and include the JAVA_17 value, for example: 
-
++
 [source,java,linenums]
 ----
 @Extension(name = "Database")
