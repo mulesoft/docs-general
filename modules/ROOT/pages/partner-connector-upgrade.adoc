@@ -38,7 +38,7 @@ Upgrade your Mule SDK (Java SDK and XML SDK) connectors to Java 17:
 
 Upgrade your custom connector’s third-party libraries to be compatible with Java 17.
 
-===== Upgrade Java EE Libraries
+=== Upgrade Java EE Libraries
 
 Mule 4.6 exposes Java EE libraries differently. You must add the following BOM dependency to your custom connector and, if applicable, ensure the provided conflicting library is properly excluded. You can also add the libraries in the BOM dependency separately.
 
