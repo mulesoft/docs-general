@@ -1,6 +1,6 @@
 = Partner Guide for Upgrading and Testing Custom Connectors for Java 17
 
-NOTE: This guide applies only to MuleSoft partners.
+NOTE: This guide applies to MuleSoft partners only. If you are a MuleSoft customer, see xref:customer-connector-upgrade.adoc[].
 
 Upgrade and test your custom connectors for Java 17 to ensure compatibility within the MuleSoft ecosystem. 
 
