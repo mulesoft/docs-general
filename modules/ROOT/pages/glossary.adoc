@@ -67,35 +67,35 @@ Dynamically generated views of different aspects of an application network graph
 
 // Definition of API
 
-include::partial$api-gov-concepts.adoc[tag=api-entire,leveloffset=+2]
+include::partial$api-gov-concepts.adoc[tag=api-entire]
 
 // Definition of API Aspects
 
-include::partial$api-gov-concepts.adoc[tag=api-aspects,leveloffset=+2]
+include::partial$api-gov-concepts.adoc[tag=api-aspects]
 
 // Definition of API Catalog Information
 
-include::partial$api-gov-concepts.adoc[tag=api-catalog-info,leveloffset=+3]
+include::partial$api-gov-concepts.adoc[tag=api-catalog-info]
 
 // Definition of API Conformance
 
-include::partial$api-gov-concepts.adoc[tag=api-conformance,leveloffset=+2]
+include::partial$api-gov-concepts.adoc[tag=api-conformance]
 
 // Definition of API Documentation
 
-include::partial$api-gov-concepts.adoc[tag=api-documentation,leveloffset=+3]
+include::partial$api-gov-concepts.adoc[tag=api-documentation]
 
 // Definition of API Implementation
 
-include::partial$api-gov-concepts.adoc[tag=api-implementation,leveloffset=+3]
+include::partial$api-gov-concepts.adoc[tag=api-implementation]
 
 // Definition of API Instances
 
-include::partial$api-gov-concepts.adoc[tag=api-instances,leveloffset=+3]
+include::partial$api-gov-concepts.adoc[tag=api-instances]
 
 // Definition of API Specifications
 
-include::partial$api-gov-concepts.adoc[tag=api-specifications,leveloffset=+3]
+include::partial$api-gov-concepts.adoc[tag=api-specifications]
 
 API Governance::
 Part of Anypoint Platform that enables you to apply governance rules to your APIs and monitor conformance to those rules.
@@ -165,15 +165,15 @@ Within a Mule application, a flow is a block of executable components, including
 
 // Definition of Governed APIs
 
-include::partial$api-gov-concepts.adoc[tag=governed-apis,leveloffset=+2]
+include::partial$api-gov-concepts.adoc[tag=governed-apis]
 
 // Definition of Governance Profiles
 
-include::partial$api-gov-concepts.adoc[tag=governance-profiles,leveloffset=+2]
+include::partial$api-gov-concepts.adoc[tag=governance-profiles]
 
 // Definition of Governance Rulesets
 
-include::partial$api-gov-concepts.adoc[tag=governance-rulesets-definition,leveloffset=+2]
+include::partial$api-gov-concepts.adoc[tag=governance-rulesets-definition]
 
 == H
 
@@ -223,7 +223,7 @@ An object that controls authentication, access, consumption rates, and service l
 
 // Definition of Project Errors
 
-include::partial$api-gov-concepts.adoc[tag=project-errors,leveloffset=+2]
+include::partial$api-gov-concepts.adoc[tag=project-errors]
 
 == R
 
