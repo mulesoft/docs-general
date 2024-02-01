@@ -34,7 +34,7 @@ To decouple the minimum Mule version when running tests, add the `-Dmunit.jvm` p
 
 Upgrade your Mule SDK (Java SDK and XML SDK) connectors to Java 17:
 
-==== Upgrade Third-Party Libraries
+=== Upgrade Third-Party Libraries
 
 Upgrade your custom connector’s third-party libraries to be compatible with Java 17.
 
