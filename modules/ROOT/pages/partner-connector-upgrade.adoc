@@ -378,7 +378,7 @@ Either your custom connector does not require any major changes or your test sui
 
 After you update your code and your tests are green, you are ready to release a new Java 17 compatible version of your custom connector. 
 
-To communicate Java 17 compatibility, you must generate metadata regarding Java compatibility of your custom connector. Add or upgrade the custom connector’s mule-sdk-api dependency to the latest version: 
+. To communicate Java 17 compatibility, you must generate metadata for Java compatibility of your custom connector by adding or upgrading the custom connector’s mule-sdk-api dependency to the latest version: 
 
 [source,xml,linenums]
 ----
