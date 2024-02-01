@@ -24,22 +24,17 @@ If your custom connector is running on Mule 4.5.x or earlier, you can’t run Ja
 +
 To decouple the minimum Mule version when running tests, add the `-Dmunit.jvm` parameter to use Java 17 as described in <<test-for-java-17-compatibility-directly>>.
 
-
-
-* <<upgrade-your-rest-sdk-connectors>>
-* <<upgrade-your-rest-connect-connectors>> 
-
 [[upgrade-your-mule-sdk-connectors]]
-=== Upgrade Your Mule SDK Connectors
+== Upgrade Your Mule SDK Connectors
 
-Upgrade your Mule SDK (Java SDK and XML SDK) connectors to Java 17:
+Upgrade your Mule SDK (Java SDK and XML SDK) connectors to Java 17.
 
 === Upgrade Third-Party Libraries
 
 Upgrade your custom connector’s third-party libraries to be compatible with Java 17.
 
-=== Upgrade Java EE Libraries
-
+* Java EE libraries
++
 Mule 4.6 exposes Java EE libraries differently. You must add the following BOM dependency to your custom connector and, if applicable, ensure the provided conflicting library is properly excluded. You can also add the libraries in the BOM dependency separately.
 
 [source,java,linenums]
@@ -58,10 +53,10 @@ Mule 4.6 exposes Java EE libraries differently. You must add the following BOM d
   </dependencyManagement>
 ----
 
-===== Upgrade External Libraries
-
+* External libraries
++
 Upgrade external libraries, which are third-party libraries that are not bundled with your custom connector. Some examples include a JDBC driver, JMS broker client, or Groovy runtime. The following example shows a JDBC driver external library configuration: 
-
++
 [source,java,linenums]
 ----
 @ExternalLib(name = "MySQL JDBC Driver",
@@ -73,28 +68,28 @@ public class MySqlConnectionProvider implements ConnectionProvider<Connection> {
   //
 }
 ----
-
++
 You must update your external libraries to a version that is compatible with Java 17. 
 
-==== Review Your Code
+=== Review Your Code
 
 Even though you compile your custom connector with Java 8, ensure you can run your custom connector with Java 17. Reviewing your code is important because there are some restrictions that are flagged as warnings in Java 11 but are flagged as failures and can’t be disabled in Java 17. For example, reflection is more restricted in Java 17, so you must review your code to ensure there are no illegal actions. 
 
-Learn about the different changes in Java 17 to review your code effectively.
+Learn about the different changes in Java 17 to review your code effectively:
 
-===== JDK Migration Guide
+* JDK Migration Guide
++
+See the https://docs.oracle.com/en/java/javase/17/migrate/getting-started.html#GUID-C25E2B1D-6C24-4403-8540-CFEA875B994A[Oracle JDK Migration Guide]. It contains for a full list of the changes made in Java 17. Use the guide to assess the impact to your code.
 
-See the https://docs.oracle.com/en/java/javase/17/migrate/getting-started.html#GUID-C25E2B1D-6C24-4403-8540-CFEA875B994A[Oracle JDK Migration Guide]. It contains a full list of the changes made in Java 17. Use the guide to assess impact to your code.
-
-===== Mule Runtime Changes
-
-See <<LINK TO MULE RUNTIME>>. It contains a full list of the Java 17 changes made in Mule Runtime. 
-
-* <<Reflection on Java classes>> 
-* <<Serialization>>
-* <<Library upgrades>>
-* <<Changes with running the test suite>>? 
-* <<JPMS>>
+* Mule Runtime Changes
++
+See Mule Runtime. It contains a full list of the Java 17 changes made in Mule Runtime. 
++
+** Reflection on Java classes
+** Serialization
+** Library upgrades
+** Changes with running the test suite
+** JPMS
 // link to these docs which will be in the Mule Runtime docs
 
 === Add Missing Code
@@ -104,7 +99,7 @@ Because reflection is more restricted in Java 17, API objects now require setter
 Constructors and setters are required if your class is instantiated, and getters are required if your class is read. If your class is returned and not instantiated, only getters are required. However, using both getters and setters simplify the validation and certification process. 
 
 [[upgrade-your-rest-sdk-connectors]]
-=== Upgrade Your REST SDK Connectors
+== Upgrade Your REST SDK Connectors
 
 Use REST SDK version 0.8.0-RC4 to upgrade your REST SDK connectors to Java 17. 
 
@@ -125,11 +120,11 @@ The resulting connector will be backward compatible with the previous version.
 
 For more information about REST SDK, see https://beta.docs.mulesoft.com/beta-mule-sdk/mule-sdk/1.1/rest-sdk/rest-sdk-connectivity[REST SDK]. 
 
-==== Upgrade an Existing REST SDK Connector
+=== Upgrade an Existing REST SDK Connector
 
 If you previously generated a connector using REST SDK and you want to make that connector compatible with Java 17:
 
-. Upgrade the REST SDK components and dependencies to 0.8.0-RC4.
+. Upgrade the REST SDK components and dependencies to version 0.8.0-RC4.
 +
 [source,xml,linenums]
 ----
@@ -142,7 +137,7 @@ If you previously generated a connector using REST SDK and you want to make that
 <rest.sdk.commons.version>0.8.0-RC4</rest.sdk.commons.version>
 <rest.sdk.mojo.version>0.8.0-RC4</rest.sdk.mojo.version>
 ----
-. If you manually create the configuration class (ConnectorNameConfiguration.java) using the REST SDK overriding feature, you must add an extra annotation. 
+. If you manually create the configuration class (ConnectorNameConfiguration.java) using the REST SDK override feature, you must add an extra annotation. 
 +
 [source,java,linenums]
 ----
@@ -155,11 +150,11 @@ public class YourConnectorConfiguration
 ----
 . Regenerate the connector.
 
-==== Upgrade a New REST SDK Connector
+=== Upgrade a New REST SDK Connector
 
 If you generate a new connector using REST SDK and want to make that connector compatible with Java 17:
 
-. Upgrade the REST SDK components and dependencies to 0.8.0-RC4.
+. Upgrade the REST SDK components and dependencies to version 0.8.0-RC4.
 +
 [source,xml,linenums]
 ----
@@ -175,7 +170,7 @@ If you generate a new connector using REST SDK and want to make that connector c
 . Upgrade the Mule runtime version to 4.6.0.
 
 [[upgrade-your-rest-connect-connectors]]
-=== Upgrade Your REST Connect Connectors 
+== Upgrade Your REST Connect Connectors 
 
 Upgrade your REST Connect connectors to Java 17.
 
@@ -195,13 +190,9 @@ image:single-build-pipeline.png[Example of single build pipeline]
 
 The pipeline runs all tests even if the previous tests fail. For example, the pipeline runs Java 17 tests even if the Java 11 tests fail. 
 
-Although there are multiple tests, the pipeline has one compilation phase and one release phase which target Java 8.
+Although there are multiple tests, the pipeline has one compilation phase and one release phase, which targets Java 8.
 
-=== Run Your Tests
-
-Run MTF tests to ensure your custom connector is compatible with Java 17.
-
-==== Run an Initial Test
+=== Run an Initial Test
 
 Run an initial test to test your custom connector for Java 17 compatibility. You can continue to run tests as you change your custom connector’s code.
 
@@ -215,7 +206,7 @@ Run an initial test to test your custom connector for Java 17 compatibility. You
 ----
 . Run your MTF test to generate the coverage report.
 
-==== View your Coverage Report
+=== View your Coverage Report
 
 View your coverage report to see your custom connector’s coverage. You must have at least 80% coverage for a high certainty of Java 17 compatibility. 
 
@@ -224,7 +215,7 @@ View your coverage report to see your custom connector’s coverage. You must ha
 . In *Choose Coverage Suite to Display*, add jacoco-munit.exec to the list if it is not there already.
 . Analyze your results by looking at the percentages.
 
-==== Add the JDeps Maven Plugin
+=== Add the JDeps Maven Plugin
 
 JDeps is a tool for static code analysis that detects the usage of JDK internal APIs that are no longer available or accessible. For more information, refer to the https://wiki.openjdk.org/display/JDK8/Java+Dependency+Analysis+Tool[OpenJDK wiki]. 
 
@@ -250,7 +241,7 @@ Add the JDeps Maven plugin to your custom connector’s pom.xml file:
 </plugin>
 ----
 
-==== Test for Java 17 Compatibility 
+=== Test for Java 17 Compatibility 
 
 You can test for Java 17 compatibility either running on Java 11 or running on Java 17. 
 
@@ -259,7 +250,7 @@ If you are running on Java 11, you can still perform early validations by adding
 If you are running on Java 17, you can test for Java 17 directly. See <<test-for-java-17-compatibility-directly>>.
 
 [[add-a-parameter-for-illegal-reflective-access]]
-===== Add a Parameter for Illegal Reflective Access
+==== Add a Parameter for Illegal Reflective Access
 
 Reflective access is one of the breaking changes of Java 17. If you run your MTF tests with the default Java 11 behavior, the MTF tests log only a warning for reflective access. 
 
@@ -309,7 +300,7 @@ cat target/illegal-access.log | sort | uniq | grep -Ev "org.mule.module.artifact
 ----
 
 [[test-for-java-17-compatibility-directly]]
-===== Test for Java 17 Compatibility Directly
+==== Test for Java 17 Compatibility Directly
 
 Run your MTF tests to test compatibility of your custom connector against Java 17. 
 
@@ -372,7 +363,7 @@ You will likely have to make changes to your custom connector code to ensure Jav
 
 * All tests pass
 +
-Either your custom connector does not require any major changes or your test suite is not comprehensive enough. You might want to review your test suite and double-check that your code coverage is good and that your test scenarios and assertions are not excessively naive.
+Either your custom connector does not require any major changes or your test suite is not comprehensive enough. You might want to review your test suite and double-check that your code coverage is good and that your test scenarios and assertions are not too simple.
 
 === Communicate the Support Level of Your Custom Connector
 
