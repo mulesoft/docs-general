@@ -104,7 +104,7 @@ Before following these steps, ensure your policies are updated. For more informa
 Before following these steps, ensure your policies are updated. For more information, see <<upgrading-automated-policies>> and <<upgrading-api-level-policies>>. 
 
 . Deploy Mule runtime engine 4.6 in a new server running on Java 17 and start the server. For more information, see xref:runtime-manager::servers-create.adoc[].
-. Select the new target you created running on Java 17 and in API Manager, go to *API Administration > Settings*.
+. Select the new target you created running on Java 17 and, in API Manager, go to *API Administration > Settings*.
 . xref:api-manager::edit-api-endpoint-task.adoc[Edit the API instance's configuration settings]:  
  .. In *Select target*, select the server running on Java 17 as the target.
 . Click *Save & Apply*.
