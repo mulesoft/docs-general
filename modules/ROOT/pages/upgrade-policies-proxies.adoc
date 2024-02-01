@@ -124,5 +124,9 @@ Before following these steps, ensure your policies are updated. For more informa
 . Click *Save & Apply*.
 . After the server successfully runs on Java 17, shift your traffic gradually to the new server using a load balancer and turn off the old server after all of its apps are migrated.
 
+== See Also
+
+* xref:java-support.adoc[]
+
 
 
