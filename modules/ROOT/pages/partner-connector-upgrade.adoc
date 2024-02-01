@@ -26,7 +26,6 @@ To decouple the minimum Mule version when running tests, add the `-Dmunit.jvm` p
 
 
 
-* <<upgrade-your-mule-sdk-connectors>> (Java SDK and XML SDK)
 * <<upgrade-your-rest-sdk-connectors>>
 * <<upgrade-your-rest-connect-connectors>> 
 
