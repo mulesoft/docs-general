@@ -108,7 +108,7 @@ Before following these steps, ensure your policies are updated. For more informa
 . xref:api-manager::edit-api-endpoint-task.adoc[Edit the API instance's configuration settings]:  
  .. In *Select target*, select the server running on Java 17 as the target.
 . Click *Save & Apply*.
-. After the server successfully runs on Java 17, shift your traffic gradually to the new server using load balancer and turn off the old server after all of its apps are migrated.
+. After the server successfully runs on Java 17, shift your traffic gradually to the new server using a load balancer and turn off the old server after all of its apps are migrated.
 
 [[runtime-fabric-deployments]]
 === Runtime Fabric Deployments 
