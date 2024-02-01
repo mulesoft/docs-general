@@ -111,7 +111,7 @@ Constructors and setters are required if your class is instantiated, and getters
 
 Use REST SDK version 0.8.0-RC4 to upgrade your REST SDK connectors to Java 17. 
 
-0.8.0-RC4 generates Java 17 compatible connectors and maintains backward compatibility only with 0.8.0-RC3 connectors built without Java customizations. 0.8.0-RC4 is not backward compatible with REST SDK versions earlier than 0.8.0-RC3. 
+REST SDK 0.8.0-RC4 generates Java 17-compatible connectors and maintains backward compatibility only with REST SDK 0.8.0-RC3 connectors built without Java customizations. Version 0.8.0-RC4 is not backward compatible with REST SDK versions earlier than 0.8.0-RC3. 
 
 When upgrading REST SDK connectors to Java 17:
 
