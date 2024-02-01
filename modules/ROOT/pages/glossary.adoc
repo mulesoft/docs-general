@@ -171,10 +171,6 @@ include::partial$api-gov-concepts.adoc[tag=governed-apis]
 
 include::partial$api-gov-concepts.adoc[tag=governance-profiles]
 
-// Definition of Governance Rulesets
-
-include::partial$api-gov-concepts.adoc[tag=governance-rulesets-definition]
-
 == H
 
 hybrid deployment::
