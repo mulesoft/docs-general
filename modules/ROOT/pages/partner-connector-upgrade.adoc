@@ -16,7 +16,7 @@ Because you must compile your custom connector with Java 8, use the Java compile
 
 * *-add-opens or -add-export directives*
 +
-Do not set -add-opens or -add-export directives.
+Do not set `-add-opens` or `-add-export` directives.
 
 * *Understanding minimum Mule version caveats*
 +
