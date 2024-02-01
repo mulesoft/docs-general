@@ -124,7 +124,7 @@ The resulting connector will likely break compatibility with the previous versio
 
 * For REST SDK  0.8.0-RC3 and earlier connectors without Java customizations, regenerate the connector with REST SDK 0.8.0-RC4. 
 +
-When you regenerate the connector with 0.8.0-RC4, the resulting connector will be backward compatible with the previous version.
+The resulting connector will be backward compatible with the previous version.
 
 For more information about REST SDK, see https://beta.docs.mulesoft.com/beta-mule-sdk/mule-sdk/1.1/rest-sdk/rest-sdk-connectivity[REST SDK]. 
 
