@@ -96,7 +96,7 @@ See xref:exhange/to-deploy-using-rest-connect.adoc#upgrade-rest-connector[REST C
 [[policies]]
 == Policies
 
-The MuleSoft-included Mule Gateway and Flex Gateway policies are compatible with Java 17 beginning with the Mule runtime 4.6 release. These policies continue to be compatible with Java 8 until February 2025, so it's best to start updating your policies as soon as possible. 
+The MuleSoft-included Mule Gateway policies are compatible with Java 17 beginning with the Mule runtime 4.6 release. These policies continue to be compatible with Java 8 until February 2025, so it's best to start updating your policies as soon as possible. 
 
 [IMPORTANT]
 To ensure your API proxies or Mule apps are protected when upgrading, upgrade your policies *before* upgrading your API proxies or Mule apps.
