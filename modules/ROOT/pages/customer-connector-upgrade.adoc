@@ -20,7 +20,7 @@ Do not set -add-opens or -add-export directives.
 +
 If your custom connector has a minimum Mule version that is incompatible with Java 17 (Mule 4.5.x and earlier), you can’t run Java 17 tests that extend the MuleArtifactFunctionalTestCase. You can still run Java 8 tests.
 +
-To decouple the minimum Mule version when running tests, add the -Dmunit.jvm parameter to use Java 17 as described in <<test-for-java-17-compatibility>>.
+To decouple the minimum Mule version when running tests, add the -Dmunit.jvm parameter to use Java 17 as described in <<test-your-custom-connector-with-munit>>.
 
 == Upgrade Your Custom Connector
 
@@ -103,6 +103,7 @@ Because reflection is more restricted in Java 17, API objects now require setter
 
 Constructors and setters are required if your class is instantiated, and getters are required if your class is read. If your class is returned and not instantiated, only getters are required. However, using both getters and setters simplify the validation and certification process. 
 
+[[upgrade-your-rest-connect-connectors]]
 === Upgrade Your REST Connect Connectors 
 
 Upgrade your REST Connect connectors to Java 17.
@@ -111,6 +112,7 @@ REST Connect now supports Java 17. REST Connect connectors are generated from an
 
 IMPORTANT: REST Connect now adds support for TLS. To save time, you can enable TLS at the same time with the Java 17 upgrade. This way, you only need to generate the connector and test your apps once.
 
+[[test-your-custom-connector-with-munit]]
 == Test Your Custom Connector with MUnit
 
 Run your MUnit tests to test compatibility of your connector against Java 17. Ensure your local JDK version is 17. 

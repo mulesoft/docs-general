@@ -106,6 +106,7 @@ Because reflection is more restricted in Java 17, API objects now require setter
 
 Constructors and setters are required if your class is instantiated, and getters are required if your class is read. If your class is returned and not instantiated, only getters are required. However, using both getters and setters simplify the validation and certification process. 
 
+[[upgrade-your-rest-sdk-connectors]]
 === Upgrade Your REST SDK Connectors
 
 Upgrade your REST SDK connectors to Java 17 by using the REST SDK 0.8.0-RC4 version. 
@@ -173,6 +174,7 @@ If you generate a new connector using REST SDK and want to make that connector c
 ---- 
 . Upgrade the Mule runtime version to 4.6.0.
 
+[[upgrade-your-rest-connect-connectors]]
 === Upgrade Your REST Connect Connectors 
 
 Upgrade your REST Connect connectors to Java 17.
