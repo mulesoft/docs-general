@@ -18,10 +18,10 @@ To upgrade automated xref:mule-gateway::policies-included-directory.adoc[MuleSof
   * To apply included policies to all Mule runtimes, select *All runtimes* and click *Apply*.
   * To apply the included policies to Flex Gateways only, select *Flex Gateways only* and click *Apply*.
   * To apply the included policies to Mule Gateways only:
-  ** Select *Mule Gateways only*.
-  ** In *From version* and *To*, enter the Mule version range.
-  ** In *Java versions*, select *All Java versions* or *Choose specific Java versions*. 
-  ** Click *Apply*.
+  .. Select *Mule Gateways only*.
+  .. In *From version* and *To*, enter the Mule version range.
+  .. In *Java versions*, select *All Java versions* or *Choose specific Java versions*. 
+  .. Click *Apply*.
 
 [[upgrading-custom-automated-policies]]
 === Upgrading Custom Automated Policies
