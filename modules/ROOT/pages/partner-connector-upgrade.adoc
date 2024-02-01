@@ -119,7 +119,7 @@ When upgrading REST SDK connectors to Java 17:
 +
 Regenerate the connector with 0.8.0-RC4 and port over any Java customizations. The resulting connector will likely break compatibility with the previous version of the connector.
 
-* For connectors with version 0.8.0-RC3 without Java customizations:
+* For REST SDK  0.8.0-RC3 and earlier connectors without Java customizations, regenerate the connector with REST SDK 0.8.0-RC4. 
 +
 When you regenerate the connector with 0.8.0-RC4, the resulting connector will be backward compatible with the previous version.
 
