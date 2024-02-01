@@ -51,7 +51,7 @@ Upgrade your API-level policies (included and custom) to Java 17.
 
 To upgrade API-level xref:mule-gateway::policies-included-directory.adoc[MuleSoft included policies] to Java 17:
 
-. In API Manager, go to *API Administration > {API Name} > Policies > Add a policy* to xref:gateway::policies-included-apply.adoc[apply policies] at the individual API level. 
+. In API Manager, go to *API Administration* > *{API Name}* > *Policies* > *Add a policy* to xref:gateway::policies-included-apply.adoc[apply policies] at the individual API level. 
 . Upgrade each of your API-level policies:
 .. In *Policy version*, select the latest version of the included policy.
 .. In *Method & resource conditions*, select either *Apply configuration to all API method & resources* or *Apply configuration to specific API method & resources*.
@@ -62,7 +62,7 @@ To upgrade API-level xref:mule-gateway::policies-included-directory.adoc[MuleSof
 
 To upgrade custom API-level policies to Java 17:
 
-. In API Manager, go to *API Administration > {API Name} > Policies > Add a policy* to xref:gateway::policies-included-apply.adoc[apply policies] at the individual API level. 
+. In API Manager, go to *API Administration* > *{API Name}* > *Policies* > *Add a policy* to xref:gateway::policies-included-apply.adoc[apply policies] at the individual API level. 
 . Upgrade the required extensions and connectors to Java 17.
  * If your custom policy has Anypoint Connectors, see xref:java-support.adoc#anypoint-connectors-and-modules[Upgrading Anypoint Connectors and Modules].
  * If your custom policy has custom connectors, see <<Upgrading Custom Connectors INSERT LINK>>.
