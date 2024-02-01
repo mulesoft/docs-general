@@ -1,0 +1,167 @@
+= Customer Guide for Upgrading and Testing Custom Connectors for Java 17
+
+Upgrade and test your custom connectors for Java 17 to ensure compatibility within the MuleSoft ecosystem. 
+
+== Before You Begin
+
+Before upgrading and testing your custom connector for Java 17, you must be familiar with the following:
+
+* *Running and compiling your custom connector*
++
+Ensure your custom connector runs with Java 17, but always use Java 8 as the target compilation level.
++
+Because you must compile your custom connector with Java 8, use the Java compiler configuration from the Java SDK parent POM. You can’t use language features from Java 11 or Java 17. 
+
+* *Avoiding -add-opens or -add-export directives*
++
+Do not set -add-opens or -add-export directives.
+
+* *Understanding minimum Mule version caveats*
++
+If your custom connector has a minimum Mule version that is incompatible with Java 17 (Mule 4.5.x and earlier), you can’t run Java 17 tests that extend the MuleArtifactFunctionalTestCase. You can still run Java 8 tests.
++
+To decouple the minimum Mule version when running tests, add the -Dmunit.jvm parameter to use Java 17 as described in <<test-for-java-17-compatibility>>.
+
+== Upgrade Your Custom Connector
+
+The steps to upgrade differ depending on how your connector is developed. 
+
+* <<upgrade-your-mule-sdk-connectors>> (Java SDK and XML SDK)
+* <<upgrade-your-rest-connect-connectors>> 
+
+[[upgrade-your-mule-sdk-connectors]]
+=== Upgrade Your Mule SDK Connectors
+
+Upgrade your Mule SDK (Java SDK and XML SDK) connectors to Java 17:
+
+==== Upgrade Third-Party Libraries
+
+Upgrade your custom connector’s third-party libraries to be compatible with Java 17.
+
+===== Upgrade Java EE Libraries
+
+Mule 4.6 exposes Java EE libraries differently. You must add the following BOM dependency to your custom connector and, if applicable, ensure the provided conflicting library is properly excluded. You can also add the libraries in the BOM dependency separately.
+
+[source,java,linenums]
+----
+<muleJavaEeBomVersion>4.6.0-20231025</muleJavaEeBomVersion>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.mule</groupId>
+        <artifactId>mule-javaee-runtime-bom</artifactId>
+        <version>${muleJavaEeBomVersion}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+----
+
+===== Upgrade External Libraries
+
+Upgrade external libraries, which are third-party libraries that are not bundled with your custom connector. Some examples include a JDBC driver, JMS broker client, or Groovy runtime. The following example shows a JDBC driver external library configuration: 
+
+[source,java,linenums]
+----
+@ExternalLib(name = "MySQL JDBC Driver",
+description = "A JDBC driver that supports connection to the MySQL Database",
+nameRegexpMatcher = "(.*)\\.jar",
+requiredClassName = "com.mysql.jdbc.Driver",
+coordinates = "mysql:mysql-connector-java:5.1.44")
+public class MySqlConnectionProvider implements ConnectionProvider<Connection> {
+  //
+}
+----
+
+You must update your external libraries to a version that is compatible with Java 17. 
+
+==== Review Your Code
+
+Even though you compile your custom connector with Java 8, ensure you can run your custom connector with Java 17. Reviewing your code is important because there are some restrictions that are flagged as warnings in Java 11 but are flagged as failures and can’t be disabled in Java 17. For example, reflection is more restricted in Java 17, so you must review your code to ensure there are no illegal actions. 
+
+Learn about the different changes in Java 17 to review your code effectively.
+
+===== JDK Migration Guide
+
+See the https://docs.oracle.com/en/java/javase/17/migrate/getting-started.html#GUID-C25E2B1D-6C24-4403-8540-CFEA875B994A[Oracle JDK Migration Guide]. It contains a full list of the changes made in Java 17. Use the guide to assess impact to your code.
+
+===== Mule Runtime Changes
+
+See <<LINK TO MULE RUNTIME>>. It contains a full list of the Java 17 changes made in Mule Runtime. 
+
+* <<Reflection on Java classes>> 
+* <<Serialization>>
+* <<Library upgrades>>
+* <<Changes with running the test suite>>? 
+* <<JPMS>>
+// link to these docs which will be in the Mule Runtime docs
+
+=== Add Missing Code
+
+Because reflection is more restricted in Java 17, API objects now require setters. Previously, API objects and plain old Java objects (POJOs) had default constructors and getters for all properties. Now, API objects and POJOs must also have setters so DataWeave can build outside the connector in the Mule app. 
+
+Constructors and setters are required if your class is instantiated, and getters are required if your class is read. If your class is returned and not instantiated, only getters are required. However, using both getters and setters simplify the validation and certification process. 
+
+=== Upgrade Your REST Connect Connectors 
+
+Upgrade your REST Connect connectors to Java 17.
+
+REST Connect now supports Java 17. REST Connect connectors are generated from an API specification using REST Connect, so all you have to do to make the connector Java 17-compatible is republish the API specification to Exchange. See xref:exchange::to-deploy-using-rest-connect.adoc[REST Connect Connector Generator].
+
+IMPORTANT: REST Connect now adds support for TLS. To save time, you can enable TLS at the same time with the Java 17 upgrade. This way, you only need to generate the connector and test your apps once.
+
+== Test Your Custom Connector with MUnit
+
+Run your MUnit tests to test compatibility of your connector against Java 17. Ensure your local JDK version is 17. 
+
+. Open the pom.xml file of your Mule app.
+. Replace the mule-maven-plugin version with the ${mule.maven.plugin.version} parameter.
+. If you haven’t already, add the munit-maven-plugin. Replace the version with the ${munit.version} parameter and replace the runtimeVersion with the ${app.runtime} parameter.
++
+[source,xml,linenums]
+----
+	<plugin>
+		<groupId>com.mulesoft.munit.tools</groupId>
+		<artifactId>munit-maven-plugin</artifactId>
+		<version>${munit.version}</version>
+		<executions>
+			<execution>
+				<id>test</id>
+				<phase>test</phase>
+				<goals>
+					<goal>test</goal>
+					<goal>coverage-report</goal>
+				</goals>
+			</execution>
+		</executions>
+		<configuration>
+			<coverage>
+				<runCoverage>true</runCoverage>
+				<formats>
+					<format>html</format>
+				</formats>
+			</coverage>
+			<runtimeVersion>${app.runtime}</runtimeVersion>
+			<dynamicPorts>
+				<dynamicPort>http.port</dynamicPort>
+			</dynamicPorts>
+		</configuration>
+	</plugin>
+----
++
+NOTE: MUnit 3.1 is only compatible with Mule runtime 4.3.0 and later. If your connector is compatible with Mule runtime 4.2.0 and earlier, you must create a legacy profile that overrides the MUnit version.
+. If you have MUnit dependencies, such as munit-runner and munit-tools, replace the version for each dependency with the ${munit-version} parameter.
+. Replace the version for each connector dependency with the Java 17 compatible version of the connector.
+. Open a terminal window in the root of your Mule project and run the following command:
++
+[source,bash]
+----
+mvn -f pom.xml -s ~/.m2/settings.xml -Dapp.runtime=4.6.0 -Dmunit.version=3.1.0 -Dmule.maven.plugin.version=4.1.0 -fae test
+----
+
+You can now see if your connector is compatible with Java 17. For more information about running MUnit tests, refer to xref:munit::index.adoc[MUnit]. 
+
+== See Also
+
+* xref:java-support.adoc[]
