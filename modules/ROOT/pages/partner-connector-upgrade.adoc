@@ -389,7 +389,7 @@ After you update your code and your tests are green, you are ready to release a 
 </dependency>
 ----
 
-Next, use the new @JavaVersionSupport annotation to specify the added support of Java 17. In Mule 4.5 and later, custom connectors that do not specify the @JavaVersionSupport annotation are assumed to be compatible with Java 8 and Java 11. Add the @JavaVersionSupport annotation in the same class that has the @Extension annotation and include the JAVA_17 value, for example: 
+. Add the `@JavaVersionSupport` annotation in the same class that has the `@Extension` annotation and include the JAVA_17 value, for example: 
 
 [source,java,linenums]
 ----
