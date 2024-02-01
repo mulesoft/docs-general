@@ -8,7 +8,7 @@ Upgrade and test your custom connectors for Java 17 to ensure compatibility with
 
 Before upgrading and testing your custom connector for Java 17, you must be familiar with the following:
 
-* *Running and compiling your custom connector*
+* *How to run and compile your custom connector*
 +
 Ensure your custom connector runs with Java 17, but always use Java 8 as the target compilation level.
 +
