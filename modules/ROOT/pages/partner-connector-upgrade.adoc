@@ -14,7 +14,7 @@ Ensure your custom connector runs with Java 17, but always use Java 8 as the tar
 +
 Because you must compile your custom connector with Java 8, use the Java compiler configuration from the Java SDK parent POM. You can’t use language features from Java 11 or Java 17. 
 
-* *Avoiding -add-opens or -add-export directives*
+* *-add-opens or -add-export directives*
 +
 Do not set -add-opens or -add-export directives.
 
