@@ -401,7 +401,7 @@ public class DatabaseConnector {
 }
 ----
 
-It is possible to mark your custom connector as only compatible with Java 17, however you must ensure there are no adoption or backward compatibility issues. 
+You can mark your custom connector as compatible with Java 17 only, however, you must ensure there are no adoption or backward compatibility issues. 
 
 When you deploy a Mule app, Mule verifies that all modules in the Mule app are compatible with the Java version. If Mule finds an incompatibility, Mule throws an error and the application does not deploy. 
 
