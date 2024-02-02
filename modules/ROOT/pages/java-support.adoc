@@ -4,14 +4,14 @@ MuleSoft is adopting Java's long-term-support (LTS) release cadence, beginning w
 
 Many third-party vendors are discontinuing support for Java 8, which impacts the MuleSoft product stack. Adopting this new release cadence provides greater security, compliance, and performance.
 
-This change has no immediate impact to Mule applications and Mule Gateway policies and proxies that are running on currently supported Mule versions, or on applications that are upgraded to Mule runtime 4.6, as existing Java 8 apps will continue to run on Java 8 until February 2026, giving you time to plan for your upgrade to Java 17.
+This change has no immediate impact to Mule applications that are running on currently supported Mule versions, or on applications that are upgraded to Mule runtime 4.6, as existing Java 8 apps will continue to run on Java 8 until February 2026, giving you time to plan for your upgrade to Java 17.
 
-Java 17 upgrade planning includes evaluating connectors, integration apps, Mule Gateway policies, and proxies, as all of these components rely on Java. 
+Java 17 upgrade planning includes evaluating integration apps, connectors (Anypoint connectors and custom connectors), Mule Gateway policies, and API proxies, as all of these components rely on Java. 
 
 [[mule-runtime-java-support]]
 == Mule Runtime Java Support
 
-The following table shows the timeline for Java 8 and Java 17 support:
+The following table shows the timeline for Java 8, Java 11, and Java 17 support:
 
 [%header%autowidth.spread]
 |===
@@ -68,30 +68,34 @@ To upgrade Anypoint Connectors:
 [[custom-connectors]]
 == Custom Connectors
 
-Custom connectors are any connectors that are not developed and maintained by MuleSoft, including connectors that are built by MuleSoft partners using Mule SDK, or XML SDK.
+Custom connectors are any connectors that are not developed and maintained by MuleSoft, including connectors that are built by MuleSoft partners or customers using Mule SDK (Java SDK and XML SDK).
 
-If you are using a custom connector in your app, you must update your connector to run on Java 17 and MuleSoft Runtime 4.6 and later. After you update your connector using Mule Java SDK or XML SDK, you must test your app and deploy it. 
+If you are using a custom connector in your app, you must update your connector to run on Java 17 and Mule runtime 4.6 and later. After you update your connector using Mule SDK, you must test your app and deploy it. 
 
-image:java-upgrade-connectors.png[Java upgrade steps for connectors]
+If you are a MuleSoft partner:
 
 [calloutlist]
-. Update your connector using:
-  * xref:mule-sdk/getting-started.adoc[Mule Java SDK]
-  * xref:mule-sdk/xml-sdk.adoc[Mule XML SDK]
-. Test your connector using xref:munit/index.adoc[MUnit].
+. Update your connector that is generated from:
+  * xref:partner-connector-upgrade.adoc#upgrade-your-mule-sdk-connectors[Mule SDK]
+  * xref:partner-connector-upgrade.adoc#upgrade-your-rest-sdk-connectors[REST SDK]
+  * xref:partner-connector-upgrade.adoc#upgrade-your-rest-connect-connectors[REST Connect]
+. Test your connector using xref:partner-connector-upgrade.adoc#test-your-custom-connector-with-mtf[MTF].
 . Deploy your Mule application:
   * xref:runtime-fabric::/deploy-to-runtime-fabric.adoc[Deploying Apps to Runtime Fabric]
   * xref:runtime-manager::cloudhub/deploy-mule-application-task.adoc[Deploying Apps to CloudHub]
   * xref:hosting::/ch2-deploy.adoc[Deploying Apps to CloudHub 2.0]
 
-[[rest-connect-generated-connectors]]
-== REST Connect Generated Connectors
+If you are a MuleSoft customer:
 
-REST Connect Connector Generator <version> is compatible with Java 17 and also adds support for TLS. To save time, enable TLS at the same time you update your generated connector for Java 17 so that you need to generate the connector and test your apps only once.
-
-For connectors that are generated from an API specification using the REST Connect connector generator tool, all you have to do to make the connector Java 17-compatible is republish the API specification to Exchange. 
-
-See xref:exhange/to-deploy-using-rest-connect.adoc#upgrade-rest-connector[REST Connect Connector Generator].
+[calloutlist]
+. Update your connector that is generated from:
+  * xref:customer-connector-upgrade.adoc#upgrade-your-mule-sdk-connectors[Mule SDK]
+  * xref:customer-connector-upgrade.adoc#upgrade-your-rest-connect-connectors[REST Connect]
+. Test your connector using xref:customer-connector-upgrade.adoc#test-your-custom-connector-with-munit[MUnit].
+. Deploy your Mule application:
+  * xref:runtime-fabric::/deploy-to-runtime-fabric.adoc[Deploying Apps to Runtime Fabric]
+  * xref:runtime-manager::cloudhub/deploy-mule-application-task.adoc[Deploying Apps to CloudHub]
+  * xref:hosting::/ch2-deploy.adoc[Deploying Apps to CloudHub 2.0]
 
 [[policies]]
 == Policies
@@ -101,7 +105,7 @@ The MuleSoft-included Mule Gateway policies are compatible with Java 17 beginnin
 [IMPORTANT]
 To ensure your API proxies or Mule apps are protected when upgrading, upgrade your policies *before* upgrading your API proxies or Mule apps.
 
-For details about how to upgrade your policies, see xref:upgrade-policies-proxies.adoc[].
+For details about how to upgrade your policies, see xref:upgrade-policies-proxies.adoc#upgrading-automated-policies[] and xref:upgrade-policies-proxies.adoc#upgrading-api-level-policies[].
 
 [[api-proxies]]
 == API Proxies
@@ -116,7 +120,7 @@ The steps to upgrade are a little different, depending on which deployment model
 [IMPORTANT]
 To ensure your API proxies or Mule apps are protected when upgrading, upgrade your API policies *before* upgrading your API proxies or Mule apps.
 
-For details about how to upgrade your API proxies, see xref:upgrade-policies-proxies.adoc[].
+For details about how to upgrade your API proxies, see xref:upgrade-policies-proxies.adoc#upgrading-api-proxies[].
 
 [[mule-maven-plugin]]
 == Mule Maven Plugin 
@@ -130,8 +134,8 @@ When deploying to Runtime Fabric (RTF) and CloudHub 2.0, MMP accepts the entire 
 
 See the following documentation for more information:
 
-* xref:cloudhub-2/ch2-deploy-maven.adoc[Deploying apps to CloudHub 2.0 using the Maven Plugin]
-* xref:runtime-fabric/deploy-maven-4.x.adoc[Deploying Applications to Runtime Fabric Using Maven]
+* xref:cloudhub-2/ch2-deploy-maven.adoc[Deploying Apps to CloudHub 2.0 Using the Maven Plugin]
+* xref:runtime-fabric/deploy-maven-4.x.adoc[Deploying Apps to Runtime Fabric Using the Maven Plugin]
 
 [[dataweave]]
 == DataWeave
@@ -149,7 +153,6 @@ POJOs are required from now on and you must also ensure that POJOs have:
 * Setters for all properties
 
 See xref:dataweave::dataweave-formats-java.adoc#java-support[Java Support] for more information.
-
 
 == See Also
 
