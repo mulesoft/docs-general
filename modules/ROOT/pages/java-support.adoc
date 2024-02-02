@@ -73,7 +73,7 @@ Custom connectors are any connectors that are not developed and maintained by Mu
 If you are using a custom connector in your app, you must update your connector to run on Java 17 and Mule runtime 4.6 and later. After you update your connector using Mule SDK, you must test your app and deploy it. 
 
 If you are a MuleSoft partner:
-+
+
 [calloutlist]
 . Update your connector that is generated from:
   * xref:partner-connector-upgrade.adoc#upgrade-your-mule-sdk-connectors[Mule SDK]
@@ -86,7 +86,7 @@ If you are a MuleSoft partner:
   * xref:hosting::/ch2-deploy.adoc[Deploying Apps to CloudHub 2.0]
 
 If you are a MuleSoft customer:
-+
+
 [calloutlist]
 . Update your connector that is generated from:
   * xref:customer-connector-upgrade.adoc#upgrade-your-mule-sdk-connectors[Mule SDK]
