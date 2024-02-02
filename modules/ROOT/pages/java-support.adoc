@@ -134,8 +134,8 @@ When deploying to Runtime Fabric (RTF) and CloudHub 2.0, MMP accepts the entire 
 
 See the following documentation for more information:
 
-* xref:cloudhub-2/ch2-deploy-maven.adoc[Deploying apps to CloudHub 2.0 using the Maven Plugin]
-* xref:runtime-fabric/deploy-maven-4.x.adoc[Deploying Applications to Runtime Fabric Using Maven]
+* xref:cloudhub-2/ch2-deploy-maven.adoc[Deploying Apps to CloudHub 2.0 Using the Maven Plugin]
+* xref:runtime-fabric/deploy-maven-4.x.adoc[Deploying Apps to Runtime Fabric Using the Maven Plugin]
 
 [[dataweave]]
 == DataWeave
