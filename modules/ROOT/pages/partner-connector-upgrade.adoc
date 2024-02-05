@@ -2,7 +2,7 @@
 
 NOTE: This guide applies to MuleSoft partners only. If you are a MuleSoft customer, see xref:customer-connector-upgrade.adoc[].
 
-Upgrade and test your custom connectors for Java 17 to ensure compatibility within the MuleSoft ecosystem. 
+Upgrade, test, and release your custom connectors for Java 17 to ensure compatibility within the MuleSoft ecosystem. 
 
 include::partial$partner-and-customer-guide.adoc[tags=before-you-begin]
 
@@ -267,47 +267,7 @@ You probably need to change your custom connector code to ensure Java 17 compati
 +
 Either your custom connector does not require any major changes or your test suite is not comprehensive enough. Review your test suite and double-check that your code coverage is good and that your test scenarios and assertions are not too simple.
 
-=== Communicate the Support Level of Your Custom Connector
-
-After you update your code and your tests are green, you are ready to release a new Java 17-compatible version of your custom connector. 
-
-. To communicate Java 17 compatibility, generate metadata for Java compatibility of your custom connector by adding or upgrading the custom connector `mule-sdk-api` dependency to the latest version: 
-+
-[source,xml,linenums]
-----
-<dependency>
-   <groupId>org.mule.sdk</groupId>
-   <artifactId>mule-sdk-api</artifactId>
-   <version>0.7.0</version>
-</dependency>
-----
-
-. Add the `@JavaVersionSupport` annotation in the same class as the `@Extension` annotation and include the JAVA_17 value, for example: 
-+
-[source,java,linenums]
-----
-@Extension(name = "Database")
-@Operations(...)
-@JavaVersionSupport({JAVA_8, JAVA_11, JAVA_17})
-public class DatabaseConnector {
-..
-}
-----
-
-In Mule 4.5.0 and later, custom connectors that do not specify the `@JavaVersionSupport` annotation are assumed to be compatible with Java 8 and Java 11.
-
-You can mark your custom connector as compatible with Java 17 only; however, you must ensure that no adoption or backward compatibility issues exist. 
-
-When you deploy a Mule app, Mule verifies that all modules in the Mule app are compatible with the Java version. If Mule finds an incompatibility, Mule throws an error and the application does not deploy. 
-
-If your code is compatible with Java 17 but you do not declare Java 17 compatibility, you can still get a successful test run. 
-
-To run a quick check on your custom connector or if all dependencies are not ready, pass the following argument to skip hard checks on the Java support declaration:
-
-[source,bash]
-----
--M-Dmule.jvm.version.extension.enforcement=LOOSE
-----
+include::partial$partner-and-customer-guide.adoc[tags=communicate-support-level]
 
 == See Also
 

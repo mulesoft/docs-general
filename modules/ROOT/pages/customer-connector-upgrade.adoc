@@ -2,7 +2,7 @@
 
 NOTE: This guide applies to MuleSoft customers only. If you are a MuleSoft partner, see xref:partner-connector-upgrade.adoc[].
 
-Upgrade and test your custom connectors for Java 17 to ensure compatibility within the MuleSoft ecosystem. 
+Upgrade, test, and release your custom connectors for Java 17 to ensure compatibility within the MuleSoft ecosystem. 
 
 include::partial$partner-and-customer-guide.adoc[tags=before-you-begin]
 
@@ -63,6 +63,8 @@ mvn -f pom.xml -s ~/.m2/settings.xml -Dapp.runtime=4.6.0 -Dmunit.version=3.1.0 -
 ----
 
 You can now see if your connector is compatible with Java 17. For more information about running MUnit tests, refer to xref:munit::index.adoc[MUnit]. 
+
+include::partial$partner-and-customer-guide.adoc[tags=communicate-support-level]
 
 == See Also
 
