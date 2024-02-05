@@ -84,7 +84,7 @@ See the https://docs.oracle.com/en/java/javase/17/migrate/getting-started.html#G
 
 * Mule runtime engine
 +
-See xref:java-support.adoc#mule-runtime[] to learn more about the Java 17 changes made in Mule runtime engine. 
+See xref:java-support.adoc#mule-runtime[Mule Runtime] to learn more about the Java 17 changes made in Mule runtime engine. 
 +
 ** Reflection on Java classes
 ** Serialization
