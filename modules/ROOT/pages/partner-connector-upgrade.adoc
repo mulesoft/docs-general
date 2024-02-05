@@ -4,11 +4,11 @@ NOTE: This guide applies to MuleSoft partners only. If you are a MuleSoft custom
 
 Upgrade and test your custom connectors for Java 17 to ensure compatibility within the MuleSoft ecosystem. 
 
-include::partial$partner-connector-upgrade.adoc[tags=before-you-begin]
+include::partial$partner-and-customer-guide.adoc[tags=before-you-begin]
 
 To decouple the minimum Mule version when running tests, add the `-Dmunit.jvm` parameter to use Java 17 as described in <<test-for-java-17-compatibility-directly>>.
 
-include::partial$partner-connector-upgrade.adoc[tags=mule-sdk-connectors]
+include::partial$partner-and-customer-guide.adoc[tags=mule-sdk-connectors]
 
 [[upgrade-your-rest-sdk-connectors]]
 == Upgrade Your Custom REST SDK Connectors
@@ -78,7 +78,7 @@ If you generate a new connector using REST SDK and want to make that connector c
 ---- 
 . Upgrade the Mule runtime version to 4.6.0.
 
-include::partial$partner-connector-upgrade.adoc[tags=rest-connect-connectors]
+include::partial$partner-and-customer-guide.adoc[tags=rest-connect-connectors]
  
 [[test-your-custom-connector-with-mtf]]
 == Test Your Custom Connector with MTF
