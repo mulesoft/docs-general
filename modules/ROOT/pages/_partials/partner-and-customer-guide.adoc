@@ -1,0 +1,114 @@
+// Partial used for common content in the Java 17 partner and customer guides
+
+tag::before-you-begin[]
+
+== Before You Begin
+
+Before upgrading and testing your custom connector for Java 17, you must be familiar with the following considerations:
+
+* Target compilation level
++
+Ensure your custom connector runs with Java 17, but always use Java 8 as the target compilation level.
++
+Because you must compile your custom connector with Java 8, use the Java compiler configuration from the Java SDK parent POM. You can’t use language features from Java 11 or Java 17. 
+
+* Unsupported directives
++
+Do not set `-add-opens` or `-add-export` directives.
+
+* Minimum Mule version
++
+If your custom connector is running on Mule 4.5.x or earlier, you can’t run Java 17 tests that extend the `MuleArtifactFunctionalTestCase`, but you can still run Java 8 tests.
++
+
+end::before-you-begin[]
+
+tag::mule-sdk-connectors[]
+
+[[upgrade-your-mule-sdk-connectors]]
+== Upgrade Your Custom Mule SDK Connectors
+
+Upgrade your custom Mule SDK (Java SDK and XML SDK) connectors to Java 17.
+
+=== Upgrade Third-Party Libraries
+
+Upgrade the third-party libraries of your custom connector to be compatible with Java 17:
+
+* Java EE libraries
++
+Mule 4.6 exposes Java EE libraries differently than earlier Mule versions. You must add the BOM dependency to your custom connector and, if applicable, exclude the provided conflicting library. You can also add the libraries in the BOM dependency separately.
++
+[source,java,linenums]
+----
+<muleJavaEeBomVersion>4.6.0-20231025</muleJavaEeBomVersion>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.mule</groupId>
+        <artifactId>mule-javaee-runtime-bom</artifactId>
+        <version>${muleJavaEeBomVersion}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+----
+
+* External libraries
++
+Upgrade external libraries, which are third-party libraries that are not bundled with your custom connector. Some examples include a JDBC driver, JMS broker client, or Groovy runtime. The following example shows a JDBC driver external library configuration: 
++
+[source,java,linenums]
+----
+@ExternalLib(name = "MySQL JDBC Driver",
+description = "A JDBC driver that supports connection to the MySQL Database",
+nameRegexpMatcher = "(.*)\\.jar",
+requiredClassName = "com.mysql.jdbc.Driver",
+coordinates = "mysql:mysql-connector-java:5.1.44")
+public class MySqlConnectionProvider implements ConnectionProvider<Connection> {
+  //
+}
+----
++
+You must update your external libraries to a version that is compatible with Java 17. 
+
+=== Review Your Code
+
+After you compile your custom connector with Java 8, ensure you can run your custom connector with Java 17. Reviewing your code is important because some restrictions are flagged as warnings in Java 11 but are flagged as failures and can’t be disabled in Java 17. For example, reflection is more restricted in Java 17, so you must review your code to ensure there are no illegal actions. 
+
+To help you review your code, learn more about the different changes in Java 17:
+
+* JDK Migration Guide
++
+See the https://docs.oracle.com/en/java/javase/17/migrate/getting-started.html#GUID-C25E2B1D-6C24-4403-8540-CFEA875B994A[Oracle JDK Migration Guide] for a full list of the changes made in Java 17. Use the guide to assess the impact to your code.
+
+* Mule runtime engine
++
+See xref:java-support.adoc#mule-runtime[] to learn more about the Java 17 changes made in Mule runtime engine. 
++
+** Reflection on Java classes
+** Serialization
+** Library upgrades
+** Changes with running the test suite
+** JPMS
+
+=== Add Missing Code
+
+Because reflection is more restricted in Java 17, API objects now require setters. Previously, API objects and plain old Java objects (POJOs) had default constructors and getters for all properties. Now, API objects and POJOs must also have setters so DataWeave can build outside the connector in the Mule app. 
+
+Constructors and setters are required if your class is instantiated, and getters are required if your class is read. If your class is returned and not instantiated, only getters are required. However, using both getters and setters simplify the validation and certification process. 
+
+end::mule-sdk-connectors[]
+
+tag::rest-connect-connectors[]
+
+[[upgrade-your-rest-connect-connectors]]
+== Upgrade Your Custom REST Connect Connectors 
+
+Upgrade your custom REST Connect connectors to Java 17.
+
+REST Connect now supports Java 17. REST Connect connectors are generated from an API specification using REST Connect. To make the connector Java 17-compatible, republish the API specification to Exchange. See xref:exchange::to-deploy-using-rest-connect.adoc[REST Connect Connector Generator].
+
+IMPORTANT: REST Connect now adds support for TLS. To save time, enable TLS at the same time you update your generated connector for Java 17 so that you need to generate the connector and test your apps only once.
+
+end::rest-connect-connectors[]
