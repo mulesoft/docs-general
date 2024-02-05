@@ -4,13 +4,13 @@ NOTE: This guide applies to MuleSoft customers only. If you are a MuleSoft partn
 
 Upgrade and test your custom connectors for Java 17 to ensure compatibility within the MuleSoft ecosystem. 
 
-include::general::partial$partner-connector-upgrade.adoc[tags=before-you-begin]
+include::partial$partner-connector-upgrade.adoc[tags=before-you-begin]
 
 To decouple the minimum Mule version when running tests, add the `-Dmunit.jvm` parameter to use Java 17 as described in <<test-your-custom-connector-with-munit>>.
 
-include::general::partial$partner-connector-upgrade.adoc[tags=mule-sdk-connectors]
+include::partial$partner-connector-upgrade.adoc[tags=mule-sdk-connectors]
 
-include::general::partial$partner-connector-upgrade.adoc[tags=rest-connect-connectors]
+include::partial$partner-connector-upgrade.adoc[tags=rest-connect-connectors]
 
 [[test-your-custom-connector-with-munit]]
 == Test Your Custom Connector with MUnit
