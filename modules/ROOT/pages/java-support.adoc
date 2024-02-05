@@ -26,7 +26,9 @@ The following table shows the timeline for Java 8, Java 11, and Java 17 support:
 |===
 
 [NOTE]
-Along with the end of support for Java 8 with the Mule runtime 4.9 release in February 2025, Java 11 will also no longer be available. Plan your upgrade path for apps that are running on both Java 8 and Java 11.
+Along with the end of support for Java 8 with the Mule runtime 4.9 release in February 2025, Java 11 will also no longer be available. Plan your upgrade path for apps that are running on either Java 8 or Java 11.
+
+See xref:mule-runtime::release-notes/lts-edge-release-cadence.adoc[] for more information about Mule release cadences.
 
 [[mule-runtime]]
 == Mule Runtime
@@ -47,6 +49,18 @@ The majority of Mule applications currently in use can be updated, tested, and r
 
 [IMPORTANT]
 To ensure your API proxies or Mule apps are protected when upgrading, upgrade your API policies *before* upgrading your API proxies or Mule apps.
+
+=== Application Performance
+
+Java 17 manages memory differently than in Java 8. In some cases, Java 17 preferentially commits to heap memory or uses heap memory for structures in some apps, which earlier Java versions allocated to native memory.
+
+This change in memory management makes it important for you to conduct xref:mule-runtime::tuning-test-validations.adoc[performance testing] and xref:mule-runtime::tuning-monitoring[monitoring] for your most common workloads.
+
+If your apps are deployed on-premises: 
+
+* If your workloads are running on Runtime Fabric, you must have 1400 MB of memory allocation for 0.45 vCPU replica sizes.
+* If your workloads are running on-premises in a hybrid or standalone environment, you must tune your operating system's garbage collection algorithm. 
+
 
 [[anypoint-connectors-and-modules]]
 == Anypoint Connectors and Modules
@@ -122,7 +136,6 @@ For details about how to upgrade your API proxies, see xref:upgrade-policies-pro
 
 [[mule-maven-plugin]]
 == Mule Maven Plugin 
-(QUESTION FOR REVIEWERS: For this section, is there a dependency on Studio, so this should wait until the Studio release?)
 
 If you are using Mule Maven Plugin (MMP) to deploy your apps, configure the deployment to use Java 17.  
 
