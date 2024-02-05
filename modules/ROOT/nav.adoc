@@ -12,6 +12,8 @@
   ** xref:pricing.adoc[Pricing]
   ** xref:pricing-metrics.adoc[Usage and Pricing Metrics]
 * xref:java-support.adoc[]
+** xref:partner-connector-upgrade.adoc[]
+** xref:customer-connector-upgrade.adoc[]
 ** xref:upgrade-policies-proxies.adoc[]
 * xref:browser-support.adoc[Browser Support]
 * xref:glossary.adoc[Glossary]
