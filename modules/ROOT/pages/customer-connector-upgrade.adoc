@@ -13,7 +13,7 @@ include::partial$partner-and-customer-guide.adoc[tags=mule-sdk-connectors]
 include::partial$partner-and-customer-guide.adoc[tags=rest-connect-connectors]
 
 [[test-your-custom-connector-with-munit]]
-== Testing Your Custom Connector with MUnit
+== Test Your Custom Connector with MUnit
 
 Run your MUnit tests to test compatibility of your connector against Java 17. Ensure your local JDK version is 17. 
 

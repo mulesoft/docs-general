@@ -11,7 +11,7 @@ To decouple the minimum Mule version when running tests, add the `-Dmunit.jvm` p
 include::partial$partner-and-customer-guide.adoc[tags=mule-sdk-connectors]
 
 [[upgrade-your-rest-sdk-connectors]]
-== Upgrading Your Custom REST SDK Connectors
+== Upgrade Your Custom REST SDK Connectors
 
 Use REST SDK version 0.8.0-RC4 to upgrade your custom REST SDK connectors to Java 17. 
 
@@ -81,7 +81,7 @@ If you generate a new connector using REST SDK and want to make that connector c
 include::partial$partner-and-customer-guide.adoc[tags=rest-connect-connectors]
  
 [[test-your-custom-connector-with-mtf]]
-== Testing Your Custom Connector with MTF
+== Test Your Custom Connector with MTF
 
 Test your custom connector with Module Testing Framework (MTF) to ensure Java 17 compatibility. For more information about MTF, see https://beta.docs.mulesoft.com/beta-mtf/mule-sdk/1.1/mtf[MTF]. 
 
