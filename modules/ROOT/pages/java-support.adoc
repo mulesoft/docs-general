@@ -50,6 +50,7 @@ The majority of Mule applications currently in use can be updated, tested, and r
 [IMPORTANT]
 To ensure your API proxies or Mule apps are protected when upgrading, upgrade your API policies *before* upgrading your API proxies or Mule apps.
 
+[[application-performance]]
 === Application Performance
 
 Java 17 manages memory differently than in Java 8. In some cases, Java 17 preferentially commits to heap memory or uses heap memory for structures in some apps, which earlier Java versions allocated to native memory.
