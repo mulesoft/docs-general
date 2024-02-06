@@ -116,7 +116,7 @@ The MuleSoft-included API proxies are compatible with Java 17 beginning with the
 
 The steps to upgrade are a little different, depending on which deployment model you use. 
 
-* If you use Basic endpoint, deploy the adapted application to the server from Mule runtime and connect it to API Manager using autodiscovery. For more information, see <<mule-runtime>>.
+* If you use Basic endpoint, deploy the adapted application to the server from Mule runtime and connect it to API Manager using autodiscovery. For more information, see xref:mule-gateway::mule-gateway-config-autodiscovery-mule4.adoc[Configuring Mule Gateway API Autodiscovery in a Mule 4 Application].
 * If you use a Basic endpoint API instance to update your instance, update the Mule application connecting to your API instance.
 
 [IMPORTANT]
