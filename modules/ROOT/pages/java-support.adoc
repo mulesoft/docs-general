@@ -114,15 +114,17 @@ For details about how to upgrade your policies, see xref:upgrade-policies-proxie
 
 The MuleSoft-included API proxies are compatible with Java 17 beginning with the Mule runtime 4.6 release. These API proxies continue to have standard support for Java 8 until February 2025, so it’s best to start updating your API proxies as soon as possible. 
 
-The steps to upgrade are a little different, depending on which deployment model you use. 
-
-* If you use Basic endpoint, deploy the adapted application to the server from Mule runtime and connect it to API Manager using autodiscovery. For more information, see xref:mule-gateway::mule-gateway-config-autodiscovery-mule4.adoc[Configuring Mule Gateway API Autodiscovery in a Mule 4 Application].
-* If you use a Basic endpoint API instance to update your instance, update the Mule application connecting to your API instance.
-
 [IMPORTANT]
 To ensure your API proxies or Mule apps are protected when upgrading, upgrade your API policies *before* upgrading your API proxies or Mule apps.
 
-For details about how to upgrade your API proxies, see xref:upgrade-policies-proxies.adoc#upgrading-api-proxies[Upgrading API Proxies].
+The steps to upgrade are a little different, depending on your *Proxy type*: 
+
+* Basic endpoint:
+** If you use Basic endpoint, deploy the adapted application to the server from Mule runtime and connect it to API Manager using autodiscovery. For more information, see xref:mule-gateway::mule-gateway-config-autodiscovery-mule4.adoc[Configuring Mule Gateway API Autodiscovery in a Mule 4 Application].
+** If you use a Basic endpoint API instance to update your instance, update the Mule application connecting to your API instance.
+* Proxy application
++
+For details about how to upgrade your Proxy applications, see xref:upgrade-policies-proxies.adoc#upgrading-api-proxies[Upgrading API Proxies].
 
 [[mule-maven-plugin]]
 == Mule Maven Plugin 
