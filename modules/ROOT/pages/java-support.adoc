@@ -33,7 +33,7 @@ For more information about Mule release cadences, see xref:release-notes::mule-r
 [[mule-runtime]]
 == Mule Runtime
 
-To take advantage of the improved performance and security of Java 17, xref:mule-runtime::updating-mule-4-versions.adoc[upgrade to Mule runtime 4.6 or later].
+To take advantage of the improved performance and security of Java 17, xref:release-notes::mule-runtime/updating-mule-4-versions.adoc[upgrade to Mule runtime 4.6 or later].
 
 Follow these best practices:
 
