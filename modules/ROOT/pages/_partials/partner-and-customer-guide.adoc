@@ -16,10 +16,6 @@ Because you must compile your custom connector with Java 8, use the Java compile
 +
 Do not set `-add-opens` or `-add-export` directives.
 
-* Minimum Mule version
-+
-If your custom connector is running on Mule 4.5.x or earlier, you can’t run Java 17 tests that extend the `MuleArtifactFunctionalTestCase`, but you can still run Java 8 tests.
-+
 
 // end::before-you-begin[]
 
