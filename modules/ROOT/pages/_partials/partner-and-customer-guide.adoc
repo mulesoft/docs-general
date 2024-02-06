@@ -26,6 +26,7 @@ Do not set `-add-opens` or `-add-export` directives.
 
 Upgrade your custom Mule SDK (Java SDK and XML SDK) connectors to Java 17.
 
+[[upgrade-third-party-libraries]]
 === Upgrade Third-Party Libraries
 
 Upgrade the third-party libraries of your custom connector to be compatible with Java 17:
