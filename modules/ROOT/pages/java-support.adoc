@@ -33,7 +33,7 @@ See xref:release-notes::mule-runtime/lts-edge-release-cadence.adoc[] for more in
 [[mule-runtime]]
 == Mule Runtime
 
-To take advantage of the improved performance and security of Java 17 xref:mule-runtime::updating-mule-4-versions.adoc[Upgrade to Mule runtime 4.6 or later].
+To take advantage of the improved performance and security of Java 17, xref:mule-runtime::updating-mule-4-versions.adoc[upgrade to Mule runtime 4.6 or later].
 
 Follow these best practices:
 
