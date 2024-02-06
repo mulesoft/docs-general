@@ -82,7 +82,7 @@ To upgrade Anypoint Connectors:
 
 Custom connectors are any connectors that are not developed and maintained by MuleSoft, including connectors that are built by MuleSoft partners or customers. If you are using a custom connector in your app, you must update your connector to run on Java 17 and Mule runtime 4.6 and later. 
 
-If you are a MuleSoft partner:
+* If you are a MuleSoft partner:
 
 . Update your connector that is generated from:
   * xref:partner-connector-upgrade.adoc#upgrade-your-mule-sdk-connectors[Mule SDK]
