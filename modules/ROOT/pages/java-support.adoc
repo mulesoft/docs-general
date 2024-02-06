@@ -59,7 +59,7 @@ Because of this change in Java 17 memory management, it is important for you to 
 
 If your apps are deployed on-premises: 
 
-* If your workloads are running on Runtime Fabric, you must have 1400 MB of memory allocation for 0.45 vCPU replica sizes.
+* If your workloads are running on Runtime Fabric, you must have 1400 MB of memory allocation for 0.50 vCPU replica sizes. Memory requirements vary for individual apps. 
 * If your workloads are running on-premises in a hybrid or standalone environment, you must tune your operating system's garbage collection algorithm. 
 
 
