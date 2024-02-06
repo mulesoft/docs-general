@@ -4,7 +4,7 @@ MuleSoft is adopting Java's long-term-support (LTS) release cadence, beginning w
 
 Many third-party vendors are discontinuing support for Java 8, which impacts the MuleSoft product stack. Adopting this new release cadence provides greater security, compliance, and performance.
 
-This change has no immediate impact to Mule applications that are running on currently supported Mule versions, or on applications that are upgraded to Mule runtime 4.6, as existing Java 8 apps will continue to run on Java 8 until February 2026, giving you time to plan for your upgrade to Java 17.
+This change has no immediate impact to Mule applications that are running on currently supported Mule versions, or on applications that are upgraded to Mule runtime 4.6, as existing Java 8 apps will continue to run on Java 8 until February 2025, giving you time to plan for your upgrade to Java 17.
 
 Java 17 upgrade planning includes evaluating integration apps, connectors (Anypoint connectors and custom connectors), Mule Gateway policies, and API proxies, as all of these components rely on Java. 
 
@@ -28,7 +28,7 @@ The following table shows the timeline for Java 8, Java 11, and Java 17 support:
 [NOTE]
 Standard support for Java 8 and 11 ends with the Mule runtime 4.9 release in February 2025, so plan your upgrade path for apps that are running on either Java 8 or Java 11 accordingly.
 
-See xref:release-notes::mule-runtime/lts-edge-release-cadence.adoc[] for more information about Mule release cadences.
+For more information about Mule release cadences, see xref:release-notes::mule-runtime/lts-edge-release-cadence.adoc[].
 
 [[mule-runtime]]
 == Mule Runtime
@@ -135,7 +135,7 @@ When deploying to Runtime Fabric (RTF) and CloudHub 2.0, MMP accepts the entire 
 
 See the following documentation for more information:
 
-* xref:cloudhub-2/ch2-deploy-maven.adoc[Deploying Apps to CloudHub 2.0 Using the Maven Plugin]
+* xref:mule-runtime::deploy-to-cloudhub-2.adoc[Deploying Applications to CloudHub 2.0 Using the Mule Maven Plugin]
 * xref:runtime-fabric/deploy-maven-4.x.adoc[Deploying Apps to Runtime Fabric Using the Maven Plugin]
 
 [[dataweave]]
