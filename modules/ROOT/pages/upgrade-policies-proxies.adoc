@@ -83,7 +83,7 @@ To ensure your API proxies or Mule apps are protected when upgrading, upgrade yo
 
 The steps to upgrade API proxies to Java 17 differ depending on which deployment model you use. 
 
-* If you use Basic endpoint, deploy the adapted application to the server from Mule runtime and connect it to API Manager using autodiscovery. For more information, see xref:java-support.adoc#mule-runtime[Mule Runtime].
+* If you use Basic endpoint, deploy the adapted application to the server from Mule runtime and connect it to API Manager using autodiscovery. For more information, see xref:mule-gateway::mule-gateway-config-autodiscovery-mule4.adoc[Configuring Mule Gateway API Autodiscovery in a Mule 4 Application].
 * If you use a Basic endpoint API instance to update your instance, update the Mule application connecting to your API instance.
 
 [[cloudhub-and-cloudhub2-deployments]]
