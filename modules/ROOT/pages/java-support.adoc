@@ -124,7 +124,7 @@ The steps to upgrade are a little different, depending on your *Proxy type*:
 ** If you use a Basic endpoint API instance to update your instance, update the Mule application connecting to your API instance.
 * Proxy application
 +
-For details about how to upgrade your Proxy applications, see xref:upgrade-policies-proxies.adoc#upgrading-api-proxies[Upgrading API Proxies].
+For details about how to upgrade your proxy applications, see xref:upgrade-policies-proxies.adoc#upgrading-api-proxies[Upgrading API Proxies].
 
 [[mule-maven-plugin]]
 == Mule Maven Plugin 
