@@ -32,9 +32,9 @@ To upgrade custom automated policies to Java 17:
 . Upgrade the required extensions and connectors to Java 17.
  * If your custom policy has Anypoint Connectors, see xref:java-support.adoc#anypoint-connectors-and-modules[Upgrading Anypoint Connectors and Modules].
  * If your custom policy has custom connectors, see xref:java-support.adoc#custom-connectors[Upgrading Custom Connectors].
-. xref:gateway::policies-custom-java-version.adoc[Upgrade the custom policy].
-. xref:gateway::policies-custom-package.adoc[Package the custom policy].
-. xref:gateway::policies-custom-upload-to-exchange.adoc[Republish the custom policy to Exchange].
+. xref:mule-gateway::policies-custom-java-version.adoc[Upgrade the custom policy].
+. xref:mule-gateway::policies-custom-package.adoc[Package the custom policy].
+. xref:mule-gateway::policies-custom-upload-to-exchange.adoc[Republish the custom policy to Exchange].
 . Apply the new version of the custom policy that is compatible with Java 17 to the API instance:
  .. Go to *Policies*.
  .. In *Applied policy status*, verify that the latest definition is applied.
@@ -66,9 +66,9 @@ To upgrade custom API-level policies to Java 17:
 . Upgrade the required extensions and connectors to Java 17.
  * If your custom policy has Anypoint Connectors, see xref:java-support.adoc#anypoint-connectors-and-modules[Upgrading Anypoint Connectors and Modules].
  * If your custom policy has custom connectors, see xref:java-support.adoc#custom-connectors[Upgrading Custom Connectors].
-. xref:gateway::policies-custom-java-version.adoc[Upgrade the custom policy].
-. xref:gateway::policies-custom-package.adoc[Package the custom policy].
-. xref:gateway::policies-custom-upload-to-exchange.adoc[Republish the custom policy to Exchange].
+. xref:mule-gateway::policies-custom-java-version.adoc[Upgrade the custom policy].
+. xref:mule-gateway::policies-custom-package.adoc[Package the custom policy].
+. xref:mule-gateway::policies-custom-upload-to-exchange.adoc[Republish the custom policy to Exchange].
 . Apply the new version of the custom policy that is compatible with Java 17 to the API instance:
  .. Go to *Policies*.
  .. In *Applied policy status*, verify that the latest definition is applied.
@@ -83,7 +83,7 @@ To ensure your API proxies or Mule apps are protected when upgrading, upgrade yo
 
 The steps to upgrade API proxies to Java 17 differ depending on which deployment model you use. 
 
-* If you use Basic endpoint, deploy the adapted application to the server from Mule runtime and connect it to API Manager using autodiscovery. For more information, see xref:java-support.adoc#mule-runtime[].
+* If you use Basic endpoint, deploy the adapted application to the server from Mule runtime and connect it to API Manager using autodiscovery. For more information, see xref:java-support.adoc#mule-runtime[Mule Runtime].
 * If you use a Basic endpoint API instance to update your instance, update the Mule application connecting to your API instance.
 
 [[cloudhub-and-cloudhub2-deployments]]
