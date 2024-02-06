@@ -1,0 +1,165 @@
+= Java Support
+
+MuleSoft is adopting Java's long-term-support (LTS) release cadence, beginning with Mule runtime 4.6, which adds support for Java 17 LTS. 
+
+Many third-party vendors are discontinuing support for Java 8, which impacts the MuleSoft product stack. Adopting this new release cadence provides greater security, compliance, and performance.
+
+This change has no immediate impact to Mule applications that are running on currently supported Mule versions, or on applications that are upgraded to Mule runtime 4.6. Existing Java 8 apps will continue to run on Java 8 until February 2025.
+
+Java 17 upgrade planning includes evaluating integration apps and connectors (Anypoint connectors and custom connectors), as all of these components rely on Java. 
+
+[[mule-runtime-java-support]]
+== Mule Runtime Java Support
+
+The following table shows the timeline for Java 8, Java 11, and Java 17 support:
+
+[%header%autowidth.spread]
+|===
+|Mule Version| Release Date |Java Version | End of Standard Support | End of Extended Support
+|4.5 Edge | October 2023 |8 and 11 | February 2024 | June 2024
+|4.6 LTS | February 2024 | 8, 11, and 17 | February 2025 | February 2026
+|4.6 Edge | February 2024 |8, 11, and 17 | June 2024 | October 2024
+|4.7 Edge | June 2024 | 8, 11, and 17 | October 2024 | February 2025
+|4.8 Edge | October 2024 | 8, 11, and 17 | February 2025 | June 2025
+|4.9 LTS | February 2025 | 17 | February 2026 | February 2027
+|4.9 Edge | February 2025 | 17 | June 2025 | October 2025
+|===
+
+[NOTE]
+Standard support for Java 8 and 11 ends with the Mule runtime 4.9 release in February 2025, so plan your upgrade path for apps that are running on either Java 8 or Java 11 accordingly.
+
+For more information about Mule release cadences, see xref:release-notes::mule-runtime/lts-edge-release-cadence.adoc[].
+
+[[mule-runtime]]
+== Mule Runtime
+
+To take advantage of the improved performance and security of Java 17, xref:release-notes::mule-runtime/updating-mule-4-versions.adoc[upgrade to Mule runtime 4.6 or later].
+
+Follow these best practices:
+
+* Upgrade your standalone Mule instances.
+* Upgrade on-premises Mule instances that are managed through Runtime Manager.
+* Update the Mule version used to build your Mule applications.
+* xref:mule-runtime::deploying.adoc[Deploy your applications] to a target running on Mule 4.6 or later.
+
+[[mule-apps]]
+== Mule Apps
+
+The majority of Mule applications currently in use can be updated, tested, and redeployed. However, any apps and connectors that are running custom Java code require additional work to certify those components. Before you upgrade your integration apps to Java 17, all extensions, modules, and connectors used within those apps must first be updated to be Java 17-compatible. 
+
+//// 
+[IMPORTANT]
+To ensure your API proxies or Mule apps are protected when upgrading, upgrade your API policies _before_ upgrading your API proxies or Mule apps.
+//// 
+
+[[application-performance]]
+=== Application Performance
+
+Java 17 manages memory differently than it did in earlier versions like Java 8. In some cases, Java 17 preferentially commits to heap memory or uses heap memory for structures in some apps, which earlier Java versions allocated to native memory.
+
+Because of this change in Java 17 memory management, you must conduct xref:mule-runtime::tuning-test-validations.adoc[performance testing] and xref:mule-runtime::tuning-monitoring.adoc[monitoring] for your most common workloads.
+
+If your apps are deployed on-premises: 
+
+* If your workloads are running on Runtime Fabric, you must allocate 1400 MB of memory for 0.50 vCPU replica sizes. Memory requirements vary for individual apps. 
+* If your workloads are running on-premises in a hybrid or standalone environment, you must tune your operating system's garbage collection algorithm. 
+
+
+[[anypoint-connectors-and-modules]]
+== Anypoint Connectors and Modules
+
+Anypoint Connectors and modules are certified by MuleSoft to run on Java 17. For information about Java 17 support for each connector and module, see the xref:release-notes::connector/anypoint-connector-release-notes.adoc[Release Notes] for that Mule 4 connector or module. Java compatibility information is also provided on the Exchange tiles for connectors and modules. 
+
+The most commonly used Anypoint Connectors and modules are Java 17-compatible now, and others are being released regularly. For a list of Java 17-compatible connectors, see https://help.salesforce.com/s/articleView?id=000782248&type=1[Java 17-Compatible Anypoint Connectors^].
+
+To upgrade Anypoint Connectors:
+
+. Update your Mule app to run on Mule runtime 4.6 or later. 
+. Change the target JVM at the project property level. This includes both upgrades and downgrades of the JVM version.
+. In Anypoint Studio, update the connectors in your app to the latest Java 17-compatible version. 
+. xref:mule-runtime::deploying.adoc[Deploy your applications] to a target running on Mule 4.6 or later.
+
+[[custom-connectors]]
+== Custom Connectors
+
+Custom connectors are any connectors that are not developed and maintained by MuleSoft, including connectors that are built by MuleSoft partners or customers. If you are using a custom connector in your app, you must update your connector to run on Java 17 and Mule runtime 4.6 and later. 
+
+If you are a MuleSoft partner:
+
+. In your Mule app, update your connector that is generated from:
+  * xref:partner-connector-upgrade.adoc#upgrade-your-mule-sdk-connectors[Mule SDK]
+  * xref:partner-connector-upgrade.adoc#upgrade-your-rest-sdk-connectors[REST SDK]
+  * xref:partner-connector-upgrade.adoc#upgrade-your-rest-connect-connectors[REST Connect]
+. Test your connector using xref:partner-connector-upgrade.adoc#test-your-custom-connector-with-mtf[Module Testing Framework (beta)].
+. xref:mule-runtime::deploying.adoc[Deploy your applications] to a target running on Mule 4.6 or later.
+
+If you are a MuleSoft customer:
+
+. In your Mule app, update your connector that is generated from:
+  * xref:customer-connector-upgrade.adoc#upgrade-your-mule-sdk-connectors[Mule SDK]
+  * xref:customer-connector-upgrade.adoc#upgrade-your-rest-connect-connectors[REST Connect (beta)]
+. Test your connector using xref:customer-connector-upgrade.adoc#test-your-custom-connector-with-munit[MUnit].
+. xref:mule-runtime::deploying.adoc[Deploy your applications] to a target running on Mule 4.6 or later.
+
+////
+[[policies]]
+== Policies
+
+The MuleSoft-included Mule Gateway policies are compatible with Java 17 beginning with the Mule runtime 4.6 release. These policies continue to have standard support for Java 8 until February 2025, so it's best to start updating your policies as soon as possible. 
+
+[IMPORTANT]
+To ensure your API proxies or Mule apps are protected when upgrading, upgrade your policies _before_ upgrading your API proxies or Mule apps.
+
+For details about how to upgrade your policies, see xref:upgrade-policies-proxies.adoc#upgrading-automated-policies[Upgrading Automated Policies] and xref:upgrade-policies-proxies.adoc#upgrading-api-level-policies[Upgrading API-Level Policies].
+
+[[api-proxies]]
+== API Proxies
+
+The MuleSoft-included API proxies are compatible with Java 17 beginning with the Mule runtime 4.6 release. These API proxies continue to have standard support for Java 8 until February 2025, so it’s best to start updating your API proxies as soon as possible. 
+
+[IMPORTANT]
+To ensure your API proxies or Mule apps are protected when upgrading, upgrade your API policies _before_ upgrading your API proxies or Mule apps.
+
+The steps to upgrade are a little different, depending on your *Proxy type*: 
+
+* Basic endpoint:
+** If you use Basic endpoint, deploy the adapted application to the Mule runtime instance and connect it to API Manager using autodiscovery. For more information, see xref:mule-gateway::mule-gateway-config-autodiscovery-mule4.adoc[Configuring Mule Gateway API Autodiscovery in a Mule 4 Application].
+** If you use a Basic endpoint API instance to update your instance, update the Mule application connecting to your API instance.
+* Proxy application
++
+For details about how to upgrade your proxy applications, see xref:upgrade-policies-proxies.adoc#upgrading-api-proxies[Upgrading API Proxies].
+////
+
+[[mule-maven-plugin]]
+== Mule Maven Plugin 
+
+If you are using Mule Maven Plugin (MMP) to deploy your apps, configure the deployment to use Java 17.  
+
+When deploying to CloudHub, MMP deploys the latest build version of a release train when the build version has a major and minor version. MMP has a new Java version property to explicitly deploy to a specified Java version.
+
+When deploying to Runtime Fabric and CloudHub 2.0, MMP accepts the entire tag of the build so you can use the correct semantic version (SemVer) in your deployment. 
+
+For more information, see the following documentation:
+
+* xref:mule-runtime::deploy-to-cloudhub-2.adoc[]
+* xref:mule-runtime::deploy-to-rtf.adoc[]
+
+[[dataweave]]
+== DataWeave
+
+DataWeave uses Java’s reflection API to read and write Java objects. Java 17 adds some restrictions in encapsulation and reflective access that affect the Java Data Format.
+
+To ensure that your applications continue to work as expected, follow these guidelines:
+
+* Verify that the objects used by your application are Plain Old Java Objects (POJOs). 
++
+POJOs are required from now on and you must also ensure that POJOs have:
+** Default constructor
+** Getters for all properties
+** Setters for all properties
+
+For more information, see xref:dataweave::dataweave-formats-java.adoc#java-support[Java Support].
+
+== See Also
+
+* https://help.salesforce.com/s/articleView?id=000396936&type=1[MuleSoft Java 17 Upgrade FAQ^]
