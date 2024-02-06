@@ -133,7 +133,7 @@ If you are using Mule Maven Plugin (MMP) to deploy your apps, configure the depl
 
 When deploying to CloudHub, MMP deploys the latest build version of a release train when it's given a major and minor version. MMP has a new Java version property to explicitly deploy to a specified Java version.
 
-When deploying to Runtime Fabric (RTF) and CloudHub 2.0, MMP accepts the entire tag of the build so you can use the correct semantic version (SemVer) in your deployment. 
+When deploying to Runtime Fabric and CloudHub 2.0, MMP accepts the entire tag of the build so you can use the correct semantic version (SemVer) in your deployment. 
 
 For more information, see the following documentation:
 
