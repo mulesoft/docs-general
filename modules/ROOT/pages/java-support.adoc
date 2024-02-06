@@ -112,7 +112,7 @@ For details about how to upgrade your policies, see xref:upgrade-policies-proxie
 [[api-proxies]]
 == API Proxies
 
-The MuleSoft-included API proxies are compatible with Java 17 beginning with the Mule runtime 4.6 release. These API proxies continue to be compatible with Java 8 until February 2025, so it’s best to start updating your API proxies as soon as possible. 
+The MuleSoft-included API proxies are compatible with Java 17 beginning with the Mule runtime 4.6 release. These API proxies continue to have standard support for Java 8 until February 2025, so it’s best to start updating your API proxies as soon as possible. 
 
 The steps to upgrade are a little different, depending on which deployment model you use. 
 
