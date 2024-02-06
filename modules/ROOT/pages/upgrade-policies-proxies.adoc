@@ -87,7 +87,7 @@ The steps to upgrade are a little different, depending on your *Proxy type*:
 ** If you use Basic endpoint, deploy the adapted application to the server from Mule runtime and connect it to API Manager using autodiscovery. For more information, see xref:mule-gateway::mule-gateway-config-autodiscovery-mule4.adoc[Configuring Mule Gateway API Autodiscovery in a Mule 4 Application].
 ** If you use a Basic endpoint API instance to update your instance, update the Mule application connecting to your API instance.
 * If you use a proxy application, see the following sections for deployment type:
-** <cloudhub-and-cloudhub2-deployments>>
+** <<cloudhub-and-cloudhub2-deployments>>
 ** <<hybrid-deployments>>
 ** <<runtime-fabric-deployments>>
 
