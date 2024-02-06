@@ -4,7 +4,7 @@ MuleSoft is adopting Java's long-term-support (LTS) release cadence, beginning w
 
 Many third-party vendors are discontinuing support for Java 8, which impacts the MuleSoft product stack. Adopting this new release cadence provides greater security, compliance, and performance.
 
-This change has no immediate impact to Mule applications that are running on currently supported Mule versions, or on applications that are upgraded to Mule runtime 4.6, as existing Java 8 apps will continue to run on Java 8 until February 2025, giving you time to plan for your upgrade to Java 17.
+This change has no immediate impact to Mule applications that are running on currently supported Mule versions, or on applications that are upgraded to Mule runtime 4.6. Existing Java 8 apps will continue to run on Java 8 until February 2025.
 
 Java 17 upgrade planning includes evaluating integration apps and connectors (Anypoint connectors and custom connectors), as all of these components rely on Java. 
 
@@ -84,20 +84,20 @@ To upgrade Anypoint Connectors:
 
 Custom connectors are any connectors that are not developed and maintained by MuleSoft, including connectors that are built by MuleSoft partners or customers. If you are using a custom connector in your app, you must update your connector to run on Java 17 and Mule runtime 4.6 and later. 
 
-* If you are a MuleSoft partner:
-+
-. Update your connector that is generated from:
-  ** xref:partner-connector-upgrade.adoc#upgrade-your-mule-sdk-connectors[Mule SDK]
-  ** xref:partner-connector-upgrade.adoc#upgrade-your-rest-sdk-connectors[REST SDK]
-  ** xref:partner-connector-upgrade.adoc#upgrade-your-rest-connect-connectors[REST Connect]
-. Test your connector using xref:partner-connector-upgrade.adoc#test-your-custom-connector-with-mtf[MTF].
+If you are a MuleSoft partner:
+
+. In your Mule app, update your connector that is generated from:
+  * xref:partner-connector-upgrade.adoc#upgrade-your-mule-sdk-connectors[Mule SDK]
+  * xref:partner-connector-upgrade.adoc#upgrade-your-rest-sdk-connectors[REST SDK]
+  * xref:partner-connector-upgrade.adoc#upgrade-your-rest-connect-connectors[REST Connect]
+. Test your connector using xref:partner-connector-upgrade.adoc#test-your-custom-connector-with-mtf[Module Testing Framework (beta)].
 . xref:mule-runtime::deploying.adoc[Deploy your applications] to a target running on Mule 4.6 or later.
 
-* If you are a MuleSoft customer:
-+
-. Update your connector that is generated from:
-  ** xref:customer-connector-upgrade.adoc#upgrade-your-mule-sdk-connectors[Mule SDK]
-  ** xref:customer-connector-upgrade.adoc#upgrade-your-rest-connect-connectors[REST Connect]
+If you are a MuleSoft customer:
+
+. In your Mule app, update your connector that is generated from:
+  * xref:customer-connector-upgrade.adoc#upgrade-your-mule-sdk-connectors[Mule SDK]
+  * xref:customer-connector-upgrade.adoc#upgrade-your-rest-connect-connectors[REST Connect (beta)]
 . Test your connector using xref:customer-connector-upgrade.adoc#test-your-custom-connector-with-munit[MUnit].
 . xref:mule-runtime::deploying.adoc[Deploy your applications] to a target running on Mule 4.6 or later.
 
@@ -123,7 +123,7 @@ To ensure your API proxies or Mule apps are protected when upgrading, upgrade yo
 The steps to upgrade are a little different, depending on your *Proxy type*: 
 
 * Basic endpoint:
-** If you use Basic endpoint, deploy the adapted application to the server from Mule runtime and connect it to API Manager using autodiscovery. For more information, see xref:mule-gateway::mule-gateway-config-autodiscovery-mule4.adoc[Configuring Mule Gateway API Autodiscovery in a Mule 4 Application].
+** If you use Basic endpoint, deploy the adapted application to the Mule runtime instance and connect it to API Manager using autodiscovery. For more information, see xref:mule-gateway::mule-gateway-config-autodiscovery-mule4.adoc[Configuring Mule Gateway API Autodiscovery in a Mule 4 Application].
 ** If you use a Basic endpoint API instance to update your instance, update the Mule application connecting to your API instance.
 * Proxy application
 +
@@ -135,14 +135,14 @@ For details about how to upgrade your proxy applications, see xref:upgrade-polic
 
 If you are using Mule Maven Plugin (MMP) to deploy your apps, configure the deployment to use Java 17.  
 
-When deploying to CloudHub, MMP deploys the latest build version of a release train when it's given a major and minor version. MMP has a new Java version property to explicitly deploy to a specified Java version.
+When deploying to CloudHub, MMP deploys the latest build version of a release train when the build version has a major and minor version. MMP has a new Java version property to explicitly deploy to a specified Java version.
 
 When deploying to Runtime Fabric and CloudHub 2.0, MMP accepts the entire tag of the build so you can use the correct semantic version (SemVer) in your deployment. 
 
 For more information, see the following documentation:
 
-* xref:mule-runtime::deploy-to-cloudhub-2.adoc[Deploying Applications to CloudHub 2.0 Using the Mule Maven Plugin]
-* xref:mule-runtime::deploy-to-rtf.adoc[Deploying Applications to Runtime Fabric Using the Mule Maven Plugin]
+* xref:mule-runtime::deploy-to-cloudhub-2.adoc[]
+* xref:mule-runtime::deploy-to-rtf.adoc[]
 
 [[dataweave]]
 == DataWeave
