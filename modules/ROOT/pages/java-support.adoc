@@ -143,7 +143,7 @@ For more information, see the following documentation:
 [[dataweave]]
 == DataWeave
 
-DataWeave uses Java’s reflection API to read and write Java objects and Java 17 adds some restrictions in encapsulation and reflective access that affect the Java Data Format.
+DataWeave uses Java’s reflection API to read and write Java objects. Java 17 adds some restrictions in encapsulation and reflective access that affect the Java Data Format.
 
 To ensure that your applications continue to work as expected, follow these guidelines:
 
