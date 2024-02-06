@@ -133,7 +133,7 @@ When deploying to CloudHub, MMP deploys the latest build version of a release tr
 
 When deploying to Runtime Fabric (RTF) and CloudHub 2.0, MMP accepts the entire tag of the build so you can use the correct semantic version (SemVer) in your deployment. 
 
-See the following documentation for more information:
+For more information, see the following documentation:
 
 * xref:mule-runtime::deploy-to-cloudhub-2.adoc[Deploying Applications to CloudHub 2.0 Using the Mule Maven Plugin]
 * xref:mule-runtime::deploy-to-rtf.adoc[Deploying Applications to Runtime Fabric Using the Mule Maven Plugin]
