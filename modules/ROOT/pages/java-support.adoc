@@ -84,7 +84,6 @@ Custom connectors are any connectors that are not developed and maintained by Mu
 
 If you are a MuleSoft partner:
 
-[calloutlist]
 . Update your connector that is generated from:
   * xref:partner-connector-upgrade.adoc#upgrade-your-mule-sdk-connectors[Mule SDK]
   * xref:partner-connector-upgrade.adoc#upgrade-your-rest-sdk-connectors[REST SDK]
