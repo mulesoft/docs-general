@@ -111,6 +111,7 @@ IMPORTANT: REST Connect now adds support for TLS. To save time, enable TLS at th
 
 // tag::communicate-support-level[]
 
+[[release-your-custom-connector]]
 == Release Your Custom Connector
 
 After you update your code and your tests are green, you are ready to release a new Java 17-compatible version of your custom connector. 
