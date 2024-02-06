@@ -48,7 +48,7 @@ Follow these best practices:
 The majority of Mule applications currently in use can be updated, tested, and redeployed. However, any apps and connectors that are running custom Java code require additional work to certify those components. Before you upgrade your integration apps or Mule Gateway policies and proxies to Java 17, all extensions, modules, and connectors used within those apps and policies must first be updated to be Java 17-compatible. 
 
 [IMPORTANT]
-To ensure your API proxies or Mule apps are protected when upgrading, upgrade your API policies *before* upgrading your API proxies or Mule apps.
+To ensure your API proxies or Mule apps are protected when upgrading, upgrade your API policies _before_ upgrading your API proxies or Mule apps.
 
 [[application-performance]]
 === Application Performance
