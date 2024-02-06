@@ -26,7 +26,7 @@ The following table shows the timeline for Java 8, Java 11, and Java 17 support:
 |===
 
 [NOTE]
-Along with the end of standard support for Java 8 and 11 with the Mule runtime 4.9 release in February 2025. Plan your upgrade path for apps that are running on either Java 8 or Java 11.
+Standard support for Java 8 and 11 ends with the Mule runtime 4.9 release in February 2025, so plan your upgrade path for apps that are running on either Java 8 or Java 11 accordingly.
 
 See xref:release-notes::mule-runtime/lts-edge-release-cadence.adoc[] for more information about Mule release cadences.
 
