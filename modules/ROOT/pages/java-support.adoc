@@ -6,7 +6,7 @@ Many third-party vendors are discontinuing support for Java 8, which impacts the
 
 This change has no immediate impact to Mule applications that are running on currently supported Mule versions, or on applications that are upgraded to Mule runtime 4.6, as existing Java 8 apps will continue to run on Java 8 until February 2025, giving you time to plan for your upgrade to Java 17.
 
-Java 17 upgrade planning includes evaluating integration apps, connectors (Anypoint connectors and custom connectors), Mule Gateway policies, and API proxies, as all of these components rely on Java. 
+Java 17 upgrade planning includes evaluating integration apps and connectors (Anypoint connectors and custom connectors), as all of these components rely on Java. 
 
 [[mule-runtime-java-support]]
 == Mule Runtime Java Support
@@ -45,10 +45,12 @@ Follow these best practices:
 [[mule-apps]]
 == Mule Apps
 
-The majority of Mule applications currently in use can be updated, tested, and redeployed. However, any apps and connectors that are running custom Java code require additional work to certify those components. Before you upgrade your integration apps or Mule Gateway policies and proxies to Java 17, all extensions, modules, and connectors used within those apps and policies must first be updated to be Java 17-compatible. 
+The majority of Mule applications currently in use can be updated, tested, and redeployed. However, any apps and connectors that are running custom Java code require additional work to certify those components. Before you upgrade your integration apps to Java 17, all extensions, modules, and connectors used within those apps must first be updated to be Java 17-compatible. 
 
+//// 
 [IMPORTANT]
 To ensure your API proxies or Mule apps are protected when upgrading, upgrade your API policies _before_ upgrading your API proxies or Mule apps.
+//// 
 
 [[application-performance]]
 === Application Performance
@@ -99,6 +101,7 @@ Custom connectors are any connectors that are not developed and maintained by Mu
 . Test your connector using xref:customer-connector-upgrade.adoc#test-your-custom-connector-with-munit[MUnit].
 . xref:mule-runtime::deploying.adoc[Deploy your applications] to a target running on Mule 4.6 or later.
 
+////
 [[policies]]
 == Policies
 
@@ -125,6 +128,7 @@ The steps to upgrade are a little different, depending on your *Proxy type*:
 * Proxy application
 +
 For details about how to upgrade your proxy applications, see xref:upgrade-policies-proxies.adoc#upgrading-api-proxies[Upgrading API Proxies].
+////
 
 [[mule-maven-plugin]]
 == Mule Maven Plugin 
