@@ -93,7 +93,6 @@ If you are a MuleSoft partner:
 
 If you are a MuleSoft customer:
 
-[calloutlist]
 . Update your connector that is generated from:
   * xref:customer-connector-upgrade.adoc#upgrade-your-mule-sdk-connectors[Mule SDK]
   * xref:customer-connector-upgrade.adoc#upgrade-your-rest-connect-connectors[REST Connect]
