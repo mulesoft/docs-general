@@ -154,6 +154,7 @@ To ensure that your applications continue to work as expected, follow these guid
 * Verify that the objects used by your application are Plain Old Java Objects (POJOs). 
 +
 POJOs are required from now on and you must also ensure that POJOs have:
+
 ** Default constructor
 ** Getters for all properties
 ** Setters for all properties
