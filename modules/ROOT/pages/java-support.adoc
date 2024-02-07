@@ -88,7 +88,7 @@ If you are a MuleSoft partner:
 
 . In your Mule app, update your connector that is generated from:
   * xref:partner-connector-upgrade.adoc#upgrade-your-mule-sdk-connectors[Mule SDK]
-  * xref:partner-connector-upgrade.adoc#upgrade-your-rest-sdk-connectors[REST SDK]
+  * xref:partner-connector-upgrade.adoc#upgrade-your-rest-sdk-connectors[REST SDK (beta)]
   * xref:partner-connector-upgrade.adoc#upgrade-your-rest-connect-connectors[REST Connect]
 . Test your connector using xref:partner-connector-upgrade.adoc#test-your-custom-connector-with-mtf[Module Testing Framework (beta)].
 . xref:mule-runtime::deploying.adoc[Deploy your applications] to a target running on Mule 4.6 or later.
@@ -97,7 +97,7 @@ If you are a MuleSoft customer:
 
 . In your Mule app, update your connector that is generated from:
   * xref:customer-connector-upgrade.adoc#upgrade-your-mule-sdk-connectors[Mule SDK]
-  * xref:customer-connector-upgrade.adoc#upgrade-your-rest-connect-connectors[REST Connect (beta)]
+  * xref:customer-connector-upgrade.adoc#upgrade-your-rest-connect-connectors[REST Connect]
 . Test your connector using xref:customer-connector-upgrade.adoc#test-your-custom-connector-with-munit[MUnit].
 . xref:mule-runtime::deploying.adoc[Deploy your applications] to a target running on Mule 4.6 or later.
 
