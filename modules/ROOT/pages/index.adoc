@@ -4,9 +4,6 @@
 :!sectids:
 ifndef::env-site[:imagesdir: ../images]
 
-[#cta]
-xref:api-led-overview.adoc[New to MuleSoft? Start here.]
-
 [#the-road]
 == The Road to Digital Transformation
 
