@@ -54,6 +54,12 @@ To ensure your API proxies or Mule apps are protected when upgrading, upgrade yo
 [[application-performance]]
 === Application Performance
 
+To enhance application performance, see:
+
+* <<memory-management>>
+* <<default-tls-cipher-selection>>
+
+[[memory-management]]
 ==== Memory Management
 
 Java 17 manages memory differently than it did in earlier versions like Java 8. Java 17 reduces request latency and executes work more predictably. To achieve this, it adopts a different memory management approach. Although highly dependent on each application, in some cases, Java 17 preferentially commits to heap memory.
@@ -65,13 +71,14 @@ If your apps are deployed on-premises:
 * If your workloads are running on Runtime Fabric, you must allocate 1400 MB of memory for 0.50 vCPU replica sizes. Memory requirements vary for individual apps. 
 * If your workloads are running on-premises, such as in a hybrid or standalone environment, you must tune your operating system's garbage collection algorithm. 
 
+[[default-tls-cipher-selection]]
 ==== Default TLS Cipher Selection
 
-When using TLS in a server with Java 11+, it is the server the one that determines the cipher preference, with the client supported ciphers list only used to filter, but never to determine priority. See https://bugs.openjdk.org/browse/JDK-8168261[JDK-8168261].
+When using TLS in a server with Java 11 and later, the server is the one that determines the cipher preference. The client supported ciphers list is only used to filter, but never to determine priority. See https://bugs.openjdk.org/browse/JDK-8168261[Use server cipher suites preference by default].
 
-If you upgrade your server from Java 8 to Java 11+, this may cause a different cipher to be negotiated (depending on what was the supported ciphers list from the client). A change in cipher may incur in a peformance vs security trade-off.
+Upgrading your server from Java 8 to Java 11 and later may cause a different cipher to be negotiated (depending on the supported ciphers list of the client). A change in cipher may incur in a performance vs security trade-off.
 
-There are various ways in which you can xref:mule-runtime::tls-configuration.adoc#optional-specify-protocols-and-cipher-suites[control the cipher selection] in case the defaults are not good for your needs.
+If you want to change the defaults, see xref:mule-runtime::tls-configuration.adoc#optional-specify-protocols-and-cipher-suites[control the cipher selection].
 
 [[anypoint-connectors-and-modules]]
 == Anypoint Connectors and Modules
