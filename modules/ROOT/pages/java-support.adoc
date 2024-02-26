@@ -74,11 +74,11 @@ If your apps are deployed on-premises:
 [[default-tls-cipher-selection]]
 ==== Default TLS Cipher Selection
 
-When using TLS in a server with Java 11 and later, the server is the one that determines the cipher preference. The client supported ciphers list is only used to filter, but never to determine priority. See https://bugs.openjdk.org/browse/JDK-8168261[Use server cipher suites preference by default (JDK-8168261)].
+When using TLS in a server with Java 11 and later, the server determines the cipher preference. The client supported ciphers list is used to filter, not to determine priority. See https://bugs.openjdk.org/browse/JDK-8168261[Use server cipher suites preference by default (JDK-8168261)].
 
-Upgrading your server from Java 8 to Java 11 and later may cause a different cipher to be negotiated (depending on the supported ciphers list of the client). A change in cipher may incur in a performance vs security trade-off.
+Upgrading your server from Java 8 to Java 11 and later can cause a different cipher to be negotiated (depending on the supported ciphers list of the client). A change in cipher can affect the trade-off between security and performance.
 
-If you want to change the defaults, see xref:mule-runtime::tls-configuration.adoc#optional-specify-protocols-and-cipher-suites[control the cipher selection].
+If you want to change its default values, see xref:mule-runtime::tls-configuration.adoc#optional-specify-protocols-and-cipher-suites[control the cipher selection].
 
 [[anypoint-connectors-and-modules]]
 == Anypoint Connectors and Modules
