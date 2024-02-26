@@ -74,7 +74,7 @@ If your apps are deployed on-premises:
 [[default-tls-cipher-selection]]
 ==== Default TLS Cipher Selection
 
-When using TLS in a server with Java 11 and later, the server is the one that determines the cipher preference. The client supported ciphers list is only used to filter, but never to determine priority. See https://bugs.openjdk.org/browse/JDK-8168261[Use server cipher suites preference by default].
+When using TLS in a server with Java 11 and later, the server is the one that determines the cipher preference. The client supported ciphers list is only used to filter, but never to determine priority. See https://bugs.openjdk.org/browse/JDK-8168261[Use server cipher suites preference by default (JDK-8168261)].
 
 Upgrading your server from Java 8 to Java 11 and later may cause a different cipher to be negotiated (depending on the supported ciphers list of the client). A change in cipher may incur in a performance vs security trade-off.
 
