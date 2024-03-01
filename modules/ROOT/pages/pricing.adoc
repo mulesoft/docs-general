@@ -2,16 +2,16 @@
 
 [IMPORTANT]
 ====
-This document applies only to select customers in the US control plane who are opted in to a new pricing model.
+This document applies only to select customers who are opted in to usage-based pricing. 
 Details in this document are subject to change.
 ====
 
 This document describes the changes introduced in Runtime Manager for CloudHub 1.0, 
-CloudHub 2.0, Anypoint Runtime Fabric, and Access Management to support the new pricing and packaging model.
+CloudHub 2.0, Anypoint Runtime Fabric, and Access Management to support usage-based pricing.
 
-== Usage Reports Changes from vCore to the New Pricing and Packaging Model
+== Usage Reports Changes from Legacy Subscription Plans to Usage-Based Plans
 
-When your organization opts into the new usage pricing and packaging model, your apps must be redeployed. After redeploying your apps, your usage reports temporarily display both vCore-based usage and the new usage metrics for your apps. Usage reports cover an entire month, so usage reports appear for both the new usage pricing model and the vCore-based usage pricing for that month.
+When your organization opts into a usage-based pricing plan, such as the Anypoint Integration Advanced package, your apps must be redeployed. After redeploying your apps, your usage reports temporarily display both legacy vCore-based metrics and usage-based metrics for your apps. Usage reports cover an entire month, so usage reports appear for both the usage-based pricing packages and the legacy subscription-based vCore pricing for that month.
 
 For CloudHub and CloudHub 2.0, apps are automatically redeployed during the monthly runtime patch update cycle. See xref:runtime-manager::cloudhub-app-runtime-version-updates.adoc[CloudHub Runtime Continuous Updates] and xref:cloudhub-2::ch2-patch-updates.adoc[CloudHub 2.0 Operating System Patch Updates] for more details.
 
@@ -19,7 +19,7 @@ For Runtime Fabric, you must redeploy apps manually. After you redeploy all RTF 
 
 == Supported Mule Runtime Versions
 
-To benefit from the new pricing and packaging model, all of your applications (in production and sandbox) must use the following Mule versions:
+To benefit from the robust usage reports that accompany usage-based pricing plans, all of your applications (in production and sandbox) must use the following Mule versions:
 
 [cols="2*"]
 |===
@@ -52,27 +52,25 @@ Mule 3 images version:
 
 |=== 
 
-After your organization onboards to the new pricing and packaging model, you must redeploy your apps with a supported version, either manually or during the monthly patching cycle. The monthly patching cycle is applicable only for CloudHub 1.0 and CloudHub 2.0 applications. RTF customers must be using RTF agent version 1.13.112 or 2.1.30 or newer. You must also manually redeploy Runtime Fabric applications (with a supported date-patch version) after your organization is onboarded to the new pricing and packaging model.
+After your organization onboards to usage-based pricing, you must redeploy your apps with a supported version, either manually or during the monthly patching cycle. The monthly patching cycle is applicable only for CloudHub 1.0 and CloudHub 2.0 applications. RTF customers must be using RTF agent version 1.13.112 or 2.1.30 or newer. You must also manually redeploy Runtime Fabric applications (with a supported date-patch version) after your organization is onboarded to usage-based pricing.
 
-To xref:cloudhub-2::ch2-update-apps.adoc#roll-back-to-a-previous-successful-configuration[roll back] to a previous successful configuration of existing applications that use a Mule version that the new pricing and packaging model does not support, choose a compliant version before deploying changes. After deployment, MuleSoft creates a new configuration with the previously chosen settings and a supported runtime.
+To xref:cloudhub-2::ch2-update-apps.adoc#roll-back-to-a-previous-successful-configuration[roll back] to a previous successful configuration of existing applications that use a Mule version that the usage-based pricing model does not support, choose a compliant version before deploying changes. After deployment, MuleSoft creates a new configuration with the previously chosen settings and a supported runtime.
 
 == Metrics Definitions
 
-Anypoint Platform has a pricing package that is based on the consumption of allotted Mule components.
+Usage-based pricing packages and their usage reports are based on your organization's use of allotted Mule components.
 
 For information about pricing concepts within Anypoint Platform, see xref:general::pricing-metrics.adoc[Usage and Pricing Metrics].
 
-// WIP
-
 == Global Resource Pool Limits
 
-Root organizations provisioned with the new pricing and packaging receive a global pool of shared CPU and memory resources that is shared for deployments into CloudHub 1.0 and CloudHub 2.0 across all business groups and environments in the organization. This pool of resources is large enough to consume all of the purchased flows and messages without interruption. If an organization runs out of resources, actions that consume more resources such as deploying new applications or starting stopped applications are blocked until sufficient resources are available. 
+Root organizations provisioned with usage-based pricing receive a global pool of shared CPU and memory resources that is shared for deployments into CloudHub 1.0 and CloudHub 2.0 across all business groups and environments in the organization. This pool of resources is large enough to consume all of the purchased flows and messages without interruption. If an organization runs out of resources, actions that consume more resources such as deploying new applications or starting stopped applications are blocked until sufficient resources are available. 
 
 You can free up resources by stopping or deleting unused applications, or reducing the replica size or resources that an existing application consumes. You receive a warning each time your organization approaches the resource limit on the Applications List UI, Application Deployment UI, and Manage Application UI. To avoid hitting limits, allocate only what you need by using granular replica sizes in CloudHub 1.0 and CloudHub 2.0. Contact Support if you require an exception when you reach the limit. 
 
 == CloudHub 2.0 Application Deployment
 
-CloudHub 2.0 now uses replica sizing for application deployment. You can choose from the following replica sizes based on the application profile or size and display the equivalent in terms of vCores. Replica sizes with the suffix `.mem` are memory-intensive options with the same compute. 
+For organizations provisioned with a usage-based pricing package, CloudHub 2.0 uses replica sizing for application deployment. You can choose from the following replica sizes based on the application profile or size and display the equivalent in terms of legacy vCores. Replica sizes with the suffix `.mem` are memory-intensive options with the same compute. 
 
 include::partial$pricing.adoc[tag=pricingTable]
 
@@ -80,7 +78,7 @@ During the monthly patching cycle, your applications automatically migrate to an
 
 == Access Management Entitlements
 
-Accounts provisioned with the new pricing and packaging show flows, messages, and throughput entitlements instead of vCores on Access Management. These entitlements are available at the root organization level and cannot be allocated among business groups. Because vCores are no longer the purchased entity, they can no longer be tracked or allocated among business groups. To view your monthly usage of flows, messages, and throughput, xref:general::usage-reports.adoc#access-usage-reports[access usage reports] by using the Access Management UI. 
+Accounts provisioned with a usage-based pricing package show flows, messages, and throughput entitlements instead of vCores on Access Management. These entitlements are available at the root organization level and cannot be allocated among business groups. Because vCores are no longer the purchased entity, they can no longer be tracked or allocated among business groups. To view your monthly usage of flows, messages, and throughput, xref:general::usage-reports.adoc#access-usage-reports[access usage reports] by using the Access Management UI. 
 
 == See Also
 
