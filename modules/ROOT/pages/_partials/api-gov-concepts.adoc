@@ -187,3 +187,17 @@ Properties related to an API's entry in an API catalog, such as name, version, o
 In Anypoint Exchange, these properties are associated with APIs in asset portal information.
 
 // end::api-catalog-info[]
+
+// tag::gov-active-profiles[]
+
+[[gov-draft-profiles]]
+Save a profile as active to govern the targeted APIs and show API conformance information in integrating Anypoint Platform products.
+
+// end::gov-active-profiles[]
+
+// tag::gov-draft-profiles[]
+
+[[gov-draft-profiles]]
+Save a profile as draft to experiment with profile settings and review conformance information before governing the APIs. API conformance information for draft profiles is not shown in integrating Anypoint Platform products.
+
+// end::gov-draft-profiles[]
