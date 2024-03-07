@@ -9,6 +9,23 @@ against the rulesets to determine governance conformance.
 
 // end::governance-profiles[]
 
+// tag::gov-active-profiles[]
+
+[[gov-active-profiles]]
+active governance profiles::
+APIs targeted by active profiles are governed APIs and their conformance information is shown in integrating Anypoint Platform products.
+
+// end::gov-active-profiles[]
+
+// tag::gov-draft-profiles[]
+
+[[gov-draft-profiles]]
+draft governance profiles::
+Draft profiles enable you to experiment with profile settings and review conformance information before governing the targeted APIs. API conformance information for draft profiles is not shown in integrating Anypoint Platform products.
+
+// end::gov-draft-profiles[]
+
+
 // tag::governance-profile-status[]
 
 [[gov-profile-status]]
@@ -47,7 +64,7 @@ MuleSoft provides several rulesets in Exchange, such as Anypoint API Best Practi
 
 [[governed-apis]]
 governed APIs::
-APIs are governed if they are identified by the selection criteria of at least one of the governance profiles. If an API is governed, all versions of that API are considered one governed API. Subscription limits are set based on your organization's purchased capacity and the UI gives information about usage and alerts when you are nearing or exceeding your subscription capacity. 
+APIs are governed if they are identified by the selection criteria of at least one active governance profile. If an API is governed, all versions of that API are considered one governed API. Subscription limits are set based on your organization's purchased capacity and the UI gives information about usage and alerts when you are nearing or exceeding your subscription capacity. 
 
 // end::governed-apis[]
 
@@ -55,7 +72,7 @@ APIs are governed if they are identified by the selection criteria of at least o
 
 [[governance-status]]
 governance status::
-Governance status in the API Governance console shows the number of governed APIs, total number of APIs of supported API types, and subscription limit information.
+Governance status in the API Governance console shows the usage of API Governance, including number of governed APIs, total number of APIs of supported API types, and subscription limit information.
 
 // end::governance-status[]
 
@@ -187,17 +204,3 @@ Properties related to an API's entry in an API catalog, such as name, version, o
 In Anypoint Exchange, these properties are associated with APIs in asset portal information.
 
 // end::api-catalog-info[]
-
-// tag::gov-active-profiles[]
-
-[[gov-active-profiles]]
-Save a profile as active to govern the targeted APIs and show API conformance information in integrating Anypoint Platform products.
-
-// end::gov-active-profiles[]
-
-// tag::gov-draft-profiles[]
-
-[[gov-draft-profiles]]
-Save a profile as draft to experiment with profile settings and review conformance information before governing the APIs. API conformance information for draft profiles is not shown in integrating Anypoint Platform products.
-
-// end::gov-draft-profiles[]
