@@ -190,7 +190,7 @@ In Anypoint Exchange, these properties are associated with APIs in asset portal 
 
 // tag::gov-active-profiles[]
 
-[[gov-draft-profiles]]
+[[gov-active-profiles]]
 Save a profile as active to govern the targeted APIs and show API conformance information in integrating Anypoint Platform products.
 
 // end::gov-active-profiles[]
