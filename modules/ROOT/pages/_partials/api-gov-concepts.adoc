@@ -80,7 +80,7 @@ Governance status in the API Governance console shows the usage of API Governanc
 
 [[api-conformance]]
 API conformance::
-API conformance indicates whether a validated API passes all of the required rules in one or more governance rulesets. If an API specification is included in multiple governance profiles, it must pass all of the rulesets in all of those profiles to be conformant.
+API conformance indicates whether a validated API passes all of the required rules in one or more governance rulesets. If an API is included in multiple governance profiles, it must pass all of the rulesets in all of those profiles to be conformant.
 
 // end::api-conformance[]
 
