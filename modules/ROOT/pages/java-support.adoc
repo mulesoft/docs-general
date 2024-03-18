@@ -94,6 +94,18 @@ To upgrade Anypoint Connectors:
 . In Anypoint Studio, update the connectors in your app to the latest Java 17-compatible version. 
 . xref:mule-runtime::deploying.adoc[Deploy your applications] to a target running on Mule 4.6 or later.
 
+[[anypoint-studio]]
+== Anypoint Studio
+
+If your Mule app is running on Mule runtime 4.6 or later, you can change the target JVM at the Studio project level to upgrade or downgrade the JVM. 
+
+When you add a new connector or module to your project, Studio shows the supported JVM version for each version of the connector or module. 
+
+When you upgrade an existing Studio project to Java 17, Studio automatically searches Exchange and suggests which extensions (modules and connectors) in your app to upgrade. 
+
+For more information, see xref:studio::change-jdk-config-in-projects.adoc[] and xref:studio::update-modules.adoc[].
+
+
 [[custom-connectors]]
 == Custom Connectors
 
