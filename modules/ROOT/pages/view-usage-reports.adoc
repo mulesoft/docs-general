@@ -30,13 +30,12 @@ include::partial$usage-reports-tasks.adoc[tag=accessUsageReports]
 
 == Query Data using the Metering API and Anypoint Metric Query Language
 
-Anypoint Platform offers the Metering API [link!] that enables you to access your usage data, which is stored in a domain-specific language. Using the Anypoint Monitoring Query Language [link!], you can construct simple, flexible, and secure queries to peruse your data. For more information, see [the Metering API link] and [the link to the subsection for the query language] in Exchange.
+Anypoint Platform offers APIs that enable you to view your usage data and construct simple, flexible, and secure queries to peruse your data. For more information, see xref:usage-apis.adoc[usage APIs documentation] and the Metering API spec.
 
 == Troubleshoot Usage Reports
 
 Because platform data availability depends on activity in your organization, there might be instances in which usage reports are unavailable. 
 
-[cols="^1,^1,^1"]
 |===
 | Issue | Explanation | Action Required
 
