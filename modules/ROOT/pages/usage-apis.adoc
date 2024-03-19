@@ -40,4 +40,4 @@ include::monitoring::partial$amql.adoc[tag=whereClause]
 
 === GROUPING Clause
 
-include::monitoring::partial$amql.adoc[tag=groupingClause]
+include::monitoring::partial$amql.adoc[tag=groupingClauseUR]
