@@ -24,7 +24,7 @@ include::monitoring::partial$amql.adoc[tag=queryGrammarUR]
 
 === Filtering
 
-include::monitoring::partial$amql.adoc[tag=amqlFiltering]
+include::monitoring::partial$amql.adoc[tag=filtering]
 
 === Reserved Keywords
 
