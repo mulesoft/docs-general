@@ -45,14 +45,16 @@ Follow these best practices:
 [[mule-apps]]
 == Mule Apps
 
-The majority of Mule applications currently in use can be updated, tested, and redeployed. However, any apps and connectors that are running custom Java code require additional work to certify those components. Before you upgrade your integration apps or Mule Gateway policies and proxies to Java 17, all extensions, modules, and connectors used within those apps and policies must first be updated to be Java 17-compatible.
+The majority of Mule applications currently in use can be updated, tested, and redeployed. However, any apps and connectors that are running custom Java code require additional work to certify those components. Before you upgrade your integration apps or Mule Gateway policies and proxies to Java 17, you must update all extensions, modules, and connectors used within those apps and policies to be Java 17-compatible.
 
 [IMPORTANT]
 To ensure your API proxies or Mule apps are protected when upgrading, upgrade your API policies _before_ upgrading your API proxies or Mule apps.
 
 
 [[application-performance]]
-=== Application Performance
+== Java 17 Performance Considerations
+
+Java 17 provides important performance changes to MuleSoft products. Java 17 includes a new JIT compiler, which improves code execution speed. 
 
 To enhance application performance, see:
 
@@ -60,25 +62,62 @@ To enhance application performance, see:
 * <<default-tls-cipher-selection>>
 
 [[memory-management]]
-==== Memory Management
+=== Memory Management
 
-Java 17 manages memory differently than it did in earlier versions like Java 8. Java 17 reduces request latency and executes work more predictably. To achieve this, it adopts a different memory management approach. Although highly dependent on each application, in some cases, Java 17 preferentially commits to heap memory.
+Java 17 manages memory differently, with the goal of reducing latency and executing work more predictably. To achieve this, Java 17 adopts a different memory management approach. Although highly dependent on each application, Java 17 in some cases preferentially commits more data to heap memory, which results in higher initial memory usage. Java 17 also brings new Garbage Collection (GC) algorithms with changed defaults. The Mule runtime 4.6 LTS release provides, at a minimum, comparable or better performance for most apps as well as significant performance improvement (as high as 50%) for many apps. 
 
 Because of this change in Java 17 memory management, to ensure optimal operation and effectively leverage these improvements, you must conduct xref:mule-runtime::tuning-test-validations.adoc[performance testing] and xref:mule-runtime::tuning-monitoring.adoc[monitoring] for your most common workloads.
 
-If your apps are deployed on-premises: 
+[[runtime-fabric-performance]]
+=== Runtime Fabric
 
-* If your workloads are running on Runtime Fabric, you must allocate 1400 MB of memory for 0.50 vCPU replica sizes. Memory requirements vary for individual apps. 
-* If your workloads are running on-premises, such as in a hybrid or standalone environment, you must tune your operating system's garbage collection algorithm. 
+If your workloads are running on the Runtime Fabric, you must allocate a minimum memory size of 1400mb of memory for 0.50 vCpu replica sizes. This is the minimum recommended size as the best configuration for memory allocation for most applications. With Runtime Fabric, even for the small fractionals with minimum memory, 50% of the total memory is allocated for heap. For example, a 450m request with a 550m limit CPU app with 1400mb will have a heap size of 700mb. 
+
+After performance testing, some small adjustments, such as adding 100mb of memory or even subtracting memory, might be necessary, depending on your specific use cases.
+
+[[cloud-hub-2-performance]]
+=== CloudHub 2.0
+
+With Java 17, Cloudhub 2.0 for small fractionals (micro offerings) continues to support the same applications supported with Java 8, within the bounds of limitations for CPU and heap memory size for the offering size. Features such as Apikit, Api Gateway policies, DataWeave, and so on, are supported with comparable or better performance in most cases on the micro offering. 
+
+The total memory for the micro and nano offerings has increased from 1250mb to 1400mb. The heap size remains unchanged. For example, the micro offering 0.1 vCpu of a 450m request 550m limit CPU app has 1400mb of total memory and still has a heap size of 500mb. More native memory is provided for the CloudHub 2.0 managed offering versus Runtime Fabric to enable you to fully use the CPU and heap provided with the offering.
+
+=== Garbage Collection Algorithms
+
+MuleSoft is following the Java 17 garbage collection defaults. The following table shows which garbage collection algorithms are used for Mule runtime 4.6.0 or later. 
+
+[%header%autowidth.spread]
+|===
+|Java version | vCores | Algorithm
+| Java 8 | All | Parallel GC*
+| Java 17 | < 2 |Serial GC
+| Java 17 | >= 2 | G1
+|===
+
+*Using deploy flags, you can choose to override and use ‘CMS’ where there are specific application needs, however CMS was deprecated in Java 11. 
+
+* Parallel GC 
++
+MuleSoft Java 8 uses Parallel as the default garbage collection algorithm, which is a generational collector. This algorithm uses the standard young and old generation heap format. Oracle also refers to this algorithm as a “throughput collector”. 
+
+* Serial GC
++
+Serial GC is the Java 17 default for fractional and small vCore offerings. Serial is also a generational collector. Serial uses a single thread for GC, whereas Parallel can use multiple threads to increase garbage collection speed.
+
+* Garbage-First (G1) GC
++
+Used for larger offerings of >= 2 vCores. It serves multi-core machines with very large amounts of memory. Per Oracle, "it attempts to meet garbage collection pause-time goals with high probability while achieving high throughput with little need for configuration.”
+
+For more information, see the xref:https://docs.oracle.com/en/java/javase/17/gctuning/parallel-collector1.html#GUID-DCDD6E46-0406-41D1-AB49-FB96A50EB9CE[Java 17 HotSpot Virtual Machine Garbage Collection Tuning Guide].
 
 [[default-tls-cipher-selection]]
-==== Default TLS Cipher Selection
+=== Default TLS Cipher Selection
 
 When using TLS in a server with Java 11 and later, the server determines the cipher preference. The client supported ciphers list is used to filter, not to determine priority. See https://bugs.openjdk.org/browse/JDK-8168261[Use server cipher suites preference by default (JDK-8168261)].
 
-Upgrading your server from Java 8 to Java 11 and later can cause a different cipher to be negotiated (depending on the supported ciphers list of the client). A change in cipher can affect the trade-off between security and performance.
+Upgrading your server from Java 8 to Java 11 and later can cause negotiation of a different cipher (depending on the supported ciphers list of the client), which can affect the trade-off between security and performance.
 
-If you want to change its default values, see xref:mule-runtime::tls-configuration.adoc#optional-specify-protocols-and-cipher-suites[control the cipher selection].
+If you want to change the cipher's default values, see xref:mule-runtime::tls-configuration.adoc#optional-specify-protocols-and-cipher-suites[control the cipher selection].
 
 [[anypoint-connectors-and-modules]]
 == Anypoint Connectors and Modules
@@ -159,7 +198,7 @@ For details about how to upgrade your proxy applications, see xref:upgrade-polic
 [[mule-maven-plugin]]
 == Mule Maven Plugin 
 
-If you are using Mule Maven Plugin (MMP) to deploy your apps, configure the deployment to use Java 17.  
+If you are using Mule Maven Plugin (MMP) 4.1.0 and later to deploy your apps, you can configure the deployment to use Java 17.  
 
 When deploying to CloudHub, MMP deploys the latest build version of a release train when the build version has a major and minor version. MMP has a new Java version property to explicitly deploy to a specified Java version.
 
@@ -179,9 +218,9 @@ To ensure that your applications continue to work as expected, follow these guid
 
 * Verify that the objects used by your application are Plain Old Java Objects (POJOs). 
 +
-POJOs are required from now on and you must also ensure that POJOs have:
+POJOs are required from DataWeave 6.0.0 on, and you must ensure that the POJOs have:
 
-** Default constructor
+** A default constructor
 ** Getters for all properties
 ** Setters for all properties
 
