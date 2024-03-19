@@ -97,13 +97,13 @@ To upgrade Anypoint Connectors:
 [[anypoint-studio]]
 == Anypoint Studio
 
-If your Mule app is running on Mule runtime 4.6 or later, you can change the target JVM at the Studio project level to upgrade or downgrade the JVM. When you compile your app, Studio 7.17 offers real-time guidance and alerts you if there are any incompatible connector versions or project mismatches to prevent deployment failures.
+Starting with Anypoint Studio (Studio) 7.17, if your Mule app is running on Mule runtime 4.6 or later, you can change the target JVM at the Studio project level to upgrade or downgrade the JVM. When you compile your app, Studio 7.17 offers real-time guidance and alerts you if there are any incompatible connector versions or project mismatches to prevent deployment failures.
 
 When you add a new connector or module to your project, Studio shows the supported JVM version for each version of the connector or module. 
 
 When you upgrade an existing Studio project to Java 17, Studio automatically searches Exchange and suggests which extensions (modules and connectors) in your app to upgrade. 
 
-When you deploy an app to CloudHub, Runtime Manager proactively detects mismatches between the project's Java version and the deployment environment. For example, if your project is built for Java 8 and your target environment is a Java 17 environment, Runtime Manager provides guidance to prevent deployment failures.
+When you deploy an app to CloudHub from Studio, Runtime Manager proactively detects mismatches between the project's Java version and the deployment environment. For example, if your project is built for Java 8 and your target environment is a Java 17 environment, Runtime Manager and Studio provides guidance to prevent deployment failures.
 
 For more information, see xref:studio::change-jdk-config-in-projects.adoc[] and xref:studio::update-modules.adoc[].
 
