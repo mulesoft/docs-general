@@ -71,7 +71,7 @@ If your apps are deployed on-premises:
 
 * If your workloads run on Runtime Fabric, you must allocate at least 1400 MB of memory for 0.50 vCPU replica sizes. Because memory requirements vary for individual apps, this minimum provides the best memory allocation configuration for most applications.
 
-* If your workloads are running on-premises, such as in a hybrid or standalone environment, you must tune your operating system’s garbage collection algorithm. 
+* If your workloads run on-premises, such as in a hybrid or standalone environment, you must tune your operating system’s garbage collection algorithm. 
 
 [[default-tls-cipher-selection]]
 === Default TLS Cipher Selection
