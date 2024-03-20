@@ -78,9 +78,9 @@ If your apps are deployed on-premises:
 
 When using TLS in a server with Java 11 and later, the server determines the cipher preference. The client supported ciphers list is used to filter, not to determine priority. See https://bugs.openjdk.org/browse/JDK-8168261[Use server cipher suites preference by default (JDK-8168261)].
 
-Upgrading your server from Java 8 to Java 11 and later can cause negotiation of a different cipher (depending on the supported ciphers list of the client), which can affect the trade-off between security and performance.
+Upgrading your server from Java 8 to Java 11 and later can cause cipher renegotiation (depending on the supported ciphers list of the client), which can affect the trade-off between security and performance.
 
-If you want to change the cipher's default values, see xref:mule-runtime::tls-configuration.adoc#optional-specify-protocols-and-cipher-suites[control the cipher selection].
+If you want to change the cipher's default values, see xref:mule-runtime::tls-configuration.adoc#optional-specify-protocols-and-cipher-suites[Specify Protocols and Cipher Suites].
 
 [[anypoint-connectors-and-modules]]
 == Anypoint Connectors and Modules
@@ -99,13 +99,14 @@ To upgrade Anypoint Connectors:
 [[anypoint-studio]]
 == Anypoint Studio
 
-Starting with Anypoint Studio (Studio) 7.17, if your Mule app is running on Mule runtime 4.6 or later, you can change the target JVM at the Studio project level to upgrade or downgrade the JVM. When you compile your app, Studio 7.17 offers real-time guidance and alerts you if there are any incompatible connector versions or project mismatches to prevent deployment failures.
+Starting with Anypoint Studio (Studio) 7.17, if your Mule app is running on Mule runtime 4.6 or later, you can change the target JVM at the Studio project level to upgrade or downgrade the JVM. 
 
-When you add a new connector or module to your project, Studio shows the supported JVM version for each version of the connector or module. 
+Studio 17 provides compatibility guidance:
 
-When you upgrade an existing Studio project to Java 17, Studio automatically searches Exchange and suggests which extensions (modules and connectors) in your app to upgrade. 
-
-When you deploy an app to CloudHub from Studio, Runtime Manager proactively detects mismatches between the project's Java version and the deployment environment. For example, if your project is built for Java 8 and your target environment is Java 17, Runtime Manager and Studio provides guidance to prevent deployment failures.
+* When you compile your app, Studio 7.17 offers real-time guidance and alerts you if there are any incompatible connector versions or project mismatches to prevent deployment failures.
+* When you add a new connector or module to your project, Studio shows the supported JVM version for each version of the connector or module. 
+* When you upgrade an existing Studio project to Java 17, Studio automatically searches Exchange and suggests which extensions (modules and connectors) in your app to upgrade. 
+* When you deploy an app to CloudHub from Studio, Runtime Manager proactively detects mismatches between the project's Java version and the deployment environment. For example, if your project is built for Java 8 and your target environment is Java 17, Runtime Manager and Studio provide guidance to prevent deployment failures.
 
 For more information, see xref:studio::change-jdk-config-in-projects.adoc[] and xref:studio::update-modules.adoc[].
 
@@ -181,7 +182,7 @@ To ensure that your applications continue to work as expected, follow these guid
 
 * Verify that the objects used by your application are Plain Old Java Objects (POJOs). 
 +
-POJOs are required from DataWeave 6.0.0 on, and you must ensure that the POJOs have:
+POJOs are required for DataWeave 6.0.0 and later, and you must ensure that the POJOs have:
 
 ** A default constructor
 ** Getters for all properties
