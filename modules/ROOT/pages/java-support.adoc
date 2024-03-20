@@ -64,9 +64,17 @@ To enhance application performance, see:
 [[memory-management]]
 === Memory Management
 
-Java 17 manages memory differently, with the goal of reducing latency and executing work more predictably. To achieve this, Java 17 adopts a different memory management approach. Although highly dependent on each application, Java 17 in some cases preferentially commits more data to heap memory, which results in higher initial memory usage. Java 17 also brings new Garbage Collection (GC) algorithms with changed defaults. The Mule runtime 4.6 LTS release provides, at a minimum, comparable or better performance for most apps as well as significant performance improvement (as high as 50%) for many apps. 
+Java 17 manages memory differently than it did in earlier versions like Java 8. Java 17 reduces request latency and executes work more predictably. To achieve this, it adopts a different memory management approach. Although highly dependent on each application, in some cases, Java 17 preferentially commits to heap memory.
 
 Because of this change in Java 17 memory management, to ensure optimal operation and effectively leverage these improvements, you must conduct xref:mule-runtime::tuning-test-validations.adoc[performance testing] and xref:mule-runtime::tuning-monitoring.adoc[monitoring] for your most common workloads.
+
+If your apps are deployed on-premises:
+
+* If your workloads are running on Runtime Fabric, you must allocate 1400 MB of memory for 0.50 vCPU replica sizes. Memory requirements vary for individual apps.
+
+* If your workloads are running on-premises, such as in a hybrid or standalone environment, you must tune your operating system’s garbage collection algorithm. 
+
+
 
 [[runtime-fabric-performance]]
 === Runtime Fabric
