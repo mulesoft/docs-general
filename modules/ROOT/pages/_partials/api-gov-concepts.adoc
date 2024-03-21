@@ -9,6 +9,23 @@ against the rulesets to determine governance conformance.
 
 // end::governance-profiles[]
 
+// tag::gov-active-profiles[]
+
+[[gov-active-profiles]]
+active governance profiles::
+APIs targeted by active profiles are governed APIs and their conformance information is shown in integrating Anypoint Platform products.
+
+// end::gov-active-profiles[]
+
+// tag::gov-draft-profiles[]
+
+[[gov-draft-profiles]]
+draft governance profiles::
+Draft profiles enable you to experiment with profile settings and review conformance information before centrally governing the targeted APIs. APIs targeted by draft profiles are governed APIs, but their conformance information is not shown in integrating Anypoint Platform products.
+
+// end::gov-draft-profiles[]
+
+
 // tag::governance-profile-status[]
 
 [[gov-profile-status]]
@@ -47,15 +64,23 @@ MuleSoft provides several rulesets in Exchange, such as Anypoint API Best Practi
 
 [[governed-apis]]
 governed APIs::
-APIs are governed if they are identified by the selection criteria of at least one of the governance profiles. If an API is governed, all versions of that API are considered one governed API. Subscription limits are set based on your organization's purchased capacity and the UI gives information about usage and alerts when you are nearing or exceeding your subscription capacity. 
+APIs are governed if they are identified by the selection criteria of at least one active or draft governance profile. If an API is governed, all versions of that API are considered one governed API. Subscription limits are set based on your organization's purchased capacity and the UI gives information about usage and alerts when you are nearing or exceeding your subscription capacity. 
 
 // end::governed-apis[]
+
+// tag::centrally-governed-apis[]
+
+[[centrally-governed-apis]]
+centrally governed APIs::
+APIs are centrally governed if they are identified by the selection criteria of at least one active governance profile. Conformance for centrally governed APIs is shown in API Governance and in integrating Anypoint Platform products. 
+
+// end::centrally-governed-apis[]
 
 // tag::governance-status[]
 
 [[governance-status]]
 governance status::
-Governance status in the API Governance console shows the number of governed APIs, total number of APIs of supported API types, and subscription limit information.
+Governance status in the API Governance console shows the usage of API Governance, including number of governed APIs, total number of APIs of supported API types, and subscription limit information.
 
 // end::governance-status[]
 
@@ -63,7 +88,7 @@ Governance status in the API Governance console shows the number of governed API
 
 [[api-conformance]]
 API conformance::
-API conformance indicates whether a validated API specification passes all of the required rules in one or more governance rulesets. If an API specification is included in multiple governance profiles, it must pass all of the rulesets in all of those profiles to be conformant.
+API conformance indicates whether a validated API passes all of the required rules in one or more governance rulesets. If multiple profiles target an API, the API must pass all of the rulesets in all of those profiles to be conformant.
 
 // end::api-conformance[]
 
