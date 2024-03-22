@@ -208,7 +208,7 @@ Runtime Manager metrics include:
 
 To access Runtime Manager:
 
-include::access-management::partial$include-nav-steps-org-admin.adoc
+include::access-management::partial$include-nav-steps-org-admin.adoc[]
 
 . Under *Subscriptions*, click Runtime Manager.
 
@@ -233,6 +233,6 @@ Object Store metrics in Access Management include API requests.
 
 To access Object Store metrics:
 
-include::access-management::partial$include-nav-steps-org-admin.adoc
+include::access-management::partial$include-nav-steps-org-admin.adoc[]
 
 . Under *Subscriptions*, click Object Store.
