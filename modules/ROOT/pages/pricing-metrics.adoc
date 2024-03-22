@@ -222,7 +222,7 @@ Anypoint MQ Metrics include:
 
 To access Anypoint MQ metrics:
 
-include::access-management::partial$include-nav-steps-org-admin.adoc
+include::access-management::partial$include-nav-steps-org-admin.adoc[]
 
 . Under *Subscriptions*, click MQ.
 
