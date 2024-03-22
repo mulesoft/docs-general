@@ -206,16 +206,16 @@ Runtime Manager metrics include:
 * Static IPs
 * Load balancers
 
-To access Runtime Manager:
+To access Runtime Manager metrics:
 
 include::access-management::partial$include-nav-steps-org-admin.adoc[]
 
-. Under *Subscriptions*, click Runtime Manager.
+. In the *Subscriptions* section, click *Runtime Manager*.
 
 [[mq-metrics]]
 === Access Anypoint MQ Metrics
 
-Anypoint MQ Metrics include:
+Anypoint MQ metrics include:
 
 * Message units
 * API requests
@@ -224,7 +224,7 @@ To access Anypoint MQ metrics:
 
 include::access-management::partial$include-nav-steps-org-admin.adoc[]
 
-. Under *Subscriptions*, click MQ.
+. In the *Subscriptions* section, click *MQ*.
 
 [[object-store-metrics]]
 === Object Store Metrics
@@ -235,4 +235,4 @@ To access Object Store metrics:
 
 include::access-management::partial$include-nav-steps-org-admin.adoc[]
 
-. Under *Subscriptions*, click Object Store.
+. In the *Subscriptions* section, click *Object Store*.
