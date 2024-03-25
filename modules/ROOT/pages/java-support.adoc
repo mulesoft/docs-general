@@ -176,7 +176,7 @@ For more information, see the following documentation:
 [[dataweave]]
 == DataWeave
 
-DataWeave uses Java’s reflection API to read and write Java objects. Java 17 adds some restrictions in encapsulation and reflective access that affect the Java Data Format.
+DataWeave uses Java's reflection API to read and write Java objects. Java 17 adds some restrictions in encapsulation and reflective access that affect the Java Data Format.
 
 To ensure that your applications continue to work as expected, follow these guidelines:
 
@@ -188,7 +188,7 @@ POJOs are required for DataWeave 6.0.0 and later, and you must ensure that the P
 ** Getters for all properties
 ** Setters for all properties
 
-For more information, see xref:dataweave::dataweave-formats-java.adoc#java-support[supported Java Format].
+For more information, see xref:dataweave::dataweave-formats-java.adoc#java-support[Java Format].
 
 == See Also
 
