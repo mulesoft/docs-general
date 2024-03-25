@@ -188,7 +188,7 @@ POJOs are required for DataWeave 6.0.0 and later, and you must ensure that the P
 ** Getters for all properties
 ** Setters for all properties
 
-For more information, see xref:dataweave::dataweave-formats-java.adoc#java-support[Java Support].
+For more information, see xref:dataweave::dataweave-formats-java.adoc#java-support[supported Java Format].
 
 == See Also
 
