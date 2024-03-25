@@ -14,8 +14,8 @@ Some usage data, such as monthly statements and vCore allocation, appears in dif
 
 * Monthly bills and resource usage appear in your monthly bills. For more information, see https://help.salesforce.com/s/articleView?id=000390885&type=1[Monthly Account Summaries] documentation in Salesforce.
 * Runtime Manager vCore allocation information and other metrics appear in Access Management. For more information, see xref:pricing-metrics.adoc#runtime-manager-metrics[Runtime Manager Metrics].
-* MQ usage appears in Access Management. For more information, see xref:pricing-metrics.adoc#mq-metrics[MQ Metrics]
-* Object Store usage appears in Access Management. For more information, see xref:pricing-metrics.adoc#object-store-metrics[ObjectStore Metrics]
+* MQ usage appears in Access Management. For more information, see xref:pricing-metrics.adoc#mq-metrics[MQ Metrics].
+* Object Store usage appears in Access Management. For more information, see xref:pricing-metrics.adoc#object-store-metrics[ObjectStore Metrics].
 
 == Access Usage Reports
 
