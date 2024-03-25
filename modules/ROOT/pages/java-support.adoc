@@ -68,7 +68,6 @@ Java 17 manages memory differently than it did in earlier versions like Java 8. 
 [NOTE]
 To ensure optimal operation of your apps and effectively leverage the Java 17 improvements, you must conduct xref:mule-runtime::tuning-test-validations.adoc[performance testing] and xref:mule-runtime::tuning-monitoring.adoc[monitoring] for:
 
-* Your most common workloads
 * Large batch apps
 * Apps that are at the limit of their CPU and memory offering 
 
