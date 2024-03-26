@@ -33,7 +33,7 @@ Upgrade the third-party libraries of your custom connector to be compatible with
 
 * Java EE libraries
 +
-Mule 4.6 exposes Java EE libraries differently than earlier Mule versions. You must add the BOM dependency to your custom connector and, if applicable, exclude the provided conflicting library. You can also add the libraries in the BOM dependency separately.
+Mule 4.6.x exposes Java EE libraries differently than earlier Mule versions. You must add the BOM dependency to your custom connector and, if applicable, exclude the provided conflicting library. You can also add the libraries in the BOM dependency separately.
 +
 [source,java,linenums]
 ----
