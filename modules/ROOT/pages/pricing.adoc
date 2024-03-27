@@ -19,7 +19,6 @@ For Runtime Fabric, you must redeploy apps manually. After you redeploy all RTF 
 
 == Supported Mule Runtime Versions
 
-To benefit from the robust usage reports that accompany usage-based pricing plans, all of your applications (in production and sandbox) must use the following Mule versions:
 
 include::partial$usage-runtime.adoc[]
 
