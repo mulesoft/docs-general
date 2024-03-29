@@ -21,7 +21,7 @@ APIs targeted by active profiles are governed APIs and their conformance informa
 
 [[gov-draft-profiles]]
 draft governance profiles::
-Draft profiles enable you to experiment with profile settings and review conformance information before centrally governing the targeted APIs. APIs targeted by draft profiles are governed APIs, but their conformance information is not shown in integrating Anypoint Platform products.
+Use draft profiles to test settings before revealing their targeted APIs' conformance information across Anypoint Platform. APIs targeted by draft profiles are governed APIs but their conformance information is not shown in integrating Anypoint Platform products.
 
 // end::gov-draft-profiles[]
 
