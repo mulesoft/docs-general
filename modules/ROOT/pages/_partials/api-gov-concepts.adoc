@@ -12,7 +12,7 @@ against the rulesets to determine governance conformance.
 // tag::gov-active-profiles[]
 
 [[gov-active-profiles]]
-active governance profiles::
+active profiles::
 APIs targeted by active profiles are governed APIs and their conformance information is shown in integrating Anypoint Platform products.
 
 // end::gov-active-profiles[]
@@ -20,27 +20,10 @@ APIs targeted by active profiles are governed APIs and their conformance informa
 // tag::gov-draft-profiles[]
 
 [[gov-draft-profiles]]
-draft governance profiles::
+draft profiles::
 Use draft profiles to test settings before revealing their targeted APIs' conformance information across Anypoint Platform. APIs targeted by draft profiles are governed APIs but their conformance information is not shown in integrating Anypoint Platform products.
 
 // end::gov-draft-profiles[]
-
-
-// tag::governance-profile-status[]
-
-[[gov-profile-status]]
-Active Profile Status::
-This tile on the governance console shows profile statuses for active profiles based on the percentage of conformant APIs in the profiles:
-+
-* Normal: 
-+ 
-More than 70% of APIs are conformant.
-+
-* At Risk:
-+
-Less than 70% of APIs are conformant.
-
-// end::governance-profile-status[]
 
 // tag::governance-rulesets[]
 
@@ -68,14 +51,6 @@ APIs are governed if they are identified by the selection criteria of at least o
 
 // end::governed-apis[]
 
-// tag::governance-status[]
-
-[[governance-status]]
-Governance Usage by Profile Type::
-This tile in the governance console shows the usage of API Governance, including number of governed APIs, total number of APIs by profile type, and subscription limit information. Because some APIs might be in both active and draft profiles, this tile specifies how many are in draft only.
-
-// end::governance-status[]
-
 // tag::api-conformance[]
 
 [[api-conformance]]
@@ -85,62 +60,6 @@ API conformance indicates whether a validated API passes all of the required rul
 API conformance applies only to API types supported by API Governance, such as REST API and AsyncAPI. 
 
 // end::api-conformance[]
-
-// tag::api-conformance-status[]
-
-[[conformance-status]]
-Conformance Status::
-This tile on the governance console shows the breakdown of conformance for the APIs targeted by your governance profiles as follows: 
-+
-* Conformant:
-+
-The APIs pass all applied governance rulesets.
-+
-* Not Conformant:
-+
-The APIs fail at least one governance ruleset.
-+
-* Not Validated:
-+
-The APIs are not validated because they are not included in a governance profile.›
-
-// end::api-conformance-status[]
-
-// tag::nonconformance-severity[]
-
-[[nonconformance-severity]]
-Nonconformance by Severity::
-This tile on the governance console shows the severity of API nonconformance to rulesets based on the percentage of all of required rulesets that the APIs passed. The higher the severity, the fewer rulesets the APIs passed.
-+
-* High Severity:
-+
-0 - 40% rulesets passed
-+
-* Medium Severity:
-+
-41% - 80% rulesets passed
-+
-* Low Severity: 
-+
-81% - 99% rulesets passed
-
-// end::nonconformance-severity[]
-
-// tag::project-errors[]
-
-[[project-errors]]
-project errors::
-Project errors are shown in the Design Center API Designer text editor page. The *Project Errors* section of the page shows functional issues and nonconformance messages found in the API specification that is open in the text editor.
-
-// end::project-errors[]
-
-// tag::api-governance-usage-reports[]
-
-[[api-governance-usage-reports]]
-API Governance usage reports::
-You can view usage reports to gain insight into your monthly usage of API Governance. See xref:general::usage-reports.adoc#api-governance[Viewing Usage Reports for API Governance].
-
-// end::api-governance-usage-reports[]
 
 // tag::api-entire[]
 
