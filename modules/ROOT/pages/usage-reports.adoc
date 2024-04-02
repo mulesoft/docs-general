@@ -12,7 +12,7 @@ Use the usage report to compare your actual usage against your existing contract
 
 Some usage data, such as monthly statements and vCore allocation, appears in different areas of Anypoint Platform or Salesforce products. 
 
-* Monthly bills and resource usage appear in your monthly bills. For more information, see https://help.salesforce.com/s/articleView?id=000390885&type=1[Monthly Account Summaries] documentation in Salesforce.
+* Monthly charges and resource usage appear in your monthly bills. For more information, see https://help.salesforce.com/s/articleView?id=000390885&type=1[Monthly Account Summaries] documentation in Salesforce.
 * Monthly statements for Mule Runtime (including Mule flows, Mule messages, and data throughput) and xref:rpa-home::ms-automation-credits-usage-types.adoc[Automation Credits] are sent to the primary billing contract. See https://help.salesforce.com/s/articleView?id=000390885&type=1[FAQ] documentation for details.
 * Runtime Manager vCore allocation information and other metrics appear in Access Management. For more information, see xref:pricing-metrics.adoc#runtime-manager-metrics[Runtime Manager Metrics].
 * xref:mq::mq-usage.adoc#access-anypoint-mq-usage[Anypoiont MQ] usage appears in Access Management. For more information, see xref:pricing-metrics.adoc#mq-metrics[MQ Metrics].
