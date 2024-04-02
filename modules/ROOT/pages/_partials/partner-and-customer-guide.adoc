@@ -37,7 +37,7 @@ Mule 4.6.x exposes Java EE libraries differently than earlier Mule versions. You
 +
 [source,java,linenums]
 ----
-<muleJavaEeBomVersion>4.6.0-20231025</muleJavaEeBomVersion>
+<muleJavaEeBomVersion>4.6.0</muleJavaEeBomVersion>
   <dependencyManagement>
     <dependencies>
       <dependency>
