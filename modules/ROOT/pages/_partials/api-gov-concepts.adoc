@@ -29,8 +29,8 @@ Use draft profiles to test settings before revealing their targeted APIs' confor
 // tag::governance-profile-status[]
 
 [[gov-profile-status]]
-governance profile status::
-You can view profile statuses in the API Governance console. Governance profile statuses are based on the percentage of conformant APIs in the profile:
+Active Profile Status::
+This tile on the governance console shows profile statuses for active profiles based on the percentage of conformant APIs in the profiles:
 +
 * Normal: 
 + 
@@ -71,8 +71,8 @@ APIs are governed if they are identified by the selection criteria of at least o
 // tag::governance-status[]
 
 [[governance-status]]
-governance status::
-Governance status in the API Governance console shows the usage of API Governance, including number of governed APIs, total number of APIs of supported API types, and subscription limit information.
+Governance Usage by Profile Type::
+This tile in the governance console shows the usage of API Governance, including number of governed APIs, total number of APIs by profile type, and subscription limit information. Because some APIs might be in both active and draft profiles, this tile specifies how many are in draft only.
 
 // end::governance-status[]
 
@@ -81,16 +81,17 @@ Governance status in the API Governance console shows the usage of API Governanc
 [[api-conformance]]
 API conformance::
 API conformance indicates whether a validated API passes all of the required rules in one or more governance rulesets. If multiple profiles target an API, the API must pass all of the rulesets in all of those profiles to be conformant.
++
+API conformance applies only to API types supported by API Governance, such as REST API and AsyncAPI. 
 
 // end::api-conformance[]
 
 // tag::api-conformance-status[]
 
 [[conformance-status]]
-API conformance status::
-API conformance status indicates whether the APIs that are included in your governance profiles pass all applied governance rulesets: 
+Conformance Status::
+This tile on the governance console shows the breakdown of conformance for the APIs targeted by your governance profiles as follows: 
 +
---
 * Conformant:
 +
 The APIs pass all applied governance rulesets.
@@ -101,20 +102,15 @@ The APIs fail at least one governance ruleset.
 +
 * Not Validated:
 +
-The APIs are not validated because they are not included in a governance profile.
---
-+
-Versions of an API might have different conformance statuses. Total version conformance status counts are shown in the API Governance console and conformance status indicators are shown for API versions in API Governance, Exchange, and API Manager. 
-+
-NOTE: API conformance applies only to API types supported by API Governance, such as REST API and AsyncAPI. 
+The APIs are not validated because they are not included in a governance profile.›
 
 // end::api-conformance-status[]
 
 // tag::nonconformance-severity[]
 
 [[nonconformance-severity]]
-nonconformance severity::
-Nonconformance severity is categorized by percentage of passed rulesets among all required rulesets:
+Nonconformance by Severity::
+This tile on the governance console shows the severity of API nonconformance to rulesets based on the percentage of all of required rulesets that the APIs passed. The higher the severity, the fewer rulesets the APIs passed.
 +
 * High Severity:
 +
