@@ -215,7 +215,7 @@ include::access-management::partial$include-nav-steps-org-admin.adoc[]
 [[mq-metrics]]
 === Access Anypoint MQ Metrics
 
-Anypoint MQ metrics include:
+xref:mq::mq-usage.adoc#access-anypoint-mq-usage[Anypoint MQ metrics] include:
 
 * Message units
 * API requests
@@ -229,7 +229,7 @@ include::access-management::partial$include-nav-steps-org-admin.adoc[]
 [[object-store-metrics]]
 === Object Store Metrics
 
-Object Store metrics in Access Management include API requests.
+xref:object-store::osv2-usage.adoc#access-object-store-effective-api-request-usage-charts[Object Store metrics] in Access Management include API requests.
 
 To access Object Store metrics:
 
