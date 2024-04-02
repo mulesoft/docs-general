@@ -13,7 +13,7 @@ against the rulesets to determine governance conformance.
 
 [[gov-active-profiles]]
 active profiles::
-APIs targeted by active profiles are governed APIs and their conformance information is shown in integrating Anypoint Platform products.
+Use active profiles to share API conformance information with developers and notify them of conformance issues. APIs targeted by active profiles are governed APIs and their conformance information is shown in integrating Anypoint Platform products.
 
 // end::gov-active-profiles[]
 
