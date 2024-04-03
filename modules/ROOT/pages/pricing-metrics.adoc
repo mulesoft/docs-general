@@ -227,11 +227,11 @@ include::access-management::partial$include-nav-steps-org-admin.adoc[]
 . In the *Subscriptions* section, click *MQ*.
 
 [[object-store-metrics]]
-=== Object Store Metrics
+=== Object Store v2 Metrics
 
-xref:object-store::osv2-usage.adoc#access-object-store-effective-api-request-usage-charts[Object Store metrics] in Access Management include API requests.
+xref:object-store::osv2-usage.adoc#access-object-store-effective-api-request-usage-charts[Object Store v2 metrics] in Access Management include API requests.
 
-To access Object Store metrics:
+To access Object Store v2 metrics:
 
 include::access-management::partial$include-nav-steps-org-admin.adoc[]
 
