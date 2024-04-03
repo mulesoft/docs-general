@@ -65,7 +65,13 @@ To enhance application performance, see:
 
 Java 17 manages memory differently than it did in earlier versions like Java 8. Java 17 reduces request latency and executes work more predictably. To achieve this, it adopts a different memory management approach. Although highly dependent on each application, in some cases, Java 17 preferentially commits to heap memory.
 
-Because of this change in Java 17 memory management, to ensure optimal operation and effectively leverage these improvements, you must conduct xref:mule-runtime::tuning-test-validations.adoc[performance testing] and xref:mule-runtime::tuning-monitoring.adoc[monitoring] for your most common workloads.
+[NOTE]
+====
+To ensure optimal operation of your apps and effectively leverage the Java 17 improvements, you must conduct xref:mule-runtime::tuning-test-validations.adoc[performance testing] and xref:mule-runtime::tuning-monitoring.adoc[monitoring] for:
+
+* Large batch apps
+* Apps that are at the limit of their CPU and memory offering 
+====
 
 If your apps are deployed on-premises:
 
@@ -176,7 +182,7 @@ For more information, see the following documentation:
 [[dataweave]]
 == DataWeave
 
-DataWeave uses Java’s reflection API to read and write Java objects. Java 17 adds some restrictions in encapsulation and reflective access that affect the Java Data Format.
+DataWeave uses Java's reflection API to read and write Java objects. Java 17 adds some restrictions in encapsulation and reflective access that affect the Java Data Format.
 
 To ensure that your applications continue to work as expected, follow these guidelines:
 
@@ -188,7 +194,7 @@ POJOs are required for DataWeave 6.0.0 and later, and you must ensure that the P
 ** Getters for all properties
 ** Setters for all properties
 
-For more information, see xref:dataweave::dataweave-formats-java.adoc#java-support[Java Support].
+For more information, see xref:dataweave::dataweave-formats-java.adoc#java-support[Java Format].
 
 == See Also
 
