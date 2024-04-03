@@ -191,7 +191,7 @@ _Data Throughput_ is all of the network I/O bytes produced by the infrastructure
 
 == View Usage Data in Access Management
 
-Runtime Manager, MQ, and Object Store store some usage data, such as vCore allocations and API requests, in Access Management.
+Runtime Manager, Anypoint MQ, and Object Store store some usage data, such as vCore allocations and API requests, in Access Management.
 
 [[runtime-manager-metrics]]
 === Access Runtime Manager Metrics
