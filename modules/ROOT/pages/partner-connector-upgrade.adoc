@@ -80,7 +80,7 @@ If you generate a new connector using REST SDK and want to make that connector c
 <rest.sdk.commons.version>0.8.0-RC4</rest.sdk.commons.version>
 <rest.sdk.mojo.version>0.8.0-RC4</rest.sdk.mojo.version>
 ---- 
-. Upgrade the Mule runtime version to 4.6.0.
+. Upgrade the Mule runtime version to 4.6.x.
 
 include::partial$partner-and-customer-guide.adoc[tags=rest-connect-connectors]
  

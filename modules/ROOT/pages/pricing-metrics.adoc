@@ -188,3 +188,51 @@ When an event source within a flow of a Mule application is triggered, the _even
 == Data Throughput
 
 _Data Throughput_ is all of the network I/O bytes produced by the infrastructure that starts and runs the Mule Runtime server that runs a Mule application. This includes the data that the application produces to execute its business logic, as well as internal operational network traffic such as logs, health-checks, and monitoring traffic. For example, data throughput includes inserting a record into a database and the network traffic associated with the infrastructure of the app, such as log forwarding, control plane connection, and monitoring metrics transfer. 
+
+== View Usage Data in Access Management
+
+Runtime Manager, Anypoint MQ, and Object Store v2 store some usage data, such as vCore allocations and API requests, in Access Management.
+
+[[runtime-manager-metrics]]
+=== Access Runtime Manager Metrics
+
+Runtime Manager metrics include:
+
+* Production vCores
+* Design vCores
+* Sandbox vCores
+* VPCs
+* Network connections
+* Static IPs
+* Load balancers
+
+To access Runtime Manager metrics:
+
+include::access-management::partial$include-nav-steps-org-admin.adoc[]
+
+. In the *Subscriptions* section, click *Runtime Manager*.
+
+[[mq-metrics]]
+=== Access Anypoint MQ Metrics
+
+xref:mq::mq-usage.adoc#access-anypoint-mq-usage[Anypoint MQ metrics] include:
+
+* Message units
+* API requests
+
+To access Anypoint MQ metrics:
+
+include::access-management::partial$include-nav-steps-org-admin.adoc[]
+
+. In the *Subscriptions* section, click *MQ*.
+
+[[object-store-metrics]]
+=== Object Store v2 Metrics
+
+xref:object-store::osv2-usage.adoc#access-object-store-effective-api-request-usage-charts[Object Store v2 metrics] in Access Management include API requests.
+
+To access Object Store v2 metrics:
+
+include::access-management::partial$include-nav-steps-org-admin.adoc[]
+
+. In the *Subscriptions* section, click *Object Store*.
