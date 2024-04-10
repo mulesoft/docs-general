@@ -47,7 +47,7 @@ MuleSoft provides several rulesets in Exchange, such as Anypoint API Best Practi
 
 [[governed-apis]]
 governed APIs::
-APIs are governed if they are identified by the selection criteria of at least one governance profile. If an API is governed, all versions of that API are considered one governed API. Subscription limits are set based on your organization's purchased capacity and the UI gives information about usage and alerts when you are nearing or exceeding your subscription capacity. 
+APIs are governed if they're identified by the selection criteria of at least one governance profile. If an API is governed, all versions of that API are considered one governed API. Subscription limits are set based on your organization's purchased capacity. The UI gives information about usage and alerts when you near or exceed your subscription capacity. 
 
 // end::governed-apis[]
 
