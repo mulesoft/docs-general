@@ -1,0 +1,22 @@
+= API Experience Hub Usage Reports
+
+include::partial$api-eh-metrics.adoc[tag=description]
+
+== Access API Experience Hub Usage Reports
+
+include::partial$usage-reports-tasks.adoc[tag=accessUsageReportsNew]
+
+. Click *API Experience Hub*.
+
+image::api-eg-report.png[Usage Reports interface showing an API Experience Hub usage report that contains a card and table of usage data]
+
+== API Experience Hub Metrics
+
+=== Metrics Cards
+
+include::partial$api-eh-metrics.adoc[tag=cards]
+
+=== Metrics Table
+
+include::partial$api-eh-metrics.adoc[tag=table]
+

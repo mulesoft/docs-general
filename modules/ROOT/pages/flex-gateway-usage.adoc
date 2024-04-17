@@ -1,0 +1,23 @@
+= Flex Gateway Usage Reports
+
+include::partial$flex-gateway-metrics.adoc[tag=intro]
+
+== Access Flex Gateway Usage Reports
+
+include::partial$usage-reports-tasks.adoc[tag=accessUsageReportsNew]
+
+. Click *Flex Gateway*.
+
+image::flex-gateway-usage-report.png[Usage Reports interface showing a Flex Gateway usage report that contains cards and a table of usage data]
+
+== Card Metrics
+
+A Flex Gateway usage report shows cards that contain the following data:
+
+include::partial$flex-gateway-metrics.adoc[tag=cards]
+
+== Table Metrics
+
+A Flex Gateway usage report table shows the following data:
+
+include::partial$flex-gateway-metrics.adoc[tag=table]

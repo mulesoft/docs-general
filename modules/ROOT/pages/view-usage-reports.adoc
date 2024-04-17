@@ -63,7 +63,7 @@ a| * Switch views
 | None
 
 | A deployed Mule app is not listed in the Mule Runtime usage report.
-| The Mule app is not a deployed to a supported version of Mule Runtime. For more information, see xref:usage-reports.adoc#supported-runtime-versions[supported runtime versions].
+| The Mule app is not a deployed to a supported version of Mule Runtime. For more information, see xref:mule-runtime-usage.adoc#supported-runtime-versions[supported runtime versions].
 | Redeploy your apps with a supported runtime version, either manually or during a monthly patching cycle.
 
 |===

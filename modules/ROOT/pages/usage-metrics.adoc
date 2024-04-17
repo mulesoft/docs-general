@@ -1,241 +1,102 @@
-= Usage and Pricing Metrics
+= Usage and Pricing Metrics Reference
 :page-aliases: pricing-metrics.adoc
+
+== Metrics Collected in Anypoint Platform
+
+Anypoint Platform captures usage metrics across products, but not all metrics are billable or reflected in usage reports.
+
+[cols=3*]
+|===
+|Product |Metric Description |Usage Details
+
+.3+|Mule Runtime	
+|_Mule flow_: A flow within a deployed and running Mule app that contains a Mule event source or route APIKit request. 
+|Flows are aggregated using a Max Concurrent model. The usage for a month is the highest number of flows that exist in a single given hour during a month.
+
+|_Mule message_: The container of the core information processed by the runtime. 
+|A Mule message counts as a single unit when an event source triggers it. Messages are aggregated using a sum of all messages sent during a month.
+|_Data throughput_: The total amount of data transferred in and out of the infrastructure that runs Mule where the Mule app is deployed. 
+|Data throughput counts when the deployed application transfers data to execute its business logic, including but not limited to internal operational network traffic for monitoring, logs, and health checks. Data throughput is aggregated as a sum of all bytes during a month. 
+
+|API Manager	
+|_API instance under management_: API instances that are managed by API Manager after they are created using add, promote, or import options. 
+|API instances remain under management until they are deleted. Instances of API Manager are aggregated using a Max Concurrent model. The usage for a month is the highest number of APIs Managed in a single given hour during a month.
+
+|API Governance	
+|_API under Governance_: APIs that are identified by the selection criteria of at least one of the governance profiles. 
+|If an API is governed, all versions of that API are considered one governed API. Instances of API Governance are aggregated using a Max Concurrent model. The usage for a month is the highest number of APIs governed in a single given hour during a month.
+
+|Flex Gateway	
+|_Flex Gateway API call_: Any access request received by Anypoint Flex Gateway regardless of whether the response to the request is successful or not. 
+|Flex Gateway requests are aggregated as a sum of all requests during a month.
+
+|Composer	
+|_Composer task_: Any action executed on a Composer connector, including but not limited to read, create, update, and delete. 
+|Composer tasks are aggregated as a sum of all actions during a month.
+
+|RPA	
+|_Robotic Process Automation (“RPA”) bot minutes_: The number of minutes running process automations across all bot sessions. 
+|A single bot may run multiple parallel sessions, with RPA bot minutes counting for each parallel session. Multiple bots may be configured to run the same process, with RPA bot minutes counting for each of these separate bot sessions. Test runs or process runs in the test phase are also counted towards RPA bot minutes.
+
+|Message Queue	
+|_Anypoint MQ API request_: A request made to retrieve one or more messages from the Anypoint MQ APIs. 
+|Each Anypoint MQ API request includes up to 100 kilobytes of data. An Anypoint MQ API request over 100 kilobytes counts as multiple requests with no fractional units. Anypoint MQ API requests are calculated in the aggregate across all environments (including production, pre-production, sandbox, and design). MQ API requests are currently available via API and are not currently aggregated on usage reports.
+
+|Object Store	
+|_Object Store API request_: A request made to retrieve one or more messages from the Object Store APIs as further defined in the Object Store Documentation. 
+|Each Object Store API Request includes up to 100 kilobytes of data. Object Store API Requests over 100 kilobytes count as multiple requests with no fractional units. OS API requests are currently available via API and are not currently aggregated on usage reports.
+
+|Data Graph	
+|_DataGraph orchestration_: An API request made by Anypoint DataGraph to the source APIs to get data for the GraphQL API request made to Anypoint DataGraph. 
+|Orchestrations are not currently aggregated on usage reports.
+|===
+
+== API Experience Hub Usage
+
+API Experience Hub usage reports show the following information in cards and tables:
+
+include::partial$api-eh-metrics.adoc[tag=table]
+
+include::partial$api-eh-metrics.adoc[tag=card]
+
+== API Governance Usage
+
+API governance usage reports show the following information in cards and tables:
+
+include::partial$api-governance-metrics.adoc[tag=table]
+
+== API Manager Usage
+
+API Manager usage reports show the following information in cards and tables:
+
+include::partial$api-manager-metrics.adoc[tag=table]
+
+== Flex Gateway Usage
+
+Flex Gateway usage reports show the following information in cards and tables:
+
+include::partial$flex-gateway-metrics.adoc[tag=card]
+
+include::partial$flex-gateway-metrics.adoc[tag=table]
+
+== Mule Runtime Usage
+
+Mule Runtime usage reports show the following information in cards and tables:
+
+include::partial$mule-runtime-metrics.adoc[tag=card]
+
+include::partial$mule-runtime-metrics.adoc[tag=table]
 
 MuleSoft captures usage data for Mule flows, Mule messages, and data throughput, but not all of this data is aggregated in usage reports. 
 
 For select customers in the US control plane, MuleSoft offers a pricing and packaging model for Anypoint Platform that allots a number of Mule flows, Mule messages, and data throughput (measured as network I/O bytes). Not all types of Mule flows and messages count toward the allotments in a package. 
 
-== Metrics Collected in Anypoint Platform
+include::partial$mule-runtime-usage.adoc[tag=flows,leveloffset=+2] 
 
-Anypoint Platform captures usage metrics across products, but not all metrics are billable or reflected in usage reports.
+include::partial$mule-runtime-usage.adoc[tag=billableFlows,leveloffset=+2] 
 
-[cols=3*]
-|===
-|Product |Metric Description |Usage Details
+include::partial$mule-runtime-usage.adoc[tag=nonBillableFlows,leveloffset=+2] 
 
-.3+|Mule Runtime	
-|_Mule flow_: A flow within a deployed and running Mule app that contains a Mule event source or route APIKit request. 
-|Flows are aggregated using a Max Concurrent model. The usage for a month is the highest number of flows that exist in a single given hour during a month.
+include::partial$mule-runtime-usage.adoc[tag=muleMessages,leveloffset=+2] 
 
-|_Mule message_: The container of the core information processed by the runtime. 
-|A Mule message counts as a single unit when an event source triggers it. Messages are aggregated using a sum of all messages sent during a month.
-|_Data throughput_: The total amount of data transferred in and out of the infrastructure that runs Mule where the Mule app is deployed. 
-|Data throughput counts when the deployed application transfers data to execute its business logic, including but not limited to internal operational network traffic for monitoring, logs, and health checks. Data throughput is aggregated as a sum of all bytes during a month. 
-
-|API Manager	
-|_API instance under management_: API instances that are managed by API Manager after they are created using add, promote, or import options. 
-|API instances remain under management until they are deleted. Instances of API Manager are aggregated using a Max Concurrent model. The usage for a month is the highest number of APIs Managed in a single given hour during a month.
-
-|API Governance	
-|_API under Governance_: APIs that are identified by the selection criteria of at least one of the governance profiles. 
-|If an API is governed, all versions of that API are considered one governed API. Instances of API Governance are aggregated using a Max Concurrent model. The usage for a month is the highest number of APIs governed in a single given hour during a month.
-
-|Flex Gateway	
-|_Flex Gateway API call_: Any access request received by Anypoint Flex Gateway regardless of whether the response to the request is successful or not. 
-|Flex Gateway requests are aggregated as a sum of all requests during a month.
-
-|Composer	
-|_Composer task_: Any action executed on a Composer connector, including but not limited to read, create, update, and delete. 
-|Composer tasks are aggregated as a sum of all actions during a month.
-
-|RPA	
-|_Robotic Process Automation (“RPA”) bot minutes_: The number of minutes running process automations across all bot sessions. 
-|A single bot may run multiple parallel sessions, with RPA bot minutes counting for each parallel session. Multiple bots may be configured to run the same process, with RPA bot minutes counting for each of these separate bot sessions. Test runs or process runs in the test phase are also counted towards RPA bot minutes.
-
-|Message Queue	
-|_Anypoint MQ API request_: A request made to retrieve one or more messages from the Anypoint MQ APIs. 
-|Each Anypoint MQ API request includes up to 100 kilobytes of data. An Anypoint MQ API request over 100 kilobytes counts as multiple requests with no fractional units. Anypoint MQ API requests are calculated in the aggregate across all environments (including production, pre-production, sandbox, and design). MQ API requests are currently available via API and are not currently aggregated on usage reports.
-
-|Object Store	
-|_Object Store API request_: A request made to retrieve one or more messages from the Object Store APIs as further defined in the Object Store Documentation. 
-|Each Object Store API Request includes up to 100 kilobytes of data. Object Store API Requests over 100 kilobytes count as multiple requests with no fractional units. OS API requests are currently available via API and are not currently aggregated on usage reports.
-
-|Data Graph	
-|_DataGraph orchestration_: An API request made by Anypoint DataGraph to the source APIs to get data for the GraphQL API request made to Anypoint DataGraph. 
-|Orchestrations are not currently aggregated on usage reports.
-|===
-
-== Metrics Collected in Anypoint Platform
-
-Anypoint Platform captures usage metrics across products, but not all metrics are billable or reflected in usage reports.
-
-[cols=3*]
-|===
-|Product |Metric Description |Usage Details
-
-.3+|Mule Runtime	
-|_Mule flow_: A flow within a deployed and running Mule app that contains a Mule event source or route APIKit request. 
-|Flows are aggregated using a Max Concurrent model. The usage for a month is the highest number of flows that exist in a single given hour during a month.
-
-|_Mule message_: The container of the core information processed by the runtime. 
-|A Mule message counts as a single unit when an event source triggers it. Messages are aggregated using a sum of all messages sent during a month.
-|_Data throughput_: The total amount of data transferred in and out of the infrastructure that runs Mule where the Mule app is deployed. 
-|Data throughput counts when the deployed application transfers data to execute its business logic, including but not limited to internal operational network traffic for monitoring, logs, and health checks. Data throughput is aggregated as a sum of all bytes during a month. 
-
-|API Manager	
-|_API instance under management_: API instances that are managed by API Manager after they are created using add, promote, or import options. 
-|API instances remain under management until they are deleted. Instances of API Manager are aggregated using a Max Concurrent model. The usage for a month is the highest number of APIs Managed in a single given hour during a month.
-
-|API Governance	
-|_API under Governance_: APIs that are identified by the selection criteria of at least one of the governance profiles. 
-|If an API is governed, all versions of that API are considered one governed API. Instances of API Governance are aggregated using a Max Concurrent model. The usage for a month is the highest number of APIs governed in a single given hour during a month.
-
-|Flex Gateway	
-|_Flex Gateway API call_: Any access request received by Anypoint Flex Gateway regardless of whether the response to the request is successful or not. 
-|Flex Gateway requests are aggregated as a sum of all requests during a month.
-
-|Composer	
-|_Composer task_: Any action executed on a Composer connector, including but not limited to read, create, update, and delete. 
-|Composer tasks are aggregated as a sum of all actions during a month.
-
-|RPA	
-|_Robotic Process Automation (“RPA”) bot minutes_: The number of minutes running process automations across all bot sessions. 
-|A single bot may run multiple parallel sessions, with RPA bot minutes counting for each parallel session. Multiple bots may be configured to run the same process, with RPA bot minutes counting for each of these separate bot sessions. Test runs or process runs in the test phase are also counted towards RPA bot minutes.
-
-|Message Queue	
-|_Anypoint MQ API request_: A request made to retrieve one or more messages from the Anypoint MQ APIs. 
-|Each Anypoint MQ API request includes up to 100 kilobytes of data. An Anypoint MQ API request over 100 kilobytes counts as multiple requests with no fractional units. Anypoint MQ API requests are calculated in the aggregate across all environments (including production, pre-production, sandbox, and design). MQ API requests are currently available via API and are not currently aggregated on usage reports.
-
-|Object Store	
-|_Object Store API request_: A request made to retrieve one or more messages from the Object Store APIs as further defined in the Object Store Documentation. 
-|Each Object Store API Request includes up to 100 kilobytes of data. Object Store API Requests over 100 kilobytes count as multiple requests with no fractional units. OS API requests are currently available via API and are not currently aggregated on usage reports.
-
-|Data Graph	
-|_DataGraph orchestration_: An API request made by Anypoint DataGraph to the source APIs to get data for the GraphQL API request made to Anypoint DataGraph. 
-|Orchestrations are not currently aggregated on usage reports.
-|===
-
-[[mule-flows]]
-== Mule Flows
-
-A _Mule flow_ is a sequence of logical operations configured in XML by using the `<flow>` element. A Mule app can consist of a single Mule flow, or it can break up processing into discrete xref:mule-runtime::about-flows.adoc[Mule flows and subflows] that you add to the app and connect together. Mule apps in production environments typically use multiple Mule flows and subflows to divide the app into functional modules or for error-handling purposes. For example, one Mule flow might receive a record and transform data into a given format that another flow processes. 
-
-In a usage report, flow counts are calculated by multiplying the number of flows in an app by the number of workers (CloudHub) or replicas (Runtime Fabric and CloudHub 2.0).
-
-=== Mule Flow Scenarios that Count Towards Your Anypoint Platform Package Allotment
-
-The following Mule flows count towards your allotment:
- 
-* Flows that contain a xref:mule-runtime::about-mule-event.adoc[Mule event source] 
-* xref:apikit::index.adoc[Flows generated by APIkit] that process API requests 
-
-Mule flows are charged only when the application containing the Mule flow is deployed and running. 
-
-=== Mule Flow with an Event Source
-
-The following Mule flow contains an event source as the first element. In this case, the `listener` counts towards your allotment.
-
-[source,xml]
-----
-<flow name="test-flow" >
-        <http:listener config-ref="cocheras-puerto-madero-api-httpListenerConfig" path="/daily-report"/>
-         <logger level="INFO" message="#[output json --- attributes.queryParams]" />	
-</flow>
-----
-
-
-=== Examples of Event Sources
-
-[cols="2*",options="header"]
-|===
-| Connector | Source
-
-| aggregators | aggregator-listener
-| amqp | listener
-| anypoint-mq | subscriber
-.2+| apikit-odata | request-entity-collection-listener | request-entity-listener
-.3+| as2-mule4 | as2-listener | as2-mdn-listener | non-repudiation-listener
-| azure-service-bus-messaging | message-listener
-| core | scheduler
-| db | listener
-.2+| email | listener-imap | listener-pop3
-| file | listener
-| ftp | listener
-| ftps | listener
-.3+| google-sheets | new-row-listener | new-spreadsheet-listener | updated-row-listener
-| http | listener
-| ibm-mq| listener
-| jms | listener
-.2+| kafka | batch-message-listener | message-listener
-| mllp | mllp-listener
-.4+| netsuite | deleted-object-listener | modified-object-listener | modified-record-listener | new-record-listener
-| pubsub | message-listener
-.7+| salesforce | deleted-object-listener | modified-object-listener | new-object-listener | replay-channel-listener | replay-topic-listener | subscribe-channel-listener | subscribe-topic-listener
-.2+| sap | document-listener | function-listener
-| servicebus | listener
-| sftp | listener
-| sockets | listener
-.2+| solace | queue-listener | topic-listener
-.2+| sqs | receive-messages | receivemessages
-.3+| stripe | citizen-on-new-charge-listener | on-new-charge-listener | on-new-event-listener
-| vm | listener
-.2+| websocket | inbound-listener | outbound-listener
-|===
-
-
-// Example Use-case [1 Mule flow]: A CSV file with customer contacts needs to be uploaded to CRM on a regularly scheduled basis
-
-// image
-
-// Using a single Mule flow with four elements, this application accepts CSV files that contain contact information, and then uploads the contacts to MS Dynamics. The Mule flow accepts a CSV file by polling a local folder at frequent intervals that are set with a Scheduler (event source) component. 
-
-// The columns of the CSV file contain selected contact information, such as first name, last name, phone number, and email. These columns are mapped to each of the respective fields in a specific Dynamics CRM account, and the rows are uploaded.
-
-=== Mule Flow Generated by APIkit and Used for Routing APIkit Requests
-
-APIkit is a tool that simplifies the implementation of APIs by automatically generating a minimal set of Mule flows based on the API specification. Each APIkit router endpoint counts as a distinct Mule flow. These Mule flows do not have an event source and are used for the handling of HTTP requests for a particular API method and path.
-
-==== Example of an APIkit Request:
-
-This flow routes APIkit requests and handles the GET request in the `/reservation` path:
-
-[source,xml]
-----
-<flow name="get:\reservation:cocheras-puerto-madero-api-config">
-        <logger level="INFO" message="#[output json --- attributes.queryParams]" />
-</flow>
-----
-
-// Example Use-case [12 flows]: New customer profile data needs to be moved from Marketing Cloud to Master Data Management (MDM) 
-
-// Mule Flow with Event Source [1]: Main Mule Flow with the HTTP listener that routes message to appropriate flow generated by APIkit based on the message content.
-
-// image 
-
-// Mule Flows used for routing APIkit Requests [11]:
-
-// image
-
-[[non-billable-flows]]
-=== Mule Flows that Do Not Count Against Your Anypoint Platform Package Allotment 
-
-Mule Flows that do not have an event source and are not used for the routing of APIkit requests are not charged against your Anypoint Platform package allotment. These are Mule flows primarily used to modularize code.
-
-Example:
-
-[source,xml]
-----
-2.a - Flow with only a logger component
-<flow name="just-logging">
-        <logger level="INFO" message="#[output json --- attributes.queryParams]" />
-</flow>
-----
-
-[[mule-messages]]
-== Mule Messages
-
-A _Mule message_ is the data (the payload and its attributes) that passes through one or more Mule flows in an application. A Mule message is part of a Mule event, which is generated when the event source within a Mule flow is triggered. For example, a Mule event that consists of a Mule message is created when an HTTP listener receives a request or each time the scheduler component triggers an execution of the Mule flow. 
-Mule message processors in a Mule flow (such as core components, file read operations, or the HTTP request operations) can then retrieve, set, and process Mule message data that resides in the Mule event according to their configurations. 
-A Mule message is immutable, so every change to a Mule message results in the creation of a new instance. Each processor in a flow that receives a Mule message returns a new Mule message that consists of a message payload (the body of the message) and message attributes (metadata associated with the message).
-
-[[billable-mule-messages]]
-=== Mule Message Scenarios that Count Towards Your Anypoint Platform Package Allotment
-
-When an event source within a flow of a Mule application is triggered, the _event source_ (such as HTTP, Salesforce, scheduler, and so on) generates a Mule event that encapsulates a Mule message. The Mule message generated by the event source counts towards your Anypoint Platform package allotment. New instances of that message, which can be created during the processing of the original message as it moves through other processors in connected Mule flows, do not count towards your Anypoint Platform package allotment.
-
-// add the three missing examples
-
-[[data-throughput]]
-== Data Throughput
-
-_Data Throughput_ is all of the network I/O bytes produced by the infrastructure that starts and runs the Mule Runtime server that runs a Mule application. This includes the data that the application produces to execute its business logic, as well as internal operational network traffic such as logs, health-checks, and monitoring traffic. For example, data throughput includes inserting a record into a database and the network traffic associated with the infrastructure of the app, such as log forwarding, control plane connection, and monitoring metrics transfer. 
+include::partial$mule-runtime-usage.adoc[tag=dataThroughput,leveloffset=+2] 

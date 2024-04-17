@@ -1,0 +1,19 @@
+= API Governance Usage Reports
+
+include::partial$api-eh-metrics.adoc[tag=apiGdescription]
+
+Usage reports show API governance usage metrics on a monthly basis.
+
+== Access API Governance Usage Reports
+
+include::partial$usage-reports-tasks.adoc[tag=accessUsageReportsLegacy]
+
+. Click *API governance*.
+
+image::api-governance-usage-report.png[Usage Reports interface showing an API governance usage report]
+
+== API Governance Usage Metrics
+
+An API governance usage report shows the following information:
+
+include::partial$api-governance-metrics.adoc[tag=table]

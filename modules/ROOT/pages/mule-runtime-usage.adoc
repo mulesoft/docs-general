@@ -1,0 +1,41 @@
+= Mule Runtime Usage Reports
+
+include::partial$mule-runtime-metrics.adoc[tag=intro]
+
+== Supported Runtime Versions
+
+include::partial$mule-runtime-usage.adoc[tag=supportedRuntimes]
+
+include::partial$mule-runtime-usage.adoc[tag=rtfApps] 
+
+== Access Mule Runtime Usage Reports
+
+include::partial$usage-reports-tasks.adoc[tag=accessUsageReportsNew]
+
+. Click *Mule Application*.
+
+image::mule-runtime-reports.png[Usage Reports interface showing a Mule app usage report that contains cards and a table of usage data]
+
+== Metrics Cards
+
+A Mule Runtime usage report shows cards that contain the following data:
+
+include::partial$mule-runtime-usage.adoc[tag=cards]
+
+== Metrics Table
+
+A Mule Runtime usage report table shows the following data:
+
+include::partial$mule-runtime-usage.adoc[tag=table]
+
+== About Mule Runtime Usage Metrics
+
+include::partial$mule-runtime-usage.adoc[tag=flows,leveloffset=+2] 
+
+include::partial$mule-runtime-usage.adoc[tag=billableFlows,leveloffset=+2] 
+
+include::partial$mule-runtime-usage.adoc[tag=nonBillableFlows,leveloffset=+2] 
+
+include::partial$mule-runtime-usage.adoc[tag=muleMessages,leveloffset=+2] 
+
+include::partial$mule-runtime-usage.adoc[tag=dataThroughput,leveloffset=+2] 

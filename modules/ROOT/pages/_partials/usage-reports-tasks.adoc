@@ -14,3 +14,30 @@ Only dates that Anypoint Platform collected data for the selected product are av
 The usage report appears, displaying an assortment of usage metrics that are xref:usage-metrics.adoc[dependent on the product you selected]. 
 
 // end::accessUsageReports[]
+
+// tag::accessUsageReportsLegacy[]
+
+. Log in to Anypoint Platform using an account that has the Usage Viewer permission over your root organization.
+. Click the circle with your organization name's initial in it and ensure you are at the root level of your organization and not in a business group.
+. From the Anypoint Platform navigation bar, click your username icon.
+. Click *Usage*.
+. Click *Switch View*. +
+. Select the month of the usage report you want to view. +
+Only months that Anypoint Platform collected data for the selected product are available.
+
+// end::accessUsageReportsLegacy[]
+
+// tag::accessUsageReportsNew[]
+
+. Log in to Anypoint Platform using an account that has the Usage Viewer permission over your root organization.
+. Click the circle with your organization name's initial in it and ensure you are at the root level of your organization and not in a business group.
+. From the Anypoint Platform navigation bar, click your username icon.
+. Click *Usage*.
+. Select the product for which you want to view a usage report.
+. Click *Monthly Usage Report* or *Daily Usage Report*. +
+. Select the month or day of the usage report you want to view. +
+Only dates that Anypoint Platform collected data for the selected product are available.
++
+The usage report appears, displaying an assortment of usage metrics that are xref:usage-metrics.adoc[dependent on the product you selected]. 
+
+// end::accessUsageReportsNew[]
