@@ -91,12 +91,12 @@ MuleSoft captures usage data for Mule flows, Mule messages, and data throughput,
 
 For select customers in the US control plane, MuleSoft offers a pricing and packaging model for Anypoint Platform that allots a number of Mule flows, Mule messages, and data throughput (measured as network I/O bytes). Not all types of Mule flows and messages count toward the allotments in a package. 
 
-include::partial$mule-runtime-usage.adoc[tag=flows,leveloffset=+2] 
+include::partial$mule-runtime-metrics.adoc[tag=flows,leveloffset=+2] 
 
-include::partial$mule-runtime-usage.adoc[tag=billableFlows,leveloffset=+2] 
+include::partial$mule-runtime-metrics.adoc[tag=billableFlows,leveloffset=+2] 
 
-include::partial$mule-runtime-usage.adoc[tag=nonBillableFlows,leveloffset=+2] 
+include::partial$mule-runtime-metrics.adoc[tag=nonBillableFlows,leveloffset=+2] 
 
-include::partial$mule-runtime-usage.adoc[tag=muleMessages,leveloffset=+2] 
+include::partial$mule-runtime-metrics.adoc[tag=muleMessages,leveloffset=+2] 
 
-include::partial$mule-runtime-usage.adoc[tag=dataThroughput,leveloffset=+2] 
+include::partial$mule-runtime-metrics.adoc[tag=dataThroughput,leveloffset=+2] 
