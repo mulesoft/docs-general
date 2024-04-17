@@ -4,9 +4,9 @@ include::partial$mule-runtime-metrics.adoc[tag=intro]
 
 == Supported Runtime Versions
 
-include::partial$mule-runtime-usage.adoc[tag=supportedRuntimes]
+include::partial$mule-runtime-metrics.adoc[tag=supportedRuntimes]
 
-include::partial$mule-runtime-usage.adoc[tag=rtfApps] 
+include::partial$mule-runtime-metrics.adoc[tag=rtfApps] 
 
 == Access Mule Runtime Usage Reports
 
@@ -20,22 +20,22 @@ image::mule-runtime-reports.png[Usage Reports interface showing a Mule app usage
 
 A Mule Runtime usage report shows cards that contain the following data:
 
-include::partial$mule-runtime-usage.adoc[tag=cards]
+include::partial$mule-runtime-metrics.adoc[tag=cards]
 
 == Metrics Table
 
 A Mule Runtime usage report table shows the following data:
 
-include::partial$mule-runtime-usage.adoc[tag=table]
+include::partial$mule-runtime-metrics.adoc[tag=table]
 
 == About Mule Runtime Usage Metrics
 
-include::partial$mule-runtime-usage.adoc[tag=flows,leveloffset=+2] 
+include::partial$mule-runtime-metrics.adoc[tag=flows,leveloffset=+2] 
 
-include::partial$mule-runtime-usage.adoc[tag=billableFlows,leveloffset=+2] 
+include::partial$mule-runtime-metrics.adoc[tag=billableFlows,leveloffset=+2] 
 
-include::partial$mule-runtime-usage.adoc[tag=nonBillableFlows,leveloffset=+2] 
+include::partial$mule-runtime-metrics.adoc[tag=nonBillableFlows,leveloffset=+2] 
 
-include::partial$mule-runtime-usage.adoc[tag=muleMessages,leveloffset=+2] 
+include::partial$mule-runtime-metrics.adoc[tag=muleMessages,leveloffset=+2] 
 
-include::partial$mule-runtime-usage.adoc[tag=dataThroughput,leveloffset=+2] 
+include::partial$mule-runtime-metrics.adoc[tag=dataThroughput,leveloffset=+2] 
