@@ -69,7 +69,7 @@ include::partial$api-governance-metrics.adoc[tag=table]
 
 API Manager usage reports show the following information in cards and tables:
 
-include::partial$api-manager-metrics.adoc[tag=table]
+include::partial$apim-metrics.adoc[tag=table]
 
 == Flex Gateway Usage
 

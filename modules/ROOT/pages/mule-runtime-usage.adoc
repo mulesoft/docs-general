@@ -12,8 +12,6 @@ include::partial$mule-runtime-metrics.adoc[tag=rtfApps]
 
 include::partial$usage-reports-tasks.adoc[tag=accessUsageReportsNew]
 
-. Click *Mule Application*.
-
 image::mule-runtime-reports.png[Usage Reports interface showing a Mule app usage report that contains cards and a table of usage data]
 
 == Metrics Cards
