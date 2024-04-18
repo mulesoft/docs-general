@@ -42,9 +42,9 @@ The following products have both daily and monthly usage reports:
 
 == Requirements for Mule Runtime
 
-include::partial$mule-runtime-usage.adoc[tag=supportedRuntimes]
+include::partial$mule-runtime-metrics.adoc[tag=supportedRuntimes]
 
-include::partial$mule-runtime-usage.adoc[tag=rtfApps]
+include::partial$mule-runtime-metrics.adoc[tag=rtfApps]
 
 == Before You Begin
 
