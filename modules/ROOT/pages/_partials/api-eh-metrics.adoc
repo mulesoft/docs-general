@@ -1,0 +1,25 @@
+// tag::intro[]
+
+API Experience Hub usage reports track the number of approved access requests on a daily and monthly basis by Salesforce org ID and Salesforce portal name. 
+
+// end::intro[]
+
+// tag::cards[]
+
+Total # of Approved Request Access:: 
+Sum of approved access requests across all Salesforce organizations.
+
+// end::cards[]
+
+// tag::table[]
+
+Salesforce Organization ID::
+OrgID for the Salesforce organization in which the API is deployed.
+
+Salesforce Portal Name::
+Name of the Salesforce portal to which the API is deployed. 
+
+# of Approved Request Access::
+Sum of approved access requests for the API.
+
+// end::table[]
