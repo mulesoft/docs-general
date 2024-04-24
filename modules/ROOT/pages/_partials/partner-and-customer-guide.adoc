@@ -128,7 +128,7 @@ After you update your code and your tests are green, you are ready to release a 
 </dependency>
 ----
 
-. For Java SDK, add the `@JavaVersionSupport` annotation in the same class as the `@Extension` annotation and include the JAVA_17 value, for example: 
+. For Java SDK, add the `@JavaVersionSupport` annotation in the same class as the `@Extension` annotation and include the `JAVA_17` value, for example: 
 +
 NOTE: You do not need to add any annotations for XML SDK because XML SDK modules are Java 17 compatible and will inherit the property automatically.
 +
