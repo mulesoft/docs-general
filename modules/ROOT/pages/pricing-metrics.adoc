@@ -54,7 +54,7 @@ Anypoint Platform captures usage metrics across products, but not all metrics ar
 |Orchestrations are not currently aggregated on usage reports.
 
 |IDP 
-|Intelligent Document Processing (IDP) Document Pages: A single page processed by IDP.
+|_Intelligent Document Processing (IDP) Document Pages_: A single page processed by IDP.
 |IDP document actions may process documents that have more than one page with each page counting separately. Executing document actions from RPA also counts Document Pages and additionally consumes the corresponding RPA Bot Minutes accounting for the time the RPA process runs. 
 |===
 
