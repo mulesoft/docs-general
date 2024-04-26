@@ -37,7 +37,7 @@ Mule 4.6.x exposes Java EE libraries differently than earlier Mule versions. You
 +
 [source,java,linenums]
 ----
-<muleJavaEeBomVersion>4.6.0-20231025</muleJavaEeBomVersion>
+<muleJavaEeBomVersion>4.6.0</muleJavaEeBomVersion>
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -50,6 +50,8 @@ Mule 4.6.x exposes Java EE libraries differently than earlier Mule versions. You
     </dependencies>
   </dependencyManagement>
 ----
++
+For more information, see xref:mule-sdk::java-ee-libraries.adoc[].
 
 * External libraries
 +
@@ -156,5 +158,7 @@ To run a quick check on your custom connector or if all dependencies are not rea
 ----
 -M-Dmule.jvm.version.extension.enforcement=LOOSE
 ----
+
+For more information, see xref:mule-sdk::java-version-support.adoc[].
 
 // end::communicate-support-level[]
