@@ -52,6 +52,10 @@ Anypoint Platform captures usage metrics across products, but not all metrics ar
 |Data Graph	
 |_DataGraph orchestration_: An API request made by Anypoint DataGraph to the source APIs to get data for the GraphQL API request made to Anypoint DataGraph. 
 |Orchestrations are not currently aggregated on usage reports.
+
+|IDP 
+|_Intelligent Document Processing (IDP) Document Pages_: A single page processed by IDP.
+|IDP document actions might process documents that have more than one page, with each page counting separately. When RPA executes document actions, it also counts towards document pages and additionally consumes the corresponding RPA Bot Minutes, accounting for the time the RPA process runs. 
 |===
 
 [[mule-flows]]
