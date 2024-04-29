@@ -95,10 +95,11 @@ Anypoint Connectors and modules are certified by MuleSoft to run on Java 17. For
 
 === Where to Find Java Compatibility Information for Connectors and Modules
 
+The most commonly used Anypoint Connectors and modules are Java 17-compatible now, and others are being released regularly. 
+
 Java compatibility information is provided on the details page for connectors and modules in the *Asset versions* table. This is the most current compatibility information, as connectors are tagged as Java 17-compatible when they are released. 
 
-[NOTE]
-The most commonly used Anypoint Connectors and modules are Java 17-compatible now, and others are being released regularly. For a list of Java 17-compatible connectors, see https://help.salesforce.com/s/articleView?id=000782248&type=1[Java 17-Compatible Anypoint Connectors^]. 
+For a list of Java 17-compatible connectors, see https://help.salesforce.com/s/articleView?id=000782248&type=1[Java 17-Compatible Anypoint Connectors^]. 
 
 === Upgrading Anypoint Connectors 
 
@@ -109,26 +110,7 @@ To upgrade Anypoint Connectors provided by MuleSoft, with no custom code:
 . In <<anypoint-studio>>, update the connectors in your app to the latest Java 17-compatible version. 
 . xref:mule-runtime::deploying.adoc[Deploy your applications] to a target running on Mule 4.6 or later.
 
-[[anypoint-exchange]]
-== Anypoint Exchange
-
-The Asset version detail table for connectors shows which versions of Java the connector is compatible with.
-
-
-
-[[anypoint-studio]]
-== Anypoint Studio
-
-Starting with Anypoint Studio (Studio) 7.17, if your Mule app is running on Mule runtime 4.6 or later, you can change the target JVM at the Studio project level to upgrade or downgrade the JVM. 
-
-Studio 17 provides compatibility guidance:
-
-* When you compile your app, Studio 7.17 offers real-time guidance and alerts you if there are any incompatible connector versions or project mismatches to prevent deployment failures.
-* When you add a new connector or module to your project, Studio shows the supported JVM version for each version of the connector or module. 
-* When you upgrade an existing Studio project to Java 17, Studio automatically searches Exchange and suggests which extensions (modules and connectors) in your app to upgrade. 
-* When you deploy an app to CloudHub from Studio, Runtime Manager proactively detects mismatches between the project's Java version and the deployment environment. For example, if your project is built for Java 8 and your target environment is Java 17, Runtime Manager and Studio provide guidance to prevent deployment failures.
-
-For more information, see xref:studio::change-jdk-config-in-projects.adoc[] and xref:studio::update-modules.adoc[].
+If your connector includes custom code, go to <<custom-connectors>>.
 
 [[custom-connectors]]
 == Custom Connectors
@@ -151,6 +133,20 @@ If you are a MuleSoft customer:
   * xref:customer-connector-upgrade.adoc#upgrade-your-rest-connect-connectors[REST Connect]
 . Test your connector using xref:customer-connector-upgrade.adoc#test-your-custom-connector-with-munit[MUnit].
 . xref:mule-runtime::deploying.adoc[Deploy your applications] to a target running on Mule 4.6 or later.
+
+[[anypoint-studio]]
+== Anypoint Studio
+
+Starting with Anypoint Studio (Studio) 7.17, if your Mule app is running on Mule runtime 4.6 or later, you can change the target JVM at the Studio project level to upgrade or downgrade the JVM. 
+
+Studio 17 provides compatibility guidance:
+
+* When you compile your app, Studio 7.17 offers real-time guidance and alerts you if there are any incompatible connector versions or project mismatches to prevent deployment failures.
+* When you add a new connector or module to your project, Studio shows the supported JVM version for each version of the connector or module. 
+* When you upgrade an existing Studio project to Java 17, Studio automatically searches Exchange and suggests which extensions (modules and connectors) in your app to upgrade. 
+* When you deploy an app to CloudHub from Studio, Runtime Manager proactively detects mismatches between the project's Java version and the deployment environment. For example, if your project is built for Java 8 and your target environment is Java 17, Runtime Manager and Studio provide guidance to prevent deployment failures.
+
+For more information, see xref:studio::change-jdk-config-in-projects.adoc[] and xref:studio::update-modules.adoc[].
 
 [[policies]]
 == Policies
