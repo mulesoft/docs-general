@@ -150,6 +150,8 @@ You can mark your custom connector as compatible with Java 17 only; however, you
 
 When you deploy a Mule app, Mule verifies that all modules in the Mule app are compatible with the Java version. If Mule finds an incompatibility, Mule throws an error and the application does not deploy. 
 
+NOTE: If you receive an error message specific to an XML SDK based connector, such as `Extension 'module-error-handler-plugin' does not support Java 17. Supported versions are: [1.8, 11]`, this means that your Mule app still contains some connectors that are not compatible with Java 17. To resolve this error, upgrade all connectors in your Mule app to be compatible with Java 17.
+
 If your code is compatible with Java 17 but you do not declare Java 17 compatibility, you can still get a successful test run. 
 
 To run a quick check on your custom connector or if all dependencies are not ready, pass the following argument to skip hard checks on the Java support declaration:
