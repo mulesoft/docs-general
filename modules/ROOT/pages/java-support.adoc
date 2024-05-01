@@ -99,6 +99,8 @@ The most commonly used Anypoint Connectors and modules are Java 17-compatible no
 
 Java compatibility information is also provided on the xref:https://www.mulesoft.com/exchange/[Exchange] details page for connectors and modules in the *Asset versions* table. This is the most current compatibility information, as connectors are tagged as Java 17-compatible when they are released. 
 
+image:exchange-version-detail.png[Expanded menu to show asset version detail option]
+
 For a list of Java 17-compatible connectors, see https://help.salesforce.com/s/articleView?id=000782248&type=1[Java 17-Compatible Anypoint Connectors^]. 
 
 === Upgrading Anypoint Connectors 
