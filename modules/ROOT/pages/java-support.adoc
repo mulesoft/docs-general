@@ -103,12 +103,13 @@ For a list of Java 17-compatible connectors, see https://help.salesforce.com/s/a
 
 === Upgrading Anypoint Connectors 
 
-To upgrade Anypoint Connectors provided by MuleSoft, with no custom code:
+To upgrade Anypoint Connectors that are provided by MuleSoft and being used out-of-the-box (no custom code):
 
-. Update your Mule app to run on Mule runtime 4.6 or later. 
-. Change the target JVM at the project property level. This includes both upgrades and downgrades of the JVM version.
-. In <<anypoint-studio>>, update the connectors in your app to the latest Java 17-compatible version. 
-. xref:mule-runtime::deploying.adoc[Deploy your applications] to a target running on Mule 4.6 or later.
+. In Runtime Manager, update the Mule app that has your connectors to run on Mule runtime 4.6 or later. 
+. In Anypoint Studio, xref:studio::change-jdk-config-in-projects.adoc[change the target JDK] at the project property level.  
+. When you select JDK 17, Studio automatically prompts you to update the connectors in your project.
+. During packaging, Studio provides guidance and alerts if there are any connectors in your project that are incompatible with the selected JDK version. 
+. xref:mule-runtime::deploying.adoc[Deploy your applications] to a target running on Mule 4.6 or later. Runtime Manager shows alerts if there are any mismatches between the project's Java version and the deployment environment. 
 
 If your connector includes custom code, go to <<custom-connectors>>.
 
