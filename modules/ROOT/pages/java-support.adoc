@@ -95,7 +95,7 @@ Anypoint Connectors and modules are certified by MuleSoft to run on Java 17. For
 
 === Where to Find Java Compatibility Information for Connectors and Modules
 
-The most commonly used Anypoint Connectors and modules are Java 17-compatible now, and others are being released regularly. Check the release  notes for your connector for compatibility information.
+The most commonly used Anypoint Connectors and modules are Java 17-compatible now, and others are being released regularly. Check the release notes for your connector for compatibility information.
 
 Java compatibility information is also provided on the xref:exchange::asset-versions.adoc[Exchange] details page for connectors and modules in the *Asset versions* table. This is the most current compatibility information, as connectors are tagged as Java 17-compatible when they are released. 
 
