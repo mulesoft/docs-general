@@ -199,7 +199,7 @@ POJOs are required for DataWeave 2.6.0 and later, and you must ensure that the P
 Variables like `attributes`, `message`, or `error` have specific access APIs. Using the proper fields is required when using Java 17 because internal fields are no longer accessible. For example:
 
 ** `error.muleMessage` needs to be replaced by the proper Mule error field `error.errorMessage`.
-** `error.errors` will need to be replaced by the proper Mule error field `error.childErrors`
+** `error.errors` needs to be replaced by the proper Mule error field `error.childErrors`.
 
 For more information, see the following documentation:
 
