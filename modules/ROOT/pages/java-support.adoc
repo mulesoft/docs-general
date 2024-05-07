@@ -194,7 +194,7 @@ POJOs are required for DataWeave 2.6.0 and later, and you must ensure that the P
 ** Getters for all properties
 ** Setters for all properties
 
-* Verify that predefined variables are accessed through their proper API
+* Verify that predefined variables are accessed through their proper API.
 +
 Variables like `attributes`, `message`, or `error` have specific access APIs. Using the proper fields is required when using Java 17 because internal fields are no longer accesible. For example:
 
