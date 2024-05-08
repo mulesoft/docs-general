@@ -91,30 +91,29 @@ If you want to change the cipher's default values, see xref:mule-runtime::tls-co
 [[anypoint-connectors-and-modules]]
 == Anypoint Connectors and Modules
 
-Anypoint Connectors and modules are certified by MuleSoft to run on Java 17. For information about Java 17 support for each connector and module, see the xref:release-notes::connector/anypoint-connector-release-notes.adoc[Release Notes] for that Mule 4 connector or module. Java compatibility information is also provided on the Exchange tiles for connectors and modules. 
+Anypoint Connectors and modules are certified by MuleSoft to run on Java 17. For information about Java 17 support for each connector and module, see the xref:release-notes::connector/anypoint-connector-release-notes.adoc#mule_4[Release Notes] for that Mule 4 connector or module. 
 
-The most commonly used Anypoint Connectors and modules are Java 17-compatible now, and others are being released regularly. For a list of Java 17-compatible connectors, see https://help.salesforce.com/s/articleView?id=000782248&type=1[Java 17-Compatible Anypoint Connectors^].
+=== Where to Find Java Compatibility Information for Connectors and Modules
 
-To upgrade Anypoint Connectors:
+The most commonly used Anypoint Connectors and modules are Java 17-compatible now, and others are being released regularly. Check the release notes for your connector for compatibility information.
 
-. Update your Mule app to run on Mule runtime 4.6 or later. 
-. Change the target JVM at the project property level. This includes both upgrades and downgrades of the JVM version.
-. In Anypoint Studio, update the connectors in your app to the latest Java 17-compatible version. 
-. xref:mule-runtime::deploying.adoc[Deploy your applications] to a target running on Mule 4.6 or later.
+Java compatibility information is also provided on the xref:exchange::asset-versions.adoc[Exchange] details page for connectors and modules in the *Asset versions* table. This is the most current compatibility information, as connectors are tagged as Java 17-compatible when they are released. 
 
-[[anypoint-studio]]
-== Anypoint Studio
+image:exchange-version-detail.png[Expanded menu to show asset version detail option]
 
-Starting with Anypoint Studio (Studio) 7.17, if your Mule app is running on Mule runtime 4.6 or later, you can change the target JVM at the Studio project level to upgrade or downgrade the JVM. 
+For a list of Java 17-compatible connectors, see https://help.salesforce.com/s/articleView?id=000782248&type=1[Java 17-Compatible Anypoint Connectors^]. 
 
-Studio 17 provides compatibility guidance:
+=== Upgrading Anypoint Connectors 
 
-* When you compile your app, Studio 7.17 offers real-time guidance and alerts you if there are any incompatible connector versions or project mismatches to prevent deployment failures.
-* When you add a new connector or module to your project, Studio shows the supported JVM version for each version of the connector or module. 
-* When you upgrade an existing Studio project to Java 17, Studio automatically searches Exchange and suggests which extensions (modules and connectors) in your app to upgrade. 
-* When you deploy an app to CloudHub from Studio, Runtime Manager proactively detects mismatches between the project's Java version and the deployment environment. For example, if your project is built for Java 8 and your target environment is Java 17, Runtime Manager and Studio provide guidance to prevent deployment failures.
+To upgrade Anypoint Connectors that are provided by MuleSoft and being used out-of-the-box (no custom code):
 
-For more information, see xref:studio::change-jdk-config-in-projects.adoc[] and xref:studio::update-modules.adoc[].
+. In Runtime Manager, update the Mule app that has your connectors to run on Mule runtime 4.6 or later. 
+. In Anypoint Studio, xref:studio::change-jdk-config-in-projects.adoc[change the target JDK] at the project property level.  
+. When you select JDK 17, Studio automatically prompts you to update the connectors in your project.
+. During packaging, Studio provides guidance and alerts if there are any connectors in your project that are incompatible with the selected JDK version. 
+. xref:mule-runtime::deploying.adoc[Deploy your applications] to a target running on Mule 4.6 or later. Runtime Manager shows alerts if there are any mismatches between the project's Java version and the deployment environment. 
+
+If your connector includes custom code, go to <<custom-connectors>>.
 
 [[custom-connectors]]
 == Custom Connectors
@@ -137,6 +136,20 @@ If you are a MuleSoft customer:
   * xref:customer-connector-upgrade.adoc#upgrade-your-rest-connect-connectors[REST Connect]
 . Test your connector using xref:customer-connector-upgrade.adoc#test-your-custom-connector-with-munit[MUnit].
 . xref:mule-runtime::deploying.adoc[Deploy your applications] to a target running on Mule 4.6 or later.
+
+[[anypoint-studio]]
+== Anypoint Studio
+
+Starting with Anypoint Studio (Studio) 7.17, if your Mule app is running on Mule runtime 4.6 or later, you can change the target JVM at the Studio project level to upgrade or downgrade the JVM. 
+
+Studio 17 provides compatibility guidance:
+
+* When you package your app, Studio 7.17 offers real-time guidance and alerts you if there are any incompatible connector versions or project mismatches to prevent deployment failures.
+* When you add a new connector or module to your project, Studio shows the supported JVM version for each version of the connector or module. 
+* When you upgrade an existing Studio project to Java 17, Studio automatically searches Exchange and suggests which extensions (modules and connectors) in your app to upgrade. 
+* When you deploy an app to CloudHub from Studio, Runtime Manager proactively detects mismatches between the project's Java version and the deployment environment. For example, if your project is built for Java 8 and your target environment is Java 17, Runtime Manager and Studio provide guidance to prevent deployment failures.
+
+For more information, see xref:studio::change-jdk-config-in-projects.adoc[] and xref:studio::update-modules.adoc[].
 
 [[policies]]
 == Policies
@@ -209,3 +222,4 @@ For more information, see the following documentation:
 == See Also
 
 * https://help.salesforce.com/s/articleView?id=000396936&type=1[MuleSoft Java 17 Upgrade FAQ^]
+* xref:release-notes::connector/anypoint-connector-release-notes.adoc[Connector Release Notes]
