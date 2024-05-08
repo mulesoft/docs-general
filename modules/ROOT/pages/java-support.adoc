@@ -195,19 +195,29 @@ For more information, see the following documentation:
 [[dataweave]]
 == DataWeave
 
-DataWeave uses Java's reflection API to read and write Java objects. Java 17 adds some restrictions in encapsulation and reflective access that affect the Java Data Format.
+DataWeave uses Java's reflection API to read and write Java objects. Java 17 adds some restrictions in encapsulation and reflective access that affect the Java Data Format and Mule objects.
 
 To ensure that your applications continue to work as expected, follow these guidelines:
 
 * Verify that the objects used by your application are Plain Old Java Objects (POJOs). 
 +
-POJOs are required for DataWeave 6.0.0 and later, and you must ensure that the POJOs have:
+POJOs are required for DataWeave 2.6.0 and later, and you must ensure that the POJOs have:
 
 ** A default constructor
 ** Getters for all properties
 ** Setters for all properties
 
-For more information, see xref:dataweave::dataweave-formats-java.adoc#java-support[Java Format].
+* Verify that predefined variables are accessed through their proper API.
++
+Variables like `attributes`, `message`, and `error` have specific access APIs. Using the proper fields is required when using Java 17 because internal fields are no longer accessible. For example:
+
+** `error.muleMessage` needs to be replaced by the proper Mule error field `error.errorMessage`.
+** `error.errors` needs to be replaced by the proper Mule error field `error.childErrors`.
+
+For more information, see the following documentation:
+
+* xref:dataweave::dataweave-formats-java.adoc#java-support[Java Format]
+* xref:dataweave::dataweave-variables-context.adoc[Predefined Variables]
 
 == See Also
 
