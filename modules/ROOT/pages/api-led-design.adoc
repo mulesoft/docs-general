@@ -138,8 +138,6 @@ image:successful-test1.png[Results of a successful test, 500]
 . In *Local Settings*, enable *Select By Default*.
 +
 image:api-mocking-service-configuration-icon.png[Mocking service icon]
-+
-image:disable-mocking-service.png[Mocking service control before being disabled, 500]
 
 == Step 2.4. Publish Your API Specification
 
