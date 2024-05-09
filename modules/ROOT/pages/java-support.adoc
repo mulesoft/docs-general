@@ -93,6 +93,8 @@ If you want to change the cipher's default values, see xref:mule-runtime::tls-co
 
 Anypoint Connectors and modules are certified by MuleSoft to run on Java 17. For information about Java 17 support for each connector and module, see the xref:release-notes::connector/anypoint-connector-release-notes.adoc#mule_4[Release Notes] for that Mule 4 connector or module. 
 
+MuleSoft Government Cloud now supports Java 17, so connectors that are compatible with Java 17 are now available in MuleSoft Government Cloud. 
+
 === Where to Find Java Compatibility Information for Connectors and Modules
 
 The most commonly used Anypoint Connectors and modules are Java 17-compatible now, and others are being released regularly. Check the release notes for your connector for compatibility information.
