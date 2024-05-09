@@ -72,7 +72,8 @@ link:https://anypoint.mulesoft.com/login["Take me to Anypoint Platform^", role="
 . In the *Upstream page*, enter the upstream URL, and click *Next*.
 +
 The upstream URL is the *App url* from the deployed app in Runtime Manager. 
-. Click *Save & Deploy*.
+. Click *Next*.
+. Review the selections for the API instance, and then click *Save & Deploy*.
 . After the API instance is deployed, a confirmation message appears with a link to Anypoint Runtime Manager. Click the link to view the details of your API instance
 
 Now that your API is managed in API Manager, you can create a proxy in the next step.
