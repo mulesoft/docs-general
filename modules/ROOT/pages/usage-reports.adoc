@@ -21,7 +21,7 @@ See https://help.salesforce.com/s/articleView?id=000390885&type=1[FAQ] documenta
 * Runtime Manager vCore allocation information and other metrics appear in Access Management.
 +
 For more information, see xref:pricing-metrics.adoc#runtime-manager-metrics[Runtime Manager Metrics].
-* xref:mq::mq-usage.adoc#access-anypoint-mq-usage[Anypoiont MQ] usage appears in Access Management.
+* xref:mq::mq-usage.adoc#access-anypoint-mq-usage[Anypoint MQ] usage appears in Access Management.
 +
 For more information, see xref:pricing-metrics.adoc#mq-metrics[Anypoint MQ Metrics].
 * xref:object-store::osv2-usage.adoc#access-object-store-effective-api-request-usage-charts[Object Store v2] usage appears in Access Management.
