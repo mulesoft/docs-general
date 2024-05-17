@@ -3,22 +3,22 @@
 
 Usage reports provide comprehensive monthly and daily summaries that provide valuable insights into your resource use across Anypoint Platform products. Usage reports enable you to track and understand your usage, which helps you optimize your resource allocation. By correlating your usage with billing cycles, you can gain insights into the factors influencing your costs, which enables you to proactively manage your budget and make informed decisions to optimize your resource allocation.
 
-When you use an Anypoint Platform product, MuleSoft meters your usage and aggregates the records on a daily and monthly basis. Currently, some products have only monthly usage reports available. Monthly usage reports are updated on the third day of each month and are split by product. All reports are calculated using the UTC time standard. Daily usage reports are available two days after the current date. A daily report contains data that is aggregated from 00:00 to 00:00 UTC.  
+When you use an Anypoint Platform product that is metered, MuleSoft measures your usage and aggregates the records on a daily and monthly basis. Currently, some products have only monthly usage reports available. Monthly usage reports are updated on the third day of each month and are split by product. All reports are calculated using the UTC time standard. Daily usage reports are available three days after the usage date. A daily report contains data that is aggregated from 00:00 to 00:00 UTC.  
 
-Metrics and data availability in usage reports are also influenced by your pricing and packaging model. Organizations that use a usage-based pricing model can use the usage report to compare actual usage against the existing contract. However, usage reports are not for billing purposes. For more information about usage metrics and pricing, read the following:
+Organizations that use a usage-based pricing model can use the usage report to compare actual usage against the existing contract. However, usage reports are not for billing purposes. For more information about usage metrics and pricing, read the following:
 
 * xref:pricing.adoc[]
 * xref:usage-metrics.adoc[]
 
 Some usage data, such as monthly statements and vCore allocation, appears in different areas of Anypoint Platform or Salesforce products. 
 
-* Monthly statements for Mule Runtime (including Mule flows, Mule messages, and data throughput) and xref:rpa-home::ms-automation-credits-usage-types.adoc[Automation Credits] are sent to the primary billing contract.
+* Monthly statements for Mule Runtime (including Mule flows, Mule messages, and data throughput), Flex Gateway, and xref:rpa-home::ms-automation-credits-usage-types.adoc[Automation Credits] are sent to the primary billing contract.
 +
 For more information, see https://help.salesforce.com/s/articleView?id=000390885&type=1[Monthly Account Summaries] documentation in Salesforce.
 * Runtime Manager vCore allocation information and other metrics appear in Access Management.
 +
 For more information, see xref:pricing-metrics.adoc#runtime-manager-metrics[Runtime Manager Metrics].
-* xref:mq::mq-usage.adoc#access-anypoint-mq-usage[Anypoiont MQ] usage appears in Access Management.
+* xref:mq::mq-usage.adoc#access-anypoint-mq-usage[Anypoint MQ] usage appears in Access Management.
 +
 For more information, see xref:pricing-metrics.adoc#mq-metrics[Anypoint MQ Metrics].
 * xref:object-store::osv2-usage.adoc#access-object-store-effective-api-request-usage-charts[Object Store v2] usage appears in Access Management.
@@ -40,7 +40,7 @@ The following products have both daily and monthly usage reports:
 * xref:flex-gateway-usage.adoc[Flex Gateway]
 * xref:mule-runtime-usage.adoc[Mule Runtime]
 
-== Requirements for Mule Runtime
+== Requirements for Mule Runtime to Report Usage
 
 include::partial$mule-runtime-metrics.adoc[tag=supportedRuntimes]
 
