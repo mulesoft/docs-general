@@ -8,11 +8,11 @@ Daily and monthly usage reports offer different metrics depending on the product
 The following products have only monthly usage reports and are available only in the legacy usage reports view:
 
 * API Manager
-* API governance
 
 The following products have both daily and monthly usage reports and are available only in the new usage reports view:
 
 * API Experience Hub
+* API Governance
 * Flex Gateway
 * Intelligent Document Processing (IDP)
 * Mule Runtime
