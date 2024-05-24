@@ -31,12 +31,12 @@ When you navigate to the *Usage Reports* page in Anypoint Plaform, the selection
 
 The following products have only monthly usage reports:
 
-* xref:api-governance-usage.adoc[API Governance]
 * xref:api-manager-usage.adoc[API Manager]
 
 The following products have both daily and monthly usage reports:
 
 * xref:api-experience-hub-usage.adoc[API Experience Hub]
+* xref:api-governance-usage.adoc[API Governance]
 * xref:flex-gateway-usage.adoc[Flex Gateway]
 * xref:mule-runtime-usage.adoc[Mule Runtime]
 
