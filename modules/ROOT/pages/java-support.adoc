@@ -1,12 +1,13 @@
 = Java Support
 
-MuleSoft is adopting Java's long-term-support (LTS) release cadence, beginning with Mule runtime 4.6, which adds support for Java 17 LTS. 
+MuleSoft is adopting Java's long-term-support (LTS) release cadence, beginning with Mule runtime 4.6, which adds support for Java 17 LTS. Upgrading to Java 17 provides many benefits, including improved performance, language-level enhancement, increased security, and extended APIs and libraries.
 
-Many third-party vendors are discontinuing support for Java 8, which impacts the MuleSoft product stack. Adopting this new release cadence provides greater security, compliance, and performance.
+Many third-party vendors are discontinuing support for Java 8, which impacts the MuleSoft product stack. Adopting the new LTS release cadence provides greater security, compliance, and performance.
 
-This change has no immediate impact to Mule applications that are running on currently supported Mule versions, or on applications that are upgraded to Mule runtime 4.6. Existing Java 8 apps will continue to run on Java 8 until February 2025.
+Even though this change has no immediate impact to Mule applications that are running on currently supported Mule versions, or on applications that are upgraded to Mule runtime 4.6, it is best to start your upgrade planning now. Java 17 upgrade planning includes evaluating integration apps, connectors (Anypoint connectors and custom connectors), Mule Gateway policies, and API proxies, as all of these components rely on Java.
 
-Java 17 upgrade planning includes evaluating integration apps, connectors (Anypoint connectors and custom connectors), Mule Gateway policies, and API proxies, as all of these components rely on Java.
+Existing Java 8 apps will continue to run on Java 8 until February 2025. 
+
 
 [[mule-runtime-java-support]]
 == Mule Runtime Java Support
@@ -46,6 +47,8 @@ Follow these best practices:
 == Mule Apps
 
 You can update, test, and redeploy most of your currently running Mule apps to use Java 17. However, any apps and connectors that are running custom Java code require additional work to certify those components. Before you upgrade your integration apps or Mule Gateway policies and proxies to Java 17, you must update all extensions, modules, and connectors used within those apps and policies to Java 17.
+
+NOTE: The maximum supported version for running your applications is Java 17 for Mule runtime 4.6.x and later. During the packaging of your app, all code, including third-party dependencies, *must* be compiled for Java 8.
 
 [IMPORTANT]
 To ensure your API proxies or Mule apps are protected when upgrading, upgrade your API policies _before_ upgrading your API proxies or Mule apps.
