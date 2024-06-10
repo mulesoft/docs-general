@@ -8,7 +8,7 @@ Before upgrading and testing your custom connector for Java 17, you must be fami
 
 * Target compilation level
 +
-Ensure your custom connector runs with Java 17, but always use Java 8 as the target compilation level.
+NOTE: The maximum supported version for running your applications is JDK 17 for Mule runtime 4.6.x and later. During the packaging of your app, all code, including third-party dependencies, *must* be compiled for Java language level 1.8.
 +
 Because you must compile your custom connector with Java 8, use the Java compiler configuration from the Java SDK parent POM. You can’t use language features from Java 11 or Java 17. 
 
