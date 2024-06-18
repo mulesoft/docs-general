@@ -184,9 +184,9 @@ For details about how to upgrade your proxy applications, see xref:upgrade-polic
 [[mule-maven-plugin]]
 == Mule Maven Plugin 
 
-If you are using Mule Maven Plugin (MMP) 4.1.1 and later to deploy your apps, you can configure the deployment to use Java 17.  
+If you are using Mule Maven Plugin 4.1.1 and later to deploy your apps, you can configure the deployment to use Java 17.  
 
-When deploying to CloudHub, Mule Maven Plugin deploys the latest build version of a release train when the build version has a major and minor version. MMP has a new Java version property to explicitly deploy to a specified Java version.
+When deploying to CloudHub, Mule Maven Plugin deploys the latest build version of a release train when the build version has a major and minor version. Mule Maven Plugin has a new Java version property to explicitly deploy to a specified Java version.
 
 When deploying to Runtime Fabric and CloudHub 2.0, Mule Maven Plugin accepts the entire tag of the build so you can use the correct semantic version (SemVer) in your deployment. 
 
