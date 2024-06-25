@@ -34,6 +34,8 @@ To upgrade custom automated policies to Java 17:
  * If your custom policy has custom connectors, see xref:java-support.adoc#custom-connectors[Upgrading Custom Connectors].
 . xref:mule-gateway::policies-custom-java-version.adoc[Upgrade the custom policy].
 . xref:mule-gateway::policies-custom-package.adoc[Package the custom policy].
++
+Configure Java 17 locally to make custom policies compatible with Java 17.
 . xref:mule-gateway::policies-custom-upload-to-exchange.adoc[Republish the custom policy to Exchange].
 . Apply the new version of the custom policy that is compatible with Java 17 to the API instance:
  .. Go to *Policies*.
@@ -68,6 +70,8 @@ To upgrade custom API-level policies to Java 17:
  * If your custom policy has custom connectors, see xref:java-support.adoc#custom-connectors[Upgrading Custom Connectors].
 . xref:mule-gateway::policies-custom-java-version.adoc[Upgrade the custom policy].
 . xref:mule-gateway::policies-custom-package.adoc[Package the custom policy].
++
+Configure Java 17 locally to make custom policies compatible with Java 17.
 . xref:mule-gateway::policies-custom-upload-to-exchange.adoc[Republish the custom policy to Exchange].
 . Apply the new version of the custom policy that is compatible with Java 17 to the API instance:
  .. Go to *Policies*.
