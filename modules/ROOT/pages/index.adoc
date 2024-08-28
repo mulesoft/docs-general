@@ -4,127 +4,46 @@ include::_attributes.adoc[]
 endif::[]
 :linkattrs:
 
-This site provides archived MuleSoft documentation for products and product versions that have reached their end of life and are no longer supported.
+This site provides archived MuleSoft documentation. In general, this documentation covers products and product versions that have reached their end of life and are no longer supported.
 
-This documentation is for reference purposes only and will not be updated.
+It is for reference purposes only and will not be updated.
 
 |===
 
-| Release Notes Archives |
-  xref:release-notes::index.adoc[Release Notes]
-
-| Anypoint Platform Command-Line Interface Doc Archives |
-  xref:2.x@anypoint-cli::index.adoc[v2.x Archive]
-
-| Anypoint Platform for Pivotal Cloud Foundry Doc Archives |
-  xref:1.6@anypoint-platform-pcf::index.adoc[v1.6 Archive] +
+| Anypoint Platform for PCF Doc Archives |
   xref:1.5@anypoint-platform-pcf::index.adoc[v1.5 Archive]
 
-| Anypoint Platform Private Cloud Edition Doc Archives |
-  xref:3.0@private-cloud::index.adoc[v3.0 Archive] +
-  xref:2.1@private-cloud::index.adoc[v2.1 Archive] +
-  xref:2.0@private-cloud::index.adoc[v2.0 Archive] +
-  xref:1.7@private-cloud::index.adoc[v1.7 Archive] +
-  xref:1.6@private-cloud::index.adoc[v1.6 Archive] +
-  xref:1.5@private-cloud::index.adoc[v1.5 Archive] +
-  xref:1.1@private-cloud::index.adoc[v1.1 Archive]
-
-| Connector DevKit Doc Archives |
-  xref:3.8@connector-devkit::index.adoc[v3.8 Archive] +
-  xref:3.7@connector-devkit::index.adoc[v3.7 Archive] +
-  xref:3.6@connector-devkit::index.adoc[v3.6 Archive] +
-  xref:3.5@connector-devkit::index.adoc[v3.5 Archive] +
-  xref:3.4@connector-devkit::index.adoc[v3.4 Archive] +
-  xref:3.3@connector-devkit::index.adoc[v3.3 Archive] +
+| Anypoint Connector DevKit Doc Archives |
+  xref:3.4@connector-devkit::index.adoc[v3.4 Archive] - +
+  xref:3.3@connector-devkit::index.adoc[v3.3 Archive] - +
   xref:3.2@connector-devkit::index.adoc[v3.2 Archive]
 
-| Connectors Doc Archives |
-  xref:connectors::index.adoc[Archive] 
-
-| Data Gateway Doc Archives |
-  xref:data-gateway::index.adoc[Archive]
-
-| DataWeave Doc Archives |
-  xref:2.2@dataweave::index.adoc[v2.2 Archive] +
-  xref:2.1@dataweave::index.adoc[v2.1 Archive] +
-  xref:1.1@dataweave::index.adoc[v1.1 Archive] +
-  xref:1.0@dataweave::index.adoc[v1.0 Archive]
-
-| Design Center Doc Archives |
-  xref:design-center::index.adoc[Flow Designer Archive]
-
-| Flex Gateway Doc Archives |
-  xref:1.0@gateway::index.adoc[v1.0 Archive]
+| Anypoint Data Gateway Doc Archives |
+  xref:latest@data-gateway::index.adoc[Archive]
 
 | Healthcare Toolkit Doc Archives |
-  xref:3.1@healthcare-toolkit::index.adoc[v3.1 Archive] +
-  xref:3.0@healthcare-toolkit::index.adoc[v3.0 Archive] +
-  xref:2.0@healthcare-toolkit::index.adoc[v2.0 Archive] +
-  xref:1.3@healthcare-toolkit::index.adoc[v1.3 Archive]
+  xref:1.3@healthcare-toolkit/[v1.3 Archive]
 
 | Mule Management Console Doc Archives |
-  xref:3.8@mule-management-console::index.adoc[v3.8 Archive] +
-  xref:3.7@mule-management-console::index.adoc[v3.7 Archive] +
-  xref:3.6@mule-management-console::index.adoc[v3.6 Archive] +
-  xref:3.5@mule-management-console::index.adoc[v3.5 Archive] +
-  xref:3.4@mule-management-console::index.adoc[v3.4 Archive] +
-  xref:3.3@mule-management-console::index.adoc[v3.3 Archive] +
+  xref:3.7@mule-management-console::index.adoc[v3.7 Archive] - +
+  xref:3.6@mule-management-console::index.adoc[v3.6 Archive] - +
+  xref:3.5@mule-management-console::index.adoc[v3.5 Archive] - +
+  xref:3.4@mule-management-console::index.adoc[v3.4 Archive] - +
+  xref:3.3@mule-management-console::index.adoc[v3.3 Archive] - +
   xref:3.2@mule-management-console::index.adoc[v3.2 Archive]
 
 | Mule Runtime Doc Archives (Mule User Guide) |
-  xref:4.2@mule-runtime::index.adoc[v4.2 Archive] +
-  xref:4.1@mule-runtime::index.adoc[v4.1 Archive] +
-  xref:3.8@mule-runtime::index.adoc[v3.8 Archive] +
-  xref:3.7@mule-runtime::index.adoc[v3.7 Archive] +
-  xref:3.6@mule-runtime::index.adoc[v3.6 Archive] +
-  xref:3.5@mule-runtime::index.adoc[v3.5 Archive] +
-  xref:3.4@mule-runtime::index.adoc[v3.4 Archive] +
-  xref:3.3@mule-runtime::index.adoc[v3.3 Archive] +
+  xref:3.7@mule-runtime::index.adoc[v3.7 Archive] - +
+  xref:3.6@mule-runtime::index.adoc[v3.6 Archive] - +
+  xref:3.5@mule-runtime::index.adoc[v3.5 Archive] - +
+  xref:3.4@mule-runtime::index.adoc[v3.4 Archive] - +
+  xref:3.3@mule-runtime::index.adoc[v3.3 Archive] - +
   xref:3.2@mule-runtime::index.adoc[v3.2 Archive]
 
 | MUnit Doc Archives |
-  xref:1.2@munit::index.adoc[v1.2 Archive] +
-  xref:1.1@munit::index.adoc[v1.1 Archive] +
+  xref:1.2@munit::index.adoc[v1.2 Archive] - +
+  xref:1.1@munit::index.adoc[v1.1 Archive] - +
   xref:1.0@munit::index.adoc[v1.0 Archive]
-
-| Runtime Fabric Doc Archives |
-  xref:1.7@runtime-fabric::index.adoc[v1.7 Archive] +
-  xref:1.6@runtime-fabric::index.adoc[v1.6 Archive] +
-  xref:1.5@runtime-fabric::index.adoc[v1.5 Archive] +
-  xref:1.4@runtime-fabric::index.adoc[v1.4 Archive] +
-  xref:1.3@runtime-fabric::index.adoc[v1.3 Archive] +
-  xref:1.2@runtime-fabric::index.adoc[v1.2 Archive] +
-  xref:1.0@runtime-fabric::index.adoc[v1.0 Archive]
-
-| Partner Manager Doc Archives |
-  xref:1.0@partner-manager::index.adoc[v1.0 Archive]
-
-| Studio Doc Archives |
-  xref:7.17@studio::index.adoc[v7.17 Archive] +
-  xref:7.16@studio::index.adoc[v7.16 Archive] +
-  xref:7.15@studio::index.adoc[v7.15 Archive] +
-  xref:7.14@studio::index.adoc[v7.14 Archive] +
-  xref:7.13@studio::index.adoc[v7.13 Archive] +
-  xref:7.12@studio::index.adoc[v7.12 Archive] +
-  xref:7.11@studio::index.adoc[v7.11 Archive] +
-  xref:7.10@studio::index.adoc[v7.10 Archive] +
-  xref:7.9@studio::index.adoc[v7.9 Archive] +
-  xref:7.8@studio::index.adoc[v7.8 Archive] +
-  xref:7.7@studio::index.adoc[v7.7 Archive] +
-  xref:7.6@studio::index.adoc[v7.6 Archive] +
-  xref:7.5@studio::index.adoc[v7.5 Archive] +
-  xref:7.4@studio::index.adoc[v7.4 Archive] +
-  xref:7.3@studio::index.adoc[v7.3 Archive] +
-  xref:7.2@studio::index.adoc[v7.2 Archive] +
-  xref:7.1@studio::index.adoc[v7.1 Archive] +
-  xref:5.x@studio::index.adoc[v5 Archive]
-
-| Service Mesh Doc Archives |
-  xref:1.1@service-mesh::index.adoc[v1.1 Archive] +
-  xref:1.0@service-mesh::index.adoc[v1.0 Archive]
-
-| Tcat Server Doc Archives |
-  xref:7.1@tcat-server::index.adoc[v7.1 Archive]
 |===
 
 == Current MuleSoft Documentation
