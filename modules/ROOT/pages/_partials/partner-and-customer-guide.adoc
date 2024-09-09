@@ -1,5 +1,17 @@
 // Partial used for common content in the Java 17 partner and customer guides
 
+// tag::partner-upgrade-note[]
+
+NOTE: This guide applies to MuleSoft partners only. If you are a MuleSoft customer, see xref:customer-connector-upgrade.adoc[].
+
+// end::partner-upgrade-note[]
+
+// tag::customer-upgrade-note[]
+
+NOTE: This guide applies to MuleSoft customers only. If you are a MuleSoft partner, see xref:partner-connector-upgrade.adoc[].
+
+// end::customer-upgrade-note[]
+
 // tag::connector-intro[]
 
 Upgrade, test, and release your custom connectors for Java 17 to ensure compatibility within the MuleSoft ecosystem. 

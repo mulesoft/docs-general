@@ -1,6 +1,6 @@
 = Upgrading Java for Custom Connectors (Partners)
 
-NOTE: This guide applies to MuleSoft partners only. If you are a MuleSoft customer, see xref:customer-connector-upgrade.adoc[].
+include::partial$partner-and-customer-guide.adoc[tags=partner-upgrade-note]
 
 include::partial$partner-and-customer-guide.adoc[tags=connector-intro]
 
