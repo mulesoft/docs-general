@@ -2,7 +2,7 @@
 
 NOTE: This guide applies to MuleSoft customers only. If you are a MuleSoft partner, see xref:partner-connector-upgrade.adoc[].
 
-include::partial$partner-and-customer-guide.adoc[tags=customer-intro]
+include::partial$partner-and-customer-guide.adoc[tags=connector-intro]
 
 include::partial$partner-and-customer-guide.adoc[tags=before-you-begin]
 
