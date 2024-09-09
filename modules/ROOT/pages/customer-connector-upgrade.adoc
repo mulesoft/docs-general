@@ -10,6 +10,10 @@ include::partial$partner-and-customer-guide.adoc[tags=min-mule-version-munit]
 
 include::partial$partner-and-customer-guide.adoc[tags=mule-sdk-connectors]
 
+include::partial$partner-and-customer-guide.adoc[tags=mule-sdk-connectors-review-mule-runtime]
+
+include::partial$partner-and-customer-guide.adoc[tags=mule-sdk-connectors-add-missing-code]
+
 include::partial$partner-and-customer-guide.adoc[tags=rest-connect-connectors]
 
 include::partial$partner-and-customer-guide.adoc[tags=test-custom-connector-munit]
