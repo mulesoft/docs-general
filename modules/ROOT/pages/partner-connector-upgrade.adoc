@@ -10,6 +10,10 @@ include::partial$partner-and-customer-guide.adoc[tags=min-mule-version-mtf]
 
 include::partial$partner-and-customer-guide.adoc[tags=mule-sdk-connectors]
 
+include::partial$partner-and-customer-guide.adoc[tags=mule-sdk-connectors-review-mule-runtime]
+
+include::partial$partner-and-customer-guide.adoc[tags=mule-sdk-connectors-add-missing-code]
+
 [[upgrade-your-rest-sdk-connectors]]
 == Upgrade Your Custom REST SDK Connectors
 

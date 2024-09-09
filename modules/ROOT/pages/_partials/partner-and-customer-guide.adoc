@@ -119,6 +119,10 @@ To help you review your code, learn more about the different changes in Java 17:
 +
 See the https://docs.oracle.com/en/java/javase/17/migrate/getting-started.html#GUID-C25E2B1D-6C24-4403-8540-CFEA875B994A[Oracle JDK Migration Guide] for a full list of the changes made in Java 17. Use the guide to assess the impact to your code.
 
+// end::mule-sdk-connectors[]
+
+// tag::mule-sdk-connectors-review-mule-runtime[]
+
 * Mule runtime engine
 +
 See xref:java-support.adoc#mule-runtime[Mule Runtime] to learn more about the Java 17 changes made in Mule runtime engine. 
@@ -129,13 +133,31 @@ See xref:java-support.adoc#mule-runtime[Mule Runtime] to learn more about the Ja
 ** Changes with running the test suite
 ** JPMS
 
+// end::mule-sdk-connectors-review-mule-runtime[]
+
+// tag::mule-sdk-connectors-review-mule-runtime-sdk[]
+
+* Mule runtime engine
++
+See xref:java-support.adoc#mule-runtime[Mule Runtime] to learn more about the Java 17 changes made in Mule runtime engine. 
++
+** Reflection on Java classes
+** Serialization
+** Library upgrades
+** Changes with running the test suite
+** JPMS
+
+// end::mule-sdk-connectors-review-mule-runtime-sdk[]
+
+// tag::mule-sdk-connectors-add-missing-code[]
+
 === Add Missing Code
 
 Because reflection is more restricted in Java 17, API objects now require setters. Previously, API objects and plain old Java objects (POJOs) had default constructors and getters for all properties. Now, API objects and POJOs must also have setters so DataWeave can build outside the connector in the Mule app. 
 
 Constructors and setters are required if your class is instantiated, and getters are required if your class is read. If your class is returned and not instantiated, only getters are required. However, using both getters and setters simplify the validation and certification process. 
 
-// end::mule-sdk-connectors[]
+// end::mule-sdk-connectors-add-missing-code[]
 
 // tag::rest-connect-connectors[]
 
@@ -465,3 +487,11 @@ Java 17 is supported with Mule runtime 4.6.0 and later. However, a connector can
 * xref:java-support.adoc[]
 
 // end::see-also[]
+
+// tag::see-also-sdk[]
+
+== See Also
+
+* xref:general::java-support.adoc[]
+
+// end::see-also-sdk[]
