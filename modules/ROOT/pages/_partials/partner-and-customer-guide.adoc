@@ -112,6 +112,19 @@ IMPORTANT: REST Connect now adds support for TLS. To save time, enable TLS at th
 
 // end::rest-connect-connectors[]
 
+// tag::custom-configuration-properties-provider[]
+
+[[upgrade-your-custom-configuration-properties-provider]]
+== Upgrade Your Custom Configuration Properties Provider
+
+If you have a Custom Configuration Properties Provider which was developed following an older version of xref:mule-runtime::custom-configuration-properties-provider.adoc#example-mule-sdk-module[these instructions], you have two alternatives:
+
+. (Recommended) Switch to using the xref:mule-sdk::getting-started.adoc[Java SDK] and take advantage of the `@JavaVersionSupport` annotation just like explained xref:release-your-custom-connector[here]. You will also need to perform all the other validation steps described in the previous sections, just like with any custom connector. The example Custom Properties Provider mentioned in xref:mule-runtime::custom-configuration-properties-provider.adoc#example-mule-sdk-module[this section] has been updated to support Java 17. You can take a look at that one as an example to update yours. Looking at https://github.com/mulesoft/mule-custom-properties-providers-module-example/commit/410ee26d8b3c44adacb077e099f32886f99eb6be[the changeset] may be clearer (note that it also includes migrating the tests to MUnit).
+
+. If switching to using the xref:mule-sdk::getting-started.adoc[Java SDK] involves too many changes for you, there is another alternative which only requires you to add the declaration using the `ExtensionDeclarer` inside your `ExtensionLoadingDelegate`. https://github.com/mulesoft/mule-custom-properties-providers-module-example/commit/19d9d45cd52b0695f7b9c2b9019bae88f45fb228[Here] is an example of how it would look like.
+
+// end::custom-configuration-properties-provider[]
+
 // tag::communicate-support-level[]
 
 [[release-your-custom-connector]]

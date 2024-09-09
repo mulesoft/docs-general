@@ -16,6 +16,8 @@ include::partial$partner-and-customer-guide.adoc[tags=mule-sdk-connectors]
 
 include::partial$partner-and-customer-guide.adoc[tags=rest-connect-connectors]
 
+include::partial$partner-and-customer-guide.adoc[tags=custom-configuration-properties-provider]
+
 [[test-your-custom-connector-with-munit]]
 == Test Your Custom Connector with MUnit
 
