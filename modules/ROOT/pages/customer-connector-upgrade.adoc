@@ -16,7 +16,7 @@ include::partial$partner-and-customer-guide.adoc[tags=mule-sdk-connectors-add-mi
 
 include::partial$partner-and-customer-guide.adoc[tags=rest-connect-connectors]
 
-include::partial$partner-and-customer-guide.adoc[tags=custom-configuration-properties-provider-customer]
+include::partial$partner-and-customer-guide.adoc[tags=custom-configuration-properties-provider-customers]
 
 include::partial$partner-and-customer-guide.adoc[tags=test-custom-connector-munit]
 
