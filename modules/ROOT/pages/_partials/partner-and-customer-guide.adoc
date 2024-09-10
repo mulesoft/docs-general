@@ -185,6 +185,19 @@ To upgrade a custom configuration properties provider to be compatible with Java
 
 // end::custom-configuration-properties-provider-partners[]
 
+// tag::custom-configuration-properties-provider-customers[]
+
+[[upgrade-your-custom-configuration-properties-providers]]
+== Upgrade Your Custom Configuration Properties Providers
+
+To upgrade a custom configuration properties provider to be compatible with Java 17, you have two alternatives:
+
+. It is best to switch to use xref:mule-sdk::getting-started.adoc[Java SDK] and use the `@JavaVersionSupport` annotation as explained in xref:general::customer-connector-upgrade.adoc#release-your-custom-connector[Release Your Custom Connector]. You can also perform all the other steps described in xref:general::customer-connector-upgrade.adoc[], just like with any custom connector. The example custom configuration properties provider mentioned in xref:mule-runtime::custom-configuration-properties-provider.adoc#example-mule-sdk-module[Example: Mule SDK Module] is updated to support Java 17, so you can refer to that example to update your custom configuration properties provider. For more details about what the changed code looks like (including migrating tests to MUnit), refer to this https://github.com/mulesoft/mule-custom-properties-providers-module-example/commit/410ee26d8b3c44adacb077e099f32886f99eb6be[example]. 
+
+. If switching to using xref:mule-sdk::getting-started.adoc[Java SDK] involves too many changes for you, add a declaration using the `ExtensionDeclarer` inside `ExtensionLoadingDelegate` in your custom configuration properties provider. For more details about what the changed code looks like, refer to this https://github.com/mulesoft/mule-custom-properties-providers-module-example/commit/19d9d45cd52b0695f7b9c2b9019bae88f45fb228[example].
+
+// end::custom-configuration-properties-provider-customers[]
+
 // tag::communicate-support-level[]
 
 [[release-your-custom-connector]]
