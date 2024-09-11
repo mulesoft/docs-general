@@ -83,6 +83,8 @@ If you generate a new connector using REST SDK and want to make that connector c
 . Upgrade the Mule runtime version to 4.6.x.
 
 include::partial$partner-and-customer-guide.adoc[tags=rest-connect-connectors]
+
+include::partial$partner-and-customer-guide.adoc[tags=custom-configuration-properties-provider-partners]
  
 include::partial$partner-and-customer-guide.adoc[tags=test-custom-connector-mtf]
 
