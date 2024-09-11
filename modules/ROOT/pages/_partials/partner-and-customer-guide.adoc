@@ -77,18 +77,18 @@ Mule 4.6.x exposes Java EE libraries differently than earlier Mule versions. You
 ----
 <properties>
  <muleJavaEeBomVersion>4.6.0</muleJavaEeBomVersion>
-   <dependencyManagement>
-     <dependencies>
-       <dependency>
-         <groupId>org.mule</groupId>
-         <artifactId>mule-javaee-runtime-bom</artifactId>
-         <version>${muleJavaEeBomVersion}</version>
-         <type>pom</type>
-         <scope>import</scope>
-       </dependency>
-     </dependencies>
-   </dependencyManagement>
 </properties>
+<dependencyManagement>
+ <dependencies>
+   <dependency>
+     <groupId>org.mule</groupId>
+     <artifactId>mule-javaee-runtime-bom</artifactId>
+     <version>${muleJavaEeBomVersion}</version>
+     <type>pom</type>
+     <scope>import</scope>
+   </dependency>
+ </dependencies>
+</dependencyManagement>
 ----
 +
 For more information, see xref:mule-sdk::java-ee-libraries.adoc[].
