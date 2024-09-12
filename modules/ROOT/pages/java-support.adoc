@@ -38,9 +38,9 @@ For more information about Mule release cadences, see xref:release-notes::mule-r
 Follow these steps to upgrade to Java 17:
 
 * *Pre-Upgrade*
-. Learn about <<application-performance, application performance>> when upgrading to Java 17. 
 . Review your current setup to identify what needs upgrading or removal (such as any Java features that are no longer supported or are marked as deprecated in Java 17).
 . Create a comprehensive upgrade plan, including testing, rollback strategies, and post-upgrade checks.
+. Learn about <<application-performance, application performance>> when upgrading to Java 17. 
 . For on-prem (as with any upgrade), schedule downtime and inform stakeholders to minimize business disruption.
 * *Upgrade*
 . Upgrade to <<mule-runtime, Mule runtime 4.6>>.
