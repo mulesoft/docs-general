@@ -37,20 +37,23 @@ For more information about Mule release cadences, see xref:release-notes::mule-r
 
 Follow these steps to upgrade to Java 17:
 
+* *Pre-Upgrade*
 . Learn about <<application-performance, application performance>> when upgrading to Java 17. 
-. Conduct an analysis of your current setup to pinpoint compatibility issues or deprecated elements.
+. Review your current setup to identify what needs upgrading or removal (such as any Java features that are no longer supported or are marked as deprecated in Java 17).
 . Create a comprehensive upgrade plan, including testing, rollback strategies, and post-upgrade checks.
-. Schedule downtime and inform stakeholders to minimize business disruption.
-. Implement the upgrade:
-.. Upgrade to <<mule-runtime, Mule runtime 4.6>>.
-.. Upgrade all <<anypoint-connectors-and-modules, Anypoint Connectors and modules>>, and <<custom-connectors, custom connectors>> used within Mule apps and policies to Java 17.
-.. Upgrade your <<policies, policies>>.
-.. Upgrade your <<api-proxies, API proxies>> and <<mule-apps, Mule apps>>.
-.. Upgrade <<anypoint-studio, Anypoint Studio>> to 7.17 and change the target JVM at the Studio project level to upgrade or downgrade the JVM.
-.. Learn about <<dataweave, DataWeave>> updates for Java 17 and verify your apps continue to work as expected.
-.. Test your apps in a controlled environment before going live.
-.. If you are using Mule Maven plugin 4.1.1 and later to deploy your apps, <<mule-maven-plugin, configure the deployment>> to use Java 17. 
-
+. For on-prem (as with any upgrade), schedule downtime and inform stakeholders to minimize business disruption.
+* *Upgrade*
+. Upgrade to <<mule-runtime, Mule runtime 4.6>>.
+. Upgrade all <<anypoint-connectors-and-modules, Anypoint Connectors and modules>>, and <<custom-connectors, custom connectors>> used within Mule apps and policies to Java 17. Connectors containing custom Java code need additional modifications to ensure compatibility with Java 17.
+. Upgrade your <<policies, policies>>. Policies containing custom Java code need additional modifications to ensure compatibility with Java 17.
+. Upgrade your <<api-proxies, API proxies>> and <<mule-apps, Mule apps>>. Proxies containing custom Java code need additional modifications to ensure compatibility with Java 17.
+. Upgrade <<anypoint-studio, Anypoint Studio>> to 7.17 and change the target JVM at the Studio project level to upgrade or downgrade the JVM.
+. Learn about <<dataweave, DataWeave>> updates for Java 17 and verify your apps continue to work as expected.
+. Test your apps in a controlled environment before going live.
+. If you are using Mule Maven plugin 4.1.1 and later to deploy your apps, <<mule-maven-plugin, configure the deployment>> to use Java 17. 
+* *Post-Upgrade*
+. Monitor your apps for any unexpected behavior.
+. Update any relevant documentation to reflect changes made during the upgrade.
 
 [[mule-runtime]]
 == Mule Runtime
