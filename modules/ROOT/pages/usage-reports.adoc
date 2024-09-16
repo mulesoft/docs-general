@@ -40,6 +40,11 @@ To access usage reports, you need the xref:access-management::permissions-by-pro
 . Click *Usage*.
 . To see reports for a particular month, click the *Monthly Usage Reports* drop-down list.
 
+[[metering-api]]
+== Use the Metering API and Anypoint Monitoring Query Language
+
+Anypoint Platform offers the Metering API [link!] that enables you to access your usage data, which is stored in a domain-specific language. Using the Anypoint Monitoring Query Language [link!], you can construct simple, flexible, and secure queries to peruse your data. For more information, see [the Metering API link] and [the link to the subsection for the query language] in Exchange. 
+
 == Usage Report Availability
 
 Usage reports are available for the following Anypoint Platform products:
