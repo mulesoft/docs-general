@@ -132,10 +132,20 @@ See the https://docs.oracle.com/en/java/javase/17/migrate/getting-started.html#G
 See xref:java-support.adoc#mule-runtime[Mule runtime] to learn more about the Java 17 changes made in Mule runtime engine. 
 +
 ** Reflection on Java classes
++
+To ensure compatibility with Java 17, review and update any code that uses reflection to access Java classes or set parameter values. Java 17 imposes stricter access controls, so you should avoid introspecting JDK internals. Modify your code to eliminate deep introspection of JDK classes and ensure that reflective access is limited to necessary areas only.
 ** Serialization
++
+Update your serialization code to accommodate the restrictions of Java 17. If your code uses libraries like Gson for serializing classes such as MetadataType, switch to using Data Transfer Objects (DTOs) where reflective access to JDK classes is involved. Ensure that serialization libraries are updated and adjust your code to minimize reliance on reflection.
 ** Library upgrades
++
+Upgrade your libraries to versions compatible with Java 17. This includes updating Byte-buddy to version 1.14.0, Jacoco to 0.8.10, and SLF4J to version 2.x. Replace CGLib with ByteBuddy and check for updates to other libraries like Groovy and JRuby. Verify that all dependencies are compatible with Java 17 to avoid runtime issues.
 ** Changes with running the test suite
++
+Adapt your testing approach for Java 17. If you use Mockito or TITA, be aware that Mockito cannot mock JVM classes and TITA relies on internal JDK packages. Consider custom implementations for mocking and switch from PowerMock to newer Mockito versions. Update your tests to handle the changes in Java 17 and avoid deprecated methods.
 ** JPMS
++
+Adjust your code to work with the Java Platform Module System (JPMS). Ensure that your modules do not rely on introspection of JDK internal classes. For any connectors or classes that use JDK internals, replace them with DTOs and configure packages to be opened only when necessary for serialization. Update your codebase to adhere to JPMS requirements and avoid reflective access wherever possible.
 
 // end::mule-sdk-connectors-review-mule-runtime[]
 
@@ -146,10 +156,20 @@ See xref:java-support.adoc#mule-runtime[Mule runtime] to learn more about the Ja
 See xref:general::java-support.adoc#mule-runtime[Mule runtime] to learn more about the Java 17 changes made in Mule runtime engine. 
 +
 ** Reflection on Java classes
++
+To ensure compatibility with Java 17, review and update any code that uses reflection to access Java classes or set parameter values. Java 17 imposes stricter access controls, so you should avoid introspecting JDK internals. Modify your code to eliminate deep introspection of JDK classes and ensure that reflective access is limited to necessary areas only.
 ** Serialization
++
+Update your serialization code to accommodate the restrictions of Java 17. If your code uses libraries like Gson for serializing classes such as MetadataType, switch to using Data Transfer Objects (DTOs) where reflective access to JDK classes is involved. Ensure that serialization libraries are updated and adjust your code to minimize reliance on reflection.
 ** Library upgrades
++
+Upgrade your libraries to versions compatible with Java 17. This includes updating Byte-buddy to version 1.14.0, Jacoco to 0.8.10, and SLF4J to version 2.x. Replace CGLib with ByteBuddy and check for updates to other libraries like Groovy and JRuby. Verify that all dependencies are compatible with Java 17 to avoid runtime issues.
 ** Changes with running the test suite
++
+Adapt your testing approach for Java 17. If you use Mockito or TITA, be aware that Mockito cannot mock JVM classes and TITA relies on internal JDK packages. Consider custom implementations for mocking and switch from PowerMock to newer Mockito versions. Update your tests to handle the changes in Java 17 and avoid deprecated methods.
 ** JPMS
++
+Adjust your code to work with the Java Platform Module System (JPMS). Ensure that your modules do not rely on introspection of JDK internal classes. For any connectors or classes that use JDK internals, replace them with DTOs and configure packages to be opened only when necessary for serialization. Update your codebase to adhere to JPMS requirements and avoid reflective access wherever possible.
 
 // end::mule-sdk-connectors-review-mule-runtime-sdk[]
 
