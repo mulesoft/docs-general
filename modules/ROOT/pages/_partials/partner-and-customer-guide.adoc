@@ -52,8 +52,7 @@ Because you must compile your custom connector with Java 8, use the Java compile
 
 * Unsupported directives
 +
-Do not set `-add-opens` or `-add-export` directives.
-
+Do not set `-add-opens` or `-add-export` directives. These directives are not allowed in CloudHub or Runtime Fabric, require managing them for each connector across all environments, and introduce a backward compatibility burden, complicating future Java upgrades and potentially enabling security vulnerabilities.
 
 // end::before-you-begin[]
 
@@ -66,6 +65,8 @@ Upgrade your custom Mule SDK (Java SDK and XML SDK) connectors to Java 17.
 
 [[upgrade-third-party-libraries]]
 === Upgrade Third-Party Libraries
+
+Your custom connector likely relies on third-party libraries, so it's important to ensure they are compatible with Java 17 as well. Even if your custom connector passes tests, it is still important to deliver secure and reliable software. If a critical bug or vulnerability is found, you must upgrade to a fixed version. Using up-to-date libraries that explicitly support Java 17 makes this process easier and more reliable, as the vendor has already tested them on Java 17.
 
 Upgrade the third-party libraries of your custom connector to be compatible with Java 17:
 
@@ -111,6 +112,7 @@ public class MySqlConnectionProvider implements ConnectionProvider<Connection> {
 +
 You must update your external libraries to a version that is compatible with Java 17. 
 
+[[review-your-code]]
 === Review Your Code
 
 After you compile your custom connector with Java 8, ensure you can run your custom connector with Java 17. Reviewing your code is important because some restrictions are flagged as warnings in Java 11 but are flagged as failures and can’t be disabled in Java 17. For example, reflection is more restricted in Java 17, so you must review your code to ensure there are no illegal actions. 
@@ -210,7 +212,7 @@ After you update your code and your tests are green, you are ready to release a 
 <dependency>
    <groupId>org.mule.sdk</groupId>
    <artifactId>mule-sdk-api</artifactId>
-   <version>0.7.0</version>
+   <version>0.8.1</version>
 </dependency>
 ----
 
@@ -278,7 +280,9 @@ Run an initial test to test your custom connector for Java 17 compatibility. You
          <argLine>                      -javaagent:${settings.localRepository}/org/jacoco/org.jacoco.agent/${jacoco.version}/org.jacoco.agent-${jacoco.version}-runtime.jar=destfile=${session.executionRootDirectory}/target/jacoco-munit.exec</argLine>
 </argLines>
 ----
-. Run your MTF test to generate the coverage report.
+. Run your MTF test to generate the coverage report. Use the `-Dtest=none` and `-DfailIfNoTests=false` flags when running the test to avoid including the JUnit and TITA tests in the coverage report.
++
+The coverage report is available in `target/jacoco-munit.exec`. 
 
 === View your Coverage Report
 
@@ -288,6 +292,8 @@ View your coverage report to see your custom connector coverage. You must have a
 . Go to *Run* > *Show Coverage Data*.
 . In *Choose Coverage Suite to Display*, add `jacoco-munit.exec` to the list if it's not there already.
 . Look at the coverage percentages to analyze your results.
+
+The coverage percentage reflects the confidence line in which you can state your connector is Java 17 compatible. A key issue to avoid is illegal reflective access in your code. The only ways to detect this are to <<review-your-code>> or through testing. The higher the coverage percentage, the better your chances of catching Java 17 violations. Aiming for at least 80% coverage allows flexibility on simpler code, such as getters and setters, while ensuring thorough testing of all critical business logic.
 
 === Add the JDeps Maven Plugin
 
@@ -314,6 +320,19 @@ Add the JDeps Maven plugin to your custom connector’s `pom.xml` file:
     </configuration>
 </plugin>
 ----
+
+If your custom connector is using a JDK internal API that is no longer available or accessible, the build fails.
+
+Run the build with both Java 8 and 11 by changing the `JAVA_HOME` value, as the JDeps Maven plugin relies on the JDeps tool bundled with the JDK. Running the build with each Java version ensures extra confidence.
+
+To run the JDeps Maven plugin without tests, use the following command:
+
+[source,bash]
+----
+mvn clean install -Dtest=none -DfailIfNoTests=false -DskipTests=true
+----
+
+This helps focus on checking the offending libraries and internal access issues without dealing with potential test failures or long test runtimes.
 
 === Test for Java 17 Compatibility 
 
@@ -348,7 +367,7 @@ To set up your custom connector’s `pom.xml` file to include the configuration:
 </environmentVariables>
 ----
 
-You can now run your MTF tests with the `--illegal-access=deny` parameter. Here is an example bash script: 
+You can now run your MTF tests with the `--illegal-access=deny` parameter. Here is an example bash script (replace with the latest Mule runtime version available): 
 
 [source,bash]
 ----
