@@ -43,8 +43,6 @@ The following products have both daily and monthly usage reports:
 * Mule Runtime
 * Intelligent Document Processing (IDP)
 
-
-
 == Before You Begin
 
 Usage reports are available only when you're signed in to the root organization and don't appear at the business group level.
@@ -55,7 +53,7 @@ To access usage reports, you need the xref:access-management::permissions-by-pro
 
 include::partial$usage-reports-tasks.adoc[tag=accessUsageReports]
 
-== Export Usage Reports to CSV
+== Export Usage Reports to a CSV File
 
 You can export both daily and monthly usage reports to CSV files. These metrics match the data available in usage reports.
 
