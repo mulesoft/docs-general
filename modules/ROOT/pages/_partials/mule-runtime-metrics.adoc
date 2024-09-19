@@ -5,7 +5,7 @@ To track Mule message usage, the runtime report counts the number of times a Mul
 
 To calculate usage, MuleSoft meters and aggregates the number of messages on a daily and monthly basis. After a message is triggered, the report does not track changes to the message because the message is processed within the application’s flows.
 
-A Mule flow is a sequence of logical operations configured within the XML `<flow/>` element of a Mule application. The runtime report tracks the Mule flows within a deployed and running Mule application that contains a Mule event source or APIkit route requests. This report does not track other Mule flows. You can view the maximum number of Mule flows in a given day or month in the usage report. 
+A Mule flow is a sequence of logical operations configured within the XML `<flow/>` element of a Mule application. The runtime report tracks the Mule flows within a deployed and running Mule application that contains a Mule event source or APIkit route requests. This report doesn't track other Mule flows. You can view the maximum number of Mule flows in a given day or month in the usage report. 
 
 To calculate usage, MuleSoft tracks the number of Mule flows for all business groups, environments, and applications. The maximum number of Mule flows within a day or month is identified based on the peak hour across the day or month. For the detailed breakdown, MuleSoft shows the peak hour usage per business group, environment, and application. 
 
@@ -18,19 +18,19 @@ To calculate usage, MuleSoft tracks GB usage and aggregates the total GBs on a d
 
 include::partial$usage-runtime.adoc[]
 
-You must redeploy your apps with a supported version, either manually or during the monthly patching cycle. The monthly patching cycle is applicable only for CloudHub 1.0 and CloudHub 2.0 applications. Runtime Fabric customers must be using Runtime Fabric agent version 1.13.112 or 2.1.30 or later. If usage reports do not appear properly, you must also manually redeploy Runtime Fabric applications (with a supported date-patch version).
+You must redeploy your apps with a supported version, either manually or during the monthly patching cycle. The monthly patching cycle is applicable only for CloudHub and CloudHub 2.0 applications. 
 
-If you want to xref:cloudhub-2::ch2-update-apps.adoc#roll-back-to-a-previous-successful-configuration[roll back] to a previous successful configuration of existing applications that use a Mule version that usage reports do not support, you must choose a compliant version before deploying changes. After deployment, a new configuration with the previously chosen settings and a supported runtime is created.
+To xref:cloudhub-2::ch2-update-apps.adoc#roll-back-to-a-previous-successful-configuration[roll back] to a previous successful configuration of existing applications that use a Mule version that usage reports don't support, you must choose a compliant version before deploying changes. After deployment, a new configuration with the previously chosen settings and a supported runtime is created.
 
 // end::supportedRuntimes[]
 
 // tag::rtfApps[]
-If usage reports do not display data from Runtime Fabric apps, ensure the following requirements are met:
+If usage reports don't display data from Runtime Fabric apps, ensure the following requirements are met:
 
-* You are using Runtime Fabric agent version 1.13.112, 2.1.30, or later. 
-* After updating the Runtime Fabric agent, you have manually redeployed each Runtime Fabric app with a supported date-patch version.
+* You're using Runtime Fabric agent version 1.13.112, 2.1.30, or later. 
+* After updating the Runtime Fabric agent, you manually redeployed each Runtime Fabric app with a supported date-patch version.
 
-If you are still missing Runtime Fabric apps in your usage reports, contact your account executive to request a report of apps that are not upgraded and what actions need to be taken to update them.
+If you're still missing Runtime Fabric apps in your usage reports, contact your account executive to request a report of apps that are not upgraded and what actions need to be taken to update them.
 // end::rtfApps[]
 
 // tag::cards[]
@@ -179,9 +179,9 @@ This flow routes APIkit requests and handles the GET request in the `/reservatio
 
 // tag::nonBillableFlows[]
 [[non-billable-flows]]
-=== Mule Flows that Do Not Count Against Your Anypoint Platform Package Allotment 
+=== Mule Flows that Don't Count Against Your Anypoint Platform Package Allotment 
 
-Mule Flows that do not have an event source and are not used for the routing of APIkit requests are not charged against your Anypoint Platform package allotment. These are Mule flows primarily used to modularize code.
+Mule Flows that don't have an event source and aren't used for the routing of APIkit requests are not charged against your Anypoint Platform package allotment. These are Mule flows primarily used to modularize code.
 
 Example:
 

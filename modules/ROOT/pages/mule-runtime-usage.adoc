@@ -8,24 +8,6 @@ include::partial$mule-runtime-metrics.adoc[tag=supportedRuntimes]
 
 include::partial$mule-runtime-metrics.adoc[tag=rtfApps] 
 
-== Access Mule Runtime Usage Reports
-
-include::partial$usage-reports-tasks.adoc[tag=accessUsageReportsNew]
-
-image::mule-runtime-reports.png[Usage Reports interface showing a Mule app usage report that contains cards and a table of usage data]
-
-== Metrics Cards
-
-A Mule Runtime usage report shows cards that contain the following data:
-
-include::partial$mule-runtime-metrics.adoc[tag=cards]
-
-== Metrics Table
-
-A Mule Runtime usage report table shows the following data:
-
-include::partial$mule-runtime-metrics.adoc[tag=table]
-
 == About Mule Runtime Usage Metrics
 
 include::partial$mule-runtime-metrics.adoc[tag=flows,leveloffset=+2] 

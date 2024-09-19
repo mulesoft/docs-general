@@ -5,10 +5,10 @@ To view usage reports for Mule runtime, all of your relevant applications (in pr
 |Deployment Type |Version Requirements
 
 |CloudHub 2.0
-|The latest date-patch versions for 4.3, 4.4, 4.5, and 4.6
+|The latest date-patch versions for 4.3, 4.4, 4.5, 4.6, and 4.7
 
 |CloudHub 
-|The latest date-patch versions for 3.9, 4.2, 4.3, 4.4, 4.5, and 4.6
+|The latest date-patch versions for 3.9, 4.2, 4.3, 4.4, 4.5, 4.6, and 4.7
 
 |Runtime Fabric
 a| One of the following versions or any later date-patch:
