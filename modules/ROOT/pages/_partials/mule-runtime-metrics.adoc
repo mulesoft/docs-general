@@ -14,6 +14,8 @@ Data throughput is all the network I/O bytes produced by the infrastructure that
 To calculate usage, MuleSoft tracks GB usage and aggregates the total GBs on a daily and monthly basis.
 // end::intro[]
 
+== Requirements for Mule Runtime to Report Usage
+
 // tag::supportedRuntimes[]
 
 include::partial$usage-runtime.adoc[]
