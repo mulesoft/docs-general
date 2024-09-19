@@ -20,7 +20,11 @@ Anypoint Platform captures usage metrics across products, but not all metrics ar
 
 |API Manager	
 |_API instance under management_: API instances that are managed by API Manager after they are created using add, promote, or import options. 
-|API instances remain under management until they are deleted. Instances of API Manager are aggregated using a Max Concurrent model. The usage for a month is the highest number of APIs Managed in a single given hour during a month.
+a|API instances remain under management until they are deleted. Instances of API Manager are aggregated using a Max Concurrent model. 
++
+API Manager usage reports track the maximum number of xref:api-manager::latest-overview-concept.adoc#api-instances[API instances] deployed in a given month per business group, environment, and runtime. 
++
+To calculate usage, MuleSoft tracks the number of managed API instances each business group, environment, and runtime uses per hour and identifies the maximum number of managed API instances used in a month for each business group, environment, and runtime. To calculate the total count for API Manager, MuleSoft adds the maximum number of managed API instances per month used across business groups, environments, and runtimes.
 
 |API Governance	
 |_API under Governance_: APIs that are identified by the selection criteria of at least one of the governance profiles. 
@@ -34,7 +38,11 @@ Note that the number of governed APIs (both conformant and non-conformant) shown
 
 |Flex Gateway	
 |_Flex Gateway API call_: Any access request received by Anypoint Flex Gateway regardless of whether the response to the request is successful or not. 
-|Flex Gateway requests are aggregated as a sum of all requests during a month.
+a|Flex Gateway requests are aggregated as a sum of all requests during a month.
++
+Flex Gateway usage reports track daily and monthly API calls. You can view API calls by business group, environment, and registration.
++
+To calculate usage, MuleSoft meters the hourly API calls you make and aggregates the number of API calls on a daily and monthly basis.
 
 |Composer	
 |_Composer task_: Any action executed on a Composer connector, including but not limited to read, create, update, and delete. 
