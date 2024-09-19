@@ -9,7 +9,7 @@
   ** xref:api-led-operate.adoc[Step 6. Operate the API]
 * xref:usage-reports.adoc[Usage Reports]
   ** xref:usage-reports-release-notes.adoc[Release Notes]
-  *** xref:mule-runtime-usage.adoc[]
+  ** xref:mule-runtime-usage.adoc[]
   ** xref:usage-metrics.adoc[Usage and Pricing Metrics Reference]
   ** xref:pricing.adoc[Pricing]
   ** xref:troubleshooting-usage-reports.adoc[]
