@@ -21,6 +21,7 @@ The usage report appears, displaying an assortment of usage metrics, which xref:
 
 // end::accessUsageReports[]
 
+EDITORS: NO NEED TO REVIEW THE REST OF THIS FILE (THESE AREN'T BEING USED)
 // tag::accessUsageReportsLegacy[]
 
 . Log in to Anypoint Platform using an account that has the Usage Viewer permission over your root organization.
