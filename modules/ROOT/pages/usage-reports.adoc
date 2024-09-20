@@ -43,6 +43,12 @@ The following products have both daily and monthly usage reports:
 * Mule Runtime
 * Intelligent Document Processing (IDP)
 
+== Supported Mule Runtime Versions
+
+include::partial$mule-runtime-metrics.adoc[tag=supportedRuntimes]
+
+include::partial$mule-runtime-metrics.adoc[tag=rtfApps] 
+
 == Before You Begin
 
 Usage reports are available only when you're signed in to the root organization and don't appear at the business group level.

@@ -49,7 +49,6 @@ Redeploy your Mule apps with a supported Mule runtime version, either manually o
 
 == See Also
 
-xref:usage-metrics.adoc[]
-xref:usage-reports.adoc[]
-xref:mule-runtime-usage.adoc[]
-xref:access-management::permissions-by-product.adoc[]
+* xref:usage-metrics.adoc[]
+* xref:usage-reports.adoc[]
+* xref:access-management::permissions-by-product.adoc[]

@@ -26,7 +26,11 @@ a|If an API is governed, all versions of that API are considered one governed AP
 
 |Flex Gateway	
 |_Flex Gateway API call_: Any access request received by Anypoint Flex Gateway regardless of whether the response to the request is successful or not. 
-a|Flex Gateway requests are aggregated as a sum of all requests during a month.
+|Flex Gateway requests are aggregated as a sum of all requests during a month.
+
+| Intelligent Document Processing (IDP)
+| IDP API 
+|
 
 |Composer	
 |_Composer task_: Any action executed on a Composer connector, including but not limited to read, create, update, and delete. 
@@ -91,6 +95,10 @@ include::partial$flex-gateway-metrics.adoc[tag=card]
 
 include::partial$flex-gateway-metrics.adoc[tag=table]
 
+== Intelligent Document Processing (IDP)
+
+
+
 == Mule Runtime Usage
 
 Mule Runtime usage reports show the following information in cards and tables:
@@ -116,4 +124,3 @@ include::partial$mule-runtime-metrics.adoc[tag=dataThroughput,leveloffset=+2]
 == See Also
 
 * xref:usage-reports.adoc[]
-* xref:mule-runtime-usage.adoc[]
