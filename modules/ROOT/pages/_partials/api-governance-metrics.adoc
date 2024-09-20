@@ -1,0 +1,25 @@
+// tag::intro[]
+
+API Governance usage reports track the maximum number of xref:api-governance::index.adoc#governed-apis[APIs governed] in a given month per business group. 
+
+To calculate usage, MuleSoft tracks the number of governed APIs each business group uses per hour and then identifies the maximum number of APIs governed in a month for each business group. To calculate the total count for API Governance, MuleSoft adds the maximum number of governed APIs per month used across all business groups. 
+
+Note that the number of governed APIs (both conformant and non-conformant) shown in the API governance console represents a current snapshot of your usage per business group, while the usage report shows the maximum number of APIs you used in a given month per business group.
+
+// end::intro[]
+
+// tag::cards[]
+
+nothing yet - comes with onboarding 
+
+// end::cards[]
+
+// tag::table[]
+
+Business Group::
+Business group that contains governed APIs.
+
+# of APIs Governed::
+Sum of APIs governed in the specified business group.
+
+// end::table[]
