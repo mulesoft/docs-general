@@ -38,7 +38,7 @@ a|If an API is governed, all versions of that API are considered one governed AP
 
 |RPA	
 |_Robotic Process Automation (“RPA”) bot minutes_: The number of minutes running process automations across all bot sessions. 
-|A single bot may run multiple parallel sessions, with RPA bot minutes counting for each parallel session. Multiple bots may be configured to run the same process, with RPA bot minutes counting for each of these separate bot sessions. Test runs or process runs in the test phase are also counted towards RPA bot minutes.
+|A single bot can run multiple parallel sessions, with RPA bot minutes counting for each parallel session. You can configure multiple bots to run the same process, with RPA bot minutes counting for each of these separate bot sessions. Test runs or process runs in the test phase are also counted towards RPA bot minutes.
 
 |Message Queue	
 |_Anypoint MQ API request_: A request made to retrieve one or more messages from the Anypoint MQ APIs. 
@@ -48,7 +48,7 @@ a|If an API is governed, all versions of that API are considered one governed AP
 |_Object Store API request_: A request made to retrieve one or more messages from the Object Store APIs as further defined in the Object Store Documentation. 
 |Each Object Store API Request includes up to 100 kilobytes of data. Object Store API Requests over 100 kilobytes count as multiple requests with no fractional units. OS API requests are currently available via API and are not currently aggregated on usage reports.
 
-|Data Graph	
+|DataGraph	
 |_DataGraph orchestration_: An API request made by Anypoint DataGraph to the source APIs to get data for the GraphQL API request made to Anypoint DataGraph. 
 |Orchestrations are not currently aggregated on usage reports.
 |===
