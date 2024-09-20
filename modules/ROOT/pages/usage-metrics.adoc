@@ -97,6 +97,22 @@ include::partial$flex-gateway-metrics.adoc[tag=table]
 
 == Intelligent Document Processing (IDP)
 
+IDP usage reports show the following information in cards and tables:
+
+Business Group::
+Business group in which the document is processed.
+
+Action ID::
+ID associated with the processed action.
+
+Action Version::
+Version associated with the processed action.
+
+Execution Type::
+Execution types associated with the processed action.
+
+Processed Pages::
+Sum of pages processed.
 
 
 == Mule Runtime Usage
