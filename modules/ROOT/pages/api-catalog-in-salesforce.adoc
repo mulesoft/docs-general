@@ -25,14 +25,14 @@ Ensure that you have the following in MuleSoft Anypoint Platform in collaboratio
 * A tag of sf-api-catalog in Anypoint Exchange on each API you want to import 
 * Instances of your APIs in API Manager that have implementation HTTPS URLs with either no SLA tiers or at least one auto-approval SLA tier. The implementation URLs are used as destination URLs in API Catalog.
 * A tenant relationship established with a trusted Salesforce org in Anypoint Platform so that the organizations can securely share information without duplicate logins
-* Permission of Exchange Contributor assigned to the user named API Catalog Integration that is automatically created in Access Management when you enable the tenant relationship allows the sync of APIs from Anypoint Platform to API Catalog in Salesforce.
+* Permission of Exchange Contributor assigned to the user named API Catalog Integration that is automatically created in Access Management when you enable the tenant relationship that allows the sync of APIs from Anypoint Platform to API Catalog in Salesforce
 
 See the following MuleSoft documentation for more information:
 
 * xref:access-management::managing-your-account.adoc[]
 * xref:exchange::index.adoc[]
 * xref:api-manager::add-api-instances.adoc[] 
-* xref:access-management:trusted-salesforce-org.adoc[]
+* xref:access-management::trusted-salesforce-org.adoc[]
 
 [[view-and-search-apis]]
 == View and Search APIs in API Catalog
@@ -133,6 +133,7 @@ To modify the connection description:
 NOTE: 
 You can't change the connection name and destination URL because they're used to name and later identify auto-generated configurations.
 
+[[get-started-with-flows]]
 == Get Started Using MuleSoft APIs as Actions in Flows
 
 Now that you've synced your APIs in API Catalog and activated operations as actions, you can get started using them in a flow. Here's a brief walkthrough using the scenario discussed at the beginning of this document, connecting Salesforce to a credit service API that has a managed API instance in Anypoint Platform. 
