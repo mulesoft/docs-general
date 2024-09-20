@@ -29,8 +29,8 @@ a|If an API is governed, all versions of that API are considered one governed AP
 |Flex Gateway requests are aggregated as a sum of all requests during a month.
 
 | Intelligent Document Processing (IDP)
-| IDP API 
-|
+| Intelligent Document Processing (IDP) Document Pages: A single page processed by IDP.
+| IDP document actions might process documents that have more than one page, with each page counting separately. When RPA executes document actions, it also counts towards document pages and additionally consumes the corresponding RPA Bot Minutes, accounting for the time the RPA process runs.
 
 |Composer	
 |_Composer task_: Any action executed on a Composer connector, including but not limited to read, create, update, and delete. 

@@ -2,8 +2,9 @@
 
 . Sign in to Anypoint Platform using an account that has the Usage Viewer permission in your root organization.
 . In the Anypoint Platform navigation bar, click the business group selector, and ensure you are at the root organization level.
-. In the Anypoint Platform navigation bar, click your username icon.
-. Click *Usage*.
+. You can access usage reports either by:
+* Clicking your username icon and then clicking *Usage*, or
+* Selecting *Usage* in the Anypoint Platform navigation menu.
 . Select the product for which you want to view a usage report. 
 +
 If you don't see the product listed, click *Switch View*. 
@@ -16,6 +17,7 @@ API Manager and API governance don't have daily usage reports.
 Only dates that Anypoint Platform collected data for the selected product are available.
 +
 The usage report appears, displaying an assortment of usage metrics, which xref:usage-metrics.adoc[depend on the product you selected]. 
+
 
 // end::accessUsageReports[]
 
