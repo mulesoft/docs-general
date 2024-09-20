@@ -29,6 +29,7 @@ For more information, see xref:pricing-metrics.adoc#mq-metrics[Anypoint MQ Metri
 +
 For more information, see xref:pricing-metrics.adoc#object-store-metrics[Object Store v2 Metrics].
 
+[[products-usage-reports]]
 == Products Available in Usage Reports
 
 When you navigate to the *Usage Reports* page in Anypoint Platform, the selection of products you see varies based on the view you are using. Products that have usage reports only on a monthly basis are viewable only in the legacy usage reports view, while products that have both daily and monthly usage reports are available only in the new usage reports view. To switch between views, click the *Switch View* button in the banner. 
