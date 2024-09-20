@@ -1,9 +1,11 @@
 = Usage Reports
 :page-aliases: gateway::flex-view-usage-reports.adoc
 
-Usage reports provide comprehensive monthly and daily summaries that give you valuable insights into your resource use across Anypoint Platform products. Usage reports enable you to track and understand your usage, which helps you optimize your resource allocation. By correlating your usage with billing cycles, you can gain insights into the factors influencing your costs, which enables you to proactively manage your budget and make informed decisions to optimize your resource allocation.
+Usage reports provide comprehensive monthly and daily summaries that give you valuable insights into your resource use across Anypoint Platform products. By correlating your usage with billing cycles, you can gain insights into the factors influencing your costs, which enables you to proactively manage your budget and make informed decisions to optimize your resource allocation.
 
-When you use an Anypoint Platform product that is metered, MuleSoft measures your usage and aggregates the records on a daily and monthly basis. Monthly and daily usage reports have a three-day latency, meaning that today’s usage is available in three days. All reports are calculated using the UTC time standard. For example, a daily usage is aggregated from 00:00 to 00:00 UTC. Daily usage retention is three months and monthly usage retention is up to five years.
+When you use an Anypoint Platform product that is metered, MuleSoft measures your usage and aggregates the records on a daily and monthly basis. Monthly and daily usage reports have a three-day latency, meaning that today’s usage is available in three days. All reports are calculated using the UTC time standard. For example, a daily usage is aggregated from 00:00 to 00:00 UTC. 
+
+Daily usage retention is three months and monthly usage retention is up to five years.
 
 Organizations that have a usage-based pricing model can compare actual usage from the report against the existing contract. However, usage reports are not for billing purposes. For more information about usage metrics and pricing, read:
 
@@ -69,7 +71,7 @@ You can export both daily and monthly usage reports to CSV files. These metrics 
 
 == See Also
 
-* xref:gateway::flex-gateway-getting-started.adoc[]
+* xref:gateway::gateway/flex-gateway-getting-started.adoc[]
 * xref:api-governance::index.adoc[]
 * xref:api-manager::index.adoc[]
 * xref:usage-metrics.adoc[]
