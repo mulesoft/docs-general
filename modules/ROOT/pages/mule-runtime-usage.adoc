@@ -2,7 +2,7 @@
 
 include::partial$mule-runtime-metrics.adoc[tag=intro]
 
-== Supported Runtime Versions
+== Supported Mule Runtime Versions
 
 include::partial$mule-runtime-metrics.adoc[tag=supportedRuntimes]
 
@@ -19,3 +19,8 @@ include::partial$mule-runtime-metrics.adoc[tag=nonBillableFlows,leveloffset=+2]
 include::partial$mule-runtime-metrics.adoc[tag=muleMessages,leveloffset=+2] 
 
 include::partial$mule-runtime-metrics.adoc[tag=dataThroughput,leveloffset=+2] 
+
+== See Also
+
+* xref:usage-reports.adoc[]
+* xref:usage-metrics.adoc[]

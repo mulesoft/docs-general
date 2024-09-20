@@ -66,3 +66,4 @@ You can export both daily and monthly usage reports to CSV files. These metrics 
 * xref:gateway::flex-gateway-getting-started.adoc[]
 * xref:api-governance::index.adoc[]
 * xref:api-manager::index.adoc[]
+* xref:usage-metrics.adoc[]

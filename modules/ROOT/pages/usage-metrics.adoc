@@ -1,8 +1,6 @@
 = Usage and Pricing Metrics Reference
 :page-aliases: pricing-metrics.adoc
 
-== Metrics Collected in Anypoint Platform
-
 Anypoint Platform captures usage metrics across products, but not all metrics are billable or reflected in usage reports.
 
 [cols=3*]
@@ -20,29 +18,15 @@ Anypoint Platform captures usage metrics across products, but not all metrics ar
 
 |API Manager	
 |_API instance under management_: API instances that are managed by API Manager after they are created using add, promote, or import options. 
-a|API instances remain under management until they are deleted. Instances of API Manager are aggregated using a Max Concurrent model. 
-+
-API Manager usage reports track the maximum number of xref:api-manager::latest-overview-concept.adoc#api-instances[API instances] deployed in a given month per business group, environment, and runtime. 
-+
-To calculate usage, MuleSoft tracks the number of managed API instances each business group, environment, and runtime uses per hour and identifies the maximum number of managed API instances used in a month for each business group, environment, and runtime. To calculate the total count for API Manager, MuleSoft adds the maximum number of managed API instances per month used across business groups, environments, and runtimes.
+|API instances remain under management until they are deleted. Instances of API Manager are aggregated using a Max Concurrent model. 
 
 |API Governance	
 |_API under Governance_: APIs that are identified by the selection criteria of at least one of the governance profiles. 
 a|If an API is governed, all versions of that API are considered one governed API. Instances of API Governance are aggregated using a Max Concurrent model. The usage for a month is the highest number of APIs governed in a single given hour during a month.
-+
-API Governance usage reports track the maximum number of xref:api-governance::index.adoc#governed-apis[APIs governed] in a given month per business group. 
-+
-To calculate usage, MuleSoft tracks the number of governed APIs each business group uses per hour and then identifies the maximum number of APIs governed in a month for each business group. To calculate the total count for API Governance, MuleSoft adds the maximum number of governed APIs per month used across all business groups. 
-+
-Note that the number of governed APIs (both conformant and non-conformant) shown in the API governance console represents a current snapshot of your usage per business group, while the usage report shows the maximum number of APIs you used in a given month per business group.
 
 |Flex Gateway	
 |_Flex Gateway API call_: Any access request received by Anypoint Flex Gateway regardless of whether the response to the request is successful or not. 
 a|Flex Gateway requests are aggregated as a sum of all requests during a month.
-+
-Flex Gateway usage reports track daily and monthly API calls. You can view API calls by business group, environment, and registration.
-+
-To calculate usage, MuleSoft meters the hourly API calls you make and aggregates the number of API calls on a daily and monthly basis.
 
 |Composer	
 |_Composer task_: Any action executed on a Composer connector, including but not limited to read, create, update, and delete. 
@@ -75,17 +59,31 @@ include::partial$api-eh-metrics.adoc[tag=card]
 
 == API Governance Usage
 
+API Governance usage reports track the maximum number of xref:api-governance::index.adoc#governed-apis[APIs governed] in a given month per business group. 
+
+To calculate usage, MuleSoft tracks the number of governed APIs each business group uses per hour and then identifies the maximum number of APIs governed in a month for each business group. To calculate the total count for API Governance, MuleSoft adds the maximum number of governed APIs per month used across all business groups. 
+
+The number of governed APIs (both conformant and non-conformant) shown in the API governance console represents a current snapshot of your usage per business group, while the usage report shows the maximum number of APIs you used in a given month per business group.
+
 API governance usage reports show the following information in cards and tables:
 
 include::partial$api-governance-metrics.adoc[tag=table]
 
 == API Manager Usage
 
+API Manager usage reports track the maximum number of xref:api-manager::latest-overview-concept.adoc#api-instances[API instances] deployed in a given month per business group, environment, and runtime. 
+
+To calculate usage, MuleSoft tracks the number of managed API instances each business group, environment, and runtime uses per hour and identifies the maximum number of managed API instances used in a month for each business group, environment, and runtime. To calculate the total count for API Manager, MuleSoft adds the maximum number of managed API instances per month used across business groups, environments, and runtimes.
+
 API Manager usage reports show the following information in cards and tables:
 
 include::partial$apim-metrics.adoc[tag=table]
 
 == Flex Gateway Usage
+
+Flex Gateway usage reports track daily and monthly API calls. You can view API calls by business group, environment, and registration.
+
+To calculate usage, MuleSoft meters the hourly API calls you make and aggregates the number of API calls on a daily and monthly basis.
 
 Flex Gateway usage reports show the following information in cards and tables:
 
@@ -114,3 +112,8 @@ include::partial$mule-runtime-metrics.adoc[tag=nonBillableFlows,leveloffset=+2]
 include::partial$mule-runtime-metrics.adoc[tag=muleMessages,leveloffset=+2] 
 
 include::partial$mule-runtime-metrics.adoc[tag=dataThroughput,leveloffset=+2] 
+
+== See Also
+
+* xref:usage-reports.adoc[]
+* xref:mule-runtime-usage.adoc[]
