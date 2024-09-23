@@ -14,12 +14,12 @@ Sum of approved access requests across all Salesforce organizations.
 // tag::table[]
 
 Salesforce Organization ID::
-OrgID for the Salesforce organization in which the API is deployed.
+OrgID for the Salesforce organization where the API is deployed
 
 Salesforce Portal Name::
-Name of the Salesforce portal to which the API is deployed. 
+Name of the Salesforce portal where the API is deployed 
 
 # of Approved Request Access::
-Sum of approved access requests for the API.
+Sum of approved access requests for the API
 
 // end::table[]

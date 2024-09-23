@@ -55,7 +55,7 @@ a|If an API is governed, all versions of that API are considered one governed AP
 
 == API Experience Hub Usage
 
-API Experience Hub usage reports show the following information in cards and tables:
+API Experience Hub usage reports show the following information in tables and cards:
 
 include::partial$api-eh-metrics.adoc[tag=table]
 
@@ -63,41 +63,27 @@ include::partial$api-eh-metrics.adoc[tag=card]
 
 == API Governance Usage
 
-API Governance usage reports track the maximum number of xref:api-governance::index.adoc#governed-apis[APIs governed] in a given month per business group. 
-
-To calculate usage, MuleSoft tracks the number of governed APIs each business group uses per hour and then identifies the maximum number of APIs governed in a month for each business group. To calculate the total count for API Governance, MuleSoft adds the maximum number of governed APIs per month used across all business groups. 
-
-The number of governed APIs (both conformant and non-conformant) shown in the API governance console represents a current snapshot of your usage per business group, while the usage report shows the maximum number of APIs you used in a given month per business group.
-
-API governance usage reports show the following information in cards and tables:
+API Governance usage reports show the following information in tables and cards:
 
 include::partial$api-governance-metrics.adoc[tag=table]
 
 == API Manager Usage
 
-API Manager usage reports track the maximum number of xref:api-manager::latest-overview-concept.adoc#api-instances[API instances] deployed in a given month per business group, environment, and runtime. 
-
-To calculate usage, MuleSoft tracks the number of managed API instances each business group, environment, and runtime uses per hour and identifies the maximum number of managed API instances used in a month for each business group, environment, and runtime. To calculate the total count for API Manager, MuleSoft adds the maximum number of managed API instances per month used across business groups, environments, and runtimes.
-
-API Manager usage reports show the following information in cards and tables:
+API Manager usage reports show the following information in tables and cards:
 
 include::partial$apim-metrics.adoc[tag=table]
 
 == Flex Gateway Usage
 
-Flex Gateway usage reports track daily and monthly API calls. You can view API calls by business group, environment, and registration.
-
-To calculate usage, MuleSoft meters the hourly API calls you make and aggregates the number of API calls on a daily and monthly basis.
-
-Flex Gateway usage reports show the following information in cards and tables:
-
-include::partial$flex-gateway-metrics.adoc[tag=card]
+Flex Gateway usage reports show the following information in tables and cards:
 
 include::partial$flex-gateway-metrics.adoc[tag=table]
 
+include::partial$flex-gateway-metrics.adoc[tag=card]
+
 == Intelligent Document Processing (IDP)
 
-IDP usage reports show the following information in cards and tables:
+IDP usage reports show the following information in tables and cards:
 
 Business Group::
 Business group in which the document is processed.
@@ -117,11 +103,11 @@ Sum of pages processed.
 
 == Mule Runtime Usage
 
-Mule Runtime usage reports show the following information in cards and tables:
-
-include::partial$mule-runtime-metrics.adoc[tag=card]
+Mule Runtime usage reports show the following information in tables and cards:
 
 include::partial$mule-runtime-metrics.adoc[tag=table]
+
+include::partial$mule-runtime-metrics.adoc[tag=card]
 
 MuleSoft captures usage data for Mule flows, Mule messages, and data throughput, but not all of this data is aggregated in usage reports. 
 

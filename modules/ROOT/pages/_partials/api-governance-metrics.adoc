@@ -17,9 +17,9 @@ nothing yet - comes with onboarding
 // tag::table[]
 
 Business Group::
-Business group that contains governed APIs.
+Business group that contains governed APIs
 
 # of APIs Governed::
-Sum of APIs governed in the specified business group.
+Sum of APIs governed in the specified business group
 
 // end::table[]

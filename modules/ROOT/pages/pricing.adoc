@@ -11,11 +11,11 @@ CloudHub 2.0, Anypoint Runtime Fabric, and Access Management to support usage-ba
 
 == Usage Reports Changes from Legacy Subscription Plans to Usage-Based Plans
 
-When your organization opts into a usage-based pricing plan, such as the Anypoint Integration Advanced package, your apps must be redeployed. After redeploying your apps, your usage reports temporarily display both legacy vCore-based metrics and usage-based metrics for your apps. Usage reports cover an entire month, so usage reports appear for both the usage-based pricing packages and the legacy subscription-based vCore pricing for that month.
+The Usage Reports page supports pricing packages for integration. When your organization opts into a usage-based pricing plan, such as the Anypoint Integration Advanced package, your apps must be redeployed. After redeploying your apps, your usage reports are displayed. 
 
 For CloudHub and CloudHub 2.0, apps are automatically redeployed during the monthly runtime patch update cycle. See xref:runtime-manager::cloudhub-app-runtime-version-updates.adoc[CloudHub Runtime Continuous Updates] and xref:cloudhub-2::ch2-patch-updates.adoc[CloudHub 2.0 Operating System Patch Updates] for more details.
 
-For Runtime Fabric, you must redeploy apps manually. After you redeploy all Runtime Fabric apps, usage reporting shifts from a mix of usage and vCore reports to all usage-based reporting. You must redeploy Runtime Fabric apps in a timely manner to remain in compliance with your Anypoint Platform contract.
+For Runtime Fabric, you must redeploy apps manually. You must redeploy Runtime Fabric apps in a timely manner to remain in compliance with your Anypoint Platform contract.
 
 == Metrics Definitions
 
