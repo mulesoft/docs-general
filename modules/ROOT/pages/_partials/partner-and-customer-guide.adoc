@@ -52,7 +52,7 @@ Because you must compile your custom connector with Java 8, use the Java compile
 
 * Unsupported directives
 +
-don't set `-add-opens` or `-add-export` directives. These directives are not allowed in CloudHub or Runtime Fabric, require managing them for each connector across all environments, and introduce a backward compatibility burden, complicating future Java upgrades and potentially enabling security vulnerabilities.
+Don't set `-add-opens` or `-add-export` directives. These directives are not allowed in CloudHub or Runtime Fabric, require managing them for each connector across all environments, and introduce a backward compatibility burden, complicating future Java upgrades and potentially enabling security vulnerabilities.
 
 // end::before-you-begin[]
 
