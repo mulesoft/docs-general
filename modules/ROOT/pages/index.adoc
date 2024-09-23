@@ -9,7 +9,7 @@ ifndef::env-site[:imagesdir: ../images]
 
 image::getting-started.png[alt=""]
 
-This is a testing commit.
+This is a testing commit and a pull request
 --
 [discrete]
 === Getting Started
