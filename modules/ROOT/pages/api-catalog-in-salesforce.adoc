@@ -41,19 +41,14 @@ After you populate API Catalog, you can view and search the list to find APIs yo
 
 image::api-catalog-in-sf.png[API Catalog in Salesforce with a list of APIs]
 
-To initially populate API Catalog:
-
-. Complete the prerequisites in <<before-you-begin>>.
-. From Setup, in the Quick Find box, enter API Catalog and select it.
-. Click *Sync APIs*.
-
 [[sync-api-catalog]]
 == Sync API Catalog
 
-Sync API Catalog when you have new or updated APIs that you want to bring into the catalog. This retrieves the latest information from Anypoint Platform.
+Sync API Catalog to initially populate the catalog with MuleSoft APIs and when you have new or updated APIs that you want to bring into the catalog. This retrieves the latest information from Anypoint Platform.
 
 To sync API Catalog:
- 
+
+. Ensure that you Anypoint Platform and Salesforce admins have completed the prerequisites in <<before-you-begin>>.
 . From Setup, in the Quick Find box, enter API Catalog and select it.
 . Click *Sync APIs*.
 
