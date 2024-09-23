@@ -9,21 +9,21 @@ against the rulesets to determine governance conformance.
 
 // end::governance-profiles[]
 
-// tag::governance-profile-status[]
+// tag::gov-active-profiles[]
 
-[[gov-profile-status]]
-governance profile status::
-You can view profile statuses in the API Governance console. Governance profile statuses are based on the percentage of conformant APIs in the profile:
-+
-* Normal: 
-+ 
-More than 70% of APIs are conformant.
-+
-* At Risk:
-+
-Less than 70% of APIs are conformant.
+[[gov-active-profiles]]
+active profiles::
+Use active profiles to share API conformance information with developers and notify them of conformance issues. APIs targeted by active profiles are governed APIs and their conformance information is shown across Anypoint Platform.
 
-// end::governance-profile-status[]
+// end::gov-active-profiles[]
+
+// tag::gov-draft-profiles[]
+
+[[gov-draft-profiles]]
+draft profiles::
+Use draft profiles to test settings before revealing their targeted APIs' conformance information across Anypoint Platform. APIs targeted by draft profiles are governed, but their conformance information isn't shown outside of the draft profile view unless they're also targeted by an active profile.
+
+// end::gov-draft-profiles[]
 
 // tag::governance-rulesets[]
 
@@ -47,87 +47,19 @@ MuleSoft provides several rulesets in Exchange, such as Anypoint API Best Practi
 
 [[governed-apis]]
 governed APIs::
-APIs are governed if they are identified by the selection criteria of at least one of the governance profiles. If an API is governed, all versions of that API are considered one governed API. Subscription limits are set based on your organization's purchased capacity and the UI gives information about usage and alerts when you are nearing or exceeding your subscription capacity. 
+APIs are governed if they're identified by the selection criteria of at least one governance profile. If an API is governed, all versions of that API are considered one governed API. Subscription limits are set based on your organization's purchased capacity. The UI gives information about usage and shows alerts when you near or exceed your subscription capacity. 
 
 // end::governed-apis[]
-
-// tag::governance-status[]
-
-[[governance-status]]
-governance status::
-Governance status in the API Governance console shows the number of governed APIs, total number of APIs of supported API types, and subscription limit information.
-
-// end::governance-status[]
 
 // tag::api-conformance[]
 
 [[api-conformance]]
 API conformance::
-API conformance indicates whether a validated API specification passes all of the required rules in one or more governance rulesets. If an API specification is included in multiple governance profiles, it must pass all of the rulesets in all of those profiles to be conformant.
+API conformance indicates whether a validated API passes all of the required rules in one or more governance rulesets. If multiple profiles target an API, the API must pass all of the rulesets in all of those profiles to be conformant.
++
+API conformance applies only to API types supported by API Governance, such as REST API and AsyncAPI. 
 
 // end::api-conformance[]
-
-// tag::api-conformance-status[]
-
-[[conformance-status]]
-API conformance status::
-API conformance status indicates whether the APIs that are included in your governance profiles pass all applied governance rulesets: 
-+
---
-* Conformant:
-+
-The APIs pass all applied governance rulesets.
-+
-* Not Conformant:
-+
-The APIs fail at least one governance ruleset.
-+
-* Not Validated:
-+
-The APIs are not validated because they are not included in a governance profile.
---
-+
-Versions of an API might have different conformance statuses. Total version conformance status counts are shown in the API Governance console and conformance status indicators are shown for API versions in API Governance, Exchange, and API Manager. 
-+
-NOTE: API conformance applies only to API types supported by API Governance, such as REST API and AsyncAPI. 
-
-// end::api-conformance-status[]
-
-// tag::nonconformance-severity[]
-
-[[nonconformance-severity]]
-nonconformance severity::
-Nonconformance severity is categorized by percentage of passed rulesets among all required rulesets:
-+
-* High Severity:
-+
-0 - 40% rulesets passed
-+
-* Medium Severity:
-+
-41% - 80% rulesets passed
-+
-* Low Severity: 
-+
-81% - 99% rulesets passed
-
-// end::nonconformance-severity[]
-
-// tag::project-errors[]
-
-[[project-errors]]
-project errors::
-Project errors are shown in the Design Center API Designer text editor page. The *Project Errors* section of the page shows functional issues and nonconformance messages found in the API specification that is open in the text editor.
-
-// end::project-errors[]
-
-// tag::api-governance-usage-reports[]
-
-[[api-governance-usage-reports]]
-API Governance usage reports::
-You can view usage reports to gain insight into your monthly usage of API Governance. See xref:general::usage-reports.adoc#api-governance[Viewing Usage Reports for API Governance].
-
-// end::api-governance-usage-reports[]
 
 // tag::api-entire[]
 
@@ -183,7 +115,7 @@ Helps consumers understand and use the API, with content such as examples, use c
 
 [[api-catalog-info]]
 API catalog information::
-Properties related to an API's entry in an API catalog, such as name, version, owner (contact), tags and categories. 
+Properties related to an API's entry in an API catalog, such as name, version, owner (contact), tags, and categories. 
 In Anypoint Exchange, these properties are associated with APIs in asset portal information.
 
 // end::api-catalog-info[]

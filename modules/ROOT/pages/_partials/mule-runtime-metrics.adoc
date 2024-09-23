@@ -31,8 +31,14 @@ To xref:cloudhub-2::ch2-update-apps.adoc#roll-back-to-a-previous-successful-conf
 Total Data Throughput::
 The sum of data in gigabytes (GB) transmitted across all Mule apps and business groups during the selected time period. For more information about how this metric is billed, see xref:usage-metrics.adoc#data-throughput[data throughput].  
 
-Total Mule Messages:: 
-The sum of all Mule messages transmitted across all Mule apps and business groups during the selected time period. For more information about how this metric is billed, see xref:usage-metrics.adoc#mule-messages[Mule messages].  
+|Data Graph	
+|_DataGraph orchestration_: An API request made by Anypoint DataGraph to the source APIs to get data for the GraphQL API request made to Anypoint DataGraph. 
+|Orchestrations are not currently aggregated on usage reports.
+
+|IDP 
+|_Intelligent Document Processing (IDP) Document Pages_: A single page processed by IDP.
+|IDP document actions might process documents that have more than one page, with each page counting separately. When RPA executes document actions, it also counts towards document pages and additionally consumes the corresponding RPA Bot Minutes, accounting for the time the RPA process runs. 
+|===
 
 Max Flows::
 The maximum number of concurrent flows across all Mule apps and business groups during the selected time period. For more information about how this metric is billed, see xref:usage-metrics.adoc#mule-flows[Mule flows].  

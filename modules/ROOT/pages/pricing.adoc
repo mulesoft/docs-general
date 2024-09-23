@@ -2,7 +2,7 @@
 
 [IMPORTANT]
 ====
-This document applies only to select customers who are opted in to usage-based pricing. 
+This document applies only to select customers who are opted in to https://www.salesforce.com/content/dam/web/en_us/www/documents/legal/Agreements/Limited-Release-Features-Entitlements-New-Packaging.pdf[usage-based pricing]. 
 Details in this document are subject to change.
 ====
 
@@ -28,6 +28,9 @@ To understand the technical aspects of metering and pricing concepts within Anyp
 Root organizations provisioned with usage-based pricing receive a global pool of shared CPU and memory resources that is shared for deployments in to CloudHub and CloudHub 2.0 across all business groups and environments in the organization. This pool of resources is large enough to consume all of the purchased flows and messages without interruption. If an organization runs out of resources, actions that consume more resources such as deploying new applications or starting stopped applications are blocked until sufficient resources are available. 
 
 You can free up resources by stopping or deleting unused applications, or reducing the replica size or resources that an existing application consumes. You receive a warning each time your organization approaches the resource limit on the Applications List UI, Application Deployment UI, and Manage Application UI. To avoid hitting limits, allocate only what you need by using granular replica sizes in CloudHub and CloudHub 2.0. Contact Support if you require an exception when you reach the limit. 
+
+[NOTE]
+This limit does not impact applications configured with xref:cloudhub-2::ch2-configure-horizontal-autoscaling.adoc[Horizontal Pod Autoscaling in CloudHub 2.0]. You can continue to deploy applications with Horizontal Pod Autoscaling enabled even if you hit the Global Resource Limits.
 
 == CloudHub 2.0 Application Deployment
 
