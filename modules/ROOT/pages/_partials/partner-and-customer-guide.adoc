@@ -129,14 +129,14 @@ See the https://docs.oracle.com/en/java/javase/17/migrate/getting-started.html#G
 
 * Mule runtime engine
 +
-See xref:java-support.adoc#mule-runtime[Mule runtime] to learn more about the Java 17 changes made in Mule runtime engine. 
+See xref:general::java-support.adoc#mule-runtime[Mule runtime] to learn more about the Java 17 changes made in Mule runtime engine. 
 +
 ** Reflection on Java classes
 +
 To ensure compatibility with Java 17, review and update any code that uses reflection to access Java classes or set parameter values. Java 17 imposes stricter access controls, so you should avoid introspecting JDK internals. Ensure you have a robust test suite and make sure it is run with Java 17.
 ** Serialization
 +
-Update your serialization code to accommodate the restrictions of Java 17. If your code uses libraries like Gson for serializing classes, switch to using Data Transfer Objects (DTOs) where reflective access to JDK classes is involved. Ensure that serialization libraries are updated and adjust your code to minimize reliance on reflection.
+Update your serialization code to accommodate the restrictions of Java 17. If your code uses libraries like Gson for serializing classes, switch to using Data Transfer Objects (DTOs) where reflective access to JDK classes is involved. Ensure that serialization libraries are updated and adjust your code to minimize reliance on reflection. For more information, refer to xref:mule-runtime::configure-custom-serializers.adoc[].
 ** Library upgrades
 +
 Upgrade your libraries to versions compatible with Java 17. This includes updating ByteBuddy to version 1.14.0, Jacoco to 0.8.10, and SLF4J to version 2.x. Replace CGLib with ByteBuddy and check for updates to other libraries like Groovy and JRuby. Verify that all dependencies are compatible with Java 17 to avoid runtime issues.
@@ -151,39 +151,6 @@ JPMS introduces stricter encapsulation, impacting how Mule modules interact with
 *** *Address ResourceBundle Loading*: Implement solutions for issues related to resource bundle loading, such as using `ResourceBundleProvider` or alternative methods.
 
 // end::mule-sdk-connectors-review-mule-runtime[]
-
-// tag::mule-sdk-connectors-review-mule-runtime-sdk[]
-
-* Mule runtime engine
-+
-See xref:general::java-support.adoc#mule-runtime[Mule runtime] to learn more about the Java 17 changes made in Mule runtime engine. 
-+
-** Reflection on Java classes
-+
-To ensure compatibility with Java 17, review and update any code that uses reflection to access Java classes or set parameter values. Java 17 imposes stricter access controls, so you should avoid introspecting JDK internals. Modify your code to eliminate deep introspection of JDK classes and ensure that reflective access is limited to necessary areas only.
-** Serialization
-+
-Update your serialization code to accommodate the restrictions of Java 17. If your code uses libraries like Gson for serializing classes such as MetadataType, switch to using Data Transfer Objects (DTOs) where reflective access to JDK classes is involved. Ensure that serialization libraries are updated and adjust your code to minimize reliance on reflection. For more information, refer to xref:mule-runtime::configure-custom-serializers.adoc[].
-** Library upgrades
-+
-Upgrade your libraries to versions compatible with Java 17. This includes updating Byte-buddy to version 1.14.0, Jacoco to 0.8.10, and SLF4J to version 2.x. Replace CGLib with ByteBuddy and check for updates to other libraries like Groovy and JRuby. Verify that all dependencies are compatible with Java 17 to avoid runtime issues.
-** Changes with running the test suite
-+
-Adapt your testing approach for Java 17. If you use Mockito or TITA, be aware that Mockito cannot mock JVM classes and TITA relies on internal JDK packages. Consider custom implementations for mocking and switch from PowerMock to newer Mockito versions. Update your tests to handle the changes in Java 17 and avoid deprecated methods.
-** Java Platform Module System (JPMS)
-+
-JPMS introduces stricter encapsulation, impacting how Mule modules interact with JDK classes. As Mule upgrades to Java 17 and JPMS, the following changes are necessary:
-+
-*** *Transition to Module Path*: Replace the use of `URLClassLoader` with `ModuleLayer` for enhanced module management and isolation.
-*** *Implement Multi-Release JARs*: Use multi-release JARs to support different Java versions and include `module-info.java` descriptors to ensure JPMS compliance.
-*** *Adjust Container Module Layers*: Set up non-hierarchical module layers to better manage module isolation. This involves addressing issues with automatic modules and third-party libraries by updating module descriptors and visibility.
-*** *Refactor Split Packages*: Resolve issues with internal and API package splits by reorganizing and refactoring packages to conform with JPMS modularization standards.
-*** *Replace JDK Class References*: For connectors like HTTP Connector, substitute direct JDK class references with Data Transfer Objects (DTOs) to avoid compatibility issues.
-*** *Selective Package Exposure*: Open specific packages selectively for serialization, while modifying your code to reduce reliance on reflection.
-*** *Manage Application Module Layers*: Develop strategies for deploying applications and connectors as modules, addressing potential classloader issues and ensuring compatibility with automatic modules.
-*** *Address ResourceBundle Loading*: Implement solutions for issues related to resource bundle loading, such as using `ResourceBundleProvider` or alternative methods.
-
-// end::mule-sdk-connectors-review-mule-runtime-sdk[]
 
 // tag::mule-sdk-connectors-add-missing-code[]
 
