@@ -13,7 +13,7 @@ Consider a scenario where you want to connect Salesforce to a credit service API
 
 You can bring the credit service API into API Catalog in Salesforce, select operations and activate them as actions, and then use them in Flow Builder automations.
 
-See <<get-started-with-flows>>.
+<<before-you-begin,Continue to get started with API Catalog in Salesforce>> or for more information about the example scenario, see <<get-started-with-flows>>.
 
 [[before-you-begin]]
 == Before You Begin
@@ -125,7 +125,7 @@ You can't change the connection name and destination URL because they're used to
 
 Now that you've synced your APIs in API Catalog and activated operations as actions, you can get started using them in a flow. Here's a brief walkthrough using the scenario discussed at the beginning of this document, connecting Salesforce to a credit service API that has a managed API instance in Anypoint Platform. 
 
-The credit service retrieves the customer's credit score, determines whether the credit service should be extended to the customer, and provides the payment terms. You want to extend the credit service to a Salesforce account so that you can view the payment terms in Salesforce.
+The credit service retrieves the customer's credit score, determines whether the customer qualifies for the credit service, and provides the payment terms. You want to extend the credit service to a Salesforce account so that you can view the payment terms in Salesforce.
 
 After you populate API Catalog in Salesforce, you can:
 
