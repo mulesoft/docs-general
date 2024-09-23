@@ -22,7 +22,7 @@ Ensure that you have the following in MuleSoft Anypoint Platform in collaboratio
 
 * A valid MuleSoft Anypoint Platform account. See  xref:access-management::managing-your-account.adoc[].
 * API specs in MuleSoft Anypoint API Exchange that you want to import into API Catalog. See xref:exchange::index.adoc[]. 
-* A tag of `sf-api-catalog` in Anypoint Exchange on each API you want to import. See xref:exchange::to-describe-an-asset.adoc#add-and-remove-asset-tags[].
+* A tag of `sf-api-catalog` in Anypoint Exchange on each API you want to import. See xref:exchange::to-describe-an-asset.adoc#add-and-remove-asset-tags[Add and Remove Asset Tags].
 * Instances of your APIs in API Manager that have implementation HTTPS URLs with either no SLA tiers or at least one auto-approval SLA tier. The implementation URLs appear as destination URLs in API Catalog. See xref:api-manager::add-api-instances.adoc[]. 
 * A trusted connection established with a trusted Salesforce org in Anypoint Platform so that the organizations can securely share information without duplicate logins. See xref:access-management::trusted-salesforce-org.adoc[].
 
