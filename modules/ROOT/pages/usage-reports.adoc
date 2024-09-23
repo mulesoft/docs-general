@@ -7,10 +7,7 @@ When you use an Anypoint Platform product that is metered, MuleSoft measures you
 
 Daily usage retention is three months and monthly usage retention is up to five years.
 
-Organizations that have a usage-based pricing model can compare actual usage from the report against the existing contract. However, usage reports are not for billing purposes. For more information about usage metrics and pricing, read:
-
-* xref:pricing.adoc[]
-* xref:usage-metrics.adoc[]
+Organizations that have a usage-based pricing model can compare actual usage from the report against the existing contract. However, usage reports are not for billing purposes. For more information about usage metrics and pricing, read xref:pricing.adoc[] and xref:usage-metrics.adoc[]
 
 Some usage data, such as monthly statements and vCore allocation, appears in different areas of Anypoint Platform or Salesforce products. 
 

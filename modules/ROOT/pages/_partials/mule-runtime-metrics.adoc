@@ -3,15 +3,15 @@ Mule runtime reports track your use of Mule messages, Mule flows, and data throu
 
 To track Mule message usage, the runtime report counts the number of times a Mule event source triggers a Mule message. You can view the number of these messages in a given day or month by business group, environment, and application. 
 
-To calculate usage, MuleSoft meters and aggregates the number of messages on a daily and monthly basis. After a message is triggered, the report does not track changes to the message because the message is processed within the application’s flows.
+To calculate usage, MuleSoft meters and aggregates the number of messages daily and monthly. After a message is triggered, the report doesn't track changes to the message because the message is processed within the application’s flows.
 
 A Mule flow is a sequence of logical operations configured within the XML `<flow/>` element of a Mule application. The runtime report tracks the Mule flows within a deployed and running Mule application that contains a Mule event source or APIkit route requests. This report doesn't track other Mule flows. You can view the maximum number of Mule flows in a given day or month in the usage report. 
 
 To calculate usage, MuleSoft tracks the number of Mule flows for all business groups, environments, and applications. The maximum number of Mule flows within a day or month is identified based on the peak hour across the day or month. For the detailed breakdown, MuleSoft shows the peak hour usage per business group, environment, and application. 
 
-Data throughput is all the network I/O bytes produced by the infrastructure that starts and runs the Mule runtime engine that runs a Mule application. You can view the total amount of GB usage in a given day or month by business group, environment, and application. 
+Data throughput is the network I/O bytes produced by the infrastructure that runs the Mule runtime engine running the Mule application. 
 
-To calculate usage, MuleSoft tracks GB usage and aggregates the total GBs on a daily and monthly basis.
+To calculate usage, MuleSoft tracks GB usage and aggregates the total daily and monthly GBs.
 // end::intro[]
 
 == Requirements for Mule Runtime to Report Usage
@@ -22,7 +22,7 @@ include::partial$usage-runtime.adoc[]
 
 You must redeploy your apps with a supported version, either manually or during the monthly patching cycle. The monthly patching cycle is applicable only for CloudHub and CloudHub 2.0 applications. 
 
-To xref:cloudhub-2::ch2-update-apps.adoc#roll-back-to-a-previous-successful-configuration[roll back] to a previous successful configuration of existing applications that use a Mule version that usage reports don't support, you must choose a compliant version before deploying changes. After deployment, a new configuration with the previously chosen settings and a supported runtime is created.
+You can xref:cloudhub-2::ch2-update-apps.adoc#roll-back-to-a-previous-successful-configuration[roll back] to a previous successful application configuration. However, if an app is using a Mule version not supported by usage reports, you must choose a compliant Mule version before deploying changes. After deployment, a new configuration with the previously chosen settings and a supported runtime is created.
 
 // end::supportedRuntimes[]
 
