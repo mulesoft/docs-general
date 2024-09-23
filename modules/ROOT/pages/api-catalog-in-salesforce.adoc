@@ -46,6 +46,8 @@ To sync API Catalog:
 + 
 The sync imports APIs that have the tag of `sf-api-catalog` in Anypoint Exchange and a running instance in API Manager into API Catalog.
 
+NOTE: The sync might take several minutes to complete. You can navigate away from the API Catalog page and the sync continues in the background.
+
 == Refresh API Catalog
 
 Refresh when you navigate away from the API Catalog page and aren't sure you have the latest information from your most recent sync. This retrieves the latest information from the Salesforce database.
@@ -119,8 +121,7 @@ To modify the connection description:
 . In the Connections tab, click Edit to modify the connection.
 . Update the connection description.
 
-NOTE: 
-You can't change the connection name and destination URL because they're used to name and later identify auto-generated configurations.
+NOTE: You can't change the connection name and destination URL because they're used to name and later identify auto-generated configurations.
 
 [[get-started-with-flows]]
 == Get Started Using MuleSoft APIs as Actions in Flows
