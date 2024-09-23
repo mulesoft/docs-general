@@ -15,15 +15,15 @@ nothing for now - will be added when onboarded
 // tag::table[]
 
 Business Group:: 
-Business group in which the API is managed.
+Business group where the API is managed
 
 Environment::
-Environment type in which the API is managed.
+Environment type where the API is managed
 
 Runtime:: 
-Runtime type for the API.
+Runtime type for the API
 
 # of APIs Managed::
-Sum of APIs managed in the specified business group, environment, and runtime.
+Sum of APIs managed in the specified business group, environment, and runtime
 
 // end::table[]

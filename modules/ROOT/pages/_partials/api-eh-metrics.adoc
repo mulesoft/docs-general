@@ -7,7 +7,7 @@ API Experience Hub usage reports track the number of approved access requests on
 // tag::cards[]
 
 Total # of Approved Request Access:: 
-Sum of approved access requests across all Salesforce organizations.
+Sum of approved access requests across all Salesforce organizations
 
 // end::cards[]
 

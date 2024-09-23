@@ -8,7 +8,6 @@ include::partial$usage-reports-tasks.adoc[tag=accessUsageReportsLegacy]
 
 . Click *API Manager*.
 
-image::apim-usage-report.png[Usage Reports showing an API Manager usage report]
 
 == API Manager Usage Metrics
 

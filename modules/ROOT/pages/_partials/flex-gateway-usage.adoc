@@ -6,8 +6,6 @@ include::partial$flex-gateway-metrics.adoc[tag=intro]
 
 include::partial$usage-reports-tasks.adoc[tag=accessUsageReportsNew]
 
-image::flex-gateway-usage-report.png[Usage Reports interface showing a Flex Gateway usage report that contains cards and a table of usage data]
-
 == Card Metrics
 
 A Flex Gateway usage report shows cards that contain the following data:

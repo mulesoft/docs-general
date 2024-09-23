@@ -8,8 +8,6 @@ Usage reports show Anypoint API Governance usage metrics on a daily and monthly 
 
 include::partial$usage-reports-tasks.adoc[tag=accessUsageReportsNew]
 
-image::api-governance-usage-report.png[Usage Reports interface showing an API governance usage report]
-
 == Anypoint API Governance Usage Metrics
 
 An Anypoint API governance usage report shows the following information:
