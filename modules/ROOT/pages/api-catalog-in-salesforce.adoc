@@ -18,13 +18,13 @@ You can bring the credit service API into API Catalog in Salesforce, select oper
 [[before-you-begin]]
 == Before You Begin
 
-Ensure that you have the following in MuleSoft Anypoint Platform in collaboration with your MuleSoft engineers and your Anypoint Platform organization administrator: 
+Work with an Anypoint Platform admin to ensure that all <<before-you-begin, prerequisite configuration>> is done in the Anypoint Platform organization from which you want to sync APIs. The following are required before you can being using API Catalog in Salesforce: 
 
 * A valid MuleSoft Anypoint Platform account. See  xref:access-management::managing-your-account.adoc[].
 * API specs in MuleSoft Anypoint API Exchange that you want to import into API Catalog. See xref:exchange::index.adoc[]. 
 * A tag of `sf-api-catalog` in Anypoint Exchange on each API you want to import. See xref:exchange::to-describe-an-asset.adoc#add-and-remove-asset-tags[Add and Remove Asset Tags].
 * Instances of your APIs in API Manager that have implementation HTTPS URLs with either no SLA tiers or at least one auto-approval SLA tier. The implementation URLs appear as destination URLs in API Catalog. See xref:api-manager::add-api-instances.adoc[]. 
-* A trusted connection established with a trusted Salesforce org in Anypoint Platform so that the organizations can securely share information without duplicate logins. See xref:access-management::trusted-salesforce-org.adoc[].
+* An Anypoint Platform and Salesforce org connection is established and the API Catalog feature is enabled in Anypoint Platform Access Management. See xref:access-management::trusted-salesforce-org.adoc[].
 
 [[view-and-search-apis]]
 == View and Search APIs in API Catalog
@@ -40,11 +40,14 @@ Sync API Catalog to initially populate the catalog with MuleSoft APIs and when y
 
 To sync API Catalog:
 
-. Ensure your Anypoint Platform and Salesforce org connection is enabled according to the prerequisites in <<before-you-begin>>.
-. From Setup, in the Quick Find box, enter API Catalog and select it.
+. Work with an Anypoint Platform admin to ensure that all <<before-you-begin, prerequisite configuration>> is done in the Anypoint Platform organization from which you want to sync APIs.
+. From Salesforce Setup, in the Quick Find box, enter API Catalog and select it.
 . Click *Sync APIs*.
 + 
-The sync imports APIs that have the tag of `sf-api-catalog` in Anypoint Exchange and a running instance in API Manager into API Catalog.
+The sync imports APIs into API Catalog that have:
++
+* A tag of `sf-api-catalog` in Anypoint Exchange
+* Implementation HTTPS URLs in API Manager with either no SLA tiers or at least one auto-approval SLA tier 
 
 NOTE: The sync might take several minutes to complete. You can navigate away from the API Catalog page and the sync continues in the background.
 
@@ -109,7 +112,7 @@ To modify the operation selections for activated actions:
 
 . From Setup, in the Quick Find box, enter API Catalog and select it.
 . Select the API to modify the operation selections for.
-. In the Operations tab, click *Edit* to modify the operation selection‌s.
+. In the Operations tab, click *Edit*.
 . Select or deselect operations.
  
 === Edit a Connection Description
