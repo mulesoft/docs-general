@@ -41,7 +41,7 @@ a|If an API is governed, all versions of that API are considered one governed AP
 |Each Anypoint MQ API request includes up to 100 kilobytes of data. An Anypoint MQ API request over 100 kilobytes counts as multiple requests with no fractional units. Anypoint MQ API requests are calculated in the aggregate across all environments (including production, pre-production, sandbox, and design). MQ API requests are currently available via API and are not currently aggregated on usage reports.
 
 |Object Store	
-|_Object Store API request_: A request made to retrieve one or more messages from the Object Store APIs as further defined in the Object Store Documentation. 
+|_Object Store API request_: A request made to retrieve one or more messages from the Object Store APIs as further defined in the Object Store documentation. 
 |Each Object Store API request includes up to 100 KB of data. Object Store API requests over 100 KB count as multiple requests with no fractional units. Object Store API requests are currently available only via API and aren’t aggregated on usage reports.
 
 |DataGraph	
