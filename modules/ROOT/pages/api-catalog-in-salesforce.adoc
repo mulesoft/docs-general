@@ -13,7 +13,7 @@ Consider a scenario where you want to connect Salesforce to a credit service API
 
 You can bring the credit service API into API Catalog in Salesforce, select operations and activate them as actions, and then use them in Flow Builder automations.
 
-<<before-you-begin,Continue to get started with API Catalog in Salesforce>> or for more information about the example scenario, see <<get-started-with-flows>>.
+<<before-you-begin, Continue to get started with API Catalog in Salesforce>> or for more information about the example scenario, see <<get-started-with-flows>>.
 
 [[before-you-begin]]
 == Before You Begin
@@ -135,8 +135,8 @@ The credit service retrieves the customer's credit score, determines whether the
 
 After you populate API Catalog in Salesforce, you can:
 
-. <<view-and-search-apis,Find and select>> the credit service API‌ in API Catalog in Salesforce.
-. <<activate-actions,Select the operations>> that you want to make available in Salesforce as invocable actions and create connections for them. 
+. <<view-and-search-apis, Find and select>> the credit service API‌ in API Catalog in Salesforce.
+. <<activate-actions, Select the operations>> that you want to make available in Salesforce as invocable actions and create connections for them. 
 +
 The create connection process automatically generates the credentials for invoking the API actions from within Salesforce automations. 
 . Enable the permission set created for the activated API's connection.
