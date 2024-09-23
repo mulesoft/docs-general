@@ -43,6 +43,8 @@ To sync API Catalog:
 . Ensure your Anypoint Platform and Salesforce org connection is enabled according to the prerequisites in <<before-you-begin>>.
 . From Setup, in the Quick Find box, enter API Catalog and select it.
 . Click *Sync APIs*.
++ 
+The sync imports APIs that have the tag of `sf-api-catalog` in Anypoint Exchange and a running instance in API Manager into API Catalog.
 
 == Refresh API Catalog
 
