@@ -67,6 +67,9 @@ API Governance usage reports show this information in tables and cards:
 
 include::partial$api-governance-metrics.adoc[tag=table]
 
+Maximum Number of Governed APIs::
+Highest number of APIs governed in a single given hour during a month
+
 == API Manager Usage
 
 API Manager usage reports show this information in tables and cards:

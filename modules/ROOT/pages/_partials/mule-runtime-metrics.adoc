@@ -180,7 +180,7 @@ This flow routes APIkit requests and handles the GET request in the `/reservatio
 [[non-billable-flows]]
 === Mule Flows That Don't Count Against Your Anypoint Platform Package Allotment 
 
-Mule Flows that don't have an event source and aren't used for the routing of APIkit requests are not charged against your Anypoint Platform package allotment. These are Mule flows primarily used to modularize code.
+Mule flows that don't have an event source and aren't used for routing APIkit requests aren’t charged against your Anypoint Platform package allotment. These Mule flows are primarily used to modularize code.
 
 Example:
 
