@@ -28,10 +28,6 @@ a|If an API is governed, all versions of that API are considered one governed AP
 |_Flex Gateway API call_: Any access request received by Anypoint Flex Gateway regardless of whether the response to the request is successful or not. 
 |Flex Gateway requests are aggregated as a sum of all requests during a month.
 
-| Intelligent Document Processing (IDP)
-| Intelligent Document Processing (IDP) Document Pages: A single page processed by IDP.
-| IDP document actions might process documents that have more than one page, with each page counting separately. When RPA executes document actions, it also counts towards document pages and additionally consumes the corresponding RPA Bot Minutes, accounting for the time the RPA process runs.
-
 |Composer	
 |_Composer task_: Any action executed on a Composer connector, including but not limited to read, create, update, and delete. 
 |Composer tasks are aggregated as a sum of all actions during a month.
@@ -51,6 +47,10 @@ a|If an API is governed, all versions of that API are considered one governed AP
 |DataGraph	
 |_DataGraph orchestration_: An API request made by Anypoint DataGraph to the source APIs to get data for the GraphQL API request made to Anypoint DataGraph. 
 |Orchestrations are not currently aggregated on usage reports.
+
+| Intelligent Document Processing (IDP)
+| Intelligent Document Processing (IDP) Document Pages: A single page processed by IDP.
+| IDP document actions might process documents that have more than one page, with each page counting separately. When RPA executes document actions, it also counts towards document pages and additionally consumes the corresponding RPA Bot Minutes, accounting for the time the RPA process runs.
 |===
 
 == API Experience Hub Usage
