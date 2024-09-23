@@ -52,8 +52,7 @@ Because you must compile your custom connector with Java 8, use the Java compile
 
 * Unsupported directives
 +
-Do not set `-add-opens` or `-add-export` directives.
-
+Don't set `-add-opens` or `-add-export` directives. These directives are not allowed in CloudHub or Runtime Fabric, require managing them for each connector across all environments, and introduce a backward compatibility burden, complicating future Java upgrades and potentially enabling security vulnerabilities.
 
 // end::before-you-begin[]
 
@@ -66,6 +65,8 @@ Upgrade your custom Mule SDK (Java SDK and XML SDK) connectors to Java 17.
 
 [[upgrade-third-party-libraries]]
 === Upgrade Third-Party Libraries
+
+Your custom connector likely relies on third-party libraries, so it's important to ensure they are compatible with Java 17 as well. Even if your custom connector passes tests, it is still important to deliver secure and reliable software. If a critical bug or vulnerability is found, you must upgrade to a fixed version. Using up-to-date libraries that explicitly support Java 17 makes this process easier and more reliable, as the vendor has already tested them on Java 17.
 
 Upgrade the third-party libraries of your custom connector to be compatible with Java 17:
 
@@ -111,6 +112,7 @@ public class MySqlConnectionProvider implements ConnectionProvider<Connection> {
 +
 You must update your external libraries to a version that is compatible with Java 17. 
 
+[[review-your-code]]
 === Review Your Code
 
 After you compile your custom connector with Java 8, ensure you can run your custom connector with Java 17. Reviewing your code is important because some restrictions are flagged as warnings in Java 11 but are flagged as failures and can’t be disabled in Java 17. For example, reflection is more restricted in Java 17, so you must review your code to ensure there are no illegal actions. 
@@ -121,37 +123,28 @@ To help you review your code, learn more about the different changes in Java 17:
 +
 See the https://docs.oracle.com/en/java/javase/17/migrate/getting-started.html#GUID-C25E2B1D-6C24-4403-8540-CFEA875B994A[Oracle JDK Migration Guide] for a full list of the changes made in Java 17. Use the guide to assess the impact to your code.
 
-// end::mule-sdk-connectors[]
-
-// tag::mule-sdk-connectors-review-mule-runtime[]
-
-* Mule runtime engine
-+
-See xref:java-support.adoc#mule-runtime[Mule runtime] to learn more about the Java 17 changes made in Mule runtime engine. 
-+
-** Reflection on Java classes
-** Serialization
-** Library upgrades
-** Changes with running the test suite
-** JPMS
-
-// end::mule-sdk-connectors-review-mule-runtime[]
-
-// tag::mule-sdk-connectors-review-mule-runtime-sdk[]
-
 * Mule runtime engine
 +
 See xref:general::java-support.adoc#mule-runtime[Mule runtime] to learn more about the Java 17 changes made in Mule runtime engine. 
 +
 ** Reflection on Java classes
++
+To ensure compatibility with Java 17, review and update any code that uses reflection to access Java classes or set parameter values. Java 17 imposes stricter access controls, so you should avoid introspecting JDK internals. Ensure you have a robust test suite and make sure it is run with Java 17.
 ** Serialization
++
+Update your serialization code to accommodate the restrictions of Java 17. If your code uses libraries like Gson for serializing classes, switch to using Data Transfer Objects (DTOs) where reflective access to JDK classes is involved. Ensure that serialization libraries are updated and adjust your code to minimize reliance on reflection. For more information, refer to xref:mule-runtime::configure-custom-serializers.adoc[].
 ** Library upgrades
++
+Upgrade your libraries to versions compatible with Java 17. This includes updating ByteBuddy to version 1.14.0, Jacoco to 0.8.10, and SLF4J to version 2.x. Replace CGLib with ByteBuddy and check for updates to other libraries like Groovy and JRuby. Verify that all dependencies are compatible with Java 17 to avoid runtime issues.
 ** Changes with running the test suite
-** JPMS
-
-// end::mule-sdk-connectors-review-mule-runtime-sdk[]
-
-// tag::mule-sdk-connectors-add-missing-code[]
++
+Adapt your testing approach for Java 17. If you use Mockito, be aware that Mockito can't mock JVM classes. Consider custom implementations for mocking and switch from PowerMock to newer Mockito versions. Update your tests to handle the changes in Java 17 and avoid deprecated methods.
+** Java Platform Module System (JPMS)
++
+JPMS introduces stricter encapsulation, impacting how Mule modules interact with JDK classes. As Mule upgrades to Java 17 and JPMS, the following changes are necessary:
++
+*** *Refactor Split Packages*: Resolve issues with internal and API package splits by reorganizing and refactoring packages to conform with JPMS modularization standards.
+*** *Address ResourceBundle Loading*: Implement solutions for issues related to resource bundle loading, such as using `ResourceBundleProvider` or alternative methods.
 
 === Add Missing Code
 
@@ -159,7 +152,8 @@ Because reflection is more restricted in Java 17, API objects now require setter
 
 Constructors and setters are required if your class is instantiated, and getters are required if your class is read. If your class is returned and not instantiated, only getters are required. However, using both getters and setters simplify the validation and certification process. 
 
-// end::mule-sdk-connectors-add-missing-code[]
+
+// end::mule-sdk-connectors[]
 
 // tag::rest-connect-connectors[]
 
@@ -210,7 +204,7 @@ After you update your code and your tests are green, you are ready to release a 
 <dependency>
    <groupId>org.mule.sdk</groupId>
    <artifactId>mule-sdk-api</artifactId>
-   <version>0.7.0</version>
+   <version>0.10.1</version>
 </dependency>
 ----
 
@@ -228,7 +222,7 @@ public class DatabaseConnector {
 }
 ----
 
-In Mule 4.5.0 and later, custom connectors that do not specify the `@JavaVersionSupport` annotation are assumed to be compatible with Java 8 and Java 11.
+In Mule 4.5.0 and later, custom connectors that don't specify the `@JavaVersionSupport` annotation are assumed to be compatible with Java 8 and Java 11.
 
 You can mark your custom connector as compatible with Java 17 only; however, you must ensure that no adoption or backward compatibility issues exist. 
 
@@ -236,7 +230,7 @@ When you deploy a Mule app, Mule verifies that all modules in the Mule app are c
 
 NOTE: If you receive an error message specific to an XML SDK based connector, such as `Extension 'module-error-handler-plugin' does not support Java 17. Supported versions are: [1.8, 11]`, this means that your Mule app still contains some connectors that are not compatible with Java 17. To resolve this error, upgrade all connectors in your Mule app to be compatible with Java 17.
 
-If your code is compatible with Java 17 but you do not declare Java 17 compatibility, you can still get a successful test run. 
+If your code is compatible with Java 17 but you don't declare Java 17 compatibility, you can still get a successful test run. 
 
 To run a quick check on your custom connector or if all dependencies are not ready, pass the following argument to skip hard checks on the Java support declaration:
 
@@ -278,7 +272,9 @@ Run an initial test to test your custom connector for Java 17 compatibility. You
          <argLine>                      -javaagent:${settings.localRepository}/org/jacoco/org.jacoco.agent/${jacoco.version}/org.jacoco.agent-${jacoco.version}-runtime.jar=destfile=${session.executionRootDirectory}/target/jacoco-munit.exec</argLine>
 </argLines>
 ----
-. Run your MTF test to generate the coverage report.
+. Run your MTF test to generate the coverage report. Use the `-Dtest=none` and `-DfailIfNoTests=false` flags when running the test to avoid including the JUnit tests in the coverage report.
++
+The coverage report is available in `target/jacoco-munit.exec`. 
 
 === View your Coverage Report
 
@@ -288,6 +284,8 @@ View your coverage report to see your custom connector coverage. You must have a
 . Go to *Run* > *Show Coverage Data*.
 . In *Choose Coverage Suite to Display*, add `jacoco-munit.exec` to the list if it's not there already.
 . Look at the coverage percentages to analyze your results.
+
+The coverage percentage reflects how much of your connector is tested. A key issue to avoid is illegal reflective access in your code. The only ways to detect this are to <<review-your-code>> or through testing. Aiming for at least 80% coverage allows flexibility on simpler code, such as getters and setters, while ensuring thorough testing of all critical business logic.
 
 === Add the JDeps Maven Plugin
 
@@ -314,6 +312,19 @@ Add the JDeps Maven plugin to your custom connector’s `pom.xml` file:
     </configuration>
 </plugin>
 ----
+
+If your custom connector is using a JDK internal API that is no longer available or accessible, the build fails.
+
+Run the build with both Java 8 and 11 by changing the `JAVA_HOME` value, as the JDeps Maven plugin relies on the JDeps tool bundled with the JDK. Running the build with each Java version ensures extra confidence.
+
+To run the JDeps Maven plugin without tests, use the following command:
+
+[source,bash]
+----
+mvn clean install -Dtest=none -DfailIfNoTests=false -DskipTests=true
+----
+
+This helps focus on checking the offending libraries and internal access issues without dealing with potential test failures or long test runtimes.
 
 === Test for Java 17 Compatibility 
 
@@ -348,7 +359,7 @@ To set up your custom connector’s `pom.xml` file to include the configuration:
 </environmentVariables>
 ----
 
-You can now run your MTF tests with the `--illegal-access=deny` parameter. Here is an example bash script: 
+You can now run your MTF tests with the `--illegal-access=deny` parameter. Here is an example bash script (replace with the latest Mule runtime version available): 
 
 [source,bash]
 ----
@@ -428,7 +439,7 @@ mvn verify \
 
 The Mule runtime version you use determines the version of the mule-modules-parent. For example, if you use Mule runtime 4.6.0, you must use mule-modules-parent 1.6.0. Minor versions maintain a correspondence, such as Mule runtime 4.1.0 with mule-modules parent 1.1.0, Mule runtime 4.2.0 with mule-modules-parent 1.2.0, and so forth.
 
-Java 17 is supported with Mule runtime 4.6.0 and later. However, a connector can be compatible with both Mule 4.3.0 and Java 17 simultaneously. If your connector must be compatible with Mule 4.3.0, its mule-modules-parent version cannot exceed 1.3.0. You do not necessarily need to use mule-modules-parent 1.6.0 for your connector to be compatible with Java 17. Using mule-modules-parent 1.6.0 is specifically required to leverage other features from the Mule runtime 4.6.0 in the connector.
+Java 17 is supported with Mule runtime 4.6.0 and later. However, a connector can be compatible with both Mule 4.3.0 and Java 17 simultaneously. If your connector must be compatible with Mule 4.3.0, its mule-modules-parent version cannot exceed 1.3.0. You don't necessarily need to use mule-modules-parent 1.6.0 for your connector to be compatible with Java 17. Using mule-modules-parent 1.6.0 is specifically required to leverage other features from the Mule runtime 4.6.0 in the connector.
 
 === Read Your Tests 
 
@@ -500,7 +511,7 @@ You can now see if your connector is compatible with Java 17. For more informati
 
 The Mule runtime version you use determines the version of the mule-modules-parent. For example, if you use Mule runtime 4.6.0, you must use mule-modules-parent 1.6.0. Minor versions maintain a correspondence, such as Mule runtime 4.1.0 with mule-modules parent 1.1.0, Mule runtime 4.2.0 with mule-modules-parent 1.2.0, and so forth.
 
-Java 17 is supported with Mule runtime 4.6.0 and later. However, a connector can be compatible with both Mule 4.3.0 and Java 17 simultaneously. If your connector must be compatible with Mule 4.3.0, its mule-modules-parent version cannot exceed 1.3.0. You do not necessarily need to use mule-modules-parent 1.6.0 for your connector to be compatible with Java 17. Using mule-modules-parent 1.6.0 is specifically required to leverage other features from the Mule runtime 4.6.0 in the connector.
+Java 17 is supported with Mule runtime 4.6.0 and later. However, a connector can be compatible with both Mule 4.3.0 and Java 17 simultaneously. If your connector must be compatible with Mule 4.3.0, its mule-modules-parent version cannot exceed 1.3.0. You don't necessarily need to use mule-modules-parent 1.6.0 for your connector to be compatible with Java 17. Using mule-modules-parent 1.6.0 is specifically required to leverage other features from the Mule runtime 4.6.0 in the connector.
 
 // end::test-custom-connector-munit[]
 
