@@ -88,7 +88,7 @@ Enter a description.
 . Select a destination URL to use as the managed named credential for this connection to Salesforce. API Catalog lists only active destination URLs, which are managed in Anypoint API Manager. 
 . Click *Done*.
 +
-Connection configuration is done automatically, including:
+The Create Connection process creates the required objects in Salesforce automatically, including:
 +
 * External credentials
 * External Services
@@ -98,11 +98,11 @@ Connection configuration is done automatically, including:
 The UI shows the number of activated actions on each API's page.
 
 [[enable-permission-sets]]
-== Enable the Permission Sets for the Connections
+== Enable User Permissions in Salesforce
 
-Following the procedure in https://help.salesforce.com/s/articleView?id=sf.perm_sets_app_perms.htm&language=en_US&type=5[Enable User Permissions in Permission Sets], select and enable the permission set for each connection you just created.
+After you create the connection, give specific Salesforce users access to the activated actions so that they can use them in their Salesforce automations. To select and enable the permission set for each connection for the users, see https://help.salesforce.com/s/articleView?id=sf.perm_sets_app_perms.htm&language=en_US&type=5[Enable User Permissions in Permission Sets].
 
-The actions are now available to use in Flow Builder automations. 
+The actions are now available for those users to select and use in Flow Builder automations. 
 
 == Manage Activated Actions and Connections
 
