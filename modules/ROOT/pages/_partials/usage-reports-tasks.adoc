@@ -1,6 +1,6 @@
 // tag::accessUsageReports[]
 
-. Sign in to Anypoint Platform using an account that has the Usage Viewer permission in your root organization.
+. Sign in to Anypoint Platform using an account that has the Usage Viewer permission for your root organization.
 . In the Anypoint Platform navigation bar, click the business group selector, and ensure you are at the root organization level.
 . You can access usage reports either by:
 * Clicking your username icon and then clicking *Usage*, or
