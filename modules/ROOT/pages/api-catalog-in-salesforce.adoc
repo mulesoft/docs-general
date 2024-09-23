@@ -9,7 +9,7 @@ API Catalog in Salesforce provides a single place for you to view your MuleSoft 
 * Sync to get the latest changes and updates.
 * Activate operations from Anypoint APIs as Salesforce invocable actions.
 
-Consider a scenario where you want to connect Salesforce to a credit service API that has an API that's managed in Anypoint Platform. The credit service retrieves the customer's credit score, determines whether the credit service should be extended to the customer, and provides the payment terms. You want to extend the credit service to a Salesforce account so that you can view the payment terms in Salesforce.
+Consider a scenario where you want to connect Salesforce to a credit service API that has an API that's managed in Anypoint Platform. The credit service retrieves the customer's credit score, determines whether the customer qualifies for the credit service, and provides the payment terms. You want to extend the credit service to a Salesforce account so that you can view the payment terms in Salesforce.
 
 You can bring the credit service API into API Catalog in Salesforce, select operations and activate them as actions, and then use them in Flow Builder automations.
 
