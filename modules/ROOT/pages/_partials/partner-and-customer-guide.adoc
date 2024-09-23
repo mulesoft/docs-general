@@ -123,10 +123,6 @@ To help you review your code, learn more about the different changes in Java 17:
 +
 See the https://docs.oracle.com/en/java/javase/17/migrate/getting-started.html#GUID-C25E2B1D-6C24-4403-8540-CFEA875B994A[Oracle JDK Migration Guide] for a full list of the changes made in Java 17. Use the guide to assess the impact to your code.
 
-// end::mule-sdk-connectors[]
-
-// tag::mule-sdk-connectors-review-mule-runtime[]
-
 * Mule runtime engine
 +
 See xref:general::java-support.adoc#mule-runtime[Mule runtime] to learn more about the Java 17 changes made in Mule runtime engine. 
@@ -150,7 +146,7 @@ JPMS introduces stricter encapsulation, impacting how Mule modules interact with
 *** *Refactor Split Packages*: Resolve issues with internal and API package splits by reorganizing and refactoring packages to conform with JPMS modularization standards.
 *** *Address ResourceBundle Loading*: Implement solutions for issues related to resource bundle loading, such as using `ResourceBundleProvider` or alternative methods.
 
-// end::mule-sdk-connectors-review-mule-runtime[]
+// end::mule-sdk-connectors[]
 
 // tag::mule-sdk-connectors-add-missing-code[]
 
