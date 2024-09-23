@@ -68,7 +68,7 @@ Data Throughput::
 The sum of inbound and outbound data in gigabytes (GB) transmitted by the Mule app. For more information about how this metric is billed, see xref:usage-metrics.adoc#data-throughput[data throughput].  
 
 Number of Workers::
-The sum of all workers (CloudHub) or replicas (CloudHub 2.0) of a Mule app. Apps that do not have workers or replicas display a value of `N/A` in this column.
+The sum of all workers (CloudHub) or replicas (CloudHub 2.0) of a Mule app. Apps that don’t have workers or replicas show a value of `N/A` in this column.
 // end::table[]
 
 // tag::flows[]
