@@ -21,7 +21,7 @@ Anypoint Platform captures usage metrics across products, but not all metrics ar
 |API instances remain under management until they are deleted. Instances of API Manager are aggregated using a Max Concurrent model. 
 
 |API Governance	
-|_API under Governance_: APIs that are identified by the selection criteria of at least one of the governance profiles. 
+|_API under Governance_: APIs identified by the selection criteria of at least one of the governance profiles. 
 a|If an API is governed, all versions of that API are considered one governed API. Instances of API Governance are aggregated using a Max Concurrent model. The usage for a month is the highest number of APIs governed in a single given hour during a month.
 
 |Flex Gateway	
