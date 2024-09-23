@@ -11,9 +11,9 @@ Organizations that have a usage-based pricing model can compare actual usage fro
 
 Some usage data, such as monthly statements and vCore allocation, appears in different areas of Anypoint Platform or Salesforce products. 
 
-* Monthly statements for Mule Runtime, including Mule flows, Mule messages, and data throughput are sent to the primary billing contact. 
+* Monthly statements for Mule runtime, including Mule flows, Mule messages, and data throughput are sent to the primary billing contact. 
 +
-xref:rpa-home::ms-automation-credits-usage-types.adoc[Automation credits] for RPA, Composer, Intelligent Document Processing (IDP), and API Experience Hub) are sent to the primary billing contact.
+xref:rpa-home::ms-automation-credits-usage-types.adoc[Automation credits] for RPA, (Composer, Intelligent Document Processing (IDP), and API Experience Hub) are sent to the primary billing contact.
 +
 For more information, see https://help.salesforce.com/s/articleView?id=000390885&type=1[Monthly Account Summaries] documentation in Salesforce.
 * Runtime Manager vCore allocation information and other metrics appear in Access Management.
@@ -29,7 +29,7 @@ For more information, see xref:pricing-metrics.adoc#object-store-metrics[Object 
 [[products-usage-reports]]
 == Products Available in Usage Reports
 
-When you navigate to the *Usage Reports* page in Anypoint Platform, the selection of products you see varies based on the view you are using. Products that have usage reports only on a monthly basis are viewable only in the legacy usage reports view, while products that have both daily and monthly usage reports are available only in the new usage reports view. To switch between views, click the *Switch View* button in the banner. 
+When you navigate to the *Usage Reports* page in Anypoint Platform, the selection of products you see varies based on the view you are using. Products that have only monthly usage reports are viewable only in the legacy usage reports view, while products that have both daily and monthly usage reports are available only in the new usage reports view. To switch between views, click the *Switch View* button in the banner. 
 
 The following products have only monthly usage reports:
 
