@@ -27,7 +27,7 @@ If you're still missing Runtime Fabric apps in your usage reports, contact your 
 
 == A Month or a Day is Unavailable in the Date Picker 
 
-This means that data is unavailable for the selected day or month. 
+If the date picker doesn't show a month or day, data is unavailable for the selected period. 
 
 == Report Says No Data
 
