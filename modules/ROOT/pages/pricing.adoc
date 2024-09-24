@@ -22,7 +22,7 @@ To understand the technical aspects of metering and pricing concepts within Anyp
 
 == Global Resource Pool Limits
 
-Root organizations provisioned with usage-based pricing receive a global pool of CPU and memory resources that are shared for CloudHub and CloudHub 2.0 deployments across all business groups and environments in the organization. This pool of resources is large enough to consume all the purchased flows and messages without interruption. 
+Root organizations provisioned with usage-based pricing receive a shared global pool of CPU and memory resources for CloudHub and CloudHub 2.0 deployments across all business groups and environments in the organization. This pool of resources is large enough to consume all the purchased flows and messages without interruption. 
 
 If an organization runs out of resources, actions that consume more resources, such as deploying new applications or starting stopped applications are blocked until sufficient resources are available. You can free up resources by stopping or deleting unused applications, or reducing the replica size or resources that an existing application consumes. 
 
