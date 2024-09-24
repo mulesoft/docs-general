@@ -31,7 +31,7 @@ If the date picker doesn't show a month or day, data is unavailable for the sele
 
 == Report Says No Data
 
-If you select a product and daily or monthly report in new usage reports, the report returns a `No Data` message. 
+If you select a product and daily or monthly report in new usage reports, and the report returns a `No Data` message, no data is available for the selected period.
 
 This means that there is no data available for the selected day or month. 
 
