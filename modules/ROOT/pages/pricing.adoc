@@ -12,7 +12,7 @@ The Usage Reports page supports pricing packages for integration. When your orga
 
 For CloudHub and CloudHub 2.0, apps are automatically redeployed during the monthly runtime patch update cycle. For more information, see xref:runtime-manager::cloudhub-app-runtime-version-updates.adoc[CloudHub Runtime Continuous Updates] and xref:cloudhub-2::ch2-patch-updates.adoc[CloudHub 2.0 Operating System Patch Updates].
 
-For Runtime Fabric, you must redeploy apps manually. You must redeploy Runtime Fabric apps in a timely manner to remain in compliance with your Anypoint Platform contract.
+For Runtime Fabric, you must manually redeploy apps to remain in compliance with your Anypoint Platform contract.
 
 == Metrics Definitions
 
