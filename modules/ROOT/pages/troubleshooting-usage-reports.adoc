@@ -43,7 +43,7 @@ This means there is no data available for the selected month.
 
 == Deployed Mule App Isn't Listed in the Mule Runtime Usage Report
 
-If a deployed Mule app isn't listed in the Mule Runtime usage report, ensure that you are using a supported version of Mule Runtime. For more information, see xref:mule-runtime-usage.adoc#supported-runtime-versions[supported runtime versions].
+If a deployed Mule app isn't listed in the Mule Runtime usage report, make sure you're using a supported version of Mule runtime. For more information, see xref:mule-runtime-usage.adoc#supported-runtime-versions[supported runtime versions].
 
 Redeploy your Mule apps with a supported Mule runtime version, either manually or during a monthly patching cycle.
 
