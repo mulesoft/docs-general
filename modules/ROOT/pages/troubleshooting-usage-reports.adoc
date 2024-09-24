@@ -41,7 +41,7 @@ If, after selecting a month in legacy usage reports, the report returns `No repo
 
 This means there is no data available for the selected month. 
 
-== Deployed Mule app Isn't Listed in the Mule Runtime Usage Report
+== Deployed Mule App Isn't Listed in the Mule Runtime Usage Report
 
 If a deployed Mule app isn't listed in the Mule Runtime usage report, ensure that you are using a supported version of Mule Runtime. For more information, see xref:mule-runtime-usage.adoc#supported-runtime-versions[supported runtime versions].
 
