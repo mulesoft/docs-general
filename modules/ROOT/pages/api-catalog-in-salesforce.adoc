@@ -18,7 +18,7 @@ You can bring the credit service API into API Catalog in Salesforce, select oper
 [[before-you-begin]]
 == Before You Begin
 
-Work with an Anypoint Platform admin to ensure that all <<before-you-begin, prerequisite configuration>> is done in the Anypoint Platform organization from which you want to sync APIs. The following are required before you can being using API Catalog in Salesforce: 
+Work with an Anypoint Platform admin to ensure that all prerequisite configuration is done in the Anypoint Platform organization from which you want to sync APIs. The following are required before you can being using API Catalog in Salesforce: 
 
 * A valid MuleSoft Anypoint Platform account. See  xref:access-management::managing-your-account.adoc[].
 * API specs in MuleSoft Anypoint API Exchange that you want to import into API Catalog. See xref:exchange::index.adoc[]. 
