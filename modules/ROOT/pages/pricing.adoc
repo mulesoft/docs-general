@@ -39,7 +39,7 @@ For organizations provisioned with a usage-based pricing package, CloudHub 2.0 u
 
 include::partial$pricing.adoc[tag=pricingTable]
 
-During the monthly patching cycle, your applications automatically migrates to an equivalent replica size. 
+During the monthly patching cycle, your applications automatically migrate to an equivalent replica size. 
 
 Application deployment using the Mule Maven Plugin is not yet supported. To deploy your apps, use the Runtime Manager UI and the Application Manager Experience APIs with the new field in `target.deploymentSettings` called `instanceType`.
 
