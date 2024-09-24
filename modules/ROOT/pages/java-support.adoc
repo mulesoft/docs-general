@@ -233,7 +233,7 @@ To ensure that your applications continue to work as expected, follow these guid
 +
 POJOs are required for DataWeave 2.6.0 and later. Because reflection is more restricted in Java 17, POJOs now require setters as well. Previously, POJOs had default constructors and getters for all properties. Now, POJOs must also have setters so DataWeave can build outside the connector in the Mule app. 
 +
-Constructors and setters are required if your class is instantiated by DataWeave, and getters are required if your class is read. If your class is returned and not instantiated, only getters are required. However, using both getters and setters simplify the validation and certification process.
+Constructors and setters are required if your class is instantiated by DataWeave, and getters are required if your class is read. If your class is returned and not instantiated, only getters are required. However, using both getters and setters simplifies the validation and certification process.
 +
 You must ensure that the POJOs have:
 
