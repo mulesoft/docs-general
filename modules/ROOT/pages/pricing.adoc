@@ -2,18 +2,15 @@
 
 [IMPORTANT]
 ====
-This document applies only to select customers who are opted in to https://www.salesforce.com/content/dam/web/en_us/www/documents/legal/Agreements/Limited-Release-Features-Entitlements-New-Packaging.pdf[usage-based pricing]. 
+This information applies only to select customers who are opted in to https://www.salesforce.com/content/dam/web/en_us/www/documents/legal/Agreements/Limited-Release-Features-Entitlements-New-Packaging.pdf[usage-based pricing]. 
 Details in this document are subject to change.
 ====
 
-This document describes the changes introduced in Runtime Manager for CloudHub 1.0, 
-CloudHub 2.0, Anypoint Runtime Fabric, and Access Management to support usage-based pricing.
-
 == Usage Reports Changes from Legacy Subscription Plans to Usage-Based Plans
 
-The Usage Reports page supports pricing packages for integration. When your organization opts into a usage-based pricing plan, such as the Anypoint Integration Advanced package, your apps must be redeployed. After redeploying your apps, your usage reports are displayed. 
+The Usage Reports page supports pricing packages for integration. When your organization opts in to a usage-based pricing plan, such as the Anypoint Integration Advanced package, your apps must be redeployed. After redeploying your apps, your usage reports are shown. 
 
-For CloudHub and CloudHub 2.0, apps are automatically redeployed during the monthly runtime patch update cycle. See xref:runtime-manager::cloudhub-app-runtime-version-updates.adoc[CloudHub Runtime Continuous Updates] and xref:cloudhub-2::ch2-patch-updates.adoc[CloudHub 2.0 Operating System Patch Updates] for more details.
+For CloudHub and CloudHub 2.0, apps are automatically redeployed during the monthly runtime patch update cycle. For more information, see xref:runtime-manager::cloudhub-app-runtime-version-updates.adoc[CloudHub Runtime Continuous Updates] and xref:cloudhub-2::ch2-patch-updates.adoc[CloudHub 2.0 Operating System Patch Updates].
 
 For Runtime Fabric, you must redeploy apps manually. You must redeploy Runtime Fabric apps in a timely manner to remain in compliance with your Anypoint Platform contract.
 
@@ -25,24 +22,30 @@ To understand the technical aspects of metering and pricing concepts within Anyp
 
 == Global Resource Pool Limits
 
-Root organizations provisioned with usage-based pricing receive a global pool of shared CPU and memory resources that is shared for deployments in to CloudHub and CloudHub 2.0 across all business groups and environments in the organization. This pool of resources is large enough to consume all of the purchased flows and messages without interruption. If an organization runs out of resources, actions that consume more resources such as deploying new applications or starting stopped applications are blocked until sufficient resources are available. 
+Root organizations provisioned with usage-based pricing receive a global pool of CPU and memory resources that are shared for CloudHub and CloudHub 2.0 deployments across all business groups and environments in the organization. This pool of resources is large enough to consume all the purchased flows and messages without interruption. 
 
-You can free up resources by stopping or deleting unused applications, or reducing the replica size or resources that an existing application consumes. You receive a warning each time your organization approaches the resource limit on the Applications List UI, Application Deployment UI, and Manage Application UI. To avoid hitting limits, allocate only what you need by using granular replica sizes in CloudHub and CloudHub 2.0. Contact Support if you require an exception when you reach the limit. 
+If an organization runs out of resources, actions that consume more resources, such as deploying new applications or starting stopped applications are blocked until sufficient resources are available. You can free up resources by stopping or deleting unused applications, or reducing the replica size or resources that an existing application consumes. 
+
+When your organization approaches the resource limit on the Applications List UI, Application Deployment UI, and Manage Application UI, you receive a warning. To avoid reaching limits, allocate only the needed resources by using granular replica sizes in CloudHub and CloudHub 2.0. 
+
+Contact Support if you require an exception when you reach the limit. 
 
 [NOTE]
-This limit does not impact applications configured with xref:cloudhub-2::ch2-configure-horizontal-autoscaling.adoc[Horizontal Pod Autoscaling in CloudHub 2.0]. You can continue to deploy applications with Horizontal Pod Autoscaling enabled even if you hit the Global Resource Limits.
+This limit doesn't impact applications configured with xref:cloudhub-2::ch2-configure-horizontal-autoscaling.adoc[Horizontal Pod Autoscaling in CloudHub 2.0]. You can continue to deploy applications if Horizontal Pod Autoscaling is enabled even if you hit the Global Resource Limits.
 
 == CloudHub 2.0 Application Deployment
 
-For organizations provisioned with a usage-based pricing package, CloudHub 2.0 uses replica sizing for application deployment. You can choose from the following replica sizes based on the application profile or size and display the equivalent in terms of legacy vCores. Replica sizes with the suffix `.mem` are memory-intensive options with the same compute. 
+For organizations provisioned with a usage-based pricing package, CloudHub 2.0 uses replica sizing for application deployment. You can choose replica sizes based on the application profile or size and display the equivalent in terms of legacy vCores. Replica sizes with the suffix `.mem` are memory-intensive options with the same compute. 
 
 include::partial$pricing.adoc[tag=pricingTable]
 
-During the monthly patching cycle, your applications automatically migrate to an equivalent replica size. Application deployment through the Mule Maven Plugin is not yet supported. However, you can deploy using the Runtime Manager UI and the Application Manager Experience APIs by leveraging a new field under `target.deploymentSettings` called `instanceType`.
+During the monthly patching cycle, your applications automatically migrates to an equivalent replica size. 
+
+Application deployment using the Mule Maven Plugin is not yet supported. To deploy your apps, use the Runtime Manager UI and the Application Manager Experience APIs with the new field in `target.deploymentSettings` called `instanceType`.
 
 == Access Management Entitlements
 
-Accounts provisioned with a usage-based pricing package show flows, messages, and throughput entitlements instead of vCores on Access Management. These entitlements are available at the root organization level and cannot be allocated among business groups. Because vCores are no longer the purchased entity, they can no longer be tracked or allocated among business groups. To view your monthly usage of flows, messages, and throughput, xref:general::usage-reports.adoc#access-usage-reports[access usage reports] by using the Access Management UI. 
+Accounts provisioned with a usage-based pricing package show flows, messages, and throughput entitlements in Access Management instead of vCores. These entitlements are available only at the root organization level. Because vCores are no longer the purchased entity, they can no longer be tracked or allocated among business groups. To view your monthly usage of flows, messages, and throughput, xref:general::usage-reports.adoc#access-usage-reports[access usage reports] in the Access Management UI. 
 
 == See Also
 
