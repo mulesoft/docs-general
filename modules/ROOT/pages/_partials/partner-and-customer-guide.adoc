@@ -150,7 +150,7 @@ JPMS introduces stricter encapsulation, impacting how Mule modules interact with
 
 Because reflection is more restricted in Java 17, API objects now require setters. Previously, API objects and plain old Java objects (POJOs) had default constructors and getters for all properties. Now, API objects and POJOs must also have setters so DataWeave can build outside the connector in the Mule app. 
 
-Constructors and setters are required if your class is instantiated, and getters are required if your class is read. If your class is returned and not instantiated, only getters are required. However, using both getters and setters simplify the validation and certification process. 
+Constructors and setters are required if your class is instantiated by DataWeave, and getters are required if your class is read. If your class is returned and not instantiated, only getters are required. However, using both getters and setters simplifies the validation and certification process. 
 
 
 // end::mule-sdk-connectors[]
