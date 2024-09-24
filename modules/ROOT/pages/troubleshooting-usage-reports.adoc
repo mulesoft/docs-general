@@ -37,7 +37,7 @@ This means that there is no data available for the selected day or month.
 
 == No Report Available for This Time Period Message
 
-After selecting a month in legacy usage reports, the report returns a `No report available for this time period` message instead of showing data.
+If, after selecting a month in legacy usage reports, the report returns `No report available for this time period`, no data is available for the selected month.
 
 This means there is no data available for the selected month. 
 
