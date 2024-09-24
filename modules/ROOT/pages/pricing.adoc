@@ -1,12 +1,5 @@
 = Anypoint Platform Pricing
 
-[IMPORTANT]
-====
-This information applies only to customers who opt in to https://www.salesforce.com/content/dam/web/en_us/www/documents/legal/Agreements/Limited-Release-Features-Entitlements-New-Packaging.pdf[usage-based pricing]. 
-Details in this document are subject to change.
-====
-
-== Usage Reports Changes from Legacy Subscription Plans to Usage-Based Plans
 
 The Usage Reports page supports pricing packages for integration. When your organization opts in to a usage-based pricing plan, such as the Anypoint Integration Advanced package, you must redeploy your apps. After redeploying your apps, your usage reports are shown. 
 
