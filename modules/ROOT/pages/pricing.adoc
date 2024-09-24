@@ -10,7 +10,7 @@ Details in this document are subject to change.
 
 The Usage Reports page supports pricing packages for integration. When your organization opts in to a usage-based pricing plan, such as the Anypoint Integration Advanced package, you must redeploy your apps. After redeploying your apps, your usage reports are shown. 
 
-For CloudHub and CloudHub 2.0, apps are automatically redeployed during the monthly runtime patch update cycle. For more information, see xref:runtime-manager::cloudhub-app-runtime-version-updates.adoc[CloudHub Runtime Continuous Updates] and xref:cloudhub-2::ch2-patch-updates.adoc[CloudHub 2.0 Operating System Patch Updates].
+For CloudHub and CloudHub 2.0, apps are automatically redeployed during the monthly runtime patch update cycle. For more information, see xref:runtime-manager::cloudhub-app-runtime-version-updates.adoc[] and xref:cloudhub-2::ch2-patch-updates.adoc[].
 
 For Runtime Fabric, you must manually redeploy apps to remain in compliance with your Anypoint Platform contract.
 
@@ -18,7 +18,7 @@ For Runtime Fabric, you must manually redeploy apps to remain in compliance with
 
 Usage-based pricing packages and their usage reports are based on your organization's use of allotted Mule components.
 
-To understand the technical aspects of metering and pricing concepts within Anypoint Platform, see xref:general::usage-metrics.adoc[Usage and Pricing Metrics] documentation.
+To understand the technical aspects of metering and pricing concepts within Anypoint Platform, see xref:general::usage-metrics.adoc[] documentation.
 
 == Global Resource Pool Limits
 
@@ -28,10 +28,10 @@ If an organization runs out of resources, actions that consume more resources, s
 
 When your organization approaches the resource limit on the Applications List UI, Application Deployment UI, and Manage Application UI, you receive a warning. To avoid reaching limits, allocate only the needed resources by using granular replica sizes in CloudHub and CloudHub 2.0. 
 
-Contact Support if you require an exception when you reach the limit. 
+Contact Support if you require an exception when you reach the resource limit. 
 
 [NOTE]
-This limit doesn't impact applications configured with xref:cloudhub-2::ch2-configure-horizontal-autoscaling.adoc[Horizontal Pod Autoscaling in CloudHub 2.0]. You can continue to deploy applications if Horizontal Pod Autoscaling is enabled even if you hit the global resource limits.
+This limit doesn't impact applications configured with xref:cloudhub-2::ch2-configure-horizontal-autoscaling.adoc[]. You can continue to deploy applications if Horizontal Pod Autoscaling is enabled even if you reach the global resource limits.
 
 == CloudHub 2.0 Application Deployment
 
@@ -41,7 +41,7 @@ include::partial$pricing.adoc[tag=pricingTable]
 
 During the monthly patching cycle, your applications automatically migrate to an equivalent replica size. 
 
-Application deployment using the Mule Maven plugin is not yet supported. To deploy your apps, use the Runtime Manager UI and the Application Manager Experience APIs with the new field in `target.deploymentSettings` called `instanceType`.
+Application deployment using the Mule Maven plugin is not yet supported. To deploy your apps, use the Runtime Manager UI and the Application Manager APIs with the new field in `target.deploymentSettings` called `instanceType`.
 
 == Access Management Entitlements
 
@@ -49,4 +49,4 @@ Accounts provisioned with a usage-based pricing package show flows, messages, an
 
 == See Also
 
-* xref:general::usage-reports.adoc[Usage Reports]
+* xref:general::usage-reports.adoc[]
