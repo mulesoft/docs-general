@@ -8,7 +8,7 @@ Details in this document are subject to change.
 
 == Usage Reports Changes from Legacy Subscription Plans to Usage-Based Plans
 
-The Usage Reports page supports pricing packages for integration. When your organization opts in to a usage-based pricing plan, such as the Anypoint Integration Advanced package, your apps must be redeployed. After redeploying your apps, your usage reports are shown. 
+The Usage Reports page supports pricing packages for integration. When your organization opts in to a usage-based pricing plan, such as the Anypoint Integration Advanced package, you must redeploy your apps. After redeploying your apps, your usage reports are shown. 
 
 For CloudHub and CloudHub 2.0, apps are automatically redeployed during the monthly runtime patch update cycle. For more information, see xref:runtime-manager::cloudhub-app-runtime-version-updates.adoc[CloudHub Runtime Continuous Updates] and xref:cloudhub-2::ch2-patch-updates.adoc[CloudHub 2.0 Operating System Patch Updates].
 
