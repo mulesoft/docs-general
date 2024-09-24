@@ -31,7 +31,7 @@ When your organization approaches the resource limit on the Applications List UI
 Contact Support if you require an exception when you reach the limit. 
 
 [NOTE]
-This limit doesn't impact applications configured with xref:cloudhub-2::ch2-configure-horizontal-autoscaling.adoc[Horizontal Pod Autoscaling in CloudHub 2.0]. You can continue to deploy applications if Horizontal Pod Autoscaling is enabled even if you hit the Global Resource Limits.
+This limit doesn't impact applications configured with xref:cloudhub-2::ch2-configure-horizontal-autoscaling.adoc[Horizontal Pod Autoscaling in CloudHub 2.0]. You can continue to deploy applications if Horizontal Pod Autoscaling is enabled even if you hit the global resource limits.
 
 == CloudHub 2.0 Application Deployment
 
