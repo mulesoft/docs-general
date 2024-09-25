@@ -85,6 +85,7 @@ Enter a description.
 The Create Connection process creates the required objects in Salesforce automatically, including:
 +
 * External credentials
+* Named credentials
 * External Services
 * Invocable Actions
 * Permission Sets	
@@ -115,13 +116,13 @@ To modify the operation selections for activated actions:
 . In the Operations tab, click *Edit*.
 . Select or deselect operations.
  
-=== Edit a Connection Description
+=== Edit Connection Descriptions
 
-To modify the connection description:
+To modify a connection description:
 
 . From Setup, in the Quick Find box, enter API Catalog and select it.
 . Select the API to modify the connection description for.
-. In the Connections tab, click Edit to modify the connection.
+. In the Connections tab, click Edit.
 . Update the connection description.
 
 NOTE: You can't change the connection name and destination URL because they're used to name and later identify auto-generated configurations.
@@ -129,7 +130,7 @@ NOTE: You can't change the connection name and destination URL because they're u
 [[get-started-with-flows]]
 == Get Started Using MuleSoft APIs as Actions in Flows
 
-After you sync your APIs in API Catalog and activate operations as actions, you can get started using them in a flow. Here's a brief walkthrough using the scenario discussed at the beginning of this document, connecting Salesforce to a credit service API that has a managed API instance in Anypoint Platform. 
+After you sync your APIs in API Catalog and activate operations as actions, you can get started using them in a Flow Builder flow. Here's a brief walkthrough using the scenario discussed at the beginning of this document, connecting Salesforce to a credit service API that has a managed API instance in Anypoint Platform. 
 
 The credit service retrieves the customer's credit score, determines whether the customer qualifies for the credit service, and provides the payment terms. You want to extend the credit service to a Salesforce account so that you can view the payment terms in Salesforce.
 
