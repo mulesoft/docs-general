@@ -6,12 +6,6 @@
 * Click your username icon and then click *Usage*, or
 * Select *Usage* in the Anypoint Platform navigation menu.
 . Select the product to view the usage report for. 
-+
-If you don't see the product listed, click *Switch View*. 
-+
-. If applicable, click *Monthly Usage Report* or *Daily Usage Report*. 
-+
-API Manager and API Governance don't have daily usage reports.
 . Select the month or day of the usage report to view. 
 +
 Only dates that Anypoint Platform collected data for the selected product are available.
