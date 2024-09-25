@@ -41,7 +41,7 @@ Sync API Catalog to initially populate the catalog with MuleSoft APIs and when y
 To sync API Catalog:
 
 . Work with an Anypoint Platform admin to ensure that all <<before-you-begin, prerequisite configuration>> is done in the Anypoint Platform organization from which you want to sync APIs.
-. From Salesforce Setup, in the Quick Find box, enter API Catalog and select it.
+. In Salesforce, from Setup, in the Quick Find box, enter API Catalog and select it.
 . Click *Sync APIs*.
 + 
 The sync imports APIs into API Catalog that have:
