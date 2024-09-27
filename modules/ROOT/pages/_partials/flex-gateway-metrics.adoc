@@ -1,0 +1,30 @@
+// tag::intro[]
+
+Flex Gateway usage reports track daily and monthly API calls. You can view API calls by business group, environment, and registration.
+
+To calculate usage, MuleSoft meters the hourly API calls you make and aggregates the number of API calls on a daily and monthly basis. 
+
+// end::intro[]
+
+// tag::cards[]
+
+Total # of API Calls::
+Sum of API calls across all registered Flex Gateways in the organization.
+
+// end::cards[]
+
+// tag::table[]
+
+Business Group:: 
+Business group in which the Flex Gateway is registered.
+
+Environment:: 
+Environment in which the Flex Gateway is registered.
+
+Registration::
+Name of the registered Flex Gateway.
+
+# of API Calls::
+Sum of API calls made by APIs that are deployed within the Flex Gateway.
+
+// end::table[]

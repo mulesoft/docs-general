@@ -1,0 +1,16 @@
+= API Manager Usage Reports
+
+Usage reports show API Manager usage metrics on a monthly basis.
+
+== Access API Manager Usage Reports
+
+include::partial$usage-reports-tasks.adoc[tag=accessUsageReportsLegacy]
+
+. Click *API Manager*.
+
+
+== API Manager Usage Metrics
+
+When you open a usage report for API Manager, the report shows the following fields:
+
+include::partial$apim-metrics.adoc[tag=table]

@@ -1,0 +1,134 @@
+= Usage and Pricing Metrics Reference
+:page-aliases: pricing-metrics.adoc
+
+Anypoint Platform captures usage metrics across products, but not all metrics are billable or reflected in usage reports.
+
+[cols=3*]
+|===
+|Product |Metric Description |Usage Details
+
+.3+|Mule Runtime	
+|Mule flow: A flow within a deployed and running Mule app that contains a Mule event source or route APIKit request. 
+|Flows are aggregated using a Max Concurrent model. The usage for a month is the highest number of flows that exist in a single given hour during a month.
+
+|Mule message: The container of the core information processed by the runtime. 
+|A Mule message counts as a single unit when an event source triggers it. Messages are aggregated using a sum of all messages sent during a month.
+|Data throughput: The total amount of data transferred in and out of the infrastructure that runs Mule where the Mule app is deployed. 
+|Data throughput counts when the deployed application transfers data to execute its business logic, including but not limited to internal operational network traffic for monitoring, logs, and health checks. Data throughput is aggregated as a sum of all bytes during a month. 
+
+|API Manager	
+|API instance under management: API instances that are managed by API Manager after they are created using add, promote, or import options. 
+|API instances remain under management until they are deleted. Instances of API Manager are aggregated using a Max Concurrent model. 
+
+|API Governance	
+|API under Governance: APIs identified by the selection criteria of at least one of the governance profiles. 
+a|If an API is governed, all versions of that API are considered one governed API. Instances of API Governance are aggregated using a Max Concurrent model. The usage for a month is the highest number of APIs governed in a single given hour during a month.
+
+|Flex Gateway	
+|Flex Gateway API call: Any access request received by Anypoint Flex Gateway regardless of whether the response to the request is successful or not. 
+|Flex Gateway requests are aggregated as a sum of all requests during a month.
+
+|Composer	
+|Composer task: Any action executed on a Composer connector, including but not limited to read, create, update, and delete. 
+|Composer tasks are aggregated as a sum of all actions during a month.
+
+|RPA	
+|Robotic Process Automation (“RPA”) bot minutes: The number of minutes running process automations across all bot sessions. 
+|A single bot can run multiple parallel sessions, with RPA bot minutes counting for each parallel session. You can configure multiple bots to run the same process, with RPA bot minutes counting for each of these separate bot sessions. Test runs or process runs in the test phase are also counted towards RPA bot minutes.
+
+|Message Queue	
+|Anypoint MQ API request: A request made to retrieve one or more messages from the Anypoint MQ APIs. 
+|Each Anypoint MQ API request includes up to 100 KB of data. An Anypoint MQ API request over 100 KB counts as multiple requests with no fractional units. Anypoint MQ API requests are calculated in the aggregate across all environments (including production, pre-production, sandbox, and design). Anypoint MQ API requests are currently available only via API and aren’t aggregated on usage reports.
+
+|Object Store	
+|Object Store API request: A request made to retrieve one or more messages from the Object Store APIs as further defined in the Object Store documentation. 
+|Each Object Store API request includes up to 100 KB of data. Object Store API requests over 100 KB count as multiple requests with no fractional units. Object Store API requests are currently available only via API and aren’t aggregated on usage reports.
+
+|DataGraph	
+|DataGraph orchestration: An API request made by Anypoint DataGraph to the source APIs to get data for the GraphQL API request made to Anypoint DataGraph. 
+|Orchestrations are not currently aggregated on usage reports.
+
+| Intelligent Document Processing (IDP)
+| Intelligent Document Processing (IDP) Document Pages: A single page processed by IDP.
+| IDP document actions might process documents that have more than one page, with each page counting separately. When RPA executes document actions, it also counts towards document pages and additionally consumes the corresponding RPA Bot Minutes, accounting for the time the RPA process runs.
+|===
+
+== API Experience Hub Usage
+
+API Experience Hub usage reports show this information in tables and cards:
+
+include::partial$api-eh-metrics.adoc[tag=table]
+
+include::partial$api-eh-metrics.adoc[tag=card]
+
+== API Governance Usage
+
+API Governance usage reports show this information in tables and cards:
+
+include::partial$api-governance-metrics.adoc[tag=table]
+
+Maximum Number of Governed APIs::
+Highest number of APIs governed in a single given hour during a month
+
+== API Manager Usage
+
+API Manager usage reports show this information in tables and cards:
+
+include::partial$apim-metrics.adoc[tag=table]
+
+Maximum Number of Managed APIs::
+API instances managed by API Manager
+
+== Flex Gateway Usage
+
+Flex Gateway usage reports show this information in tables and cards:
+
+include::partial$flex-gateway-metrics.adoc[tag=table]
+
+include::partial$flex-gateway-metrics.adoc[tag=card]
+
+== Intelligent Document Processing (IDP)
+
+IDP usage reports show this information in tables and cards:
+
+Business Group::
+Business group in which the document is processed
+
+Action ID::
+ID associated with the processed action
+
+Action Version::
+Version associated with the processed action
+
+Execution Type::
+Execution types associated with the processed action
+
+Processed Pages::
+Sum of pages processed
+
+
+== Mule Runtime Usage
+
+Mule Runtime usage reports show this information in tables and cards:
+
+include::partial$mule-runtime-metrics.adoc[tag=table]
+
+include::partial$mule-runtime-metrics.adoc[tag=card]
+
+MuleSoft captures usage data for Mule flows, Mule messages, and data throughput, but not all of this data is aggregated in usage reports. 
+
+For select customers in the US control plane, MuleSoft offers a pricing and packaging model for Anypoint Platform that allots a number of Mule flows, Mule messages, and data throughput (measured as network I/O bytes). Not all types of Mule flows and messages count toward the allotments in a package. 
+
+include::partial$mule-runtime-metrics.adoc[tag=flows,leveloffset=+2] 
+
+include::partial$mule-runtime-metrics.adoc[tag=billableFlows,leveloffset=+2] 
+
+include::partial$mule-runtime-metrics.adoc[tag=nonBillableFlows,leveloffset=+2] 
+
+include::partial$mule-runtime-metrics.adoc[tag=muleMessages,leveloffset=+2] 
+
+include::partial$mule-runtime-metrics.adoc[tag=dataThroughput,leveloffset=+2] 
+
+== See Also
+
+* xref:usage-reports.adoc[]
