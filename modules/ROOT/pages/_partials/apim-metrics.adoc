@@ -1,0 +1,29 @@
+// tag::intro[]
+
+API Manager usage reports track the maximum number of xref:api-manager::latest-overview-concept.adoc#api-instances[API instances] deployed in a given month per business group, environment, and runtime. 
+
+To calculate usage, MuleSoft tracks the number of managed API instances each business group, environment, and runtime uses per hour and identifies the maximum number of managed API instances used in a month for each business group, environment, and runtime. To calculate the total count for API Manager, MuleSoft adds the maximum number of managed API instances per month used across business groups, environments, and runtimes.
+
+// end::intro[]
+
+// tag::cards[]
+
+nothing for now - will be added when onboarded
+
+// end::cards[]
+
+// tag::table[]
+
+Business Group:: 
+Business group where the API is managed
+
+Environment::
+Environment type where the API is managed
+
+Runtime:: 
+Runtime type for the API
+
+# of APIs Managed::
+Sum of APIs managed in the specified business group, environment, and runtime
+
+// end::table[]

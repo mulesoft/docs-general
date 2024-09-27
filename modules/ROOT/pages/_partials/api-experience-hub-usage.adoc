@@ -1,0 +1,16 @@
+= API Experience Hub Usage Reports
+
+include::partial$api-eh-metrics.adoc[tag=intro]
+
+== Access API Experience Hub Usage Reports
+
+include::partial$usage-reports-tasks.adoc[tag=accessUsageReportsNew]
+
+=== Metrics Cards
+
+include::partial$api-eh-metrics.adoc[tag=cards]
+
+=== Metrics Table
+
+include::partial$api-eh-metrics.adoc[tag=table]
+
