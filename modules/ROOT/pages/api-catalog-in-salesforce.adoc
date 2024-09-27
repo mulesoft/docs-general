@@ -24,7 +24,7 @@ Work with an Anypoint Platform admin to ensure that all prerequisite configurati
 * API specs in MuleSoft Anypoint API Exchange that you want to import into API Catalog. See xref:exchange::index.adoc[]. 
 * A tag of `sf-api-catalog` in Anypoint Exchange on each API you want to import. See xref:exchange::to-describe-an-asset.adoc#add-and-remove-asset-tags[Add and Remove Asset Tags].
 * Instances of your APIs in API Manager that have implementation HTTPS URLs with either no SLA tiers or at least one auto-approval SLA tier. The implementation URLs appear as destination URLs in API Catalog. See xref:api-manager::add-api-instances.adoc[]. 
-* A *Consumer Endpoint* with an HTTPS URL in API Manager that is used to run the API.
+* A consumer endpoint with an HTTPS URL that specifies a proxy application’s address for consumers to use for sending requests. To configure the consumer endpoint for Mule Gateway API instances, see xref:api-manager::create-instance-task-mule.adoc[].
 * An Anypoint Platform and Salesforce org connection established and the API Catalog feature enabled in Anypoint Platform Access Management. See xref:access-management::connecting-salesforce-orgs.adoc[].
 
 [[view-and-search-apis]]
