@@ -130,7 +130,7 @@ NOTE: You can't change the connection name and destination URL because they're u
 [[get-started-with-flows]]
 == Get Started Using MuleSoft APIs as Actions in Flows
 
-After you sync your APIs in API Catalog and activate operations as actions, you can get started using them in a Flow Builder flow. One example is to create a flow for the scenario discussed at the beginning of this document, connecting Salesforce to a credit service API that has a managed API instance in Anypoint Platform. 
+After you sync your APIs in API Catalog and activate operations as actions, you can get started using them in a Flow Builder flow. An  example is to create a flow for the scenario discussed at the beginning of this document, connecting Salesforce to a credit service API that has a managed API instance in Anypoint Platform. 
 
 The credit service retrieves the customer's credit score, determines whether the customer qualifies for the credit service, and provides the payment terms. You want to extend the credit service to a Salesforce account so that you can view the payment terms in Salesforce.
 
