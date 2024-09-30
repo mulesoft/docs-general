@@ -30,6 +30,8 @@ Work with an Anypoint Platform admin to ensure that all prerequisite configurati
 
 // graphic from a slide that shows the overall task steps
 
+image::api-catalog-supertask.png[High level steps of using API Catalog in Salesforce]
+
 . xref:access-management::connecting-salesforce-orgs.adoc[Work with Anypoint Platform admins to establish a trusted connection] between Anypoint Platform and Salesforce and enable the API Catalog feature in Access Management.
 . <<sync-api-catalog, Sync eligible APIs>> into API Catalog in Salesforce.
 . <<view-and-search-apis, View and search APIs>> in the catalog for easier discovery. 
