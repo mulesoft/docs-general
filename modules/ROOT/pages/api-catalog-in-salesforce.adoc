@@ -28,7 +28,7 @@ Work with an Anypoint Platform admin to ensure that all prerequisite configurati
 * An Anypoint Platform and Salesforce org connection established and the API Catalog feature enabled in Anypoint Platform Access Management. See xref:access-management::connecting-salesforce-orgs.adoc[].
 
 [[get-started-with-apicat]]
-== Getting Started with API Catalog in Salesforce
+== Get Started with API Catalog in Salesforce
 
 // graphic from a slide that shows the overall task steps
 
