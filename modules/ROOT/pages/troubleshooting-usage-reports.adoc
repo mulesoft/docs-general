@@ -4,7 +4,7 @@ Because platform data availability depends on activity in your organization, in 
 
 == Unable to Access Usage Reports in Anypoint Platform
 
-Verify that you have have the Usage Viewer permission assigned at the root organization level. 
+Verify that you have the Usage Viewer permission assigned at the root organization level. 
 
 If you don't have the Usage Viewer permission assigned to you, contact the Anypoint Platform organization administrator. 
 
