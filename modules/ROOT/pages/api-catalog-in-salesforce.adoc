@@ -27,6 +27,18 @@ Work with an Anypoint Platform admin to ensure that all prerequisite configurati
 * A consumer endpoint for each instance with an HTTPS URL that specifies a proxy application's address for consumers to use for sending requests. To configure a consumer endpoint for Mule Gateway API instances, see xref:api-manager::create-instance-task-mule.adoc[].
 * An Anypoint Platform and Salesforce org connection established and the API Catalog feature enabled in Anypoint Platform Access Management. See xref:access-management::connecting-salesforce-orgs.adoc[].
 
+[[get-started-with-apicat]]
+== Getting Started with API Catalog in Salesforce
+
+// graphic from a slide that shows the overall task steps
+
+. xref:access-management::connecting-salesforce-orgs.adoc[Work with Anypoint Platform admins to establish a trusted connection] between Anypoint Platform and Salesforce and enable the API Catalog feature in Access Management.
+. <<sync-api-catalog, Sync eligible APIs>> into API Catalog.
+. <<view-and-search-apis, View and search APIs>> in the catalog for easier discovery. 
+. <<activate-actions, Activate actions for specific API operations>>, which autogenerates secure connection configurations for each action.
+. <<enable-user-permissions, Assign user permissions>> for each connection's permission set to ensure that Salesforce users have the correct access.
+. <<get-started-with-flows, Start using the actions>> in a Flow Builder flow.
+
 [[view-and-search-apis]]
 == View and Search APIs in API Catalog
 
@@ -94,10 +106,14 @@ The Create Connection process creates the required objects in Salesforce automat
 
 The UI shows the number of activated actions on each API's page.
 
-[[enable-permission-sets]]
+[[enable-user-permissions]]
 == Enable User Permissions in Salesforce
 
-After you create the connection, give specific Salesforce users access to the activated actions so that they can use them in their Salesforce automations. To select and enable the permission set for each connection for the users, see https://help.salesforce.com/s/articleView?id=sf.perm_sets_app_perms.htm&language=en_US&type=5[Enable User Permissions in Permission Sets].
+After you create the connection, give specific Salesforce users access to the activated actions so that they can use them in their Salesforce automations. 
+
+Click the permission sets link on a connection's details page to go directly to the permission set for that connection.
+
+For details on setting user permissions in permission sets, see https://help.salesforce.com/s/articleView?id=sf.perm_sets_app_perms.htm&language=en_US&type=5[Enable User Permissions in Permission Sets].
 
 The actions are now available for those users to select and use in Flow Builder automations. 
 
