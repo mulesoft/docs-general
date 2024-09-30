@@ -13,8 +13,6 @@ Consider a scenario where you want to connect Salesforce to a credit service API
 
 You can bring the credit service API into API Catalog in Salesforce, select operations and activate them as actions, and then use them in Flow Builder automations.
 
-<<before-you-begin, Continue to get started with API Catalog in Salesforce>> or for more information about the example scenario, see <<get-started-with-flows>>.
-
 [[before-you-begin]]
 == Before You Begin
 
