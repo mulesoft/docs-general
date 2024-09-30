@@ -31,7 +31,7 @@ Work with an Anypoint Platform admin to ensure that all prerequisite configurati
 // graphic from a slide that shows the overall task steps
 
 . xref:access-management::connecting-salesforce-orgs.adoc[Work with Anypoint Platform admins to establish a trusted connection] between Anypoint Platform and Salesforce and enable the API Catalog feature in Access Management.
-. <<sync-api-catalog, Sync eligible APIs>> into API Catalog.
+. <<sync-api-catalog, Sync eligible APIs>> into API Catalog in Salesforce.
 . <<view-and-search-apis, View and search APIs>> in the catalog for easier discovery. 
 . <<activate-actions, Activate actions for specific API operations>>, which autogenerates secure connection configurations for each action.
 . <<enable-user-permissions, Assign user permissions>> for each connection's permission set to ensure that Salesforce users have the correct access.
