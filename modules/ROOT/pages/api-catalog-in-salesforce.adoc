@@ -39,13 +39,6 @@ image::api-catalog-supertask.png[High level steps of using API Catalog in Salesf
 . <<enable-user-permissions, Assign user permissions>> for each connection's permission set to ensure that Salesforce users have the correct access.
 . <<get-started-with-flows, Start using the actions>> in a Flow Builder flow.
 
-[[view-and-search-apis]]
-== View and Search APIs in API Catalog
-
-After you populate API Catalog, you can view and search the list to find APIs you want to use in Salesforce. 
-
-image::api-catalog-in-sf.png[API Catalog in Salesforce with a list of APIs]
-
 [[sync-api-catalog]]
 == Sync API Catalog
 
@@ -73,6 +66,13 @@ To refresh the API Catalog page with the latest synced API information:
  
 . From Setup, in the Quick Find box, enter API Catalog and select it.
 . Click the refresh icon.
+
+[[view-and-search-apis]]
+== View and Search APIs in API Catalog
+
+After you populate API Catalog, you can view and search the list to find APIs you want to use in Salesforce. 
+
+image::api-catalog-in-sf.png[API Catalog in Salesforce with a list of APIs]
 
 [[activate-actions]]
 == Select Operations and Create Connections for Actions
