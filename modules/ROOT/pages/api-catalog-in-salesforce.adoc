@@ -75,9 +75,9 @@ After you populate API Catalog, you can view and search the list to find APIs yo
 image::api-catalog-in-sf.png[API Catalog in Salesforce with a list of APIs]
 
 [[activate-actions]]
-== Select Operations and Create Connections for Actions
+== Activate Actions
 
-When you select an API in your API Catalog API list, you can activate actions to use in your automations, such as those in Flow Builder. The activate actions process begins the create connection process that automatically generates the authentication configuration objects for the APIs.
+When you select an API in your API Catalog API list, you can activate actions for API operations to use in your automations, such as those in Flow Builder. The activate actions process begins the create connection process that automatically generates the authentication configuration objects for the APIs.
  
 To activate actions:
 
@@ -85,14 +85,19 @@ To activate actions:
 +
 If you have an active connection to an Anypoint Platform organization, API Catalog shows the list of APIs imported from Anypoint Exchange. If you don't see any APIs, see <<sync-api-catalog>>.
 . Select the API you want to activate actions for.
-. View resource names for operations that are generated from the automatically-imported API schema. 
-. Expand the rows to view operation names and descriptions. 
++
+.. View resource names for operations that are generated from the automatically-imported API schema. 
+.. Expand the rows to view operation names and descriptions. 
++
 . Click *Activate Actions*.
 . Select operations to activate as actions and then click *Next*.
 . In the Create Connection page, create a connection to authorize the use of activated actions in Salesforce for a destination URL.
 +
-The connection name defaults to the API name and version. Overtype the name to customize it.
-Enter a description. 
+The connection name defaults to the API name and version. 
++
+.. Overtype the name to customize it.
+.. Enter a description.
++ 
 . Select a destination URL to use as the managed named credential for this connection to Salesforce. API Catalog lists only active destination URLs, which are managed in Anypoint API Manager. 
 . Click *Done*.
 +
@@ -104,16 +109,16 @@ The Create Connection process creates the required objects in Salesforce automat
 * Invocable Actions
 * Permission Sets	
 
-The UI shows the number of activated actions on each API's page.
+The UI prompts you to allow access to actions and gives a link to the connection's permission set in Salesforce Setup.
 
 [[enable-user-permissions]]
-== Enable User Permissions in Salesforce
+== Assign User Permissions for Connections
 
 After you create the connection, give specific Salesforce users access to the activated actions so that they can use them in their Salesforce automations. 
 
-Click the permission sets link on a connection's details page to go directly to the permission set for that connection.
+Click the permission sets link on a connection's details page to go to the permission set for that connection.
 
-For details on setting user permissions in permission sets, see https://help.salesforce.com/s/articleView?id=sf.perm_sets_app_perms.htm&language=en_US&type=5[Enable User Permissions in Permission Sets].
+For details on assigning user permissions in permission sets for connections, see https://help.salesforce.com/s/articleView?id=sf.perm_sets_manage_assignments.htm&type=5[Manage Permission Set Assignments].
 
 The actions are now available for those users to select and use in Flow Builder automations. 
 
@@ -169,7 +174,7 @@ When the flow runs, the output contains the credit decision and, if applicable, 
 == See Also
 
 * xref:access-management::connecting-salesforce-orgs.adoc[] in the MuleSoft documentation
-* https://help.salesforce.com/s/articleView?id=sf.perm_sets_app_perms.htm&type=5[Enable User Permissions in Permission Sets]
+* https://help.salesforce.com/s/articleView?id=sf.perm_sets_manage_assignments.htm&type=5[Manage Permission Set Assignments]
 * https://help.salesforce.com/s/articleView?id=sf.enhanced_external_services_example_create_flow_end_to_end.htm&type=5[End-to-end Example with Flow]
 * https://help.salesforce.com/s/articleView?id=sf.flow_build.htm&type=5[Build a Flow]
 * https://help.salesforce.com/s/articleView?id=sf.external_services_apex_registrations.htm&type=5[External Service Registrations in Apex] 
