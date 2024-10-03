@@ -24,6 +24,8 @@ Work with an Anypoint Platform admin to ensure that all prerequisite configurati
 * Instances of your APIs in API Manager that have implementation HTTPS URLs with either no SLA tiers or at least one auto-approval SLA tier. The implementation URLs appear as destination URLs in API Catalog. See xref:api-manager::add-api-instances.adoc[]. 
 * A consumer endpoint for each instance with an HTTPS URL that specifies a proxy application's address for consumers to use for sending requests. To configure a consumer endpoint for Mule Gateway API instances, see xref:api-manager::create-instance-task-mule.adoc[].
 * An Anypoint Platform and Salesforce org connection established and the API Catalog feature enabled in Anypoint Platform Access Management. See xref:access-management::connecting-salesforce-orgs.adoc[].
++ 
+TIP: Salesforce admins get the connection information the Anypoint Platform admin needs, such as the Salesforce tenant key of the Salesforce org, and enable MuleSoft features in their Salesforce org Setup in *MuleSoft | Anypoint Platform Setup*.
 
 [[get-started-with-apicat]]
 == Get Started with API Catalog in Salesforce
