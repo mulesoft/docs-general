@@ -140,7 +140,7 @@ To manage activated actions and connections, you can:
 
 API Catalog shows the versions of an API that meet the criteria for syncing with API Catalog. The UI shows information for the latest version by default.
 
-To select the API version in Connections:
+To view Connections for an API version:
 
 . From Setup, in the Quick Find box, enter API Catalog and select it.
 . Select an API.
