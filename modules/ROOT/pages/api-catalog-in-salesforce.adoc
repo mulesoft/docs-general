@@ -138,7 +138,7 @@ To modify the operation selections for activated actions:
 
 . From Setup, in the Quick Find box, enter API Catalog and select it.
 . Select the API to modify the operation selections for.
-. In the Operations tab, click *Edit*.
+. In the Connections tab, click *Edit*.
 . Select or deselect operations.
  
 === Edit Connection Descriptions
@@ -148,6 +148,7 @@ To modify a connection description:
 . From Setup, in the Quick Find box, enter API Catalog and select it.
 . Select the API to modify the connection description for.
 . In the Connections tab, click Edit.
+. Click *Next* on the Operations page. 
 . Update the connection description.
 
 NOTE: You can't change the connection name and destination URL because they're used to name and later identify auto-generated configurations.
