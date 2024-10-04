@@ -80,6 +80,8 @@ image::api-catalog-in-sf.png[API Catalog in Salesforce with a list of APIs]
 == Activate Actions
 
 When you select an API in your API Catalog API list, you can activate actions for API operations to use in your automations, such as those in Flow Builder. The activate actions process begins the create connection process that automatically generates the authentication configuration objects for the APIs.
+
+You can activate actions only for the latest API version. If earlier versions already have activated actions, you can view their operations selections and connections. See <<view-api-version-info>>.
  
 To activate actions:
 
@@ -128,9 +130,21 @@ The actions are now available for those users to select and use in Flow Builder 
 
 To manage activated actions and connections, you can:
 
+* View operation selections and connection information for all versions of your APIs that have them. 
 * Modify operation selections.
 * Modify connection descriptions.
 * Delete connections.
+
+[[view-api-version-info]]
+=== View Connections for an API Version
+
+API Catalog shows the versions of an API that meet the criteria for syncing with API Catalog. The UI shows information for the latest version by default.
+
+To select the API version in Connections:
+
+. From Setup, in the Quick Find box, enter API Catalog and select it.
+. Select an API.
+. Switch between versions in the *API Version* menu to see the operations and connections associated with that version. 
 
 === Edit Operation Selections
 
