@@ -136,7 +136,7 @@ To manage activated actions and connections, you can:
 * Delete connections.
 
 [[view-api-version-info]]
-=== View Connections for an API Version
+=== View Details for an API Version
 
 API Catalog shows the versions of an API that meet the criteria for syncing with API Catalog. The UI shows information for the latest version by default.
 
