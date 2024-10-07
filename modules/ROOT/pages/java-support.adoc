@@ -6,7 +6,7 @@ Many third-party vendors are discontinuing support for Java 8, which impacts the
 
 Even though this change has no immediate impact to Mule applications that are running on currently supported Mule versions, or on applications that are upgraded to Mule runtime 4.6, it is best to start your upgrade planning now. Java 17 upgrade planning includes evaluating integration apps, connectors (Anypoint connectors and custom connectors), Mule Gateway policies, and API proxies, as all of these components rely on Java.
 
-Existing Java 8 apps will continue to run on Java 8 until February 2025. 
+Existing Java 8 apps will continue to run on Java 8 until the end of extended support for the Mule version they are running on is reached.  
 
 
 [[mule-runtime-java-support]]
