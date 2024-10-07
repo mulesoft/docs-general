@@ -1,4 +1,5 @@
 = Java Support
+:page-notice-banner-message: Standard support for Java 8 and 11 ends with the Mule runtime 4.9 release in February 2025.  
 
 MuleSoft is adopting Java's long-term-support (LTS) release cadence, beginning with Mule runtime 4.6, which adds support for Java 17 LTS. Upgrading to Java 17 provides many benefits, including improved performance, language-level enhancement, increased security, and extended APIs and libraries.
 
