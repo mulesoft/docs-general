@@ -54,6 +54,10 @@ This documentation is for reference purposes only and will not be updated.
   xref:design-center::index.adoc[Flow Designer Archive]
 
 | Flex Gateway Doc Archives |
+  xref:1.4@gateway::index.adoc[v1.4 Archive] +
+  xref:1.3@gateway::index.adoc[v1.3 Archive] +
+  xref:1.2@gateway::index.adoc[v1.2 Archive] +
+  xref:1.1@gateway::index.adoc[v1.1 Archive] +
   xref:1.0@gateway::index.adoc[v1.0 Archive]
 
 | Healthcare Toolkit Doc Archives |
@@ -88,6 +92,11 @@ This documentation is for reference purposes only and will not be updated.
   xref:1.0@munit::index.adoc[v1.0 Archive]
 
 | Runtime Fabric Doc Archives |
+  xref:1.12@runtime-fabric::index.adoc[v1.12 Archive] +
+  xref:1.11@runtime-fabric::index.adoc[v1.11 Archive] +
+  xref:1.10@runtime-fabric::index.adoc[v1.10 Archive] +
+  xref:1.9@runtime-fabric::index.adoc[v1.9 Archive] +
+  xref:1.8@runtime-fabric::index.adoc[v1.8 Archive] +
   xref:1.7@runtime-fabric::index.adoc[v1.7 Archive] +
   xref:1.6@runtime-fabric::index.adoc[v1.6 Archive] +
   xref:1.5@runtime-fabric::index.adoc[v1.5 Archive] +
