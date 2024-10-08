@@ -24,7 +24,7 @@ For more information, see xref:pricing-metrics.adoc#runtime-manager-metrics[Runt
 For more information, see xref:pricing-metrics.adoc#mq-metrics[Anypoint MQ Metrics].
 * xref:object-store::osv2-usage.adoc#access-object-store-effective-api-request-usage-charts[Object Store v2] usage appears in Access Management.
 +
-For more information, see xref:pricing-metrics.adoc#object-store-metrics[Object Store v2 Metrics].
+For more information, see xref:usage-metrics.adoc#object-store-metrics[Object Store v2 Metrics].
 
 [[products-usage-reports]]
 == Products Available in Usage Reports
@@ -42,6 +42,7 @@ The following products have both daily and monthly usage reports:
 * Flex Gateway
 * Mule Runtime
 * Intelligent Document Processing (IDP)
+* Runtime Fabric
 
 == Supported Mule Runtime Versions
 

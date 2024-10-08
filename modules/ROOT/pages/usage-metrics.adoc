@@ -129,6 +129,7 @@ include::partial$mule-runtime-metrics.adoc[tag=muleMessages,leveloffset=+2]
 
 include::partial$mule-runtime-metrics.adoc[tag=dataThroughput,leveloffset=+2] 
 
+
 == See Also
 
 * xref:usage-reports.adoc[]
