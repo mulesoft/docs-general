@@ -1,53 +1,35 @@
-= Usage and Pricing Metrics
+// tag::intro[]
+Mule runtime reports track your use of Mule messages, Mule flows, and data throughput. 
 
-MuleSoft captures usage data for Mule flows, Mule messages, and data throughput, but not all of this data is aggregated in usage reports. 
+To track Mule message usage, the runtime report counts the number of times a Mule event source triggers a Mule message. You can view the number of these messages in a given day or month by business group, environment, and application. 
 
-For select customers in the US control plane, MuleSoft offers a pricing and packaging model for Anypoint Platform that allots a number of Mule flows, Mule messages, and data throughput (measured as network I/O bytes). Not all types of Mule flows and messages count toward the allotments in a package. 
+To calculate usage, MuleSoft meters and aggregates the number of messages daily and monthly. After a message is triggered, the report doesn't track changes to the message because the message is processed within the application’s flows.
 
-== Metrics Collected in Anypoint Platform
+A Mule flow is a sequence of logical operations configured within the XML `<flow/>` element of a Mule application. The runtime report tracks the Mule flows within a deployed and running Mule application that contains a Mule event source or APIkit route requests. This report doesn't track other Mule flows. You can view the maximum number of Mule flows in a given day or month in the usage report. 
 
-Anypoint Platform captures usage metrics across products, but not all metrics are billable or reflected in usage reports.
+To calculate usage, MuleSoft tracks the number of Mule flows for all business groups, environments, and applications. The maximum number of Mule flows within a day or month is identified based on the peak hour across the day or month. For the detailed breakdown, MuleSoft shows the peak hour usage per business group, environment, and application. 
 
-[cols=3*]
-|===
-|Product |Metric Description |Usage Details
+Data throughput is the network I/O bytes produced by the infrastructure that runs the Mule runtime engine running the Mule application. 
 
-.3+|Mule Runtime	
-|_Mule flow_: A flow within a deployed and running Mule app that contains a Mule event source or route APIKit request. 
-|Flows are aggregated using a Max Concurrent model. The usage for a month is the highest number of flows that exist in a single given hour during a month.
+To calculate usage, MuleSoft tracks GB usage and aggregates the total daily and monthly GBs.
+// end::intro[]
 
-|_Mule message_: The container of the core information processed by the runtime. 
-|A Mule message counts as a single unit when an event source triggers it. Messages are aggregated using a sum of all messages sent during a month.
-|_Data throughput_: The total amount of data transferred in and out of the infrastructure that runs Mule where the Mule app is deployed. 
-|Data throughput counts when the deployed application transfers data to execute its business logic, including but not limited to internal operational network traffic for monitoring, logs, and health checks. Data throughput is aggregated as a sum of all bytes during a month. 
+== Requirements for Mule Runtime to Report Usage
 
-|API Manager	
-|_API instance under management_: API instances that are managed by API Manager after they are created using add, promote, or import options. 
-|API instances remain under management until they are deleted. Instances of API Manager are aggregated using a Max Concurrent model. The usage for a month is the highest number of APIs Managed in a single given hour during a month.
+// tag::supportedRuntimes[]
 
-|API Governance	
-|_API under Governance_: APIs that are identified by the selection criteria of at least one of the governance profiles. 
-|If an API is governed, all versions of that API are considered one governed API. Instances of API Governance are aggregated using a Max Concurrent model. The usage for a month is the highest number of APIs governed in a single given hour during a month.
+include::partial$usage-runtime.adoc[]
 
-|Flex Gateway	
-|_Flex Gateway API call_: Any access request received by Anypoint Flex Gateway regardless of whether the response to the request is successful or not. 
-|Flex Gateway requests are aggregated as a sum of all requests during a month.
+You must redeploy your apps with a supported version, either manually or during the monthly patching cycle. The monthly patching cycle is applicable only for CloudHub and CloudHub 2.0 applications. 
 
-|Composer	
-|_Composer task_: Any action executed on a Composer connector, including but not limited to read, create, update, and delete. 
-|Composer tasks are aggregated as a sum of all actions during a month.
+You can xref:cloudhub-2::ch2-update-apps.adoc#roll-back-to-a-previous-successful-configuration[roll back] to a previous successful application configuration. However, if an app is using a Mule version not supported by usage reports, you must choose a compliant Mule version before deploying changes. After deployment, a new configuration with the previously chosen settings and a supported runtime is created.
 
-|RPA	
-|_Robotic Process Automation (“RPA”) bot minutes_: The number of minutes running process automations across all bot sessions. 
-|A single bot may run multiple parallel sessions, with RPA bot minutes counting for each parallel session. Multiple bots may be configured to run the same process, with RPA bot minutes counting for each of these separate bot sessions. Test runs or process runs in the test phase are also counted towards RPA bot minutes.
+// end::supportedRuntimes[]
 
-|Message Queue	
-|_Anypoint MQ API request_: A request made to retrieve one or more messages from the Anypoint MQ APIs. 
-|Each Anypoint MQ API request includes up to 100 kilobytes of data. An Anypoint MQ API request over 100 kilobytes counts as multiple requests with no fractional units. Anypoint MQ API requests are calculated in the aggregate across all environments (including production, pre-production, sandbox, and design). MQ API requests are currently available via API and are not currently aggregated on usage reports.
+// tag::cards[]
 
-|Object Store	
-|_Object Store API request_: A request made to retrieve one or more messages from the Object Store APIs as further defined in the Object Store Documentation. 
-|Each Object Store API Request includes up to 100 kilobytes of data. Object Store API Requests over 100 kilobytes count as multiple requests with no fractional units. OS API requests are currently available via API and are not currently aggregated on usage reports.
+Total Data Throughput::
+The sum of data in gigabytes (GB) transmitted across all Mule apps and business groups during the selected time period. For more information about how this metric is billed, see xref:usage-metrics.adoc#data-throughput[data throughput].  
 
 |Data Graph	
 |_DataGraph orchestration_: An API request made by Anypoint DataGraph to the source APIs to get data for the GraphQL API request made to Anypoint DataGraph. 
@@ -58,13 +40,46 @@ Anypoint Platform captures usage metrics across products, but not all metrics ar
 |IDP document actions might process documents that have more than one page, with each page counting separately. When RPA executes document actions, it also counts towards document pages and additionally consumes the corresponding RPA Bot Minutes, accounting for the time the RPA process runs. 
 |===
 
-[[mule-flows]]
+Max Flows::
+The maximum number of concurrent flows across all Mule apps and business groups during the selected time period. For more information about how this metric is billed, see xref:usage-metrics.adoc#mule-flows[Mule flows].  
+
+// end::cards[]
+
+// tag::table[]
+Business Group:: 
+The business group in which a Mule app is deployed.
+
+Environment:: 
+The environment in which a Mule app is deployed.
+
+Application::
+The name of the Mule application.
+
+Deployment:: 
+The runtime plane to which the Mule app is deployed. CloudHub (abbreviated as CH), CloudHub 2.0 (abbreviated as CH2), and Runtime Fabric (abbreviated as RTF) are supported. 
+
+Flows:: 
+The sum of flows in the Mule app. This number is calculated by multiplying flows by the number of workers (CloudHub) or replicas (CloudHub 2.0). For more information about how this metric is billed, see xref:usage-metrics.adoc#mule-flows[Mule flows].
+
+Messages::
+The sum of inbound and outbound Mule messages in the Mule app. For more information about how this metric is billed, see xref:usage-metrics.adoc#mule-messages[Mule messages].  
+
+Data Throughput::
+The sum of inbound and outbound data in gigabytes (GB) transmitted by the Mule app. For more information about how this metric is billed, see xref:usage-metrics.adoc#data-throughput[data throughput].  
+
+Number of Workers::
+The sum of all workers (CloudHub) or replicas (CloudHub 2.0) of a Mule app. Apps that don’t have workers or replicas show a value of `N/A` in this column.
+// end::table[]
+
+// tag::flows[]
 == Mule Flows
 
 A _Mule flow_ is a sequence of logical operations configured in XML by using the `<flow>` element. A Mule app can consist of a single Mule flow, or it can break up processing into discrete xref:mule-runtime::about-flows.adoc[Mule flows and subflows] that you add to the app and connect together. Mule apps in production environments typically use multiple Mule flows and subflows to divide the app into functional modules or for error-handling purposes. For example, one Mule flow might receive a record and transform data into a given format that another flow processes. 
 
 In a usage report, flow counts are calculated by multiplying the number of flows in an app by the number of workers (CloudHub) or replicas (Runtime Fabric and CloudHub 2.0).
+// end::flows[]
 
+// tag::billableFlows[]
 === Mule Flow Scenarios that Count Towards Your Anypoint Platform Package Allotment
 
 The following Mule flows count towards your allotment:
@@ -159,10 +174,13 @@ This flow routes APIkit requests and handles the GET request in the `/reservatio
 
 // image
 
-[[non-billable-flows]]
-=== Mule Flows that Do Not Count Against Your Anypoint Platform Package Allotment 
+// end::billableFlows[]
 
-Mule Flows that do not have an event source and are not used for the routing of APIkit requests are not charged against your Anypoint Platform package allotment. These are Mule flows primarily used to modularize code.
+// tag::nonBillableFlows[]
+[[non-billable-flows]]
+=== Mule Flows That Don't Count Against Your Anypoint Platform Package Allotment 
+
+Mule flows that don't have an event source and aren't used for routing APIkit requests aren’t charged against your Anypoint Platform package allotment. These Mule flows are primarily used to modularize code.
 
 Example:
 
@@ -173,7 +191,9 @@ Example:
         <logger level="INFO" message="#[output json --- attributes.queryParams]" />
 </flow>
 ----
+// end::nonBillableFlows[]
 
+// tag::muleMessages[]
 [[mule-messages]]
 == Mule Messages
 
@@ -188,55 +208,12 @@ When an event source within a flow of a Mule application is triggered, the _even
 
 // add the three missing examples
 
+// end::muleMessages[]
+
+// tag::dataThroughput[]
 [[data-throughput]]
 == Data Throughput
 
 _Data Throughput_ is all of the network I/O bytes produced by the infrastructure that starts and runs the Mule Runtime server that runs a Mule application. This includes the data that the application produces to execute its business logic, as well as internal operational network traffic such as logs, health-checks, and monitoring traffic. For example, data throughput includes inserting a record into a database and the network traffic associated with the infrastructure of the app, such as log forwarding, control plane connection, and monitoring metrics transfer. 
 
-== View Usage Data in Access Management
-
-Runtime Manager, Anypoint MQ, and Object Store v2 store some usage data, such as vCore allocations and API requests, in Access Management.
-
-[[runtime-manager-metrics]]
-=== Access Runtime Manager Metrics
-
-Runtime Manager metrics include:
-
-* Production vCores
-* Design vCores
-* Sandbox vCores
-* VPCs
-* Network connections
-* Static IPs
-* Load balancers
-
-To access Runtime Manager metrics:
-
-include::access-management::partial$include-nav-steps-org-admin.adoc[]
-
-. In the *Subscriptions* section, click *Runtime Manager*.
-
-[[mq-metrics]]
-=== Access Anypoint MQ Metrics
-
-xref:mq::mq-usage.adoc#access-anypoint-mq-usage[Anypoint MQ metrics] include:
-
-* Message units
-* API requests
-
-To access Anypoint MQ metrics:
-
-include::access-management::partial$include-nav-steps-org-admin.adoc[]
-
-. In the *Subscriptions* section, click *MQ*.
-
-[[object-store-metrics]]
-=== Object Store v2 Metrics
-
-xref:object-store::osv2-usage.adoc#access-object-store-effective-api-request-usage-charts[Object Store v2 metrics] in Access Management include API requests.
-
-To access Object Store v2 metrics:
-
-include::access-management::partial$include-nav-steps-org-admin.adoc[]
-
-. In the *Subscriptions* section, click *Object Store*.
+// end::dataThroughput[]

@@ -1,0 +1,15 @@
+= Anypoint API Governance Usage Reports
+
+include::partial$api-eh-metrics.adoc[tag=apiGdescription]
+
+Usage reports show Anypoint API Governance usage metrics on a daily and monthly basis.
+
+== Access Anypoint API Governance Usage Reports
+
+include::partial$usage-reports-tasks.adoc[tag=accessUsageReportsNew]
+
+== Anypoint API Governance Usage Metrics
+
+An Anypoint API governance usage report shows the following information:
+
+include::partial$api-governance-metrics.adoc[tag=table]

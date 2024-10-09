@@ -1,23 +1,21 @@
-= Viewing Usage Reports
+= Usage Reports
 :page-aliases: gateway::flex-view-usage-reports.adoc
 
-Usage reports provide insights into your monthly usage of Anypoint Platform products. 
+Usage reports provide comprehensive monthly and daily summaries that give you valuable insights into your resource use across Anypoint Platform products. By correlating your usage with billing cycles, you can gain insights into the factors influencing your costs, which enables you to proactively manage your budget and make informed decisions to optimize your resource allocation.
 
-When you use an Anypoint Platform product, MuleSoft meters your usage and aggregates the records on a monthly basis. Usage reports are updated on the third day of each month and are split by product. All reports are calculated using the UTC time standard.
+When you use an Anypoint Platform product that is metered, MuleSoft measures your usage and aggregates the records on a daily and monthly basis. Monthly and daily usage reports have a three-day latency, meaning that today’s usage is available in three days. All reports are calculated using the UTC time standard. For example, a daily usage is aggregated from 00:00 to 00:00 UTC. 
 
-Use the usage report to compare your actual usage against your existing contract. The report is not for billing purposes. 
+Daily usage retention is three months and monthly usage retention is up to five years.
 
-* xref:pricing.adoc[]
-* xref:pricing-metrics.adoc[]
+Organizations that have a usage-based pricing model can compare actual usage from the report against the existing contract. However, usage reports are not for billing purposes. For more information about usage metrics and pricing, read xref:pricing.adoc[] and xref:usage-metrics.adoc[]
 
 Some usage data, such as monthly statements and vCore allocation, appears in different areas of Anypoint Platform or Salesforce products. 
 
-* Monthly charges and resource usage appear in your monthly bills.
+* Monthly statements for Mule runtime, including Mule flows, Mule messages, and data throughput are sent to the primary billing contact. 
++
+xref:rpa-home::ms-automation-credits-usage-types.adoc[Automation credits] for RPA, (Composer, Intelligent Document Processing (IDP), and API Experience Hub) are sent to the primary billing contact.
 +
 For more information, see https://help.salesforce.com/s/articleView?id=000390885&type=1[Monthly Account Summaries] documentation in Salesforce.
-* Monthly statements for Mule Runtime (including Mule flows, Mule messages, and data throughput) and xref:rpa-home::ms-automation-credits-usage-types.adoc[Automation Credits] are sent to the primary billing contract.
-+
-See https://help.salesforce.com/s/articleView?id=000390885&type=1[FAQ] documentation for details.
 * Runtime Manager vCore allocation information and other metrics appear in Access Management.
 +
 For more information, see xref:pricing-metrics.adoc#runtime-manager-metrics[Runtime Manager Metrics].
@@ -28,119 +26,49 @@ For more information, see xref:pricing-metrics.adoc#mq-metrics[Anypoint MQ Metri
 +
 For more information, see xref:pricing-metrics.adoc#object-store-metrics[Object Store v2 Metrics].
 
-== Access Usage Reports
+[[products-usage-reports]]
+== Products Available in Usage Reports
 
-Usage reports are available only when accessing the root organization and do not appear at the business group level.
+When you navigate to the *Usage Reports* page in Anypoint Platform, the selection of products you see varies based on the view you are using. Products that have only monthly usage reports are viewable only in the legacy usage reports view, while products that have both daily and monthly usage reports are available only in the new usage reports view. To switch between views, click the *Switch View* button in the banner. 
+
+The following products have only monthly usage reports:
+
+* API Manager
+
+The following products have both daily and monthly usage reports:
+
+* API Experience Hub
+* API Governance
+* Flex Gateway
+* Mule Runtime
+* Intelligent Document Processing (IDP)
+
+== Supported Mule Runtime Versions
+
+include::partial$mule-runtime-metrics.adoc[tag=supportedRuntimes]
+
+include::partial$mule-runtime-metrics.adoc[tag=rtfApps] 
+
+== Before You Begin
+
+Usage reports are available only when you're signed in to the root organization and don't appear at the business group level.
 
 To access usage reports, you need the xref:access-management::permissions-by-product.adoc#usage[Usage Viewer permission]. If you don't have this permission, contact your organization administrator to request access. The Usage Viewer permission must be xref:access-management::managing-permissions.adoc[applied at the root organization level] rather than the business group level. 
 
-. Log in to Anypoint Platform using an account that has the Usage Viewer permission over your root organization.
-. Click the circle with your organization name's initial in it and ensure you are at the root level of your organization and not in a business group.
-. From the Anypoint Platform navigation bar, click your username icon.
-. Click *Usage*.
-. To see reports for a particular month, click the *Monthly Usage Reports* drop-down list.
+== Access Usage Reports
 
-== Usage Report Availability
+include::partial$usage-reports-tasks.adoc[tag=accessUsageReports]
 
-Usage reports are available for the following Anypoint Platform products:
+== Export Usage Reports to a CSV File
 
-* <<flex-gateway>>
-* <<api-govern>>
-* <<api-manager>>
-* <<mule-runtime>>
+You can export both daily and monthly usage reports to CSV files. These metrics match the data available in usage reports.
 
+. Navigate to the usage report to download. 
+. Click *Export as CSV*.
 
-[[flex-gateway]]
-=== Flex Gateway
-
-Flex Gateway usage reports track monthly API calls. You can view monthly API calls by business group, environment, and registration.
-
-To calculate usage, MuleSoft meters the hourly API calls you make and aggregates the number of API calls on a monthly basis. 
- 
-[[api-govern]]
-=== API Governance
-
-API Governance usage reports track the maximum number of xref:api-governance::index.adoc#governed-apis[APIs governed] in a given month per business group. 
-
-To calculate usage, MuleSoft tracks the number of governed APIs each business group uses per hour and then identifies the maximum number of APIs governed in a month for each business group. To calculate the total count for API Governance, MuleSoft adds the maximum number of governed APIs per month used across all business groups. 
-
-Note that the number of governed APIs (both conformant and non-conformant) shown in the API governance console represents a current snapshot of your usage per business group, while the usage report shows the maximum number of APIs you used in a given month per business group.
-
-[[api-manager]]
-=== API Manager
-
-API Manager usage reports track the maximum number of xref:api-manager::latest-overview-concept.adoc#api-instances[API instances] deployed in a given month per business group, environment, and runtime. 
-
-To calculate usage, MuleSoft tracks the number of managed API instances each business group, environment, and runtime uses per hour and identifies the maximum number of managed API instances used in a month for each business group, environment, and runtime. To calculate the total count for API Manager, MuleSoft adds the maximum number of managed API instances per month used across business groups, environments, and runtimes.
-
-[[mule-runtime]]
-=== Mule Runtime
-
-Mule runtime reports track your use of Mule messages, Mule flows, and data throughput. 
-
-To track Mule message usage, the runtime report counts the number of times a Mule event source triggers a Mule message. You can view the number of these messages in a given month by business group, environment, and application. 
-
-To calculate usage, MuleSoft meters and aggregates the number of messages on a monthly basis. After a message is triggered, the report does not track changes to the message because the message is processed within the application’s flows.
-
-A Mule flow is a sequence of logical operations configured within the XML `<flow/>` element of a Mule application. The runtime report tracks the Mule flows within a deployed and running Mule application that contains a Mule event source or APIkit route requests. This report does not track other Mule flows. You can view the maximum number of Mule flows in a given month in the usage report. 
-
-To calculate usage, MuleSoft tracks the number of Mule flows for all business groups, environments, and applications. The maximum number of Mule flows within a month is identified based on the peak hour across the month. For the detailed breakdown, MuleSoft shows the peak hour usage per business group, environment, and application. 
-
-Data throughput is all the network I/O bytes produced by the infrastructure that starts and runs the Mule runtime engine that runs a Mule application. You can view the total amount of GB usage in a given month by business group, environment, and application. 
-
-To calculate usage, MuleSoft tracks GB usage and aggregates the total GBs on a monthly basis.
-
-==== Supported Mule Runtime Versions
-
-To view usage reports for Mule runtime, all of your relevant applications (in production and sandbox) must use the following Mule versions:
-
-[cols="2*"]
-|===
-|Deployment Type |Version Requirements
-
-|CloudHub 2.0
-|The latest date-patch versions for 4.3, 4.4, and 4.5
-
-|CloudHub 1.0
-|The latest date-patch versions for 3.9, 4.2, 4.3, 4.4, and 4.5
-
-|Runtime Fabric
-a| One of the following versions or any later date-patch:
-
-Mule 4 image versions:
-
-* 4.5.0:23e
-* 4.4.0-20230111-1
-* 4.3.0-20221212-2
-* 4.2.2-20221027-7
-* 4.2.1-20221027-7
-* 4.2.0-20221027-6
-
-Mule 3 image versions:
-
-* 3.9.5-20230424-2
-* 3.9.4-20230424-1
-* 3.9.3-20230424-1
-* 3.9.2-20230424-1
-* 3.9.1-20230424-1
-
-|=== 
-
-You must redeploy your apps with a supported version, either manually or during the monthly patching cycle. The monthly patching cycle is applicable only for CloudHub 1.0 and CloudHub 2.0 applications. Runtime Fabric customers must be using Runtime Fabric agent version 1.13.112 or 2.1.30 or later. If usage reports do not appear properly, you must also manually redeploy Runtime Fabric applications (with a supported date-patch version).
-
-If you want to xref:cloudhub-2::ch2-update-apps.adoc#roll-back-to-a-previous-successful-configuration[roll back] to a previous successful configuration of existing applications that use a Mule version that usage reports do not support, you must choose a compliant version before deploying changes. After deployment, a new configuration with the previously chosen settings and a supported runtime is created.
-
-==== Runtime Fabric Apps in Usage Reports
-
-If usage reports do not display data from Runtime Fabric apps, ensure the following requirements are met:
-
-* You are using Runtime Fabric agent version 1.13.112, 2.1.30, or later. 
-* After updating the Runtime Fabric agent, you have manually redeployed each Runtime Fabric app with a supported date-patch version.
-
-If you are still missing Runtime Fabric apps in your usage reports, contact your account executive to request a report of apps that are not upgraded and what actions need to be taken to update them.
 
 == See Also
 
-* xref:gateway::flex-gateway-getting-started.adoc[]
 * xref:api-governance::index.adoc[]
 * xref:api-manager::index.adoc[]
+
