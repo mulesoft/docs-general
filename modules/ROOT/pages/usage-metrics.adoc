@@ -172,6 +172,16 @@ Select the *Application Details* tab to view:
 
 === Mule Runtime Usage Cards
 
+MuleSoft usage reports cards include:
+
+* <<max-mule-flows>>
+* <<mule-messages>>
+* <<max-cpu-prod>>
+* <<max-cpu-preprod>>
+* <<max-cluster-prod>>
+* <<max-cluster-preprod>>
+
+[[max-mule-flows]]
 === Maximum Mule Flows
 
 A Mule flow is a sequence of logical operations configured within the XML `<flow/>` element of a Mule application. The runtime report tracks the Mule flows within a deployed and running Mule application that contains a Mule event source or APIkit route requests. Mule apps in production environments typically use multiple Mule flows and subflows to divide the app into functional modules or for error-handling purposes. For example, one Mule flow might receive a record and transform data into a given format that another flow processes.  
@@ -286,16 +296,19 @@ When an event source within a flow of a Mule application is triggered, the event
 
 Data throughput is all of the network I/O bytes produced by the infrastructure that starts and runs the Mule Runtime server that runs a Mule application. This includes the data that the application produces to execute its business logic, as well as internal operational network traffic such as logs, health-checks, and monitoring traffic. For example, data throughput includes inserting a record into a database and the network traffic associated with the infrastructure of the app, such as log forwarding, control plane connection, and monitoring metrics transfer.  
 
+[[max-cpu-prod]]
 === Maximum CPU Limit in Production
 
 
+[[max-cpu-preprod]]
 === Maximum CPU Limit in Preproduction
 
+[[max-cluster-prod]]
 === Maximum Cluster Capacity in Production
 
+[[max-cluster-preprod]]
 === Maximum Cluster Capacity in Preproduction
 
-=== 
 
 == See Also
 
