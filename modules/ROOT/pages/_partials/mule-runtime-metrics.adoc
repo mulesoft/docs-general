@@ -51,56 +51,49 @@ Select the *Business Group Details* tab to view:
 
 [%header%autowidth.spread]
 |===
-|Business Group 
-|The business group a Mule app is deployed to
+|Field | Description
 
-|Environment Type
-|The environment in which a Mule app is deployed.
+|Business Group |The business group a Mule app is deployed to
 
-| Cluster
-|The name of the cluster containing the replicas and worker nodes.
-|Cluster Capacity (Millicores)
-| The worker node capacity.
+|Environment Type |The environment in which a Mule app is deployed.
+
+| Cluster |The name of the cluster containing the replicas and worker nodes.
+
+|Cluster Capacity (Millicores) | The worker node capacity.
 |===
 
 Select the *Application Details* tab to view:
 
-|Application
-|The name of the Mule application.
+[%header%autowidth.spread]
+|===
+|Field |Description
+|Application |The name of the Mule application.
 
-| Business Group
-| The business group a Mule app is deployed to.
+| Business Group | The business group a Mule app is deployed to.
 
-| Deployment Type
-| The runtime plane to which the Mule app is deployed. CloudHub (abbreviated as CH), CloudHub 2.0 (abbreviated as CH2), and Runtime Fabric (abbreviated as RTF) are supported. 
+| Deployment Type | The runtime plane to which the Mule app is deployed. CloudHub (abbreviated as CH), CloudHub 2.0 (abbreviated as CH2), and Runtime Fabric (abbreviated as RTF) are supported. 
 
-|Environment Type
-|The environment in which a Mule app is deployed.
+|Environment Type |The environment in which a Mule app is deployed.
 
-| Cluster
-| The name of the cluster containing the replicas and worker nodes.
+| Cluster | The name of the cluster containing the replicas and worker nodes.
 
-| CPU Limit
-| The maximum amount of vCPU the application can use. This is shared CPU on the worker node.
+| CPU Limit | The maximum amount of vCPU the application can use. This is shared CPU on the worker node.
 
-| CPU Reserve (Millicores)
-| The amount of vCPU guaranteed to the application and reserved for its use.
+| CPU Reserve (Millicores) | The amount of vCPU guaranteed to the application and reserved for its use.
 
-| Mule Flows 
-| The sum of flows in the Mule app. This number is calculated by multiplying flows by the number of workers (CloudHub) or replicas (CloudHub 2.0). For more information about how this metric is billed, see xref:usage-metrics.adoc#mule-flows[Mule flows].
+| Mule Flows | The sum of flows in the Mule app. This number is calculated by multiplying flows by the number of workers (CloudHub) or replicas (CloudHub 2.0). For more information about how this metric is billed, see xref:usage-metrics.adoc#mule-flows[Mule flows].
 
-| Mule Messages
-| The sum of inbound and outbound Mule messages in the Mule app. For more information about how this metric is billed, see xref:usage-metrics.adoc#mule-messages[Mule messages].  
+| Mule Messages | The sum of inbound and outbound Mule messages in the Mule app. For more information about how this metric is billed, see xref:usage-metrics.adoc#mule-messages[Mule messages].  
 
-| Data Throughput (GB)
-| The sum of inbound and outbound data in gigabytes (GB) transmitted by the Mule app. For more information about how this metric is billed, see xref:usage-metrics.adoc#data-throughput[data throughput].  
+| Data Throughput (GB) | The sum of inbound and outbound data in gigabytes (GB) transmitted by the Mule app. For more information about how this metric is billed, see xref:usage-metrics.adoc#data-throughput[data throughput].  
+|===
 
 // end::table[]
 
 // tag::flows[]
 == Mule Flows
 
-A _Mule flow_ is a sequence of logical operations configured in XML by using the `<flow>` element. A Mule app can consist of a single Mule flow, or it can break up processing into discrete xref:mule-runtime::about-flows.adoc[Mule flows and subflows] that you add to the app and connect together. Mule apps in production environments typically use multiple Mule flows and subflows to divide the app into functional modules or for error-handling purposes. For example, one Mule flow might receive a record and transform data into a given format that another flow processes. 
+A Mule flow is a sequence of logical operations configured in XML by using the `<flow>` element. A Mule app can consist of a single Mule flow, or it can break up processing into discrete xref:mule-runtime::about-flows.adoc[Mule flows and subflows] that you add to the app and connect together. Mule apps in production environments typically use multiple Mule flows and subflows to divide the app into functional modules or for error-handling purposes. For example, one Mule flow might receive a record and transform data into a given format that another flow processes. 
 
 In a usage report, flow counts are calculated by multiplying the number of flows in an app by the number of workers (CloudHub) or replicas (Runtime Fabric and CloudHub 2.0).
 // end::flows[]
