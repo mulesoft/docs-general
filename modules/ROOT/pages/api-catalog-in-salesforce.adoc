@@ -1,0 +1,197 @@
+= API Catalog in Salesforce
+
+From Anypoint Exchange to Service Mesh and API Governance, MuleSoft helps API-producing teams create well-documented, governed, and secure APIs. Integrations between MuleSoft Anypoint Platform and Salesforce enable you to access and bring MuleSoft APIs into Salesforce.
+
+API Catalog in Salesforce provides a single place for you to view your MuleSoft APIs in Salesforce and improves connection management by simplifying and automating some of the steps to create secure connections to MuleSoft API instances. With API Catalog in Salesforce you can:
+
+* Import managed MuleSoft APIs into Salesforce.
+* View a catalog of MuleSoft APIs available for use in Salesforce.
+* Sync to get the latest changes and updates.
+* Activate operations from Anypoint APIs as Salesforce invocable actions.
+
+Consider a scenario where you want to connect Salesforce to a credit service API that has an API that's managed in Anypoint Platform. The credit service retrieves the customer's credit score, determines whether the customer qualifies for the credit service, and provides the payment terms. You want to extend the credit service to a Salesforce account so that you can view the payment terms in Salesforce.
+
+You can bring the credit service API into API Catalog in Salesforce, select operations and activate them as actions, and then use them in Flow Builder automations.
+
+[[before-you-begin]]
+== Before You Begin
+
+Work with an Anypoint Platform admin to ensure that all prerequisite configuration is done in the Anypoint Platform organization from which you want to sync APIs. The following are required before you can being using API Catalog in Salesforce: 
+
+* A valid MuleSoft Anypoint Platform account. See  xref:access-management::managing-your-account.adoc[].
+* API specs in MuleSoft Anypoint API Exchange that you want to import into API Catalog. See xref:exchange::index.adoc[]. 
+* A tag of `sf-api-catalog` in Anypoint Exchange on each API you want to import. See xref:exchange::to-describe-an-asset.adoc#add-and-remove-asset-tags[Add and Remove Asset Tags].
+* Instances of your APIs in API Manager that have implementation HTTPS URLs with either no SLA tiers or at least one auto-approval SLA tier. The implementation URLs appear as destination URLs in API Catalog. See xref:api-manager::add-api-instances.adoc[]. 
+* A consumer endpoint for each instance with an HTTPS URL that specifies a proxy application's address for consumers to use for sending requests. To configure a consumer endpoint for Mule Gateway API instances, see xref:api-manager::create-instance-task-mule.adoc[].
+* An Anypoint Platform and Salesforce org connection established and the API Catalog feature enabled in Anypoint Platform Access Management. See xref:access-management::connecting-salesforce-orgs.adoc[].
++ 
+TIP: Salesforce admins get the connection information the Anypoint Platform admin needs, such as the Salesforce tenant key of the Salesforce org, and enable MuleSoft features in their Salesforce org Setup in *MuleSoft > Anypoint Platform Setup*.
+
+[[get-started-with-apicat]]
+== Get Started with API Catalog in Salesforce
+
+// graphic from a slide that shows the overall task steps
+
+image::api-catalog-supertask.png[High level steps of using API Catalog in Salesforce]
+
+. xref:access-management::connecting-salesforce-orgs.adoc[Work with Anypoint Platform admins to establish a trusted connection] between Anypoint Platform and Salesforce and enable the API Catalog feature in Access Management.
+. <<sync-api-catalog, Sync eligible APIs>> into API Catalog in Salesforce.
+. <<view-and-search-apis, View and search APIs>> in the catalog for easier discovery. 
+. <<activate-actions, Activate actions for specific API operations>>, which autogenerates secure connection configurations for each action.
+. <<enable-user-permissions, Assign user permissions>> for each connection's permission set to ensure that Salesforce users have the correct access.
+. <<get-started-with-flows, Start using the actions>> in a Flow Builder flow.
+
+[[sync-api-catalog]]
+== Sync API Catalog
+
+Sync API Catalog to initially populate the catalog with MuleSoft APIs and when you have new or updated APIs that you want to bring into the catalog. This retrieves the latest information from Anypoint Platform.
+
+To sync API Catalog:
+
+. Work with an Anypoint Platform admin to ensure that all <<before-you-begin, prerequisite configuration>> is done in the Anypoint Platform organization from which you want to sync APIs.
+. In Salesforce, from Setup, in the Quick Find box, enter API Catalog and select it.
+. Click *Sync APIs*.
++ 
+The sync imports APIs into API Catalog that have:
++
+* A tag of `sf-api-catalog` in Anypoint Exchange
+* Implementation HTTPS URLs in API Manager with either no SLA tiers or at least one auto-approval SLA tier 
+* A consumer endpoint with an HTTPS URL that specifies a proxy application's address for consumers to use for sending requests
+
+NOTE: The sync might take several minutes to complete. You can navigate away from the API Catalog page and the sync continues in the background.
+
+== Refresh API Catalog
+
+Refresh when you navigate away from the API Catalog page and aren't sure you have the latest information from your most recent sync. This retrieves the latest information from the Salesforce database.
+
+To refresh the API Catalog page with the latest synced API information:
+ 
+. From Setup, in the Quick Find box, enter API Catalog and select it.
+. Click the refresh icon.
+
+[[view-and-search-apis]]
+== View and Search APIs in API Catalog
+
+After you populate API Catalog, you can view and search the list to find APIs you want to use in Salesforce. 
+
+image::api-catalog-in-sf.png[API Catalog in Salesforce with a list of APIs]
+
+[[activate-actions]]
+== Activate Actions
+
+When you select an API in your API Catalog API list, you can activate actions for API operations to use in your automations, such as those in Flow Builder. The activate actions process begins the create connection process that automatically generates the authentication configuration objects for the APIs.
+
+You can activate actions only for the latest API version. If earlier versions already have activated actions, you can view their operations selections and connections. See <<view-api-version-info>>.
+ 
+To activate actions:
+
+. From Setup, in the Quick Find box, enter API Catalog and select it.
++
+If you have an active connection to an Anypoint Platform organization, API Catalog shows the list of APIs imported from Anypoint Exchange. If you don't see any APIs, see <<sync-api-catalog>>.
+. Select the API you want to activate actions for.
++
+.. View resource names for operations that are generated from the automatically-imported API schema. 
+.. Expand the rows to view operation names and descriptions. 
++
+. Click *Activate Actions*.
+. Select operations to activate as actions and then click *Next*.
+. In the Create Connection page, create a connection to authorize the use of activated actions in Salesforce for a destination URL.
++
+The connection name defaults to the API name and version. 
++
+.. Overtype the name to customize it.
+.. Enter a description.
++ 
+. Select a destination URL to use as the managed named credential for this connection to Salesforce. API Catalog lists only active destination URLs, which are managed in Anypoint API Manager. 
+. Click *Done*.
++
+The Create Connection process creates the required objects in Salesforce automatically, including:
++
+* External credentials
+* Named credentials
+* External Services
+* Invocable Actions
+* Permission Sets	
+
+The UI prompts you to allow access to actions and gives a link to the connection's permission set in Salesforce Setup.
+
+[[enable-user-permissions]]
+== Assign User Permissions for Connections
+
+After you create the connection, give specific Salesforce users access to the activated actions so that they can use them in their Salesforce automations. 
+
+Click the permission sets link on a connection's details page to go to the permission set for that connection.
+
+For details on assigning user permissions in permission sets for connections, see https://help.salesforce.com/s/articleView?id=sf.perm_sets_manage_assignments.htm&type=5[Manage Permission Set Assignments].
+
+The actions are now available for those users to select and use in Flow Builder automations. 
+
+== Manage Activated Actions and Connections
+
+To manage activated actions and connections, you can:
+
+* View operation selections and connection information for all versions of your APIs that have them. 
+* Modify operation selections.
+* Modify connection descriptions.
+* Delete connections.
+
+[[view-api-version-info]]
+=== View Details for an API Version
+
+API Catalog shows the versions of an API that meet the criteria for syncing with API Catalog. The UI shows information for the latest version by default.
+
+To view Connections for an API version:
+
+. From Setup, in the Quick Find box, enter API Catalog and select it.
+. Select an API.
+. Switch between versions in the *API Version* menu to see the operations and connections associated with that version. 
+
+=== Edit Operation Selections
+
+To modify the operation selections for activated actions:
+
+. From Setup, in the Quick Find box, enter API Catalog and select it.
+. Select the API to modify the operation selections for.
+. In the Connections tab, click *Edit*.
+. Select or deselect operations.
+ 
+=== Edit Connection Descriptions
+
+To modify a connection description:
+
+. From Setup, in the Quick Find box, enter API Catalog and select it.
+. Select the API to modify the connection description for.
+. In the Connections tab, click *Edit*.
+. Click *Next* on the Operations page. 
+. Update the connection description.
+
+NOTE: You can't change the connection name and destination URL because they're used to name and later identify auto-generated configurations.
+
+[[get-started-with-flows]]
+== Get Started Using MuleSoft APIs as Actions in Flows
+
+After you sync your APIs in API Catalog and activate operations as actions, you can get started using them in a Flow Builder flow. An  example is to create a flow for the scenario discussed at the beginning of this document, connecting Salesforce to a credit service API that has a managed API instance in Anypoint Platform. 
+
+The credit service retrieves the customer's credit score, determines whether the customer qualifies for the credit service, and provides the payment terms. You want to extend the credit service to a Salesforce account so that you can view the payment terms in Salesforce.
+
+After you populate API Catalog in Salesforce, you can:
+
+. <<view-and-search-apis, Find and select>> the credit service API‌ in API Catalog in Salesforce.
+. <<activate-actions, Select the operations>> that you want to make available in Salesforce as invocable actions and create connections for them. 
++
+The create connection process automatically generates the credentials for invoking the API actions from within Salesforce automations. 
+. Enable the permission set created for the activated API's connection.
+
+After you activate the invocable actions from API Catalog, you can use Flow Builder to use the actions in your automations. 
+
+. Create a flow using the new credit service API category in Flow Builder. 
++
+When the flow runs, the output contains the credit decision and, if applicable, payment terms.
+
+== See Also
+
+* xref:access-management::connecting-salesforce-orgs.adoc[] in the MuleSoft documentation
+* https://help.salesforce.com/s/articleView?id=sf.perm_sets_manage_assignments.htm&type=5[Manage Permission Set Assignments]
+* https://help.salesforce.com/s/articleView?id=sf.enhanced_external_services_example_create_flow_end_to_end.htm&type=5[End-to-end Example with Flow]
+* https://help.salesforce.com/s/articleView?id=sf.flow_build.htm&type=5[Build a Flow]
+* https://help.salesforce.com/s/articleView?id=sf.external_services_apex_registrations.htm&type=5[External Service Registrations in Apex] 
