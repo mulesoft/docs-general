@@ -15,12 +15,27 @@ To upgrade automated xref:mule-gateway::policies-included-directory.adoc[MuleSof
 . In API Manager, go to *Automated Policies*.
 . In *Policy version*, select the latest version of the included policy.
 . In *Rule of application*:
-  * To apply included policies to all Mule runtimes, select *All runtimes* and click *Apply*.
-  * To apply the included policies to Flex Gateways only, select *Flex Gateways only* and click *Apply*.
-  * To apply the included policies to Mule Gateways only:
-  .. Select *Mule Gateways only*.
+* If your policy is on the latest version:
+  ** To apply included policies to all Mule runtimes, select *All runtimes* and click *Apply*.
+  ** To apply the included policies to Flex Gateways only, select *Flex gateways only* and click *Apply*.
+  ** To apply the included policies to Mule Gateways only:
+  .. Select *Mule gateways only*.
   .. In *From version* and *To*, enter the Mule version range.
-  .. In *Java versions*, select *All Java versions* or *Choose specific Java versions*. 
+  .. In *Java Versions*, select *All Java versions* or *Choose specific Java versions*. 
+  .. Click *Apply*.
+* If your policy is not on the latest version:
+  ** To apply included policies to all Mule runtimes, select *All runtimes* and click *Apply*.
+  ** To apply the included policies to Flex Gateways only, select *Flex gateways only* and click *Apply*. Note that the *Rule of application* section must be the same as the *Rule of application* section in the latest version or else you might have unprotected APIs.
+  ** To apply the included policies to Mule Gateways only:
+  .. Select *Mule gateways only*.
+  .. In *From version* and *To*, enter the Mule version range.
+  .. In *Java versions*, select *Choose specific Java versions* and select Java 8 and Java 11. 
+  .. Click *Apply*.
+  .. Click *Add automated policy* and add the same automated policy.
+  .. Click *Advanced options*.
+  .. Select *Mule gateways only*.
+  .. In *From version* and *To*, enter the Mule version range.
+  .. In *Java versions*, select *Choose specific Java versions* and select Java 17. 
   .. Click *Apply*.
 
 [[upgrading-custom-automated-policies]]
