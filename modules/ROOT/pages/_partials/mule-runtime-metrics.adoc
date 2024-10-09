@@ -58,9 +58,9 @@ Select the *Business Group Details* tab to view:
 |The environment in which a Mule app is deployed.
 
 | Cluster
-|
+|The name of the cluster containing the replicas and worker nodes.
 |Cluster Capacity (Millicores)
-|
+| The worker node capacity.
 |===
 
 Select the *Application Details* tab to view:
