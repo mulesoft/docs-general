@@ -15,12 +15,12 @@ Anypoint Platform captures usage metrics across products, but not all metrics ar
 |A Mule message counts as a single unit when an event source triggers it. Messages are aggregated using a sum of all messages sent during a month.
 |Data throughput: The total amount of data transferred in and out of the infrastructure that runs Mule where the Mule app is deployed. 
 |Data throughput counts when the deployed application transfers data to execute its business logic, including but not limited to internal operational network traffic for monitoring, logs, and health checks. Data throughput is aggregated as a sum of all bytes during a month. 
-| Cluster 
-| The name of the cluster containing the replicas and worker nodes.
-| CPU Limit 
-| The maximum amount of CPU the application can use. This is shared CPU on the worker node.
-| CPU Reserve (Millicores) 
-| The amount of CPU guaranteed to the application and reserved for its use.
+| Cluster: A set of servers that act as a single deployment target.
+| Cluster capacity is determined by your cluster configuration. 
+| CPU Limit: The maximum amount of CPU resources that a worker node can use.
+| The CPU limit is aggregated by measuring the amount of CPU usage over a specific period of time, such as an hour or a day. This data is collected and aggregated to calculate the total CPU usage for a particular application. 
+| CPU Reserve (Millicores): A guaranteed minimum amount of CPU resources allocated to a worker node. 
+| CPU reserve is aggregated by calculating the total amount of CPU resources reserved across all applications in the worker nodes. The aggregated CPU reserve is then used to determine the total amount of CPU usage. 
 
 |API Manager	
 |API instance under management: API instances that are managed by API Manager after they are created using add, promote, or import options. 
