@@ -159,9 +159,9 @@ Select the *Application Details* tab to view:
 
 | Cluster | The name of the cluster containing the replicas and worker nodes.
 
-| CPU Limit | The maximum amount of vCPU the application can use. This is shared CPU on the worker node.
+| CPU Limit | The maximum amount of CPU the application can use. This is shared CPU on the worker node.
 
-| CPU Reserve (Millicores) | The amount of vCPU guaranteed to the application and reserved for its use.
+| CPU Reserve (Millicores) | The amount of CPU guaranteed to the application and reserved for its use.
 
 | Mule Flows | The sum of flows in the Mule app. This number is calculated by multiplying flows by the number of workers (CloudHub) or replicas (CloudHub 2.0). For more information about how this metric is billed, see xref:usage-metrics.adoc#mule-flows[Mule flows].
 
@@ -188,7 +188,7 @@ A Mule flow is a sequence of logical operations configured within the XML `<flow
 
 To calculate usage, MuleSoft tracks the number of Mule flows for all business groups, environments, and applications. The maximum number of Mule flows within a day or month is identified based on the peak hour across the day or month. For the detailed breakdown, MuleSoft shows the peak hour usage per business group, environment, and application. 
 
-In a usage report, flow counts are calculated by multiplying the number of flows in an app by the number of workers (CloudHub), replicas (Runtime Fabric and CloudHub 2.0), or CPU limits (Runtime Fabric).
+In a usage report, flow counts are calculated by multiplying the number of flows in an app by the number of workers (CloudHub) or replicas (Runtime Fabric and CloudHub 2.0).
 
 ==== Mule Flow Scenarios that Count Towards Your Anypoint Platform Package Allotment
 
@@ -299,16 +299,79 @@ Data throughput is all of the network I/O bytes produced by the infrastructure t
 [[max-cpu-prod]]
 === Maximum CPU Limit in Production
 
+Usage reports enable you to see your CPU limits broken out by business group. The CPU limit is further broken out by application, which helps you identify which application is using the most CPU limit, so you can make adjustments to your application configurations. 
+
+The maximum CPU limit in production is the maximum amount of CPU an app can use when deployed and running in the production runtime plane. This is shared CPU on the worker node. Each member of a set of workers for the same app can have a different value for the CPU limit. Data is captured every 30 minutes as the autoscale policy can execute every 30 minutes, which can impact the worker count and CPU limit of an app.
+ 
+==== Example
+
+This is an example with two apps:
+
+App1 has a CPU Limit of one each and a worker count range of 1-3.
+
+App2 has a CPU Limit of one each and a worker count range of 2-5.
+
+Data captured at 00:30 minutes:
+
+* App 1: sum(1,1,1) = 3
+* App 2: sum(1,1,1,1,1) 
+* Max metric = 5 CPU Limit aggregated
+
+Redeployment of App1 with a CPU Limit of 2 and worker range of 1 - 6 at 00:45 minutes:
+
+* App 1: sum(1,1,1,2,2,2) = 9
+* App 2: sum(1,1,1,1,1) = 5
+* Max metric = 14 CPU Limit aggregated
+
+Time 00:60 min: 
+
+* App 1: sum(2,2,2,2,2,2) = 12
+* App 2: sum(1,1,1,1,1) = 5
+* Max metric = 17 CPU Limit aggregated
+* For the root organization in a given hour:
++
+Max concurrent limit CPU = 17
+* For the root organization in given day:
++
+Max concurrent limit CPU = 17
+* For the root organization in given month:
++
+Max concurrent limit CPU = 17
+
+App 2 auto scales down to three workers after 01:60 min:
+
+* App 1: sum(2,2,2,2,2,2) = 12
+* App 2: sum(1,1,1) =3
+* Max metric = 15 CPU Limit aggregate
+* For the root organization in a given hour:
++
+Max concurrent limit CPU = 15
+* For the root organization in given day:
++
+Max concurrent limit CPU = 17
+* For the root organization in given month:
++
+Max concurrent limit CPU = 17
+
 
 [[max-cpu-preprod]]
 === Maximum CPU Limit in Preproduction
 
+The maximum CPU limit in preproduction is the maximum amount of CPU an app can use when deployed and running in preproduction. 
+
 [[max-cluster-prod]]
 === Maximum Cluster Capacity in Production
+
+Your maximum cluster capacity depends on your cluster configuration. 
+
+See xref:runtime-fabric::rtf-cluster-config.adoc[]
 
 [[max-cluster-preprod]]
 === Maximum Cluster Capacity in Preproduction
 
+Your maximum cluster capacity depends on your cluster configuration. 
+
+See xref:runtime-fabric::rtf-cluster-config.adoc[]
 
 == See Also
 
