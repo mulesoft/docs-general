@@ -3,6 +3,8 @@
 
 Anypoint Platform captures usage metrics across products, but not all metrics are billable or reflected in usage reports.
 
+Historical data isn't available before October 2024. 
+
 [cols=3*]
 |===
 |Product |Metric Description |Usage Details

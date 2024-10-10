@@ -9,7 +9,7 @@ Daily usage retention is three months and monthly usage retention is up to five 
 
 Organizations that have a usage-based pricing model can compare actual usage from the report against the existing contract. However, usage reports are not for billing purposes. For more information about usage metrics and pricing, read xref:pricing.adoc[] and xref:usage-metrics.adoc[]
 
-Some usage data, such as monthly statements and vCore allocation, appears in different areas of Anypoint Platform or Salesforce products. 
+Some usage data, such as monthly statements and vCore and Core allocation, appears in different areas of Anypoint Platform or Salesforce products. 
 
 * Monthly statements for Mule runtime, including Mule flows, Mule messages, and data throughput are sent to the primary billing contact. 
 +
@@ -29,13 +29,7 @@ For more information, see xref:pricing-metrics.adoc#object-store-metrics[Object 
 [[products-usage-reports]]
 == Products Available in Usage Reports
 
-When you navigate to the *Usage Reports* page in Anypoint Platform, the selection of products you see varies based on the view you are using. Products that have only monthly usage reports are viewable only in the legacy usage reports view, while products that have both daily and monthly usage reports are available only in the new usage reports view. To switch between views, click the *Switch View* button in the banner. 
-
-The following products have only monthly usage reports:
-
-* API Manager
-
-The following products have both daily and monthly usage reports:
+The following products are available in usage reports:
 
 * API Experience Hub
 * API Governance
