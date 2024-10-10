@@ -7,7 +7,7 @@ Anypoint Platform captures usage metrics across products, but not all metrics ar
 |===
 |Product |Metric Description |Usage Details
 
-.3+|Mule Runtime	
+.6+|Mule Runtime	
 |Mule flow: A flow within a deployed and running Mule app that contains a Mule event source or route APIKit request. 
 |Flows are aggregated using a Max Concurrent model. The usage for a month is the highest number of flows that exist in a single given hour during a month.
 
@@ -15,6 +15,12 @@ Anypoint Platform captures usage metrics across products, but not all metrics ar
 |A Mule message counts as a single unit when an event source triggers it. Messages are aggregated using a sum of all messages sent during a month.
 |Data throughput: The total amount of data transferred in and out of the infrastructure that runs Mule where the Mule app is deployed. 
 |Data throughput counts when the deployed application transfers data to execute its business logic, including but not limited to internal operational network traffic for monitoring, logs, and health checks. Data throughput is aggregated as a sum of all bytes during a month. 
+| Cluster 
+| The name of the cluster containing the replicas and worker nodes.
+| CPU Limit 
+| The maximum amount of CPU the application can use. This is shared CPU on the worker node.
+| CPU Reserve (Millicores) 
+| The amount of CPU guaranteed to the application and reserved for its use.
 
 |API Manager	
 |API instance under management: API instances that are managed by API Manager after they are created using add, promote, or import options. 
