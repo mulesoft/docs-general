@@ -2,20 +2,19 @@
 
 . Sign in to Anypoint Platform using an account that has the Usage Viewer permission for your root organization.
 . In the Anypoint Platform navigation bar, click the business group selector, and ensure you are at the root organization level.
-. To access usage reports, either:
-* Click your username icon and then click *Usage*.
-. Select the product to view the usage report for. 
-. Select the month or day of the usage report to view. 
-+
+. In the Anypoint Platform navigation bar, click your username icon and select *Usage*.
+. Select the product for which to view a usage report.
+. Click *Monthly Usage Report* or *Daily Usage Report*. +
+. Select the month or day of the usage report to view. +
 For the selected product, only dates that Anypoint Platform collected data for are available.
 +
-The usage report shows metrics based on the xref:usage-metrics.adoc[selected product].  
+The usage report appears, displaying an assortment of usage metrics that are xref:usage-metrics.adoc[dependent on the product you selected].  
 
 
 // end::accessUsageReports[]
 
 // tag::accessUsageReportsLegacy[]
-
+// Not using this after October
 . Log in to Anypoint Platform using an account that has the Usage Viewer permission for your root organization.
 . In the Anypoint Platform navigation bar, click the business group selector, and ensure you are at the root organization level.
 . In the Anypoint Platform navigation bar, click your username icon.
@@ -29,7 +28,7 @@ For the selected product, only months that Anypoint Platform collected data for 
 
 // tag::accessUsageReportsNew[]
 
-. Log in to Anypoint Platform using an account that has the Usage Viewer permission for your root organization.
+. Sign in to Anypoint Platform using an account that has the Usage Viewer permission for your root organization.
 . In the Anypoint Platform navigation bar, click the business group selector, and ensure you are at the root organization level.
 . In the Anypoint Platform navigation bar, click your username icon and select *Usage*.
 . Select the product for which to view a usage report.
