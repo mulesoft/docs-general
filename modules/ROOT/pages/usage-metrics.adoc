@@ -18,7 +18,9 @@ Anypoint Platform captures usage metrics across products, but not all metrics ar
 | Cluster: A set of servers that act as a single deployment target.
 | Cluster capacity is determined by your cluster configuration. 
 | CPU Limit: The maximum amount of CPU resources that a worker node can use.
-| The CPU limit is aggregated by measuring the amount of CPU usage over a specific period of time, such as an hour or a day. This data is collected and aggregated to calculate the total CPU usage for a particular application. 
+a| The CPU limit is aggregated by measuring the amount of CPU usage over a specific period of time, such as an hour or a day. This data is collected and aggregated to calculate the total CPU usage for a particular application. 
++
+The CPU Limit configuration of each application is summarized at each environment ID, then at each business group, and then at the root organization ID for preproduction and production environment types separately.
 | CPU Reserve (Millicores): A guaranteed minimum amount of CPU resources allocated to a worker node. 
 | CPU reserve is aggregated by calculating the total amount of CPU resources reserved across all applications in the worker nodes. The aggregated CPU reserve is then used to determine the total amount of CPU usage. 
 
@@ -305,7 +307,21 @@ Data throughput is all of the network I/O bytes produced by the infrastructure t
 [[max-cpu-prod]]
 === Maximum CPU Limit in Production
 
-Usage reports enable you to see your CPU limits broken out by business group. The CPU limit is further broken out by application, which helps you identify which application is using the most CPU limit, so you can make adjustments to your application configurations. 
+Usage reports enable you to see your CPU limits broken out by business group. The CPU limit is further broken out by application, which helps you identify which application is using the most CPU, so you can make adjustments to your application configurations. 
+
+You can drill down and track CPU limit based usage per application ID with the ability to group them using the following metadata:
+
+* Runtime Fabric cluster name
++
+Tracks whether the underlying cluster has enough capacity to scale.
+* Business group
++
+For the ability to see usage per business group.
+* Root organization
++
+To monitor the usage of cores and stay under the total entitlement.
++
+The cluster capacity metric is available only at the root organization level.
 
 The maximum CPU limit in production is the maximum amount of CPU an app can use when deployed and running in the production runtime plane. This is shared CPU on the worker node. Each member of a set of workers for the same app can have a different value for the CPU limit. Data is captured every 30 minutes as the autoscale policy can execute every 30 minutes, which can impact the worker count and CPU limit of an app.
  
