@@ -21,7 +21,7 @@ Anypoint Platform captures usage metrics across products, but not all metrics ar
 a|API instances remain under management until they are deleted. Instances of API Manager are aggregated using a Max Concurrent model. 
 +
 [NOTE]
-Historical data for API Manager isn't available before October 2024. 
+Data for API Manager is available starting in October 2024. 
 
 |API Governance	
 |API under Governance: APIs identified by the selection criteria of at least one of the governance profiles. 
@@ -75,7 +75,7 @@ Highest number of APIs governed in a single given hour during a month
 
 == API Manager Usage
 
-Historical data isn't available for API Manager before October 2024. 
+Data for API Manager is available starting in October 2024.  
 
 API Manager usage reports show this information in tables and cards:
 
