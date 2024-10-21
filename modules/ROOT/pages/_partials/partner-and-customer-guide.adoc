@@ -13,8 +13,8 @@ NOTE: This guide applies to MuleSoft customers only. If you are a MuleSoft partn
 // end::customer-upgrade-note[]
 
 // tag::connector-intro[]
-
-Upgrade, test, and release your custom connectors for Java 17 to ensure compatibility within the MuleSoft ecosystem. 
+ 
+Upgrade, test, and release your custom connectors for Java 17 to ensure compatibility within the MuleSoft ecosystem. Ensuring this compatibility is crucial because running an incompatible connector can lead to runtime failures, decreased performance, and security vulnerabilities that could impact your app's stability.
 
 // end::connector-intro[]
 
@@ -49,6 +49,8 @@ Before upgrading and testing your custom connector for Java 17, you must be fami
 NOTE: The maximum supported version for running your applications is Java 17 for Mule runtime 4.6.x and later. During the packaging of your app, all code, including third-party dependencies, *must* be compiled for Java 8.
 +
 Because you must compile your custom connector with Java 8, use the Java compiler configuration from the Java SDK parent POM. You can’t use language features from Java 11 or Java 17. 
++
+If you change the compilation to Java 17, the surrounding tooling (such as Studio, Maven plugins, DataSense, connectivity testing, etc) breaks because they are still running on Java 8.
 
 * Unsupported directives
 +
@@ -148,7 +150,7 @@ JPMS introduces stricter encapsulation, impacting how Mule modules interact with
 
 === Add Missing Code
 
-Because reflection is more restricted in Java 17, API objects now require setters. Previously, API objects and plain old Java objects (POJOs) had default constructors and getters for all properties. Now, API objects and POJOs must also have setters so DataWeave can build outside the connector in the Mule app. 
+Because reflection is more restricted in Java 17, API objects now require setters. Previously, API objects and plain old Java objects (POJOs) had default constructors and getters for all properties. Now, API objects and POJOs must also have setters so DataWeave can build outside the connector in the Mule app. Ensuring that API objects now require setters is crucial because it allows for more flexible and robust data handling. This change facilitates compatibility with Java 17's stricter reflection rules and DataWeave's requirements, making sure your connector can interact seamlessly within Mule applications.
 
 Constructors and setters are required if your class is instantiated by DataWeave, and getters are required if your class is read. If your class is returned and not instantiated, only getters are required. However, using both getters and setters simplifies the validation and certification process. 
 
