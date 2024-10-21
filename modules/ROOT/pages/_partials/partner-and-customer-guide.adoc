@@ -50,7 +50,7 @@ NOTE: The maximum supported version for running your applications is Java 17 for
 +
 Because you must compile your custom connector with Java 8, use the Java compiler configuration from the Java SDK parent POM. You can’t use language features from Java 11 or Java 17. 
 +
-If you change the compilation to Java 17, the surrounding tooling (such as Studio, Maven plugins, DataSense, connectivity testing, etc) breaks because they are still running on Java 8.
+If you change the compilation to Java 17, the surrounding tooling (such as Studio, Maven plugins, DataSense, or connectivity testing, and so on) breaks because they are still running on Java 8.
 
 * Unsupported directives
 +
