@@ -18,14 +18,13 @@ The following table shows the timeline for Java 8, Java 11, and Java 17 support:
 [%header%autowidth.spread]
 |===
 |Mule Version| Release Date |Java Version | End of Standard Support | End of Extended Support
-|4.5 Edge | October 2023 |8 and 11 | February 2024 | June 2024
-|4.6 LTS | February 2024 | 8, 11, and 17 | February 2025 | February 2026
-|4.6 Edge | February 2024 |8, 11, and 17 | June 2024 | October 2024
+|4.8 Edge | October 2024 | 8, 11, and 17 | March 2025 | June 2025
 |4.7 Edge | June 2024 | 8, 11, and 17 | October 2024 | February 2025
-|4.8 Edge | October 2024 | 8, 11, and 17 | February 2025 | June 2025
-|4.9 LTS | February 2025 | 17 | February 2026 | February 2027
-|4.9 Edge | February 2025 | 17 | June 2025 | October 2025
+|4.6 LTS | February 2024 | 8, 11, and 17 | August 2025 | February 2026
+|4.6 Edge | February 2024 |8, 11, and 17| June 2024 | October 2024
+|4.5 Edge | October 2023 |8 and 11 | February 2024 | June 2024
 |===
+
 
 [NOTE]
 Standard support for Java 8 and 11 ends with the Mule runtime 4.9 release in February 2025, so plan your upgrade path for apps that are running on either Java 8 or Java 11 accordingly.
