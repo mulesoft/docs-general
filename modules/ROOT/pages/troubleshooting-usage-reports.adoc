@@ -18,12 +18,7 @@ For more information about product availability by view, see xref:usage-reports.
 
 == Usage Reports Don't Display Data for Runtime Fabric Apps
 
-If you don't see any data for Runtime Fabric apps, ensure that:
-
-* You're using Runtime Fabric agent version 1.13.112, 2.1.30, or later. 
-* After updating the Runtime Fabric agent, you manually redeployed each Runtime Fabric app with a supported date-patch version.
-
-If you're still missing Runtime Fabric apps in your usage reports, contact your account executive to request a report of apps that are not upgraded and what actions you need to take to update them.
+include::partial$mule-runtime-metrics.adoc[tag=rtfApps] 
 
 == A Month or a Day is Unavailable in the Date Picker 
 
@@ -43,7 +38,7 @@ This means there is no data available for the selected month.
 
 == Deployed Mule App Isn't Listed in the Mule Runtime Usage Report
 
-If a deployed Mule app isn't listed in the Mule Runtime usage report, make sure you're using a supported version of Mule runtime. For more information, see xref:mule-runtime-usage.adoc#supported-runtime-versions[supported runtime versions].
+If a deployed Mule app isn't listed in the Mule Runtime usage report, make sure you're using a supported version of Mule runtime. For more information, see xref:usage-reports.adoc#supported-runtime-versions[supported runtime versions].
 
 Redeploy your Mule apps with a supported Mule runtime version, either manually or during a monthly patching cycle.
 

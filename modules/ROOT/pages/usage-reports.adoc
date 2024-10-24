@@ -43,6 +43,7 @@ The following products have both daily and monthly usage reports:
 * Mule Runtime
 * Intelligent Document Processing (IDP)
 
+[[supported-runtime-versions]]
 == Supported Mule Runtime Versions
 
 include::partial$mule-runtime-metrics.adoc[tag=supportedRuntimes]
@@ -71,4 +72,3 @@ You can export both daily and monthly usage reports to CSV files. These metrics 
 
 * xref:api-governance::index.adoc[]
 * xref:api-manager::index.adoc[]
-
