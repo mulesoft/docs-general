@@ -59,7 +59,7 @@ API Experience Hub usage reports show this information in tables and cards:
 
 include::partial$api-eh-metrics.adoc[tag=table]
 
-include::partial$api-eh-metrics.adoc[tag=card]
+include::partial$api-eh-metrics.adoc[tag=cards]
 
 == API Governance Usage
 
@@ -85,7 +85,7 @@ Flex Gateway usage reports show this information in tables and cards:
 
 include::partial$flex-gateway-metrics.adoc[tag=table]
 
-include::partial$flex-gateway-metrics.adoc[tag=card]
+include::partial$flex-gateway-metrics.adoc[tag=cards]
 
 == Intelligent Document Processing (IDP)
 
@@ -113,7 +113,7 @@ Mule Runtime usage reports show this information in tables and cards:
 
 include::partial$mule-runtime-metrics.adoc[tag=table]
 
-include::partial$mule-runtime-metrics.adoc[tag=card]
+include::partial$mule-runtime-metrics.adoc[tag=cards]
 
 MuleSoft captures usage data for Mule flows, Mule messages, and data throughput, but not all of this data is aggregated in usage reports. 
 
