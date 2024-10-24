@@ -43,7 +43,7 @@ Total Data Throughput::
 The sum of data in gigabytes (GB) transmitted across all Mule apps and business groups during the selected time period. For more information about how this metric is billed, see xref:usage-metrics.adoc#data-throughput[data throughput].  
 
 |===
-|Data Graph	
+|DataGraph	
 |_DataGraph orchestration_: An API request made by Anypoint DataGraph to the source APIs to get data for the GraphQL API request made to Anypoint DataGraph. 
 |Orchestrations are not currently aggregated on usage reports.
 
@@ -119,7 +119,6 @@ The following Mule flow contains an event source as the first element. In this c
 [cols="2*",options="header"]
 |===
 | Connector | Source
-
 | aggregators | aggregator-listener
 | amqp | listener
 | anypoint-mq | subscriber
