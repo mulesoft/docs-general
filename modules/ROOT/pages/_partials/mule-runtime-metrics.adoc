@@ -26,6 +26,17 @@ You can xref:cloudhub-2::ch2-update-apps.adoc#roll-back-to-a-previous-successful
 
 // end::supportedRuntimes[]
 
+// tag::rtfApps[]
+
+If you don't see any data for Runtime Fabric apps, ensure that:
+
+* You're using Runtime Fabric agent version 1.13.112, 2.1.30, or later. 
+* After updating the Runtime Fabric agent, you manually redeployed each Runtime Fabric app with a supported date-patch version.
+
+If you're still missing Runtime Fabric apps in your usage reports, contact your account executive to request a report of apps that are not upgraded and what actions you need to take to update them.
+
+// end::rtfApps[]
+
 // tag::cards[]
 
 Total Data Throughput::
