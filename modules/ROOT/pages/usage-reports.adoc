@@ -29,16 +29,11 @@ For more information, see xref:pricing-metrics.adoc#object-store-metrics[Object 
 [[products-usage-reports]]
 == Products Available in Usage Reports
 
-When you navigate to the *Usage Reports* page in Anypoint Platform, the selection of products you see varies based on the view you are using. Products that have only monthly usage reports are viewable only in the legacy usage reports view, while products that have both daily and monthly usage reports are available only in the new usage reports view. To switch between views, click the *Switch View* button in the banner. 
-
-The following products have only monthly usage reports:
-
-* API Manager
-
-The following products have both daily and monthly usage reports:
+The following products are available in usage reports:
 
 * API Experience Hub
 * API Governance
+* API Manager
 * Flex Gateway
 * Mule Runtime
 * Intelligent Document Processing (IDP)

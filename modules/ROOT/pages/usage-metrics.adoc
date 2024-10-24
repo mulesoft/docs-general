@@ -18,7 +18,10 @@ Anypoint Platform captures usage metrics across products, but not all metrics ar
 
 |API Manager	
 |API instance under management: API instances that are managed by API Manager after they are created using add, promote, or import options. 
-|API instances remain under management until they are deleted. Instances of API Manager are aggregated using a Max Concurrent model. 
+a|API instances remain under management until they are deleted. Instances of API Manager are aggregated using a Max Concurrent model. 
++
+[NOTE]
+Data for API Manager is available starting in October 2024. 
 
 |API Governance	
 |API under Governance: APIs identified by the selection criteria of at least one of the governance profiles. 
@@ -71,6 +74,8 @@ Maximum Number of Governed APIs::
 Highest number of APIs governed in a single given hour during a month
 
 == API Manager Usage
+
+Data for API Manager is available starting in October 2024.  
 
 API Manager usage reports show this information in tables and cards:
 
