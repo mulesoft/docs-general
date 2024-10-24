@@ -217,10 +217,6 @@ A cloud computing platform as a service (PaaS) provided by the company Pivotal. 
 policy::
 An object that controls authentication, access, consumption rates, and service level access (SLA) to API resources. Anypoint Platform provides both preconfigured and tools to create custom policies.
 
-// Definition of Project Errors
-
-include::partial$api-gov-concepts.adoc[tag=project-errors]
-
 == R
 
 RAML®::
