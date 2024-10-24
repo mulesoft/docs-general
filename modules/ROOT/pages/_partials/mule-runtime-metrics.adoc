@@ -46,41 +46,62 @@ The maximum number of concurrent flows across all Mule apps and business groups 
 // end::cards[]
 
 // tag::table[]
-Business Group:: 
-The business group in which a Mule app is deployed.
 
-Environment:: 
-The environment in which a Mule app is deployed.
+Select the *Business Group Details* tab to view:
 
-Application::
-The name of the Mule application.
+[%header%autowidth.spread]
+|===
+|Field | Description
 
-Deployment:: 
-The runtime plane to which the Mule app is deployed. CloudHub (abbreviated as CH), CloudHub 2.0 (abbreviated as CH2), and Runtime Fabric (abbreviated as RTF) are supported. 
+|Business Group |The business group a Mule app is deployed to
 
-Flows:: 
-The sum of flows in the Mule app. This number is calculated by multiplying flows by the number of workers (CloudHub) or replicas (CloudHub 2.0). For more information about how this metric is billed, see xref:usage-metrics.adoc#mule-flows[Mule flows].
+|Environment Type |The environment in which a Mule app is deployed.
 
-Messages::
-The sum of inbound and outbound Mule messages in the Mule app. For more information about how this metric is billed, see xref:usage-metrics.adoc#mule-messages[Mule messages].  
+| Cluster |The name of the cluster containing the replicas and worker nodes.
 
-Data Throughput::
-The sum of inbound and outbound data in gigabytes (GB) transmitted by the Mule app. For more information about how this metric is billed, see xref:usage-metrics.adoc#data-throughput[data throughput].  
+|Cluster Capacity (Millicores) | The worker node capacity.
+|===
 
-Number of Workers::
-The sum of all workers (CloudHub) or replicas (CloudHub 2.0) of a Mule app. Apps that don’t have workers or replicas show a value of `N/A` in this column.
+Select the *Application Details* tab to view:
+
+[%header%autowidth.spread]
+|===
+|Field |Description
+|Application |The name of the Mule application.
+
+| Business Group | The business group a Mule app is deployed to.
+
+| Deployment Type | The runtime plane to which the Mule app is deployed. CloudHub (abbreviated as CH), CloudHub 2.0 (abbreviated as CH2), and Runtime Fabric (abbreviated as RTF) are supported. 
+
+|Environment Type |The environment in which a Mule app is deployed.
+
+| Cluster | The name of the cluster containing the replicas and worker nodes.
+
+| CPU Limit | The maximum amount of vCPU the application can use. This is shared CPU on the worker node.
+
+| CPU Reserve (Millicores) | The amount of vCPU guaranteed to the application and reserved for its use.
+
+| Mule Flows | The sum of flows in the Mule app. This number is calculated by multiplying flows by the number of workers (CloudHub) or replicas (CloudHub 2.0). For more information about how this metric is billed, see xref:usage-metrics.adoc#mule-flows[Mule flows].
+
+| Mule Messages | The sum of inbound and outbound Mule messages in the Mule app. For more information about how this metric is billed, see xref:usage-metrics.adoc#mule-messages[Mule messages].  
+
+| Data Throughput (GB) | The sum of inbound and outbound data in gigabytes (GB) transmitted by the Mule app. For more information about how this metric is billed, see xref:usage-metrics.adoc#data-throughput[data throughput].  
+|===
+
 // end::table[]
 
 // tag::flows[]
-== Mule Flows
+=== Mule Flows
 
-A _Mule flow_ is a sequence of logical operations configured in XML by using the `<flow>` element. A Mule app can consist of a single Mule flow, or it can break up processing into discrete xref:mule-runtime::about-flows.adoc[Mule flows and subflows] that you add to the app and connect together. Mule apps in production environments typically use multiple Mule flows and subflows to divide the app into functional modules or for error-handling purposes. For example, one Mule flow might receive a record and transform data into a given format that another flow processes. 
+A Mule flow is a sequence of logical operations configured within the XML `<flow/>` element of a Mule application. The runtime report tracks the Mule flows within a deployed and running Mule application that contains a Mule event source or APIkit route requests. Mule apps in production environments typically use multiple Mule flows and subflows to divide the app into functional modules or for error-handling purposes. For example, one Mule flow might receive a record and transform data into a given format that another flow processes.  
 
-In a usage report, flow counts are calculated by multiplying the number of flows in an app by the number of workers (CloudHub) or replicas (Runtime Fabric and CloudHub 2.0).
+To calculate usage, MuleSoft tracks the number of Mule flows for all business groups, environments, and applications. The maximum number of Mule flows within a day or month is identified based on the peak hour across the day or month. For the detailed breakdown, MuleSoft shows the peak hour usage per business group, environment, and application. 
+
+In a usage report, flow counts are calculated by multiplying the number of flows in an app by the number of workers (CloudHub), replicas (Runtime Fabric and CloudHub 2.0), or CPU limits (Runtime Fabric).
 // end::flows[]
 
 // tag::billableFlows[]
-=== Mule Flow Scenarios that Count Towards Your Anypoint Platform Package Allotment
+==== Mule Flow Scenarios that Count Towards Your Anypoint Platform Package Allotment
 
 The following Mule flows count towards your allotment:
  
@@ -89,7 +110,7 @@ The following Mule flows count towards your allotment:
 
 Mule flows are charged only when the application containing the Mule flow is deployed and running. 
 
-=== Mule Flow with an Event Source
+==== Mule Flow with an Event Source
 
 The following Mule flow contains an event source as the first element. In this case, the `listener` counts towards your allotment.
 
@@ -101,8 +122,7 @@ The following Mule flow contains an event source as the first element. In this c
 </flow>
 ----
 
-
-=== Examples of Event Sources
+==== Examples of Event Sources
 
 [cols="2*",options="header"]
 |===
@@ -149,11 +169,11 @@ The following Mule flow contains an event source as the first element. In this c
 
 // The columns of the CSV file contain selected contact information, such as first name, last name, phone number, and email. These columns are mapped to each of the respective fields in a specific Dynamics CRM account, and the rows are uploaded.
 
-=== Mule Flow Generated by APIkit and Used for Routing APIkit Requests
+==== Mule Flow Generated by APIkit and Used for Routing APIkit Requests
 
 APIkit is a tool that simplifies the implementation of APIs by automatically generating a minimal set of Mule flows based on the API specification. Each APIkit router endpoint counts as a distinct Mule flow. These Mule flows do not have an event source and are used for the handling of HTTP requests for a particular API method and path.
 
-==== Example of an APIkit Request:
+===== Example of an APIkit Request:
 
 This flow routes APIkit requests and handles the GET request in the `/reservation` path:
 
@@ -178,7 +198,7 @@ This flow routes APIkit requests and handles the GET request in the `/reservatio
 
 // tag::nonBillableFlows[]
 [[non-billable-flows]]
-=== Mule Flows That Don't Count Against Your Anypoint Platform Package Allotment 
+==== Mule Flows That Don't Count Against Your Anypoint Platform Package Allotment 
 
 Mule flows that don't have an event source and aren't used for routing APIkit requests aren’t charged against your Anypoint Platform package allotment. These Mule flows are primarily used to modularize code.
 
@@ -195,14 +215,14 @@ Example:
 
 // tag::muleMessages[]
 [[mule-messages]]
-== Mule Messages
+=== Mule Messages
 
 A _Mule message_ is the data (the payload and its attributes) that passes through one or more Mule flows in an application. A Mule message is part of a Mule event, which is generated when the event source within a Mule flow is triggered. For example, a Mule event that consists of a Mule message is created when an HTTP listener receives a request or each time the scheduler component triggers an execution of the Mule flow. 
 Mule message processors in a Mule flow (such as core components, file read operations, or the HTTP request operations) can then retrieve, set, and process Mule message data that resides in the Mule event according to their configurations. 
 A Mule message is immutable, so every change to a Mule message results in the creation of a new instance. Each processor in a flow that receives a Mule message returns a new Mule message that consists of a message payload (the body of the message) and message attributes (metadata associated with the message).
 
 [[billable-mule-messages]]
-=== Mule Message Scenarios that Count Towards Your Anypoint Platform Package Allotment
+==== Mule Message Scenarios that Count Towards Your Anypoint Platform Package Allotment
 
 When an event source within a flow of a Mule application is triggered, the _event source_ (such as HTTP, Salesforce, scheduler, and so on) generates a Mule event that encapsulates a Mule message. The Mule message generated by the event source counts towards your Anypoint Platform package allotment. New instances of that message, which can be created during the processing of the original message as it moves through other processors in connected Mule flows, do not count towards your Anypoint Platform package allotment.
 
@@ -212,7 +232,7 @@ When an event source within a flow of a Mule application is triggered, the _even
 
 // tag::dataThroughput[]
 [[data-throughput]]
-== Data Throughput
+=== Data Throughput
 
 _Data Throughput_ is all of the network I/O bytes produced by the infrastructure that starts and runs the Mule Runtime server that runs a Mule application. This includes the data that the application produces to execute its business logic, as well as internal operational network traffic such as logs, health-checks, and monitoring traffic. For example, data throughput includes inserting a record into a database and the network traffic associated with the infrastructure of the app, such as log forwarding, control plane connection, and monitoring metrics transfer. 
 
