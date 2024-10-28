@@ -114,7 +114,6 @@ Execution types associated with the processed action
 Processed Pages::
 Sum of pages processed
 
-
 == Mule Runtime Usage
 
 MuleSoft captures usage data for Mule flows, Mule messages, and data throughput, but not all of this data is aggregated in usage reports.  
@@ -305,9 +304,17 @@ When an event source within a flow of a Mule application is triggered, the event
 Data throughput is all of the network I/O bytes produced by the infrastructure that starts and runs the Mule Runtime server that runs a Mule application. This includes the data that the application produces to execute its business logic, as well as internal operational network traffic such as logs, health-checks, and monitoring traffic. For example, data throughput includes inserting a record into a database and the network traffic associated with the infrastructure of the app, such as log forwarding, control plane connection, and monitoring metrics transfer.  
 
 [[max-cpu-prod]]
-=== Maximum CPU Limit in Production
+=== Runtime Fabric Usage Metrics
 
-Usage reports enable you to see your CPU limits broken out by business group. The CPU limit is further broken out by application, which helps you identify which application is using the most CPU, so you can make adjustments to your application configurations. 
+The Usage dashboard for Runtime Fabric lets you track, monitor, and govern core usage in hybrid environments and provides detailed metrics and analysis for Runtime Fabric instances and application deployments. You can see your CPU limits and Node Capacity metrics broken out by business group. The CPU limit is further broken out by application, which helps you identify which application is using the most CPU, so you can make adjustments to your application configurations. 
+
+The dashboard also lets you look at different things like Date and Time, Business Groups, and Environments. This helps you plan capacity better, gives you a way to measure license compliance, and makes chargebacks less expensive.
+
+The dashboard allows you to compare cores and flows consumed by each application side-by-side to help you understand your utilization and associated pricing. You can visualize core and flows consumed by each application alongside each other with the ability to drill down per environment ID and business group. This translation from cores to flows allows you to make the necessary changes to applications so you can transition to usage-based pricing iteratively.
+
+You can continue to choose whether to use the CPU Limit metric or Node Capacity metric for contract governance month over month. 
+
+=== Maximum CPU Limit in Production
 
 You can drill down and track CPU limit based usage per application ID with the ability to group them using the following metadata:
 
@@ -324,7 +331,8 @@ To monitor the usage of cores and stay under the total entitlement.
 The cluster capacity metric is available only at the root organization level.
 
 The maximum CPU limit in production is the maximum amount of CPU an app can use when deployed and running in the production runtime plane. This is shared CPU on the worker node. Each member of a set of workers for the same app can have a different value for the CPU limit. Data is captured every hour as the autoscale policy can execute every 30 minutes, which can impact the worker count and CPU limit of an app.
- 
+
+
 ==== Example
 
 This is an example with two apps:
@@ -376,19 +384,19 @@ Max concurrent limit CPU = 17
 
 
 [[max-cpu-preprod]]
-=== Maximum CPU Limit in Preproduction
+==== Maximum CPU Limit in Preproduction
 
 The maximum CPU limit in preproduction is the maximum amount of CPU an app can use when deployed and running in preproduction. 
 
 [[max-cluster-prod]]
-=== Maximum Cluster Capacity in Production
+==== Maximum Cluster Capacity in Production
 
 Your maximum cluster capacity depends on your cluster configuration. 
 
 See xref:runtime-fabric::rtf-cluster-config.adoc[]
 
 [[max-cluster-preprod]]
-=== Maximum Cluster Capacity in Preproduction
+==== Maximum Cluster Capacity in Preproduction
 
 Your maximum cluster capacity depends on your cluster configuration. 
 
