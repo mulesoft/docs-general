@@ -58,8 +58,8 @@ To sync API Catalog:
 The sync imports APIs into API Catalog that have:
 +
 * A tag of `sf-api-catalog` in Anypoint Exchange
-* Implementation HTTPS URLs in API Manager with either no SLA tiers or at least one auto-approval SLA tier 
-* A consumer endpoint with an HTTPS URL that specifies a proxy application's address for consumers to use for sending requests
+* Instances in API Manager with either no SLA tiers or at least one auto-approval SLA tier 
+* A consumer endpoint with an HTTPS URL 
 
 NOTE: The sync might take several minutes to complete. You can navigate away from the API Catalog page and the sync continues in the background.
 
