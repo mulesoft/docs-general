@@ -335,7 +335,7 @@ The maximum CPU limit in production is the maximum amount of CPU an app can use 
 
 ==== Example
 
-This is an example with two apps:
+Here is an example with two apps:
 
 App1 has a CPU Limit of one each and a worker count range of 1-3.
 
@@ -357,28 +357,28 @@ Time 01:00 min:
 * App 1: sum(2,2,2,2,2,2) = 12
 * App 2: sum(1,1,1,1,1) = 5
 * Max metric = 17 CPU Limit aggregated
-* For the root organization in a given hour (this is not reported on the usage dashboard):
+* For the root organization in a given hour (not reported on the usage dashboard):
 +
 Max concurrent limit CPU = 17
-* For the root organization in given day:
+* For the root organization in a given day:
 +
 Max concurrent limit CPU = 17
-* For the root organization in given month:
+* For the root organization in a given month:
 +
 Max concurrent limit CPU = 17
 
 App 2 auto scales down to three workers after 02:00 min:
 
 * App 1: sum(2,2,2,2,2,2) = 12
-* App 2: sum(1,1,1) =3
+* App 2: sum(1,1,1) = 3
 * Max metric = 15 CPU Limit aggregate
-* For the root organization in a given hour (this is not reported on the usage dahsboard):
+* For the root organization in a given hour (not reported on the usage dahsboard):
 +
 Max concurrent limit CPU = 15
-* For the root organization in given day:
+* For the root organization in a given day:
 +
 Max concurrent limit CPU = 17
-* For the root organization in given month:
+* For the root organization in a given month:
 +
 Max concurrent limit CPU = 17
 
