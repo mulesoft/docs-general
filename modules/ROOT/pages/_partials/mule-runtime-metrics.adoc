@@ -53,13 +53,13 @@ Select the *Business Group Details* tab to view:
 |===
 |Field | Description
 
-|Business Group |The business group a Mule app is deployed to
+|Business Group |Business group a Mule app is deployed to
 
-|Environment Type |The environment in which a Mule app is deployed.
+|Environment Type |Environment a Mule app is deployed to
 
-| Cluster |The name of the cluster containing the replicas and worker nodes.
+| Cluster |Name of the cluster containing the replicas and worker nodes
 
-|Cluster Capacity (Millicores) | The worker node capacity.
+|Cluster Capacity (Millicores) | Worker node capacity
 |===
 
 Select the *Application Details* tab to view:
@@ -77,15 +77,15 @@ Select the *Application Details* tab to view:
 
 | Cluster | The name of the cluster containing the replicas and worker nodes.
 
-| CPU Limit | The maximum amount of vCPU the application can use. This is shared CPU on the worker node.
+| CPU Limit | The maximum amount of vCPU the application can use. The CPU amount is shared on the worker node.
 
 | CPU Reserve (Millicores) | The amount of vCPU guaranteed to the application and reserved for its use.
 
-| Mule Flows | The sum of flows in the Mule app. This number is calculated by multiplying flows by the number of workers (CloudHub) or replicas (CloudHub 2.0). For more information about how this metric is billed, see xref:usage-metrics.adoc#mule-flows[Mule flows].
+| Mule Flows | The sum of flows in the Mule app. This number is calculated by multiplying flows by the number of workers (CloudHub) or replicas (CloudHub 2.0). For more information about how this metric is billed, see xref:usage-metrics.adoc#mule-flows[Mule Flows].
 
-| Mule Messages | The sum of inbound and outbound Mule messages in the Mule app. For more information about how this metric is billed, see xref:usage-metrics.adoc#mule-messages[Mule messages].  
+| Mule Messages | The sum of inbound and outbound Mule Messages in the Mule app. For more information about how this metric is billed, see xref:usage-metrics.adoc#mule-messages[Mule Messages].  
 
-| Data Throughput (GB) | The sum of inbound and outbound data in gigabytes (GB) transmitted by the Mule app. For more information about how this metric is billed, see xref:usage-metrics.adoc#data-throughput[data throughput].  
+| Data Throughput (GB) | The total of inbound and outbound data in gigabytes (GB) transmitted by the Mule app. For more information about how this metric is billed, see xref:usage-metrics.adoc#data-throughput[data throughput].  
 |===
 
 // end::table[]
@@ -95,13 +95,13 @@ Select the *Application Details* tab to view:
 
 A Mule flow is a sequence of logical operations configured within the XML `<flow/>` element of a Mule application. The runtime report tracks the Mule flows within a deployed and running Mule application that contains a Mule event source or APIkit route requests. Mule apps in production environments typically use multiple Mule flows and subflows to divide the app into functional modules or for error-handling purposes. For example, one Mule flow might receive a record and transform data into a given format that another flow processes.  
 
-To calculate usage, MuleSoft tracks the number of Mule flows for all business groups, environments, and applications. The maximum number of Mule flows within a day or month is identified based on the peak hour across the day or month. For the detailed breakdown, MuleSoft shows the peak hour usage per business group, environment, and application. 
+To calculate usage, MuleSoft tracks the number of Mule flows for all business groups, environments, and applications. The maximum number of Mule flows within a day or month is identified based on the peak hour across the day or month. For the detailed breakdown, MuleSoft shows the peak-hour usage per business group, environment, and application. 
 
 In a usage report, flow counts are calculated by multiplying the number of flows in an app by the number of workers (CloudHub), replicas (Runtime Fabric and CloudHub 2.0), or CPU limits (Runtime Fabric).
 // end::flows[]
 
 // tag::billableFlows[]
-==== Mule Flow Scenarios that Count Towards Your Anypoint Platform Package Allotment
+==== Mule Flow Scenarios That Count Toward Your Anypoint Platform Package Allotment
 
 The following Mule flows count towards your allotment:
  
@@ -222,7 +222,7 @@ Mule message processors in a Mule flow (such as core components, file read opera
 A Mule message is immutable, so every change to a Mule message results in the creation of a new instance. Each processor in a flow that receives a Mule message returns a new Mule message that consists of a message payload (the body of the message) and message attributes (metadata associated with the message).
 
 [[billable-mule-messages]]
-==== Mule Message Scenarios that Count Towards Your Anypoint Platform Package Allotment
+==== Mule Message Scenarios That Count Toward Your Anypoint Platform Package Allotment
 
 When an event source within a flow of a Mule application is triggered, the _event source_ (such as HTTP, Salesforce, scheduler, and so on) generates a Mule event that encapsulates a Mule message. The Mule message generated by the event source counts towards your Anypoint Platform package allotment. New instances of that message, which can be created during the processing of the original message as it moves through other processors in connected Mule flows, do not count towards your Anypoint Platform package allotment.
 
