@@ -303,7 +303,7 @@ When an event source within a flow of a Mule application is triggered, the event
 
 Data throughput is all of the network I/O bytes produced by the infrastructure that starts and runs the Mule Runtime server that runs a Mule application. This includes the data that the application produces to execute its business logic, as well as internal operational network traffic such as logs, health-checks, and monitoring traffic. For example, data throughput includes inserting a record into a database and the network traffic associated with the infrastructure of the app, such as log forwarding, control plane connection, and monitoring metrics transfer.  
 
-[[max-cpu-prod]]
+[[rtf-usage-metrics]]
 == Runtime Fabric Usage Metrics
 
 The Usage dashboard for Runtime Fabric lets you track, monitor, and govern core usage in hybrid environments and provides detailed metrics and analysis for Runtime Fabric instances and application deployments. You can see your CPU limits and cluster capacity metrics broken out by business group. The CPU limit is further broken out by application, which helps you identify which application is using the most CPU, so you can make adjustments to your application configurations. 
@@ -312,7 +312,7 @@ The dashboard also lets you look at different things like Date and Time, Busines
 
 The dashboard allows you to compare cores and flows consumed by each application side-by-side to help you understand your utilization and associated pricing. You can visualize core and flows consumed by each application alongside each other with the ability to drill down per environment ID and business group when you export the usage report CSV. This translation from cores to flows allows you to make the necessary changes to applications so you can transition to usage-based pricing iteratively.
 
-
+[[rtf-compliance-tracking]]
 === Runtime Fabric Compliance Tracking With Usage Metrics
 
 You must adjust your clusters and application configurations for accurate measurement of usage metrics. You can continue to choose whether to use the CPU limit metric or node capacity metric, at the root organization level for contract governance depending on your use case. 
@@ -331,6 +331,7 @@ a| * You can install Runtime Fabric instances in a shared Kubernets cluster, wit
 
 For more information, see xref:runtime-fabric::limitations-self.adoc#license-compliance[MuleSoft License Compliance].
 
+[[max-cpu-prod]]
 === Maximum CPU Limit in Production
 
 You can drill down and track CPU limit based usage per application ID with the ability to group them using metadata, including:
