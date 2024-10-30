@@ -352,7 +352,7 @@ The maximum CPU limit in production is the maximum amount of CPU an app can use 
 Data is captured every hour but the max metric is tracked on a daily and monthly basis as shown in the following example. 
 
 [[example]]
-==== Example
+=== Example
 
 Here is an example with two apps:
 
@@ -403,7 +403,7 @@ Max concurrent limit CPU = 17
 
 
 [[max-cpu-preprod]]
-==== Maximum CPU Limit in Preproduction
+=== Maximum CPU Limit in Preproduction
 
 The maximum CPU limit in preproduction (sandbox) is the maximum amount of CPU an app can use when deployed and running in preproduction. 
 
@@ -424,16 +424,20 @@ The cluster capacity metric is available only at the root organization level.
 Data is captured every hour but the max metric is tracked on a daily and monthly basis as shown in the <<example>>. 
 
 [[max-cluster-prod]]
-==== Maximum Cluster Capacity in Production
+=== Maximum Cluster Capacity in Production
 
 Your maximum cluster capacity depends on your cluster configuration. 
+
+Data is captured every hour but the max metric is tracked on a daily and monthly basis as shown in the <<example>>. 
 
 See xref:runtime-fabric::rtf-cluster-config.adoc[]
 
 [[max-cluster-preprod]]
-==== Maximum Cluster Capacity in Preproduction
+=== Maximum Cluster Capacity in Preproduction
 
 Your maximum cluster capacity depends on your cluster configuration. 
+
+Data is captured every hour but the max metric is tracked on a daily and monthly basis as shown in the <<example>>.  
 
 See xref:runtime-fabric::rtf-cluster-config.adoc[]
 
