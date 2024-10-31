@@ -325,10 +325,10 @@ There are some additional configuration requirements if you are using the cluste
 
 * The Runtime Fabric agent must be version 2.7.0 or later. 
 +
-For more information, see xref:runtime-fabric::upgrade.index.adoc[].
+For more information, see xref:runtime-fabric::upgrade-index.adoc[].
 * If you are using a Helm-based Runtime Fabric installation, ensure that the NODE_WATCHER parameter is enabled.
 +
-For more information about enabling NODE_WATCHER, see xref:runtime-fabric::install-helm.adoc##optional-parameters[Optional Parameters].
+For more information about enabling NODE_WATCHER, see xref:runtime-fabric::install-helm.adoc#optional-parameters[Optional Parameters].
 
 These configurations only apply to the Runtime Fabric agent and have no impact on applications. You don't need to take any action on applications (redeployment or restarts) for tracking the cluster capacity and CPU limit metrics.
 
