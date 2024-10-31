@@ -90,6 +90,7 @@ Select the *Application Details* tab to view:
 
 // end::table[]
 
+//// The tags from here to the end of the file are not in use as far as I know. 
 // tag::flows[]
 === Mule Flows
 
@@ -237,3 +238,4 @@ When an event source within a flow of a Mule application is triggered, the _even
 _Data Throughput_ is all of the network I/O bytes produced by the infrastructure that starts and runs the Mule Runtime server that runs a Mule application. This includes the data that the application produces to execute its business logic, as well as internal operational network traffic such as logs, health-checks, and monitoring traffic. For example, data throughput includes inserting a record into a database and the network traffic associated with the infrastructure of the app, such as log forwarding, control plane connection, and monitoring metrics transfer. 
 
 // end::dataThroughput[]
+////

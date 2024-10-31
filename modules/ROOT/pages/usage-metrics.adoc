@@ -11,16 +11,17 @@ Anypoint Platform captures usage metrics across products, but not all metrics ar
 |Mule flow: A flow within a deployed and running Mule app that contains a Mule event source or route APIKit request. 
 |Flows are aggregated using a Max Concurrent model. The usage for a month is the highest number of flows that exist in a single given hour during a month.
 
-|Mule message: The container of the core information processed by the runtime. 
-|A Mule message counts as a single unit when an event source triggers it. Messages are aggregated using a sum of all messages sent during a month.
-|Data throughput: The total amount of data transferred in and out of the infrastructure that runs Mule where the Mule app is deployed. 
+|Mule message: Container of the core information processed by the runtime. 
+|A Mule message counts as a single unit when an event source triggers it. Messages are aggregated using a total of all messages sent during a month.
+|Data throughput: Total amount of data transferred in and out of the infrastructure that runs Mule where the Mule app is deployed. 
 |Data throughput counts when the deployed application transfers data to execute its business logic, including but not limited to internal operational network traffic for monitoring, logs, and health checks. Data throughput is aggregated as a sum of all bytes during a month. 
 | Cluster capacity: A set of workers or nodes that act as a single deployment target for a given Runtime Fabric instance.
 | Allocatable CPU capacity of each node that's managed by the given Runtime Fabric instances.
-| CPU Limit: Maximum amount of CPU resources a worker node can use.
-a| The CPU limit is aggregated by measuring the amount of CPU usage over a specific period of time, such as an hour or a day.  
+| CPU Limit (Millicores): Maximum amount of CPU resources a worker node can use.
+a| The CPU limit is measured by aggregating the amount of CPU usage over a specific period of time, such as an hour or a day.  
 
-The CPU Limit configuration of each application is summarized at each environment ID, then at each business group, and then at the root organization ID for preproduction (sandbox) and production environment types separately.
+The CPU limit configuration of each application is summarized at each environment ID, then at each business group, and then at the root organization ID for preproduction (sandbox) and production environment types separately.
+
 | CPU Reserve (Millicores): A guaranteed minimum amount of CPU resources allocated to a worker node. 
 | CPU reserve is aggregated by calculating the total amount of CPU resources allocated by the user to reserve for applications within the cluster or Runtime Fabric instance. 
 
@@ -100,7 +101,7 @@ include::partial$flex-gateway-metrics.adoc[tag=card]
 IDP usage reports show this information in tables and cards:
 
 Business Group::
-Business group in which the document is processed
+Business group the document is processed in
 
 Action ID::
 ID associated with the processed action
@@ -112,7 +113,7 @@ Execution Type::
 Execution types associated with the processed action
 
 Processed Pages::
-Sum of pages processed
+Total pages processed
 
 == Mule Runtime Usage
 
@@ -140,13 +141,13 @@ Select the *Business Group Details* tab to view:
 |===
 |Field | Description
 
-|Business Group |Business group a Mule app is deployed to
+|Business Group |Business group a Mule app is deployed to.
 
 |Environment Type |Environment the Mule app is deployed to. Preproduction environments are sandbox environments.
 
-| Cluster | Name of the Runtime Fabric instance containing the applications, workers, and nodes 
+| Cluster | Name of the Runtime Fabric instance containing the applications, workers, and nodes. 
 
-|Cluster Capacity (Millicores) | Allocatable CPU capacity of each node that is managed by the given Runtime Fabric instances
+|Cluster Capacity (Millicores) | Allocatable CPU capacity of each node that is managed by the given Runtime Fabric instances.
 |===
 
 ==== Application Details
@@ -170,11 +171,11 @@ Select the *Application Details* tab to view:
 
 | CPU Reserve (Millicores) | Amount of CPU allocated by the user to reserve for applications withing the Runtime Fabric cluster or instance. 
 
-| Mule Flows | Sum of flows in the Mule app. This number is calculated by multiplying flows by the number of workers (CloudHub) or replicas (CloudHub 2.0). For more information about how this metric is billed, see xref:usage-metrics.adoc#mule-flows[Mule flows].
+| Mule Flows | Total number of flows in the Mule app. This number is calculated by multiplying flows by the number of workers (CloudHub) or replicas (CloudHub 2.0). For more information about how this metric is billed, see xref:usage-metrics.adoc#mule-flows[Mule flows].
 
-| Mule Messages | Sum of inbound and outbound Mule messages in the Mule app. For more information about how this metric is billed, see xref:usage-metrics.adoc#mule-messages[Mule messages].  
+| Mule Messages | Total number of inbound and outbound Mule messages in the Mule app. For more information about how this metric is billed, see xref:usage-metrics.adoc#mule-messages[Mule messages].  
 
-| Data Throughput (GB) | Sum of inbound and outbound data in gigabytes (GB) transmitted by the Mule app. For more information about how this metric is billed, see xref:usage-metrics.adoc#data-throughput[data throughput].  
+| Data Throughput (GB) | Total amount of inbound and outbound data in gigabytes (GB) transmitted by the Mule app. For more information about how this metric is billed, see xref:usage-metrics.adoc#data-throughput[data throughput].  
 |===
 
 === Mule Runtime Usage Cards
@@ -191,15 +192,17 @@ MuleSoft usage reports cards include:
 [[max-mule-flows]]
 === Maximum Mule Flows
 
-A Mule flow is a sequence of logical operations configured within the XML `<flow/>` element of a Mule application. The runtime report tracks the Mule flows within a deployed and running Mule application that contains a Mule event source or APIkit route requests. Mule apps in production environments typically use multiple Mule flows and subflows to divide the app into functional modules or for error-handling purposes. For example, one Mule flow might receive a record and transform data into a given format that another flow processes.  
+A Mule flow is a sequence of logical operations configured within the XML `<flow/>` element of a Mule application. The runtime report tracks the Mule flows within a deployed and running Mule application that contains a Mule event source or APIkit route requests. 
 
-To calculate usage, MuleSoft tracks the number of Mule flows for all business groups, environments, and applications. The maximum number of Mule flows within a day or month is identified based on the peak hour across the day or month. For the detailed breakdown, MuleSoft shows the peak hour usage per business group, environment, and application. 
+Mule apps in production environments typically use multiple Mule flows and subflows to divide the app into functional modules or for error-handling purposes. For example, one Mule flow might receive a record and transform data into a given format that another flow processes.  
+
+To calculate usage, MuleSoft tracks the number of Mule flows for all business groups, environments, and applications. The maximum number of Mule flows within a day or month is identified based on the peak-hour usage across the day or month. For the detailed breakdown, MuleSoft shows the peak hour usage per business group, environment, and application. 
 
 In a usage report, flow counts are calculated by multiplying the number of flows in an app by the number of workers (CloudHub) or replicas (Runtime Fabric and CloudHub 2.0).
 
-==== Mule Flow Scenarios that Count Towards Your Anypoint Platform Package Allotment
+==== Mule Flow Scenarios That Count Toward Your Anypoint Platform Package Allotment
 
-The following Mule flows count towards your allotment:
+The following Mule flows count toward your allotment:
  
 * Flows that contain a xref:mule-runtime::about-mule-event.adoc[Mule event source] 
 * xref:apikit::index.adoc[Flows generated by APIkit] that process API requests 
@@ -256,11 +259,9 @@ The following Mule flow contains an event source as the first element. In this c
 .2+| websocket | inbound-listener | outbound-listener
 |===
 
-==== Mule Flow Generated by APIkit and Used for Routing APIkit Requests
+==== Mule Flows Generated by APIkit and Used for Routing APIkit Requests
 
 APIkit is a tool that simplifies the implementation of APIs by automatically generating a minimal set of Mule flows based on the API specification. Each APIkit router endpoint counts as a distinct Mule flow. These Mule flows do not have an event source and are used for the handling of HTTP requests for a particular API method and path.
-
-Here is an example of an APIkit request:
 
 This flow routes APIkit requests and handles the GET request in the `/reservation` path:
 
@@ -290,11 +291,13 @@ Example:
 === Total Mule Messages
 
 A Mule message is the data (the payload and its attributes) that passes through one or more Mule flows in an application. A Mule message is part of a Mule event, which is generated when the event source within a Mule flow is triggered. For example, a Mule event that consists of a Mule message is created when an HTTP listener receives a request or each time the scheduler component triggers an execution of the Mule flow. 
+
 Mule message processors in a Mule flow (such as core components, file read operations, or the HTTP request operations) can then retrieve, set, and process Mule message data that resides in the Mule event according to their configurations. 
+
 A Mule message is immutable, so every change to a Mule message results in the creation of a new instance. Each processor in a flow that receives a Mule message returns a new Mule message that consists of a message payload (the body of the message) and message attributes (metadata associated with the message).
 
 [[billable-mule-messages]]
-==== Mule Message Scenarios that Count Towards Your Anypoint Platform Package Allotment
+==== Mule Message Scenarios That Count Toward Your Anypoint Platform Package Allotment
 
 When an event source within a flow of a Mule application is triggered, the event source such as HTTP Listener or Scheduler, generates a Mule event that encapsulates a Mule message. The Mule message generated by the event source counts towards your Anypoint Platform package allotment. New instances of that message, which can be created during the processing of the original message as it moves through other processors in connected Mule flows, do not count towards your Anypoint Platform package allotment.
 
@@ -306,9 +309,9 @@ Data throughput is all of the network I/O bytes produced by the infrastructure t
 [[rtf-usage-metrics]]
 == Runtime Fabric Usage Metrics
 
-The Usage dashboard for Runtime Fabric lets you track, monitor, and govern core usage in hybrid environments and provides detailed metrics and analysis for Runtime Fabric instances and application deployments. You can see your CPU limits and cluster capacity metrics broken out by business group. The CPU limit is further broken out by application, which helps you identify which application is using the most CPU, so you can make adjustments to your application configurations. 
+The Usage dashboard for Runtime Fabric lets you track, monitor, and govern core usage in hybrid environments and provides detailed metrics and analysis for Runtime Fabric instances and application deployments. You can see your cluster capacity metrics broken out by business group. The CPU limit is shown at the application level, along with the associated business groups, which helps you identify which applications are using the most CPU, so you can make adjustments to your application configurations. 
 
-The dashboard also lets you look at different things like Date and Time, Business Groups, and Environments. This helps you plan capacity better, gives you a way to measure license compliance, and makes chargebacks less expensive.
+The Usage dashboard also lets you look at different things like Date and Time, Business Groups, and Environments. This helps you plan capacity better, gives you a way to measure license compliance, and makes chargebacks less expensive.
 
 The dashboard allows you to compare cores and flows consumed by each application side-by-side to help you understand your utilization and associated pricing. You can visualize core and flows consumed by each application alongside each other with the ability to drill down per environment ID and business group when you export the usage report CSV. This translation from cores to flows allows you to make the necessary changes to applications so you can transition to usage-based pricing iteratively.
 
@@ -322,11 +325,11 @@ Here are some recommendations to help you accurately measure metrics:
 [%header%autowidth.spread]
 |===
 | CPU Limit | Cluster Capacity
-a|* Each application requires variable CPU allocation depending on its workload requirements. Use Anypoint Monitoring to analyze the CPU usage of your application during development to identify the right CPU Limit and CPU reserve configurations. 
-* Runtime Manager sets the CPU limit configuration by default to the available capacity of the underlying Runtime Fabric instance, which can unintentionally result in a higher CPU limit usage reported for applications. To avoid this, modify the CPU limit configuration with the appropriate values based on the performance of the app.
+a|* Each application requires variable CPU allocation depending on its workload requirements. Use Anypoint Monitoring to analyze the CPU usage of your application during development to identify the right CPU limit and CPU reserve configurations. 
+* Runtime Manager sets the CPU limit configuration to the available cluster capacity of the underlying Runtime Fabric instance by default, which can result in a higher CPU limit usage reported for applications if the CPU limit configuration isn't explicitly modified during deployment. For an accurate CPU Limit metric, ensure that the application's CPU Limit configurations are updated with the appropriate values based on the app's performance.
 
-a| * You can install Runtime Fabric instances in a shared Kubernets cluster, with both namespace isolation and node isolation for applications and Runtime Fabric core service workloads. These isolations are not reflected by the cluster capacity metric captured from the Kubelet server. To use this metric for compliance, use a dedicated cluster for Runtime Fabric instances for accurate measurements.
-* Due to the granularity of infrastructure configurability, if a cluster is configured with hyper-threading, virtualization of compute cores, or has system nodes for advanced cluster management, MuleSoft can't account for the usage impact from these configurations on the cluster capacity metric. If you must have these configurations along and choose to use the cluster capacity metric, reach out to your account team for accurate compliance audits.
+a| * You can install Runtime Fabric instances in a shared Kubernetes cluster, with both namespace isolation and node isolation for applications and Runtime Fabric core service workloads. These isolations aren't reflected by the cluster capacity metric captured from the Kubelet server. To use this metric for compliance, use a dedicated cluster for Runtime Fabric instances for accurate measurements.
+* If a cluster is reconfigured with hyper-threading, virtualization of compute cores, or has system nodes for advanced cluster management, MuleSoft can't account for the usage impact from these configurations on the cluster capacity metric. If you must have these configurations and choose to use the cluster capacity metric, reach out to your account team for accurate compliance audits.
 |===
 
 For more information, see xref:runtime-fabric::limitations-self.adoc#license-compliance[MuleSoft License Compliance].
@@ -341,7 +344,7 @@ You can drill down and track CPU limit based usage per application ID with the a
 Tracks whether the underlying cluster has enough capacity to scale.
 * Business group
 +
-For the ability to see usage per business group.
+Shows usage per business group.
 * Root organization
 +
 To monitor the usage of cores and stay under the total entitlement.
@@ -357,17 +360,17 @@ Data is captured every hour but the max metric is tracked on a daily and monthly
 
 Here is an example with two apps:
 
-App1 has a CPU Limit of one each and a worker count range of 1-3.
+App1 has a CPU limit of one each and a worker count range of 1-3.
 
-App2 has a CPU Limit of one each and a worker count range of 2-5.
+App2 has a CPU limit of one each and a worker count range of 2-5.
 
 Data captured at 00:00 minutes:
 
 * App 1: sum(1,1,1) = 3
 * App 2: sum(1,1,1,1,1) = 5
-* Max metric captured = 8 CPU Limit aggregated
+* Max metric captured = 8 CPU limit aggregated
 
-Redeployment of App1 with a CPU Limit of 2 and worker range of 1 - 6 at 00:45 minutes:
+Redeployment of App1 with a CPU limit of 2 and worker range of 1 - 6 at 00:45 minutes:
 
 * App 1: sum(1,1,1,2,2,2) = 9
 * App 2: sum(1,1,1,1,1) = 5
@@ -376,7 +379,7 @@ Time 01:00 min:
 
 * App 1: sum(2,2,2,2,2,2) = 12
 * App 2: sum(1,1,1,1,1) = 5
-* Max metric captured = 17 CPU Limit aggregated
+* Max metric captured = 17 CPU limit aggregated
 * For the root organization in a given hour (not reported on the usage dashboard):
 +
 Max concurrent limit CPU = 17
@@ -391,7 +394,7 @@ App 2 auto scales down to three workers after 02:00 min:
 
 * App 1: sum(2,2,2,2,2,2) = 12
 * App 2: sum(1,1,1) = 3
-* Max metric = 15 CPU Limit aggregate
+* Max metric = 15 CPU limit aggregate
 * For the root organization in a given hour (not reported on the usage dahsboard):
 +
 Max concurrent limit CPU = 15
@@ -408,14 +411,14 @@ Max concurrent limit CPU = 17
 
 The maximum CPU limit in preproduction (sandbox) is the maximum amount of CPU an app can use when deployed and running in preproduction. 
 
-You can drill down and track CPU limit based usage per application ID with the ability to group them using metadata, including:
+You can drill down and track CPU limit-based usage per application ID with the ability to group them using metadata, including:
 
 * Runtime Fabric cluster name
 +
 Tracks whether the underlying cluster has enough capacity to scale.
 * Business group
 +
-For the ability to see usage per business group.
+Shows usage per business group.
 * Root organization
 +
 To monitor the usage of cores and stay under the total entitlement.
@@ -423,6 +426,8 @@ To monitor the usage of cores and stay under the total entitlement.
 The cluster capacity metric is available only at the root organization level.
 
 Data is captured every hour but the max metric is tracked on a daily and monthly basis as shown in the <<example>>. 
+
+When an application is moved from a preproduction to a production environment, the CPU limit configuration for that application is accounted for in the daily max meter of both preproduction and production environments. 
 
 [[max-cluster-prod]]
 === Maximum Cluster Capacity in Production
