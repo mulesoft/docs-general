@@ -16,7 +16,7 @@ Anypoint Platform captures usage metrics across products, but not all metrics ar
 |Data throughput: Total amount of data transferred in and out of the infrastructure that runs Mule where the Mule app is deployed. 
 |Data throughput counts when the deployed application transfers data to execute its business logic, including but not limited to internal operational network traffic for monitoring, logs, and health checks. Data throughput is aggregated as a sum of all bytes during a month. 
 | Cluster capacity: A set of workers or nodes that act as a single deployment target for a given Runtime Fabric instance.
-| Allocatable CPU capacity of each node that's managed by the given Runtime Fabric instances.
+| Allocatable CPU capacity of each node within the Runtime Fabric instance.
 | CPU Limit (Millicores): Maximum amount of CPU resources a worker node can use.
 a| The CPU limit is measured by aggregating the amount of CPU usage over a specific period of time, such as an hour or a day.  
 
@@ -141,13 +141,15 @@ Select the *Business Group Details* tab to view:
 |===
 |Field | Description
 
-|Business Group |Business group a Mule app is deployed to.
+|Business Group |Owner business group used when creating the Runtime Fabric instance.
 
-|Environment Type |Environment the Mule app is deployed to. Preproduction environments are sandbox environments.
 
-| Cluster | Name of the Runtime Fabric instance containing the applications, workers, and nodes. 
+|Environment Type |Environment the Runtime Fabric instance is associated with. If any production environment is associated with a Runtime Fabric instance, it is considered a production instance. Cluster capacity is not split within a Runtime Fabric instance between preproduction (sandbox) and production environments. 
+ 
 
-|Cluster Capacity (Millicores) | Allocatable CPU capacity of each node that is managed by the given Runtime Fabric instances.
+| Cluster | Name of the Runtime Fabric instance containing the applications, workers, and nodes 
+
+|Cluster Capacity (Millicores) | Allocatable CPU capacity of each node within the Runtime Fabric instance
 |===
 
 ==== Application Details
@@ -161,15 +163,15 @@ Select the *Application Details* tab to view:
 
 | Business Group | Business group a Mule app is deployed to.
 
-| Deployment Type | Runtime plane to which the Mule app is deployed. CloudHub (abbreviated as CH), CloudHub 2.0 (abbreviated as CH2), and Runtime Fabric (abbreviated as RTF) are supported. 
+| Deployment Type | Runtime plane the Mule app is deployed to. CloudHub (abbreviated as CH), CloudHub 2.0 (abbreviated as CH2), and Runtime Fabric (abbreviated as RTF) are supported. 
 
-|Environment Type |Environment the Mule app is deployed to. Preproduction environments in the usage table refer to sandbox environments.
+|Environment Type |Preproduction (sandbox) or production environment the Mule app is deployed to. 
 
-| Cluster | Name of the Runtime Fabric instance containing the applications, workers, and nodes.
+| Cluster |The Runtime Fabric instance that contains the nodes and applications.
 
 | CPU Limit (Millicores) | Maximum amount of CPU allocated by the user that the application can burst to within the shared cluster or Runtime Fabric instance.
 
-| CPU Reserve (Millicores) | Amount of CPU allocated by the user to reserve for applications withing the Runtime Fabric cluster or instance. 
+| CPU Reserve (Millicores) | Amount of CPU allocated by the user to reserve for applications within the Runtime Fabric cluster or instance. 
 
 | Mule Flows | Total number of flows in the Mule app. This number is calculated by multiplying flows by the number of workers (CloudHub) or replicas (CloudHub 2.0). For more information about how this metric is billed, see xref:usage-metrics.adoc#mule-flows[Mule flows].
 
@@ -309,16 +311,31 @@ Data throughput is all of the network I/O bytes produced by the infrastructure t
 [[rtf-usage-metrics]]
 == Runtime Fabric Usage Metrics
 
-The Usage dashboard for Runtime Fabric lets you track, monitor, and govern core usage in hybrid environments and provides detailed metrics and analysis for Runtime Fabric instances and application deployments. You can see your cluster capacity metrics broken out by business group. The CPU limit is shown at the application level, along with the associated business groups, which helps you identify which applications are using the most CPU, so you can make adjustments to your application configurations. 
+The Usage dashboard for Runtime Fabric lets you track, monitor, and govern core usage in hybrid environments and provides detailed metrics and analysis for Runtime Fabric instances and application deployments. 
 
-The Usage dashboard also lets you look at different things like Date and Time, Business Groups, and Environments. This helps you plan capacity better, gives you a way to measure license compliance, and makes chargebacks less expensive.
+You can see your cluster capacity metrics refined by business group. To see CPU limit aggregates at the business group level, xref:usage-reports.adoc#export-usage-reports[export the usage report as a CSV]. The CPU limit is shown at the application level on the Usage dashboard, along with the associated business groups, which helps you identify which applications are using the most CPU, so you can make adjustments to your application configurations if needed. 
 
-The dashboard allows you to compare cores and flows consumed by each application side-by-side to help you understand your utilization and associated pricing. You can visualize core and flows consumed by each application alongside each other with the ability to drill down per environment ID and business group when you export the usage report CSV. This translation from cores to flows allows you to make the necessary changes to applications so you can transition to usage-based pricing iteratively.
+Use the dashboard to compare cores and flows consumed by each application side-by-side to help you understand your utilization and associated pricing. You can visualize cores and flows consumed by each application alongside each other and drill down per environment ID and business group when you export the usage report CSV file. 
+
+If you are using the cluster capacity metric for billing, this translation from core usage to flow usage enables you to make the necessary changes to applications so you can transition to usage-based pricing iteratively, which gives you a more flexible pricing model that scales with your integration needs and isn't tied to your infrastructure.
+
+=== Runtime Fabric Agent Version and Configuration Requirements
+
+There are some additional configuration requirements if you are using the cluster capacity metric for tracking. These requirements don't apply for accurate tracking of the CPU limit metric. 
+
+* The Runtime Fabric agent must be version 2.7.0 or later. 
++
+For more information, see xref:runtime-fabric::upgrade.index.adoc[].
+* If you are using a Helm-based Runtime Fabric installation, ensure that the NODE_WATCHER parameter is enabled.
++
+For more information about enabling NODE_WATCHER, see xref:runtime-fabric::install-helm.adoc##optional-parameters[Optional Parameters].
+
+These configurations only apply to the Runtime Fabric agent and have no impact on applications. You don't need to take any action on applications (redeployment or restarts) for tracking the cluster capacity and CPU limit metrics.
 
 [[rtf-compliance-tracking]]
 === Runtime Fabric Compliance Tracking With Usage Metrics
 
-You must adjust your clusters and application configurations for accurate measurement of usage metrics. You can continue to choose whether to use the CPU limit metric or node capacity metric, at the root organization level for contract governance depending on your use case. 
+You must adjust your clusters and application configurations for accurate measurement of usage metrics. You can continue to choose whether to use the CPU limit metric or cluster capacity metric, at the root organization level for contract governance depending on your use case. 
 
 Here are some recommendations to help you accurately measure metrics:
 
@@ -347,11 +364,11 @@ Tracks whether the underlying cluster has enough capacity to scale.
 Shows usage per business group.
 * Root organization
 +
-To monitor the usage of cores and stay under the total entitlement.
+Monitor core usage to stay under the total entitlement.
 +
 The cluster capacity metric is available only at the root organization level.
 
-The maximum CPU limit in production is the maximum amount of CPU an app can use when deployed and running in the production runtime plane. The CPU is shared on the worker node. Each member of a set of workers for the same app can have a different value for the CPU limit. Autoscale policies, if implemented, can execute every 30 minutes, which can impact the worker or replica count and CPU limit of an app deployment.
+The maximum CPU limit in production is the maximum amount of CPU an app can use when deployed and running in the production runtime plane. The CPU amount is shared on the worker node. Each member of a set of workers for the same app can have a different value for the CPU limit. Autoscale policies, if implemented, can execute every 30 minutes, which can impact the worker or replica count and CPU limit of an app deployment.
 
 Data is captured every hour but the max metric is tracked on a daily and monthly basis as shown in the following example. 
 
@@ -421,7 +438,7 @@ Tracks whether the underlying cluster has enough capacity to scale.
 Shows usage per business group.
 * Root organization
 +
-To monitor the usage of cores and stay under the total entitlement.
+Monitor core usage to stay under the total entitlement.
 +
 The cluster capacity metric is available only at the root organization level.
 
