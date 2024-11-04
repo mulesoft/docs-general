@@ -443,7 +443,7 @@ Monitor core usage to stay under the total entitlement.
 +
 The cluster capacity metric is available only at the root organization level.
 
-include::partial$rtf-usage.adoc[tag=maxmetric] 
+include::partial$rtf-usage.adoc[tag=max-metric] 
 
 When an application is moved from a preproduction to a production environment, the CPU limit configuration for that application is accounted for in the daily max meter of both preproduction and production environments. 
 
