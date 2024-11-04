@@ -429,7 +429,7 @@ Max concurrent limit CPU = 17
 
 The maximum CPU limit in preproduction (sandbox) is the maximum amount of CPU an app can use when deployed and running in preproduction. 
 
-You can drill down and track CPU limit-based usage per application ID with the ability to group them using metadata, including:
+You can drill down and track CPU limit-based usage per application ID and group them using metadata, including:
 
 * Runtime Fabric cluster name
 +
