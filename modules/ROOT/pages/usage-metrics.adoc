@@ -314,7 +314,7 @@ Data throughput is all of the network I/O bytes produced by the infrastructure t
 
 The usage dashboard for Runtime Fabric lets you track, monitor, and govern core usage in hybrid environments and provides detailed metrics and analysis for Runtime Fabric instances and application deployments. 
 
-You can see your cluster capacity metrics refined by business group. To see CPU limit aggregates at the business group level, xref:usage-reports.adoc#export-usage-reports[export the usage report as a CSV]. The CPU limit is shown at the application level on the usage dashboard, along with the associated business groups, which helps you identify which applications are using the most CPU, so you can make adjustments to your application configurations if needed. 
+You can see your cluster capacity metrics refined by business group. To see CPU limit aggregates at the business group level, xref:usage-reports.adoc#export-usage-reports[export the usage report as a CSV]. The CPU limit is shown at the application level on the usage dashboard, along with the associated business groups, which helps you identify which applications use the most CPU, so you adjust to your application configurations if needed. 
 
 Use the dashboard to compare cores and flows consumed by each application side-by-side to help you understand your utilization and associated pricing. You can visualize cores and flows consumed by each application alongside each other and drill down per environment ID and business group when you export the usage report CSV file. 
 
@@ -454,7 +454,7 @@ Your maximum cluster capacity depends on your cluster configuration.
 
 Data is captured every hour but the max metric is tracked on a daily and monthly basis as shown in the <<example>>. 
 
-See xref:runtime-fabric::rtf-cluster-config.adoc[]
+See xref:runtime-fabric::rtf-cluster-config.adoc[].
 
 [[max-cluster-preprod]]
 === Maximum Cluster Capacity in Preproduction
@@ -463,7 +463,7 @@ Your maximum cluster capacity depends on your cluster configuration.
 
 Data is captured every hour but the max metric is tracked on a daily and monthly basis as shown in the <<example>>.  
 
-See xref:runtime-fabric::rtf-cluster-config.adoc[]
+See xref:runtime-fabric::rtf-cluster-config.adoc[].
 
 == See Also
 
