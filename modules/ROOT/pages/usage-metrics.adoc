@@ -324,7 +324,7 @@ If you are using the cluster capacity metric for billing, this translation from 
 
 === Runtime Fabric Agent Version and Configuration Requirements
 
-There are some additional configuration requirements if you are using the cluster capacity metric for tracking. These requirements don't apply for accurate tracking of the CPU limit metric. 
+If you are using the cluster capacity metric for tracking, additional configuration requirements apply. These requirements don't apply for accurate tracking of the CPU limit metric. 
 
 * The Runtime Fabric agent must be version 2.7.0 or later. 
 +
