@@ -68,7 +68,7 @@ API Experience Hub usage reports show this information in tables and cards:
 
 include::partial$api-eh-metrics.adoc[tag=table]
 
-include::partial$api-eh-metrics.adoc[tag=card]
+include::partial$api-eh-metrics.adoc[tag=cards]
 
 == API Governance Usage
 
@@ -94,7 +94,7 @@ Flex Gateway usage reports show this information in tables and cards:
 
 include::partial$flex-gateway-metrics.adoc[tag=table]
 
-include::partial$flex-gateway-metrics.adoc[tag=card]
+include::partial$flex-gateway-metrics.adoc[tag=cards]
 
 == Intelligent Document Processing (IDP)
 
@@ -452,7 +452,7 @@ When an application is moved from a preproduction to a production environment, t
 
 Your maximum cluster capacity depends on your cluster configuration. 
 
-Data is captured every hour but the max metric is tracked on a daily and monthly basis as shown in the <<example>>. 
+include::partial$rtf-usage.adoc[tag=max-metric]  
 
 See xref:runtime-fabric::rtf-cluster-config.adoc[].
 
@@ -461,7 +461,7 @@ See xref:runtime-fabric::rtf-cluster-config.adoc[].
 
 Your maximum cluster capacity depends on your cluster configuration. 
 
-Data is captured every hour but the max metric is tracked on a daily and monthly basis as shown in the <<example>>.  
+include::partial$rtf-usage.adoc[tag=max-metric]   
 
 See xref:runtime-fabric::rtf-cluster-config.adoc[].
 
