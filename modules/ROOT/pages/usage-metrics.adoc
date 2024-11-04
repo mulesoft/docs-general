@@ -280,7 +280,7 @@ This flow routes APIkit requests and handles the GET request in the `/reservatio
 
 Mule flows that don't have an event source and aren't used for routing APIkit requests aren’t charged against your Anypoint Platform package allotment. These Mule flows are primarily used to modularize code.
 
-Example:
+For example:
 
 [source,xml]
 ----
