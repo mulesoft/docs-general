@@ -318,7 +318,7 @@ The usage dashboard for Runtime Fabric lets you track, monitor, and govern core 
 
 You can see your cluster capacity metrics refined by business group. To see CPU limit aggregates at the business group level, xref:usage-reports.adoc#export-usage-reports[export the usage report as a CSV]. The CPU limit is shown at the application level on the usage dashboard, along with the associated business groups, which helps you identify which applications use the most CPU, so you adjust to your application configurations if needed. 
 
-Use the dashboard to compare cores and flows consumed by each application side-by-side to help you understand your utilization and associated pricing. You can visualize cores and flows consumed by each application alongside each other and drill down per environment ID and business group when you export the usage report CSV file. 
+In the dashboard, compare cores and flows consumed by each application to help you understand your usage and associated pricing. Export the usage report to a CSV file to visualize cores and flows consumed by each app and drill down per environment ID and business group.
 
 If you are using the cluster capacity metric for billing, this translation from core usage to flow usage enables you to make the necessary changes to applications so you can transition to usage-based pricing iteratively, which gives you a more flexible pricing model that scales with your integration needs and isn't tied to your infrastructure.
 
