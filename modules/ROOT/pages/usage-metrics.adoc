@@ -298,6 +298,7 @@ A Mule message is the data (the payload and its attributes) that passes through 
 
 Mule message processors in a Mule flow (such as core components, file read operations, or the HTTP request operations) can then retrieve, set, and process Mule message data that resides in the Mule event according to their configurations. 
 
+
 A Mule message is immutable, so every change to a Mule message results in the creation of a new instance. Each processor in a flow that receives a Mule message returns a new Mule message that consists of a message payload (the body of the message) and message attributes (metadata associated with the message).
 
 [[billable-mule-messages]]
