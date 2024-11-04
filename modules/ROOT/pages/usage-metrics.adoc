@@ -312,9 +312,9 @@ Data throughput is all of the network I/O bytes produced by the infrastructure t
 [[rtf-usage-metrics]]
 == Runtime Fabric Usage Metrics
 
-The Usage dashboard for Runtime Fabric lets you track, monitor, and govern core usage in hybrid environments and provides detailed metrics and analysis for Runtime Fabric instances and application deployments. 
+The usage dashboard for Runtime Fabric lets you track, monitor, and govern core usage in hybrid environments and provides detailed metrics and analysis for Runtime Fabric instances and application deployments. 
 
-You can see your cluster capacity metrics refined by business group. To see CPU limit aggregates at the business group level, xref:usage-reports.adoc#export-usage-reports[export the usage report as a CSV]. The CPU limit is shown at the application level on the Usage dashboard, along with the associated business groups, which helps you identify which applications are using the most CPU, so you can make adjustments to your application configurations if needed. 
+You can see your cluster capacity metrics refined by business group. To see CPU limit aggregates at the business group level, xref:usage-reports.adoc#export-usage-reports[export the usage report as a CSV]. The CPU limit is shown at the application level on the usage dashboard, along with the associated business groups, which helps you identify which applications are using the most CPU, so you can make adjustments to your application configurations if needed. 
 
 Use the dashboard to compare cores and flows consumed by each application side-by-side to help you understand your utilization and associated pricing. You can visualize cores and flows consumed by each application alongside each other and drill down per environment ID and business group when you export the usage report CSV file. 
 
@@ -327,9 +327,9 @@ There are some additional configuration requirements if you are using the cluste
 * The Runtime Fabric agent must be version 2.7.0 or later. 
 +
 For more information, see xref:runtime-fabric::upgrade-index.adoc[].
-* If you are using a Helm-based Runtime Fabric installation, ensure that the NODE_WATCHER parameter is enabled.
+* If you are using a Helm-based Runtime Fabric installation, ensure that the `NODE_WATCHER` parameter is enabled.
 +
-For more information about enabling NODE_WATCHER, see xref:runtime-fabric::install-helm.adoc#optional-parameters[Optional Parameters].
+For more information about enabling `NODE_WATCHER`, see xref:runtime-fabric::install-helm.adoc#optional-parameters[Optional Parameters].
 
 These configurations only apply to the Runtime Fabric agent and have no impact on applications. You don't need to take any action on applications (redeployment or restarts) for tracking the cluster capacity and CPU limit metrics.
 
@@ -344,7 +344,7 @@ Here are some recommendations to help you accurately measure metrics:
 |===
 | CPU Limit | Cluster Capacity
 a|* Each application requires variable CPU allocation depending on its workload requirements. Use Anypoint Monitoring to analyze the CPU usage of your application during development to identify the right CPU limit and CPU reserve configurations. 
-* Runtime Manager sets the CPU limit configuration to the available cluster capacity of the underlying Runtime Fabric instance by default, which can result in a higher CPU limit usage reported for applications if the CPU limit configuration isn't explicitly modified during deployment. For an accurate CPU Limit metric, ensure that the application's CPU Limit configurations are updated with the appropriate values based on the app's performance.
+* Runtime Manager sets the CPU limit configuration to the available cluster capacity of the underlying Runtime Fabric instance by default, which can result in a higher CPU limit usage reported for applications if the CPU limit configuration isn't explicitly modified during deployment. For an accurate CPU limit metric, ensure that the application's CPU limit configurations are updated with the appropriate values based on the app's performance.
 
 a| * You can install Runtime Fabric instances in a shared Kubernetes cluster, with both namespace isolation and node isolation for applications and Runtime Fabric core service workloads. These isolations aren't reflected by the cluster capacity metric captured from the Kubelet server. To use this metric for compliance, use a dedicated cluster for Runtime Fabric instances for accurate measurements.
 * If a cluster is reconfigured with hyper-threading, virtualization of compute cores, or has system nodes for advanced cluster management, MuleSoft can't account for the usage impact from these configurations on the cluster capacity metric. If you must have these configurations and choose to use the cluster capacity metric, reach out to your account team for accurate compliance audits.
@@ -384,19 +384,19 @@ App2 has a CPU limit of one each and a worker count range of 2-5.
 
 Data captured at 00:00 minutes:
 
-* App 1: sum(1,1,1) = 3
-* App 2: sum(1,1,1,1,1) = 5
+* App1: sum(1,1,1) = 3
+* App2: sum(1,1,1,1,1) = 5
 * Max metric captured = 8 CPU limit aggregated
 
 Redeployment of App1 with a CPU limit of 2 and worker range of 1 - 6 at 00:45 minutes:
 
-* App 1: sum(1,1,1,2,2,2) = 9
-* App 2: sum(1,1,1,1,1) = 5
+* App1: sum(1,1,1,2,2,2) = 9
+* App2: sum(1,1,1,1,1) = 5
 
 Time 01:00 min: 
 
-* App 1: sum(2,2,2,2,2,2) = 12
-* App 2: sum(1,1,1,1,1) = 5
+* App1: sum(2,2,2,2,2,2) = 12
+* App2: sum(1,1,1,1,1) = 5
 * Max metric captured = 17 CPU limit aggregated
 * For the root organization in a given hour (not reported on the usage dashboard):
 +
@@ -408,10 +408,10 @@ Max concurrent limit CPU = 17
 +
 Max concurrent limit CPU = 17
 
-App 2 auto scales down to three workers after 02:00 min:
+App2 auto scales down to three workers after 02:00 min:
 
-* App 1: sum(2,2,2,2,2,2) = 12
-* App 2: sum(1,1,1) = 3
+* App1: sum(2,2,2,2,2,2) = 12
+* App2: sum(1,1,1) = 3
 * Max metric = 15 CPU limit aggregate
 * For the root organization in a given hour (not reported on the usage dahsboard):
 +
