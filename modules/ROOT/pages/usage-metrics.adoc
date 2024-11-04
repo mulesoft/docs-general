@@ -336,7 +336,7 @@ These configurations only apply to the Runtime Fabric agent and have no impact o
 [[rtf-compliance-tracking]]
 === Runtime Fabric Compliance Tracking With Usage Metrics
 
-You must adjust your clusters and application configurations for accurate measurement of usage metrics. You can continue to choose whether to use the CPU limit metric or cluster capacity metric, at the root organization level for contract governance depending on your use case. 
+You must adjust your clusters and application configurations for accurate usage-metric measurement. You can still use the CPU limit metric or cluster capacity metric at the root organization level for contract governance depending on your use case. 
 
 These recommendations can help you accurately measure metrics:
 
