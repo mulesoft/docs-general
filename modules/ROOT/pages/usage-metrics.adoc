@@ -309,7 +309,7 @@ When an event source within a flow of a Mule application is triggered, the event
 [[data-throughput]]
 === Total Data Throughput
 
-Data throughput is all of the network I/O bytes produced by the infrastructure that starts and runs the Mule Runtime server that runs a Mule application. This includes the data that the application produces to execute its business logic, as well as internal operational network traffic such as logs, health-checks, and monitoring traffic. For example, data throughput includes inserting a record into a database and the network traffic associated with the infrastructure of the app, such as log forwarding, control plane connection, and monitoring metrics transfer.  
+Data throughput is all of the network I/O bytes produced by the infrastructure for the Mule runtime server that runs a Mule application. This includes the data that the application produces to execute its business logic, as well as internal operational network traffic such as logs, health checks, and monitoring traffic. For example, data throughput includes inserting a record into a database and the network traffic associated with the app infrastructure, such as log forwarding, control plane connection, and monitoring metrics transfer.  
 
 [[rtf-usage-metrics]]
 == Runtime Fabric Usage Metrics
