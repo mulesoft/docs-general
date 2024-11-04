@@ -367,7 +367,7 @@ Shows usage per business group.
 +
 Monitor core usage to stay under the total entitlement.
 +
-The cluster capacity metric is available only at the root organization level.
+The cluster-capacity metric is available only at the root organization level.
 
 The maximum CPU limit in production is the maximum amount of CPU an app can use when deployed and running in the production runtime plane. The CPU amount is shared on the worker node. Each member of a set of workers for the same app can have a different value for the CPU limit. Autoscale policies, if implemented, can execute every 30 minutes, which can impact the worker or replica count and CPU limit of an app deployment.
 
