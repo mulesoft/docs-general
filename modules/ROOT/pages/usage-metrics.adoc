@@ -338,7 +338,7 @@ These configurations only apply to the Runtime Fabric agent and have no impact o
 
 You must adjust your clusters and application configurations for accurate measurement of usage metrics. You can continue to choose whether to use the CPU limit metric or cluster capacity metric, at the root organization level for contract governance depending on your use case. 
 
-Here are some recommendations to help you accurately measure metrics:
+These recommendations can help you accurately measure metrics:
 
 [%header%autowidth.spread]
 |===
