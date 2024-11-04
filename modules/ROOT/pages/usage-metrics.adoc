@@ -371,16 +371,16 @@ The cluster capacity metric is available only at the root organization level.
 
 The maximum CPU limit in production is the maximum amount of CPU an app can use when deployed and running in the production runtime plane. The CPU amount is shared on the worker node. Each member of a set of workers for the same app can have a different value for the CPU limit. Autoscale policies, if implemented, can execute every 30 minutes, which can impact the worker or replica count and CPU limit of an app deployment.
 
-Data is captured every hour but the max metric is tracked on a daily and monthly basis as shown in the following example. 
+Data is captured every hour but the max metric is tracked on a daily and monthly basis as shown in this example. 
 
 [[example]]
 === Example
 
 Here is an example with two apps:
 
-App1 has a CPU limit of one each and a worker count range of 1-3.
+App1 has a CPU limit of one each and a worker count range of 1 - 3.
 
-App2 has a CPU limit of one each and a worker count range of 2-5.
+App2 has a CPU limit of one each and a worker count range of 2 - 5.
 
 Data captured at 00:00 minutes:
 
@@ -413,7 +413,7 @@ App2 auto scales down to three workers after 02:00 min:
 * App1: sum(2,2,2,2,2,2) = 12
 * App2: sum(1,1,1) = 3
 * Max metric = 15 CPU limit aggregate
-* For the root organization in a given hour (not reported on the usage dahsboard):
+* For the root organization in a given hour (not reported on the usage dashboard):
 +
 Max concurrent limit CPU = 15
 * For the root organization in a given day:
@@ -443,7 +443,7 @@ Monitor core usage to stay under the total entitlement.
 +
 The cluster capacity metric is available only at the root organization level.
 
-Data is captured every hour but the max metric is tracked on a daily and monthly basis as shown in the <<example>>. 
+include::partial$rtf-usage.adoc[tag=maxmetric] 
 
 When an application is moved from a preproduction to a production environment, the CPU limit configuration for that application is accounted for in the daily max meter of both preproduction and production environments. 
 
