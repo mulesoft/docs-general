@@ -355,7 +355,7 @@ For more information, see xref:runtime-fabric::limitations-self.adoc#license-com
 [[max-cpu-prod]]
 === Maximum CPU Limit in Production
 
-You can drill down and track CPU limit based usage per application ID with the ability to group them using metadata, including:
+You can drill down and track CPU limit-based usage per application ID and group them using metadata, including:
 
 * Runtime Fabric cluster name
 +
