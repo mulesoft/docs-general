@@ -214,7 +214,7 @@ Mule flows are charged only when the application containing the Mule flow is dep
 
 ==== Mule Flow with an Event Source
 
-The following Mule flow contains an event source as the first element. In this case, the `listener` counts towards your allotment.
+This Mule flow contains an event source as the first element. In this case, the `listener` counts towards your allotment.
 
 [source,xml]
 ----
