@@ -1,0 +1,5 @@
+// Partials used in RTF usage-metrics
+
+// tag::max-metric[]
+Data is captured every hour, but the max metric is tracked daily and monthly as shown in this <<example>>. 
+// end:max-metric[]
