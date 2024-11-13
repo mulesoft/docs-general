@@ -17,8 +17,8 @@ Anypoint Platform captures usage metrics across products, but not all metrics ar
 |Data throughput counts when the deployed application transfers data to execute its business logic, including but not limited to internal operational network traffic for monitoring, logs, and health checks. Data throughput is aggregated as a sum of all bytes during a month. 
 
 |API Manager	
-|API instance under management: API instances that are managed by API Manager after they are created using add, promote, or import options. 
-a|API instances remain under management until they are deleted. Instances of API Manager are aggregated using a Max Concurrent model. 
+|API instances:  API instances in production, preproduction, and unclassified APIs (not associated with an environment) that are managed by API Manager after they are created using add, promote, or import options. 
+a|API instances remain under management until they are deleted. Instances of API Manager are aggregated using a Max Concurrent model with three separate metrics for production, preproduction, and unclassified (APIs that aren't associated with an environment). 
 +
 [NOTE]
 Data for API Manager is available starting in October 2024. 
@@ -82,7 +82,7 @@ API Manager usage reports show this information in tables and cards:
 include::partial$apim-metrics.adoc[tag=table]
 
 Maximum Number of Managed APIs::
-API instances managed by API Manager
+API instances in production, preproduction, and unclassified APIs (not associated with an environment)
 
 == Flex Gateway Usage
 
