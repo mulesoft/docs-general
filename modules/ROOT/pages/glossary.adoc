@@ -193,7 +193,7 @@ module::
 A group of components. Modules add flexibility to your apps by allowing you to aggregate values, compress data, use Java features, and process JSON.
 
 Mule® application::
-An app that is configured to run in Mule runtime engine.
+A Mule application is an integration solution built using the Mule runtime engine, which processes and transforms data through a series of flows. These flows consist of message sources and processors that define how messages are received, processed, and routed to destinations. Mule applications can handle various types of data, including messages from different external sources such as HTTP endpoints, and support sophisticated processing mechanisms like transactions and batch jobs.
 
 Mule configuration file (configuration XML)::
 An XML file in which you configure Mule applications, domains, and policies. 
