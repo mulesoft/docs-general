@@ -19,29 +19,20 @@ For more information, see https://help.salesforce.com/s/articleView?id=000390885
 * Runtime Manager vCore allocation information and other metrics appear in Access Management.
 +
 For more information, see xref:pricing-metrics.adoc#runtime-manager-metrics[Runtime Manager Metrics].
-* xref:mq::mq-usage.adoc#access-anypoint-mq-usage[Anypoint MQ] usage appears in Access Management.
-+
-For more information, see xref:pricing-metrics.adoc#mq-metrics[Anypoint MQ Metrics].
-* xref:object-store::osv2-usage.adoc#access-object-store-effective-api-request-usage-charts[Object Store v2] usage appears in Access Management.
-+
-For more information, see xref:usage-metrics.adoc#object-store-metrics[Object Store v2 Metrics].
 
 [[products-usage-reports]]
 == Products Available in Usage Reports
 
 The following products are available in usage reports:
 
+* xref:mq::mq-usage.adoc[Anypoint MQ]
 * API Experience Hub
 * API Governance
 * API Manager
 * Flex Gateway
-* Mule Runtime
 * Intelligent Document Processing (IDP)
-
-The following products are available only in usage reports on Hyperforce:
-
-* Anypoint MQ
-* Object Store
+* Mule Runtime
+* xref:object-store::osv2-usage.adoc[Object Store v2]
 
 == Supported Mule Runtime Versions
 
@@ -71,13 +62,6 @@ You can export both daily and monthly usage reports to CSV files. These metrics 
 [[usage-reports-on-hyperforce]]
 == Usage Reports on Hyperforce
 All features of Usage Reports are supported on Hyperforce.
-
-NOTE: Anypoint MQ and Object Store usage reports are available only on Hyperforce. They aren't available on US Cloud and EU Cloud.
-
-For more information, see:
-
-* xref:mq::mq-usage.adoc#access-mq-usage-reports[Access Anypoint MQ Usage Reports]
-* xref:object-store::osv2-usage.adoc#access-os-usage-reports[Access Effective API Request Usage Reports]
 
 == See Also
 
