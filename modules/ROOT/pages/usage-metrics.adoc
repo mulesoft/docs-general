@@ -461,7 +461,7 @@ Your maximum cluster capacity depends on your cluster configuration.
 
 include::partial$rtf-usage.adoc[tag=max-metric]  
 
-Note that the CPU capacity of a single node is derived from the `Allocatable:cpu:` field when you describe the node. The total cluster CPU capacity is the sum of all these `Allocatable:cpu:` values in millicores from the worker nodes. These worker nodes are those that do not have these labels `node-role.kubernetes.io/master`, `node-role.kubernetes.io/control-plane`, `node-role.kubernetes.io/ingress`, or `rtf.mulesoft.com/ingress`.
+Note that the CPU capacity of a single node is derived from the `Allocatable:cpu:` field when you describe the node. The total cluster CPU capacity is the sum of all these `Allocatable:cpu:` values in millicores from the worker nodes. These worker nodes are those that don’t have these labels `node-role.kubernetes.io/master`, `node-role.kubernetes.io/control-plane`, `node-role.kubernetes.io/ingress`, or `rtf.mulesoft.com/ingress`.
 
 See xref:runtime-fabric::rtf-cluster-config.adoc[].
 
