@@ -46,8 +46,7 @@ The following products are available only in usage reports on Hyperforce:
 == Supported Mule Runtime Versions
 
 include::partial$mule-runtime-metrics.adoc[tag=supportedRuntimes]
-
-include::partial$mule-runtime-metrics.adoc[tag=rtfApps] 
+ 
 
 == Before You Begin
 
