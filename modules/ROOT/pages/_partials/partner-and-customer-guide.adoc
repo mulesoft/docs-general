@@ -45,11 +45,12 @@ To decouple the minimum Mule version when running tests, add the `-Dmunit.jvm` p
 Before upgrading and testing your custom connector for Java 17, you must be familiar with the following considerations:
 
 * Target compilation level
-From Mule 4.9.0 and onwards, connectors can be compiled with any Java versions providing it can generate bytecode the proper version.
 +
-For this, the version of `mule-modules-parent` must be upgraded to 1.9.0 of higher, and the `java.release.version` set to the minimal Java version that the connector will require. (See xref:java-version-support.adoc#bytecode_level[Bytecode Level Configuration]).
+In Mule 4.9.0 and later, you can compile any Mule project for Java 17 or lower. You must also compile any additional dependencies for Java 17 or lower. 
 +
-If the `mule-modules-parent` is lower than 1.9.0, bytecode level must be for Java 8 (and all of the third-party dependencies as well), and Java 8 must be used to build the connector. Because of this, use the Java compiler configuration from the Java SDK parent POM. You can’t use language features from Java 11 or Java 17. 
+The `mule-modules-parent` should be upgraded to version 1.9.0 or later, which automatically sets the `java.release.version` to Java 17. The connector's minimum Mule version will also be 4.9.0, ensuring compatibility only with Mule 4.9.0 or later. See xref:java-version-support.adoc#bytecode_level[Bytecode Level Configuration].
++
+If the `mule-modules-parent` version is earlier than 1.9.0, the bytecode level for the connector and its additional dependencies must be for Java 8, and the connector must be built using Java 8. Because of this, use the Java compiler configuration from the Java SDK parent POM instead of modifying it. You can’t use language features from Java 11 or Java 17. 
 
 * Unsupported directives
 +
