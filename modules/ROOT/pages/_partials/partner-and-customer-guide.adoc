@@ -48,7 +48,7 @@ Before upgrading and testing your custom connector for Java 17, you must be fami
 +
 In Mule 4.9.0 and later, you can compile any Mule project for Java 17 or lower. Additional dependencies must be compiled for Java 17 or lower. 
 +
-The `mule-modules-parent` should be upgraded to version 1.9.0 or later. The connector's minimum Mule version will also be 4.9.0, ensuring compatibility only with Mule 4.9.0 or later. See xref:java-version-support.adoc#bytecode_level[Bytecode Level Configuration].
+If you compile for Java 17, the `mule-modules-parent` should be upgraded to version 1.9.0 or later. The connector's minimum Mule version will also be 4.9.0, ensuring compatibility only with Mule 4.9.0 or later. See xref:java-version-support.adoc#bytecode_level[Bytecode Level Configuration].
 +
 If the `mule-modules-parent` version is earlier than 1.9.0, the bytecode level for the connector and its additional dependencies must be for Java 8. You can’t use language features from Java 11 or Java 17. 
 
