@@ -1,4 +1,5 @@
 = Upgrading Java for Custom Connectors (Customers)
+:page-notice-banner-message: Standard support for Java 8 and 11 ends in March 2025 for Mule 4.8 Edge and August 2025 for 4.6 LTS. Plan your upgrade path for apps that are running on Java 8 or 11 accordingly. 
 
 include::partial$partner-and-customer-guide.adoc[tags=customer-upgrade-note]
 
@@ -19,4 +20,3 @@ include::partial$partner-and-customer-guide.adoc[tags=test-custom-connector-muni
 include::partial$partner-and-customer-guide.adoc[tags=communicate-support-level]
 
 include::partial$partner-and-customer-guide.adoc[tags=see-also]
-
