@@ -48,9 +48,10 @@ a|If an API is governed, all versions of that API are considered one governed AP
 |Robotic Process Automation (“RPA”) bot minutes: The number of minutes running process automations across all bot sessions 
 |A single bot can run multiple parallel sessions, with RPA bot minutes counting for each parallel session. You can configure multiple bots to run the same process, with RPA bot minutes counting for each of these separate bot sessions. Test runs or process runs in the test phase are also counted towards RPA bot minutes.
 
-|Message Queue	
+|Anypoint MQ	
 |Anypoint MQ API request: A request made to retrieve one or more messages from the Anypoint MQ APIs 
-|Each Anypoint MQ API request includes up to 100 KB of data. An Anypoint MQ API request over 100 KB counts as multiple requests with no fractional units. Anypoint MQ API requests are calculated in the aggregate across all environments (including production, pre-production, sandbox, and design).
+|Anypoint MQ uses API requests to calculate billing.
+Anypoint MQ API requests are calculated in the aggregate across all environments (including production, pre-production, sandbox, and design).
 Anypoint MQ API requests are available via API and aggregated on usage reports.
 
 |Object Store	
@@ -65,6 +66,30 @@ Anypoint MQ API requests are available via API and aggregated on usage reports.
 | Intelligent Document Processing (IDP) Document Pages: A single page processed by IDP
 | IDP document actions might process documents that have more than one page, with each page counting separately. When RPA executes document actions, it also counts towards document pages and additionally consumes the corresponding RPA Bot Minutes, accounting for the time the RPA process runs.
 |===
+
+== Anypoint MQ Usage
+
+Anypoint MQ usage reports show this information in tables and cards:
+
+Message units::
+Number of encoded characters in a message, used to determine the size of message data in the response for rate limiting (not billing)
+Messages bytes::
+Size of the message data in the response, based on message units
+API requests::
+Number of API calls via the connector or API, used to calculate monthly quota for billing
+Messages received::
+Number of messages received
+Total Message units::
+Sum of message units across all queues in the organization
+Total Messages bytes::
+Sum of message data across all queues in the organization
+Total API requests::
+Sum of API calls across all queues in the organization
+Total Messages received::
+Sum of messages received across all queues in the organization
+
+For more information, see xref:mq::mq-usage.adoc[].
+
 
 == API Experience Hub Usage
 
@@ -316,6 +341,25 @@ When an event source within a flow of a Mule application is triggered, the event
 === Total Data Throughput
 
 Data throughput is all of the network I/O bytes produced by the infrastructure for the Mule runtime server that runs a Mule application. This includes the data that the application produces to execute its business logic, as well as internal operational network traffic such as logs, health checks, and monitoring traffic. For example, data throughput includes inserting a record into a database and the network traffic associated with the app infrastructure, such as log forwarding, control plane connection, and monitoring metrics transfer.  
+
+== Object Store Usage
+
+Object Store v2 usage reports show this information in tables and cards:
+
+Business Group::
+Business group that owns the resources where the app with the object store is deployed
+Environment::
+Environment within the business group where the app with the object store is deployed
+Region id:: 
+Region where the app with the object store is deployed
+Store::
+Name of the object store associated with the API requests
+Effective API requests::
+API requests along with the payload size and number of keys returned, used to calculate units against the quota
+Total Effective API requests::
+Sum of effective API requests that return a 2xx (success) response across all object stores in the organization
+
+For more information, see xref:object-store::osv2-usage.adoc[].
 
 [[rtf-usage-metrics]]
 == Runtime Fabric Usage Metrics
