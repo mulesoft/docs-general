@@ -1,5 +1,7 @@
 = Upgrading Java for Custom Connectors (Customers)
 
+include::reuse::partial$java8-eoss-banner.adoc[tag="java8-eoss"]
+
 include::partial$partner-and-customer-guide.adoc[tags=customer-upgrade-note]
 
 include::partial$partner-and-customer-guide.adoc[tags=connector-intro]
@@ -19,4 +21,3 @@ include::partial$partner-and-customer-guide.adoc[tags=test-custom-connector-muni
 include::partial$partner-and-customer-guide.adoc[tags=communicate-support-level]
 
 include::partial$partner-and-customer-guide.adoc[tags=see-also]
-
