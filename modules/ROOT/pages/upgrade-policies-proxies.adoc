@@ -1,5 +1,6 @@
 = Upgrading Java for Policies and API Proxies 
-:page-notice-banner-message: Standard support for Java 8 and 11 ends in March 2025 for Mule 4.8 Edge and August 2025 for 4.6 LTS. Plan your upgrade path for apps that are running on Java 8 or 11 accordingly. 
+
+include::reuse::partial$java8-eoss-banner.adoc[tag="java8-eoss"]
 
 Upgrade your policies and API proxies to be compatible with Java 17.
 
