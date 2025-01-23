@@ -1,5 +1,6 @@
 = Java Support
-:page-notice-banner-message: Standard support for Java 8 and 11 ends with the Mule runtime 4.9 release in February 2025.  
+
+include::reuse::partial$java8-eoss-banner.adoc[tag="java8-eoss"]
 
 MuleSoft is adopting Java's long-term-support (LTS) release cadence, beginning with Mule runtime 4.6, which adds support for Java 17 LTS. Upgrading to Java 17 provides many benefits, including improved performance, language-level enhancement, increased security, and extended APIs and libraries.
 
@@ -29,7 +30,7 @@ The following table shows the timeline for Java 8, Java 11, and Java 17 support:
 
 
 [NOTE]
-Standard support for Java 8 and 11 ends with the Mule runtime 4.9 release in February 2025, so plan your upgrade path for apps that are running on either Java 8 or Java 11 accordingly.
+Standard support for Java 8 and 11 ends in March 2025 for Mule 4.8 Edge and August 2025 for 4.6 LTS, so plan your upgrade path for apps that are running on Java 8 or 11 accordingly.
 
 The maximum supported version for running your applications is Java 17 for Mule runtime 4.6.x and later. During the packaging of your app, all code, including third-party dependencies, *must* be compiled for Java 8.
 
@@ -124,13 +125,13 @@ Anypoint Connectors and modules are certified by MuleSoft to run on Java 17. For
 
 === Where to Find Java Compatibility Information for Connectors and Modules
 
-The most commonly used Anypoint Connectors and modules are Java 17-compatible now, and others are being released regularly. Check the release notes for your connector for compatibility information.
+All Anypoint Connectors and modules are Java 17-compatible now. Check the release notes for your connector to see which connector versions are compatible with Java 17.
 
 Java compatibility information is also provided on the xref:exchange::asset-versions.adoc[Exchange] details page for connectors and modules in the *Asset versions* table. This is the most current compatibility information, as connectors are tagged as Java 17-compatible when they are released. 
 
 image:exchange-version-detail.png[Expanded menu to show asset version detail option]
 
-For a list of Java 17-compatible connectors, see https://help.salesforce.com/s/articleView?id=000782248&type=1[Java 17-Compatible Anypoint Connectors^]. 
+For a list of Java 17-compatible connectors and their respective versions, see https://help.salesforce.com/s/articleView?id=000782248&type=1[Java 17-Compatible Anypoint Connectors^]. 
 
 === Upgrading Anypoint Connectors 
 

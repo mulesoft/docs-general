@@ -29,25 +29,24 @@ For more information, see xref:usage-metrics.adoc#object-store-metrics[Object St
 [[products-usage-reports]]
 == Products Available in Usage Reports
 
-When you navigate to the *Usage Reports* page in Anypoint Platform, the selection of products you see varies based on the view you are using. Products that have only monthly usage reports are viewable only in the legacy usage reports view, while products that have both daily and monthly usage reports are available only in the new usage reports view. To switch between views, click the *Switch View* button in the banner. 
-
-The following products have only monthly usage reports:
-
-* API Manager
-
-The following products have both daily and monthly usage reports:
+The following products are available in usage reports:
 
 * API Experience Hub
 * API Governance
+* API Manager
 * Flex Gateway
 * Mule Runtime
 * Intelligent Document Processing (IDP)
 
+The following products are available only in usage reports on Hyperforce:
+
+* Anypoint MQ
+* Object Store
+
 == Supported Mule Runtime Versions
 
 include::partial$mule-runtime-metrics.adoc[tag=supportedRuntimes]
-
-include::partial$mule-runtime-metrics.adoc[tag=rtfApps] 
+ 
 
 == Before You Begin
 
@@ -68,6 +67,16 @@ You can export both daily and monthly usage reports to CSV files. These metrics 
 . Navigate to the usage report to download. 
 . Click *Export as CSV*.
 
+[[usage-reports-on-hyperforce]]
+== Usage Reports on Hyperforce
+All features of Usage Reports are supported on Hyperforce.
+
+NOTE: Anypoint MQ and Object Store usage reports are available only on Hyperforce. They aren't available on US Cloud and EU Cloud.
+
+For more information, see:
+
+* xref:mq::mq-usage.adoc#access-mq-usage-reports[Access Anypoint MQ Usage Reports]
+* xref:object-store::osv2-usage.adoc#access-os-usage-reports[Access Effective API Request Usage Reports]
 
 == See Also
 
