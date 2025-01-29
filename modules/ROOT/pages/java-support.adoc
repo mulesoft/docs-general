@@ -170,7 +170,7 @@ If you are a MuleSoft customer:
 . xref:mule-runtime::deploying.adoc[Deploy your applications] to a target running on Mule 4.6 or later.
 
 [[custom-code-in-connectors]]
-=== Custom Code in Connectors 
+== Custom Code in Connectors 
 
 If you have custom code in your connectors, or if you are using third-party libraries, you must update that custom code to be compatible with Java 17.
 
