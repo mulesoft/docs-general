@@ -32,7 +32,7 @@ The following table shows the timeline for Java 8, Java 11, and Java 17 support:
 [NOTE]
 Standard support for Java 8 and 11 ends in March 2025 for Mule 4.8 Edge and August 2025 for 4.6 LTS, so plan your upgrade path for apps that are running on Java 8 or 11 accordingly.
 
-The maximum supported version for running your applications is Java 17 for Mule runtime 4.6.x and later. During the packaging of your app, all code, including third-party dependencies, *must* be compiled for Java 8.
+In Mule 4.6.0 and later, the maximum supported version for running your applications is Java 17. In Mule 4.9.0 and later, you can compile any Mule project and additional dependencies for Java 17 or lower. In versions earlier than Mule 4.9.0, you must compile any Mule project and additional dependencies for Java 8.
 
 For more information about Mule release cadences, see xref:release-notes::mule-runtime/lts-edge-release-cadence.adoc[].
 
@@ -75,7 +75,7 @@ Follow these best practices:
 
 You can update, test, and redeploy most of your currently running Mule apps to use Java 17. However, any apps and connectors that are running custom Java code require additional work to certify those components. Before you upgrade your integration apps or Mule Gateway policies and proxies to Java 17, you must update all extensions, modules, and connectors used within those apps and policies to Java 17.
 
-NOTE: The maximum supported version for running your applications is Java 17 for Mule runtime 4.6.x and later. During the packaging of your app, all code, including third-party dependencies, *must* be compiled for Java 8.
+NOTE: In Mule 4.6.0 and later, the maximum supported version for running your applications is Java 17. In Mule 4.9.0 and later, you can compile any Mule project and additional dependencies for Java 17 or lower. In versions earlier than Mule 4.9.0, you must compile any Mule project and additional dependencies for Java 8.
 
 [IMPORTANT]
 To ensure your API proxies or Mule apps are protected when upgrading, upgrade your policies _before_ upgrading your API proxies or Mule apps.
