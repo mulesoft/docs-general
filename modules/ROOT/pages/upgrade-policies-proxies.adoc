@@ -1,6 +1,6 @@
 = Upgrading Java for Policies and API Proxies 
 
-include::reuse::partial$java8-eoss-banner.adoc[tag="java8-eoss"]
+include::reuse::partial$java8-eoss-banner.adoc[tag=java8-eoss]
 
 Upgrade your policies and API proxies to be compatible with Java 17.
 

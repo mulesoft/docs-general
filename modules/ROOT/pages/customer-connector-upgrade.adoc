@@ -1,6 +1,6 @@
 = Upgrading Java for Custom Connectors (Customers)
 
-include::reuse::partial$java8-eoss-banner.adoc[tag="java8-eoss"]
+include::reuse::partial$java8-eoss-banner.adoc[tag=java8-eoss]
 
 include::partial$partner-and-customer-guide.adoc[tags=customer-upgrade-note]
 
