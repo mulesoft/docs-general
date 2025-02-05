@@ -28,7 +28,7 @@ With standalone deployments, you can deploy your applications from the Runtime M
 
 Hyperforce, Government Cloud, and Anypoint Private Cloud Edition don't support standalone deployments.
 
-Standalone deployments show both managed and sideloaded applications on the usage reports. Managed apps are deployed using Anypoint Runtime Manager, while sideloaded apps aren't deployed using Anypoint Runtime Manager.
+Standalone deployments show both managed and sideloaded applications on the usage reports. Managed applications are deployed using Anypoint Runtime Manager, while sideloaded applications aren't deployed using Anypoint Runtime Manager.
 
 // end::supportedRuntimes[]
 
