@@ -502,7 +502,7 @@ Run your MUnit tests to test compatibility of your connector against Java 17. En
 NOTE: MUnit 3.1 is compatible only with Mule runtime 4.3.0 and later. If your connector is compatible with Mule runtime 4.2.0 and earlier, you must create a legacy profile that overrides the MUnit version.
 . If you have MUnit dependencies, such as `munit-runner` and `munit-tools`, replace the version for each dependency with the `${munit-version}` parameter.
 . Replace the version for each connector dependency with the Java 17 compatible version of the connector.
-. Open a terminal window in the root of your Mule project and run the following command:
+. Open a terminal window in the root of your Mule project and run the following command. This command displays the earliest versions of Mule runtime, MUnit, and the Mule Maven plugin that are compatible with Java 17.
 +
 [source,bash]
 ----
