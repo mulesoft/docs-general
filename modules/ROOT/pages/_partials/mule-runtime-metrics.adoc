@@ -24,7 +24,7 @@ You must redeploy your apps with a supported version, either manually or during 
 
 You can xref:cloudhub-2::ch2-update-apps.adoc#roll-back-to-a-previous-successful-configuration[roll back] to a previous successful application configuration. However, if an app is using a Mule version not supported by usage reports, you must choose a compliant Mule version before deploying changes. After deployment, a new configuration with the previously chosen settings and a supported runtime is created.
 
-With standalone deployment, you can deploy your applications from the Runtime Manager cloud console to your Mule servers, and use Runtime Manager to manage them. It's a hybrid deployment option that gives you the best of both worlds: the flexibility of on-premises deployment with the convenience of cloud-based management. For more information, see xref:runtime-manager::deployment-strategies.adoc#hybrid-deployments[Hybrid Deployments] in the Runtime Manager documentation.
+With standalone deployments, you can deploy your applications from the Runtime Manager cloud console to your Mule servers, and use Runtime Manager to manage them. It's a hybrid deployment option that gives you the best of both worlds: the flexibility of on-premises deployment with the convenience of cloud-based management. For more information, see xref:runtime-manager::deployment-strategies.adoc#hybrid-deployments[Hybrid Deployments] in the Runtime Manager documentation.
 
 Hyperforce, Government Cloud, and Anypoint Private Cloud Edition don't support standalone deployments.
 
