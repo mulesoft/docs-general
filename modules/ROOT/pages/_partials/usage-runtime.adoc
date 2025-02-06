@@ -1,4 +1,4 @@
-To view usage reports for Mule runtime, all applications (in production and sandbox) must use the following Mule versions:
+To view usage reports for Mule runtime, all applications (in production and sandbox) must use these Mule versions:
 
 [cols="2*"]
 |===
@@ -11,7 +11,7 @@ To view usage reports for Mule runtime, all applications (in production and sand
 |The latest date-patch versions for 3.9 and 4.2.0 and later
 
 |Runtime Fabric
-a| One of the following versions or any later date-patch:
+a| One of these versions or any later date-patch:
 
 Mule 4 image versions:
 
@@ -31,7 +31,7 @@ Mule 3 image versions:
 * 3.9.1-20230424-1
 
 |Standalone
-a|One of the following versions or any later date-patch:
+a|One of these versions or any later date-patch:
 
 * 4.5.0 and later
 * 4.4.0-20221111

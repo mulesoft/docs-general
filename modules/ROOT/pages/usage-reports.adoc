@@ -72,12 +72,12 @@ Hyperforce, Government Cloud, and Anypoint Private Cloud Edition aren’t availa
 
 With standalone deployments, you can deploy your applications from the Runtime Manager cloud console to your Mule servers, and use Runtime Manager to manage them. It's a hybrid deployment option that gives you the best of both worlds: the flexibility of on-premises deployment with the convenience of cloud-based management. For more information, see xref:runtime-manager::deployment-strategies.adoc#hybrid-deployments[Hybrid Deployments] in the Runtime Manager documentation.
 
-Standalone deployments show both managed and sideloaded applications on the usage reports. Managed applications are deployed using Anypoint Runtime Manager, while sideloaded applications aren't deployed using Anypoint Runtime Manager.
+Standalone deployments show both managed and sideloaded applications in the usage reports. Managed applications are deployed using Anypoint Runtime Manager, while sideloaded applications aren't deployed using Anypoint Runtime Manager.
 
 
 [[usage-reports-on-hyperforce]]
 == Usage Reports on Hyperforce
-All features of Usage Reports are supported on Hyperforce.
+All features of Usage Reports are supported on Hyperforce except for standalone deployments.
 
 NOTE: Anypoint MQ and Object Store usage reports are available only on Hyperforce. They aren't available on US Cloud and EU Cloud.
 
