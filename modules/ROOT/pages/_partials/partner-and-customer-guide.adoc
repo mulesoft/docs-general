@@ -131,7 +131,7 @@ See xref:general::java-support.adoc#mule-runtime[Mule runtime] to learn more abo
 +
 ** Reflection on Java classes
 +
-To ensure compatibility with Java 17, review and update any code that uses reflection to access Java classes or set parameter values. Java 17 imposes stricter access controls, so you should avoid introspecting JDK internals. Ensure you have a robust test suite and make sure it is run with Java 17. Pay special attention to the `setAccessible(true)` method because these type of changes in the accessibility is not allowed in Java 17.
+To ensure compatibility with Java 17, review and update any code that uses reflection to access Java classes or set parameter values. Java 17 imposes stricter access controls, so avoid introspecting JDK internals. Have a robust test suite that runs with Java 17. Pay special attention to the `setAccessible(true)` method because these access changes are not allowed in Java 17.
 ** Serialization
 +
 Update your serialization code to accommodate the restrictions of Java 17. If your code uses libraries like Gson for serializing classes, switch to using Data Transfer Objects (DTOs) where reflective access to JDK classes is involved. Ensure that serialization libraries are updated and adjust your code to minimize reliance on reflection. For more information, refer to xref:mule-runtime::configure-custom-serializers.adoc[].
@@ -143,11 +143,11 @@ Upgrade your libraries to versions compatible with Java 17. This includes updati
 Adapt your testing approach for Java 17. If you use Mockito, be aware that Mockito can't mock JVM classes. Consider custom implementations for mocking and switch from PowerMock to newer Mockito versions. Update your tests to handle the changes in Java 17 and avoid deprecated methods.
 ** Java Platform Module System (JPMS)
 +
-JPMS was introduced in Java 9. This feature introduces stricter encapsulation, impacting how Mule modules interact with JDK classes. As Mule upgrades to Java 17 and JPMS, the following changes are necessary:
+JPMS was introduced in Java 9. This feature introduces stricter encapsulation, impacting how Mule modules interact with JDK classes. As Mule upgrades to Java 17 and JPMS, these changes are necessary:
 +
-*** *Refactor Split Packages*: Resolve issues with internal and API package splits by reorganizing and refactoring packages to conform with JPMS modularization standards.
-*** *Address ResourceBundle Loading*: Implement solutions for issues related to resource bundle loading, such as using `ResourceBundleProvider` or alternative methods.
-*** Analyze the third-party libraries' changelogs to understand the changes related to JPMS or about Java 17 compatibility.
+*** Refactor Split Packages: Resolve issues with internal and API package splits by reorganizing and refactoring packages to conform with JPMS modularization standards.
+*** Address `ResourceBundle` Loading: Implement solutions for issues related to resource bundle loading, such as using `ResourceBundleProvider` or alternative methods.
+*** Analyze the third-party libraries' changelogs to understand Java 17 compatibility and changes related to JPMS.
 
 === Add Missing Code
 
