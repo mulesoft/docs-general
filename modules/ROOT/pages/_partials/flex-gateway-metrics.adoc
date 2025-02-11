@@ -30,7 +30,7 @@ Registration::
 Name of the registered Flex Gateway.
 
 Data Egress (GB)::
-Total amount of outbound data in gigabytes (GB) transmitted by the Flex Gateway egress to upstream services. 
+Total amount of outbound data in gigabytes (GB) transmitted by the egress Flex Gateway to upstream services. 
 +
 Data for this metric is available starting in February 2025.
 
