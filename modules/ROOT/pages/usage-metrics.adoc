@@ -65,6 +65,8 @@ a|If an API is governed, all versions of that API are considered one governed AP
 | IDP document actions might process documents that have more than one page, with each page counting separately. When RPA executes document actions, it also counts towards document pages and additionally consumes the corresponding RPA Bot Minutes, accounting for the time the RPA process runs.
 |===
 
+Sideloaded apps for hybrid standalone deployments are shown with the ⓘ icon in usage reports. Redeployments of sideloaded apps result in multiple records appearing in usage reports.
+
 == API Experience Hub Usage
 
 API Experience Hub usage reports show this information in tables and cards:

@@ -26,6 +26,8 @@ For more information, see xref:pricing-metrics.adoc#mq-metrics[Anypoint MQ Metri
 +
 For more information, see xref:usage-metrics.adoc#object-store-metrics[Object Store v2 Metrics].
 
+Government Cloud and Anypoint Private Cloud Edition usages aren't available in usage reports.
+
 [[products-usage-reports]]
 == Products Available in Usage Reports
 
