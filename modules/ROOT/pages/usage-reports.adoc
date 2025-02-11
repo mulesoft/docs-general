@@ -72,7 +72,7 @@ You can export both daily and monthly usage reports to CSV files. These metrics 
 
 [[usage-reports-on-hyperforce]]
 == Usage Reports on Hyperforce
-All features of Usage Reports are supported on Hyperforce except for standalone deployments.
+All features of Usage Reports are supported on Hyperforce.
 
 NOTE: Anypoint MQ and Object Store usage reports are available only on Hyperforce. They aren't available on US Cloud and EU Cloud.
 
