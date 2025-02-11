@@ -69,13 +69,6 @@ You can export both daily and monthly usage reports to CSV files. These metrics 
 . Navigate to the usage report to download. 
 . Click *Export as CSV*.
 
-== Standalone Deployments
-Hyperforce, Government Cloud, and Anypoint Private Cloud Edition aren’t available for standalone deployments for Usage Reports.
-
-With standalone deployments, you can deploy your applications from the Runtime Manager cloud console to your Mule servers, and use Runtime Manager to manage them. It's a hybrid deployment option that gives you the best of both worlds: the flexibility of on-premises deployment with the convenience of cloud-based management. For more information, see xref:runtime-manager::deployment-strategies.adoc#hybrid-deployments[Hybrid Deployments] in the Runtime Manager documentation.
-
-Standalone deployments show both managed and sideloaded applications in the usage reports. Managed applications are deployed using Anypoint Runtime Manager, while sideloaded applications aren't deployed using Anypoint Runtime Manager.
-
 
 [[usage-reports-on-hyperforce]]
 == Usage Reports on Hyperforce
