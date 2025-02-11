@@ -1,5 +1,6 @@
 = Java Support
-:page-notice-banner-message: Standard support for Java 8 and 11 ends in March 2025 for Mule 4.8 Edge and August 2025 for 4.6 LTS.  
+
+include::reuse::partial$java8-eoss-banner.adoc[tag=java8-eoss]
 
 MuleSoft is adopting Java's long-term-support (LTS) release cadence, beginning with Mule runtime 4.6, which adds support for Java 17 LTS. Upgrading to Java 17 provides many benefits, including improved performance, language-level enhancement, increased security, and extended APIs and libraries.
 
@@ -46,7 +47,7 @@ Follow these steps to upgrade to Java 17:
 . For on-prem (as with any upgrade), schedule downtime and inform stakeholders to minimize business disruption.
 * *Upgrade*
 . Upgrade to <<mule-runtime, Mule runtime 4.6>>.
-. Upgrade all <<anypoint-connectors-and-modules, Anypoint Connectors and modules>>, and <<custom-connectors, custom connectors>> used within Mule apps and policies to Java 17. Connectors containing custom Java code need additional modifications to ensure compatibility with Java 17.
+. Upgrade all <<anypoint-connectors-and-modules, Anypoint Connectors and modules>>, and <<custom-connectors, custom connectors>> used within Mule apps and policies to Java 17. Connectors containing <<custom-code-in-connectors,custom Java code>> need additional modifications to ensure compatibility with Java 17.
 . Upgrade your <<policies, policies>>. Policies containing custom Java code need additional modifications to ensure compatibility with Java 17.
 . Upgrade your <<api-proxies, API proxies>> and <<mule-apps, Mule apps>>. Proxies containing custom Java code need additional modifications to ensure compatibility with Java 17.
 . Upgrade <<anypoint-studio, Anypoint Studio>> to 7.17 and change the target JVM at the Studio project level to upgrade or downgrade the JVM.
@@ -167,6 +168,27 @@ If you are a MuleSoft customer:
   * xref:customer-connector-upgrade.adoc#upgrade-your-custom-configuration-properties-providers[Configuration Properties Providers]
 . Test your connector using xref:customer-connector-upgrade.adoc#test-your-custom-connector-with-munit[MUnit].
 . xref:mule-runtime::deploying.adoc[Deploy your applications] to a target running on Mule 4.6 or later.
+
+[[custom-code-in-connectors]]
+== Custom Code in Connectors 
+
+If you have custom code in your connectors, or if you are using third-party libraries, you must update that custom code to be compatible with Java 17.
+
+* Reflection on Java classes
++
+To ensure compatibility with Java 17, review and update any code that uses reflection to access Java classes or set parameter values. Java 17 imposes stricter access controls, so avoid introspecting JDK internals. Have a robust test suite that runs with Java 17. Pay special attention to the `setAccessible(true)` method because these access changes are not allowed in Java 17.
+
+* Java Platform Module System (JPMS)
++
+JPMS was introduced in Java 9. This feature introduces stricter encapsulation, impacting how Mule modules interact with JDK classes. As Mule upgrades to Java 17 and JPMS, these changes are necessary:
++
+** Refactor Split Packages: Resolve issues with internal and API package splits by reorganizing and refactoring packages to conform with JPMS modularization standards.
+** Address `ResourceBundle` Loading: Implement solutions for issues related to resource bundle loading, such as using `ResourceBundleProvider` or alternative methods.
+** Analyze the third-party libraries' changelogs to understand Java 17 compatibility and changes related to JPMS.
+
+* JDK Migration Guide
++
+See the https://docs.oracle.com/en/java/javase/17/migrate/getting-started.html#GUID-C25E2B1D-6C24-4403-8540-CFEA875B994A[Oracle JDK Migration Guide] for a full list of the changes made from Java 8 to Java 17. Use the guide to assess the impact to your code.
 
 [[anypoint-studio]]
 == Anypoint Studio
