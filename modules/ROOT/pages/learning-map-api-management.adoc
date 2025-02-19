@@ -1,0 +1,121 @@
+= Getting Started with API Management on Anypoint Platform
+:page-article-style: learning-map
+
+API management on Anypoint Platform is a collection of new and existing products that accelerate application delivery and combat API sprawl by managing and securing any API, built and deployed anywhere. You can start anywhere in this end-to-end API lifecycle journey: design and build, discover, manage and secure, govern, and create engaging digital experiences.
+
+*API management solution on Anypoint Platform:*
+
+- https://docs.mulesoft.com/anypoint-code-builder/[**Anypoint Code Builder**] – Design, implement, and integrate your APIs.
+- https://docs.mulesoft.com/exchange/apicat-about-api-catalog-cli[**API Catalog CLI**] – Autocatalog APIs.
+- https://docs.mulesoft.com/exchange/[**Exchange**] – Publish APIs into a curated catalog of reusable assets.
+- https://docs.mulesoft.com/api-governance/[**API Governance**] – Apply governance rules to your APIs as part of the API lifecycle.
+- https://docs.mulesoft.com/gateway/latest/flex-gateway-overview[**Flex Gateway**] – Manage and secure APIs running anywhere.
+- https://docs.mulesoft.com/api-manager/latest/what-is-api-manager[**API Manager**] – Manage, govern, and secure APIs.
+- https://docs.mulesoft.com/api-experience-hub/[**API Experience Hub**] – Create custom API portals to engage with your API ecosystems within and outside the enterprise.
+
+The end-to-end API lifecycle journey for API management consists of various tasks, each with links to relevant content to assist you in completing them.
+
+[.lm-table, cols="1a,1a,1a", grid="none"]
+|===
+| image::../_/img/learning-map/start-pin.png[]
+
+*What Is API Management?*
+
+
+API management is the process of creating, publishing, and overseeing application programming interfaces (APIs) in a secure and scalable environment.
+
+API management helps ensure that APIs are reliable, secure, and easy to use, which can lead to better developer experiences and more successful applications.
+
+- https://www.mulesoft.com/api/management[Anypoint Platform API Management]
+
+| image::../_/img/learning-map/mid-compass.png[]
+*Design and Build*
+
+Implement APIs with any system.
+
+- https://docs.mulesoft.com/anypoint-code-builder/des-designing-api-specs[Design API Specs and Fragments]
+- https://docs.mulesoft.com/anypoint-code-builder/des-create-api-specs[Create and Import API Specs]
+- https://docs.mulesoft.com/anypoint-code-builder/des-publish-api-spec-to-exchange[Publish API Specs and Fragments to Exchange]
+- https://docs.mulesoft.com/anypoint-code-builder/start-acb[Implement an API]
+- https://www.youtube.com/watch?v=qkbEj2s14Lo[Design an API]
+- https://www.youtube.com/watch?v=GvsTSFjB4Gs[Build APIs]
+- https://trailhead.salesforce.com/content/learn/modules/mulesoft-anypoint-code-builder-quick-look[Anypoint Code Builder: Quick Look]
+
+| image::../_/img/learning-map/mid-search.png[]
+*Discover*
+
+Enable your developer community to discover your APIs anywhere automatically along with relevant metadata and documentation.
+
+- https://docs.mulesoft.com/exchange/apicat-about-api-catalog-cli[Autocatalog APIs]
+- https://docs.mulesoft.com/exchange/to-find-info[Search for Assets]
+- https://docs.mulesoft.com/exchange/ex2-to-simulate-api-data#test-a-rest-api-with-simulated-data[Test an API Using Simulated Data]
+- https://www.youtube.com/watch?v=2zxthY_RNSI[Discover and Catalog Any API]
+
+| image::../_/img/learning-map/mid-integrate.png[]
+*Govern*
+
+Ensure consistent API quality and security by applying governance rules to your APIs as part of the API lifecycle.
+
+- https://docs.mulesoft.com/api-governance/create-profiles[Apply Rulesets to Identified APIs]
+- https://docs.mulesoft.com/api-governance/create-custom-rulesets[Create Custom Governance Rulesets]
+- https://www.youtube.com/watch?v=NTnY8I9vtZI[Govern APIs for Security Teams]
+- https://www.youtube.com/watch?v=NQx8AXOHdDU[Govern API Specs for Developers]
+- https://www.youtube.com/watch?v=GuRNme2tLkw[Govern API Policy Instances for Developers]
+- https://trailhead.salesforce.com/content/learn/projects/govern-apis-using-anypoint-api-governance[Govern Your APIs Using API Governance]
+
+| image::../_/img/learning-map/mid-wrench.png[]
+*Manage and Secure*
+
+Control and secure access to any API.
+
+- https://docs.mulesoft.com/gateway/latest/policies-included-apply[Apply a Policy]
+- https://docs.mulesoft.com/gateway/latest/policies-automated-applying[Apply Automated Policies]
+- https://docs.mulesoft.com/gateway/latest/flex-gateway-secure-apis[Secure and Govern Flex Gateway APIs]
+- https://docs.mulesoft.com/api-manager/latest/add-api-instances[Add API Instances]
+- https://docs.mulesoft.com/api-manager/latest/api-instance-landing-page[Manage API Instances]
+- https://www.youtube.com/watch?v=64RWZpSF-2o[Control and Manage Any API]
+- https://www.youtube.com/watch?v=eguO1gO-rss[Product Spotlight: Flex Gateway]
+- https://www.youtube.com/watch?v=OUFadXZ0NjQ[Friends of Max Overview: Flex Gateway]
+
+| image::../_/img/learning-map/end-exit.png[]
+*Engage*
+
+Create custom API portals to engage with your ecosystem of API consumers and producers.
+
+- https://docs.mulesoft.com/api-experience-hub/setting-up-the-api-portal[Set Up an API Portal]
+- https://docs.mulesoft.com/api-experience-hub/managing-apis[Manage APIs]
+- https://docs.mulesoft.com/api-experience-hub/managing-users[Manage User Access]
+- https://docs.mulesoft.com/api-experience-hub/previewing-and-publishing-your-portal[Publish Your Portal]
+- https://docs.mulesoft.com/api-experience-hub/discovering-apis[Discover APIs]
+- https://www.youtube.com/watch?v=3_9nbvJ7cdo[Engage Developers to Set Up API Ecosystems]
+|===
+
+
+[discrete]
+== See Also
+
+Learn more about other Anypoint Platform products for API management.
+
+[.lm-table-border, cols="1a,1a,1a", frame="show"]
+|===
+| *API Design Center*
+
+- https://docs.mulesoft.com/design-center/design-create-publish-api-visual-editor[Create an API Spec with the Visual API Editor]
+- https://docs.mulesoft.com/design-center/design-create-publish-api-specs-from-file[Create and Publish an API Spec or Fragment From an External File]
+- https://docs.mulesoft.com/design-center/design-mocking-service[Simulate API Calls with the Mocking Service]
+- https://docs.mulesoft.com/design-center/design-publish[Publish API Specs to Exchange]
+
+| *Anypoint Studio*
+
+- https://docs.mulesoft.com/studio/latest/create-api-specification-studio[Create an API Spec Project]
+- https://docs.mulesoft.com/studio/latest/test-specification-api-console[Test Your API Spec]
+- https://docs.mulesoft.com/studio/latest/test-with-munit-in-studio[Test Your Mule Projects with MUnit]
+- https://docs.mulesoft.com/studio/latest/deploy-mule-application-task[Deploy a Mule Application to CloudHub]
+
+| *Mule Gateway*
+
+- https://docs.mulesoft.com/mule-gateway/mule-gateway-org-credentials-mule4[Configure Organization Credentials]
+- https://docs.mulesoft.com/mule-gateway/mule-gateway-encryption-mule4[Learn About Gateway Startup Encryption]
+- https://docs.mulesoft.com/mule-gateway/mule-gateway-gatekeeper[Enhance Security with Gatekeeper]
+- https://docs.mulesoft.com/mule-gateway/policies-policy-overview[Learn about Mule Gateway Policies]
+|===
