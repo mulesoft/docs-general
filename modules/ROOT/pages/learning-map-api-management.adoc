@@ -39,7 +39,7 @@ Enable your developer community to discover your APIs anywhere automatically alo
 
 - xref:exchange::apicat-about-api-catalog-cli.adoc[Autocatalog APIs]
 - xref:exchange::to-find-info.adoc[Search for Assets]
-- xref:exchange::ex2-to-simulate-api-data#test-a-rest-api-with-simulated-data[Test an API Using Simulated Data]
+- xref:exchange::ex2-to-simulate-api-data.adoc#test-a-rest-api-with-simulated-data[Test an API Using Simulated Data]
 - https://www.youtube.com/watch?v=2zxthY_RNSI[Discover and Catalog Any API]
 
 | image::../_/img/learning-map/mid-integrate.png[]
