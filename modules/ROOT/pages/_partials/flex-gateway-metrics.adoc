@@ -18,11 +18,21 @@ Sum of API calls across all registered Flex Gateways in the organization.
 Business Group:: 
 Business group in which the Flex Gateway is registered.
 
+Gateway Type::
+Type of the registered Flex Gateway.
++
+Data for this metric is available starting in February 2025.
+
 Environment:: 
 Environment in which the Flex Gateway is registered.
 
 Registration::
 Name of the registered Flex Gateway.
+
+Data Egress (GB)::
+Total amount of outbound data in gigabytes (GB) transmitted by the egress Flex Gateway to upstream services. 
++
+Data for this metric is available starting in February 2025.
 
 # of API Calls::
 Sum of API calls made by APIs that are deployed within the Flex Gateway.
