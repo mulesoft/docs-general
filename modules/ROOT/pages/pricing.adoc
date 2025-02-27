@@ -33,8 +33,6 @@ include::partial$pricing.adoc[tag=pricingTable]
 
 During the monthly patching cycle, your applications automatically migrate to an equivalent replica size. 
 
-Application deployment using the Mule Maven plugin is not yet supported. To deploy your apps, use the Runtime Manager UI and the Application Manager APIs with the new field in `target.deploymentSettings` called `instanceType`.
-
 == Access Management Entitlements
 
 Accounts provisioned with a usage-based pricing package show flows, messages, and throughput entitlements in Access Management instead of vCores. These entitlements are available only at the root organization level. Because vCores are no longer the purchased entity, they can no longer be tracked or allocated among business groups. To view your monthly usage of flows, messages, and throughput, xref:general::usage-reports.adoc#access-usage-reports[access usage reports] in the Access Management UI. 
