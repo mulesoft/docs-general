@@ -19,7 +19,7 @@ Business Group::
 Business group in which the Flex Gateway is registered.
 
 Gateway Type::
-Type of the registered Flex Gateway.
+Gateway type of the Flex Gateway registered.
 +
 Data for this metric is available starting in February 2025.
 
@@ -30,7 +30,7 @@ Registration::
 Name of the registered Flex Gateway.
 
 Data Egress (GB)::
-Total amount of outbound data in gigabytes (GB) transmitted by the egress Flex Gateway to upstream services. 
+Total amount of outbound data in gigabytes (GB) transmitted by the Flex Gateway egress to upstream servicess. 
 +
 Data for this metric is available starting in February 2025.
 
