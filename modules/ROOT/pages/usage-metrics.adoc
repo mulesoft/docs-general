@@ -382,6 +382,10 @@ The dashboard helps you understand your usage and associated pricing by letting 
 
 If you're using the cluster capacity metric for billing, this translation from core usage to flow usage enables you to make the necessary changes to applications so you can transition to usage-based pricing iteratively, which gives you a more flexible pricing model that scales with your integration needs and isn't tied to your infrastructure.
 
+=== Mule Version Requirements for Flow Metrics
+
+Alongside the cluster capacity and CPU limit, you can also view other usage metrics (such as flow, messages, and data throughput). Ensure that the Mule applications are using the compliant xref:usage-reports.adoc#supported-mule-runtime-versions[Supported Mule Runtime Versions]. 
+
 === Runtime Fabric Agent Version and Configuration Requirements
 
 If you are using the cluster capacity metric for tracking, additional configuration requirements apply. These requirements don't apply for accurate tracking of the CPU limit metric. 
