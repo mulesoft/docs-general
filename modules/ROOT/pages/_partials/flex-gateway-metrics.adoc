@@ -18,10 +18,7 @@ Sum of API calls across all registered Flex Gateways in the organization.
 Business Group:: 
 Business group in which the Flex Gateway is registered.
 
-Gateway Type::
-Type of the registered Flex Gateway.
-+
-Data for this metric is available starting in February 2025.
+
 
 Environment:: 
 Environment in which the Flex Gateway is registered.
