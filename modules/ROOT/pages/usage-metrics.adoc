@@ -473,7 +473,7 @@ include::partial$rtf-usage.adoc[tag=max-metric]
 See xref:runtime-fabric::rtf-cluster-config.adoc[].
 
 [[exclude-node]]
-=== Exclude Nodes from Runtime Fabric Cluster Capacity
+=== Exclude Nodes From Runtime Fabric Cluster Capacity
 
 For nodes not intended to run Mule apps, exclude the nodes from your Runtime Fabric cluster's capacity report by following these steps:
 
