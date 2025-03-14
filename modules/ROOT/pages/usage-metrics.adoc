@@ -472,6 +472,19 @@ include::partial$rtf-usage.adoc[tag=max-metric]
 
 See xref:runtime-fabric::rtf-cluster-config.adoc[].
 
+[[exclude-node]]
+=== Exclude Nodes from Runtime Fabric Cluster Capacity
+
+For nodes not intended to run Mule apps, exclude the nodes from your Runtime Fabric cluster's capacity report by following these steps:
+
+. Apply the label `rtf.mulesoft.com/non-worker` to the node. This prevents further Mule apps to be scheduled on that node.
+. Make sure that no Mule apps are currently running on the node. The node is excluded from the capacity report if no Mule apps are detected.
+. Make sure the Runtime Fabric agent version is <new-agent-version-release> or higher.
+
+[NOTE]
+Use a dedicated cluster for Runtime Fabric instances for accurate measurements
+
+
 == See Also
 
 * xref:usage-reports.adoc[]
