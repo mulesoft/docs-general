@@ -479,7 +479,7 @@ For nodes not intended to run Mule apps, exclude the nodes from your Runtime Fab
 
 . Apply the label `rtf.mulesoft.com/non-worker` to the node. This prevents further Mule apps to be scheduled on that node.
 . Make sure that no Mule apps are currently running on the node. The node is excluded from the capacity report if no Mule apps are detected.
-. Make sure the Runtime Fabric agent version is <new-agent-version-release> or higher.
+. Make sure the Runtime Fabric agent version is 2.10.0 or higher.
 
 [NOTE]
 Use a dedicated cluster for Runtime Fabric instances for accurate measurements
