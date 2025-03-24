@@ -60,7 +60,7 @@ Ensure consistent API quality and security by applying governance rules to your 
 
 Control and secure access to any API.
 
-- xref:gateway::policies-included-apply.adoc[Apply a Policy]
+- xref:gateway::flex-gateway-secure-conn.adoc[Apply a Policy]
 - xref:gateway::policies-automated-applying.adoc[Apply Automated Policies]
 - xref:gateway::flex-gateway-secure-apis.adoc[Secure and Govern Flex Gateway APIs]
 - xref:api-manager::add-api-instances.adoc[Add API Instances]
