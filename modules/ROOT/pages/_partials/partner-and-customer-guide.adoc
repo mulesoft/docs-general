@@ -46,11 +46,11 @@ Before upgrading and testing your custom connector for Java 17, you must be fami
 
 * Target compilation level
 +
-NOTE: The maximum supported version for running your applications is Java 17 for Mule runtime 4.6.x and later. During the packaging of your app, all code, including third-party dependencies, *must* be compiled for Java 8.
+In Mule 4.9.0 and later, you can compile any Mule project for Java 17 or lower. Additional dependencies must be compiled for Java 17 or lower. 
 +
-Because you must compile your custom connector with Java 8, use the Java compiler configuration from the Java SDK parent POM. You can’t use language features from Java 11 or Java 17. 
+If you compile for Java 17, the `mule-modules-parent` should be upgraded to version 1.9.0 or later. The connector's minimum Mule version will also be 4.9.0, ensuring compatibility only with Mule 4.9.0 or later. See xref:mule-sdk::java-version-support.adoc#specify-java-compatibility[Specify Java Compatibility].
 +
-If you change the compilation to Java 17, the surrounding tooling (such as Studio, Maven plugins, DataSense, or connectivity testing, and so on) breaks because they are still running on Java 8.
+If the `mule-modules-parent` version is earlier than 1.9.0, the bytecode level for the connector and its additional dependencies must be for Java 8. You can’t use language features from Java 11 or Java 17. 
 
 * Unsupported directives
 +
@@ -117,13 +117,13 @@ You must update your external libraries to a version that is compatible with Jav
 [[review-your-code]]
 === Review Your Code
 
-After you compile your custom connector with Java 8, ensure you can run your custom connector with Java 17. Reviewing your code is important because some restrictions are flagged as warnings in Java 11 but are flagged as failures and can’t be disabled in Java 17. For example, reflection is more restricted in Java 17, so you must review your code to ensure there are no illegal actions. 
+After you compile your custom connector, ensure you can run your custom connector with Java 17. Reviewing your code is important because some restrictions are flagged as warnings in Java 11 but are flagged as failures and can’t be disabled in Java 17. For example, reflection is more restricted in Java 17, so you must review your code to ensure there are no illegal actions. 
 
 To help you review your code, learn more about the different changes in Java 17:
 
 * JDK Migration Guide
 +
-See the https://docs.oracle.com/en/java/javase/17/migrate/getting-started.html#GUID-C25E2B1D-6C24-4403-8540-CFEA875B994A[Oracle JDK Migration Guide] for a full list of the changes made in Java 17. Use the guide to assess the impact to your code.
+See the https://docs.oracle.com/en/java/javase/17/migrate/getting-started.html#GUID-C25E2B1D-6C24-4403-8540-CFEA875B994A[Oracle JDK Migration Guide] for a full list of the changes made from Java 8 to Java 17. Use the guide to assess the impact to your code.
 
 * Mule runtime engine
 +
@@ -131,7 +131,7 @@ See xref:general::java-support.adoc#mule-runtime[Mule runtime] to learn more abo
 +
 ** Reflection on Java classes
 +
-To ensure compatibility with Java 17, review and update any code that uses reflection to access Java classes or set parameter values. Java 17 imposes stricter access controls, so you should avoid introspecting JDK internals. Ensure you have a robust test suite and make sure it is run with Java 17.
+To ensure compatibility with Java 17, review and update any code that uses reflection to access Java classes or set parameter values. Java 17 imposes stricter access controls, so avoid introspecting JDK internals. Have a robust test suite that runs with Java 17. Pay special attention to the `setAccessible(true)` method because these access changes are not allowed in Java 17.
 ** Serialization
 +
 Update your serialization code to accommodate the restrictions of Java 17. If your code uses libraries like Gson for serializing classes, switch to using Data Transfer Objects (DTOs) where reflective access to JDK classes is involved. Ensure that serialization libraries are updated and adjust your code to minimize reliance on reflection. For more information, refer to xref:mule-runtime::configure-custom-serializers.adoc[].
@@ -143,10 +143,11 @@ Upgrade your libraries to versions compatible with Java 17. This includes updati
 Adapt your testing approach for Java 17. If you use Mockito, be aware that Mockito can't mock JVM classes. Consider custom implementations for mocking and switch from PowerMock to newer Mockito versions. Update your tests to handle the changes in Java 17 and avoid deprecated methods.
 ** Java Platform Module System (JPMS)
 +
-JPMS introduces stricter encapsulation, impacting how Mule modules interact with JDK classes. As Mule upgrades to Java 17 and JPMS, the following changes are necessary:
+JPMS was introduced in Java 9. This feature introduces stricter encapsulation, impacting how Mule modules interact with JDK classes. As Mule upgrades to Java 17 and JPMS, these changes are necessary:
 +
-*** *Refactor Split Packages*: Resolve issues with internal and API package splits by reorganizing and refactoring packages to conform with JPMS modularization standards.
-*** *Address ResourceBundle Loading*: Implement solutions for issues related to resource bundle loading, such as using `ResourceBundleProvider` or alternative methods.
+*** Refactor Split Packages: Resolve issues with internal and API package splits by reorganizing and refactoring packages to conform with JPMS modularization standards.
+*** Address `ResourceBundle` Loading: Implement solutions for issues related to resource bundle loading, such as using `ResourceBundleProvider` or alternative methods.
+*** Analyze the third-party libraries' changelogs to understand Java 17 compatibility and changes related to JPMS.
 
 === Add Missing Code
 
@@ -502,7 +503,7 @@ Run your MUnit tests to test compatibility of your connector against Java 17. En
 NOTE: MUnit 3.1 is compatible only with Mule runtime 4.3.0 and later. If your connector is compatible with Mule runtime 4.2.0 and earlier, you must create a legacy profile that overrides the MUnit version.
 . If you have MUnit dependencies, such as `munit-runner` and `munit-tools`, replace the version for each dependency with the `${munit-version}` parameter.
 . Replace the version for each connector dependency with the Java 17 compatible version of the connector.
-. Open a terminal window in the root of your Mule project and run the following command:
+. Open a terminal window in the root of your Mule project and run the following command. This command displays the earliest versions of Mule runtime, MUnit, and the Mule Maven plugin that are compatible with Java 17.
 +
 [source,bash]
 ----
