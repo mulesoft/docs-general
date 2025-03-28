@@ -98,7 +98,7 @@ Sum of API calls across all queues in the organization
 Total Messages received::
 Sum of messages received across all queues in the organization
 
-For more information, see xref:mq::mq-usage.adoc[].
+//For more information, see xref:mq::mq-usage.adoc[].
 
 
 == API Experience Hub Usage
@@ -369,7 +369,7 @@ API requests along with the payload size and number of keys returned, used to ca
 Total Effective API requests::
 Sum of effective API requests that return a 2xx (success) response across all object stores in the organization
 
-For more information, see xref:object-store::osv2-usage.adoc[].
+//For more information, see xref:object-store::osv2-usage.adoc[].
 
 [[rtf-usage-metrics]]
 == Runtime Fabric Usage Metrics

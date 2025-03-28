@@ -25,14 +25,16 @@ For more information, see xref:pricing-metrics.adoc#runtime-manager-metrics[Runt
 
 The following products are available in usage reports:
 
-* xref:mq::mq-usage.adoc[Anypoint MQ]
+//* xref:mq::mq-usage.adoc[Anypoint MQ] until MQ GA release
+* Anypoint MQ
 * API Experience Hub
 * API Governance
 * API Manager
 * Flex Gateway
 * Intelligent Document Processing (IDP)
 * Mule Runtime
-* xref:object-store::osv2-usage.adoc[Object Store v2]
+//* xref:object-store::osv2-usage.adoc[Object Store v2] until OS is released
+* Object Store v2
 
 == Supported Mule Runtime Versions
 
