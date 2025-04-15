@@ -49,6 +49,7 @@ This documentation is for reference purposes only and will not be updated.
 | DataWeave Doc Archives |
   xref:2.2@dataweave::index.adoc[v2.2 Archive] +
   xref:2.1@dataweave::index.adoc[v2.1 Archive] +
+  xref:1.2@dataweave::index.adoc[v1.2 Archive] +
   xref:1.1@dataweave::index.adoc[v1.1 Archive] +
   xref:1.0@dataweave::index.adoc[v1.0 Archive]
 
@@ -80,6 +81,7 @@ This documentation is for reference purposes only and will not be updated.
 | Mule Runtime Doc Archives (Mule User Guide) |
   xref:4.2@mule-runtime::index.adoc[v4.2 Archive] +
   xref:4.1@mule-runtime::index.adoc[v4.1 Archive] +
+  xref:3.9@mule-runtime::index.adoc[v3.9 Archive] +
   xref:3.8@mule-runtime::index.adoc[v3.8 Archive] +
   xref:3.7@mule-runtime::index.adoc[v3.7 Archive] +
   xref:3.6@mule-runtime::index.adoc[v3.6 Archive] +
