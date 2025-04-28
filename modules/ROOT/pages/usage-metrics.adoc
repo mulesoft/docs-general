@@ -100,7 +100,6 @@ Sum of messages received across all queues in the organization
 
 //For more information, see xref:mq::mq-usage.adoc[].(comment out until MQ release)
 
-=======
 Sideloaded apps for hybrid standalone deployments are shown with the ⓘ icon in usage reports. Redeployments of sideloaded apps result in multiple records appearing in usage reports.
 
 == API Experience Hub Usage
