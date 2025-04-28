@@ -100,6 +100,8 @@ Sum of messages received across all queues in the organization
 
 //For more information, see xref:mq::mq-usage.adoc[].(comment out until MQ release)
 
+=======
+Sideloaded apps for hybrid standalone deployments are shown with the ⓘ icon in usage reports. Redeployments of sideloaded apps result in multiple records appearing in usage reports.
 
 == API Experience Hub Usage
 
@@ -534,6 +536,19 @@ include::partial$rtf-usage.adoc[tag=max-metric]
 Note that the CPU capacity of a single node is derived from the `Allocatable:cpu:` field when you describe the node. The total cluster CPU capacity is the sum of all these `Allocatable:cpu:` values in millicores from the worker nodes. These worker nodes are those that don’t have these labels `node-role.kubernetes.io/master`, `node-role.kubernetes.io/control-plane`, `node-role.kubernetes.io/ingress`, or `rtf.mulesoft.com/ingress`.
 
 See xref:runtime-fabric::rtf-cluster-config.adoc[].
+
+[[exclude-node]]
+=== Exclude Nodes From Runtime Fabric Cluster Capacity
+
+For nodes not intended to run Mule apps, exclude the nodes from your Runtime Fabric cluster's capacity report by following these steps:
+
+. Apply the label `rtf.mulesoft.com/non-worker` to the node. This prevents further Mule apps to be scheduled on that node.
+. Make sure that no Mule apps are currently running on the node. The node is excluded from the capacity report if no Mule apps are detected.
+. Make sure the Runtime Fabric agent version is 2.10.0 or higher.
+
+[NOTE]
+Use a dedicated cluster for Runtime Fabric instances for accurate measurements
+
 
 == See Also
 

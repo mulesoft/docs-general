@@ -20,6 +20,8 @@ For more information, see https://help.salesforce.com/s/articleView?id=000390885
 +
 For more information, see xref:pricing-metrics.adoc#runtime-manager-metrics[Runtime Manager Metrics].
 
+Government Cloud and Anypoint Private Cloud Edition usages aren't available in usage reports.
+
 [[products-usage-reports]]
 == Products Available in Usage Reports
 
@@ -59,6 +61,7 @@ You can export both daily and monthly usage reports to CSV files. These metrics 
 
 . Navigate to the usage report to download. 
 . Click *Export as CSV*.
+
 
 [[usage-reports-on-hyperforce]]
 == Usage Reports on Hyperforce
