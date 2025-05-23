@@ -47,7 +47,7 @@ a|If an API is governed, all versions of that API are considered one governed AP
 |RPA	
 |Robotic Process Automation (“RPA”) bot minutes: The number of minutes running process automations across all bot sessions 
 |A single bot can run multiple parallel sessions, with RPA bot minutes counting for each parallel session. You can configure multiple bots to run the same process, with RPA bot minutes counting for each of these separate bot sessions. Test runs or process runs in the test phase are also counted towards RPA bot minutes.
-
+////
 |Anypoint MQ	
 |Anypoint MQ API request: A request made to retrieve one or more messages from the Anypoint MQ APIs 
 |Anypoint MQ uses API requests to calculate billing.
@@ -57,7 +57,7 @@ Anypoint MQ API requests are available via API and aggregated on usage reports.
 |Object Store	
 |Object Store API request: A request made to retrieve one or more messages from the Object Store APIs as further defined in the Object Store documentation 
 |Each Object Store API request includes up to 100 KB of data. Object Store API requests over 100 KB count as multiple requests with no fractional units. Object Store API requests are available via API and aggregated on usage reports.
-
+////
 |DataGraph	
 |DataGraph orchestration: An API request made by Anypoint DataGraph to the source APIs to get data for the GraphQL API request made to Anypoint DataGraph 
 |Orchestrations are not currently aggregated on usage reports.
@@ -66,7 +66,7 @@ Anypoint MQ API requests are available via API and aggregated on usage reports.
 | Intelligent Document Processing (IDP) Document Pages: A single page processed by IDP
 | IDP document actions might process documents that have more than one page, with each page counting separately. When RPA executes document actions, it also counts towards document pages and additionally consumes the corresponding RPA Bot Minutes, accounting for the time the RPA process runs.
 |===
-
+////
 == Anypoint MQ Usage
 
 Anypoint MQ usage reports show this information in tables and cards:
@@ -101,7 +101,7 @@ Sum of messages received across all queues in the organization
 //For more information, see xref:mq::mq-usage.adoc[].(comment out until MQ release)
 
 Sideloaded apps for hybrid standalone deployments are shown with the ⓘ icon in usage reports. Redeployments of sideloaded apps result in multiple records appearing in usage reports.
-
+////
 == API Experience Hub Usage
 
 API Experience Hub usage reports show this information in tables and cards:
@@ -274,7 +274,9 @@ This Mule flow contains an event source as the first element. In this case, the 
 
 | aggregators | aggregator-listener
 | amqp | listener
+////
 | anypoint-mq | subscriber
+////
 .2+| apikit-odata | request-entity-collection-listener | request-entity-listener
 .3+| as2-mule4 | as2-listener | as2-mdn-listener | non-repudiation-listener
 | azure-service-bus-messaging | message-listener
@@ -352,7 +354,7 @@ When an event source within a flow of a Mule application is triggered, the event
 === Total Data Throughput
 
 Data throughput is all of the network I/O bytes produced by the infrastructure for the Mule runtime server that runs a Mule application. This includes the data that the application produces to execute its business logic, as well as internal operational network traffic such as logs, health checks, and monitoring traffic. For example, data throughput includes inserting a record into a database and the network traffic associated with the app infrastructure, such as log forwarding, control plane connection, and monitoring metrics transfer.  
-
+////
 == Object Store Usage
 
 Object Store v2 usage reports show this information in tables and cards:
@@ -369,7 +371,7 @@ Effective API requests::
 API requests along with the payload size and number of keys returned, used to calculate units against the quota
 Total Effective API requests::
 Sum of effective API requests that return a 2xx (success) response across all object stores in the organization
-
+////
 //For more information, see xref:object-store::osv2-usage.adoc[].(comment out until OS release)
 
 [[rtf-usage-metrics]]
