@@ -47,17 +47,17 @@ a|If an API is governed, all versions of that API are considered one governed AP
 |RPA	
 |Robotic Process Automation (“RPA”) bot minutes: The number of minutes running process automations across all bot sessions 
 |A single bot can run multiple parallel sessions, with RPA bot minutes counting for each parallel session. You can configure multiple bots to run the same process, with RPA bot minutes counting for each of these separate bot sessions. Test runs or process runs in the test phase are also counted towards RPA bot minutes.
-////
-|Anypoint MQ	
-|Anypoint MQ API request: A request made to retrieve one or more messages from the Anypoint MQ APIs 
-|Anypoint MQ uses API requests to calculate billing.
-Anypoint MQ API requests are calculated in the aggregate across all environments (including production, pre-production, sandbox, and design).
-Anypoint MQ API requests are available via API and aggregated on usage reports.
 
-|Object Store	
-|Object Store API request: A request made to retrieve one or more messages from the Object Store APIs as further defined in the Object Store documentation 
-|Each Object Store API request includes up to 100 KB of data. Object Store API requests over 100 KB count as multiple requests with no fractional units. Object Store API requests are available via API and aggregated on usage reports.
-////
+//|Anypoint MQ
+//|Anypoint MQ API request: A request made to retrieve one or more messages from the Anypoint MQ APIs 
+//|Anypoint MQ uses API requests to calculate billing.
+//Anypoint MQ API requests are calculated in the aggregate across all environments (including production, pre-production, sandbox, and design).
+//Anypoint MQ API requests are available via API and aggregated on usage reports.
+
+//|Object Store	
+//|Object Store API request: A request made to retrieve one or more messages from the Object Store APIs as further defined in the Object Store documentation 
+//|Each Object Store API request includes up to 100 KB of data. Object Store API requests over 100 KB count as multiple requests with no fractional units. Object Store API requests are available via API and aggregated on usage reports.
+
 |DataGraph	
 |DataGraph orchestration: An API request made by Anypoint DataGraph to the source APIs to get data for the GraphQL API request made to Anypoint DataGraph 
 |Orchestrations are not currently aggregated on usage reports.
@@ -274,9 +274,7 @@ This Mule flow contains an event source as the first element. In this case, the 
 
 | aggregators | aggregator-listener
 | amqp | listener
-////
-| anypoint-mq | subscriber
-////
+//| anypoint-mq | subscriber
 .2+| apikit-odata | request-entity-collection-listener | request-entity-listener
 .3+| as2-mule4 | as2-listener | as2-mdn-listener | non-repudiation-listener
 | azure-service-bus-messaging | message-listener
