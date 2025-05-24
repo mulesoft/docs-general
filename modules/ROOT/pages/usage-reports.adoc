@@ -28,7 +28,7 @@ Government Cloud and Anypoint Private Cloud Edition usages aren't available in u
 The following products are available in usage reports:
 
 //* xref:mq::mq-usage.adoc[Anypoint MQ] (comment out until MQ GA release)
-* Anypoint MQ
+//* Anypoint MQ
 * API Experience Hub
 * API Governance
 * API Manager
@@ -36,7 +36,7 @@ The following products are available in usage reports:
 * Intelligent Document Processing (IDP)
 * Mule Runtime
 //* xref:object-store::osv2-usage.adoc[Object Store v2] (comment out until OS is released)
-* Object Store v2
+//* Object Store v2
 
 == Supported Mule Runtime Versions
 
@@ -71,4 +71,3 @@ All features of Usage Reports are supported on Hyperforce.
 
 * xref:api-governance::index.adoc[]
 * xref:api-manager::index.adoc[]
-
