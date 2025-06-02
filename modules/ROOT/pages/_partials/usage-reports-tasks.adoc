@@ -2,7 +2,7 @@
 
 . Sign in to Anypoint Platform using an account that has the Usage Viewer permission for your root organization.
 . In the Anypoint Platform navigation bar, click the business group selector, and ensure you are at the root organization level.
-. In the Anypoint Platform navigation bar, click your username icon and select *Usage*.
+. In the Anypoint Platform navigation bar, click your username icon and select *Usage Reports*.
 . Select the product for which to view a usage report.
 . Click *Monthly Usage Report* or *Daily Usage Report*. 
 . Select the month or day of the usage report to view. 
