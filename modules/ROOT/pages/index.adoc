@@ -7,7 +7,7 @@ endif::[]
 
 This site provides archived MuleSoft documentation for products and product versions that have reached their end of life and are no longer supported.
 
-This documentation is for reference purposes only and will not be updated.
+This documentation is for reference purposes only and won't be updated.
 
 |===
 
@@ -108,6 +108,9 @@ This documentation is for reference purposes only and will not be updated.
   xref:1.1@munit::index.adoc[v1.1 Archive] +
   xref:1.0@munit::index.adoc[v1.0 Archive]
 
+| Partner Manager Doc Archives |
+  xref:1.0@partner-manager::index.adoc[v1.0 Archive]
+
 | Runtime Fabric Doc Archives |
   xref:1.12@runtime-fabric::index.adoc[v1.12 Archive] +
   xref:1.11@runtime-fabric::index.adoc[v1.11 Archive] +
@@ -122,8 +125,10 @@ This documentation is for reference purposes only and will not be updated.
   xref:1.2@runtime-fabric::index.adoc[v1.2 Archive] +
   xref:1.0@runtime-fabric::index.adoc[v1.0 Archive]
 
-| Partner Manager Doc Archives |
-  xref:1.0@partner-manager::index.adoc[v1.0 Archive]
+| Service Mesh Doc Archives |
+  xref:1.2@service-mesh::index.adoc[v1.2 Archive] +
+  xref:1.1@service-mesh::index.adoc[v1.1 Archive] +
+  xref:1.0@service-mesh::index.adoc[v1.0 Archive]
 
 | Studio Doc Archives |
   xref:7.19@studio::index.adoc[v7.19 Archive] +
@@ -147,11 +152,6 @@ This documentation is for reference purposes only and will not be updated.
   xref:7.1@studio::index.adoc[v7.1 Archive] +
   xref:6.5@studio::index.adoc[v6.5 Archive] +
   xref:5.x@studio::index.adoc[v5 Archive]
-
-| Service Mesh Doc Archives |
-  xref:1.2@service-mesh::index.adoc[v1.2 Archive] +
-  xref:1.1@service-mesh::index.adoc[v1.1 Archive] +
-  xref:1.0@service-mesh::index.adoc[v1.0 Archive]
 
 | Tcat Server Doc Archives |
   xref:7.1@tcat-server::index.adoc[v7.1 Archive]
