@@ -62,6 +62,11 @@ You can export both daily and monthly usage reports to CSV files. These metrics 
 . Navigate to the usage report to download. 
 . Click *Export as CSV*.
 
+== Usage API
+Use the Anypoint Usage API to programmatically access usage data. The API provides both daily and monthly details. Usage metrics are organized by business group and application. This provides detailed insight into product consumption. 
+
+To use the API, see the API documentation for the https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a/usage-api/[Anypoint Usage API] for access and implementation details. Users must have Usage Viewer permission to access the Usage API.
+
 
 [[usage-reports-on-hyperforce]]
 == Usage Reports on Hyperforce
