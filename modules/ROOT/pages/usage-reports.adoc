@@ -16,6 +16,11 @@ Some usage data, such as monthly statements and vCore allocation, appears in dif
 xref:rpa-home::ms-automation-credits-usage-types.adoc[Automation credits] for RPA, Composer, Intelligent Document Processing (IDP), Salesforce Flow Orchestration, and MuleSoft for Flow are sent to the primary billing contact.
 +
 For more information, see https://help.salesforce.com/s/articleView?id=000390885&type=1[Monthly Account Summaries] documentation in Salesforce.
+
+* Alerts for usage reaching 80%, 90%, and 100% of the contractual entitlement are sent automatically to the primary billing contact email address.
++
+For more information, see https://help.salesforce.com/s/articleView?id=004811177&type=1[SalesforceUsage Alerts FAQ] documentation in Salesforce.
+
 * Runtime Manager vCore allocation information and other metrics appear in Access Management.
 +
 For more information, see xref:pricing-metrics.adoc#runtime-manager-metrics[Runtime Manager Metrics].
