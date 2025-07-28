@@ -17,7 +17,7 @@ xref:rpa-home::ms-automation-credits-usage-types.adoc[Automation credits] for RP
 +
 For more information, see https://help.salesforce.com/s/articleView?id=000390885&type=1[Monthly Account Summaries] documentation in Salesforce.
 
-* Alerts for usage reaching 80% and 90% of the contractual entitlement are sent automatically to the primary billing contact email address. Alerts are sent monthly once thresholds are reached.
+* Alerts for usage reaching 80% and 90% of the contractual entitlement are sent automatically to the primary billing contact email address. The primary billing contact gets alerts monthly once thresholds are reached.
 +
 For more information, see https://help.salesforce.com/s/articleView?id=004811177&type=1[SalesforceUsage Alerts FAQ] documentation in Salesforce.
 
