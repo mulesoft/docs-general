@@ -3,7 +3,11 @@
 
 Usage reports provide comprehensive monthly and daily summaries that give you valuable insights into your resource use across Anypoint Platform products. By correlating your usage with billing cycles, you can gain insights into the factors influencing your costs, which enables you to proactively manage your budget and make informed decisions to optimize your resource allocation.
 
-When you use an Anypoint Platform product that is metered, MuleSoft measures your usage and aggregates the records on a daily and monthly basis. Monthly and daily usage reports have a three-day latency, meaning that today’s usage is available in three days. All reports are calculated using the UTC time standard. For example, a daily usage is aggregated from 00:00 to 00:00 UTC. 
+When you use an Anypoint Platform product that is metered, MuleSoft measures your usage and aggregates the records on a daily and monthly basis. 
+
+Usage report data is refreshed twice a day. The most recent three days of data are provisional. This means the data is subject to change. For example, on January 10, data from January 7 to January 10 might still be updated. Data from January 6 and earlier is final and won't change. 
+
+All reports are calculated using the UTC time standard. For example, a daily usage is aggregated from 00:00 to 00:00 UTC. 
 
 Daily usage retention is three months and monthly usage retention is up to five years.
 
