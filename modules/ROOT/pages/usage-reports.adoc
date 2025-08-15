@@ -5,7 +5,7 @@ Usage reports provide comprehensive monthly and daily summaries that give you va
 
 When you use an Anypoint Platform product that is metered, MuleSoft measures your usage and aggregates the records on a daily and monthly basis. 
 
-Usage report data is refreshed twice a day. The most recent three days of data are provisional. This means the data is subject to change. For example, on January 10, data from January 7 to January 10 might still be updated. Data from January 6 and earlier is final and won't change. 
+Usage report data is refreshed twice a day. The most recent three days of data is subject to change. For example, on January 10, data from January 7 to January 10 might still be updated. Data from January 6 and earlier is final and won't change. 
 
 All reports are calculated using the UTC time standard. For example, a daily usage is aggregated from 00:00 to 00:00 UTC. 
 
