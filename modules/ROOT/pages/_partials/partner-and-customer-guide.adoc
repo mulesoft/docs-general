@@ -54,7 +54,7 @@ If the `mule-modules-parent` version is earlier than 1.9.0, the bytecode level f
 
 * Unsupported directives
 +
-Don't set `-add-opens` or `-add-export` directives. These directives are not allowed in CloudHub or Runtime Fabric, require managing them for each connector across all environments, and introduce a backward compatibility burden, complicating future Java upgrades and potentially enabling security vulnerabilities.
+Don't set `--add-opens`, `--add-exports`, or `--add-modules` directives. These directives are not allowed in CloudHub, Runtime Fabric, or on-premises. These directives also require managing them for each connector across all environments, and introduce a backward compatibility burden, complicating future Java upgrades and potentially enabling security vulnerabilities. If these directives are used, they are not covered under Support.
 
 // end::before-you-begin[]
 
