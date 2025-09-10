@@ -29,6 +29,14 @@ Design and coordinate AI agents using a declarative approach that promotes reuse
 - https://example.com/mulesoft-ai/visualizer[Agent Visualization]
 - https://example.com/mulesoft-ai/observability[Agent Observability]
 - https://example.com/mulesoft-ai/deployment[Agent Broker Deployment]
+| image::../_/img/learning-map/lm_analyze_1.png[]
+[.lm-bold]##Get Started##
+
+Kick off with quickstarts and templates.
+
+- https://example.com/mulesoft-ai/quickstart[Quickstart: Build Your First Agent]
+- https://example.com/mulesoft-ai/samples[Sample Agent Templates]
+- https://example.com/mulesoft-ai/best-practices[Agent Best Practices]
 |===
 
 [.lm-table, cols="1a,1a,1a", grid="none"]
@@ -59,6 +67,14 @@ Leverage AI for advanced monitoring, analysis, troubleshooting, and insights acr
 - https://example.com/mulesoft-ai/integration-intelligence/metrics[Metrics and Alerts]
 - https://example.com/mulesoft-ai/integration-intelligence/tracing[Logs and Traces]
 - https://example.com/mulesoft-ai/integration-intelligence/access[Access from Anypoint Monitoring]
+| image::../_/img/learning-map/lm_audience_end_1.png[]
+[.lm-bold]##Agent Governance and Security##
+
+Apply guardrails, enforce policies, and secure agent traffic.
+
+- https://example.com/mulesoft-ai/governance/overview[Governance Overview]
+- https://example.com/mulesoft-ai/governance/policies[Agentic Policies and Guardrails]
+- https://example.com/mulesoft-ai/governance/flex-gateway[Secure Agent Traffic with Flex Gateway]
 |===
 
 [discrete]
