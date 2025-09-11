@@ -1,4 +1,4 @@
-= Develop with MuleSoft AI
+= MuleSoft ActionableAI
 :page-article-style: learning-map
 
 MuleSoft is leading the industry in agentic transformation, moving organizations beyond traditional digital transformation to achieve enhanced actionability through an advanced suite of AI products and features. This transition is supported by key capabilities designed for the development, orchestration, management, governance, deployment, and observability of AI agents. MuleSoft aims to convert disparate agents into a cohesive, trusted, and actionable network, leveraging existing deterministic investments for non-deterministic outcomes.
@@ -8,12 +8,12 @@ The end-to-end AI journey for MuleSoft AI consists of various tasks, each with l
 [.lm-table, cols="1a,1a,1a", grid="none"]
 |===
 | image::../_/img/learning-map/lm_start.png[]
-[.lm-bold]##What Is MuleSoft AI?##
+[.lm-bold]##Learn About MuleSoft AI##
 
 MuleSoft AI is a set of capabilities for building, orchestrating, governing, deploying, and observing AI agents and agent networks across your enterprise.
 
 - https://example.com/mulesoft-ai/overview[MuleSoft AI Overview]
-- https://example.com/mulesoft-ai/agentic-transformation[Agentic Transformation Explained]
+- https://example.com/mulesoft-ai/agentic-transformation[Agentic Transformation]
 - https://example.com/mulesoft-ai/trust-governance[Trust, Governance, and Safety]
 
 | image::../_/img/learning-map/lm_explore_1.png[]
@@ -21,7 +21,7 @@ MuleSoft AI is a set of capabilities for building, orchestrating, governing, dep
 
 Design and coordinate AI agents using a declarative approach that promotes reuse, governance, and observability.
 
-- https://example.com/mulesoft-ai/agent-fabric[Agent Fabric Overview]
+- xref:agent-fabric::index.adoc[Agent Fabric Overview]
 - https://example.com/mulesoft-ai/exchange[Agent Discoverability]
 - https://example.com/mulesoft-ai/broker[Agent Orchestration]
 - https://example.com/mulesoft-ai/governance[Agent Governance]
@@ -44,22 +44,22 @@ Kick off with quickstarts and templates.
 | image::../_/img/learning-map/lm_analyze_1.png[]
 [.lm-bold]##Develop with AI-Powered Tools##
 
-Accelerate integration and agent development with AI in Anypoint Code Builder and platform connectors.
+Accelerate integration and agent development with AI in Anypoint Code Builder, MuleSoft connectors, and other tools.
 
-- https://example.com/mulesoft-ai/acb-agentforce[Anypoint Code Builder Agentforce]
-- https://example.com/mulesoft-ai/topics-actions[Topics and Agent Actions]
-- https://example.com/mulesoft-ai/mcp-server[MuleSoft Model Context Protocol (MCP) Server]
-- https://example.com/mulesoft-ai/connectors/a2a[A2A Connector]
-- https://example.com/mulesoft-ai/connectors/mcp[MCP Connector]
-- https://example.com/mulesoft-ai/connectors/einstein[Einstein AI Connector]
-- https://example.com/mulesoft-ai/connectors/agentforce[Agentforce Connector]
-- https://example.com/mulesoft-ai/connectors/ai-chain[MuleSoft AI Chain Connector]
-- https://example.com/mulesoft-ai/connectors/inference[MuleSoft Inference Connector]
+- xref:anypoint-code-builder::ai-enabling-api-project-topic-center.adoc[Enable APIs for Topics and Agent Actions]
+- xref:anypoint-code-builder::int-ai-developing-integrations.adoc[Develop Integrations Using Agentforce]
+- xref:a2a-connector::index.adoc[A2A Connector]
+- xref:mcp-connector::index.adoc[MCP Connector]
+- xref:mulesoft-mcp-server::index.adoc[MuleSoft MCP Server]
+- xref:einstein-ai-connector::index.adoc[Einstein AI Connector]
+- xref:agentforce-connector::index.adoc[Agentforce Connector]
+- xref:mulesoft-ai-chain-connector::index.adoc[MuleSoft AI Chain Connector]
+- xref:inference-connector::index.adoc[MuleSoft Inference Connector]
 
 | image::../_/img/learning-map/lm_build_1.png[]
-[.lm-bold]##Use Integration Intelligence##
+[.lm-bold]##Observe and Gain Actionable Insights##
 
-Leverage AI for advanced monitoring, analysis, troubleshooting, and insights across agentic workloads and integrations.
+Use Integration Intelligence for advanced monitoring, analysis, troubleshooting, and insights across agentic workloads and integrations.
 
 - https://example.com/mulesoft-ai/integration-intelligence/overview[Integration Intelligence]
 - https://example.com/mulesoft-ai/integration-intelligence/dashboards[Dashboards and Insights]
