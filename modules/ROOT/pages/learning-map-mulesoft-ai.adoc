@@ -12,32 +12,29 @@ The end-to-end AI journey for MuleSoft AI consists of various tasks, each with l
 
 MuleSoft AI is a set of capabilities for building, orchestrating, governing, deploying, and observing AI agents and agent networks across your enterprise.
 
-- https://example.com/mulesoft-ai/overview[MuleSoft AI Overview]
-- https://example.com/mulesoft-ai/agentic-transformation[Agentic Transformation]
-- https://example.com/mulesoft-ai/trust-governance[Trust, Governance, and Safety]
-
+- https://docs.mulesoft.com[Learn About MuleSoft AI]
+- https://docs.mulesoft.com[Transform Your Business with AI]
 | image::../_/img/learning-map/lm_explore_1.png[]
 [.lm-bold]##Design and Orchestrate Agents##
 
 Design and coordinate AI agents using a declarative approach that promotes reuse, governance, and observability.
 
-- xref:agent-fabric::index.adoc[Agent Fabric Overview]
-- https://drive.google.com/file/d/1lBTTIfcKEya_lFMnZ-xVbknuf2g-bIyF/view[MuleSoft Agent Fabric]
-- https://example.com/mulesoft-ai/exchange[Agent Discoverability]
-- https://example.com/mulesoft-ai/broker[Agent Orchestration]
-- https://example.com/mulesoft-ai/governance[Agent Governance]
-- https://example.com/mulesoft-ai/evaluation[Agent Evaluation]
-- https://example.com/mulesoft-ai/visualizer[Agent Visualization]
-- https://example.com/mulesoft-ai/observability[Agent Observability]
-- https://example.com/mulesoft-ai/deployment[Agent Broker Deployment]
+- xref:agent-fabric::index.adoc[Explore Agent Fabric]
+- https://drive.google.com/file/d/1lBTTIfcKEya_lFMnZ-xVbknuf2g-bIyF/view[Watch a Demo of MuleSoft Agent Fabric]
+- https://docs.mulesoft.com[Discover Agents]
+- https://docs.mulesoft.com/[Orchestrate the Agent Network]
+* xref:gateway::index.adoc[Govern the Agent Network]
+- xref:agent-visualizer::index.adoc[Visualize Your Agent Network]
+- xref:monitoring::index.adoc[Monitor and Troubleshoot Your Agent Network]
+- xref:anypoint-code-builder::index.adoc[Deploy Your Agent Network]
 | image::../_/img/learning-map/lm_analyze_1.png[]
 [.lm-bold]##Get Started##
 
-Kick off with quickstarts and templates.
+Kick off your agentic journey with quickstarts and templates.
 
-- https://example.com/mulesoft-ai/quickstart[Build Your First Agent]
-- https://example.com/mulesoft-ai/samples[Sample Agent Templates]
-- https://example.com/mulesoft-ai/best-practices[Agent Best Practices]
+- https://trailhead.salesforce.com/content/learn/trails/design-and-implement-ai-agents-with-agentforce[Design and Implement AI Agents with Agentforce]
+- xref:agent-fabric::index.adoc[Explore Sample Agent Templates]
+- https://docs.mulesoft.com/[Learn About Agent Best Practices]
 |===
 
 [.lm-table, cols="1a,1a,1a", grid="none"]
@@ -45,44 +42,43 @@ Kick off with quickstarts and templates.
 | image::../_/img/learning-map/lm_analyze_1.png[]
 [.lm-bold]##Develop with AI-Powered Tools##
 
-Accelerate integration and agent development with AI in Anypoint Code Builder, MuleSoft connectors, and other tools.
+Accelerate integration and agent development with AI using Anypoint Code Builder, MuleSoft connectors, and other tools.
 
 - xref:anypoint-code-builder::ai-enabling-api-project-topic-center.adoc[Enable APIs for Topics and Agent Actions]
 - xref:anypoint-code-builder::int-ai-developing-integrations.adoc[Develop Integrations Using Agentforce]
-- xref:a2a-connector::index.adoc[A2A Connector]
-- xref:mcp-connector::index.adoc[MCP Connector]
-- xref:mulesoft-mcp-server::index.adoc[MuleSoft MCP Server]
-- xref:einstein-ai-connector::index.adoc[Einstein AI Connector]
-- xref:agentforce-connector::index.adoc[Agentforce Connector]
-- xref:mulesoft-ai-chain-connector::index.adoc[MuleSoft AI Chain Connector]
-- xref:inference-connector::index.adoc[MuleSoft Inference Connector]
+- xref:a2a-connector::index.adoc[Develop with A2A Connector]
+- xref:mcp-connector::index.adoc[Develop with MCP Connector]
+- xref:mulesoft-mcp-server::index.adoc[Develop with MuleSoft MCP Server]
+- xref:einstein-ai-connector::index.adoc[Develop with Einstein AI Connector]
+- xref:agentforce-connector::index.adoc[Develop with Agentforce Connector]
+- xref:mulesoft-ai-chain-connector::index.adoc[Develop with MuleSoft AI Chain Connector]
+- xref:inference-connector::index.adoc[Develop with MuleSoft Inference Connector]
 
 | image::../_/img/learning-map/lm_build_1.png[]
 [.lm-bold]##Observe and Gain Actionable Insights##
 
 Use Integration Intelligence for advanced monitoring, analysis, troubleshooting, and insights across agentic workloads and integrations.
 
-- https://example.com/mulesoft-ai/integration-intelligence/overview[Integration Intelligence]
-- https://example.com/mulesoft-ai/integration-intelligence/dashboards[Dashboards and Insights]
-- https://example.com/mulesoft-ai/integration-intelligence/nlp-troubleshooting[Troubleshoot]
-- https://example.com/mulesoft-ai/integration-intelligence/metrics[Metrics and Alerts]
-- https://example.com/mulesoft-ai/integration-intelligence/tracing[Logs and Traces]
-- https://example.com/mulesoft-ai/integration-intelligence/access[Access from Anypoint Monitoring]
+- https://docs.mulesoft.com/[Learn AboutIntegration Intelligence]
+- https://docs.mulesoft.com/[Use Dashboards and Insights]
+- https://docs.mulesoft.com/[Troubleshoot with NLP]
+- https://docs.mulesoft.com/[Use Metrics and Alerts]
+- https://docs.mulesoft.com/[View Logs and Traces]
 
 | image::../_/img/learning-map/lm_audience_end_1.png[]
 [.lm-bold]##Govern and Secure Your Agents##
 
-Apply guardrails, enforce policies, and secure agent traffic.
+Apply policies and secure agent network traffic.
 
-- https://example.com/mulesoft-ai/governance/overview[Governance Overview]
-- https://example.com/mulesoft-ai/governance/policies[Agentic Policies and Guardrails]
-- https://example.com/mulesoft-ai/governance/flex-gateway[Secure Agent Traffic with Flex Gateway]
+- xref:gateway::index.adoc[Learn About Governance]
+- xref:gateway::flex-gateway-secure-apis.adoc[Apply Policies to the Agent Network]
+- xref:gateway::index.adoc[Secure Agent Network Traffic with Flex Gateway]
 |===
 
 [discrete]
 == See Also
 
-* xref:anypoint-code-builder::index.adoc[Anypoint Code Builder]
-* xref:monitoring::index.adoc[Anypoint Monitoring]
-* xref:exchange::index.adoc[Exchange]
-* xref:gateway::index.adoc[Flex Gateway]
+* xref:anypoint-code-builder::index.adoc[]
+* xref:monitoring::index.adoc[]
+* xref:exchange::index.adoc[]
+* xref:gateway::index.adoc[]
