@@ -23,7 +23,7 @@ Design and coordinate AI agents using a declarative approach that promotes reuse
 - https://youtube.com[Watch a Demo of MuleSoft Agent Fabric]
 - https://docs.mulesoft.com[Discover Agents]
 - https://docs.mulesoft.com/[Orchestrate the Agent Network]
-* xref:gateway::index.adoc[Govern the Agent Network]
+- xref:gateway::index.adoc[Govern the Agent Network]
 - xref:agent-visualizer::index.adoc[Visualize Your Agent Network]
 - xref:monitoring::index.adoc[Monitor and Troubleshoot Your Agent Network]
 - xref:anypoint-code-builder::index.adoc[Deploy Your Agent Network]
@@ -39,7 +39,7 @@ Kick off your agentic journey with quickstarts and templates.
 
 [.lm-table, cols="1a,1a,1a", grid="none"]
 |===
-| image::../_/img/learning-map/lm_analyze_1.png[]
+| image::../_/img/learning-map/lm_build_1.png[]
 [.lm-bold]##Develop with AI-Powered Tools##
 
 Accelerate integration and agent development with AI using Anypoint Code Builder, MuleSoft connectors, and other tools.
@@ -54,7 +54,7 @@ Accelerate integration and agent development with AI using Anypoint Code Builder
 - xref:mulesoft-ai-chain-connector::index.adoc[Develop with MuleSoft AI Chain Connector]
 - xref:inference-connector::index.adoc[Develop with MuleSoft Inference Connector]
 
-| image::../_/img/learning-map/lm_build_1.png[]
+| image::../_/img/learning-map/lm_analyze_1.png[]
 [.lm-bold]##Observe and Gain Actionable Insights##
 
 Use Integration Intelligence for advanced monitoring, analysis, troubleshooting, and insights across agentic workloads and integrations.
