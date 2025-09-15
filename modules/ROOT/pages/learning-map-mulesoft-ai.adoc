@@ -7,7 +7,7 @@ The end-to-end AI journey for MuleSoft AI consists of various tasks, each with l
 
 [.lm-table, cols="1a,1a,1a", grid="none"]
 |===
-| image::../_/img/learning-map/lm_start.png[]
+| image::reuse::lm_start.png[]
 [.lm-bold]##Learn About MuleSoft AI##
 
 MuleSoft AI is a set of capabilities for building, orchestrating, governing, deploying, and observing AI agents and agent networks across your enterprise.
@@ -16,7 +16,7 @@ MuleSoft AI is a set of capabilities for building, orchestrating, governing, dep
 - https://docs.mulesoft.com[Transform Your Business with AI]
 - https://www.mulesoft.com/platform/[Enable Agent Actionability with MuleSoft AI]
 
-| image::../_/img/learning-map/lm_explore_1.png[]
+| image::reuse::lm_explore_1.png[]
 [.lm-bold]##Design and Orchestrate Agents##
 
 Design and coordinate AI agents using a declarative approach that promotes reuse, governance, and observability.
@@ -30,7 +30,7 @@ Design and coordinate AI agents using a declarative approach that promotes reuse
 - xref:monitoring::index.adoc[Monitor and Troubleshoot Your Agent Network]
 - xref:anypoint-code-builder::index.adoc[Deploy Your Agent Network]
 - https://videos.mulesoft.com/watch/wgZ5WuV6VgDbyK3bFKV2RJ[Orchestrate Your Agents]
-| image::../_/img/learning-map/lm_analyze_1.png[]
+| image::reuse::lm_analyze_1.png[]
 [.lm-bold]##Get Started##
 
 Kick off your agentic journey with quickstarts and templates.
@@ -42,7 +42,7 @@ Kick off your agentic journey with quickstarts and templates.
 
 [.lm-table, cols="1a,1a,1a", grid="none"]
 |===
-| image::../_/img/learning-map/lm_build_1.png[]
+| image::reuse::lm_build_1.png[]
 [.lm-bold]##Develop with AI-Powered Tools##
 
 Accelerate integration and agent development with AI using Anypoint Code Builder, MuleSoft connectors, and other tools.
@@ -59,7 +59,7 @@ Accelerate integration and agent development with AI using Anypoint Code Builder
 - xref:mulesoft-ai-chain-connector::index.adoc[Develop with MuleSoft AI Chain Connector]
 - xref:inference-connector::index.adoc[Develop with MuleSoft Inference Connector]
 
-| image::../_/img/learning-map/lm_analyze_1.png[]
+| image::reuse::lm_analyze_1.png[]
 [.lm-bold]##Observe and Gain Actionable Insights##
 
 Use Integration Intelligence for advanced monitoring, analysis, troubleshooting, and insights across agentic workloads and integrations.
@@ -70,7 +70,7 @@ Use Integration Intelligence for advanced monitoring, analysis, troubleshooting,
 - https://docs.mulesoft.com/[Use Metrics and Alerts]
 - https://docs.mulesoft.com/[View Logs and Traces]
 
-| image::../_/img/learning-map/lm_audience_end_1.png[]
+| image::reuse::lm_audience_end_1.png[]
 [.lm-bold]##Govern and Secure Your Agents##
 
 Apply policies and secure agent network traffic.
