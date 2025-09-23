@@ -87,8 +87,9 @@ Monitor your APIs and integrations using dashboards, metrics, and visualization.
 
 [#trending-topics]
 == Trending Topics
+// You can update the H2 here, but do NOT change the ID without contacting ms-docs-infra-requests
+// Limit the number of links to 10 maximum
 
-//Date Range 5/01/2022 - 6/01/2022 (omits #1 ranking link to landing page, of course)
 * xref:dataweave::dataweave-cookbook-format-dates.adoc[Format Dates and Times]
 * xref:dataweave::dw-operators.adoc[DataWeave Operators]
 * xref:dataweave::dw-core-functions-filter.adoc[DataWeave Function: filter]
@@ -96,8 +97,3 @@ Monitor your APIs and integrations using dashboards, metrics, and visualization.
 * xref:mule-runtime::batch-processing-concept.adoc[Batch Processing]
 * xref:dataweave::dataweave-functions.adoc[DataWeave Reference]
 * xref:connectors::index.adoc[Connectors]
-// rank #8-10:
-// * xref:mule-runtime::mule-error-concept.adoc[Mule Errors]
-// * xref:mule-runtime::cloudhub-architecture.adoc[CloudHub Architecture]
-// * xref:dataweave::dw-core-functions-contains.adoc[DataWeave Function: contains]
-
