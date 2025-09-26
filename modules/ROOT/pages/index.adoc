@@ -86,10 +86,11 @@ Monitor your APIs and integrations using dashboards, metrics, and visualization.
 == Quick Links
 
 [#trending-topics]
-== Trending Topics
-// You can update the H2 here, but do NOT change the ID without contacting ms-docs-infra-requests
+== Featured Topics
+// You can update the H2 here, but please do not change the ID without contacting ms-docs-infra-requests
 // Limit the number of links to 10 maximum
 
+// Added 2023/01/20
 * xref:dataweave::dataweave-cookbook-format-dates.adoc[Format Dates and Times]
 * xref:dataweave::dw-operators.adoc[DataWeave Operators]
 * xref:dataweave::dw-core-functions-filter.adoc[DataWeave Function: filter]
