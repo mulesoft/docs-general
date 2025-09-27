@@ -88,13 +88,22 @@ Monitor your APIs and integrations using dashboards, metrics, and visualization.
 [#trending-topics]
 == Featured Topics
 // You can update the H2 here, but please do not change the ID without contacting ms-docs-infra-requests
-// Limit the number of links to 10 maximum
+////
+- Add your xref to the top of the list.
+- Include a comment on when you added your xref and if there's a reason it shouldn't be removed.
+- If your addition(s) cause the list to exceed ten, remove xref(s) from the bottom of the list.
 
+////
+
+// Added 2025/09/26 - hanna
+* xref:mulesoft-mcp-server::index.adoc[]
+* xref:mcp-connector::index.adoc[MCP Connector User Guide]
+* xref:anypoint-code-builder::api-ai-design-spec.adoc[]
+* xref:anypoint-code-builder::int-ai-developing-integrations.adoc[]
+* xref:learning-map-api-management.adoc[Getting Started with API Management]
+* xref:cloudhub::app-migration.adoc[]
+* xref:hyperforce::index.adoc[Salesforce Hyperforce (Hyperforce)]
+* xref:dataweave::dw-functions.adoc[]
+* xref:mule-runtime::secure-configuration-properties.adoc[]
 // Added 2023/01/20
-* xref:dataweave::dataweave-cookbook-format-dates.adoc[Format Dates and Times]
-* xref:dataweave::dw-operators.adoc[DataWeave Operators]
-* xref:dataweave::dw-core-functions-filter.adoc[DataWeave Function: filter]
-* xref:dataweave::dw-core-functions-map.adoc[DataWeave Function: map]
-* xref:mule-runtime::batch-processing-concept.adoc[Batch Processing]
-* xref:dataweave::dataweave-functions.adoc[DataWeave Reference]
 * xref:connectors::index.adoc[Connectors]
