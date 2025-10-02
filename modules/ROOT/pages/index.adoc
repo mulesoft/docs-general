@@ -100,7 +100,7 @@ Monitor your APIs and integrations using dashboards, metrics, and visualization.
 * anypoint-code-builder::af-get-started.adoc[]
 * xref:gateway::index.adoc[]
 * xref:agent-visualizer::index.adoc[]
-- xref:monitoring::anypoint-insights-agentic.adoc[]
+* xref:monitoring::anypoint-insights-agentic.adoc[]
 * xref:mulesoft-mcp-server::index.adoc[]
 * xref:mcp-connector::index.adoc[MCP Connector User Guide]
 * xref:learning-map-api-management.adoc[]
