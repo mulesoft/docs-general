@@ -99,6 +99,7 @@ Monitor your APIs and integrations using dashboards, metrics, and visualization.
 * xref:agent-fabric::learning-map-agent-fabric.adoc[]
 * xref:anypoint-code-builder::af-get-started.adoc[]
 * xref:gateway::flex-gateway-managed-ingress-egress.adoc[]
+* xref:api-manager::create-instance-task-agent-tool.adoc[]
 * xref:agent-visualizer::index.adoc[]
 * xref:monitoring::anypoint-insights-agentic.adoc[]
 * xref:mulesoft-mcp-server::index.adoc[]
