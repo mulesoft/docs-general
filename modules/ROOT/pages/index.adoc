@@ -95,15 +95,16 @@ Monitor your APIs and integrations using dashboards, metrics, and visualization.
 
 ////
 
-// Added 2025/09/26 - hanna
+// Updated 2025/10/02 - hanna
+* xref:agent-fabric::learning-map-agent-fabric.adoc[]
+* xref:anypoint-code-builder::af-get-started.adoc[]
+* xref:exchange::importing-agentforce-agents.adoc[]
+* xref:gateway::flex-gateway-managed-ingress-egress.adoc[]
+* xref:api-manager::create-instance-task-agent-tool.adoc[]
+* xref:agent-visualizer::index.adoc[]
+* xref:monitoring::anypoint-insights-agentic.adoc[]
 * xref:mulesoft-mcp-server::index.adoc[]
 * xref:mcp-connector::index.adoc[MCP Connector User Guide]
-* xref:anypoint-code-builder::api-ai-design-spec.adoc[]
-* xref:anypoint-code-builder::int-ai-developing-integrations.adoc[]
-* xref:learning-map-api-management.adoc[Getting Started with API Management]
-* xref:cloudhub::app-migration.adoc[]
-* xref:hyperforce::index.adoc[Salesforce Hyperforce (Hyperforce)]
-* xref:dataweave::dw-functions.adoc[]
-* xref:mule-runtime::secure-configuration-properties.adoc[]
-// Added 2023/01/20
-* xref:connectors::index.adoc[Connectors]
+* xref:learning-map-api-management.adoc[]
+//* xref:cloudhub::app-migration.adoc[]
+//* xref:hyperforce::index.adoc[Salesforce Hyperforce]
