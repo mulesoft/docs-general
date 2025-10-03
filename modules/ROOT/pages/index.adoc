@@ -104,5 +104,5 @@ Monitor your APIs and integrations using dashboards, metrics, and visualization.
 * xref:mulesoft-mcp-server::index.adoc[]
 * xref:mcp-connector::index.adoc[MCP Connector User Guide]
 * xref:learning-map-api-management.adoc[]
-* xref:cloudhub::app-migration.adoc[]
-* xref:hyperforce::index.adoc[Salesforce Hyperforce]
+//* xref:cloudhub::app-migration.adoc[]
+//* xref:hyperforce::index.adoc[Salesforce Hyperforce]
