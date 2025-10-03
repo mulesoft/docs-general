@@ -96,8 +96,8 @@ Monitor your APIs and integrations using dashboards, metrics, and visualization.
 ////
 
 // Updated 2025/10/02 - hanna
-* xref:agent-fabric::agent-fabric-get-started.adoc[]
-* anypoint-code-builder::af-get-started.adoc[]
+* xref:agent-fabric::learning-map-agent-fabric.adoc[]
+* xref:anypoint-code-builder::af-get-started.adoc[]
 * xref:gateway::flex-gateway-managed-ingress-egress.adoc[]
 * xref:agent-visualizer::index.adoc[]
 * xref:monitoring::anypoint-insights-agentic.adoc[]
