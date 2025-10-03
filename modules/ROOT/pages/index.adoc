@@ -98,7 +98,7 @@ Monitor your APIs and integrations using dashboards, metrics, and visualization.
 // Updated 2025/10/02 - hanna
 * xref:agent-fabric::agent-fabric-get-started.adoc[]
 * anypoint-code-builder::af-get-started.adoc[]
-* xref:gateway::index.adoc[]
+* xref:gateway::flex-gateway-managed-ingress-egress.adoc[]
 * xref:agent-visualizer::index.adoc[]
 * xref:monitoring::anypoint-insights-agentic.adoc[]
 * xref:mulesoft-mcp-server::index.adoc[]
@@ -106,4 +106,3 @@ Monitor your APIs and integrations using dashboards, metrics, and visualization.
 * xref:learning-map-api-management.adoc[]
 * xref:cloudhub::app-migration.adoc[]
 * xref:hyperforce::index.adoc[Salesforce Hyperforce]
-
