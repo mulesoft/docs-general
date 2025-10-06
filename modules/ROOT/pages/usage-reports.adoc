@@ -21,9 +21,27 @@ xref:rpa-home::ms-automation-credits-usage-types.adoc[Automation credits] for RP
 +
 For more information, see https://help.salesforce.com/s/articleView?id=000390885&type=1[Monthly Account Summaries] documentation in Salesforce.
 
-* Usage of certain Salesforcegenerative AI features (Agentforce and Einstein generative AI) or direct calls to the Large Language Model (LLM) gateway consumes credits. All Salesforce AI usage from Anypoint Platform features is routed through your connected Salesforce org, which tracks consumption and handles billing.
+* Usage of certain Salesforce generative AI features (Agentforce and Einstein generative AI) or direct calls to the Large Language Model (LLM) gateway consumes credits. All Salesforce AI usage from Anypoint Platform features is routed through your connected Salesforce org, which tracks consumption and handles billing.
 +
-For more information, see https://help.salesforce.com/s/articleView?id=ai.generative_ai_usage.htm&type=5[Agentforce and Generative AI Usage and Billing].
+Anypoint Platform features that use Einstein generative AI or Agentforce features include:
++
+* Anypoint Code Builder
++
+Use MuleSoft Dev Agent to develop integrations and API specs. 
++
+For more information about this feature, see xref:anypoint-code-builder::int-ai-developing-integrations.adoc[] and xref:anypoint-code-builder::api-ai-design-spec.adoc[].
+* Intelligent Document Processing (IDP)
++
+Use Einstein generative AI to read and interpret documents.
++
+For more information about this feature, see xref:idp::enhancing-data-extraction-with-einstein.adoc[]..
+* Anypoint Exchange
++
+Use Einstein generative AI to generate API documentation for REST APIs.
++
+For more information about this feature, see xref:exchange::generating-documentation-with-ai.adoc[].
++
+For more information about how the usage for these features is tracked and billed, see https://help.salesforce.com/s/articleView?id=ai.generative_ai_usage.htm&type=5[Agentforce and Generative AI Usage and Billing].
 
 * Alerts for usage reaching 80% and 90% of the contractual entitlement are sent automatically to the primary billing contact email address. The primary billing contact gets alerts monthly once thresholds are reached.
 +
