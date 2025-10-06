@@ -25,17 +25,17 @@ For more information, see https://help.salesforce.com/s/articleView?id=000390885
 +
 Anypoint Platform features that use Einstein generative AI or Agentforce features include:
 +
-* Anypoint Code Builder
+** Anypoint Code Builder
 +
 Use MuleSoft Dev Agent to develop integrations and API specs. 
 +
 For more information about this feature, see xref:anypoint-code-builder::int-ai-developing-integrations.adoc[] and xref:anypoint-code-builder::api-ai-design-spec.adoc[].
-* Intelligent Document Processing (IDP)
+** Intelligent Document Processing (IDP)
 +
 Use Einstein generative AI to read and interpret documents.
 +
 For more information about this feature, see xref:idp::enhancing-data-extraction-with-einstein.adoc[]..
-* Anypoint Exchange
+** Anypoint Exchange
 +
 Use Einstein generative AI to generate API documentation for REST APIs.
 +
