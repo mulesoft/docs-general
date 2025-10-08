@@ -25,7 +25,6 @@ Implement APIs with any system.
 - xref:anypoint-code-builder::des-create-api-specs.adoc[Create and Import API Specs]
 - xref:anypoint-code-builder::des-publish-api-spec-to-exchange.adoc[Publish API Specs and Fragments to Exchange]
 - xref:anypoint-code-builder::start-acb.adoc[Implement an API]
-- xref:api-functional-monitoring::afm-getting-started.adoc#monitor-your-apis-using-the-functional-monitoring-ui[Monitor Your API]
 - https://www.youtube.com/watch?v=qkbEj2s14Lo[Design an API]
 - https://www.youtube.com/watch?v=GvsTSFjB4Gs[Build APIs]
 - https://trailhead.salesforce.com/content/learn/modules/mulesoft-anypoint-code-builder-quick-look[Anypoint Code Builder: Quick Look]
