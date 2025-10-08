@@ -35,10 +35,6 @@ Design and coordinate AI agents using a declarative approach that promotes reuse
 - xref:exchange::asset-types.adoc[Learn About Asset Types Published in Exchange]
 - xref:exchange::importing-agentforce-agents.adoc[Import Agentforce Agents]
 - xref:anypoint-code-builder::af-create-agent-network.adoc[Build Agent Networks for Agent Fabric]
-- xref:gateway::flex-gateway-managed-ingress-egress.adoc[Govern the Agent Network]
-- xref:gateway::flex-gateway-secure-apis.adoc[Secure the Agent Network with Policies]
-- xref:agent-visualizer::index.adoc[Visualize and Explore Your Agent Network]
-- xref:monitoring::anypoint-insights-agentic.adoc[Monitor and Troubleshoot Your Agent Network]
 - xref:anypoint-code-builder::af-deploy-agent-network-targets.adoc[Deploy Your Agent Network Instances]
 - https://videos.mulesoft.com/watch/wgZ5WuV6VgDbyK3bFKV2RJ[Watch a Demo: Orchestrate Your Agents]
 
@@ -70,11 +66,8 @@ Accelerate integration and agent development with AI using Anypoint Code Builder
 
 Use Integration Intelligence for advanced monitoring, analysis, troubleshooting, and insights across agentic workloads and integrations.
 
-- https://docs.mulesoft.com/[Learn About Integration Intelligence]
-- https://docs.mulesoft.com/[Use Dashboards and Insights]
-- https://docs.mulesoft.com/[Troubleshoot with NLP]
-- https://docs.mulesoft.com/[Use Metrics and Alerts]
-- https://docs.mulesoft.com/[View Logs and Traces]
+- xref:agent-visualizer::index.adoc[Visualize and Explore Your Agent Network]
+- xref:monitoring::anypoint-insights-agentic.adoc[Monitor and Troubleshoot Your Agent Network]
 
 | image::reuse::lm_audience_end_1.png[]
 [.lm-bold]##Govern and Secure Your Agents##
@@ -82,8 +75,8 @@ Use Integration Intelligence for advanced monitoring, analysis, troubleshooting,
 Apply policies and secure agent network traffic.
 
 - xref:gateway::index.adoc[Learn About Governance]
-- xref:gateway::flex-gateway-secure-apis.adoc[Apply Policies to the Agent Network]
-- xref:gateway::index.adoc[Secure Agent Network Traffic with Flex Gateway]
+- xref:gateway::flex-gateway-managed-ingress-egress.adoc[Govern the Agent Network]
+- xref:gateway::flex-gateway-secure-apis.adoc[Secure the Agent Network with Policies]
 - https://videos.mulesoft.com/watch/zPeibGjqTAqa4fxF545Jwh[MuleSoft for AI: Govern Your Agents]
 |===
 
