@@ -86,18 +86,25 @@ Monitor your APIs and integrations using dashboards, metrics, and visualization.
 == Quick Links
 
 [#trending-topics]
-== Trending Topics
+== Featured Topics
+// You can update the H2 here, but please do not change the ID without contacting ms-docs-infra-requests
+////
+- Add your xref to the top of the list.
+- Include a comment on when you added your xref and if there's a reason it shouldn't be removed.
+- If your addition(s) cause the list to exceed ten, remove xref(s) from the bottom of the list.
 
-//Date Range 5/01/2022 - 6/01/2022 (omits #1 ranking link to landing page, of course)
-* xref:dataweave::dataweave-cookbook-format-dates.adoc[Format Dates and Times]
-* xref:dataweave::dw-operators.adoc[DataWeave Operators]
-* xref:dataweave::dw-core-functions-filter.adoc[DataWeave Function: filter]
-* xref:dataweave::dw-core-functions-map.adoc[DataWeave Function: map]
-* xref:mule-runtime::batch-processing-concept.adoc[Batch Processing]
-* xref:dataweave::dataweave-functions.adoc[DataWeave Reference]
-* xref:connectors::index.adoc[Connectors]
-// rank #8-10:
-// * xref:mule-runtime::mule-error-concept.adoc[Mule Errors]
-// * xref:mule-runtime::cloudhub-architecture.adoc[CloudHub Architecture]
-// * xref:dataweave::dw-core-functions-contains.adoc[DataWeave Function: contains]
+////
 
+// Updated 2025/10/02 - hanna
+* xref:agent-fabric::learning-map-agent-fabric.adoc[]
+* xref:anypoint-code-builder::af-get-started.adoc[]
+* xref:exchange::importing-agentforce-agents.adoc[]
+* xref:gateway::flex-gateway-managed-ingress-egress.adoc[]
+* xref:api-manager::create-instance-task-agent-tool.adoc[]
+* xref:agent-visualizer::index.adoc[]
+* xref:monitoring::anypoint-insights-agentic.adoc[]
+* xref:mulesoft-mcp-server::index.adoc[]
+* xref:mcp-connector::index.adoc[MCP Connector User Guide]
+* xref:learning-map-api-management.adoc[]
+//* xref:cloudhub::app-migration.adoc[]
+//* xref:hyperforce::index.adoc[Salesforce Hyperforce]
