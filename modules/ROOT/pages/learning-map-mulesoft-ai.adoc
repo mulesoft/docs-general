@@ -1,7 +1,7 @@
-= MuleSoft AI
+= MuleSoft for AI
 :page-article-style: learning-map
 
-MuleSoft AI on Anypoint Platform is a collection of new and existing products that accelerate your ability to deliver an actionable, connected enterprise by helping you build, orchestrate, and manage AI-driven experiences. MuleSoft's suite of AI products and features moves you beyond traditional digital transformation, enabling you to build a cohesive network of AI agents. You can leverage these agents to create new and valuable outcomes from your existing business investments, transforming disparate efforts into a unified and trusted system.
+MuleSoft for AI empowers agent action with flexible intelligent tooling that integrates systems and automates processes with AI to help accelerate your ability to deliver an actionable, connected enterprise by helping you build, orchestrate, and manage AI-driven experiences. 
 
 The end-to-end AI journey for MuleSoft AI consists of various tasks, each with links to relevant content to assist you in completing them.
 
@@ -12,24 +12,28 @@ The end-to-end AI journey for MuleSoft AI consists of various tasks, each with l
 
 MuleSoft AI is a set of capabilities for building, orchestrating, governing, deploying, and observing AI agents and agent networks across your enterprise.
 
-- https://docs.mulesoft.com[Learn About MuleSoft AI]
-- https://docs.mulesoft.com[Transform Your Business with AI]
-- https://www.mulesoft.com/platform/[Enable Agent Actionability with MuleSoft AI]
+- https://www.mulesoft.com/platform/ai[Learn About MuleSoft AI]
+- https://www.mulesoft.com/lp/whitepaper/blueprint-for-implementing-ai[Blueprint for Implementing AI]
+- https://www.mulesoft.com/lp/whitepaper/build-a-foundation-for-ai-with-integration[Build a Foundation for AI with Integration]
 
 | image::reuse::lm_explore_1.png[]
 [.lm-bold]##Design and Orchestrate Agents##
 
 Design and coordinate AI agents using a declarative approach that promotes reuse, governance, and observability.
 
-- xref:agent-fabric::index.adoc[Explore Agent Fabric]
-- https://www.youtube.com[Watch a Demo of MuleSoft Agent Fabric]
-- https://docs.mulesoft.com[Discover Agents]
-- https://docs.mulesoft.com/[Orchestrate the Agent Network]
-- xref:gateway::index.adoc[Govern the Agent Network]
-- xref:agent-visualizer::index.adoc[Visualize Your Agent Network]
-- xref:monitoring::index.adoc[Monitor and Troubleshoot Your Agent Network]
-- xref:anypoint-code-builder::index.adoc[Deploy Your Agent Network]
-- https://videos.mulesoft.com/watch/wgZ5WuV6VgDbyK3bFKV2RJ[Orchestrate Your Agents]
+- https://www.youtube.com/watch?v=GAqwPie16ic[Learn About MuleSoft Agent Fabric]
+- xref:agent-fabric::learning-map-agent-fabric.adoc[Explore Agent Fabric]
+- xref:exchange::asset-types.adoc[Learn About Asset Types Published in Exchange]
+- xref:exchange::importing-agentforce-agents.adoc[Import Agentforce Agents]
+- xref:anypoint-code-builder::af-get-started.adoc[Get Started with Agent Networks]
+- xref:anypoint-code-builder::af-.adoc[Build Agent Networks for Agent Fabric]
+- xref:gateway::flex-gateway-managed-ingress-egress.adoc[Govern the Agent Network]
+- xref:gateway::flex-gateway-secure-apis.adoc[Secure the Agent Network with Policies]
+- xref:agent-visualizer::index.adoc[Visualize and Explore Your Agent Network]
+- xref:monitoring::anypoint-insights-agentic.adoc[Monitor and Troubleshoot Your Agent Network]
+- xref:anypoint-code-builder::af-deploy-agent-network-targets.adoc[Deploy Your Agent Network Instances]
+- https://videos.mulesoft.com/watch/wgZ5WuV6VgDbyK3bFKV2RJ[Watch a Demo: Orchestrate Your Agents]
+
 | image::reuse::lm_analyze_1.png[]
 [.lm-bold]##Get Started##
 
@@ -47,8 +51,10 @@ Kick off your agentic journey with quickstarts and templates.
 
 Accelerate integration and agent development with AI using Anypoint Code Builder, MuleSoft connectors, and other tools.
 
+- https://www.youtube.com/watch?v=1bU8nzFI_Co[Watch a Video Introducing MuleSoft Dev Agent]
+- xref:anypoint-code-builder::int-ai-developing-integrations.adoc[Develop Integrations Using MuleSoft Dev Agent]
+- xref:anypoint-code-builder::api-ai-design-spec.adoc[Design API Specs Using MuleSoft Dev Agent]
 - xref:anypoint-code-builder::ai-enabling-api-project-topic-center.adoc[Enable APIs for Topics and Agent Actions]
-- xref:anypoint-code-builder::int-ai-developing-integrations.adoc[Develop Integrations Using Agentforce]
 - https://www.mulesoft.com/platform/ai/model-context-protocol[Understand MuleSoft MCP Support]
 - https://videos.mulesoft.com/watch/Fhho6DvrtMBdcgfCrcXDkz[Spotlight: MuleSoft MCP Support]
 - xref:a2a-connector::index.adoc[Develop with A2A Connector]
