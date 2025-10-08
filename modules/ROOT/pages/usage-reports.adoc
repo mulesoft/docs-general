@@ -21,7 +21,7 @@ xref:rpa-home::ms-automation-credits-usage-types.adoc[Automation credits] for RP
 +
 For more information, see https://help.salesforce.com/s/articleView?id=000390885&type=1[Monthly Account Summaries] documentation in Salesforce.
 
-* Usage of certain Salesforce generative AI features (Agentforce and Einstein generative AI) or direct calls to the Large Language Model (LLM) gateway consumes credits. All Salesforce AI usage from Anypoint Platform features is routed through your connected Salesforce org, which tracks consumption and handles billing.
+* Usage of certain Salesforce generative AI features (Agentforce and Einstein generative AI) or direct calls to the large language model (LLM) gateway consumes credits. All Salesforce AI usage from Anypoint Platform features is routed through your connected Salesforce org, which tracks consumption and handles billing.
 +
 Anypoint Platform features that use Einstein generative AI or Agentforce features include:
 +
