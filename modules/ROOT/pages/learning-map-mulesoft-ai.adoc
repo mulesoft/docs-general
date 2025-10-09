@@ -15,6 +15,7 @@ MuleSoft AI is a set of capabilities for building, orchestrating, governing, dep
 - https://www.mulesoft.com/platform/ai[Learn About MuleSoft AI]
 - https://www.mulesoft.com/lp/whitepaper/blueprint-for-implementing-ai[Blueprint for Implementing AI]
 - https://www.mulesoft.com/lp/whitepaper/build-a-foundation-for-ai-with-integration[Build a Foundation for AI with Integration]
+- https://help.salesforce.com/s/articleView?id=platform.api_catalog_use_api_actions_in_agent_actions.htm&type=5[Watch an Example of Using MuleSoft for Agentforce]
 
 | image::reuse::lm_analyze_1.png[]
 [.lm-bold]##Get Started##
@@ -30,13 +31,13 @@ Kick off your agentic journey with quickstarts and templates.
 
 Design and coordinate AI agents using a declarative approach that promotes reuse, governance, and observability.
 
-- https://www.youtube.com/watch?v=GAqwPie16ic[Learn About MuleSoft Agent Fabric]
+- https://www.youtube.com/watch?v=GAqwPie16ic[Watch an Intro About MuleSoft Agent Fabric]
 - xref:agent-fabric::learning-map-agent-fabric.adoc[Explore Agent Fabric]
-- xref:exchange::asset-types.adoc[Learn About Asset Types Published in Exchange]
+- xref:exchange::asset-types.adoc[Learn About Agentic Asset Types Supported in Exchange]
 - xref:exchange::importing-agentforce-agents.adoc[Import Agentforce Agents]
 - xref:anypoint-code-builder::af-create-agent-network.adoc[Build Agent Networks for Agent Fabric]
 - xref:anypoint-code-builder::af-deploy-agent-network-targets.adoc[Deploy Your Agent Network Instances]
-- https://videos.mulesoft.com/watch/wgZ5WuV6VgDbyK3bFKV2RJ[Watch a Demo: Orchestrate Your Agents]
+- https://videos.mulesoft.com/watch/wgZ5WuV6VgDbyK3bFKV2RJ[Watch a Demo About Agent Orchestration]
 - https://www.mulesoft.com/exchange/org.mule.examples/mcp-b2b-partner-manager-template/minor/0.1/[Try an MCP Tools Template for Partner Manager]
 
 |===
@@ -46,26 +47,27 @@ Design and coordinate AI agents using a declarative approach that promotes reuse
 | image::reuse::lm_build_1.png[]
 [.lm-bold]##Develop with AI-Powered Tools##
 
-Accelerate integration and agent development with AI using Anypoint Code Builder, MuleSoft connectors, and other tools.
+Accelerate integration and agent development with AI using Anypoint Code Builder, MuleSoft connectors, MuleSoft MCP Server, and other tools.
 
 - https://www.youtube.com/watch?v=1bU8nzFI_Co[Watch an Intro to MuleSoft Dev Agent]
-- xref:anypoint-code-builder::int-ai-developing-integrations.adoc[Develop Integrations Using MuleSoft Dev Agent]
-- xref:anypoint-code-builder::api-ai-design-spec.adoc[Design API Specs Using MuleSoft Dev Agent]
+- xref:anypoint-code-builder::int-ai-developing-integrations.adoc[Develop Integrations with MuleSoft Dev Agent]
+- xref:anypoint-code-builder::api-ai-design-spec.adoc[Design API Specs with MuleSoft Dev Agent]
 - xref:anypoint-code-builder::ai-enabling-api-project-topic-center.adoc[Enable APIs for Topics and Agent Actions]
-- https://www.mulesoft.com/platform/ai/model-context-protocol[Understand MuleSoft MCP Support]
-- https://videos.mulesoft.com/watch/Fhho6DvrtMBdcgfCrcXDkz[Spotlight: MuleSoft MCP Support]
+- xref:https://help.salesforce.com/s/articleView?id=platform.api_catalog_activate_agent_topics_and_agent_actions.htm&type=5[Activate Agent Topic and Agent Actions in API Catalog]
+- https://videos.mulesoft.com/watch/Fhho6DvrtMBdcgfCrcXDkz[Watch an Intro to MuleSoft MCP Support]
+- https://www.mulesoft.com/platform/ai/model-context-protocol[Learn About MuleSoft MCP Support]
+- xref:mulesoft-mcp-server::index.adoc[Leverage MuleSoft MCP Server]
 - xref:a2a-connector::index.adoc[Develop with A2A Connector]
-- xref:mcp-connector::index.adoc[Develop with MCP Connector]
-- xref:mulesoft-mcp-server::index.adoc[Develop with MuleSoft MCP Server]
-- xref:einstein-ai-connector::index.adoc[Develop with Einstein AI Connector]
 - xref:agentforce-connector::index.adoc[Develop with Agentforce Connector]
-- xref:mulesoft-ai-chain-connector::index.adoc[Develop with MuleSoft AI Chain Connector]
-- xref:inference-connector::index.adoc[Develop with MuleSoft Inference Connector]
+- xref:mulesoft-ai-chain-connector::index.adoc[Develop with AI Chain Connector]
+- xref:einstein-ai-connector::index.adoc[Develop with Einstein AI Connector]
+- xref:inference-connector::index.adoc[Develop with Inference Connector]
+- xref:mcp-connector::index.adoc[Develop with MCP Connector]
 
 | image::reuse::lm_analyze_1.png[]
 [.lm-bold]##Observe and Gain Actionable Insights##
 
-Use Integration Intelligence for advanced monitoring, analysis, troubleshooting, and insights across agentic workloads and integrations.
+Visualize and monitor your agent network and agentic assets.
 
 - xref:agent-visualizer::index.adoc[Visualize and Explore Your Agent Network]
 - xref:monitoring::anypoint-insights-agentic.adoc[Monitor and Troubleshoot Your Agent Network]
@@ -84,6 +86,8 @@ Apply policies and secure agent network traffic.
 [discrete]
 == See Also
 
+* xref:agent-fabric::index.adoc[]
+* xref:agent-visualizer::index.adoc[]
 * xref:anypoint-code-builder::index.adoc[]
 * xref:monitoring::index.adoc[]
 * xref:exchange::index.adoc[]
