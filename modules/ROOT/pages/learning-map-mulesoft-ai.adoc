@@ -22,19 +22,19 @@ MuleSoft AI is a set of capabilities for building, orchestrating, governing, dep
 
 Kick off your agentic journey with quickstarts and templates.
 
+- https://www.youtube.com/watch?v=GAqwPie16ic[Watch an Intro About MuleSoft Agent Fabric]
+- xref:agent-fabric::learning-map-agent-fabric.adoc[Get Started with Agent Fabric]
 - https://trailhead.salesforce.com/content/learn/trails/design-and-implement-ai-agents-with-agentforce[Design and Implement AI Agents with Agentforce]
 - https://help.salesforce.com/s/articleView?id=ai.agent_plan.htm&type=5[Plan Your AI Agent]
-- xref:anypoint-code-builder::af-get-started.adoc[Get Started with Agent Networks]
 
 | image::reuse::lm_explore_1.png[]
 [.lm-bold]##Design and Orchestrate Agents##
 
 Design and coordinate AI agents using a declarative approach that promotes reuse, governance, and observability.
 
-- https://www.youtube.com/watch?v=GAqwPie16ic[Watch an Intro About MuleSoft Agent Fabric]
-- xref:agent-fabric::learning-map-agent-fabric.adoc[Explore Agent Fabric]
 - xref:exchange::asset-types.adoc[Learn About Agentic Asset Types Supported in Exchange]
 - xref:exchange::importing-agentforce-agents.adoc[Import Agentforce Agents]
+- xref:anypoint-code-builder::af-get-started.adoc[Get Started with Agent Networks]
 - xref:anypoint-code-builder::af-create-agent-network.adoc[Build Agent Networks for Agent Fabric]
 - xref:anypoint-code-builder::af-deploy-agent-network-targets.adoc[Deploy Your Agent Network Instances]
 - https://videos.mulesoft.com/watch/wgZ5WuV6VgDbyK3bFKV2RJ[Watch a Demo About Agent Orchestration]
