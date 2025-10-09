@@ -37,7 +37,7 @@ Design and coordinate AI agents using a declarative approach that promotes reuse
 - xref:anypoint-code-builder::af-create-agent-network.adoc[Build Agent Networks for Agent Fabric]
 - xref:anypoint-code-builder::af-deploy-agent-network-targets.adoc[Deploy Your Agent Network Instances]
 - https://videos.mulesoft.com/watch/wgZ5WuV6VgDbyK3bFKV2RJ[Watch a Demo: Orchestrate Your Agents]
-- https://www.mulesoft.com/exchange/org.mule.examples/mcp-b2b-partner-manager-template/minor/0.1/[Use an MCP Tools Template for Anypoint Partner Manager (Beta)]
+- https://www.mulesoft.com/exchange/org.mule.examples/mcp-b2b-partner-manager-template/minor/0.1/[Try an MCP Tools Template for Partner Manager]
 
 |===
 
