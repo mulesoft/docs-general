@@ -56,14 +56,14 @@ Accelerate integration and agent development with AI using Anypoint Code Builder
 - https://videos.mulesoft.com/watch/Fhho6DvrtMBdcgfCrcXDkz[Watch an Intro to MuleSoft MCP Support]
 - https://www.mulesoft.com/platform/ai/model-context-protocol[Learn About MuleSoft MCP Support]
 - xref:mulesoft-mcp-server::index.adoc[Leverage MuleSoft MCP Server]
-- Develop with MuleSoft AI Connectors
-    - xref:a2a-connector::index.adoc[A2A Connector]
-    - xref:agentforce-connector::index.adoc[Agentforce Connector]
-    - xref:einstein-ai-connector::index.adoc[Einstein AI Connector]
-    - xref:mcp-connector::index.adoc[MCP Connector]
-    - xref:mulesoft-ai-chain-connector::index.adoc[MuleSoft AI Chain Connector]
-    - xref:mulesoft-inference-connector::index.adoc[MuleSoft Inference Connector]
-    - xref:mulesoft-vectors-connector::index.adoc[MuleSoft Vectors Connector]
+- Develop with MuleSoft AI Connectors.
+  * xref:a2a-connector::index.adoc[A2A Connector]
+  * xref:agentforce-connector::index.adoc[Agentforce Connector]
+  * xref:einstein-ai-connector::index.adoc[Einstein AI Connector]
+  * xref:mcp-connector::index.adoc[MCP Connector]
+  * xref:mulesoft-ai-chain-connector::index.adoc[MuleSoft AI Chain Connector]
+  * xref:mulesoft-inference-connector::index.adoc[MuleSoft Inference Connector]
+  * xref:mulesoft-vectors-connector::index.adoc[MuleSoft Vectors Connector]
 
 | image::reuse::lm_analyze_1.png[]
 [.lm-bold]##Observe and Gain Actionable Insights##
