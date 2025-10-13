@@ -39,7 +39,6 @@ Design and coordinate AI agents using a declarative approach that promotes reuse
 - xref:anypoint-code-builder::af-deploy-agent-network-targets.adoc[Deploy Your Agent Network Instances]
 - https://videos.mulesoft.com/watch/wgZ5WuV6VgDbyK3bFKV2RJ[Watch a Demo About Agent Orchestration]
 - https://www.mulesoft.com/exchange/org.mule.examples/mcp-b2b-partner-manager-template/minor/0.1/[Try an MCP Tools Template for Partner Manager]
-
 |===
 
 [.lm-table, cols="1a,1a,1a", grid="none"]
@@ -57,13 +56,14 @@ Accelerate integration and agent development with AI using Anypoint Code Builder
 - https://videos.mulesoft.com/watch/Fhho6DvrtMBdcgfCrcXDkz[Watch an Intro to MuleSoft MCP Support]
 - https://www.mulesoft.com/platform/ai/model-context-protocol[Learn About MuleSoft MCP Support]
 - xref:mulesoft-mcp-server::index.adoc[Leverage MuleSoft MCP Server]
-- xref:a2a-connector::index.adoc[Develop with A2A Connector]
-- xref:agentforce-connector::index.adoc[Develop with Agentforce Connector]
-- xref:einstein-ai-connector::index.adoc[Develop with Einstein AI Connector]
-- xref:mcp-connector::index.adoc[Develop with MCP Connector]
-- xref:mulesoft-ai-chain-connector::index.adoc[Develop with MuleSoft AI Chain Connector]
-- xref:mulesoft-inference-connector::index.adoc[Develop with MuleSoft Inference Connector]
-- xref:mulesoft-vectors-connector::index.adoc[Develop with MuleSoft Vectors Connector]
+- Develop with MuleSoft AI Connectors
+  - xref:a2a-connector::index.adoc[A2A Connector]
+  - xref:agentforce-connector::index.adoc[Agentforce Connector]
+  - xref:einstein-ai-connector::index.adoc[Einstein AI Connector]
+  - xref:mcp-connector::index.adoc[MCP Connector]
+  - xref:mulesoft-ai-chain-connector::index.adoc[MuleSoft AI Chain Connector]
+  - xref:mulesoft-inference-connector::index.adoc[MuleSoft Inference Connector]
+  - xref:mulesoft-vectors-connector::index.adoc[MuleSoft Vectors Connector]
 
 | image::reuse::lm_analyze_1.png[]
 [.lm-bold]##Observe and Gain Actionable Insights##
