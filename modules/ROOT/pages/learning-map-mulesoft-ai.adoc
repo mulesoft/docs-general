@@ -47,7 +47,7 @@ Design and coordinate AI agents using a declarative approach that promotes reuse
 | image::reuse::lm_build_1.png[]
 [.lm-bold]##Develop with AI-Powered Tools##
 
-Accelerate integration and agent development with AI using Anypoint Code Builder, Anypoint Connectors, MuleSoft MCP Server, and other tools.
+Accelerate integration and agent development with AI using Anypoint Code Builder, MuleSoft connectors, MuleSoft MCP Server, and other tools.
 
 - https://www.youtube.com/watch?v=1bU8nzFI_Co[Watch an Intro to MuleSoft Dev Agent]
 - xref:anypoint-code-builder::int-ai-developing-integrations.adoc[Develop Integrations with MuleSoft Dev Agent]
