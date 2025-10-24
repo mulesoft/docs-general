@@ -64,6 +64,7 @@ Accelerate integration and agent development with AI using Anypoint Code Builder
   * xref:mulesoft-ai-chain-connector::index.adoc[MuleSoft AI Chain Connector]
   * xref:mulesoft-inference-connector::index.adoc[MuleSoft Inference Connector]
   * xref:mulesoft-vectors-connector::index.adoc[MuleSoft Vectors Connector]
+  * xref:connector-builder::index.adoc[Create Connectors with Connector Builder]
 
 | image::reuse::lm_analyze_1.png[]
 [.lm-bold]##Observe and Gain Actionable Insights##
