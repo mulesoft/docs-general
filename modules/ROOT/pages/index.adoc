@@ -31,6 +31,9 @@ This documentation is for reference purposes only and won't be updated.
   xref:1.5@private-cloud::index.adoc[v1.5 Archive] +
   xref:1.1@private-cloud::index.adoc[v1.1 Archive]
 
+| Anypoint Security Doc Archives |
+  xref:anypoint-security::index.adoc[Edge and Tokenization Archive]
+
 | APIkit Doc Archives |
   xref:3.x@apikit::index.adoc[v3.x Archive]
 
