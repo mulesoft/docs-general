@@ -31,8 +31,6 @@ This documentation is for reference purposes only and won't be updated.
   xref:1.5@private-cloud::index.adoc[v1.5 Archive] +
   xref:1.1@private-cloud::index.adoc[v1.1 Archive]
 
-| Anypoint Security Doc Archives |
-  xref:anypoint-security::index.adoc[Edge and Tokenization Archive]
 
 | APIkit Doc Archives |
   xref:3.x@apikit::index.adoc[v3.x Archive]
@@ -144,6 +142,10 @@ This documentation is for reference purposes only and won't be updated.
   xref:1.3@runtime-fabric::index.adoc[v1.3 Archive] +
   xref:1.2@runtime-fabric::index.adoc[v1.2 Archive] +
   xref:1.0@runtime-fabric::index.adoc[v1.0 Archive]
+
+
+| Security Doc Archives |
+  xref:anypoint-security::index.adoc[Edge and Tokenization Archive]
 
 | Service Mesh Doc Archives |
   xref:1.2@service-mesh::index.adoc[v1.2 Archive] +
