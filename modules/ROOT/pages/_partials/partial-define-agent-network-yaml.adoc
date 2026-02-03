@@ -1,0 +1,30 @@
+// This partial can be used in other repos that need to reference the YAML, such as ACB. 
+
+// tag::agent-network-yaml-intro[]
+The broker group YAML file defines a structured configuration for multi-agent systems, enabling orchestration of AI agents with external services, tools, and inter-agent communication. This format provides a declarative way to define agent capabilities, dependencies, and service integrations.
+For example, think of the YAML as your organizational chart for digital labor. Each group represents an internal organization (for example, HR, IT, Sales, or Engineering). Each internal organization (group) has a hierarchical structure through which actors collaborate. Jobs are split into tasks and assigned. 
+Just like with human labor, these digital agents require coordination. We call these broker groups. These are special types of A2A-enabled agents capable of receiving a user prompt, identifying the goal, determining the necessary steps to be carried out, and delegating each step to the proper agent, even if the agent is part of a different broker group. 
+// end::agent-network-yaml-intro[]
+
+// tag::agent-network-yaml-structure[]
+The YAML file consists of the following sections:
+
+* `version`: The version of the YAML file.
+* `name`: The name of the agent network.
+* `description`: The description of the agent network.
+// end::agent-network-yaml-structure[]
+
+// tag::broker-groups-in-yaml[]
+A broker group consists of a set of brokers and a set of external services that assist them. Here’s how a broker group is represented in YAML.
+
+* `schemaVersion`: The version of the schema.
+* `brokers`: The broker definitions.
+* `services`: The external service configurations.
+
+[source,yaml]
+----
+schemaVersion: 0.1.0-beta  
+brokers: {}                 
+services: {}               
+----
+// end::broker-groups-in-yaml[]

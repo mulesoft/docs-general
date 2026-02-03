@@ -1,3 +1,6 @@
 .DS_Store
 .vscode/
 .codegenie/
+
+# Cursor rules (symlinked from docs-superagent)
+.cursor

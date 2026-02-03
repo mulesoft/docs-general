@@ -2,3 +2,4 @@
 :partialsdir: {moduledir}/pages/_partials
 :imagesdir: {moduledir}/assets/images
 :examplesdir: {moduledir}/examples
+:learningmapdir: {moduledir}/pages/learning-map

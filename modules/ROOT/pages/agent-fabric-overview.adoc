@@ -1,0 +1,86 @@
+= Agent Fabric Overview
+
+MuleSoft Agent Fabric is an agent management platform that maximizes the potential of every AI agent, no matter where it’s built, with centralized discovery, orchestration across agents and tools, cross-ecosystem governance, and full transparency into agentic interactions.
+
+Complex tasks often require a series of steps, with each step‌ handled by a different agent or tool. Managing this process manually is difficult and error-prone. An agent network (a network of agents in a domain) acts as a coordinated group for defining, validating, and executing these multistep processes.
+
+Define your ‌agent network in a simple, human-readable YAML file, abstracting away the underlying technical complexities. This approach allows you to focus on the business constraints and context of your agentic process without needing to understand the inner workings of the orchestration engine.
+
+Create robust, automated agent networks with these key benefits.
+
+* Simplified Development
++
+Define your agent processes in an intentional way using a simple YAML file, which is easier and faster than writing complex code.
+* Safety and Governance
++
+Ensure control and compliance across every agent and tool interaction with enterprise-grade governance. 
+* Observability
++
+Gain insight into agent actions with a visual trace of their decision-making. 
+* Flexibility
++
+Coordinate any type of agent and tool, regardless of where it’s built and deployed so you can build a diverse network of agents.
+* Tool and Agent Invocation
++
+Manage the invocation of both deterministic (tool-based) and probabilistic (LLM-based) actions.
+
+Agent Fabric uses LLMs for reasoning and planning capabilities. Agent networks integrate with Anypoint Connector for MCP (Model Context Protocol) and Anypoint Connector for Agent2Agent (A2A). 
+
+== Architecture
+
+image::agent-fabric-architecture.png[Agent Fabric showing agents and MCP servers defined in YAML and published to Exchange, with traffic through Flex Gateway, governed by API Manager, and observed in Monitoring and Visualizer]
+
+[calloutlist]
+. Publish the agentic assets to Anypoint Exchange for discovery and reuse after you define the agent network (brokers, agents, MCP servers) in the agent network YAML in Anypoint Code Builder.
+. Deploy the agentic assets to CloudHub 2.0 (managed in Runtime Manager).
+. Enforce policies on incoming traffic to the network with an ingress Flex Gateway, which sits in front of broker and API endpoints.
+. Enforce policies, manage connections, and emit telemetry data with an egress Flex Gateway, which sits on outbound paths from brokers and agents to external agents and services.
+. Collect logs, metrics, and traces from Flex Gateway and runtimes in Anypoint Monitoring.
+
+== What’s an Agent Network?
+
+An agent network consists of brokers, agents, and MCP servers in the same domain. You define an agent network in a YAML template in your agent network project. The MuleSoft Dev Agent can help create and configure your YAML for you. For more information, see xref:anypoint-code-builder::af-agent-networks.adoc[].
+
+== What’s a Broker?
+
+A broker is an intelligent routing agent that coordinates task delegation across specialized agents in your enterprise. It's defined by the agents and MCP servers it leverages to accomplish tasks.
+
+A broker is a specialized agent that is shown in Anypoint Exchange after you publish your agent network assets and can be reused by other brokers. 
+
+
+== Example Use Case: Employee Onboarding
+
+=== Goal
+Seamlessly activate a new hire across HR, IT, Security, and Facilities with a single, policy‑governed experience.
+
+=== Solution
+
+* Discover
++
+Publish existing agents and tools (HRIS, Identity, ITSM, Payroll, Facilities, LMS) in Exchange for reuse.
+* Orchestrate
++
+An agent broker decomposes the task of onboarding the new hire (create HR record, provision identity, assign hardware, grant app access, enroll in benefits and training), calling MCP and A2A agents as needed, with human‑in‑the‑loop approvals where required.
+* Govern
++
+Flex Gateway enforces authentication, least‑privilege access, and guardrails. API Manager policies ensure consistent controls across all calls and data exchanges.
+* Observe
++
+Monitoring and traces (beta) give end‑to‑end visibility into progress, failures, and latency. Visualization shows which agents interacted and where bottlenecks occurred.
+Reuse
++
+The onboarding definition (YAML) is versioned and shareable, enabling rapid adaptation for roles, regions, or subsidiaries without rebuilding flows.
+* Trust and Compliance
++
+Centralized credentials, audit trails, and policy inheritance support security, privacy, and regulatory requirements (PII handling, approvals, and separation of duties).
+
+=== Outcome
+
+Faster time‑to‑productivity, fewer handoffs, lower error rates, and a consistent new‑hire experience across the enterprise.
+
+== See Also
+
+* xref:agent-fabric-get-started.adoc[]
+* xref:anypoint-code-builder::af-agent-networks.adoc[]
+* xref:anypoint-code-builder::index.adoc[]
+* xref:exchange::index.adoc[]
