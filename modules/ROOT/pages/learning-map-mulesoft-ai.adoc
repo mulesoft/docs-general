@@ -63,6 +63,7 @@ Accelerate integration and agent development with AI using Anypoint Code Builder
 
   - xref:a2a-connector::index.adoc[A2A Connector]
   - xref:agentforce-connector::index.adoc[Agentforce Connector]
+  - xref:amazon-bedrock-connector::index.adoc[Amazon Bedrock Connector]
   - xref:einstein-ai-connector::index.adoc[Einstein AI Connector]
   - xref:mcp-connector::index.adoc[MCP Connector]
   - xref:mulesoft-ai-chain-connector::index.adoc[MuleSoft AI Chain Connector]
