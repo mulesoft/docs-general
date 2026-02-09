@@ -92,7 +92,7 @@ Apply policies and secure agent network traffic.
 [discrete]
 == See Also
 
-* xref:agent-fabric::index.adoc[]
+* xref:learning-map-agent-fabric.adoc[Agent Fabric]
 * xref:agent-visualizer::index.adoc[]
 * xref:anypoint-code-builder::index.adoc[]
 * xref:monitoring::index.adoc[]
