@@ -4,7 +4,7 @@
 :!sectids:
 ifndef::env-site[:imagesdir: ../images]
 
-[#the-road]
+[[the-road]]
 == The Road to Digital Transformation
 
 image::getting-started.png[alt=""]
@@ -85,7 +85,7 @@ Monitor your APIs and integrations using dashboards, metrics, and visualization.
 
 == Quick Links
 
-[#trending-topics]
+[[trending-topics]]
 == Featured Topics
 // You can update the H2 here, but please do not change the ID without contacting ms-docs-infra-requests
 ////
