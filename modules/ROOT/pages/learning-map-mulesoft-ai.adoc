@@ -23,7 +23,7 @@ MuleSoft AI is a set of capabilities for building, orchestrating, governing, dep
 Kick off your agentic journey with quickstarts and templates.
 
 - https://www.youtube.com/watch?v=GAqwPie16ic[Watch an Intro to MuleSoft Agent Fabric]
-- xref:agent-fabric::learning-map-agent-fabric.adoc[Get Started with Agent Fabric]
+- xref:learning-map-agent-fabric.adoc[Get Started with Agent Fabric]
 - https://trailhead.salesforce.com/content/learn/trails/design-and-implement-ai-agents-with-agentforce[Design and Implement AI Agents with Agentforce]
 - https://help.salesforce.com/s/articleView?id=ai.agent_plan.htm&type=5[Plan Your AI Agent]
 
@@ -63,6 +63,7 @@ Accelerate integration and agent development with AI using Anypoint Code Builder
 
   - xref:a2a-connector::index.adoc[A2A Connector]
   - xref:agentforce-connector::index.adoc[Agentforce Connector]
+  - xref:amazon-bedrock-connector::index.adoc[Amazon Bedrock Connector]
   - xref:einstein-ai-connector::index.adoc[Einstein AI Connector]
   - xref:mcp-connector::index.adoc[MCP Connector]
   - xref:mulesoft-ai-chain-connector::index.adoc[MuleSoft AI Chain Connector]
@@ -91,7 +92,7 @@ Apply policies and secure agent network traffic.
 [discrete]
 == See Also
 
-* xref:agent-fabric::index.adoc[]
+* xref:learning-map-agent-fabric.adoc[Agent Fabric]
 * xref:agent-visualizer::index.adoc[]
 * xref:anypoint-code-builder::index.adoc[]
 * xref:monitoring::index.adoc[]
