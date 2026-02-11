@@ -11,7 +11,7 @@ Before you begin your API-led journey, verify that you have the required tools a
 link:https://anypoint.mulesoft.com/login/#/signup["Create a Trial organization^", role="button-primary"]
 * Download Anypoint Studio 7.16.0 or later. Anypoint Studio is an Eclipse-based IDE with rich functionality for building and deploying apps to Anypoint Platform. 
 +
-link:https://www.mulesoft.com/lp/dl/studio["Download Anypoint Studio^", role="button-primary"]
+link:https://www.mulesoft.com/lp/dl/anypoint-mule-studio["Download Anypoint Studio^", role="button-primary"]
 * To test REST requests, obtain a client such as Advanced REST Client or Postman if you don't already have one. This tutorial uses Advanced REST Client.
 +
 link:https://github.com/advanced-rest-client/arc-electron/releases["Install Advanced REST Client^", role=button-primary"]
