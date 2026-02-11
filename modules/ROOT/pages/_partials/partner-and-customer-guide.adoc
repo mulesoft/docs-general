@@ -292,7 +292,7 @@ The coverage percentage reflects how much of your connector is tested. A key iss
 
 === Add the JDeps Maven Plugin
 
-JDeps is a tool for static code analysis that detects the usage of JDK internal APIs that are no longer available or accessible. For more information, refer to the https://wiki.openjdk.org/display/JDK8/Java+Dependency+Analysis+Tool[OpenJDK wiki]. 
+JDeps is a tool for static code analysis that detects the usage of JDK internal APIs that are no longer available or accessible. For more information, refer to the https://wiki.openjdk.org/spaces/JDK8/pages/17957128/Java+Dependency+Analysis+Tool[OpenJDK wiki]. 
 
 Add the JDeps Maven plugin to your custom connector’s `pom.xml` file:
 
