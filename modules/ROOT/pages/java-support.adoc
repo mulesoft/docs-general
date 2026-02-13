@@ -30,10 +30,6 @@ The following table shows the timeline for Java 8, Java 11, and Java 17 support:
 |4.5 Edge | 8 and 11
 |===
 
-
-[NOTE]
-Standard support for Java 8 and 11 ends in March 2025 for Mule 4.8 Edge and August 2026 for 4.6 LTS, so plan your upgrade path for apps that are running on Java 8 or 11 accordingly.
-
 In Mule 4.6.0 and later, the maximum supported version for running your applications is Java 17. In Mule 4.9.0 and later, you can compile any Mule project and additional dependencies for Java 17 or lower. In versions earlier than Mule 4.9.0, you must compile any Mule project and additional dependencies for Java 8.
 
 When selecting a dependency (for example, `mssql-jdbc`), configure the version compatible with Java 8 or Java 17 in the `pom.xml`. For information about compatibility details, refer to the documentation of the dependency.
