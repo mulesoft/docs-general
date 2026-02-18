@@ -257,7 +257,7 @@ Test your custom connector with Module Testing Framework (MTF) to ensure Java 17
 
 Ensure your pipeline runs against all supported Java versions (Java 8, Java 11, and Java 17). The following example shows a single build pipeline that is configured to run tests against all supported Java versions, in which `default` corresponds to Java 17:
 
-image:single-build-pipeline.png[Example of single build pipeline]
+image:general::single-build-pipeline.png[Example of single build pipeline]
 
 The pipeline runs all tests even if the previous tests fail. For example, the pipeline runs Java 17 tests even if the Java 11 tests fail. 
 
