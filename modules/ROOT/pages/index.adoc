@@ -20,7 +20,7 @@ This documentation is for reference purposes only and won't be updated.
 
   a| MuleSoft Accelerator for Consumer Goods Doc Archives 
 
-  xref:5.2@consumer-goods::index.adoc[v5.2 Archive] +
+*  xref:5.2@consumer-goods::index.adoc[v5.2 Archive] +
   xref:5.1@consumer-goods::index.adoc[v5.1 Archive] +
   xref:5.0@consumer-goods::index.adoc[v5.0 Archive] +
   xref:4.0@consumer-goods::index.adoc[v4.0 Archive] +
@@ -57,7 +57,7 @@ a| MuleSoft Accelerator for Retail Doc Archives
   xref:2.7@retail::index.adoc[v2.7 Archive] |
 
 a| MuleSoft Accelerator for Salesforce OMS Doc Archives 
-
++
   xref:1.0@salesforce-oms::index.adoc[v1.0 Archive] 
   
 | Anypoint Platform Command-Line Interface Doc Archives |
