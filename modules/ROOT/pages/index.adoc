@@ -14,9 +14,9 @@ This documentation is for reference purposes only and won't be updated.
 | Release Notes Archives |
   xref:release-notes::index.adoc[Release Notes]
 
-| Accelerators a| Accelerators Cloud Information Model Doc Archives 
+| Accelerators a| Cloud Information Model Doc Archives 
 
-  xref:1.3@accelerators-cim::index.adoc[v1.3 Archive] |
+*  xref:1.3@accelerators-cim::index.adoc[v1.3 Archive] |
 
   a| MuleSoft Accelerator for Consumer Goods Doc Archives 
 
@@ -28,14 +28,14 @@ This documentation is for reference purposes only and won't be updated.
 
 a| MuleSoft Accelerator for Financial Services Doc Archives 
 
-  xref:1.11@financial-services::index.adoc[v1.11 Archive] +
+*  xref:1.11@financial-services::index.adoc[v1.11 Archive] +
   xref:1.10@financial-services::index.adoc[v1.10 Archive] +
   xref:1.9@financial-services::index.adoc[v1.9 Archive] +
   xref:1.8@financial-services::index.adoc[v1.8 Archive] |
 
 a| MuleSoft Accelerator for Healthcare Doc Archives 
 
-  xref:2.23@healthcare::index.adoc[v2.23 Archive] +
+*  xref:2.23@healthcare::index.adoc[v2.23 Archive] +
   xref:2.22@healthcare::index.adoc[v2.22 Archive] +
   xref:2.21@healthcare::index.adoc[v2.21 Archive] +
   xref:2.20@healthcare::index.adoc[v2.20 Archive] +
@@ -44,21 +44,21 @@ a| MuleSoft Accelerator for Healthcare Doc Archives
 
 a| MuleSoft Accelerator for Life Sciences Doc Archives 
 
-  xref:1.1@life-sciences::index.adoc[v1.1 Archive] |
+*  xref:1.1@life-sciences::index.adoc[v1.1 Archive] |
 
 a| MuleSoft Accelerator for Manufacturing Doc Archives 
 
-  xref:1.3@manufacturing::index.adoc[v1.3 Archive] |
+*  xref:1.3@manufacturing::index.adoc[v1.3 Archive] |
 
 a| MuleSoft Accelerator for Retail Doc Archives 
 
-  xref:3.1@retail::index.adoc[v3.1 Archive] +
+*  xref:3.1@retail::index.adoc[v3.1 Archive] +
   xref:3.0@retail::index.adoc[v3.0 Archive] +
   xref:2.7@retail::index.adoc[v2.7 Archive] |
 
 a| MuleSoft Accelerator for Salesforce OMS Doc Archives 
-+
-  xref:1.0@salesforce-oms::index.adoc[v1.0 Archive] 
+
+*  xref:1.0@salesforce-oms::index.adoc[v1.0 Archive] 
   
 | Anypoint Platform Command-Line Interface Doc Archives |
   xref:2.x@anypoint-cli::index.adoc[v2.x Archive]
