@@ -1,0 +1,137 @@
+openapi: 3.0.3
+info:
+  title: Anypoint Usage API
+  description: |-
+    The Anypoint Usage API enables access to usage data stored in the MuleSoft Usage Report Service. It employs a Domain-Specific Language called Anypoint Metric Query Language (AMQL) to construct flexible queries for accessing platform usage data including runtime flow counts, network bytes, API call volumes, vCore consumption, and other platform utilization metrics. Data is generally available with a 3-day delay for consolidation.
+
+    The Anypoint Usage API provides programmatic access to platform usage and metering data. It uses the Anypoint Metric Query Language (AMQL), a SQL-like DSL for constructing queries against usage meters. The API enables organizations to track and report on their Anypoint Platform resource consumption across environments, business groups, and applications.
+  version: 2.0.x
+  contact:
+    name: MuleSoft
+    url: https://www.mulesoft.com
+servers:
+  - url: https://anypoint.mulesoft.com/metering/usage/api/v1
+    description: Anypoint Platform
+security:
+  - bearerAuth: []
+paths:
+  /meters:describe:
+    get:
+      summary: Describe All Meters
+      description: Returns descriptions of all available meters in the Usage Report Service. Each meter description includes the meter name, available dimensions (attributes for filtering and grouping), enriched dimensions (human-readable labels), and measurements (quantifiable values). Use this endpoint to discover what usage data is available for querying.
+      operationId: get__meters_describe
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token for authentication (e.g., 'Bearer {token}')
+          schema:
+            type: string
+        - name: Content-Type
+          in: header
+          required: true
+          description: Must be 'application/json'
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved descriptions of all available meters. Returns an array of meter descriptor objects, each containing name, dimensions, enrichedDimensions, and measurements.
+        '401':
+          description: Unauthorized - invalid or missing bearer token
+        '403':
+          description: Forbidden - user does not have 'Usage Viewer' permissions
+  /meters/{meterName}:describe:
+    get:
+      summary: Describe Specific Meter
+      description: Retrieves the complete description of a specific meter, including all available columns and fields. The response includes the meter name, dimensions (attributes that can be used for filtering in WHERE and grouping in GROUP BY), enriched dimensions (human-readable labels that can only be used in SELECT), and measurements (quantifiable numerical values that can be aggregated).
+      operationId: get__meters_meterName_describe
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: meterName
+          in: path
+          required: true
+          description: The name of the meter to describe (e.g., 'runtime_flow_count', 'runtime_network_bytes_count', 'api_call_count')
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token for authentication
+          schema:
+            type: string
+        - name: Content-Type
+          in: header
+          required: true
+          description: Must be 'application/json'
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved meter description. Returns the meter name, dimensions array, enrichedDimensions array, and measurements array with their types.
+        '401':
+          description: Unauthorized - invalid or missing bearer token
+        '403':
+          description: Forbidden - insufficient permissions
+        '404':
+          description: Meter not found - the specified meter name does not exist
+  /meters:search:
+    post:
+      summary: Search/Query Usage Data
+      description: Executes an AMQL query against the usage meter data. The query must include a SELECT clause with at least one measurement, a FROM clause specifying the meter, and a mandatory TIMESERIES clause. Timestamp filters are required. Results are returned as an array of data rows matching the query criteria. Data is generally available with a 3-day delay.
+      operationId: post__meters_search
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token for authentication
+          schema:
+            type: string
+        - name: Content-Type
+          in: header
+          required: true
+          description: Must be 'application/json'
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query:
+                  type: string
+              required:
+                - query
+      responses:
+        '200':
+          description: Successfully executed AMQL query. Returns a data array with rows matching the query, each containing the selected dimensions, enriched dimensions, and aggregated measurements.
+        '400':
+          description: Bad request - invalid AMQL syntax, missing mandatory clauses (TIMESERIES, timestamp), exceeding date range limits, or using unsupported features (SELECT *, aliases)
+        '401':
+          description: Unauthorized - invalid or missing bearer token
+        '403':
+          description: Forbidden - user does not have 'Usage Viewer' permissions
+        '422':
+          description: Unprocessable entity - semantically invalid query such as referencing non-existent meters, dimensions, or measurements
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: All API requests require a valid Anypoint Platform bearer token. Generate the token via the Anypoint Platform authorization endpoint. The user must have 'Usage Viewer' access level permissions. Include the token in the Authorization header as 'Bearer {token}'.
+tags:
+  - name: Governance
+    description: Anypoint Usage API endpoints

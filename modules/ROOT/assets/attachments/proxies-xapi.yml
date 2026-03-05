@@ -1,0 +1,443 @@
+openapi: 3.0.3
+info:
+  title: Proxies XAPI
+  description: |-
+    The Proxies XAPI allows you to download or deploy proxies into Runtime Manager. It enables deployment of API proxies to CloudHub, Hybrid (on-premises) environments, and Runtime Fabric targets. The API is part of the broader Anypoint Platform ecosystem, requiring integration with the API Manager for instance creation and the Exchange API for application registration and access control management.
+
+    The Proxies XAPI provides endpoints for downloading and deploying API proxies to various runtime targets within the Anypoint Platform. It supports CloudHub (CH), Hybrid/on-premises (HY), and Runtime Fabric (RF) deployment types. The API works in conjunction with API Manager (for creating API instances) and Exchange (for application registration).
+  version: 1.0.x
+  contact:
+    name: MuleSoft
+    url: https://www.mulesoft.com
+servers:
+  - url: https://anypoint.mulesoft.com/proxies/xapi/v1
+    description: Anypoint Platform
+security:
+  - bearerAuth: []
+paths:
+  /organizations/{organizationId}/environments/{environmentId}/apis/{apiId}/deployments:
+    post:
+      summary: Deploy proxy to Runtime Fabric
+      description: Deploys an API proxy to an Anypoint Runtime Fabric target.
+      operationId: post__organizations_organizationId_environments_environmentId_apis_apiId_deployments
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization ID
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: Environment ID
+          schema:
+            type: string
+        - name: apiId
+          in: path
+          required: true
+          description: API instance ID
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type:
+                type: string
+                enum:
+                  - RF
+                description: 'Deployment type: Runtime Fabric'
+              name:
+                type: string
+                description: Deployment name
+              target:
+                type: object
+                properties:
+                  targetId:
+                    type: number
+                    description: Runtime Fabric target ID
+                  deploymentSettings:
+                    type: object
+                    properties:
+                      runtimeVersion:
+                        type: string
+                        description: Mule runtime version
+            example:
+              type: RF
+              name: my-rf-proxy
+              target:
+                targetId: 67890
+                deploymentSettings:
+                  runtimeVersion: 4.4.0
+      responses:
+        '200':
+          description: Proxy deployed to Runtime Fabric successfully
+  /organizations/{organizationId}/environments/{environmentId}/apis/{apiInstanceId}/deployments/{deploymentId}:
+    put:
+      summary: Redeploy proxy to CloudHub
+      description: Redeploys an existing API proxy to CloudHub, updating the application.
+      operationId: put__organizations_organizationId_environments_environmentId_apis_apiInstanceId_deployments_deploymentId_
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization ID
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: Environment ID
+          schema:
+            type: string
+        - name: apiInstanceId
+          in: path
+          required: true
+          description: API instance ID
+          schema:
+            type: string
+        - name: deploymentId
+          in: path
+          required: true
+          description: Existing deployment ID
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              applicationName:
+                type: string
+                description: Application name
+              gatewayVersion:
+                type: string
+                description: Mule gateway version
+              overwrite:
+                type: boolean
+                description: Overwrite existing application
+              type:
+                type: string
+                enum:
+                  - CH
+                description: 'Deployment type: CloudHub'
+              environmentId:
+                type: string
+                description: Target environment ID
+            example:
+              applicationName: my-api-proxy
+              gatewayVersion: 4.4.0
+              overwrite: true
+              type: CH
+              environmentId: env-uuid
+      responses:
+        '200':
+          description: Proxy redeployed successfully
+    get:
+      summary: Get deployment details
+      description: Retrieves details for a specific proxy deployment.
+      operationId: get__organizations_organizationId_environments_environmentId_apis_apiInstanceId_deployments_deploymentId_
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization ID
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: Environment ID
+          schema:
+            type: string
+        - name: apiInstanceId
+          in: path
+          required: true
+          description: API instance ID
+          schema:
+            type: string
+        - name: deploymentId
+          in: path
+          required: true
+          description: Deployment ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Deployment details including status, target, and configuration
+    delete:
+      summary: Delete proxy deployment
+      description: Removes a proxy deployment, undeploying the proxy from its target.
+      operationId: delete__organizations_organizationId_environments_environmentId_apis_apiInstanceId_deployments_deploymentId_
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization ID
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: Environment ID
+          schema:
+            type: string
+        - name: apiInstanceId
+          in: path
+          required: true
+          description: API instance ID
+          schema:
+            type: string
+        - name: deploymentId
+          in: path
+          required: true
+          description: Deployment ID
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Deployment deleted successfully
+        '404':
+          description: Deployment not found
+    patch:
+      summary: Update proxy deployment
+      description: Updates configuration of an existing proxy deployment.
+      operationId: patch__organizations_organizationId_environments_environmentId_apis_apiInstanceId_deployments_deploymentId_
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization ID
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: Environment ID
+          schema:
+            type: string
+        - name: apiInstanceId
+          in: path
+          required: true
+          description: API instance ID
+          schema:
+            type: string
+        - name: deploymentId
+          in: path
+          required: true
+          description: Deployment ID
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                gatewayVersion:
+                  type: string
+                applicationName:
+                  type: string
+              required:
+                - gatewayVersion
+                - applicationName
+      responses:
+        '200':
+          description: Deployment updated successfully
+  /organizations/{organizationId}/environments/{environmentId}/apis/{apiInstanceId}/deployments:
+    post:
+      summary: Deploy proxy to Hybrid environment
+      description: Deploys an API proxy to an on-premises Mule runtime (Hybrid server, cluster, or server group).
+      operationId: post__organizations_organizationId_environments_environmentId_apis_apiInstanceId_deployments
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization ID
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: Environment ID
+          schema:
+            type: string
+        - name: apiInstanceId
+          in: path
+          required: true
+          description: API instance ID
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              gatewayVersion:
+                type: string
+                description: Mule gateway version
+              targetId:
+                type: number
+                description: ID of the target server, cluster, or server group
+              targetName:
+                type: string
+                description: Name of the target
+              targetType:
+                type: string
+                enum:
+                  - server
+                  - cluster
+                  - serverGroup
+                description: Type of hybrid target
+              type:
+                type: string
+                enum:
+                  - HY
+                description: 'Deployment type: Hybrid'
+              environmentId:
+                type: string
+                description: Target environment ID
+            example:
+              gatewayVersion: 4.4.0
+              targetId: 12345
+              targetName: my-server
+              targetType: server
+              type: HY
+              environmentId: env-uuid
+      responses:
+        '200':
+          description: Proxy deployed to Hybrid target successfully
+    get:
+      summary: List proxy deployments
+      description: Retrieves all deployments for a specific API instance.
+      operationId: get__organizations_organizationId_environments_environmentId_apis_apiInstanceId_deployments
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization ID
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: Environment ID
+          schema:
+            type: string
+        - name: apiInstanceId
+          in: path
+          required: true
+          description: API instance ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Array of deployments with status, target, and configuration
+  /organizations/{organizationId}/providers/{providerId}/runtime-fabric-deployment-targets:
+    get:
+      summary: Get Runtime Fabric deployment targets
+      description: Retrieves available Runtime Fabric deployment targets for the specified organization and provider.
+      operationId: get__organizations_organizationId_providers_providerId_runtime_fabric_deployment_targets
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization ID
+          schema:
+            type: string
+        - name: providerId
+          in: path
+          required: true
+          description: Provider ID
+          schema:
+            type: string
+        - name: environmentId
+          in: query
+          required: true
+          description: Environment ID to filter targets
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Array of available Runtime Fabric deployment targets with IDs and names
+  /organizations/{organizationId}/environments/{environmentId}/apis/{apiInstanceId}/proxy:
+    get:
+      summary: Download proxy for standalone deployment
+      description: Downloads the proxy application file for manual deployment to a standalone Mule runtime.
+      operationId: get__organizations_organizationId_environments_environmentId_apis_apiInstanceId_proxy
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization ID
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: Environment ID
+          schema:
+            type: string
+        - name: apiInstanceId
+          in: path
+          required: true
+          description: API instance ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Binary file download of the proxy application (.jar)
+        '404':
+          description: API instance not found
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'Users must authenticate via Anypoint Platform by obtaining an access token. Use the Access Management API to obtain credentials. Pass the token as ''Authorization: Bearer <access_token>'' header.'
+tags:
+  - name: API Management
+    description: Proxies XAPI endpoints

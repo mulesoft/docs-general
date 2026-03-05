@@ -1,0 +1,382 @@
+openapi: 3.0.3
+info:
+  title: Anypoint MQ Stats API
+  description: |-
+    The Anypoint MQ Stats API provides access to statistical information about Anypoint MQ message queues and exchanges. It enables retrieval of real-time queue statistics, historical data for queues and exchanges, and organization-wide usage metrics for billing and capacity planning.
+
+    The Anypoint MQ Stats API provides access to statistical and usage information about Anypoint MQ resources. It supports real-time statistics for active queue metrics, historical data tracking queue and exchange activity over time, and organization-wide usage metrics for billing and capacity planning. The API works in conjunction with the Anypoint MQ Admin API (for managing destinations) and the Anypoint MQ Broker API (for publishing/consuming messages).
+  version: 1.0.x
+  contact:
+    name: MuleSoft
+    url: https://www.mulesoft.com
+servers:
+  - url: https://anypoint.mulesoft.com/mq/stats/api/v1
+    description: Anypoint Platform
+security:
+  - bearerAuth: []
+paths:
+  /organizations/{ORG_ID}/environments/{ENV_ID}/regions/{REGION_ID}/queues:
+    get:
+      summary: Get current queue statistics
+      description: Retrieves a real-time snapshot of message counts for queues in a specified region. Returns the number of messages waiting in the queue and the number of in-flight messages currently being processed.
+      operationId: get__organizations_ORG_ID_environments_ENV_ID_regions_REGION_ID_queues
+      tags:
+        - Monitoring
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: ORG_ID
+          in: path
+          required: true
+          description: The organization ID where the queues reside.
+          schema:
+            type: string
+        - name: ENV_ID
+          in: path
+          required: true
+          description: The environment ID where the queues reside.
+          schema:
+            type: string
+        - name: REGION_ID
+          in: path
+          required: true
+          description: The geographic region (e.g., us-east-1).
+          schema:
+            type: string
+        - name: destinationIds
+          in: query
+          required: false
+          description: Comma-separated list of queue IDs to filter statistics for specific queues. If omitted, returns stats for all queues.
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved current queue statistics.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    destination:
+                      type: string
+                      description: Queue name/identifier.
+                    messages:
+                      type: integer
+                      description: Number of messages currently in the queue waiting to be consumed.
+                    inflightMessages:
+                      type: integer
+                      description: Number of messages currently being processed (read but not yet acknowledged or returned to queue).
+                example:
+                  - destination: orders-received
+                    messages: 716
+                    inflightMessages: 3
+  /organizations/{ORG_ID}/environments/{ENV_ID}/regions/{REGION_ID}/queues/{queueId}:
+    get:
+      summary: Get historical queue statistics
+      description: Fetches historical statistics for a specific queue over a time range. Returns time-series data with message counts at specified granularity. Data is retained for 15 months.
+      operationId: get__organizations_ORG_ID_environments_ENV_ID_regions_REGION_ID_queues_queueId_
+      tags:
+        - Monitoring
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: ORG_ID
+          in: path
+          required: true
+          description: The organization ID.
+          schema:
+            type: string
+        - name: ENV_ID
+          in: path
+          required: true
+          description: The environment ID.
+          schema:
+            type: string
+        - name: REGION_ID
+          in: path
+          required: true
+          description: The geographic region (e.g., us-east-1).
+          schema:
+            type: string
+        - name: queueId
+          in: path
+          required: true
+          description: The queue identifier to get statistics for.
+          schema:
+            type: string
+        - name: startDate
+          in: query
+          required: true
+          description: Start date for the time range in URL-encoded ISO 8601 format (e.g., 2023-01-01T00%3A00%3A00.000Z).
+          schema:
+            type: string
+        - name: endDate
+          in: query
+          required: true
+          description: End date for the time range in URL-encoded ISO 8601 format.
+          schema:
+            type: string
+        - name: period
+          in: query
+          required: true
+          description: Granularity of the time-series data in seconds (e.g., 600 for 10-minute intervals, 3600 for hourly, 86400 for daily).
+          schema:
+            type: integer
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved historical queue statistics.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  destination:
+                    type: string
+                    description: Queue name/identifier.
+                  messages:
+                    type: array
+                    description: Time-series array of message counts.
+                    items:
+                      type: object
+                      properties:
+                        timestamp:
+                          type: string
+                          format: date-time
+                        value:
+                          type: integer
+  /organizations/{ORG_ID}/environments/{ENV_ID}/regions/{REGION_ID}/exchanges/{exchangeId}:
+    get:
+      summary: Get historical exchange statistics
+      description: Retrieves historical statistics for a specific message exchange over a time range. Returns time-series data for messages published through the exchange.
+      operationId: get__organizations_ORG_ID_environments_ENV_ID_regions_REGION_ID_exchanges_exchangeId_
+      tags:
+        - Monitoring
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: ORG_ID
+          in: path
+          required: true
+          description: The organization ID.
+          schema:
+            type: string
+        - name: ENV_ID
+          in: path
+          required: true
+          description: The environment ID.
+          schema:
+            type: string
+        - name: REGION_ID
+          in: path
+          required: true
+          description: The geographic region.
+          schema:
+            type: string
+        - name: exchangeId
+          in: path
+          required: true
+          description: The exchange identifier to get statistics for.
+          schema:
+            type: string
+        - name: startDate
+          in: query
+          required: true
+          description: Start date in URL-encoded ISO 8601 format.
+          schema:
+            type: string
+        - name: endDate
+          in: query
+          required: true
+          description: End date in URL-encoded ISO 8601 format.
+          schema:
+            type: string
+        - name: period
+          in: query
+          required: true
+          description: Granularity in seconds.
+          schema:
+            type: integer
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved historical exchange statistics.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  destination:
+                    type: string
+                    description: Exchange name/identifier.
+                  messagesPublished:
+                    type: array
+                    description: Time-series array of published message counts.
+                    items:
+                      type: object
+                      properties:
+                        timestamp:
+                          type: string
+                          format: date-time
+                        value:
+                          type: integer
+  /organizations/{ORG_ID}/environments/{ENV_ID}:
+    get:
+      summary: Get usage metrics by environment
+      description: Retrieves Anypoint MQ usage metrics aggregated by environment. Returns API request counts, message receipt counts, billable unit counts, and message byte counts over the specified time period. Rate limited to 10 TPM.
+      operationId: get__organizations_ORG_ID_environments_ENV_ID_
+      tags:
+        - Monitoring
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: ORG_ID
+          in: path
+          required: true
+          description: The organization ID.
+          schema:
+            type: string
+        - name: ENV_ID
+          in: path
+          required: true
+          description: The environment ID.
+          schema:
+            type: string
+        - name: startDate
+          in: query
+          required: true
+          description: Start date in URL-encoded ISO 8601 format.
+          schema:
+            type: string
+        - name: endDate
+          in: query
+          required: true
+          description: End date in URL-encoded ISO 8601 format.
+          schema:
+            type: string
+        - name: period
+          in: query
+          required: true
+          description: 'Aggregation period. Use 1hour (max query window: 1 day), 1day (max: 1 month), or 1month (max: 2 months).'
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved environment usage metrics.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    timestamp:
+                      type: string
+                      format: date-time
+                      description: Time period start.
+                    apiRequestCount:
+                      type: integer
+                      description: Number of API requests made.
+                    messageReceiptCount:
+                      type: integer
+                      description: Number of message receipts.
+                    billableUnitCount:
+                      type: integer
+                      description: Number of billable units consumed.
+                    messageByteCount:
+                      type: integer
+                      description: Total bytes of messages processed.
+  /organizations/{ORG_ID}:
+    get:
+      summary: Get usage metrics by organization
+      description: Retrieves Anypoint MQ usage metrics for the root business organization. Returns aggregated API request counts, message receipt counts, billable unit counts, and message byte counts. Rate limited to 10 TPM.
+      operationId: get__organizations_ORG_ID_
+      tags:
+        - Monitoring
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: ORG_ID
+          in: path
+          required: true
+          description: The root organization ID.
+          schema:
+            type: string
+        - name: startDate
+          in: query
+          required: true
+          description: Start date in URL-encoded ISO 8601 format.
+          schema:
+            type: string
+        - name: endDate
+          in: query
+          required: true
+          description: End date in URL-encoded ISO 8601 format.
+          schema:
+            type: string
+        - name: period
+          in: query
+          required: true
+          description: 'Aggregation period. Use 1hour (max: 1 day), 1day (max: 1 month), or 1month (max: 2 months).'
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved organization usage metrics.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    timestamp:
+                      type: string
+                      format: date-time
+                    apiRequestCount:
+                      type: integer
+                    messageReceiptCount:
+                      type: integer
+                    billableUnitCount:
+                      type: integer
+                    messageByteCount:
+                      type: integer
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'Access requires a bearer token obtained through the Anypoint Access Management API using Anypoint Platform credentials. Pass the token in the Authorization header as: Bearer {access_token}.'
+tags:
+  - name: Monitoring
+    description: Anypoint MQ Stats API endpoints

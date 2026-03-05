@@ -1,0 +1,1275 @@
+openapi: 3.0.3
+info:
+  title: Partner Manager v2 Partners API
+  description: |-
+    The Partner Manager v2 Partners API enables access to trading partner details including partner names, descriptions, logos, addresses, contacts, and associated assets such as identifiers, digital certificates, endpoints, message types, and message flows. It provides comprehensive CRUD operations for managing B2B trading partner relationships, configurations, and transaction processing within the Anypoint Platform ecosystem.
+
+    The Partner Manager v2 Partners API provides programmatic management of B2B trading partner relationships in Anypoint Platform. It allows organizations to create and manage trading partners, their contact information, identifiers (DUNS, AS2, X12), digital certificates, communication endpoints (AS2, SFTP, HTTP/S), message types, message flows, and deployment configurations. This API is essential for automating B2B integration workflows and partner onboarding processes.
+  version: 1.0.x
+  contact:
+    name: MuleSoft
+    url: https://www.mulesoft.com
+servers:
+  - url: https://anypoint.mulesoft.com/partnermanager/partners/api/v2
+    description: Anypoint Platform
+security:
+  - bearerAuth: []
+paths:
+  /organizations/{organizationId}/environments/{environmentId}/partners:
+    get:
+      summary: List All Partners
+      description: Retrieves a list of all trading partners configured in the specified organization and environment. Returns partner details including name, description, status, and summary of associated assets.
+      operationId: get__organizations_organizationId_environments_environmentId_partners
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+        - name: offset
+          in: query
+          required: false
+          description: Pagination offset
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          required: false
+          description: Maximum number of results to return
+          schema:
+            type: integer
+        - name: searchTerm
+          in: query
+          required: false
+          description: Search filter for partner name
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved list of partners. Returns array of partner objects with id, name, description, status, and asset counts.
+        '401':
+          description: Unauthorized - invalid or missing bearer token
+        '403':
+          description: Forbidden - insufficient permissions or no Partner Manager subscription
+    post:
+      summary: Create Partner
+      description: Creates a new trading partner in the specified organization and environment. The partner is initialized with basic information and can subsequently have identifiers, certificates, endpoints, and message flows added.
+      operationId: post__organizations_organizationId_environments_environmentId_partners
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              name:
+                type: string
+                required: true
+                description: The name of the trading partner
+              description:
+                type: string
+                required: false
+                description: Description of the trading partner
+              address:
+                type: object
+                required: false
+                description: Physical address of the partner with street, city, state, country, postalCode
+              websiteUrl:
+                type: string
+                required: false
+                description: Partner's website URL
+              logo:
+                type: string
+                required: false
+                description: Base64 encoded logo image
+      responses:
+        '201':
+          description: Partner created successfully. Returns the complete partner object with generated id.
+        '400':
+          description: Bad request - invalid partner data
+        '401':
+          description: Unauthorized - invalid or missing bearer token
+        '403':
+          description: Forbidden - insufficient permissions
+        '409':
+          description: Conflict - a partner with that name already exists
+  /organizations/{organizationId}/environments/{environmentId}/partners/{partnerId}:
+    get:
+      summary: Get Partner Details
+      description: Retrieves detailed information about a specific trading partner, including all configuration details, address, contacts summary, and asset counts.
+      operationId: get__organizations_organizationId_environments_environmentId_partners_partnerId_
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+        - name: partnerId
+          in: path
+          required: true
+          description: The UUID of the trading partner
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved partner details.
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Partner not found
+    put:
+      summary: Update Partner
+      description: Updates an existing trading partner's information including name, description, address, and other profile details.
+      operationId: put__organizations_organizationId_environments_environmentId_partners_partnerId_
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+        - name: partnerId
+          in: path
+          required: true
+          description: The UUID of the trading partner to update
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              name:
+                type: string
+                description: Updated partner name
+              description:
+                type: string
+                description: Updated description
+              address:
+                type: object
+                description: Updated address
+              websiteUrl:
+                type: string
+                description: Updated website URL
+      responses:
+        '200':
+          description: Partner updated successfully
+        '400':
+          description: Bad request - invalid update data
+        '401':
+          description: Unauthorized
+        '404':
+          description: Partner not found
+    delete:
+      summary: Delete Partner
+      description: Deletes a trading partner and all associated assets (identifiers, certificates, endpoints, message flows) from the specified environment.
+      operationId: delete__organizations_organizationId_environments_environmentId_partners_partnerId_
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+        - name: partnerId
+          in: path
+          required: true
+          description: The UUID of the trading partner to delete
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Partner deleted successfully
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Partner not found
+        '409':
+          description: Conflict - partner has active message flows and cannot be deleted
+  /organizations/{organizationId}/environments/{environmentId}/partners/{partnerId}/contacts:
+    get:
+      summary: List Partner Contacts
+      description: Retrieves all contacts associated with a specific trading partner.
+      operationId: get__organizations_organizationId_environments_environmentId_partners_partnerId_contacts
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+        - name: partnerId
+          in: path
+          required: true
+          description: The UUID of the trading partner
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved list of partner contacts. Returns array of contact objects with name, email, phone, role.
+        '401':
+          description: Unauthorized
+        '404':
+          description: Partner not found
+    post:
+      summary: Create Partner Contact
+      description: Creates a new contact for a specific trading partner. Contacts represent individuals at the partner organization who are involved in B2B communication.
+      operationId: post__organizations_organizationId_environments_environmentId_partners_partnerId_contacts
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+        - name: partnerId
+          in: path
+          required: true
+          description: The UUID of the trading partner
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                phone:
+                  type: string
+                role:
+                  type: string
+              required:
+                - name
+                - email
+                - phone
+                - role
+      responses:
+        '201':
+          description: Contact created successfully
+        '400':
+          description: Bad request - invalid contact data
+        '401':
+          description: Unauthorized
+        '404':
+          description: Partner not found
+  /organizations/{organizationId}/environments/{environmentId}/partners/{partnerId}/contacts/{contactId}:
+    get:
+      summary: Get Partner Contact
+      description: Retrieves details for a specific contact associated with a trading partner.
+      operationId: get__organizations_organizationId_environments_environmentId_partners_partnerId_contacts_contactId_
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+        - name: partnerId
+          in: path
+          required: true
+          description: The UUID of the trading partner
+          schema:
+            type: string
+        - name: contactId
+          in: path
+          required: true
+          description: The UUID of the contact
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved contact details
+        '404':
+          description: Contact or partner not found
+    delete:
+      summary: Delete Partner Contact
+      description: Deletes a specific contact from a trading partner.
+      operationId: delete__organizations_organizationId_environments_environmentId_partners_partnerId_contacts_contactId_
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+        - name: partnerId
+          in: path
+          required: true
+          description: The UUID of the trading partner
+          schema:
+            type: string
+        - name: contactId
+          in: path
+          required: true
+          description: The UUID of the contact to delete
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Contact deleted successfully
+        '404':
+          description: Contact or partner not found
+  /organizations/{organizationId}/environments/{environmentId}/partners/{partnerId}/identifiers:
+    get:
+      summary: List Partner Identifiers
+      description: Retrieves all identifiers associated with a specific trading partner. Identifiers include DUNS numbers, AS2 IDs, X12 ISA and GS qualifiers, and other partner identification codes.
+      operationId: get__organizations_organizationId_environments_environmentId_partners_partnerId_identifiers
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+        - name: partnerId
+          in: path
+          required: true
+          description: The UUID of the trading partner
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved list of identifiers
+        '401':
+          description: Unauthorized
+        '404':
+          description: Partner not found
+    post:
+      summary: Create Partner Identifier
+      description: Creates a new identifier for a trading partner. Identifiers are used for partner lookup during B2B transaction processing.
+      operationId: post__organizations_organizationId_environments_environmentId_partners_partnerId_identifiers
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+        - name: partnerId
+          in: path
+          required: true
+          description: The UUID of the trading partner
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                identifierTypeQualifierId:
+                  type: string
+                value:
+                  type: string
+              required:
+                - identifierTypeQualifierId
+                - value
+      responses:
+        '201':
+          description: Identifier created successfully
+        '400':
+          description: Bad request - invalid identifier data
+        '409':
+          description: Conflict - identifier value already exists
+  /organizations/{organizationId}/environments/{environmentId}/partners/{partnerId}/identifiers/{identifierId}:
+    get:
+      summary: Get Partner Identifier
+      description: Retrieves details for a specific identifier associated with a trading partner.
+      operationId: get__organizations_organizationId_environments_environmentId_partners_partnerId_identifiers_identifierId_
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+        - name: partnerId
+          in: path
+          required: true
+          description: The UUID of the trading partner
+          schema:
+            type: string
+        - name: identifierId
+          in: path
+          required: true
+          description: The UUID of the identifier
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved identifier details
+        '404':
+          description: Identifier or partner not found
+    delete:
+      summary: Delete Partner Identifier
+      description: Deletes a specific identifier from a trading partner.
+      operationId: delete__organizations_organizationId_environments_environmentId_partners_partnerId_identifiers_identifierId_
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+        - name: partnerId
+          in: path
+          required: true
+          description: The UUID of the trading partner
+          schema:
+            type: string
+        - name: identifierId
+          in: path
+          required: true
+          description: The UUID of the identifier to delete
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Identifier deleted successfully
+        '404':
+          description: Identifier or partner not found
+  /organizations/{organizationId}/environments/{environmentId}/partners/{partnerId}/certificates:
+    get:
+      summary: List Partner Digital Certificates
+      description: Retrieves all digital certificates associated with a trading partner. Certificates are used for secure AS2 communication and message signing/encryption.
+      operationId: get__organizations_organizationId_environments_environmentId_partners_partnerId_certificates
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+        - name: partnerId
+          in: path
+          required: true
+          description: The UUID of the trading partner
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved list of digital certificates
+        '404':
+          description: Partner not found
+    post:
+      summary: Create Partner Digital Certificate
+      description: Uploads a new digital certificate for a trading partner. Supports X.509 certificates in PEM or DER format.
+      operationId: post__organizations_organizationId_environments_environmentId_partners_partnerId_certificates
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+        - name: partnerId
+          in: path
+          required: true
+          description: The UUID of the trading partner
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                certificateBody:
+                  type: string
+                usage:
+                  type: string
+              required:
+                - name
+                - certificateBody
+                - usage
+      responses:
+        '201':
+          description: Certificate uploaded successfully
+        '400':
+          description: Bad request - invalid certificate data or format
+  /organizations/{organizationId}/environments/{environmentId}/partners/{partnerId}/certificates/{certificateId}:
+    get:
+      summary: Get Partner Digital Certificate
+      description: Retrieves details for a specific digital certificate associated with a trading partner.
+      operationId: get__organizations_organizationId_environments_environmentId_partners_partnerId_certificates_certificateId_
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+        - name: partnerId
+          in: path
+          required: true
+          description: The UUID of the trading partner
+          schema:
+            type: string
+        - name: certificateId
+          in: path
+          required: true
+          description: The UUID of the certificate
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved certificate details
+        '404':
+          description: Certificate or partner not found
+    delete:
+      summary: Delete Partner Digital Certificate
+      description: Deletes a specific digital certificate from a trading partner.
+      operationId: delete__organizations_organizationId_environments_environmentId_partners_partnerId_certificates_certificateId_
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+        - name: partnerId
+          in: path
+          required: true
+          description: The UUID of the trading partner
+          schema:
+            type: string
+        - name: certificateId
+          in: path
+          required: true
+          description: The UUID of the certificate to delete
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Certificate deleted successfully
+        '404':
+          description: Certificate or partner not found
+  /organizations/{organizationId}/environments/{environmentId}/partners/{partnerId}/endpoints:
+    get:
+      summary: List Partner Endpoints
+      description: Retrieves all communication endpoints associated with a trading partner. Endpoints define the protocols and connection details for B2B message exchange (AS2, SFTP, HTTP/S, FTP).
+      operationId: get__organizations_organizationId_environments_environmentId_partners_partnerId_endpoints
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+        - name: partnerId
+          in: path
+          required: true
+          description: The UUID of the trading partner
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved list of endpoints
+        '404':
+          description: Partner not found
+    post:
+      summary: Create Partner Endpoint
+      description: Creates a new communication endpoint for a trading partner. Supports AS2, SFTP, HTTP/S, and FTP protocol types with protocol-specific configuration.
+      operationId: post__organizations_organizationId_environments_environmentId_partners_partnerId_endpoints
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+        - name: partnerId
+          in: path
+          required: true
+          description: The UUID of the trading partner
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              name:
+                type: string
+                required: true
+                description: Endpoint name
+              type:
+                type: string
+                required: true
+                description: 'Endpoint protocol type: ''AS2'', ''SFTP'', ''HTTPS'', ''HTTP'', ''FTP'''
+              direction:
+                type: string
+                required: true
+                description: 'Endpoint direction: ''send'' or ''receive'''
+              config:
+                type: object
+                required: true
+                description: Protocol-specific configuration (URL, host, port, credentials, etc.)
+      responses:
+        '201':
+          description: Endpoint created successfully
+        '400':
+          description: Bad request - invalid endpoint configuration
+  /organizations/{organizationId}/environments/{environmentId}/partners/{partnerId}/endpoints/{endpointId}:
+    get:
+      summary: Get Partner Endpoint
+      description: Retrieves details for a specific communication endpoint associated with a trading partner.
+      operationId: get__organizations_organizationId_environments_environmentId_partners_partnerId_endpoints_endpointId_
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+        - name: partnerId
+          in: path
+          required: true
+          description: The UUID of the trading partner
+          schema:
+            type: string
+        - name: endpointId
+          in: path
+          required: true
+          description: The UUID of the endpoint
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved endpoint details
+        '404':
+          description: Endpoint or partner not found
+    delete:
+      summary: Delete Partner Endpoint
+      description: Deletes a specific communication endpoint from a trading partner.
+      operationId: delete__organizations_organizationId_environments_environmentId_partners_partnerId_endpoints_endpointId_
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+        - name: partnerId
+          in: path
+          required: true
+          description: The UUID of the trading partner
+          schema:
+            type: string
+        - name: endpointId
+          in: path
+          required: true
+          description: The UUID of the endpoint to delete
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Endpoint deleted successfully
+        '404':
+          description: Endpoint or partner not found
+  /organizations/{organizationId}/environments/{environmentId}/partners/{partnerId}/messageFlows:
+    get:
+      summary: List Partner Message Flows
+      description: Retrieves all message flows associated with a trading partner. Message flows define the routing, transformation, and processing rules for B2B transactions between partners.
+      operationId: get__organizations_organizationId_environments_environmentId_partners_partnerId_messageFlows
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+        - name: partnerId
+          in: path
+          required: true
+          description: The UUID of the trading partner
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved list of message flows
+        '404':
+          description: Partner not found
+    post:
+      summary: Create Partner Message Flow
+      description: Creates a new message flow for a trading partner. Message flows connect source and target endpoints with message type definitions and transformation rules.
+      operationId: post__organizations_organizationId_environments_environmentId_partners_partnerId_messageFlows
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+        - name: partnerId
+          in: path
+          required: true
+          description: The UUID of the trading partner
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                direction:
+                  type: string
+                sourceEndpointId:
+                  type: string
+                targetEndpointId:
+                  type: string
+                messageTypeId:
+                  type: string
+              required:
+                - name
+                - direction
+                - sourceEndpointId
+                - targetEndpointId
+                - messageTypeId
+      responses:
+        '201':
+          description: Message flow created successfully
+        '400':
+          description: Bad request - invalid message flow configuration
+  /organizations/{organizationId}/environments/{environmentId}/partners/{partnerId}/messageFlows/{messageFlowId}:
+    get:
+      summary: Get Partner Message Flow
+      description: Retrieves details for a specific message flow associated with a trading partner.
+      operationId: get__organizations_organizationId_environments_environmentId_partners_partnerId_messageFlows_messageFlowId_
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+        - name: partnerId
+          in: path
+          required: true
+          description: The UUID of the trading partner
+          schema:
+            type: string
+        - name: messageFlowId
+          in: path
+          required: true
+          description: The UUID of the message flow
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved message flow details
+        '404':
+          description: Message flow or partner not found
+    delete:
+      summary: Delete Partner Message Flow
+      description: Deletes a specific message flow from a trading partner.
+      operationId: delete__organizations_organizationId_environments_environmentId_partners_partnerId_messageFlows_messageFlowId_
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+        - name: partnerId
+          in: path
+          required: true
+          description: The UUID of the trading partner
+          schema:
+            type: string
+        - name: messageFlowId
+          in: path
+          required: true
+          description: The UUID of the message flow to delete
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Message flow deleted successfully
+        '404':
+          description: Message flow or partner not found
+  /organizations/{organizationId}/environments/{environmentId}/partners/{partnerId}/messageFlows/{messageFlowId}/deployments:
+    get:
+      summary: Get Message Flow Deployments
+      description: Retrieves deployment information for a specific message flow, including deployment status, target environment, and runtime details.
+      operationId: get__organizations_organizationId_environments_environmentId_partners_partnerId_messageFlows_messageFlowId_deployments
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+        - name: partnerId
+          in: path
+          required: true
+          description: The UUID of the trading partner
+          schema:
+            type: string
+        - name: messageFlowId
+          in: path
+          required: true
+          description: The UUID of the message flow
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved deployment information for the message flow
+        '404':
+          description: Message flow or partner not found
+  /organizations/{organizationId}/environments/{environmentId}/messageTypes:
+    get:
+      summary: List Message Types
+      description: Retrieves all available message types configured in the environment. Message types define the format and structure of B2B documents (e.g., X12 850 Purchase Order, X12 810 Invoice).
+      operationId: get__organizations_organizationId_environments_environmentId_messageTypes
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved list of message types
+        '401':
+          description: Unauthorized
+  /organizations/{organizationId}/environments/{environmentId}/messageFormats:
+    get:
+      summary: List Message Formats
+      description: Retrieves all available message formats, including X12 EDI formats and their versions.
+      operationId: get__organizations_organizationId_environments_environmentId_messageFormats
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved list of message formats
+        '401':
+          description: Unauthorized
+  /organizations/{organizationId}/environments/{environmentId}/x12/configurations:
+    get:
+      summary: Get X12 Configurations
+      description: Retrieves X12 EDI-specific configurations including ISA (Interchange Control Header) settings, GS (Functional Group Header) settings, and transaction set configurations.
+      operationId: get__organizations_organizationId_environments_environmentId_x12_configurations
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved X12 configurations
+        '401':
+          description: Unauthorized
+  /organizations/{organizationId}/environments/{environmentId}/messageConfigurations:
+    post:
+      summary: Create Message Configuration
+      description: Creates a new message configuration that defines how a specific message type is processed, including validation rules, transformation mappings, and protocol-specific settings.
+      operationId: post__organizations_organizationId_environments_environmentId_messageConfigurations
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                messageTypeId:
+                  type: string
+                config:
+                  type: string
+              required:
+                - messageTypeId
+                - config
+      responses:
+        '201':
+          description: Message configuration created successfully
+        '400':
+          description: Bad request - invalid configuration
+  /organizations/{organizationId}/environments/{environmentId}/messageConfigurations/{configId}:
+    delete:
+      summary: Delete Message Configuration
+      description: Deletes a specific message configuration.
+      operationId: delete__organizations_organizationId_environments_environmentId_messageConfigurations_configId_
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The UUID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The UUID of the environment
+          schema:
+            type: string
+        - name: configId
+          in: path
+          required: true
+          description: The UUID of the message configuration to delete
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Message configuration deleted successfully
+        '404':
+          description: Configuration not found
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: All API requests require OAuth 2.0 tokens from the Anypoint Platform. Obtain a token via the Access Management API (POST to /accounts/api/v2/oauth2/token with client_credentials grant type). Include the token in the Authorization header as 'Bearer {token}'. An active Anypoint Partner Manager v2 subscription is required.
+tags:
+  - name: Integration
+    description: Partner Manager v2 Partners API endpoints

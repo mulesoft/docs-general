@@ -1,0 +1,898 @@
+openapi: 3.0.3
+info:
+  title: CloudHub API
+  description: |-
+    The CloudHub Public API enables programmatic access to Anypoint Runtime Manager functions for CloudHub-deployed applications. It supports deploying and managing applications, schedules, queues, logs, performance metrics, alerts, load balancers, VPCs, VPNs, TGWs, and persistent queues. Statistics data follows a one-month retention policy.
+
+    The CloudHub API enables you to programmatically access the functions of Anypoint Runtime Manager, such as creating, deploying, starting, stopping, listing, and deleting applications on CloudHub. It also supports updating application metadata, retrieving statistics, managing transactions, handling static IPs, downloading packages, managing schedules, log levels, notifications, alerts, load balancers, VPCs, VPNs, TGWs, and persistent queues.
+  version: 1.0.x
+  contact:
+    name: MuleSoft
+    url: https://www.mulesoft.com
+servers:
+  - url: https://anypoint.mulesoft.com/cloudhub/api
+    description: Anypoint Platform
+security:
+  - bearerAuth: []
+paths:
+  /applications:
+    get:
+      summary: List all applications
+      description: Retrieves a list of all applications deployed to CloudHub in the specified environment.
+      operationId: get__applications
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token
+          schema:
+            type: string
+        - name: X-ANYPNT-ENV-ID
+          in: header
+          required: true
+          description: Environment ID
+          schema:
+            type: string
+        - name: X-ANYPNT-ORG-ID
+          in: header
+          required: true
+          description: Organization ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: JSON array with application details including domain, status, workers, muleVersion, etc.
+    post:
+      summary: Create a new application
+      description: Creates and deploys a new application on CloudHub.
+      operationId: post__applications
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        description: Application configuration including domain name, Mule version, worker size and count, properties, and application file.
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Application created successfully with details
+  /applications/{domain}:
+    get:
+      summary: Get application details
+      description: Retrieves detailed information about a specific application by its domain name.
+      operationId: get__applications_domain_
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          description: Application domain name
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Application details including domain, status, workers, muleVersion, properties
+    put:
+      summary: Update an application
+      description: Updates application metadata including worker count, Mule runtime version, system properties, and deploys a new version of the application.
+      operationId: put__applications_domain_
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          description: Application domain name
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Updated application configuration
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Application updated successfully
+    delete:
+      summary: Delete an application
+      description: Deletes an application from CloudHub.
+      operationId: delete__applications_domain_
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          description: Application domain name
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Application deleted successfully
+  /applications/{domain}/deploy:
+    post:
+      summary: Deploy application
+      description: Deploys or redeploys an application to CloudHub.
+      operationId: post__applications_domain_deploy
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          description: Application domain name
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Application deployed successfully
+  /applications/{domain}/start:
+    post:
+      summary: Start an application
+      description: Starts a stopped application on CloudHub.
+      operationId: post__applications_domain_start
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          description: Application domain name
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Application started successfully
+  /applications/{domain}/stop:
+    post:
+      summary: Stop an application
+      description: Stops a running application on CloudHub.
+      operationId: post__applications_domain_stop
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          description: Application domain name
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Application stopped successfully
+  /applications/{domain}/restart:
+    post:
+      summary: Restart an application
+      description: Restarts a running application on CloudHub.
+      operationId: post__applications_domain_restart
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          description: Application domain name
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Application restarted successfully
+  /applications/{domain}/schedules:
+    get:
+      summary: Get application schedules
+      description: Retrieves polling schedule configurations for an application.
+      operationId: get__applications_domain_schedules
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          description: Application domain name
+          schema:
+            type: string
+      responses:
+        '200':
+          description: JSON array of schedule objects with id, flow, name, enabled, status, schedule (timeUnit, period), and lastRun
+    put:
+      summary: Update application schedules
+      description: Updates schedule configurations for an application.
+      operationId: put__applications_domain_schedules
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          description: Application domain name
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Schedule configuration with timeUnit, period, and enabled flag
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Schedules updated successfully
+  /applications/{domain}/schedules/{scheduleId}/run:
+    post:
+      summary: Run a specific schedule
+      description: Triggers immediate execution of a specific schedule.
+      operationId: post__applications_domain_schedules_scheduleId_run
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          description: Application domain name
+          schema:
+            type: string
+        - name: scheduleId
+          in: path
+          required: true
+          description: Schedule identifier
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Schedule triggered successfully
+  /applications/{domain}/schedules/{scheduleId}:
+    put:
+      summary: Enable or disable a schedule
+      description: Enables or disables a specific schedule for an application.
+      operationId: put__applications_domain_schedules_scheduleId_
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          description: Application domain name
+          schema:
+            type: string
+        - name: scheduleId
+          in: path
+          required: true
+          description: Schedule identifier
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Object with 'enabled' boolean field
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Schedule updated successfully
+  /applications/{domain}/logs:
+    get:
+      summary: Download application logs
+      description: Downloads the log file for an application or specific instance.
+      operationId: get__applications_domain_logs
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          description: Application domain name
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Log file content
+  /applications/{domain}/logs/{instanceId}:
+    get:
+      summary: Download instance logs
+      description: Downloads log file for a specific worker instance.
+      operationId: get__applications_domain_logs_instanceId_
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          description: Application domain name
+          schema:
+            type: string
+        - name: instanceId
+          in: path
+          required: true
+          description: Worker instance identifier
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Instance log file content
+  /applications/{domain}/log-levels:
+    get:
+      summary: Get log levels
+      description: Retrieves log levels configured for an application.
+      operationId: get__applications_domain_log_levels
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          description: Application domain name
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Current log level configuration
+    put:
+      summary: Update log levels
+      description: Updates log level configuration for an application.
+      operationId: put__applications_domain_log_levels
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          description: Application domain name
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Log level configuration with package name and level
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Log levels updated successfully
+  /applications/{domain}/statistics:
+    get:
+      summary: Get application statistics
+      description: Retrieves performance statistics for an application. Data follows a one-month retention policy.
+      operationId: get__applications_domain_statistics
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          description: Application domain name
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Application performance statistics
+  /applications/{domain}/statistics/{workerId}:
+    get:
+      summary: Get worker statistics
+      description: Retrieves performance statistics for a specific worker.
+      operationId: get__applications_domain_statistics_workerId_
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          description: Application domain name
+          schema:
+            type: string
+        - name: workerId
+          in: path
+          required: true
+          description: Worker identifier
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Worker performance statistics
+  /applications/{domain}/transactions:
+    get:
+      summary: Get application transactions
+      description: Retrieves transaction events for an application.
+      operationId: get__applications_domain_transactions
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          description: Application domain name
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Transaction events data
+  /applications/{domain}/transactions/{transactionId}:
+    get:
+      summary: Get transaction details
+      description: Retrieves events for a specific transaction.
+      operationId: get__applications_domain_transactions_transactionId_
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          description: Application domain name
+          schema:
+            type: string
+        - name: transactionId
+          in: path
+          required: true
+          description: Transaction identifier
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Transaction event details
+  /applications/{domain}/transactions/{transactionId}/replay:
+    post:
+      summary: Replay a transaction
+      description: Replays the flow for a specific transaction.
+      operationId: post__applications_domain_transactions_transactionId_replay
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          description: Application domain name
+          schema:
+            type: string
+        - name: transactionId
+          in: path
+          required: true
+          description: Transaction identifier
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Transaction replay initiated
+  /applications/{domain}/transactions/replay:
+    delete:
+      summary: Delete replay data
+      description: Deletes replay data for an application.
+      operationId: delete__applications_domain_transactions_replay
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          description: Application domain name
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Replay data deleted successfully
+  /applications/{domain}/static-ips:
+    get:
+      summary: Get static IPs
+      description: Retrieves static IP addresses associated with an application.
+      operationId: get__applications_domain_static_ips
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          description: Application domain name
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of static IP addresses
+    put:
+      summary: Manage static IPs
+      description: Assigns or releases static IP addresses for an application.
+      operationId: put__applications_domain_static_ips
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          description: Application domain name
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Static IP configuration updated
+  /applications/{domain}/static-ips/{ip}:
+    delete:
+      summary: Release a static IP
+      description: Releases an unused static IP address associated with an application.
+      operationId: delete__applications_domain_static_ips_ip_
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          description: Application domain name
+          schema:
+            type: string
+        - name: ip
+          in: path
+          required: true
+          description: Static IP address to release
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Static IP released successfully
+  /applications/{domain}/package:
+    get:
+      summary: Download Mule package
+      description: Downloads the Mule application package file for an application.
+      operationId: get__applications_domain_package
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          description: Application domain name
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Mule application package file (binary)
+  /notifications:
+    get:
+      summary: Get notifications
+      description: Retrieves notifications for the current environment.
+      operationId: get__notifications
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: List of notifications
+    post:
+      summary: Create a notification
+      description: Creates a new notification.
+      operationId: post__notifications
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        description: Notification details including message and priority
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Notification created
+  /notifications/{notificationId}:
+    put:
+      summary: Update a notification
+      description: Updates a notification, including marking as read or unread.
+      operationId: put__notifications_notificationId_
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: notificationId
+          in: path
+          required: true
+          description: Notification identifier
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Updated notification fields
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Notification updated
+  /alerts:
+    get:
+      summary: Get alerts
+      description: Retrieves alerts configured for applications.
+      operationId: get__alerts
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: List of alert configurations
+    post:
+      summary: Create an alert
+      description: Creates a new alert triggered by application events or policy violations.
+      operationId: post__alerts
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        description: Alert configuration including trigger conditions and notification settings
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Alert created
+  /alerts/{alertId}:
+    put:
+      summary: Update an alert
+      description: Updates an existing alert configuration.
+      operationId: put__alerts_alertId_
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: alertId
+          in: path
+          required: true
+          description: Alert identifier
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Updated alert configuration
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Alert updated
+    delete:
+      summary: Delete an alert
+      description: Deletes an alert configuration.
+      operationId: delete__alerts_alertId_
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: alertId
+          in: path
+          required: true
+          description: Alert identifier
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Alert deleted
+  /v2/applications/{domain}/queues:
+    get:
+      summary: Get persistent queues
+      description: Retrieves persistent queue statistics for an application.
+      operationId: get__v2_applications_domain_queues
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          description: Application domain name
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Persistent queue statistics
+  /vpcs:
+    get:
+      summary: List VPCs
+      description: Retrieves a list of Virtual Private Clouds configured for the organization.
+      operationId: get__vpcs
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: List of VPC configurations
+    post:
+      summary: Create a VPC
+      description: Creates a new Virtual Private Cloud.
+      operationId: post__vpcs
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        description: VPC configuration including CIDR block, region, and firewall rules
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: VPC created successfully
+  /vpns:
+    get:
+      summary: List VPNs
+      description: Retrieves VPN connections configured for the organization.
+      operationId: get__vpns
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: List of VPN configurations
+    post:
+      summary: Create a VPN
+      description: Creates a new VPN connection.
+      operationId: post__vpns
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        description: VPN configuration including remote IP, tunnels, and routing
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: VPN created successfully
+  /loadbalancers:
+    get:
+      summary: List load balancers
+      description: Retrieves dedicated load balancers configured for the organization.
+      operationId: get__loadbalancers
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: List of load balancer configurations
+    post:
+      summary: Create a load balancer
+      description: Creates a new dedicated load balancer.
+      operationId: post__loadbalancers
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        description: Load balancer configuration including VPC, SSL certificates, and mapping rules
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Load balancer created successfully
+  /loadbalancers/{loadbalancerId}:
+    put:
+      summary: Update a load balancer
+      description: Updates an existing load balancer configuration.
+      operationId: put__loadbalancers_loadbalancerId_
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: loadbalancerId
+          in: path
+          required: true
+          description: Load balancer identifier
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Updated load balancer configuration
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Load balancer updated
+    delete:
+      summary: Delete a load balancer
+      description: Deletes a dedicated load balancer.
+      operationId: delete__loadbalancers_loadbalancerId_
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: loadbalancerId
+          in: path
+          required: true
+          description: Load balancer identifier
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Load balancer deleted
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Access requires valid Anypoint Access Management credentials. Tokens are obtained through POST /accounts/login or POST /accounts/oauth2/token (client credentials). Include the bearer token in the Authorization header for all requests.
+tags:
+  - name: Runtime
+    description: CloudHub API endpoints

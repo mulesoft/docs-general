@@ -1,0 +1,856 @@
+openapi: 3.0.3
+info:
+  title: Access Management API
+  description: |-
+    The Anypoint Access Management API enables programmatic access to the administrative functionality of Anypoint Platform, including user management, client management, invitation and signup workflows, organizations and business groups, roles and permissions, environments, entitlements, connected applications, and identity provider management.
+
+    The Access Management API provides administrative control over the Anypoint Platform. It covers user management, client management, invitation and signup, organizations and business groups, roles and permissions, environments, and entitlements. The API also supports connected application management with OAuth2 flows including authorization code, refresh token, password grant, JWT bearer, and client credentials.
+  version: 1.0.x
+  contact:
+    name: MuleSoft
+    url: https://www.mulesoft.com
+servers:
+  - url: https://anypoint.mulesoft.com/accounts
+    description: Anypoint Platform
+security:
+  - bearerAuth: []
+paths:
+  /login:
+    post:
+      summary: Authenticate with username and password
+      description: Authenticates a user with username and password credentials. Returns a bearer access token for use in subsequent API calls.
+      operationId: post__login
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  description: Anypoint Platform username
+                password:
+                  type: string
+                  description: user password
+              required:
+                - username
+                - password
+      responses:
+        '200':
+          description: Authentication successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  access_token:
+                    type: string
+                  token_type:
+                    type: string
+                    example: bearer
+                required:
+                  - access_token
+                  - token_type
+        '401':
+          description: Invalid credentials
+  /login/receive-id:
+    post:
+      summary: Authenticate with SAML 2.0
+      description: Authenticates using a SAML 2.0 response for SSO flows. Returns a bearer token and optional redirect URL.
+      operationId: post__login_receive_id
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                SAMLResponse:
+                  type: string
+                  description: SAML Response XML
+              required:
+                - SAMLResponse
+      responses:
+        '200':
+          description: SAML authentication successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  access_token:
+                    type: string
+                  token_type:
+                    type: string
+                    example: bearer
+                  redirectUrl:
+                    type: string
+                required:
+                  - access_token
+                  - token_type
+                  - redirectUrl
+  /oauth2/token:
+    post:
+      summary: OAuth2 token endpoint
+      description: Obtains an access token using OAuth2 client credentials grant. Used by connected applications and service accounts.
+      operationId: post__oauth2_token
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                client_id:
+                  type: string
+                client_secret:
+                  type: string
+                grant_type:
+                  type: string
+                  description: '''client_credentials'''
+              required:
+                - client_id
+                - client_secret
+                - grant_type
+      responses:
+        '200':
+          description: Token issued successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  access_token:
+                    type: string
+                  token_type:
+                    type: string
+                    example: bearer
+                required:
+                  - access_token
+                  - token_type
+  /api/me:
+    get:
+      summary: Get current user profile
+      description: Retrieves the profile information for the currently authenticated user, including organization ID.
+      operationId: get__api_me
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: User profile with organization details
+  /api/profile:
+    get:
+      summary: Get user profile
+      description: Retrieves detailed profile information for the authenticated user including id, createdAt, and additional user information.
+      operationId: get__api_profile
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: User profile data
+  /api/organizations/{orgId}:
+    get:
+      summary: Get organization details
+      description: Retrieves details about a specific organization including name, entitlements, and configuration.
+      operationId: get__api_organizations_orgId_
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          description: Organization identifier
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Organization details
+  /api/organizations/{orgId}/environments:
+    get:
+      summary: List environments
+      description: Retrieves all environments configured for an organization.
+      operationId: get__api_organizations_orgId_environments
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          description: Organization identifier
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of environments with IDs, names, types (sandbox/production), and status
+    post:
+      summary: Create an environment
+      description: Creates a new environment within an organization.
+      operationId: post__api_organizations_orgId_environments
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Environment configuration including name and type (sandbox or production)
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Environment created successfully
+  /api/organizations/{orgId}/environments/{envId}:
+    put:
+      summary: Update an environment
+      description: Updates an existing environment's configuration.
+      operationId: put__api_organizations_orgId_environments_envId_
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: envId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Updated environment configuration
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Environment updated
+    delete:
+      summary: Delete an environment
+      description: Deletes an environment from an organization.
+      operationId: delete__api_organizations_orgId_environments_envId_
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: envId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Environment deleted
+  /api/organizations/{orgId}/users:
+    get:
+      summary: List organization users
+      description: Retrieves all users in an organization.
+      operationId: get__api_organizations_orgId_users
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of users with profile details
+    post:
+      summary: Add a user to organization
+      description: Adds or invites a user to an organization.
+      operationId: post__api_organizations_orgId_users
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: User details including email and role assignments
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: User added or invitation sent
+  /api/organizations/{orgId}/users/{userId}:
+    delete:
+      summary: Remove a user from organization
+      description: Removes a user from an organization.
+      operationId: delete__api_organizations_orgId_users_userId_
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: User removed
+  /api/organizations/{orgId}/users/{userId}/identityProviderProfiles:
+    delete:
+      summary: Remove user identity provider profile
+      description: Removes identity provider profile association from a user.
+      operationId: delete__api_organizations_orgId_users_userId_identityProviderProfiles
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Identity provider profile removed
+  /api/organizations/{orgId}/roles:
+    get:
+      summary: List roles
+      description: Retrieves all roles defined for an organization.
+      operationId: get__api_organizations_orgId_roles
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of roles with permissions and descriptions
+    post:
+      summary: Create a role
+      description: Creates a new custom role in the organization.
+      operationId: post__api_organizations_orgId_roles
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Role definition including name, description, and permissions
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Role created
+  /api/organizations/{orgId}/roles/{roleId}:
+    put:
+      summary: Update a role
+      description: Updates an existing role's configuration.
+      operationId: put__api_organizations_orgId_roles_roleId_
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: roleId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Updated role configuration
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Role updated
+    delete:
+      summary: Delete a role
+      description: Deletes a custom role from the organization.
+      operationId: delete__api_organizations_orgId_roles_roleId_
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: roleId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Role deleted
+  /api/organizations/{orgId}/roles/{roleId}/users:
+    post:
+      summary: Assign user to role
+      description: Assigns a user to a specific role within the organization.
+      operationId: post__api_organizations_orgId_roles_roleId_users
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: roleId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: User identifier to assign
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: User assigned to role
+  /api/organizations/{orgId}/roles/{roleId}/users/{userId}:
+    delete:
+      summary: Remove user from role
+      description: Removes a user's assignment to a specific role.
+      operationId: delete__api_organizations_orgId_roles_roleId_users_userId_
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: roleId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: User removed from role
+  /api/organizations/{orgId}/entitlements:
+    get:
+      summary: Get organization entitlements
+      description: Retrieves the entitlements (feature and resource limits) for an organization.
+      operationId: get__api_organizations_orgId_entitlements
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Organization entitlements including vCores, static IPs, VPCs, etc.
+  /api/connectedApplications:
+    post:
+      summary: Create a connected application
+      description: Creates a new connected application with OAuth2 capabilities. Supports authorization code, refresh token, client credentials, password, and JWT bearer grant types.
+      operationId: post__api_connectedApplications
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                client_name:
+                  type: string
+                  description: application identifier
+                grant_types:
+                  type: array
+                  items:
+                    type: string
+                  description: e.g., ['refresh_token', 'authorization_code']
+                redirect_uris:
+                  type: array
+                  items:
+                    type: string
+                  description: callback URLs
+                scopes:
+                  type: array
+                  items:
+                    type: string
+                  description: e.g., ['profile', 'offline_access']
+                public_keys:
+                  type: array
+                  description: for JWT Bearer grant type
+                audience:
+                  type: string
+                  description: typically 'internal'
+              required:
+                - client_name
+                - grant_types
+                - redirect_uris
+                - scopes
+                - public_keys
+                - audience
+      responses:
+        '201':
+          description: Connected application created with client_id and client_secret
+  /api/v2/oauth2/authorize:
+    get:
+      summary: OAuth2 authorization endpoint
+      description: Initiates the OAuth2 authorization code flow. Redirects the user to the login page for authentication.
+      operationId: get__api_v2_oauth2_authorize
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: client_id
+          in: query
+          required: true
+          description: Connected application client ID
+          schema:
+            type: string
+        - name: scope
+          in: query
+          required: true
+          description: Space-separated list of requested scopes
+          schema:
+            type: string
+        - name: response_type
+          in: query
+          required: true
+          description: '''code'' for authorization code flow'
+          schema:
+            type: string
+        - name: redirect_uri
+          in: query
+          required: true
+          description: Registered callback URL
+          schema:
+            type: string
+        - name: nonce
+          in: query
+          required: false
+          description: Optional security parameter
+          schema:
+            type: string
+      responses:
+        '302':
+          description: Redirects to login page, then redirects to redirect_uri with authorization code
+  /api/v2/oauth2/token:
+    post:
+      summary: Connected app token exchange
+      description: Exchanges an authorization code, refresh token, or other credentials for an access token. Supports authorization_code, refresh_token, password, client_credentials, and urn:ietf:params:oauth:grant-type:jwt-bearer grant types.
+      operationId: post__api_v2_oauth2_token
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                grant_type:
+                  type: string
+                  description: authorization_code | refresh_token | password | client_credentials | urn:ietf:params:oauth:grant-type:jwt-bearer
+                client_id:
+                  type: string
+                client_secret:
+                  type: string
+                  description: not required for JWT bearer
+                code:
+                  type: string
+                  description: for authorization_code grant
+                redirect_uri:
+                  type: string
+                  description: for authorization_code grant
+                refresh_token:
+                  type: string
+                  description: for refresh_token grant
+                username:
+                  type: string
+                  description: for password grant
+                password:
+                  type: string
+                  description: for password grant
+                assertion:
+                  type: string
+                  description: signed JWT for jwt-bearer grant
+              required:
+                - grant_type
+                - client_id
+                - client_secret
+                - code
+                - redirect_uri
+                - refresh_token
+                - username
+                - password
+                - assertion
+      responses:
+        '200':
+          description: Token issued
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  access_token:
+                    type: string
+                  refresh_token:
+                    type: string
+                    description: if applicable
+                  expires_in:
+                    type: integer
+                    description: seconds
+                  token_type:
+                    type: string
+                    example: bearer
+                  id_token:
+                    type: string
+                    description: requires openid scope
+                required:
+                  - access_token
+                  - refresh_token
+                  - expires_in
+                  - token_type
+                  - id_token
+  /api/organizations/{orgId}/invites:
+    get:
+      summary: List pending invitations
+      description: Retrieves pending invitations for an organization.
+      operationId: get__api_organizations_orgId_invites
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of pending invitations
+    post:
+      summary: Send an invitation
+      description: Sends an invitation to join the organization to an email address.
+      operationId: post__api_organizations_orgId_invites
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Invitation details including email and role assignments
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Invitation sent
+  /api/organizations/{orgId}/invites/{inviteId}:
+    delete:
+      summary: Revoke an invitation
+      description: Revokes a pending invitation.
+      operationId: delete__api_organizations_orgId_invites_inviteId_
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: inviteId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Invitation revoked
+  /api/organizations/{orgId}/clients:
+    get:
+      summary: List client applications
+      description: Retrieves OAuth client applications registered in the organization.
+      operationId: get__api_organizations_orgId_clients
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of client applications
+    post:
+      summary: Create a client application
+      description: Registers a new OAuth client application for the organization.
+      operationId: post__api_organizations_orgId_clients
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Client application details including name, description, redirect URIs, and grant types
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Client application created with client_id and client_secret
+  /api/organizations/{orgId}/clients/{clientId}:
+    delete:
+      summary: Delete a client application
+      description: Deletes a registered client application.
+      operationId: delete__api_organizations_orgId_clients_clientId_
+      tags:
+        - Security
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: clientId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Client application deleted
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'Supports three authentication methods: 1) Username/password via POST /accounts/login, 2) SAML 2.0 via POST /accounts/login/receive-id, 3) OAuth2 client credentials via POST /accounts/oauth2/token. All subsequent API calls require the bearer token in the Authorization header.'
+tags:
+  - name: Security
+    description: Access Management API endpoints

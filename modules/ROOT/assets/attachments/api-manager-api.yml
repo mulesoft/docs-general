@@ -1,0 +1,729 @@
+openapi: 3.0.3
+info:
+  title: API Manager API
+  description: |-
+    The API Manager API enables management of APIs through policy application, SLA configuration, alert setup, and API instance management. It supports three policy categories: compliance policies (CORS and Client ID enforcement), quality of service policies (rate limiting and throttling, SLA-based), and security policies (whitelisting, blacklisting, and authentication managers like LDAP). It also supports API promotion across environments, traffic management, and outbound policy application for Flex Gateway and Mule 4 runtimes.
+
+    API Manager is a component of Anypoint Platform that enables you to manage, govern, and secure APIs and server instances. It provides an interface to configure the runtime capabilities of Anypoint Flex Gateway, Anypoint Mule Gateway, Anypoint Service Mesh, and server instance types. API Manager helps organizations implement API governance policies, monitor API performance, manage server connectivity, and ensure security compliance across their API ecosystem.
+  version: 1.0.x
+  contact:
+    name: MuleSoft
+    url: https://www.mulesoft.com
+servers:
+  - url: https://anypoint.mulesoft.com/apimanager/api/v1
+    description: Anypoint Platform
+security:
+  - bearerAuth: []
+paths:
+  /organizations/{organizationId}/environments/{environmentId}/apis:
+    post:
+      summary: Create API instance
+      description: Creates a new API instance in API Manager. Supports proxy instances and basic endpoint instances for Flex Gateway, Mule 4, and Service Mesh runtimes.
+      operationId: post__organizations_organizationId_environments_environmentId_apis
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization identifier
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: Environment identifier
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                spec:
+                  type: string
+                endpoint:
+                  type: string
+                technology:
+                  type: string
+                  description: '''mule4'', ''flexGateway'', ''serviceMesh'''
+                instanceLabel:
+                  type: string
+                  description: instance identifier
+              required:
+                - spec
+                - endpoint
+                - technology
+                - instanceLabel
+      responses:
+        '201':
+          description: API instance created successfully with id, environmentApiId, and configuration details
+    get:
+      summary: List API instances
+      description: Retrieves a paginated list of all API instances in the specified environment. Supports filtering by query, groupId, assetId, assetVersion, and instanceLabel.
+      operationId: get__organizations_organizationId_environments_environmentId_apis
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization identifier
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: Environment identifier
+          schema:
+            type: string
+        - name: query
+          in: query
+          required: false
+          description: Searches partial/similar matches across name, description, labels, tags
+          schema:
+            type: string
+        - name: groupId
+          in: query
+          required: false
+          description: Exact match on groupId
+          schema:
+            type: string
+        - name: assetId
+          in: query
+          required: false
+          description: Exact match on assetId
+          schema:
+            type: string
+        - name: assetVersion
+          in: query
+          required: false
+          description: Exact match on assetVersion
+          schema:
+            type: string
+        - name: instanceLabel
+          in: query
+          required: false
+          description: Exact match on instanceLabel
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Paginated list of API instances with IDs and metadata
+  /organizations/{organizationId}/environments/{environmentId}/apis/{environmentApiId}:
+    get:
+      summary: Get specific API instance
+      description: Retrieves detailed information about a specific API instance by its environment API ID.
+      operationId: get__organizations_organizationId_environments_environmentId_apis_environmentApiId_
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentApiId
+          in: path
+          required: true
+          description: API instance identifier within the environment
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Full API instance details including configuration, endpoint, technology, and status
+    patch:
+      summary: Update API instance
+      description: Updates an existing API instance configuration.
+      operationId: patch__organizations_organizationId_environments_environmentId_apis_environmentApiId_
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentApiId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Partial API instance configuration to update
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: API instance updated successfully
+    delete:
+      summary: Delete API instance
+      description: Deletes an API instance from API Manager.
+      operationId: delete__organizations_organizationId_environments_environmentId_apis_environmentApiId_
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentApiId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: API instance deleted successfully
+  /organizations/{organizationId}/environments/{environmentId}/apis/{environmentApiId}/policies:
+    post:
+      summary: Apply a policy to an API
+      description: Applies a policy to an API instance. For Mule 4 and Flex Gateway, specify groupId, assetId, assetVersion, configurationData, and order. For older runtimes, use policyTemplateId.
+      operationId: post__organizations_organizationId_environments_environmentId_apis_environmentApiId_policies
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentApiId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                configurationData:
+                  type: object
+                  description: policy-specific configuration values
+                pointcutData:
+                  type: string
+                  description: object or null (resource-level policy settings)
+                groupId:
+                  type: string
+                  description: policy asset group identifier - for Mule 4/Flex Gateway
+                assetId:
+                  type: string
+                  description: policy asset identifier, e.g., 'rate-limiting'
+                assetVersion:
+                  type: string
+                  description: policy version, e.g., '1.0.0'
+                order:
+                  type: integer
+                  description: execution precedence, 1 = highest
+                policyTemplateId:
+                  type: string
+                  description: legacy template ID for pre-4.x runtimes
+              required:
+                - configurationData
+                - pointcutData
+                - groupId
+                - assetId
+                - assetVersion
+                - order
+                - policyTemplateId
+            example:
+              configurationData:
+                clusterizable: true
+                exposeHeader: true
+                rateLimits:
+                  - timePeriodInMilliseconds: 86400000
+                    maximumRequests: 10
+              pointcutData: null
+              groupId: 68ef9520-24e9-4cf2-b2f5-620025690913
+              assetId: rate-limiting
+              assetVersion: 1.0.0
+              order: 1
+      responses:
+        '201':
+          description: Policy applied successfully
+    get:
+      summary: List policies applied to an API
+      description: Retrieves all policies currently applied to an API instance.
+      operationId: get__organizations_organizationId_environments_environmentId_apis_environmentApiId_policies
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentApiId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of applied policies with configuration details
+  /organizations/{organizationId}/environments/{environmentId}/apis/{environmentApiId}/policies/{policyId}:
+    delete:
+      summary: Remove a policy from an API
+      description: Removes an applied policy from an API instance.
+      operationId: delete__organizations_organizationId_environments_environmentId_apis_environmentApiId_policies_policyId_
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentApiId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: policyId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Policy removed successfully
+  /organizations/{organizationId}/environments/{environmentId}/apis/{environmentApiId}/tiers:
+    post:
+      summary: Create an SLA tier
+      description: Creates a new SLA tier for an API instance with rate limiting configuration.
+      operationId: post__organizations_organizationId_environments_environmentId_apis_environmentApiId_tiers
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentApiId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: SLA tier configuration including name, description, limits, auto-approve flag, and visibility
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: SLA tier created successfully
+    get:
+      summary: List SLA tiers
+      description: Retrieves all SLA tiers defined for an API instance.
+      operationId: get__organizations_organizationId_environments_environmentId_apis_environmentApiId_tiers
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentApiId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of SLA tiers with limits and configuration
+  /organizations/{organizationId}/environments/{environmentId}/apis/{environmentApiId}/tiers/{tierId}:
+    put:
+      summary: Update an SLA tier
+      description: Updates an existing SLA tier configuration.
+      operationId: put__organizations_organizationId_environments_environmentId_apis_environmentApiId_tiers_tierId_
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: tierId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Updated SLA tier configuration
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: SLA tier updated
+    delete:
+      summary: Delete an SLA tier
+      description: Deletes an SLA tier from an API instance.
+      operationId: delete__organizations_organizationId_environments_environmentId_apis_environmentApiId_tiers_tierId_
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: tierId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: SLA tier deleted
+  /organizations/{organizationId}/environments/{environmentId}/apis/{environmentApiId}/alerts:
+    get:
+      summary: List API alerts
+      description: Retrieves alerts configured for an API instance.
+      operationId: get__organizations_organizationId_environments_environmentId_apis_environmentApiId_alerts
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentApiId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of alert configurations
+    post:
+      summary: Create an API alert
+      description: Creates an alert for an API instance triggered by policy violations, unusual traffic, or response time degradation.
+      operationId: post__organizations_organizationId_environments_environmentId_apis_environmentApiId_alerts
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        description: Alert configuration including trigger conditions and notification settings
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Alert created
+  /organizations/{organizationId}/environments/{environmentId}/apis/{environmentApiId}/contracts:
+    get:
+      summary: List API contracts
+      description: Retrieves contracts (client application registrations) for an API instance.
+      operationId: get__organizations_organizationId_environments_environmentId_apis_environmentApiId_contracts
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: List of API contracts with client application details
+    post:
+      summary: Create an API contract
+      description: Registers a client application contract with an API instance.
+      operationId: post__organizations_organizationId_environments_environmentId_apis_environmentApiId_contracts
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        description: Contract details including client application ID and SLA tier
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Contract created
+  /organizations/{organizationId}/environments/{environmentId}/apis/{environmentApiId}/contracts/{contractId}:
+    delete:
+      summary: Revoke an API contract
+      description: Revokes a client application's contract with an API instance.
+      operationId: delete__organizations_organizationId_environments_environmentId_apis_environmentApiId_contracts_contractId_
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: contractId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Contract revoked
+  /organizations/{organizationId}/policy-templates:
+    get:
+      summary: List policy templates
+      description: Retrieves available policy templates for the organization. Used to discover policyTemplateId values for applying policies to pre-4.x runtimes.
+      operationId: get__organizations_organizationId_policy_templates
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of available policy templates with IDs and configuration schemas
+  /organizations/{organizationId}/environments/{environmentId}/apis/{environmentApiId}/promote:
+    post:
+      summary: Promote an API instance
+      description: Promotes an API instance to another environment, preserving policies, SLA tiers, and configuration.
+      operationId: post__organizations_organizationId_environments_environmentId_apis_environmentApiId_promote
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentApiId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Target environment ID and promotion configuration
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: API promoted successfully to target environment
+  https://anypoint.mulesoft.com/proxies/xapi/v1/organizations/{organizationId}/environments/{environmentId}/apis/{instanceId}/deployments:
+    post:
+      summary: Deploy an API proxy
+      description: Deploys an API proxy to a Flex Gateway or Mule 4 Hybrid target. Requires the API instance ID from the create API response.
+      operationId: post_https_anypoint_mulesoft_com_proxies_xapi_v1_organizations_organizationId_environments_environmentId_apis_instanceId_deployments
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: instanceId
+          in: path
+          required: true
+          description: API instance ID from the create API response
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: string (e.g., 'HY' for hybrid)
+              gatewayVersion: string (e.g., '1.3.0' for Flex, '4.4.0' for Mule 4)
+              targetId: string or integer (target server/gateway ID)
+              targetName: string (target name)
+              targetType: string (e.g., 'server' for hybrid)
+              environmentId: string
+              environmentName: string (for Mule 4 hybrid)
+            example:
+              type: HY
+              gatewayVersion: 1.3.0
+              targetId: flex-target-id
+              targetName: flex-target-name
+              environmentId: env-id
+      responses:
+        '201':
+          description: Deployment created successfully with status and metadata
+  https://anypoint.mulesoft.com/apimanager/xapi/v1/organizations/{organizationId}/environments/{environmentId}/apis/{environmentApiId}/policies/outbound-policies:
+    post:
+      summary: Apply an outbound policy
+      description: Applies an outbound policy to specified upstream endpoints. Supports credential injection and other outbound transformations for Flex Gateway deployments.
+      operationId: post_https_anypoint_mulesoft_com_apimanager_xapi_v1_organizations_organizationId_environments_environmentId_apis_environmentApiId_policies_outbound_policies
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentApiId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                configurationData:
+                  type: object
+                  description: policy-specific settings, e.g., username, password, customHeader
+                groupId:
+                  type: string
+                  description: asset group identifier
+                assetId:
+                  type: string
+                  description: e.g., 'credential-injection-basic-auth'
+                assetVersion:
+                  type: string
+                  description: e.g., '1.0.0'
+                order:
+                  type: integer
+                  description: execution sequence within a single upstream
+                upstreamIds:
+                  type: array
+                  items:
+                    type: string
+                  description: upstream endpoint identifiers
+              required:
+                - configurationData
+                - groupId
+                - assetId
+                - assetVersion
+                - order
+                - upstreamIds
+            example:
+              configurationData:
+                username: user
+                password: pass
+                overwrite: true
+                customHeader: X-Custom
+              groupId: 68ef9520-24e9-4cf2-b2f5-620025690913
+              assetId: credential-injection-basic-auth
+              assetVersion: 1.0.0
+              order: 1
+              upstreamIds:
+                - upstream-id-1
+      responses:
+        '201':
+          description: Outbound policy applied successfully
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth2 bearer token required. Obtain via Access Management API POST /accounts/login or POST /accounts/oauth2/token. Include in Authorization header for all requests.
+tags:
+  - name: API Management
+    description: API Manager API endpoints

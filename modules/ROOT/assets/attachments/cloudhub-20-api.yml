@@ -1,0 +1,577 @@
+openapi: 3.0.3
+info:
+  title: CloudHub 2.0 API
+  description: |-
+    CloudHub 2.0 is a fully managed, containerized cloud service that enables deployment and execution of MuleSoft applications with enterprise-grade features. It provides continuous software updates without complex hardware maintenance, versatile tenancy options for varying security and isolation requirements, globally distributed architecture with 99.99% uptime guarantee, built-in cloud security and compliance capabilities, access-based control for organizational requirements, and dynamic scalability with elastic transaction volumes. The CloudHub 2.0 API (Application Manager API) exposes REST endpoints for managing the full lifecycle of applications deployed to CloudHub 2.0, including creating, deploying, updating, monitoring, and deleting deployments.
+
+    The CloudHub 2.0 API (also referred to as the Application Manager API) enables programmatic access to all functions of Anypoint Runtime Manager for CloudHub 2.0 deployments. Many platform services in CloudHub 2.0 are exposed through this REST API, allowing you to deploy and manage applications, configure endpoints, manage schedules, view logs, and retrieve statistics about deployed Mule applications. The API supports deployments to Runtime Fabric and CloudHub 2.0 targets.
+  version: 1.0.x
+  contact:
+    name: MuleSoft
+    url: https://www.mulesoft.com
+servers:
+  - url: https://anypoint.mulesoft.com/amc/application-manager/api/v2
+    description: Anypoint Platform
+security:
+  - bearerAuth: []
+paths:
+  /organizations/{organizationId}/environments/{environmentId}/deployments:
+    get:
+      summary: List Deployments
+      description: Retrieves a list of all application deployments in the specified organization and environment. Returns deployment details including status, configuration, and target information.
+      operationId: get__organizations_organizationId_environments_environmentId_deployments
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The ID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The ID of the environment
+          schema:
+            type: string
+        - name: offset
+          in: query
+          required: false
+          description: The offset for pagination
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          required: false
+          description: The maximum number of results to return
+          schema:
+            type: integer
+        - name: targetId
+          in: query
+          required: false
+          description: Filter deployments by target ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved list of deployments
+        '401':
+          description: Unauthorized - invalid or missing bearer token
+        '403':
+          description: Forbidden - insufficient permissions
+    post:
+      summary: Create Deployment
+      description: Creates a new application deployment in the specified organization and environment. Supports deploying Mule applications to CloudHub 2.0 shared spaces and private spaces with configurable settings including vCores, runtime version, properties, and TCP port mappings.
+      operationId: post__organizations_organizationId_environments_environmentId_deployments
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The ID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The ID of the environment
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                labels:
+                  type: string
+                target:
+                  type: string
+                application:
+                  type: string
+              required:
+                - name
+                - labels
+                - target
+                - application
+      responses:
+        '200':
+          description: Deployment created successfully
+        '400':
+          description: Bad request - invalid deployment configuration
+        '401':
+          description: Unauthorized - invalid or missing bearer token
+        '403':
+          description: Forbidden - insufficient permissions
+        '409':
+          description: Conflict - deployment with that name already exists
+  /organizations/{organizationId}/environments/{environmentId}/deployments/{deploymentId}:
+    get:
+      summary: Get Deployment
+      description: Retrieves detailed information about a specific application deployment, including its current status, configuration, target settings, and application details.
+      operationId: get__organizations_organizationId_environments_environmentId_deployments_deploymentId_
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The ID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The ID of the environment
+          schema:
+            type: string
+        - name: deploymentId
+          in: path
+          required: true
+          description: The ID of the deployment
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved deployment details
+        '401':
+          description: Unauthorized - invalid or missing bearer token
+        '403':
+          description: Forbidden - insufficient permissions
+        '404':
+          description: Deployment not found
+    patch:
+      summary: Update Deployment
+      description: Updates an existing application deployment. Can be used to modify deployment settings, update TCP port mappings, change application configuration, adjust replicas, update properties, or redeploy with a new application version.
+      operationId: patch__organizations_organizationId_environments_environmentId_deployments_deploymentId_
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The ID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The ID of the environment
+          schema:
+            type: string
+        - name: deploymentId
+          in: path
+          required: true
+          description: The ID of the deployment to update
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                target:
+                  type: string
+                application:
+                  type: string
+              required:
+                - target
+                - application
+      responses:
+        '200':
+          description: Deployment updated successfully
+        '400':
+          description: Bad request - invalid update payload
+        '401':
+          description: Unauthorized - invalid or missing bearer token
+        '403':
+          description: Forbidden - insufficient permissions
+        '404':
+          description: Deployment not found
+    delete:
+      summary: Delete Deployment
+      description: Deletes an existing application deployment from the specified environment. This stops the running application and removes the deployment configuration.
+      operationId: delete__organizations_organizationId_environments_environmentId_deployments_deploymentId_
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The ID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The ID of the environment
+          schema:
+            type: string
+        - name: deploymentId
+          in: path
+          required: true
+          description: The ID of the deployment to delete
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Deployment deleted successfully
+        '401':
+          description: Unauthorized - invalid or missing bearer token
+        '403':
+          description: Forbidden - insufficient permissions
+        '404':
+          description: Deployment not found
+  /organizations/{organizationId}/environments/{environmentId}/deployments/{deploymentId}/specs:
+    get:
+      summary: Get Deployment Specs
+      description: Retrieves the specifications and detailed configuration of a specific deployment, including resource allocations, runtime settings, and target specifications.
+      operationId: get__organizations_organizationId_environments_environmentId_deployments_deploymentId_specs
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The ID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The ID of the environment
+          schema:
+            type: string
+        - name: deploymentId
+          in: path
+          required: true
+          description: The ID of the deployment
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved deployment specifications
+        '401':
+          description: Unauthorized
+        '404':
+          description: Deployment not found
+  /organizations/{organizationId}/environments/{environmentId}/deployments/{deploymentId}/application-status:
+    get:
+      summary: Get Application Status
+      description: Retrieves the current runtime status of the deployed application, including replica states, health checks, and operational metrics.
+      operationId: get__organizations_organizationId_environments_environmentId_deployments_deploymentId_application_status
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The ID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The ID of the environment
+          schema:
+            type: string
+        - name: deploymentId
+          in: path
+          required: true
+          description: The ID of the deployment
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved application status
+        '401':
+          description: Unauthorized
+        '404':
+          description: Deployment not found
+  /organizations/{organizationId}/environments/{environmentId}/deployments/{deploymentId}/logs:
+    get:
+      summary: Get Deployment Logs
+      description: Retrieves log output for a specific deployment. Supports filtering and pagination of log entries.
+      operationId: get__organizations_organizationId_environments_environmentId_deployments_deploymentId_logs
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The ID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The ID of the environment
+          schema:
+            type: string
+        - name: deploymentId
+          in: path
+          required: true
+          description: The ID of the deployment
+          schema:
+            type: string
+        - name: limit
+          in: query
+          required: false
+          description: Maximum number of log lines to return
+          schema:
+            type: integer
+        - name: startTime
+          in: query
+          required: false
+          description: Start time for log retrieval (ISO 8601 format)
+          schema:
+            type: string
+        - name: endTime
+          in: query
+          required: false
+          description: End time for log retrieval (ISO 8601 format)
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved deployment logs
+        '401':
+          description: Unauthorized
+        '404':
+          description: Deployment not found
+  /runtimefabric/api/organizations/{organizationId}/privatespaces/{privatespaceId}/ports:
+    get:
+      summary: List Available Ports
+      description: Retrieves a list of available TCP ports for a private space. Used to identify ports that can be assigned to application deployments with TCP endpoints.
+      operationId: get__runtimefabric_api_organizations_organizationId_privatespaces_privatespaceId_ports
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The ID of the organization
+          schema:
+            type: string
+        - name: privatespaceId
+          in: path
+          required: true
+          description: The ID of the private space
+          schema:
+            type: string
+        - name: available
+          in: query
+          required: false
+          description: When true, returns only unused/available ports
+          schema:
+            type: boolean
+        - name: count
+          in: query
+          required: false
+          description: 'Number of available ports to return (range: 1-10)'
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully retrieved available ports. Returns JSON array of port numbers.
+        '401':
+          description: Unauthorized
+        '404':
+          description: Private space not found
+  /organizations/{organizationId}/environments/{environmentId}/deployments/{deploymentId}/statistics:
+    get:
+      summary: Get Deployment Statistics
+      description: Retrieves runtime statistics for a deployment including CPU usage, memory consumption, and message processing metrics.
+      operationId: get__organizations_organizationId_environments_environmentId_deployments_deploymentId_statistics
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The ID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The ID of the environment
+          schema:
+            type: string
+        - name: deploymentId
+          in: path
+          required: true
+          description: The ID of the deployment
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved deployment statistics
+        '401':
+          description: Unauthorized
+        '404':
+          description: Deployment not found
+  /organizations/{organizationId}/environments/{environmentId}/deployments/{deploymentId}/restart:
+    post:
+      summary: Restart Deployment
+      description: Triggers a restart of the application deployment. All replicas will be restarted according to the configured rolling restart strategy.
+      operationId: post__organizations_organizationId_environments_environmentId_deployments_deploymentId_restart
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The ID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The ID of the environment
+          schema:
+            type: string
+        - name: deploymentId
+          in: path
+          required: true
+          description: The ID of the deployment to restart
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Restart initiated successfully
+        '401':
+          description: Unauthorized
+        '404':
+          description: Deployment not found
+  /organizations/{organizationId}/environments/{environmentId}/deployments/{deploymentId}/schedules:
+    get:
+      summary: List Deployment Schedules
+      description: Retrieves all configured schedules for a specific deployment, including CRON-based and polling schedulers.
+      operationId: get__organizations_organizationId_environments_environmentId_deployments_deploymentId_schedules
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The ID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The ID of the environment
+          schema:
+            type: string
+        - name: deploymentId
+          in: path
+          required: true
+          description: The ID of the deployment
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved schedules
+        '401':
+          description: Unauthorized
+        '404':
+          description: Deployment not found
+  /organizations/{organizationId}/environments/{environmentId}/deployments/{deploymentId}/schedules/{scheduleId}:
+    patch:
+      summary: Update Schedule
+      description: Updates a specific schedule for a deployment, allowing modification of the schedule expression or enabling/disabling the schedule.
+      operationId: patch__organizations_organizationId_environments_environmentId_deployments_deploymentId_schedules_scheduleId_
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The ID of the organization
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The ID of the environment
+          schema:
+            type: string
+        - name: deploymentId
+          in: path
+          required: true
+          description: The ID of the deployment
+          schema:
+            type: string
+        - name: scheduleId
+          in: path
+          required: true
+          description: The ID of the schedule to update
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                enabled:
+                  type: string
+                expression:
+                  type: string
+              required:
+                - enabled
+                - expression
+      responses:
+        '200':
+          description: Schedule updated successfully
+        '401':
+          description: Unauthorized
+        '404':
+          description: Deployment or schedule not found
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: All API requests require a valid Anypoint Platform bearer token. Obtain a token by sending a POST request to https://anypoint.mulesoft.com/accounts/api/v2/oauth2/token with client_credentials grant type, or by using Anypoint Platform username and password. The user must be assigned the Organization Administrators role or have appropriate deployment permissions. Include the token in the Authorization header as 'Bearer {token}'.
+tags:
+  - name: Runtime
+    description: CloudHub 2.0 API endpoints

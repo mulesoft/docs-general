@@ -1,0 +1,675 @@
+openapi: 3.0.3
+info:
+  title: API Platform API
+  description: |-
+    The API Platform API exposes the management capabilities of the Anypoint Platform for APIs, enabling them to be used by external sites. It provides endpoints for managing organizations, APIs, API versions, portals, users, applications, contracts, SLA tiers, and policies. This version has entered Extended Support, with users encouraged to upgrade to the latest version. Most operations require authentication except those under /public endpoints.
+
+    The API Platform API (v2) provides management capabilities for the Anypoint Platform's API governance features. It supports querying and managing APIs, applications, contracts, SLA tiers, portals, and users within organizations. The API includes both authenticated endpoints for organization management and public endpoints for API discovery.
+  version: 2.0.x
+  contact:
+    name: MuleSoft
+    url: https://www.mulesoft.com
+servers:
+  - url: https://anypoint.mulesoft.com/apiplatform/repository/v2
+    description: Anypoint Platform
+security:
+  - bearerAuth: []
+paths:
+  /organizations/active:
+    get:
+      summary: Get active organization
+      description: Retrieves the currently active organization for the authenticated user.
+      operationId: get__organizations_active
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Active organization object with id, name, and metadata
+  /organizations/{organizationId}/apis:
+    get:
+      summary: List all APIs
+      description: Retrieves all API instances for the specified organization.
+      operationId: get__organizations_organizationId_apis
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Array of APIs with their versions and metadata
+  /organizations/{organizationId}/apis/by-name:
+    get:
+      summary: Get API by name
+      description: Retrieves a specific API by its name within the organization.
+      operationId: get__organizations_organizationId_apis_by_name
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization ID
+          schema:
+            type: string
+        - name: apiName
+          in: query
+          required: true
+          description: Name of the API to find
+          schema:
+            type: string
+      responses:
+        '200':
+          description: API object with versions and metadata
+  /organizations/{organizationId}/apis/{apiId}:
+    get:
+      summary: Get API details
+      description: Retrieves details for a specific API by its ID.
+      operationId: get__organizations_organizationId_apis_apiId_
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization ID
+          schema:
+            type: string
+        - name: apiId
+          in: path
+          required: true
+          description: API ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: API details including name, versions, and configuration
+    patch:
+      summary: Update API
+      description: Updates properties of an existing API.
+      operationId: patch__organizations_organizationId_apis_apiId_
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization ID
+          schema:
+            type: string
+        - name: apiId
+          in: path
+          required: true
+          description: API ID
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              name:
+                type: string
+                description: Updated API name
+              description:
+                type: string
+                description: Updated description
+              tags:
+                type: array
+                description: Updated tags
+      responses:
+        '200':
+          description: API updated successfully
+  /organizations/{organizationId}/apis/{apiId}/versions:
+    get:
+      summary: List API versions
+      description: Retrieves all versions for a specific API.
+      operationId: get__organizations_organizationId_apis_apiId_versions
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization ID
+          schema:
+            type: string
+        - name: apiId
+          in: path
+          required: true
+          description: API ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Array of API versions with their metadata
+  /organizations/{organizationId}/apis/{apiId}/versions/{apiVersionId}:
+    get:
+      summary: Get API version details
+      description: Retrieves details for a specific API version.
+      operationId: get__organizations_organizationId_apis_apiId_versions_apiVersionId_
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization ID
+          schema:
+            type: string
+        - name: apiId
+          in: path
+          required: true
+          description: API ID
+          schema:
+            type: string
+        - name: apiVersionId
+          in: path
+          required: true
+          description: API version ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: API version details including RAML/OAS specification reference
+    patch:
+      summary: Update API version
+      description: Updates properties of an existing API version.
+      operationId: patch__organizations_organizationId_apis_apiId_versions_apiVersionId_
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization ID
+          schema:
+            type: string
+        - name: apiId
+          in: path
+          required: true
+          description: API ID
+          schema:
+            type: string
+        - name: apiVersionId
+          in: path
+          required: true
+          description: API version ID
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              name:
+                type: string
+              description:
+                type: string
+      responses:
+        '200':
+          description: API version updated successfully
+  /organizations/{organizationId}/apis/{apiId}/versions/{apiVersionId}/contracts:
+    get:
+      summary: List API version contracts
+      description: Retrieves all contracts (application registrations) for a specific API version.
+      operationId: get__organizations_organizationId_apis_apiId_versions_apiVersionId_contracts
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization ID
+          schema:
+            type: string
+        - name: apiId
+          in: path
+          required: true
+          description: API ID
+          schema:
+            type: string
+        - name: apiVersionId
+          in: path
+          required: true
+          description: API version ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Array of contracts with application details and SLA tier information
+  /organizations/{organizationId}/users:
+    get:
+      summary: List organization users
+      description: Retrieves a list of all users in the organization.
+      operationId: get__organizations_organizationId_users
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Array of users with their names, emails, and roles
+  /organizations/{organizationId}/applications:
+    get:
+      summary: List applications
+      description: Retrieves all applications registered in the organization.
+      operationId: get__organizations_organizationId_applications
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Array of applications with name, owner, and contract information
+  /organizations/{organizationId}/applications/{applicationId}:
+    get:
+      summary: Get application details
+      description: Retrieves details for a specific application, including owner name and email.
+      operationId: get__organizations_organizationId_applications_applicationId_
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization ID
+          schema:
+            type: string
+        - name: applicationId
+          in: path
+          required: true
+          description: Application ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Application details with name, owner name, email, and registered APIs
+  /organizations/{organizationId}/applications/{applicationId}/contracts:
+    get:
+      summary: List application contracts
+      description: Retrieves all contracts for a specific application, including SLA tier information.
+      operationId: get__organizations_organizationId_applications_applicationId_contracts
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization ID
+          schema:
+            type: string
+        - name: applicationId
+          in: path
+          required: true
+          description: Application ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Array of contracts with API details and SLA tiers
+  /organizations/{organizationId}/environments:
+    get:
+      summary: List environments
+      description: Retrieves all environments for the specified organization.
+      operationId: get__organizations_organizationId_environments
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Array of environments with IDs and names
+  /organizations/{organizationId}/portals:
+    get:
+      summary: List API portals
+      description: Retrieves all API portals for the organization.
+      operationId: get__organizations_organizationId_portals
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Array of portals with their APIs and metadata
+  /organizations/{organizationId}/public/portals:
+    get:
+      summary: Search organization portals (extended search)
+      description: Searches through API portals within the organization scope. Supports both simple keyword search and advanced field-specific queries.
+      operationId: get__organizations_organizationId_public_portals
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization ID
+          schema:
+            type: string
+        - name: query
+          in: query
+          required: false
+          description: Simple keyword search across name, version, description, and tags
+          schema:
+            type: string
+        - name: query[name]
+          in: query
+          required: false
+          description: Search by API name
+          schema:
+            type: string
+        - name: query[version]
+          in: query
+          required: false
+          description: Search by version name
+          schema:
+            type: string
+        - name: query[description]
+          in: query
+          required: false
+          description: Search by version description
+          schema:
+            type: string
+        - name: query[tags]
+          in: query
+          required: false
+          description: Search by API tags
+          schema:
+            type: string
+        - name: query[matchAll]
+          in: query
+          required: false
+          description: 'true=AND logic, false=OR logic (default: false)'
+          schema:
+            type: boolean
+        - name: requireRaml
+          in: query
+          required: false
+          description: 'Filter by RAML requirement (default: true)'
+          schema:
+            type: boolean
+        - name: organizationId
+          in: query
+          required: false
+          description: Override organization scope for search
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Object with 'apis' array containing matching API results
+  /public/apis:
+    get:
+      summary: Public API search
+      description: Search through all public APIs within the Anypoint Platform. Does not require authentication.
+      operationId: get__public_apis
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: query
+          in: query
+          required: false
+          description: Keywords matching API name, tags, or description
+          schema:
+            type: string
+        - name: requireRaml
+          in: query
+          required: false
+          description: 'Filter APIs with RAML definitions (default: true)'
+          schema:
+            type: boolean
+        - name: offset
+          in: query
+          required: false
+          description: 'Skip elements by offset value (0-10000, default: 0)'
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          required: false
+          description: 'Number of response elements (10-250, default: 100)'
+          schema:
+            type: integer
+        - name: sort
+          in: query
+          required: false
+          description: Property to sort results by
+          schema:
+            type: string
+        - name: ascending
+          in: query
+          required: false
+          description: Sort order direction
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: Object containing 'apis' array of matching public APIs
+  /auth/exchangeToken:
+    post:
+      summary: Exchange federated token
+      description: Exchanges a PingFederate token for an Anypoint Platform access token.
+      operationId: post__auth_exchangeToken
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                federatedToken:
+                  type: string
+              required:
+                - federatedToken
+      responses:
+        '200':
+          description: Anypoint Platform access token
+  /organizations/{organizationId}/apis/{apiId}/versions/{apiVersionId}/tiers:
+    get:
+      summary: List SLA tiers
+      description: Retrieves all SLA tiers defined for a specific API version.
+      operationId: get__organizations_organizationId_apis_apiId_versions_apiVersionId_tiers
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization ID
+          schema:
+            type: string
+        - name: apiId
+          in: path
+          required: true
+          description: API ID
+          schema:
+            type: string
+        - name: apiVersionId
+          in: path
+          required: true
+          description: API version ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Array of SLA tiers with rate limit configurations
+  /organizations/{organizationId}/apis/{apiId}/versions/{apiVersionId}/policies:
+    get:
+      summary: List API policies
+      description: Retrieves all policies applied to a specific API version.
+      operationId: get__organizations_organizationId_apis_apiId_versions_apiVersionId_policies
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization ID
+          schema:
+            type: string
+        - name: apiId
+          in: path
+          required: true
+          description: API ID
+          schema:
+            type: string
+        - name: apiVersionId
+          in: path
+          required: true
+          description: API version ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Array of policies applied to the API version
+  /organizations/{organizationId}/apis/{apiId}/versions/{apiVersionId}/portal:
+    get:
+      summary: Get API portal
+      description: Retrieves the portal associated with a specific API version.
+      operationId: get__organizations_organizationId_apis_apiId_versions_apiVersionId_portal
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization ID
+          schema:
+            type: string
+        - name: apiId
+          in: path
+          required: true
+          description: API ID
+          schema:
+            type: string
+        - name: apiVersionId
+          in: path
+          required: true
+          description: API version ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Portal details including pages and API console information
+  /organizations/{organizationId}/apis/{apiId}/versions/{apiVersionId}/classify:
+    post:
+      summary: Classify API instance into environment
+      description: Classifies an API instance into a specific environment for API Manager 2.x migration.
+      operationId: post__organizations_organizationId_apis_apiId_versions_apiVersionId_classify
+      tags:
+        - API Management
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization ID
+          schema:
+            type: string
+        - name: apiId
+          in: path
+          required: true
+          description: API ID
+          schema:
+            type: string
+        - name: apiVersionId
+          in: path
+          required: true
+          description: API version ID
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                environmentId:
+                  type: string
+              required:
+                - environmentId
+      responses:
+        '200':
+          description: API instance classified successfully
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Most operations require authentication to the Anypoint Platform via a bearer token. All /public endpoints do not require authentication. Federated authentication is supported via PingFederate; users can exchange federated tokens at /auth/exchangeToken. A public clientId 'apiportal' is available for public API operations. Connected apps support is limited to application endpoints.
+tags:
+  - name: API Management
+    description: API Platform API endpoints

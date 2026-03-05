@@ -1,0 +1,549 @@
+openapi: 3.0.3
+info:
+  title: Partner Manager v2 Tracking API
+  description: |-
+    The Partner Manager v2 Tracking API provides access to details about transmissions and associated messages processed by Anypoint Partner Manager v2. It enables retrieval of transmission processing activity details, specific transmission information, associated steps and messages, and message content for B2B integration monitoring.
+
+    The Partner Manager v2 Tracking API enables programmatic access to B2B transmission and message tracking data processed by Anypoint Partner Manager v2. It provides capabilities to retrieve all transmission processing activity details, get details for specific transmissions, obtain steps associated with transmissions, retrieve message details and content, and monitor the processing pipeline. This API is essential for building custom dashboards, automated monitoring, and integration with external systems for B2B transaction visibility.
+  version: 1.0.x
+  contact:
+    name: MuleSoft
+    url: https://www.mulesoft.com
+servers:
+  - url: https://anypoint.mulesoft.com/partnermanager/partners/api/v2
+    description: Anypoint Platform
+security:
+  - bearerAuth: []
+paths:
+  /organizations/{orgId}/environments/{envId}/transmissions:
+    get:
+      summary: Get all transmissions
+      description: Retrieves all transmission processing activity details for the specified organization and environment. Returns a list of transmissions with metadata including date received, partner info, message count, status, and acknowledgment details. Supports filtering and pagination.
+      operationId: get__organizations_orgId_environments_envId_transmissions
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          description: The Anypoint organization ID.
+          schema:
+            type: string
+        - name: envId
+          in: path
+          required: true
+          description: The Anypoint environment ID.
+          schema:
+            type: string
+        - name: partnerId
+          in: query
+          required: false
+          description: Filter by partner identifier.
+          schema:
+            type: string
+        - name: status
+          in: query
+          required: false
+          description: Filter by transmission status (e.g., COMPLETED, FAILED, IN_PROGRESS).
+          schema:
+            type: string
+        - name: direction
+          in: query
+          required: false
+          description: Filter by transmission direction.
+          schema:
+            type: string
+        - name: dateFrom
+          in: query
+          required: false
+          description: Filter transmissions received on or after this date (ISO 8601).
+          schema:
+            type: string
+        - name: dateTo
+          in: query
+          required: false
+          description: Filter transmissions received on or before this date (ISO 8601).
+          schema:
+            type: string
+        - name: offset
+          in: query
+          required: false
+          description: Pagination offset (number of records to skip).
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          required: false
+          description: Maximum number of transmissions to return.
+          schema:
+            type: integer
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved list of transmissions.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    transmissionId:
+                      type: string
+                      description: Unique transmission identifier.
+                    partnerId:
+                      type: string
+                      description: Partner identifier.
+                    partnerName:
+                      type: string
+                      description: Partner display name.
+                    direction:
+                      type: string
+                      enum:
+                        - INBOUND
+                        - OUTBOUND
+                    status:
+                      type: string
+                      description: Transmission processing status.
+                    dateReceived:
+                      type: string
+                      format: date-time
+                    messageCount:
+                      type: integer
+                      description: Number of messages in the transmission.
+                    messageType:
+                      type: string
+                      description: Type of messages (e.g., X12, EDIFACT).
+                    controlNumber:
+                      type: string
+                      description: EDI control number.
+                    acknowledgmentStatus:
+                      type: string
+                      description: Acknowledgment status.
+        '401':
+          description: Unauthorized. Invalid or expired access token.
+        '403':
+          description: Forbidden. Partner Manager v2 subscription required.
+  /organizations/{orgId}/environments/{envId}/transmissions/{transmissionId}:
+    get:
+      summary: Get transmission details
+      description: Retrieves detailed information for a specific processed transmission, including all metadata, partner details, processing status, and timing information.
+      operationId: get__organizations_orgId_environments_envId_transmissions_transmissionId_
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          description: The Anypoint organization ID.
+          schema:
+            type: string
+        - name: envId
+          in: path
+          required: true
+          description: The Anypoint environment ID.
+          schema:
+            type: string
+        - name: transmissionId
+          in: path
+          required: true
+          description: The unique transmission identifier.
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved transmission details.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  transmissionId:
+                    type: string
+                  partnerId:
+                    type: string
+                  partnerName:
+                    type: string
+                  direction:
+                    type: string
+                  status:
+                    type: string
+                  dateReceived:
+                    type: string
+                    format: date-time
+                  dateProcessed:
+                    type: string
+                    format: date-time
+                  messageCount:
+                    type: integer
+                  messageType:
+                    type: string
+                  controlNumber:
+                    type: string
+                  acknowledgmentStatus:
+                    type: string
+                  protocol:
+                    type: string
+                    description: Communication protocol (e.g., AS2, SFTP, HTTP).
+                  fromParty:
+                    type: string
+                  toParty:
+                    type: string
+        '401':
+          description: Unauthorized.
+        '404':
+          description: Transmission not found.
+  /organizations/{orgId}/environments/{envId}/transmissions/{transmissionId}/steps:
+    get:
+      summary: Get transmission steps
+      description: Retrieves all processing steps associated with a specific transmission. Steps represent the stages of processing that the transmission went through in the Partner Manager pipeline.
+      operationId: get__organizations_orgId_environments_envId_transmissions_transmissionId_steps
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          description: The Anypoint organization ID.
+          schema:
+            type: string
+        - name: envId
+          in: path
+          required: true
+          description: The Anypoint environment ID.
+          schema:
+            type: string
+        - name: transmissionId
+          in: path
+          required: true
+          description: The unique transmission identifier.
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved transmission steps.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    stepId:
+                      type: string
+                      description: Unique step identifier.
+                    stepName:
+                      type: string
+                      description: Name of the processing step.
+                    status:
+                      type: string
+                      description: Step processing status.
+                    startTime:
+                      type: string
+                      format: date-time
+                    endTime:
+                      type: string
+                      format: date-time
+                    details:
+                      type: object
+                      description: Additional step-specific metadata.
+        '401':
+          description: Unauthorized.
+        '404':
+          description: Transmission not found.
+  /organizations/{orgId}/environments/{envId}/transmissions/{transmissionId}/messages:
+    get:
+      summary: Get transmission messages
+      description: Retrieves details of all messages associated with a specific transmission. Each message represents an individual transaction within the transmission.
+      operationId: get__organizations_orgId_environments_envId_transmissions_transmissionId_messages
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          description: The Anypoint organization ID.
+          schema:
+            type: string
+        - name: envId
+          in: path
+          required: true
+          description: The Anypoint environment ID.
+          schema:
+            type: string
+        - name: transmissionId
+          in: path
+          required: true
+          description: The unique transmission identifier.
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved messages for the transmission.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    messageId:
+                      type: string
+                      description: Unique message identifier.
+                    transmissionId:
+                      type: string
+                    status:
+                      type: string
+                      description: Message processing status.
+                    messageType:
+                      type: string
+                      description: Type of message (e.g., 850, 810, ORDERS).
+                    partnerId:
+                      type: string
+                    partnerName:
+                      type: string
+                    direction:
+                      type: string
+                      enum:
+                        - INBOUND
+                        - OUTBOUND
+                    dateReceived:
+                      type: string
+                      format: date-time
+                    documentId:
+                      type: string
+                      description: Document identifier.
+                    businessKey:
+                      type: string
+                      description: Business key for correlation.
+                    acknowledgmentStatus:
+                      type: string
+        '401':
+          description: Unauthorized.
+        '404':
+          description: Transmission not found.
+  /organizations/{orgId}/environments/{envId}/messages/{messageId}:
+    get:
+      summary: Get message details
+      description: Retrieves detailed information for a specific message, including its processing status, partner details, document identifiers, and business context.
+      operationId: get__organizations_orgId_environments_envId_messages_messageId_
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          description: The Anypoint organization ID.
+          schema:
+            type: string
+        - name: envId
+          in: path
+          required: true
+          description: The Anypoint environment ID.
+          schema:
+            type: string
+        - name: messageId
+          in: path
+          required: true
+          description: The unique message identifier.
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved message details.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  messageId:
+                    type: string
+                  transmissionId:
+                    type: string
+                  status:
+                    type: string
+                  messageType:
+                    type: string
+                  partnerId:
+                    type: string
+                  partnerName:
+                    type: string
+                  direction:
+                    type: string
+                  dateReceived:
+                    type: string
+                    format: date-time
+                  dateProcessed:
+                    type: string
+                    format: date-time
+                  documentId:
+                    type: string
+                  businessKey:
+                    type: string
+                  acknowledgmentStatus:
+                    type: string
+                  protocol:
+                    type: string
+                  standard:
+                    type: string
+                    description: EDI standard (e.g., X12, EDIFACT).
+        '401':
+          description: Unauthorized.
+        '404':
+          description: Message not found.
+  /organizations/{orgId}/environments/{envId}/messages/{messageId}/steps:
+    get:
+      summary: Get message steps
+      description: Retrieves all processing steps associated with a specific message. Steps show the complete processing pipeline the message traversed.
+      operationId: get__organizations_orgId_environments_envId_messages_messageId_steps
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          description: The Anypoint organization ID.
+          schema:
+            type: string
+        - name: envId
+          in: path
+          required: true
+          description: The Anypoint environment ID.
+          schema:
+            type: string
+        - name: messageId
+          in: path
+          required: true
+          description: The unique message identifier.
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved message steps.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    stepId:
+                      type: string
+                    stepName:
+                      type: string
+                    status:
+                      type: string
+                    startTime:
+                      type: string
+                      format: date-time
+                    endTime:
+                      type: string
+                      format: date-time
+                    details:
+                      type: object
+        '401':
+          description: Unauthorized.
+        '404':
+          description: Message not found.
+  /organizations/{orgId}/environments/{envId}/messages/{messageId}/content:
+    get:
+      summary: Get message content
+      description: Retrieves the actual content/payload of a specific message. Returns the raw message data that was transmitted as part of the B2B exchange.
+      operationId: get__organizations_orgId_environments_envId_messages_messageId_content
+      tags:
+        - Integration
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          description: The Anypoint organization ID.
+          schema:
+            type: string
+        - name: envId
+          in: path
+          required: true
+          description: The Anypoint environment ID.
+          schema:
+            type: string
+        - name: messageId
+          in: path
+          required: true
+          description: The unique message identifier.
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved message content. Content type depends on the message format (e.g., application/edi-x12, application/xml, application/json).
+          content:
+            application/json:
+              schema:
+                type: string
+                description: Raw message content/payload.
+        '401':
+          description: Unauthorized.
+        '404':
+          description: Message or message content not found.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'OAuth 2.0 token from Anypoint Platform. Obtain an access token by authenticating with the Anypoint Access Management API using your Anypoint Platform credentials. Pass the token in the Authorization header as: Bearer {access_token}. Access to this API requires an Anypoint Partner Manager v2 subscription.'
+tags:
+  - name: Integration
+    description: Partner Manager v2 Tracking API endpoints

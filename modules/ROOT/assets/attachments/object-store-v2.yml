@@ -1,0 +1,562 @@
+openapi: 3.0.3
+info:
+  title: Object Store V2
+  description: |-
+    The Object Store V2 API enables API access to Anypoint Platform Object Store v2, providing fast data and state sharing across batch processes, Mule components, and distributed applications. It is an integrated service within the Anypoint Platform that is self-service (no central IT setup required), horizontally scalable, resilient, and distributed. Supports CloudHub deployment.
+
+    Object Store V2 provides a key-value storage service for Mule applications running on CloudHub. It allows applications to store and share data across processes, components, and distributed deployments. The API provides CRUD operations on object stores, partitions, and key-value pairs. The base URL varies by region (e.g., object-store-us-east-1.anypoint.mulesoft.com, object-store-eu-west-1.anypoint.mulesoft.com).
+  version: 1.0.x
+  contact:
+    name: MuleSoft
+    url: https://www.mulesoft.com
+servers:
+  - url: https://object-store-us-east-1.anypoint.mulesoft.com/api/v1
+    description: Anypoint Platform
+security:
+  - bearerAuth: []
+paths:
+  /organizations/{organizationId}/regions:
+    get:
+      summary: List available regions
+      description: Retrieves a list of available regions for Object Store V2 deployment. Each region has its own base URL for API access.
+      operationId: get__organizations_organizationId_regions
+      tags:
+        - Storage
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The organization UUID.
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token obtained via OAuth 2.0 client credentials flow.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved available regions.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      description: Region identifier (e.g., us-east-1).
+                    name:
+                      type: string
+                      description: Human-readable region name.
+                    url:
+                      type: string
+                      description: Base URL for API access in this region.
+        '401':
+          description: Unauthorized. Invalid or expired access token.
+  /organizations/{organizationId}/environments/{environmentId}/stores:
+    get:
+      summary: List object stores
+      description: Retrieves a list of object stores and keys associated with an application in the specified organization and environment. Supports pagination via nextPageToken.
+      operationId: get__organizations_organizationId_environments_environmentId_stores
+      tags:
+        - Storage
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The organization UUID.
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The environment UUID.
+          schema:
+            type: string
+        - name: nextPageToken
+          in: query
+          required: false
+          description: Pagination token from a previous response to get the next page of results.
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved list of object stores.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  values:
+                    type: array
+                    description: Array of object store definitions.
+                    items:
+                      type: object
+                      properties:
+                        storeId:
+                          type: string
+                          description: Unique identifier for the object store.
+                        encrypted:
+                          type: boolean
+                          description: Whether the store is encrypted.
+                        permanentOsFlag:
+                          type: boolean
+                          description: Whether the store is permanent.
+                        persistent:
+                          type: boolean
+                          description: Whether the store persists data across deployments.
+                        defaultTtlSeconds:
+                          type: integer
+                          description: Default time-to-live for key-value pairs in seconds.
+                        defaultConfirmationTtlSeconds:
+                          type: integer
+                          description: Default confirmation TTL in seconds.
+                  nextPageToken:
+                    type: string
+                    description: Token to retrieve the next page of results. Null if no more pages.
+        '401':
+          description: Unauthorized.
+  /organizations/{organizationId}/environments/{environmentId}/stores/{storeId}/partitions:
+    get:
+      summary: List partitions
+      description: Retrieves all partitions within a specific object store. Partitions are logical subdivisions within a store that group related key-value pairs.
+      operationId: get__organizations_organizationId_environments_environmentId_stores_storeId_partitions
+      tags:
+        - Storage
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The organization UUID.
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The environment UUID.
+          schema:
+            type: string
+        - name: storeId
+          in: path
+          required: true
+          description: The object store identifier.
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved list of partitions.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  description: Partition identifier.
+        '401':
+          description: Unauthorized.
+        '404':
+          description: Store not found.
+  /organizations/{organizationId}/environments/{environmentId}/stores/{storeId}/partitions/{partitionId}/keys:
+    get:
+      summary: List keys in a partition
+      description: Retrieves a list of keys in a specified partition. Returns a maximum of 25 keys per request. Use nextPageToken for pagination to retrieve additional keys.
+      operationId: get__organizations_organizationId_environments_environmentId_stores_storeId_partitions_partitionId_keys
+      tags:
+        - Storage
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The organization UUID.
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The environment UUID.
+          schema:
+            type: string
+        - name: storeId
+          in: path
+          required: true
+          description: The object store identifier.
+          schema:
+            type: string
+        - name: partitionId
+          in: path
+          required: true
+          description: The partition identifier.
+          schema:
+            type: string
+        - name: startKey
+          in: query
+          required: false
+          description: Key to start listing from (for pagination).
+          schema:
+            type: string
+        - name: nextPageToken
+          in: query
+          required: false
+          description: Pagination token from a previous response.
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved list of keys. Maximum 25 keys per response.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  values:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        keyId:
+                          type: string
+                          description: The key identifier.
+                  nextPageToken:
+                    type: string
+                    description: Token for retrieving the next page.
+        '401':
+          description: Unauthorized.
+        '404':
+          description: Store or partition not found.
+  /organizations/{organizationId}/environments/{environmentId}/stores/{storeId}/partitions/{partitionId}/keys/{keyId}:
+    get:
+      summary: Get key value
+      description: Retrieves the value associated with a specific key in an object store partition. Returns the value along with its type information.
+      operationId: get__organizations_organizationId_environments_environmentId_stores_storeId_partitions_partitionId_keys_keyId_
+      tags:
+        - Storage
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The organization UUID.
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The environment UUID.
+          schema:
+            type: string
+        - name: storeId
+          in: path
+          required: true
+          description: The object store identifier.
+          schema:
+            type: string
+        - name: partitionId
+          in: path
+          required: true
+          description: The partition identifier.
+          schema:
+            type: string
+        - name: keyId
+          in: path
+          required: true
+          description: The key identifier to retrieve.
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved key value.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  keyId:
+                    type: string
+                    description: The key identifier.
+                  stringValue:
+                    type: string
+                    description: The string value (present when valueType is STRING).
+                  binaryValue:
+                    type: string
+                    description: The binary value as base64 (present when valueType is BINARY).
+                  valueType:
+                    type: string
+                    enum:
+                      - STRING
+                      - BINARY
+                    description: The type of the stored value.
+        '401':
+          description: Unauthorized.
+        '404':
+          description: Key not found.
+    post:
+      summary: Store a key-value pair
+      description: Stores a new key-value pair in the specified partition of an object store. If the key already exists, use PUT to update it.
+      operationId: post__organizations_organizationId_environments_environmentId_stores_storeId_partitions_partitionId_keys_keyId_
+      tags:
+        - Storage
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The organization UUID.
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The environment UUID.
+          schema:
+            type: string
+        - name: storeId
+          in: path
+          required: true
+          description: The object store identifier.
+          schema:
+            type: string
+        - name: partitionId
+          in: path
+          required: true
+          description: The partition identifier.
+          schema:
+            type: string
+        - name: keyId
+          in: path
+          required: true
+          description: The key identifier for the new entry.
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                keyId:
+                  type: string
+                  description: The key identifier (must match path parameter).
+                stringValue:
+                  type: string
+                  description: The string value to store (use for STRING type).
+                binaryValue:
+                  type: string
+                  description: Base64-encoded binary value (use for BINARY type).
+                valueType:
+                  type: string
+                  enum:
+                    - STRING
+                    - BINARY
+                  description: The type of value being stored.
+              required:
+                - valueType
+            example:
+              keyId: myKey
+              stringValue: Hello World
+              valueType: STRING
+      responses:
+        '200':
+          description: Key-value pair successfully stored.
+        '201':
+          description: Key-value pair successfully created.
+        '401':
+          description: Unauthorized.
+        '409':
+          description: Conflict - key already exists. Use PUT to update.
+    put:
+      summary: Update a key-value pair
+      description: Updates the value of an existing key or creates a new key-value pair if it does not exist (upsert behavior).
+      operationId: put__organizations_organizationId_environments_environmentId_stores_storeId_partitions_partitionId_keys_keyId_
+      tags:
+        - Storage
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The organization UUID.
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The environment UUID.
+          schema:
+            type: string
+        - name: storeId
+          in: path
+          required: true
+          description: The object store identifier.
+          schema:
+            type: string
+        - name: partitionId
+          in: path
+          required: true
+          description: The partition identifier.
+          schema:
+            type: string
+        - name: keyId
+          in: path
+          required: true
+          description: The key identifier to update or create.
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                stringValue:
+                  type: string
+                  description: The string value to store.
+                binaryValue:
+                  type: string
+                  description: Base64-encoded binary value.
+                valueType:
+                  type: string
+                  enum:
+                    - STRING
+                    - BINARY
+                  description: The type of value being stored.
+                metadata:
+                  type: object
+                  description: Optional metadata to attach to the key-value pair.
+              required:
+                - valueType
+            example:
+              stringValue: Updated Value
+              valueType: STRING
+      responses:
+        '200':
+          description: Key-value pair successfully updated.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  keyId:
+                    type: string
+                  stringValue:
+                    type: string
+                  valueType:
+                    type: string
+        '201':
+          description: Key-value pair created (did not previously exist).
+        '401':
+          description: Unauthorized.
+    delete:
+      summary: Delete a key-value pair
+      description: Deletes a specific key-value pair from an object store partition. This action is irreversible.
+      operationId: delete__organizations_organizationId_environments_environmentId_stores_storeId_partitions_partitionId_keys_keyId_
+      tags:
+        - Storage
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The organization UUID.
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The environment UUID.
+          schema:
+            type: string
+        - name: storeId
+          in: path
+          required: true
+          description: The object store identifier.
+          schema:
+            type: string
+        - name: partitionId
+          in: path
+          required: true
+          description: The partition identifier.
+          schema:
+            type: string
+        - name: keyId
+          in: path
+          required: true
+          description: The key identifier to delete.
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Key-value pair successfully deleted. No content returned.
+        '401':
+          description: Unauthorized.
+        '404':
+          description: Key not found.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'OAuth 2.0 with Client Credentials. Obtain Client ID and Client Secret from Anypoint Platform (Runtime Manager > application > Object Store > Show Client Credentials). Send a POST request to https://anypoint.mulesoft.com/accounts/oauth2/token with client_id, client_secret, and grant_type=client_credentials. Use the returned access token in the Authorization header as: Bearer {access_token}.'
+tags:
+  - name: Storage
+    description: Object Store V2 endpoints

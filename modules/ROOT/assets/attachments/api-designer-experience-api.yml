@@ -1,0 +1,585 @@
+openapi: 3.0.3
+info:
+  title: API Designer Experience API
+  description: |-
+    The API Designer Experience API defines operations to design and manage API Specifications and API Fragments from Design Center. It enables users to work with different resources when designing and managing RAML API specifications and fragments. You can list projects, create new projects, get project details, delete projects, manage branches, create/delete/modify files, publish to Exchange, and search for dependencies.
+
+    The API Designer Experience API provides a RESTful interface for managing API design projects in Anypoint Design Center. It supports the full lifecycle of API specification development including project creation, branch management, file editing, and publishing to Exchange. The API follows a locking mechanism for branch modifications to ensure consistency.
+  version: 1.1.x
+  contact:
+    name: MuleSoft
+    url: https://www.mulesoft.com
+servers:
+  - url: https://anypoint.mulesoft.com/designcenter/api-designer
+    description: Anypoint Platform
+security:
+  - bearerAuth: []
+paths:
+  /projects:
+    get:
+      summary: List all projects
+      description: Lists all projects for the authenticated user's organization and owner context.
+      operationId: get__projects
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token
+          schema:
+            type: string
+        - name: x-organization-id
+          in: header
+          required: true
+          description: Organization ID (UUID)
+          schema:
+            type: string
+        - name: x-owner-id
+          in: header
+          required: true
+          description: Owner/User ID (UUID)
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Array of projects with id, name, createdBy, createdDate, organizationId
+    post:
+      summary: Create a new project
+      description: Creates a new API specification or fragment project in Design Center.
+      operationId: post__projects
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token
+          schema:
+            type: string
+        - name: x-organization-id
+          in: header
+          required: true
+          description: Organization ID (UUID)
+          schema:
+            type: string
+        - name: x-owner-id
+          in: header
+          required: true
+          description: Owner/User ID (UUID)
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                classifier:
+                  type: string
+                subType:
+                  type: string
+              required:
+                - name
+                - classifier
+                - subType
+            example:
+              name: My API Specification
+              classifier: raml
+      responses:
+        '201':
+          description: Project created successfully, returns project object with id
+  /projects/{projectId}:
+    get:
+      summary: Get project details
+      description: Retrieves details for a specific project including id, name, createdBy, createdDate, and organizationId.
+      operationId: get__projects_projectId_
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          description: Project ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Project details object with id, name, createdBy, createdDate, organizationId
+    delete:
+      summary: Delete a project
+      description: Permanently deletes a project and all its branches and files.
+      operationId: delete__projects_projectId_
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          description: Project ID
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Project deleted successfully
+  /projects/{projectId}/branches:
+    get:
+      summary: List project branches
+      description: Lists all branches for a specific project. Each branch has a name and commitId.
+      operationId: get__projects_projectId_branches
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          description: Project ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Array of branches with name and commitId
+    post:
+      summary: Create a new branch
+      description: Creates a new branch for the project. If commitId is not provided, it branches from master.
+      operationId: post__projects_projectId_branches
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          description: Project ID
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                commitId:
+                  type: string
+              required:
+                - name
+                - commitId
+            example:
+              name: feature-branch
+              commitId: abc123
+      responses:
+        '200':
+          description: Branch created successfully with name and commitId
+  /projects/{projectId}/branches/{branchName}:
+    delete:
+      summary: Delete a branch
+      description: Deletes a branch from the project. The master branch cannot be deleted.
+      operationId: delete__projects_projectId_branches_branchName_
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          description: Project ID
+          schema:
+            type: string
+        - name: branchName
+          in: path
+          required: true
+          description: Branch name to delete
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Branch deleted successfully
+        '400':
+          description: Cannot delete master branch
+  /projects/{projectId}/branches/{branchName}/acquireLock:
+    post:
+      summary: Acquire write lock on branch
+      description: Acquires a write lock on a branch. Must be called before making any file modifications. Returns lock status.
+      operationId: post__projects_projectId_branches_branchName_acquireLock
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          description: Project ID
+          schema:
+            type: string
+        - name: branchName
+          in: path
+          required: true
+          description: Branch name (e.g., 'master')
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 'Lock acquired, returns {locked: true, name: ''<user>''}'
+        '409':
+          description: Lock already held by another user
+  /projects/{projectId}/branches/{branchName}/releaseLock:
+    post:
+      summary: Release write lock on branch
+      description: Releases the write lock on a branch after modifications are complete.
+      operationId: post__projects_projectId_branches_branchName_releaseLock
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          description: Project ID
+          schema:
+            type: string
+        - name: branchName
+          in: path
+          required: true
+          description: Branch name
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Lock released successfully
+  /projects/{projectId}/branches/{branchName}/status:
+    post:
+      summary: Get branch lock status
+      description: Retrieves the current lock status of a branch, including who holds the lock.
+      operationId: post__projects_projectId_branches_branchName_status
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          description: Project ID
+          schema:
+            type: string
+        - name: branchName
+          in: path
+          required: true
+          description: Branch name
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Lock status information including locked state and holder name
+  /projects/{projectId}/branches/{branchName}/files:
+    get:
+      summary: List files in branch
+      description: Retrieves the complete file and folder listing for a branch.
+      operationId: get__projects_projectId_branches_branchName_files
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          description: Project ID
+          schema:
+            type: string
+        - name: branchName
+          in: path
+          required: true
+          description: Branch name
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Array of files and folders with path, type, and metadata
+  /projects/{projectId}/branches/{branchName}/files/{filePath}:
+    get:
+      summary: Get file content
+      description: Retrieves the content of a specific file in a branch.
+      operationId: get__projects_projectId_branches_branchName_files_filePath_
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          description: Project ID
+          schema:
+            type: string
+        - name: branchName
+          in: path
+          required: true
+          description: Branch name
+          schema:
+            type: string
+        - name: filePath
+          in: path
+          required: true
+          description: File path relative to project root
+          schema:
+            type: string
+      responses:
+        '200':
+          description: File content
+        '304':
+          description: Not modified (if using conditional headers)
+    delete:
+      summary: Delete a file
+      description: Deletes a file from a branch. Requires an active write lock.
+      operationId: delete__projects_projectId_branches_branchName_files_filePath_
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          description: Project ID
+          schema:
+            type: string
+        - name: branchName
+          in: path
+          required: true
+          description: Branch name
+          schema:
+            type: string
+        - name: filePath
+          in: path
+          required: true
+          description: File path to delete
+          schema:
+            type: string
+      responses:
+        '200':
+          description: File deleted successfully
+  /projects/{projectId}/branches/{branchName}/save:
+    post:
+      summary: Save files to branch
+      description: Saves one or more files to a branch. Requires an active write lock. Can create new files or update existing ones.
+      operationId: post__projects_projectId_branches_branchName_save
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          description: Project ID
+          schema:
+            type: string
+        - name: branchName
+          in: path
+          required: true
+          description: Branch name
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                path:
+                  type: string
+                  description: File path (e.g., '/api.raml')
+                type:
+                  type: string
+                  enum:
+                    - FILE
+                    - FOLDER
+                  description: Entry type
+                content:
+                  type: string
+                  description: File content (for FILE type)
+                title:
+                  type: string
+                  description: Display title
+            example:
+              - path: /api.raml
+                type: FILE
+                content: |-
+                  #%RAML 1.0
+                  title: My API
+                  version: v1
+                title: api.raml
+      responses:
+        '200':
+          description: Files saved, returns updated list of all files in branch
+  /projects/{projectId}/branches/{branchName}/files/{filePath}/move:
+    post:
+      summary: Move/rename a file
+      description: Moves or renames a file within a branch. Requires an active write lock.
+      operationId: post__projects_projectId_branches_branchName_files_filePath_move
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          description: Project ID
+          schema:
+            type: string
+        - name: branchName
+          in: path
+          required: true
+          description: Branch name
+          schema:
+            type: string
+        - name: filePath
+          in: path
+          required: true
+          description: Current file path
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                path:
+                  type: string
+              required:
+                - path
+            example:
+              path: renamed-file.raml
+      responses:
+        '200':
+          description: File moved/renamed successfully
+  /projects/{projectId}/branches/{branchName}/publish/exchange:
+    post:
+      summary: Publish to Exchange
+      description: Publishes the API specification or fragment from a branch to Anypoint Exchange as a new asset version.
+      operationId: post__projects_projectId_branches_branchName_publish_exchange
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          description: Project ID
+          schema:
+            type: string
+        - name: branchName
+          in: path
+          required: true
+          description: Branch name to publish from
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                apiVersion:
+                  type: string
+                version:
+                  type: string
+                main:
+                  type: string
+                assetId:
+                  type: string
+                groupId:
+                  type: string
+                classifier:
+                  type: string
+              required:
+                - name
+                - apiVersion
+                - version
+                - main
+                - assetId
+                - groupId
+                - classifier
+            example:
+              name: My API
+              apiVersion: v1
+              version: 1.0.0
+              main: api.raml
+              assetId: my-api
+              groupId: org-uuid
+              classifier: raml
+      responses:
+        '200':
+          description: Published successfully, returns {organizationId, groupId, assetId, version}
+  /exchange/graphql:
+    post:
+      summary: Search Exchange dependencies
+      description: Searches for available fragments and dependencies in Exchange using GraphQL queries. Used for finding reusable API fragments when designing specifications.
+      operationId: post__exchange_graphql
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query:
+                  type: string
+                variables:
+                  type: string
+              required:
+                - query
+                - variables
+            example:
+              query: '{ assets(query: { type: ''raml-fragment'' }) { assetId groupId version } }'
+      responses:
+        '200':
+          description: GraphQL response with matching Exchange assets
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'All requests require authentication with three headers: ''Authorization: Bearer <token>'' for the access token, ''x-organization-id: <org-id>'' (UUID format) for the organization ID, and ''x-owner-id: <user-id>'' (UUID format) for the owner/user ID. Organization and owner IDs can be obtained through the Access Management API''s organizations and users endpoints respectively.'
+tags:
+  - name: Governance
+    description: API Designer Experience API endpoints

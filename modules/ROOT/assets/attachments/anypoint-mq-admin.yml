@@ -1,0 +1,768 @@
+openapi: 3.0.3
+info:
+  title: Anypoint MQ Admin API
+  description: |-
+    The Anypoint MQ Admin API provides API access to Anypoint MQ administrative functionality. This API allows you to browse queues and message exchanges, create queues and message exchanges, manage bindings for message exchanges, manage cross-region fallback configuration for standard queues, and configure message routing rules on exchange-to-queue bindings.
+
+    The Anypoint MQ Admin API enables organizations to manage message queues and exchanges programmatically. It supports browsing resources, creating new destinations (queues and exchanges), managing bindings between exchanges and queues, configuring cross-region failover for standard queues, and setting up intelligent message routing rules. The API works in conjunction with the Anypoint MQ Broker API (for publishing/consuming messages) and the Anypoint MQ Stats API (for viewing statistics).
+  version: 1.0.x
+  contact:
+    name: MuleSoft
+    url: https://www.mulesoft.com
+servers:
+  - url: https://anypoint.mulesoft.com/mq/admin/api/v1
+    description: Anypoint Platform
+security:
+  - bearerAuth: []
+paths:
+  /organizations/{ORG_ID}/environments/{ENV_ID}/regions:
+    get:
+      summary: List available regions
+      description: Retrieves all available AWS regions for Anypoint MQ deployment within the specified organization and environment.
+      operationId: get__organizations_ORG_ID_environments_ENV_ID_regions
+      tags:
+        - Messaging
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: ORG_ID
+          in: path
+          required: true
+          description: The organization ID (business group identifier) where the MQ resources reside.
+          schema:
+            type: string
+        - name: ENV_ID
+          in: path
+          required: true
+          description: The environment ID where the MQ resources reside.
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token obtained from Anypoint Access Management API.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved list of available regions.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      description: Region identifier (e.g., us-east-1)
+                    name:
+                      type: string
+                      description: Human-readable region name
+                    type:
+                      type: string
+                      description: Region type
+  /organizations/{ORG_ID}/environments/{ENV_ID}/regions/{REGION_ID}/destinations:
+    get:
+      summary: List all destinations
+      description: Retrieves all queues and message exchanges in a specified organization, environment, and region. Includes failover configuration details for each destination.
+      operationId: get__organizations_ORG_ID_environments_ENV_ID_regions_REGION_ID_destinations
+      tags:
+        - Messaging
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: ORG_ID
+          in: path
+          required: true
+          description: The organization ID (business group identifier).
+          schema:
+            type: string
+        - name: ENV_ID
+          in: path
+          required: true
+          description: The environment ID.
+          schema:
+            type: string
+        - name: REGION_ID
+          in: path
+          required: true
+          description: The region identifier (e.g., us-east-1).
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token obtained from Anypoint Access Management API.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved list of destinations.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    queueId:
+                      type: string
+                      description: Queue identifier (present for queues)
+                    exchangeId:
+                      type: string
+                      description: Exchange identifier (present for exchanges)
+                    type:
+                      type: string
+                      description: Destination type (queue or exchange)
+                    encrypted:
+                      type: boolean
+                      description: Whether the destination is encrypted
+                    fifo:
+                      type: boolean
+                      description: Whether the queue is FIFO
+                    defaultTtl:
+                      type: integer
+                      description: Default time-to-live in milliseconds
+                    defaultLockTtl:
+                      type: integer
+                      description: Default lock TTL in milliseconds
+                    isFallback:
+                      type: boolean
+                      description: Whether this is a fallback queue
+                    fallbackConfig:
+                      type: object
+                      description: Fallback configuration details including fallback region and queue
+  /organizations/{ORG_ID}/environments/{ENV_ID}/regions/{REGION_ID}/destinations/queues/{QUEUE_ID}:
+    get:
+      summary: Get queue configuration
+      description: Retrieves detailed configuration for a specific queue, including its failover/fallback settings, TTL, lock TTL, encryption status, and FIFO configuration.
+      operationId: get__organizations_ORG_ID_environments_ENV_ID_regions_REGION_ID_destinations_queues_QUEUE_ID_
+      tags:
+        - Messaging
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: ORG_ID
+          in: path
+          required: true
+          description: The organization ID.
+          schema:
+            type: string
+        - name: ENV_ID
+          in: path
+          required: true
+          description: The environment ID.
+          schema:
+            type: string
+        - name: REGION_ID
+          in: path
+          required: true
+          description: The region identifier.
+          schema:
+            type: string
+        - name: QUEUE_ID
+          in: path
+          required: true
+          description: The queue name/identifier.
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved queue configuration.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  queueId:
+                    type: string
+                  type:
+                    type: string
+                  encrypted:
+                    type: boolean
+                  fifo:
+                    type: boolean
+                  defaultTtl:
+                    type: integer
+                  defaultLockTtl:
+                    type: integer
+                  maxDeliveries:
+                    type: integer
+                  deadLetterQueueId:
+                    type: string
+                  fallbackConfig:
+                    type: object
+        '404':
+          description: Queue not found.
+    put:
+      summary: Create or update a queue
+      description: Creates a new queue or updates an existing queue's configuration. Supports creating standard queues and FIFO queues with configurable TTL, lock TTL, encryption, dead letter queue, and delivery delay settings.
+      operationId: put__organizations_ORG_ID_environments_ENV_ID_regions_REGION_ID_destinations_queues_QUEUE_ID_
+      tags:
+        - Messaging
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: ORG_ID
+          in: path
+          required: true
+          description: The organization ID.
+          schema:
+            type: string
+        - name: ENV_ID
+          in: path
+          required: true
+          description: The environment ID.
+          schema:
+            type: string
+        - name: REGION_ID
+          in: path
+          required: true
+          description: The region identifier (e.g., us-east-1).
+          schema:
+            type: string
+        - name: QUEUE_ID
+          in: path
+          required: true
+          description: The queue name/identifier to create or update.
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                defaultTtl:
+                  type: integer
+                  description: Default time-to-live for messages in milliseconds. Maximum 2 weeks (1,209,600,000 ms).
+                defaultLockTtl:
+                  type: integer
+                  description: Default lock TTL in milliseconds. How long a message is hidden from other consumers after being read.
+                encrypted:
+                  type: boolean
+                  description: Whether to enable server-side encryption for messages.
+                fifo:
+                  type: boolean
+                  description: Whether to create as a FIFO queue (guarantees message ordering).
+                maxDeliveries:
+                  type: integer
+                  description: Maximum number of delivery attempts before moving to dead letter queue.
+                deadLetterQueueId:
+                  type: string
+                  description: ID of the dead letter queue to route messages that exceed maxDeliveries.
+                defaultDeliveryDelay:
+                  type: integer
+                  description: Default delivery delay in milliseconds for messages sent to this queue.
+            example:
+              defaultTtl: 604800000
+              defaultLockTtl: 120000
+              encrypted: true
+              fifo: true
+      responses:
+        '200':
+          description: Queue successfully created or updated.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  queueId:
+                    type: string
+                  type:
+                    type: string
+                  encrypted:
+                    type: boolean
+                  fifo:
+                    type: boolean
+                  defaultTtl:
+                    type: integer
+                  defaultLockTtl:
+                    type: integer
+                  maxDeliveries:
+                    type: integer
+                  deadLetterQueueId:
+                    type: string
+    delete:
+      summary: Delete a queue
+      description: Deletes a specific queue from the given organization, environment, and region. This action is irreversible and all messages in the queue will be lost.
+      operationId: delete__organizations_ORG_ID_environments_ENV_ID_regions_REGION_ID_destinations_queues_QUEUE_ID_
+      tags:
+        - Messaging
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: ORG_ID
+          in: path
+          required: true
+          description: The organization ID.
+          schema:
+            type: string
+        - name: ENV_ID
+          in: path
+          required: true
+          description: The environment ID.
+          schema:
+            type: string
+        - name: REGION_ID
+          in: path
+          required: true
+          description: The region identifier.
+          schema:
+            type: string
+        - name: QUEUE_ID
+          in: path
+          required: true
+          description: The queue name/identifier to delete.
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Queue successfully deleted. No content returned.
+        '404':
+          description: Queue not found.
+  /organizations/{ORG_ID}/environments/{ENV_ID}/regions/{REGION_ID}/destinations/exchanges/{EXCHANGE_ID}:
+    put:
+      summary: Create or update a message exchange
+      description: Creates a new message exchange or updates an existing exchange's configuration. Exchanges route messages to one or more bound queues.
+      operationId: put__organizations_ORG_ID_environments_ENV_ID_regions_REGION_ID_destinations_exchanges_EXCHANGE_ID_
+      tags:
+        - Messaging
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: ORG_ID
+          in: path
+          required: true
+          description: The organization ID.
+          schema:
+            type: string
+        - name: ENV_ID
+          in: path
+          required: true
+          description: The environment ID.
+          schema:
+            type: string
+        - name: REGION_ID
+          in: path
+          required: true
+          description: The region identifier.
+          schema:
+            type: string
+        - name: EXCHANGE_ID
+          in: path
+          required: true
+          description: The exchange name/identifier to create or update.
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                encrypted:
+                  type: boolean
+                  description: Whether to enable server-side encryption for messages published to this exchange.
+            example:
+              encrypted: true
+      responses:
+        '200':
+          description: Exchange successfully created or updated.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  exchangeId:
+                    type: string
+                  type:
+                    type: string
+                  encrypted:
+                    type: boolean
+    delete:
+      summary: Delete a message exchange
+      description: Deletes a specific message exchange. All bindings associated with the exchange will also be removed.
+      operationId: delete__organizations_ORG_ID_environments_ENV_ID_regions_REGION_ID_destinations_exchanges_EXCHANGE_ID_
+      tags:
+        - Messaging
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: ORG_ID
+          in: path
+          required: true
+          description: The organization ID.
+          schema:
+            type: string
+        - name: ENV_ID
+          in: path
+          required: true
+          description: The environment ID.
+          schema:
+            type: string
+        - name: REGION_ID
+          in: path
+          required: true
+          description: The region identifier.
+          schema:
+            type: string
+        - name: EXCHANGE_ID
+          in: path
+          required: true
+          description: The exchange name/identifier to delete.
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Exchange successfully deleted. No content returned.
+        '404':
+          description: Exchange not found.
+  /organizations/{ORG_ID}/environments/{ENV_ID}/regions/{REGION_ID}/destinations/queues/{QUEUE_ID}/fallback:
+    put:
+      summary: Enable or disable cross-region failover
+      description: Toggles automatic failover capability for a standard queue. When enabled, creates a fallback queue in the secondary region. When disabled, removes the fallback configuration. Applications consuming from or publishing to the queue must be restarted after changes. FIFO queues do not support failover.
+      operationId: put__organizations_ORG_ID_environments_ENV_ID_regions_REGION_ID_destinations_queues_QUEUE_ID_fallback
+      tags:
+        - Messaging
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: ORG_ID
+          in: path
+          required: true
+          description: The organization ID.
+          schema:
+            type: string
+        - name: ENV_ID
+          in: path
+          required: true
+          description: The environment ID.
+          schema:
+            type: string
+        - name: REGION_ID
+          in: path
+          required: true
+          description: The primary region identifier.
+          schema:
+            type: string
+        - name: QUEUE_ID
+          in: path
+          required: true
+          description: The queue name/identifier.
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                fallbackEnabled:
+                  type: boolean
+                  description: Set to true to enable failover, false to disable.
+              required:
+                - fallbackEnabled
+            example:
+              fallbackEnabled: true
+      responses:
+        '200':
+          description: Failover configuration successfully updated.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  queueId:
+                    type: string
+                  fallbackConfig:
+                    type: object
+                    properties:
+                      fallbackEnabled:
+                        type: boolean
+                      fallbackRegion:
+                        type: string
+                      fallbackQueueId:
+                        type: string
+  /organizations/{ORG_ID}/environments/{ENV_ID}/regions/{REGION_ID}/bindings/exchanges/{EXCHANGE_ID}/queues/{QUEUE_ID}:
+    put:
+      summary: Bind a queue to an exchange
+      description: Creates or updates a binding between a message exchange and a queue. Messages published to the exchange will be routed to the bound queue.
+      operationId: put__organizations_ORG_ID_environments_ENV_ID_regions_REGION_ID_bindings_exchanges_EXCHANGE_ID_queues_QUEUE_ID_
+      tags:
+        - Messaging
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: ORG_ID
+          in: path
+          required: true
+          description: The organization ID.
+          schema:
+            type: string
+        - name: ENV_ID
+          in: path
+          required: true
+          description: The environment ID.
+          schema:
+            type: string
+        - name: REGION_ID
+          in: path
+          required: true
+          description: The region identifier.
+          schema:
+            type: string
+        - name: EXCHANGE_ID
+          in: path
+          required: true
+          description: The exchange name/identifier.
+          schema:
+            type: string
+        - name: QUEUE_ID
+          in: path
+          required: true
+          description: The queue name/identifier to bind.
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Binding successfully created or updated.
+    delete:
+      summary: Remove a queue binding from an exchange
+      description: Removes the binding between a message exchange and a queue. Messages will no longer be routed to the unbound queue.
+      operationId: delete__organizations_ORG_ID_environments_ENV_ID_regions_REGION_ID_bindings_exchanges_EXCHANGE_ID_queues_QUEUE_ID_
+      tags:
+        - Messaging
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: ORG_ID
+          in: path
+          required: true
+          description: The organization ID.
+          schema:
+            type: string
+        - name: ENV_ID
+          in: path
+          required: true
+          description: The environment ID.
+          schema:
+            type: string
+        - name: REGION_ID
+          in: path
+          required: true
+          description: The region identifier.
+          schema:
+            type: string
+        - name: EXCHANGE_ID
+          in: path
+          required: true
+          description: The exchange name/identifier.
+          schema:
+            type: string
+        - name: QUEUE_ID
+          in: path
+          required: true
+          description: The queue name/identifier to unbind.
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Binding successfully removed.
+  /organizations/{ORG_ID}/environments/{ENV_ID}/regions/{REGION_ID}/bindings/exchanges/{EXCHANGE_ID}/queues/{QUEUE_ID}/rules/routing:
+    put:
+      summary: Create or update message routing rules
+      description: Establishes or replaces message routing rules on an exchange-to-queue binding to route specific subsets of messages. A PUT request replaces the existing routing rule with the new configuration. It may take up to 15 minutes for routing rule changes to take effect.
+      operationId: put__organizations_ORG_ID_environments_ENV_ID_regions_REGION_ID_bindings_exchanges_EXCHANGE_ID_queues_QUEUE_ID_rules_routing
+      tags:
+        - Messaging
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: ORG_ID
+          in: path
+          required: true
+          description: The organization ID.
+          schema:
+            type: string
+        - name: ENV_ID
+          in: path
+          required: true
+          description: The environment ID.
+          schema:
+            type: string
+        - name: REGION_ID
+          in: path
+          required: true
+          description: The region identifier.
+          schema:
+            type: string
+        - name: EXCHANGE_ID
+          in: path
+          required: true
+          description: The exchange name/identifier.
+          schema:
+            type: string
+        - name: QUEUE_ID
+          in: path
+          required: true
+          description: The queue name/identifier.
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                routingRules:
+                  type: array
+                  description: Array of routing rules to apply to the binding.
+                  items:
+                    type: object
+                    properties:
+                      propertyName:
+                        type: string
+                        description: The message property name to evaluate.
+                      propertyType:
+                        type: string
+                        enum:
+                          - STRING
+                        description: The data type of the property.
+                      matcherType:
+                        type: string
+                        enum:
+                          - EQ
+                        description: The comparison operator. EQ = equals.
+                      value:
+                        type: string
+                        description: The value to match against.
+            example:
+              routingRules:
+                - propertyName: orderType
+                  propertyType: STRING
+                  matcherType: EQ
+                  value: premium
+      responses:
+        '200':
+          description: Routing rules successfully created or updated.
+    delete:
+      summary: Delete message routing rules
+      description: Removes all message routing rules from an exchange-to-queue binding. After deletion, all messages published to the exchange will be routed to the queue without filtering.
+      operationId: delete__organizations_ORG_ID_environments_ENV_ID_regions_REGION_ID_bindings_exchanges_EXCHANGE_ID_queues_QUEUE_ID_rules_routing
+      tags:
+        - Messaging
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: ORG_ID
+          in: path
+          required: true
+          description: The organization ID.
+          schema:
+            type: string
+        - name: ENV_ID
+          in: path
+          required: true
+          description: The environment ID.
+          schema:
+            type: string
+        - name: REGION_ID
+          in: path
+          required: true
+          description: The region identifier.
+          schema:
+            type: string
+        - name: EXCHANGE_ID
+          in: path
+          required: true
+          description: The exchange name/identifier.
+          schema:
+            type: string
+        - name: QUEUE_ID
+          in: path
+          required: true
+          description: The queue name/identifier.
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Routing rules successfully deleted.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'Access requires tokens obtained through Anypoint Access Management API using Anypoint Platform credentials. Pass the token in the Authorization header as: Bearer {access_token}. Obtain the token by sending a POST request to https://anypoint.mulesoft.com/accounts/login with your Anypoint Platform username and password.'
+tags:
+  - name: Messaging
+    description: Anypoint MQ Admin API endpoints

@@ -1,0 +1,767 @@
+openapi: 3.0.3
+info:
+  title: Exchange Experience API
+  description: |-
+    The Exchange API enables users to create, share, search, and manage assets and their documentation in Exchange, customize the public portal, and manage organizations. It supports all asset types including REST APIs (RAML, OAS), SOAP APIs (WSDL), HTTP APIs, AsyncAPI, GraphQL, gRPC, connectors, examples, templates, Mule applications, policies, and custom assets. The API also supports asset documentation management with Markdown and HTML content, public portal customization, and API access request workflows.
+
+    The Exchange API (v2) enables comprehensive asset lifecycle management in Anypoint Exchange. It supports publishing assets of all types, editing metadata and documentation, searching assets by multiple criteria, managing asset versioning and tags, requesting API access, sharing assets on public portals, and customizing portal appearance.
+  version: 2.4.x
+  contact:
+    name: MuleSoft
+    url: https://www.mulesoft.com
+servers:
+  - url: https://anypoint.mulesoft.com/exchange/api/v2
+    description: Anypoint Platform
+security:
+  - bearerAuth: []
+paths:
+  /organizations/{organizationId}/assets/{groupId}/{assetId}/{version}:
+    post:
+      summary: Publish a new asset
+      description: Creates and publishes a new asset to Exchange. If the asset already exists, returns 409 (conflict). Supports all asset types. Use x-sync-publication header to control synchronous vs asynchronous publication.
+      operationId: post__organizations_organizationId_assets_groupId_assetId_version_
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization ID where asset is published
+          schema:
+            type: string
+        - name: groupId
+          in: path
+          required: true
+          description: Asset group ID (typically the organization ID)
+          schema:
+            type: string
+        - name: assetId
+          in: path
+          required: true
+          description: Asset identifier
+          schema:
+            type: string
+        - name: version
+          in: path
+          required: true
+          description: Asset version
+          schema:
+            type: string
+        - name: x-sync-publication
+          in: header
+          required: false
+          description: '''true'' for synchronous (manual), ''false'' for asynchronous (automation)'
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          multipart/form-data:
+            schema:
+              name: string (asset display name)
+              description: string (asset description)
+              type: string (asset type)
+              dependencies: string (JSON array of dependencies)
+              keywords: string (comma-separated keywords)
+              tags: string (JSON array of tag objects)
+              categories: string (JSON object with category mappings)
+              fields: string (JSON object with custom fields)
+              contactName: string
+              contactEmail: string
+              properties.mainFile: string (main file path within archive)
+              properties.apiVersion: string (API version)
+              properties.assetLink: string (external link)
+              files: file(s) with classifier and packaging metadata
+              status: string (lifecycle status)
+      responses:
+        '200':
+          description: Asset published successfully (synchronous mode)
+        '202':
+          description: Publication initiated (asynchronous mode)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  publicationStatusLink:
+                    type: string
+                    description: URL to poll for status
+                required:
+                  - publicationStatusLink
+        '409':
+          description: Asset already exists
+  /organizations/{organizationId}/assets/{groupId}/{assetId}/{version}/publication/status/{statusId}:
+    get:
+      summary: Check async publication status
+      description: Polls the status of an asynchronous asset publication.
+      operationId: get__organizations_organizationId_assets_groupId_assetId_version_publication_status_statusId_
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: groupId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: assetId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: statusId
+          in: path
+          required: true
+          description: Status identifier from the publication response
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Publication status (pending, completed, failed)
+  /assets/{groupId}/{assetId}:
+    delete:
+      summary: Delete an asset (all versions)
+      description: Deletes all versions of an asset. Supports hard delete and soft delete modes.
+      operationId: delete__assets_groupId_assetId_
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: groupId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: assetId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: hardDelete
+          in: query
+          required: false
+          description: If true, permanently deletes. If false, soft deletes.
+          schema:
+            type: boolean
+      responses:
+        '204':
+          description: Asset deleted
+    get:
+      summary: Get asset details
+      description: Retrieves detailed information about an asset including all versions, metadata, and documentation.
+      operationId: get__assets_groupId_assetId_
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: groupId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: assetId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Asset details with metadata, versions, and documentation
+  /assets/{groupId}/{assetId}/{version}:
+    delete:
+      summary: Delete a specific asset version
+      description: Deletes a specific version of an asset.
+      operationId: delete__assets_groupId_assetId_version_
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: groupId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: assetId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Asset version deleted
+    get:
+      summary: Get specific asset version
+      description: Retrieves information about a specific version of an asset.
+      operationId: get__assets_groupId_assetId_version_
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: groupId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: assetId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Asset version details
+  /assets/{groupId}/{assetId}/{version}/tags:
+    put:
+      summary: Set asset tags
+      description: Inserts or replaces all tags on an asset version.
+      operationId: put__assets_groupId_assetId_version_tags
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: groupId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: assetId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: JSON array of tag objects with key-value pairs
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Tags updated
+  /assets/{groupId}/{assetId}/{version}/tags/categories/{categoryKey}:
+    put:
+      summary: Set category values on asset
+      description: Sets category values for a specific category key on an asset version.
+      operationId: put__assets_groupId_assetId_version_tags_categories_categoryKey_
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: groupId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: assetId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: categoryKey
+          in: path
+          required: true
+          description: Category key identifier
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tagValue:
+                  type: array
+                  items:
+                    type: string
+                  description: category values
+              required:
+                - tagValue
+      responses:
+        '200':
+          description: Category values set
+  /assets/{groupId}/{assetId}/{version}/tags/fields/{fieldKey}:
+    put:
+      summary: Set custom field values
+      description: Sets custom field values for a specific field key on an asset version.
+      operationId: put__assets_groupId_assetId_version_tags_fields_fieldKey_
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: groupId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: assetId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: fieldKey
+          in: path
+          required: true
+          description: Custom field key identifier
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tagValue:
+                  type: array
+                  items:
+                    type: string
+                  description: field values
+              required:
+                - tagValue
+      responses:
+        '200':
+          description: Custom field values set
+  /assets/{groupId}/{assetId}/{version}/status:
+    patch:
+      summary: Promote asset lifecycle state
+      description: Changes the lifecycle status of an asset version (e.g., from development to published).
+      operationId: patch__assets_groupId_assetId_version_status
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: groupId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: assetId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                  description: target lifecycle state
+              required:
+                - status
+      responses:
+        '200':
+          description: Asset status updated
+  /organizations/{organizationId}/assets/{groupId}/{assetId}/{version}/mutabledata:
+    patch:
+      summary: Update asset metadata
+      description: Updates version-agnostic asset properties (name, description, icon) without creating a new version. Returns an asynchronous status link.
+      operationId: patch__organizations_organizationId_assets_groupId_assetId_version_mutabledata
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: groupId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: assetId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Updated metadata fields including name, description, categories, tags, and icon
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+      responses:
+        '202':
+          description: Update initiated with status link for polling
+  /organizations/{organizationId}/assets/{groupId}/{assetId}/{version}/mutabledata/status/{statusId}:
+    get:
+      summary: Check mutable data update status
+      description: Polls the status of an asynchronous mutable data update.
+      operationId: get__organizations_organizationId_assets_groupId_assetId_version_mutabledata_status_statusId_
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: statusId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Update status
+  /assets/{groupId}/{assetId}/{version}/portal/draft/pages:
+    post:
+      summary: Create documentation page
+      description: Creates a new page in the asset's documentation draft. Use pagePath '.terms' for API assets to add Terms and Conditions.
+      operationId: post__assets_groupId_assetId_version_portal_draft_pages
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: groupId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: assetId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pagePath:
+                  type: string
+                  description: page name or '.terms' for T&C
+              required:
+                - pagePath
+      responses:
+        '201':
+          description: Page created with pageId
+  /assets/{groupId}/{assetId}/{version}/portal/draft/pages/{pageId}:
+    put:
+      summary: Upload page content
+      description: Overrides the Markdown content of a draft documentation page.
+      operationId: put__assets_groupId_assetId_version_portal_draft_pages_pageId_
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: groupId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: assetId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pageId
+          in: path
+          required: true
+          description: Page identifier from create page response
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Markdown-formatted documentation content
+        content:
+          text/markdown:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Page content updated
+  /assets/{groupId}/{assetId}/{version}/portal/draft/resources:
+    post:
+      summary: Upload documentation resource
+      description: Uploads image resources (PNG, JPG, etc.) for use in Markdown documentation pages.
+      operationId: post__assets_groupId_assetId_version_portal_draft_resources
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: groupId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: assetId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Image file to upload
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Resource uploaded
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  commitId:
+                    type: string
+                  path:
+                    type: string
+                    description: e.g., 'resources/filename.png'
+                required:
+                  - commitId
+                  - path
+  /assets/{groupId}/{assetId}/{version}/portal:
+    patch:
+      summary: Publish documentation
+      description: Publishes the content of the asset documentation that is in draft mode, making it publicly available.
+      operationId: patch__assets_groupId_assetId_version_portal
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: groupId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: assetId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Documentation published
+  /assets/{groupId}/{assetId}/versionGroups/{versionGroup}/instances/external:
+    post:
+      summary: Add runtime instance information
+      description: Adds server/instance information to an API asset, such as deployment URLs and visibility.
+      operationId: post__assets_groupId_assetId_versionGroups_versionGroup_instances_external
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: groupId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: assetId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: versionGroup
+          in: path
+          required: true
+          description: Version group identifier
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: instance name
+                endpointUri:
+                  type: string
+                  description: instance URL
+                isPublic:
+                  type: boolean
+                  description: whether instance is publicly accessible
+              required:
+                - name
+                - endpointUri
+                - isPublic
+      responses:
+        '201':
+          description: Instance information added
+  /assets/search:
+    get:
+      summary: Search assets
+      description: Searches for assets across Exchange by organization, type, description, tags, content, and documentation.
+      operationId: get__assets_search
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: search
+          in: query
+          required: false
+          description: Search term to match against asset name, description, tags, and content
+          schema:
+            type: string
+        - name: organizationId
+          in: query
+          required: false
+          description: Filter by organization
+          schema:
+            type: string
+        - name: type
+          in: query
+          required: false
+          description: Filter by asset type
+          schema:
+            type: string
+        - name: offset
+          in: query
+          required: false
+          description: Pagination offset
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          required: false
+          description: Number of results to return
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Search results with asset metadata
+  /assets/{groupId}/{assetId}/{version}/requestAccess:
+    post:
+      summary: Request API access
+      description: Requests access to an API or API Group. Creates a contract request for approval.
+      operationId: post__assets_groupId_assetId_version_requestAccess
+      tags:
+        - Governance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: groupId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: assetId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Access request details including client application ID and SLA tier
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Access request created
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Requires Anypoint Platform account with OAuth2 token-based authentication. Obtain a token via POST /accounts/login or POST /accounts/oauth2/token. User permissions control available operations. Include the bearer token in the Authorization header.
+tags:
+  - name: Governance
+    description: Exchange Experience API endpoints

@@ -1,0 +1,149 @@
+openapi: 3.0.3
+info:
+  title: Anypoint Monitoring Metrics API
+  description: |-
+    The Anypoint Monitoring Metrics API enables access to metrics exposed by Anypoint Monitoring. It uses the Anypoint Monitoring Query Language (AMQL) to construct flexible, secure queries for retrieving metrics data from Mule applications, APIs, and infrastructure deployed on the Anypoint Platform. The API provides endpoints for listing available metric types, describing metric structures, and executing search queries to retrieve time-series data with aggregations and filtering.
+
+    The Anypoint Monitoring Metrics API provides programmatic access to metrics data collected by Anypoint Monitoring. It supports querying application performance metrics, API metrics, infrastructure metrics, and custom metrics using the Anypoint Monitoring Query Language (AMQL), a SQL-like domain-specific language designed for time-series metric queries.
+  version: 1.0.x
+  contact:
+    name: MuleSoft
+    url: https://www.mulesoft.com
+servers:
+  - url: https://anypoint.mulesoft.com/observability/api/v1
+    description: Anypoint Platform
+security:
+  - bearerAuth: []
+paths:
+  /metric_types:
+    get:
+      summary: List Metric Types
+      description: Retrieves a list of all available metric types that can be queried through the Metrics API. Each metric type represents a category of metrics data collected by Anypoint Monitoring, such as application requests, API calls, or infrastructure metrics.
+      operationId: get__metric_types
+      tags:
+        - Monitoring
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token for authentication (e.g., 'Bearer {token}')
+          schema:
+            type: string
+        - name: Content-Type
+          in: header
+          required: true
+          description: Must be 'application/json'
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved list of available metric types. Returns an array of metric type names and their descriptions.
+        '401':
+          description: Unauthorized - invalid or missing bearer token
+        '403':
+          description: Forbidden - insufficient permissions to access metric types
+  /metric_types/{metricName}:describe:
+    get:
+      summary: Describe Metric
+      description: Returns the registered MetricDescriptor for a specific metric type, showing the shape of the stored data. The descriptor includes the metric name, available dimensions (filterable attributes used in WHERE and GROUP BY clauses), and measurements (aggregatable numerical values used in SELECT clauses with aggregation functions).
+      operationId: get__metric_types_metricName_describe
+      tags:
+        - Monitoring
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: metricName
+          in: path
+          required: true
+          description: The name of the metric type to describe (e.g., 'mulesoft.app.request', 'mulesoft.api', 'mulesoft.entity')
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token for authentication
+          schema:
+            type: string
+        - name: Content-Type
+          in: header
+          required: true
+          description: Must be 'application/json'
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved metric descriptor. Returns metricName (string), dimensions (array of filterable attribute objects with name and type), and measurements (array of aggregatable numerical value objects with name and type).
+        '401':
+          description: Unauthorized - invalid or missing bearer token
+        '403':
+          description: Forbidden - insufficient permissions
+        '404':
+          description: Metric type not found
+  /metrics:search:
+    post:
+      summary: Search Metrics
+      description: Executes an AMQL query against the metrics data store. The query must include a SELECT clause with at least one aggregated measurement, a FROM clause specifying the metric namespace, and a WHERE clause with a mandatory timestamp range filter. Supports pagination via offset and limit query parameters.
+      operationId: post__metrics_search
+      tags:
+        - Monitoring
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: offset
+          in: query
+          required: false
+          description: 'Number of rows to skip for pagination (default: 0)'
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          required: false
+          description: 'Maximum number of rows to return (default: 20)'
+          schema:
+            type: integer
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token for authentication
+          schema:
+            type: string
+        - name: Content-Type
+          in: header
+          required: true
+          description: Must be 'application/json'
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query:
+                  type: string
+              required:
+                - query
+      responses:
+        '200':
+          description: Successfully executed AMQL query. Returns a data array containing query results with columns matching the SELECT clause fields and rows containing the aggregated values.
+        '400':
+          description: Bad request - invalid AMQL query syntax, missing required clauses, or invalid parameter values
+        '401':
+          description: Unauthorized - invalid or missing bearer token
+        '403':
+          description: Forbidden - insufficient permissions for the requested business group or environment
+        '422':
+          description: Unprocessable entity - semantically invalid query (e.g., referencing non-existent dimensions or measurements)
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: All API requests require a valid Anypoint Platform bearer token. Generate the token via the Anypoint Platform authorization endpoint (POST to /accounts/api/v2/oauth2/token with client_credentials). Include the token in the Authorization header as 'Bearer {token}'. The user must have Access Control permissions for the targeted business groups and environments.
+tags:
+  - name: Monitoring
+    description: Anypoint Monitoring Metrics API endpoints

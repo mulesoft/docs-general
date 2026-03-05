@@ -1,0 +1,311 @@
+openapi: 3.0.3
+info:
+  title: Object Store V2 Stats
+  description: |-
+    An API for retrieving Object Store V2 usage statistics. This API provides statistical usage data on organizations' Object Store V2 service consumption, including metrics such as API call volumes aggregated by organization, environment, region, and individual store.
+
+    The Object Store V2 Stats API provides usage statistics for the Object Store V2 service. It enables retrieval of API request counts at various levels of granularity: organization-wide, per environment, per region, and per individual object store. This is useful for monitoring usage, capacity planning, and billing analysis.
+  version: 1.0.x
+  contact:
+    name: MuleSoft
+    url: https://www.mulesoft.com
+servers:
+  - url: https://object-store-stats.anypoint.mulesoft.com/api/v1
+    description: Anypoint Platform
+security:
+  - bearerAuth: []
+paths:
+  /organizations/{organizationId}:
+    get:
+      summary: Get organization usage statistics
+      description: Retrieves Object Store V2 usage statistics aggregated at the organization level. Returns time-series data with API request counts for the specified date range and aggregation period.
+      operationId: get__organizations_organizationId_
+      tags:
+        - Monitoring
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The organization UUID.
+          schema:
+            type: string
+        - name: startDate
+          in: query
+          required: true
+          description: Start date in ISO 8601 format (e.g., 2023-01-01T00:00:00.000Z).
+          schema:
+            type: string
+        - name: endDate
+          in: query
+          required: true
+          description: End date in ISO 8601 format (e.g., 2023-02-01T00:00:00.000Z).
+          schema:
+            type: string
+        - name: period
+          in: query
+          required: true
+          description: Aggregation period for the statistics data.
+          schema:
+            type: string
+        - name: isMaster
+          in: query
+          required: false
+          description: Optional flag to include sub-organization data.
+          schema:
+            type: boolean
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token obtained via OAuth 2.0 client credentials flow.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved organization usage statistics.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    timeStamp:
+                      type: string
+                      format: date-time
+                      description: Start of the aggregation period in ISO 8601 format.
+                    objectStoreRequestCount:
+                      type: integer
+                      description: Number of Object Store API requests in this period.
+                example:
+                  - timeStamp: '2023-01-01T00:00:00Z'
+                    objectStoreRequestCount: 3442
+                  - timeStamp: '2023-02-01T00:00:00Z'
+                    objectStoreRequestCount: 68772
+        '401':
+          description: Unauthorized. Invalid or expired access token.
+        '404':
+          description: Organization not found.
+  /organizations/{organizationId}/environments/{environmentId}:
+    get:
+      summary: Get environment usage statistics
+      description: Retrieves Object Store V2 usage statistics scoped to a specific environment within an organization. Returns time-series data with API request counts.
+      operationId: get__organizations_organizationId_environments_environmentId_
+      tags:
+        - Monitoring
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The organization UUID.
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The environment UUID.
+          schema:
+            type: string
+        - name: startDate
+          in: query
+          required: true
+          description: Start date in ISO 8601 format.
+          schema:
+            type: string
+        - name: endDate
+          in: query
+          required: true
+          description: End date in ISO 8601 format.
+          schema:
+            type: string
+        - name: period
+          in: query
+          required: true
+          description: Aggregation period.
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved environment usage statistics.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    timeStamp:
+                      type: string
+                      format: date-time
+                    objectStoreRequestCount:
+                      type: integer
+        '401':
+          description: Unauthorized.
+        '404':
+          description: Organization or environment not found.
+  /organizations/{organizationId}/environments/{environmentId}/regions/{regionId}:
+    get:
+      summary: Get region usage statistics
+      description: Retrieves Object Store V2 usage statistics scoped to a specific region within an environment. Returns time-series data with API request counts.
+      operationId: get__organizations_organizationId_environments_environmentId_regions_regionId_
+      tags:
+        - Monitoring
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The organization UUID.
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The environment UUID.
+          schema:
+            type: string
+        - name: regionId
+          in: path
+          required: true
+          description: The region identifier (e.g., us-east-1).
+          schema:
+            type: string
+        - name: startDate
+          in: query
+          required: true
+          description: Start date in ISO 8601 format.
+          schema:
+            type: string
+        - name: endDate
+          in: query
+          required: true
+          description: End date in ISO 8601 format.
+          schema:
+            type: string
+        - name: period
+          in: query
+          required: true
+          description: Aggregation period.
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved region usage statistics.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    timeStamp:
+                      type: string
+                      format: date-time
+                    objectStoreRequestCount:
+                      type: integer
+        '401':
+          description: Unauthorized.
+        '404':
+          description: Organization, environment, or region not found.
+  /organizations/{organizationId}/environments/{environmentId}/regions/{regionId}/stores/{storeId}:
+    get:
+      summary: Get store usage statistics
+      description: Retrieves Object Store V2 usage statistics for an individual object store. Returns time-series data with API request counts at the most granular level.
+      operationId: get__organizations_organizationId_environments_environmentId_regions_regionId_stores_storeId_
+      tags:
+        - Monitoring
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: The organization UUID.
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: The environment UUID.
+          schema:
+            type: string
+        - name: regionId
+          in: path
+          required: true
+          description: The region identifier.
+          schema:
+            type: string
+        - name: storeId
+          in: path
+          required: true
+          description: The object store identifier.
+          schema:
+            type: string
+        - name: startDate
+          in: query
+          required: true
+          description: Start date in ISO 8601 format.
+          schema:
+            type: string
+        - name: endDate
+          in: query
+          required: true
+          description: End date in ISO 8601 format.
+          schema:
+            type: string
+        - name: period
+          in: query
+          required: true
+          description: Aggregation period.
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved store usage statistics.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    timeStamp:
+                      type: string
+                      format: date-time
+                    objectStoreRequestCount:
+                      type: integer
+        '401':
+          description: Unauthorized.
+        '404':
+          description: Resource not found.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'OAuth 2.0 with Client Credentials. Obtain Client ID and Client Secret from Anypoint Platform, then call the token endpoint (POST https://anypoint.mulesoft.com/accounts/oauth2/token) with client_id, client_secret, and grant_type=client_credentials. Use the returned access token in the Authorization header as: Bearer {access_token}.'
+tags:
+  - name: Monitoring
+    description: Object Store V2 Stats endpoints

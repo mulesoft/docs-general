@@ -1,0 +1,378 @@
+openapi: 3.0.3
+info:
+  title: AMC Application Manager API
+  description: |-
+    The Application Manager API provides Mule Application management operations from Anypoint Control Planes to Runtime Planes. It supports deploying a Mule Application or API to a Mule Runtime, scaling up or down a running application, managing application settings (properties), deleting a Mule Application Deployment, changing artifact version or configurations of a deployment, and starting, stopping or restarting applications. Currently supports deployments to Runtime Fabric and CloudHub 2.0 targets only.
+
+    The Application Manager API provides Mule Application management operations from Anypoint Control Planes to any Runtime Plane. It enables deploying Mule Applications or APIs to Mule Runtimes, scaling applications up or down, managing application settings and properties, deleting deployments, changing artifact versions or configurations, and starting, stopping, or restarting applications.
+  version: 4.1.x
+  contact:
+    name: MuleSoft
+    url: https://www.mulesoft.com
+servers:
+  - url: https://anypoint.mulesoft.com/amc/application-manager/api/v2
+    description: Anypoint Platform
+security:
+  - bearerAuth: []
+paths:
+  /organizations/{organizationId}/environments/{environmentId}/deployments:
+    post:
+      summary: Create a new deployment
+      description: Deploys a new Mule application or API to a Runtime Fabric or CloudHub 2.0 target. Supports configuration of replicas, vCores, runtime version, properties, TCP port mappings, and other deployment settings.
+      operationId: post__organizations_organizationId_environments_environmentId_deployments
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization identifier
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: Environment identifier
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: application name
+                labels:
+                  type: array
+                  items:
+                    type: string
+                target:
+                  type: string
+                application:
+                  type: string
+              required:
+                - name
+                - labels
+                - target
+                - application
+      responses:
+        '200':
+          description: Deployment created successfully with deployment ID, status, and assigned ports
+        '400':
+          description: Invalid deployment configuration
+        '409':
+          description: Deployment with same name already exists
+    get:
+      summary: List deployments
+      description: Retrieves a list of all deployments in the specified environment.
+      operationId: get__organizations_organizationId_environments_environmentId_deployments
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization identifier
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          description: Environment identifier
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of deployments with status, configuration, and metadata
+  /organizations/{organizationId}/environments/{environmentId}/deployments/{deploymentId}:
+    get:
+      summary: Get deployment details
+      description: Retrieves detailed information about a specific deployment.
+      operationId: get__organizations_organizationId_environments_environmentId_deployments_deploymentId_
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: deploymentId
+          in: path
+          required: true
+          description: Deployment identifier
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Full deployment details including status, target configuration, application settings, and replica status
+    patch:
+      summary: Update a deployment
+      description: Updates an existing deployment configuration. Can modify artifact version, replica count, properties, TCP port mappings, and other settings. Also used for scaling, changing runtime versions, and updating application properties.
+      operationId: patch__organizations_organizationId_environments_environmentId_deployments_deploymentId_
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: deploymentId
+          in: path
+          required: true
+          description: Deployment identifier
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Partial deployment configuration with fields to update. Supports updating target settings, replicas, application reference, properties, and TCP port mappings.
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Deployment updated and redeploying with new configuration
+    delete:
+      summary: Delete a deployment
+      description: Deletes a Mule Application deployment, stopping all running instances.
+      operationId: delete__organizations_organizationId_environments_environmentId_deployments_deploymentId_
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: deploymentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Deployment deleted successfully
+  /organizations/{organizationId}/environments/{environmentId}/deployments/{deploymentId}/start:
+    post:
+      summary: Start a deployment
+      description: Starts a stopped deployment, bringing up all configured replicas.
+      operationId: post__organizations_organizationId_environments_environmentId_deployments_deploymentId_start
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: deploymentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Deployment starting
+  /organizations/{organizationId}/environments/{environmentId}/deployments/{deploymentId}/stop:
+    post:
+      summary: Stop a deployment
+      description: Stops a running deployment, shutting down all replicas.
+      operationId: post__organizations_organizationId_environments_environmentId_deployments_deploymentId_stop
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: deploymentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Deployment stopping
+  /organizations/{organizationId}/environments/{environmentId}/deployments/{deploymentId}/restart:
+    post:
+      summary: Restart a deployment
+      description: Restarts a running deployment by cycling all replicas.
+      operationId: post__organizations_organizationId_environments_environmentId_deployments_deploymentId_restart
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: deploymentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Deployment restarting
+  /organizations/{organizationId}/environments/{environmentId}/deployments/{deploymentId}/specs:
+    get:
+      summary: Get deployment specifications
+      description: Retrieves the full specification of a deployment including target configuration and application details.
+      operationId: get__organizations_organizationId_environments_environmentId_deployments_deploymentId_specs
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: deploymentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Deployment specification details
+  https://anypoint.mulesoft.com/runtimefabric/api/organizations/{organizationId}/privatespaces/{privatespaceId}/ports:
+    get:
+      summary: Find available TCP ports
+      description: Retrieves available TCP ports within a private space for use with TCP port mappings. Returns ports in the 30500-32500 range.
+      operationId: get_https_anypoint_mulesoft_com_runtimefabric_api_organizations_organizationId_privatespaces_privatespaceId_ports
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          description: Organization identifier
+          schema:
+            type: string
+        - name: privatespaceId
+          in: path
+          required: true
+          description: Private space identifier
+          schema:
+            type: string
+        - name: available
+          in: query
+          required: false
+          description: If true, returns only unused ports
+          schema:
+            type: boolean
+        - name: count
+          in: query
+          required: false
+          description: Number of ports to return (1-10)
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: JSON array of available port numbers
+  https://anypoint.mulesoft.com/amc/adam/api/organizations/{organizationId}/environments/{environmentId}/deployments/{deploymentId}:
+    patch:
+      summary: Update deployment via ADAM API
+      description: Alternative deployment update endpoint via the ADAM (Application Deployment and Management) API. Used for modifying deployment configurations including TCP port mappings.
+      operationId: patch_https_anypoint_mulesoft_com_amc_adam_api_organizations_organizationId_environments_environmentId_deployments_deploymentId_
+      tags:
+        - Runtime
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: deploymentId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Deployment configuration update including target settings and TCP port mappings
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Deployment updated with new port assignments
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Access requires an access token obtained through the Access Management API (POST /accounts/login or POST /accounts/oauth2/token). Include the bearer token in the Authorization header for all requests.
+tags:
+  - name: Runtime
+    description: AMC Application Manager API endpoints
