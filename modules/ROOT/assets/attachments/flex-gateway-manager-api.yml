@@ -1,422 +1,675 @@
-openapi: 3.0.3
+openapi: 3.1.1
 info:
   title: Flex Gateway Manager API
   description: |-
-    The Anypoint Flex Gateway Manager API provides endpoints to manage Flex Gateways registered in Anypoint Platform. It exposes all CRUD operations on Anypoint Managed Flex Gateways (Flex Gateways deployed to CloudHub 2.0) through a RESTful API. The API enables creating, reading, updating, and deleting managed gateway instances, retrieving registration data, managing gateway configurations, and monitoring gateway usage across organizations and environments.
-
-    The Flex Gateway Manager API enables programmatic management of Anypoint Flex Gateways that are registered and deployed via Anypoint Platform. Flex Gateway is a lightweight, high-performance API gateway that can be deployed in connected mode (managed by Anypoint Platform) or local mode. This API manages gateways in connected mode, providing full CRUD operations for gateway lifecycle management including creation, configuration, monitoring, and deletion.
+    The Anypoint Flex Gateway Manager API provides endpoints to manage Flex Gateways registered in Anypoint Platform. It exposes all CRUD (Create, Read, Update, Delete) operations on Anypoint Managed Flex Gateways (Flex Gateways deployed to Cloudhub 2.0) through this RESTful API.
   version: 1.0.x
-  contact:
-    name: MuleSoft
-    url: https://www.mulesoft.com
+
 servers:
-  - url: https://anypoint.mulesoft.com/gatewaymanager/api/v1
-    description: Anypoint Platform
-security:
-  - bearerAuth: []
+  - url: '{baseUri}/api/v1'
+    variables:
+      baseUri:
+        default: https://anypoint.mulesoft.com/gatewaymanager
 paths:
-  /organizations/{organizationId}/environments/{environmentId}/gateways:
-    get:
-      summary: List Managed Gateways
-      description: Retrieves a paginated list of managed Flex Gateways for a specific organization and environment. Supports filtering by name and sorting options.
-      operationId: get__organizations_organizationId_environments_environmentId_gateways
-      tags:
-        - API Management
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: organizationId
-          in: path
-          required: true
-          description: The UUID of the organization
-          schema:
-            type: string
-        - name: environmentId
-          in: path
-          required: true
-          description: The UUID of the environment
-          schema:
-            type: string
-        - name: name
-          in: query
-          required: false
-          description: Filter gateways by name (partial match)
-          schema:
-            type: string
-        - name: pageSize
-          in: query
-          required: false
-          description: Number of items per page for pagination
-          schema:
-            type: integer
-        - name: pageNumber
-          in: query
-          required: false
-          description: Page number for pagination (0-based)
-          schema:
-            type: integer
-        - name: sortBy
-          in: query
-          required: false
-          description: Field to sort results by (e.g., 'name', 'createdAt', 'updatedAt')
-          schema:
-            type: string
-        - name: sortOrder
-          in: query
-          required: false
-          description: 'Sort order: ''asc'' for ascending, ''desc'' for descending'
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Successfully retrieved list of managed gateways. Returns paginated array of gateway objects with id, name, status, size, creation date, and configuration details.
-        '401':
-          description: Unauthorized - invalid or missing bearer token
-        '403':
-          description: Forbidden - insufficient permissions to list gateways in this environment
-        '404':
-          description: Organization or environment not found
-    post:
-      summary: Create Managed Gateway
-      description: Creates a new managed Flex Gateway in the specified organization and environment. The gateway is provisioned on CloudHub 2.0 infrastructure and registered with Anypoint Platform for centralized management.
-      operationId: post__organizations_organizationId_environments_environmentId_gateways
-      tags:
-        - API Management
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: organizationId
-          in: path
-          required: true
-          description: The UUID of the organization
-          schema:
-            type: string
-        - name: environmentId
-          in: path
-          required: true
-          description: The UUID of the environment
-          schema:
-            type: string
-      requestBody:
-        required: true
-        description: ''
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                size:
-                  type: string
-                configuration:
-                  type: string
-              required:
-                - name
-                - size
-                - configuration
-      responses:
-        '201':
-          description: Gateway created successfully. Returns the gateway object with id, name, status, size, and registration details.
-        '400':
-          description: Bad request - invalid gateway configuration
-        '401':
-          description: Unauthorized - invalid or missing bearer token
-        '403':
-          description: Forbidden - insufficient permissions to create gateways
-        '409':
-          description: Conflict - a gateway with the specified name already exists
-  /organizations/{organizationId}/environments/{environmentId}/gateways/{gatewayId}:
-    get:
-      summary: Get Gateway Details
-      description: Retrieves detailed information about a specific managed Flex Gateway, including its current status, configuration, size, registration state, and associated metadata.
-      operationId: get__organizations_organizationId_environments_environmentId_gateways_gatewayId_
-      tags:
-        - API Management
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: organizationId
-          in: path
-          required: true
-          description: The UUID of the organization
-          schema:
-            type: string
-        - name: environmentId
-          in: path
-          required: true
-          description: The UUID of the environment
-          schema:
-            type: string
-        - name: gatewayId
-          in: path
-          required: true
-          description: The UUID of the gateway
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Successfully retrieved gateway details. Returns complete gateway object with id, name, status, size, configuration, createdAt, updatedAt, and registration information.
-        '401':
-          description: Unauthorized - invalid or missing bearer token
-        '403':
-          description: Forbidden - insufficient permissions
-        '404':
-          description: Gateway not found
-    put:
-      summary: Update Gateway
-      description: Updates the configuration of an existing managed Flex Gateway. Allows modification of gateway name, size, and other configuration settings.
-      operationId: put__organizations_organizationId_environments_environmentId_gateways_gatewayId_
-      tags:
-        - API Management
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: organizationId
-          in: path
-          required: true
-          description: The UUID of the organization
-          schema:
-            type: string
-        - name: environmentId
-          in: path
-          required: true
-          description: The UUID of the environment
-          schema:
-            type: string
-        - name: gatewayId
-          in: path
-          required: true
-          description: The UUID of the gateway to update
-          schema:
-            type: string
-      requestBody:
-        required: true
-        description: ''
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                size:
-                  type: string
-                configuration:
-                  type: string
-              required:
-                - name
-                - size
-                - configuration
-      responses:
-        '200':
-          description: Gateway updated successfully. Returns the updated gateway object.
-        '400':
-          description: Bad request - invalid update payload
-        '401':
-          description: Unauthorized - invalid or missing bearer token
-        '403':
-          description: Forbidden - insufficient permissions
-        '404':
-          description: Gateway not found
-    delete:
-      summary: Delete Gateway
-      description: Removes a managed Flex Gateway from the environment. This deregisters the gateway from Anypoint Platform and releases the associated CloudHub 2.0 resources.
-      operationId: delete__organizations_organizationId_environments_environmentId_gateways_gatewayId_
-      tags:
-        - API Management
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: organizationId
-          in: path
-          required: true
-          description: The UUID of the organization
-          schema:
-            type: string
-        - name: environmentId
-          in: path
-          required: true
-          description: The UUID of the environment
-          schema:
-            type: string
-        - name: gatewayId
-          in: path
-          required: true
-          description: The UUID of the gateway to delete
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Gateway deleted successfully
-        '401':
-          description: Unauthorized - invalid or missing bearer token
-        '403':
-          description: Forbidden - insufficient permissions
-        '404':
-          description: Gateway not found
-        '409':
-          description: Conflict - gateway has active API instances and cannot be deleted
-  /organizations/{organizationId}/environments/{environmentId}/gateways/{gatewayId}/registration:
-    get:
-      summary: Get Gateway Registration Data
-      description: Retrieves the registration information for a specific managed Flex Gateway. The registration data includes the connection details and credentials needed by the gateway runtime to connect to Anypoint Platform in connected mode.
-      operationId: get__organizations_organizationId_environments_environmentId_gateways_gatewayId_registration
-      tags:
-        - API Management
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: organizationId
-          in: path
-          required: true
-          description: The UUID of the organization
-          schema:
-            type: string
-        - name: environmentId
-          in: path
-          required: true
-          description: The UUID of the environment
-          schema:
-            type: string
-        - name: gatewayId
-          in: path
-          required: true
-          description: The UUID of the gateway
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Successfully retrieved registration data. Returns registration object with connection details, token, and platform URL for gateway runtime configuration.
-        '401':
-          description: Unauthorized - invalid or missing bearer token
-        '403':
-          description: Forbidden - insufficient permissions
-        '404':
-          description: Gateway not found
   /organizations/{organizationId}/usage/managed-gateways:
     get:
-      summary: Get Gateway Usage
-      description: Retrieves usage information for managed Flex Gateways across an organization. Provides metrics on gateway resource consumption, including counts by size category.
-      operationId: get__organizations_organizationId_usage_managed_gateways
-      tags:
-        - API Management
-      security:
-        - bearerAuth: []
+      operationId: Usage of Managed Gateways
       parameters:
         - name: organizationId
           in: path
           required: true
-          description: The UUID of the organization
           schema:
             type: string
+          examples:
+            default:
+              value: 8a2a82a0-b8c1-4457-b385-4dc1c7b8900e
         - name: size
           in: query
           required: false
-          description: 'Filter usage by gateway size: ''small'' or ''large'''
           schema:
             type: string
+            examples:
+              - small
+            enum:
+              - small
+              - large
       responses:
         '200':
-          description: Successfully retrieved gateway usage information. Returns usage metrics including gateway counts by size, total resource consumption, and organizational allocation data.
-        '401':
-          description: Unauthorized - invalid or missing bearer token
-        '403':
-          description: Forbidden - insufficient permissions to view organization usage
-        '404':
-          description: Organization not found
-  /organizations/{organizationId}/environments/{environmentId}/gateways/{gatewayId}/status:
+          description: 'Amount of existing Managed Gateways created for the specified organization'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    resource:
+                      type: string
+                    value:
+                      type: number
+                  required:
+                    - resource
+                    - value
+              examples:
+                default:
+                  value:
+                    - resource: managed-gateways-small
+                      value: 3
+                    - resource: managed-gateways-large
+                      value: 1
+        default:
+          description: 'Response body for handled errors'
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/errors.yaml#/components/schemas/GatewayManagerError'
+  /organizations/{organizationId}/environments/{environmentId}/gateways/{gatewayId}/runtime-configuration:
     get:
-      summary: Get Gateway Status
-      description: Retrieves the current operational status of a managed Flex Gateway, including health state, connectivity status, and runtime information.
-      operationId: get__organizations_organizationId_environments_environmentId_gateways_gatewayId_status
-      tags:
-        - API Management
-      security:
-        - bearerAuth: []
+      operationId: Get a Managed or Self-Managed Flex Gateway runtime configuration data
+      description: Get the runtime configuration of a Managed or Self-Managed Flex Gateway
       parameters:
         - name: organizationId
           in: path
           required: true
-          description: The UUID of the organization
           schema:
             type: string
+          examples:
+            default:
+              value: 8a2a82a0-b8c1-4457-b385-4dc1c7b8900e
         - name: environmentId
           in: path
           required: true
-          description: The UUID of the environment
           schema:
             type: string
+          examples:
+            default:
+              value: c9e28061-60f0-4e54-a048-44f053a8a993
         - name: gatewayId
           in: path
           required: true
-          description: The UUID of the gateway
           schema:
             type: string
+          examples:
+            default:
+              value: d4f1a2b3-5678-9abc-def0-1234567890ab
       responses:
         '200':
-          description: Successfully retrieved gateway status. Returns status object with health state, connectivity, version information, and last heartbeat timestamp.
-        '401':
-          description: Unauthorized - invalid or missing bearer token
-        '403':
-          description: Forbidden - insufficient permissions
-        '404':
-          description: Gateway not found
-  /organizations/{organizationId}/environments/{environmentId}/gateways/{gatewayId}/apis:
-    get:
-      summary: List Gateway API Instances
-      description: Retrieves a list of API instances deployed to a specific managed Flex Gateway.
-      operationId: get__organizations_organizationId_environments_environmentId_gateways_gatewayId_apis
-      tags:
-        - API Management
-      security:
-        - bearerAuth: []
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/gateway.yaml#/components/schemas/RuntimeConfigurationDetail'
+          x-amf-mediaType: application/json
+        default:
+          description: 'Response body for handled errors'
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/errors.yaml#/components/schemas/GatewayManagerError'
+    put:
+      operationId: Upsert (create or update) runtime configuration of a Managed or Self-Managed Flex Gateway
       parameters:
         - name: organizationId
           in: path
           required: true
-          description: The UUID of the organization
           schema:
             type: string
+          examples:
+            default:
+              value: 8a2a82a0-b8c1-4457-b385-4dc1c7b8900e
         - name: environmentId
           in: path
           required: true
-          description: The UUID of the environment
           schema:
             type: string
+          examples:
+            default:
+              value: c9e28061-60f0-4e54-a048-44f053a8a993
         - name: gatewayId
           in: path
           required: true
-          description: The UUID of the gateway
           schema:
             type: string
+          examples:
+            default:
+              value: d4f1a2b3-5678-9abc-def0-1234567890ab
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateRuntimeConfig'
+        required: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/gateway.yaml#/components/schemas/RuntimeConfigurationDetail'
+          x-amf-mediaType: application/json
+        default:
+          description: 'Response body for handled errors'
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/errors.yaml#/components/schemas/GatewayManagerError'
+  /organizations/{organizationId}/environments/{environmentId}/gateways:
+    get:
+      operationId: List Managed Gateways
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+          examples:
+            default:
+              value: 8a2a82a0-b8c1-4457-b385-4dc1c7b8900e
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
+          examples:
+            default:
+              value: c9e28061-60f0-4e54-a048-44f053a8a993
+        - name: name
+          in: query
+          required: false
+          schema:
+            type: string
+          examples:
+            default:
+              value: my-gateway
         - name: pageSize
           in: query
           required: false
-          description: Number of items per page
           schema:
             type: integer
+          examples:
+            default:
+              value: 20
+        - name: sortBy
+          in: query
+          required: false
+          schema:
+            type: string
+          examples:
+            default:
+              value: name
+        - name: sortOrder
+          in: query
+          required: false
+          schema:
+            type: string
+          examples:
+            default:
+              value: ASC
         - name: pageNumber
           in: query
           required: false
-          description: Page number for pagination
           schema:
             type: integer
+          examples:
+            default:
+              value: 0
       responses:
         '200':
-          description: Successfully retrieved list of API instances on the gateway.
-        '401':
-          description: Unauthorized - invalid or missing bearer token
-        '403':
-          description: Forbidden - insufficient permissions
-        '404':
-          description: Gateway not found
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GatewayList'
+              examples:
+                default:
+                  value:
+                    content:
+                      - id: d4f1a2b3-5678-9abc-def0-1234567890ab
+                        name: my-gateway
+                        status: RUNNING
+                        size: small
+                        releaseChannel: LTS
+                        runtimeVersion: 1.9.3
+                    totalElements: 1
+                    pageNumber: 0
+                    pageSize: 20
+        default:
+          description: 'Response body for handled errors'
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/errors.yaml#/components/schemas/GatewayManagerError'
+    post:
+      operationId: Create a Managed Gateway
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+          examples:
+            default:
+              value: 8a2a82a0-b8c1-4457-b385-4dc1c7b8900e
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
+          examples:
+            default:
+              value: c9e28061-60f0-4e54-a048-44f053a8a993
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateGateway'
+            examples:
+              default:
+                value:
+                  name: my-new-gateway
+                  targetId: f1c1b011-888e-4994-9999-e44e4a44c444
+                  releaseChannel: LTS
+                  runtimeVersion: 1.9.3
+                  size: small
+        required: false
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/gateway.yaml#/components/schemas/ManagedGatewayDetail'
+        default:
+          description: 'Response body for handled errors'
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/errors.yaml#/components/schemas/GatewayManagerError'
+  /organizations/{organizationId}/environments/{environmentId}/gateways/{gatewayId}:
+    get:
+      operationId: Get Managed Gateway data
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+          examples:
+            default:
+              value: 8a2a82a0-b8c1-4457-b385-4dc1c7b8900e
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
+          examples:
+            default:
+              value: c9e28061-60f0-4e54-a048-44f053a8a993
+        - name: gatewayId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+          examples:
+            default:
+              value: d4f1a2b3-5678-9abc-def0-1234567890ab
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/gateway.yaml#/components/schemas/ManagedGatewayDetail'
+        default:
+          description: 'Response body for handled errors'
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/errors.yaml#/components/schemas/GatewayManagerError'
+    put:
+      operationId: Update Managed Gateway data
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+          examples:
+            default:
+              value: 8a2a82a0-b8c1-4457-b385-4dc1c7b8900e
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
+          examples:
+            default:
+              value: c9e28061-60f0-4e54-a048-44f053a8a993
+        - name: gatewayId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+          examples:
+            default:
+              value: d4f1a2b3-5678-9abc-def0-1234567890ab
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateGateway'
+            examples:
+              default:
+                value:
+                  name: my-updated-gateway
+                  targetId: f1c1b011-888e-4994-9999-e44e4a44c444
+                  releaseChannel: LTS
+                  runtimeVersion: 1.9.4
+                  size: large
+        required: false
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/gateway.yaml#/components/schemas/ManagedGatewayDetail'
+        default:
+          description: 'Response body for handled errors'
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/errors.yaml#/components/schemas/GatewayManagerError'
+    delete:
+      operationId: Delete a Managed Gateway
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+          examples:
+            default:
+              value: 8a2a82a0-b8c1-4457-b385-4dc1c7b8900e
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
+          examples:
+            default:
+              value: c9e28061-60f0-4e54-a048-44f053a8a993
+        - name: gatewayId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+          examples:
+            default:
+              value: d4f1a2b3-5678-9abc-def0-1234567890ab
+      responses:
+        '204':
+          description: ''
+          content: {}
+        default:
+          description: 'Response body for handled errors'
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/errors.yaml#/components/schemas/GatewayManagerError'
+  /organizations/{organizationId}/environments/{environmentId}/gateways/{gatewayId}/registration:
+    get:
+      operationId: Get registration data for the Managed Gateway
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+          examples:
+            default:
+              value: 8a2a82a0-b8c1-4457-b385-4dc1c7b8900e
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
+          examples:
+            default:
+              value: c9e28061-60f0-4e54-a048-44f053a8a993
+        - name: gatewayId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+          examples:
+            default:
+              value: d4f1a2b3-5678-9abc-def0-1234567890ab
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - expiration
+                properties:
+                  expiration:
+                    type: string
+                    examples:
+                      - '2024-11-22T17:34:09.000Z'
+              examples:
+                default:
+                  value:
+                    expiration: '2024-11-22T17:34:09.000Z'
+        default:
+          description: 'Response body for handled errors'
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/errors.yaml#/components/schemas/GatewayManagerError'
+  /organizations/{organizationId}/environments/{environmentId}/gateways/{gatewayId}/status:
+    get:
+      operationId: Recover current status data for the Managed Gateway
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+          examples:
+            default:
+              value: 8a2a82a0-b8c1-4457-b385-4dc1c7b8900e
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
+          examples:
+            default:
+              value: c9e28061-60f0-4e54-a048-44f053a8a993
+        - name: gatewayId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+          examples:
+            default:
+              value: d4f1a2b3-5678-9abc-def0-1234567890ab
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - status
+                  - ready
+                  - running
+                properties:
+                  status:
+                    type: string
+                    examples:
+                      - RUNNING
+                  ready:
+                    type: boolean
+                  running:
+                    type: boolean
+              examples:
+                running:
+                  summary: A running gateway
+                  value:
+                    status: RUNNING
+                    ready: true
+                    running: true
+                stopped:
+                  summary: A stopped gateway
+                  value:
+                    status: STOPPED
+                    ready: false
+                    running: false
+        default:
+          description: 'Response body for handled errors'
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/errors.yaml#/components/schemas/GatewayManagerError'
+  /organizations/{organizationId}/environments/{environmentId}/gateways/{gatewayId}/desiredstatus:
+    patch:
+      operationId: Update desired status of a gateway
+      parameters:
+        - name: organizationId
+          in: path
+          required: true
+          schema:
+            type: string
+          examples:
+            default:
+              value: 8a2a82a0-b8c1-4457-b385-4dc1c7b8900e
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
+          examples:
+            default:
+              value: c9e28061-60f0-4e54-a048-44f053a8a993
+        - name: gatewayId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+          examples:
+            default:
+              value: d4f1a2b3-5678-9abc-def0-1234567890ab
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+                - desiredStatus
+              type: object
+              properties:
+                desiredStatus:
+                  type: string
+                  examples:
+                    - STARTED
+                  enum:
+                    - STARTED
+                    - STOPPED
+            examples:
+              start:
+                summary: Start a gateway
+                value:
+                  desiredStatus: STARTED
+              stop:
+                summary: Stop a gateway
+                value:
+                  desiredStatus: STOPPED
+        required: false
+      responses:
+        '202':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                default:
+                  value: {}
+        default:
+          description: 'Response body for handled errors'
+          content:
+            application/json:
+              schema:
+                $ref: './schemas/errors.yaml#/components/schemas/GatewayManagerError'
 components:
-  securitySchemes:
-    bearerAuth:
-      type: http
-      scheme: bearer
-      description: All API requests require authentication using Anypoint Platform credentials. Obtain a bearer token via the Access Management API (POST to /accounts/api/v2/oauth2/token with client_credentials grant type). Include the token in the Authorization header as 'Bearer {token}'. For connected app authentication, use client_id and client_secret. Users must have appropriate gateway management permissions.
-tags:
-  - name: API Management
-    description: Flex Gateway Manager API endpoints
+  schemas:
+    GatewayList:
+      required:
+        - content
+        - pageNumber
+        - pageSize
+        - totalElements
+      type: object
+      properties:
+        content:
+          type: array
+          items:
+            $ref: './schemas/gateway.yaml#/components/schemas/ManagedGatewayOverview'
+        totalElements:
+          type: integer
+          examples:
+            - 21
+        pageNumber:
+          type: integer
+          examples:
+            - 0
+        pageSize:
+          type: integer
+          examples:
+            - 20
+    CreateGateway:
+      required:
+        - name
+        - runtimeVersion
+        - releaseChannel
+        - size
+        - targetId
+      type: object
+      properties:
+        name:
+          type: string
+          examples:
+            - example-gateway
+          pattern: ^(?![-0-9])([a-z0-9-]{2,41}[a-z0-9])?$
+        targetId:
+          type: string
+          format: uuid
+          examples:
+            - f1c1b011-888e-4994-9999-e44e4a44c444
+        releaseChannel:
+          $ref: './schemas/gateway.yaml#/components/schemas/ManagedGatewayReleaseChannel'
+        runtimeVersion:
+          type: string
+          examples:
+            - 1.9.3
+        size:
+          $ref: './schemas/gateway.yaml#/components/schemas/ManagedGatewaySize'
+        configuration:
+          $ref: './schemas/gateway.yaml#/components/schemas/ManagedGatewayConfiguration'
+    CreateRuntimeConfig:
+      type: object
+      required:
+        - configuration
+      properties:
+        configuration:
+          $ref: './schemas/gateway.yaml#/components/schemas/RuntimeConfiguration'
