@@ -1,0 +1,34 @@
+= MuleSoft Automation Credits 1.0
+
+You can use MuleSoft Automation Credits 1.0 with MuleSoft Composer, MuleSoft Intelligent Document Processing (IDP), MuleSoft Robotic Process Automation (RPA), or a combination of these products. Consumption aggregates over the term of your subscription (not per session) and is then converted to credits as shown below. The credits are deducted from your assigned quota for the subscription period.
+
+If you have MuleSoft Automation Credits 1.0, you can view usage visibility through Anypoint Usage Reports. Sequoia handles monthly statements and overage billing.
+
+[%header%autowidth.spread]
+|===
+| Usage type | Conversion rate (Units per Credit)
+
+| RPA Bot Minutes
+| 2
+
+| RPA API Calls
+| 100
+
+| Composer Tasks
+| 50
+
+| IDP Document Pages
+| 5
+|===
+
+MuleSoft adds all the RPA execution times in seconds for the period and converts the total into minutes with two decimal precision. MuleSoft reports Automation Credits with two-decimal precision.
+
+For example, if you run 5 processes that take 30 seconds each to execute: MuleSoft converts the total execution time (150 seconds) to minutes, rounds up the last two digits: 150/60 = 2.5 minutes, and then converts the minutes to Automation Credits and rounds up the last two digits: 2.5/2 = 1.25 credits.
+
+For detailed definitions and more information, see the https://www.mulesoft.com/prod-subscription-plans[].
+
+== See Also
+
+* xref:automation-credits-usage-and-rates.adoc[]
+* https://www.mulesoft.com/prod-subscription-plans[MuleSoft Product Subscription Plans^]
+* xref:usage-reports.adoc[]
