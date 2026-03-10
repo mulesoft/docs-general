@@ -32,6 +32,7 @@ Use Anypoint Exchange to discover agentic assets for reuse across your enterpris
 
 - https://www.mulesoft.com/platform/exchange[Discover Assets in Anypoint Exchange]
 - xref:exchange::asset-types.adoc[Learn About Asset Types Published in Exchange]
+- xref:exchange::discovering-and-importing-external-agents.adoc[Discover and Catalog External Agents With Scanners]
 - xref:exchange::importing-agentforce-agents.adoc[Import Agentforce Agents]
 - xref:exchange::to-create-an-asset.adoc#create-agent[Create and Publish an Agent in Exchange]
 - xref:exchange::to-create-an-asset.adoc#create-mcp[Create and Publish an MCP Server in Exchange]
