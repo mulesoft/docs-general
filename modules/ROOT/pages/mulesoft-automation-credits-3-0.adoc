@@ -27,10 +27,8 @@ Rates and usage types for Automation Credits 3.0 varies by subscription. Refer t
 
 To learn more about how Flex Credits are consumed, and when other types of credits are consumed with generative AI features, see https://help.salesforce.com/s/articleView?id=ai.generative_ai_usage.htm&type=5[Agentforce and Generative AI Usage and Billing^] in Salesforce Help.
 
-For Automation Credits 3.0, see https://help.salesforce.com/s/articleView?id=xcloud.wallet_enabled_products_rate_cards.htm&type=5[Digital Wallet–Enabled Consumption-Based Products^] in Salesforce Help.
-
 == See Also
 
-* xref:automation-credits-usage-and-rates.adoc[MuleSoft Automation Credits Usage and Rates]
-* https://help.salesforce.com/s/articleView?id=xcloud.wallet_enabled_products_rate_cards.htm&type=5[^] (Salesforce Help)
-* https://help.salesforce.com/s/articleView?id=ai.generative_ai_usage.htm&type=5[^] (Salesforce Help)
+* xref:automation-credits-usage-and-rates.adoc[]
+* xref:usage-reports.adoc[]
+* https://help.salesforce.com/s/articleView?id=xcloud.wallet_enabled_products_rate_cards.htm&type=5[Digital Wallet–Enabled Consumption-Based Products^] (Salesforce Help)
