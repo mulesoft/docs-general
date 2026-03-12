@@ -101,7 +101,7 @@ Usage calculated using a multiplier in which each successful connector action co
 Usage calculated based on allowance in which 1 credit entitles you to 50 tasks. A task is any successful action performed by a connector.
 |===
 
-*Note*: Quoting rules generally prevent you from holding both MuleSoft Automation credits 2.0 and 3.0 simultaneously. However, if you have both MuleSoft Automation credits 2.0 and 3.0, the system sends all usage data to the Digital Wallet to provide a single, centralized view of consumption.
+*NOTE*: Quoting rules generally prevent you from holding both MuleSoft Automation credits 2.0 and 3.0 simultaneously. However, if you have both MuleSoft Automation credits 2.0 and 3.0, the system sends all usage data to the Digital Wallet to provide a single, centralized view of consumption.
 
 == Viewing Usage and Billing
 
