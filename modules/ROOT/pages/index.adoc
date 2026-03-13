@@ -14,6 +14,46 @@ This documentation is for reference purposes only and won't be updated.
 | Release Notes Archives |
   xref:release-notes::index.adoc[Release Notes]
 
+| Accelerators |
+
+| Cloud Information Model Doc Archives | 
+  xref:1.3@accelerators-cim::index.adoc[v1.3 Archive] 
+
+| Consumer Goods Doc Archives |
+  xref:5.2@consumer-goods::index.adoc[v5.2 Archive] +
+  xref:5.1@consumer-goods::index.adoc[v5.1 Archive] +
+  xref:5.0@consumer-goods::index.adoc[v5.0 Archive] +
+  xref:4.0@consumer-goods::index.adoc[v4.0 Archive] +
+  xref:3.0@consumer-goods::index.adoc[v3.0 Archive] 
+
+| Financial Services Doc Archives |
+  xref:1.11@financial-services::index.adoc[v1.11 Archive] +
+  xref:1.10@financial-services::index.adoc[v1.10 Archive] +
+  xref:1.9@financial-services::index.adoc[v1.9 Archive] +
+  xref:1.8@financial-services::index.adoc[v1.8 Archive] 
+
+| Healthcare Doc Archives |
+  xref:2.23@healthcare::index.adoc[v2.23 Archive] +
+  xref:2.22@healthcare::index.adoc[v2.22 Archive] +
+  xref:2.21@healthcare::index.adoc[v2.21 Archive] +
+  xref:2.20@healthcare::index.adoc[v2.20 Archive] +
+  xref:2.19@healthcare::index.adoc[v2.19 Archive] +
+  xref:2.18@healthcare::index.adoc[v2.18 Archive] 
+
+| Life Sciences Doc Archives |
+  xref:1.1@life-sciences::index.adoc[v1.1 Archive] 
+
+| Manufacturing Doc Archives |
+  xref:1.3@manufacturing::index.adoc[v1.3 Archive] 
+
+| Retail Doc Archives |
+  xref:3.1@retail::index.adoc[v3.1 Archive] +
+  xref:3.0@retail::index.adoc[v3.0 Archive] +
+  xref:2.7@retail::index.adoc[v2.7 Archive] 
+
+| Salesforce OMS Doc Archives |
+  xref:1.0@salesforce-oms::index.adoc[v1.0 Archive] 
+  
 | Anypoint Platform Command-Line Interface Doc Archives |
   xref:2.x@anypoint-cli::index.adoc[v2.x Archive]
 
@@ -104,6 +144,8 @@ This documentation is for reference purposes only and won't be updated.
   xref:3.4@mule-runtime::index.adoc[v3.4 Archive] +
   xref:3.3@mule-runtime::index.adoc[v3.3 Archive] +
   xref:3.2@mule-runtime::index.adoc[v3.2 Archive]
+
+
 
 | MUnit Doc Archives |
   xref:3.5@munit::index.adoc[v3.5 Archive] +
