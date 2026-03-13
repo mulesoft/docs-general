@@ -9,30 +9,29 @@ This site provides archived MuleSoft documentation for products and product vers
 
 This documentation is for reference purposes only and won't be updated.
 
+[cols="2s,2,2",width="100%"]
 |===
 
-| Release Notes Archives |
+| Release Notes 1+| |
   xref:release-notes::index.adoc[Release Notes]
 
-| Accelerators |
-
-| Cloud Information Model Doc Archives | 
+.8+| Accelerators s| Cloud Information Model |
   xref:1.3@accelerators-cim::index.adoc[v1.3 Archive] 
 
-| Consumer Goods Doc Archives |
+s| Consumer Goods |
   xref:5.2@consumer-goods::index.adoc[v5.2 Archive] +
   xref:5.1@consumer-goods::index.adoc[v5.1 Archive] +
   xref:5.0@consumer-goods::index.adoc[v5.0 Archive] +
   xref:4.0@consumer-goods::index.adoc[v4.0 Archive] +
   xref:3.0@consumer-goods::index.adoc[v3.0 Archive] 
 
-| Financial Services Doc Archives |
+s| Financial Services |
   xref:1.11@financial-services::index.adoc[v1.11 Archive] +
   xref:1.10@financial-services::index.adoc[v1.10 Archive] +
   xref:1.9@financial-services::index.adoc[v1.9 Archive] +
   xref:1.8@financial-services::index.adoc[v1.8 Archive] 
 
-| Healthcare Doc Archives |
+s| Healthcare |
   xref:2.23@healthcare::index.adoc[v2.23 Archive] +
   xref:2.22@healthcare::index.adoc[v2.22 Archive] +
   xref:2.21@healthcare::index.adoc[v2.21 Archive] +
@@ -40,28 +39,28 @@ This documentation is for reference purposes only and won't be updated.
   xref:2.19@healthcare::index.adoc[v2.19 Archive] +
   xref:2.18@healthcare::index.adoc[v2.18 Archive] 
 
-| Life Sciences Doc Archives |
+s| Life Sciences  |
   xref:1.1@life-sciences::index.adoc[v1.1 Archive] 
 
-| Manufacturing Doc Archives |
+s| Manufacturing  |
   xref:1.3@manufacturing::index.adoc[v1.3 Archive] 
 
-| Retail Doc Archives |
+s| Retail  |
   xref:3.1@retail::index.adoc[v3.1 Archive] +
   xref:3.0@retail::index.adoc[v3.0 Archive] +
   xref:2.7@retail::index.adoc[v2.7 Archive] 
 
-| Salesforce OMS Doc Archives |
+s| Salesforce OMS  |
   xref:1.0@salesforce-oms::index.adoc[v1.0 Archive] 
   
-| Anypoint Platform Command-Line Interface Doc Archives |
+| Anypoint Platform Command-Line Interface 1+| |
   xref:2.x@anypoint-cli::index.adoc[v2.x Archive]
 
-| Anypoint Platform for Pivotal Cloud Foundry Doc Archives |
+| Anypoint Platform for Pivotal Cloud Foundry | |
   xref:1.6@anypoint-platform-pcf::index.adoc[v1.6 Archive] +
   xref:1.5@anypoint-platform-pcf::index.adoc[v1.5 Archive]
 
-| Anypoint Platform Private Cloud Edition Doc Archives |
+| Anypoint Platform Private Cloud Edition | |
   xref:3.1@private-cloud::index.adoc[v3.1 Archive] +
   xref:3.0@private-cloud::index.adoc[v3.0 Archive] +
   xref:2.1@private-cloud::index.adoc[v2.1 Archive] +
@@ -72,13 +71,13 @@ This documentation is for reference purposes only and won't be updated.
   xref:1.1@private-cloud::index.adoc[v1.1 Archive]
 
 
-| APIkit Doc Archives |
+| APIkit | |
   xref:3.x@apikit::index.adoc[v3.x Archive]
 
-| API Manager Doc Archives |
+| API Manager | |
   xref:1.x@api-manager::classic-overview-concept.adoc[v1.x Archive]
 
-| Connector DevKit Doc Archives |
+| Connector DevKit | |
   xref:3.9@connector-devkit::index.adoc[v3.9 Archive] +
   xref:3.8@connector-devkit::index.adoc[v3.8 Archive] +
   xref:3.7@connector-devkit::index.adoc[v3.7 Archive] +
@@ -88,23 +87,23 @@ This documentation is for reference purposes only and won't be updated.
   xref:3.3@connector-devkit::index.adoc[v3.3 Archive] +
   xref:3.2@connector-devkit::index.adoc[v3.2 Archive]
 
-| Connectors Doc Archives |
+| Connectors | |
   xref:connectors::index.adoc[Archive] 
 
-| Data Gateway Doc Archives |
+| Data Gateway | |
   xref:data-gateway::index.adoc[Archive]
 
-| DataWeave Doc Archives |
+| DataWeave | |
   xref:2.2@dataweave::index.adoc[v2.2 Archive] +
   xref:2.1@dataweave::index.adoc[v2.1 Archive] +
   xref:1.2@dataweave::index.adoc[v1.2 Archive] +
   xref:1.1@dataweave::index.adoc[v1.1 Archive] +
   xref:1.0@dataweave::index.adoc[v1.0 Archive]
 
-| Design Center Doc Archives |
+| Design Center | |
   xref:design-center::index.adoc[Flow Designer Archive]
 
-| Flex Gateway Doc Archives |
+| Flex Gateway | |
   xref:1.7@gateway::index.adoc[v1.7 Archive] +
   xref:1.6@gateway::index.adoc[v1.6 Archive] +
   xref:1.5@gateway::index.adoc[v1.5 Archive] +
@@ -114,17 +113,17 @@ This documentation is for reference purposes only and won't be updated.
   xref:1.1@gateway::index.adoc[v1.1 Archive] +
   xref:1.0@gateway::index.adoc[v1.0 Archive]
 
-| Flex Gateway Policy Development Kit (PDK) |
+| Flex Gateway Policy Development Kit (PDK) | |
   xref:1.1@pdk::policies-pdk-overview.adoc[v1.1 Archive] +
   xref:1.0@pdk::policies-pdk-overview.adoc[v1.0 Archive]
 
-| Healthcare Toolkit Doc Archives |
+| Healthcare Toolkit | |
   xref:3.1@healthcare-toolkit::index.adoc[v3.1 Archive] +
   xref:3.0@healthcare-toolkit::index.adoc[v3.0 Archive] +
   xref:2.0@healthcare-toolkit::index.adoc[v2.0 Archive] +
   xref:1.3@healthcare-toolkit::index.adoc[v1.3 Archive]
 
-| Mule Management Console Doc Archives |
+| Mule Management Console ||
   xref:3.8@mule-management-console::index.adoc[v3.8 Archive] +
   xref:3.7@mule-management-console::index.adoc[v3.7 Archive] +
   xref:3.6@mule-management-console::index.adoc[v3.6 Archive] +
@@ -133,7 +132,7 @@ This documentation is for reference purposes only and won't be updated.
   xref:3.3@mule-management-console::index.adoc[v3.3 Archive] +
   xref:3.2@mule-management-console::index.adoc[v3.2 Archive]
 
-| Mule Runtime Doc Archives (Mule User Guide) |
+| Mule Runtime (Mule User Guide) | |
   xref:4.2@mule-runtime::index.adoc[v4.2 Archive] +
   xref:4.1@mule-runtime::index.adoc[v4.1 Archive] +
   xref:3.9@mule-runtime::index.adoc[v3.9 Archive] +
@@ -146,8 +145,7 @@ This documentation is for reference purposes only and won't be updated.
   xref:3.2@mule-runtime::index.adoc[v3.2 Archive]
 
 
-
-| MUnit Doc Archives |
+|  MUnit 1+| |
   xref:3.5@munit::index.adoc[v3.5 Archive] +
   xref:3.4@munit::index.adoc[v3.4 Archive] +
   xref:3.3@munit::index.adoc[v3.3 Archive] +
@@ -162,10 +160,10 @@ This documentation is for reference purposes only and won't be updated.
   xref:1.1@munit::index.adoc[v1.1 Archive] +
   xref:1.0@munit::index.adoc[v1.0 Archive]
 
-| Partner Manager Doc Archives |
+| Partner Manager 1+| |
   xref:1.0@partner-manager::index.adoc[v1.0 Archive]
 
-| RPA Bot Doc Archives |
+.3+| RPA s| RPA Bot |
   xref:1.5@rpa-bot::index.adoc[v1.5 Archive] +
   xref:1.4@rpa-bot::index.adoc[v1.4 Archive] +
   xref:1.3@rpa-bot::index.adoc[v1.3 Archive] +
@@ -173,7 +171,7 @@ This documentation is for reference purposes only and won't be updated.
   xref:1.1@rpa-bot::index.adoc[v1.1 Archive] +
   xref:1.0@rpa-bot::index.adoc[v1.0 Archive] 
 
-| RPA Builder Doc Archives |
+s| RPA Builder |
   xref:6.5@rpa-builder::index.adoc[v6.5 Archive] +
   xref:6.4@rpa-builder::index.adoc[v6.4 Archive] +
   xref:6.3@rpa-builder::index.adoc[v6.3 Archive] +
@@ -181,7 +179,7 @@ This documentation is for reference purposes only and won't be updated.
   xref:6.1@rpa-builder::index.adoc[v6.1 Archive] +
   xref:6.0@rpa-builder::index.adoc[v6.0 Archive] 
 
-| RPA Recorder Doc Archives |
+s| RPA Recorder |
   xref:6.4@rpa-recorder::index.adoc[v6.4 Archive] +
   xref:6.3@rpa-recorder::index.adoc[v6.3 Archive] +
   xref:6.2@rpa-recorder::index.adoc[v6.2 Archive] +
@@ -189,7 +187,7 @@ This documentation is for reference purposes only and won't be updated.
   xref:6.0@rpa-recorder::index.adoc[v6.0 Archive] 
 
 
-| Runtime Fabric Doc Archives |
+| Runtime Fabric 1+| |
   xref:2.4@runtime-fabric::index.adoc[v2.4 Archive] +
   xref:2.3@runtime-fabric::index.adoc[v2.3 Archive] +
   xref:2.2@runtime-fabric::index.adoc[v2.2 Archive] +
@@ -209,15 +207,15 @@ This documentation is for reference purposes only and won't be updated.
   xref:1.2@runtime-fabric::index.adoc[v1.2 Archive] +
   xref:1.0@runtime-fabric::index.adoc[v1.0 Archive]
 
-| Security Doc Archives |
+| Security 1+| |
   xref:anypoint-security::index.adoc[Edge and Tokenization Archive]
 
-| Service Mesh Doc Archives |
+| Service Mesh 1+| |
   xref:1.2@service-mesh::index.adoc[v1.2 Archive] +
   xref:1.1@service-mesh::index.adoc[v1.1 Archive] +
   xref:1.0@service-mesh::index.adoc[v1.0 Archive]
 
-| Studio Doc Archives |
+| Studio 1+| |
   xref:7.19@studio::index.adoc[v7.19 Archive] +
   xref:7.18@studio::index.adoc[v7.18 Archive] +
   xref:7.17@studio::index.adoc[v7.17 Archive] +
@@ -240,7 +238,7 @@ This documentation is for reference purposes only and won't be updated.
   xref:6.5@studio::index.adoc[v6.5 Archive] +
   xref:5.x@studio::index.adoc[v5 Archive]
 
-| Tcat Server Doc Archives |
+| Tcat Server 1+| |
   xref:7.1@tcat-server::index.adoc[v7.1 Archive]
 |===
 
