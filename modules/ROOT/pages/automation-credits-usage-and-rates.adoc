@@ -1,0 +1,139 @@
+= Automation Credits Usage and Rates
+:page-aliases: rpa-home::ms-automation-credits-usage-types.adoc, idp::ms-automation-credits-usage-types.adoc, composer::ms_composer_hyperautomation.adoc
+
+Your MuleSoft Automation subscription plan includes a quota of Automation Credits that depletes as you create and execute automations.
+
+Credit usage rates differ for different subscription plans. See the article that corresponds to your subscription plan in this table:
+
+[%header%autowidth.spread]
+|===
+| Subscription Plan | Conversion Rate Sheet
+
+| Automation Starter +
+Automation Advanced +
+Automation for vCore/Core +
+MuleSoft Integration Starter +
+MuleSoft Integration Advanced +
+MuleSoft Integration Unlimited +
+MuleSoft for Flow Integration - Enterprise Edition +
+MuleSoft for Flow Integration - Performance Edition +
+MuleSoft for Flow Integration - Unlimited Edition
+| xref:mulesoft-automation-credits-3-0.adoc[MuleSoft Automation Credits 3.0]
+
+| Automation Starter +
+Automation Advanced +
+Automation for vCore/Core +
+Additional Automation Credits
+| xref:mulesoft-automation-credits-2-0.adoc[MuleSoft Automation Credits 2.0]
+
+| MuleSoft - Automation +
+MuleSoft - Automation - (Gold, Platinum, Titanium Edition) +
+MuleSoft - Automation for Salesforce +
+MuleSoft - Automation for Salesforce - (Gold, Platinum, Titanium Edition) +
+MuleSoft - Automation - Additional Credits (100) +
+MuleSoft - Automation - Additional Credits (100) - (Gold, Platinum, Titanium)
+| xref:mulesoft-automation-credits-1-0.adoc[MuleSoft Automation Credits 1.0]
+|===
+
+== MuleSoft Automation Credits
+
+A quantity of Automation Credits is included with certain MuleSoft Services, with the specific entitlement indicated on the Usage Details table on the Order Form for such Services. Automation Credits are consumed as you create and execute automations based on the rates in the following table. While MuleSoft Automation Credits 1.0 uses a conversion-based model, MuleSoft Automation Credits 2.0 and 3.0 use multiplier rates. Credit usage rates differ by subscription plan. Refer to the column that corresponds to your credit system.
+
+IMPORTANT: As of February 18, 2026, Flow Orchestration is free for customers in Enterprise and higher editions. For customers on other editions, the https://help.salesforce.com/s/articleView?id=platform.flow_considerations_limit.htm&type=5[General Flow Limits^] apply.
+
+[%header,cols="1,2,2,2"]
+|===
+| Usage Type | MuleSoft Automation Credits 3.0 | MuleSoft Automation Credits 2.0 | MuleSoft Automation Credits 1.0
+
+| *Visibility and Reporting*
+| *Digital Wallet:* Automation Credits 3.0 provides an instant visibility of credit consumption.
+| *Anypoint Reports (Monthly):* Usage aggregated and reported via Sequoia on a monthly cycle.
+| *Anypoint Reports (Monthly):* Legacy reporting via Sequoia based on monthly usage aggregates.
+
+| *Flow Orchestration Runs*
+| *As of February 18, 2026, for Enterprise and Higher Editions*: Free +
+For customers on other editions, the https://help.salesforce.com/s/articleView?id=platform.flow_considerations_limit.htm&type=5[General Flow Limits^] apply.
+| 100 automation credits per run. +
+*As of February 18, 2026, for Enterprise and Higher Editions*: Free +
+For customers on other editions, the https://help.salesforce.com/s/articleView?id=platform.flow_considerations_limit.htm&type=5[General Flow Limits^] apply.
+| Not Available
+
+| *IDP Document Pages*
+| 30 credits per page. +
+Usage calculated using a multiplier of each page. A page is defined as a single physical or digital page within a processed document. This enables you to track real-time visibility into document volumes processed via the Salesforce-integrated dashboard.
+| 30 credits per page. +
+Usage calculated using a multiplier of each processed page. This usage includes AI-driven classification and data extraction.
+| 5 pages per credit. +
+Usage calculated based on allowance in which 1 credit entitles you to 5 pages.
+
+| *Integration Tasks*
+| 2 credits per task. +
+Usage calculated based on the execution of discrete tasks. This enables an immediate monitoring of the task consumption.
+| 2 credits per successful task. +
+Usage calculated based on the execution of discrete tasks within a MuleSoft integration flow.
+| Not Available
+
+| *MuleSoft for Flow: IDP*
+| 30 credits per page. +
+This usage type tracks IDP pages processed specifically when triggered from within a Salesforce Flow via the native MuleSoft integration.
+| Not Available
+| Not Available
+
+| *RPA Bot Minutes*
+| Not Available
+| 80 credits per RPA Bot minute. +
+Usage calculated by multiplying the raw execution minutes by a constant multiplier.
+| 2 RPA Bot minutes per credit. +
+Usage calculated by summing the total execution time (in seconds) of all RPA processes over the subscription term. This total is converted to minutes and then to credits. MuleSoft adds all the RPA execution times in seconds for the period and converts the total into minutes with two decimal precision.
+
+| *RPA API Calls*
+| Not Available
+| 2 credits per successful call to the RPA Manager or RPA Bot API. +
+Usage calculated per individual request.
+| 100 Bot API calls per credit. +
+Usage calculated by summing the total calls made to the RPA Manager or RPA Bot API to trigger processes or retrieve status.
+
+| *Composer Tasks*
+| Not Available
+| 2 credits per task. +
+Usage calculated using a multiplier in which each successful connector action consumes 2 credits.
+| 50 tasks per credit. +
+Usage calculated based on allowance in which 1 credit entitles you to 50 tasks. A task is any successful action performed by a connector.
+|===
+
+NOTE: Quoting rules generally prevent you from holding both MuleSoft Automation credits 2.0 and 3.0 simultaneously. However, if you have both MuleSoft Automation credits 2.0 and 3.0, the system sends all usage data to the Digital Wallet to provide a single, centralized view of consumption.
+
+== Viewing Usage and Billing
+
+The method for viewing usage and handling billing varies based on the type of Automation purchase.
+
+[%header%autowidth.spread]
+|===
+| Usage Type | Usage Visibility | Billing (monthly statements and overage)
+
+| MuleSoft Automation Credits 3.0
+| Digital Wallet (and optionally Anypoint Usage Reports if you have an Anypoint Platform org)
+| Digital Wallet
+
+| MuleSoft Automation Credits 2.0
+| Anypoint Usage Reports
+| Sequoia
+
+| MuleSoft Automation Credits 1.0
+| Anypoint Usage Reports
+| Sequoia
+|===
+
+== Monthly Account Summary Emails
+
+Salesforce sends usage-based billing reports to every MuleSoft Composer, Intelligent Document Processing (IDP), and Robotic Process Automation (RPA) customer on the 10th day of each month. By default, Salesforce sends these emails to the account's billing contact.
+
+For more information about the reports, the list of recipients, and other details, see the https://help.salesforce.com/s/articleView?id=000390885&type=1[Monthly Account Summary Email FAQ^].
+
+== See Also
+
+* xref:mulesoft-automation-credits-3-0.adoc[]
+* xref:mulesoft-automation-credits-2-0.adoc[]
+* xref:mulesoft-automation-credits-1-0.adoc[]
+* https://help.salesforce.com/s/articleView?id=xcloud.wallet_enabled_products_rate_cards.htm&type=5[Digital Wallet–Enabled Consumption-Based Products^] (Salesforce Help)
+
