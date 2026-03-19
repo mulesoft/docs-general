@@ -37,7 +37,7 @@ Use Anypoint Exchange to discover agentic assets for reuse across your enterpris
 - xref:exchange::to-create-an-asset.adoc#create-agent[Create and Publish an Agent in Exchange]
 - xref:exchange::to-create-an-asset.adoc#create-mcp[Create and Publish an MCP Server in Exchange]
 - xref:exchange::to-create-an-asset.adoc#create-llm[Create and Publish an LLM in Exchange]
-- xref:exchange::to-find-info.adoc[Search and Filter Assets]
+- xref:exchange::to-find-info.adoc[Search and Filter Assets in Exchange]
 
 | image::lm_build_1.png[]
 [.lm-bold]##Build and Orchestrate Agent Networks##
@@ -58,8 +58,7 @@ Build your agent network and coordinate brokers and agents using a declarative Y
 
 Apply policies to your agents, brokers, LLMs, and MCP servers to help manage security and control traffic.
 
-- xref:gateway::index.adoc[Secure Your Agent Network with Flex Gateway]
-- xref:api-manager::create-instance-task-agent-tool.adoc[Add a Flex Gateway Agent or Tool Instance]
+- xref:api-manager::create-instance-task-agent-tool.adoc[Add a Flex Gateway Agent or Tool Instance in API Manager]
 - xref:gateway::flex-gateway-managed-ingress-egress.adoc[Deploy Agent Fabric Ingress and Egress Managed Flex Gateways]
 - xref:gateway::flex-gateway-secure-apis.adoc[Secure Flex Gateway Instances with Policies]
 
@@ -69,8 +68,8 @@ Apply policies to your agents, brokers, LLMs, and MCP servers to help manage sec
 Visualize your agent network and monitor performance and behavior.
 
 - xref:agent-visualizer::index.adoc[Visualize Your Agent Network in Agent Visualizer]
-- xref:monitoring::anypoint-insights-agentic.adoc[View Metrics in Anypoint Monitoring]
-- xref:monitoring::logs-us-eu.adoc#search-agentic[View Logs in Anypoint Monitoring]
+- xref:monitoring::anypoint-insights-agentic.adoc[View Agent Metrics in Anypoint Monitoring]
+- xref:monitoring::logs-us-eu.adoc#search-agentic[View Logs for Agentic Assets in Anypoint Monitoring]
 - xref:monitoring::traces.adoc[View Traces in Anypoint Monitoring]
 
 
