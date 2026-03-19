@@ -1,0 +1,36 @@
+= MuleSoft Automation Credits 2.0
+:page-aliases: rpa-home::ms-automation-credits-2.adoc, idp::ms-automation-credits-2.adoc, composer::ms_composer_automation_credits_2.adoc
+
+Use MuleSoft Automation Credits 2.0 with Composer, IDP, RPA, Salesforce Flow Orchestration, MuleSoft for Flow: Integration, or a combination of these products, as more fully described in the applicable https://www.salesforce.com/company/legal/mulesoft-subscription-plan/[Subscription Plan] or Features and Entitlement Document.
+
+If you have MuleSoft Automation Credits 2.0, view usage visibility through Anypoint Usage Reports. Sequoia handles monthly statements and overage billing.
+
+[%header%autowidth.spread]
+|===
+| Usage type | Conversion rate (Credits per unit)
+
+| RPA Bot Minutes
+| 80
+
+| RPA API Calls
+| 2
+
+| Composer Tasks
+| 2
+
+| Flow Orchestration Runs
+| 100
+
+| IDP Document Pages
+| 30
+
+| Integration Tasks
+| 2
+|===
+
+To learn more about how Flex Credits are consumed, and when other types of credits are consumed with generative AI features, see https://help.salesforce.com/s/articleView?id=ai.generative_ai_usage.htm&type=5[Agentforce and Generative AI Usage and Billing^] in Salesforce Help.
+
+== See Also
+
+* xref:automation-credits-usage-and-rates.adoc[]
+* xref:usage-reports.adoc[]
