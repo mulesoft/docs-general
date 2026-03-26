@@ -48,7 +48,7 @@ a|If an API is governed, all versions of that API are considered one governed AP
 |These tokens are the sum of all response tokens a specific LLM Proxy receives from a specific LLM Model during a month.
 
 | Total tokens: Total number of tokens used in interactions between an LLM Proxy and a specific LLM Model
-| Some LLM Providers, such as Gemini, use thinking tokens. Total tokens include thinking tokens.
+| Some LLM Providers, such as Gemini, use thinking tokens. Total tokens are the sum of prompt tokens, completion tokens, and thinking tokens if applicable.
 
 |Composer	
 |Composer task: Any action executed on a Composer connector, including but not limited to read, create, update, and delete 
