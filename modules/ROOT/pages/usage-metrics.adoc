@@ -148,6 +148,34 @@ include::partial$flex-gateway-metrics.adoc[tag=table]
 
 include::partial$flex-gateway-metrics.adoc[tag=cards]
 
+== LLM Proxy Usage
+
+LLM Proxy usage reports show this information in tables and cards:
+
+LLM Proxy:: 
+Name of the LLM Proxy
+
+Business Group:: 
+Business group where the LLM Proxy is deployed
+
+Client app:: 
+The client application or integration that sent requests to the LLM Proxy
+
+Provider:: 
+The external LLM provider used by the proxy
+
+Model:: 
+The specific LLM models used by the proxy
+
+Prompt tokens:: 
+The sum of tokens in prompts the LLM Proxy sends to the model in the given time period
+
+Completion tokens:: 
+The sum of tokens in responses the LLM Proxy receives from the model in the given time period
+
+Total tokens:: 
+Total tokens used in interactions between the LLM Proxy and the model in the given time period. This includes prompt tokens, completion tokens, and any provider-specific thinking tokens when applicable.
+
 == Intelligent Document Processing (IDP)
 
 IDP usage reports show this information in tables and cards:
