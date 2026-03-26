@@ -40,6 +40,16 @@ a|If an API is governed, all versions of that API are considered one governed AP
 |Flex Gateway API call: Any access request received by Anypoint Flex Gateway regardless of whether the response to the request is successful 
 |Flex Gateway requests are aggregated as a total of all requests during a month.
 
+.3+|LLM Proxy	
+| Prompt tokens: Number of tokens an LLM Proxy in the prompts an LLM Proxy sends to a specific LLM Model
+| These tokens are the sum of all prompt tokens a specific LLM Proxy sends to a specific LLM Model during a month. A prompt sent to an LLM Proxy are considered a Flex Gateway API call and count towards the Flex Gateway API call metric.
+
+| Completion tokens: Number of tokens in the responses that an LLM Proxy receives from a specific LLM Model
+|These tokens are the sum of all response tokens a specific LLM Proxy receives from a specific LLM Model during a month.
+
+| Total tokens: Total number of tokens used in interactions between an LLM Proxy and a specific LLM Model
+| Some LLM Providers, such as Gemini, use thinking tokens. Total tokens include thinking tokens.
+
 |Composer	
 |Composer task: Any action executed on a Composer connector, including but not limited to read, create, update, and delete 
 |Composer tasks are aggregated as a total of all actions during a month.
