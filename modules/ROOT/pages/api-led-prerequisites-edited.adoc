@@ -1,0 +1,100 @@
+= Step 1. Prerequisites for Building an API-Led Solution
+
+
+Before you begin building your API-led solution, verify that you have the required tools and access:
+
+* Username and password for your Anypoint Platform organization. If you don't have Anypoint Platform yet, create a Trial organization on Anypoint Platform.
++
+link:https://anypoint.mulesoft.com/login/#/signup["Create a Trial organization^", role="button-primary"]
+
+* Download Anypoint Code Builder. 
++
+link:https://www.mulesoft.com/lp/dl/anypoint-mule-studio["Download Anypoint Studio^", role="button-primary"]
+
+* Required Permissions:
+** *Anypoint Code Builder Developer*
+** *Mule Developer Generative AI User*
++
+Enables MuleSoft Vibes features
+** *Design Center Developer*: Allows API specification creation
+** *Exchange Contributor*: Enables publishing assets to Exchange
+** *CloudHub 2.0 Deploy*: Allows deployment to CloudHub 2.0
+
+* *Einstein Enabled*: MuleSoft Vibes requires Einstein to be enabled in Access Management. See xref:access-management::enabling-einstein.adoc[Enabling Einstein for Anypoint Platform].
+
+== Required Tools
+
+Install these tools for testing APIs:
+
+* *REST Client*: Download and install a REST client such as:
+** link:https://www.postman.com/downloads/["Postman^", role="button-primary"]
+** link:https://github.com/advanced-rest-client/arc-electron/releases["Advanced REST Client^", role="button-primary"]
++
+This tutorial uses Postman for examples, but any REST client works.
+
+== Recommended Knowledge
+
+While this tutorial guides you through each step, familiarity with these concepts helps:
+
+* *REST APIs*: Understanding HTTP methods (GET, POST, PUT, DELETE), status codes, and JSON
+* *API Specifications*: Basic knowledge of OpenAPI Specification (OAS) or RAML
+* *Integration Concepts*: General understanding of how systems communicate
+
+You don't need prior experience with MuleSoft tools - this tutorial teaches you as you go.
+
+== CloudHub 2.0 Setup
+
+For CloudHub 2.0 deployments, you need:
+
+* *Shared Space*: A CloudHub 2.0 Shared Space in your organization. Trial organizations include a default Shared Space.
++
+If you need to create a Shared Space, see xref:cloudhub-2::ch2-shared-space-about.adoc[About Shared Spaces].
+
+* *Environment*: At least one environment (such as Sandbox or Development) configured for CloudHub 2.0 deployments.
+
+== Tutorial Scenario: Order Status System
+
+In this tutorial, you'll build three APIs that work together to provide order status information to customers:
+
+*System Layer: Order Database API*
+
+* Provides direct access to the orders database
+* Returns order details, shipping information, and status
+* Used by internal applications and Process APIs
+
+*Process Layer: Order Processing API*
+
+* Validates order IDs and checks permissions
+* Enriches order data with calculated fields (estimated delivery, status descriptions)
+* Aggregates data from multiple System APIs
+
+*Experience Layer: Customer Order Status API*
+
+* Optimized for mobile and web applications
+* Returns only customer-relevant information
+* Provides friendly error messages and status descriptions
+
+This three-layer architecture demonstrates how API-led connectivity:
+
+* Enables reuse (multiple apps consume the same Process API)
+* Supports change (modify business logic without changing Experience APIs)
+* Accelerates development (new channels can quickly build on existing APIs)
+
+== Helpful Hints
+
+* *Use Two Browser Windows*: Keep one window open for reading instructions and another for working in Anypoint Code Builder.
+
+* *Enable Auto-Save*: In Anypoint Code Builder, enable auto-save to avoid losing work (File > Auto Save).
+
+* *Bookmark Key Resources*: Keep these pages handy during the tutorial:
+** Anypoint Platform: https://anypoint.mulesoft.com
+** Runtime Manager: https://anypoint.mulesoft.com/cloudhub
+** API Manager: https://anypoint.mulesoft.com/apimanager
+
+* *Take Your Time*: This tutorial takes 60-90 minutes to complete. You can pause and resume at any time.
+
+== What's Next
+
+With your environment ready, you'll use MuleSoft Vibes to design your first API specification using natural language prompts.
+
+xref:api-led-design.adoc[Next: Phase 1 - Design with AI]

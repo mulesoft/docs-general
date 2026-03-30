@@ -1,0 +1,294 @@
+= Phase 1: Design with AI (MuleSoft Vibes)
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+In this phase, you'll use MuleSoft Vibes, an AI-powered assistant integrated into Anypoint Code Builder, to generate API specifications from natural language descriptions. This approach dramatically accelerates API design by eliminating manual specification writing.
+
+== Understanding AI-Powered API Design
+
+Traditional API design requires manually writing specification files in RAML or OpenAPI format. This process is time-consuming and error-prone. MuleSoft Vibes transforms this by:
+
+* Generating complete API specifications from natural language prompts
+* Validating specifications automatically
+* Providing contextual suggestions and best practices
+* Enabling rapid iteration through conversational refinement
+
+You describe what your API should do, and Vibes generates a production-ready specification.
+
+== Access Anypoint Code Builder
+
+. Log in to Anypoint Platform:
++
+link:https://anypoint.mulesoft.com/login["Take me to Anypoint Platform^", role="button-primary"]
+
+. From the Anypoint Platform home page, click *Code Builder* in the Development section.
++
+Code Builder opens in a new browser tab with your authenticated session.
++
+image::acb-landing-page.png[Anypoint Code Builder landing page]
+
+== Design the Experience Layer API with AI
+
+Start by designing the Customer Order Status API, which provides the customer-facing interface for checking orders.
+
+=== Step 1.1: Open MuleSoft Vibes
+
+. In Anypoint Code Builder, locate the MuleSoft Vibes icon in the activity bar on the left side.
++
+image::vibes-icon-activitybar.png[MuleSoft Vibes icon in activity bar]
+
+. Click the icon to open the Vibes panel.
++
+The Vibes chat interface appears, ready to accept your natural language prompts.
+
+=== Step 1.2: Generate the API Specification
+
+. In the Vibes panel, enter the following prompt:
++
+[source,text]
+----
+Create an OAS 3.0 API specification named "customer-order-status-api" for checking customer order status.
+
+The API should have:
+- Base path: /api/v1
+- A GET endpoint at /orders/{orderId} that returns:
+  - orderId (string)
+  - status (string enum: pending, processing, shipped, delivered, cancelled)
+  - orderDate (date-time)
+  - estimatedDelivery (date-time, nullable)
+  - items (array of objects with productName and quantity)
+  - totalAmount (number)
+- Response codes: 200 (success with order details), 404 (order not found), 400 (invalid order ID)
+- Add appropriate descriptions for all fields
+----
+
+. Click *Send* or press Enter to submit the prompt.
++
+MuleSoft Vibes processes your request and generates the API specification. This may take 10-15 seconds.
+
+. Review the generated specification in the Vibes response.
++
+image::vibes-generated-spec-preview.png[Generated specification preview in Vibes panel]
+
+=== Step 1.3: Save the Specification as a Project
+
+. In the Vibes response, click *Create Project* to save the specification.
++
+Alternatively, if auto-approve is enabled in Vibes settings, the project is created automatically.
+
+. When prompted, provide the project location:
++
+* *Project Location*: Select your home directory or create a dedicated folder for your tutorial projects
+
+. Anypoint Code Builder creates the project with:
++
+* The API specification file: `customer-order-status-api.yaml`
+* Project configuration files
+* API project properties
+
+. In the Explorer panel, expand the project to view the generated specification file.
+
+. Click `customer-order-status-api.yaml` to open and review the specification.
++
+image::generated-spec-in-editor.png[Generated specification in the editor]
+
+=== Step 1.4: Refine the Specification with AI
+
+You can refine the specification through conversation with Vibes:
+
+. In the Vibes panel, enter a refinement request:
++
+[source,text]
+----
+Add a tracking object to the response with:
+- trackingNumber (string)
+- carrier (string)
+- trackingUrl (string, URL format)
+
+Only include tracking information when status is "shipped" or "delivered"
+----
+
+. Vibes updates the specification with your requested changes.
+
+. Review the updated specification in the editor.
+
+== Design the Process Layer API
+
+Next, create the Order Processing API that the Customer Order Status API will consume.
+
+=== Step 1.5: Generate the Process API Specification
+
+. In the Vibes panel, enter this prompt:
++
+[source,text]
+----
+Create a new OAS 3.0 API specification named "order-processing-api" for internal order processing.
+
+The API should have:
+- Base path: /api/v1
+- A GET endpoint at /orders/{orderId} that returns:
+  - orderId (string)
+  - customerId (string)
+  - status (string)
+  - orderDate (date-time)
+  - lastUpdated (date-time)
+  - items (array with productId, productName, quantity, unitPrice, subtotal)
+  - shipping (object with address, method, cost, trackingNumber, carrier)
+  - totalAmount (number)
+  - taxAmount (number)
+  - shippingAmount (number)
+- A POST endpoint at /orders/{orderId}/status for updating order status with:
+  - Request body: newStatus (string) and notes (string, optional)
+  - Response: updated order object
+- Response codes: 200, 400, 404, 500
+----
+
+. After Vibes generates the specification, click *Create Project* and save it to your projects folder.
+
+== Design the System Layer API
+
+Finally, create the Order Database API that directly accesses the database.
+
+=== Step 1.6: Generate the System API Specification
+
+. In the Vibes panel, enter this prompt:
++
+[source,text]
+----
+Create an OAS 3.0 API specification named "order-database-api" for direct database access.
+
+The API should have:
+- Base path: /api/v1
+- A GET endpoint at /orders/{orderId} that returns the raw database record:
+  - order_id (string)
+  - customer_id (string)
+  - status_code (string)
+  - created_at (date-time)
+  - updated_at (date-time)
+  - order_data (object, flexible schema for JSON column)
+- A PUT endpoint at /orders/{orderId} for updating order records:
+  - Request body: complete order record
+  - Response: updated order record
+- Response codes: 200, 400, 404, 500
+- Add a security scheme for API key authentication (header: X-API-Key)
+----
+
+. Save the generated specification as a project.
+
+== Test the Specifications with Mocking Service
+
+Anypoint Code Builder includes a built-in mocking service that creates functioning endpoints from your specifications.
+
+=== Step 1.7: Enable the Mocking Service
+
+. Open `customer-order-status-api.yaml` in the editor.
+
+. In the editor toolbar, click the *Enable Mocking Service* toggle.
++
+image::enable-mocking-service.png[Enable mocking service toggle]
++
+The mocking service starts and displays a temporary URL.
+
+. Copy the mocking service URL (it looks like: `https://mocksvc.mulesoft.com/mocks/...`).
+
+=== Step 1.8: Test with the API Console
+
+. In the editor, click the *Open API Console* button.
++
+The API Console opens in a new panel, displaying your API's endpoints.
++
+image::api-console-endpoints.png[API Console showing endpoints]
+
+. Expand the *GET /orders/{orderId}* endpoint.
+
+. Click *Try it* to open the request form.
+
+. Enter a sample order ID (e.g., `ORD-12345`) and click *Send*.
++
+The mocking service returns example data based on your specification.
++
+image::mocking-service-response.png[Mocking service response in API Console]
+
+. Review the response to verify it matches your specification.
+
+=== Step 1.9: Test with an External REST Client
+
+. Open Postman (or your preferred REST client).
+
+. Create a new GET request to the mocking service URL:
++
+[source,text]
+----
+GET https://mocksvc.mulesoft.com/mocks/YOUR-MOCK-ID/api/v1/orders/ORD-12345
+----
+
+. Send the request and verify the response.
++
+The mocking service returns example data, allowing you to test your API design before implementation.
+
+== Publish Specifications to Exchange
+
+Publishing your specifications to Exchange makes them discoverable by your team and available for implementation.
+
+=== Step 1.10: Publish to Exchange
+
+. In the Explorer panel, right-click `customer-order-status-api.yaml` and select *Publish to Exchange*.
+
+. In the publish dialog, configure:
++
+* *Business Group*: Select your organization or business group
+* *Asset Version*: Accept the default (1.0.0)
+* *Asset Type*: REST API
+
+. Click *Publish to Exchange*.
++
+Anypoint Code Builder validates and publishes your specification.
+
+. After publication completes, click the link to view your asset in Exchange.
+
+. Repeat this process for the `order-processing-api.yaml` and `order-database-api.yaml` specifications.
+
+== Review Your API Design
+
+You now have three API specifications that form a complete API-led architecture:
+
+*Customer Order Status API (Experience Layer)*
+
+* Optimized for customer-facing applications
+* Includes only customer-relevant fields
+* Provides friendly status descriptions and tracking information
+
+*Order Processing API (Process Layer)*
+
+* Implements business logic and validation
+* Enriches order data with calculated fields
+* Serves as the integration point for Experience APIs
+
+*Order Database API (System Layer)*
+
+* Provides direct database access
+* Uses raw database field names and structures
+* Secured with API key authentication
+* Consumed only by Process APIs
+
+This layered approach enables:
+
+* *Reusability*: Multiple applications can consume the same Process API
+* *Flexibility*: Change implementations without affecting consumers
+* *Maintainability*: Each layer has a clear purpose and ownership
+
+== What's Next
+
+With your API specifications designed, tested, and published, you'll scaffold implementation projects and add business logic to make the APIs functional.
+
+xref:api-led-develop.adoc[Next: Phase 2 - Develop the APIs]
+
+== Developer Deep Dive
+
+Explore advanced API design capabilities:
+
+* xref:code-builder::api-ai-create-spec.adoc[MuleSoft Vibes Features]
+* xref:code-builder::des-govern-api.adoc[API Governance and Validation]
+* xref:code-builder::des-create-api-fragments.adoc[Creating Reusable API Fragments]
+* xref:design-center::design-create-publish-api-specs.adoc[Advanced API Design Patterns]

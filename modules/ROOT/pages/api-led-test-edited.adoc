@@ -1,0 +1,371 @@
+= Phase 3: Test Locally
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+In this phase, you'll comprehensively test your API implementation using Anypoint Code Builder's integrated testing tools: the API Console, debugging capabilities, and external REST clients.
+
+== Understanding Local Testing
+
+Before deploying to production, thorough local testing ensures your APIs work correctly. Anypoint Code Builder provides several testing approaches:
+
+* *API Console*: Interactive testing directly within the IDE
+* *Debug Mode*: Step-through debugging with breakpoints
+* *External REST Clients*: Testing with Postman or similar tools
+* *Automated Tests*: Unit and integration tests with MUnit (optional)
+
+This phase focuses on interactive and debug testing.
+
+== Test the System API with API Console
+
+=== Step 3.1: Launch the System API
+
+. In Anypoint Code Builder, open the `order-database-impl` project.
+
+. Open `order-database-api.xml` in the canvas.
+
+. Click the *Run and Debug* icon in the activity bar.
+
+. Click *Run* to start the application.
++
+Wait for the "Application started successfully" message in the Output panel.
+
+=== Step 3.2: Test with the Built-in API Console
+
+. In the editor toolbar, click *Open API Console*.
++
+The API Console opens in a panel, displaying all endpoints from your specification.
++
+image::api-console-system-api.png[API Console for System API]
+
+. Expand the *GET /orders/{orderId}* endpoint.
+
+. Click *Try it* to open the request form.
+
+. Configure the request:
++
+* *orderId*: `ORD-12345`
+* *Headers*: Add `X-API-Key` with value `test-key`
+
+. Click *Send*.
++
+The API Console displays:
+
+* Request details (URL, headers, parameters)
+* Response status code
+* Response headers
+* Response body with syntax highlighting
++
+image::api-console-response.png[API Console response display]
+
+. Verify the response contains:
++
+* Correct order ID
+* Database field names (order_id, customer_id, status_code)
+* Nested order_data object
+
+=== Step 3.3: Test Error Scenarios
+
+. Test with an invalid API key:
++
+* Remove or change the X-API-Key header value
+* Click *Send*
+* Verify you receive a 401 Unauthorized response
+
+. Test the PUT endpoint:
++
+* Expand *PUT /orders/{orderId}*
+* Enter an order ID and sample request body
+* Click *Send*
+* Verify the order updates successfully
+
+== Debug the Process API
+
+Use Anypoint Code Builder's debugger to inspect data transformation and flow execution.
+
+=== Step 3.4: Set Up Breakpoints
+
+. Open the `order-processing-impl` project.
+
+. Open `order-processing-api.xml` in the canvas.
+
+. In the *get:\orders\{orderId}* flow, click in the left margin next to:
++
+* The HTTP Request component
+* The Transform Message component
++
+Red dots appear, indicating breakpoints are set.
++
+image::breakpoints-set.png[Breakpoints set on flow components]
+
+=== Step 3.5: Start Debug Session
+
+. Ensure the System API is still running.
+
+. In the `order-processing-impl` project, click *Run and Debug*.
+
+. Click *Debug* (not Run) to start in debug mode.
++
+The debug toolbar appears with controls for stepping through execution.
++
+image::debug-toolbar.png[Debug toolbar with step controls]
+
+=== Step 3.6: Execute a Request and Inspect
+
+. Open Postman and send a GET request:
++
+[source,text]
+----
+GET http://localhost:8082/api/v1/orders/ORD-12345
+----
+
+. Return to Anypoint Code Builder.
++
+Execution pauses at the first breakpoint (HTTP Request).
+
+. In the Variables panel (bottom of screen), expand *message* to inspect:
++
+* *payload*: Current message payload
+* *attributes*: HTTP request attributes including URI parameters
+* *vars*: Flow variables
++
+image::debug-variables-panel.png[Variables panel showing message state]
+
+. Click *Continue* (or press F5) to advance to the next breakpoint.
++
+Execution proceeds to the Transform Message component.
+
+. In the Variables panel, examine the *payload* from the System API call.
++
+You can see the raw database format data before transformation.
+
+. Click *Continue* again.
++
+The Transform Message executes, and you can see the transformed payload in business-friendly format.
+
+. Click *Continue* to complete the request.
+
+. Review the response in Postman to verify the transformation worked correctly.
+
+=== Step 3.7: Inspect DataWeave Transformation
+
+. While debugging, when execution pauses at Transform Message:
++
+.. Click the *DataWeave Preview* button in the editor
+.. Review the input and output preview
+.. Verify the transformation logic is correct
+
+. Click *Stop* in the debug toolbar to end the debug session.
+
+== Test the Experience API with Detailed Logging
+
+Add logging to better understand the data flow through the Experience API.
+
+=== Step 3.8: Add Logger Components
+
+. Open the `customer-order-status-impl` project.
+
+. Open `customer-order-status-api.xml` in the canvas.
+
+. In the *get:\orders\{orderId}* flow, drag a *Logger* component:
++
+* Place it after the HTTP Request (before Transform Message)
+* Configure:
+** *Message*: `"Process API Response: " ++ write(payload, "application/json")`
+** *Level*: INFO
+
+. Add another Logger after Transform Message:
++
+* *Message*: `"Customer Response: " ++ write(payload, "application/json")`
+* *Level*: INFO
+
+. Save your changes.
+
+=== Step 3.9: Test with Logging Output
+
+. Start all three APIs:
++
+.. System API (port 8081)
+.. Process API (port 8082)
+.. Experience API (port 8083)
+
+. In Anypoint Code Builder, open the *Output* panel and select *Mule Maven Output*.
+
+. Send a test request via Postman:
++
+[source,text]
+----
+GET http://localhost:8083/api/v1/orders/ORD-12345
+----
+
+. Review the Output panel to see logged messages:
++
+[source,text]
+----
+INFO  [order-processing-impl].get:\orders\{orderId}.HTTP Listener
+  Process API Response: {"orderId":"ORD-12345", ...}
+
+INFO  [customer-order-status-impl].get:\orders\{orderId}.HTTP Listener
+  Customer Response: {"orderId":"ORD-12345", "statusDescription":"Your order is on its way", ...}
+----
+
+. Verify the logs show:
++
+* Data received from Process API
+* Transformed data sent to customer
+* Differences in field names and structure
+
+== Test Complete API Chain Scenarios
+
+Test various scenarios to ensure robust behavior.
+
+=== Step 3.10: Test Successful Order Retrieval
+
+. Send a GET request for a valid order:
++
+[source,text]
+----
+GET http://localhost:8083/api/v1/orders/ORD-12345
+----
+
+. Verify the response includes:
++
+* Order ID and status
+* Status description
+* Order items with product names
+* Total amount
+* Tracking information (if status is shipped/delivered)
+
+=== Step 3.11: Test Error Handling
+
+. Test with an invalid order ID format:
++
+[source,text]
+----
+GET http://localhost:8083/api/v1/orders/INVALID
+----
+
+. Verify the response:
++
+* Returns 404 status code
+* Contains customer-friendly error message
+* Includes the requested order ID for reference
+
+=== Step 3.12: Test Status-Dependent Behavior
+
+Tracking information should only appear for shipped/delivered orders.
+
+. Modify the System API response to return different statuses:
++
+.. Open `order-database-impl`
+.. In the GET endpoint Transform Message, change `status_code: "SHIPPED"` to `status_code: "PROCESSING"`
+.. Restart the System API
+
+. Test the Experience API:
++
+[source,text]
+----
+GET http://localhost:8083/api/v1/orders/ORD-12345
+----
+
+. Verify the response:
++
+* Status is "processing"
+* Status description is "Your order is being prepared"
+* Tracking object is null (not included for processing status)
+
+. Change status back to "SHIPPED" and retest to verify tracking appears.
+
+== Test Performance and Response Times
+
+=== Step 3.13: Measure Response Times
+
+. In Postman, enable response time display.
+
+. Send multiple requests to each API layer:
++
+.. System API directly
+.. Process API (calls System API)
+.. Experience API (calls Process API)
+
+. Compare response times:
++
+* System API: ~50-100ms (direct data retrieval)
+* Process API: ~150-250ms (adds transformation overhead)
+* Experience API: ~200-350ms (full chain)
+
+. Note: Local testing response times differ from CloudHub 2.0 deployed performance.
+
+== Review Console Output for Errors
+
+=== Step 3.14: Check for Warnings and Errors
+
+. Review the Output panel for any warnings or errors during testing.
+
+. Common issues to check:
++
+* Connection refused errors (API not running)
+* Transformation errors (DataWeave issues)
+* Timeout errors (API taking too long to respond)
+* Memory warnings (large payloads)
+
+. Fix any issues before deployment.
+
+== Clean Up Test Data
+
+=== Step 3.15: Stop All Running Applications
+
+. Click *Stop* in the debug toolbar for each running application:
++
+.. Stop Experience API
+.. Stop Process API
+.. Stop System API
+
+. Verify all applications have stopped by checking the Output panel.
+
+== Test Summary
+
+You've thoroughly tested your API implementation:
+
+*System API Testing*
+
+* Verified database-format responses
+* Tested authentication with API keys
+* Confirmed PUT endpoint updates work
+
+*Process API Testing*
+
+* Debugged data transformation logic
+* Verified business logic (status mapping, delivery estimation)
+* Confirmed System API integration
+
+*Experience API Testing*
+
+* Validated customer-optimized responses
+* Tested conditional fields (tracking information)
+* Verified friendly error messages
+* Confirmed complete API chain works
+
+*Quality Validation*
+
+* Used breakpoints to inspect data flow
+* Added logging for visibility
+* Tested error scenarios
+* Measured response times
+
+This comprehensive testing ensures your APIs work correctly before deployment.
+
+== What's Next
+
+With your APIs fully tested locally, you'll deploy them to CloudHub 2.0 to make them accessible to other applications and users.
+
+xref:api-led-deploy.adoc[Next: Phase 4 - Deploy to CloudHub 2.0]
+
+== Developer Deep Dive
+
+Explore advanced testing capabilities:
+
+* xref:code-builder::int-test-munit.adoc[Automated Testing with MUnit]
+* xref:mule-runtime::intro-error-handlers.adoc[Advanced Error Handling]
+* xref:code-builder::troubleshoot-gen-ai.adoc[Troubleshooting with MuleSoft Vibes]
+* xref:mule-runtime::dataweave-testing-framework.adoc[DataWeave Testing Framework]

@@ -1,0 +1,454 @@
+= Phase 4: Deploy to CloudHub 2.0
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+In this phase, you'll deploy your APIs to CloudHub 2.0, MuleSoft's next-generation cloud runtime platform. CloudHub 2.0 provides Kubernetes-based architecture, improved scaling, and zero-downtime deployments.
+
+== Understanding CloudHub 2.0
+
+CloudHub 2.0 introduces significant improvements over CloudHub 1.0:
+
+*Shared Spaces*
+
+* Multi-tenant environments for resource optimization
+* Isolated networking with private domains
+* Reduced costs through shared infrastructure
+* Improved security with network isolation
+
+*Architecture*
+
+* Kubernetes-based for better reliability and scaling
+* Container-based deployments for faster startup
+* Replicas instead of workers for better terminology alignment
+* Rolling updates for zero-downtime deployments
+
+*Deployment Models*
+
+* *Rolling Update*: Gradually replaces replicas (zero downtime)
+* *Recreate*: Stops all replicas then starts new ones (brief downtime)
+
+For this tutorial, you'll use rolling updates to ensure continuous availability.
+
+== Prepare for Deployment
+
+Before deploying, configure your projects for CloudHub 2.0.
+
+=== Step 4.1: Update POM Files for CloudHub 2.0
+
+CloudHub 2.0 deployments require specific Maven configuration.
+
+. Open the `order-database-impl` project.
+
+. Open `pom.xml` in the editor.
+
+. Locate the `<groupId>` element and update it to match your Anypoint Platform organization ID:
++
+[source,xml]
+----
+<groupId>YOUR-ORG-ID</groupId>
+----
++
+To find your organization ID:
++
+.. Open Anypoint Platform
+.. Go to *Access Management* > *Organization*
+.. Copy the *Organization ID*
+
+. Remove the `-SNAPSHOT` suffix from the `<version>` element:
++
+[source,xml]
+----
+<version>1.0.0</version>
+----
++
+CloudHub 2.0 doesn't support SNAPSHOT versions.
+
+. Save the file.
+
+. Repeat for `order-processing-impl` and `customer-order-status-impl` projects.
+
+== Deploy the System API
+
+Start by deploying the System API, which the other APIs depend on.
+
+=== Step 4.2: Initiate CloudHub 2.0 Deployment
+
+. Open the `order-database-impl` project.
+
+. Open any configuration XML file (e.g., `order-database-api.xml`).
+
+. Click the image:icon-deploy.png["",20,20] (*Deploy to CloudHub*) icon in the toolbar.
++
+Alternatively, open the Command Palette (Cmd+Shift+P on Mac, Ctrl+Shift+P on Windows/Linux) and select *MuleSoft: Deploy to CloudHub*.
+
+. If prompted, click *Allow* to authenticate with Anypoint Platform.
+
+. Select your Business Group from the dropdown.
+
+=== Step 4.3: Configure CloudHub 2.0 Deployment
+
+. When prompted for deployment target, select *CloudHub 2.0*.
++
+image::select-cloudhub-2.png[Deployment target selection dialog]
+
+. Select the Shared Space to deploy to (e.g., "my-shared-space").
++
+Trial organizations include a default Shared Space.
++
+image::select-shared-space.png[Shared Space selection]
+
+. Anypoint Code Builder creates a `deploy_ch2.json` file in `src/main/resources` and opens it for review:
++
+image::deploy-ch2-json-created.png[Generated deploy_ch2.json file]
+
+=== Step 4.4: Configure deploy_ch2.json
+
+Review and customize the deployment configuration.
+
+. In `deploy_ch2.json`, verify these properties:
++
+[source,json]
+----
+{
+  "runtime": "4.8.0",
+  "applicationName": "order-database-impl",
+  "replicas": 1,
+  "replicaSize": "0.1",
+  "deploymentModel": "rolling",
+  "autoStart": true,
+  "ObjectStoreV2": true
+}
+----
+
+. Key properties explained:
++
+* *applicationName*: Must be unique across your organization. The domain will be `order-database-impl.<space-domain>.cloudhub.io`
+* *replicas*: Number of instances (1 for tutorial, scale up for production)
+* *replicaSize*: Memory allocation (0.1 vCores = 0.5 GB RAM)
+* *deploymentModel*: "rolling" for zero-downtime updates
+* *ObjectStoreV2*: Enabled for storing application state
+
+. For unique naming, append your initials or team name:
++
+[source,json]
+----
+"applicationName": "order-database-impl-jsmith"
+----
+
+. Save the file.
+
+=== Step 4.5: Complete the Deployment
+
+. After reviewing `deploy_ch2.json`, click *Deploy* in the prompt.
+
+. Select the environment to deploy to (e.g., *Sandbox*).
++
+image::select-environment.png[Environment selection]
+
+. Anypoint Code Builder packages and deploys the application.
++
+The Output panel displays deployment progress:
++
+[source,text]
+----
+[INFO] Building deployable artifact...
+[INFO] Uploading to CloudHub 2.0...
+[INFO] Deployment started...
+[INFO] Application deployed successfully
+----
+
+. When deployment completes, click *Open in Runtime Manager*.
++
+Your application opens in Runtime Manager in Anypoint Platform.
++
+image::runtime-manager-deployment.png[Application in Runtime Manager]
+
+=== Step 4.6: Verify System API Deployment
+
+. In Runtime Manager, locate your deployed application.
+
+. Verify the status shows *Running* (may take 2-3 minutes).
+
+. Copy the application URL from the *Status* section.
++
+Format: `https://order-database-impl-jsmith.<space-domain>.cloudhub.io`
+
+. Test the deployed API with Postman:
++
+[source,text]
+----
+GET https://order-database-impl-jsmith.<space-domain>.cloudhub.io/api/v1/orders/ORD-12345
+Header: X-API-Key: test-key
+----
+
+. Verify you receive order data.
+
+== Deploy the Process API
+
+With the System API deployed, deploy the Process API that depends on it.
+
+=== Step 4.7: Update Process API Configuration
+
+. Open the `order-processing-impl` project.
+
+. Open `order-processing-api.xml` in the canvas.
+
+. Locate the HTTP Request component in the *get:\orders\{orderId}* flow.
+
+. Update the URL to point to the deployed System API:
++
+[source,text]
+----
+https://order-database-impl-jsmith.<space-domain>.cloudhub.io/api/v1/orders/{orderId}
+----
++
+Replace `order-database-impl-jsmith` with your actual System API application name.
+
+. Save the file.
+
+=== Step 4.8: Deploy the Process API
+
+. Click the *Deploy to CloudHub* icon.
+
+. Select *CloudHub 2.0* as the deployment target.
+
+. Select the same Shared Space as the System API.
+
+. Review and update `deploy_ch2.json`:
++
+[source,json]
+----
+{
+  "runtime": "4.8.0",
+  "applicationName": "order-processing-impl-jsmith",
+  "replicas": 1,
+  "replicaSize": "0.1",
+  "deploymentModel": "rolling",
+  "autoStart": true,
+  "ObjectStoreV2": true
+}
+----
+
+. Click *Deploy* and select the environment.
+
+. Wait for deployment to complete.
+
+. Verify the application is *Running* in Runtime Manager.
+
+. Test the deployed Process API:
++
+[source,text]
+----
+GET https://order-processing-impl-jsmith.<space-domain>.cloudhub.io/api/v1/orders/ORD-12345
+----
+
+. Verify you receive enriched order data with business-friendly field names.
+
+== Deploy the Experience API
+
+Finally, deploy the customer-facing Experience API.
+
+=== Step 4.9: Update Experience API Configuration
+
+. Open the `customer-order-status-impl` project.
+
+. Open `customer-order-status-api.xml`.
+
+. Update the HTTP Request URL to point to the deployed Process API:
++
+[source,text]
+----
+https://order-processing-impl-jsmith.<space-domain>.cloudhub.io/api/v1/orders/{orderId}
+----
+
+. Save the file.
+
+=== Step 4.10: Deploy the Experience API
+
+. Click the *Deploy to CloudHub* icon.
+
+. Select *CloudHub 2.0* and the same Shared Space.
+
+. Review and update `deploy_ch2.json`:
++
+[source,json]
+----
+{
+  "runtime": "4.8.0",
+  "applicationName": "customer-order-status-impl-jsmith",
+  "replicas": 1,
+  "replicaSize": "0.1",
+  "deploymentModel": "rolling",
+  "autoStart": true,
+  "ObjectStoreV2": true
+}
+----
+
+. Deploy to the same environment.
+
+. Wait for deployment to complete.
+
+== Test the Complete Deployed API Chain
+
+=== Step 4.11: Test End-to-End in CloudHub 2.0
+
+. In Postman, test the customer-facing API:
++
+[source,text]
+----
+GET https://customer-order-status-impl-jsmith.<space-domain>.cloudhub.io/api/v1/orders/ORD-12345
+----
+
+. Verify the response:
++
+* Contains customer-optimized data
+* Status description is present
+* Tracking information appears for shipped orders
+* Response time is acceptable (<500ms)
+
+. Test error handling:
++
+[source,text]
+----
+GET https://customer-order-status-impl-jsmith.<space-domain>.cloudhub.io/api/v1/orders/INVALID
+----
+
+. Verify you receive a 404 error with a customer-friendly message.
+
+== Configure API Management (Optional)
+
+Enhance your deployed APIs with policies and analytics.
+
+=== Step 4.12: Add APIs to API Manager
+
+. From Runtime Manager, click your Experience API application.
+
+. In the application details, click *API Manager*.
+
+. Click *Add API* to register the API:
++
+* *API Name*: Customer Order Status API
+* *Asset Version*: Select from Exchange
+* *Implementation URL*: The CloudHub 2.0 application URL
+
+. Click *Save*.
+
+=== Step 4.13: Apply a Rate Limiting Policy
+
+. In API Manager, click *Policies*.
+
+. Click *Apply New Policy*.
+
+. Select *Rate Limiting* from the policies list.
+
+. Configure the policy:
++
+* *Number of Requests*: 100
+* *Time Period*: 1
+* *Time Unit*: Minute
+
+. Click *Apply*.
++
+The policy protects your API from abuse while allowing legitimate traffic.
+
+== Monitor Deployments in Runtime Manager
+
+=== Step 4.14: Review Application Metrics
+
+. In Runtime Manager, click each application to view:
++
+* *Dashboard*: Overview of application health
+* *Logs*: Application logs from the last 30 days
+* *Insight*: Performance metrics and transaction details
+* *Settings*: Application configuration and properties
+
+. In the Dashboard, review:
++
+* CPU usage
+* Memory usage
+* Message throughput
+* Response times
++
+image::runtime-manager-dashboard.png[Runtime Manager dashboard with metrics]
+
+== Update a Deployed Application
+
+CloudHub 2.0 supports zero-downtime updates using rolling deployments.
+
+=== Step 4.15: Perform a Rolling Update
+
+. Make a change to the Experience API (e.g., update the status description text).
+
+. Save the changes.
+
+. Click *Deploy to CloudHub*.
+
+. Select *CloudHub 2.0* and the existing Shared Space.
+
+. Increment the version in `pom.xml`:
++
+[source,xml]
+----
+<version>1.0.1</version>
+----
+
+. Deploy with the same application name.
++
+CloudHub 2.0 performs a rolling update:
+
+. Starts new replicas with the updated code
+. Waits for health checks to pass
+. Routes traffic to new replicas
+. Stops old replicas
++
+The application remains available throughout the update.
+
+. Monitor the update in Runtime Manager.
+
+. Test the updated API to verify the changes.
+
+== Deployment Summary
+
+You've successfully deployed a three-layer API architecture to CloudHub 2.0:
+
+*System Layer*
+
+* Deployed to CloudHub 2.0 Shared Space
+* Accessible at a unique domain
+* Secured with API key authentication
+
+*Process Layer*
+
+* Calls the deployed System API
+* Runs in the same Shared Space
+* Applies business logic and transformations
+
+*Experience Layer*
+
+* Calls the deployed Process API
+* Provides customer-facing interface
+* Optimized for mobile and web applications
+
+*Deployment Benefits*
+
+* Zero-downtime updates with rolling deployments
+* Resource efficiency with Shared Spaces
+* Kubernetes-based reliability and scaling
+* Integrated monitoring and management
+
+== What's Next
+
+With your APIs deployed to CloudHub 2.0, you'll verify the live endpoints and learn how to monitor and manage them in Runtime Manager.
+
+xref:api-led-operate.adoc[Next: Phase 5 - Monitor and Manage]
+
+== Developer Deep Dive
+
+Explore advanced CloudHub 2.0 capabilities:
+
+* xref:cloudhub-2::ch2-architecture.adoc[CloudHub 2.0 Architecture]
+* xref:cloudhub-2::ch2-shared-space-about.adoc[Shared Spaces Deep Dive]
+* xref:cloudhub-2::ch2-update-apps.adoc[Rolling Updates vs. Recreate]
+* xref:cloudhub-2::ch2-configure-private-space.adoc[Private Spaces for Production]
+* xref:api-manager::policies-landing-page.adoc[API Policies]

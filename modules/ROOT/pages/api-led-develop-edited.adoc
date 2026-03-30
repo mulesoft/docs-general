@@ -1,0 +1,461 @@
+= Phase 2: Develop the APIs
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+In this phase, you'll implement your API specifications by scaffolding implementation projects and adding business logic. Anypoint Code Builder provides visual canvas and XML editors for building Mule applications.
+
+== Understanding API Implementation
+
+An API specification defines the contract - what endpoints exist, what data they accept and return. Implementation adds the business logic - how the API actually processes requests.
+
+Anypoint Code Builder scaffolds implementation projects from specifications, generating:
+
+* HTTP Listener configurations for receiving requests
+* APIkit Router for routing requests to endpoints
+* Flow templates for each endpoint
+* Error handlers for different error conditions
+
+You add the business logic to these scaffolded flows.
+
+== Scaffold the System Layer API
+
+Start by implementing the Order Database API that directly accesses the database.
+
+=== Step 2.1: Create Implementation Project from Specification
+
+. In Anypoint Code Builder, open the Command Palette (Cmd+Shift+P on Mac, Ctrl+Shift+P on Windows/Linux).
+
+. Select *MuleSoft: Develop an Integration*.
+
+. Select *Create New Project*.
+
+. Configure the project:
++
+* *Project Name*: `order-database-impl`
+* *Import API Specification*: Select *From Exchange*
+* Search for and select `order-database-api`
+* Enable *Scaffold flows from this API specification*
+
+. Click *Create Project*.
++
+Anypoint Code Builder generates the project with scaffolded flows.
++
+image::scaffolded-project-structure.png[Scaffolded project structure in Explorer]
+
+=== Step 2.2: Review the Scaffolded Structure
+
+. In the Explorer panel, open `order-database-api.xml`.
++
+The canvas displays the scaffolded flows:
++
+* *HTTP Listener* flow - receives incoming requests
+* *APIkit Router* - routes to endpoint-specific flows
+* *get:\orders\{orderId}* flow - handles GET requests
+* *put:\orders\{orderId}* flow - handles PUT requests
+* *Error handling flows* - handle various error conditions
+
+. Click the *HTTP Listener* component to view its configuration:
++
+* *Path*: `/api/v1/*` (matches your spec's base path)
+* *Host*: `0.0.0.0`
+* *Port*: `8081`
+
+=== Step 2.3: Implement the GET Endpoint
+
+For this tutorial, simulate database access with sample data. In production, you'd use the Database Connector.
+
+. In the canvas, navigate to the *get:\orders\{orderId}* flow.
+
+. The flow contains a Transform Message component. Click it to configure.
+
+. Replace the DataWeave transformation with:
++
+[source,dataweave]
+----
+%dw 2.0
+output application/json
+---
+{
+  order_id: attributes.uriParams.orderId,
+  customer_id: "CUST-" ++ (randomInt(9999) as String),
+  status_code: "SHIPPED",
+  created_at: now() - |P7D|,
+  updated_at: now() - |P1D|,
+  order_data: {
+    items: [
+      {
+        product_id: "PROD-001",
+        product_name: "Premium Widget",
+        quantity: 2,
+        unit_price: 29.99
+      },
+      {
+        product_id: "PROD-002",
+        product_name: "Deluxe Gadget",
+        quantity: 1,
+        unit_price: 49.99
+      }
+    ],
+    shipping: {
+      address: "123 Main St, Anytown, ST 12345",
+      method: "Standard",
+      cost: 9.99,
+      tracking_number: "TRACK" ++ (randomInt(999999) as String),
+      carrier: "FastShip Logistics"
+    },
+    totals: {
+      subtotal: 109.97,
+      tax: 8.80,
+      shipping: 9.99,
+      total: 128.76
+    }
+  }
+}
+----
++
+This DataWeave script:
+
+* Extracts the order ID from the URI
+* Generates sample customer and order data
+* Returns data matching the database schema
+
+. Save your changes (Cmd+S on Mac, Ctrl+S on Windows/Linux).
+
+=== Step 2.4: Implement the PUT Endpoint
+
+. Navigate to the *put:\orders\{orderId}* flow.
+
+. Click the Transform Message component.
+
+. Replace the transformation with:
++
+[source,dataweave]
+----
+%dw 2.0
+output application/json
+---
+{
+  order_id: attributes.uriParams.orderId,
+  customer_id: payload.customer_id,
+  status_code: payload.status_code,
+  updated_at: now(),
+  order_data: payload.order_data,
+  message: "Order updated successfully"
+}
+----
+
+. Save your changes.
+
+=== Step 2.5: Test the System API Locally
+
+. Click the *Run and Debug* icon in the activity bar (or press Cmd+Shift+D on Mac, Ctrl+Shift+D on Windows/Linux).
+
+. Click *Run* to start the application.
++
+The Output panel displays startup progress. When you see "Application started successfully", the API is running.
+
+. Open Postman and test the GET endpoint:
++
+[source,text]
+----
+GET http://localhost:8081/api/v1/orders/ORD-12345
+Header: X-API-Key: test-key
+----
+
+. Verify you receive order data in response.
+
+. Click *Stop* in the debug toolbar when testing is complete.
+
+== Scaffold the Process Layer API
+
+Next, implement the Order Processing API that adds business logic.
+
+=== Step 2.6: Create the Process API Implementation
+
+. Open the Command Palette and select *MuleSoft: Develop an Integration*.
+
+. Create a new project:
++
+* *Project Name*: `order-processing-impl`
+* Import `order-processing-api` from Exchange
+* Enable scaffolding
+
+. Anypoint Code Builder generates the project structure.
+
+=== Step 2.7: Implement the GET Endpoint with HTTP Request
+
+The Process API calls the System API to retrieve order data, then enriches it.
+
+. In `order-processing-api.xml`, navigate to the *get:\orders\{orderId}* flow.
+
+. From the component palette, drag *HTTP Request* into the flow before Transform Message.
+
+. Configure the HTTP Request:
++
+* *Method*: GET
+* *URL*: `http://order-database-impl.cloudhub-2.io/api/v1/orders/\{orderId}`
++
+(For local testing, use: `http://localhost:8081/api/v1/orders/\{orderId}`)
+* *Headers*: Add `X-API-Key` with value `test-key`
+
+. Click the Transform Message component and update the DataWeave:
++
+[source,dataweave]
+----
+%dw 2.0
+output application/json
+
+fun calculateEstimatedDelivery(status, orderDate) =
+  if (status == "SHIPPED") orderDate + |P5D|
+  else if (status == "PROCESSING") orderDate + |P7D|
+  else null
+
+fun mapStatus(statusCode) =
+  statusCode match {
+    case "PROCESSING" -> "processing"
+    case "SHIPPED" -> "shipped"
+    case "DELIVERED" -> "delivered"
+    case "CANCELLED" -> "cancelled"
+    else -> "pending"
+  }
+---
+{
+  orderId: payload.order_id,
+  customerId: payload.customer_id,
+  status: mapStatus(payload.status_code),
+  orderDate: payload.created_at,
+  lastUpdated: payload.updated_at,
+  estimatedDelivery: calculateEstimatedDelivery(payload.status_code, payload.created_at),
+  items: payload.order_data.items map (item) -> {
+    productId: item.product_id,
+    productName: item.product_name,
+    quantity: item.quantity,
+    unitPrice: item.unit_price,
+    subtotal: item.quantity * item.unit_price
+  },
+  shipping: {
+    address: payload.order_data.shipping.address,
+    method: payload.order_data.shipping.method,
+    cost: payload.order_data.shipping.cost,
+    trackingNumber: payload.order_data.shipping.tracking_number,
+    carrier: payload.order_data.shipping.carrier
+  },
+  totalAmount: payload.order_data.totals.total,
+  taxAmount: payload.order_data.totals.tax,
+  shippingAmount: payload.order_data.totals.shipping
+}
+----
++
+This transformation:
+
+* Maps database field names to business-friendly names
+* Calculates estimated delivery dates based on status
+* Transforms status codes to readable values
+* Structures data for business consumption
+
+. Save your changes.
+
+=== Step 2.8: Implement the POST Endpoint
+
+. Navigate to the *post:\orders\{orderId}\status* flow.
+
+. Add an HTTP Request to call the System API's PUT endpoint.
+
+. Configure the HTTP Request:
++
+* *Method*: PUT
+* *URL*: `http://localhost:8081/api/v1/orders/\{orderId}`
+* *Body*:
++
+[source,dataweave]
+----
+%dw 2.0
+output application/json
+---
+{
+  status_code: payload.newStatus,
+  notes: payload.notes
+}
+----
+
+. Add a Transform Message after the HTTP Request to format the response.
+
+. Save your changes.
+
+=== Step 2.9: Test the Process API Locally
+
+. Ensure the System API is still running (or restart it).
+
+. In a new terminal, run the Process API.
+
+. Test with Postman:
++
+[source,text]
+----
+GET http://localhost:8082/api/v1/orders/ORD-12345
+----
++
+Note: Use port 8082 to avoid conflicts with the System API on 8081.
+
+. Verify the response contains enriched data with business-friendly field names.
+
+== Scaffold the Experience Layer API
+
+Finally, implement the Customer Order Status API optimized for customer applications.
+
+=== Step 2.10: Create the Experience API Implementation
+
+. Create a new project:
++
+* *Project Name*: `customer-order-status-impl`
+* Import `customer-order-status-api` from Exchange
+* Enable scaffolding
+
+=== Step 2.11: Implement the Customer-Facing Endpoint
+
+. Navigate to the *get:\orders\{orderId}* flow.
+
+. Add an HTTP Request to call the Process API:
++
+* *URL*: `http://localhost:8082/api/v1/orders/\{orderId}`
+
+. Update the Transform Message with customer-optimized data:
++
+[source,dataweave]
+----
+%dw 2.0
+output application/json
+
+fun getStatusDescription(status) =
+  status match {
+    case "pending" -> "We're processing your order"
+    case "processing" -> "Your order is being prepared"
+    case "shipped" -> "Your order is on its way"
+    case "delivered" -> "Your order has been delivered"
+    case "cancelled" -> "This order was cancelled"
+    else -> "Order status unknown"
+  }
+
+fun getTrackingInfo(status, shipping) =
+  if (status == "shipped" or status == "delivered")
+    {
+      trackingNumber: shipping.trackingNumber,
+      carrier: shipping.carrier,
+      trackingUrl: "https://track.example.com/" ++ shipping.trackingNumber
+    }
+  else null
+---
+{
+  orderId: payload.orderId,
+  status: payload.status,
+  statusDescription: getStatusDescription(payload.status),
+  orderDate: payload.orderDate,
+  estimatedDelivery: payload.estimatedDelivery,
+  items: payload.items map {
+    productName: $.productName,
+    quantity: $.quantity
+  },
+  totalAmount: payload.totalAmount,
+  tracking: getTrackingInfo(payload.status, payload.shipping)
+}
+----
++
+This transformation:
+
+* Simplifies the response to only customer-relevant fields
+* Adds friendly status descriptions
+* Conditionally includes tracking information
+* Removes internal identifiers and business logic fields
+
+. Save your changes.
+
+=== Step 2.12: Add Error Handling
+
+Enhance error handling for better customer experience.
+
+. In the Error Handling section of the flow, locate *On Error Propagate*.
+
+. Add a Transform Message to the error handler:
++
+[source,dataweave]
+----
+%dw 2.0
+output application/json
+---
+{
+  error: "ORDER_NOT_FOUND",
+  message: "We couldn't find an order with that ID. Please check your order number and try again.",
+  orderId: attributes.uriParams.orderId
+}
+----
+
+. Configure the error handler to return HTTP 404 for not found errors.
+
+. Save your changes.
+
+=== Step 2.13: Test the Complete API Chain
+
+. Start all three APIs in order:
++
+.. System API (port 8081)
+.. Process API (port 8082)
+.. Experience API (port 8083)
+
+. Test the complete chain with Postman:
++
+[source,text]
+----
+GET http://localhost:8083/api/v1/orders/ORD-12345
+----
+
+. Verify the response contains customer-optimized data.
+
+. Test error handling with an invalid order ID.
+
+. Stop all running applications.
+
+== Review Your Implementation
+
+You've now implemented a complete three-layer API architecture:
+
+*System Layer (Order Database API)*
+
+* Direct database access with raw field names
+* Secured with API key authentication
+* Returns comprehensive order data
+
+*Process Layer (Order Processing API)*
+
+* Calls System API to retrieve data
+* Applies business logic (status mapping, delivery estimation)
+* Transforms data to business-friendly format
+
+*Experience Layer (Customer Order Status API)*
+
+* Calls Process API for enriched data
+* Optimizes response for customer applications
+* Provides friendly descriptions and conditional fields
+* Implements customer-friendly error handling
+
+This architecture demonstrates:
+
+* *Separation of Concerns*: Each layer has a distinct responsibility
+* *Reusability*: The Process API can serve multiple Experience APIs
+* *Maintainability*: Changes to business logic don't affect Experience APIs
+* *Testability*: Each layer can be tested independently
+
+== What's Next
+
+With your APIs implemented and tested locally, you'll add comprehensive testing using the API Console and mocking service.
+
+xref:api-led-test.adoc[Next: Phase 3 - Test Locally]
+
+== Developer Deep Dive
+
+Explore advanced implementation techniques:
+
+* xref:mule-runtime::dataweave.adoc[DataWeave Language Reference]
+* xref:connectors::database/database-connector.adoc[Database Connector]
+* xref:mule-runtime::error-handling.adoc[Error Handling in Mule 4]
+* xref:mule-runtime::about-flows.adoc[Understanding Flows and Subflows]
