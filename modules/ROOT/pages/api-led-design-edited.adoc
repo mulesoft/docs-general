@@ -1,4 +1,130 @@
-= Phase 1: Design with AI (MuleSoft Vibes)
+= Design with AI
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+In this step, you'll use MuleSoft Vibes to create an API specification by describing what you want in plain language. No code required.
+
+== What You'll Learn
+
+* How to access Anypoint Code Builder
+* How to use MuleSoft Vibes (AI assistant) to generate API specs
+* How to review and test your API specification
+
+== Access Anypoint Code Builder
+
+. Log in to Anypoint Platform:
++
+link:https://anypoint.mulesoft.com/login["Go to Anypoint Platform^", role="button-primary"]
+
+. Click *Code Builder* in the Development section.
++
+Code Builder opens in a new tab.
+
+== Generate Your API Spec with Vibes
+
+. In Code Builder, locate the MuleSoft Vibes icon (chat bubble) in the left sidebar.
+
+. Click it to open the Vibes panel.
+
+. Type this prompt in the chat:
++
+[source,text]
+----
+Create an OAS 3.0 API specification called "hello-world-api" with a GET endpoint at /greeting that returns a simple JSON response with a message field containing "Hello, World!"
+----
+
+. Press Enter to send.
++
+Vibes generates your API specification in about 10 seconds.
+
+. Review the generated spec in the response. It should include:
++
+* An API title and version
+* A GET endpoint at `/greeting`
+* A 200 response with a JSON schema
+
+. Click *Create Project* in the Vibes response.
+
+. Select your home directory as the project location.
+
+. Anypoint Code Builder creates the project and opens `hello-world-api.yaml`.
+
+== Review Your API Specification
+
+. In the editor, review the generated specification:
++
+[source,yaml]
+----
+openapi: 3.0.0
+info:
+  title: hello-world-api
+  version: 1.0.0
+paths:
+  /greeting:
+    get:
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Hello, World!"
+----
+
+. This specification defines:
++
+* A GET endpoint at `/greeting`
+* Returns HTTP 200 with JSON
+* JSON contains a `message` field
+
+== Test with the Mocking Service
+
+Before implementing, test your design with Code Builder's built-in mocking service.
+
+. In the editor toolbar, toggle *Enable Mocking Service* on.
++
+A temporary URL appears (like `https://mocksvc.mulesoft.com/...`).
+
+. Copy the mocking URL.
+
+. Open Postman and create a new GET request:
++
+[source,text]
+----
+GET https://mocksvc.mulesoft.com/YOUR-MOCK-ID/greeting
+----
+
+. Click *Send*.
++
+The mocking service returns example data based on your spec:
++
+[source,json]
+----
+{
+  "message": "Hello, World!"
+}
+----
+
+Congratulations! You've designed an API without writing any code.
+
+== What Just Happened?
+
+Let's understand which tools you used:
+
+* *Anypoint Code Builder*: The cloud IDE where you design and build APIs
+* *MuleSoft Vibes*: The AI that generated your OpenAPI specification from your description
+* *Mocking Service*: Built into Code Builder, it creates a working API from your spec for testing
+
+== What's Next
+
+Now that your API is designed, you'll scaffold an implementation project and add the business logic to make it functional.
+
+xref:api-led-develop-edited.adoc[Next: Develop the API]
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]

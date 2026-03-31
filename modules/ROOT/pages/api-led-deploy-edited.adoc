@@ -1,4 +1,128 @@
-= Phase 4: Deploy to CloudHub 2.0
+= Deploy to CloudHub 2.0
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+In this step, you'll deploy your API to CloudHub 2.0, MuleSoft's cloud platform. Your API will be accessible from anywhere with a public URL.
+
+== What You'll Learn
+
+* How to deploy from Code Builder to CloudHub 2.0
+* How to configure `deploy_ch2.json`
+* How to verify deployment in Runtime Manager
+
+== Prepare for Deployment
+
+Before deploying, update your Maven configuration for CloudHub 2.0.
+
+. In Code Builder, open `pom.xml` in your project.
+
+. Find the `<version>` element and remove `-SNAPSHOT`:
++
+Change from: `<version>1.0.0-SNAPSHOT</version>`
++
+To: `<version>1.0.0</version>`
++
+CloudHub 2.0 doesn't support SNAPSHOT versions.
+
+. Save the file.
+
+== Deploy to CloudHub 2.0
+
+. Open `hello-world-api.xml` in the editor.
+
+. Click the *Deploy to CloudHub* icon (cloud with arrow) in the toolbar.
++
+Alternatively, open Command Palette and select *MuleSoft: Deploy to CloudHub*.
+
+. If prompted, allow sign-in with Anypoint Platform.
+
+. When asked for deployment target, select *CloudHub 2.0*.
+
+. Select a Shared Space from the dropdown (trial accounts have a default space).
+
+. Code Builder creates `deploy_ch2.json` in `src/main/resources` and opens it:
++
+[source,json]
+----
+{
+  "runtime": "4.8.0",
+  "applicationName": "hello-world-impl",
+  "replicas": 1,
+  "replicaSize": "0.1",
+  "deploymentModel": "rolling",
+  "autoStart": true,
+  "ObjectStoreV2": true
+}
+----
+
+. Update the `applicationName` to make it unique. Add your initials:
++
+[source,json]
+----
+"applicationName": "hello-world-impl-jsmith"
+----
++
+Application names must be unique across all CloudHub applications.
+
+. Save the file.
+
+. Click *Deploy* in the prompt.
+
+. Select the *Sandbox* environment.
++
+Deployment begins. The Output panel shows progress.
+
+. After 2-3 minutes, you'll see "Deployment successful".
+
+. Click *Open in Runtime Manager*.
+
+== Verify in Runtime Manager
+
+. Runtime Manager opens showing your application.
+
+. Wait for the status to change from *Deploying* to *Running* (this takes a few minutes).
+
+. Once running, copy the application URL:
++
+Format: `https://hello-world-impl-jsmith.<space-domain>.cloudhub.io`
+
+. Open Postman and test your deployed API:
++
+[source,text]
+----
+GET https://hello-world-impl-jsmith.<space-domain>.cloudhub.io/api/greeting
+----
+
+. Verify you receive your greeting:
++
+[source,json]
+----
+{
+  "message": "Hello, World!"
+}
+----
+
+Congratulations! Your API is live in the cloud!
+
+== What Just Happened?
+
+Let's understand the tools you used:
+
+* *CloudHub 2.0*: MuleSoft's cloud platform where your API now runs
+* *Shared Space*: A multi-tenant environment for cost-effective hosting
+* *deploy_ch2.json*: Configuration file specifying replicas, resources, and settings
+* *Replicas*: Instances of your application (1 for tutorial, scale up for production)
+* *Rolling Deployment*: Zero-downtime deployment strategy
+* *Runtime Manager*: Operations dashboard for deployed applications
+
+Your API is now accessible worldwide at a public URL!
+
+== What's Next
+
+Your API is deployed! Learn how to monitor it and view logs in Runtime Manager.
+
+xref:api-led-operate-edited.adoc[Next: Monitor and Manage]
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]

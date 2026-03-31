@@ -1,84 +1,51 @@
-= Tutorial: Build an API-Led Solution from Start to Finish
+= Tutorial: Build an API from Start to Finish
 
-API-led connectivity transforms how organizations build and manage their digital architecture. By treating integration as a product, API-led connectivity enables you to create reusable, discoverable, and composable building blocks that accelerate development and reduce technical debt.
+Build your first API from design to deployment using the latest MuleSoft tools. This quick tutorial walks you through creating and deploying a simple "Hello World" API.
+
+You'll learn which MuleSoft features and products to use for each step of API development.
 
 == What You'll Build
 
-You'll create a customer-facing order status system that demonstrates the three layers of API-led connectivity:
+A simple "Hello World" API that:
 
-* *System Layer*: Order Database API - Direct access to the orders database
-* *Process Layer*: Order Processing API - Business logic for order validation and enrichment
-* *Experience Layer*: Customer Order Status API - Customer-optimized interface for checking order status
+* Returns a greeting message when you call it
+* Demonstrates the complete API development lifecycle
+* Runs in the cloud and is accessible from anywhere
 
-This architecture enables you to:
+== What You'll Use
 
-* Reuse the System API across multiple applications without duplicating database logic
-* Modify business rules in the Process API without impacting downstream consumers
-* Create multiple Experience APIs (mobile, web, partner portal) that consume the same Process API
+* Anypoint Code Builder
++
+Your cloud-based development environment for designing and building APIs. Think of it as a specialized IDE for MuleSoft development that runs in your browser.
 
-== API-Led Connectivity: The Three Layers
+* MuleSoft Vibes
++
+An AI assistant built into Code Builder that generates API specifications from simple descriptions. Instead of writing code, you describe what you want.
 
-API-led connectivity organizes integrations into three distinct layers:
+* CloudHub 2.0
++
+MuleSoft's cloud platform where your APIs run. Deploy once and your API is accessible worldwide with automatic scaling and reliability.
 
-*System APIs* provide direct access to core systems of record (databases, ERP, CRM). They:
+* Runtime Manager
++
+Your operations dashboard for monitoring deployed APIs, viewing logs, and managing applications running on CloudHub 2.0.
 
-* Abstract the complexity of backend systems
-* Provide a consistent interface regardless of the underlying technology
-* Enable system changes without impacting consumers
-* Are owned by the team responsible for the system
+== Tutorial Steps
 
-*Process APIs* orchestrate business logic and data from multiple System APIs. They:
+Follow these steps to create your first API:
 
-* Implement business processes and rules
-* Combine data from multiple sources
-* Transform data to match business requirements
-* Are owned by business domain teams
+. xref:api-led-prerequisites-edited.adoc[Complete the prerequisites]. 
+. xref:api-led-design-edited.adoc[Design an API specification with AI].
+. xref:api-led-develop-edited.adoc[Scaffold and implement the API].
+. xref:api-led-test-edited.adoc[Test your API locally].
+. xref:api-led-deploy-edited.adoc[Deploy your API to CloudHub 2.0].
+. xref:api-led-operate-edited.adoc[Verify and Monitor your API].
 
-*Experience APIs* optimize data for specific channels or audiences. They:
-
-* Tailor responses for mobile, web, or partner needs
-* Aggregate only the data needed for the user experience
-* Provide channel-specific features (pagination, caching, rate limiting)
-* Are owned by channel or product teams
-
-This separation of concerns enables teams to work independently while maintaining consistency across the organization.
-
-== The Modern MuleSoft Development Lifecycle
-
-This tutorial uses the latest MuleSoft tools:
-
-*Anypoint Code Builder*: A cloud-based IDE built on Visual Studio Code that provides a complete development environment for building, testing, and deploying MuleSoft applications. 
-
-*MuleSoft Vibes*: An AI-powered assistant integrated into Anypoint Code Builder that accelerates development by:
-
-* Generating API specifications from natural language descriptions
-* Scaffolding implementation projects from specs
-* Providing contextual guidance and best practices
-* Automating deployment and configuration tasks
-
-*CloudHub 2.0*: The next generation of MuleSoft's cloud runtime platform featuring:
-
-* Kubernetes-based architecture with improved scaling and reliability
-* Shared Spaces for multi-tenancy and resource optimization
-* Rolling updates for zero-downtime deployments
-* Enhanced security and compliance features
-
-== Tutorial Journey
-
-Follow these phases to build your API-led solution:
-
-. xref:api-led-prerequisites.adoc[Prerequisites]: Set up your development environment and understand the tools.
-. xref:api-led-design.adoc[Phase 1: Design with AI]: Use MuleSoft Vibes to generate your API specification from natural language.
-. xref:api-led-develop.adoc[Phase 2: Develop the APIs]: Scaffold projects and implement the three API layers.
-. xref:api-led-test.adoc[Phase 3: Test Locally]: Use the built-in API Console and mocking service.
-. xref:api-led-deploy.adoc[Phase 4: Deploy to CloudHub 2.0]: Deploy your APIs to the cloud with zero-downtime updates.
-. xref:api-led-operate.adoc[Phase 5: Monitor and Manage]: Verify endpoints and monitor performance in Runtime Manager.
-
-After completing this tutorial, you'll understand how to apply API-led connectivity principles to your own integration projects, accelerate development with AI-powered tools, and deploy production-ready APIs to CloudHub 2.0.
+After completing this tutorial, you'll understand the MuleSoft development workflow and be ready to build more complex APIs.
 
 == See Also
 
-* https://www.salesforce.com/blog/api-led-connectivity/?bc=OTH[What is API-led Connectivity^]
-* xref:code-builder::index.adoc[Anypoint Code Builder Documentation]
-* xref:code-builder::api-ai-design-spec.adoc[MuleSoft Vibes Overview]
-* xref:cloudhub-2::index.adoc[CloudHub 2.0 Documentation]
+* https://www.salesforce.com/blog/api-led-connectivity/?bc=OTH[What is API-led Connectivity]
+* xref:code-builder::index.adoc[]
+* xref:code-builder::api-ai-design-spec.adoc[]
+* xref:cloudhub-2::index.adoc[]

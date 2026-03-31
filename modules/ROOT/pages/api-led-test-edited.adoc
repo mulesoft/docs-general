@@ -1,4 +1,121 @@
-= Phase 3: Test Locally
+= Test Locally
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+In this step, you'll test your API using Code Builder's debugging tools and add logging to see what's happening inside your application.
+
+== What You'll Learn
+
+* How to use the API Console for quick testing
+* How to add logging to your flows
+* How to use breakpoints for debugging
+
+== Test with the API Console
+
+Code Builder has a built-in API Console for quick testing.
+
+. In Code Builder, open `hello-world-api.xml`.
+
+. Click *Open API Console* in the editor toolbar.
++
+The API Console opens in a panel.
+
+. Expand *GET /greeting*.
+
+. Click *Try it*.
+
+. Click *Send*.
++
+You'll see the request URL and the response with your greeting.
+
+This confirms your API spec and implementation match.
+
+== Add Logging
+
+Logging helps you see what's happening inside your flows.
+
+. In the canvas, find your *get:\greeting* flow.
+
+. From the component palette on the left, search for *Logger*.
+
+. Drag the Logger component into your flow *before* the Transform Message.
+
+. Click the Logger to configure it:
++
+* *Message*: `"Received request for greeting"`
+* *Level*: INFO
+
+. Save your changes.
+
+== Test with Logging
+
+. Click *Run and Debug*, then *Run*.
+
+. Send a request with Postman:
++
+[source,text]
+----
+GET http://localhost:8081/api/greeting
+----
+
+. In the Output panel (bottom of Code Builder), select *Mule Maven Output*.
++
+You'll see your log message:
++
+[source,text]
+----
+INFO  [hello-world-impl].get:\greeting
+  Received request for greeting
+----
+
+. Send a few more requests and watch the logs update.
+
+. Click *Stop*.
+
+== Use Breakpoints for Debugging
+
+Breakpoints pause execution so you can inspect what's happening.
+
+. In the canvas, click in the left margin next to the Logger component.
++
+A red dot appears - this is a breakpoint.
+
+. Click *Run and Debug*, then *Debug* (not Run).
+
+. Send a request from Postman.
+
+. Return to Code Builder.
++
+Execution pauses at the breakpoint. The debug toolbar appears at the top.
+
+. In the Variables panel (bottom), expand *message* to see:
++
+* *payload*: The current message content
+* *attributes*: HTTP request details (headers, query params, URI)
+* *vars*: Flow variables
+
+. Click *Continue* (or press F5) to proceed to the next breakpoint.
+
+. Click *Continue* again to complete the request.
+
+. Click *Stop* when done.
+
+== What Just Happened?
+
+You used Code Builder's testing and debugging tools:
+
+* *API Console*: Quick testing without leaving the IDE
+* *Logger*: Adds visibility into your flows
+* *Breakpoints*: Pause execution to inspect data
+* *Variables Panel*: Shows message content at each step
+* *Debug Mode*: Step through your flow execution
+
+== What's Next
+
+Your API works and you can debug it. Now deploy it to CloudHub 2.0 so it's accessible from anywhere.
+
+xref:api-led-deploy-edited.adoc[Next: Deploy to CloudHub 2.0]
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]

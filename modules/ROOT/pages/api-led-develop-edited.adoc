@@ -1,4 +1,128 @@
-= Phase 2: Develop the APIs
+= Develop the API
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+In this step, you'll turn your API specification into a working application. Anypoint Code Builder scaffolds the project structure automatically, and you'll add the simple business logic.
+
+== What You'll Learn
+
+* How to scaffold an implementation project from an API spec
+* How to use the visual canvas in Code Builder
+* How to set a response payload
+
+== Create the Implementation Project
+
+. In Anypoint Code Builder, open the Command Palette (Cmd+Shift+P on Mac, Ctrl+Shift+P on Windows/Linux).
+
+. Type and select: *MuleSoft: Develop an Integration*
+
+. Select *Create New Project*.
+
+. Configure the project:
++
+* *Project Name*: `hello-world-impl`
+* Select *Import API Specification*: *From Exchange*
++
+NOTE: If your spec isn't in Exchange, select *From Local File* and browse to `hello-world-api.yaml`
+* Enable *Scaffold flows from this API specification*
+
+. Click *Create Project*.
++
+Code Builder generates:
+
+* HTTP Listener configuration (receives requests)
+* APIkit Router (routes to your endpoint)
+* A flow for your GET `/greeting` endpoint
+* Error handlers
+
+. In the Explorer, open `hello-world-api.xml`.
++
+The canvas displays your scaffolded flows.
+
+== Understand the Scaffolded Structure
+
+. In the canvas, you'll see these flows:
++
+* *hello-world-api-main*: HTTP Listener that receives requests on port 8081
+* *get:\greeting:hello-world-api-config*: Your GET endpoint implementation
+* Error handling flows
+
+. Click the *HTTP Listener* component to review:
++
+* *Path*: `/api/*` (receives all API requests)
+* *Port*: `8081` (local development port)
+
+== Implement the Hello World Logic
+
+Now add the logic to return your greeting.
+
+. Navigate to the *get:\greeting:hello-world-api-config* flow in the canvas.
+
+. The flow contains a *Transform Message* component. Click it.
+
+. Replace the DataWeave code with:
++
+[source,dataweave]
+----
+%dw 2.0
+output application/json
+---
+{
+  message: "Hello, World!"
+}
+----
++
+This DataWeave script returns a simple JSON response with your greeting.
+
+. Save your changes (Cmd+S on Mac, Ctrl+S on Windows/Linux).
+
+That's it! Your API is implemented.
+
+== Test Locally
+
+. Click the *Run and Debug* icon in the left sidebar (or press Cmd+Shift+D).
+
+. Click *Run* to start your application.
++
+The Output panel shows startup progress. Wait for "Application started successfully".
+
+. Open Postman and send a GET request:
++
+[source,text]
+----
+GET http://localhost:8081/api/greeting
+----
+
+. Verify you receive:
++
+[source,json]
+----
+{
+  "message": "Hello, World!"
+}
+----
+
+. Click *Stop* in the debug toolbar.
+
+Congratulations! Your API works locally.
+
+== What Just Happened?
+
+Let's understand what you used:
+
+* *Scaffolding*: Code Builder generated the project structure from your specification
+* *HTTP Listener*: Receives incoming HTTP requests on port 8081
+* *APIkit Router*: Routes requests to the correct endpoint flow
+* *DataWeave*: MuleSoft's transformation language for creating responses
+* *Canvas*: Visual editor for building flows
+* *Run and Debug*: Built-in testing environment
+
+== What's Next
+
+Your API works on your machine. Next, you'll add a quick validation step to see how to test locally.
+
+xref:api-led-test-edited.adoc[Next: Test Locally]
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
