@@ -61,7 +61,7 @@ Build your agent network and coordinate brokers and agents using a declarative Y
 Apply policies to your agents, brokers, LLMs, and MCP servers to help manage security and control traffic.
 
 - xref:api-manager::create-instance-task-agent-tool.adoc[Add a Flex Gateway Agent or Tool Instance in API Manager]
-- https://videos.mulesoft.com/watch/2E2PkqzMnLEjoDhL5YkywT[Watch a Video toLearn About AI Gateway from MuleSoft] 
+- https://videos.mulesoft.com/watch/2E2PkqzMnLEjoDhL5YkywT[Watch a Video to Learn About AI Gateway from MuleSoft] 
 - xref:gateway::flex-gateway-managed-ingress-egress.adoc[Deploy Agent Fabric Ingress and Egress Managed Flex Gateways]
 - xref:gateway::flex-gateway-secure-apis.adoc[Secure Flex Gateway Instances with Policies]
 
