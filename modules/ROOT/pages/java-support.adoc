@@ -193,6 +193,10 @@ JPMS was introduced in Java 9. This feature introduces stricter encapsulation, i
 ** Address `ResourceBundle` Loading: Implement solutions for issues related to resource bundle loading, such as using `ResourceBundleProvider` or alternative methods.
 ** Analyze the third-party libraries' changelogs to understand Java 17 compatibility and changes related to JPMS.
 
+* Unsupported directives
++
+Don't set `--add-opens`, `--add-exports`, or `--add-modules` directives. These directives are not allowed in CloudHub, Runtime Fabric, or on-premises. These directives also require managing them for each connector across all environments, and introduce a backward compatibility burden, complicating future Java upgrades and potentially enabling security vulnerabilities. If these directives are used, they are not covered under Support.
+
 * JDK Migration Guide
 +
 See the https://docs.oracle.com/en/java/javase/17/migrate/getting-started.html#GUID-C25E2B1D-6C24-4403-8540-CFEA875B994A[Oracle JDK Migration Guide] for a full list of the changes made from Java 8 to Java 17. Use the guide to assess the impact to your code.
