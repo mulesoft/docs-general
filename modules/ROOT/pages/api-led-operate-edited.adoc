@@ -1,9 +1,6 @@
 = Step 6. Monitor and Manage
-ifndef::env-site,env-github[]
-include::_attributes.adoc[]
-endif::[]
 
-In this final step, you'll learn how to monitor your deployed API using Runtime Manager - your operations dashboard for CloudHub applications.
+In this final step, you'll learn how to monitor your deployed API using Runtime Manager, your operations dashboard for CloudHub applications.
 
 == Step 6.1: Access Runtime Manager
 
@@ -21,11 +18,21 @@ The dashboard opens.
 
 The dashboard shows real-time metrics:
 
-* *Status*: Running (green) means your API is healthy
-* *Uptime*: How long the application has been running
-* *CPU Usage*: Current CPU utilization
-* *Memory Usage*: Current memory consumption
-* *Replicas*: Shows 1/1 (1 running replica out of 1 expected)
+* *Status*
++
+Running (green) means your API is healthy.
+* *Uptime*
++
+How long the application has been running.
+* *CPU Usage*
++
+Current CPU utilization.
+* *Memory Usage*
++
+Current memory consumption.
+* *Replicas*
++
+Shows *1/1* (1 running replica out of 1 expected).
 
 Send a few test requests from Postman and watch the *Message Rate* graph update.
 
@@ -49,11 +56,17 @@ INFO  [hello-world-impl].get:\greeting
 
 . Use log filters:
 +
-* *Priority*: Filter by INFO, WARN, ERROR
-* *Search*: Find specific text
-* *Time Range*: View logs from the last 30 days
-
-. Logs show every request, error, and Logger message from your application.
+* *Priority*
++
+Filter by INFO, WARN, ERROR.
+* *Search*
++
+Find specific text.
+* *Time Range*
++
+View logs from the last 30 days.
++
+Logs show every request, error, and Logger message from your application.
 
 == Step 6.4: Understand Your Application's URL
 
@@ -72,7 +85,7 @@ This URL is publicly accessible and automatically includes:
 
 * HTTPS/TLS encryption
 * Load balancing across replicas
-* DDoS protection
+* Distributed Denial-of-Service (DDoS) protection
 * Automatic scaling
 
 == Step 6.5: Test from Anywhere
@@ -88,7 +101,7 @@ Try it! Open a browser on any device and visit:
 
 [source,text]
 ----
-https://your-app-url.cloudhub.io/api/greeting
+https://your-app-url.cloudhub.io/api/greeting?name=World
 ----
 
 You'll see your greeting in the browser.

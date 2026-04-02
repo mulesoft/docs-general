@@ -1,14 +1,14 @@
 = Step 5. Deploy the API to CloudHub 2.0
 
-Now that you’ve created and tested the Mule app that contains your new API from within Anypoint Code Builder, you can deploy the API to CloudHub 2.0. First, create an API proxy, which then enables you to test the API from Exchange. Then, set up a rate-limiting policy to protect your API from a denial-of-service attack.
+Now that you’ve tested your API locally, deploy it to CloudHub 2.0 so it’s accessible from anywhere.
 
 == Step 5.1: Prepare for Deployment
 
-Before deploying, update your Maven configuration for CloudHub 2.0.
+CloudHub 2.0 requires a release version (not a snapshot). When you scaffolded the project, Anypoint Code Builder created a `pom.xml` with `-SNAPSHOT` in the version (Maven’s convention for work-in-progress code). Remove it before deploying.
 
 . In Anypoint Code Builder, open `pom.xml` in your project.
 
-. Find the `<version>` element and remove `-SNAPSHOT`, for example:
+. Find the `<version>` element and remove `-SNAPSHOT`:
 +
 [source,xml]
 ----
@@ -67,9 +67,7 @@ The VS Code status bar shows the progress of the deployment.
 Anypoint Code Builder packages the application and deploys it to CloudHub 2.0.
 The Output panel opens with *Mule Maven Output* selected:
 +
-image::int-deploy-output.png["Output panel with Mule Maven Output selected"]
-+
-After a couple of minutes, you'll see "Deployment successful".
+After a couple of minutes, you'll see `Deployment successful`.
 
 . Click *Open in Runtime Manager*.
 
@@ -79,15 +77,15 @@ After a couple of minutes, you'll see "Deployment successful".
 
 . Wait for the status to change from *Deploying* to *Running* (this takes a few minutes).
 
-. Once running, copy the application URL:
+. After the app is running, copy the application URL.
 +
-Format: `https://hello-world-impl-jsmith.<space-domain>.cloudhub.io`
+The format is: `+https://hello-world-impl-jsmith.<space-domain>.cloudhub.io+`
 
 . Open Postman and test your deployed API:
 +
 [source,text]
 ----
-GET https://hello-world-impl-jsmith.<space-domain>.cloudhub.io/api/greeting
+GET https://hello-world-impl-jsmith.<space-domain>.cloudhub.io/api/greeting?name=World
 ----
 
 . Verify you receive your greeting:

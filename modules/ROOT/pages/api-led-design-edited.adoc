@@ -62,7 +62,7 @@ After exploring Exchange to see the range of assets available, return to Anypoin
 +
 [source,text]
 ----
-Create an OAS 3.0 API specification called "hello-world-api" with a GET endpoint at /greeting that returns a simple JSON response with a message field containing "Hello, World!"
+Create an OAS 3.0 API specification called "hello-world-api" with a GET endpoint at /greeting that accepts a required query parameter called "name" and returns a JSON response with a message field containing a personalized greeting.
 ----
 
 . Press Enter to send.
@@ -73,6 +73,7 @@ MuleSoft Vibes generates your API specification in about 10 seconds.
 +
 * An API title and version
 * A GET endpoint at `/greeting`
+* A required query parameter `name`
 * A 200 response with a JSON schema
 
 . Click *Create Project* in the MuleSoft Vibes response.
@@ -94,7 +95,14 @@ info:
 paths:
   /greeting: <1>
     get:
-      responses: <2>
+      parameters: <2>
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+          description: The name to greet
+      responses: <3>
         '200':
           description: Success
           content:
@@ -102,13 +110,14 @@ paths:
               schema:
                 type: object
                 properties:
-                  message: <3>
+                  message: <4>
                     type: string
                     example: "Hello, World!"
 ----
 <1> The endpoint path for the API. Clients send GET requests to `/greeting`.
-<2> Defines the possible HTTP responses this endpoint returns.
-<3> The JSON response property that contains the greeting message.
+<2> Defines the required query parameter that clients must provide.
+<3> Defines the possible HTTP responses this endpoint returns.
+<4> The JSON response property that contains the greeting message.
 
 == Step 2.5: Test with the Mocking Service
 
@@ -124,9 +133,11 @@ The API Console displays your spec.
 
 . Click *Try It*.
 
+. In the *name* query parameter field, enter `World`.
+
 . Click *Send*.
 
-. Verify that API Console returns the response you defined:
+. Verify that API Console returns the response:
 +
 [source,json]
 ----

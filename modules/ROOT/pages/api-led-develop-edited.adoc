@@ -69,11 +69,11 @@ Now add the logic to return your greeting.
 output application/json
 ---
 {
-  message: "Hello, World!"
+  message: "Hello, " ++ attributes.queryParams.name ++ "!"
 }
 ----
 +
-This DataWeave script returns a simple JSON response with your greeting.
+This DataWeave script reads the `name` query parameter and returns a personalized greeting.
 
 . Save your changes (Cmd+S on Mac, Ctrl+S on Windows/Linux).
 
@@ -102,7 +102,7 @@ The Output panel shows startup progress. Wait for "Application started successfu
 +
 [source,text]
 ----
-GET http://localhost:8081/api/greeting
+GET http://localhost:8081/api/greeting?name=World
 ----
 
 . Verify you receive:
@@ -132,7 +132,6 @@ Let's understand what you used:
 == What's Next
 
 Your API works on your machine. Next, you'll add a quick validation step to see how to test locally.
-
 
 == Developer Deep Dive
 
