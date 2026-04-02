@@ -1,50 +1,39 @@
 = Step 1. Prerequisites for Building an API-Led Solution
 
-
 Before you begin building your API-led solution, verify that you have the required tools and access:
 
 * Username and password for your Anypoint Platform organization. If you don't have Anypoint Platform yet, create a Trial organization on Anypoint Platform.
 +
 link:https://anypoint.mulesoft.com/login/#/signup["Create a Trial organization^", role="button-primary"]
 
-* Download Anypoint Code Builder. 
+* xref:anypoint-code-builder::start-acb-desktop.adoc[Set up Anypoint Code Builder]. 
+* To test REST requests, obtain a client such as Advanced REST Client or Postman if you don't already have one. This tutorial uses Advanced REST Client.
 +
-link:https://www.mulesoft.com/lp/dl/anypoint-mule-studio["Download Anypoint Studio^", role="button-primary"]
+link:https://github.com/advanced-rest-client/arc-electron/releases["Install Advanced REST Client^", role=button-primary"]
++
+Depending on your platform, you might need to install a different client, or https://github.com/advanced-rest-client/arc-electron/releases[install Advanced REST Client from GitHub].
 
 * Required Permissions:
-** *Anypoint Code Builder Developer*
 ** *Mule Developer Generative AI User*
 +
 Enables MuleSoft Vibes features
-** *Design Center Developer*: Allows API specification creation
-** *Exchange Contributor*: Enables publishing assets to Exchange
-** *CloudHub 2.0 Deploy*: Allows deployment to CloudHub 2.0
-
-* *Einstein Enabled*: MuleSoft Vibes requires Einstein to be enabled in Access Management. See xref:access-management::enabling-einstein.adoc[Enabling Einstein for Anypoint Platform].
-
-== Required Tools
-
-Install these tools for testing APIs:
-
-* *REST Client*: Download and install a REST client such as:
-** link:https://www.postman.com/downloads/["Postman^", role="button-primary"]
-** link:https://github.com/advanced-rest-client/arc-electron/releases["Advanced REST Client^", role="button-primary"]
+** *Design Center Developer*
 +
-This tutorial uses Postman for examples, but any REST client works.
+Allows API specification creation
+** *Exchange Contributor*
++
+Enables publishing assets to Exchange
+** *CloudHub 2.0 Deploy*
++
+Allows deployment to CloudHub 2.0
 
-== Recommended Knowledge
-
-While this tutorial guides you through each step, familiarity with these concepts helps:
-
-* *REST APIs*: Understanding HTTP methods (GET, POST, PUT, DELETE), status codes, and JSON
-* *API Specifications*: Basic knowledge of OpenAPI Specification (OAS) or RAML
-* *Integration Concepts*: General understanding of how systems communicate
+* *MuleSoft Vibes requires Agentforce to be enabled in Access Management. See xref:access-management::enabling-agentforce.adoc[].
 
 == CloudHub 2.0 Setup
 
 For CloudHub 2.0 deployments, you need:
 
-* A CloudHub 2.0 Shared Space in your organization. Anypoint Platform trial accountsinclude a default Shared Space.
+* A CloudHub 2.0 Shared Space in your organization. Anypoint Platform trial accounts include a default Shared Space.
 +
 See xref:cloudhub-2::ch2-shared-space-about.adoc[About Shared Spaces].
 
@@ -52,10 +41,9 @@ See xref:cloudhub-2::ch2-shared-space-about.adoc[About Shared Spaces].
 +
 See xref:cloudhub-2::ch2-environments-about.adoc[About Environments].
 
-
 == Helpful Hints
 
-* Use two browser windows.Keep one window open for reading instructions and another for working in Anypoint Code Builder.
+* Use two browser windows: One to read instructions and one to perform the tasks.
 
 * In Anypoint Code Builder, enable auto-save to avoid losing work (File > Auto Save).
 
@@ -65,4 +53,4 @@ See xref:cloudhub-2::ch2-environments-about.adoc[About Environments].
 
 With your environment ready, you'll use MuleSoft Vibes to design your first API specification using natural language prompts.
 
-xref:api-led-design.adoc[Next: Phase 1 - Design with AI]
+xref:api-led-design.adoc[Next: Design an API Specification]
