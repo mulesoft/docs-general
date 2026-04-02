@@ -1,17 +1,11 @@
-= Develop the API
+= Step 3. Develop the API
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
 In this step, you'll turn your API specification into a working application. Anypoint Code Builder scaffolds the project structure automatically, and you'll add the simple business logic.
 
-== What You'll Learn
-
-* How to scaffold an implementation project from an API spec
-* How to use the visual canvas in Code Builder
-* How to set a response payload
-
-== Create the Implementation Project
+== Step 3.1: Create the Implementation Project
 
 . In Anypoint Code Builder, open the Command Palette (Cmd+Shift+P on Mac, Ctrl+Shift+P on Windows/Linux).
 
@@ -40,7 +34,7 @@ Code Builder generates:
 +
 The canvas displays your scaffolded flows.
 
-== Understand the Scaffolded Structure
+== Step 3.2: Understand the Scaffolded Structure
 
 . In the canvas, you'll see these flows:
 +
@@ -53,7 +47,7 @@ The canvas displays your scaffolded flows.
 * *Path*: `/api/*` (receives all API requests)
 * *Port*: `8081` (local development port)
 
-== Implement the Hello World Logic
+== Step 3.3: Implement the Hello World Logic
 
 Now add the logic to return your greeting.
 
@@ -79,7 +73,7 @@ This DataWeave script returns a simple JSON response with your greeting.
 
 That's it! Your API is implemented.
 
-== Test Locally
+== Step 3.4: Test Locally
 
 . Click the *Run and Debug* icon in the left sidebar (or press Cmd+Shift+D).
 

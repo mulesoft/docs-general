@@ -1,17 +1,11 @@
-= Test Locally
+= Step 4. Test the API
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
 In this step, you'll test your API using Code Builder's debugging tools and add logging to see what's happening inside your application.
 
-== What You'll Learn
-
-* How to use the API Console for quick testing
-* How to add logging to your flows
-* How to use breakpoints for debugging
-
-== Test with the API Console
+== Step 4.1: Test with the API Console
 
 Code Builder has a built-in API Console for quick testing.
 
@@ -31,7 +25,7 @@ You'll see the request URL and the response with your greeting.
 
 This confirms your API spec and implementation match.
 
-== Add Logging
+== Step 4.2: Add Logging
 
 Logging helps you see what's happening inside your flows.
 
@@ -48,7 +42,7 @@ Logging helps you see what's happening inside your flows.
 
 . Save your changes.
 
-== Test with Logging
+== Step 4.3: Test with Logging
 
 . Click *Run and Debug*, then *Run*.
 
@@ -73,7 +67,7 @@ INFO  [hello-world-impl].get:\greeting
 
 . Click *Stop*.
 
-== Use Breakpoints for Debugging
+== Step 4.4: Use Breakpoints for Debugging
 
 Breakpoints pause execution so you can inspect what's happening.
 
