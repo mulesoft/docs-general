@@ -75,7 +75,7 @@ MuleSoft Vibes generates your API specification in about 10 seconds.
 * A GET endpoint at `/greeting`
 * A 200 response with a JSON schema
 
-. Click *Create Project* in the Vibes response.
+. Click *Create Project* in the MuleSoft Vibes response.
 
 . Select your home directory as the project location.
 
@@ -92,9 +92,9 @@ info:
   title: hello-world-api
   version: 1.0.0
 paths:
-  /greeting:
+  /greeting: <1>
     get:
-      responses:
+      responses: <2>
         '200':
           description: Success
           content:
@@ -102,37 +102,31 @@ paths:
               schema:
                 type: object
                 properties:
-                  message:
+                  message: <3>
                     type: string
                     example: "Hello, World!"
 ----
-
-. This specification defines:
-+
-* A GET endpoint at `/greeting`
-* Returns HTTP 200 with JSON
-* JSON contains a `message` field
+<1> The endpoint path for the API. Clients send GET requests to `/greeting`.
+<2> Defines the possible HTTP responses this endpoint returns.
+<3> The JSON response property that contains the greeting message.
 
 == Step 2.5: Test with the Mocking Service
 
-Before implementing, test your design with Anypoint Code Builder's built-in mocking service.
+Use the Mocking Service in the API Console to check the request and response that you configured in your API spec.
 
-. In the editor toolbar, toggle *Enable Mocking Service* on.
+. In Anypoint Code Builder, open the spec for your API project (`hello-world-api.yaml`).
+
+. Click the image:icon-api-console.png["",14,14] (*API Console*) icon in the editor toolbar.
 +
-A temporary URL appears (like `https://mocksvc.mulesoft.com/...`).
+The API Console displays your spec.
 
-. Copy the mocking URL.
+. In the API Console, expand the *GET* method for the `/greeting` resource.
 
-. Open Postman and create a new GET request:
-+
-[source,text]
-----
-GET https://mocksvc.mulesoft.com/YOUR-MOCK-ID/greeting
-----
+. Click *Try It*.
 
 . Click *Send*.
-+
-The mocking service returns example data based on your spec:
+
+. Verify that API Console returns the response you defined:
 +
 [source,json]
 ----
