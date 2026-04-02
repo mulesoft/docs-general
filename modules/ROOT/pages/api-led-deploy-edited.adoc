@@ -65,7 +65,9 @@ The VS Code status bar shows the progress of the deployment.
 . At the prompt, select the environment to deploy to.
 +
 Anypoint Code Builder packages the application and deploys it to CloudHub 2.0.
-The Output panel opens with *Mule Maven Output* selected:
+
++
+The Output panel opens with *Mule Maven Output* selected.
 +
 After a couple of minutes, you'll see `Deployment successful`.
 

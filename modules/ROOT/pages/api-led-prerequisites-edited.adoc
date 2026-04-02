@@ -11,7 +11,7 @@ link:https://anypoint.mulesoft.com/login/#/signup["Create a Trial organization^"
 +
 link:https://github.com/advanced-rest-client/arc-electron/releases["Install Advanced REST Client^", role=button-primary"]
 +
-Depending on your platform, you might need to install a different client, or https://github.com/advanced-rest-client/arc-electron/releases[install Advanced REST Client from GitHub].
+Depending on your platform, you might need to install a different client.
 
 * Required Permissions:
 ** *Mule Developer Generative AI User*
@@ -27,7 +27,7 @@ Enables publishing assets to Exchange
 +
 Allows deployment to CloudHub 2.0
 
-* *MuleSoft Vibes requires Agentforce to be enabled in Access Management. See xref:access-management::enabling-agentforce.adoc[].
+* *MuleSoft Vibes* requires Agentforce to be enabled in Access Management. See xref:access-management::enabling-agentforce.adoc[].
 
 == CloudHub 2.0 Setup
 
@@ -45,9 +45,9 @@ See xref:cloudhub-2::ch2-environments-about.adoc[About Environments].
 
 * Use two browser windows: One to read instructions and one to perform the tasks.
 
-* In Anypoint Code Builder, enable auto-save to avoid losing work (File > Auto Save).
+* In Anypoint Code Builder, enable auto-save to avoid losing work (*File > Auto Save*).
 
-* Bookmark the xref:https://anypoint.mulesoft.com[Anypoint Platform] login page.
+* Bookmark the https://anypoint.mulesoft.com[Anypoint Platform] login page.
 
 == What's Next
 

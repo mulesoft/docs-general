@@ -30,7 +30,7 @@ You can also check whether an API specification with the same objectives isn't a
 
 Looking for an API specification that already does what you need is easy:
 
-* Look at the public Anypoint Exchange, which is a portal hosted by MuleSoft that contains API specifications, connectors, and other assets that you can download and use.
+. Look at the public Anypoint Exchange, which is a portal hosted by MuleSoft that contains API specifications, connectors, and other assets that you can download and use.
 You’ll see some of the most popular API specifications, connectors, and other assets displayed on the landing page.
 +
 link:https://www.mulesoft.com/exchange["Take me to Exchange^", role="button-primary"]
@@ -38,7 +38,7 @@ link:https://www.mulesoft.com/exchange["Take me to Exchange^", role="button-prim
   .. Select *Any Type > REST APIs* to display only REST API specifications.
   .. Click any specification to see the data types and the HTTP requests defined for the API.
 +
-* Look at Exchange for your organization (account). Logging in changes the view to your organization's private Exchange.
+. Look at Exchange for your organization (account). Logging in changes the view to your organization's private Exchange.
 +
 link:https://anypoint.mulesoft.com/login["Take me to Anypoint Platform^", role="button-primary"]
 +
@@ -46,7 +46,7 @@ link:https://anypoint.mulesoft.com/login["Take me to Anypoint Platform^", role="
   .. In the Anypoint Platform landing page, go to the *Exchange* section and click *Discover and share*.
   .. Click on any specification to see the data types and the HTTP requests defined for the API. If this is a trial org, you might not see anything yet.
 
-After exploring Exchange to see the range of assets available, return to Anypoint Platform and use MuleSoft Vibes to create a new API specification.
+After exploring Exchange to see the range of assets available, use MuleSoft Vibes to create a new API specification.
 
 == Step 2.2: Access Anypoint Code Builder
 
@@ -67,24 +67,17 @@ Create an OAS 3.0 API specification called "hello-world-api" with a GET endpoint
 
 . Press Enter to send.
 +
-MuleSoft Vibes generates your API specification in about 10 seconds.
-
-. Review the generated spec in the response. It should include:
-+
-* An API title and version
-* A GET endpoint at `/greeting`
-* A required query parameter `name`
-* A 200 response with a JSON schema
+MuleSoft Vibes generates your API specification in about 10 seconds. You'll see the generated spec in the chat response.
 
 . Click *Create Project* in the MuleSoft Vibes response.
 
 . Select your home directory as the project location.
-
-. Anypoint Code Builder creates the project and opens `hello-world-api.yaml`.
++
+Anypoint Code Builder creates the project and opens `hello-world-api.yaml` in the editor.
 
 == Step 2.4: Review Your API Specification
 
-. In the editor, review the generated specification:
+The file is now open in the editor. Let's review the structure:
 +
 [source,yaml]
 ----
@@ -121,11 +114,9 @@ paths:
 
 == Step 2.5: Test with the Mocking Service
 
-Use the Mocking Service in the API Console to check the request and response that you configured in your API spec.
+Use the Mocking Service in the API Console to test your spec before implementing it.
 
-. In Anypoint Code Builder, open the spec for your API project (`hello-world-api.yaml`).
-
-. Click the image:icon-api-console.png["",14,14] (*API Console*) icon in the editor toolbar.
+. With `hello-world-api.yaml` still open, click the image:icon-api-console.png["",14,14] (*API Console*) icon in the editor toolbar.
 +
 The API Console displays your spec.
 
@@ -151,6 +142,8 @@ Congratulations! You've designed an API without writing any code.
 == What's Next
 
 Now that your API is designed, you'll scaffold an implementation project and add the business logic to make it functional.
+
+xref:api-led-develop-edited.adoc[Next: Develop the API]
 
 == Developer Deep Dive
 

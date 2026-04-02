@@ -92,10 +92,10 @@ This URL is publicly accessible and automatically includes:
 
 Your API is now accessible from any device:
 
-* Test from your phone's browser
-* Share the URL with teammates
-* Call it from other applications
-* Use it in front-end web apps
+* Test the API from your phone's browser.
+* Share the URL with teammates.
+* Call the API from other applications.
+* Use the API in front-end web apps.
 
 Try it! Open a browser on any device and visit:
 
@@ -110,9 +110,15 @@ You'll see your greeting in the browser.
 
 You used Runtime Manager to:
 
-* *Monitor*: View real-time health metrics
-* *Troubleshoot*: Access logs for debugging
-* *Verify*: Confirm your API is running correctly
+* *Monitor* 
++
+View real-time health metrics.
+* *Troubleshoot*
++
+Access logs for debugging.
+* *Verify*
++
+Confirm your API is running correctly.
 
 Your Hello World API is now:
 
@@ -133,19 +139,27 @@ Congratulations! You've completed the full API development lifecycle:
 
 You now understand which MuleSoft product does what:
 
-* *Anypoint Code Builder*: Design and develop APIs
-* *MuleSoft Vibes*: AI-powered spec generation
-* *CloudHub 2.0*: Cloud deployment platform
-* *Runtime Manager*: Operations and monitoring dashboard
+* *Anypoint Code Builder*
++
+Design and develop APIs.
+* *MuleSoft Vibes*
++
+AI-powered spec generation.
+* *CloudHub 2.0*
++
+Cloud deployment platform.
+* *Runtime Manager*
++
+Operations and monitoring dashboard.
 
 == Learn More
 
 Ready to build more complex APIs? Explore:
 
-* xref:code-builder::tutorials.adoc[More Anypoint Code Builder Tutorials]
+* xref:anypoint-code-builder::tutorials.adoc[More Anypoint Code Builder Tutorials]
 * xref:connectors::index.adoc[Connectors for Databases, Salesforce, SAP, and more]
 * xref:mule-runtime::dataweave.adoc[DataWeave for Data Transformation]
-* https://www.salesforce.com/blog/api-led-connectivity/?bc=OTH[API-Led Connectivity Patterns^]
+* https://www.salesforce.com/blog/api-led-connectivity/?bc=OTH[API-Led Connectivity Patterns]
 
 == Clean Up (Optional)
 

@@ -1,28 +1,45 @@
 = Step 4. Test the API
 
-In this step, you'll test your API using Anypoint Code Builder's debugging tools and add logging to see what's happening inside your application.
+In this step, you'll test your API using Anypoint Code Builder's debugging tools and add validation and logging to see what's happening inside your application.
 
-== Step 4.1: Test with the API Console
+== Step 4.1: Run and Test Your API
 
-Anypoint Code Builder has a built-in API Console for quick testing.
-
-. In Anypoint Code Builder, open `hello-world-api.xml`.
-
-. Click the image:icon-api-console.png["",14,14] (*API Console*) icon in the editor toolbar.
+. Open the Run and Debug panel.
 +
-The API Console opens in a panel.
-
-. Expand *GET /greeting*.
-
-. Click *Try it*.
-
-. In the *name* query parameter field, enter `World`.
-
-. Click *Send*.
+.Show me how
+[%collapsible]
+====
+** Click the image:icon-run-debug.png["",15,15] (*Run and Debug*) icon in the activity bar.
+** Use the keyboard shortcuts:
 +
-You'll see the request URL and the response with your greeting.
+*** Mac: Cmd+Shift+d
+*** Windows: Ctrl+Shift+d
+** In the desktop IDE, select *View* > *Run*.
+====
 
-This confirms your API spec and implementation match.
+. Click *Run* to start your application.
++
+The Output panel shows startup progress. Wait for `Application started successfully`.
+
+. Open Postman and send a GET request:
++
+[source,text]
+----
+GET http://localhost:8081/api/greeting?name=World
+----
+
+. Verify you receive:
++
+[source,json]
+----
+{
+  "message": "Hello, World!"
+}
+----
++
+Your API works! Now let's add validation and debugging.
+
+. Click *Stop* in the debug toolbar.
 
 == Step 4.2: Add Validation
 
@@ -30,7 +47,7 @@ Now add validation to ensure your API handles invalid requests properly.
 
 . In the canvas, navigate to your *get:\greeting* flow.
 
-. From the component palette, search for *Validation* and drag *Is not blank string* into your flow *before* the Transform Message component.
+. From the component palette, search for *Validation* and drag *Is not blank string* into your flow before the *Transform Message* component.
 
 . Click the validation component to configure it:
 +
@@ -128,7 +145,7 @@ Breakpoints pause execution so you can inspect what's happening.
 
 . In the canvas, click in the left margin next to the Logger component.
 +
-A red dot appears - this is a breakpoint.
+A red dot appears, which represents a breakpoint.
 
 . Open the Run and Debug panel.
 +
@@ -167,12 +184,24 @@ Execution pauses at the breakpoint. The debug toolbar appears at the top.
 
 You used Anypoint Code Builder's testing and debugging tools:
 
-* *API Console*: Quick testing without leaving the IDE
-* *Validation Module*: Ensures your API handles invalid input properly
-* *Logger*: Adds visibility into your flows
-* *Breakpoints*: Pause execution to inspect data
-* *Variables Panel*: Shows message content at each step
-* *Debug Mode*: Step through your flow execution
+* *API Console*
++
+Quick testing without leaving the IDE
+* *Validation Module*
++
+Ensures your API handles invalid input properly
+* *Logger*
++
+Adds visibility into your flows
+* *Breakpoints*
++
+Pauses execution to inspect data
+* *Variables Panel*
++
+Shows message content at each step
+* *Debug Mode*
++
+Step through your flow execution
 
 == What's Next
 
@@ -184,7 +213,7 @@ xref:api-led-deploy.adoc[Next: Phase 4 - Deploy to CloudHub 2.0]
 
 Explore advanced testing capabilities:
 
-* xref:code-builder::int-test-munit.adoc[Automated Testing with MUnit]
+* xref:anypoint-code-builder::int-test-munit.adoc[Automated Testing with MUnit]
 * xref:mule-runtime::intro-error-handlers.adoc[Advanced Error Handling]
-* xref:code-builder::troubleshoot-gen-ai.adoc[Troubleshooting with MuleSoft Vibes]
+* xref:anypoint-code-builder::troubleshoot-gen-ai.adoc[Troubleshooting with MuleSoft Vibes]
 * xref:mule-runtime::dataweave-testing-framework.adoc[DataWeave Testing Framework]

@@ -46,6 +46,6 @@ After completing this tutorial, you'll understand the MuleSoft development workf
 == See Also
 
 * https://www.salesforce.com/blog/api-led-connectivity/?bc=OTH[What is API-led Connectivity]
-* xref:code-builder::index.adoc[]
-* xref:code-builder::api-ai-design-spec.adoc[]
+* xref:anypoint-code-builder::index.adoc[]
+* xref:anypoint-code-builder::api-ai-design-spec.adoc[]
 * xref:cloudhub-2::index.adoc[]
