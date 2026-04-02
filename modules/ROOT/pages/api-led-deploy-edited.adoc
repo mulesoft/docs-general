@@ -6,7 +6,7 @@ Now that you’ve created and tested the Mule app that contains your new API fro
 
 Before deploying, update your Maven configuration for CloudHub 2.0.
 
-. In Code Builder, open `pom.xml` in your project.
+. In Anypoint Code Builder, open `pom.xml` in your project.
 
 . Find the `<version>` element and remove `-SNAPSHOT`, for example:
 +

@@ -50,19 +50,13 @@ After exploring Exchange to see the range of assets available, return to Anypoin
 
 == Step 2.2: Access Anypoint Code Builder
 
-. Log in to Anypoint Platform:
-+
-link:https://anypoint.mulesoft.com/login["Go to Anypoint Platform^", role="button-primary"]
+. Open the desktop IDE (VS Code) with Anypoint Code Builder installed.
 
-. Click *Code Builder* in the Development section.
-+
-Code Builder opens in a new tab.
+. In the activity bar of the IDE, click the image:icon-ms-logo.png["",20,20] (*Anypoint Code Builder*) icon.
 
 == Step 2.3: Generate Your API Spec with MuleSoft Vibes
 
-. In Code Builder, locate the MuleSoft Vibes icon (chat bubble) in the left sidebar.
-
-. Click it to open the Vibes panel.
+. Open MuleSoft Vibes from the toolbar or from the *Build Your Ecosystem with AI* card in the canvas.
 
 . Type this prompt in the chat:
 +
@@ -73,7 +67,7 @@ Create an OAS 3.0 API specification called "hello-world-api" with a GET endpoint
 
 . Press Enter to send.
 +
-Vibes generates your API specification in about 10 seconds.
+MuleSoft Vibes generates your API specification in about 10 seconds.
 
 . Review the generated spec in the response. It should include:
 +
@@ -121,7 +115,7 @@ paths:
 
 == Step 2.5: Test with the Mocking Service
 
-Before implementing, test your design with Code Builder's built-in mocking service.
+Before implementing, test your design with Anypoint Code Builder's built-in mocking service.
 
 . In the editor toolbar, toggle *Enable Mocking Service* on.
 +

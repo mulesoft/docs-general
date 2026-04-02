@@ -113,7 +113,7 @@ Your Hello World API is now:
 Congratulations! You've completed the full API development lifecycle:
 
 . ✓ Designed an API spec with MuleSoft Vibes
-. ✓ Developed the implementation in Code Builder
+. ✓ Developed the implementation in Anypoint Code Builder
 . ✓ Tested locally with debugging tools
 . ✓ Deployed to CloudHub 2.0
 . ✓ Verified and monitored in Runtime Manager
@@ -129,7 +129,7 @@ You now understand which MuleSoft product does what:
 
 Ready to build more complex APIs? Explore:
 
-* xref:code-builder::tutorials.adoc[More Code Builder Tutorials]
+* xref:code-builder::tutorials.adoc[More Anypoint Code Builder Tutorials]
 * xref:connectors::index.adoc[Connectors for Databases, Salesforce, SAP, and more]
 * xref:mule-runtime::dataweave.adoc[DataWeave for Data Transformation]
 * https://www.salesforce.com/blog/api-led-connectivity/?bc=OTH[API-Led Connectivity Patterns^]

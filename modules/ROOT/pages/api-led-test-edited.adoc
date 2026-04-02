@@ -3,13 +3,13 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-In this step, you'll test your API using Code Builder's debugging tools and add logging to see what's happening inside your application.
+In this step, you'll test your API using Anypoint Code Builder's debugging tools and add logging to see what's happening inside your application.
 
 == Step 4.1: Test with the API Console
 
 Code Builder has a built-in API Console for quick testing.
 
-. In Code Builder, open `hello-world-api.xml`.
+. In Anypoint Code Builder, open `hello-world-api.xml`.
 
 . Click *Open API Console* in the editor toolbar.
 +
@@ -53,7 +53,7 @@ Logging helps you see what's happening inside your flows.
 GET http://localhost:8081/api/greeting
 ----
 
-. In the Output panel (bottom of Code Builder), select *Mule Maven Output*.
+. In the Output panel (bottom of Anypoint Code Builder), select *Mule Maven Output*.
 +
 You'll see your log message:
 +
@@ -79,7 +79,7 @@ A red dot appears - this is a breakpoint.
 
 . Send a request from Postman.
 
-. Return to Code Builder.
+. Return to Anypoint Code Builder.
 +
 Execution pauses at the breakpoint. The debug toolbar appears at the top.
 
@@ -97,7 +97,7 @@ Execution pauses at the breakpoint. The debug toolbar appears at the top.
 
 == What Just Happened?
 
-You used Code Builder's testing and debugging tools:
+You used Anypoint Code Builder's testing and debugging tools:
 
 * *API Console*: Quick testing without leaving the IDE
 * *Logger*: Adds visibility into your flows

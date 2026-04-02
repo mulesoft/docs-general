@@ -105,7 +105,7 @@ Congratulations! Your API works locally.
 
 Let's understand what you used:
 
-* *Scaffolding*: Code Builder generated the project structure from your specification
+* *Scaffolding*: Anypoint Code Builder generated the project structure from your specification
 * *HTTP Listener*: Receives incoming HTTP requests on port 8081
 * *APIkit Router*: Routes requests to the correct endpoint flow
 * *DataWeave*: MuleSoft's transformation language for creating responses
