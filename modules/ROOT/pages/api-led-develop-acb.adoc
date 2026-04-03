@@ -4,9 +4,16 @@ Now that you've created an API specification, you'll turn it into a working Mule
 
 == Step 3.1: Create the Implementation Project
 
-. In Anypoint Code Builder, open the Command Palette.
+. Open your API specification file in the editor, then click the image:icon-implement-api.png["",15,15] (*Implement this local API*) icon in the activity bar.
 +
-.Show me how
+image::imp-local-api.png["Implement this local API icon in the activity bar"]
++
+[NOTE]
+The icon and command are only available when your API spec file is open and active in the editor.
++
+Alternatively, open the Command Palette and select `MuleSoft: Implement this Local API`.
++
+.Show me how to open the Command Palette
 [%collapsible]
 ====
 * Use the keyboard shortcuts:
@@ -14,35 +21,36 @@ Now that you've created an API specification, you'll turn it into a working Mule
 ** Windows: Ctrl+Shift+p
 * In the desktop IDE, select *View* > *Command Palette*.
 ====
-
-. Type and select: *MuleSoft: Develop an Integration*.
-
-. Select *Create New Project*.
-
-. Configure the project:
 +
-* *Project Name*: `hello-world-impl`
-* Select *Import API Specification*: *From Exchange*.
-+
-NOTE: If your spec isn't in Exchange, select *From Local File* and browse to `hello-world-api.yaml`
-* Enable *Scaffold flows from this API specification*.
+[IMPORTANT]
+Do not select `MuleSoft: Implement an API Specification` — that command is for specs published to Anypoint Exchange, not local specs.
 
-. Click *Create Project*.
+. At the prompt, click *OK*:
 +
-Anypoint Code Builder generates:
+image::imp-local-workspace-prompt.png["Prompt: We'll create a workspace to keep your API specification and Mule project in sync."]
 
-* HTTP Listener configuration (receives requests)
-* APIkit Router (routes to your endpoint)
-* A flow for your GET `/greeting` endpoint
-* Error handlers
-
-. In the Explorer, open `hello-world-api.xml`.
+. Navigate to a directory for your new project, and click *Save*.
 +
-The canvas displays your scaffolded flows.
+[IMPORTANT]
+--
+Do not accept the default location. Save your `.code-workspace` file in a directory outside of your project folder, not within your API spec folder.
+--
+
+. When prompted, provide project configuration details:
+.. Provide a name for your Mule project, for example, `hello-world-impl`.
+.. Navigate to a folder for your Mule project, and click *Select target folder*.
+.. Select a Mule runtime version for the project.
+.. Select a Java version for the project.
++
+Anypoint Code Builder scaffolds your local API specification into a new Mule project. Both the API spec and the Mule project open in your IDE.
+
+. In the Explorer view, navigate to `hello-world-impl/src/main/mule/` and open `hello-world-impl.xml`.
++
+This is the Mule configuration XML. This file contains your flows, HTTP Listener, and APIkit Router. The canvas opens automatically when you open it. 
 
 == Step 3.2: Understand the Scaffolded Structure
 
-. In the canvas, you'll see these flows:
+. The canvas shows your scaffolded flows, including: 
 +
 * *hello-world-api-main*
 +
@@ -52,9 +60,10 @@ HTTP Listener that receives requests on port 8081
 Your GET endpoint implementation
 * Error handling flows
 
-. Click the *HTTP Listener* component to review:
+. Click the *Listener* component, then the *Edit Connection* icon (image:icon-gear.png["",15,15]) to review the connection configuration, including:
 +
 * *Path*: `/api/*` (receives all API requests)
+* *Host*: `0.0.0.0` (listens to all interfaces)
 * *Port*: `8081` (local development port)
 
 == Step 3.3: Implement the Hello World Logic
@@ -62,10 +71,18 @@ Your GET endpoint implementation
 Now add the logic to return your greeting.
 
 . Navigate to the *get:\greeting:hello-world-api-config* flow in the canvas.
++
+The flow contains a Logger component by default. You'll replace it with a Transform component to return your greeting.
 
-. Click the *Transform Message* component in the flow.
+. In the flow, click the Logger component and delete it.
 
-. Replace the DataWeave code with:
+. Click the image:icon-plus.png["",15,15] (*Add component*) icon in the flow.
+
+. In the *Add Component* panel, search for `Transform` and select *Transform* from the results.
+
+. Click the *Transform* component to open the DataWeave editor.
+
+. In the DataWeave editor that opens, replace the default script with:
 +
 [source,dataweave]
 ----
@@ -100,11 +117,6 @@ Routes requests to the correct endpoint flow.
 +
 MuleSoft's transformation language for creating responses.
 * *Canvas*
-+
-Visual editor for building flows.
-* *Run and Debug*
-+
-Built-in testing environment.
 
 == What's Next
 

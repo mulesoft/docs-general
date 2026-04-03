@@ -95,12 +95,14 @@ Option B: Create Manually::
 
 . Click *Design an API* or select *File > New > API Specification*.
 
-. In the *API Specification* dialog:
-.. For *Project Name*, enter `hello-world-api`.
-.. For *Project Location*, select your home directory.
-.. For *API Specification Language*, select *OAS 3.0 (YAML)*.
+. In the *API Specification* dialog, enter or select these values:
+* *Project Name*, enter `hello-world-api`.
+* *Project Location*, select your home directory.
+* *API Type*, select *REST API*.
+* *API Specification Language*, select *OAS 3.0 (YAML)*.
+* Optionally, select a business group.
 
-. Click *Create API Specification*.
+. Click *Create Project*.
 +
 Anypoint Code Builder creates the project and opens `hello-world-api.yaml` in the editor with a basic template.
 
@@ -202,7 +204,7 @@ The API Console displays your spec.
 }
 ----
 
-Congratulations! You've designed an API without writing any code.
+Congratulations, you've designed an API!
 
 == What's Next
 

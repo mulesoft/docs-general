@@ -10,15 +10,12 @@ In this step, you'll test your API using Anypoint Code Builder's debugging tools
 [%collapsible]
 ====
 ** Click the image:icon-run-debug.png["",15,15] (*Run and Debug*) icon in the activity bar.
-** Use the keyboard shortcuts:
+* Use the keyboard shortcuts:
 +
 *** Mac: Cmd+Shift+d
 *** Windows: Ctrl+Shift+d
 ** In the desktop IDE, select *View* > *Run*.
 ====
-
-. Click *Run* to start your application.
-+
 The Output panel shows startup progress. Wait for `Application started successfully`.
 
 . Open Postman and send a GET request:
@@ -43,20 +40,31 @@ Your API works! Now let's add validation and debugging.
 
 == Step 4.2: Add Validation
 
-Now add validation to ensure your API handles invalid requests properly.
+Now add validation to ensure your API handles requests without a `name` parameter.
 
 . In the canvas, navigate to your *get:\greeting* flow.
-
-. From the component palette, search for *Validation* and drag *Is not blank string* into your flow before the *Transform Message* component.
-
-. Click the validation component to configure it:
+. Click the image:icon-plus.png["",15,15] (*Add component*) icon *before* the *Logger* component.
+. Search for *Choice* and select it from the results.
 +
-* *Value*: `#[attributes.queryParams.name]`
-* *Message*: `"Name parameter is required"`
-
+The Choice component adds a *When* branch and an *Otherwise* branch. Execution continues to Logger and Transform after the Choice unless the When branch stops it (with Raise Error).
+. Click the image:icon-plus.png["",15,15] (*Add component*) icon inside the *When* branch.
+. Search for *Raise error* and select it.
++
+[IMPORTANT]
+Add the *Raise Error* component to the *When* branch before setting the condition. The *When* branch must contain at least one component or the XML will be invalid.
+. Configure the *Raise Error* component:
++
+* *Type*: `APP:BAD_REQUEST`
+* *Description*: `Name parameter is required`
+. Click the *Choice* component to open its configuration panel and set the *When* condition to:
++
+[source,dataweave]
+----
+#[attributes.queryParams.name == null or attributes.queryParams.name == ""]
+----
 . Save your changes.
 +
-Your flow now validates that the `name` parameter is provided before processing the request.
+Your flow order is now: *Choice* → *Logger* → *Transform*. When `name` is missing, the When branch raises an error and the flow stops. When `name` is present, execution continues past the Choice to Logger and Transform.
 
 == Step 4.3: Test the Validation
 
@@ -78,7 +86,7 @@ You should receive: `{"message": "Hello, World!"}`
 GET http://localhost:8081/api/greeting
 ----
 +
-You should receive a validation error with status 400.
+You should receive a validation error with status `400`.
 
 . Click *Stop* in the debug toolbar.
 
@@ -90,33 +98,24 @@ Logging helps you see what's happening inside your flows.
 
 . In the canvas, find your *get:\greeting* flow.
 
-. From the component palette on the left, search for *Logger*.
-
-. Drag the Logger component into your flow *before* the Transform Message.
-
-. Click the Logger to configure it:
+. Click the *Logger* component to configure it:
 +
-* *Message*: `"Received request for greeting"`
+* *Message*: `#["Received greeting request for name: " ++ (attributes.queryParams.name default "not provided")]`
 * *Level*: INFO
 
 . Save your changes.
 
 == Step 4.5: Test with Logging
 
-. Open the Run and Debug panel.
-+
-.Show me how
-[%collapsible]
-====
-** Click the image:icon-run-debug.png["",15,15] (*Run and Debug*) icon in the activity bar.
-** Use the keyboard shortcuts:
-+
-*** Mac: Cmd+Shift+d
-*** Windows: Ctrl+Shift+d
-** In the desktop IDE, select *View* > *Run*.
-====
+. Click *Start Debugging (F5)* to start your application.
 
-. Click *Run* to start your application.
+. Open the Terminal panel to see your application logs:
++
+* Mac: Cmd+\` or select *View* > *Terminal*
+* Windows: Ctrl+\` or select *View* > *Terminal*
++
+[NOTE]
+Logger output appears in the Terminal panel, not the Output panel. The Terminal shows the live Mule runtime log as requests are processed.
 
 . Send a request with Postman:
 +
@@ -125,14 +124,13 @@ Logging helps you see what's happening inside your flows.
 GET http://localhost:8081/api/greeting?name=World
 ----
 
-. In the Output panel (bottom of Anypoint Code Builder), select *Mule Maven Output*.
+. In the Output panel, select *Mule Maven Output*.
 +
-You'll see your log message:
+In the Terminal panel, you'll see a log entry similar to:
 +
 [source,text]
 ----
-INFO  [hello-world-impl].get:\greeting
-  Received request for greeting
+INFO  [hello-world-impl].get:\greeting  Received greeting request for name: World
 ----
 
 . Send a few more requests and watch the logs update.
