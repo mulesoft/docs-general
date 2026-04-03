@@ -16,11 +16,11 @@ A simple "Hello World" API that:
 
 * Anypoint Code Builder
 +
-Your cloud-based development environment for designing and building APIs. Think of it as a specialized IDE for MuleSoft development that runs in your browser.
+Your cloud-based development environment for designing and building APIs. Think of it as a specialized IDE for MuleSoft development that runs in your browser or desktop.
 
-* MuleSoft Vibes
+* MuleSoft Vibes (Optional)
 +
-An AI assistant built into Anypoint Code Builder that generates API specifications from simple descriptions. Instead of writing code, you describe what you want.
+An AI assistant built into Anypoint Code Builder that generates API specifications from simple descriptions. Instead of writing code, you describe what you want. If you don't have access to MuleSoft Vibes, you can create API specifications manually in Anypoint Code Builder.
 
 * CloudHub 2.0
 +

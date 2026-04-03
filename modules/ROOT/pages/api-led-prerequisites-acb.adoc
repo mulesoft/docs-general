@@ -7,16 +7,13 @@ Before you begin building your API-led solution, verify that you have the requir
 link:https://anypoint.mulesoft.com/login/#/signup["Create a Trial organization^", role="button-primary"]
 
 * xref:anypoint-code-builder::start-acb-desktop.adoc[Set up Anypoint Code Builder]. 
-* To test REST requests, obtain a client such as Advanced REST Client or Postman if you don't already have one. This tutorial uses Advanced REST Client.
+* To test REST requests, obtain a client such as Advanced REST Client or Postman if you don't already have one. This tutorial Postman.
 +
-link:https://github.com/advanced-rest-client/arc-electron/releases["Install Advanced REST Client^", role=button-primary"]
+link:https://www.postman.com/downloads/["Install Postman^", role=button-primary"]
 +
 Depending on your platform, you might need to install a different client.
 
 * Required Permissions:
-** *Mule Developer Generative AI User*
-+
-Enables MuleSoft Vibes features
 ** *Design Center Developer*
 +
 Allows API specification creation
@@ -27,7 +24,12 @@ Enables publishing assets to Exchange
 +
 Allows deployment to CloudHub 2.0
 
-* *MuleSoft Vibes* requires Agentforce to be enabled in Access Management. See xref:access-management::enabling-agentforce.adoc[].
+* Optional Permissions (for MuleSoft Vibes AI features):
+** *Mule Developer Generative AI User*
++
+Enables MuleSoft Vibes features for AI-generated API specifications. If you don't have this permission, you can still complete the tutorial by manually creating your API specification.
++
+*MuleSoft Vibes* requires Agentforce to be enabled in Access Management. See xref:access-management::enabling-agentforce.adoc[].
 
 == CloudHub 2.0 Setup
 

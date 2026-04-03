@@ -54,8 +54,18 @@ After exploring Exchange to see the range of assets available, use MuleSoft Vibe
 
 . In the activity bar of the IDE, click the image:icon-ms-logo.png["",20,20] (*Anypoint Code Builder*) icon.
 
-== Step 2.3: Generate Your API Spec with MuleSoft Vibes
+== Step 2.3: Create Your API Specification
 
+You have two options for creating your API specification. Choose the method that works best for your environment:
+
+* *Option A: Use MuleSoft Vibes (AI-Powered)* - If you have the Mule Developer Generative AI User permission and Agentforce enabled
+* *Option B: Create Manually* - If you don't have access to MuleSoft Vibes
+
+[tabs]
+====
+Option A: Use MuleSoft Vibes::
++
+--
 . Open MuleSoft Vibes from the toolbar or from the *Build Your Ecosystem with AI* card in the canvas.
 
 . Type this prompt in the chat:
@@ -75,9 +85,64 @@ MuleSoft Vibes generates your API specification in about 10 seconds. You'll see 
 +
 Anypoint Code Builder creates the project and opens `hello-world-api.yaml` in the editor.
 
+Proceed to <<step-2-4>>.
+--
+
+Option B: Create Manually::
++
+--
+. In Anypoint Code Builder, click the image:icon-ms-logo.png["",20,20] (*Anypoint Code Builder*) icon in the activity bar.
+
+. Click *Design an API* or select *File > New > API Specification*.
+
+. In the *API Specification* dialog:
+.. For *Project Name*, enter `hello-world-api`.
+.. For *Project Location*, select your home directory.
+.. For *API Specification Language*, select *OAS 3.0 (YAML)*.
+
+. Click *Create API Specification*.
++
+Anypoint Code Builder creates the project and opens `hello-world-api.yaml` in the editor with a basic template.
+
+. Replace the template content with this API specification:
++
+[source,yaml]
+----
+openapi: 3.0.0
+info:
+  title: hello-world-api
+  version: 1.0.0
+paths:
+  /greeting:
+    get:
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+          description: The name to greet
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Hello, World!"
+----
+
+. Save the file (*File > Save* or Cmd+S/Ctrl+S).
+--
+====
+
+[[step-2-4]]
 == Step 2.4: Review Your API Specification
 
-The file is now open in the editor. Let's review the structure:
+The file is now open in the editor. Regardless of which method you used, you now have a complete API specification. Let's review the structure:
 +
 [source,yaml]
 ----
