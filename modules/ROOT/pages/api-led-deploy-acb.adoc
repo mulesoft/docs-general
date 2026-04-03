@@ -13,7 +13,7 @@ CloudHub 2.0 requires a release version (not a snapshot). When you scaffolded th
 [source,xml]
 ----
 <groupId>com.mycompany</groupId>
-<artifactId>hello-world-api</artifactId>
+<artifactId>hello-world-impl</artifactId>
 <version>1.0.0</version>
 <packaging>mule-application</packaging>
 ----
@@ -22,7 +22,7 @@ CloudHub 2.0 requires a release version (not a snapshot). When you scaffolded th
 
 == Step 5.2: Deploy to CloudHub 2.0
 
-. Open `hello-world-api.xml` in the editor.
+. Open `hello-world-impl.xml` in the editor.
 
 . Click the image:icon-deploy.png["",20,20] (*Deploy to CloudHub*) icon.
 +
@@ -41,8 +41,8 @@ You are prompted to select the space to deploy your application.
 [source,json]
 ----
 {
-  "runtime": "4.8.0", <1>
-  "applicationName": "hello-world-impl-jsmith", <2>
+  "runtime": "4.x.x", <1>
+  "applicationName": "hello-world-impl-vh", <2>
   "replicas": 1, <3>
   "replicaSize": "0.1", <4>
   "deploymentModel": "rolling", <5>
@@ -51,33 +51,33 @@ You are prompted to select the space to deploy your application.
 }
 ----
 <1> The Mule runtime version to use for the deployment.
-<2> Defines part of the URL for accessing your application on CloudHub. Must be unique across all applications deployed to CloudHub. Update this to include your initials or another unique identifier.
+<2> Defines part of the URL for accessing your application on CloudHub. This must be unique across all applications deployed to CloudHub 2.0. Update this to include your initials or another unique identifier.
 <3> Number of application instances to run. Use 1 for this tutorial; increase for production workloads.
 <4> The vCore allocation per replica. 0.1 vCores provides 0.5 GB of memory.
 <5> The deployment strategy. Use `rolling` for zero-downtime updates, or `recreate` for a full restart.
 <6> Starts the application automatically after deployment.
 <7> Enables Anypoint Object Store v2 for storing application state.
 
-. After reviewing the deployment configuration, click *Deploy* to deploy the application to CloudHub 2.0.
-+
-The VS Code status bar shows the progress of the deployment.
-
-. At the prompt, select the environment to deploy to.
+. At the prompt, select the environment, runtime version, and application version, then press Enter.
 +
 Anypoint Code Builder packages the application and deploys it to CloudHub 2.0.
-
++
+The VS Code status bar shows the progress of the deployment.
 +
 The Output panel opens with *Mule Maven Output* selected.
 +
 After a couple of minutes, you'll see `Deployment successful`.
 
 . Click *Open in Runtime Manager*.
++
+Your browser opens to Runtime Manager in Anypoint Platform, showing your application.
 
 == Step 5.3: Verify in Runtime Manager
 
-. Runtime Manager opens showing your application.
-
-. Wait for the status to change from *Deploying* to *Running* (this takes a few minutes).
+. Wait for the status to change from *Deploying* to *Running*.
++
+[NOTE]
+The first deployment typically takes 5–10 minutes. You can monitor progress in the Output panel (*Mule Maven Output*) in ACB. As long as the status shows *Deploying* and not an error, the deployment is working.
 
 . After the app is running, copy the application URL.
 +

@@ -139,44 +139,38 @@ INFO  [hello-world-impl].get:\greeting  Received greeting request for name: Worl
 
 == Step 4.6: Use Breakpoints for Debugging
 
-Breakpoints pause execution so you can inspect what's happening.
+Breakpoints pause execution so you can inspect the Mule message at a specific point in your flow.
 
-. In the canvas, click in the left margin next to the Logger component.
+. In the canvas, select the context menu  for the *Logger* component, and then select *Add Breakpoint*.
 +
 A red dot appears, which represents a breakpoint.
 
-. Open the Run and Debug panel.
-+
-.Show me how
-[%collapsible]
-====
-** Click the image:icon-run-debug.png["",15,15] (*Run and Debug*) icon in the activity bar.
-** Use the keyboard shortcuts:
-+
-*** Mac: Cmd+Shift+d
-*** Windows: Ctrl+Shift+d
-** In the desktop IDE, select *View* > *Run*.
-====
+. Click image:icon-run-debug.png["",15,15] (*Run and Debug*) in the activity bar to open the Run and Debug panel.
 
-. Click *Debug* (not Run) to start in debug mode.
-
-. Send a request from Postman.
+. Select *Debug Mule Application* to start your application in debug mode.
+. Send a request from Postman:
++
+[source,text]
+----
+GET http://localhost:8081/api/greeting?name=World
+----
 
 . Return to Anypoint Code Builder.
 +
-Execution pauses at the breakpoint. The debug toolbar appears at the top.
+Execution pauses at the breakpoint. The debug toolbar appears at the top of the editor, and the *Variables* panel appears in the Run and Debug sidebar on the left side of the IDE.
++
+[NOTE]
+The Variables panel is in the *Run and Debug sidebar*, not at the bottom of the IDE. If you don't see it, make sure the Run and Debug panel is open (image:icon-run-debug.png["",15,15] icon in the activity bar).
 
-. In the Variables panel (bottom), expand *message* to see:
+. In the *Variables* panel, expand *Mule Message* to inspect:
 +
 * *payload*: The current message content
-* *attributes*: HTTP request details (headers, query params, URI)
-* *vars*: Flow variables
+* *attributes*: HTTP request details, including headers, query parameters, and URI
+* *vars*: Any flow variables set during execution
 
-. Click *Continue* (or press F5) to proceed to the next breakpoint.
+. Click *Continue* (F5) in the debug toolbar to resume execution and complete the request.
 
-. Click *Continue* again to complete the request.
-
-. Click *Stop* when done.
+. Click image:icon-stop.png["",15,15] (*Stop*) when done.
 
 == What Just Happened?
 
