@@ -118,7 +118,7 @@ The rolling deployment model is a zero-downtime deployment strategy.
 
 Now that your API is deployed, learn how to monitor it and view logs in Runtime Manager.
 
-xref:api-led-operate-edited.adoc[Next: Monitor and Manage]
+xref:api-led-operate-acb.adoc[Next: Monitor and Manage]
 
 
 == Developer Deep Dive

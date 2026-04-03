@@ -34,12 +34,12 @@ Your operations dashboard for monitoring deployed APIs, viewing logs, and managi
 
 Follow these steps to create your first API:
 
-. xref:api-led-prerequisites-edited.adoc[Complete the prerequisites]. 
-. xref:api-led-design-edited.adoc[Design an API specification with AI].
-. xref:api-led-develop-edited.adoc[Scaffold and implement the API].
-. xref:api-led-test-edited.adoc[Test your API locally].
-. xref:api-led-deploy-edited.adoc[Deploy your API to CloudHub 2.0].
-. xref:api-led-operate-edited.adoc[Verify and Monitor your API].
+. xref:api-led-prerequisites-acb.adoc[Complete the prerequisites]. 
+. xref:api-led-design-acb.adoc[Design an API specification with AI].
+. xref:api-led-develop-acb.adoc[Scaffold and implement the API].
+. xref:api-led-test-acb.adoc[Test your API locally].
+. xref:api-led-deploy-acb.adoc[Deploy your API to CloudHub 2.0].
+. xref:api-led-operate-acb.adoc[Verify and Monitor your API].
 
 After completing this tutorial, you'll understand the MuleSoft development workflow and be ready to build more complex APIs.
 

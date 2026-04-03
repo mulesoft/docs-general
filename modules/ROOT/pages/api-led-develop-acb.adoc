@@ -110,7 +110,7 @@ Built-in testing environment.
 
 Your API is implemented. Next, you'll test it locally using debugging tools, add validation, and inspect the data flow.
 
-xref:api-led-test-edited.adoc[Next: Test the API]
+xref:api-led-test-acb.adoc[Next: Test the API]
 
 == Developer Deep Dive
 
