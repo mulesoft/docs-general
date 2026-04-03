@@ -107,7 +107,10 @@ Logging helps you see what's happening inside your flows.
 
 == Step 4.5: Test with Logging
 
-. Click *Start Debugging (F5)* to start your application.
+. In the Run and Debug panel, click *Start Debugging (F5)* to start your application.
++
+[NOTE]
+On Mac, function keys trigger system actions by default. Press *Fn+F5* to use the F5 shortcut, or click *Start Debugging* directly in the Run and Debug panel.
 
 . Open the Terminal panel to see your application logs:
 +
@@ -168,7 +171,7 @@ The Variables panel is in the *Run and Debug sidebar*, not at the bottom of the 
 * *attributes*: HTTP request details, including headers, query parameters, and URI
 * *vars*: Any flow variables set during execution
 
-. Click *Continue* (F5) in the debug toolbar to resume execution and complete the request.
+. Click *Continue* in the debug toolbar (or press Fn+F5 on Mac, F5 on Windows) to resume execution and complete the request.
 
 . Click image:icon-stop.png["",15,15] (*Stop*) when done.
 

@@ -21,20 +21,29 @@ The dashboard shows real-time metrics:
 * *Status*
 +
 Running (green) means your API is healthy.
-* *Uptime*
-+
-How long the application has been running.
-* *CPU Usage*
-+
-Current CPU utilization.
-* *Memory Usage*
-+
-Current memory consumption.
+
 * *Replicas*
 +
 Shows *1/1* (1 running replica out of 1 expected).
 
-Send a few test requests from Postman and watch the *Message Rate* graph update.
+* *Last Updated*
++
+The last time the application was updated.
+
+* *Mule Messages*
++
+The number of Mule messages the application has processed.
++
+Send a few test requests from Postman and watch the *Mule Messages* graph update.
+
+* *Average Response Time*
++
+The average response time of the application.
+
+* *Errors*
++
+The number of errors the application has encountered.
+
 
 == Step 6.3: View Application Logs
 
@@ -56,7 +65,7 @@ INFO  [hello-world-impl].get:\greeting
 
 . Use log filters:
 +
-* *Priority*
+* *Log Level*
 +
 Filter by INFO, WARN, ERROR.
 * *Search*
@@ -152,15 +161,6 @@ Cloud deployment platform.
 +
 Operations and monitoring dashboard.
 
-== Learn More
-
-Ready to build more complex APIs? Explore:
-
-* xref:anypoint-code-builder::tutorials.adoc[More Anypoint Code Builder Tutorials]
-* xref:connectors::index.adoc[Connectors for Databases, Salesforce, SAP, and more]
-* xref:mule-runtime::dataweave.adoc[DataWeave for Data Transformation]
-* https://www.salesforce.com/blog/api-led-connectivity/?bc=OTH[API-Led Connectivity Patterns]
-
 == Clean Up (Optional)
 
 To remove your tutorial application and free resources:
@@ -170,495 +170,12 @@ To remove your tutorial application and free resources:
 . Confirm deletion.
 
 Your application is stopped and removed from CloudHub 2.0.
-ifndef::env-site,env-github[]
-include::_attributes.adoc[]
-endif::[]
 
-In this final phase, you'll learn how to monitor, manage, and maintain your deployed APIs using Runtime Manager and API Manager. Effective operations ensure your APIs remain healthy, performant, and secure.
+== Learn More
 
-== Understanding API Operations
+Ready to build more complex APIs? Explore:
 
-Deploying APIs is just the beginning. Ongoing operations include:
-
-* *Monitoring*: Tracking health, performance, and usage
-* *Logging*: Reviewing application logs for troubleshooting
-* *Scaling*: Adjusting resources based on demand
-* *Alerting*: Setting up notifications for issues
-* *Analytics*: Understanding API usage patterns
-
-Runtime Manager provides comprehensive tools for these operations.
-
-== Access Runtime Manager
-
-. From Anypoint Platform, navigate to Runtime Manager:
-+
-link:https://anypoint.mulesoft.com/cloudhub/#/console/home/applications["Take me to Runtime Manager^", role="button-primary"]
-
-. Select the *Sandbox* environment from the environment dropdown.
-+
-image::runtime-manager-env-selector.png[Environment selector showing Sandbox selected]
-
-. View your deployed applications in the applications list.
-+
-image::runtime-manager-apps-list.png[List of deployed applications]
-
-== Monitor Application Health
-
-=== Step 5.1: Review the Dashboard
-
-. In Runtime Manager, click the *customer-order-status-impl* application.
-+
-The application dashboard opens, showing real-time metrics.
-+
-image::runtime-manager-dashboard.png[Runtime Manager application dashboard]
-
-. Review key metrics:
-+
-* *Status*: Running, Stopped, or Deploying
-* *Uptime*: How long the application has been running
-* *CPU Usage*: Current CPU utilization percentage
-* *Memory Usage*: Current memory consumption
-* *Replicas*: Number of running replicas (1/1 means 1 of 1 expected)
-
-. Scroll down to view the *Message Rate* graph:
-+
-* Displays requests per minute over time
-* Helps identify traffic patterns and spikes
-* Useful for capacity planning
-
-=== Step 5.2: Check Application Logs
-
-Logs provide detailed information about application behavior and errors.
-
-. In the application details, click *Logs* in the left navigation.
-+
-The logs panel displays recent log entries.
-+
-image::runtime-manager-logs.png[Application logs panel]
-
-. Use the log filters:
-+
-* *Priority*: Filter by log level (INFO, WARN, ERROR, DEBUG)
-* *Search*: Enter text to find specific log entries
-* *Time Range*: Select custom date ranges (up to 30 days)
-
-. Generate some traffic to see new logs:
-+
-.. Send requests to your API using Postman
-.. Refresh the logs panel
-.. Observe the log entries for each request
-
-. Look for your Logger component messages:
-+
-[source,text]
-----
-INFO  [customer-order-status-impl].get:\orders\{orderId}.HTTP Listener
-  Customer Response: {"orderId":"ORD-12345", ...}
-----
-
-. Check for errors:
-+
-.. Filter logs by *ERROR* priority
-.. Review any error messages
-.. Note the timestamp and context for troubleshooting
-
-== Analyze Performance Metrics
-
-=== Step 5.3: Enable Anypoint Monitoring
-
-Anypoint Monitoring provides advanced performance analytics.
-
-. In the application details, click *Insights* in the left navigation.
-
-. If Insights isn't enabled, click *Enable Insights*.
-+
-Insights provides:
-
-* Transaction-level detail
-* Custom dashboards
-* Performance bottleneck identification
-* Distributed tracing
-
-. After enabling, wait a few minutes for data collection to begin.
-
-=== Step 5.4: Review Performance Data
-
-. Return to the *Dashboard*.
-
-. Scroll to the *Performance* section to view:
-+
-* *Response Time*: Average response time per minute
-* *Throughput*: Requests processed per minute
-* *Failures*: Failed requests per minute
-
-. Send multiple test requests and observe the metrics update.
-
-. Compare performance across the three API layers:
-+
-[%header,cols="1,1,1"]
-|===
-| API Layer | Avg Response Time | Notes
-
-| System API
-| ~100-200ms
-| Direct data access
-
-| Process API
-| ~200-350ms
-| Adds business logic
-
-| Experience API
-| ~300-500ms
-| Full chain plus optimization
-|===
-
-== Scale Applications
-
-=== Step 5.5: Adjust Replica Count
-
-For production workloads, you can scale applications horizontally by adding replicas.
-
-. In the application details, click *Settings*.
-
-. Locate the *Replicas* section.
-+
-image::runtime-manager-replica-settings.png[Replica configuration settings]
-
-. For production scenarios, you might increase replicas:
-+
-.. Click *Edit*
-.. Change *Number of Replicas* from 1 to 2
-.. Click *Apply*
-+
-CloudHub 2.0 performs a rolling update to add the new replica.
-
-. Monitor the scaling operation:
-+
-.. Return to the *Dashboard*
-.. Watch the *Replicas* indicator change from 1/1 to 2/2
-.. Traffic automatically load balances across replicas
-
-. For this tutorial, you can leave the replica count at 1 to conserve resources.
-
-=== Step 5.6: Adjust Replica Size
-
-For memory-intensive applications, increase the replica size.
-
-. In *Settings*, locate the *Replica Size* dropdown.
-
-. Available sizes:
-+
-* 0.1 vCores (0.5 GB RAM) - Tutorial and light workloads
-* 0.2 vCores (1 GB RAM) - Low-volume production
-* 0.5 vCores (1.5 GB RAM) - Medium-volume production
-* 1.0+ vCores - High-volume production
-
-. For this tutorial, 0.1 vCores is sufficient.
-
-== Manage API Policies
-
-=== Step 5.7: Review Applied Policies
-
-. Navigate to API Manager:
-+
-link:https://anypoint.mulesoft.com/apimanager/["Take me to API Manager^", role="button-primary"]
-
-. Select your *Customer Order Status API*.
-
-. Click *Policies* to view applied policies.
-+
-If you applied the Rate Limiting policy in Phase 4, it appears here.
-+
-image::api-manager-policies-list.png[List of applied API policies]
-
-. Review policy details:
-+
-* *Rate Limiting*: 100 requests per minute
-* *Status*: Enabled
-* *Applied Date*: When the policy was configured
-
-=== Step 5.8: Test Rate Limiting
-
-. Open Postman and create a collection with your API request.
-
-. Run the collection repeatedly (send 10+ requests quickly).
-
-. After exceeding the rate limit (100 requests per minute), observe:
-+
-* HTTP status code 429 (Too Many Requests)
-* Response headers showing rate limit information:
-+
-[source,text]
-----
-X-RateLimit-Limit: 100
-X-RateLimit-Remaining: 0
-X-RateLimit-Reset: 1234567890
-----
-
-. Wait one minute and try again - the rate limit resets.
-
-== Set Up Alerts
-
-Proactive monitoring requires alerts when issues occur.
-
-=== Step 5.9: Configure Application Alerts
-
-. In Runtime Manager, click your application.
-
-. Click *Alerts* in the left navigation.
-
-. Click *Create Alert* to add a new alert rule.
-
-. Configure a CPU alert:
-+
-* *Alert Name*: High CPU Usage
-* *Severity*: Warning
-* *Condition*: CPU usage exceeds 80%
-* *Subject*: Send email to your address
-* *Message*: "Application CPU usage is critically high"
-
-. Click *Create*.
-
-. Create additional alerts for:
-+
-* Memory usage exceeds 80%
-* Application deployment fails
-* Application stops unexpectedly
-* Response time exceeds 5 seconds
-
-. Test an alert by intentionally triggering the condition (if time permits).
-
-== Review API Analytics
-
-=== Step 5.10: Analyze API Usage
-
-. In API Manager, select your API.
-
-. Click *Analytics* in the left navigation.
-+
-Analytics displays API usage over time.
-+
-image::api-manager-analytics.png[API Manager analytics dashboard]
-
-. Review key metrics:
-+
-* *Requests*: Total API calls over time period
-* *Response Time*: Average, minimum, and maximum
-* *Errors*: Failed requests by status code
-* *Top Clients*: Which consumers call your API most
-
-. Filter by time range to analyze:
-+
-* Last hour (for immediate testing)
-* Last 7 days (for weekly patterns)
-* Last 30 days (for monthly trends)
-
-. Identify patterns:
-+
-* Peak usage times
-* Common error codes
-* Slowest endpoints
-* Most active consumers
-
-== Manage Application Lifecycle
-
-=== Step 5.11: Update Application Properties
-
-. In Runtime Manager, click your application.
-
-. Click *Settings*.
-
-. Scroll to *Properties* to add runtime configuration.
-+
-For example, add an environment-specific property:
-+
-[source,text]
-----
-environment: production
-log.level: INFO
-----
-
-. Click *Apply Changes*.
-+
-The application restarts with new properties (rolling restart for zero downtime).
-
-=== Step 5.12: Download Application Logs
-
-For detailed troubleshooting, download complete logs.
-
-. In the *Logs* panel, click *Download*.
-
-. Select the date range (up to 30 days).
-
-. Click *Download*.
-+
-Runtime Manager prepares and downloads a log file.
-
-. Open the log file in a text editor for detailed analysis.
-
-== Monitor the Complete API Chain
-
-=== Step 5.13: Trace a Request Through All Layers
-
-Use distributed tracing to follow a request through the entire API chain.
-
-. In Runtime Manager, ensure Insights is enabled for all three applications.
-
-. Send a test request to the Experience API.
-
-. In Insights, search for the transaction by order ID.
-
-. View the distributed trace showing:
-+
-* Experience API receives request
-* Experience API calls Process API
-* Process API calls System API
-* System API returns data
-* Process API transforms data
-* Experience API optimizes response
-* Response sent to client
-+
-image::insights-distributed-trace.png[Distributed trace showing request flow]
-
-. Review timing for each hop to identify bottlenecks.
-
-== Best Practices for Production
-
-=== Step 5.14: Production Readiness Checklist
-
-Before moving APIs to production, verify:
-
-*Security*
-
-* [ ] API keys or OAuth tokens configured
-* [ ] HTTPS enforced for all endpoints
-* [ ] Rate limiting policies applied
-* [ ] IP whitelist configured (if needed)
-
-*Reliability*
-
-* [ ] Multiple replicas configured for high availability
-* [ ] Appropriate replica size for workload
-* [ ] Health check endpoints defined
-* [ ] Circuit breakers implemented for downstream calls
-
-*Monitoring*
-
-* [ ] Alerts configured for critical issues
-* [ ] Log retention meets compliance requirements
-* [ ] Analytics dashboard reviewed regularly
-* [ ] Performance baselines established
-
-*Documentation*
-
-* [ ] API specifications published to Exchange
-* [ ] Consumer documentation available
-* [ ] SLA commitments documented
-* [ ] Support contacts identified
-
-== Troubleshooting Common Issues
-
-=== Step 5.15: Resolve Common Problems
-
-*Application Won't Start*
-
-. Check logs for errors during startup
-. Verify `pom.xml` configuration is correct
-. Ensure all dependencies are available
-. Check for port conflicts in configuration
-
-*High Response Times*
-
-. Review logs for slow operations
-. Check external service dependencies
-. Analyze DataWeave transformations
-. Consider increasing replica size
-
-*Memory Errors*
-
-. Increase replica size in Settings
-. Review code for memory leaks
-. Check payload sizes (large messages)
-. Enable object store for caching
-
-*Connection Refused Errors*
-
-. Verify upstream API is running
-. Check firewall rules in Shared Space
-. Verify correct URLs in configuration
-. Test connectivity with curl
-
-== Cleanup (Optional)
-
-To remove tutorial applications and free resources:
-
-=== Step 5.16: Stop and Delete Applications
-
-. In Runtime Manager, click each application.
-
-. Click *Settings* > *Delete Application*.
-
-. Confirm deletion.
-
-. The application is stopped and removed from CloudHub 2.0.
-
-== Summary: Your API-Led Journey
-
-Congratulations! You've completed the full API-led connectivity journey:
-
-*Phase 1: Design with AI*
-
-* Used MuleSoft Vibes to generate API specifications from natural language
-* Created three-layer API architecture
-* Tested specifications with mocking service
-
-*Phase 2: Develop*
-
-* Scaffolded implementation projects from specifications
-* Implemented business logic with DataWeave
-* Built System, Process, and Experience layers
-
-*Phase 3: Test*
-
-* Tested locally with API Console
-* Used debugging to inspect data flow
-* Validated error handling
-
-*Phase 4: Deploy*
-
-* Deployed to CloudHub 2.0 Shared Spaces
-* Configured rolling updates for zero downtime
-* Applied API policies for security
-
-*Phase 5: Operate*
-
-* Monitored health and performance
-* Analyzed logs and metrics
-* Set up alerts for proactive management
-* Optimized based on usage patterns
-
-You now understand how to:
-
-* Apply API-led connectivity principles
-* Accelerate development with AI-powered tools
-* Build robust, layered API architectures
-* Deploy and manage APIs in CloudHub 2.0
-
-== Next Steps
-
-Continue your MuleSoft journey:
-
-* Build your own API-led projects
-* Explore advanced connectors (Salesforce, SAP, databases)
-* Implement OAuth security
-* Create custom DataWeave functions
-* Integrate with CI/CD pipelines
-* Prepare for MuleSoft certification
-
-== See Also
-
-* xref:runtime-manager::index.adoc[Runtime Manager Documentation]
-* xref:api-manager::index.adoc[API Manager Documentation]
-* xref:cloudhub-2::index.adoc[CloudHub 2.0 Documentation]
-* xref:monitoring::index.adoc[Anypoint Monitoring]
-* https://www.salesforce.com/blog/api-led-connectivity/?bc=OTH[API-Led Connectivity Best Practices^]
+* xref:anypoint-code-builder::tutorials.adoc[More Anypoint Code Builder Tutorials]
+* xref:connectors::index.adoc[Connectors for Databases, Salesforce, SAP, and more]
+* xref:mule-runtime::dataweave.adoc[DataWeave for Data Transformation]
+* https://www.salesforce.com/blog/api-led-connectivity/?bc=OTH[API-Led Connectivity Patterns]

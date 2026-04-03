@@ -79,16 +79,19 @@ Your browser opens to Runtime Manager in Anypoint Platform, showing your applica
 [NOTE]
 The first deployment typically takes 5–10 minutes. You can monitor progress in the Output panel (*Mule Maven Output*) in ACB. As long as the status shows *Deploying* and not an error, the deployment is working.
 
-. After the app is running, copy the application URL.
+. After the app is running, copy the application URL from Runtime Manager.
 +
-The format is: `+https://hello-world-impl-jsmith.<space-domain>.cloudhub.io+`
+[IMPORTANT]
+The application URL is the base hostname only — your API endpoint is at the `/api/greeting` path. Do not send requests to the root URL (`/`) as it returns a 404.
 
-. Open Postman and test your deployed API:
+. Open Postman and send a request to the full API path:
 +
 [source,text]
 ----
 GET https://hello-world-impl-jsmith.<space-domain>.cloudhub.io/api/greeting?name=World
 ----
++
+Replace `hello-world-impl-jsmith.<space-domain>` with the hostname from Runtime Manager.
 
 . Verify you receive your greeting:
 +
