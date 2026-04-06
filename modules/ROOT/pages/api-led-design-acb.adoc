@@ -1,16 +1,6 @@
 = Step 2. Design an API Specification
 
-In this step, you'll use MuleSoft Vibes to create an API specification by describing what you want in plain language. No code is required.
-
-To design an API, assess the purpose and requirements:
-
-* Identify the type of API: Is it a simple API, part of an integration, or part of a backend system?
-* Understand the data flows: one-way, two-way, or more.
-* Explore the security requirements.
-
-After you define the scope and flow of your integration project,
-define an API specification in link:https://raml.org/[RAML] or link:https://www.openapis.org/[OAS].
-Then, in later steps, you'll use the API specification to quickly develop an API.
+Design your API specification before building the implementation. An API specification defines the endpoints, parameters, and responses your API supports, giving you and your team a contract to work from. You can use MuleSoft Vibes to generate the spec from a plain-language description, or create it manually in Anypoint Code Builder.
 
 == API Specifications and APIs
 
@@ -35,16 +25,16 @@ You’ll see some of the most popular API specifications, connectors, and other 
 +
 link:https://www.mulesoft.com/exchange["Take me to Exchange^", role="button-primary"]
 +
-  .. Select *Any Type > REST APIs* to display only REST API specifications.
-  .. Click any specification to see the data types and the HTTP requests defined for the API.
+.. Select *Any Type > REST APIs* to display only REST API specifications.
+.. Click any specification to see the data types and the HTTP requests defined for the API.
 +
 . Look at Exchange for your organization (account). Logging in changes the view to your organization's private Exchange.
 +
 link:https://anypoint.mulesoft.com/login["Take me to Anypoint Platform^", role="button-primary"]
 +
-  .. Log in to Anypoint Platform if needed.
-  .. In the Anypoint Platform landing page, go to the *Exchange* section and click *Discover and share*.
-  .. Click on any specification to see the data types and the HTTP requests defined for the API. If this is a trial org, you might not see anything yet.
+.. Log in to Anypoint Platform if needed.
+.. In the Anypoint Platform landing page, go to the *Exchange* section and click *Discover and share*.
+.. Click any specification to see the data types and the HTTP requests defined for the API. If this is a trial org, you might not see anything yet.
 
 After exploring Exchange to see the range of assets available, use MuleSoft Vibes to create a new API specification.
 
@@ -58,8 +48,8 @@ After exploring Exchange to see the range of assets available, use MuleSoft Vibe
 
 You have two options for creating your API specification. Choose the method that works best for your environment:
 
-* *Option A: Use MuleSoft Vibes (AI-Powered)* - If you have the Mule Developer Generative AI User permission and Agentforce enabled
-* *Option B: Create Manually* - If you don't have access to MuleSoft Vibes
+* *Option A: Use MuleSoft Vibes (AI-Powered)*: Requires the Mule Developer Generative AI User permission and Agentforce enabled in Access Management
+* *Option B: Create Manually*: Use this option if you don't have access to MuleSoft Vibes
 
 [tabs]
 ====
@@ -144,8 +134,8 @@ paths:
 [[step-2-4]]
 == Step 2.4: Review Your API Specification
 
-The file is now open in the editor. Regardless of which method you used, you now have a complete API specification. Let's review the structure:
-+
+The file is now open in the editor. Regardless of which method you used, you now have a complete API specification. Review the structure:
+
 [source,yaml]
 ----
 openapi: 3.0.0
