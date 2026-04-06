@@ -6,14 +6,12 @@ Now that you've created an API specification, you'll turn it into a working Mule
 
 . Open your API specification file in the editor, then click the image:icon-implement-api.png["",15,15] (*Implement this local API*) icon in the activity bar.
 +
-image::imp-local-api.png["Implement this local API icon in the activity bar"]
-+
 [NOTE]
 The icon and command are only available when your API spec file is open and active in the editor.
 +
 Alternatively, open the Command Palette and select `MuleSoft: Implement this Local API`.
 +
-.Show me how to open the Command Palette
+.Show me how
 [%collapsible]
 ====
 * Use the keyboard shortcuts:
@@ -23,7 +21,7 @@ Alternatively, open the Command Palette and select `MuleSoft: Implement this Loc
 ====
 +
 [IMPORTANT]
-Do not select `MuleSoft: Implement an API Specification` — that command is for specs published to Anypoint Exchange, not local specs.
+Do not select `MuleSoft: Implement an API Specification`. That command is for specs published to Anypoint Exchange, not local specs.
 
 . At the prompt, click *OK*:
 +
@@ -50,7 +48,7 @@ This is the Mule configuration XML. This file contains your flows, HTTP Listener
 
 == Step 3.2: Understand the Scaffolded Structure
 
-. The canvas shows your scaffolded flows, including: 
+The canvas shows your scaffolded flows, including: 
 +
 * *hello-world-api-main*
 +
@@ -100,7 +98,7 @@ That's it! Your API is implemented and ready to test.
 
 == What Just Happened?
 
-Let's understand what you used:
+You used these components to implement your API:
 
 * *Scaffolding*
 +
@@ -114,7 +112,6 @@ Routes requests to the correct endpoint flow.
 * *DataWeave*
 +
 MuleSoft's transformation language for creating responses.
-* *Canvas*
 
 == What's Next
 
