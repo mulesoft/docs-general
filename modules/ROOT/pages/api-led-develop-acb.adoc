@@ -72,11 +72,9 @@ Now add the logic to return your greeting.
 
 . Navigate to the *get:\greeting:hello-world-api-config* flow in the canvas.
 +
-The flow contains a Logger component by default. You'll replace it with a Transform component to return your greeting.
+The flow contains a Logger component by default. You'll add a Transform component after it to return your greeting.
 
-. In the flow, click the Logger component and delete it.
-
-. Click the image:icon-plus.png["",15,15] (*Add component*) icon in the flow.
+. Click the image:icon-plus.png["",15,15] (*Add component*) icon after the Logger component in the flow.
 
 . In the *Add Component* panel, search for `Transform` and select *Transform* from the results.
 

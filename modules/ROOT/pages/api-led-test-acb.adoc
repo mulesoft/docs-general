@@ -43,7 +43,9 @@ Your API works! Now let's add validation and debugging.
 Now add validation to ensure your API handles requests without a `name` parameter.
 
 . In the canvas, navigate to your *get:\greeting* flow.
-. Click the image:icon-plus.png["",15,15] (*Add component*) icon *before* the *Logger* component.
++
+Your flow currently has a Logger component followed by a Transform component from the previous step.
+. Click the image:icon-plus.png["",15,15] (*Add component*) icon *before* the *Logger* component (at the start of the flow).
 . Search for *Choice* and select it from the results.
 +
 The Choice component adds a *When* branch and an *Otherwise* branch. Execution continues to Logger and Transform after the Choice unless the When branch stops it (with Raise Error).

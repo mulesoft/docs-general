@@ -216,7 +216,7 @@ xref:api-led-develop-acb.adoc[Next: Develop the API]
 
 Explore advanced API design capabilities:
 
-* xref:code-builder::api-ai-create-spec.adoc[MuleSoft Vibes Features]
-* xref:code-builder::des-govern-api.adoc[API Governance and Validation]
-* xref:code-builder::des-create-api-fragments.adoc[Creating Reusable API Fragments]
+* xref:anypoint-code-builder::api-ai-create-spec.adoc[MuleSoft Vibes Features]
+* xref:anypoint-code-builder::des-govern-api.adoc[API Governance and Validation]
+* xref:anypoint-code-builder::des-create-api-fragments.adoc[Creating Reusable API Fragments]
 * xref:design-center::design-create-publish-api-specs.adoc[Advanced API Design Patterns]
