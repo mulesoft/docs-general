@@ -1,6 +1,6 @@
 = Step 5. Deploy the API to CloudHub 2.0
 
-Now that you’ve tested your API locally, deploy it to CloudHub 2.0 so it’s accessible from anywhere.
+Deploy your tested API to CloudHub 2.0 to make it accessible from anywhere. You update the project version, configure deployment settings, and deploy directly from Anypoint Code Builder. After deployment, verify the API is running by sending a request to its public CloudHub URL.
 
 == Step 5.1: Prepare for Deployment
 
@@ -28,9 +28,7 @@ CloudHub 2.0 requires a release version (not a snapshot). When you scaffolded th
 +
 Alternatively, open the Command Palette and select `MuleSoft: Deploy to CloudHub`.
 
-. If prompted, click *Allow* to allow sign in using Anypoint Platform and select the business group.
-
-. Select a Business Group to use for deployment.
+. If prompted, click *Allow* to sign in to Anypoint Platform, then select a business group.
 
 . When prompted via the VS Code command palette, select *CloudHub 2.0* as the deployment target.
 +
@@ -58,7 +56,7 @@ You are prompted to select the space to deploy your application.
 <6> Starts the application automatically after deployment.
 <7> Enables Anypoint Object Store v2 for storing application state.
 
-. At the prompt, select the environment, runtime version, and application version, then press Enter.
+. At the prompt, select the environment to deploy to.
 +
 Anypoint Code Builder packages the application and deploys it to CloudHub 2.0.
 +
@@ -82,7 +80,7 @@ The first deployment typically takes 5–10 minutes. You can monitor progress in
 . After the app is running, copy the application URL from Runtime Manager.
 +
 [IMPORTANT]
-The application URL is the base hostname only — your API endpoint is at the `/api/greeting` path. Do not send requests to the root URL (`/`) as it returns a 404.
+The application URL is the base hostname only. Your API endpoint is at the `/api/greeting` path. Do not send requests to the root URL (`/`) as it returns a 404.
 
 . Open Postman and send a request to the full API path:
 +
@@ -110,7 +108,7 @@ Let's understand the tools you used:
 
 * CloudHub 2.0 is MuleSoft's cloud platform where your API now runs
 * A Shared Space is a multi-tenant environment for cost-effective hosting.
-* The `deploy_ch2.json` configuration file specifies replicas, resources, deployment model, and and other settings.
+* The `deploy_ch2.json` configuration file specifies replicas, resources, deployment model, and other settings.
 +
 Replicas are instances of your application (one for this tutorial).
 +
