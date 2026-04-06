@@ -59,8 +59,7 @@ Logs help you troubleshoot and understand what your application is doing.
 +
 [source,text]
 ----
-INFO  [hello-world-impl].get:\greeting
-  Received request for greeting
+INFO  [hello-world-impl].get:\greeting  Received greeting request for name: World
 ----
 
 . Use log filters:
@@ -140,11 +139,11 @@ Your Hello World API is now:
 
 Congratulations! You've completed the full API development lifecycle:
 
-. ✓ Designed an API spec with MuleSoft Vibes
-. ✓ Developed the implementation in Anypoint Code Builder
-. ✓ Tested locally with debugging tools
-. ✓ Deployed to CloudHub 2.0
-. ✓ Verified and monitored in Runtime Manager
+. Designed an API spec with MuleSoft Vibes
+. Developed the implementation in Anypoint Code Builder
+. Tested locally with debugging tools
+. Deployed to CloudHub 2.0
+. Verified and monitored in Runtime Manager
 
 You now understand which MuleSoft product does what:
 
