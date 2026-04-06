@@ -1,6 +1,6 @@
 = Step 4. Test the API
 
-In this step, you'll test your API using Anypoint Code Builder's debugging tools and add validation and logging to see what's happening inside your application.
+Test your API locally before deploying it to the cloud. You run the API in Anypoint Code Builder, send requests using Postman, and use the built-in debugger to inspect the Mule message at each step. You also add input validation and logging to make the API more robust.
 
 == Step 4.1: Run and Test Your API
 
@@ -10,12 +10,13 @@ In this step, you'll test your API using Anypoint Code Builder's debugging tools
 [%collapsible]
 ====
 ** Click the image:icon-run-debug.png["",15,15] (*Run and Debug*) icon in the activity bar.
-* Use the keyboard shortcuts:
+** Use the keyboard shortcuts:
 +
 *** Mac: Cmd+Shift+d
 *** Windows: Ctrl+Shift+d
 ** In the desktop IDE, select *View* > *Run*.
 ====
++
 The Output panel shows startup progress. Wait for `Application started successfully`.
 
 . Open Postman and send a GET request:
@@ -140,9 +141,7 @@ Logger output appears in the Terminal panel, not the Output panel. The Terminal 
 GET http://localhost:8081/api/greeting?name=World
 ----
 
-. In the Output panel, select *Mule Maven Output*.
-+
-In the Terminal panel, you'll see a log entry similar to:
+. In the Terminal panel, you'll see a log entry similar to:
 +
 [source,text]
 ----
@@ -157,7 +156,7 @@ INFO  [hello-world-impl].get:\greeting  Received greeting request for name: Worl
 
 Breakpoints pause execution so you can inspect the Mule message at a specific point in your flow.
 
-. In the canvas, select the context menu  for the *Logger* component, and then select *Add Breakpoint*.
+. In the canvas, select the context menu for the *Logger* component, and then select *Add Breakpoint*.
 +
 A red dot appears, which represents a breakpoint.
 
@@ -192,12 +191,9 @@ The Variables panel is in the *Run and Debug sidebar*, not at the bottom of the 
 
 You used Anypoint Code Builder's testing and debugging tools:
 
-* *API Console*
+* *Choice and Raise Error*
 +
-Quick testing without leaving the IDE
-* *Validation Module*
-+
-Ensures your API handles invalid input properly
+Validates input and stops execution with a meaningful error when required parameters are missing
 * *Logger*
 +
 Adds visibility into your flows
@@ -209,7 +205,7 @@ Pauses execution to inspect data
 Shows message content at each step
 * *Debug Mode*
 +
-Step through your flow execution
+Step through your flow execution.
 
 == What's Next
 
