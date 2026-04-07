@@ -24,7 +24,7 @@ From sign-in through your home overview and catalogs, you open each asset to wor
 
 This walkthrough shows how to move through Omni in a straightforward way so you can manage and improve a multi-agent environment with confidence.
 
-The end-to-end journey for MuleSoft Omni consists of various tasks, each with links to relevant content to assist you in completing them.
+The table summarizes what you can do in each area of Omni and points to the sections in this topic where each area is described in full.
 
 [.lm-table, cols="1a,1a,1a", grid="none"]
 |===
@@ -101,9 +101,4 @@ The Platform section encompasses the foundational tools and features that drive 
 * *Integrate with ease* -- Use robust platform tools to manage connections between agents, APIs, MCP servers, and LLMs.
 * *Explore platform capabilities* -- Access a wide range of functionalities that support efficient data integration and digital transformation.
 * *Configure and customize* -- Tailor platform settings to align with your organization's unique requirements for a flexible, adaptable ecosystem.
-
-[discrete]
-== See Also
-
-*
 
