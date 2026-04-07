@@ -1,0 +1,109 @@
+= Get Started with MuleSoft Omni
+:page-aliases:
+:page-article-style: learning-map
+
+MuleSoft Omni pairs an AI-powered assistant with a single, unified experience for your portfolio. The assistant helps you manage, connect, and optimize integrations across your digital ecosystem. Use it to understand how agents, APIs, and infrastructure fit together, apply governance, and act on performance and cost recommendations. Omni guides you through complex setup so you can keep integrations compliant and observable without juggling every tool manually.
+
+The experience is organized around the jobs you perform on your portfolio. For agents, APIs, gateways, MCP servers, and LLMs, you move through overview, instances, governance, and observability in one connected path for each asset. Integration and environment-wide controls are grouped under Platform so that work stays in one place instead of scattered across separate areas of the product.
+
+Omni brings together Agents, Governance, Observability, and Platform—four areas where you work with your portfolio.
+
+From sign-in through your home overview and catalogs, you open each asset to work with policies, instances, monitoring, and governance reports in one place, aligned with how you manage work across Omni.
+
+== End-to-End Journey: Working in MuleSoft Omni
+
+. *Signing in* -- You sign in to Omni with your credentials and arrive at the Home Dashboard.
+. *Reviewing the Home Dashboard* -- The home overview highlights what matters most: totals for agents and APIs, average latency, compliance status, and trends you can scan at a glance.
+. *Opening catalogs* -- From the main menu, you browse catalogs for Agents, APIs, MCP Servers, and LLMs. For example, you open *Agents* to see every agent in your environment.
+. *Reviewing an agent* -- In the Agents catalog, agents are listed in a clear layout. You select an agent—for example, the MuleSoft Documentation Agent—and review its status, cost per day, latency, and skills in full.
+. *Managing policies* -- Under *Policies*, you see which governance policies apply so compliance and performance expectations stay clear.
+. *Reviewing instances* -- Under *Instances*, you see where the agent is deployed, review configuration, and inspect behavior for each deployment.
+. *Checking performance* -- Under *Monitoring*, you review live analytics such as latency, invocation counts, and error rates.
+. *Reading governance reports* -- Under *Governance Report*, you review rule-level compliance, violations, and warnings across services.
+. *Getting help or sharing feedback* -- You can send feedback to the support team and open Help & Support for documentation or contact options when you need assistance.
+
+This walkthrough shows how to move through Omni in a straightforward way so you can manage and improve a multi-agent environment with confidence.
+
+The end-to-end journey for MuleSoft Omni consists of various tasks, each with links to relevant content to assist you in completing them.
+
+[.lm-table, cols="1a,1a,1a", grid="none"]
+|===
+| image::reuse::lm_start.png[]
+[.lm-bold]##Agents##
+
+- Discover and manage agents and see how they connect to APIs, gateways, MCP servers, and LLMs
+- Review performance and cost, and tune how agents run
+
+| image::reuse::lm_explore_1.png[]
+[.lm-bold]##Governance##
+
+- Apply and track policies across APIs, agents, and related assets
+- Automate policy rollout and stay audit-ready with reports and rule analysis
+
+| image::reuse::lm_analyze_1.png[]
+[.lm-bold]##Observability##
+
+- Monitor latency, throughput, and errors with dashboards and analytics
+- Investigate issues and align operational insight with governance reporting
+
+| image::reuse::lm_test_1.png[]
+[.lm-bold]##Platform##
+
+- Manage connections and environment-wide settings for agents, APIs, and integrations
+- Adapt Omni to how your organization works
+
+| image::reuse::lm_build_1.png[]
+[.lm-bold]##Areas in this topic##
+
+- <<agents>>
+- <<governance>>
+- <<observability>>
+- <<platform>>
+
+| image::reuse::lm_audience_end_1.png[]
+[.lm-bold]##More help##
+
+- Use Help & Support in Omni when you need documentation or to contact support
+|===
+
+[[agents]]
+== Agents
+
+Agents are integral to the MuleSoft Omni platform, serving as specialized software entities that perform specific tasks or processes. Within the Agents section, you can:
+
+* *Explore a diverse array of agents* -- Discover and manage all active and inactive agents, each designed for unique functions such as data processing, customer support, or compliance checks. See how agents relate to APIs, gateways, MCP servers, and LLMs so you understand roles and dependencies at a glance.
+* *Optimize agent operations* -- Access performance metrics and cost details for each agent to optimize their operations and ensure efficient resource usage.
+* *Enable seamless interactions* -- Connect agents with APIs, LLMs, and MCP servers to enhance capabilities and extend functionality across your digital ecosystem.
+
+[[governance]]
+== Governance
+
+Governance within the MuleSoft Omni platform ensures that all components operate within predefined compliance, security, and regulatory standards. In this section, you can:
+
+* *Enforce governance policies* -- Apply and manage policies across APIs, agents, and other entities so they meet security and compliance requirements and you protect data across the ecosystem.
+* *Monitor compliance* -- Track governance compliance through detailed reports and rule analysis, identify areas that need improvement, and review operational performance alongside compliance status.
+* *Automate policy management* -- Use automation features to streamline policy application and keep governance consistent across all instances.
+
+[[observability]]
+== Observability
+
+The Observability section provides real-time insights into the performance and health of your integrated systems, including focused monitoring where it applies to select gateways. Key functionalities include:
+
+* *Monitor system performance* -- Use dashboards for an overview of latency, request rates, error metrics, and throughput to keep systems performing well.
+* *Detect and resolve issues* -- Quickly identify and troubleshoot anomalies or performance degradation with comprehensive monitoring tools.
+* *Gain operational insights* -- Use detailed analytics to understand system behavior, support data-driven optimization decisions, and complement governance-focused reporting when you assess how services run in production.
+
+[[platform]]
+== Platform
+
+The Platform section encompasses the foundational tools and features that drive the MuleSoft Omni ecosystem. It offers:
+
+* *Integrate with ease* -- Use robust platform tools to manage connections between agents, APIs, MCP servers, and LLMs.
+* *Explore platform capabilities* -- Access a wide range of functionalities that support efficient data integration and digital transformation.
+* *Configure and customize* -- Tailor platform settings to align with your organization's unique requirements for a flexible, adaptable ecosystem.
+
+[discrete]
+== See Also
+
+*
+
