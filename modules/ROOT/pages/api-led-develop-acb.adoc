@@ -95,7 +95,9 @@ Now add the logic to return your greeting.
 
 . Navigate to the *get:\greeting:hello-world-api-config* flow in the canvas.
 +
-The flow contains a Logger component by default. You'll add a Transform component after it to return your greeting.
+image::api-tutorial-api-config-flow.png[The get:\greeting:hello-world-api-config flow highlighted in the flow list]
++
+The flow contains a *Logger* component by default. You'll add a *Transform* component after it to return your greeting.
 
 . Click the image:icon-plus.png["",15,15] (*Add component*) icon after the Logger component in the flow.
 
@@ -114,6 +116,8 @@ output application/json
   message: "Hello, " ++ attributes.queryParams.name ++ "!"
 }
 ----
++
+image::api-tutorial-transform-component-acb.png[The Transform component with the DataWeave script inserted]
 +
 This DataWeave script reads the `name` query parameter and returns a personalized greeting.
 
