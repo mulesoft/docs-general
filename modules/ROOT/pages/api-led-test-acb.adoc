@@ -162,11 +162,17 @@ Breakpoints pause execution so you can inspect the Mule message at a specific po
 
 . In the canvas, select the context menu for the *Logger* component, and then select *Add Breakpoint*.
 +
+image::api-tutorial-logger-context-menu-acb.png[The context menu for the Logger component with an arrow pointing to the Add Breakpoint option]
++
 A red dot appears, which represents a breakpoint.
++
+image::api-tutorial-logger-breakpoint-acb.png[The Logger component with a red dot representing a breakpoint]
 
 . Click image:icon-run-debug.png["",15,15] (*Run and Debug*) in the activity bar to open the Run and Debug panel.
 
 . Select *Debug Mule Application* to start your application in debug mode.
++
+image::api-tutorial-debug-options-acb.png[The Debug Mule Application option selected in the Run and Debug panel]
 . Send a request from Postman:
 +
 [source,text]
@@ -176,7 +182,7 @@ http://localhost:8081/api/greeting?name=World
 
 . Return to Anypoint Code Builder.
 +
-Execution pauses at the breakpoint. The debug toolbar appears at the top of the editor, and the *Variables* panel appears in the Run and Debug sidebar on the left side of the IDE.
+Execution pauses at the breakpoint. The debug toolbar appears at the top of the editor, and the *Variables* panel appears in the Run and Debug panel.
 +
 [NOTE]
 The Variables panel is in the *Run and Debug sidebar*, not at the bottom of the IDE. If you don't see it, make sure the Run and Debug panel is open (image:icon-run-debug.png["",15,15] icon in the activity bar).
@@ -186,6 +192,8 @@ The Variables panel is in the *Run and Debug sidebar*, not at the bottom of the 
 * *payload*: The current message content
 * *attributes*: HTTP request details, including headers, query parameters, and URI
 * *vars*: Any flow variables set during execution
++
+image::api-tutorial-debug-panel-variables-acb.png[The Variables panel in the Run and Debug panel]
 
 . Click *Continue* in the debug toolbar to resume execution and complete the request.
 
