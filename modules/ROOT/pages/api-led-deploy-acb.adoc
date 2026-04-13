@@ -30,9 +30,8 @@ Alternatively, open the Command Palette and select `MuleSoft: Deploy to CloudHub
 
 . If prompted, click *Allow* to sign in to Anypoint Platform, then select a business group.
 
-. When prompted via the VS Code command palette, select *CloudHub 2.0* as the deployment target.
-+
-You are prompted to select the space to deploy your application.
+. When prompted via the VS Code command palette, select *CloudHub 2.0* as the deployment target, then select the region to deploy the application to.
+. At the prompt, select the environment to deploy to.
 
 . If the project doesn't already have a `deploy_ch2.json` file, Anypoint Code Builder indicates that a deployment configuration file has been created and opens it for you to review:
 +
@@ -55,8 +54,6 @@ You are prompted to select the space to deploy your application.
 <5> The deployment strategy. Use `rolling` for zero-downtime updates, or `recreate` for a full restart.
 <6> Starts the application automatically after deployment.
 <7> Enables Anypoint Object Store v2 for storing application state.
-
-. At the prompt, select the environment to deploy to.
 +
 Anypoint Code Builder packages the application and deploys it to CloudHub 2.0.
 +
@@ -73,6 +70,8 @@ Your browser opens to Runtime Manager in Anypoint Platform, showing your applica
 == Step 5.3: Verify in Runtime Manager
 
 . Wait for the status to change from *Deploying* to *Running*.
++
+image::api-tutorial-app-running-runtime-manager.png[The application status is Running in Runtime Manager]
 +
 [NOTE]
 The first deployment typically takes 5–10 minutes. You can monitor progress in the Output panel (*Mule Maven Output*) in ACB. As long as the status shows *Deploying* and not an error, the deployment is working.
@@ -101,6 +100,34 @@ Replace `hello-world-impl-jsmith.<space-domain>` with the hostname from Runtime 
 ----
 
 Congratulations! Your API is live in the cloud!
+
+== Troubleshoot Deployment Issues
+
+If your deployment fails with an error message similar to:
+
+----
+Failed to deploy to CloudHub 2.0: PUBLISH 409: ASSET_PRE_CONDITIONS_FAILED.
+Cannot create a new asset with the provided groupId, assetId, version, state.
+An asset already exists with this version and published lifecycle state.
+----
+
+This means that version `1.0.0` has already been published to Exchange. **Exchange does not allow you to overwrite published versions.**
+
+To resolve this issue:
+
+. Open your `pom.xml` file in the project.
+. Increment the `<version>` element:
++
+[source,xml]
+----
+<version>1.0.1</version>
+----
++
+[TIP]
+Each time you deploy, you must use a unique version number. Follow semantic versioning: increment the patch version (1.0.1, 1.0.2) for bug fixes, the minor version (1.1.0) for new features, and the major version (2.0.0) for breaking changes.
+
+. Save the file.
+. Retry the deployment.
 
 == Step 5.4: What Just Happened?
 
