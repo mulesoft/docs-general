@@ -89,6 +89,8 @@ Option B: Create Manually::
 * *API Type*, select *REST API*.
 * *API Specification Language*, select *OAS 3.0 (YAML)*.
 * Optionally, select a business group.
++
+image:api-tutorial-create-project-acb.png[The form to create a new API specification with values filled in]
 
 . Click *Create Project*.
 +
