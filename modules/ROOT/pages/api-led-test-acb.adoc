@@ -20,9 +20,10 @@ Test your API locally before deploying it to the cloud. You run the API in Anypo
 +
 image::api-tutorial-run-mule-app-acb.png["The Run and Debug panel and the button to run the Mule app"]
 +
-[calloutlist]
+--
 . Click to open the Run and Debug panel.
 . Click the button to run the Mule app.
+--
 +
 The Output panel shows startup progress. Wait for `Application started successfully`.
 
