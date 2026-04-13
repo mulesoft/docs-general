@@ -27,26 +27,47 @@ Do not select `MuleSoft: Implement an API Specification`. That command is for sp
 +
 image::api-tutorial-implement-local-api-prompt.png["Prompt: We'll create a workspace to keep your API specification and Mule project in sync."]
 
-. Navigate to a directory for your new project, and click *Save*.
+. When prompted to save a `.code-workspace` file, navigate to your home directory and click *Save*.
 +
 [IMPORTANT]
 --
-Do not accept the default location. Save your `.code-workspace` file in a directory outside of your project folder, not within your API spec folder.
+Do not accept the default location. The default saves the `.code-workspace` file inside your `hello-world-api` spec folder, which causes errors. You must save it one level up — in your home directory — so it sits alongside (not inside) your projects.
 --
++
+For example, if you created your API spec in `~/hello-world-api/`, navigate up to `~` (your home directory) and save the file there. Your folder structure should look like this:
++
+----
+~/ (home directory)
+├── hello-world-api/          <- your API spec project
+│   └── hello-world-api.yaml
+└── hello-world.code-workspace  <- save the file HERE
+----
 
 . When prompted, provide project configuration details:
 .. Provide a name for your Mule project, for example, `hello-world-impl`.
 +
 image::api-tutorial-api-impl-provide-project-name-prompt.png[The prompt to provide a project name for the API implementation project]
-.. Navigate to a folder for your Mule project, and click *Select target folder*.
+.. When prompted to select a target folder, navigate to your home directory (`~`) and click *Select target folder*.
++
+This is where Anypoint Code Builder creates the `hello-world-impl` project folder. Selecting your home directory places both projects side by side:
++
+----
+~/ (home directory)
+├── hello-world-api/          <- API spec project
+│   └── hello-world-api.yaml
+├── hello-world-impl/         <- implementation project (created here)
+└── hello-world.code-workspace
+----
 .. Select a Mule runtime version for the project.
 .. Select a Java version for the project.
 +
-Anypoint Code Builder scaffolds your local API specification into a new Mule project. Both the API spec and the Mule project open in your IDE.
+Anypoint Code Builder scaffolds your local API specification into a new Mule project. Both the API spec and the implementation project open together in your IDE in a multi-root workspace.
 
-. In the Explorer view, navigate to `hello-world-impl/src/main/mule/` and open `hello-world-impl.xml`.
+. Confirm the implementation file opened correctly:
+.. In the Explorer view on the left, you'll see two projects listed: `hello-world-api` and `hello-world-impl`.
+.. Expand `hello-world-impl` > `src` > `main` > `mule` and open `hello-world-impl.xml`.
 +
-This is the Mule configuration XML. This file contains your flows, HTTP Listener, and APIkit Router. The canvas opens automatically when you open it. 
+This is the Mule configuration XML, scaffolded from your API spec. It contains your flows, HTTP Listener, and APIkit Router. The canvas opens automatically.
 
 == Step 3.2: Understand the Scaffolded Structure
 
