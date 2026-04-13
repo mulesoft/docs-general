@@ -86,7 +86,7 @@ The application URL is the base hostname only. Your API endpoint is at the `/api
 +
 [source,text]
 ----
-GET https://hello-world-impl-jsmith.<space-domain>.cloudhub.io/api/greeting?name=World
+https://hello-world-impl-jsmith.<space-domain>.cloudhub.io/api/greeting?name=World
 ----
 +
 Replace `hello-world-impl-jsmith.<space-domain>` with the hostname from Runtime Manager.

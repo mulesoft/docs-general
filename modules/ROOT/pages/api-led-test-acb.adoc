@@ -30,7 +30,7 @@ The Output panel shows startup progress. Wait for `Application started successfu
 +
 [source,text]
 ----
-GET http://localhost:8081/api/greeting?name=World
+http://localhost:8081/api/greeting?name=World
 ----
 
 . Verify you receive:
@@ -44,7 +44,7 @@ GET http://localhost:8081/api/greeting?name=World
 +
 Your API works! Now let's add validation and debugging.
 
-. Click *Stop* in the debug toolbar.
+. Click image:icon-stop.png["",15,15] (*Stop*) in the debug toolbar.
 
 == Step 4.2: Add Validation
 
@@ -66,25 +66,31 @@ Add the *Raise Error* component to the *When* branch before setting the conditio
 +
 * *Type*: `APP:BAD_REQUEST`
 * *Description*: `Name parameter is required`
-. Click the *Choice* component to open its configuration panel and set the *When* condition to:
++
+image::api-tutorial-raise-error-component-acb.png[The Raise Error component with the Type and Description configured]
+. Click the *Choice* component's *When* condition, and enter this expression:
 +
 [source,dataweave]
 ----
 #[attributes.queryParams.name == null or attributes.queryParams.name == ""]
 ----
++
+This expression checks whether the `name` query parameter is missing from the request or sent as an empty string. The `name` parameter is the one you defined in your API spec at `/greeting?name=`.
++
+image::api-tutorial-when-condition-acb.png[The flow withe the When condition highlighted and the configuration panel with the expression entered]
 . Save your changes.
 +
-Your flow order is now: *Choice* → *Logger* → *Transform*. When `name` is missing, the When branch raises an error and the flow stops. When `name` is present, execution continues past the Choice to Logger and Transform.
+Your flow order is now: *Choice* → *Logger* → *Transform*. When the `name` query parameter is missing or empty, the *When* condition triggers the *Raise Error* component and the flow stops. When `name` has a value, execution continues to *Logger* and *Transform*.
 
 == Step 4.3: Test the Validation
 
-. Start your application using Run and Debug.
+. Start your application by clicking the *Run* button in the Run and Debug panel.
 
 . In Postman, test with a valid name parameter:
 +
 [source,text]
 ----
-GET http://localhost:8081/api/greeting?name=World
+http://localhost:8081/api/greeting?name=World
 ----
 +
 You should receive: `{"message": "Hello, World!"}`
@@ -93,12 +99,12 @@ You should receive: `{"message": "Hello, World!"}`
 +
 [source,text]
 ----
-GET http://localhost:8081/api/greeting
+http://localhost:8081/api/greeting
 ----
 +
 You should receive a validation error with status `400`.
 
-. Click *Stop* in the debug toolbar.
+. Click image:icon-stop.png["",15,15] (*Stop*) in the debug toolbar.
 
 Your API now validates input before processing.
 
@@ -106,33 +112,24 @@ Your API now validates input before processing.
 
 Logging helps you see what's happening inside your flows.
 
-. In the canvas, find your *get:\greeting* flow.
-
-. Click the *Logger* component to configure it:
+. Click the *Logger* component and configure it:
 +
-* *Message*: `#["Received greeting request for name: " ++ (attributes.queryParams.name default "not provided")]`
+* *Message*: Click *fx* to switch to expression mode, then enter:
++
+[source,dataweave]
+----
+#["Received greeting request for name: " ++ (attributes.queryParams.name default "not provided")]
+----
++
+This message logs the `name` query parameter value or "not provided" if it's missing.
 * *Level*: INFO
-
++
+image::api-tutorial-logger-component-configured-acb.png[The Logger component with the Message and Level configured]
 . Save your changes.
 
 == Step 4.5: Test with Logging
 
-. Open the Run and Debug panel.
-+
-.Show me how
-[%collapsible]
-====
-** Click the image:icon-run-debug.png["",15,15] (*Run and Debug*) icon in the activity bar.
-** Use the keyboard shortcuts:
-+
-*** Mac: Cmd+Shift+d
-*** Windows: Ctrl+Shift+d
-** In the desktop IDE, select *View* > *Run*.
-====
-
-. Click *Start Debugging* to start your application.
-
-
+. Start your application by clicking the *Run* button in the Run and Debug panel.
 . Open the Terminal panel to see your application logs:
 +
 * Mac: Cmd+\` or select *View* > *Terminal*
@@ -145,7 +142,7 @@ Logger output appears in the Terminal panel, not the Output panel. The Terminal 
 +
 [source,text]
 ----
-GET http://localhost:8081/api/greeting?name=World
+http://localhost:8081/api/greeting?name=World
 ----
 
 . In the Terminal panel, you'll see a log entry similar to:
@@ -157,7 +154,7 @@ INFO  [hello-world-impl].get:\greeting  Received greeting request for name: Worl
 
 . Send a few more requests and watch the logs update.
 
-. Click *Stop*.
+. Click image:icon-stop.png["",15,15] (*Stop*) when done.
 
 == Step 4.6: Use Breakpoints for Debugging
 
@@ -174,7 +171,7 @@ A red dot appears, which represents a breakpoint.
 +
 [source,text]
 ----
-GET http://localhost:8081/api/greeting?name=World
+http://localhost:8081/api/greeting?name=World
 ----
 
 . Return to Anypoint Code Builder.
