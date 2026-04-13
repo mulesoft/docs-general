@@ -36,6 +36,8 @@ Do not accept the default location. Save your `.code-workspace` file in a direct
 
 . When prompted, provide project configuration details:
 .. Provide a name for your Mule project, for example, `hello-world-impl`.
++
+image::api-tutorial-api-impl-provide-project-name-prompt.png[The prompt to provide a project name for the API implementation project]
 .. Navigate to a folder for your Mule project, and click *Select target folder*.
 .. Select a Mule runtime version for the project.
 .. Select a Java version for the project.
