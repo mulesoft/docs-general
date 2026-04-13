@@ -65,14 +65,14 @@ Anypoint Code Builder scaffolds your local API specification into a new Mule pro
 
 . Confirm the implementation file opened correctly:
 .. In the Explorer view on the left, you'll see two projects listed: `hello-world-api` and `hello-world-impl`.
-.. Expand `hello-world-impl` > `src` > `main` > `mule` and open `hello-world-impl.xml`.
+.. Expand `hello-world-impl > src > main > mule` and open `hello-world-api.xml`.
 +
 This is the Mule configuration XML, scaffolded from your API spec. It contains your flows, HTTP Listener, and APIkit Router. The canvas opens automatically.
 
 == Step 3.2: Understand the Scaffolded Structure
 
 The canvas shows your scaffolded flows, including: 
-+
+
 * *hello-world-api-main*
 +
 HTTP Listener that receives requests on port 8081
@@ -86,6 +86,8 @@ Your GET endpoint implementation
 * *Path*: `/api/*` (receives all API requests)
 * *Host*: `0.0.0.0` (listens to all interfaces)
 * *Port*: `8081` (local development port)
++
+image::api-tutorial-listener-component.png[Anypoint Code Builder canvas with Listener component highlighted and an arrow pointing to the Edit Connection icon]
 
 == Step 3.3: Implement the Hello World Logic
 

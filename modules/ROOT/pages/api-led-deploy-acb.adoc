@@ -22,7 +22,7 @@ CloudHub 2.0 requires a release version (not a snapshot). When you scaffolded th
 
 == Step 5.2: Deploy to CloudHub 2.0
 
-. Open `hello-world-impl.xml` in the editor.
+. Open `hello-world-api.xml` in the editor.
 
 . Click the image:icon-deploy.png["",20,20] (*Deploy to CloudHub*) icon.
 +
