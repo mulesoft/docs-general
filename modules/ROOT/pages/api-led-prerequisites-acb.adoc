@@ -14,15 +14,15 @@ link:https://www.postman.com/downloads/["Install Postman^", role="button-primary
 Depending on your platform, you might need to install a different client.
 
 * Required permissions:
-** *Design Center Developer*
+** *Anypoint Code Builder Developer*
 +
 Allows API specification creation
 ** *Exchange Contributor*
 +
 Enables publishing assets to Exchange
-** *CloudHub 2.0 Deploy*
+** *Create Applications*
 +
-Allows deployment to CloudHub 2.0
+Allows deployment of applications to CloudHub 2.0
 
 * Optional permissions (for MuleSoft Vibes AI features):
 ** *Mule Developer Generative AI User*

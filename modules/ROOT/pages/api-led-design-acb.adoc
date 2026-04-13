@@ -33,10 +33,10 @@ link:https://www.mulesoft.com/exchange["Take me to Exchange^", role="button-prim
 link:https://anypoint.mulesoft.com/login["Take me to Anypoint Platform^", role="button-primary"]
 +
 .. Log in to Anypoint Platform if needed.
-.. In the Anypoint Platform landing page, go to the *Exchange* section and click *Discover and share*.
+.. In the Anypoint Platform landing page, go to the *Exchange* section and click *Discover & Share*.
 .. Click any specification to see the data types and the HTTP requests defined for the API. If this is a trial org, you might not see anything yet.
 
-After exploring Exchange to see the range of assets available, use MuleSoft Vibes to create a new API specification.
+After exploring Exchange to see the range of assets available, use Anypoint Code Builder to create a new API specification.
 
 == Step 2.2: Access Anypoint Code Builder
 
@@ -81,11 +81,9 @@ Proceed to <<step-2-4>>.
 Option B: Create Manually::
 +
 --
-. In Anypoint Code Builder, click the image:icon-ms-logo.png["",20,20] (*Anypoint Code Builder*) icon in the activity bar.
+. Click *Design an API*.
 
-. Click *Design an API* or select *File > New > API Specification*.
-
-. In the *API Specification* dialog, enter or select these values:
+. Complete the *API Specification* form:
 * *Project Name*, enter `hello-world-api`.
 * *Project Location*, select your home directory.
 * *API Type*, select *REST API*.
@@ -174,6 +172,8 @@ paths:
 Use the Mocking Service in the API Console to test your spec before implementing it.
 
 . With `hello-world-api.yaml` still open, click the image:icon-api-console.png["",14,14] (*API Console*) icon in the editor toolbar.
++
+image:api-tutorial-open-api-console-acb.png[Yaml file is open and API Console icon is selected in the toolbar]
 +
 The API Console displays your spec.
 
