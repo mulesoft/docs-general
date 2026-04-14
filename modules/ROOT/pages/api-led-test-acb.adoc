@@ -172,7 +172,7 @@ image::api-tutorial-logger-breakpoint-acb.png[The Logger component with a red do
 
 . Select *Debug Mule Application* to start your application in debug mode.
 +
-image::api-tutorial-debug-options-acb.png[The Debug Mule Application option selected in the Run and Debug panel]
+image::api-tutorial-debug-option-acb.png[The Debug Mule Application option selected in the Run and Debug panel]
 . Send a request from Postman:
 +
 [source,text]
