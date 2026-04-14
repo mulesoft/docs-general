@@ -1,4 +1,4 @@
-= Understanding MuleSoft Omni: Benefits for Your AI Asset Journey
+= Comparing MuleSoft Omni and Anypoint Platform
 :page-aliases:
 
 Both MuleSoft Omni and Anypoint Platform ship robust capabilities, but they emphasize different strengths, especially when you manage AI assets such as agents, LLMs, and MCP servers next to APIs and gateways.
@@ -6,22 +6,6 @@ Both MuleSoft Omni and Anypoint Platform ship robust capabilities, but they emph
 Adopting Omni gives you a fuller way to manage and optimize AI assets, with the flexibility and governance modern AI-driven environments need. You configure AI policies and map relationships among assets faster and more seamlessly in Omni because the UI targets that portfolio. This is helpful when AI is central to your strategy.
 
 You still rely on Mulesoft Anypoint Platform for API and integration work, such as designing and evolving specifications, implementing and testing Mule apps in Anypoint Studio or Anypoint Code Builder, running CI/CD, deploying to runtimes such as CloudHub or Runtime Fabric, and using *Exchange* and *API Manager* for publishing, deep lifecycle policy, and runtime depth when *Omni* links you there.
-
-== Anypoint Platform vs MuleSoft Omni
-
-[cols="1a,1a",options="header"]
-|===
-| Anypoint Platform | MuleSoft Omni
-
-| API and integration focus: You get strong depth in spec design, Studio and Code Builder flows, Exchange, API Manager, Runtime Manager, and related monitors for APIs and runtimes you deploy.
-| Portfolio focus: *Home* and *Portfolio* catalogs place AI-related assets next to APIs and gateways. Each asset opens the same style of detail work: *Overview*, *Instances* when present, *Monitoring*, *Policies* or *Governance*, *Conformance Report* when present, and *Versions*.
-
-| Agents, MCP servers, and LLMs don't appear as first-class peers in the same unified catalog model as Omni's *Portfolio* next to APIs and gateways.
-| *Governance* and *Observability* navigation groups span the portfolio, such as *Cost Management* and *Governance Strategies*, plus *Dashboards*, *Reports*, and *Notifications*, so you don't treat AI operations as a separate island from APIs and gateways.
-|===
-
-[NOTE]
-Exact screens and capabilities change with product releases. Validate behavior in your org's tenants and release notes.
 
 == Benefits of Adopting Omni
 
@@ -36,26 +20,26 @@ Assistant Across the Portfolio:: The in-product assistant targets setup, questio
 
 == What to Manage Where
 
-[cols="1a,1a,1a",options="header"]
+Mulesoft Omni and Anypoint Platform each offer distinct capabilities that can guide your choice of tasks. Omni is a portfolio-first control plane for AI and APIs, and Anypoint is the traditional platform for builds, deployments, and Exchange-centric operations. Use Omni for governance, monitoring, and cross-asset interactions. Use Anypoint for development, deployment, runtime operations, and Exchange assets. If you need depth outside the portfolio UI, Omni links you to the right Anypoint experiences.
+
+[cols="1a,1a",options="header"]
 |===
-| Task | Prefer Anypoint | Prefer Omni
+| MuleSoft Omni | Anypoint Platform
 
-| Author or edit API specifications, design RAML/OAS | API Designer, repos, review flows | Not the primary surface
+a|
+* *Multi-agent ecosystem management.* Manage and optimize a network of AI agents—interaction management, compliance monitoring, integration oversight—and run agents, MCP servers, and LLMs next to APIs and gateways using *Portfolio*, *Add*, asset detail tabs, *Governance*, and *Observability*.
+* *Governance and compliance.* Enforce policies and conformance across agents, APIs, MCP servers, and LLMs; centralize governance strategies using portfolio *Governance* and asset-level *Policies*, *Conformance Report*, and related controls where the product supports them.
+* *Cost and performance optimization.* Monitor costs and token usage; tune instances and apply cost-reduction strategies such as tool sanitization and mapping, using *Cost Management*, *Governance*, and asset-level monitoring.
+* *Unified monitoring and observability.* Get a holistic view of entities in the ecosystem and track performance across services with *Dashboards*, *Reports*, *Notifications*, and portfolio views in *Observability* and *Home*.
 
-| Implement integrations and APIs, unit and integration test | Studio, Code Builder, MUnit | Not the primary surface
-
-| Deploy apps and APIs; manage environments and workers | Runtime Manager, deployment pipelines, CloudHub or RTF operations | Not the primary surface; Omni can link here for depth
-
-| Publish and discover API products for reuse | Exchange | Omni *APIs* catalog for portfolio context next to AI assets
-
-| Day-two policy and SLA management for published APIs | API Manager | *Policies* / *Conformance Report* on the API asset; *Governance* for portfolio-wide strategy and cost
-
-| Inventory and operate agents, MCP servers, and LLMs next to APIs and gateways | No single equivalent catalog in the classic Anypoint shell | *Portfolio* catalogs, *Add*, detail tabs, *Governance*, *Observability*
-
-| Portfolio-wide cost, guardrails, and cross-asset dashboards | Partial; spread across products | *Governance*, *Observability*, *Home*
+a|
+* *API design and development.* Design and evolve APIs with RAML or OAS, manage API lifecycle, and publish to Exchange (API Designer, repos, review flows).
+* *Integration development.* Build integrations and flows that connect applications and data using Anypoint Studio, Anypoint Code Builder, and related testing (for example, MUnit).
+* *Runtime management.* Operate Mule applications, monitor performance, configure environments and workers, and handle in-depth runtime tasks with Runtime Manager, deployment pipelines, CloudHub or Runtime Fabric, and related operations.
+* *Exchange asset management.* Manage shared artifacts, connectors, and API products in Anypoint Exchange as the primary place for reusable assets and discovery.
 |===
 
-When the same job exists in both places, Omni offers broader context and a single navigation model across AI and API assets. Anypoint is better suited for deep implementation and mature API lifecycle tasks.
+Some activities touch both sides: for example, day-two API policy depth often starts in Omni for portfolio context and continues in API Manager when you need classic lifecycle controls. Use the split above as a guide, then follow product links and your org’s practices for handoffs.
 
 == See Also
 

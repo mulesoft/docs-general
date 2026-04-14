@@ -1,7 +1,7 @@
 .xref:index.adoc[Anypoint Platform]
 * xref:index.adoc[Documentation]
 * xref:omni-overview.adoc[MuleSoft Omni]
-* xref:omni-comparison.adoc[Understanding MuleSoft Omni benefits]
+  ** xref:omni-comparison.adoc[Understanding MuleSoft Omni benefits]
 * xref:learning-map-mulesoft-ai.adoc[]
 * xref:learning-map-agent-fabric.adoc[Agent Fabric]
   ** xref:agent-fabric-release-notes.adoc[]
