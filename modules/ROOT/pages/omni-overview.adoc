@@ -1,89 +1,67 @@
-= Get Started with MuleSoft Omni
+= MuleSoft Omni Overview
 :page-aliases:
 :page-article-style: learning-map
 
-MuleSoft Omni pairs an AI-powered assistant with one place to manage your portfolio. The assistant helps you connect and tune integrations across your ecosystem. It shows how agents, APIs, gateways, MCP servers, and LLMs fit together, where to apply governance, and how to act on performance and cost signals. Omni walks you through setup so you keep integrations compliant and visible without switching tools.
+MuleSoft Omni helps you manage, optimize, and govern a multi-agent ecosystem from one place. Work with agents, APIs, MCP servers, LLMs, and gateways as a single portfolio. View asset relationships, apply governance and cost discipline, and act on observability signals instead of working in separate silos.
 
-Omni centers the UI on the jobs you do. Under *Portfolio* in the left navigation, you get a catalog for each asset type you manage: agents, MCP servers, LLMs, APIs, and gateways. For each asset, you move through overview, instances, governance, and observability on one path. Cross-cutting governance and monitoring sit under *Governance* and *Observability*. Environment-wide controls sit under *Platform*.
+Omni pairs this portfolio view with an in-product assistant to connect integrations, tune configurations, and get answers in context.
 
-Portfolio, Governance, Observability, and Platform are the four areas where you work with your portfolio.
+== Platform Capabilities
 
-From sign-in through *Home* and your catalogs, you open each asset and use its detail tabs in one place.
+Omni supports the full lifecycle of AI-connected integration assets:
 
-== End-to-End Journey: Working in MuleSoft Omni
+Entity Management:: Register and manage agents, REST and GraphQL APIs, MCP servers, LLMs, and gateways, including MuleSoft Flex Gateway, external gateways, and unmanaged gateways. Each type has a dedicated catalog under *Portfolio*.
 
-This walkthrough follows the path you take in Omni so you can grow and tune your AI portfolio across agents, APIs, gateways, MCP servers, and LLMs.
+Governance and Compliance:: Define and apply policies across domains such as access and security, performance and cost, data privacy and integrity, and compliance and observability. Conformance reporting summarizes rule violations and severity so you can close gaps systematically.
 
-. *Signing in*
-+
-Sign in to Omni with your credentials. You land on *Home*.
-. *Opening catalogs*
-+
-Under *Portfolio* in the main navigation, open the catalog you need: *Agents*, *MCP Servers*, *LLMs*, *APIs*, or *Gateways*.
-. *Opening an asset and using Overview*
-+
-The catalog lists assets in a clear layout. Select one to open its detail page. Start on *Overview* for a summary and portfolio context. Graphs and fields differ by asset type.
-. *Reviewing instances and deployments*
-+
-On *Agents*, *MCP Servers*, *LLMs*, and *APIs*, open the *Instances* tab to review deployments, environment, version, status, gateway protection, and configuration or endpoint detail for that type. Gateways don't include an *Instances* tab.
-. *Checking performance*
-+
-On *Monitoring*, review live metrics such as latency, invocation counts, and error rates when Omni shows runtime data. What you see depends on how gateways expose the asset.
-. *Managing policies and governance*
-+
-On the *Policies* tab, review which governance policies apply and adjust runtime policy where Omni lets you. For gateways, use *Governance* instead.
-. *Reading conformance*
-+
-On *Agents*, *APIs*, and *MCP Servers*, open *Conformance Report* for rule-level compliance, violations, warnings, and conformance status. For gateways, use *Governance*.
-. *Reviewing versions*
-+
-Open *Versions* when you need change history for the asset.
-. *Getting help or sharing feedback*
-+
-Send feedback to the support team or open *Help & Support* for documentation and contact options.
+Cost and Performance Optimization:: Monitor token usage, per-instance signals, and daily cost where the product exposes them. Apply governance strategies and related controls, such as tool mapping and tool sanitization, to reduce spend and risk where Omni supports them.
 
-== What You Can Do in Each Area
+* Instance Management:: Create and review instances for supported asset types. Choose managed paths through Flex Gateway when you need deeper monitoring and policy enforcement, or choose lighter models when that matches your operating model.
 
-The left navigation groups work into *Portfolio*, *Governance*, *Observability*, and *Platform*. 
+== Navigation Areas
+
+Manage your AI ecosystem by tracking performance, cost, and compliance across agents, models, and gateways. The *Portfolio* provides a centralized view to register new assets and monitor their operational health. You can enforce security policies through *Governance* to maintain budget discipline and audit readiness. These integrated tools help you optimize latency and throughput while ensuring consistent policy application across your entire environment.
 
 [#portfolio#agents]
 === Portfolio
 
-image::reuse::lm_start.png[]
-
-*Portfolio* lists your AI portfolio in five catalogs: *Agents*, *MCP Servers*, *LLMs*, *APIs*, and *Gateways*. Browse each list, compare performance and cost, inspect configuration, and trace how assets connect. In any catalog, select *Add* to register or connect another asset of that type. Omni guides you through the flow so the new entry appears with the rest of your portfolio and you can govern and observe it the same way.
+*Portfolio* lists your AI portfolio in five catalogs: *Agents*, *MCP Servers*, *LLMs*, *APIs*, and *Gateways*. Browse each list, compare performance and cost, inspect configuration, and trace how assets connect. In any catalog, you can register or connect new assets. Follow the in-product steps so the new entry appears with the rest of your portfolio, then govern and observe it the same way as your other assets.
 
 Each catalog targets one asset type:
 
-* *Agents*: task-focused runtimes. Inspect status, cost, latency, skills, and related detail.
-* *MCP Servers*: Model Context Protocol (MCP) endpoints that agents and tools call for context and capabilities.
-* *LLMs*: model connections your flows depend on.
-* *APIs*: APIs you integrate across agents and services.
-* *Gateways*: gateways that front traffic where Omni applies routing, policies, and focused monitoring.
+* Agents
++ 
+Task-focused runtimes. Inspect status, cost, latency, skills, and related detail.
+* MCP Servers
++
+Model Context Protocol (MCP) endpoints that agents and tools call for context and capabilities.
+* LLMs
++
+Model connections your flows depend on.
+* APIs
++
+APIs you integrate across agents and services.
+* Gateways
++
+Gateways that front traffic where Omni applies routing, policies, and focused monitoring.
 
 [[governance]]
 === Governance
 
-image::reuse::lm_explore_1.png[]
-
-Use *Governance* for compliance, security, and spend discipline. Open *Cost Management* and *Governance Strategies* to steer budgets and policy posture. Apply and manage policies across APIs, agents, and related portfolio assets so you meet requirements and protect data. Track compliance with reports and rule analysis, close gaps, and stay audit-ready. Where Omni supports automation, use it to keep policy rollout consistent across instances.
+Use *Governance* for compliance, security, and spend discipline. Open *Cost Management* and *Governance Strategies* to steer budgets and policy posture. Apply and manage policies across APIs, agents, and related portfolio assets so you meet requirements and protect data. Track compliance with reports and rule analysis, close gaps, and stay audit-ready. Use policy rollout automation to keep changes consistent across instances.
 
 [[observability]]
 === Observability
 
-image::reuse::lm_analyze_1.png[]
-
-Use *Observability* for runtime health and day-to-day operations. Open *Dashboards*, *Reports*, and *Notifications* to watch latency, throughput, errors, and related signals, including gateway-focused views when Omni provides them. Investigate incidents, troubleshoot slowdowns, and compare what you see in operations with governance reporting as you assess production behavior.
+Use *Observability* for runtime health and day-to-day operations. Open *Dashboards*, *Reports*, and *Notifications* to watch latency, throughput, errors, and related signals, including gateway-focused views when Omni provides them. Investigate incidents, troubleshoot slowdowns, and compare operational views with governance reporting as you assess production behavior.
 
 [[platform]]
 === Platform
 
-image::reuse::lm_test_1.png[]
+Configure how Omni connects to external systems and supporting services for agents, APIs, MCP servers, and LLMs. Adjust options so Omni matches how your organization integrates and operates.
 
-*Platform* includes environment-wide tools and settings, including *Providers*. Configure how Omni connects to external systems and supporting services for agents, APIs, MCP servers, and LLMs. Adjust options so Omni matches how your organization integrates and operates.
 
-=== More help
+== See Also
 
-image::reuse::lm_audience_end_1.png[]
-
-Open *Help & Support* in Omni when you need documentation or want to contact support.
+* xref:omni-start-home.adoc[Get Started with MuleSoft Omni]
+* xref:omni-comparison.adoc[Comparing MuleSoft Omni and Anypoint Platform]

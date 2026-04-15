@@ -1,0 +1,118 @@
+= Get Started with MuleSoft Omni
+:page-aliases:
+
+Grow and tune your AI portfolio by registering and monitoring agents, APIs, and gateways in centralized catalogs. Sign in through the entry point your organization provides, such as Anypoint Platform, Slack, or a direct URL, to access dashboards and governance strategies based on your assigned permissions. You can review live performance metrics, manage security policies, and track rule-level compliance through automated conformance reports. 
+
+These tools ensure your AI assets remain audit-ready while providing clear visibility into cost and runtime health across your organization.
+
+== Access MuleSoft Omni
+
+Your organization determines how you access Omni. Common options include these environments.
+
+* Anypoint Platform 
++
+In Anypoint Platform, look for the Omni banner or shortcut and choose *Go to Omni*. Your administrator can also add a direct link in the main navigation or workspace.
+* Slack
++
+If your organization integrates Omni with Slack, use the Omni Slack app to receive notifications and alerts, and follow links back into the product. Your workspace can also offer shortcuts or slash commands your admin configures.
+* Coding assistants
++
+If your organization connects Omni to a supported assistant, such as Claude Code, follow your internal instructions to open Omni features from that development environment.
+* Direct URL
++
+Your organization can share a standalone URL that signs you in to Omni outside other apps. Use the address your administrator or internal documentation provides.
+* Custom integrations
++
+Your organization can build access through another tool. Follow the internal access instructions for custom integrations.
+
+[NOTE]
+Available access points depend on how your administrators configured Omni's integrations with other platforms.
+
+
+== Before You Begin
+
+Before you rely on Omni in production, complete these checks with your administrator. Requirements vary by entry point and how your administrator integrates Omni with other systems.
+
+=== Access and Credentials
+
+* Confirm that you have a user account for your organization's entry path, such as Anypoint Platform, and valid credentials to log in.
+* Confirm that you can reach Omni and integrated services, such as Anypoint Platform, Slack, or a connected coding assistant, from the networks and locations you use.
+
+=== Platform and Product Access
+
+* Confirm that your organization has the MuleSoft Omni entitlement and an administrator enabled it for your Anypoint business group or organization.
+* Confirm that required integrations with Anypoint Platform, Slack, or your development environment work end to end.
+* If Omni connects to other services, work with your administrator to configure authentication, such as API keys or OAuth tokens, to ensure successful connections.
+* Confirm that your administrator approved and configured required external connections, such as cloud providers under *Providers*.
+
+
+[[permissions]]
+== Permissions
+
+Omni uses Anypoint Platform access control. Your administrator maps tasks to roles and permissions in Anypoint Access Management. Exact permission names differ by organization. Use this table with your internal access guide.
+
+.Required permissions for Omni
+[cols="20%,~",options="header"]
+|===
+|Audience |Typical Permissions and Tasks
+
+|Administrator
+a|
+* Integration setup: Configure and manage integrations with external systems that Omni relies on.
+* Policy management: Define and enforce governance policies across APIs, agents, and other managed entities.
+* Access control: Assign user roles and access levels so teams see only the Omni areas and actions they need.
+
+|Business user
+a|
+* Portfolio operations: View and work with APIs, agents, and other entities in your catalogs, including asset registration flows when your policies allow it.
+* Governance insights: Open dashboards and reports that surface compliance and performance metrics.
+* Instance management: When your organization allows it, create or change instances under the guided conditions Omni exposes.
+
+|Developer
+a|
+* API design and documentation: Design, document, and publish APIs that Omni tracks as part of your integration work.
+* Tools and MCP servers: When you use MCP servers, adjust tool settings and invoke operations your administrator permits.
+
+|===
+
+If you can't complete an action or a page shows an authorization error, ask your Anypoint organization administrator for the matching permission or role.
+
+== Typical Omni Workflow
+
+Manage and tune your AI portfolio by registering assets, applying security policies, and monitoring runtime health. Access centralized catalogs to track agents and gateways while verifying compliance through conformance reports and cost management tools. These integrated features help you optimize performance and maintain audit readiness across your environment
+
+. Complete onboarding and access
++
+Confirm your credentials and the permissions your administrator assigned, as described in <<permissions,Permissions>>. Finish integration setup for supporting systems, such as connected providers under *Platform* > *Providers*, before you depend on Omni in production.
+. Learn the layout
++
+Sign in through your entry path and land on *Home*. Scan *Portfolio* catalogs, *Governance*, *Observability*, and *Platform* so you know where to register assets, apply policies, read health signals, and manage providers.
+. Register assets in Portfolio
++
+Under *Portfolio*, open *Agents*, *MCP Servers*, *LLMs*, *APIs*, or *Gateways*. Add assets to work with. Register manually or use connected providers under *Platform* > *Providers* if your organization enables discovery flows.
+. Create and manage instances
++
+On *Agents*, *MCP Servers*, *LLMs*, and *APIs*, open *Instances* to create managed or unmanaged deployments that match your needs. Managed instances on Flex Gateway give stronger governance and monitoring when Omni exposes them. *Gateways* don't include an *Instances* tab.
+. Configure policies
++
+On the *Policies* tab for a service or instance, apply governance policies that match access control, data privacy, performance, and compliance goals. Use *Governance* for gateway-wide policy work, organization strategies, and cost tools.
+. Review compliance
++
+On *Agents*, *APIs*, and *MCP Servers*, open *Conformance Report* to review scores, violations, and warnings, then address the findings your governance team prioritizes. For gateways, use *Governance* for the same compliance story at the scope Omni supports.
+. Monitor runtime health
++
+On *Monitoring*, review live metrics such as latency, error rates, and request volume when Omni surfaces Flex Gateway data for managed paths. Compare what you see with dashboards, reports, or notifications under *Observability* when your administrator enabled those views for your team.
+. Manage cost
++
+Under *Governance*, open *Cost Management* to study token usage and related spend signals. Apply the cost reduction strategies your organization adopted, such as tool mapping or tool sanitization, where Omni supports them.
+. Operate and tune the portfolio
++
+Coordinate agents, APIs, gateways, MCP servers, and LLMs so traffic, policies, and integrations stay aligned. Open *Versions* when you need configuration history before you change instances or policies. Adjust policies, instances, or registrations when monitoring and governance insights show drift or new risk.
+. Improve on each cycle
++
+Feed findings from monitoring and governance back into planning for the next change window. 
+
+== See also
+
+* xref:omni-overview.adoc[MuleSoft Omni Overview]
+* xref:omni-comparison.adoc[Comparing MuleSoft Omni and Anypoint Platform]
