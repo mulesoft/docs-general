@@ -6,6 +6,8 @@ Set up your environment before starting the tutorial. You need an Anypoint Platf
 +
 link:https://anypoint.mulesoft.com/login/#/signup["Create a Trial organization^", role="button-primary"]
 
+* link:https://code.visualstudio.com/download["Download and install Visual Studio Code^", role="button-primary"].
+
 * xref:anypoint-code-builder::start-acb-desktop.adoc[Set up Anypoint Code Builder]. 
 * To test REST requests, obtain a client such as Advanced REST Client or Postman if you don't already have one. This tutorial uses Postman.
 +
