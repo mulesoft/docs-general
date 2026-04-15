@@ -8,12 +8,12 @@ link:https://anypoint.mulesoft.com/login/#/signup["Create a Trial organization^"
 
 * link:https://code.visualstudio.com/download["Download and install Visual Studio Code^", role="button-primary"].
 
-* xref:anypoint-code-builder::start-acb-desktop.adoc[Set up Anypoint Code Builder]. 
-* To test REST requests, obtain a client such as Advanced REST Client or Postman if you don't already have one. This tutorial uses Postman.
+* To test REST requests, obtain a client such as Postman or Advanced REST Client if you don't already have one. This tutorial uses Postman.
 +
 link:https://www.postman.com/downloads/["Install Postman^", role="button-primary"]
 +
 Depending on your platform, you might need to install a different client.
+* xref:anypoint-code-builder::start-acb-desktop.adoc[Set up Anypoint Code Builder]. 
 
 * Required permissions:
 ** *Anypoint Code Builder Developer*
