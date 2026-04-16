@@ -33,13 +33,13 @@ Available access points depend on how your administrators configured Omni's inte
 
 Before you rely on Omni in production, complete these checks with your administrator. Requirements vary by entry point and how your administrator integrates Omni with other systems.
 
-=== Access and Credentials
-
+Access and Credentials::
++
 * Confirm that you have a user account for your organization's entry path, such as Anypoint Platform, and valid credentials to log in.
 * Confirm that you can reach Omni and integrated services, such as Anypoint Platform, Slack, or a connected coding assistant, from the networks and locations you use.
 
-=== Platform and Product Access
-
+Platform and Product Access::
++
 * Confirm that your organization has the MuleSoft Omni entitlement and an administrator enabled it for your Anypoint business group or organization.
 * Confirm that required integrations with Anypoint Platform, Slack, or your development environment work end to end.
 * If Omni connects to other services, work with your administrator to configure authentication, such as API keys or OAuth tokens, to ensure successful connections.
@@ -51,7 +51,7 @@ Before you rely on Omni in production, complete these checks with your administr
 
 Omni uses Anypoint Platform access control. Your administrator maps tasks to roles and permissions in Anypoint Access Management. Exact permission names differ by organization. Use this table with your internal access guide.
 
-.Required permissions for Omni
+
 [cols="20%,~",options="header"]
 |===
 |Audience |Typical Permissions and Tasks
