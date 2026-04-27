@@ -134,7 +134,7 @@ paths:
 [[step-2-4]]
 == Step 2.4: Review Your API Specification
 
-The file is now open in the editor. Regardless of which method you used, you now have a complete API specification. Review the structure:
+Regardless of which method you used, you now have a complete API specification, which is open in the editor. Review the structure:
 
 [source,yaml]
 ----
