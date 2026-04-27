@@ -144,6 +144,8 @@ Logger output appears in the Terminal panel, not the Output panel. The Terminal 
 ----
 http://localhost:8081/api/greeting?name=World
 ----
++ 
+image::api-tutorial-send-postman-request.png[Postman UI with the request URL entered]
 
 . In the Terminal panel, you'll see a log entry similar to:
 +
