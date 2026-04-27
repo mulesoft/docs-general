@@ -114,19 +114,9 @@ https://your-app-url.cloudhub.io/api/greeting?name=World
 
 You'll see your greeting in the browser.
 
-== What Just Happened?
+== What You Learned
 
-You used Runtime Manager to:
-
-* *Monitor* 
-+
-View real-time health metrics.
-* *Troubleshoot*
-+
-Access logs for debugging.
-* *Verify*
-+
-Confirm your API is running correctly.
+You used Runtime Manager to check your application's health metrics, view live logs including the Logger messages from your flow, and verify the deployed API responds correctly from anywhere.
 
 Your Hello World API is now:
 

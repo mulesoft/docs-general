@@ -199,25 +199,9 @@ image::api-tutorial-debug-panel-variables-acb.png[The Variables panel in the Run
 
 . Click image:icon-stop.png["",15,15] (*Stop*) when done.
 
-== What Just Happened?
+== What You Learned
 
-You used Anypoint Code Builder's testing and debugging tools:
-
-* *Choice and Raise Error*
-+
-Validates input and stops execution with a meaningful error when required parameters are missing
-* *Logger*
-+
-Adds visibility into your flows
-* *Breakpoints*
-+
-Pauses execution to inspect data
-* *Variables Panel*
-+
-Shows message content at each step
-* *Debug Mode*
-+
-Step through your flow execution.
+You ran the API locally and tested it with Postman, then hardened it by adding a Choice router and Raise Error component to validate the `name` parameter. You configured a Logger to record each request, then used Anypoint Code Builder's debugger — breakpoints and the Variables panel — to pause execution and inspect the Mule message at each step.
 
 == What's Next
 

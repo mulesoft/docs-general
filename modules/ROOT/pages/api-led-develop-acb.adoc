@@ -125,22 +125,9 @@ This DataWeave script reads the `name` query parameter and returns a personalize
 
 That's it! Your API is implemented and ready to test.
 
-== What Just Happened?
+== What You Learned
 
-You used these components to implement your API:
-
-* *Scaffolding*
-+
-Anypoint Code Builder generated the project structure from your specification.
-* *HTTP Listener*
-+
-Receives incoming HTTP requests on port 8081.
-* *APIkit Router*
-+
-Routes requests to the correct endpoint flow.
-* *DataWeave*
-+
-MuleSoft's transformation language for creating responses.
+You scaffolded a Mule project from your API spec using Anypoint Code Builder, which generated the HTTP Listener, APIkit Router, and flow structure automatically. You then implemented the greeting logic by adding a Transform component and writing a DataWeave script to read the `name` query parameter and return a JSON response.
 
 == What's Next
 

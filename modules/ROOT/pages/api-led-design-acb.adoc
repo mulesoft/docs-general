@@ -198,6 +198,10 @@ The API Console displays your spec.
 
 Congratulations, you've designed an API!
 
+== What You Learned
+
+You created an OAS 3.0 API specification in Anypoint Code Builder, either by describing your API in plain language using MuleSoft Vibes or by writing the YAML manually. You then used the API Console's Mocking Service to test the spec and verify it returns the expected response before writing any implementation code.
+
 == What's Next
 
 Now that your API is designed, you'll scaffold an implementation project and add the business logic to make it functional.

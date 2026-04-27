@@ -111,7 +111,7 @@ Cannot create a new asset with the provided groupId, assetId, version, state.
 An asset already exists with this version and published lifecycle state.
 ----
 
-This means that version `1.0.0` has already been published to Exchange. **Exchange does not allow you to overwrite published versions.**
+This means that the version specified in your `pom.xml` is already published to Exchange. Exchange doesn't allow you to overwrite published versions.
 
 To resolve this issue:
 
@@ -124,23 +124,14 @@ To resolve this issue:
 ----
 +
 [TIP]
-Each time you deploy, you must use a unique version number. Follow semantic versioning: increment the patch version (1.0.1, 1.0.2) for bug fixes, the minor version (1.1.0) for new features, and the major version (2.0.0) for breaking changes.
+Each time you deploy, you must use a unique version number.
 
 . Save the file.
 . Retry the deployment.
 
-== Step 5.4: What Just Happened?
+== What You Learned
 
-Let's understand the tools you used:
-
-* CloudHub 2.0 is MuleSoft's cloud platform where your API now runs
-* A Shared Space is a multi-tenant environment for cost-effective hosting.
-* The `deploy_ch2.json` configuration file specifies replicas, resources, deployment model, and other settings.
-+
-Replicas are instances of your application (one for this tutorial).
-+
-The rolling deployment model is a zero-downtime deployment strategy.
-* Runtime Manager is the operations dashboard for deployed applications.
+You prepared your project for release and deployed it to CloudHub 2.0 using the built-in deploy command in Anypoint Code Builder. After deployment, you confirmed the application was running in Runtime Manager and verified the live endpoint with Postman.
 
 == What's Next
 
