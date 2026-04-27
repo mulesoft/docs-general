@@ -1,24 +1,84 @@
-= Step 1. Prerequisites for Building an API
-ifndef::env-site,env-github[]
-include::_attributes.adoc[]
-endif::[]
-:experimental:
+= Step 1. Prerequisites for Building an API-Led Solution
 
-Before you begin your API-led journey, verify that you have the required tools and access:
+Set up your environment before starting the tutorial. You need an Anypoint Platform account, Anypoint Code Builder, and a REST client such as Postman. Specific permissions are also required for deployment and, optionally, for AI-assisted API design.
 
 * Username and password for your Anypoint Platform organization. If you don't have Anypoint Platform yet, create a Trial organization on Anypoint Platform.
 +
 link:https://anypoint.mulesoft.com/login/#/signup["Create a Trial organization^", role="button-primary"]
-* Download Anypoint Studio 7.16.0 or later. Anypoint Studio is an Eclipse-based IDE with rich functionality for building and deploying apps to Anypoint Platform. 
+
+* https://code.visualstudio.com/download[Download and install Visual Studio Code].
+
+* To test REST requests, obtain a client such as Postman or Advanced REST Client if you don't already have one. This tutorial uses Postman.
 +
-link:https://www.mulesoft.com/lp/dl/anypoint-mule-studio["Download Anypoint Studio^", role="button-primary"]
-* To test REST requests, obtain a client such as Advanced REST Client or Postman if you don't already have one. This tutorial uses Advanced REST Client.
+https://www.postman.com/downloads/[Install Postman].
 +
-link:https://github.com/advanced-rest-client/arc-electron/releases["Install Advanced REST Client^", role=button-primary"]
+Depending on your platform, you might need to install a different client.
+* <<install-acb,Install Anypoint Code Builder>>. 
+
+* Required permissions:
+** *Anypoint Code Builder Developer*
 +
-Depending on your platform, you might need to install a different client, or https://github.com/advanced-rest-client/arc-electron/releases[install Advanced REST Client from GitHub].
+Allows API specification creation
+** *Exchange Contributor*
++
+Enables publishing assets to Exchange
+** *Create Applications*
++
+Allows deployment of applications to CloudHub 2.0
+
+* Optional permissions (for MuleSoft Vibes AI features):
+** *Mule Developer Generative AI User*
++
+Enables MuleSoft Vibes features for AI-generated API specifications. If you don't have this permission, you can still complete the tutorial by manually creating your API specification.
++
+*MuleSoft Vibes* requires Agentforce to be enabled in Access Management. See xref:access-management::enabling-agentforce.adoc[].
+
+[[install-acb]]
+== Install Anypoint Code Builder
+
+Install the Anypoint Extension Pack in Visual Studio Code to set up Anypoint Code Builder for desktop development.
+
+. Open Visual Studio Code.
+. Select *View > Extensions* and search for the *Anypoint Extension Pack*.
++
+To avoid installation errors, don't install the individual Anypoint Code Builder extensions that are also available separately from Anypoint Extension Pack in Visual Studio Marketplace.
+.Click *Install*.
++
+[NOTE] 
+Make sure that the Anypoint extensions update automatically by right-clicking each extension to see if Auto Update All (From Publisher) is selected. If it’s not, select *Auto Update* for each extension.
+. If you have an Anypoint Platform account running in the EU cloud, change the *Mule: Control Plane* setting to *EU cloud*
+.. Press Cmd+Shift+P (Mac) or Ctrl+Shift+P (Windows/Linux) to open the Command Palette.
+.. Type *Preferences: Open Settings* and select it.
+.. Search for *Mule: Control Plane*.
+.. Change the value to *EU cloud*.
++
+[NOTE]
+==== 
+If an Anypoint Platform session is active in any of your browsers when you install the Anypoint Extension Pack, the extension pack uses that session to sign in to Anypoint Platform from the IDE. You can log out or sign in from the status bar in the IDE.
+====
+
+== CloudHub 2.0 Setup
+
+For CloudHub 2.0 deployments, you need:
+
+* A CloudHub 2.0 Shared Space in your organization. Anypoint Platform trial accounts include a default Shared Space.
++
+See xref:cloudhub-2::ch2-shared-space-about.adoc[About Shared Spaces].
+
+* At least one environment (such as Sandbox or Development) configured for CloudHub 2.0 deployments.
++
+See xref:cloudhub-2::ch2-environments-about.adoc[About Environments].
 
 == Helpful Hints
 
 * Use two browser windows: One to read instructions and one to perform the tasks.
-* Set Advanced REST Client to have a long timeout. When you step through the processes during debugging, you don't want the REST request to time out.
+
+* In Anypoint Code Builder, enable auto-save to avoid losing work (*File > Auto Save*).
+
+* Bookmark the https://anypoint.mulesoft.com[Anypoint Platform] login page.
+
+== What's Next
+
+With your environment ready, the next step is designing your API specification.
+
+xref:api-led-design-acb.adoc[Next: Design an API Specification]

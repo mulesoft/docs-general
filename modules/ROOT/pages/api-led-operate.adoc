@@ -1,31 +1,153 @@
-= Step 6. Operate the Deployed API
-ifndef::env-site,env-github[]
-include::_attributes.adoc[]
-endif::[]
+= Step 6. Monitor and Manage
 
-MuleSoft provides tools to help you manage your deployed APIs.
+In this final step, you'll learn how to monitor your deployed API using Runtime Manager, your operations dashboard for CloudHub applications.
 
-image::runtime-overview.png[Runtime Manager user interface showing the Dashboard]
+== Step 6.1: Access Runtime Manager
 
-To check the health of your API:
-
-. From your Anypoint Platform organization, navigate to Runtime Manager.
+. From Anypoint Platform, navigate to Runtime Manager:
 +
-link:https://anypoint.mulesoft.com/cloudhub/#/console/home/applications["Take me to Runtime Manager^", role="button-primary"]
+link:https://anypoint.mulesoft.com/cloudhub/#/console/home/applications["Go to Runtime Manager^", role="button-primary"]
+
+. Ensure you're viewing the *Sandbox* environment.
+
+. Click your *hello-world-impl* application.
 +
-. Select the Sandbox environment. If the Design environment is automatically displayed, switch to the Sandbox environment:
-  .. Click the *Design* environment button.
-  .. Click *Sandbox*, and then click the *Switch* button.
-. Click the link for your deployed API proxy. 
+The dashboard opens.
 
-If you've sent a few test requests to the proxy, you can see the traffic in the form of Mule messages in the interface.
+== Step 6.2: View Application Health
 
-Other information you can obtain from Runtime Manager:
+The dashboard shows real-time metrics:
 
-* Click *Logs* to review every transaction for the selected app for the last 30 days (up to 100 MB).
-* Click *Settings* to review the settings for this app.
-* Click *Insight* to enable Anypoint Monitoring and Anypoint Visualizer.
+* *Status*
++
+Running (green) means your API is healthy.
 
-== Developer Deep Dive
+* *Replicas*
++
+Shows *1/1* (1 running replica out of 1 expected).
 
-The more work your API does, the more data Runtime Manager can provide. To learn more, visit xref:runtime-manager::index.adoc[the Runtime Manager documentation].
+* *Last Updated*
++
+The last time the application was updated.
+
+* *Mule Messages*
++
+The number of Mule messages the application has processed.
++
+Send a few test requests from Postman and watch the *Mule Messages* graph update.
+
+* *Average Response Time*
++
+The average response time of the application.
+
+* *Errors*
++
+The number of errors the application has encountered.
+
+
+== Step 6.3: View Application Logs
+
+Logs help you troubleshoot and understand what your application is doing.
+
+. In Runtime Manager, click *Logs* in the left menu.
+
+. You'll see recent log entries.
+
+. Send a request to your API from Postman.
+
+. Refresh the logs to see your Logger message:
++
+[source,text]
+----
+INFO  [hello-world-impl].get:\greeting  Received greeting request for name: World
+----
+
+. Use log filters:
++
+* *Log Level*
++
+Filter by INFO, WARN, ERROR.
+* *Search*
++
+Find specific text.
+* *Time Range*
++
+View logs from the last 30 days.
++
+Logs show every request, error, and Logger message from your application.
+
+== Step 6.4: Understand Your Application's URL
+
+Your application URL has this structure:
+
+[source,text]
+----
+https://hello-world-impl-jsmith.<space-domain>.cloudhub.io/api/greeting
+----
+
+* `hello-world-impl-jsmith`: Your unique application name
+* `<space-domain>`: Your Shared Space's domain
+* `/api/greeting`: Your API endpoint path
+
+This URL is publicly accessible and automatically includes:
+
+* HTTPS/TLS encryption
+* Load balancing across replicas
+* Distributed Denial-of-Service (DDoS) protection
+* Automatic scaling
+
+== Step 6.5: Test from Anywhere
+
+Your API is now accessible from any device:
+
+* Test the API from your phone's browser.
+* Share the URL with teammates.
+* Call the API from other applications.
+* Use the API in front-end web apps.
+
+Try it! Open a browser on any device and visit:
+
+[source,text]
+----
+https://your-app-url.cloudhub.io/api/greeting?name=World
+----
+
+You'll see your greeting in the browser.
+
+== What You Learned
+
+You used Runtime Manager to check your application's health metrics, view live logs including the Logger messages from your flow, and verify the deployed API responds correctly from anywhere.
+
+Your Hello World API is now:
+
+* Deployed to CloudHub 2.0
+* Running on MuleSoft's cloud infrastructure
+* Accessible worldwide via HTTPS
+* Monitored and logged automatically
+
+Congratulations! You've completed the full API development lifecycle:
+
+. Designed an API spec with Anypoint Code Builder
+. Developed the API implementation in Anypoint Code Builder
+. Tested the API locally with debugging tools
+. Deployed the API to CloudHub 2.0
+. Verified and monitored the API in Runtime Manager
+
+== Clean Up (Optional)
+
+To remove your tutorial application and free up resources:
+
+. In Runtime Manager, click your application.
+. Click *Settings* > *Delete Application*.
+. Confirm deletion.
+
+Your application is stopped and removed from CloudHub 2.0.
+
+== Learn More
+
+Ready to build more complex APIs? Explore:
+
+* xref:anypoint-code-builder::tutorials.adoc[More Anypoint Code Builder Tutorials]
+* xref:connectors::index.adoc[Connectors for Databases, Salesforce, SAP, and more]
+* xref:mule-runtime::dataweave.adoc[DataWeave for Data Transformation]
+* https://www.salesforce.com/blog/api-led-connectivity/?bc=OTH[API-Led Connectivity Patterns]

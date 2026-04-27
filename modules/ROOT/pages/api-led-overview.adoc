@@ -1,18 +1,55 @@
-= Tutorial: Build an API from Start to Finish
+= Tutorial: Build an API from Start to Finish with Anypoint Code Builder
 
-API-led connectivity enables delightful experiences on a variety of devices for your customers. Different software applications communicate and share information across different systems. An Application Programming Interface (API) acts as a digital messenger and translator between those applications and systems, ensuring you can adapt to changes, reuse solutions efficiently, and build security into the digital touchpoints of your business.
+Build your first API from design to deployment using Anypoint Code Builder. Design an API specification, implement the logic, test locally, and deploy to CloudHub 2.0. Each step uses a specific MuleSoft tool, so you learn the full API development workflow as you build.
 
-Take your first end-to-end, API-led journey in MuleSoft:
+== What You'll Build
 
-. xref:api-led-prerequisites.adoc[Prerequisites]
-. xref:api-led-design.adoc[Design an API Specification]
-. xref:api-led-develop.adoc[Develop the API]
-. xref:api-led-test.adoc[Add Validation and Error Handling]
-. xref:api-led-deploy.adoc[Deploy to CloudHub]
-. xref:api-led-operate.adoc[Operate the API]
+A simple "Hello World" API that:
 
-After you've experienced the end-to-end journey with a single-resource API that you create, use the model to plan your own connectivity projects.
+* Returns a greeting message when you call it
+* Demonstrates the complete API development lifecycle
+* Runs in the cloud and is accessible from anywhere
+
+== What You'll Use
+
+* Anypoint Code Builder
++
+Your cloud-based development environment for designing and building APIs. Think of it as a specialized IDE for MuleSoft development that runs in your browser or desktop.
+
+* MuleSoft Vibes (Optional)
++
+An AI assistant built into Anypoint Code Builder that generates API specifications from simple descriptions. Instead of writing code, you describe what you want. If you don't have access to MuleSoft Vibes, you can create API specifications manually in Anypoint Code Builder.
+
+* CloudHub 2.0
++
+MuleSoft's cloud platform where your APIs run. Deploy once and your API is accessible worldwide with automatic scaling and reliability.
+
+* Runtime Manager
++
+Your operations dashboard for monitoring deployed APIs, viewing logs, and managing applications running on CloudHub 2.0.
+
+== Tutorial Steps
+
+Follow these steps to create your first API:
+
+. xref:api-led-prerequisites-acb.adoc[Complete the prerequisites]. 
+. xref:api-led-design-acb.adoc[Design an API specification with AI].
+. xref:api-led-develop-acb.adoc[Scaffold and implement the API].
+. xref:api-led-test-acb.adoc[Test your API locally].
+. xref:api-led-deploy-acb.adoc[Deploy your API to CloudHub 2.0].
+. xref:api-led-operate-acb.adoc[Verify and monitor your API].
+
+After completing this tutorial, you'll understand the MuleSoft development workflow and be ready to build more complex APIs.
+
+== What's Next
+
+Ready to get started? Begin by setting up your development environment.
+
+xref:api-led-prerequisites-acb.adoc[Start the Tutorial: Complete the Prerequisites]
 
 == See Also
 
 * https://www.salesforce.com/blog/api-led-connectivity/?bc=OTH[What is API-led Connectivity]
+* xref:anypoint-code-builder::index.adoc[]
+* xref:anypoint-code-builder::api-ai-design-spec.adoc[]
+* xref:cloudhub-2::index.adoc[]
