@@ -74,7 +74,7 @@ Your browser opens to Runtime Manager in Anypoint Platform, showing your applica
 image::api-tutorial-app-running-runtime-manager.png[The application status is Running in Runtime Manager]
 +
 [NOTE]
-The first deployment typically takes 5–10 minutes. You can monitor progress in the Output panel (*Mule Maven Output*) in ACB. As long as the status shows *Deploying* and not an error, the deployment is working.
+The first deployment typically takes 5–10 minutes. You can monitor progress in the Output panel (*Mule Maven Output*) in Anypoint Code Builder. As long as the status shows *Deploying* and not an error, the deployment is working.
 
 . After the app is running, copy the application URL from Runtime Manager.
 +
@@ -137,7 +137,7 @@ Each time you deploy, you must use a unique version number.
 
 Now that your API is deployed, learn how to monitor it and view logs in Runtime Manager.
 
-xref:api-led-operate-acb.adoc[Next: Monitor and Manage]
+xref:api-led-operate.adoc[Next: Monitor and Manage]
 
 
 == Developer Deep Dive

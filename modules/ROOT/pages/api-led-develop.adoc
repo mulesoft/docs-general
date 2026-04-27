@@ -127,13 +127,13 @@ That's it! Your API is implemented and ready to test.
 
 == What You Learned
 
-You scaffolded a Mule project from your API spec using Anypoint Code Builder, which generated the HTTP Listener, APIkit Router, and flow structure automatically. You then implemented the greeting logic by adding a Transform component and writing a DataWeave script to read the `name` query parameter and return a JSON response.
+You scaffolded a Mule project from your API spec using Anypoint Code Builder, which generated the HTTP Listener, APIkit Router, and flow structure automatically. You then implemented the greeting logic by adding a *Transform* component and writing a DataWeave script to read the `name` query parameter and return a JSON response.
 
 == What's Next
 
 Your API is implemented. Next, you'll test it locally using debugging tools, add validation, and inspect the data flow.
 
-xref:api-led-test-acb.adoc[Next: Test the API]
+xref:api-led-test.adoc[Next: Test the API]
 
 == Developer Deep Dive
 

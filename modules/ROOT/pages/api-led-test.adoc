@@ -129,7 +129,7 @@ image::api-tutorial-logger-component-configured-acb.png[The Logger component wit
 
 == Step 4.5: Test with Logging
 
-. . Start your application by clicking the image:icon-start-debug.png["",15,15] (*Run*) icon in the debug toolbar.
+. Start your application by clicking the image:icon-start-debug.png["",15,15] (*Run*) icon in the debug toolbar.
 . Open the Terminal panel to see your application logs:
 +
 * Mac: `Cmd+\` or select *View* > *Terminal*
@@ -144,7 +144,7 @@ Logger output appears in the Terminal panel, not the Output panel. The Terminal 
 ----
 http://localhost:8081/api/greeting?name=World
 ----
-+ 
++
 image::api-tutorial-send-postman-request.png[Postman UI with the request URL entered]
 
 . In the Terminal panel, you'll see a log entry similar to:
@@ -209,7 +209,7 @@ You ran the API locally and tested it with Postman, then hardened it by adding a
 
 With your APIs fully tested locally, you'll deploy them to CloudHub 2.0 to make them accessible to other applications and users.
 
-xref:api-led-deploy-acb.adoc[Next: Deploy to CloudHub 2.0]
+xref:api-led-deploy.adoc[Next: Deploy to CloudHub 2.0]
 
 == Developer Deep Dive
 
