@@ -84,7 +84,7 @@ Your flow order is now: *Choice* → *Logger* → *Transform*. When the `name` q
 
 == Step 4.3: Test the Validation
 
-. Start your application by clicking the *Run* button in the Run and Debug panel.
+. Start your application by clicking the image:icon-start-debug.png["",15,15] (*Run*) icon in the debug toolbar.
 
 . In Postman, test with a valid name parameter:
 +
@@ -132,8 +132,8 @@ image::api-tutorial-logger-component-configured-acb.png[The Logger component wit
 . Start your application by clicking the *Run* button in the Run and Debug panel.
 . Open the Terminal panel to see your application logs:
 +
-* Mac: Cmd+\` or select *View* > *Terminal*
-* Windows: Ctrl+\` or select *View* > *Terminal*
+* Mac: `Cmd+\` or select *View* > *Terminal*
+* Windows: `Ctrl+\` or select *View* > *Terminal*
 +
 [NOTE]
 Logger output appears in the Terminal panel, not the Output panel. The Terminal shows the live Mule runtime log as requests are processed.
