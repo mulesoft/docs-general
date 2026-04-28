@@ -1,17 +1,15 @@
 = Step 6. Monitor and Manage
-:page-pagination:
+:page-pagination: prev
 
 In this final step, you'll learn how to monitor your deployed API using Runtime Manager, your operations dashboard for CloudHub applications.
 
 == Step 6.1: Access Runtime Manager
 
-. From Anypoint Platform, navigate to Runtime Manager:
-+
-link:https://anypoint.mulesoft.com/cloudhub/#/console/home/applications["Go to Runtime Manager^", role="button-primary"]
+. From Anypoint Platform, navigate to link:https://anypoint.mulesoft.com/cloudhub/#/console/home/applications[Runtime Manager].
 
-. Ensure you're viewing the *Sandbox* environment.
+. Make sure you're viewing the *Sandbox* environment.
 
-. Click your *hello-world-impl* application.
+. Select your *hello-world-impl* application.
 +
 The dashboard opens.
 
