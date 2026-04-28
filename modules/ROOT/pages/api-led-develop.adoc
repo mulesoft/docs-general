@@ -26,7 +26,7 @@ Don't select `MuleSoft: Implement an API Specification`. That command is for spe
 
 . At the prompt, click *OK*:
 +
-image::api-tutorial-implement-local-api-prompt.png["Prompt: We'll create a workspace to keep your API spec and Mule project in sync."]
+image::api-tutorial-implement-prompt.png["Prompt: We'll create a workspace to keep your API spec and Mule project in sync."]
 
 . When prompted to save a `.code-workspace` file, navigate to your home directory and click *Save*.
 +
