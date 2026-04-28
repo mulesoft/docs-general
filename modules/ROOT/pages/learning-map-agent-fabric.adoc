@@ -33,6 +33,8 @@ Use Anypoint Exchange to discover agentic assets for reuse across your enterpris
 - https://www.mulesoft.com/platform/exchange[Discover Assets in Anypoint Exchange]
 - xref:exchange::asset-types.adoc[Learn About Asset Types Published in Exchange]
 - xref:exchange::discovering-and-importing-external-agents.adoc[Discover and Catalog External Agents With Scanners]
+- https://videos.mulesoft.com/watch/GJxX42uWd1gGComp3KQqEB[Watch a Video to Learn About Agent Fabric and GoDaddy ANS Integration]
+- https://blogs.mulesoft.com/news/agent-scanners/[Learn How to Catalog Agents Automatically With Scanners]
 - xref:exchange::importing-agentforce-agents.adoc[Import Agentforce Agents]
 - xref:exchange::to-create-an-asset.adoc#create-agent[Create and Publish an Agent in Exchange]
 - xref:exchange::to-create-an-asset.adoc#create-mcp[Create and Publish an MCP Server in Exchange]
@@ -59,6 +61,7 @@ Build your agent network and coordinate brokers and agents using a declarative Y
 Apply policies to your agents, brokers, LLMs, and MCP servers to help manage security and control traffic.
 
 - xref:api-manager::create-instance-task-agent-tool.adoc[Add a Flex Gateway Agent or Tool Instance in API Manager]
+- https://videos.mulesoft.com/watch/2E2PkqzMnLEjoDhL5YkywT[Watch a Video to Learn About AI Gateway from MuleSoft] 
 - xref:gateway::flex-gateway-managed-ingress-egress.adoc[Deploy Agent Fabric Ingress and Egress Managed Flex Gateways]
 - xref:gateway::flex-gateway-secure-apis.adoc[Secure Flex Gateway Instances with Policies]
 

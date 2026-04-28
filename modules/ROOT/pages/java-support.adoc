@@ -100,6 +100,8 @@ To enhance application performance, see:
 
 Java 17 manages memory differently than it did in earlier versions like Java 8. Java 17 reduces request latency and executes work more predictably. To achieve this, it adopts a different memory management approach. Although highly dependent on each application, in some cases, Java 17 preferentially commits to heap memory.
 
+When running Mule applications on Java 17, you might observe heap memory patterns that differ from Java 8. For example, heap usage can remain at a higher baseline or not decrease immediately after load. This behavior is expected and reflects how Java manages memory. For more information, see https://help.salesforce.com/s/articleView?id=005132434&type=1[Mule heap memory pattern differences between Java 17 and Java 8].
+
 [NOTE]
 ====
 To ensure optimal operation of your apps and effectively leverage the Java 17 improvements, you must conduct xref:mule-runtime::tuning-test-validations.adoc[performance testing] and xref:mule-runtime::tuning-monitoring.adoc[monitoring] for:
@@ -190,6 +192,10 @@ JPMS was introduced in Java 9. This feature introduces stricter encapsulation, i
 ** Refactor Split Packages: Resolve issues with internal and API package splits by reorganizing and refactoring packages to conform with JPMS modularization standards.
 ** Address `ResourceBundle` Loading: Implement solutions for issues related to resource bundle loading, such as using `ResourceBundleProvider` or alternative methods.
 ** Analyze the third-party libraries' changelogs to understand Java 17 compatibility and changes related to JPMS.
+
+* Unsupported directives
++
+Don't set `--add-opens`, `--add-exports`, or `--add-modules` directives. These directives are not allowed in CloudHub, Runtime Fabric, or on-premises. These directives also require managing them for each connector across all environments, and introduce a backward compatibility burden, complicating future Java upgrades and potentially enabling security vulnerabilities. If these directives are used, they are not covered under Support.
 
 * JDK Migration Guide
 +
