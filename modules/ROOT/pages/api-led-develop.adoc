@@ -24,7 +24,7 @@ Alternatively, open the Command Palette and select `MuleSoft: Implement this Loc
 [IMPORTANT]
 Don't select `MuleSoft: Implement an API Specification`. That command is for specs published to Anypoint Exchange, not local specs.
 
-. At the prompt, click *OK*:
+. At the prompt, click *OK*.
 +
 image::api-tutorial-implement-prompt.png["Prompt: We'll create a workspace to keep your API spec and Mule project in sync."]
 
