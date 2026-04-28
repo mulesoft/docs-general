@@ -1,13 +1,15 @@
 = Step 2. Design an API Spec
 :page-pagination:
 
-Design your API spec before building the implementation. An API spec defines the endpoints, parameters, and responses your API supports, giving you and your team a contract to work from. 
+API-led development means designing the contract before writing any code. By defining your API spec upfront, you give your team, consumers, and tools a shared contract to build against, which reduces rework and increases reuse.
+
+Design your API spec before building the implementation. An API spec defines the endpoints, parameters, and responses your API supports, giving you and your team a contract to work from.
 
 To design an API, assess the purpose and requirements:
 
 * Identify the type of API: Is it a simple API, part of an integration, or part of a backend system?
 * Understand the data flows: one-way, two-way, or more.
-*Explore the security requirements.
+* Explore the security requirements.
 
 After you define the scope and flow of your integration project, define an API spec in OAS. You can use MuleSoft Vibes to generate the spec from a plain-language description, or create it manually in Anypoint Code Builder.
 
