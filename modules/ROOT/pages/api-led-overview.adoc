@@ -1,7 +1,7 @@
 = Tutorial: Build an API from Start to Finish
 :page-pagination: next
 
-Build your first API from design to deployment using Anypoint Code Builder. Design an API specification, implement the logic, test locally, and deploy to CloudHub 2.0 to learn the complete MuleSoft API development workflow.
+Build your first API from design to deployment using Anypoint Code Builder. Design an API spec, implement the logic, test locally, and deploy to CloudHub 2.0 to learn the complete MuleSoft API development workflow.
 
 == What You'll Build
 
@@ -19,7 +19,7 @@ Your cloud-based development environment for designing and building APIs.
 
 * MuleSoft Vibes (Optional)
 +
-An AI assistant built into Anypoint Code Builder that generates API specifications from simple descriptions. Instead of writing code, you describe what you want. If you don't have access to MuleSoft Vibes, you can create API specifications manually in Anypoint Code Builder.
+An AI assistant built into Anypoint Code Builder that generates API specs from simple descriptions. Instead of writing code, you describe what you want. If you don't have access to MuleSoft Vibes, you can create API specs manually in Anypoint Code Builder.
 
 * CloudHub 2.0
 +
@@ -34,7 +34,7 @@ Your operations dashboard for monitoring deployed APIs, viewing logs, and managi
 Complete the steps in order to create your first API:
 
 . xref:api-led-prerequisites-acb.adoc[Complete the prerequisites]. 
-. xref:api-led-design-acb.adoc[Design an API specification with AI].
+. xref:api-led-design-acb.adoc[Design an API spec with AI].
 . xref:api-led-develop-acb.adoc[Scaffold and implement the API].
 . xref:api-led-test-acb.adoc[Test your API locally].
 . xref:api-led-deploy-acb.adoc[Deploy your API to CloudHub 2.0].

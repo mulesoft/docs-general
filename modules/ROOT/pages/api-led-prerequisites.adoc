@@ -19,7 +19,7 @@ Depending on your platform, you might need to install a different client.
 * Required permissions:
 ** *Anypoint Code Builder Developer*
 +
-Allows API specification creation
+Allows API spec creation
 ** *Exchange Contributor*
 +
 Enables publishing assets to Exchange
@@ -32,7 +32,7 @@ Allows deployment of applications to CloudHub 2.0
 *MuleSoft Vibes* requires Agentforce to be enabled in Access Management. See xref:access-management::enabling-agentforce.adoc[].
 ** *Mule Developer Generative AI User*
 +
-Enables MuleSoft Vibes features for AI-generated API specifications. If you don't have this permission, you can still complete the tutorial by manually creating your API specification.
+Enables MuleSoft Vibes features for AI-generated API specs. If you don't have this permission, you can still complete the tutorial by manually creating your API spec.
 
 [[install-acb]]
 == Install Anypoint Code Builder
@@ -80,6 +80,6 @@ See xref:cloudhub-2::ch2-environments-about.adoc[About Environments].
 
 == What's Next
 
-With your environment ready, the next step is designing your API specification.
+With your environment ready, the next step is designing your API spec.
 
 

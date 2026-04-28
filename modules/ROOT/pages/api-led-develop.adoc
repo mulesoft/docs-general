@@ -1,11 +1,11 @@
 = Step 3. Develop the API
 :page-pagination:
 
-Now that you've created an API specification, you'll turn it into a working Mule application. Anypoint Code Builder includes an embedded Mule runtime for local testing. Later, you'll deploy your application to xref:cloudhub-2::ch2-deploy.adoc[CloudHub 2.0], where it runs on Mule runtime in the cloud.
+Now that you've created an API spec, you'll turn it into a working Mule application. Anypoint Code Builder includes an embedded Mule runtime for local testing. Later, you'll deploy your application to xref:cloudhub-2::ch2-deploy.adoc[CloudHub 2.0], where it runs on Mule runtime in the cloud.
 
 == Step 3.1: Create the Implementation Project
 
-. Open your API specification file in the editor, then click the image:icon-implement-api.png["",15,15] (*Implement this local API*) icon in the activity bar.
+. Open your API spec file in the editor, then click the image:icon-implement-api.png["",15,15] (*Implement this local API*) icon in the activity bar.
 +
 [NOTE]
 The icon and command are only available when your API spec file is open and active in the editor.
@@ -26,7 +26,7 @@ Don't select `MuleSoft: Implement an API Specification`. That command is for spe
 
 . At the prompt, click *OK*:
 +
-image::api-tutorial-implement-local-api-prompt.png["Prompt: We'll create a workspace to keep your API specification and Mule project in sync."]
+image::api-tutorial-implement-local-api-prompt.png["Prompt: We'll create a workspace to keep your API spec and Mule project in sync."]
 
 . When prompted to save a `.code-workspace` file, navigate to your home directory and click *Save*.
 +
@@ -62,7 +62,7 @@ This is where Anypoint Code Builder creates the `hello-world-impl` project folde
 .. Select a Mule runtime version for the project.
 .. Select a Java version for the project.
 +
-Anypoint Code Builder scaffolds your local API specification into a new Mule project. Both the API spec and the implementation project open together in your IDE in a multi-root workspace.
+Anypoint Code Builder scaffolds your local API spec into a new Mule project. Both the API spec and the implementation project open together in your IDE in a multi-root workspace.
 
 . Confirm the implementation file opened correctly:
 .. In the Explorer view on the left, you'll see two projects listed: `hello-world-api` and `hello-world-impl`.

@@ -1,7 +1,7 @@
-= Step 2. Design an API Specification
+= Step 2. Design an API Spec
 :page-pagination:
 
-Design your API specification before building the implementation. An API specification defines the endpoints, parameters, and responses your API supports, giving you and your team a contract to work from. 
+Design your API spec before building the implementation. An API spec defines the endpoints, parameters, and responses your API supports, giving you and your team a contract to work from. 
 
 To design an API, assess the purpose and requirements:
 
@@ -9,33 +9,33 @@ To design an API, assess the purpose and requirements:
 * Understand the data flows: one-way, two-way, or more.
 *Explore the security requirements.
 
-After you define the scope and flow of your integration project, define an API specification in OAS. You can use MuleSoft Vibes to generate the spec from a plain-language description, or create it manually in Anypoint Code Builder.
+After you define the scope and flow of your integration project, define an API spec in OAS. You can use MuleSoft Vibes to generate the spec from a plain-language description, or create it manually in Anypoint Code Builder.
 
-== API Specifications and APIs
+== API Specs and APIs
 
 An API is a published interface to a resource that anyone with the correct permissions and a properly structured request can access.
 
-An API specification details the functional and expected behavior of an API,
+An API spec details the functional and expected behavior of an API,
 as well as the fundamental design philosophy and supported data types.
 It contains both documentation and API definitions to create a contract that people and software can read.
 
-MuleSoft provides tools that make it easy to create an API specification that you can then share with your team, your customers, or the general public. Using an API specification increases adoption and shortens project completion time.
+MuleSoft provides tools that make it easy to create an API spec that you can then share with your team, your customers, or the general public. Using an API spec increases adoption and shortens project completion time.
 
-== Step 2.1: Explore Existing API Specifications
+== Step 2.1: Explore Existing API Specs
 
-If you look at existing API specifications before writing your own,
+If you look at existing API specs before writing your own,
 you can learn how other people have approached situations similar to yours.
-You can also check whether an API specification with the same objectives isn't already in development, and reuse it if appropriate.
+You can also check whether an API spec with the same objectives isn't already in development, and reuse it if appropriate.
 
-Looking for an API specification that already does what you need is easy:
+Looking for an API spec that already does what you need is easy:
 
-. Look at the public Anypoint Exchange, which is a portal hosted by MuleSoft that contains API specifications, connectors, and other assets that you can download and use.
-You’ll see some of the most popular API specifications, connectors, and other assets displayed on the landing page.
+. Look at the public Anypoint Exchange, which is a portal hosted by MuleSoft that contains API specs, connectors, and other assets that you can download and use.
+You’ll see some of the most popular API specs, connectors, and other assets displayed on the landing page.
 +
 link:https://www.mulesoft.com/exchange[Take me to Exchange]
 +
-.. Select *Any Type > REST APIs* to display only REST API specifications.
-.. Click any specification to see the data types and the HTTP requests defined for the API.
+.. Select *Any Type > REST APIs* to display only REST API specs.
+.. Click any spec to see the data types and the HTTP requests defined for the API.
 +
 . Look at Exchange for your organization (account). Logging in changes the view to your organization's private Exchange.
 +
@@ -43,9 +43,9 @@ link:https://anypoint.mulesoft.com/login[Take me to Anypoint Platform]
 +
 .. Log in to Anypoint Platform if needed.
 .. In the Anypoint Platform landing page, go to the *Exchange* section and click *Discover & Share*.
-.. Click any specification to see the data types and the HTTP requests defined for the API. If this is a trial org, you might not see anything yet.
+.. Click any spec to see the data types and the HTTP requests defined for the API. If this is a trial org, you might not see anything yet.
 
-After exploring Exchange to see the range of assets available, use Anypoint Code Builder to create a new API specification.
+After exploring Exchange to see the range of assets available, use Anypoint Code Builder to create a new API spec.
 
 == Step 2.2: Access Anypoint Code Builder
 
@@ -53,9 +53,9 @@ After exploring Exchange to see the range of assets available, use Anypoint Code
 
 . In the activity bar of the IDE, click the image:icon-ms-logo.png["",20,20] (*Anypoint Code Builder*) icon.
 
-== Step 2.3: Create Your API Specification
+== Step 2.3: Create Your API Spec
 
-You have two options for creating your API specification. Choose the method that works best for your environment:
+You have two options for creating your API spec. Choose the method that works best for your environment:
 
 * *Option A: Use MuleSoft Vibes (AI-Powered)*: Requires the Mule Developer Generative AI User permission and Agentforce enabled in Access Management
 * *Option B: Create Manually*: Use this option if you don't have access to MuleSoft Vibes
@@ -71,12 +71,12 @@ Option A: Use MuleSoft Vibes::
 +
 [source,text]
 ----
-Create an OAS 3.0 API specification called "hello-world-api" with a GET endpoint at /greeting that accepts a required query parameter called "name" and returns a JSON response with a message field containing a personalized greeting.
+Create an OAS 3.0 API spec called "hello-world-api" with a GET endpoint at /greeting that accepts a required query parameter called "name" and returns a JSON response with a message field containing a personalized greeting.
 ----
 
 . Press Enter to send.
 +
-MuleSoft Vibes generates your API specification in about 10 seconds. You'll see the generated spec in the chat response.
+MuleSoft Vibes generates your API spec in about 10 seconds. You'll see the generated spec in the chat response.
 
 . Click *Create Project* in the MuleSoft Vibes response.
 
@@ -84,7 +84,7 @@ MuleSoft Vibes generates your API specification in about 10 seconds. You'll see 
 +
 Anypoint Code Builder creates the project and opens `hello-world-api.yaml` in the editor.
 
-. Go to <<step-2-4,Step 2.4: Review Your API Specification>>.
+. Go to <<step-2-4,Step 2.4: Review Your API Spec>>.
 --
 
 Option B: Create Manually::
@@ -99,13 +99,13 @@ Option B: Create Manually::
 * *API Specification Language*, select *OAS 3.0 (YAML)*.
 * Optionally, select a business group.
 +
-image:api-tutorial-create-project-acb.png[The form to create a new API specification with values filled in]
+image:api-tutorial-create-project-acb.png[The form to create a new API spec with values filled in]
 
 . Click *Create Project*.
 +
 Anypoint Code Builder creates the project and opens `hello-world-api.yaml` in the editor with a basic template.
 
-. Replace the template content with this API specification:
+. Replace the template content with this API spec:
 +
 [source,yaml]
 ----
@@ -141,9 +141,9 @@ paths:
 ====
 
 [[step-2-4]]
-== Step 2.4: Review Your API Specification
+== Step 2.4: Review Your API Spec
 
-You now have a complete API specification open in the editor. Review the structure:
+You now have a complete API spec open in the editor. Review the structure:
 
 [source,yaml]
 ----
@@ -209,7 +209,7 @@ Congratulations, you've designed an API!
 
 == What You Learned
 
-You created an OAS 3.0 API specification in Anypoint Code Builder, either by describing your API in plain language using MuleSoft Vibes or by writing the YAML manually. You then used the API Console's Mocking Service to test the spec and verify it returns the expected response before writing any implementation code.
+You created an OAS 3.0 API spec in Anypoint Code Builder, either by describing your API in plain language using MuleSoft Vibes or by writing the YAML manually. You then used the API Console's Mocking Service to test the spec and verify it returns the expected response before writing any implementation code.
 
 == Developer Deep Dive
 
