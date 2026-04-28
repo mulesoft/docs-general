@@ -1,4 +1,5 @@
 = Step 4. Test the API
+:page-pagination:
 
 Test your API locally before deploying it to the cloud. You run the API in Anypoint Code Builder, send requests using Postman, and use the built-in debugger to inspect the Mule message at each step. You also add input validation and logging to make the API more robust.
 
@@ -9,7 +10,7 @@ Test your API locally before deploying it to the cloud. You run the API in Anypo
 .Show me how
 [%collapsible]
 ====
-** Click the image:icon-run-debug.png["",15,15] (*Run and Debug*) icon in the activity bar.
+** Click image:icon-run-debug.png["",15,15] (*Run and Debug*) in the activity bar.
 ** Use the keyboard shortcuts:
 +
 *** Mac: Cmd+Shift+d
@@ -53,11 +54,11 @@ Now add validation to ensure your API handles requests without a `name` paramete
 . In the canvas, navigate to your *get:\greeting* flow.
 +
 Your flow currently has a Logger component followed by a Transform component from the previous step.
-. Click the image:icon-plus.png["",15,15] (*Add component*) icon *before* the *Logger* component (at the start of the flow).
+. Click image:icon-plus.png["",15,15] (*Add component*) before the *Logger* component (at the start of the flow).
 . Search for *Choice* and select it from the results.
 +
 The Choice component adds a *When* branch and an *Otherwise* branch. Execution continues to Logger and Transform after the Choice unless the When branch stops it (with Raise Error).
-. Click the image:icon-plus.png["",15,15] (*Add component*) icon inside the *When* branch.
+. Click image:icon-plus.png["",15,15] (*Add component*) inside the *When* branch.
 . Search for *Raise error* and select it.
 +
 [IMPORTANT]
@@ -84,7 +85,7 @@ Your flow order is now: *Choice* → *Logger* → *Transform*. When the `name` q
 
 == Step 4.3: Test the Validation
 
-. Start your application by clicking the image:icon-start-debug.png["",15,15] (*Run*) icon in the debug toolbar.
+. Start your application by clicking image:icon-start-debug.png["",15,15] (*Run*) in the debug toolbar.
 
 . In Postman, test with a valid name parameter:
 +
@@ -129,7 +130,7 @@ image::api-tutorial-logger-component-configured-acb.png[The Logger component wit
 
 == Step 4.5: Test with Logging
 
-. Start your application by clicking the image:icon-start-debug.png["",15,15] (*Run*) icon in the debug toolbar.
+. Start your application by clicking image:icon-start-debug.png["",15,15] (*Run*) in the debug toolbar.
 . Open the Terminal panel to see your application logs:
 +
 * Mac: `Cmd+\` or select *View* > *Terminal*
@@ -203,13 +204,7 @@ image::api-tutorial-debug-panel-variables-acb.png[The Variables panel in the Run
 
 == What You Learned
 
-You ran the API locally and tested it with Postman, then hardened it by adding a Choice router and Raise Error component to validate the `name` parameter. You configured a Logger to record each request, then used Anypoint Code Builder's debugger — breakpoints and the Variables panel — to pause execution and inspect the Mule message at each step.
-
-== What's Next
-
-With your APIs fully tested locally, you'll deploy them to CloudHub 2.0 to make them accessible to other applications and users.
-
-xref:api-led-deploy.adoc[Next: Deploy to CloudHub 2.0]
+You ran the API locally and tested it with Postman, then added input validation using a *Choice* router and *Raise Error* component to handle missing `name` parameters. You configured a *Logger* to record each request, then used Anypoint Code Builder's debugger, including breakpoints and the Variables panel, to pause execution and inspect the Mule message at each step.
 
 == Developer Deep Dive
 
@@ -219,3 +214,9 @@ Explore advanced testing capabilities:
 * xref:mule-runtime::intro-error-handlers.adoc[Advanced Error Handling]
 * xref:anypoint-code-builder::troubleshoot-gen-ai.adoc[Troubleshooting with MuleSoft Vibes]
 * xref:mule-runtime::dataweave-testing-framework.adoc[DataWeave Testing Framework]
+
+== What's Next
+
+With your APIs fully tested locally, you'll deploy them to CloudHub 2.0 to make them accessible to other applications and users.
+
+xref:api-led-deploy.adoc[Next: Deploy to CloudHub 2.0]

@@ -1,19 +1,20 @@
 = Step 1. Prerequisites for Building an API-Led Solution
+:page-pagination: next
 
-Set up your environment before starting the tutorial. You need an Anypoint Platform account, Anypoint Code Builder, and a REST client such as Postman. Specific permissions are also required for deployment and, optionally, for AI-assisted API design.
+Set up your environment before starting the tutorial. You need an Anypoint Platform account, Anypoint Code Builder, and a REST client such as Postman. Specific permissions are also required for deployment and, optionally, for AI-assisted API design with MuleSoft Vibes.
 
 * Username and password for your Anypoint Platform organization. If you don't have Anypoint Platform yet, create a Trial organization on Anypoint Platform.
 +
-link:https://anypoint.mulesoft.com/login/#/signup["Create a Trial organization^", role="button-primary"]
+link:https://anypoint.mulesoft.com/login/#/signup[Create a Trial organization]
 
-* https://code.visualstudio.com/download[Download and install Visual Studio Code].
+* https://code.visualstudio.com/download[Download and install Visual Studio Code]
 
 * To test REST requests, obtain a client such as Postman or Advanced REST Client if you don't already have one. This tutorial uses Postman.
 +
-https://www.postman.com/downloads/[Install Postman].
+https://www.postman.com/downloads/[Install Postman]
 +
 Depending on your platform, you might need to install a different client.
-* <<install-acb,Install Anypoint Code Builder>>. 
+* <<install-acb,Install Anypoint Code Builder>>
 
 * Required permissions:
 ** *Anypoint Code Builder Developer*
@@ -27,11 +28,11 @@ Enables publishing assets to Exchange
 Allows deployment of applications to CloudHub 2.0
 
 * Optional permissions (for MuleSoft Vibes AI features):
++
+*MuleSoft Vibes* requires Agentforce to be enabled in Access Management. See xref:access-management::enabling-agentforce.adoc[].
 ** *Mule Developer Generative AI User*
 +
 Enables MuleSoft Vibes features for AI-generated API specifications. If you don't have this permission, you can still complete the tutorial by manually creating your API specification.
-+
-*MuleSoft Vibes* requires Agentforce to be enabled in Access Management. See xref:access-management::enabling-agentforce.adoc[].
 
 [[install-acb]]
 == Install Anypoint Code Builder
@@ -45,7 +46,7 @@ To avoid installation errors, don't install the individual Anypoint Code Builder
 . Select *Install*.
 +
 [NOTE] 
-Make sure that the Anypoint extensions update automatically by right-clicking each extension to see if Auto Update All (From Publisher) is selected. If it’s not, select *Auto Update* for each extension.
+Make sure that the Anypoint extensions update automatically by right-clicking each extension to see if *Auto Update All (From Publisher)* is selected. If it’s not, select *Auto Update* for each extension.
 . If you have an Anypoint Platform account running in the EU cloud, change the *Mule: Control Plane* setting to *EU cloud*:
 .. Press Cmd+Shift+P (Mac) or Ctrl+Shift+P (Windows/Linux) to open the Command Palette.
 .. Type *Preferences: Open Settings* and select it.
@@ -81,4 +82,4 @@ See xref:cloudhub-2::ch2-environments-about.adoc[About Environments].
 
 With your environment ready, the next step is designing your API specification.
 
-xref:api-led-design.adoc[Next: Design an API Specification]
+

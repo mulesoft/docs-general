@@ -1,4 +1,5 @@
 = Step 3. Develop the API
+:page-pagination:
 
 Now that you've created an API specification, you'll turn it into a working Mule application. Anypoint Code Builder includes an embedded Mule runtime for local testing. Later, you'll deploy your application to xref:cloudhub-2::ch2-deploy.adoc[CloudHub 2.0], where it runs on Mule runtime in the cloud.
 
@@ -21,7 +22,7 @@ Alternatively, open the Command Palette and select `MuleSoft: Implement this Loc
 ====
 +
 [IMPORTANT]
-Do not select `MuleSoft: Implement an API Specification`. That command is for specs published to Anypoint Exchange, not local specs.
+Don't select `MuleSoft: Implement an API Specification`. That command is for specs published to Anypoint Exchange, not local specs.
 
 . At the prompt, click *OK*:
 +
@@ -31,7 +32,7 @@ image::api-tutorial-implement-local-api-prompt.png["Prompt: We'll create a works
 +
 [IMPORTANT]
 --
-Do not accept the default location. The default saves the `.code-workspace` file inside your `hello-world-api` spec folder, which causes errors. You must save it one level up — in your home directory — so it sits alongside (not inside) your projects.
+Don't accept the default location. The default saves the `.code-workspace` file inside your `hello-world-api` spec folder, which causes errors. You must save it one level up — in your home directory — so it sits alongside (not inside) your projects.
 --
 +
 For example, if you created your API spec in `~/hello-world-api/`, navigate up to `~` (your home directory) and save the file there. Your folder structure should look like this:
@@ -81,8 +82,8 @@ HTTP Listener that receives requests on port 8081
 Your GET endpoint implementation
 * Error handling flows
 
-. Click the *Listener* component, then the *Edit Connection* icon (image:icon-gear.png["",15,15]) to review the connection configuration, including:
-+
+Click the *Listener* component, then the *Edit Connection* icon (image:icon-gear.png["",15,15]) to review the connection configuration, including:
+
 * *Path*: `/api/*` (receives all API requests)
 * *Host*: `0.0.0.0` (listens to all interfaces)
 * *Port*: `8081` (local development port)
@@ -129,12 +130,6 @@ That's it! Your API is implemented and ready to test.
 
 You scaffolded a Mule project from your API spec using Anypoint Code Builder, which generated the HTTP Listener, APIkit Router, and flow structure automatically. You then implemented the greeting logic by adding a *Transform* component and writing a DataWeave script to read the `name` query parameter and return a JSON response.
 
-== What's Next
-
-Your API is implemented. Next, you'll test it locally using debugging tools, add validation, and inspect the data flow.
-
-xref:api-led-test.adoc[Next: Test the API]
-
 == Developer Deep Dive
 
 Explore advanced implementation techniques:
@@ -143,3 +138,7 @@ Explore advanced implementation techniques:
 * xref:connectors::database/database-connector.adoc[Database Connector]
 * xref:mule-runtime::error-handling.adoc[Error Handling in Mule 4]
 * xref:mule-runtime::about-flows.adoc[Understanding Flows and Subflows]
+
+== What's Next
+
+Your API is implemented. Next, you'll test it locally using debugging tools, add validation, and inspect the data flow.
