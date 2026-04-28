@@ -218,5 +218,3 @@ Explore advanced testing capabilities:
 == What's Next
 
 With your APIs fully tested locally, you'll deploy them to CloudHub 2.0 to make them accessible to other applications and users.
-
-xref:api-led-deploy.adoc[Next: Deploy to CloudHub 2.0]

@@ -92,15 +92,6 @@ You'll see your greeting in the browser.
 
 == What You Learned
 
-You used Runtime Manager to check your application's health metrics, view live logs including the Logger messages from your flow, and verify the deployed API responds correctly from anywhere.
-
-Your Hello World API is now:
-
-* Deployed to CloudHub 2.0
-* Running on MuleSoft's cloud infrastructure
-* Accessible worldwide via HTTPS
-* Monitored and logged automatically
-
 Congratulations! You've completed the full API development lifecycle:
 
 . Designed an API spec with Anypoint Code Builder

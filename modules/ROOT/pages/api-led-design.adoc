@@ -86,7 +86,6 @@ MuleSoft Vibes generates your API spec in about 10 seconds. You'll see the gener
 +
 Anypoint Code Builder creates the project and opens `hello-world-api.yaml` in the editor.
 
-. Go to <<step-2-4,Step 2.4: Review Your API Spec>>.
 --
 
 Option B: Create Manually::
@@ -225,4 +224,3 @@ Explore advanced API design capabilities:
 == What's Next
 
 Now that your API is designed, you'll scaffold an implementation project and add the business logic to make it functional.
-
