@@ -39,7 +39,7 @@ MuleSoft - Automation - Additional Credits (100) - (Gold, Platinum, Titanium)
 
 A quantity of Automation Credits is included with certain MuleSoft Services, with the specific entitlement indicated on the Usage Details table on the Order Form for such Services. Automation Credits are consumed as you create and execute automations based on the rates in the following table. While MuleSoft Automation Credits 1.0 uses a conversion-based model, MuleSoft Automation Credits 2.0 and 3.0 use multiplier rates. Credit usage rates differ by subscription plan. Refer to the column that corresponds to your credit system.
 
-IMPORTANT: As of February 18, 2026, Flow Orchestration is free for customers in Enterprise and higher editions. For customers on other editions, the https://help.salesforce.com/s/articleView?id=platform.flow_considerations_limit.htm&type=5[General Flow Limits^] apply.
+IMPORTANT: As of February 18, 2026, Flow Orchestration is included for customers in Enterprise and higher editions. For customers on other editions, the https://help.salesforce.com/s/articleView?id=platform.flow_considerations_limit.htm&type=5[General Flow Limits^] apply.
 
 [%header,cols="1,2,2,2"]
 |===
@@ -51,10 +51,10 @@ IMPORTANT: As of February 18, 2026, Flow Orchestration is free for customers in 
 | *Anypoint Reports (Monthly):* Legacy reporting via Sequoia based on monthly usage aggregates.
 
 | *Flow Orchestration Runs*
-| *As of February 18, 2026, for Enterprise and Higher Editions*: Free +
+| *As of February 18, 2026, for Enterprise and Higher Editions*: Included +
 For customers on other editions, the https://help.salesforce.com/s/articleView?id=platform.flow_considerations_limit.htm&type=5[General Flow Limits^] apply.
 | 100 automation credits per run. +
-*As of February 18, 2026, for Enterprise and Higher Editions*: Free +
+*As of February 18, 2026, for Enterprise and Higher Editions*: Included +
 For customers on other editions, the https://help.salesforce.com/s/articleView?id=platform.flow_considerations_limit.htm&type=5[General Flow Limits^] apply.
 | Not Available
 
