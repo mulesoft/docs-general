@@ -134,8 +134,8 @@ a|With these permissions, users can view governance reports at the service and g
 a|
 Any of these permissions:
 
-* *API Manager* > View API Alerts
-* *Runtime Manager* > Read Alerts
+* *API Manager* > *View API Alerts*
+* *Runtime Manager* > *Read Alerts*
 a|With these permissions, users can view API alerts in API Manager and read alerts in Runtime Manager.
 
 |Manage alerts
@@ -150,7 +150,7 @@ a|With these permissions, users can manage API alerts in API Manager and manage 
 
 If you can't complete an action or a page shows an authorization error, ask your Anypoint organization administrator for the matching permission or role.
 
-== Typical Omni Workflow
+== High-Level Omni Workflow
 
 Manage and tune your AI portfolio by registering assets, applying security policies, and monitoring runtime health. Access centralized catalogs to track agents and gateways while verifying compliance through conformance reports and cost management tools. These integrated features help you optimize performance and maintain audit readiness across your environment
 
