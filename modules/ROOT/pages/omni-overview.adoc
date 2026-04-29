@@ -1,62 +1,8 @@
-= Get Started with MuleSoft Omni
-:page-aliases:
-:page-article-style: learning-map
+= MuleSoft Omni Overview
 
-MuleSoft Omni helps you manage, optimize, and govern a multi-agent ecosystem from one place. Work with agents, APIs, MCP servers, LLMs, and gateways as a single portfolio. View asset relationships, apply governance and cost discipline, and act on observability signals instead of working in separate silos. Omni pairs this portfolio view with an in-product assistant to connect integrations, tune configurations, and get answers in context.
+Grow and tune your AI portfolio by registering and monitoring agents, APIs, and gateways in centralized catalogs. Sign in through the entry point your organization provides, such as Anypoint Platform, Slack, or a direct URL, to access dashboards and governance strategies based on your assigned permissions. You can review live performance metrics, manage security policies, and track rule-level compliance through automated conformance reports.
 
-* Register agents, MCP servers, and LLM proxies from any provider or registry.
-* Monitor latency, cost, invocations, and failures in real time.
-* Secure instances with compatible policies across your entire registry.
-* Transcode existing REST APIs into MCP servers instantly.
-
-image::omni-pillars.png[]
-
-The end-to-end journey for Omni consists of various tasks, each with links to relevant content to assist you in completing them.
-
-[.lm-table, cols="1a,1a,1a", grid="none"]
-|===
-| image::lm_start.png[]
-[.lm-bold]##Learn About Omni##
-
-Omni helps you manage, optimize, and govern a multi-agent ecosystem from one place.
-
-//- ToDo [Video]
-//- ToDo [Trailhead]
-
-| image::lm_explore_1.png[]
-[.lm-bold]##Register##
-
-Register agents, MCP servers, and LLM proxies from any provider or registry.
-
-//- xref:
-
-| image::lm_build_1.png[]
-[.lm-bold]##Monitor##
-
-Monitor latency, cost, invocations, and failures in real time.
-
-//- xref:
-|===
-
-[.lm-table, cols="1a,1a", width="66%", grid="none"]
-|===
-| image::lm_build_1.png[]
-[.lm-bold]##Secure##
-
-Secure instances with compatible policies across your entire registry.
-
-//- xref:
-
-| image::lm_analyze_1.png[]
-[.lm-bold]##Transcode##
-
-Transcode existing REST APIs into MCP servers instantly.
-
-//- xref:
-
-
-|===
-
+These tools ensure your AI assets remain audit-ready while providing clear visibility into cost and runtime health across your organization.
 
 == Omni Capabilities
 
@@ -70,8 +16,42 @@ Cost and Performance Optimization:: Monitor token usage, per-instance signals, a
 
 Instance Management:: Create and review instances for supported asset types. Choose managed paths through Flex Gateway when you need deeper monitoring and policy enforcement, or choose lighter models when that matches your operating model.
 
+== Omni High-Level Workflow
+
+Manage and tune your AI portfolio by registering assets, applying security policies, and monitoring runtime health. Access centralized catalogs to track agents and gateways while verifying compliance through conformance reports and cost management tools. These integrated features help you optimize performance and maintain audit readiness across your environment
+
+. Complete onboarding and access
++
+Confirm your credentials and the permissions your administrator assigned, as described in <<permissions,Permissions>>. Finish integration setup for supporting systems, such as connected providers under *Platform* > *Providers*, before you depend on Omni in production.
+. Learn the layout
++
+Sign in through your entry path and land on *Home*. Scan *Portfolio* catalogs, *Governance*, *Observability*, and *Platform* so you know where to register assets, apply policies, read health signals, and manage providers.
+. Register assets in Portfolio
++
+Under *Portfolio*, open *Agents*, *MCP Servers*, *LLMs*, *APIs*, or *Gateways*. Add assets to work with. Register manually or use connected providers under *Platform* > *Providers* if your organization enables discovery flows.
+. Create and manage instances
++
+On *Agents*, *MCP Servers*, *LLMs*, and *APIs*, open *Instances* to create managed or unmanaged deployments that match your needs. Managed instances on Flex Gateway give stronger governance and monitoring when Omni exposes them. *Gateways* don't include an *Instances* tab.
+. Configure policies
++
+On the *Policies* tab for a service or instance, apply governance policies that match access control, data privacy, performance, and compliance goals. Use *Governance* for gateway-wide policy work, organization strategies, and cost tools.
+. Review compliance
++
+On *Agents*, *APIs*, and *MCP Servers*, open *Conformance Report* to review scores, violations, and warnings, then address the findings your governance team prioritizes. For gateways, use *Governance* for the same compliance story at the scope Omni supports.
+. Monitor runtime health
++
+On *Monitoring*, review live metrics such as latency, error rates, and request volume when Omni surfaces Flex Gateway data for managed paths. Compare what you see with dashboards, reports, or notifications under *Observability* when your administrator enabled those views for your team.
+. Manage cost
++
+Under *Governance*, open *Cost Management* to study token usage and related spend signals. Apply the cost reduction strategies your organization adopted, such as tool mapping or tool sanitization, where Omni supports them.
+. Operate and tune the portfolio
++
+Coordinate agents, APIs, gateways, MCP servers, and LLMs so traffic, policies, and integrations stay aligned. Open *Versions* when you need configuration history before you change instances or policies. Adjust policies, instances, or registrations when monitoring and governance insights show drift or new risk.
+. Improve on each cycle
++
+Feed findings from monitoring and governance back into planning for the next change window.
 
 == See Also
 
-* xref:omni-start-home.adoc[Get Started with MuleSoft Omni]
-* xref:omni-compare.adoc[Comparing MuleSoft Omni and Anypoint Platform]
+* xref:omni-overview.adoc[]
+* xref:omni-compare.adoc[]

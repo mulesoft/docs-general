@@ -1,5 +1,4 @@
 = Comparing MuleSoft Omni and Anypoint Platform
-:page-aliases:
 
 Both MuleSoft Omni and Anypoint Platform ship robust capabilities, but they emphasize different strengths, especially when you manage AI assets such as agents, LLMs, and MCP servers next to APIs and gateways.
 
@@ -29,9 +28,9 @@ MuleSoft Omni and Anypoint Platform each offer distinct capabilities that can gu
 | API design and documentation
 | Anypoint Platform
 a|
-The Anypoint Platform offers powerful tools like Anypoint Studio and Design Center for crafting APIs with RAML or OAS and publishing detailed documentation.
+Anypoint Platform offers powerful tools like Anypoint Studio and Design Center for crafting APIs with RAML or OAS and publishing detailed documentation.
 a|
-If you need to cross-reference API design with specific governance policies already established in Omni, you can consult documentation in Omni for quick access to compliance details.
+To cross-reference API design with specific governance policies already established in Omni, consult documentation in Omni for quick access to compliance details.
 
 | Policy enforcement and governance
 | MuleSoft Omni
@@ -72,4 +71,4 @@ Deploy applications via Anypoint to leverage its runtime monitoring, then switch
 
 == See Also
 
-* xref:omni-overview.adoc[Get Started with MuleSoft Omni].
+* xref:omni-overview.adoc[].

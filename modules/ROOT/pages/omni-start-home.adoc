@@ -112,7 +112,7 @@ Coordinate agents, APIs, gateways, MCP servers, and LLMs so traffic, policies, a
 +
 Feed findings from monitoring and governance back into planning for the next change window.
 
-== See also
+== See Also
 
-* xref:omni-overview.adoc[MuleSoft Omni Overview]
-* xref:omni-compare.adoc[Comparing MuleSoft Omni and Anypoint Platform]
+* xref:omni-overview.adoc[]
+* xref:omni-compare.adoc[]
