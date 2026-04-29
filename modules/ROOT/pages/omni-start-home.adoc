@@ -49,29 +49,101 @@ Platform and Product Access::
 [[permissions]]
 == Permissions
 
-Omni uses Anypoint Platform access control. Your administrator maps tasks to roles and permissions in Anypoint Access Management. Exact permission names differ by organization. Use this table with your internal access guide.
+Omni uses Anypoint Platform access control. Your administrator maps jobs to roles and permissions in Anypoint Access Management. Exact permission names differ by organization. Use this table with your internal access guide.
 
-
-[cols="20%,~",options="header"]
+[cols="20%,~,~",options="header"]
 |===
-|Audience |Typical Permissions and Tasks
+|To... |Required Permissions |Notes
 
-|Administrator
+|View service
 a|
-* Integration setup: Configure and manage integrations with external systems that Omni relies on.
-* Policy management: Define and enforce governance policies across APIs, agents, and other managed entities.
-* Access control: Assign user roles and access levels so teams see only the Omni areas and actions they need.
+Any of these permissions:
 
-|Business user
-a|
-* Portfolio operations: View and work with APIs, agents, and other entities in your catalogs, including asset registration flows when your policies allow it.
-* Governance insights: Open dashboards and reports that surface compliance and performance metrics.
-* Instance management: When your organization allows it, create or change instances under the guided conditions Omni exposes.
+* Exchange Viewer
+* Exchange Contributor
+* Exchange Administrator
+a|With these permissions, users can view services under the portfolio and open the catalog overview in Anypoint Exchange.
 
-|Developer
+|Create service
 a|
-* API design and documentation: Design, document, and publish APIs that Omni tracks as part of your integration work.
-* Tools and MCP servers: When you use MCP servers, adjust tool settings and invoke operations your administrator permits.
+Any of these permissions:
+
+* Exchange Contributor
+* Exchange Administrator
+* Exchange Creator
+a|With these permissions, users can use Add workflows to register MCP servers, agents, LLMs, or APIs.
+
+|Create instance
+a|
+* API Creator
+|With this permission, users can run the create-instance workflow and create or add instances.
+
+|View instance
+a|
+* View APIs Configuration
+a|With this permission, users can view instances for services and open the Instances tab.
+
+|Edit instance
+a|
+* Edit APIs Configuration
+a|With this permission, users can edit instances for services.
+
+|Create scanners
+a|
+* Exchange Administrator
+a|With this permission, users can create scanners from *Providers* and through Add MCP, Agent, or API when the organization enables the matching scanner capabilities.
+
+|View monitoring
+a|
+Any of these permissions:
+
+* Monitoring Viewer
+* Monitoring Administrator
+a|With these permissions, users can open the monitoring tab at the service and instance levels and see monitoring in navigation.
+
+|View policies
+a|
+* View Policies
+a|With this permission, users can view and apply policies on instances and use the Governance tab for policy access.
+
+|Apply policies
+a|
+* Manage Policies
+a|With this permission, users can edit policy configurations and add policies.
+
+|Send prompts to agent
+a|
+* Mule Developer Generative AI User
+|With this permission, users can use the native agent in Omni.
+
+|Create governance strategy
+a|
+* Governance Administrator
+|With this permission, users can create governance strategies.
+
+|View governance report
+a|
+Any of these permissions:
+
+* Governance Viewer
+* Governance Administrator
+a|With these permissions, users can view governance reports at the service and governance-strategy level.
+
+|View alerts
+a|
+Any of these permissions:
+
+* *API Manager* > View API Alerts
+* *Runtime Manager* > Read Alerts
+a|With these permissions, users can view API alerts in API Manager and read alerts in Runtime Manager.
+
+|Manage alerts
+a|
+Any of these permissions:
+
+* *API Manager* > Manage API Alerts
+* *Runtime Manager* > Manage Alerts
+a|With these permissions, users can manage API alerts in API Manager and manage alerts in Runtime Manager.
 
 |===
 
