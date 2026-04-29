@@ -156,7 +156,7 @@ Manage and tune your AI portfolio by registering assets, applying security polic
 
 . Complete onboarding and access
 +
-Confirm your credentials and the permissions your administrator assigned, as described in <<permissions,Permissions>>. Finish integration setup for supporting systems, such as connected providers under *Platform* > *Providers*, before you depend on Omni in production.
+Confirm your credentials and the permissions your administrator assigned, as described in <<permissions>>. Finish integration setup for supporting systems, such as connected providers under *Platform* > *Providers*, before you depend on Omni in production.
 . Learn the layout
 +
 Sign in through your entry path and land on *Home*. Scan *Portfolio* catalogs, *Governance*, *Observability*, and *Platform* so you know where to register assets, apply policies, read health signals, and manage providers.
