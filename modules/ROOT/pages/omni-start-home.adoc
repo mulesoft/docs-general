@@ -47,7 +47,8 @@ Platform and Product Access::
 
 
 [[permissions]]
-== Permissions
+== MuleSoft Omni Permissions
+// make this a partial in access management and include there as well.
 
 Omni uses Anypoint Platform access control. Your administrator maps jobs to roles and permissions in Anypoint Access Management. Exact permission names differ by organization. Use this table with your internal access guide.
 
