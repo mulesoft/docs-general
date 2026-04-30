@@ -1,9 +1,16 @@
 = Adding Services to Your Portfolio
 
+Add services like agents, APIs, MCP servers, LLM proxies, and gateways to your portfolio. You can add 
+them from the *Home* page or from the *Portfolio* of each service type.
+
+Add services using one of these methods:
+
+* xref:omni-connecting-providers-to-add-services.adoc[Connecting to Providers to Add Services]
+* xref:omni-registering-services-manually.adoc[Registering Services Manually]
+////
 The Portfolio is a set of catalogs for the service types your organization has registered or discovered. It brings together agents, APIs, MCP servers, LLM proxies, and gateways so you can manage, govern, and optimize them in your multi-agent ecosystem. These entities work together to support workloads such as data processing, API management, compliance checks, fraud detection, and more.
 
 Use your Portfolio to:
-
 * Discover services across your portfolio:
 +
 ** Find and create agents, APIs, MCP servers, LLM proxies, and gateways from the Portfolio to view and manage them.
@@ -23,7 +30,6 @@ Use your Portfolio to:
 +
 ** Incorporate LLM proxies into your workflow for advanced text and multimodal interactions.
 ** Use MCP servers to interface with popular SaaS platforms and databases for enhanced integration capabilities.
-
 Your portfolio serves as the central hub for managing and optimizing all these operations. 
 
 The Portfolio includes a catalog for each of these services so you quickly find and manage them:
@@ -63,3 +69,5 @@ Using an LLM Proxy:
 LLM proxies enhance the flexibility and capability of your ecosystem by bringing the power of advanced machine learning models into your operations. If you need to manage or explore LLM proxies further, you can do so through the LLM Proxy Catalog or related detail pages.
 
 == Gateways
+A gateway acts as a central point of entry for your AI-connected integration assets. It manages routing, authentication, and other essential functions that help you integrate and manage your AI-connected integration services.
+////
