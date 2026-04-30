@@ -1,0 +1,57 @@
+= Viewing Service Details
+
+View status, cost, policies, and related assets for a service in your portfolio, such as an API, agent, MCP server, LLM proxy, or gateway.
+
+//placeholder for image of service details page
+
+The details page for services can have these tabs:
+
+* Overview
++
+Displays general information such as the service status, average latency, daily cost, and more. It may include a summary of the service's primary functions.
+
+* Connections
++
+Shows the relationships and integrations with other entities, such as APIs, agents, or MCP servers.
+
+* Instances
++
+Lists deployed instances, indicating their environments (e.g., production, sandbox) and gateways.
+
+* Policies
++
+Offers insights into governance policies applied to the service and its instances.
+* Monitoring
++
+Provides performance metrics and analytics to monitor the health and efficiency of the service.
+
+* Conformance Report
++
+Shows the compliance score and rule-level analysis for maintaining governance standards.
+
+* Governance
++
+Shows the governance policies and rules applied to the service and its instances.
+
+* Versions
++
+Shows the history of changes made to the service.
+
+The exact tabs and labels depend on the service type; not every field appears for every type.
+
+== View Service Details
+
+. In *Portfolio*, open the catalog for the service type (for example *APIs* or *Agents*).
+. Use the search box to find the service by name or description, or scan the list or grid.
+. Click the service card  to open its detail page.
+
+== See Also
+
+* xref:omni-adding-services-to-portfolio.adoc[Adding Services to Your Portfolio]
+* xref:omni-adding-instances.adoc[Adding Instances to a Service]
+* xref:omni-adding-policies.adoc[Adding Policies to a Service]
+* xref:omni-adding-monitoring.adoc[Adding Monitoring to a Service]
+* xref:omni-adding-governance.adoc[Adding Governance to a Service]
+* xref:omni-adding-versions.adoc[Adding Versions to a Service]
+
+

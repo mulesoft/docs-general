@@ -1,0 +1,70 @@
+== Registering Services Manually
+
+You can add services to your portfolio by registering them manually from *Home* or *Portfolio*. Registered services are added to the corresponding catalog in *Portfolio*.
+
+== Register a Service Manually from Home
+
+. From the *Home* page, click *Add Service*.
+. Select the service type you want to register.
+. Enter the necessary information to register the service.
+. Click *Register*.
+
+== Register an Agent Manually
+
+Add an agent by connecting to an A2A endpoint to discover the agent card, uploading a card file, or registering without a card file.
+
+. From the *Portfolio* page, open the *Agents* catalog.
+. Click the *Add Agent*, and then select *Register Manually*.
+. Choose which method you want to use to register the agent:
++
+** *Connect to Agent*: Connect to an A2A endpoint to discover the agent card.
+** *Upload Agent Card*: Upload a card file.
+** *Register without Card*: Register without a card file.
+. If you selected *Connect to Agent*, enter the necessary information, and click *Fetch Card*.
+. If you selected *Upload Agent Card*, upload the agent card file.
+. If you selected *Register without Card*, enter the necessary information to register the agent, and test the connection.
+. Click *Continue*.
+. Review the metadata and click *Add Agent*.
+
+== Register an API Manually
+To add an API, you'll need an API specification and an instance endpoint. Choose a method for providing the spec, and we'll use it to automatically discover your endpoints, parameters, and metadata. You can choose to link to API specification file, upload an API specification file, or use an instance. The spec is used to automatically discover your endpoints, parameters, and metadata.
+
+. From the *Portfolio* page, open the *APIs* catalog.
+. Click the *Add API*, and then select *Register Manually*. 
+. Choose a method for providing the spec:
++
+** *Link to Spec*: Link to an API specification file.
+** *Upload Spec*: Upload an API specification file.
+** *Use Instance Only*: Use an instance.
+. If you selected *Link to API Specification File*, enter the necessary information, and click *Fetch Card*.
+. If you selected *Upload API Specification File*, upload the API specification file.
+. If you selected *Use Instance Only*, enter the necessary information to register the API and test the connection.
+. Click *Continue*.
+. Review the metadata, enter additional information, and click *Add API*.
+
+== Register an MCP Server Manually
+To add an MCP server, define a source and verify a live instance connection first. We use this to validate runtime access and discover tools before metadata is finalized. You can choose to connect using an MCP URL or upload a MCP schema file.
+
+. From the *Portfolio* page, open the *MCP Servers* catalog.
+. Click the *Add MCP Server* and select *Register Manually*.
+. Choose a method for providing the source:
++
+** *By MCP URL*: Connect using an MCP URL.
+** *Upload Schema*: Upload a MCP schema file.
+. If you selected *By MCP URL*, enter the necessary information, and test the connection.
+. If you selected *Upload Schema*, upload the MCP schema file and enter the necessary information to register the MCP Server and test the connection.
+. Click *Continue*.
+. Review the metadata, enter additional information, and click *Add MCP Server*.
+
+== Register an LLM Proxy Manually
+Register an LLM proxy by choosing a gateway, then connecting providers and routing.
+
+. From the *Portfolio* page, open the *LLM Proxies* catalog.
+. Click the *Add LLM Proxy* and select *Register Manually*.
+. Enter the necessary information to configure the gateway and click *Continue*.
+. Enter the necessary information to configure the routing strategy and click *Add LLM Proxy*.
+
+== See Also
+
+* xref:omni-adding-services-to-portfolio.adoc[Adding Services to Your Portfolio]
+* xref:omni-viewing-service-details.adoc[Viewing Service Details]

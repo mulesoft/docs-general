@@ -1,0 +1,41 @@
+== Connecting to Providers to Add Services
+
+Connect to providers and run scans on supported cloud platforms to discover and import services, such as agents, APIs, and MCP servers, automatically. Scanners connect to external provider platforms to pull in metadata for services.
+
+You can connect to providers from *Home* or *Portfolio*. The scanner registers discovered service types in the corresponding Portfolio catalog.
+
+== Connect to a Provider from Home
+
+. From the *Home* page, click *Add Services* and select *Connect to Provider*.
+. Choose a provider to scan and import services into your catalog and click *Continue*.
+. Enter your credentials to authenticate and discover available platforms and test the connection.
+. Click *Continue*.
+. Enter a name and description and select the scanner settings..
+. Click *Connect*.
+
+== Connect to an Agent Provider 
+
+. From the *Portfolio* page, open the *Agents*, *APIs*, *MCP Servers*, *LLM Proxies*, or *Gateways* catalog.
+. Click the *Add* button for the service type you want to add.
+. Select the provider you want to connect to and click *Connect*.
+
+== Connect to a API Provider
+
+. From the *Portfolio* page, open the *APIs* catalog.
+. Click the *Add API* and select *Connect to Provider*.
+. Choose a provider to scan and import services into your catalog and click *Continue*.
+. Enter your credentials to authenticate and discover available platforms and test the connection.
+. Click *Continue*.
+. Enter a name and description and select the scanner settings..
+. Click *Connect*.
+
+== Connect to a MCP Server Provider
+
+. From the *Portfolio* page, open the *MCP Servers* catalog.
+. Click the *Add MCP Server* and select *Connect to Provider*.
+. Choose a provider to scan and import services into your catalog and click *Continue*.
+. Enter your credentials to authenticate and discover available platforms and test the connection.
+. Click *Continue*.
+. Enter a name and description and select the scanner settings..
+. Click *Connect*.
+

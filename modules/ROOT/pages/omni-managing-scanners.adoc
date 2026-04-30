@@ -1,0 +1,36 @@
+== Managing Scanners
+
+To view and manage your scanners, click *Providers*.
+
+You can perform these actions to manage scanners:
+
+* Run a scan
+* View scanner details
+* Pause scheduled scans
+* Edit settings
+* Delete a scanner
+
+
+== Run a Scan
+Run the scanner manually to discover new services and add them to the corresponding catalog in *Portfolio*. 
+
+
+== View Scanner Details
+View a list of scanners and the details about their scans. The Scanners page lists the scanners added for the business group. The scanner details show information about the scanner, connection, last completed run, and scan history.
+
+Scanner triggers are:
+
+* Scheduled
+* Manual
+
+
+== Pause a Scheduled Scan
+Pause a scan to stop the scan process.
+
+
+== Edit a Scanner Configuration
+Edit a scanner configuration to change the scanner settings.
+To see more information about a scanner and its scan details, from the sidebar in Exchange, click Scanners and click the name of a scanner from the list.
+
+== Delete a Scanner
+Delete a scanner to remove it from Exchange.

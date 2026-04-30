@@ -1,0 +1,22 @@
+= Adding Scanners from Providers
+
+Add scanners from Providers to automatically discover and import services, such as APIs, agents, and MCP servers, from supported cloud service providers. 
+
+Benefits of adding provider scanners:
+
+* Automated Discovery: Scanners automatically discover new and existing services, keeping your portfolio up-to-date without manual intervention.
+* Centralized Management: Manage all discovered services from one platform, enhancing visibility and control.
+* Consistent Updates: Regular scans ensure that any changes or new releases in your cloud services are promptly integrated into your ecosystem.
+
+== Add a Scanner
+
+You can start from *Home*, *Providers*, or a service catalog in *Portfolio*. Each entry point opens the same wizard to connect a provider and add a scanner.
+
+* *Home*: Click *Add Services*, then select *Connect to Provider*.
+* *Providers*: Click *Add Scanner*.
+* *Portfolio*: Open the *Agents*, *APIs*, or *MCP Servers* catalog for the service type you want. Click the add control for that catalog (the label reflects the type; for example, *Add API* in the APIs catalog), then select *Connect to Provider*.
+
+Complete the wizard to configure the scanner and save your changes.
+
+Once the scanner is configured and activated, it will start discovering services according to the configured schedule.
+You can view and manage discovered services on the *Providers* page or on individual Scanner detail pages.
