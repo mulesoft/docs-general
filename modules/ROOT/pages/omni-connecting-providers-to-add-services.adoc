@@ -1,4 +1,4 @@
-== Connecting to Providers to Add Services
+= Connecting to Providers to Add Services
 
 Connect to providers and run scans on supported cloud platforms to discover and import services, such as agents, APIs, and MCP servers, automatically. Scanners connect to external provider platforms to pull in metadata for services.
 

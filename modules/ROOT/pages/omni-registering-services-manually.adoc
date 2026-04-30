@@ -1,4 +1,4 @@
-== Registering Services Manually
+= Registering Services Manually
 
 You can add services to your portfolio by registering them manually from *Home* or *Portfolio*. Registered services are added to the corresponding catalog in *Portfolio*.
 
@@ -42,7 +42,7 @@ To add an API, you'll need an API specification and an instance endpoint. Choose
 . Click *Continue*.
 . Review the metadata, enter additional information, and click *Add API*.
 
-== Register an MCP Server Manually
+= Register an MCP Server Manually
 To add an MCP server, define a source and verify a live instance connection first. We use this to validate runtime access and discover tools before metadata is finalized. You can choose to connect using an MCP URL or upload a MCP schema file.
 
 . From the *Portfolio* page, open the *MCP Servers* catalog.
