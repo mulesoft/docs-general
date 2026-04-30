@@ -141,10 +141,9 @@ Explore advanced CloudHub 2.0 capabilities:
 * xref:cloudhub-2::ch2-architecture.adoc[]
 * xref:cloudhub-2::ch2-shared-space-about.adoc[]
 * xref:cloudhub-2::ch2-update-apps.adoc[]
-* xref:cloudhub-2::ch2-configure-private-space.adoc[]
+* xref:cloudhub-2::ch2-deploy-private-space.adoc[]
 * xref:api-manager::policies-landing-page.adoc[]
 
 == What's Next
 
 Now that your API is deployed, learn how to monitor it and view logs in Runtime Manager.
-

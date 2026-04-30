@@ -135,7 +135,7 @@ You scaffolded a Mule project from your API spec using Anypoint Code Builder, wh
 Explore advanced implementation techniques:
 
 * xref:mule-runtime::dataweave.adoc[DataWeave Language Reference]
-* xref:connectors::database/database-connector.adoc[Database Connector]
+
 * xref:mule-runtime::error-handling.adoc[Error Handling in Mule 4]
 * xref:mule-runtime::about-flows.adoc[Understanding Flows and Subflows]
 
