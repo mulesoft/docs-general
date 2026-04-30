@@ -69,7 +69,7 @@ See xref:cloudhub-2::ch2-shared-space-about.adoc[About Shared Spaces].
 
 * At least one environment (such as Sandbox or Development) configured for CloudHub 2.0 deployments.
 +
-See xref:cloudhub-2::ch2-environments-about.adoc[About Environments].
+See xref:access-management::environments.adoc[].
 
 == Helpful Hints
 
