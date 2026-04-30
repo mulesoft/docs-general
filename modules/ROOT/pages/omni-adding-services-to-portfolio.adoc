@@ -11,6 +11,7 @@ Add services using one of these methods:
 The Portfolio is a set of catalogs for the service types your organization has registered or discovered. It brings together agents, APIs, MCP servers, LLM proxies, and gateways so you can manage, govern, and optimize them in your multi-agent ecosystem. These entities work together to support workloads such as data processing, API management, compliance checks, fraud detection, and more.
 
 Use your Portfolio to:
+
 * Discover services across your portfolio:
 +
 ** Find and create agents, APIs, MCP servers, LLM proxies, and gateways from the Portfolio to view and manage them.
