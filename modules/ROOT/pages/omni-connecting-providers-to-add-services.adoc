@@ -28,7 +28,7 @@ When the scanner runs successfully, discovered service types are registered in t
 
 == Catalogs and Discovery Scope
 
- *Agents, APIs, and MCP servers* — Catalog-specific flows emphasize the service type you are enriching; discovery results populate that catalog when the system supports the provider mapping for that type.
+ Agents, APIs, and MCP servers catalog-specific flows emphasize the service type you are enriching; discovery results populate that catalog when the system supports the provider mapping for that type.
 
 == See Also
 
