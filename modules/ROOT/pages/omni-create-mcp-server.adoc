@@ -15,3 +15,9 @@ The create flow typically covers these decisions:
 
 After creation is complete, register or confirm the MCP server in *Portfolio* so it appears in the *MCP Servers* catalog for ongoing governance, monitoring, and operations.
 
+== See Also
+
+* xref:omni-add-services-to-portfolio.adoc[]
+* xref:omni-register-services-manually.adoc[]
+* xref:omni-connect-providers-to-add-services.adoc[]
+* xref:omni-view-service-details.adoc[]
