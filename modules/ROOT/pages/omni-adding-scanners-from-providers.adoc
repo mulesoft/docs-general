@@ -1,6 +1,6 @@
 = Adding Scanners from Providers
 
-A scanner is the configured link between the system and a supported cloud provider so discovery jobs can find **services** (such as APIs, agents, and MCP servers) and register them in the right *Portfolio* catalogs. Adding a scanner is how you turn on—or extend—that automated discovery for your organization.
+A scanner is the configured link between the system and a supported cloud provider so discovery jobs can find services (such as APIs, agents, and MCP servers) and register them in the right *Portfolio* catalogs. Adding a scanner is how you turn on—or extend—that automated discovery for your organization.
 
 For how provider connection and catalogs fit together, see xref:omni-connecting-providers-to-add-services.adoc[] and xref:omni-adding-services-to-portfolio.adoc[].
 
@@ -25,7 +25,7 @@ Regardless of entry point, adding a scanner is about establishing trust and scop
 
 == After the Scanner Runs
 
-When the scanner is active, discovery results are applied according to its settings and your organization’s rules. You review outcomes on the *Providers* experience and on scanner detail pages, and you manage discovered services from the relevant *Portfolio* catalogs.
+When the scanner is active, discovery results are applied according to its settings and your organization’s rules. You review outcomes on the *Providers* page and on scanner detail pages, and you manage discovered services from the relevant *Portfolio* catalogs.
 
 For ongoing operations (pause, edit, or delete), see xref:omni-managing-scanners.adoc[].
 
