@@ -1,41 +1,38 @@
 = Connecting to Providers to Add Services
 
-Connect to providers and run scans on supported cloud platforms to discover and import services, such as agents, APIs, and MCP servers, automatically. Scanners connect to external provider platforms to pull in metadata for services.
+Connecting a **provider** lets the system run **scanners** against supported cloud platforms, **discover** services (such as agents, APIs, and MCP servers), and **register** them in the matching catalog in *Portfolio*. You supply credentials and scanner metadata so the integration is repeatable and auditable.
 
-You can connect to providers from *Home* or *Portfolio*. The scanner registers discovered service types in the corresponding Portfolio catalog.
+You can start the flow from *Home* or from a specific catalog in *Portfolio*. For how this fits with manual registration, see xref:omni-adding-services-to-portfolio.adoc[Adding Services to Your Portfolio]. For creating and tuning scanners themselves, see xref:omni-adding-scanners.adoc[Adding Scanners from Providers].
 
-== Connect to a Provider from Home
+== Why Use Provider Connection
 
-. From the *Home* page, click *Add Services* and select *Connect to Provider*.
-. Choose a provider to scan and import services into your catalog and click *Continue*.
-. Enter your credentials to authenticate and discover available platforms and test the connection.
-. Click *Continue*.
-. Enter a name and description and select the scanner settings..
-. Click *Connect*.
+Provider connection is for teams that maintain services in an external platform and want those services to **appear automatically** in your portfolio catalogs after authentication and discovery, instead of registering each one by hand.
 
-== Connect to an Agent Provider 
+== Where You Start
 
-. From the *Portfolio* page, open the *Agents*, *APIs*, *MCP Servers*, *LLM Proxies*, or *Gateways* catalog.
-. Click the *Add* button for the service type you want to add.
-. Select the provider you want to connect to and click *Connect*.
+* *Home* — Use *Add Services*, choose *Connect to Provider*, then work through the wizard to pick a provider, validate access, and save scanner settings. Use this path when you're not starting from a single catalog view.
+* *Portfolio* — Open the *Agents*, *APIs*, or *MCP Servers* catalog. Use the add control for that service type (for example *Add API* or *Add MCP Server*), choose *Connect to Provider*, and complete the same style of wizard scoped to that catalog.
 
-== Connect to a API Provider
+Labels can vary by catalog and release; match what you see in the UI.
 
-. From the *Portfolio* page, open the *APIs* catalog.
-. Click the *Add API* and select *Connect to Provider*.
-. Choose a provider to scan and import services into your catalog and click *Continue*.
-. Enter your credentials to authenticate and discover available platforms and test the connection.
-. Click *Continue*.
-. Enter a name and description and select the scanner settings..
-. Click *Connect*.
+== What the Wizard Establishes
 
-== Connect to a MCP Server Provider
+Across *Home* and *Portfolio* entry points, provider connection generally covers the same kinds of decisions:
 
-. From the *Portfolio* page, open the *MCP Servers* catalog.
-. Click the *Add MCP Server* and select *Connect to Provider*.
-. Choose a provider to scan and import services into your catalog and click *Continue*.
-. Enter your credentials to authenticate and discover available platforms and test the connection.
-. Click *Continue*.
-. Enter a name and description and select the scanner settings..
-. Click *Connect*.
+* **Which provider or platform** to target for discovery and import.
+* **Credentials and authentication** so teh system can reach the provider safely and securely.
+* **Connection validation** so you know discovery can run against live data.
+* **Scanner identity and settings**—name, description, and options your administrator expects—before you save the connection.
 
+When the scanner runs successfully, discovered service types are registered in the catalog that matches the workflow you started from (for example APIs land in the *APIs* catalog).
+
+== Catalogs and Discovery Scope
+
+ *Agents, APIs, and MCP servers* — Catalog-specific flows emphasize the service type you are enriching; discovery results populate that catalog when the system supports the provider mapping for that type.
+
+== See Also
+
+* xref:omni-adding-services-to-portfolio.adoc[Adding Services to Your Portfolio]
+* xref:omni-registering-services-manually.adoc[Registering Services Manually]
+* xref:omni-adding-scanners.adoc[Adding Scanners from Providers]
+* xref:omni-viewing-service-details.adoc[View Service Details]

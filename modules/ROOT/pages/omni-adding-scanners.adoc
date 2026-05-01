@@ -1,22 +1,37 @@
 = Adding Scanners from Providers
 
-Add scanners from Providers to automatically discover and import services, such as APIs, agents, and MCP servers, from supported cloud service providers. 
+A **scanner** is the configured link between the system and a **supported cloud provider** so discovery jobs can find **services** (such as APIs, agents, and MCP servers) and register them in the right *Portfolio* catalogs. Adding a scanner is how you turn on—or extend—that automated discovery for your organization.
 
-Benefits of adding provider scanners:
+For how provider connection and catalogs fit together, see xref:omni-connecting-providers-to-add-services.adoc[Connecting to Providers to Add Services] and xref:omni-adding-services-to-portfolio.adoc[Adding Services to Your Portfolio].
 
-* Automated Discovery: Scanners automatically discover new and existing services, keeping your portfolio up-to-date without manual intervention.
-* Centralized Management: Manage all discovered services from one platform, enhancing visibility and control.
-* Consistent Updates: Regular scans ensure that any changes or new releases in your cloud services are promptly integrated into your ecosystem.
+== Why Add Provider Scanners
 
-== Add a Scanner
+* **Keep catalogs current** — New and changed services in the provider surface in the system without someone re-entering each registration by hand.
+* **Centralize visibility** — Discovered services land in *Portfolio* where teams can govern, monitor, and deploy from one place.
+* **Stay aligned with the provider** — Scheduled or on-demand scans pick up releases and configuration drift according to the options your administrator allows.
 
-You can start from *Home*, *Providers*, or a service catalog in *Portfolio*. Each entry point opens the same wizard to connect a provider and add a scanner.
+== Where You Open the Scanner Flow
+The system exposes the same underlying **connect-and-configure** wizard from more than one place; the label depends on context:
 
-* *Home*: Click *Add Services*, then select *Connect to Provider*.
-* *Providers*: Click *Add Scanner*.
-* *Portfolio*: Open the *Agents*, *APIs*, or *MCP Servers* catalog for the service type you want. Click the add control for that catalog (the label reflects the type; for example, *Add API* in the APIs catalog), then select *Connect to Provider*.
+* *Home* — Start from the general *Add Service* / *Add Services* area and choose the path that connects a provider and defines a scanner (often *Connect to Provider* or equivalent wording).
+* *Providers* — Use the area dedicated to provider and scanner management when your navigation includes it; you add or refine scanners alongside other provider work.
+* *Portfolio* — Open the catalog that matches the service type you care about (*Agents*, *APIs*, *MCP Servers*, and others your tenant supports). Use that catalog’s **add** control—the label usually reflects the type (for example *Add API*)—then choose provider connection when you intend to discover into that catalog.
 
-Complete the wizard to configure the scanner and save your changes.
+Exact strings can vary by release; follow the UI your organization ships.
 
-Once the scanner is configured and activated, it will start discovering services according to the configured schedule.
-You can view and manage discovered services on the *Providers* page or on individual Scanner detail pages.
+== What You Are Configuring
+
+Regardless of entry point, adding a scanner is about **establishing trust and scope**: which provider platform to reach, how the system authenticates, how you validate connectivity, and how the scanner is **named and scheduled** (or otherwise triggered) so discovery runs on a basis your team expects. Saving the configuration activates the scanner for the catalogs and entitlements your administrator enabled.
+
+== After the Scanner Runs
+
+When the scanner is active, discovery results are applied according to its settings and your organization’s rules. You review outcomes on the *Providers* experience and on **scanner detail** pages, and you manage discovered **services** from the relevant *Portfolio* catalogs.
+
+For ongoing operations (pause, edit, or delete), see xref:omni-managing-scanners.adoc[].
+
+== See Also
+
+* xref:omni-connecting-providers-to-add-services.adoc[]
+* xref:omni-managing-scanners.adoc[]
+* xref:omni-adding-services-to-portfolio.adoc[]
+* xref:omni-viewing-service-details.adoc[]

@@ -1,74 +1,52 @@
 = Adding Services to Your Portfolio
 
-Add services like agents, APIs, MCP servers, LLM proxies, and gateways to your portfolio. You can add 
-them from the *Home* page or from the *Portfolio* of each service type.
+Your *Portfolio* is organized into catalogs—*Agents*, *APIs*, *MCP Servers*, *LLM Proxies*, and *Gateways*. Each catalog holds the services (or gateway entries) your organization registered or imported so you can govern, monitor, and deploy them from one place.
 
-Add services using one of these methods:
+This topic summarizes how APIs, agents, MCP servers, and LLM proxies get into those catalogs. For step-by-step procedures, use the topics linked in the sections.
+
+== Two Ways to Add Services
+
+[cols="1,2",options="header"]
+|===
+|Approach |What happens
+
+|xref:omni-connecting-providers-to-add-services.adoc[Connect to providers]
+|You add a provider scanner from *Home* or from a catalog in *Portfolio*. Scans discover services on supported cloud platforms and register them in the matching catalog.
+
+|xref:omni-registering-services-manually.adoc[Register manually]
+|You start an *Add …* workflow from *Home* or from the catalog for that service type. You supply metadata, specifications, endpoints, or cards to register the service without a provider scanner.
+|===
+
+Gateways follow the same entry points; gateway-specific behavior is covered in the same linked topics where it applies.
+
+== Where You Start the Workflow
+
+* *Home* — Use *Add Services to open provider connection or manual registration, then pick the service type.
+* *Portfolio* — Open the *Agents*, *APIs*, *MCP Servers*, or *LLM Proxies* catalog. Use the add control for that type (labels such as *Add API* or *Add Agent*), then choose *Connect to Provider* or *Register Manually*.
+
+Labels can vary by catalog; match what you see in the UI.
+
+== How Each Service Type is Added 
+
+*APIs*::
+Register with an API specification and instance details, or connect an API provider so scans import APIs into the *APIs* catalog.
+
+*Agents*::
+Register by connecting to an A2A endpoint, uploading an agent card, or registering without a card—or connect an agent provider for discovery.
+
+*MCP servers*::
+Register with an MCP URL or a schema file, or connect an MCP server provider.
+
+*LLM proxies*::
+Register manually by configuring a gateway and routing strategy, or use provider flows your tenant exposes for LLM proxies.
+
+For step-by-step instructions for any of these types, see xref:omni-registering-services-manually.adoc[Registering Services Manually] and xref:omni-connecting-providers-to-add-services.adoc[Connecting to Providers to Add Services].
+
+Scanners and manual flows can differ by entitlement and release; if a path is missing in your UI, confirm with your administrator.
+
+== See Also
 
 * xref:omni-connecting-providers-to-add-services.adoc[Connecting to Providers to Add Services]
 * xref:omni-registering-services-manually.adoc[Registering Services Manually]
-////
-The Portfolio is a set of catalogs for the service types your organization has registered or discovered. It brings together agents, APIs, MCP servers, LLM proxies, and gateways so you can manage, govern, and optimize them in your multi-agent ecosystem. These entities work together to support workloads such as data processing, API management, compliance checks, fraud detection, and more.
-
-Use your Portfolio to:
-
-* Discover services across your portfolio:
-+
-** Find and create agents, APIs, MCP servers, LLM proxies, and gateways from the Portfolio to view and manage them.
-* Monitor performance and cost:
-+
-** Keep track of active and inactive entities, their average latency, daily costs, and overall invocations.
-** Monitor metrics using the Performance dashboard to gauge health, usage, and trends.
-* Ensure entities comply with governance policies to maintain security, privacy, and operational integrity.
-** Use the Governance dashboard to view and manage policy implementations across your portfolio.
-* Manage instances and deployments:
-+
-** Deploy instances of APIs, agents, and MCP servers in different environments (production, staging, sandbox) to streamline operations.
-** Use the instances tab on the entity detail page to view and manage these deployments.
-* Optimize costs:
-** Analyze token usage and apply cost reduction strategies using the Cost Management page.
-* Leverage LLM proxies and MCP servers:
-+
-** Incorporate LLM proxies into your workflow for advanced text and multimodal interactions.
-** Use MCP servers to interface with popular SaaS platforms and databases for enhanced integration capabilities.
-Your portfolio serves as the central hub for managing and optimizing all these operations. 
-
-The Portfolio includes a catalog for each of these services so you quickly find and manage them:
-
-* Agents
-* APIs
-* MCP servers
-* LLM proxies
-* Gateways
-
-== Agents
-
-
-==APIs
-
-== MCP servers
-
-== LLM Proxies
-An LLM proxy acts as an intermediary layer that allows you to integrate large language models (LLMs) into your multi-agent ecosystem. These proxies are configured with routing strategies and can use semantic services for more advanced features like semantic routing based on embeddings.
-
-Key Components of an LLM proxy:
-
-Gateway Configuration:: Each LLM proxy is associated with a specific gateway and deployment environment (e.g., Production, Staging, QA). This configuration handles routing and load balancing.
-
-Semantic Routing:: Proxies can leverage semantic services that use embeddings to route requests based on content and intent. This feature depends on the deployment environment's semantic service setup.
-
-Multimodal and Text Services: LLM proxies support multimodal interactions (text, vision, tool-use) depending on the provider's capabilities.
-
-Using an LLM Proxy:
-
-* Integration: Include LLM proxies in your workflows to perform text analysis, generate responses, or handle multimodal interactions.
-
-* Configuration: Set up and manage LLM proxies through the configuration wizard at /llms/{proxyId} where you can define routes and assign semantic services.
-
-* Monitoring and Governance: Monitor LLM proxy activities and apply governance policies to ensure compliance and performance.
-
-LLM proxies enhance the flexibility and capability of your ecosystem by bringing the power of advanced machine learning models into your operations. If you need to manage or explore LLM proxies further, you can do so through the LLM Proxy Catalog or related detail pages.
-
-== Gateways
-A gateway acts as a central point of entry for your AI-connected integration assets. It manages routing, authentication, and other essential functions that help you integrate and manage your AI-connected integration services.
-////
+* xref:omni-adding-scanners.adoc[Adding Scanners from Providers]
+* xref:omni-viewing-service-details.adoc[View Service Details]

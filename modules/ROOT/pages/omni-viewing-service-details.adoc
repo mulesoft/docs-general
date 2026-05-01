@@ -1,57 +1,71 @@
-= Viewing Service Details
+= View Service Details
 
-View status, cost, policies, and related assets for a service in your portfolio, such as an API, agent, MCP server, LLM proxy, or gateway.
+Open a catalog entry in *Portfolio* to see its service detail page: a single view of one service—an API, agent, MCP server, or LLM proxy—or a gateway, depending on the catalog. From there you can review status and cost, relationships to other services, deployments, policies, monitoring, conformance, and change history without switching contexts.
 
-//placeholder for image of service details page
+//placeholder for image of service detail page
 
-The details page for services can have these tabs:
+== What You See
 
-* Overview
-+
-Displays general information such as the service status, average latency, daily cost, and more. It may include a summary of the service's primary functions.
+The page is organized into **tabs**. The following table lists each tab, what it shows, and whether that tab appears on the detail page for each catalog type. *Yes* means the tab is shown in typical configurations; *No* means it is omitted or you use another area of Omni for the same job (see the note after the table). Labels and fields inside a tab can differ by service type and release. For end-to-end portfolio tasks that reference these tabs, see xref:omni-overview.adoc[MuleSoft Omni Overview].
 
-* Connections
-+
-Shows the relationships and integrations with other entities, such as APIs, agents, or MCP servers.
+[cols="2,3,^.^,^.^,^.^,^.^,^.^",options="header"]
+|===
+|Tab |What you see |API |Agent |MCP server |LLM proxy |Gateway
 
-* Instances
-+
-Lists deployed instances, indicating their environments (e.g., production, sandbox) and gateways.
+|*Overview*
+|Status, average latency, daily cost, and a short summary of what the service does.
+|Yes |Yes |Yes |Yes |Yes
 
-* Policies
-+
-Offers insights into governance policies applied to the service and its instances.
-* Monitoring
-+
-Provides performance metrics and analytics to monitor the health and efficiency of the service.
+|*Connections*
+|Relationships and integrations with other services, such as APIs, agents, or MCP servers.
+|Yes |Yes |Yes |Yes |Yes
 
-* Conformance Report
-+
-Shows the compliance score and rule-level analysis for maintaining governance standards.
+|*Instances*
+|Deployed instances, environments (for example production or sandbox), and gateways when that catalog type supports instances.
+|Yes |Yes |Yes |Yes |No
 
-* Governance
-+
-Shows the governance policies and rules applied to the service and its instances.
+|*Policies*
+|Governance policies attached to the service or its instances (access, data, performance, compliance, and related domains your organization uses).
+|Yes |Yes |Yes |Yes |Yes
 
-* Versions
-+
-Shows the history of changes made to the service.
+|*Monitoring*
+|Runtime metrics and analytics for health and usage when Omni surfaces them for the service or gateway you are viewing.
+|Yes |Yes |Yes |Yes |Yes
 
-The exact tabs and labels depend on the service type; not every field appears for every type.
+|*Conformance Report*
+|Compliance score and rule-level analysis for conformance reporting where that tab is available.
+|Yes |Yes |Yes |No |No
 
-== View Service Details
+|*Governance*
+|Governance policies and rules for the service and its instances, including gateway-wide or organization-level views where Omni exposes them.
+|Yes |Yes |Yes |Yes |Yes
+
+|*Versions*
+|History of changes to the service configuration so you can compare before and after updates.
+|Yes |Yes |Yes |Yes |Yes
+|===
+
+[NOTE]
+====
+* *Instances* is available on *Agents*, *MCP Servers*, *LLMs*, and *APIs*; *Gateways* do not include an *Instances* tab. See xref:omni-overview.adoc[MuleSoft Omni Overview].
+
+* *Conformance Report* on the detail page aligns with *Agents*, *APIs*, and *MCP Servers*; for gateways, compliance work is framed through *Governance* and related flows at the scope Omni supports. See xref:omni-overview.adoc[MuleSoft Omni Overview].
+
+* If your tenant shows different tabs or labels, follow the UI and update this topic after you confirm behavior with product.
+====
+
+== Open a Service Detail Page
 
 . In *Portfolio*, open the catalog for the service type (for example *APIs* or *Agents*).
 . Use the search box to find the service by name or description, or scan the list or grid.
-. Click the service card  to open its detail page.
+. Click the service card to open its detail page.
 
 == See Also
 
+* xref:omni-overview.adoc[MuleSoft Omni Overview]
 * xref:omni-adding-services-to-portfolio.adoc[Adding Services to Your Portfolio]
 * xref:omni-adding-instances.adoc[Adding Instances to a Service]
 * xref:omni-adding-policies.adoc[Adding Policies to a Service]
 * xref:omni-adding-monitoring.adoc[Adding Monitoring to a Service]
 * xref:omni-adding-governance.adoc[Adding Governance to a Service]
 * xref:omni-adding-versions.adoc[Adding Versions to a Service]
-
-

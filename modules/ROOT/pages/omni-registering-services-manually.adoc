@@ -1,70 +1,51 @@
 = Registering Services Manually
 
-You can add services to your portfolio by registering them manually from *Home* or *Portfolio*. Registered services are added to the corresponding catalog in *Portfolio*.
+Manual registration adds a service to your portfolio when you already have the metadata, specification, endpoint, or card Omni needs—without running a provider scan. You start from *Home* or from the catalog for that service type in *Portfolio*; completed registrations appear in the matching catalog.
 
-== Register a Service Manually from Home
+For how manual registration fits with connecting providers, see xref:omni-adding-services-to-portfolio.adoc[Adding Services to Your Portfolio].
 
-. From the *Home* page, click *Add Service*.
-. Select the service type you want to register.
-. Enter the necessary information to register the service.
-. Click *Register*.
+== Where you start
 
-== Register an Agent Manually
+* *Home* — Open *Add Service* (or *Add Services*, depending on your release), choose the service type, then choose manual registration when the UI offers it.
+* *Portfolio* — Open the *Agents*, *APIs*, *MCP Servers*, or *LLM Proxies* catalog, use the add control for that type (for example *Add API*), and choose *Register Manually*.
 
-Add an agent by connecting to an A2A endpoint to discover the agent card, uploading a card file, or registering without a card file.
+Exact labels can vary by release; follow the options your tenant shows.
 
-. From the *Portfolio* page, open the *Agents* catalog.
-. Click the *Add Agent*, and then select *Register Manually*.
-. Choose which method you want to use to register the agent:
-+
-** *Connect to Agent*: Connect to an A2A endpoint to discover the agent card.
-** *Upload Agent Card*: Upload a card file.
-** *Register without Card*: Register without a card file.
-. If you selected *Connect to Agent*, enter the necessary information, and click *Fetch Card*.
-. If you selected *Upload Agent Card*, upload the agent card file.
-. If you selected *Register without Card*, enter the necessary information to register the agent, and test the connection.
-. Click *Continue*.
-. Review the metadata and click *Add Agent*.
+== Agents
 
-== Register an API Manually
-To add an API, you'll need an API specification and an instance endpoint. Choose a method for providing the spec, and we'll use it to automatically discover your endpoints, parameters, and metadata. You can choose to link to API specification file, upload an API specification file, or use an instance. The spec is used to automatically discover your endpoints, parameters, and metadata.
+You register an agent by supplying one of the following:
 
-. From the *Portfolio* page, open the *APIs* catalog.
-. Click the *Add API*, and then select *Register Manually*. 
-. Choose a method for providing the spec:
-+
-** *Link to Spec*: Link to an API specification file.
-** *Upload Spec*: Upload an API specification file.
-** *Use Instance Only*: Use an instance.
-. If you selected *Link to API Specification File*, enter the necessary information, and click *Fetch Card*.
-. If you selected *Upload API Specification File*, upload the API specification file.
-. If you selected *Use Instance Only*, enter the necessary information to register the API and test the connection.
-. Click *Continue*.
-. Review the metadata, enter additional information, and click *Add API*.
+* **A2A connection** — Point to an A2A endpoint to fetch an agent card.
+* **Uploaded card** — Provide an agent card file you already have.
+* **No card** — Register with metadata and connection details when you are not using a card workflow.
 
-= Register an MCP Server Manually
-To add an MCP server, define a source and verify a live instance connection first. We use this to validate runtime access and discover tools before metadata is finalized. You can choose to connect using an MCP URL or upload a MCP schema file.
+The connection gets validated, lets you review metadata, and saves the agent into the *Agents* catalog.
 
-. From the *Portfolio* page, open the *MCP Servers* catalog.
-. Click the *Add MCP Server* and select *Register Manually*.
-. Choose a method for providing the source:
-+
-** *By MCP URL*: Connect using an MCP URL.
-** *Upload Schema*: Upload a MCP schema file.
-. If you selected *By MCP URL*, enter the necessary information, and test the connection.
-. If you selected *Upload Schema*, upload the MCP schema file and enter the necessary information to register the MCP Server and test the connection.
-. Click *Continue*.
-. Review the metadata, enter additional information, and click *Add MCP Server*.
+== APIs
 
-== Register an LLM Proxy Manually
-Register an LLM proxy by choosing a gateway, then connecting providers and routing.
+Manual API registration expects an **API specification** and a way to reach a running instance (or instance-only registration when that path is enabled). The choices are:
 
-. From the *Portfolio* page, open the *LLM Proxies* catalog.
-. Click the *Add LLM Proxy* and select *Register Manually*.
-. Enter the necessary information to configure the gateway and click *Continue*.
-. Enter the necessary information to configure the routing strategy and click *Add LLM Proxy*.
+* **Link to spec** — Reference a specification by URL so the system ingests it.
+* **Upload spec** — Upload a specification file from your environment.
+* **Instance-first** — Supply instance details when your flow doesn't start from a standalone spec file.
+
+The system uses the spec to discover endpoints, parameters, and related metadata where applicable, then writes the API into the *APIs* catalog after you confirm.
+
+== MCP servers
+
+You define how the system reaches the MCP server and validates runtime access:
+
+* **MCP URL** — Connect over a URL and test the live server so tools and metadata can be discovered.
+* **Schema file** — Upload a schema and supply the details needed to register and test the server.
+
+Successful registration stores the MCP server in the *MCP Servers* catalog.
+
+== LLM proxies
+
+Manual LLM proxy registration is a **two-part** configuration: you associate the proxy with a **gateway** (and related deployment context), then define **routing** (and any provider connections your flow requires). When the wizard completes, the LLM proxy appears in the *LLM Proxies* catalog.
 
 == See Also
 
 * xref:omni-adding-services-to-portfolio.adoc[Adding Services to Your Portfolio]
-* xref:omni-viewing-service-details.adoc[Viewing Service Details]
+* xref:omni-connecting-providers-to-add-services.adoc[Connecting to Providers to Add Services]
+* xref:omni-viewing-service-details.adoc[View Service Details]
