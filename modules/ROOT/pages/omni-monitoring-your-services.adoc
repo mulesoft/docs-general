@@ -1,0 +1,36 @@
+= Monitoring Your Services
+
+Monitoring helps you see whether the services in your portfolio—and the paths that carry their traffic—are healthy, performant, and stable over time. You work from service context (what a single API, agent, MCP server, LLM proxy, or gateway is doing) and, when your administrator enables it, from broader observability surfaces that sit alongside *Portfolio* and *Governance*.
+
+== What You Use Monitoring For
+
+* **Spot regressions early** — Compare latency, errors, and throughput (or equivalent signals the system to expose for your integration type) against what you expect after a release or policy change.
+* **Triage incidents** — Correlate spikes or failures on a service with recent deployments, instances, or gateway paths your team manages.
+* **Support capacity and cost conversations** — Use sustained load or usage patterns as inputs when you tune scaling, routing, or token-related spend with your platform owners.
+
+Exact metrics depend on how the service is hosted, which gateway or runtime path applies, and what your organization is connected.
+
+== Where Monitoring Appears 
+
+* *Portfolio* and service detail — Open a catalog entry and use the *Monitoring* tab on the service (and, where the product exposes it, on instances) to read metrics scoped to that service. That is the day-to-day place engineers live when they ask, “Is this API or agent degrading?”
+* *Observability* — When your tenant includes it, *Observability* aggregates dashboards, reports, or notifications so you can compare what you see on a service with organization-wide views your administrator wired up.
+* *Home* — Your entry path may highlight alerts or shortcuts back into *Portfolio* or *Observability*; use whatever your organization configured after sign-in.
+
+Navigation labels and depth vary by entitlement and release; follow the UI your business group was given.
+
+== What Kinds of Signals You Typically See
+
+The system emphasizes runtime health for managed integration paths—for example latency, error rates, and request volume when Omni surfaces Flex Gateway data for routes your team operates under policy. Not every catalog type exposes the same charts; some services show richer series only after you complete instance* setup or connect the observability backend your administrator approved.
+
+If a tab is missing, confirm with your administrator that monitoring data is flowing for that environment and that your account has the right permissions.
+
+== Permissions (high level)
+
+The system relies on Anypoint Platform access control. Roles such as *Monitoring Viewer* or *Monitoring Administrator* control whether you can open monitoring views at the service or instance level and whether you can change monitoring configuration where the product allows it. 
+
+== See Also
+
+* xref:omni-overview.adoc]
+* xref:omni-start-home.adoc[]
+* xref:omni-viewing-service-details.adoc[]
+* xref:omni-adding-services-to-portfolio.adoc[]

@@ -1,36 +1,26 @@
 = Managing Scanners
 
-To view and manage your scanners, click *Providers*.
+Once scanners are configured, your team runs them day to day: starting discovery when needed, reading run history, updating schedules and credentials, and removing scanners that are no longer in use. Most of that work happens under *Providers*, where your organization lists provider connections, scanners, and scan activity in one place.
 
-You can perform these actions to manage scanners:
+== Where This Work Happens
 
-* Run a scan
-* View scanner details
-* Pause scheduled scans
-* Edit settings
-* Delete a scanner
+Use the *Providers* area (or equivalent navigation your administrator labels) to see which scanners exist for your business group, open a scanner’s detail context, and act on schedules, runs, and configuration. Exact layout can vary by release and entitlement.
 
+== What You Can Do With a Scanner
 
-== Run a Scan
-Run the scanner manually to discover new services and add them to the corresponding catalog in *Portfolio*. 
+* **Run discovery on demand** — Kick off a manual scan when you want fresh metadata without waiting for the next scheduled window. Successful runs update or add services in the matching *Portfolio* catalogs according to your rules.
+* **Review status and history** — Inspect connection health, the last completed run, and scan history so you can tell whether discovery is healthy, slow, or failing authentication.
+* **Pause scheduled scans** — Temporarily stop scheduled triggers when you need a quiet period—for example during maintenance or while you fix credentials—without deleting the scanner.
+* **Edit configuration** — Change names, descriptions, credentials, provider scope, or scan-related settings your product exposes, then save so future runs use the new definition.
+* **Delete a scanner** — Remove the scanner from *Providers* when the provider link is no longer authorized or useful. Consider impact on discovered services in *Portfolio* and on dependent teams before you delete.
 
+== How Scans Are Triggered
 
-== View Scanner Details
-View a list of scanners and the details about their scans. The Scanners page lists the scanners added for the business group. The scanner details show information about the scanner, connection, last completed run, and scan history.
+Scanners typically run on a schedule you or an administrator configured, or manually when someone starts a run. 
 
-Scanner triggers are:
+== See Also
 
-* Scheduled
-* Manual
-
-
-== Pause a Scheduled Scan
-Pause a scan to stop the scan process.
-
-
-== Edit a Scanner Configuration
-Edit a scanner configuration to change the scanner settings.
-To see more information about a scanner and its scan details, from the sidebar in Exchange, click Scanners and click the name of a scanner from the list.
-
-== Delete a Scanner
-Delete a scanner to remove it from *Providers*.
+* xref:omni-adding-scanners-from-providers.adoc[]
+* xref:omni-connecting-providers-to-add-services.adoc[]
+* xref:omni-adding-services-to-portfolio.adoc[]
+* xref:omni-viewing-service-details.adoc[]
