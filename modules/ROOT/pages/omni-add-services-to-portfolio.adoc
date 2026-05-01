@@ -1,6 +1,6 @@
 = Add Services to Your Portfolio
 
-Your *Portfolio* is organized into catalogs—*Agents*, *APIs*, *MCP Servers*, *LLM Proxies*, and *Gateways*. Each catalog holds the services (or gateway entries) your organization registered or imported so you can govern, monitor, and deploy them from one place.
+Add services to your portfolio to manage lifecycle and policy for that integration. Your *Portfolio* is organized into catalogs—*Agents*, *APIs*, *MCP Servers*, *LLM Proxies*, and *Gateways*. Each catalog holds the services (or gateway entries) your organization registered or imported so you can govern, monitor, and deploy them from one place.
 
 This topic summarizes how APIs, agents, MCP servers, and LLM proxies get into those catalogs. For step-by-step procedures, use the topics linked in the sections.
 
@@ -8,7 +8,7 @@ This topic summarizes how APIs, agents, MCP servers, and LLM proxies get into th
 
 [cols="1,2",options="header"]
 |===
-|Approach |What happens
+|Approach |What Happens
 
 |xref:omni-connect-providers-to-add-services.adoc[]
 |You add a provider scanner from *Home* or from a catalog in *Portfolio*. Scans discover services on supported cloud platforms and register them in the matching catalog.
