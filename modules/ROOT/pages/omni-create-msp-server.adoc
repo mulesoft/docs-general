@@ -1,4 +1,4 @@
 = Creating an MCP Server
 
-An MCP server exposes MCP capabilities (for example tools and resources) to connected clients. You add it to Portfolio to manage lifecycle and policy for that integration.
+Creating an MCP server means building a new MCP implementation (for example, by transcoding an existing REST API) or creating a runtime deployment where your environment supports it. Adding an MCP server to *Portfolio* is different: it registers an existing MCP server so teams can manage lifecycle, governance, monitoring, and related operations for that integration.
 
