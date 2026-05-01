@@ -11,7 +11,7 @@ You still rely on MuleSoft Anypoint Platform for API and integration work, such 
 Unified Relationships Across Entity Types:: *Overview* and graph-style context show how agents, MCP servers, LLMs, APIs, and gateways connect. You reason about dependencies and impact more easily than when each silo lives only in its legacy console.
 Governance Framed for AI As Well As APIs:: You apply and review governance across domains such as access and security, performance and cost, data privacy and integrity, and compliance and observability, aligned to the asset you're viewing. Policy and conformance work stays next to the asset instead of only in a separate API-only mental model.
 Cost and Usage Signals for AI Operations:: The experience includes cost management tooling aimed at portfolio spend, including visibility into token usage and optimization angles that matter for MCP servers and related AI paths. Use it when you need instance-level usage context tied to the same catalog as the rest of the portfolio.
-Instance-Level Policy Control:: For instances backed by Flex Gateway where the product supports it, the experiencesurfaces instance-level governance, including options to tune policy order and draw from a named policy catalog. Use that when you need fine-grained control in the portfolio UI, and keep deeper runtime-only workflows in Anypoint when the experience links you there.
+Instance-Level Policy Control:: For instances backed by Flex Gateway where the product supports it, the experience surfaces instance-level governance, including options to tune policy order and draw from a named policy catalog. Use that when you need fine-grained control in the portfolio UI, and keep deeper runtime-only workflows in Anypoint when the experience links you there.
 Provider Breadth for AI Connections:: *Platform* includes *Providers* and related configuration so the experience can connect AI and integration assets across multiple vendors, such as AWS Bedrock and Google Vertex AI, in addition to your existing MuleSoft footprint. That supports multi-vendor AI stacks without forcing each vendor's console to be your only view.
 Managed and unmanaged instances:: The experience supports creating managed instances on Flex Gateway when you want full support paths including authentication and monitoring, or unmanaged-style instances when you want a lighter footprint. Pick the model per asset and gateway strategy.
 Assistant Across the Portfolio:: The in-product assistant targets setup, questions, and recommendations across the assets the experience tracks. The classic Anypoint Platform control plane doesn't center that same assistant-led experience.
@@ -19,7 +19,7 @@ Assistant Across the Portfolio:: The in-product assistant targets setup, questio
 
 == What to Manage Where
 
-The enhanced MuleSoft experience and Anypoint Platform each offer distinct capabilities that can guide where you perform different tasks. Understanding each platforms strengths helps you pick the right environment and still combine tools when a workflow spans both.
+The enhanced MuleSoft experience and Anypoint Platform each offer distinct capabilities that can guide where you perform different tasks. Understanding each platform's strengths helps you pick the right environment and still combine tools when a workflow spans both.
 
 [cols="1,1,2a,2a",options="header"]
 |===
