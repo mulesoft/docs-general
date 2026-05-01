@@ -61,9 +61,9 @@ The page is organized into tabs. The following table lists each tab, what it sho
 == See Also
 
 * xref:omni-overview.adoc[]
-* xref:omni-adding-services-to-portfolio.adoc[]
-* xref:omni-adding-instances.adoc[Adding Instances to a Service]
-* xref:omni-adding-policies.adoc[Adding Policies to a Service]
-* xref:omni-adding-monitoring.adoc[Adding Monitoring to a Service]
-* xref:omni-adding-governance.adoc[Adding Governance to a Service]
-* xref:omni-adding-versions.adoc[Adding Versions to a Service]
+* xref:omni-add-services-to-portfolio.adoc[]
+* xref:omni-add-instances.adoc[Add Instances to a Service]
+* xref:omni-add-policies.adoc[Add Policies to a Service]
+* xref:omni-add-monitoring.adoc[Add Monitoring to a Service]
+* xref:omni-add-governance.adoc[Add Governance to a Service]
+* xref:omni-add-versions.adoc[Add Versions to a Service]

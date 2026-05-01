@@ -1,4 +1,4 @@
-= Managing Scanners
+= Manage Scanners
 
 Once scanners are configured, your team runs them day to day: starting discovery when needed, reading run history, updating schedules and credentials, and removing scanners that are no longer in use. Most of that work happens under *Providers*, where your organization lists provider connections, scanners, and scan activity in one place.
 
@@ -20,7 +20,7 @@ Scanners typically run on a schedule you or an administrator configured, or manu
 
 == See Also
 
-* xref:omni-adding-scanners-from-providers.adoc[]
-* xref:omni-connecting-providers-to-add-services.adoc[]
-* xref:omni-adding-services-to-portfolio.adoc[]
-* xref:omni-viewing-service-details.adoc[]
+* xref:omni-add-scanners-from-providers.adoc[]
+* xref:omni-connect-providers-to-add-services.adoc[]
+* xref:omni-add-services-to-portfolio.adoc[]
+* xref:omni-view-service-details.adoc[]

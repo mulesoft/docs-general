@@ -1,4 +1,4 @@
-= Monitoring Your Services
+= Monitor Your Services
 
 Monitoring helps you see whether the services in your portfolio—and the paths that carry their traffic—are healthy, performant, and stable over time. You work from service context (what a single API, agent, MCP server, LLM proxy, or gateway is doing) and, when your administrator enables it, from broader observability surfaces that sit alongside *Portfolio* and *Governance*.
 
@@ -30,7 +30,7 @@ The system relies on Anypoint Platform access control. Roles such as *Monitoring
 
 == See Also
 
-* xref:omni-overview.adoc]
+* xref:omni-overview.adoc[]
 * xref:omni-start-home.adoc[]
-* xref:omni-viewing-service-details.adoc[]
-* xref:omni-adding-services-to-portfolio.adoc[]
+* xref:omni-view-service-details.adoc[]
+* xref:omni-add-services-to-portfolio.adoc[]

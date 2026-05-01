@@ -1,0 +1,26 @@
+= View Token Usage and Response Performance
+
+Token usage and model response characteristics help you understand cost drivers and quality for LLM-backed services in your portfolio. When the enhanced experience surfaces these signals, you can compare traffic patterns across environments and tune governance controls your organization adopted.
+
+Charts and tables appear only when your tenant connects the right data sources and your service type supports the metrics. If a view is empty, confirm with your administrator that usage telemetry is flowing and that your account has access.
+
+== Where These Signals Appear
+
+* *Governance* > *Cost Management* — Organization- or strategy-level views of token usage and related spend indicators when your administrator enabled cost tooling.
+* Service detail pages — Some LLM proxies and related services expose usage or performance summaries on the *Overview* tab or dedicated analytics areas your release provides.
+* *Observability* — When configured, dashboards or reports may aggregate token and latency series alongside other runtime signals.
+
+Navigation labels can differ; follow the UI your business group was assigned.
+
+== How You Use the Data
+
+* **Cost optimization** — Identify high-volume tools, models, or routes so you can apply xref:omni-create-governance-strategies.adoc[strategies] such as tool mapping or sanitization where supported.
+* **Performance triage** — Correlate spikes in latency or errors with deployments, policy changes, or upstream model behavior.
+* **Planning** — Share stable trends with finance and platform teams when you forecast capacity or licensing needs.
+
+== See Also
+
+* xref:omni-overview.adoc[]
+* xref:omni-create-governance-strategies.adoc[]
+* xref:omni-monitor-your-services.adoc[]
+* xref:omni-view-detailed-metrics-for-services.adoc[]

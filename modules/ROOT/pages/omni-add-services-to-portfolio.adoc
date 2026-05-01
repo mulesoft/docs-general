@@ -1,4 +1,4 @@
-= Adding Services to Your Portfolio
+= Add Services to Your Portfolio
 
 Your *Portfolio* is organized into catalogs—*Agents*, *APIs*, *MCP Servers*, *LLM Proxies*, and *Gateways*. Each catalog holds the services (or gateway entries) your organization registered or imported so you can govern, monitor, and deploy them from one place.
 
@@ -10,10 +10,10 @@ This topic summarizes how APIs, agents, MCP servers, and LLM proxies get into th
 |===
 |Approach |What happens
 
-|xref:omni-connecting-providers-to-add-services.adoc[]
+|xref:omni-connect-providers-to-add-services.adoc[]
 |You add a provider scanner from *Home* or from a catalog in *Portfolio*. Scans discover services on supported cloud platforms and register them in the matching catalog.
 
-|xref:omni-registering-services-manually.adoc[]
+|xref:omni-register-services-manually.adoc[]
 |You start an *Add …* workflow from *Home* or from the catalog for that service type. You supply metadata, specifications, endpoints, or cards to register the service without a provider scanner.
 |===
 
@@ -40,13 +40,13 @@ Register with an MCP URL or a schema file, or connect an MCP server provider.
 *LLM proxies*::
 Register manually by configuring a gateway and routing strategy, or use provider flows your tenant exposes for LLM proxies.
 
-For step-by-step instructions for any of these types, see xref:omni-registering-services-manually.adoc[] and xref:omni-connecting-providers-to-add-services.adoc[C].
+For step-by-step instructions for any of these types, see xref:omni-register-services-manually.adoc[] and xref:omni-connect-providers-to-add-services.adoc[C].
 
 Scanners and manual flows can differ by entitlement and release; if a path is missing in your UI, confirm with your administrator.
 
 == See Also
 
-* xref:omni-connecting-providers-to-add-services.adoc[]
-* xref:omni-registering-services-manually.adoc[]
-* xref:omni-adding-scanners-from-providers.adoc[]
-* xref:omni-viewing-service-details.adoc[]
+* xref:omni-connect-providers-to-add-services.adoc[]
+* xref:omni-register-services-manually.adoc[]
+* xref:omni-add-scanners-from-providers.adoc[]
+* xref:omni-view-service-details.adoc[]

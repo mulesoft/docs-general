@@ -1,0 +1,30 @@
+= Creating Governance Strategies
+
+Governance strategies bundle the rules and controls your organization wants to enforce across agents, APIs, MCP servers, LLM proxies, and gateways. They connect policy intent to conformance reporting, cost management, and runtime behavior so teams can align releases with risk and compliance targets.
+
+Strategy authoring is available when your tenant includes *Governance* capabilities and your account has the appropriate administrator role. Exact rule catalogs and scopes depend on your organization's configuration.
+
+== Open Governance Strategy Workflows
+
+. Sign in through your organization's entry path and open *Governance*.
+. Use the area your UI labels for strategies or organization governance (names can vary by release).
+. Create a strategy, attach the domains your organization uses—such as access and security, data privacy, performance and cost, or compliance and observability—and map them to the services or scopes your administrators approved.
+
+Work with your governance lead so strategy changes match change-management processes outside the product.
+
+== Tie Strategies to Day-to-Day Operations
+
+* Apply policies at the service or instance level from *Portfolio* so runtime traffic reflects the strategy. See xref:omni-view-service-details.adoc[] for where policies appear on a service.
+* Review xref:omni-overview.adoc[conformance reporting] on supported catalog types to confirm rules pass after you update a strategy or deployment.
+* Use cost-related controls where the experience exposes them—for example under *Governance* > *Cost Management* when your tenant enables token and spend signals.
+
+== Permissions (high level)
+
+Creating governance strategies typically requires *Governance Administrator*. Viewing reports may be available to *Governance Viewer* or *Governance Administrator* depending on how your organization mapped roles.
+
+== See Also
+
+* xref:omni-overview.adoc[]
+* xref:omni-start-home.adoc#permissions[Enhanced Experience Permissions]
+* xref:omni-view-service-details.adoc[]
+* xref:omni-view-token-usage-response-performance.adoc[]

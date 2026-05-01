@@ -1,0 +1,31 @@
+= Creating and Managing Instances
+
+Instances represent how a service runs in a specific environment—for example production or sandbox—and how traffic reaches it through gateways or runtimes your organization manages. Creating the right instance type helps you balance governance, monitoring, and operational overhead.
+
+Managed paths through MuleSoft Flex Gateway typically expose richer policy and monitoring integration when your tenant supports them. Unmanaged or external paths remain valid when that matches your operating model. *Gateways* in *Portfolio* do not use an *Instances* tab the way APIs and agents do; use gateway-specific flows your UI exposes.
+
+== Open the Instances Experience
+
+. In *Portfolio*, open the catalog for the service (*APIs*, *Agents*, *MCP Servers*, or *LLM Proxies*).
+. Open the service to reach its detail page.
+. Select the *Instances* tab.
+. Use the add or edit controls your organization enabled to create a new instance or change an existing one.
+
+Field names, required metadata, and gateway choices depend on service type and what your administrator configured.
+
+== After You Create or Change an Instance
+
+* Apply or verify policies on the service or instance so access and traffic rules match your governance goals. Use the *Policies* tab described in xref:omni-view-service-details.adoc[].
+* Review xref:omni-monitor-your-services.adoc[monitoring] on the service or instance when metrics are available for the path you selected.
+* Coordinate with platform owners if DNS, certificates, or upstream routing must change outside the product.
+
+== Permissions (high level)
+
+Creating instances uses Anypoint Platform permissions such as *API Creator* for API-related flows. Viewing or editing instance configuration requires the matching view or edit permissions for API configuration. Your internal access guide lists the exact roles your organization mapped.
+
+== See Also
+
+* xref:omni-overview.adoc[]
+* xref:omni-view-service-details.adoc[]
+* xref:omni-add-services-to-portfolio.adoc[]
+* xref:omni-monitor-your-services.adoc[]

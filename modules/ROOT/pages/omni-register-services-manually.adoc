@@ -1,8 +1,8 @@
-= Registering Services Manually
+= Register Services Manually
 
 Manual registration adds a service to your portfolio when you already have the metadata, specification, endpoint, or card the new experience needs—without running a provider scan. You start from *Home* or from the catalog for that service type in *Portfolio*; completed registrations appear in the matching catalog.
 
-For how manual registration fits with connecting providers, see xref:omni-adding-services-to-portfolio.adoc[].
+For how manual registration fits with connecting providers, see xref:omni-add-services-to-portfolio.adoc[].
 
 == Where You Start
 
@@ -46,6 +46,6 @@ Manual LLM proxy registration is a two-part configuration: you associate the pro
 
 == See Also
 
-* xref:omni-adding-services-to-portfolio.adoc[]
-* xref:omni-connecting-providers-to-add-services.adoc[]
-* xref:omni-viewing-service-details.adoc[]
+* xref:omni-add-services-to-portfolio.adoc[]
+* xref:omni-connect-providers-to-add-services.adoc[]
+* xref:omni-view-service-details.adoc[]

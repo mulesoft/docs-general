@@ -1,0 +1,28 @@
+= Connect the Enhanced Experience to Claude Desktop
+
+Some organizations connect Claude Desktop (or similar assistants) to the enhanced MuleSoft experience so developers can jump from conversational workflows into governed catalogs and policies without leaving their preferred environment. Your IT team controls whether this integration is available, which OAuth scopes apply, and which actions the assistant may initiate on your behalf.
+
+This topic summarizes what you need from your administrator; it does not replace your organization's internal setup guide or Anthropic's client documentation.
+
+== Prerequisites
+
+* A supported Claude Desktop release and any enterprise controls your company applies to assistant software.
+* Network access from your workstation to both the assistant vendor endpoints and MuleSoft endpoints your security team approved.
+* An Anypoint account with permissions appropriate for the tasks you plan to run after you deep link into the enhanced experience.
+
+== What Your Administrator Configures
+
+* **Identity and consent** — Map your Anypoint identity to the assistant context and document which business groups may use the integration.
+* **Allowed actions** — Decide whether the workflow is read-only (for example opening catalog links) or may trigger guarded operations, then enforce that with roles and internal process.
+
+== Use the Integration Day to Day
+
+Follow the internal instructions your platform team published—typically a starter prompt, a packaged connector, or a bookmark that opens the enhanced experience with the right query parameters. When you land in the browser, complete any additional sign-in or step-up authentication your organization requires.
+
+If the connection stops working after a client or policy update, revalidate certificates, proxy settings, and token expiry with your administrators before opening a support case.
+
+== See Also
+
+* xref:omni-start-home.adoc[]
+* xref:omni-access-experience-from-slack.adoc[]
+* xref:omni-overview.adoc[]
