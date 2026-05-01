@@ -1,6 +1,6 @@
 = Adding Scanners from Providers
 
-A **scanner** is the configured link between the system and a **supported cloud provider** so discovery jobs can find **services** (such as APIs, agents, and MCP servers) and register them in the right *Portfolio* catalogs. Adding a scanner is how you turn on—or extend—that automated discovery for your organization.
+A scanner is the configured link between the system and a supported cloud provider so discovery jobs can find **services** (such as APIs, agents, and MCP servers) and register them in the right *Portfolio* catalogs. Adding a scanner is how you turn on—or extend—that automated discovery for your organization.
 
 For how provider connection and catalogs fit together, see xref:omni-connecting-providers-to-add-services.adoc[] and xref:omni-adding-services-to-portfolio.adoc[].
 
@@ -11,21 +11,21 @@ For how provider connection and catalogs fit together, see xref:omni-connecting-
 * **Stay aligned with the provider** — Scheduled or on-demand scans pick up releases and configuration drift according to the options your administrator allows.
 
 == Where You Open the Scanner Flow
-The system exposes the same underlying **connect-and-configure** wizard from more than one place; the label depends on context:
+The system exposes the same underlying connect-and-configure wizard from more than one place; the label depends on context:
 
-* *Home* — Start from the general *Add Service* / *Add Services* area and choose the path that connects a provider and defines a scanner (often *Connect to Provider* or equivalent wording).
+* *Home* — Start from the general *Add Services* area and choose the path that connects a provider and defines a scanner (*Connect to Provider*).
 * *Providers* — Use the area dedicated to provider and scanner management when your navigation includes it; you add or refine scanners alongside other provider work.
-* *Portfolio* — Open the catalog that matches the service type you care about (*Agents*, *APIs*, *MCP Servers*, and others your tenant supports). Use that catalog’s **add** control—the label usually reflects the type (for example *Add API*)—then choose provider connection when you intend to discover into that catalog.
+* *Portfolio* — Open the catalog that matches the service type you care about (*Agents*, *APIs*, *MCP Servers*, and others your tenant supports). Use that catalog’s add control—the label usually reflects the type (for example *Add API*)—then choose provider connection when you intend to discover into that catalog.
 
 Exact strings can vary by release; follow the UI your organization ships.
 
 == What You Are Configuring
 
-Regardless of entry point, adding a scanner is about **establishing trust and scope**: which provider platform to reach, how the system authenticates, how you validate connectivity, and how the scanner is **named and scheduled** (or otherwise triggered) so discovery runs on a basis your team expects. Saving the configuration activates the scanner for the catalogs and entitlements your administrator enabled.
+Regardless of entry point, adding a scanner is about establishing trust and scope: which provider platform to reach, how the system authenticates, how you validate connectivity, and how the scanner is named and scheduled (or otherwise triggered) so discovery runs on a basis your team expects. Saving the configuration activates the scanner for the catalogs and entitlements your administrator enabled.
 
 == After the Scanner Runs
 
-When the scanner is active, discovery results are applied according to its settings and your organization’s rules. You review outcomes on the *Providers* experience and on **scanner detail** pages, and you manage discovered **services** from the relevant *Portfolio* catalogs.
+When the scanner is active, discovery results are applied according to its settings and your organization’s rules. You review outcomes on the *Providers* experience and on scanner detail pages, and you manage discovered services from the relevant *Portfolio* catalogs.
 
 For ongoing operations (pause, edit, or delete), see xref:omni-managing-scanners.adoc[].
 

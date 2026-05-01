@@ -1,12 +1,12 @@
 = Connecting to Providers to Add Services
 
-Connecting a **provider** lets the system run **scanners** against supported cloud platforms, **discover** services (such as agents, APIs, and MCP servers), and **register** them in the matching catalog in *Portfolio*. You supply credentials and scanner metadata so the integration is repeatable and auditable.
+Connecting a provider lets the system run scanners against supported cloud platforms, discover services (such as agents, APIs, and MCP servers), and register them in the matching catalog in *Portfolio*. You supply credentials and scanner metadata so the integration is repeatable and auditable.
 
 You can start the flow from *Home* or from a specific catalog in *Portfolio*. For how this fits with manual registration, see xref:omni-adding-services-to-portfolio.adoc[]. For creating and tuning scanners themselves, see xref:omni-adding-scanners-from-providers.adoc[].
 
 == Why Use Provider Connection
 
-Provider connection is for teams that maintain services in an external platform and want those services to **appear automatically** in your portfolio catalogs after authentication and discovery, instead of registering each one by hand.
+Provider connection is for teams that maintain services in an external platform and want those services to appear automatically in your portfolio catalogs after authentication and discovery, instead of registering each one by hand.
 
 == Where You Start
 

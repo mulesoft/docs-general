@@ -4,7 +4,7 @@ Manual registration adds a service to your portfolio when you already have the m
 
 For how manual registration fits with connecting providers, see xref:omni-adding-services-to-portfolio.adoc[Adding Services to Your Portfolio].
 
-== Where you start
+== Where You start
 
 * *Home* — Open *Add Service* (or *Add Services*, depending on your release), choose the service type, then choose manual registration when the UI offers it.
 * *Portfolio* — Open the *Agents*, *APIs*, *MCP Servers*, or *LLM Proxies* catalog, use the add control for that type (for example *Add API*), and choose *Register Manually*.

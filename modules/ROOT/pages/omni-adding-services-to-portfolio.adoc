@@ -21,7 +21,7 @@ Gateways follow the same entry points; gateway-specific behavior is covered in t
 
 == Where You Start the Workflow
 
-* *Home* — Use *Add Services to open provider connection or manual registration, then pick the service type.
+* *Home* — Use *Add Services* to open provider connection or manual registration, then pick the service type.
 * *Portfolio* — Open the *Agents*, *APIs*, *MCP Servers*, or *LLM Proxies* catalog. Use the add control for that type (labels such as *Add API* or *Add Agent*), then choose *Connect to Provider* or *Register Manually*.
 
 Labels can vary by catalog; match what you see in the UI.
