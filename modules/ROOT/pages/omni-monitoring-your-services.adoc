@@ -20,7 +20,7 @@ Navigation labels and depth vary by entitlement and release; follow the UI your 
 
 == What Kinds of Signals You Typically See
 
-The system emphasizes runtime health for managed integration paths—for example latency, error rates, and request volume when Omni surfaces Flex Gateway data for routes your team operates under policy. Not every catalog type exposes the same charts; some services show richer series only after you complete instance* setup or connect the observability backend your administrator approved.
+The system emphasizes runtime health for managed integration paths—for example latency, error rates, and request volume when the new experience surfaces Flex Gateway data for routes your team operates under policy. Not every catalog type exposes the same charts; some services show richer series only after you complete instance* setup or connect the observability backend your administrator approved.
 
 If a tab is missing, confirm with your administrator that monitoring data is flowing for that environment and that your account has the right permissions.
 

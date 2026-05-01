@@ -1,7 +1,7 @@
-= MuleSoft Omni
+= Enhanced MuleSoft Experience
 :page-article-style: learning-map
 
-MuleSoft Omni helps you manage, optimize, and govern a multi-agent ecosystem from one place. Work with agents, APIs, MCP servers, LLMs, and gateways as a single portfolio. View asset relationships, apply governance and cost discipline, and act on observability signals instead of working in separate silos. Omni pairs this portfolio view with an in-product assistant to connect integrations, tune configurations, and get answers in context.
+The enhanced MuleSoft experience helps you manage, optimize, and govern a multi-agent ecosystem from one place. Work with agents, APIs, MCP servers, LLMs, and gateways as a single portfolio. View asset relationships, apply governance and cost discipline, and act on observability signals instead of working in separate silos. The experience pairs this portfolio view with an in-product assistant to connect integrations, tune configurations, and get answers in context.
 
 * Register agents, MCP servers, and LLM proxies from any provider or registry.
 * Monitor latency, cost, invocations, and failures in real time.
@@ -10,14 +10,14 @@ MuleSoft Omni helps you manage, optimize, and govern a multi-agent ecosystem fro
 
 image::omni-pillars.png[]
 
-The end-to-end journey for Omni consists of various tasks, each with links to relevant content to assist you in completing them.
+The end-to-end journey for the experience consists of these tasks, each with links to relevant content to assist you in completing them.
 
 [.lm-table, cols="1a,1a,1a", grid="none"]
 |===
 | image::lm_start.png[]
-[.lm-bold]##Learn About Omni##
+[.lm-bold]##Learn About Enhanced MuleSoft Experience##
 
-Omni helps you manage, optimize, and govern a multi-agent ecosystem from one place.
+The experience helps you manage, optimize, and govern a multi-agent ecosystem from one place.
 
 //- ToDo [Video]
 //- ToDo [Trailhead]

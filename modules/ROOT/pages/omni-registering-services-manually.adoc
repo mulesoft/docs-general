@@ -1,10 +1,10 @@
 = Registering Services Manually
 
-Manual registration adds a service to your portfolio when you already have the metadata, specification, endpoint, or card Omni needs—without running a provider scan. You start from *Home* or from the catalog for that service type in *Portfolio*; completed registrations appear in the matching catalog.
+Manual registration adds a service to your portfolio when you already have the metadata, specification, endpoint, or card the new experience needs—without running a provider scan. You start from *Home* or from the catalog for that service type in *Portfolio*; completed registrations appear in the matching catalog.
 
 For how manual registration fits with connecting providers, see xref:omni-adding-services-to-portfolio.adoc[].
 
-== Where You start
+== Where You Start
 
 * *Home* — Open *Add Service* (or *Add Services*, depending on your release), choose the service type, then choose manual registration when the UI offers it.
 * *Portfolio* — Open the *Agents*, *APIs*, *MCP Servers*, or *LLM Proxies* catalog, use the add control for that type (for example *Add API*), and choose *Register Manually*.
@@ -19,7 +19,7 @@ You register an agent by supplying one of the following:
 * **Uploaded card** — Provide an agent card file you already have.
 * **No card** — Register with metadata and connection details when you are not using a card workflow.
 
-The connection gets validated, lets you review metadata, and saves the agent into the *Agents* catalog.
+The connection gets validated, makes possible to review metadata, and saves the agent into the *Agents* catalog.
 
 == APIs
 
