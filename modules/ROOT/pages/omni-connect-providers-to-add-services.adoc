@@ -20,7 +20,7 @@ Labels can vary by catalog and release; match what you see in the UI.
 Across *Home* and *Portfolio* entry points, provider connection generally covers the same kinds of decisions:
 
 * **Which provider or platform** to target for discovery and import.
-* **Credentials and authentication** so teh system can reach the provider safely and securely.
+* **Credentials and authentication** so the system can reach the provider safely and securely.
 * **Connection validation** so you know discovery can run against live data.
 * **Scanner identity and settings**—name, description, and options your administrator expects—before you save the connection.
 
