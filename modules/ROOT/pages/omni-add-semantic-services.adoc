@@ -11,6 +11,8 @@ At a high level, adding semantic services means:
 * Operating the service as part of your broader governance and monitoring model so behavior remains reliable as traffic and use cases evolve.
 
 == Create a Semantic Service
+In the navigation, under *Portfolio*, expand *LLM Proxies*, and select *Semantic Services*.
+
 Create a semantic service by selecting the scale model that matches your traffic profile and operational needs.
 
 * *Basic scale* — Best for smaller topic sets (up to 6 topics and 10 utterances per topic). Uses managed internal LLM proxy configuration.
