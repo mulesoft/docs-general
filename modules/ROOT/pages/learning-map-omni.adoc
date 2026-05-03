@@ -58,6 +58,7 @@ Monitor latency, cost, invocations, and failures in real time.
 Secure instances with compatible policies across your entire registry.
 
 - xref:omni-add-instances.adoc[]
+- xref:omni-create-governance-strategies.adoc[]
 
 | image::lm_analyze_1.png[]
 [.lm-bold]##Transcode##
