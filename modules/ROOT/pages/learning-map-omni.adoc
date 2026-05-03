@@ -27,7 +27,16 @@ The experience helps you manage, optimize, and govern a multi-agent ecosystem fr
 
 Register agents, MCP servers, and LLM proxies from any provider or registry.
 
-//- xref:
+- xref:omni-adding-services-to-portfolio.adoc[]
+- xref:omni-connect-providers-to-add-services.adoc[]
+- xref:omni-register-services-manually.adoc[]
+- xref:omni-create-mcp-server.adoc[]
+- xref:omni-add-semantic-services.adoc[]
+- xref:omni-add-a-gateway.adoc[]
+- xref:omni-view-service-details.adoc[]
+- xref:omni-add-scanners-from-providers.adoc[]
+
+
 
 | image::lm_build_1.png[]
 [.lm-bold]##Monitor##
@@ -51,7 +60,7 @@ Secure instances with compatible policies across your entire registry.
 
 Transcode existing REST APIs into MCP servers instantly.
 
-//- xref:
+- xref:omni-create-mcp-server.adoc[]
 
 
 |===
