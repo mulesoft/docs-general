@@ -6,7 +6,7 @@ For how manual registration fits with connecting providers, see xref:omni-add-se
 
 == Where You Start
 
-* *Home* — Open *Add Service* (or *Add Services*, depending on your release), choose the service type, then choose manual registration when the UI offers it.
+* *Home* — Open *Add Services*, choose the service type, then choose manual registration when the UI offers it.
 * *Portfolio* — Open the *Agents*, *APIs*, *MCP Servers*, or *LLM Proxies* catalog, use the add control for that type (for example *Add API*), and choose *Register Manually*.
 
 Exact labels can vary by release; follow the options your tenant shows.
@@ -27,7 +27,7 @@ Manual API registration expects an API specification and a way to reach a runnin
 
 * **Link to spec** — Reference a specification by URL so the system ingests it.
 * **Upload spec** — Upload a specification file from your environment.
-* **Instance-first** — Supply instance details when your flow doesn't start from a standalone spec file.
+* **Use instance only** — Supply instance details when your flow doesn't start from a standalone spec file.
 
 The system uses the spec to discover endpoints, parameters, and related metadata where applicable, then writes the API into the *APIs* catalog after you confirm.
 
