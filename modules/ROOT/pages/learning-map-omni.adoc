@@ -33,7 +33,7 @@ The experience helps you manage, optimize, and govern a multi-agent ecosystem fr
 
 Register agents, APIs, and MCP servers from any provider or registry, and add LLM proxies and gateways.
 
-- xref:omni-adding-services-to-portfolio.adoc[]
+- xref:omni-add-services-to-portfolio.adoc[]
 - xref:omni-connect-providers-to-add-services.adoc[]
 - xref:omni-register-services-manually.adoc[]
 - xref:omni-create-mcp-server.adoc[]
