@@ -40,7 +40,10 @@ Register with an MCP URL or a schema file, or connect an MCP server provider.
 *LLM proxies*::
 Register manually by configuring a gateway and routing strategy, or use provider flows your tenant exposes for LLM proxies.
 
-For step-by-step instructions for any of these types, see xref:omni-register-services-manually.adoc[] and xref:omni-connect-providers-to-add-services.adoc[].
+*Gateways*::
+Register manually by configuring a gateway and routing strategy, or use provider flows your tenant exposes for gateways.
+
+For more information about registering any of these types, see xref:omni-register-services-manually.adoc[] and xref:omni-connect-providers-to-add-services.adoc[].
 
 Scanners and manual flows can differ by entitlement and release; if a path is missing in your UI, confirm with your administrator.
 
