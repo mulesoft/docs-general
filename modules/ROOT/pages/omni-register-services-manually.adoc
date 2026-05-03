@@ -42,7 +42,19 @@ Successful registration stores the MCP server in the *MCP Servers* catalog.
 
 == LLM proxies
 
-Manual LLM proxy registration is a two-part configuration: you associate the proxy with a gateway (and related deployment context), then define routing (and any provider connections your flow requires). When the wizard completes, the LLM proxy appears in the *LLM Proxies* catalog.
+LLM proxy registration is a two-part configuration: you associate the proxy with a gateway (and related deployment context), then define routing (and any provider connections your flow requires). When the wizard completes, the LLM proxy appears in the *LLM Proxies* catalog.
+
+== Gateways
+
+Register gateways manually when you want to add an existing gateway runtime to *Portfolio* without using provider discovery. This flow establishes gateway identity, connection context, and metadata so teams can govern and monitor gateway traffic in Omni.
+
+At a high level, manual gateway registration includes:
+
+* Defining gateway identity and descriptive metadata used in catalog and governance views.
+* Providing environment and runtime connection details so the gateway maps to your organization topology.
+* Validating registration inputs before saving so the gateway is ready for operational workflows.
+
+After registration, the gateway appears in the *Gateways* catalog in *Portfolio*, where teams can review details and apply supported governance workflows.
 
 == See Also
 

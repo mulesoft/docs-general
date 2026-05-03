@@ -25,7 +25,7 @@ The experience helps you manage, optimize, and govern a multi-agent ecosystem fr
 | image::lm_explore_1.png[]
 [.lm-bold]##Register##
 
-Register agents, MCP servers, and LLM proxies from any provider or registry.
+Register agents, APIs, and MCP servers from any provider or registry, and add LLM proxies and gateways.
 
 - xref:omni-adding-services-to-portfolio.adoc[]
 - xref:omni-connect-providers-to-add-services.adoc[]
@@ -43,7 +43,11 @@ Register agents, MCP servers, and LLM proxies from any provider or registry.
 
 Monitor latency, cost, invocations, and failures in real time.
 
-//- xref:
+- xref:omni-monitor-your-services.adoc[]
+- xref:omni-view-token-usage-response-performance.adoc[]
+- xref:omni-view-detailed-metrics-for-services.adoc[]
+- xref:omni-configure-notifications-for-alerts.adoc[]
+
 |===
 
 [.lm-table, cols="1a,1a", width="66%", grid="none"]
@@ -53,7 +57,7 @@ Monitor latency, cost, invocations, and failures in real time.
 
 Secure instances with compatible policies across your entire registry.
 
-//- xref:
+- xref:omni-add-instances.adoc[]
 
 | image::lm_analyze_1.png[]
 [.lm-bold]##Transcode##

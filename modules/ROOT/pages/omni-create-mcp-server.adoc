@@ -19,7 +19,7 @@ The create flow has this information:
 . In Select Source, Instance & Tools, choose the APIs or SaaS systems you want to expose, select the source instance/version, and choose the tools to publish (including optional read-only filtering).
 . In SaaS Credentials, provide the credentials required for the selected sources so the MCP server can call them securely.
 . In Review, validate the selected sources, tools, and credential mappings, then complete creation.
-+
+
 == After You Create an MCP Server
 After saving, the MCP server is created and available for governance and operations. You can then register or confirm the MCP server in *Portfolio* so it appears in the *MCP Servers* catalog for ongoing governance, monitoring, and operations.
 
