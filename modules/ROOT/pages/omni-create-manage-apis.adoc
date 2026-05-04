@@ -11,8 +11,6 @@ To create an API in Omni, add it to the APIs catalog either by registering it ma
 * *Register manually* – Upload a specification file to define a new API.
 * *Connect to provider* – Discover and import APIs from external platforms. See xref:omni-connect-providers-to-add-services.adoc[].
 
-Creating an API defines its structure and makes it available in the portfolio for management and operations.
-
 === Register an API Manually
 
 When you register an API manually, you provide a specification file that defines the API structure, including endpoints, operations, and data types.
@@ -75,8 +73,6 @@ Use the *Instances* tab to:
 Each instance corresponds to a specific deployment or configuration of the API.
 
 Instances enable you to apply runtime-specific configurations and interact with APIs across different environments.
-
-API instances enable you to manage runtime behavior and interact with APIs within the unified Omni experience.
 
 == See Also
 
