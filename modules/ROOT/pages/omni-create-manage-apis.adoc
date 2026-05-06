@@ -1,12 +1,12 @@
 = Create and Manage APIs in Omni
 
-In Omni, APIs are registered as services defined by formal specifications and managed within a unified experience alongside other service types.
+In the enhanced experience, APIs are registered as services defined by formal specifications and managed within a unified experience alongside other service types.
 
 Creating an API establishes its structure and makes it available in the portfolio, while instances represent deployed or managed versions of that API across environments or providers.
 
 == Create an API
 
-To create an API in Omni, add it to the APIs catalog either by registering it manually or by connecting to a provider.
+To create an API, add it to the APIs catalog either by registering it manually or by connecting to a provider.
 
 * *Register manually* – Upload a specification file to define a new API.
 * *Connect to provider* – Discover and import APIs from external platforms. See xref:omni-connect-providers-to-add-services.adoc[].
@@ -24,7 +24,7 @@ When you register an API manually, you provide a specification file that defines
 . Upload the specification file.
 . Click *Create*.
 
-Omni supports multiple API types and specification formats:
+The experience supports multiple API types and specification formats:
 
 * REST APIs (OAS, RAML)
 * gRPC APIs (Proto files)
@@ -32,7 +32,7 @@ Omni supports multiple API types and specification formats:
 
 == View API Details
 
-After creating or selecting an API, Omni displays its details as a service with multiple views that expose its structure, runtime state, and governance status.
+After creating or selecting an API, the page displays its details as a service with multiple views that expose its structure, runtime state, and governance status.
 
 The API view is organized into tabs:
 
