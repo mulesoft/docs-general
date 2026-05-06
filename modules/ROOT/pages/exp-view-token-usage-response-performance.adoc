@@ -14,13 +14,13 @@ Navigation labels can differ; follow the UI your business group was assigned.
 
 == How You Use the Data
 
-* **Cost optimization** — Identify high-volume tools, models, or routes so you can apply xref:omni-create-governance-strategies.adoc[strategies] such as tool mapping or sanitization where supported.
+* **Cost optimization** — Identify high-volume tools, models, or routes so you can apply xref:exp-create-governance-strategies.adoc[strategies] such as tool mapping or sanitization where supported.
 * **Performance triage** — Correlate spikes in latency or errors with deployments, policy changes, or upstream model behavior.
 * **Planning** — Share stable trends with finance and platform teams when you forecast capacity or licensing needs.
 
 == See Also
 
-* xref:omni-overview.adoc[]
-* xref:omni-create-governance-strategies.adoc[]
-* xref:omni-monitor-your-services.adoc[]
-* xref:omni-view-detailed-metrics-for-services.adoc[]
+* xref:exp-overview.adoc[]
+* xref:exp-create-governance-strategies.adoc[]
+* xref:exp-monitor-your-services.adoc[]
+* xref:exp-view-detailed-metrics-for-services.adoc[]

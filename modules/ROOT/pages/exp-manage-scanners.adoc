@@ -20,7 +20,7 @@ Scanners typically run on a schedule you or an administrator configured, or manu
 
 == See Also
 
-* xref:omni-add-scanners-from-providers.adoc[]
-* xref:omni-connect-providers-to-add-services.adoc[]
-* xref:omni-add-services-to-portfolio.adoc[]
-* xref:omni-view-service-details.adoc[]
+* xref:exp-add-scanners-from-providers.adoc[]
+* xref:exp-connect-providers-to-add-services.adoc[]
+* xref:exp-add-services-to-portfolio.adoc[]
+* xref:exp-view-service-details.adoc[]

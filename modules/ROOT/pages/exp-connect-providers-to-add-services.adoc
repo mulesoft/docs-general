@@ -2,7 +2,7 @@
 
 Connecting a provider lets the system run scanners against supported cloud platforms, discover services (such as agents, APIs, and MCP servers), and register them in the matching catalog in *Portfolio*. You supply credentials and scanner metadata so the integration is repeatable and auditable.
 
-You can start the flow from *Home* or from a specific catalog in *Portfolio*. For how this fits with manual registration, see xref:omni-add-services-to-portfolio.adoc[]. For creating and tuning scanners themselves, see xref:omni-add-scanners-from-providers.adoc[].
+You can start the flow from *Home* or from a specific catalog in *Portfolio*. For how this fits with manual registration, see xref:exp-add-services-to-portfolio.adoc[]. For creating and tuning scanners themselves, see xref:exp-add-scanners-from-providers.adoc[].
 
 == Why Use Provider Connection
 
@@ -32,7 +32,7 @@ Agents, APIs, and MCP servers catalog-specific flows emphasize the service type 
 
 == See Also
 
-* xref:omni-add-services-to-portfolio.adoc[]
-* xref:omni-register-services-manually.adoc[]
-* xref:omni-add-scanners-from-providers.adoc[]
-* xref:omni-view-service-details.adoc[]
+* xref:exp-add-services-to-portfolio.adoc[]
+* xref:exp-register-services-manually.adoc[]
+* xref:exp-add-scanners-from-providers.adoc[]
+* xref:exp-view-service-details.adoc[]

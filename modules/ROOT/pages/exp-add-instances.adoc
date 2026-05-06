@@ -26,7 +26,7 @@ Creating an API establishes its structure and makes it available in the portfoli
 To create an API, add it to the APIs catalog either by registering it manually or by connecting to a provider.
 
 * *Register manually* – Upload a specification file to define a new API.
-* *Connect to provider* – Discover and import APIs from external platforms. See xref:omni-connect-providers-to-add-services.adoc[].
+* *Connect to provider* – Discover and import APIs from external platforms. See xref:exp-connect-providers-to-add-services.adoc[].
 
 ==== Register an API Manually
 
@@ -91,8 +91,8 @@ Creating instances uses Anypoint Platform permissions such as *API Creator* for 
 
 == See Also
 
-* xref:omni-add-services-to-portfolio.adoc[]
-* xref:omni-register-services-manually.adoc[]
-* xref:omni-connect-providers-to-add-services.adoc[]
-* xref:omni-view-service-details.adoc[]
-* xref:omni-monitor-your-services.adoc[]
+* xref:exp-add-services-to-portfolio.adoc[]
+* xref:exp-register-services-manually.adoc[]
+* xref:exp-connect-providers-to-add-services.adoc[]
+* xref:exp-view-service-details.adoc[]
+* xref:exp-monitor-your-services.adoc[]

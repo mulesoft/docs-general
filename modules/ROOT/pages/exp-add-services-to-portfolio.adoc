@@ -10,10 +10,10 @@ This topic summarizes how APIs, agents, MCP servers, and LLM proxies get into th
 |===
 |Approach |What Happens
 
-|xref:omni-connect-providers-to-add-services.adoc[]
+|xref:exp-connect-providers-to-add-services.adoc[]
 |You add a provider scanner from *Home* or from a catalog in *Portfolio*. Scans discover services on supported cloud platforms and register them in the matching catalog.
 
-|xref:omni-register-services-manually.adoc[]
+|xref:exp-register-services-manually.adoc[]
 |You start an *Add …* workflow from *Home* or from the catalog for that service type. You supply metadata, specifications, endpoints, or cards to register the service without a provider scanner.
 |===
 
@@ -48,11 +48,11 @@ Create a new gateway runtime by configuring a gateway and routing strategy. This
 
 Browse the marketplace catalog of pre-configured gateway options to import them into the *Gateways* catalog.
 
-For more information about registering any of these types, see xref:omni-register-services-manually.adoc[] and xref:omni-connect-providers-to-add-services.adoc[].
+For more information about registering any of these types, see xref:exp-register-services-manually.adoc[] and xref:exp-connect-providers-to-add-services.adoc[].
 
 == See Also
 
-* xref:omni-connect-providers-to-add-services.adoc[]
-* xref:omni-register-services-manually.adoc[]
-* xref:omni-add-scanners-from-providers.adoc[]
-* xref:omni-view-service-details.adoc[]
+* xref:exp-connect-providers-to-add-services.adoc[]
+* xref:exp-register-services-manually.adoc[]
+* xref:exp-add-scanners-from-providers.adoc[]
+* xref:exp-view-service-details.adoc[]

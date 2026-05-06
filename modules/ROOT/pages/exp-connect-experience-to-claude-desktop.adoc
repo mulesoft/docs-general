@@ -23,6 +23,6 @@ If the connection stops working after a client or policy update, revalidate cert
 
 == See Also
 
-* xref:omni-start-home.adoc[]
-* xref:omni-access-experience-from-slack.adoc[]
-* xref:omni-overview.adoc[]
+* xref:exp-start-home.adoc[]
+* xref:exp-access-experience-from-slack.adoc[]
+* xref:exp-overview.adoc[]

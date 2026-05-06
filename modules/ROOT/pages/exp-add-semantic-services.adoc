@@ -7,7 +7,7 @@ Use this capability when your workflows need more than static routing. With sema
 At a high level, adding semantic services means:
 
 * Defining the semantic service your organization uses for contextual matching.
-* Associating that semantic capability with the relevant Omni experience (for example LLM-related routing paths where supported).
+* Associating that semantic capability with the relevant enhanced experience (for example LLM-related routing paths where supported).
 * Operating the service as part of your broader governance and monitoring model so behavior remains reliable as traffic and use cases evolve.
 
 == Create a Semantic Service
@@ -21,7 +21,7 @@ Create a semantic service by selecting the scale model that matches your traffic
 At a high level, semantic service setup defines the embedding connection used for contextual matching:
 
 * *Embedding service provider*
-* *Service label* 
+* *Service label*
 * *Endpoint URL*
 * *Model*
 * *Authentication key*
@@ -30,6 +30,6 @@ Choose *Basic scale* for faster managed setup. Choose *Advanced scale* when you 
 
 == See Also
 
-* xref:omni-add-services-to-portfolio.adoc[]
-* xref:omni-view-service-details.adoc[]
-* xref:omni-monitor-your-services.adoc[]
+* xref:exp-add-services-to-portfolio.adoc[]
+* xref:exp-view-service-details.adoc[]
+* xref:exp-monitor-your-services.adoc[]

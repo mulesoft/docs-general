@@ -19,6 +19,6 @@ If authentication fails, confirm you are in the correct Slack workspace and that
 
 == See Also
 
-* xref:omni-start-home.adoc[]
-* xref:omni-overview.adoc[]
-* xref:omni-connect-experience-to-claude-desktop.adoc[]
+* xref:exp-start-home.adoc[]
+* xref:exp-overview.adoc[]
+* xref:exp-connect-experience-to-claude-desktop.adoc[]

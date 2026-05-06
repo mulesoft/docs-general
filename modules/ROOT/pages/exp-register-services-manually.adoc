@@ -2,7 +2,7 @@
 
 Register a service to add it to your portfolio when you already have the metadata, specification, endpoint, or card the new experience needs—without running a provider scan. You start from *Home* or from the catalog for that service type in *Portfolio*; completed registrations appear in the matching catalog.
 
-For how manual registration fits with connecting providers, see xref:omni-add-services-to-portfolio.adoc[].
+For how manual registration fits with connecting providers, see xref:exp-add-services-to-portfolio.adoc[].
 
 == Where You Start
 
@@ -46,7 +46,7 @@ LLM proxy registration is a two-part configuration: you associate the proxy with
 
 == Gateways
 
-Register gateways manually when you want to add an existing gateway runtime to *Portfolio* without using provider discovery. This flow establishes gateway identity, connection context, and metadata so teams can govern and monitor gateway traffic in Omni.
+Register gateways manually when you want to add an existing gateway runtime to *Portfolio* without using provider discovery. This flow establishes gateway identity, connection context, and metadata so teams can govern and monitor gateway traffic in the enhanced experience.
 
 At a high level, manual gateway registration includes:
 
@@ -58,6 +58,6 @@ After registration, the gateway appears in the *Gateways* catalog in *Portfolio*
 
 == See Also
 
-* xref:omni-add-services-to-portfolio.adoc[]
-* xref:omni-connect-providers-to-add-services.adoc[]
-* xref:omni-view-service-details.adoc[]
+* xref:exp-add-services-to-portfolio.adoc[]
+* xref:exp-connect-providers-to-add-services.adoc[]
+* xref:exp-view-service-details.adoc[]

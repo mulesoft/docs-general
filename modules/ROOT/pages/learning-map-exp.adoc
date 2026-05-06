@@ -8,7 +8,7 @@ The enhanced MuleSoft experience helps you manage, optimize, and govern a multi-
 * Secure instances with compatible policies across your entire registry.
 * Transcode existing REST APIs into MCP servers instantly.
 
-image::omni-pillars.png[]
+image::enhanced-experience-pillars.png[]
 
 The end-to-end journey for the experience consists of these tasks, each with links to relevant content to assist you in completing them.
 
@@ -21,11 +21,11 @@ The experience helps you manage, optimize, and govern a multi-agent ecosystem fr
 
 //- ToDo [Video]
 //- ToDo [Trailhead]
-- xref:omni-overview.adoc[]
-- xref:omni-compare.adoc[]
-- xref:omni-start-home.adoc[]
-- xref:omni-access-experience-from-slack.adoc[]
-- xref:omni-connect-experience-to-claude-desktop.adoc[]
+- xref:exp-overview.adoc[]
+- xref:exp-compare.adoc[]
+- xref:exp-start-home.adoc[]
+- xref:exp-access-experience-from-slack.adoc[]
+- xref:exp-connect-experience-to-claude-desktop.adoc[]
 
 
 | image::lm_explore_1.png[]
@@ -33,13 +33,13 @@ The experience helps you manage, optimize, and govern a multi-agent ecosystem fr
 
 Register agents, APIs, and MCP servers from any provider or registry, and add LLM proxies and gateways.
 
-- xref:omni-add-services-to-portfolio.adoc[]
-- xref:omni-connect-providers-to-add-services.adoc[]
-- xref:omni-register-services-manually.adoc[]
-- xref:omni-create-mcp-server.adoc[]
-- xref:omni-add-semantic-services.adoc[]
-- xref:omni-view-service-details.adoc[]
-- xref:omni-add-scanners-from-providers.adoc[]
+- xref:exp-add-services-to-portfolio.adoc[]
+- xref:exp-connect-providers-to-add-services.adoc[]
+- xref:exp-register-services-manually.adoc[]
+- xref:exp-create-mcp-server.adoc[]
+- xref:exp-add-semantic-services.adoc[]
+- xref:exp-view-service-details.adoc[]
+- xref:exp-add-scanners-from-providers.adoc[]
 
 
 
@@ -48,10 +48,10 @@ Register agents, APIs, and MCP servers from any provider or registry, and add LL
 
 Monitor latency, cost, invocations, and failures in real time.
 
-- xref:omni-monitor-your-services.adoc[]
-- xref:omni-view-token-usage-response-performance.adoc[]
-- xref:omni-view-detailed-metrics-for-services.adoc[]
-- xref:omni-configure-notifications-for-alerts.adoc[]
+- xref:exp-monitor-your-services.adoc[]
+- xref:exp-view-token-usage-response-performance.adoc[]
+- xref:exp-view-detailed-metrics-for-services.adoc[]
+- xref:exp-configure-notifications-for-alerts.adoc[]
 
 |===
 
@@ -62,15 +62,15 @@ Monitor latency, cost, invocations, and failures in real time.
 
 Secure instances with compatible policies across your entire registry.
 
-- xref:omni-add-instances.adoc[]
-- xref:omni-create-governance-strategies.adoc[]
+- xref:exp-add-instances.adoc[]
+- xref:exp-create-governance-strategies.adoc[]
 
 | image::lm_analyze_1.png[]
 [.lm-bold]##Transcode##
 
 Transcode existing REST APIs into MCP servers instantly.
 
-- xref:omni-create-mcp-server.adoc[]
+- xref:exp-create-mcp-server.adoc[]
 
 
 |===
@@ -78,5 +78,5 @@ Transcode existing REST APIs into MCP servers instantly.
 
 == See Also
 
-* xref:omni-start-home.adoc[]
-* xref:omni-compare.adoc[]
+* xref:exp-start-home.adoc[]
+* xref:exp-compare.adoc[]

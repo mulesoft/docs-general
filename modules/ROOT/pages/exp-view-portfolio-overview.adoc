@@ -15,11 +15,11 @@ If you do not see a catalog or a summary you expect, confirm entitlements and pe
 
 * **Coverage** — Which service types are registered and which environments or instances they map to.
 * **Health and cost signals** — Summary metrics or badges when the experience exposes them at list level (for example status or daily cost on cards).
-* **Next actions** — Entry points to add services, connect providers, or open governance and observability areas described in xref:omni-overview.adoc[].
+* **Next actions** — Entry points to add services, connect providers, or open governance and observability areas described in xref:exp-overview.adoc[].
 
 == See Also
 
-* xref:omni-overview.adoc[]
-* xref:omni-start-home.adoc[]
-* xref:omni-add-services-to-portfolio.adoc[]
-* xref:omni-view-service-details.adoc[]
+* xref:exp-overview.adoc[]
+* xref:exp-start-home.adoc[]
+* xref:exp-add-services-to-portfolio.adoc[]
+* xref:exp-view-service-details.adoc[]

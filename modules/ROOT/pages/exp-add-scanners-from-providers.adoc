@@ -2,7 +2,7 @@
 
 Add scanners from providers to enable automated discovery for your organization. A scanner is the configured link between the system and a supported cloud provider so discovery jobs can find services (such as APIs, agents, and MCP servers) and register them in the right *Portfolio* catalogs. Adding a scanner is how you turn on—or extend—that automated discovery for your organization.
 
-For how provider connection and catalogs fit together, see xref:omni-connect-providers-to-add-services.adoc[] and xref:omni-add-services-to-portfolio.adoc[].
+For how provider connection and catalogs fit together, see xref:exp-connect-providers-to-add-services.adoc[] and xref:exp-add-services-to-portfolio.adoc[].
 
 == Why Add Provider Scanners
 
@@ -27,11 +27,11 @@ Regardless of entry point, adding a scanner is about establishing trust and scop
 
 When the scanner is active, discovery results are applied according to its settings and your organization’s rules. You review outcomes on the *Providers* page and on scanner detail pages, and you manage discovered services from the relevant *Portfolio* catalogs.
 
-For ongoing operations (pause, edit, or delete), see xref:omni-manage-scanners.adoc[].
+For ongoing operations (pause, edit, or delete), see xref:exp-manage-scanners.adoc[].
 
 == See Also
 
-* xref:omni-connect-providers-to-add-services.adoc[]
-* xref:omni-manage-scanners.adoc[]
-* xref:omni-add-services-to-portfolio.adoc[]
-* xref:omni-view-service-details.adoc[]
+* xref:exp-connect-providers-to-add-services.adoc[]
+* xref:exp-manage-scanners.adoc[]
+* xref:exp-add-services-to-portfolio.adoc[]
+* xref:exp-view-service-details.adoc[]

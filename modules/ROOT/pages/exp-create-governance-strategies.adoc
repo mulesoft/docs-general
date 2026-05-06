@@ -14,8 +14,8 @@ Work with your governance lead so strategy changes match change-management proce
 
 == Tie Strategies to Day-to-Day Operations
 
-* Apply policies at the service or instance level from *Portfolio* so runtime traffic reflects the strategy. See xref:omni-view-service-details.adoc[] for where policies appear on a service.
-* Review xref:omni-overview.adoc[conformance reporting] on supported catalog types to confirm rules pass after you update a strategy or deployment.
+* Apply policies at the service or instance level from *Portfolio* so runtime traffic reflects the strategy. See xref:exp-view-service-details.adoc[] for where policies appear on a service.
+* Review xref:exp-overview.adoc[conformance reporting] on supported catalog types to confirm rules pass after you update a strategy or deployment.
 * Use cost-related controls where the experience exposes them—for example under *Governance* > *Cost Management* when your tenant enables token and spend signals.
 
 == Permissions (high level)
@@ -24,7 +24,7 @@ Creating governance strategies typically requires *Governance Administrator*. Vi
 
 == See Also
 
-* xref:omni-overview.adoc[]
-* xref:omni-start-home.adoc#permissions[Enhanced Experience Permissions]
-* xref:omni-view-service-details.adoc[]
-* xref:omni-view-token-usage-response-performance.adoc[]
+* xref:exp-overview.adoc[]
+* xref:exp-start-home.adoc#permissions[Enhanced Experience Permissions]
+* xref:exp-view-service-details.adoc[]
+* xref:exp-view-token-usage-response-performance.adoc[]

@@ -14,15 +14,15 @@ Exact steps live in Anypoint Platform documentation for API Manager and Runtime 
 
 == Relate Alerts to Portfolio Work
 
-When an alert references a service you govern in the enhanced experience, open the service from *Portfolio* and review *Monitoring*, *Policies*, and *Instances* together. xref:omni-monitor-your-services.adoc[Monitoring] explains how service-level signals relate to organization-wide observability.
+When an alert references a service you govern in the enhanced experience, open the service from *Portfolio* and review *Monitoring*, *Policies*, and *Instances* together. xref:exp-monitor-your-services.adoc[Monitoring] explains how service-level signals relate to organization-wide observability.
 
 == Permissions (high level)
 
-Managing alert subscriptions typically requires *API Manager* > *Manage API Alerts* or *Runtime Manager* > *Manage Alerts*. Viewing alerts uses the corresponding view permissions. See xref:omni-start-home.adoc#permissions[Enhanced Experience Permissions] for how those roles appear in access guides.
+Managing alert subscriptions typically requires *API Manager* > *Manage API Alerts* or *Runtime Manager* > *Manage Alerts*. Viewing alerts uses the corresponding view permissions. See xref:exp-start-home.adoc#permissions[Enhanced Experience Permissions] for how those roles appear in access guides.
 
 == See Also
 
-* xref:omni-monitor-your-services.adoc[]
-* xref:omni-view-detailed-metrics-for-services.adoc[]
-* xref:omni-start-home.adoc[]
-* xref:omni-overview.adoc[]
+* xref:exp-monitor-your-services.adoc[]
+* xref:exp-view-detailed-metrics-for-services.adoc[]
+* xref:exp-start-home.adoc[]
+* xref:exp-overview.adoc[]

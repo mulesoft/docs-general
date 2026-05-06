@@ -14,12 +14,12 @@ If you need a metric that never appears, ask your platform team whether the inte
 == Practices That Keep Metrics Useful
 
 * **Baseline after changes** — Capture before-and-after windows when you deploy instances or change policies so you can attribute shifts.
-* **Align with alerts** — Pair detailed charts with xref:omni-configure-notifications-for-alerts.adoc[alert notifications] so on-call engineers land in the right context.
+* **Align with alerts** — Pair detailed charts with xref:exp-configure-notifications-for-alerts.adoc[alert notifications] so on-call engineers land in the right context.
 * **Respect data boundaries** — Some dimensions may be redacted or aggregated for privacy; follow your organization's data-handling standards.
 
 == See Also
 
-* xref:omni-monitor-your-services.adoc[]
-* xref:omni-configure-notifications-for-alerts.adoc[]
-* xref:omni-view-service-details.adoc[]
-* xref:omni-overview.adoc[]
+* xref:exp-monitor-your-services.adoc[]
+* xref:exp-configure-notifications-for-alerts.adoc[]
+* xref:exp-view-service-details.adoc[]
+* xref:exp-overview.adoc[]
