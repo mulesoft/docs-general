@@ -49,7 +49,7 @@
       "consumedDescription": "Services with active instances.",
       "governed": "Governed",
       "governedContext": "{percent}% of managed instances",
-      "governedDescription": "Services with guardrails applied."
+      "governedDescription": "Services with controls applied."
     },
     "portfolio": {
       "agents": "Agents",
@@ -1679,7 +1679,7 @@
   "guardrailsListView": {
     "filterByTypeAriaLabel": "Filter by strategy type",
     "typeAll": "All",
-    "typeGuardrails": "Guardrails",
+    "typeGuardrails": "Controls",
     "typeAutomatedPolicies": "Automated Policies",
     "reorder": "Reorder",
     "statusAny": "Any Status",
@@ -1742,7 +1742,7 @@
     "deleting": "Deleting...",
     "deleteButton": "Delete {typeLabel}",
     "typeAutomatedPolicy": "Automated Policy",
-    "typeGuardrail": "Guardrail"
+    "typeGuardrail": "Control"
   },
   "guardrailEvaluationPanel": {
     "runEvaluation": "Run profile evaluation",
@@ -1750,13 +1750,13 @@
     "jobStatus": "Job status: {status}",
     "evaluationSummary": "{services} services · {rulesets} rulesets · {violations} violations · {warnings} warnings",
     "upstreamErrors": "Upstream evaluation errors",
-    "upstreamErrorsHint": "The run completed with upstream failures. This can lead to empty guardrail matches.",
+    "upstreamErrorsHint": "The run completed with upstream failures. This can lead to empty control matches.",
     "versions": "{count} versions",
     "versionUnknown": "Version unknown",
     "rulesetStatus": "Status: {status} · Violations: {violations} · Warnings: {warnings}",
     "findingSummary": "{name} · {severity} · {count} findings",
     "noRulesetBreakdown": "No ruleset-level breakdown available for this API version.",
-    "emptyEvaluation": "No profile evaluation matches found for this guardrail yet."
+    "emptyEvaluation": "No profile evaluation matches found for this control yet."
   },
   "policyCard": {
     "typeLabel": {
@@ -1979,7 +1979,7 @@
       "rpm": "{value} rpm"
     },
     "field": {
-      "guardrails": "Guardrails",
+      "guardrails": "Controls",
       "maxTurns": "Max Turns",
       "systemPrompt": "System Prompt",
       "modalities": "Modalities",
@@ -3064,8 +3064,8 @@
       "review": "Review"
     },
     "strategyType": {
-      "guardrails": "Guardrails",
-      "guardrailsDescription": "Validate targeted services against selected guardrail rules and optionally block non-compliant actions, while automatically publishing your live compliance posture.",
+      "guardrails": "Controls",
+      "guardrailsDescription": "Validate targeted services against selected control rules and optionally block non-compliant actions, while automatically publishing your live compliance posture.",
       "automatedPolicy": "Automated Policy",
       "automatedPolicyDescription": "Enforce consistent policy requirements across targeted services to ensure uniform governance and automated security."
     },
@@ -3205,7 +3205,7 @@
       "uncategorized": "Uncategorized",
       "latest": "Latest",
       "automatedPolicy": "Automated Policy",
-      "guardrails": "Guardrails",
+      "guardrails": "Controls",
       "gatewaysLabel": "Gateways",
       "apisAgentsMcpServers": "APIs, Agents, MCP Servers",
       "scopeModeAll": "All APIs, Agents, MCP Servers",
@@ -3231,13 +3231,13 @@
       "stepDescRulesGuardrails": "Select bundled rulesets or individual rules to apply to the defined scope. These rules will be validated against services to generate reporting, block actions, and evaluate compliance.",
       "stepDescNameDescription": "Enter a unique name and description to identify this strategy profile.",
       "stepDescReview": "Review your governance strategy configuration before saving.",
-      "editWizardTitle": "Edit Guardrail Wizard",
-      "createWizardTitle": "Create Guardrail Wizard",
+      "editWizardTitle": "Edit Control Wizard",
+      "createWizardTitle": "Create Control Wizard",
       "editWizardDescription": "Adjust scope and rules, then review before saving changes.",
       "createWizardDescription": "Configure scope, choose rules, and review before publishing profile settings.",
       "previous": "Previous",
       "createAndActivate": "Create and activate strategy",
-      "saveGuardrail": "Save Guardrail",
+      "saveGuardrail": "Save Control",
       "strategyNameLabel": "Strategy Name",
       "strategyNamePlaceholder": "e.g., PCI Compliance Rules",
       "descriptionLabel": "Description",
@@ -4380,11 +4380,11 @@
     "anyProvider": "Any provider",
     "searchPlaceholder": "Search services...",
     "loadingState": "Loading governed services…",
-    "emptyState": "No services governed by this guardrail.",
+    "emptyState": "No services governed by this control.",
     "governedServicesSuffix": "governed services",
     "percentConformant": "{percent}% conformant",
     "governedServicesHeading": "Governed Services ({count})",
-    "noMatchingServices": "No services governed by this guardrail."
+    "noMatchingServices": "No services governed by this control."
   },
   "guardrailRulesetCard": {
     "violation": "violation",
@@ -4467,7 +4467,7 @@
       "updateStrategy": "Failed to update strategy. Please try again."
     },
     "success": {
-      "guardrailCreated": "Guardrail created.",
+      "guardrailCreated": "Control created.",
       "fromAnypointCreated": "From Anypoint strategy created.",
       "strategyUpdated": "Strategy updated.",
       "fromAnypointUpdated": "From Anypoint strategy updated."
@@ -4475,7 +4475,7 @@
     "dashboard": {
       "activeStrategies": "Active Strategies",
       "strategyTypes": "Strategy Types",
-      "guardrails": "Guardrails",
+      "guardrails": "Controls",
       "automatedPolicies": "Automated Policies",
       "governanceCoverage": "Governance Coverage",
       "disabledCount": "{count} disabled",
@@ -4568,7 +4568,7 @@
       "heading": "Review",
       "description": "Review your governance strategy configuration before saving.",
       "strategyType": "Strategy Type",
-      "guardrails": "Guardrails",
+      "guardrails": "Controls",
       "fromAnypoint": "From Anypoint",
       "governanceScope": "Governance Scope",
       "targetLabel": "Target",
@@ -4594,7 +4594,7 @@
     },
     "details": {
       "automatedPolicy": "Automated Policy",
-      "guardrails": "Guardrails",
+      "guardrails": "Controls",
       "fromAnypoint": "From Anypoint",
       "rulesetsLabel": "Rulesets",
       "targetLabel": "Target",
@@ -4603,8 +4603,8 @@
       "createdLabel": "Created",
       "updatedLabel": "Updated",
       "ruleCount": "{count} ({total} {total, plural, one {rule} other {rules}})",
-      "limitedFunctionalityTitle": "Limited Functionality for From Anypoint Guardrails",
-      "limitedFunctionalityDetail": "This guardrail was created in Anypoint API Governance and has limited ruleset selection and customization options. To access advanced features like conditions configuration, rule-level selection, severity customization, and the full ruleset library, create a new guardrail directly in Omni.",
+      "limitedFunctionalityTitle": "Limited Functionality for From Anypoint Controls",
+      "limitedFunctionalityDetail": "This control was created in Anypoint API Governance and has limited ruleset selection and customization options. To access advanced features like conditions configuration, rule-level selection, severity customization, and the full ruleset library, create a new control directly in Omni.",
       "configurationTab": "Configuration",
       "governedServicesTab": "Governed Services",
       "appliedPolicy": "Applied Policy",
@@ -5275,7 +5275,7 @@
     "notificationsEnabledWithRecipients": "Enabled – {recipients}",
     "bridgeScopeStepUnavailable": "No active governance scope step is available to apply the proposed changes.",
     "bridgeScopeStepUpdated": "Governance scope step updated successfully",
-    "statusGuardrailCreated": "Guardrail created.",
+    "statusGuardrailCreated": "Control created.",
     "statusLegacyCreated": "From Anypoint strategy created.",
     "statusStrategyUpdated": "Strategy updated.",
     "statusLegacyUpdated": "From Anypoint strategy updated.",
@@ -5289,7 +5289,7 @@
     "statCardActiveStrategies": "Active Strategies",
     "statCardStrategyTypes": "Strategy Types",
     "statCardGovernanceCoverage": "Governance Coverage",
-    "strategyTypeGuardrails": "Guardrails",
+    "strategyTypeGuardrails": "Controls",
     "strategyTypeAutomatedPolicies": "Automated Policies",
     "activeDisabledSubtext": "{count} disabled",
     "coverageSubtext": "{governed} of {total} services governed by active strategies",
@@ -5364,7 +5364,7 @@
     "reviewHeading": "Review",
     "reviewDescription": "Review your governance strategy configuration before saving.",
     "strategyTypeLabel": "Strategy Type",
-    "strategyTypeGuardrailsValue": "Guardrails",
+    "strategyTypeGuardrailsValue": "Controls",
     "strategyTypeFromAnypoint": "From Anypoint",
     "governanceScopeHeading": "Governance Scope",
     "targetLabel": "Target",
@@ -5378,7 +5378,7 @@
     "createStrategyButtonLabel": "Create Strategy",
     "saveChangesButton": "Save Changes",
     "typeBadgeAutomatedPolicy": "Automated Policy",
-    "typeBadgeGuardrails": "Guardrails",
+    "typeBadgeGuardrails": "Controls",
     "fromAnypointBadge": "From Anypoint",
     "rulesetsMetaLabel": "Rulesets",
     "rulesetsMetaValue": "{count} ({ruleCount, plural, one {# rule} other {# rules}})",
@@ -5387,8 +5387,8 @@
     "governedServicesMetaLabel": "Governed Services",
     "createdMetaLabel": "Created",
     "updatedMetaLabel": "Updated",
-    "limitedFunctionalityTitle": "Limited Functionality for From Anypoint Guardrails",
-    "limitedFunctionalityBody": "This guardrail was created in Anypoint API Governance and has limited ruleset selection and customization options. To access advanced features like conditions configuration, rule-level selection, severity customization, and the full ruleset library, create a new guardrail directly in Omni.",
+    "limitedFunctionalityTitle": "Limited Functionality for From Anypoint Controls",
+    "limitedFunctionalityBody": "This control was created in Anypoint API Governance and has limited ruleset selection and customization options. To access advanced features like conditions configuration, rule-level selection, severity customization, and the full ruleset library, create a new control directly in Omni.",
     "tabConfiguration": "Configuration",
     "tabGovernedServices": "Governed Services",
     "appliedPolicyHeading": "Applied Policy",
