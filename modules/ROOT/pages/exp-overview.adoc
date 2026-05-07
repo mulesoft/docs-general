@@ -1,8 +1,8 @@
 = Enhanced MuleSoft Experience Overview
 
-Grow and tune your AI portfolio by registering and monitoring agents, APIs, and gateways in centralized catalogs. Sign in through the entry point your organization provides, such as Anypoint Platform, Slack, or a direct URL, to access dashboards and governance strategies based on your assigned permissions. You can review live performance metrics, manage security policies, and track rule-level compliance through automated conformance reports.
+To grow and tune your AI portfolio, register and monitor agents, APIs, and gateways in centralized catalogs. Sign in through the entry point your organization provides, such as Anypoint Platform, Slack, or a direct URL, to access dashboards and governance strategies based on your assigned permissions. Review live performance metrics, manage security policies, and track rule-level compliance through automated conformance reports.
 
-These tools ensure your AI assets remain audit-ready while providing clear visibility into cost and runtime health across your organization.
+Your AI assets stay audit-ready with clear visibility into cost and runtime health across your org.
 
 == Enhanced Experience Capabilities
 
@@ -18,14 +18,14 @@ Instance Management:: Create and review instances for supported asset types. Cho
 
 == Enhanced Experience High-Level Workflow
 
-Manage and tune your AI portfolio by registering assets, applying security policies, and monitoring runtime health. Access centralized catalogs to track agents and gateways while verifying compliance through conformance reports and cost management tools. These integrated features help you optimize performance and maintain audit readiness across your environment
+To manage and tune your AI portfolio, register assets, apply security policies, and monitor runtime health. Access centralized catalogs to track agents and gateways while verifying compliance through conformance reports and cost management tools. These integrated features help you optimize performance and maintain audit readiness across your environment.
 
 . Complete onboarding and access
 +
-Confirm your credentials and the permissions your administrator assigned, as described in xref:exp-start-home.adoc#permissions[Enhanced Experience Permissions]. Finish integration setup for supporting systems, such as connected providers under *Platform* > *Providers*, before you depend on the experience in production.
+Confirm your credentials and the permissions that your administrator assigned, as described in xref:exp-start-home.adoc#permissions[Enhanced Experience Permissions]. Finish integration setup for supporting systems, such as connected providers under *Platform* > *Providers*, before you depend on the experience in production.
 . Learn the layout
 +
-Sign in through your entry path and land on *Home*. Scan *Portfolio* catalogs, *Governance*, *Observability*, and *Platform* so you know where to register assets, apply policies, read health signals, and manage providers.
+Sign in through your entry path and land on *Home*. Scan *Portfolio* catalogs, *Governance*, *Observability*, and *Platform* so that you know where to register assets, apply policies, read health signals, and manage providers.
 . Register assets in Portfolio
 +
 Under *Portfolio*, open *Agents*, *MCP Servers*, *LLMs*, *APIs*, or *Gateways*. Add assets to work with. Register manually or use connected providers under *Platform* > *Providers* if your organization enables discovery flows.
