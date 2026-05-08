@@ -3,10 +3,10 @@
 
 The enhanced MuleSoft experience helps you manage, optimize, and govern a multi-agent ecosystem from one place. Work with agents, APIs, MCP servers, LLMs, and gateways as a single portfolio. View asset relationships, apply governance and cost discipline, and act on observability signals instead of working in separate silos. The experience pairs this portfolio view with an in-product assistant to connect integrations, tune configurations, and get answers in context.
 
-* Register agents, MCP servers, and LLM proxies from any provider or registry.
-* Monitor latency, cost, invocations, and failures in real time.
-* Secure instances with compatible policies across your entire registry.
-* Transcode existing REST APIs into MCP servers instantly.
+* Scan platforms and import discovered APIs and agents, then manage scanners in one place.
+* Register services manually, view services across providers, and create new MCP servers.
+* Govern services with runtime policies and governance strategies for design and runtime consistency.
+* Observe service health and monitor overview dashboards across services and environments.
 
 image::enhanced-experience-pillars.png[]
 
