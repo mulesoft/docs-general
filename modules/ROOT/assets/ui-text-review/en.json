@@ -22,7 +22,7 @@
     "clearAll": "Clear all",
     "selectAll": "Select all",
     "notNow": "Not now",
-    "askOmniPlaceholder": "Ask Omni anything...",
+    "askOmniPlaceholder": "Ask MuleSoft anything...",
     "suggestions": "Suggestions",
     "dateGroup": {
       "today": "Today",
@@ -62,7 +62,7 @@
   "login": {
     "backToLogin": "Back to login",
     "logoAlt": "MuleSoft",
-    "title": "MuleSoft Omni",
+    "title": "Enhanced MuleSoft Experience",
     "dismiss": "Dismiss",
     "placeholder": {
       "username": "Username",
@@ -87,7 +87,7 @@
     "skip": "Skip",
     "getStarted": "Get Started",
     "welcome": {
-      "heading": "Welcome to MuleSoft Omni",
+      "heading": "Welcome to the enhanced MuleSoft experience",
       "subtitle": "Your multi-agent management and governance platform",
       "description": "Discover, govern, and observe agents, MCP servers, LLMs, and infrastructure across every provider — all from one place.",
       "statAgents": "Agents",
@@ -112,7 +112,7 @@
         "description": "Real-time metrics, cost tracking, and alerts"
       },
       "askOmni": {
-        "title": "Ask Omni",
+        "title": "Ask MuleSoft",
         "description": "Natural-language assistant for your entire ecosystem"
       }
     },
@@ -340,7 +340,7 @@
     "brandName": "MuleSoft"
   },
   "aiSidebarHeader": {
-    "title": "Ask Omni",
+    "title": "Ask MuleSoft",
     "newChat": "New chat",
     "conversationHistory": "Conversation history",
     "openFullView": "Open full view",
@@ -392,7 +392,7 @@
   "briefing": {
     "aiBriefing": "AI Briefing",
     "regenerateBriefing": "Regenerate briefing",
-    "footnoteGenerated": "Generated automatically by Omni agent ({source}).",
+    "footnoteGenerated": "Generated automatically by MuleSoft agent ({source}).",
     "footnoteGenerating": "Generating briefing from agent...",
     "errorEmptyBriefing": "Agent returned an empty briefing.",
     "errorUnableToGenerate": "Unable to generate briefing.",
@@ -2675,9 +2675,9 @@
   },
   "welcomeInterstitial": {
     "closeAriaLabel": "Close welcome dialog",
-    "dialogStatus": "Welcome to MuleSoft Omni dialog opened. Press Escape to close.",
-    "title": "Welcome to MuleSoft Omni",
-    "description": "Omni extends Anypoint Platform with a purpose-built layer for the multi-agent world. While Anypoint continues to power your API and integration authoring, Omni is where your agent operations live. With Omni, you can:",
+    "dialogStatus": "Welcome to the enhanced MuleSoft experience dialog opened. Press Escape to close.",
+    "title": "Welcome to the Enhanced MuleSoft Experience",
+    "description": "The enhanced MuleSoft experience extends Anypoint Platform with a purpose-built layer for the multi-agent world. While Anypoint Platform continues to power your API and integration authoring, the enhanced MuleSoft experience is where your agent operations live. With the enhanced MuleSoft experience, you can:",
     "startButton": "Start exploring"
   },
   "searchableCombobox": {
@@ -2703,7 +2703,7 @@
     "errorHeading": "Something went wrong",
     "errorRetryHint": "Try sending your message again.",
     "sendMessage": "Send message",
-    "disclaimer": "Omni can make mistakes. Verify important info.",
+    "disclaimer": "Ask MuleSoft can make mistakes. Verify important information.",
     "riskLevel": "Risk: {level}",
     "confirmationRequired": " - confirmation required",
     "confirmMonitoringCard": "Insert the proposed monitoring card?",
@@ -2727,19 +2727,19 @@
     "btnApplyProposedChanges": "Apply proposed changes"
   },
   "omniCommandPalette": {
-    "closeAriaLabel": "Close Omni command palette",
+    "closeAriaLabel": "Close MuleSoft command palette",
     "recent": "Recent",
     "hintClose": "to close",
     "hintSubmit": "to submit"
   },
   "omniCanvas": {
     "backLabel": "Back",
-    "title": "Ask Omni",
+    "title": "Ask MuleSoft",
     "minimizeToSidebar": "Minimize to sidebar"
   },
   "omniFloatingButton": {
-    "ariaLabel": "Ask Omni",
-    "tooltip": "Ask Omni"
+    "ariaLabel": "Ask MuleSoft",
+    "tooltip": "Ask MuleSoft"
   },
   "historyPopover": {
     "noConversations": "No conversations yet",
@@ -2924,7 +2924,7 @@
     "viewInstance": "View Instance"
   },
   "monitoringOmniCardGrid": {
-    "heading": "Omni Cards",
+    "heading": "MuleSoft Agent Cards",
     "description": "Natural-language cards translated into validated AMQL queries and executed against observability data.",
     "autogen": "autogen"
   },
@@ -3024,7 +3024,7 @@
       "error": "Error"
     },
     "dismiss": "Dismiss",
-    "appName": "Mule Omni for Slack",
+    "appName": "MuleSoft Agent for Slack",
     "notInstalledHint": "Install the app to enable Slack notifications",
     "pendingApprovalHint": "Awaiting admin approval in your Slack workspace",
     "connectedTo": "Connected to {workspace} workspace",
@@ -3305,27 +3305,27 @@
   },
   "tourSteps": {
     "homeTitle": "Home",
-    "homeDescription": "Your central dashboard with portfolio overview, briefings, and recent activity across all AI services.",
+    "homeDescription": "See portfolio activity, briefings, and recent changes across your AI services.",
     "searchTitle": "Search",
-    "searchDescription": "Quick access to command palette. Search for services, navigate pages, or execute actions. Press \"/\" anytime to open.",
+    "searchDescription": "Search for services, navigate pages, and run actions with the command palette. Press \"/\" to open.",
     "portfolioTitle": "Portfolio",
     "portfolioDescription": "Manage your AI services: Agents, MCP Servers, LLMs, APIs, and Gateways. Track performance, policies, and relationships.",
     "governanceTitle": "Governance",
-    "governanceDescription": "Monitor compliance, policy coverage, and trust metrics. Use governance strategy workflows to prioritize remediation.",
+    "governanceDescription": "Monitor compliance, policy coverage, and service health. Configure and manage governance strategies.",
     "observabilityTitle": "Observability",
     "observabilityDescription": "View performance metrics, error rates, and traffic patterns. Analyze trends and generate custom monitoring reports.",
     "platformTitle": "Platform",
-    "platformDescription": "Connect and manage external providers (AWS, Google, Anthropic, etc.). Set up integrations and discovery scanners.",
+    "platformDescription": "Connect and manage external providers such as AWS, Google, and Anthropic. Set up integrations and discovery scanners.",
     "anypointTitle": "Go to Anypoint",
-    "anypointDescription": "Quick link to the Anypoint Platform. Opens in a new tab for seamless navigation between Omni and Anypoint.",
+    "anypointDescription": "Opens Anypoint Platform in a new tab.",
     "businessGroupTitle": "Business Group",
-    "businessGroupDescription": "Switch between business groups to view different organizational scopes. Currently viewing: Mythical Division.",
+    "businessGroupDescription": "Switch between business groups to change your organization scope. Currently viewing: Mythical Division.",
     "themeToggleTitle": "Theme Toggle",
-    "themeToggleDescription": "Switch between light and dark modes. Your preference is saved automatically.",
+    "themeToggleDescription": "Switch between light and dark modes. Your changes take effect immediately.",
     "navToggleTitle": "Navigation Toggle",
     "navToggleDescription": "Collapse the navigation to icon-only mode for more screen space, or expand it to see full labels.",
-    "omniAssistantTitle": "Ask Omni Assistant",
-    "omniAssistantDescription": "Your AI assistant for natural language queries about your portfolio. Ask questions, get insights, or request actions. Press ⌘K (Mac) or Ctrl+K (Windows) to toggle."
+    "omniAssistantTitle": "Ask MuleSoft",
+    "omniAssistantDescription": "Ask questions, get insights, and take actions across your AI portfolio. Press ⌘K (Mac) or Ctrl+K (Windows) to open."
   },
   "welcomeFeatures": {
     "registerLabel": "Register",
@@ -3333,7 +3333,7 @@
     "monitorLabel": "Monitor",
     "monitorDescription": "latency, cost, invocations, and failures in real time.",
     "secureLabel": "Secure",
-    "secureDescription": "instances with compatible policies across your entire registry.",
+    "secureDescription": "instances with applicable policies across your entire portfolio.",
     "transcodeLabel": "Transcode",
     "transcodeDescription": "existing REST APIs into MCP servers instantly."
   },
@@ -4604,7 +4604,7 @@
       "updatedLabel": "Updated",
       "ruleCount": "{count} ({total} {total, plural, one {rule} other {rules}})",
       "limitedFunctionalityTitle": "Limited Functionality for From Anypoint Controls",
-      "limitedFunctionalityDetail": "This control was created in Anypoint API Governance and has limited ruleset selection and customization options. To access advanced features like conditions configuration, rule-level selection, severity customization, and the full ruleset library, create a new control directly in Omni.",
+      "limitedFunctionalityDetail": "This control was created in Anypoint API Governance and has limited ruleset selection and customization options. To access advanced features like conditions configuration, rule-level selection, severity customization, and the full ruleset library, create a new control directly in the enhanced .",
       "configurationTab": "Configuration",
       "governedServicesTab": "Governed Services",
       "appliedPolicy": "Applied Policy",
@@ -5388,7 +5388,7 @@
     "createdMetaLabel": "Created",
     "updatedMetaLabel": "Updated",
     "limitedFunctionalityTitle": "Limited Functionality for From Anypoint Controls",
-    "limitedFunctionalityBody": "This control was created in Anypoint API Governance and has limited ruleset selection and customization options. To access advanced features like conditions configuration, rule-level selection, severity customization, and the full ruleset library, create a new control directly in Omni.",
+    "limitedFunctionalityBody": "This control was created in Anypoint API Governance and has limited ruleset selection and customization options. To access advanced features like conditions configuration, rule-level selection, severity customization, and the full ruleset library, create a new control directly in the enhanced MuleSoft experience.",
     "tabConfiguration": "Configuration",
     "tabGovernedServices": "Governed Services",
     "appliedPolicyHeading": "Applied Policy",
