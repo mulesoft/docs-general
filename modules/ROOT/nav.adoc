@@ -1,6 +1,7 @@
 .xref:index.adoc[Anypoint Platform]
 * xref:index.adoc[Documentation]
 * xref:learning-map-exp.adoc[]
+  ** xref:exp-release-notes.adoc[Release Notes]
   ** xref:exp-overview.adoc[Overview]
     *** xref:exp-compare.adoc[Comparison: Enhanced Experience and Anypoint Platform]
     *** xref:exp-glossary.adoc[Glossary]
