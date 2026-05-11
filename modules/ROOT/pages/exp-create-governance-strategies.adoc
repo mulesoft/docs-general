@@ -1,26 +1,26 @@
 = Create Governance Strategies
 
-Create governance strategies to validate services against control rules or enforce automated policies across your organization. Strategies link governance intent—whether monitoring for compliance drift or actively blocking noncompliant behavior—to the services you choose to govern.
+Create governance strategies to validate services with controls or enforce automated policies.
 
-Strategy creation is available when your tenant includes *Governance* capabilities and you hold the appropriate administrator role.
+You can create strategies when your tenant includes *Governance* and you have the required administrator role.
 
 == Before You Start
 
-Determine what outcome you need: passive validation that reports compliance posture but allows activity to proceed, or active enforcement that can block noncompliant requests at runtime. Your answer shapes which strategy type and which rules or policies fit your goals.
+Decide whether you need validation-only monitoring or active runtime enforcement. This choice determines the strategy type and the rules or policies to apply.
 
 == Open the Strategy Workflow
 
-. Sign in and navigate to *Governance* > *Governance Strategies*.
+. Log in and go to *Governance* > *Governance Strategies*.
 . Select *Create governance strategy* to start the wizard.
 
-The wizard steps you through type selection, scope definition, rule or policy attachment, naming, and review so you can configure the full strategy before activating it.
+The wizard guides you through type, scope, rules or policies, and activation.
 
 == Choose Strategy Type
 
-Two types are available:
+Choose from these types:
 
-* *Controls* — Validate targeted services against selected control rules and optionally block noncompliant actions. The system publishes live compliance posture so teams see where services pass or fail. You choose whether to monitor, report, or also block.
-* *Automated Policy* — Enforce consistent policy requirements across targeted services to ensure uniform governance and automated security. These run at the runtime or gateway layer depending on your configuration.
+* *Controls* validate targeted services against control rules. Use controls to monitor compliance and, when supported, block noncompliant activity.
+* *Automated Policy* enforces runtime policy requirements across targeted services.
 
 Select the type that matches your governance objective, then proceed.
 
@@ -28,41 +28,41 @@ Select the type that matches your governance objective, then proceed.
 
 Specify which services the strategy governs and under what conditions those services are included.
 
-*Select Services To Govern*: Choose whether the strategy applies to APIs, Agents, and MCP Servers, or to Gateways. Service type selection determines what you can include in the filter.
+*Select Services To Govern*: Select whether the strategy applies to APIs, Agents, and MCP Servers, or to Gateways.
 
-*Select Filter Criteria*: Refine the set by choosing filter conditions—for example, all services in the tenant, or a subset that meets tag, environment, or catalog criteria your administrators configured. The product exposes the filter options your entitlement and role support.
+*Select Filter Criteria*: Refine the scope by tag, environment, or other available metadata.
 
 Use *Preview Governed Scope* to see which services currently match your criteria before you move forward.
 
 == Attach Rules or Policies
 
-Depending on strategy type, you select the rules or policies the strategy enforces:
+Depending on the strategy type, select the rules or policies the strategy enforces:
 
-* For *Controls*, pick from the control catalog your tenant provides—access and security controls, data-handling rules, performance or cost checks, and others your organization enabled. Each control specifies what it validates and whether it can block noncompliant activity.
-* For *Automated Policy*, define the runtime requirements: which gateway runtime (Flex Gateways or Mule Gateways), which endpoint types to target, and the environment where the policy applies. Policies run automatically according to the scope you defined.
+* For *Controls*, select controls from the catalog available in your tenant.
+* For *Automated Policy*, define runtime details such as gateway runtime, endpoint type, and environment.
 
-The experience shows available controls or policy configurations based on your earlier selections. Review descriptions to confirm each one aligns with your compliance or security goals.
+Available options depend on your earlier selections and entitlements.
 
 == Name and Describe the Strategy
 
-Provide a *Strategy Name* that makes the governance intent clear—for example, "PCI Compliance Rules" or "Production Security Policy." Add a *Description* that explains what the strategy enforces and why, so future administrators understand the governance rationale without re-reading the full configuration.
+Enter a clear *Strategy Name*, such as "PCI Compliance Rules". Add a *Description* that states what the strategy enforces and why.
 
 == Review and Activate
 
-The final step summarizes your selections: strategy type, governed scope, applied rules or policies, and general information. Check that the configuration is correct—especially the scope and the rules, since those determine real impact on service behavior.
+Review your selections: strategy type, scope, rules or policies, and general information.
 
-When ready, select *Create and activate strategy* to save and enable the strategy. The system begins evaluating or enforcing according to the type and scope you configured. Governed services appear in compliance reporting or are subject to runtime policy checks depending on your choices.
+Select *Create and activate strategy*.
 
-Strategies are active by default after creation. You can disable a strategy later from the *Governance Strategies* list if your governance plan changes.
+Strategies are active by default. You can disable a strategy later from *Governance Strategies*.
 
 == What Happens Next
 
-* Services that match the scope are evaluated against the rules or policies the strategy defines.
-* For *Controls*, compliance status appears in conformance reports under *Governance* or on the service detail page depending on where your product exposes it.
-* For *Automated Policy*, policy enforcement runs at the gateway or runtime layer. Check logs and metrics to confirm policy behavior aligns with expectations.
-* Edit the strategy from the *Governance Strategies* page if scope, rules, or naming needs adjustment.
+* The system evaluates services that match the scope against the rules or policies in the strategy.
+* For *Controls*, compliance status appears in conformance reports.
+* For *Automated Policy*, enforcement runs at the gateway or runtime layer.
+* Edit the strategy from *Governance Strategies* when scope, rules, or naming changes.
 
-Work with your governance lead when strategies affect production services or when you need to coordinate rollout timing.
+Work with your governance lead if your strategies affect production services or when you need to coordinate rollout timing.
 
 == See Also
 

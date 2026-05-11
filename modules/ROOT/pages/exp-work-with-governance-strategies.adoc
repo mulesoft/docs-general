@@ -1,26 +1,28 @@
 = Work with Governance Strategies
 
-Governance strategies bundle the rules and controls your organization wants to enforce across agents, APIs, MCP servers, LLM proxies, and gateways. They connect policy intent to conformance reporting, cost management, and runtime behavior so teams can align releases with risk and compliance targets.
+Use governance strategies to apply rules and policies across agents, APIs, MCP servers, LLM proxies, and gateways.
 
-Creating, managing, and monitoring strategies is available when your tenant includes *Governance* capabilities and your account has the appropriate administrator role. Exact rule catalogs, scopes, and available operations depend on your organization's configuration.
+You can create, manage, and monitor strategies when your tenant includes *Governance* and your account has the required role.
 
 == Access Governance Strategy Workflows
 
-Sign in through your organization's entry path and navigate to *Governance*. The area your UI labels for strategies or organization governance can vary by release. From there you can create strategies, attach the domains your organization uses—such as access and security, data privacy, performance and cost, or compliance and observability—and map them to the services or scopes your administrators approved. You can also manage existing strategies by editing, enabling, disabling, reordering, or removing them as your governance needs evolve.
+Log in through your organization’s entry path and go to *Governance*.
 
-Work with your governance lead so strategy changes match change-management processes outside the product.
+From there, create strategies and map them to approved services or scopes. You can also edit, enable, disable, reorder, or delete existing strategies.
 
-== How Strategies Fit Into Day-to-Day Operations
+Work with your governance lead when strategy changes affect production or compliance workflows.
 
-* **Create strategies** that match your compliance and security objectives—validation-focused controls for compliance reporting, or enforcement-focused automated policies for runtime blocking. See xref:exp-create-governance-strategies.adoc[] for the step-by-step workflow.
-* **Manage existing strategies** by adjusting scope, swapping rules, reordering priorities, or disabling strategies when governance requirements change. See xref:exp-manage-governance-strategies.adoc[] for day-to-day operations.
-* **Monitor costs and usage** under *Governance* > *Cost Management* to understand token consumption patterns and identify where governance controls can optimize spend. See xref:exp-view-cost-and-token-usage.adoc[] for cost dashboard details.
-* **Review conformance reporting** on xref:exp-overview.adoc[supported catalog types] to confirm rules pass after you create or update a strategy or deployment.
-* **Apply policies at the service level** from *Portfolio* so runtime traffic reflects the strategy. See xref:exp-view-service-details.adoc[] for where policies appear on a service.
+== How Strategies Fit Into Day to Day Operations
 
-== Permissions (high level)
+* Create strategies for compliance validation or runtime enforcement. See xref:exp-create-governance-strategies.adoc[].
+* Manage strategies by updating scope, rules, status, and priority. See xref:exp-manage-governance-strategies.adoc[].
+* Monitor token usage in *Governance* > *Cost Management*. See xref:exp-view-cost-and-token-usage.adoc[].
+* Review conformance reporting for xref:exp-overview.adoc[supported catalog types].
+* Apply policies to services from *Portfolio*. See xref:exp-view-service-details.adoc[].
 
-Creating governance strategies typically requires *Governance Administrator*. Viewing reports may be available to *Governance Viewer* or *Governance Administrator* depending on how your organization mapped roles.
+== Permissions, High Level
+
+Creating strategies typically requires *Governance Administrator*. Users with *Governance Viewer* or *Governance Administrator* can view reports, depending on your role mapping.
 
 == See Also
 
@@ -30,4 +32,3 @@ Creating governance strategies typically requires *Governance Administrator*. Vi
 * xref:exp-overview.adoc[]
 * xref:exp-start-home.adoc#permissions[Enhanced Experience Permissions]
 * xref:exp-view-service-details.adoc[]
-* xref:exp-view-cost-and-token-usage.adoc[]

@@ -1,65 +1,65 @@
 = View Cost and Token Usage
 
-Track token consumption and model response characteristics across your portfolio to understand where costs accumulate and where optimization opportunities exist. Token usage and performance signals help you budget capacity, tune governance controls, and identify high-usage patterns that affect spend.
+Use cost and token metrics to understand usage, control spend, and identify optimization opportunities.
 
-Access to cost and performance data depends on your tenant configuration and role. If your organization captures token or spend signals, these views show usage trends and highlight where governance policies could reduce consumption.
+Available metrics depend on your tenant configuration and role.
 
 == Where Token and Performance Signals Appear
 
 The system surfaces token usage and performance data in several places:
 
-* *Governance* > *Cost Management* — Organization-level views of token usage and related spend indicators when your administrator enabled cost tooling. This is the primary dashboard for monitoring consumption across all services.
-* *Service detail pages* — Some LLM proxies and related services expose usage or performance summaries on the *Overview* tab or dedicated analytics areas your release provides.
-* *Observability* — When configured, dashboards or reports may aggregate token and latency series alongside other runtime signals.
+* *Governance* > *Cost Management*: Primary dashboard for organization wide token usage and spend indicators.
+* Service detail pages: Usage and performance summaries for supported services.
+* *Observability*: Aggregated token and latency trends, when configured.
 
-Navigation labels can differ; follow the UI your business group was assigned. The instructions below focus on the *Cost Management* page under *Governance*, which provides the most comprehensive view.
+Navigation labels can vary by release.
 
 == Open Cost Management
 
-. Sign in and navigate to *Governance* > *Cost Management*.
-. The dashboard loads with default filters—typically the last 30 days. Adjust the time range or search scope to focus on specific services or periods.
+. Log in and go to *Governance* > *Cost Management*.
+. Adjust the time range and filters for the services or period you want to analyze.
 
 == Understand Usage Metrics
 
-The page organizes token and activity data into summary cards and detail views:
+The experience organizes token and activity data into summary cards and detail views:
 
-* *Total tokens* — Estimated count of tokens processed across services in the selected time range. The product estimates token volume from payload byte length; actual counts may vary depending on the tokenizer each model uses. Hover for the exact numeric value when abbreviated (for example, "5.5B" expands to the full count).
-* *Saved tokens (est.)* — Tokens that optimization policies have reduced, such as prompt caching or request deduplication. This metric appears when your tenant enables optimization features and tracks savings.
-* *Tool calls* — Number of tool or function invocations services made in the period. Useful for understanding interaction complexity and where services depend on external tools or APIs.
+* *Total tokens*: Estimated tokens processed in the selected time range.
+* *Saved tokens, estimated*: Estimated tokens saved by optimization policies.
+* *Tool calls*: Number of tool or function calls in the selected time range.
 
-Each card notes how many instances contributed to the metric. Zero instances means no services in the current scope match your filters or the system has not captured data yet.
+Each card also shows how many instances contributed to the metric.
 
 == Filter and Search
 
 Use controls at the top of the page to narrow the view:
 
-* *Search* — Enter service or instance names to focus on specific MCP servers, agents, or other assets.
-* *Filters* — Refine by service type, environment, or metadata your organization configured. Exact filter options depend on your tenant and catalog structure.
-* *Time range* — Select 1H, 6H, 24H, 7D, or 30D to adjust the reporting window. Shorter periods help spot recent spikes; longer windows show trends.
+* Search for service or instance names.
+* Use *Filters* to refine your search by service type, environment, or metadata.
+* Select 1H, 6H, 24H, 7D, or 30D to search per time range.
 
-The counter updates to reflect how many services match your criteria out of the total portfolio.
+The counter updates to show the number of matching services.
 
 == Interpret Saved Tokens
 
-When optimization policies are active—such as response caching, prompt compression, or request batching—the system estimates how many tokens those policies have saved compared to unoptimized traffic. If the "Saved tokens" card reads zero, either no optimization policies are applied to the services in scope, or the services have not generated enough traffic for the optimization logic to trigger savings yet.
+When optimization policies are active, the system estimates saved tokens compared to unoptimized traffic.
 
-Consider this metric directional rather than exact. Token estimation uses byte-to-token approximations that may differ from the specific tokenizer each LLM provider runs.
+Treat this metric as directional, not exact.
 
 == How You Use the Data
 
 Cost and performance data inform multiple workflows:
 
-* *Cost optimization* — Identify high-volume tools, models, or routes so you can apply governance strategies such as prompt caching, tool mapping, or input sanitization where supported. Budget and forecast capacity needs based on actual consumption patterns.
-* *Performance triage* — Correlate spikes in latency or errors with deployments, policy changes, or upstream model behavior. Compare usage before and after applying optimization strategies to measure effectiveness.
-* *Planning and alignment* — Share stable trends with finance and platform teams when you forecast capacity or licensing needs. Align cost discussions with technical stakeholders by pointing to concrete token or tool-call volumes.
+* Cost optimization: Identify services with high usage and apply optimization controls.
+* Performance triage: Correlate latency or error spikes with deployments or policy changes.
+* Planning and alignment: Share trends with finance and platform teams for forecasting.
 
-The product does not automatically throttle or cap usage based on what you see here. If you need to limit consumption, apply governance strategies or configure rate-limiting policies from *Governance Strategies* or the relevant service settings.
+This dashboard does't automatically cap usage. To limit consumption, apply governance strategies or rate limiting policies.
 
 == Where Cost Fits Into Governance
 
-Token and activity metrics inform governance decisions: services with unexpectedly high consumption may need tighter scoping, additional caching, or stricter input validation rules. Use data from *Cost Management* as input when you create or refine governance strategies under *Governance Strategies*.
+Use *Cost Management* data to create or refine governance strategies.
 
-For runtime enforcement—such as blocking requests that exceed token budgets—attach relevant cost-related controls or policies to a governance strategy and apply that strategy to the services you want to govern.
+For runtime enforcement, attach cost-related controls or policies to a governance strategy and apply it to the relevant services.
 
 == See Also
 
