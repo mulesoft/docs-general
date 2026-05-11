@@ -1,32 +1,40 @@
-= Add Semantic Services
+= Adding Semantic Services
 
-Add semantic services to improve how LLM-driven requests are interpreted and routed across your portfolio. Semantic services help teams apply context-aware behavior so requests are handled by the most relevant tools, services, or pathways your organization configured.
+Semantic services improve how the system interprets and routes LLM-driven requests across your portfolio. They help teams apply context-aware behavior so the system directs requests to the most relevant tools, services, or pathways that your organization configured.
 
 Use this capability when your workflows need more than static routing. With semantic context in place, the system can support better request matching, more consistent response behavior, and stronger control as usage grows across agents, APIs, MCP servers, and related integrations.
 
-At a high level, adding semantic services means:
+To add semantic services, follow these steps:
 
-* Defining the semantic service your organization uses for contextual matching.
-* Associating that semantic capability with the relevant enhanced experience (for example LLM-related routing paths where supported).
-* Operating the service as part of your broader governance and monitoring model so behavior remains reliable as traffic and use cases evolve.
+. Define the semantic service your organization uses for contextual matching.
+. Associate that semantic capability with the relevant enhanced experience (for example, LLM-related routing paths where supported).
+. Operate the service as part of your broader governance and monitoring model so behavior remains reliable as traffic and use cases evolve.
 
 == Create a Semantic Service
-In the navigation, under *Portfolio*, expand *LLM Proxies*, and select *Semantic Services*.
 
-Create a semantic service by selecting the scale model that matches your traffic profile and operational needs.
+. In the navigation, under *Portfolio*, expand *LLM Proxies*, and select *Semantic Services*.
+. Select the scale model that matches your traffic profile and operational needs.
++
+* *Basic scale*
++
+Best for smaller topic sets (up to 6 topics and 10 utterances per topic). Uses managed internal LLM proxy configuration.
++
+Choose *Basic scale* for faster managed setup. 
+* *Advanced scale*
++
+Best for larger utterance sets per topic. Uses external semantic infrastructure, including an embedding API connection and a vector database connection.
++
+Choose *Advanced scale* when you need greater scale and external infrastructure control.
 
-* *Basic scale* — Best for smaller topic sets (up to 6 topics and 10 utterances per topic). Uses managed internal LLM proxy configuration.
-* *Advanced scale* — Best for larger utterance sets per topic. Uses external semantic infrastructure, including an embedding API connection and a vector database connection.
+Semantic service setup defines the embedding connection used for contextual matching:
 
-At a high level, semantic service setup defines the embedding connection used for contextual matching:
-
+* *Environment*
 * *Embedding service provider*
 * *Service label*
-* *Endpoint URL*
+* *URL*
 * *Model*
-* *Authentication key*
+* *Auth key*
 
-Choose *Basic scale* for faster managed setup. Choose *Advanced scale* when you need greater scale and external infrastructure control.
 
 == See Also
 
