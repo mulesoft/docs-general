@@ -1,0 +1,33 @@
+= Work with Governance Strategies
+
+Governance strategies bundle the rules and controls your organization wants to enforce across agents, APIs, MCP servers, LLM proxies, and gateways. They connect policy intent to conformance reporting, cost management, and runtime behavior so teams can align releases with risk and compliance targets.
+
+Creating, managing, and monitoring strategies is available when your tenant includes *Governance* capabilities and your account has the appropriate administrator role. Exact rule catalogs, scopes, and available operations depend on your organization's configuration.
+
+== Access Governance Strategy Workflows
+
+Sign in through your organization's entry path and navigate to *Governance*. The area your UI labels for strategies or organization governance can vary by release. From there you can create strategies, attach the domains your organization uses—such as access and security, data privacy, performance and cost, or compliance and observability—and map them to the services or scopes your administrators approved. You can also manage existing strategies by editing, enabling, disabling, reordering, or removing them as your governance needs evolve.
+
+Work with your governance lead so strategy changes match change-management processes outside the product.
+
+== How Strategies Fit Into Day-to-Day Operations
+
+* **Create strategies** that match your compliance and security objectives—validation-focused controls for compliance reporting, or enforcement-focused automated policies for runtime blocking. See xref:exp-create-governance-strategies.adoc[] for the step-by-step workflow.
+* **Manage existing strategies** by adjusting scope, swapping rules, reordering priorities, or disabling strategies when governance requirements change. See xref:exp-manage-governance-strategies.adoc[] for day-to-day operations.
+* **Monitor costs and usage** under *Governance* > *Cost Management* to understand token consumption patterns and identify where governance controls can optimize spend. See xref:exp-view-cost-and-token-usage.adoc[] for cost dashboard details.
+* **Review conformance reporting** on xref:exp-overview.adoc[supported catalog types] to confirm rules pass after you create or update a strategy or deployment.
+* **Apply policies at the service level** from *Portfolio* so runtime traffic reflects the strategy. See xref:exp-view-service-details.adoc[] for where policies appear on a service.
+
+== Permissions (high level)
+
+Creating governance strategies typically requires *Governance Administrator*. Viewing reports may be available to *Governance Viewer* or *Governance Administrator* depending on how your organization mapped roles.
+
+== See Also
+
+* xref:exp-create-governance-strategies.adoc[]
+* xref:exp-manage-governance-strategies.adoc[]
+* xref:exp-view-cost-and-token-usage.adoc[]
+* xref:exp-overview.adoc[]
+* xref:exp-start-home.adoc#permissions[Enhanced Experience Permissions]
+* xref:exp-view-service-details.adoc[]
+* xref:exp-view-cost-and-token-usage.adoc[]

@@ -1,0 +1,61 @@
+= Manage Governance Strategies
+
+After you create governance strategies, you manage them day to day: reordering priorities, filtering the list, enabling or disabling strategies, and adjusting configurations when compliance requirements or service scope changes. Most of that work happens under *Governance* > *Governance Strategies*, where your organization lists active and disabled strategies in one place.
+
+== Where This Work Happens
+
+Navigate to *Governance* > *Governance Strategies* to see the full list. The page shows strategy name, type (Controls or Automated Policy), status, the count of governed services, and last-modified timestamp. Exact columns and controls depend on your product release and entitlement.
+
+== What You Can Do With a Strategy
+
+* *View details* — Select a strategy row to open its configuration page, where you see the scope definition, attached rules or policies, and metadata.
+* *Enable or disable* — Change status to pause a strategy without deleting it. Disabled strategies remain in the list but stop evaluating or enforcing until you re-enable them.
+* *Edit configuration* — Update scope filters, swap or add rules, or change the strategy name and description when governance objectives shift. Save changes to apply the new configuration; governed services pick up the updated rules on the next evaluation cycle.
+* *Reorder strategies* — When multiple strategies govern the same services, order can matter for how rules compose or which policy takes precedence. Use the *Reorder* control to adjust sequence, then save. Check with your governance lead if your organization has conventions around strategy priority.
+* *Delete a strategy* — Remove strategies that are no longer needed. Deletion is permanent and stops all evaluation or enforcement the strategy was performing. Consider disabling first if you are unsure whether the strategy will be needed again.
+
+== Filter and Search Strategies
+
+Use the controls above the table to narrow the list:
+
+* *Strategy type filter* — Choose *All*, *Controls*, or *Automated Policies* to show only strategies of a given type.
+* *Status dropdown* — Select *Any Status*, *Active*, or *Disabled* to focus on strategies in a specific state.
+* *Search* — Enter text to match strategy names. Useful when your organization maintains many strategies and you need to locate a specific profile quickly.
+
+The page updates to show matching strategies. The count at the top reflects how many are visible out of the total created.
+
+== Understand Strategy Metrics
+
+The main page includes summary cards:
+
+* *Active Strategies* — Count of strategies currently enabled, with a note of how many are disabled. This gives a snapshot of how much governance automation is running.
+* *Strategy Types* — Breakdown by Controls versus Automated Policies so you can see the mix of validation-focused and enforcement-focused governance.
+* *Governance Coverage* — Indicates what portion of your portfolio is governed by at least one strategy. Coverage data depends on whether your tenant calculates this metric; if unavailable, the card notes that coverage is not reported.
+
+Use these metrics to gauge governance posture at a glance and to spot gaps—such as many services but few active strategies, which may signal under-governed areas.
+
+== When to Adjust a Strategy
+
+Common reasons to edit or disable:
+
+* Scope has drifted and the strategy now governs services it should not (or misses services it should).
+* New compliance requirements mean you need to add or replace rules.
+* A strategy causes false positives or blocks legitimate activity, and you need to refine the controls or temporarily disable while you investigate.
+* Your organization restructured environments or tags, and filter criteria no longer match the intended services.
+
+Check the *Governed Services* count before and after changes to confirm the scope adjusted as expected.
+
+== Impact on Governed Services
+
+When you disable a strategy, services that matched its scope stop being evaluated or enforced against that strategy's rules. Compliance reports may show gaps, and runtime enforcement (if the strategy included blocking controls or policies) no longer applies.
+
+When you delete a strategy, all historical compliance data tied to that strategy remains in logs or reporting systems (depending on your backend), but the active governance link is gone. Re-creating a strategy with the same rules does not automatically restore prior associations.
+
+Coordinate with service owners and your governance team when changes affect production services or compliance reporting your organization relies on.
+
+== See Also
+
+* xref:exp-work-with-governance-strategies.adoc[]
+* xref:exp-create-governance-strategies.adoc[]
+* xref:exp-view-cost-and-token-usage.adoc[]
+* xref:exp-view-service-details.adoc[]

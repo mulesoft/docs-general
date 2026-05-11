@@ -50,7 +50,7 @@ Register agents, APIs, and MCP servers from any provider or registry, and add LL
 Monitor latency, cost, invocations, and failures in real time.
 
 - xref:exp-monitor-your-services.adoc[]
-- xref:exp-view-token-usage-response-performance.adoc[]
+- xref:exp-view-cost-and-token-usage.adoc[]
 - xref:exp-view-detailed-metrics-for-services.adoc[]
 - xref:exp-configure-notifications-for-alerts.adoc[]
 
@@ -64,7 +64,7 @@ Monitor latency, cost, invocations, and failures in real time.
 Secure instances with compatible policies across your entire registry.
 
 - xref:exp-add-instances.adoc[]
-- xref:exp-create-governance-strategies.adoc[]
+- xref:exp-work-with-governance-strategies.adoc[]
 
 | image::lm_analyze_1.png[]
 [.lm-bold]##Transcode##
