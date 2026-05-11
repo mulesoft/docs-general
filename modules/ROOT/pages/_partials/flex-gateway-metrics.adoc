@@ -1,6 +1,6 @@
 // tag::intro[]
 
-Flex Gateway usage reports track daily and monthly API calls. You can view API calls by business group, environment, and registration.
+Omni Gateway usage reports track daily and monthly API calls. You can view API calls by business group, environment, and registration.
 
 To calculate usage, MuleSoft meters the hourly API calls you make and aggregates the number of API calls on a daily and monthly basis. 
 
@@ -9,32 +9,32 @@ To calculate usage, MuleSoft meters the hourly API calls you make and aggregates
 // tag::cards[]
 
 Total # of API Calls::
-Sum of API calls across all registered Flex Gateways in the organization.
+Sum of API calls across all registered Omni Gateways in the organization.
 
 // end::cards[]
 
 // tag::table[]
 
 Business Group:: 
-Business group in which the Flex Gateway is registered.
+Business group in which the Omni Gateway is registered.
 
 Gateway Type::
-Gateway type of the Flex Gateway registered.
+Gateway type of the Omni Gateway registered.
 +
 Data for this metric is available starting in March 2025.
 
 Environment:: 
-Environment in which the Flex Gateway is registered.
+Environment in which the Omni Gateway is registered.
 
 Registration::
-Name of the registered Flex Gateway.
+Name of the registered Omni Gateway.
 
 Data Egress (GB)::
-Total amount of outbound data in gigabytes (GB) transmitted by the Flex Gateway egress to upstream services. 
+Total amount of outbound data in gigabytes (GB) transmitted by the Omni Gateway egress to upstream services. 
 +
 Data for this metric is available starting in March 2025.
 
 # of API Calls::
-Sum of API calls made by APIs that are deployed within the Flex Gateway.
+Sum of API calls made by APIs that are deployed within the Omni Gateway.
 
 // end::table[]

@@ -36,13 +36,13 @@ Data for API Manager is available starting in October 2024.
 |API under Governance: APIs identified by the selection criteria of at least one of the governance profiles 
 a|If an API is governed, all versions of that API are considered one governed API. Instances of API Governance are aggregated using a Max Concurrent model. The usage for a month is the highest number of APIs governed in a single given hour during a month.
 
-|Flex Gateway	
-|Flex Gateway API call: Any access request received by Anypoint Flex Gateway regardless of whether the response to the request is successful 
-|Flex Gateway requests are aggregated as a total of all requests during a month.
+|Omni Gateway	
+|Omni Gateway API call: Any access request received by Anypoint Omni Gateway regardless of whether the response to the request is successful 
+|Omni Gateway requests are aggregated as a total of all requests during a month.
 
 .3+|LLM Proxy	
 | Prompt tokens: Number of tokens an LLM Proxy in the prompts an LLM Proxy sends to a specific LLM Model
-| These tokens are the sum of all prompt tokens a specific LLM Proxy sends to a specific LLM Model during a month. A prompt sent to an LLM Proxy are considered a Flex Gateway API call and count towards the Flex Gateway API call metric.
+| These tokens are the sum of all prompt tokens a specific LLM Proxy sends to a specific LLM Model during a month. A prompt sent to an LLM Proxy are considered an Omni Gateway API call and count towards the Omni Gateway API call metric.
 
 | Completion tokens: Number of tokens in the responses that an LLM Proxy receives from a specific LLM Model
 |These tokens are the sum of all response tokens a specific LLM Proxy receives from a specific LLM Model during a month.
@@ -140,9 +140,9 @@ include::partial$apim-metrics.adoc[tag=table]
 Maximum Number of Managed APIs::
 API instances in production, preproduction, and unclassified APIs (not associated with an environment)
 
-== Flex Gateway Usage
+== Omni Gateway Usage
 
-Flex Gateway usage reports show this information in tables and cards:
+Omni Gateway usage reports show this information in tables and cards:
 
 include::partial$flex-gateway-metrics.adoc[tag=table]
 

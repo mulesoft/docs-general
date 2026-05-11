@@ -61,13 +61,13 @@ Control and secure access to any API.
 
 - xref:gateway::flex-gateway-secure-conn.adoc[Apply a Policy]
 - xref:gateway::policies-automated-applying.adoc[Apply Automated Policies]
-- xref:gateway::flex-gateway-secure-apis.adoc[Secure and Govern Flex Gateway APIs]
+- xref:gateway::flex-gateway-secure-apis.adoc[Secure and Govern Omni Gateway APIs]
 - xref:api-manager::add-api-instances.adoc[Add API Instances]
 - xref:monitoring::anypoint-insights.adoc[Monitor Your API with Monitoring Metrics]
 - xref:api-manager::api-instance-landing-page.adoc[Manage API Instances]
 - https://www.youtube.com/watch?v=64RWZpSF-2o[Control and Manage Any API]
-- https://www.youtube.com/watch?v=eguO1gO-rss[Product Spotlight: Flex Gateway]
-- https://www.youtube.com/watch?v=OUFadXZ0NjQ[Friends of Max Overview: Flex Gateway]
+- https://www.youtube.com/watch?v=eguO1gO-rss[Product Spotlight: Omni Gateway]
+- https://www.youtube.com/watch?v=OUFadXZ0NjQ[Friends of Max Overview: Omni Gateway]
 
 | image::reuse::lm_audience_end_1.png[]
 [.lm-bold]##Engage##
@@ -96,5 +96,5 @@ Create custom API portals to engage with your ecosystem of API consumers and pro
 * xref:api-governance::index.adoc[API Governance]
 * xref:api-manager::index.adoc[API Manager]
 * xref:exchange::index.adoc[Exchange]
-* xref:gateway::index.adoc[Flex Gateway]
+* xref:gateway::index.adoc[Omni Gateway]
 * xref:mule-gateway::mule-gateway-capabilities-mule4.adoc[Mule Gateway]
