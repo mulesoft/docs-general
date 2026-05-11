@@ -1,10 +1,6 @@
-= Add Services to Your Portfolio
+= Adding Services to Your Portfolio
 
-Add services to your portfolio to manage lifecycle and policy for that integration. Your *Portfolio* is organized into catalogs—*Agents*, *APIs*, *MCP Servers*, *LLM Proxies*, and *Gateways*. Each catalog holds the services (or gateway entries) your organization registered or imported so you can govern, monitor, and deploy them from one place.
-
-This topic summarizes how APIs, agents, MCP servers, and LLM proxies get into those catalogs. For step-by-step procedures, use the topics linked in the sections.
-
-== Two Ways to Add Services
+Your *Portfolio* is organized into catalogs: *Agents*, *APIs*, *MCP Servers*, *LLM Proxies*, and *Gateways*. Each catalog holds the services (or gateway entries) that your organization registered or imported so you can govern, monitor, and deploy them from one place. Services enter a catalog either through automated provider discovery or through manual registration. For step-by-step procedures, use the topics linked in each section.
 
 [cols="1,2",options="header"]
 |===
@@ -17,16 +13,20 @@ This topic summarizes how APIs, agents, MCP servers, and LLM proxies get into th
 |You start an *Add …* workflow from *Home* or from the catalog for that service type. You supply metadata, specifications, endpoints, or cards to register the service without a provider scanner.
 |===
 
-Gateways follow the same entry points; gateway-specific behavior is covered in the same linked topics where it applies.
+Gateways follow the same entry points; the linked topics cover gateway-specific behavior where it applies.
 
-== Where You Start the Workflow
+== Workflow Entry Points
 
-* *Home* — Use *Add Services* to open provider connection or manual registration, then pick the service type.
-* *Portfolio* — Open the *Agents*, *APIs*, *MCP Servers*, or *LLM Proxies* catalog. Use the add control for that type (labels such as *Add API* or *Add Agent*), then choose *Connect to Provider* or *Register Manually*.
+* *Home*
++
+Use *Add Services* to open provider connection or manual registration, then select the service type.
+* *Portfolio*
++
+Open the *Agents*, *APIs*, *MCP Servers*, or *LLM Proxies* catalog. Use the add control for that type (for example, *Add API* or *Add Agent*), then select *Connect to Provider* or *Register Manually*.
 
 Labels can vary by catalog; match what you see in the UI.
 
-== How Each Service Type is Added 
+== Service Type Registration Options
 
 *APIs*::
 Register with an API specification and instance details, or connect an API provider so scans import APIs into the *APIs* catalog.
@@ -41,12 +41,7 @@ Register with an MCP URL or a schema file, or connect an MCP server provider.
 Register manually by configuring a gateway and routing strategy, or use provider flows your tenant exposes for LLM proxies.
 
 *Gateways*::
-
-For gateways, add a new gateway or add an existing gateway runtime using provider discovery to add them to the *Gateways* catalog. 
-
-Create a new gateway runtime by configuring a gateway and routing strategy. This flow establishes gateway identity, connection context, and metadata so teams can govern and monitor gateway traffic in the system.
-
-Browse the marketplace catalog of pre-configured gateway options to import them into the *Gateways* catalog.
+Add a new gateway runtime by configuring a gateway and routing strategy, import an existing runtime through provider discovery, or browse the marketplace catalog to add pre-configured gateway options to the *Gateways* catalog.
 
 For more information about registering any of these types, see xref:exp-register-services-manually.adoc[] and xref:exp-connect-providers-to-add-services.adoc[].
 
