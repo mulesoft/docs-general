@@ -4,7 +4,7 @@ Instances represent how a service runs in a specific environment, such as produc
 
 Services such as APIs, agents, MCP servers, and LLM proxies can include instances. In the enhanced experience, you manage instances from the service detail page through the *Instances* tab.
 
-Managed paths through MuleSoft Flex Gateway can provide additional policy and monitoring integrations if your organization supports them. Unmanaged or external paths remain available when they align with your operating model.
+Managed paths through Anypoint Omni Gateway can provide additional policy and monitoring integrations if your organization supports them. Unmanaged or external paths remain available when they align with your operating model.
 
 == Open the Instances Experience
 

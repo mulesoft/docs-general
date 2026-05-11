@@ -24,7 +24,7 @@ Enhanced experience::
 The new MuleSoft UI for managing your AI portfolio, including governance, instance management, observability, and agentic experiences.
 
 Gateway::
-A runtime component that proxies traffic to backend services while enforcing policies. Supported types include MuleSoft Flex Gateway (managed), external gateways, and unmanaged gateways.
+A runtime component that proxies traffic to backend services while enforcing policies. Supported types include Anypoint Omni Gateway (managed), external gateways, and unmanaged gateways.
 
 Governance > Cost Management::
 A section under Governance that surfaces token usage, daily spend signals, and cost optimization recommendations across your portfolio. Apply tool mapping, tool sanitization, and related strategies here where the experience supports them.
@@ -54,7 +54,7 @@ LLM Proxy::
 A gateway-backed service that routes requests to a large language model. LLM proxies are registered in the LLM Proxies catalog and support instance management, policy application, and token usage monitoring.
 
 Managed instance::
-An instance backed by MuleSoft Flex Gateway that enables full policy enforcement, authentication, and monitoring integration. Managed instances provide stronger governance and observability than unmanaged paths.
+An instance backed by Anypoint Omni Gateway that enables full policy enforcement, authentication, and monitoring integration. Managed instances provide stronger governance and observability than unmanaged paths.
 
 MCP Server::
 A server that implements the Model Context Protocol, exposing tools and resources to MCP clients. MCP servers can be created from existing APIs, registered manually with an MCP URL or schema file, or imported via provider scanners.
@@ -90,4 +90,4 @@ Tool sanitization::
 A governance control that filters or modifies tool inputs and outputs before they reach a model or service. Apply tool sanitization to reduce risk and cost for LLM-backed services.
 
 Unmanaged instance::
-A lighter-weight instance deployment that does not route traffic through Flex Gateway. Choose unmanaged instances when a full managed path does not match your operating model.
+A lighter-weight instance deployment that does not route traffic through Omni Gateway. Choose unmanaged instances when a full managed path does not match your operating model.

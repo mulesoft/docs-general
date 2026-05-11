@@ -2,7 +2,7 @@
 
 Detailed metrics go beyond high-level status to show time series, breakdowns, and dimensions your observability stack forwards into the enhanced experience. Engineers use them to debug incidents, validate policy changes, and compare behavior across instances or environments.
 
-Available series depend on the gateway or runtime path, whether the deployment is managed through Flex Gateway, and what your organization connected under *Platform* and *Observability*.
+Available series depend on the gateway or runtime path, whether the deployment is managed through Omni Gateway, and what your organization connected under *Platform* and *Observability*.
 
 == Open Detailed Views
 

@@ -75,7 +75,7 @@ Sign in through your entry path and land on *Home*. Scan *Portfolio* catalogs, *
 Under *Portfolio*, open *Agents*, *MCP Servers*, *LLMs*, *APIs*, or *Gateways*. Add assets to work with. Register manually or use connected providers under *Platform* > *Providers* if your organization enables discovery flows.
 . Create and manage instances
 +
-On *Agents*, *MCP Servers*, *LLMs*, and *APIs*, open *Instances* to create managed or unmanaged deployments that match your needs. Managed instances on Flex Gateway give stronger governance and monitoring when the new experience exposes them. *Gateways* don't include an *Instances* tab.
+On *Agents*, *MCP Servers*, *LLMs*, and *APIs*, open *Instances* to create managed or unmanaged deployments that match your needs. Managed instances on Omni Gateway give stronger governance and monitoring when the new experience exposes them. *Gateways* don't include an *Instances* tab.
 . Configure policies
 +
 On the *Policies* tab for a service or instance, apply governance policies that match access control, data privacy, performance, and compliance goals. Use *Governance* for gateway-wide policy work, organization strategies, and cost tools.
@@ -84,7 +84,7 @@ On the *Policies* tab for a service or instance, apply governance policies that 
 On *Agents*, *APIs*, and *MCP Servers*, open *Conformance Report* to review scores, violations, and warnings, then address the findings your governance team prioritizes. For gateways, use *Governance* for the same compliance story at the scope the new experience supports.
 . Monitor runtime health
 +
-On *Monitoring*, review live metrics such as latency, error rates, and request volume when the new experience surfaces Flex Gateway data for managed paths. Compare what you see with dashboards, reports, or notifications under *Observability* when your administrator enabled those views for your team.
+On *Monitoring*, review live metrics such as latency, error rates, and request volume when the new experience surfaces Omni Gateway data for managed paths. Compare what you see with dashboards, reports, or notifications under *Observability* when your administrator enabled those views for your team.
 . Manage cost
 +
 Under *Governance*, open *Cost Management* to study token usage and related spend signals. Apply the cost reduction strategies your organization adopted, such as tool mapping or tool sanitization, where the new experience supports them.
