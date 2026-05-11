@@ -1,21 +1,29 @@
 = Access the Enhanced Experience from Slack
 
-When your administrator installs and configures the Slack integration, you can receive notifications, run shortcuts, and open deep links that land in the enhanced MuleSoft experience with your existing identity. Slack becomes a companion surface for alerts and collaboration while *Portfolio* and *Governance* remain the source of truth for configuration.
+After your administrator installs and configures the Slack integration, you can receive notifications, run shortcuts, and open deep links from the enhanced MuleSoft experience using your existing identity. Slack becomes a companion connection for alerts and collaboration while *Portfolio* and *Governance* remain the source of truth for configuration.
 
-Available commands, message templates, and workspaces depend entirely on how your organization wired the Slack app. Internal runbooks should list the slash commands or shortcuts approved for your workspace.
+Available commands, message templates, and workspaces depend on how your organization configured the Slack app. Internal runbooks list the slash commands or shortcuts approved for your workspace.
 
 == Sign In and Open the Experience
 
 . Open Slack in the workspace your company uses for MuleSoft or platform notifications.
-. Use the app your administrator added (the display name is set during installation).
+. Use the app your administrator added.
++
+The display name is set during installation.
 . Follow a notification action, a pinned link, or a slash command your internal documentation describes to authenticate and open the enhanced experience in the browser or embedded client your organization chose.
 
-If authentication fails, confirm you are in the correct Slack workspace and that your Anypoint user is linked according to your IT team's instructions.
+If authentication fails:
+. Confirm that you're in the correct Slack workspace.
+. Verify your Anypoint Platform user is linked according to your IT team's instructions.
 
 == Common Tasks from Slack
 
-* **Respond to alerts** — Open a thread from an alert message and follow the link into the service or dashboard referenced in the payload.
-* **Share context** — Post links back into Slack after you verify state in *Portfolio* so incident channels stay aligned with what you saw in the product.
+* Respond to alerts
++
+Open a thread from an alert message and follow the link into the service or dashboard referenced in the payload.
+* Share context
++
+Post links back into Slack after you verify state in *Portfolio*. This helps incident channels stay aligned with what you saw in the product.
 
 == See Also
 

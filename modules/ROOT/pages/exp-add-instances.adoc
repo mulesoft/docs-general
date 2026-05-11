@@ -1,23 +1,22 @@
-= Create and Manage Instances
+= Creating and Managing Instances
 
 Instances represent how a service runs in a specific environment, such as production or sandbox, and how traffic reaches it through gateways or runtimes your organization manages.
 
-Services such as APIs, agents, MCP servers, and LLM proxies can include instances. In the enhanced experience, instances are managed from the service detail page through the *Instances* tab.
+Services such as APIs, agents, MCP servers, and LLM proxies can include instances. In the enhanced experience, you manage instances from the service detail page through the *Instances* tab.
 
-Managed paths through MuleSoft Flex Gateway can provide additional policy and monitoring integrations when supported by your organization. Unmanaged or external paths remain available when they align with your operating model.
+Managed paths through MuleSoft Flex Gateway can provide additional policy and monitoring integrations if your organization supports them. Unmanaged or external paths remain available when they align with your operating model.
 
 == Open the Instances Experience
 
 . In *Portfolio*, open the catalog for the service type, such as *APIs*, *Agents*, *MCP Servers*, or *LLM Proxies*.
 . Select a service to open its detail page.
 . Open the *Instances* tab.
-. Use the available controls to create, edit, or manage instances.
 
 Field names, required metadata, and available gateway or runtime options depend on the selected service type and your organization's configuration.
 
 == API Instances
 
-APIs are registered as services defined by formal specifications and managed within the enhanced experience alongside other service types.
+Register APIs as services defined by formal specifications and manage them alongside other service types in the enhanced experience.
 
 Creating an API establishes its structure and makes it available in the portfolio, while instances represent deployed or managed versions of that API across environments or providers.
 
@@ -59,7 +58,7 @@ The API detail view is organized into tabs:
 * *Conformance Report* – Displays governance status
 * *Versions* – Displays available API versions
 
-NOTE: Monitoring, policies, and conformance details are managed in their respective sections.
+NOTE: Manage monitoring, policies, and conformance details in their respective sections.
 
 ==== Overview Tab
 
@@ -83,9 +82,9 @@ After creating or updating an instance, you can continue managing the service th
 
 * Use the *Policies* tab to review or apply policies to the instance.
 * Use the *Monitoring* tab to review metrics and runtime performance when monitoring is available.
-* Coordinate with platform owners if DNS, certificates, or upstream routing changes are required outside the product.
+* Coordinate with platform owners if DNS, certificates, or upstream routing changes must happen outside the product.
 
-== Permissions (high level)
+== Required Permissions
 
 Creating instances uses Anypoint Platform permissions such as *API Creator* for API-related flows. Viewing or editing instance configuration requires the corresponding permissions defined by your organization.
 
