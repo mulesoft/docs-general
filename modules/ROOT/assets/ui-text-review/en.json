@@ -194,10 +194,10 @@
     "deployingStep": "Deploying (step {current}/{total})...",
     "instanceDeployed": "Instance deployed successfully",
     "deploymentFailed": "We couldn't complete the deployment. {error}",
-    "unknownError": "unknown error",
+    "unknownError": "Unknown error",
     "deploymentTimedOut": "Deployment timed out — check the instances list.",
     "failedWithError": "Something went wrong: {error}",
-    "unknownErrorFallback": "Unknown error",
+    "unknownErrorFallback": "Something went wrong. Try again.",
     "loadingGateways": "Loading gateways...",
     "alreadyDeployed": "This MCP server is already deployed to all available gateways.",
     "goBack": "Go Back",
@@ -394,8 +394,8 @@
     "regenerateBriefing": "Regenerate briefing",
     "footnoteGenerated": "Generated automatically by MuleSoft agent ({source}).",
     "footnoteGenerating": "Generating briefing from agent...",
-    "errorEmptyBriefing": "Agent returned an empty briefing.",
-    "errorUnableToGenerate": "Unable to generate briefing.",
+    "errorEmptyBriefing": "The agent returned an empty briefing. Try again.",
+    "errorUnableToGenerate": "We couldn't generate the briefing. Try again.",
     "loadingState": "briefing-loading-state"
   },
   "providerConnectionsTable": {
@@ -1054,7 +1054,7 @@
     "disconnectConfirmLabel": "Disconnect",
     "disconnectSuccess": "Successfully disconnected {name}",
     "disconnectPartial": "Partially disconnected: {count} error(s) occurred",
-    "unexpectedError": "An unexpected error occurred"
+    "unexpectedError": "Something went wrong. Try again."
   },
   "editCredentialsModal": {
     "heading": "Update Credentials",
@@ -1197,7 +1197,7 @@
       "heading": "Flex Gateways",
       "description": "Managed and connected Flex Gateways for the connected MuleSoft provider",
       "createGateway": "Create Gateway",
-      "partialErrors": "Some gateway sources could not be loaded. Showing partial results.",
+      "partialErrors": "Some gateway sources couldn't be loaded. Try refreshing to see all sources.",
       "loadError": "We couldn't load Flex Gateways. Try again.",
       "empty": "No Flex Gateways found for this connected MuleSoft provider.",
       "createFirst": "Create your first gateway",
@@ -1295,7 +1295,7 @@
       "disconnectConfirmLabel": "Disconnect",
       "disconnectSuccess": "Successfully disconnected {name}",
       "disconnectPartial": "Partially disconnected: {count} error(s) occurred",
-      "unexpectedError": "An unexpected error occurred"
+      "unexpectedError": "Something went wrong. Try again."
     }
   },
   "costManagement": {
@@ -2230,7 +2230,7 @@
     "resetFilters": "Reset filters",
     "refreshDebounced": "Refresh already requested. Please wait a few seconds.",
     "refreshQueued": "Refresh queued. The report will update shortly.",
-    "refreshFailed": "Unable to trigger refresh right now.",
+    "refreshFailed": "We couldn't trigger a refresh. Try again.",
     "refresh": "Refresh",
     "refreshing": "Refreshing…",
     "kpi": {
@@ -2310,7 +2310,7 @@
     "lifecycleDevelopment": "Development",
     "lifecycleDevelopmentDesc": "In process of design and development",
     "failedToAddVersion": "We couldn't add the version. Try again.",
-    "publicationStatusError": "Publication status: {status}. The version was created but may not be fully available.",
+    "publicationStatusError": "The version was created but may not be fully available. Refresh the page to check its status.",
     "validationRequired": "Required",
     "validationEnterValidUrl": "Enter a valid URL",
     "validationSemverFormat": "Use SemVer format (e.g. 1.0.0 or 2.1.3)"
@@ -3160,7 +3160,7 @@
       "latest": "Latest",
       "learnMore": "Learn more",
       "loadingPolicies": "Loading policies...",
-      "unableToLoadPolicies": "Unable to load policies.",
+      "unableToLoadPolicies": "We couldn't load policies. Try again.",
       "noPoliciesMatch": "No policies match your search.",
       "profileSummaryFallback": "Includes the selected ruleset checks for this profile.",
       "loadingPolicyConfig": "Loading policy configuration...",
@@ -3247,7 +3247,7 @@
     "validation": {
       "missingOrgContext": "Missing organization context.",
       "selectTemplateFirst": "Select a policy template before continuing.",
-      "unableToResolveSchema": "Unable to resolve policy schema identifier for validation.",
+      "unableToResolveSchema": "We couldn't resolve the policy schema for validation. Try again.",
       "configDoesNotMatchSchema": "Configuration does not match the selected policy schema.",
       "configDoesNotSatisfySchema": "Configuration does not satisfy the selected policy schema.",
       "unnamedPolicyTemplate": "Unnamed policy template",
@@ -3273,7 +3273,7 @@
     "editConfiguration": "Edit Configuration",
     "removingPolicy": "Removing...",
     "removePolicy": "Remove Policy",
-    "unableToRemoveMissingId": "Unable to remove policy: missing policy id.",
+    "unableToRemoveMissingId": "We couldn't remove the policy — policy ID is missing. Try again.",
     "failedToRemovePolicy": "We couldn't remove the policy. Try again.",
     "failedToReorderPolicies": "We couldn't reorder policies. Try again.",
     "failedToLoadPolicyTemplates": "We couldn't load policy templates. Try again.",
@@ -4282,7 +4282,7 @@
     "explainDisplay": "Explain \"{name}\"",
     "reviewDisplay": "Review current \"{name}\" configuration",
     "fixDisplay": "Fix \"{name}\" using governance findings",
-    "unableToAction": "Unable to {action} this policy."
+    "unableToAction": "We couldn't {action} this policy. Try again."
   },
   "policyFormPatching": {
     "alreadyMatch": "The proposed policy changes already match the current form values.",
@@ -4977,7 +4977,7 @@
     "stepStatusFallback": "Step {current}/{total}",
     "toastMcpUpdated": "MCP server updated successfully",
     "updateFailedPrefix": "We couldn't save your changes. {error}",
-    "unknownError": "unknown error",
+    "unknownError": "Unknown error",
     "updateTimedOut": "Update may have completed — check the MCP servers list",
     "updateTimeoutFinal": "Update timed out — check the MCP servers list for status.",
     "toastSelectSource": "Please select at least one source",
