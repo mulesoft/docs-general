@@ -23,7 +23,7 @@ Navigation labels can vary by release.
 
 The experience organizes token and activity data into summary cards and detail views:
 
-* *Total tokens*: Estimated tokens processed in the selected time range.
+* *Total tokens*: Number of tokens processed in the selected time range
 * *Saved tokens, estimated*: Estimated tokens saved by optimization policies.
 * *Tool calls*: Number of tool or function calls in the selected time range.
 
