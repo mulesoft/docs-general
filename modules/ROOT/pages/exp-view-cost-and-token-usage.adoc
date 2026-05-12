@@ -6,7 +6,7 @@ Available metrics depend on your tenant configuration and role.
 
 == Cost and Token Data Locations
 
-The system surfaces token usage and performance data in several places:
+The system displays token usage and performance data in several places:
 
 * *Governance* > *Cost Management*: Primary dashboard for organization wide token usage and spend indicators.
 * Service detail pages: Usage and performance summaries for supported services.
