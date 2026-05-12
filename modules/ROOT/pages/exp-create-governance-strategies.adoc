@@ -4,7 +4,7 @@ Create governance strategies to validate services with controls or enforce autom
 
 You can create strategies when your tenant includes *Governance* and you have the required administrator role.
 
-== Before You Start
+== Before You Begin
 
 Decide whether you need validation-only monitoring or active runtime enforcement. This choice determines the strategy type and the rules or policies to apply.
 
