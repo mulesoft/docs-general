@@ -6,7 +6,7 @@ Manage strategies from *Governance* > *Governance Strategies*. Common tasks incl
 
 Go to *Governance* > *Governance Strategies* to view all strategies. Check the name, type, status, governed services, and last modified time.
 
-== What You Can Do With a Strategy
+== Available Strategy Actions
 
 * *View details*: Open a strategy to review scope, rules or policies, and metadata.
 * *Enable or disable*: Pause a strategy without deleting it.
