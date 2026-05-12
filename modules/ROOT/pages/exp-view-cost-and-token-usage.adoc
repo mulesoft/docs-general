@@ -25,7 +25,7 @@ The experience organizes token and activity data into summary cards and detail v
 
 * *Total tokens*: Number of tokens processed in the selected time range
 * *Saved tokens, estimated*: Estimated tokens saved by optimization policies
-* *Tool calls*: Number of tool or function calls in the selected time range.
+* *Tool calls*: Number of tool or function calls in the selected time range
 
 Each card also shows how many instances contributed to the metric.
 
