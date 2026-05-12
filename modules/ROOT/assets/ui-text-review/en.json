@@ -789,7 +789,7 @@
     "connectionNameLabel": "Connection Name",
     "connectionNamePlaceholder": "e.g., Production Account - Marketing",
     "descriptionLabel": "Description",
-    "descriptionPlaceholder": "Optional description for this connection",
+    "descriptionPlaceholder": "Add a description...",
     "importWarning": "All discovered services will be imported into the portfolio.",
     "connecting": "Connecting...",
     "connect": "Connect",
@@ -799,7 +799,7 @@
     "stepChoose": "Choose Provider",
     "chooseSubtitle": "Choose a provider to scan and import services into your catalog.",
     "noProvidersAvailable": "No providers available",
-    "noProvidersHint": "No providers currently support this service type."
+    "noProvidersHint": "No providers currently support this service type"
   },
   "providersMainColumn": {
     "allProviders": "All Providers",
@@ -1930,12 +1930,12 @@
     "newApi": "New API",
     "downstreamHeading": "Downstream",
     "downstreamHelp": "Inbound traffic configuration",
-    "basePath": "Base path",
+    "basePath": "Base Path",
     "basePathPlaceholder": "/my-api",
     "basePathHelp": "Unique path to expose this API on the gateway. Must start with /.",
-    "clientProvider": "Client provider",
+    "clientProvider": "Client Provider",
     "clientProviderHelp": "Automatically derived from the selected gateway environment.",
-    "instanceLabel": "Instance label",
+    "instanceLabel": "Instance Label",
     "instanceLabelPlaceholder": "e.g. production-v1",
     "instanceLabelHelp": "Recommended when managing multiple instances of the same API.",
     "upstreamHeading": "Upstream",
@@ -1959,7 +1959,7 @@
       "inactive": "Inactive"
     },
     "managedInstance": "Managed Instance",
-    "managedDescription": "Create a new instance on an Omni Gateway with full support for authentication, monitoring and policy enforcement.",
+    "managedDescription": "Create a new instance on an Omni Gateway with full support for authentication, monitoring, and policy enforcement.",
     "unmanagedTarget": "Unmanaged Target",
     "unmanagedDescription": "A basic record of an API endpoint. You can still add management for this endpoint later.",
     "instanceBox": "Instance",
@@ -2067,7 +2067,7 @@
   },
   "snippetTab": {
     "language": "JavaScript",
-    "notAvailable": "Consumer snippet not available for this entity type.",
+    "notAvailable": "No consumer snippet available",
     "copied": "Copied!",
     "copy": "Copy"
   },
@@ -3765,13 +3765,13 @@
     "registerAgentDesc": "Upload a declarative file manually to register a new Agent.",
     "createMcpServer": "Create MCP Server",
     "registerManuallyMcpDesc": "Upload a declarative file manually to register a new MCP Server.",
-    "createMcpServerDesc": "Create an MCP server from your APIs or curated list of Saas applications.",
+    "createMcpServerDesc": "Create an MCP server from your APIs or curated list of SaaS applications.",
     "registerMcpServer": "Register MCP Servers",
     "registerMcpServerDesc": "Upload a declarative file manually to register a new MCP Server.",
     "registerLlmProxies": "Register LLM Proxies",
-    "registerLlmProxiesDesc": "Upload a declarative file manually to register a new LLM Proxies.",
+    "registerLlmProxiesDesc": "Upload a declarative file manually to register new LLM Proxies.",
     "registerApi": "Register APIs",
-    "registerApiDesc": "Upload a declarative file manually to register a new APIs.",
+    "registerApiDesc": "Upload a declarative file manually to register new APIs.",
     "addService": "Add Service"
   },
   "registryUploadForm": {
