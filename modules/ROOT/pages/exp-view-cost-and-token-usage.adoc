@@ -4,7 +4,7 @@ Use cost and token metrics to understand usage, control spend, and identify opti
 
 Available metrics depend on your tenant configuration and role.
 
-== Where Token and Performance Signals Appear
+== Cost and Token Data Locations
 
 The system surfaces token usage and performance data in several places:
 
