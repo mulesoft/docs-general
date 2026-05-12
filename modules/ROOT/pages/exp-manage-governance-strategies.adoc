@@ -51,7 +51,7 @@ When you disable a strategy, the system stops evaluating or enforcing that strat
 
 When you delete a strategy, active governance for that strategy stops. Historical data retention depends on your reporting backend.
 
-Coordinate with service owners and your governance team if changes affect production services or compliance reporting that your orgsnozation relies on, 
+Coordinate with service owners and your governance team if changes affect production services or compliance reporting that your organization relies on.
 
 == See Also
 
