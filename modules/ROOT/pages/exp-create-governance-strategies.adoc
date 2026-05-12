@@ -55,7 +55,7 @@ Select *Create and activate strategy*.
 
 Strategies are active by default. You can disable a strategy later from *Governance Strategies*.
 
-== What Happens Next
+== After Strategy Activation
 
 * The system evaluates services that match the scope against the rules or policies in the strategy.
 * For *Controls*, compliance status appears in conformance reports.
