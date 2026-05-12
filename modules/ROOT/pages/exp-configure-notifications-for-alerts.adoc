@@ -16,7 +16,9 @@ Map critical alerts to high-priority channels and informational alerts to lower-
 +
 When your organization uses Slack or another integrated client, follow notifications back into the enhanced experience using the shortcuts your administrator enabled.
 
-Find detailed steps in the https://docs.mulesoft.com/runtime-manager/alerts-on-runtime-manager[Runtime Manager alerts] and https://docs.mulesoft.com/api-manager/latest/add-api-alert-task[API Manager instance alerts] documentation.
+Find detailed steps in the 
+xref:runtime-manager::alerts-on-runtime-manager.adoc[Runtime Manager alerts] and 
+xref:api-manager::add-api-alert-task.adoc[API Manager instance alerts] documentation.
 
 == Relate Alerts to Portfolio Work
 
