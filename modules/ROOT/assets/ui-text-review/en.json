@@ -2357,7 +2357,7 @@
   "instancesNonApiTables": {
     "noMatchFilters": "No instances match the selected filters.",
     "flexGateway": "Omni Gateway ({count})",
-    "flexTooltip": "These instances are protected by a MuleSoft Omni Gateway.",
+    "flexTooltip": "These instances are protected by an Anypoint Omni Gateway.",
     "externalGateway": "External Gateway ({count})",
     "externalTooltip": "These instances are protected by a non-MuleSoft gateway. Runtime data is not available.",
     "unmanagedTitle": "Unmanaged",
