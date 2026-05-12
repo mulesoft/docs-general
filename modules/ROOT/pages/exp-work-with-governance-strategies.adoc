@@ -11,7 +11,7 @@ From *Governance*, create strategies and map them to approved services or scopes
 
 Work with your governance lead when strategy changes affect production or compliance workflows.
 
-== How Strategies Fit Into Day to Day Operations
+== Governance Strategy Workflows
 
 * Create strategies for compliance validation or runtime enforcement. See xref:exp-create-governance-strategies.adoc[].
 * Manage strategies by updating scope, rules, status, and priority. See xref:exp-manage-governance-strategies.adoc[].
