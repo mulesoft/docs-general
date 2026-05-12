@@ -32,7 +32,7 @@ Specify which services that the strategy governs and under what conditions those
 
 Use *Preview Governed Scope* to see which services currently match your criteria before you move forward.
 
-== Apply Rules or Policies
+== Configure Rules or Policies
 
 Depending on the strategy type, select the rules or policies the strategy enforces:
 
