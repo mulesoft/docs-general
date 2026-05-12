@@ -53,7 +53,7 @@ Cost and performance data inform multiple workflows:
 * Performance triage: Correlate latency or error spikes with deployments or policy changes.
 * Planning and alignment: Share trends with finance and platform teams for forecasting.
 
-This dashboard does't automatically cap usage. To limit consumption, apply governance strategies or rate limiting policies.
+This dashboard doesn't automatically cap usage. To limit consumption, apply governance strategies or rate-limiting policies.
 
 == Where Cost Fits Into Governance
 
