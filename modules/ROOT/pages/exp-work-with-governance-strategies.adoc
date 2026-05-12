@@ -19,7 +19,7 @@ Work with your governance lead when strategy changes affect production or compli
 * Review conformance reporting for xref:exp-overview.adoc[supported catalog types].
 * Apply policies to services from *Portfolio*. See xref:exp-view-service-details.adoc[].
 
-== Permissions, High Level
+== Required Permissions
 
 Creating strategies typically requires *Governance Administrator*. Users with *Governance Viewer* or *Governance Administrator* can view reports, depending on your role mapping.
 
