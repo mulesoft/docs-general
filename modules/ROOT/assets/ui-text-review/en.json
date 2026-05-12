@@ -32,7 +32,7 @@
     },
     "ok": "OK",
     "copyValue": "Copy value",
-    "copiedToClipboard": "Copied to clipboard",
+    "copiedToClipboard": "Copied to clipboard.",
     "dismissNotification": "Dismiss notification"
   },
   "home": {
@@ -938,7 +938,7 @@
     "toastScanStarted": "Scan started",
     "errorStartScan": "We couldn't start the scan. Try again.",
     "errorDelete": "We couldn't delete this item. Try again.",
-    "toastScannerDeleted": "Scanner \"{name}\" deleted"
+    "toastScannerDeleted": "Scanner \"{name}\" was deleted."
   },
   "scanReviewAgentCard": {
     "selectAgent": "Select {name}",
@@ -1579,9 +1579,9 @@
     "failedToFetchTools": "We couldn't fetch tools from the MCP server. Try again.",
     "urlLabel": "Server URL",
     "clientIdLabel": "Client ID (Optional)",
-    "clientIdPlaceholder": "Paste the Client ID",
+    "clientIdPlaceholder": "Paste the Client ID...",
     "clientSecretLabel": "Client Secret (Optional)",
-    "clientSecretPlaceholder": "Paste the Client Secret",
+    "clientSecretPlaceholder": "Paste the Client Secret...",
     "fetchTools": "Fetch Tools",
     "showSecret": "Show",
     "hideSecret": "Hide",
@@ -3110,7 +3110,7 @@
     "failedToStartInstall": "We couldn't start the Slack installation. Try again.",
     "uninstallSuccess": "Slack integration uninstalled successfully",
     "failedToUninstall": "We couldn't uninstall the Slack integration. Try again.",
-    "appUninstalledExternally": "Slack app is no longer installed in your workspace. Please install it again to enable Slack notifications."
+    "appUninstalledExternally": "Slack app is no longer installed in your workspace. Install it again to enable Slack notifications."
   },
   "auth": {
     "loginFailed": "We couldn't sign you in. Try again.",
@@ -3952,9 +3952,9 @@
       "urlLabel": "URL",
       "urlPlaceholder": "https://example.com/mcp",
       "clientIdLabel": "Client ID",
-      "clientIdPlaceholder": "Paste the Client ID",
+      "clientIdPlaceholder": "Paste the Client ID...",
       "clientSecretLabel": "Client Secret",
-      "clientSecretPlaceholder": "Paste the Client Secret",
+      "clientSecretPlaceholder": "Paste the Client Secret...",
       "authenticationLabel": "Authentication",
       "methodLabel": "Method",
       "byUrlTitle": "By MCP URL",
@@ -4537,7 +4537,7 @@
       "previewScope": "We couldn't preview scope. Try again.",
       "createStrategy": "We couldn't create the strategy. Try again.",
       "updateStrategy": "We couldn't update the strategy. Try again.",
-      "createUncertain": "We couldn't confirm that your guardrail was created within the time we waited. Refresh the list to check whether it exists; if not, try again."
+      "createUncertain": "We couldn't confirm that your control was created within the time we waited. Refresh the list to check whether it exists; if not, try again."
     },
     "success": {
       "guardrailCreated": "Control created.",
@@ -4698,7 +4698,7 @@
     },
     "actions": "Actions",
     "pending": {
-      "guardrailCreating": "Don't leave this page — your guardrail is still being created. We're confirming with the upstream service."
+      "guardrailCreating": "Don't leave this page — your control is still being created. We're confirming with the upstream service."
     }
   },
   "mcpWizard": {
@@ -4732,7 +4732,7 @@
       "stepSaasCredentials": "SaaS Credentials",
       "stepReview": "Review",
       "toastApiMissingInstanceUrl": "\"{apiName}\" can't be wrapped as an MCP server yet: the selected API Manager instance has no endpoint URL. Deploy the instance in API Manager (attach a runtime) and try again.",
-      "runtimeAuthWarning": "This MCP endpoint is deployed without inbound authentication. Apply a Flex Gateway inbound auth policy (e.g. client-id-enforcement, jwt-validation) before production use."
+      "runtimeAuthWarning": "This MCP endpoint is deployed without inbound authentication. Apply a Flex Gateway inbound auth policy (for example, client-id-enforcement or jwt-validation) before production use."
     },
     "versionDropdown": {
       "latest": "latest",
@@ -4806,7 +4806,7 @@
       "editUpstreamUrlAria": "Edit upstream URL",
       "saveChangesAria": "Save changes",
       "discardChangesAria": "Discard changes",
-      "noToolsWarning": "Select at least one tool to proceed"
+      "noToolsWarning": "Select at least one tool to proceed."
     },
     "stepSelectSource": {
       "heading": "Select APIs and SaaS systems",
@@ -5206,8 +5206,8 @@
     "dataConsumedHelp": "Data transferred through the gateway this month",
     "copyPublicEndpoint": "Copy public endpoint",
     "copyInternalEndpoint": "Copy internal endpoint",
-    "endpointCopied": "Endpoint copied to clipboard",
-    "endpointCopyFailed": "Couldn't copy endpoint to clipboard"
+    "endpointCopied": "Endpoint copied to clipboard.",
+    "endpointCopyFailed": "We couldn't copy the endpoint to clipboard."
   },
   "filterableMultiSeriesChart": {
     "all": "All",
