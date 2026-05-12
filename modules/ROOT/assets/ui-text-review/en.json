@@ -2425,14 +2425,14 @@
   },
   "entityMonitoring": {
     "qualityOfService": "Quality of Service",
-    "loadingMonitoring": "Loading monitoring data...",
-    "noInstancesMatch": "No instances match the selected filters",
+    "loadingMonitoring": "Loading...",
+    "noInstancesMatch": "No instances match the selected filters.",
     "failedToLoad": "We couldn't load monitoring data. Try again.",
     "traffic": "Traffic",
     "metricLabel": {
       "totalRequests": "Total Requests",
       "errorRate": "Error Rate",
-      "avgLatency": "Avg Latency",
+      "avgLatency": "Average Latency",
       "policyViolations": "Policy Violations"
     },
     "metricSubtitle": {
@@ -2448,7 +2448,7 @@
   },
   "llmMonitoring": {
     "heading": "LLM Monitoring",
-    "loadingMonitoring": "Loading monitoring data…",
+    "loadingMonitoring": "Loading…",
     "failedToLoad": "We couldn't load monitoring data. Try again.",
     "noData": "No monitoring data available for this LLM and time range.",
     "costManagement": "Cost Management",
