@@ -906,7 +906,7 @@
     "loadingScanner": "Loading scanner…",
     "breadcrumbScanner": "Scanner",
     "breadcrumbScanDetails": "Scan Details",
-    "errorHeading": "Could not load scanner",
+    "errorHeading": "We couldn't load the scanner",
     "errorLoadFallback": "We couldn't load the scanner. Try again.",
     "errorDescription": "The scanner may have been removed or you may not have access.",
     "retry": "Retry",
@@ -1066,7 +1066,7 @@
     "saveFailed": "We couldn't save your credentials. Try again.",
     "saveCredentials": "Save Credentials",
     "saving": "Saving…",
-    "providerNotFound": "Could not find provider \"{name}\" in available providers",
+    "providerNotFound": "We couldn't find the provider \"{name}\" in available providers.",
     "loadProvidersFailed": "We couldn't load providers. Try again.",
     "closeDialog": "Close dialog"
   },
@@ -3338,7 +3338,7 @@
     "transcodeDescription": "existing REST APIs into MCP servers instantly."
   },
   "artifactRenderer": {
-    "renderError": "Could not render \"{title}\" — the data format wasn't recognized.",
+    "renderError": "We couldn't render \"{title}\" — the data format wasn't recognized.",
     "noTableData": "No table data available"
   },
   "registration": {
@@ -4868,7 +4868,7 @@
     "generatedCard": "Generated card"
   },
   "omniArtifactRenderer": {
-    "renderError": "Could not render \"{title}\" — the data format wasn't recognized."
+    "renderError": "We couldn't render \"{title}\" — the data format wasn't recognized."
   },
   "toolMappingPatchBanner": {
     "prompt": "Apply the proposed tool description optimizations?",
