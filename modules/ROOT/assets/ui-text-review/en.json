@@ -175,10 +175,10 @@
       "startingProvisioning": "Starting provisioning...",
       "deployingToGateway": "Deploying to gateway...",
       "deploySuccess": "Instance deployed successfully",
-      "deployFailed": "Deployment failed: {error}",
+      "deployFailed": "We couldn't complete the deployment. {error}",
       "deployingStep": "Deploying (step {step}/{total})...",
       "deployTimeout": "Deployment timed out — check the instances list.",
-      "genericFailed": "Failed: {error}",
+      "genericFailed": "Something went wrong: {error}",
       "loadingGateways": "Loading gateways...",
       "allGatewaysUsed": "This MCP server is already deployed to all available gateways.",
       "goBack": "Go Back",
@@ -193,10 +193,10 @@
     "deployingToGateway": "Deploying to gateway...",
     "deployingStep": "Deploying (step {current}/{total})...",
     "instanceDeployed": "Instance deployed successfully",
-    "deploymentFailed": "Deployment failed: {error}",
+    "deploymentFailed": "We couldn't complete the deployment. {error}",
     "unknownError": "unknown error",
     "deploymentTimedOut": "Deployment timed out — check the instances list.",
-    "failedWithError": "Failed: {error}",
+    "failedWithError": "Something went wrong: {error}",
     "unknownErrorFallback": "Unknown error",
     "loadingGateways": "Loading gateways...",
     "alreadyDeployed": "This MCP server is already deployed to all available gateways.",
@@ -233,10 +233,10 @@
     "back": "Back",
     "deploying": "Deploying…",
     "addLlmProxy": "Add LLM Proxy",
-    "assetCreationNotFound": "Asset creation failed — the Exchange asset could not be found. Check that the base path is valid and try again.",
-    "assetCreationFailed": "Failed to create LLM proxy asset",
-    "deployFailed": "Failed to deploy LLM proxy",
-    "deployAssetNotFound": "Deploy failed: the Exchange asset \"{basePath}\" was not found. Re-create it by refreshing and starting over.",
+    "assetCreationNotFound": "We couldn't create the LLM proxy asset — the Exchange asset wasn't found. Check that the base path is valid and try again.",
+    "assetCreationFailed": "We couldn't create the LLM proxy asset. Try again.",
+    "deployFailed": "We couldn't deploy the LLM proxy. Try again.",
+    "deployAssetNotFound": "We couldn't deploy because the Exchange asset wasn't found. Refresh and try again.",
     "subheading": "Register an LLM proxy: choose a gateway, then connect providers and routing.",
     "proxyName": "Proxy Name",
     "basePath": "Base Path",
@@ -246,9 +246,9 @@
     "port": "Port",
     "continueButton": "Continue",
     "addProxy": "Add LLM Proxy",
-    "failedToCreate": "Failed to create LLM proxy asset",
-    "failedToDeploy": "Failed to deploy LLM proxy",
-    "deployFailedAssetNotFound": "Deploy failed: the Exchange asset \"{basePath}\" was not found. Re-create it by refreshing and starting over."
+    "failedToCreate": "We couldn't create the LLM proxy asset. Try again.",
+    "failedToDeploy": "We couldn't deploy the LLM proxy. Try again.",
+    "deployFailedAssetNotFound": "We couldn't deploy because the Exchange asset wasn't found. Refresh and try again."
   },
   "createVersion": {
     "breadcrumb": "Add Version",
@@ -302,12 +302,12 @@
     "viewGateway": "View {name} gateway"
   },
   "oauthCallback": {
-    "authFailed": "Authorization failed: {error}",
+    "authFailed": "We couldn't authorize. {error}",
     "missingCode": "Missing authorization code.",
     "invalidState": "Invalid OAuth state. Please try again.",
-    "tokenExchangeFailed": "Token exchange failed: {status} — {body}",
+    "tokenExchangeFailed": "We couldn't complete sign-in. Try again.",
     "noAccessToken": "No access token in response.",
-    "signInFailed": "Sign in failed.",
+    "signInFailed": "We couldn't sign you in. Try again.",
     "backToLogin": "Back to login"
   },
   "leftNav": {
@@ -355,8 +355,8 @@
   "slackConnect": {
     "missingState": "Missing connection state.",
     "noOrganization": "No organization selected in this browser session.",
-    "connectFailed": "Failed to connect Slack user",
-    "connectFailedWithStatus": "Connect failed ({status})",
+    "connectFailed": "We couldn't connect your Slack account. Try again.",
+    "connectFailedWithStatus": "We couldn't connect ({status}).",
     "needsLogin": {
       "heading": "Connect Anypoint for Slack",
       "description": "Sign in to Anypoint first. After signing in, return to this tab to complete the Slack connection.",
@@ -373,7 +373,7 @@
       "closeTab": "You can close this tab."
     },
     "error": {
-      "heading": "Connection failed"
+      "heading": "We couldn't connect"
     },
     "connecting": {
       "heading": "Connecting to Anypoint",
@@ -504,23 +504,23 @@
       "message": "Are you sure you want to delete \"{name}\"? This action cannot be undone."
     },
     "toast": {
-      "failedToLoad": "Failed to load scanners",
+      "failedToLoad": "We couldn't load scanners. Try again.",
       "scannerDeleted": "Scanner \"{name}\" deleted",
-      "failedToDelete": "Failed to delete scanner",
+      "failedToDelete": "We couldn't delete the scanner. Try again.",
       "scanStarted": "Scan started for {name}",
-      "failedToStart": "Failed to start scan"
+      "failedToStart": "We couldn't start the scan. Try again."
     },
-    "failedToLoad": "Failed to load"
+    "failedToLoad": "We couldn't load this content. Try again."
   },
   "editScanner": {
     "backToScanners": "Back to Scanners",
     "heading": "Edit Scanner",
     "subtitle": "Update your scanner configuration",
-    "failedToLoadScanner": "Failed to load scanner",
-    "failedToUpdateScanner": "Failed to update scanner",
-    "failedToLoad": "Failed to load scanner",
+    "failedToLoadScanner": "We couldn't load the scanner. Try again.",
+    "failedToUpdateScanner": "We couldn't update the scanner. Try again.",
+    "failedToLoad": "We couldn't load the scanner. Try again.",
     "updateSuccess": "Scanner updated successfully",
-    "updateFailed": "Failed to update scanner"
+    "updateFailed": "We couldn't update the scanner. Try again."
   },
   "newScanner": {
     "backToScanners": "Back to Scanners",
@@ -633,7 +633,7 @@
       "tool-call-count": "Agent - Tool Usage"
     },
     "createdSuccessReturn": "Notification created successfully.",
-    "failedToCreate": "Failed to create notification",
+    "failedToCreate": "We couldn't create the notification. Try again.",
     "defaultSubject": "${severity}: ${api} ${condition}",
     "defaultBody": "Hello,\nYou are receiving this alert because:\n The API policy ${policy} has ${condition} of ${value} at ${timestamp}.\nThe API policy has reached the threshold based on ${condition} is ${operator} ${threshold} for ${period}.\n\nEnvironment: ${environment}\n${dashboardLink}\n${apiLink}",
     "alertFallback": "Alert",
@@ -683,7 +683,7 @@
     "previous": "Previous",
     "next": "Next",
     "loadingNotifications": "Loading notifications...",
-    "errorLoading": "Failed to load notifications",
+    "errorLoading": "We couldn't load notifications. Try again.",
     "emptyDefault": "No notifications configured yet. Click \"New Notification\" to create one.",
     "emptyFiltered": "No notifications match the selected filters.",
     "column": {
@@ -727,12 +727,12 @@
       "enabledNoChannel": "Slack → Enabled",
       "enabledWithChannel": "Slack → {channel}"
     },
-    "failedToDeleteNotification": "Failed to delete notification",
+    "failedToDeleteNotification": "We couldn't delete the notification. Try again.",
     "agentBridge": {
       "noOrgContext": "No active organization context is available to delete a notification.",
       "noMatchingNotification": "No matching notification was found on the current list page.",
       "deletedNotification": "Deleted notification {name}.",
-      "failedToDelete": "Failed to delete notification"
+      "failedToDelete": "We couldn't delete the notification. Try again."
     },
     "detail": {
       "alertMetric": "Alert Metric",
@@ -784,7 +784,7 @@
     "importWarning": "All discovered services will be imported into the portfolio.",
     "connecting": "Connecting...",
     "connect": "Connect",
-    "createScannerError": "Failed to create scanner",
+    "createScannerError": "We couldn't create the scanner. Try again.",
     "authError": "Unable to authenticate. Please check your credentials and try again.",
     "scannerCreatedFor": "We created a scanner for {name}."
   },
@@ -907,7 +907,7 @@
     "breadcrumbScanner": "Scanner",
     "breadcrumbScanDetails": "Scan Details",
     "errorHeading": "Could not load scanner",
-    "errorLoadFallback": "Failed to load scanner",
+    "errorLoadFallback": "We couldn't load the scanner. Try again.",
     "errorDescription": "The scanner may have been removed or you may not have access.",
     "retry": "Retry",
     "backToProviders": "Back to providers",
@@ -923,8 +923,8 @@
       "settings": "Settings"
     },
     "toastScanStarted": "Scan started",
-    "errorStartScan": "Failed to start scan",
-    "errorDelete": "Failed to delete"
+    "errorStartScan": "We couldn't start the scan. Try again.",
+    "errorDelete": "We couldn't delete this item. Try again."
   },
   "scanReviewAgentCard": {
     "selectAgent": "Select {name}",
@@ -979,7 +979,7 @@
   "providerDiscoveredEntities": {
     "loadingApis": "Loading discovered APIs...",
     "empty": "No entities discovered for this provider yet.",
-    "loadError": "Failed to load discovered APIs: {error}",
+    "loadError": "We couldn't load discovered APIs. {error}",
     "column": {
       "entityName": "Name",
       "status": "Status",
@@ -1062,12 +1062,12 @@
     "testConnection": "Test Connection",
     "testing": "Testing...",
     "connectedSuccessfully": "Connected successfully",
-    "connectionFailed": "Connection failed",
-    "saveFailed": "Failed to save credentials",
+    "connectionFailed": "We couldn't connect. Try again.",
+    "saveFailed": "We couldn't save your credentials. Try again.",
     "saveCredentials": "Save Credentials",
     "saving": "Saving…",
     "providerNotFound": "Could not find provider \"{name}\" in available providers",
-    "loadProvidersFailed": "Failed to load providers",
+    "loadProvidersFailed": "We couldn't load providers. Try again.",
     "closeDialog": "Close dialog"
   },
   "scannerOverviewTab": {
@@ -1108,7 +1108,7 @@
     "credentialsOnFile": "Credentials on file",
     "lastScanAuth": "Last Scan Auth",
     "authSuccess": "Authenticated successfully",
-    "authFailed": "Authentication failed",
+    "authFailed": "We couldn't authenticate you. Try again.",
     "noScansYet": "No scans yet",
     "credentialsSecure": "Credentials are stored securely and used only for discovery scans.",
     "dangerZone": "Danger Zone",
@@ -1175,7 +1175,7 @@
     "kong": {
       "heading": "Kong Control Planes",
       "description": "Connected gateways (control planes) for the Kong provider",
-      "loadError": "Failed to load Kong gateways",
+      "loadError": "We couldn't load Kong gateways. Try again.",
       "empty": "No control planes found for this Kong provider.",
       "columnGateway": "Gateway",
       "columnStatus": "Status",
@@ -1186,7 +1186,7 @@
     "apigee": {
       "heading": "Apigee Proxies",
       "description": "Connected Apigee proxies for the Apigee provider",
-      "loadError": "Failed to load Apigee proxies",
+      "loadError": "We couldn't load Apigee proxies. Try again.",
       "empty": "No connected Apigee proxies found for this provider.",
       "columnProxy": "Proxy",
       "columnOrganization": "Organization",
@@ -1198,7 +1198,7 @@
       "description": "Managed and connected Flex Gateways for the connected MuleSoft provider",
       "createGateway": "Create Gateway",
       "partialErrors": "Some gateway sources could not be loaded. Showing partial results.",
-      "loadError": "Failed to load Flex Gateways",
+      "loadError": "We couldn't load Flex Gateways. Try again.",
       "empty": "No Flex Gateways found for this connected MuleSoft provider.",
       "createFirst": "Create your first gateway",
       "columnGateway": "Gateway",
@@ -1213,7 +1213,7 @@
       "deleteTitle": "Delete Gateway",
       "deleteMessage": "Are you sure you want to delete {name}? This action cannot be undone.",
       "deleting": "Deleting…",
-      "failedToDeleteGateway": "Failed to delete {name}",
+      "failedToDeleteGateway": "We couldn't delete {name}. Try again.",
       "deleteGatewayTitle": "Delete {name}"
     },
     "refresh": "Refresh",
@@ -1245,8 +1245,8 @@
     "entitiesTab": {
       "loadingApis": "Loading discovered APIs...",
       "empty": "No entities discovered for this provider yet.",
-      "loadError": "Failed to load discovered APIs: {error}",
-      "failedToLoadApis": "Failed to load discovered APIs",
+      "loadError": "We couldn't load discovered APIs. {error}",
+      "failedToLoadApis": "We couldn't load discovered APIs. Try again.",
       "columnName": "Name",
       "columnStatus": "Status",
       "columnVersion": "Version",
@@ -1452,7 +1452,7 @@
     "loadingHint": "Configuration fields should match those available in Anypoint Platform.",
     "selectUpstream": "Select at least one upstream for outbound policy application.",
     "missingApigeeContext": "Missing Apigee apply context.",
-    "applyFailed": "Failed to apply policy ({status})",
+    "applyFailed": "We couldn't apply the policy. Try again.",
     "invalidJson": "Configuration JSON is invalid.",
     "saving": "Saving...",
     "applying": "Applying...",
@@ -1537,7 +1537,7 @@
     "continue": "Continue",
     "applyPolicy": "Apply Policy",
     "missingBaseDescription": "Base description not available",
-    "loadExistingFailed": "Failed to load existing policy configuration. Please try again.",
+    "loadExistingFailed": "We couldn't load the policy configuration. Try again.",
     "retry": "Retry"
   },
   "importSourceDropdown": {
@@ -1556,7 +1556,7 @@
     "noTools": "This MCP server has no tools available.",
     "selectAll": "Select All",
     "importCount": "Import {count} {count, plural, one {Tool} other {Tools}}",
-    "failedToFetchTools": "Failed to fetch tools from MCP server"
+    "failedToFetchTools": "We couldn't fetch tools from the MCP server. Try again."
   },
   "importToolsModal": {
     "title": "Import Tools",
@@ -1564,7 +1564,7 @@
     "noTools": "This MCP server has no tools available for import.",
     "selectAll": "Select All",
     "importCount": "Import {count} {count, plural, one {Tool} other {Tools}}",
-    "failedToLoadTools": "Failed to load tools"
+    "failedToLoadTools": "We couldn't load tools. Try again."
   },
   "toolMappingToolsStep": {
     "heading": "Tool Descriptions",
@@ -1580,7 +1580,7 @@
     "currentDescription": "Current Description",
     "updatedBadge": "Updated",
     "mappedNameAriaLabel": "Mapped name for {name}",
-    "optimizationFailed": "Optimization failed"
+    "optimizationFailed": "We couldn't complete the optimization. Try again."
   },
   "toolMappingReviewStep": {
     "heading": "Review and Apply",
@@ -1649,8 +1649,8 @@
     "serverDescriptionDefaultNoEnv": "Auto-generated MCP server exposing {name} operations",
     "creating": "Creating...",
     "createMcpServer": "Create MCP Server",
-    "failedToCreate": "Failed to create MCP server",
-    "failedToFetchGateways": "Failed to fetch gateways"
+    "failedToCreate": "We couldn't create the MCP server. Try again.",
+    "failedToFetchGateways": "We couldn't fetch gateways. Try again."
   },
   "operationTable": {
     "searchPlaceholder": "Search by path or summary...",
@@ -1729,7 +1729,7 @@
     "badgeLabel": "Automated Policy",
     "environment": "Environment",
     "noEnvironments": "No environments with automated policies",
-    "failedToReorder": "Failed to reorder automated policies",
+    "failedToReorder": "We couldn't reorder automated policies. Try again.",
     "applyReorder": "Apply Reorder",
     "emptyMessage": "No automated policies to reorder in this environment.",
     "emptyState": "No automated policies to reorder in this environment."
@@ -1784,14 +1784,14 @@
     "moveDown": "Move {name} down",
     "saving": "Saving…",
     "applyReorder": "Apply Reorder",
-    "failedToReorder": "Failed to reorder automated policies"
+    "failedToReorder": "We couldn't reorder automated policies. Try again."
   },
   "addInstanceModal": {
     "heading": "Create Instance",
     "closeModalLabel": "Close create instance modal",
     "creating": "Creating...",
     "createInstanceButton": "Create Instance",
-    "failedToCreate": "Failed to create instance",
+    "failedToCreate": "We couldn't create the instance. Try again.",
     "createdSuccessfully": "Instance created successfully",
     "unmanagedLabelField": "Label",
     "unmanagedLabelPlaceholder": "Legacy Production Instance",
@@ -2112,7 +2112,7 @@
   },
   "connectedAssetsSection": {
     "heading": "Connected Assets",
-    "failedToLoad": "Failed to load connected assets",
+    "failedToLoad": "We couldn't load connected assets. Try again.",
     "noConnectedAssets": "No connected assets declared for this broker.",
     "moreCount": "+{count} more",
     "hiddenMore": "+{count} more"
@@ -2309,7 +2309,7 @@
     "lifecycleStableDesc": "Released and ready to consume",
     "lifecycleDevelopment": "Development",
     "lifecycleDevelopmentDesc": "In process of design and development",
-    "failedToAddVersion": "Failed to add version",
+    "failedToAddVersion": "We couldn't add the version. Try again.",
     "publicationStatusError": "Publication status: {status}. The version was created but may not be fully available.",
     "validationRequired": "Required",
     "validationEnterValidUrl": "Enter a valid URL",
@@ -2382,7 +2382,7 @@
     "qualityOfService": "Quality of Service",
     "loadingMonitoring": "Loading monitoring data...",
     "noInstancesMatch": "No instances match the selected filters",
-    "failedToLoad": "Failed to load monitoring data",
+    "failedToLoad": "We couldn't load monitoring data. Try again.",
     "traffic": "Traffic",
     "metricLabel": {
       "totalRequests": "Total Requests",
@@ -2400,7 +2400,7 @@
   "llmMonitoring": {
     "heading": "LLM Monitoring",
     "loadingMonitoring": "Loading monitoring data…",
-    "failedToLoad": "Failed to load monitoring data",
+    "failedToLoad": "We couldn't load monitoring data. Try again.",
     "noData": "No monitoring data available for this LLM and time range.",
     "costManagement": "Cost Management",
     "totalTokens": "Total tokens",
@@ -2518,7 +2518,7 @@
     "tabLogs": "Logs",
     "tabConfiguration": "Configuration",
     "loadingTabContent": "Loading tab content...",
-    "failedToDeleteAsset": "Failed to delete asset",
+    "failedToDeleteAsset": "We couldn't delete the asset. Try again.",
     "entityLabel": {
       "agent": "Agent",
       "mcpServer": "MCP Server",
@@ -2884,7 +2884,7 @@
     "appsGroupLabel": "Apps",
     "successMessage": "Notification updated successfully!",
     "saving": "Saving...",
-    "failedToUpdate": "Failed to update notification",
+    "failedToUpdate": "We couldn't update the notification. Try again.",
     "defaultEmailSubject": "$'{'severity'}': $'{'api'}' $'{'condition'}'",
     "defaultEmailMessage": "Notification triggered for $'{'resource'}' in $'{'environment'}'.\n\nCondition: $'{'condition'}' ($'{'operator'}' $'{'threshold'}' for $'{'period'}')\nCurrent value: $'{'value'}'\nTime: $'{'timestamp'}'\n\nDashboard: $'{'dashboardLink'}'\nNotification details: $'{'alertLink'}'",
     "metrics": {
@@ -3045,15 +3045,15 @@
     "uninstallConfirm": "Are you sure you want to uninstall the Slack integration? This will remove all Slack notification settings.",
     "oauthSuccessWorkspace": "Successfully connected to {workspace}!",
     "oauthSuccessGeneric": "Slack integration successful!",
-    "oauthFailed": "OAuth authorization failed",
-    "failedToLoadStatus": "Failed to load Slack installation status",
-    "failedToStartInstall": "Failed to start Slack installation",
+    "oauthFailed": "We couldn't authorize with OAuth. Try again.",
+    "failedToLoadStatus": "We couldn't load the Slack installation status. Try again.",
+    "failedToStartInstall": "We couldn't start the Slack installation. Try again.",
     "uninstallSuccess": "Slack integration uninstalled successfully",
-    "failedToUninstall": "Failed to uninstall Slack integration"
+    "failedToUninstall": "We couldn't uninstall the Slack integration. Try again."
   },
   "auth": {
-    "loginFailed": "Login failed",
-    "signInFailed": "Sign in failed"
+    "loginFailed": "We couldn't sign you in. Try again.",
+    "signInFailed": "We couldn't sign you in. Try again."
   },
   "guardrailWizard": {
     "step": {
@@ -3257,7 +3257,7 @@
   "policiesTabSingle": {
     "unknownPolicy": "Unknown Policy",
     "loadingPolicies": "Loading policies for this instance...",
-    "failedToLoadPolicies": "Failed to load policies",
+    "failedToLoadPolicies": "We couldn't load policies. Try again.",
     "byDomain": "By Domain",
     "byApplicationMethod": "By Application Method",
     "automatedPolicies": "Automated Policies",
@@ -3274,16 +3274,16 @@
     "removingPolicy": "Removing...",
     "removePolicy": "Remove Policy",
     "unableToRemoveMissingId": "Unable to remove policy: missing policy id.",
-    "failedToRemovePolicy": "Failed to remove policy",
-    "failedToReorderPolicies": "Failed to reorder policies",
-    "failedToLoadPolicyTemplates": "Failed to load policy templates",
+    "failedToRemovePolicy": "We couldn't remove the policy. Try again.",
+    "failedToReorderPolicies": "We couldn't reorder policies. Try again.",
+    "failedToLoadPolicyTemplates": "We couldn't load policy templates. Try again.",
     "viewPolicyAriaLabel": "View {name}",
     "moreActionsAriaLabel": "More actions for {name}"
   },
   "policiesTab": {
     "policyFallback": "Policy",
     "errorMissingInstanceContext": "Missing API instance context (organization, environment, or instance id).",
-    "errorLoadPolicyTemplates": "Failed to load policy templates for this instance.",
+    "errorLoadPolicyTemplates": "We couldn't load policy templates for this instance. Try again.",
     "applyPolicyLoading": "Loading...",
     "applyPolicyButton": "Apply Policy",
     "calculatingCoverage": "Calculating policy coverage from instance policies...",
@@ -3458,7 +3458,7 @@
       "testing": "Testing...",
       "connectedSuccessfully": "Connected successfully",
       "testConnection": "Test Connection",
-      "connectionFailed": "Connection failed",
+      "connectionFailed": "We couldn't connect. Try again.",
       "advancedSettingsHeading": "Advanced Settings",
       "notificationsHeading": "Notifications",
       "emailOption": "Email",
@@ -3512,11 +3512,11 @@
       "assetIdRequired": "AssetId is required",
       "versionRequired": "Version is required",
       "versionInvalid": "Version field should be a valid semver version",
-      "publishFailed": "Failed to publish asset",
+      "publishFailed": "We couldn't publish the asset. Try again.",
       "signInForTestConnection": "Sign in or select an organization to test connection",
       "urlRequired": "URL is required",
       "urlInvalid": "URL is invalid",
-      "connectionTestFailed": "Connection test failed",
+      "connectionTestFailed": "We couldn't complete the connection test. Try again.",
       "chooseFileAriaLabel": "Choose {fieldLabel} file",
       "lifecycleAriaLabel": "{label} lifecycle state"
     },
@@ -3538,7 +3538,7 @@
       "cancelButton": "Cancel",
       "publishingButton": "Publishing...",
       "publishButton": "Publish",
-      "publishFailed": "Failed to publish API asset",
+      "publishFailed": "We couldn't publish the API asset. Try again.",
       "validationRequired": "Required",
       "validationEnterValidUrl": "Enter a valid URL",
       "validationInvalidSemver": "Version field should be a valid semver version"
@@ -3567,7 +3567,7 @@
     "dragAndDrop": "or drag and drop a file here",
     "nameDuplicate": "A topic with this name already exists",
     "invalidFileType": "Please upload a .txt or .csv file",
-    "fileReadFailed": "Failed to read file",
+    "fileReadFailed": "We couldn't read the file. Try again.",
     "nameLabel": "Prompt topic name",
     "utterancesLabel": "Prompt utterances (type or upload)",
     "deleteButton": "Delete",
@@ -3602,7 +3602,7 @@
     "unknown": "Unknown"
   },
   "semanticServiceContext": {
-    "loadFailed": "Failed to load semantic services"
+    "loadFailed": "We couldn't load semantic services. Try again."
   },
   "scheduleFields": {
     "frequencyLabel": "Frequency",
@@ -3741,7 +3741,7 @@
     },
     "typeBasic": "Basic",
     "typeAdvanced": "Advanced",
-    "loadFailed": "Failed to load semantic services",
+    "loadFailed": "We couldn't load semantic services. Try again.",
     "heading": "Semantic Services",
     "addService": "Add Semantic Service",
     "searchPlaceholder": "Search semantic services...",
@@ -3761,7 +3761,7 @@
     "columnModel": "Model",
     "columnUrl": "URL",
     "environment": "Environment",
-    "failedToLoad": "Failed to load semantic services"
+    "failedToLoad": "We couldn't load semantic services. Try again."
   },
   "semanticServiceCatalogRowMenu": {
     "actionsAriaLabel": "Actions for {name}",
@@ -3850,7 +3850,7 @@
     "test": "Test connection",
     "testing": "Testing connection…",
     "success": "Connection successful",
-    "failure": "Connection failed",
+    "failure": "We couldn't connect. Try again.",
     "oauthCredentialsRequired": "Client ID and Client Secret are required",
     "metadataServerLabel": "Server",
     "metadataVersionLabel": "Version",
@@ -4181,7 +4181,7 @@
     "utterancesRequired": "Utterances are required",
     "invalidFileType": "Only .csv or .txt files are allowed.",
     "fileTooLarge": "File is too large. Max file size: 500 KB.",
-    "failedToReadFile": "Failed to read file.",
+    "failedToReadFile": "We couldn't read the file. Try again.",
     "closeAriaLabel": "Close",
     "utterancesLabel": "Prompt utterances (type or upload)",
     "utterancesGuidanceAriaLabel": "Prompt utterances guidance",
@@ -4203,7 +4203,7 @@
     "saveLabel": "Save",
     "fileTypeError": "Only .csv or .txt files are allowed.",
     "fileTooLargeError": "File is too large. Max file size: 500 KB.",
-    "fileReadError": "Failed to read file.",
+    "fileReadError": "We couldn't read the file. Try again.",
     "utterancesHeading": "Prompt utterances (type or upload)",
     "utterancesTooltipAriaLabel": "Prompt utterances guidance",
     "utterancesTooltipLine1": "Type or paste utterances, separating by line break.",
@@ -4277,7 +4277,7 @@
     "explainPolicy": "Explain this policy",
     "reviewConfig": "Review this configuration",
     "fixWithContext": "Fix with governance context",
-    "prepFailed": "Failed to prepare {action} request ({status})",
+    "prepFailed": "We couldn't prepare the {action} request. Try again.",
     "noPrompt": "No prompt returned for {action}.",
     "explainDisplay": "Explain \"{name}\"",
     "reviewDisplay": "Review current \"{name}\" configuration",
@@ -4336,7 +4336,7 @@
     "llmCatalogLabel": "LLM Proxies",
     "entityCreatedSuccessfully": "{entity} has been created successfully",
     "entityBeingCreated": "{entity} is being created",
-    "failedToCreateEntity": "Failed to create {entity}",
+    "failedToCreateEntity": "We couldn't create the {entity}. Try again.",
     "agentNoun": "Agent",
     "mcpServerNoun": "MCP Server",
     "apiNoun": "API",
@@ -4352,7 +4352,7 @@
     "title": "Add Version to {name}",
     "entityNewVersionCreatedSuccessfully": "New {entity} version has been created successfully",
     "entityNewVersionBeingCreated": "New {entity} version is being created",
-    "failedToCreateNewVersion": "Failed to create new {entity} version"
+    "failedToCreateNewVersion": "We couldn't create a new {entity} version. Try again."
   },
   "guardrailGovernedServicesTab": {
     "conformance": "Conformance",
@@ -4460,11 +4460,11 @@
       "allEndpointTypes": "All endpoint types"
     },
     "error": {
-      "loadStrategies": "Failed to load governance strategies. Please try again.",
-      "loadRuleCatalog": "Failed to load rule catalog and scope options. Please try again.",
-      "previewScope": "Failed to preview scope. Please try again.",
-      "createStrategy": "Failed to create strategy. Please try again.",
-      "updateStrategy": "Failed to update strategy. Please try again."
+      "loadStrategies": "We couldn't load governance strategies. Try again.",
+      "loadRuleCatalog": "We couldn't load rule catalog and scope options. Try again.",
+      "previewScope": "We couldn't preview scope. Try again.",
+      "createStrategy": "We couldn't create the strategy. Try again.",
+      "updateStrategy": "We couldn't update the strategy. Try again."
     },
     "success": {
       "guardrailCreated": "Control created.",
@@ -4750,7 +4750,7 @@
       "credentialsWarning": "Credentials not configured. You can proceed but the upstream will reject requests until you add them.",
       "testing": "Testing...",
       "testConnection": "Test Connection",
-      "requestFailed": "Request failed",
+      "requestFailed": "We couldn't complete the request. Try again.",
       "authHeaderPrefix": "Auth header:",
       "credentialsLabel": "Credentials",
       "credentialPrefixAria": "credential prefix",
@@ -4862,7 +4862,7 @@
     "endpointsHeading": "Endpoints"
   },
   "llmProxyRoutesEditor": {
-    "failedToSaveChanges": "Failed to save changes"
+    "failedToSaveChanges": "We couldn't save your changes. Try again."
   },
   "omniInlineMonitoring": {
     "generatedCard": "Generated card"
@@ -4881,7 +4881,7 @@
     "placeholderKeepExisting": "Leave blank to keep existing",
     "showSecret": "Show",
     "hideSecret": "Hide",
-    "requestFailed": "Request failed",
+    "requestFailed": "We couldn't complete the request. Try again.",
     "credentialsNotConfigured": "Credentials not configured. You can proceed but the upstream will reject requests until you add them.",
     "testing": "Testing...",
     "testConnection": "Test Connection",
@@ -4976,12 +4976,12 @@
     "toastUpdateCompleted": "Update completed",
     "stepStatusFallback": "Step {current}/{total}",
     "toastMcpUpdated": "MCP server updated successfully",
-    "updateFailedPrefix": "Update failed: {error}",
+    "updateFailedPrefix": "We couldn't save your changes. {error}",
     "unknownError": "unknown error",
     "updateTimedOut": "Update may have completed — check the MCP servers list",
     "updateTimeoutFinal": "Update timed out — check the MCP servers list for status.",
     "toastSelectSource": "Please select at least one source",
-    "provisionFailed": "Failed to provision: {message}",
+    "provisionFailed": "We couldn't provision the server. {message}",
     "unknownErrorShort": "Unknown error",
     "breadcrumbMcpServers": "MCP Servers",
     "breadcrumbCreate": "Create MCP Server",
@@ -5225,7 +5225,7 @@
     "updateCount": "~{count}",
     "removeCount": "-{count}",
     "providersBreadcrumb": "Providers",
-    "failedLoadApis": "Failed to load discovered APIs",
+    "failedLoadApis": "We couldn't load discovered APIs. Try again.",
     "scanResultCategories": "Scan result categories",
     "close": "Close",
     "upToDate": "Up to date"
@@ -5279,8 +5279,8 @@
     "statusLegacyCreated": "From Anypoint strategy created.",
     "statusStrategyUpdated": "Strategy updated.",
     "statusLegacyUpdated": "From Anypoint strategy updated.",
-    "errorCreateFailed": "Failed to create strategy. Please try again.",
-    "errorUpdateFailed": "Failed to update strategy. Please try again.",
+    "errorCreateFailed": "We couldn't create the strategy. Try again.",
+    "errorUpdateFailed": "We couldn't update the strategy. Try again.",
     "confirmDuplicateOverride": "A similar automated policy already exists. Continue with duplicate override?",
     "loadingAriaLabel": "Loading governance configuration",
     "heading": "Governance Strategies",
