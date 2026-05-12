@@ -1,24 +1,31 @@
 = Configure Notifications for Alerts
 
-Notifications route API and runtime alerts from Anypoint Platform into channels your team already monitors, such as email, Slack, or ticketing integrations your administrator configured. Connecting alerts to the enhanced experience helps responders jump from a signal into *Portfolio* or *Observability* with less context switching.
+Route API and runtime alerts from Anypoint Platform into channels your team monitors, such as email, Slack, or ticketing integrations your administrator configured. Connect alerts to the enhanced experience so responders can jump directly from a signal into *Portfolio* or *Observability*.
 
-Delivery channels and alert types depend on Anypoint API Manager, Runtime Manager, and any add-on connectors your organization purchased. You configure the subscription side in those products; the enhanced experience surfaces links and context when your entry path integrates them.
+Delivery channels and alert types depend on API Manager, Runtime Manager, and any add-on connectors your organization purchased. You configure the subscription side in those products; the enhanced experience surfaces links and context when your entry path integrates them.
 
-== What You Typically Configure
+== Alert Configuration
 
-* **Who receives alerts** — Assign viewers or managers for API alerts in API Manager and for runtime alerts in Runtime Manager according to your team's on-call model.
-* **Severity and routing** — Map critical alerts to high-priority channels and informational alerts to lower-noise destinations so engineers trust the feed.
-* **Deep links** — When your organization uses Slack or another integrated client, follow notifications back into the enhanced experience using the shortcuts your administrator enabled.
+* Who receives alerts
++
+Assign viewers or managers for API alerts in API Manager and for runtime alerts in Runtime Manager.
+* Severity and routing
++
+Map critical alerts to high-priority channels and informational alerts to lower-noise destinations to reduce noise for your team.
+* Deep links
++
+When your organization uses Slack or another integrated client, follow notifications back into the enhanced experience using the shortcuts your administrator enabled.
 
-Exact steps live in Anypoint Platform documentation for API Manager and Runtime Manager; use those guides for click-by-click procedures.
+Find detailed steps in the https://docs.mulesoft.com/runtime-manager/alerts-on-runtime-manager[Runtime Manager alerts] and https://docs.mulesoft.com/api-manager/latest/add-api-alert-task[API Manager instance alerts] documentation.
 
 == Relate Alerts to Portfolio Work
 
-When an alert references a service you govern in the enhanced experience, open the service from *Portfolio* and review *Monitoring*, *Policies*, and *Instances* together. xref:exp-monitor-your-services.adoc[Monitoring] explains how service-level signals relate to organization-wide observability.
+When an alert references a service you govern in the enhanced experience, open the service from *Portfolio* and review *Monitoring*, *Policies*, and *Instances* together.
+xref:exp-monitor-your-services.adoc[Monitoring] explains how service-level signals relate to organization-wide observability.
 
-== Permissions (high level)
+== Permissions Overview
 
-Managing alert subscriptions typically requires *API Manager* > *Manage API Alerts* or *Runtime Manager* > *Manage Alerts*. Viewing alerts uses the corresponding view permissions. See xref:exp-start-home.adoc#permissions[Enhanced Experience Permissions] for how those roles appear in access guides.
+Managing alert subscriptions requires *API Manager* > *Manage API Alerts* or *Runtime Manager* > *Manage Alerts*. Viewing alerts uses the corresponding view permissions. See xref:exp-start-home.adoc#permissions[Enhanced Experience Permissions] for how those roles appear in access guides.
 
 == See Also
 
