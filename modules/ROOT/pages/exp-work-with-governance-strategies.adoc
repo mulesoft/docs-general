@@ -1,0 +1,33 @@
+= Working with Governance Strategies
+
+Use governance strategies to apply rules and policies across agents, APIs, MCP servers, LLM proxies, and gateways. You can create, manage, and monitor strategies when your tenant includes *Governance* and your account has the required role. Use strategies to validate service compliance, automate runtime enforcement, and maintain visibility as your portfolio grows.
+
+
+== Access Governance Strategy Workflows
+
+Log in through your organization’s entry path and go to *Governance*.
+
+From *Governance*, create strategies and map them to approved services or scopes. You can also edit, enable, disable, reorder, or delete existing strategies.
+
+Work with your governance lead when strategy changes affect production or compliance workflows.
+
+== Governance Strategy Workflows
+
+* Create strategies for compliance validation or runtime enforcement. See xref:exp-create-governance-strategies.adoc[].
+* Manage strategies by updating scope, rules, status, and priority. See xref:exp-manage-governance-strategies.adoc[].
+* Monitor token usage in *Governance* > *Cost Management*. See xref:exp-view-cost-and-token-usage.adoc[].
+* Review conformance reporting for xref:exp-overview.adoc[supported catalog types].
+* Apply policies to services from *Portfolio*. See xref:exp-view-service-details.adoc[].
+
+== Required Permissions
+
+Creating strategies typically requires *Governance Administrator*. You can view reports with the Governance Viewer or Governance Administrator role, depending on how your organization maps roles.
+
+== See Also
+
+* xref:exp-create-governance-strategies.adoc[]
+* xref:exp-manage-governance-strategies.adoc[]
+* xref:exp-view-cost-and-token-usage.adoc[]
+* xref:exp-overview.adoc[]
+* xref:exp-start-home.adoc#permissions[Enhanced Experience Permissions]
+* xref:exp-view-service-details.adoc[]

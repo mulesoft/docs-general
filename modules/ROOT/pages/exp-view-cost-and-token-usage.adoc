@@ -1,0 +1,71 @@
+= Viewing Cost and Token Usage
+
+Use cost and token metrics to understand usage, control spend, and identify optimization opportunities.
+
+Available metrics depend on your tenant configuration and role.
+
+== Cost and Token Data Locations
+
+The system displays token usage and performance data in several places:
+
+* *Governance* > *Cost Management*: Primary dashboard for organization-wide token usage and spend indicators
+* Service detail pages: Usage and performance summaries for supported services
+* *Observability*: Aggregated token and latency trends, when configured
+
+Navigation labels can vary by release.
+
+== Open Cost Management
+
+. Log in and go to *Governance* > *Cost Management*.
+. Adjust the time range and filters for the services or period you want to analyze.
+
+== Usage Metrics
+
+The experience organizes token and activity data into summary cards and detail views:
+
+* *Total tokens*: Number of tokens processed in the selected time range
+* *Saved tokens, estimated*: Estimated tokens saved by optimization policies
+* *Tool calls*: Number of tool or function calls in the selected time range
+
+Each card also shows how many instances contributed to the metric.
+
+== Filter and Search
+
+Use controls at the top of the page to narrow the view:
+
+* Search for service or instance names.
+* Use *Filters* to refine your search by service type, environment, or metadata.
+* Select 1H, 6H, 24H, 7D, or 30D to search per time range.
+
+The counter updates to show the number of matching services.
+
+== Saved Token Estimates
+
+When optimization policies are active, the system estimates saved tokens compared to unoptimized traffic.
+
+Treat this metric as directional, not exact.
+
+== Cost Data Use Cases
+
+Cost and performance data inform multiple workflows:
+
+* Cost optimization: Identify services with high usage and apply optimization controls.
+* Performance triage: Correlate latency or error spikes with deployments or policy changes.
+* Planning and alignment: Share trends with finance and platform teams for forecasting.
+
+This dashboard doesn't automatically cap usage. To limit consumption, apply governance strategies or rate-limiting policies.
+
+== Cost Data and Governance 
+
+Use *Cost Management* data to create or refine governance strategies.
+
+For runtime enforcement, attach cost-related controls or policies to a governance strategy and apply it to the relevant services.
+
+== See Also
+
+* xref:exp-work-with-governance-strategies.adoc[]
+* xref:exp-create-governance-strategies.adoc[]
+* xref:exp-manage-governance-strategies.adoc[]
+* xref:exp-view-service-details.adoc[]
+* xref:exp-monitor-your-services.adoc[]
+* xref:exp-view-detailed-metrics-for-services.adoc[]

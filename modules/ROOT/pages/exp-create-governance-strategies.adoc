@@ -1,30 +1,70 @@
-= Creating Governance Strategies
+= Create Governance Strategies
 
-Governance strategies bundle the rules and controls your organization wants to enforce across agents, APIs, MCP servers, LLM proxies, and gateways. They connect policy intent to conformance reporting, cost management, and runtime behavior so teams can align releases with risk and compliance targets.
+Governance strategies define which services the system evaluates or enforces policy against and under what conditions. A controls strategy monitors compliance and can block noncompliant activity. An automated policy strategy enforces requirements at the gateway or runtime layer. You can create strategies when your tenant includes *Governance* and you have the required administrator role.
 
-Strategy authoring is available when your tenant includes *Governance* capabilities and your account has the appropriate administrator role. Exact rule catalogs and scopes depend on your organization's configuration.
+== Before You Begin
 
-== Open Governance Strategy Workflows
+Decide whether you need validation-only monitoring or active runtime enforcement. This choice determines the strategy type and the rules or policies to apply.
 
-. Sign in through your organization's entry path and open *Governance*.
-. Use the area your UI labels for strategies or organization governance (names can vary by release).
-. Create a strategy, attach the domains your organization uses—such as access and security, data privacy, performance and cost, or compliance and observability—and map them to the services or scopes your administrators approved.
+== Open the Strategy Workflow
 
-Work with your governance lead so strategy changes match change-management processes outside the product.
+. Log in and go to *Governance* > *Governance Strategies*.
+. Select *Create governance strategy* to start the wizard.
 
-== Tie Strategies to Day-to-Day Operations
+The wizard guides you through type, scope, rules or policies, and activation.
 
-* Apply policies at the service or instance level from *Portfolio* so runtime traffic reflects the strategy. See xref:exp-view-service-details.adoc[] for where policies appear on a service.
-* Review xref:exp-overview.adoc[conformance reporting] on supported catalog types to confirm rules pass after you update a strategy or deployment.
-* Use cost-related controls where the experience exposes them—for example under *Governance* > *Cost Management* when your tenant enables token and spend signals.
+== Select Strategy Type
 
-== Permissions (high level)
+Choose from these types:
 
-Creating governance strategies typically requires *Governance Administrator*. Viewing reports may be available to *Governance Viewer* or *Governance Administrator* depending on how your organization mapped roles.
+* *Controls* validate targeted services against control rules. Use controls to monitor compliance and, when supported, block noncompliant activity.
+* *Automated Policy* enforces runtime policy requirements across targeted services.
+
+Select the type that matches your governance objective, then proceed.
+
+== Define Governance Scope
+
+Specify which services that the strategy governs and under what conditions those services are included.
+
+If shown, use *Select Services To Govern* to select whether the strategy applies to APIs, Agents, and MCP Servers, or to Gateways.
+
+Use *Select Filter Criteria* to Refine the scope by tag, environment, or other available metadata.
+
+Use *Preview Governed Scope* to see which services currently match your criteria before you move forward.
+
+== Configure Rules or Policies
+
+Depending on the strategy type, select the rules or policies the strategy enforces:
+
+* For *Controls*, select controls from the catalog available in your tenant.
+* For *Automated Policy*, define runtime details such as gateway runtime, endpoint type, and environment.
+
+Available options depend on your earlier selections and entitlements.
+
+== Name and Describe the Strategy
+
+Enter a clear *Strategy Name*, such as "PCI Compliance Rules". Add a *Description* that states what the strategy enforces and why.
+
+== Review and Activate
+
+Review your selections: strategy type, scope, rules or policies, and general information.
+
+Select *Create and activate strategy*.
+
+Strategies are active by default. You can disable a strategy later from *Governance Strategies*.
+
+== After Strategy Activation
+
+* The system evaluates services that match the scope against the rules or policies in the strategy.
+* For *Controls*, compliance status appears in conformance reports.
+* For *Automated Policy*, enforcement runs at the gateway or runtime layer.
+* Edit the strategy from *Governance Strategies* when scope, rules, or naming change.
+
+Work with your governance lead if your strategies affect production services or if you need to coordinate rollout timing.
 
 == See Also
 
-* xref:exp-overview.adoc[]
-* xref:exp-start-home.adoc#permissions[Enhanced Experience Permissions]
+* xref:exp-work-with-governance-strategies.adoc[]
+* xref:exp-manage-governance-strategies.adoc[]
+* xref:exp-view-cost-and-token-usage.adoc[]
 * xref:exp-view-service-details.adoc[]
-* xref:exp-view-token-usage-response-performance.adoc[]

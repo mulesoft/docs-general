@@ -1,0 +1,61 @@
+= Managing Governance Strategies
+
+Keep governance strategies aligned with your portfolio by adjusting scope, rules, or status as your services and compliance requirements evolve. From *Governance* > *Governance Strategies*, you can enable, disable, edit, reorder, and delete strategies, and filter the list to focus on specific types or status values. Summary cards show active strategy counts, type breakdowns, and governance coverage at a glance.
+
+== Display Governance Strategies
+
+Go to *Governance* > *Governance Strategies* to view all strategies. Check the name, type, status, governed services, and last modified time.
+
+== Available Strategy Actions
+
+* *View details*: Open a strategy to review scope, rules or policies, and metadata.
+* *Enable or disable*: Pause a strategy without deleting it.
+* *Edit configuration*: Update scope, rules, name, or description, then save.
+* *Reorder strategies*: Change strategy order when multiple strategies govern the same services.
+* *Delete a strategy*: Permanently remove a strategy that you no longer need.
+
+== Filter and Search Strategies
+
+Use the controls above the table to narrow the list:
+
+* Use the strategy type filter to select *All*, *Controls*, or *Automated Policies*.
+* Use the status filter to select *Any Status*, *Active*, or *Disabled*.
+* Enter text in the sesrch field to match strategy names.
+
+The page updates to show only matching strategies.
+
+== Strategy Metrics
+
+Review the summary cards:
+
+* *Active Strategies*: The number of enabled strategies
+* *Strategy Types*: The breakdown of *Controls* and *Automated Policies*
+* *Governance Coverage*: When available, the portion of the portfolio governed by at least one strategy
+
+Use these cards to spot governance gaps quickly.
+
+== Reasons to Adjust a Strategy
+
+Edit or disable a strategy when:
+
+* Scope drift causes the strategy to include the wrong services or miss intended services.
+* New compliance requirements call for adding or replacing rules.
+* False positives or unexpected blocking require control changes.
+* Environment or tag changes make existing filters inaccurate.
+
+Check the *Governed Services* count before and after changes to confirm the scope adjusted as expected.
+
+== Impact on Governed Services
+
+When you disable a strategy, the system stops evaluating or enforcing that strategy for matching services.
+
+When you delete a strategy, active governance for that strategy stops. Historical data retention depends on your reporting backend.
+
+Coordinate with service owners and your governance team if changes affect production services or compliance reporting that your organization relies on.
+
+== See Also
+
+* xref:exp-work-with-governance-strategies.adoc[]
+* xref:exp-create-governance-strategies.adoc[]
+* xref:exp-view-cost-and-token-usage.adoc[]
+* xref:exp-view-service-details.adoc[]
