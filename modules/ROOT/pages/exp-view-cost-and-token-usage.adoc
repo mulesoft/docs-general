@@ -9,7 +9,7 @@ Available metrics depend on your tenant configuration and role.
 The system displays token usage and performance data in several places:
 
 * *Governance* > *Cost Management*: Primary dashboard for organization-wide token usage and spend indicators
-* Service detail pages: Usage and performance summaries for supported services.
+* Service detail pages: Usage and performance summaries for supported services
 * *Observability*: Aggregated token and latency trends, when configured.
 
 Navigation labels can vary by release.
