@@ -30,7 +30,10 @@
       "last7Days": "Last 7 days",
       "older": "Older"
     },
-    "ok": "OK"
+    "ok": "OK",
+    "copyValue": "Copy value",
+    "copiedToClipboard": "Copied to clipboard.",
+    "dismissNotification": "Dismiss notification"
   },
   "home": {
     "heading": "Home",
@@ -248,7 +251,9 @@
     "addProxy": "Add LLM Proxy",
     "failedToCreate": "We couldn't create the LLM proxy asset. Try again.",
     "failedToDeploy": "We couldn't deploy the LLM proxy. Try again.",
-    "deployFailedAssetNotFound": "We couldn't deploy because the Exchange asset wasn't found. Refresh and try again."
+    "deployFailedAssetNotFound": "We couldn't deploy because the Exchange asset wasn't found. Refresh and try again.",
+    "basePathConflict": "An LLM proxy with this path already exists on the selected gateway.",
+    "basePathValidating": "Checking path availability…"
   },
   "createVersion": {
     "breadcrumb": "Add Version",
@@ -297,7 +302,10 @@
       "consumerEndpoint": "Consumer Endpoint",
       "gateway": "Gateway",
       "label": "Label",
-      "updated": "Updated"
+      "updated": "Updated",
+      "source": "Source",
+      "protocol": "Protocol",
+      "tools": "Tools"
     },
     "viewGateway": "View {name} gateway"
   },
@@ -377,7 +385,7 @@
     },
     "connecting": {
       "heading": "Connecting to Anypoint",
-      "description": "Completing secure handoff\u2026"
+      "description": "Completing secure handoff…"
     }
   },
   "activityFeed": {
@@ -434,7 +442,8 @@
     "acknowledge": "Acknowledge"
   },
   "timeSeriesChart": {
-    "noData": "No data for selected range"
+    "noData": "No data for selected range",
+    "loading": "Loading…"
   },
   "skillsPlaceholder": {
     "title": "Skills",
@@ -780,13 +789,17 @@
     "connectionNameLabel": "Connection Name",
     "connectionNamePlaceholder": "e.g., Production Account - Marketing",
     "descriptionLabel": "Description",
-    "descriptionPlaceholder": "Optional description for this connection",
+    "descriptionPlaceholder": "Add a description...",
     "importWarning": "All discovered services will be imported into the portfolio.",
     "connecting": "Connecting...",
     "connect": "Connect",
     "createScannerError": "We couldn't create the scanner. Try again.",
     "authError": "We couldn't authenticate. Check your credentials and try again.",
-    "scannerCreatedFor": "We created a scanner for {name}."
+    "scannerCreatedFor": "We created a scanner for {name}.",
+    "stepChoose": "Choose Provider",
+    "chooseSubtitle": "Choose a provider to scan and import services into your catalog.",
+    "noProvidersAvailable": "No providers available",
+    "noProvidersHint": "No providers currently support this service type"
   },
   "providersMainColumn": {
     "allProviders": "All Providers",
@@ -924,7 +937,8 @@
     },
     "toastScanStarted": "Scan started",
     "errorStartScan": "We couldn't start the scan. Try again.",
-    "errorDelete": "We couldn't delete this item. Try again."
+    "errorDelete": "We couldn't delete this item. Try again.",
+    "toastScannerDeleted": "Scanner \"{name}\" was deleted."
   },
   "scanReviewAgentCard": {
     "selectAgent": "Select {name}",
@@ -1367,7 +1381,8 @@
       "potentialSavings": "Potential Savings",
       "savingsEstimateUnavailable": "Savings estimate unavailable",
       "tokensPerTimeframe": "tokens last {timeframe}",
-      "savingsPercent": "({percent}%)"
+      "savingsPercent": "({percent}%)",
+      "skipForNow": "Skip for now"
     },
     "timeRangeTooltip": "Time range only filters this panel. Recommendations and the instance table always use the full 30-day window."
   },
@@ -1443,7 +1458,8 @@
     "status": "Status",
     "errorPolicyNotAvailable": "Policy {policyId} is not available in the selector list.",
     "errorPolicyAlreadyApplied": "Policy {name} is already {status} and cannot be re-applied.",
-    "defaultSelectSummary": "Selected policy {name}."
+    "defaultSelectSummary": "Selected policy {name}.",
+    "back": "Back"
   },
   "policyConfigForm": {
     "heading": "Configure Policy",
@@ -1457,14 +1473,18 @@
     "saving": "Saving...",
     "applying": "Applying...",
     "saveChanges": "Save Changes",
-    "applyPolicy": "Apply Policy"
+    "applyPolicy": "Apply Policy",
+    "wizardTitle": "Apply Policy"
   },
   "policyConfigFieldEditor": {
     "configurationJson": "Configuration JSON",
     "selectPlaceholder": "Select...",
     "itemLabel": "Item {index}",
     "remove": "Remove",
-    "addItem": "Add Item"
+    "addItem": "Add Item",
+    "namedItemLabel": "{name} {index}",
+    "removeItemAriaLabel": "Remove {name}",
+    "addNamedItem": "Add {name}"
   },
   "policyConfigReview": {
     "governanceReview": "Governance review",
@@ -1556,7 +1576,17 @@
     "noTools": "This MCP server has no tools available.",
     "selectAll": "Select All",
     "importCount": "Import {count} {count, plural, one {Tool} other {Tools}}",
-    "failedToFetchTools": "We couldn't fetch tools from the MCP server. Try again."
+    "failedToFetchTools": "We couldn't fetch tools from the MCP server. Try again.",
+    "urlLabel": "Server URL",
+    "clientIdLabel": "Client ID (Optional)",
+    "clientIdPlaceholder": "Paste the Client ID...",
+    "clientSecretLabel": "Client Secret (Optional)",
+    "clientSecretPlaceholder": "Paste the Client Secret...",
+    "fetchTools": "Fetch Tools",
+    "showSecret": "Show",
+    "hideSecret": "Hide",
+    "credentialsHint": "Provide credentials if the server requires authentication.",
+    "retry": "Retry"
   },
   "importToolsModal": {
     "title": "Import Tools",
@@ -1564,7 +1594,8 @@
     "noTools": "This MCP server has no tools available for import.",
     "selectAll": "Select All",
     "importCount": "Import {count} {count, plural, one {Tool} other {Tools}}",
-    "failedToLoadTools": "We couldn't load tools. Try again."
+    "failedToLoadTools": "We couldn't load tools. Try again.",
+    "specHint": "The asset's tool spec may not be published yet. Try importing from the live MCP server instead."
   },
   "toolMappingToolsStep": {
     "heading": "Tool Descriptions",
@@ -1701,7 +1732,13 @@
     "actionDelete": "Delete",
     "actionDeleting": "Deleting...",
     "emptyDefault": "No custom governance strategies created yet. Create your first to extend governance beyond the default profile.",
-    "emptyFiltered": "No governance strategies match your filters."
+    "emptyFiltered": "No governance strategies match your filters.",
+    "rowsPerPage": "Rows per page",
+    "showingRange": "Showing {start}–{end} of {total}",
+    "previous": "Previous",
+    "next": "Next",
+    "previousPageAriaLabel": "Previous page of strategies",
+    "nextPageAriaLabel": "Next page of strategies"
   },
   "complianceTable": {
     "headerServiceType": "Service Type",
@@ -1825,7 +1862,8 @@
       "targetUrlRequired": "Enter a target URL.",
       "pathConflict": "Path conflict detected",
       "pathConflictDetail": "This path conflicts with another instance."
-    }
+    },
+    "creationPending": "Instance creation is taking longer than expected — still provisioning in the background."
   },
   "catalogToolbar": {
     "filters": "Filters",
@@ -1892,10 +1930,10 @@
     "newApi": "New API",
     "downstreamHeading": "Downstream",
     "downstreamHelp": "Inbound traffic configuration",
-    "basePath": "Base path",
+    "basePath": "Base Path",
     "basePathPlaceholder": "/my-api",
     "basePathHelp": "Unique path to expose this API on the gateway. Must start with /.",
-    "clientProvider": "Client provider",
+    "clientProvider": "Client Provider",
     "clientProviderHelp": "Automatically derived from the selected gateway environment.",
     "instanceLabel": "Instance label",
     "instanceLabelPlaceholder": "For example, production-v1",
@@ -1921,7 +1959,7 @@
       "inactive": "Inactive"
     },
     "managedInstance": "Managed Instance",
-    "managedDescription": "Create a new instance on an Omni Gateway with full support for authentication, monitoring and policy enforcement.",
+    "managedDescription": "Create a new instance on an Omni Gateway with full support for authentication, monitoring, and policy enforcement.",
     "unmanagedTarget": "Unmanaged Target",
     "unmanagedDescription": "A basic record of an API endpoint. You can still add management for this endpoint later.",
     "instanceBox": "Instance",
@@ -2029,32 +2067,34 @@
   },
   "snippetTab": {
     "language": "JavaScript",
-    "notAvailable": "Consumer snippet not available for this entity type.",
+    "notAvailable": "No consumer snippet available",
     "copied": "Copied!",
     "copy": "Copy"
   },
   "instancesTab": {
     "loadingInstances": "Loading instances…",
-    "noInstances": "No instances configured for this {entity}.",
+    "noInstances": "No instances configured",
     "createInstance": "Create Instance",
     "summary": "Summary",
     "pipeline": "Pipeline",
     "deleteInstanceTitle": "Delete instance",
     "deleteExternalMessage": "Are you sure you want to delete the external instance {label}? This action cannot be reversed.",
-    "deleteManagedMessage": "Are you sure you want to delete the instance {label}? This removes the instance from the Omni Gateway where it is deployed.",
+    "deleteManagedMessage": "Are you sure you want to delete the instance {label}? We will remove the instance from the Omni Gateway where it is deployed.",
     "deleteUnmanagedMessage": "Are you sure you want to delete {label}? This action cannot be reversed.",
     "confirmDelete": "Yes, delete",
     "confirmDeleteUnmanaged": "Delete instance",
     "deleting": "Deleting...",
-    "cancelDelete": "No, cancel",
-    "noMatchingFilters": "No instances match the selected filters.",
+    "cancelDelete": "Cancel",
+    "noMatchingFilters": "No instances match the selected filters",
     "allEnvironments": "All Environments",
     "unknownEnvironment": "Unknown",
     "environmentWithType": "{label} ({type})",
-    "noInstancesMatchFilters": "No instances match the selected filters."
+    "noInstancesMatchFilters": "No instances match the selected filters"
   },
   "monitoringTab": {
-    "noMonitoring": "No monitoring available for this entity type."
+    "noMonitoring": "Monitoring not available",
+    "gatewayLevelTitle": "Gateway-level metrics not available",
+    "gatewayLevelDescription": "Monitoring is reported per service. Open a service or instance using this gateway to see its metrics."
   },
   "mcpSchemaTree": {
     "nestingTooDeep": "Schema nesting is too deep to display here.",
@@ -2224,10 +2264,10 @@
     "notValidatedTitle": "Not Validated",
     "notValidatedDescription": "This service version is not governed by any governance rules",
     "loadingConformance": "Loading conformance report...",
-    "noGovernanceReport": "No governance report available for this API.",
+    "noGovernanceReport": "No governance report available for this API",
     "reportDetails": "Report Details",
-    "noMatchingRules": "No matching rules found.",
-    "resetFilters": "Reset filters",
+    "noMatchingRules": "No matching rules found",
+    "resetFilters": "Reset Filters",
     "refreshDebounced": "Refresh already requested. Wait a few seconds and try again.",
     "refreshQueued": "Refresh queued. The report will update shortly.",
     "refreshFailed": "We couldn't trigger a refresh. Try again.",
@@ -2238,28 +2278,32 @@
       "viewInstances": "View instances",
       "violations": "{count, plural, one {violation} other {violations}}",
       "warnings": "{count, plural, one {warning} other {warnings}}",
-      "info": "info",
+      "info": "Info",
       "envFragmentUnknown": "{count} unknown",
       "envFragmentNamed": "{count} {env}",
       "inEnvInstances": "In {fragments} instances",
       "noAffectedInstances": "No affected instances",
       "noSecondarySeverityRules": "No warning and info level rules applied",
       "designTime": "Design Time",
-      "noDesignTimeRules": "No rules applied to design time"
+      "noDesignTimeRules": "No rules applied to design time",
+      "noWarningRules": "No warning level rules applied",
+      "noInfoRules": "No info level rules applied",
+      "notValidated": "Not Validated",
+      "noDesignTimeRulesShort": "No rules applied"
     },
     "results": {
       "issuesFromRules": "{issueCount, plural, one {# issue} other {# issues}} from {ruleCount, plural, one {# rule} other {# rules}}",
       "issuesFromRulesets": "{issueCount, plural, one {# issue} other {# issues}} from {rulesetCount, plural, one {# ruleset} other {# rulesets}}",
       "groupByRuleset": "Group By Ruleset",
-      "expandAll": "Expand all",
-      "collapseAll": "Collapse all",
-      "noOccurrencesToDisplay": "No occurrences to display.",
+      "expandAll": "Expand All",
+      "collapseAll": "Collapse All",
+      "noOccurrencesToDisplay": "No occurrences to display",
       "ruleSectionLabel": "Rule",
       "originRulesetSectionLabel": "Origin Ruleset",
       "ruleDetailsAria": "Rule details for {name}",
       "rulesetDetailsAria": "Ruleset details for {name}",
       "fixPolicy": "Fix Policy",
-      "noDetailsAvailable": "No details available.",
+      "noDetailsAvailable": "No details available",
       "uncategorizedRuleset": "Uncategorized",
       "aspectInstances": "Instances",
       "aspectSpecificationFallback": "Specification"
@@ -2272,7 +2316,8 @@
       "severityViolation": "Violation",
       "severityWarning": "Warning",
       "severityInfo": "Info"
-    }
+    },
+    "goToGovernanceStrategies": "Go to Governance Strategies"
   },
   "governanceReportControls": {
     "latest": "(Latest)",
@@ -2395,7 +2440,11 @@
       "failurePercentage": "Failure percentage",
       "avgResponseTime": "Average response time",
       "violatingRequests": "Estimated violating requests"
-    }
+    },
+    "noInstancesMatchTitle": "No instances match",
+    "noMonitoringDataTitle": "No monitoring data",
+    "noMonitoringDataDescription": "Monitoring data is available once this service has at least one active instance.",
+    "trafficEmptyDescription": "Traffic breakdown is not available for this service. Data appears once requests are tracked."
   },
   "llmMonitoring": {
     "heading": "LLM Monitoring",
@@ -2430,7 +2479,9 @@
     "columnTokens": "Tokens",
     "columnRequests": "Requests",
     "totalTokensFooter": "Total Tokens",
-    "tokenDistributionByModel": "Token distribution by model"
+    "tokenDistributionByModel": "Token distribution by model",
+    "noViolationsTitle": "No policy violations to report",
+    "noViolationsDescription": "No policies are applied to this proxy. Apply policies to secure this proxy and enable compliance monitoring."
   },
   "vectorDbMonitoring": {
     "heading": "Vector DB Monitoring",
@@ -2467,12 +2518,16 @@
   "multiInstanceChartGrid": {
     "aggregate": "Aggregate",
     "allVersions": "All Versions",
-    "allEnvironments": "All Environments"
+    "allEnvironments": "All Environments",
+    "noData": "No data for selected range"
   },
   "gatewayMetadataBar": {
     "currentVersion": "(Current)",
     "updated": "Updated",
-    "currentParen": "(Current)"
+    "currentParen": "(Current)",
+    "type": "Type",
+    "environment": "Environment",
+    "version": "Version"
   },
   "gatewayHeaderActions": {
     "viewFullGatewayDetails": "View Full Gateway Details",
@@ -2499,7 +2554,8 @@
       "mode": "Mode",
       "size": "Size",
       "target": "Target",
-      "updated": "Updated"
+      "updated": "Updated",
+      "status": "Status"
     },
     "gatewayMode": {
       "selfManaged": "Self Managed",
@@ -2509,7 +2565,8 @@
     "editButton": "Edit",
     "complianceStatusText": "Compliance status",
     "actionsAriaLabel": "Actions",
-    "loadingValue": "Loading {name}"
+    "loadingValue": "Loading {name}",
+    "exposeAsMcpServerDisabledTooltip": "This API only has a Mocking Service instance. Deploy a real (managed or self-managed) instance before exposing it as an MCP server."
   },
   "entityDetailPage": {
     "tabConformanceReport": "Conformance Report",
@@ -2523,7 +2580,8 @@
       "agent": "Agent",
       "mcpServer": "MCP Server",
       "api": "API"
-    }
+    },
+    "loadingDetailsAnnouncement": "Loading {label} details…"
   },
   "apiInstanceSelectorCard": {
     "environment": "Environment",
@@ -2724,7 +2782,9 @@
     "btnGoThere": "Go there",
     "confirmPolicyPatch": "Try the proposed policy fix in the form?",
     "confirmGatewayPatch": "Try the proposed gateway fix in the form?",
-    "btnApplyProposedChanges": "Apply proposed changes"
+    "btnApplyProposedChanges": "Apply proposed changes",
+    "aiFeaturesNotEnabled": "Looks like AI features aren't turned on for your organization. Ask your administrator to turn on AI features in the connected Anypoint Platform and Salesforce orgs. After AI features are turned on, try again.",
+    "aiFeaturesLearnMore": "Learn more"
   },
   "omniCommandPalette": {
     "closeAriaLabel": "Close MuleSoft command palette",
@@ -3049,7 +3109,8 @@
     "failedToLoadStatus": "We couldn't load the Slack installation status. Try again.",
     "failedToStartInstall": "We couldn't start the Slack installation. Try again.",
     "uninstallSuccess": "Slack integration uninstalled successfully",
-    "failedToUninstall": "We couldn't uninstall the Slack integration. Try again."
+    "failedToUninstall": "We couldn't uninstall the Slack integration. Try again.",
+    "appUninstalledExternally": "Slack app is no longer installed in your workspace. Install it again to enable Slack notifications."
   },
   "auth": {
     "loginFailed": "We couldn't sign you in. Try again.",
@@ -3167,7 +3228,8 @@
       "selectedPolicy": "Selected Policy",
       "noPolicySelected": "No policy selected",
       "configurePolicy": "Configure Policy",
-      "noPolicyInputsRequired": "This policy does not require configuration inputs."
+      "noPolicyInputsRequired": "This policy does not require configuration inputs.",
+      "severity": "Severity"
     },
     "review": {
       "strategyType": "Strategy Type",
@@ -3278,26 +3340,31 @@
     "failedToReorderPolicies": "We couldn't reorder policies. Try again.",
     "failedToLoadPolicyTemplates": "We couldn't load policy templates. Try again.",
     "viewPolicyAriaLabel": "View {name}",
-    "moreActionsAriaLabel": "More actions for {name}"
+    "moreActionsAriaLabel": "More actions for {name}",
+    "emptyStateTitle": "No policies applied",
+    "emptyStateDescription": "This instance has no policies applied. Add one to start protecting this instance.",
+    "enablePolicy": "Enable Policy"
   },
   "policiesTab": {
     "policyFallback": "Policy",
-    "errorMissingInstanceContext": "Missing API instance context (organization, environment, or instance id).",
+    "errorMissingInstanceContext": "We couldn't load policies. Make sure the organization, environment, and instance are set up correctly.",
     "errorLoadPolicyTemplates": "We couldn't load policy templates for this instance. Try again.",
     "applyPolicyLoading": "Loading...",
     "applyPolicyButton": "Apply Policy",
     "calculatingCoverage": "Calculating policy coverage from instance policies...",
     "columnPolicyDomain": "Policy Domain",
-    "noCoveredInstances": "No covered instances in this environment.",
+    "noCoveredInstances": "No covered instances in this environment",
     "policyAppliedCount": "{count, plural, one {# policy applied} other {# policies applied}}",
     "viewDetailsAriaLabel": "View details: {label}",
-    "coverageDetailsAriaLabel": "Coverage details: {category} - {environment}"
+    "coverageDetailsAriaLabel": "Coverage details: {category} - {environment}",
+    "emptyStateTitle": "No instances yet",
+    "emptyStateDescription": "Policy coverage appears once this service has at least one active instance. Create an instance to start applying policies."
   },
   "versionsTab": {
     "latest": "Latest",
     "addVersion": "Add Version",
     "loadingVersions": "Loading versions…",
-    "noVersionHistory": "No version history available.",
+    "noVersionHistory": "No version history available",
     "instanceCount": "{count, plural, one {# instance} other {# instances}}"
   },
   "scannerBetaBanner": {
@@ -3325,7 +3392,8 @@
     "navToggleTitle": "Navigation Toggle",
     "navToggleDescription": "Collapse the navigation to icon-only mode for more screen space, or expand it to see full labels.",
     "omniAssistantTitle": "Ask MuleSoft",
-    "omniAssistantDescription": "Ask questions, get insights, and take actions across your AI portfolio. Press ⌘K (Mac) or Ctrl+K (Windows) to open."
+    "omniAssistantDescription": "Ask questions, get insights, and take actions across your AI portfolio. Press ⌘K (Mac) or Ctrl+K (Windows) to open.",
+    "businessGroupDescriptionNoOrg": "Switch between business groups to view different organizational scopes."
   },
   "welcomeFeatures": {
     "registerLabel": "Register",
@@ -3573,7 +3641,9 @@
     "deleteButton": "Delete",
     "cancelButton": "Cancel",
     "saveButton": "Save",
-    "uploadMoreUtterances": "Upload more utterances"
+    "uploadMoreUtterances": "Upload more utterances",
+    "savingButton": "Saving…",
+    "deletingButton": "Deleting…"
   },
   "deleteSemanticServiceModal": {
     "closeAriaLabel": "Close dialog",
@@ -3674,7 +3744,7 @@
   },
   "monitoringFilterToolbar": {
     "allEnvironments": "All Environments",
-    "resetFilters": "Reset filters",
+    "resetFilters": "Reset Filters",
     "aggregate": "Aggregate",
     "instances": "Instances"
   },
@@ -3694,14 +3764,14 @@
     "registerAgent": "Register Agent",
     "registerAgentDesc": "Upload a declarative file manually to register a new agent.",
     "createMcpServer": "Create MCP Server",
-    "registerManuallyMcpDesc": "Upload a declarative file manually to register a new MCP server.",
-    "createMcpServerDesc": "Create an MCP server from your APIs or a curated list of SaaS applications.",
-    "registerMcpServer": "Register MCP Server",
-    "registerMcpServerDesc": "Upload a declarative file manually to register a new MCP server.",
+    "registerManuallyMcpDesc": "Upload a declarative file manually to register a new MCP Server.",
+    "createMcpServerDesc": "Create an MCP server from your APIs or curated list of Saas applications.",
+    "registerMcpServer": "Register MCP Servers",
+    "registerMcpServerDesc": "Upload a declarative file manually to register a new MCP Server.",
     "registerLlmProxies": "Register LLM Proxies",
-    "registerLlmProxiesDesc": "Upload a declarative file manually to register a new LLM proxy.",
+    "registerLlmProxiesDesc": "Upload a declarative file manually to register a new LLM Proxies.",
     "registerApi": "Register APIs",
-    "registerApiDesc": "Upload a declarative file manually to register a new API.",
+    "registerApiDesc": "Upload a declarative file manually to register a new APIs.",
     "addService": "Add Service"
   },
   "registryUploadForm": {
@@ -3869,7 +3939,7 @@
       "title": "Create Agent",
       "entityLabel": "Agent Card File",
       "namePlaceholder": "Agent",
-      "specFileHint": "JSON format \u00b7 agent-card.json",
+      "specFileHint": "JSON format · agent-card.json",
       "protocolLabel": "Protocol",
       "protocolA2aLabel": "A2A",
       "protocolOtherLabel": "Non-A2A"
@@ -3882,9 +3952,9 @@
       "urlLabel": "URL",
       "urlPlaceholder": "https://example.com/mcp",
       "clientIdLabel": "Client ID",
-      "clientIdPlaceholder": "Paste the Client ID",
+      "clientIdPlaceholder": "Paste the Client ID...",
       "clientSecretLabel": "Client Secret",
-      "clientSecretPlaceholder": "Paste the Client Secret",
+      "clientSecretPlaceholder": "Paste the Client Secret...",
       "authenticationLabel": "Authentication",
       "methodLabel": "Method",
       "byUrlTitle": "By MCP URL",
@@ -4254,7 +4324,8 @@
     "semanticPromptGuardTooltip": "Add phrases or keywords that should be blocked from reaching any route.",
     "editEntryAriaLabel": "Edit {name}",
     "removeEntryAriaLabel": "Remove {name}",
-    "advancedRoutingDescription": "Route fallback and filtering options"
+    "advancedRoutingDescription": "Route fallback and filtering options",
+    "selectSemanticServicePrompt": "Select a semantic service setup to configure routes."
   },
   "routeCardContent": {
     "topicsLabel": "Topics",
@@ -4401,7 +4472,8 @@
       "violation": "violation",
       "warning": "warning",
       "info": "info"
-    }
+    },
+    "rulesUsedCount": "{used} of {total} {total, plural, one {rule} other {rules}} used"
   },
   "readOnlyScopeConditionList": {
     "allIncluded": "All matching services are automatically included.",
@@ -4464,7 +4536,8 @@
       "loadRuleCatalog": "We couldn't load rule catalog and scope options. Try again.",
       "previewScope": "We couldn't preview scope. Try again.",
       "createStrategy": "We couldn't create the strategy. Try again.",
-      "updateStrategy": "We couldn't update the strategy. Try again."
+      "updateStrategy": "We couldn't update the strategy. Try again.",
+      "createUncertain": "We couldn't confirm that your control was created within the time we waited. Refresh the list to check whether it exists; if not, try again."
     },
     "success": {
       "guardrailCreated": "Control created.",
@@ -4623,7 +4696,10 @@
       "back": "Back",
       "unavailable": "Selected strategy is unavailable."
     },
-    "actions": "Actions"
+    "actions": "Actions",
+    "pending": {
+      "guardrailCreating": "Don't leave this page — your control is still being created. We're confirming with the upstream service."
+    }
   },
   "mcpWizard": {
     "wizard": {
@@ -4654,10 +4730,14 @@
       "provisioningMayHaveCompleted": "Provisioning may have completed — check the MCP servers list",
       "stepSelectSource": "Select Source, Instance, and Tools",
       "stepSaasCredentials": "SaaS Credentials",
-      "stepReview": "Review"
+      "stepReview": "Review",
+      "toastApiMissingInstanceUrl": "\"{apiName}\" can't be wrapped as an MCP server yet: the selected API Manager instance has no endpoint URL. Deploy the instance in API Manager (attach a runtime) and try again.",
+      "runtimeAuthWarning": "This MCP endpoint is deployed without inbound authentication. Apply a Flex Gateway inbound auth policy (for example, client-id-enforcement or jwt-validation) before production use."
     },
     "versionDropdown": {
-      "latest": "latest"
+      "latest": "latest",
+      "loading": "Loading versions…",
+      "empty": "No versions available"
     },
     "apiToolsTable": {
       "method": "Method",
@@ -4671,7 +4751,8 @@
       "splitTool": "Split tool",
       "emptyState": "No tools available",
       "emptyStateReadOnly": "No read-only tools available",
-      "duplicateToolNameError": "Another tool in this API already uses this name."
+      "duplicateToolNameError": "Another tool in this API already uses this name.",
+      "loadingOperations": "Loading operations…"
     },
     "saasToolsTable": {
       "method": "Method",
@@ -4724,7 +4805,8 @@
       "configureUpstreamUrlHint": "Configure the upstream URL.",
       "editUpstreamUrlAria": "Edit upstream URL",
       "saveChangesAria": "Save changes",
-      "discardChangesAria": "Discard changes"
+      "discardChangesAria": "Discard changes",
+      "noToolsWarning": "Select at least one tool to proceed."
     },
     "stepSelectSource": {
       "heading": "Select APIs and SaaS systems",
@@ -4767,7 +4849,8 @@
       "clientSecretPlaceholder": "OAuth2 client secret",
       "clientSecretAria": "Client Secret",
       "credentialsDeliveryHeader": "Credentials will be sent in the Authorization header (Basic) during token exchange.",
-      "credentialsDeliveryBody": "Credentials will be sent in the request body during token exchange."
+      "credentialsDeliveryBody": "Credentials will be sent in the request body during token exchange.",
+      "testCredentials": "Test Credentials"
     },
     "stepReview": {
       "advancedConfigHeading": "Advanced Server Configuration",
@@ -5034,7 +5117,7 @@
     "warningsHeading": "Warnings",
     "rulesetReportAriaLabel": "Ruleset report",
     "loadingConformanceReport": "Loading conformance report...",
-    "noGovernanceReport": "No governance report available for this API.",
+    "noGovernanceReport": "No governance report available for this API",
     "loadingReportDetails": "Loading report details...",
     "noErrorsOrWarnings": "No errors or warnings found for this ruleset.",
     "loadingPolicies": "Loading policies...",
@@ -5074,7 +5157,8 @@
     "upstreamPrefix": "Upstream: {name}",
     "unknownUpstream": "Unknown",
     "versionBadge": "v{version}",
-    "orderBadge": "#{order}"
+    "orderBadge": "#{order}",
+    "enablePolicy": "Enable Policy"
   },
   "policiesTabReorderInstancePolicies": {
     "title": "Instance Policies",
@@ -5088,7 +5172,13 @@
     "allSeverity": "All Severity",
     "allDomains": "All Domains",
     "selectEnvironmentType": "Select Environment Type",
-    "selectDesignTimeArea": "Select Design Time Area"
+    "selectDesignTimeArea": "Select Design Time Area",
+    "versionLabel": "Version",
+    "severityLabel": "Severity",
+    "domainLabel": "Domain",
+    "environmentLabel": "Environment",
+    "designTimeAreaLabel": "Design Time Area",
+    "filterAll": "All"
   },
   "gatewayOverview": {
     "status": {
@@ -5113,7 +5203,11 @@
     "apiRequestsUnit": "Calls",
     "apiRequestsHelp": "API calls served this month",
     "dataConsumedLabel": "Data consumed",
-    "dataConsumedHelp": "Data transferred through the gateway this month"
+    "dataConsumedHelp": "Data transferred through the gateway this month",
+    "copyPublicEndpoint": "Copy public endpoint",
+    "copyInternalEndpoint": "Copy internal endpoint",
+    "endpointCopied": "Endpoint copied to clipboard.",
+    "endpointCopyFailed": "We couldn't copy the endpoint to clipboard."
   },
   "filterableMultiSeriesChart": {
     "all": "All",
@@ -5406,5 +5500,10 @@
     "editStrategyButton": "Edit Strategy",
     "backButton": "Back",
     "selectedStrategyUnavailable": "Selected strategy is unavailable."
+  },
+  "notFound": {
+    "heading": "We couldn't find that page",
+    "description": "The page at {path} doesn't exist or may have been moved.",
+    "goToHome": "Go to home"
   }
 }
