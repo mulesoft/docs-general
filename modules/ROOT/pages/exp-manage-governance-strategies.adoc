@@ -39,7 +39,7 @@ Use these cards to spot governance gaps quickly.
 Edit or disable a strategy when:
 
 * Scope drift causes the strategy to include the wrong services or miss intended services.
-* New compliance requirements require adding or replacing rules.
+* New compliance requirements call for adding or replacing rules.
 * False positives or unexpected blocking require control changes.
 * Environment or tag changes make existing filters inaccurate.
 
