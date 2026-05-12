@@ -39,7 +39,7 @@ Use controls at the top of the page to narrow the view:
 
 The counter updates to show the number of matching services.
 
-== Interpret Saved Tokens
+== Saved Token Estimates
 
 When optimization policies are active, the system estimates saved tokens compared to unoptimized traffic.
 
