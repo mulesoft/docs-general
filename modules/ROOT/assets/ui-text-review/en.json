@@ -464,7 +464,7 @@
       "apis": "APIs",
       "vectorDbs": "Vector DBs"
     },
-    "placeholderBanner": "Conceptual placeholder — needs deeper exploration & thinking",
+    "placeholderBanner": "Conceptual placeholder — needs deeper exploration and thinking",
     "heading": "Marketplace",
     "subtitle": "Browse published assets from the community",
     "assetsAvailable": "{count} assets available",
@@ -1394,7 +1394,7 @@
     "noMatch": "No policies match your search.",
     "appliedSuccess": "Policy applied successfully",
     "applyTitle": "Apply “{name}”",
-    "closeApplyModal": "Close apply policy modal",
+    "closeApplyModal": "Close apply policy window",
     "tab": {
       "individual": "Select Individual",
       "bulk": "Bulk Rule"
@@ -1575,7 +1575,7 @@
     "authHint": "Check the authentication policies configured for this MCP server instance.",
     "noTools": "This MCP server has no tools available.",
     "selectAll": "Select All",
-    "importCount": "Import {count} {count, plural, one {Tool} other {Tools}}",
+    "importCount": "Import {count} {count, plural, one {tool} other {tools}}",
     "failedToFetchTools": "We couldn't fetch tools from the MCP server. Try again.",
     "urlLabel": "Server URL",
     "clientIdLabel": "Client ID (Optional)",
@@ -1590,10 +1590,10 @@
   },
   "importToolsModal": {
     "title": "Import Tools",
-    "closeModal": "Close modal",
+    "closeModal": "Close window",
     "noTools": "This MCP server has no tools available for import.",
     "selectAll": "Select All",
-    "importCount": "Import {count} {count, plural, one {Tool} other {Tools}}",
+    "importCount": "Import {count} {count, plural, one {tool} other {tools}}",
     "failedToLoadTools": "We couldn't load tools. Try again.",
     "specHint": "The asset's tool spec may not be published yet. Try importing from the live MCP server instead."
   },
@@ -1745,7 +1745,7 @@
     "headerTotal": "Total",
     "headerConsumption": "Consumption",
     "headerCompliant": "Compliant",
-    "headerNonCompliant": "Non-Compliant",
+    "headerNonCompliant": "Noncompliant",
     "headerPending": "Pending",
     "emptyState": "No governance status has been generated for this organization yet. Refresh insights to populate service compliance.",
     "serviceType": {
@@ -1819,7 +1819,7 @@
     "emptyState": "No automated policies to reorder in this environment.",
     "moveUp": "Move {name} up",
     "moveDown": "Move {name} down",
-    "saving": "Saving…",
+    "saving": "Saving...",
     "applyReorder": "Apply Reorder",
     "failedToReorder": "We couldn't reorder automated policies. Try again."
   },
@@ -2272,7 +2272,7 @@
     "refreshQueued": "Refresh queued. The report will update shortly.",
     "refreshFailed": "We couldn't trigger a refresh. Try again.",
     "refresh": "Refresh",
-    "refreshing": "Refreshing…",
+    "refreshing": "Refreshing...",
     "kpi": {
       "instances": "Instances",
       "viewInstances": "View instances",
@@ -2323,7 +2323,7 @@
     "latest": "(Latest)",
     "freshnessBanner": "Governance report is being refreshed. Showing the latest available snapshot.",
     "refreshReport": "Refresh report",
-    "refreshing": "Refreshing…",
+    "refreshing": "Refreshing...",
     "allDomains": "All Domains"
   },
   "addVersionModal": {
@@ -2896,7 +2896,7 @@
     "provider": "Provider"
   },
   "editNotificationModal": {
-    "closeModal": "Close modal",
+    "closeModal": "Close window",
     "heading": "Edit Notification",
     "alertMetric": "Alert Metric",
     "alertName": "Alert Name",
@@ -3126,7 +3126,7 @@
     },
     "strategyType": {
       "guardrails": "Controls",
-      "guardrailsDescription": "Validate targeted services against selected control rules and optionally block non-compliant actions, while automatically publishing your live compliance posture.",
+      "guardrailsDescription": "Validate targeted services against selected control rules and optionally block noncompliant actions, while automatically publishing your live compliance posture.",
       "automatedPolicy": "Automated Policy",
       "automatedPolicyDescription": "Enforce consistent policy requirements across targeted services to ensure uniform governance and automated security."
     },
@@ -4429,7 +4429,7 @@
     "conformance": "Conformance",
     "governedServices": "governed services",
     "conformant": "Conformant",
-    "nonConformant": "Non-Conformant",
+    "nonConformant": "Nonconformant",
     "pending": "Pending",
     "noServicesGoverned": "No services governed",
     "conformantPercent": "{percent}% conformant",
@@ -4450,7 +4450,7 @@
     "allTypes": "All types",
     "anyProvider": "Any provider",
     "searchPlaceholder": "Search services...",
-    "loadingState": "Loading governed services…",
+    "loadingState": "Loading governed services...",
     "emptyState": "No services governed by this control.",
     "governedServicesSuffix": "governed services",
     "percentConformant": "{percent}% conformant",
@@ -4619,7 +4619,7 @@
       "enabled": "Enabled",
       "disabled": "Disabled",
       "conditionLabel": "Condition",
-      "conditionValue": "Latest version of an API becomes non-conformant",
+      "conditionValue": "Latest version of an API becomes nonconformant",
       "channelLabel": "Channel",
       "channelValue": "Email",
       "recipientsLabel": "Recipients",
@@ -5444,7 +5444,7 @@
     "notificationsReleaseBannerBody": "Notification functionality is under review and timeline is subject to change.",
     "nonconformanceNotification": "Nonconformance notification",
     "conditionLabel": "Condition",
-    "conditionValue": "Latest version of an API becomes non-conformant",
+    "conditionValue": "Latest version of an API becomes nonconformant",
     "channelLabel": "Channel",
     "channelEmail": "Email",
     "recipientsLabel": "Recipients",
