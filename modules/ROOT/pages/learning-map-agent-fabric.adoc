@@ -6,7 +6,7 @@ MuleSoft Agent Fabric helps you turn your agent sprawl into a governed and highl
 
 * Discover agents and MCP servers with Anypoint Exchange, a centralized catalog for all your AI assets.
 * Orchestrate agents across ecosystems with agent brokers, an intelligent routing agent that plans and delegates work based on context (request intent, policies, identity, and runtime state) of agents, MCP servers, and assets.
-* Govern any agent with Flex Gateway support for Model Context Protocol (MCP) and Agent2Agent (A2A), a high-performance gateway for policies and controls.
+* Govern any agent with Omni Gateway support for Model Context Protocol (MCP) and Agent2Agent (A2A), a high-performance gateway for policies and controls.
 * Observe every agent interaction with Agent Visualizer, a visual map for your agent network.
 +
 View metrics, logs, and traces in Anypoint Monitoring.
@@ -60,10 +60,10 @@ Build your agent network and coordinate brokers and agents using a declarative Y
 
 Apply policies to your agents, brokers, LLMs, and MCP servers to help manage security and control traffic.
 
-- xref:api-manager::create-instance-task-agent-tool.adoc[Add a Flex Gateway Agent or Tool Instance in API Manager]
+- xref:api-manager::create-instance-task-agent-tool.adoc[Add an Omni Gateway Agent or Tool Instance in API Manager]
 - https://videos.mulesoft.com/watch/2E2PkqzMnLEjoDhL5YkywT[Watch a Video to Learn About AI Gateway from MuleSoft] 
-- xref:gateway::flex-gateway-managed-ingress-egress.adoc[Deploy Agent Fabric Ingress and Egress Managed Flex Gateways]
-- xref:gateway::flex-gateway-secure-apis.adoc[Secure Flex Gateway Instances with Policies]
+- xref:gateway::flex-gateway-managed-ingress-egress.adoc[Deploy Agent Fabric Ingress and Egress Managed Omni Gateways]
+- xref:gateway::flex-gateway-secure-apis.adoc[Secure Omni Gateway Instances with Policies]
 
 | image::lm_analyze_1.png[]
 [.lm-bold]##Observe and Gain Actionable Insights##
