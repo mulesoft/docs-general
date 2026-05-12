@@ -1,8 +1,6 @@
 = Create Governance Strategies
 
-Create governance strategies to validate services with controls or enforce automated policies.
-
-You can create strategies when your tenant includes *Governance* and you have the required administrator role.
+Governance strategies define which services the system evaluates or enforces policy against and under what conditions. A controls strategy monitors compliance and can block noncompliant activity. An automated policy strategy enforces requirements at the gateway or runtime layer. You can create strategies when your tenant includes *Governance* and you have the required administrator role.
 
 == Before You Begin
 
