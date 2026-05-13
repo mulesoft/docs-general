@@ -20,13 +20,12 @@ The end-to-end journey for the experience consists of these tasks, each with lin
 The experience helps you manage, optimize, and govern a multi-agent ecosystem from one place.
 
 //- ToDo [Video]
-//- ToDo [Trailhead]
 - xref:exp-overview.adoc[]
 - xref:exp-compare.adoc[]
 - xref:exp-start-home.adoc[]
 - xref:exp-access-experience-from-slack.adoc[]
 - xref:exp-connect-experience-to-claude-desktop.adoc[]
-- https://trailhead.salesforce.com/content/learn/modules/get-to-know-the-enhanced-mulesoft-experience[Get to Know the Enhanced MuleSoft Experience]
+- https://trailhead.salesforce.com/content/learn/modules/get-to-know-the-enhanced-mulesoft-experience[Get to Know the Enhanced MuleSoft Experience: Quick Look]
 
 
 | image::lm_explore_1.png[]

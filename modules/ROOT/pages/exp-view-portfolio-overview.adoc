@@ -1,21 +1,31 @@
-= View an Overview of Your AI Portfolio
+= View Your AI Portfolio Overview
 
 Use portfolio-level views to see how your agents, APIs, MCP servers, LLM proxies, and gateways fit together before you drill into a single service. Summaries help you spot gaps in registration, policy coverage, or health signals your organization cares about.
 
-The exact layout depends on how your tenant is configured and which catalogs your administrator enabled. Labels and widgets can differ by release.
+The exact layout depends on how your administrator configured your tenant and which catalogs they enabled. Labels and widgets differ by release.
 
-== Where You Open Portfolio Overview
+== Access Portfolio Overview
 
-* *Home* — After sign-in, your landing page may highlight portfolio activity, shortcuts into *Portfolio*, or high-level counts your organization chose to surface.
-* *Portfolio* — Open *Portfolio* to browse catalogs (*Agents*, *APIs*, *MCP Servers*, *LLM Proxies*, *Gateways*). Each catalog lists or tiles the services your team registered or imported. Use search and filters to narrow the set before you open a service detail page.
+* *Home*
++
+After sign-in, your landing page sometimes highlights portfolio activity, shortcuts into *Portfolio*, or high-level counts your organization chose to show.
+* *Portfolio*
++
+Open *Portfolio* to browse catalogs (*Agents*, *APIs*, *MCP Servers*, *LLM Proxies*, *Gateways*). Each catalog lists or tiles the services your team registered or imported. Use search and filters to narrow the set before you open a service detail page.
 
-If you do not see a catalog or a summary you expect, confirm entitlements and permissions with your Anypoint organization administrator. See xref:exp-start-home.adoc#permissions[Enhanced Experience Permissions] for role details.
+If you don't see a catalog or a summary you expect, confirm entitlements and permissions with your Anypoint Platform organization administrator. See xref:exp-start-home.adoc#permissions[Enhanced Experience Permissions] for more information.
 
-== What You Typically Review
+== Portfolio Summary
 
-* **Coverage** — Which service types are registered and which environments or instances they map to.
-* **Health and cost signals** — Summary metrics or badges when the experience exposes them at list level (for example status or daily cost on cards).
-* **Next actions** — Entry points to add services, connect providers, or open governance and observability areas described in xref:exp-overview.adoc[].
+* Coverage
++
+Which service types your team has registered and which environments or instances they map to.
+* Health and cost signals
++
+Summary metrics or badges if the experience exposes them at list level (for example status or daily cost on cards).
+* Next actions
++
+Entry points to add services, connect providers, or open governance and observability areas described in xref:exp-overview.adoc[].
 
 == See Also
 

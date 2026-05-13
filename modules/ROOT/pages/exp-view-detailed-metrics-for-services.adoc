@@ -1,21 +1,27 @@
 = View Detailed Metrics for Your Services
 
-Detailed metrics go beyond high-level status to show time series, breakdowns, and dimensions your observability stack forwards into the enhanced experience. Engineers use them to debug incidents, validate policy changes, and compare behavior across instances or environments.
+Detailed metrics go beyond high-level status to show time series, breakdowns, and dimensions your observability stack forwards into the enhanced experience. Use them to debug incidents, validate policy changes, and compare behavior across instances or environments.
 
 Available series depend on the gateway or runtime path, whether the deployment is managed through Omni Gateway, and what your organization connected under *Platform* and *Observability*.
 
 == Open Detailed Views
 
 * From *Portfolio*, open a service and go to the *Monitoring* tab for charts scoped to that service or instance when the product exposes them.
-* From *Observability*, open dashboards or explorers your administrator pinned for the organization. Use filters to narrow to the service, environment, or route you are investigating.
+* From *Observability*, open dashboards or explorers your administrator pinned for the organization. Use filters to narrow to the service, environment, or route you're investigating.
 
-If you need a metric that never appears, ask your platform team whether the integration or retention policy supports it.
+If you need a metric that doesn't appear, ask your platform team whether the integration or retention policy supports it.
 
-== Practices That Keep Metrics Useful
+== Metrics Best Practices
 
-* **Baseline after changes** — Capture before-and-after windows when you deploy instances or change policies so you can attribute shifts.
-* **Align with alerts** — Pair detailed charts with xref:exp-configure-notifications-for-alerts.adoc[alert notifications] so on-call engineers land in the right context.
-* **Respect data boundaries** — Some dimensions may be redacted or aggregated for privacy; follow your organization's data-handling standards.
+* Baseline after changes
++
+Capture before-and-after windows when you deploy instances or change policies so you can attribute shifts.
+* Align with alerts
++
+Pair detailed charts with xref:exp-configure-notifications-for-alerts.adoc[alert notifications] so on-call engineers go to the right place.
+* Respect data boundaries
++
+Some dimensions might be redacted or aggregated for privacy. Follow your organization's data-handling standards.
 
 == See Also
 
