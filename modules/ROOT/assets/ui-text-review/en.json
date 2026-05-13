@@ -253,7 +253,20 @@
     "failedToDeploy": "We couldn't deploy the LLM proxy. Try again.",
     "deployFailedAssetNotFound": "We couldn't deploy because the Exchange asset wasn't found. Refresh and try again.",
     "basePathConflict": "An LLM proxy with this path already exists on the selected gateway.",
-    "basePathValidating": "Checking path availability…"
+    "basePathValidating": "Checking path availability…",
+    "defaultFallbackRouteName": "Route {letter}",
+    "toast": {
+      "topicCreated": "Topic \"{name}\" created",
+      "topicCreatedFallback": "Topic created",
+      "failedToCreateTopic": "Failed to create topic \"{name}\"",
+      "failedToCreateTopicFallback": "Failed to create topic",
+      "topicDeleted": "Topic \"{name}\" deleted",
+      "topicDeletedFallback": "Topic deleted",
+      "failedToDeleteTopic": "Failed to delete topic \"{name}\"",
+      "failedToDeleteTopicFallback": "Failed to delete topic",
+      "topicRemovedFromRoute": "Topic \"{name}\" removed from route",
+      "topicRemovedFromRouteFallback": "Topic removed from route"
+    }
   },
   "createVersion": {
     "breadcrumb": "Add Version",
@@ -763,7 +776,8 @@
       "severity": "Severity",
       "delivery": "Delivery",
       "loadingPage": "Loading page"
-    }
+    },
+    "deleteSuccess": "Notification deleted successfully"
   },
   "providers": {
     "heading": "Providers"
@@ -1474,7 +1488,9 @@
     "applying": "Applying...",
     "saveChanges": "Save Changes",
     "applyPolicy": "Apply Policy",
-    "wizardTitle": "Apply Policy"
+    "wizardTitle": "Apply Policy",
+    "viewTitle": "Policy Configuration",
+    "viewDescription": "Configuration values for {name}."
   },
   "policyConfigFieldEditor": {
     "configurationJson": "Configuration JSON",
@@ -1861,7 +1877,9 @@
       "selectVersion": "Select a version",
       "targetUrlRequired": "Enter a target URL.",
       "pathConflict": "Path conflict detected",
-      "pathConflictDetail": "This path conflicts with another instance."
+      "pathConflictDetail": "This path conflicts with another instance.",
+      "pathInvalid": "Path may only contain letters, numbers, hyphens, and underscores.",
+      "versionInvalid": "Version must follow semver format (e.g. 1.0.0)."
     },
     "creationPending": "Instance creation is taking longer than expected — still provisioning in the background."
   },
@@ -1891,7 +1909,8 @@
     "tableViewLabel": "Table view"
   },
   "entityCard": {
-    "lastSynced": "Last synced {time}"
+    "lastSynced": "Last synced {time}",
+    "provisioningFailed": "Provisioning failed"
   },
   "filterDropdown": {
     "clearAll": "Clear all"
@@ -2258,7 +2277,9 @@
     "inbound": "Inbound ({count})",
     "outbound": "Outbound ({count})",
     "active": "Active ({count})",
-    "recommended": "Recommended"
+    "recommended": "Recommended",
+    "noGovernanceReportAvailable": "No governance report available.",
+    "noGovernanceReportForEntityType": "Governance reports are not available for this entity type."
   },
   "governanceReportTab": {
     "notValidatedTitle": "Not Validated",
@@ -2317,7 +2338,9 @@
       "severityWarning": "Warning",
       "severityInfo": "Info"
     },
-    "goToGovernanceStrategies": "Go to Governance Strategies"
+    "goToGovernanceStrategies": "Go to Governance Strategies",
+    "pendingEvaluationTitle": "Evaluating governance rules…",
+    "pendingEvaluationDescription": "This service hasn't been evaluated yet. Results will appear shortly."
   },
   "governanceReportControls": {
     "latest": "(Latest)",
@@ -2566,7 +2589,12 @@
     "complianceStatusText": "Compliance status",
     "actionsAriaLabel": "Actions",
     "loadingValue": "Loading {name}",
-    "exposeAsMcpServerDisabledTooltip": "This API only has a Mocking Service instance. Deploy a real (managed or self-managed) instance before exposing it as an MCP server."
+    "exposeAsMcpServerDisabledTooltip": "This API only has a Mocking Service instance. Deploy a real (managed or self-managed) instance before exposing it as an MCP server.",
+    "provisioningFailedTooltip": "Provisioning failed",
+    "provisioningFailedBanner": "Provisioning did not complete successfully. Click Retry to resume from where it left off.",
+    "retryButton": "Retry",
+    "retryingStatus": "Retrying…",
+    "retryTimedOut": "Retry timed out — the pipeline may still be running in the background."
   },
   "entityDetailPage": {
     "tabConformanceReport": "Conformance Report",
@@ -2784,7 +2812,8 @@
     "confirmGatewayPatch": "Try the proposed gateway fix in the form?",
     "btnApplyProposedChanges": "Apply proposed changes",
     "aiFeaturesNotEnabled": "Looks like AI features aren't turned on for your organization. Ask your administrator to turn on AI features in the connected Anypoint Platform and Salesforce orgs. After AI features are turned on, try again.",
-    "aiFeaturesLearnMore": "Learn more"
+    "aiFeaturesLearnMore": "Learn more",
+    "working": "Working…"
   },
   "omniCommandPalette": {
     "closeAriaLabel": "Close MuleSoft command palette",
@@ -2964,7 +2993,11 @@
       "serverDisconnected": "Server Disconnected",
       "serverDeleted": "Server Deleted",
       "customNotifications": "Custom Notifications"
-    }
+    },
+    "targetService": "Target Service",
+    "apiInstance": "API Instance",
+    "allApplications": "All Applications",
+    "allVersions": "All Versions"
   },
   "costDashboard": {
     "title": "Cost"
@@ -3191,7 +3224,10 @@
       "previewCategories": "Categories",
       "previewInstances": "Instances",
       "loadingScopePreviewTable": "Loading scope preview...",
-      "noServicesMatch": "No services match the current scope criteria."
+      "noServicesMatch": "No services match the current scope criteria.",
+      "filterGraphql": "GraphQL",
+      "filterSoapApi": "SOAP API",
+      "filterGrpcApi": "gRPC API"
     },
     "rules": {
       "heading": "Relevant rulesets for your selected scope",
@@ -4213,7 +4249,10 @@
     "deleteAriaLabel": "Delete {name}",
     "loading": "Loading…",
     "noTopics": "No topics yet",
-    "createNewTopic": "Create new topic"
+    "createNewTopic": "Create new topic",
+    "removeAriaLabel": "Remove {name} from this route",
+    "selectExistingPlaceholder": "Select topics…",
+    "noSelectableTopics": "All topics are already in use"
   },
   "semanticServicePicker": {
     "loading": "Loading…",
@@ -4325,7 +4364,15 @@
     "editEntryAriaLabel": "Edit {name}",
     "removeEntryAriaLabel": "Remove {name}",
     "advancedRoutingDescription": "Route fallback and filtering options",
-    "selectSemanticServicePrompt": "Select a semantic service setup to configure routes."
+    "selectSemanticServicePrompt": "Select a semantic service setup to configure routes.",
+    "addRouteTooltip": "Add additional routes for load balancing or semantic routing",
+    "fallbackCardTitle": "Fallback",
+    "fallbackCardRouteLabel": "Route",
+    "fallbackCardModelLabel": "Model",
+    "advancedOptions": "Advanced options",
+    "advancedOptionsDesc": "Filter prompts before they reach a route",
+    "selectPromptGuardTopicPlaceholder": "Select topics…",
+    "noSelectablePromptGuardTopics": "No topics available — all are assigned to a route or guard"
   },
   "routeCardContent": {
     "topicsLabel": "Topics",
@@ -4537,7 +4584,8 @@
       "previewScope": "We couldn't preview scope. Try again.",
       "createStrategy": "We couldn't create the strategy. Try again.",
       "updateStrategy": "We couldn't update the strategy. Try again.",
-      "createUncertain": "We couldn't confirm that the control was created. Refresh the list, and then try again if it doesn't appear."
+      "createUncertain": "We couldn't confirm that the control was created. Refresh the list, and then try again if it doesn't appear.",
+      "updateUncertain": "We couldn't confirm that your guardrail update was applied within the time we waited. Refresh the list to check whether it took effect; if not, try again."
     },
     "success": {
       "guardrailCreated": "Control created.",
@@ -4698,7 +4746,8 @@
     },
     "actions": "Actions",
     "pending": {
-      "guardrailCreating": "Your control is still being created. Don't leave this page."
+      "guardrailCreating": "Your control is still being created. Don't leave this page.",
+      "automatedPolicyCreating": "Don't leave this page — your automated policy is still being created. We're confirming with the upstream service."
     }
   },
   "mcpWizard": {
@@ -4732,7 +4781,10 @@
       "stepSaasCredentials": "SaaS Credentials",
       "stepReview": "Review",
       "toastApiMissingInstanceUrl": "\"{apiName}\" can't be wrapped as an MCP server yet: the selected API Manager instance has no endpoint URL. Deploy the instance in API Manager (attach a runtime) and try again.",
-      "runtimeAuthWarning": "This MCP endpoint is deployed without inbound authentication. Apply a Flex Gateway inbound auth policy (for example, client-id-enforcement or jwt-validation) before production use."
+      "runtimeAuthWarning": "This MCP endpoint is deployed without inbound authentication. Apply a Flex Gateway inbound auth policy (for example, client-id-enforcement or jwt-validation) before production use.",
+      "gatewayLoadErrorHeading": "Unable to Load Gateways",
+      "gatewayLoadErrorDescription": "We couldn't reach the gateway service after multiple attempts. This is usually a temporary issue — please try again.",
+      "retryButton": "Retry"
     },
     "versionDropdown": {
       "latest": "latest",
@@ -4902,7 +4954,10 @@
       "gatewayLabel": "Gateway",
       "selectGateway": "Select a gateway",
       "cancelButton": "Cancel",
-      "saveButton": "Save"
+      "saveButton": "Save",
+      "versionAutoIncrement": "Version is auto-incremented on each update.",
+      "pathInvalid": "Path may only contain letters, numbers, hyphens, and underscores.",
+      "versionInvalid": "Version must follow semver format (e.g. 1.0.0)."
     },
     "saasUpstreamModal": {
       "configureTitle": "Configure Upstream for {name}",
@@ -4945,7 +5000,19 @@
     "endpointsHeading": "Endpoints"
   },
   "llmProxyRoutesEditor": {
-    "failedToSaveChanges": "We couldn't save your changes. Try again."
+    "failedToSaveChanges": "We couldn't save your changes. Try again.",
+    "toast": {
+      "topicCreated": "Topic \"{name}\" created",
+      "topicCreatedFallback": "Topic created",
+      "failedToCreateTopic": "Failed to create topic \"{name}\"",
+      "failedToCreateTopicFallback": "Failed to create topic",
+      "topicDeleted": "Topic \"{name}\" deleted",
+      "topicDeletedFallback": "Topic deleted",
+      "failedToDeleteTopic": "Failed to delete topic \"{name}\"",
+      "failedToDeleteTopicFallback": "Failed to delete topic",
+      "topicRemovedFromRoute": "Topic \"{name}\" removed from route",
+      "topicRemovedFromRouteFallback": "Topic removed from route"
+    }
   },
   "omniInlineMonitoring": {
     "generatedCard": "Generated card"
@@ -5106,7 +5173,9 @@
     "policyCredentialInjection": "Credential Injection ({authType})",
     "appliedStatus": "Applied",
     "inboundHeading": "Inbound",
-    "outboundHeading": "Outbound"
+    "outboundHeading": "Outbound",
+    "pathInvalid": "Path may only contain letters, numbers, hyphens, and underscores.",
+    "versionInvalid": "Version must follow semver format (e.g. 1.0.0)."
   },
   "governanceTabDetail": {
     "policyMethodAutomated": "Automated Policies",
@@ -5245,7 +5314,8 @@
     "hide": "Hide",
     "show": "Show",
     "statusActive": "Active",
-    "statusUnknown": "Unknown"
+    "statusUnknown": "Unknown",
+    "enterNvidiaKey": "Enter NVIDIA API key"
   },
   "performanceOverview": {
     "heading": "Performance",
@@ -5505,5 +5575,13 @@
     "heading": "We couldn't find that page",
     "description": "The page at {path} doesn't exist or may have been moved.",
     "goToHome": "Go to home"
+  },
+  "unsavedChangesModal": {
+    "closeAriaLabel": "Close unsaved changes dialog",
+    "heading": "Discard unsaved changes?",
+    "confirmMessage": "You have unsaved changes that will be lost.",
+    "bodyMessage": "If you leave now, your in-progress configuration will not be saved.",
+    "discardButton": "Discard changes",
+    "keepEditingButton": "Keep editing"
   }
 }
