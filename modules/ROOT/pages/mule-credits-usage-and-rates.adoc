@@ -1,0 +1,98 @@
+= Mule Credits Usage and Rates
+
+Mule Credits are a universal currency that you can freely use across usage types. You buy and draw down from your purchased capacity pool as you use the MuleSoft platform. Unlike the previous per-product metering model (Universal Base Pricing), a single pool of credits replaces individual product meters. This gives you the flexibility to consume credits across the entire MuleSoft platform based on your usage. Credits are shared across your entire Anypoint Platform organization. You can't manage them per business group.
+
+Available in Salesforce Digital Wallet, use Mule Credits before the Order End Date on your Order Form — rollovers aren't permitted. To see which usage types are included in your subscription, refer to the Usage Details table on your Order Form, Subscription Plan, or Features and Entitlement Document.
+
+== Mule Credits by Subscription Plan
+
+The usage types available to you depend on your subscription plan.
+
+[%header%autowidth.spread]
+|===
+| Subscription Plan | Available Usage Types
+
+| *MuleSoft Integration*
+| MuleSoft Flows, MuleSoft Messages, Private Spaces, Network Connections, Load Balancers
+
+| *MuleSoft Automation*
+| IDP Pages, Flow Integration Tasks
+
+| *MuleSoft AI & API Management*
+| Managed Assets, Gateway Requests, Private Spaces, Network Connections
+
+| *MuleSoft Agent Fabric*
+| MuleSoft Flows, MuleSoft Messages, Managed Assets, Gateway Requests, Private Spaces, Network Connections
+
+| *MuleSoft All-Access*
+| All usage types: MuleSoft Flows, MuleSoft Messages, Managed Assets, Gateway Requests, IDP Pages, Flow Integration Tasks, Private Spaces, Network Connections, Load Balancers
+
+| *MuleSoft All-Access License*
+| All usage types: MuleSoft Flows, MuleSoft Messages, Managed Assets, Gateway Requests, IDP Pages, Flow Integration Tasks, Private Spaces, Network Connections, Load Balancers
+|===
+
+NOTE: MuleSoft All-Access License supports pre-commit and unlimited usage models.
+
+== Usage Types
+
+Each usage type (also referred to as a meter) tracks a specific dimension of platform consumption. Credit rates vary by monthly consumption volume and reset on the first day of each calendar month. You consume credits at the same rate across all environments, including production, pre-production, sandbox, and design. For the full tiered rate table, see the https://www.salesforce.com/mulesoft/mule-credits/rates/[Mule Credits Rate Card^].
+
+[%header%autowidth.spread]
+|===
+| Usage Type | Description | Unit
+
+| *MuleSoft Flows*
+| A flow is a sequence of logical operations within a deployed Mule application that contains a Mule event source or APIkit route. Anypoint Platform tracks the number of flows across all business groups, environments, and applications. Usage is calculated by identifying the peak-hour flow count for each day and aggregating those daily peaks over the month. This is a sum-based meter — unlike the previous high-watermark model, all daily flow counts contribute to monthly usage. Subflows used for error handling or modular processing are included in the count.
+| Per 1 Mule Flow
+
+| *MuleSoft Messages*
+| The total volume of data containers processed by the runtime. The platform counts a message each time an event source triggers it, and aggregates message counts daily and monthly. Changes to a message as it moves through application flows are not tracked — only the initial trigger is counted.
+| Per 1 million Mule Messages
+
+| *Managed Assets*
+| An API, Agent, Model Context Protocol (MCP) Server, or Large Language Model (LLM) with at least one active instance in API Manager deployed to a Mule or Omni Gateway. Usage is counted per business group per day; if an asset has active instances across multiple business groups, it counts as one asset per group. Multiple instances within the same business group do not incur extra charges. Anypoint Platform deducts credits as long as the asset status is Active in API Manager, even if there are no calls to the asset.
+| Per 1 Managed Asset
+
+| *Gateway Requests*
+| The number of calls made to all assets through the Omni Gateway. Usage is the sum of all requests processed, regardless of response status.
+| Per 1 million Gateway Requests
+
+| *IDP Pages*
+| The number of individual document pages processed by Intelligent Document Processing (IDP) in Anypoint IDP or MuleSoft for Flow: IDP. Each page is counted as a separate unit.
+| Per 1 IDP Page
+
+| *Flow Integration Tasks*
+| Individual units of work or actions (reading, creating, or updating a record) executed within a flow for MuleSoft for Flow: Integration.
+| Per 1 Flow Integration Task
+
+| *Private Spaces*
+| Dedicated, isolated logical instances within CloudHub 2.0. Anypoint Platform consumes credits based on provisioning of secure network instances, measured per day.
+| Per 1 Private Space
+
+| *Network Connections*
+| Active connections between the MuleSoft environment and external virtual private clouds (VPCs),  virtual private networks (VPNs), or on-premises data centers, tracked per active connection per day.
+| Per 1 Network Connection
+
+| *Load Balancers*
+| Dedicated Load Balancers (DLBs) used to route external traffic to Mule applications, tracked per provisioned load balancer per day.
+| Per 1 Load Balancer
+|===
+
+== Viewing Usage and Billing
+
+Mule Credits usage, monthly statements, and overage billing are centralized in Salesforce Digital Wallet. If you have an Anypoint Platform organization, you can also view your usage and entitlement details in Anypoint Usage Reports for cross-platform transparency.
+
+To view your Mule Credits consumption:
+
+. From the *App Launcher*, click *Digital Wallet*.
+. Click the *Consumption Cards* tab.
+. Locate the *Mule Credits* consumption card.
+
+Digital Wallet is available in Lightning Experience in Enterprise and Unlimited editions, and requires the View Consumption user permission.
+
+== See Also
+
+* https://help.salesforce.com/s/articleView?id=xcloud.wallet_enabled_products_rate_cards.htm&type=5[Digital Wallet–Enabled Consumption-Based Products^] (Salesforce Help)
+* https://www.salesforce.com/mulesoft/mule-credits/rates/[Mule Credits Rate Card^]
+* xref:automation-credits-usage-and-rates.adoc[]
+* xref:usage-reports.adoc[]
