@@ -1,22 +1,28 @@
-= Manage Scanners
+= Managing Scanners
 
-Once scanners are configured, your team runs them day to day: starting discovery when needed, reading run history, updating schedules and credentials, and removing scanners that are no longer in use. Most of that work happens under *Providers*, where your organization lists provider connections, scanners, and scan activity in one place.
+After you configure scanners, you run them day to day. Most of that work happens under *Providers*, where you manage provider connections, scanners, and scan activity in one place.
 
-== Where This Work Happens
+== Available Scanner Actions
 
-Use the *Providers* area (or equivalent navigation your administrator labels) to see which scanners exist for your business group, open a scanner’s detail context, and act on schedules, runs, and configuration. Exact layout can vary by release and entitlement.
+* Run discovery on demand.
++
+Start a manual scan when you want fresh metadata without waiting for the next scheduled window. Successful runs update or add services in the matching *Portfolio* catalogs according to your rules.
+* Review status and history.
++
+Inspect connection health, the last completed run, and scan history to verify whether discovery is healthy, slow, or failing authentication.
+* Pause scheduled scans.
++
+Temporarily stop scheduled triggers when you need a quiet period—for example during maintenance or while you fix credentials—without deleting the scanner.
+* Edit configuration.
++
+Change names, descriptions, credentials, provider scope, or scan-related settings your product exposes, then save so future runs use the new definition.
+* Delete a scanner.
++
+Remove the scanner from *Providers* when the provider link is no longer authorized or useful. Consider the impact on discovered services in *Portfolio* and on dependent teams before you delete the scanner.
 
-== What You Can Do With a Scanner
+== How Scanners Run
 
-* **Run discovery on demand** — Kick off a manual scan when you want fresh metadata without waiting for the next scheduled window. Successful runs update or add services in the matching *Portfolio* catalogs according to your rules.
-* **Review status and history** — Inspect connection health, the last completed run, and scan history so you can tell whether discovery is healthy, slow, or failing authentication.
-* **Pause scheduled scans** — Temporarily stop scheduled triggers when you need a quiet period—for example during maintenance or while you fix credentials—without deleting the scanner.
-* **Edit configuration** — Change names, descriptions, credentials, provider scope, or scan-related settings your product exposes, then save so future runs use the new definition.
-* **Delete a scanner** — Remove the scanner from *Providers* when the provider link is no longer authorized or useful. Consider impact on discovered services in *Portfolio* and on dependent teams before you delete.
-
-== How Scans Are Triggered
-
-Scanners typically run on a schedule you or an administrator configured, or manually when someone starts a run. 
+Scanners typically run on a schedule you or an administrator configured, or manually when you start a scan.
 
 == See Also
 
