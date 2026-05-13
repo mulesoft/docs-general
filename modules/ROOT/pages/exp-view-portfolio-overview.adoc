@@ -9,7 +9,7 @@ The exact layout depends on how your tenant is configured and which catalogs you
 * *Home* — After sign-in, your landing page may highlight portfolio activity, shortcuts into *Portfolio*, or high-level counts your organization chose to surface.
 * *Portfolio* — Open *Portfolio* to browse catalogs (*Agents*, *APIs*, *MCP Servers*, *LLM Proxies*, *Gateways*). Each catalog lists or tiles the services your team registered or imported. Use search and filters to narrow the set before you open a service detail page.
 
-If you do not see a catalog or a summary you expect, confirm entitlements and permissions with your Anypoint organization administrator.
+If you do not see a catalog or a summary you expect, confirm entitlements and permissions with your Anypoint organization administrator. See xref:exp-start-home.adoc#permissions[Enhanced Experience Permissions] for role details.
 
 == What You Typically Review
 

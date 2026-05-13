@@ -32,7 +32,7 @@ If a tab is missing, confirm with your administrator that monitoring data is flo
 
 == Permissions
 
-The system relies on Anypoint Platform access control. Roles such as Monitoring Viewer or Monitoring Administrator control access to monitoring views at the service and instance level, and control whether you can update monitoring configuration.
+The system relies on Anypoint Platform access control. Roles such as Monitoring Viewer or Monitoring Administrator control access to monitoring views at the service and instance level, and control whether you can update monitoring configuration. See xref:exp-start-home.adoc#permissions[Enhanced Experience Permissions] for role details.
 
 == See Also
 

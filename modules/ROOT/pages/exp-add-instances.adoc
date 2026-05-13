@@ -86,7 +86,7 @@ After creating or updating an instance, you can continue managing the service th
 
 == Required Permissions
 
-Creating instances uses Anypoint Platform permissions such as *API Creator* for API-related flows. Viewing or editing instance configuration requires the corresponding permissions defined by your organization.
+Creating instances uses Anypoint Platform permissions such as API Creator for API-related flows. Viewing or editing instance configuration requires the corresponding permissions defined by your organization. See xref:exp-start-home.adoc#permissions[Enhanced Experience Permissions] for role details.
 
 == See Also
 
