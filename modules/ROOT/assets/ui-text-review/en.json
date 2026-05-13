@@ -464,7 +464,7 @@
       "apis": "APIs",
       "vectorDbs": "Vector DBs"
     },
-    "placeholderBanner": "Conceptual placeholder — needs deeper exploration & thinking",
+    "placeholderBanner": "Conceptual placeholder — needs deeper exploration and thinking",
     "heading": "Marketplace",
     "subtitle": "Browse published assets from the community",
     "assetsAvailable": "{count} assets available",
@@ -1314,7 +1314,7 @@
   },
   "costManagement": {
     "heading": "Cost Management",
-    "subtitle": "Token usage monitoring and optimization recommendations across your portfolio"
+    "subtitle": "Monitor usage and review optimization recommendations across your portfolio"
   },
   "instanceDetailModal": {
     "closeDialog": "Close dialog",
@@ -1323,13 +1323,13 @@
     "tokens": "Tokens",
     "responseTimeMs": "Response Time (ms)",
     "optimizationOpportunities": "Optimization Opportunities",
-    "optimizationCount": "Found {count} {count, plural, one {optimization} other {optimizations}} you can implement",
+    "optimizationCount": "We found {count} {count, plural, one {optimization} other {optimizations}} to implement",
     "notApplied": "Not Applied",
     "applyThisPolicy": "Apply This Policy",
     "whyThisPolicy": "Why this policy?",
     "projectedReduction": "Applying {policyName} projects a reduction of ~{tokensSaved} tokens per {timeframe}.",
-    "whyToolMapping": "Analysis of tools/list responses shows an average payload of {avgTokens} tokens across {calls} calls. {policyName} compresses tool descriptions to ~15 words, projecting a reduction of ~{tokensSaved} tokens per last {timeframe}.",
-    "whyToolSanitization": "Analysis of tools/call responses shows an average payload of {avgTokens} tokens across {calls} calls. {policyName} removes unnecessary output, projecting a reduction of ~{tokensSaved} tokens per last {timeframe}.",
+    "whyToolMapping": "Tools/list responses average {avgTokens} tokens across {calls} calls. {policyName} compresses tool descriptions to ~15 words, saving an estimated {tokensSaved} tokens over the last {timeframe}.",
+    "whyToolSanitization": "Tools/call responses average {avgTokens} tokens across {calls} calls. {policyName} removes unnecessary output, saving an estimated {tokensSaved} tokens over the last {timeframe}.",
     "appliedPoliciesHeading": "Applied Cost Management Policies",
     "noPoliciesApplied": "No policies applied to this instance.",
     "viewFullDetails": "View full instance details",
@@ -1341,14 +1341,14 @@
     "closeInstanceDetail": "Close instance detail",
     "tokenUsageAndResponseTime": "Token Usage & Response Time",
     "timeRange": "Time range",
-    "policyProjection": "Applying {policyName} projects a reduction of ~{tokens} tokens per {timeframe}.",
+    "policyProjection": "Applying {policyName} saves an estimated {tokens} tokens per {timeframe}.",
     "appliedCostManagementPolicies": "Applied Cost Management Policies",
     "viewFullInstanceDetails": "View full instance details"
   },
   "mcpTokenAnalysis": {
     "summaryHeading": "Summary",
     "timeRangeAriaLabel": "Time range",
-    "estimationTooltip": "Token counts are estimated from payload byte lengths. Actual tokenizer counts may differ.",
+    "estimationTooltip": "Estimated token counts based on payload byte lengths. Actual token counts sometimes differ.",
     "acrossInstances": "Across {count} instances",
     "instancesCount": "{count} instances",
     "topOpportunities": "Top Opportunities",
@@ -1359,9 +1359,9 @@
     "dismissOpportunity": "Dismiss opportunity",
     "recommendationRange": "{start}–{end} of {total}",
     "kpi": {
-      "totalTokens": "Total tokens",
-      "savedTokens": "Saved tokens (est.)",
-      "toolCalls": "Tool calls"
+      "totalTokens": "Total Tokens",
+      "savedTokens": "Saved Tokens (Est.)",
+      "toolCalls": "Tool Calls"
     },
     "footnote": {
       "byOptimization": "By optimization policies",
@@ -1376,10 +1376,10 @@
       "avgResponseTime": "Avg Response Time"
     },
     "opportunityCard": {
-      "largeToolDescriptionsDetected": "Large tool descriptions detected",
-      "largeToolResponsesDetected": "Large tool responses detected",
-      "potentialSavings": "Potential Savings",
-      "savingsEstimateUnavailable": "Savings estimate unavailable",
+      "largeToolDescriptionsDetected": "Long tool descriptions detected",
+      "largeToolResponsesDetected": "Long tool responses detected",
+      "potentialSavings": "Potential Usage Saved",
+      "savingsEstimateUnavailable": "Saved usage estimate unavailable",
       "tokensPerTimeframe": "tokens last {timeframe}",
       "savingsPercent": "({percent}%)",
       "skipForNow": "Skip for now"
@@ -1394,7 +1394,7 @@
     "noMatch": "No policies match your search.",
     "appliedSuccess": "Policy applied successfully",
     "applyTitle": "Apply “{name}”",
-    "closeApplyModal": "Close apply policy modal",
+    "closeApplyModal": "Close apply policy window",
     "tab": {
       "individual": "Select Individual",
       "bulk": "Bulk Rule"
@@ -1428,7 +1428,7 @@
     "searchAriaLabel": "Search policies",
     "searchPlaceholder": "Search policies...",
     "trafficFlow": "Traffic Flow",
-    "trafficTooltip": "Filter policies by traffic direction: Inbound policies apply to incoming requests, Outbound policies apply to backend calls.",
+    "trafficTooltip": "Filter policies by traffic direction: Inbound policies apply to incoming requests. Outbound policies apply to backend calls.",
     "domain": "Domain",
     "direction": {
       "inbound": "Inbound",
@@ -1439,7 +1439,7 @@
     "statusAutomated": "Automated",
     "statusFilterLabel": "Status",
     "trafficFlowLabel": "Traffic Flow",
-    "trafficFlowTooltip": "Filter policies by traffic direction: Inbound policies apply to incoming requests, Outbound policies apply to backend calls.",
+    "trafficFlowTooltip": "Filter policies by traffic direction: Inbound policies apply to incoming requests. Outbound policies apply to backend calls.",
     "noFilterMatch": "No policies match your filters.",
     "allApplied": "All available policies are already applied to this instance.",
     "selectAriaLabel": "Select {name}",
@@ -1456,20 +1456,20 @@
       "automated": "Automated"
     },
     "status": "Status",
-    "errorPolicyNotAvailable": "Policy {policyId} is not available in the selector list.",
-    "errorPolicyAlreadyApplied": "Policy {name} is already {status} and cannot be re-applied.",
+    "errorPolicyNotAvailable": "Policy {policyId} isn't available in the selector list.",
+    "errorPolicyAlreadyApplied": "Policy {name} is already {status}. Select a different policy.",
     "defaultSelectSummary": "Selected policy {name}.",
     "back": "Back"
   },
   "policyConfigForm": {
     "heading": "Configure Policy",
     "description": "Set configuration values for {name}.",
-    "loadingPlaceholder": "Configurations for {name} will be shown here.",
-    "loadingHint": "Configuration fields should match those available in Anypoint Platform.",
+    "loadingPlaceholder": "Loading configurations for {name}...",
+    "loadingHint": "Match configuration fields to those available in Anypoint Platform.",
     "selectUpstream": "Select at least one upstream for outbound policy application.",
     "missingApigeeContext": "Missing Apigee apply context.",
     "applyFailed": "We couldn't apply the policy. Try again.",
-    "invalidJson": "Configuration JSON is invalid.",
+    "invalidJson": "The configuration JSON is invalid.",
     "saving": "Saving...",
     "applying": "Applying...",
     "saveChanges": "Save Changes",
@@ -1494,7 +1494,7 @@
     "suggested": "Suggested",
     "outboundTargets": "Outbound targets",
     "outboundDescription": "Select one or more upstreams for this outbound policy.",
-    "noUpstreams": "No upstreams found for this API instance.",
+    "noUpstreams": "We can't find any upstreams for this API instance. Add an upstream and try again.",
     "selectUpstream": "Select upstream {name}"
   },
   "policyConfigFooter": {
@@ -1505,7 +1505,7 @@
   },
   "policyTemplateChecker": {
     "heading": "OOTB Policy Form Checker",
-    "description": "Load every out-of-the-box policy template for an org and preview the fields the frontend will render.",
+    "description": "Load every out-of-the-box policy template and preview the fields rendered in the UI.",
     "field": {
       "orgId": "Organization ID",
       "envId": "Environment ID",
@@ -1538,11 +1538,11 @@
     "noVersion": "no-version",
     "inboundDefault": "inbound",
     "fieldCount": "{count} {count, plural, one {field} other {fields}}",
-    "noConfigMessage": "This template does not expose configurable fields. The frontend should treat it as a valid no-form policy.",
+    "noConfigMessage": "This template doesn't expose configurable fields. The UI treats it as a valid no-form policy.",
     "nestedFields": "Nested item fields: {fields}",
     "nestedConfig": "Nested configuration",
     "rawConfiguration": "Raw configuration",
-    "emptyState": "Enter an org and token, then load templates to inspect the generated forms."
+    "emptyState": "Enter an org and a token. Then, load templates to inspect the generated forms."
   },
   "toolMappingConfig": {
     "breadcrumbGovernance": "Governance",
@@ -1575,7 +1575,7 @@
     "authHint": "Check the authentication policies configured for this MCP server instance.",
     "noTools": "This MCP server has no tools available.",
     "selectAll": "Select All",
-    "importCount": "Import {count} {count, plural, one {Tool} other {Tools}}",
+    "importCount": "Import {count} {count, plural, one {tool} other {tools}}",
     "failedToFetchTools": "We couldn't fetch tools from the MCP server. Try again.",
     "urlLabel": "Server URL",
     "clientIdLabel": "Client ID (Optional)",
@@ -1590,10 +1590,10 @@
   },
   "importToolsModal": {
     "title": "Import Tools",
-    "closeModal": "Close modal",
+    "closeModal": "Close window",
     "noTools": "This MCP server has no tools available for import.",
     "selectAll": "Select All",
-    "importCount": "Import {count} {count, plural, one {Tool} other {Tools}}",
+    "importCount": "Import {count} {count, plural, one {tool} other {tools}}",
     "failedToLoadTools": "We couldn't load tools. Try again.",
     "specHint": "The asset's tool spec may not be published yet. Try importing from the live MCP server instead."
   },
@@ -1731,7 +1731,7 @@
     "actionDuplicate": "Duplicate",
     "actionDelete": "Delete",
     "actionDeleting": "Deleting...",
-    "emptyDefault": "No custom governance strategies created yet. Create your first to extend governance beyond the default profile.",
+    "emptyDefault": "No custom governance strategies exist yet. Create a strategy to extend governance beyond the default profile.",
     "emptyFiltered": "No governance strategies match your filters.",
     "rowsPerPage": "Rows per page",
     "showingRange": "Showing {start}–{end} of {total}",
@@ -1745,9 +1745,9 @@
     "headerTotal": "Total",
     "headerConsumption": "Consumption",
     "headerCompliant": "Compliant",
-    "headerNonCompliant": "Non-Compliant",
+    "headerNonCompliant": "Noncompliant",
     "headerPending": "Pending",
-    "emptyState": "No governance status has been generated for this organization yet. Refresh insights to populate service compliance.",
+    "emptyState": "No governance status exists yet. Refresh insights to populate service compliance.",
     "serviceType": {
       "agents": "Agents",
       "mcpServers": "MCP Servers",
@@ -1774,8 +1774,8 @@
   "deleteStrategyModal": {
     "closeAriaLabel": "Close delete dialog",
     "heading": "Delete {typeLabel}",
-    "confirmMessage": "Are you sure you want to delete {name}?",
-    "bodyMessage": "This will permanently remove this {bodyNoun}. Services currently governed by this {bodyNoun} will no longer be validated against its rules.",
+    "confirmMessage": "Delete {name}?",
+    "bodyMessage": "Deleting this {bodyNoun} permanently removes it. Services governed by this {bodyNoun} are no longer validated against its rules.",
     "deleting": "Deleting...",
     "deleteButton": "Delete {typeLabel}",
     "typeAutomatedPolicy": "Automated Policy",
@@ -1787,13 +1787,13 @@
     "jobStatus": "Job status: {status}",
     "evaluationSummary": "{services} services · {rulesets} rulesets · {violations} violations · {warnings} warnings",
     "upstreamErrors": "Upstream evaluation errors",
-    "upstreamErrorsHint": "The run completed with upstream failures. This can lead to empty control matches.",
+    "upstreamErrorsHint": "Upstream errors occurred during the run. This causes empty control matches.",
     "versions": "{count} versions",
     "versionUnknown": "Version unknown",
     "rulesetStatus": "Status: {status} · Violations: {violations} · Warnings: {warnings}",
     "findingSummary": "{name} · {severity} · {count} findings",
     "noRulesetBreakdown": "No ruleset-level breakdown available for this API version.",
-    "emptyEvaluation": "No profile evaluation matches found for this control yet."
+    "emptyEvaluation": "NNo profile evaluation matches exist for this control."
   },
   "policyCard": {
     "typeLabel": {
@@ -1813,13 +1813,13 @@
   "reorderPoliciesModal": {
     "closeAriaLabel": "Close reorder dialog",
     "heading": "Reorder Automated Policies",
-    "description": "Automated policy order is managed per environment. Pick an environment, then use the arrows to reorder its policies.",
+    "description": "Manage automated policy order per environment. Select an environment to reorder its policies.",
     "environmentLabel": "Environment",
     "noEnvironments": "No environments with automated policies",
     "emptyState": "No automated policies to reorder in this environment.",
     "moveUp": "Move {name} up",
     "moveDown": "Move {name} down",
-    "saving": "Saving…",
+    "saving": "Saving...",
     "applyReorder": "Apply Reorder",
     "failedToReorder": "We couldn't reorder automated policies. Try again."
   },
@@ -2272,7 +2272,7 @@
     "refreshQueued": "Refresh queued. The report will update shortly.",
     "refreshFailed": "We couldn't trigger a refresh. Try again.",
     "refresh": "Refresh",
-    "refreshing": "Refreshing…",
+    "refreshing": "Refreshing...",
     "kpi": {
       "instances": "Instances",
       "viewInstances": "View instances",
@@ -2321,9 +2321,9 @@
   },
   "governanceReportControls": {
     "latest": "(Latest)",
-    "freshnessBanner": "Governance report is being refreshed. Showing the latest available snapshot.",
+    "freshnessBanner": "Refreshing the governance report. You're viewing the latest available snapshot.",
     "refreshReport": "Refresh report",
-    "refreshing": "Refreshing…",
+    "refreshing": "Refreshing...",
     "allDomains": "All Domains"
   },
   "addVersionModal": {
@@ -2847,7 +2847,7 @@
     "headerTokensPerCall": "Tokens / call",
     "headerTotalTokens": "Total tokens",
     "totalTokensInfoAriaLabel": "Token count information",
-    "totalTokensTooltip": "Estimated token count for this instance. Parenthetical shows share of total MCP Server tokens consumed over the last 30 days.",
+    "totalTokensTooltip": "Estimated token count for this instance. The value in parentheses shows the share of total MCP server tokens consumed over the last 30 days.",
     "headerTokensSaved": "Tokens saved",
     "headerOptimized": "Optimized",
     "headerActions": "Actions",
@@ -2897,7 +2897,7 @@
   },
   "editNotificationModal": {
     "closeModal": "Close window",
-    "heading": "Edit notification",
+    "heading": "Edit Notification",
     "alertMetric": "Alert Metric",
     "alertName": "Alert Name",
     "alertSeverity": "Alert Severity",
@@ -3126,7 +3126,7 @@
     },
     "strategyType": {
       "guardrails": "Controls",
-      "guardrailsDescription": "Validate targeted services against selected control rules and optionally block non-compliant actions, while automatically publishing your live compliance posture.",
+      "guardrailsDescription": "Validate targeted services against selected control rules and optionally block noncompliant actions, while automatically publishing your live compliance posture.",
       "automatedPolicy": "Automated Policy",
       "automatedPolicyDescription": "Enforce consistent policy requirements across targeted services to ensure uniform governance and automated security."
     },
@@ -3180,8 +3180,8 @@
       "atLeastOneGroup": "Select at least one endpoint group.",
       "environment": "Environment",
       "selectEnvironment": "Select environment",
-      "environmentDescription": "Select the target environment where this automated policy will be applied.",
-      "noEnvironments": "No environments are currently available from backend scope options.",
+      "environmentDescription": "Select the target environment to apply this automated policy.",
+      "noEnvironments": "No environments are available for the selected scope.",
       "previewTitle": "Governed Scope Preview",
       "previewCount": "{count} {count, plural, one {service} other {services}} match the current scope criteria",
       "previewServiceName": "Service Name",
@@ -3228,13 +3228,13 @@
       "selectedPolicy": "Selected Policy",
       "noPolicySelected": "No policy selected",
       "configurePolicy": "Configure Policy",
-      "noPolicyInputsRequired": "This policy does not require configuration inputs.",
+      "noPolicyInputsRequired": "This policy doesn't require configuration inputs.",
       "severity": "Severity"
     },
     "review": {
       "strategyType": "Strategy Type",
       "governanceScope": "Governance Scope",
-      "autoIncludeNote": "Any services that match the filter criteria will automatically be included.",
+      "autoIncludeNote": "We automatically include services that match the filter criteria.",
       "runtime": "Runtime",
       "noRuntimesSelected": "No runtimes selected",
       "endpointTypes": "Endpoint Types",
@@ -3285,33 +3285,33 @@
       "stepTitleRulesGuardrails": "Configure Governance Rules",
       "stepTitleNameDescription": "General Information",
       "stepTitleReview": "Review",
-      "stepDescStrategyType": "Choose the type of governance strategy you want to create",
-      "stepDescScopeAutomated": "Define services to have this automated policy enforced.",
-      "stepDescScopeGuardrailsGateways": "Determine the boundaries for this strategy by targeting gateways and their managed services.",
-      "stepDescScopeGuardrailsServices": "Determine the boundaries for this strategy by selecting target services and configuring automated inclusion conditions.",
-      "stepDescRulesAutomated": "Select and configure the policy to be applied automatically using this strategy.",
-      "stepDescRulesGuardrails": "Select bundled rulesets or individual rules to apply to the defined scope. These rules will be validated against services to generate reporting, block actions, and evaluate compliance.",
+      "stepDescStrategyType": "Select the type of governance strategy to create.",
+      "stepDescScopeAutomated": "Define the services to enforce this automated policy.",
+      "stepDescScopeGuardrailsGateways": "Define the strategy scope by selecting target services and configuring automated inclusion conditions.",
+      "stepDescScopeGuardrailsServices": "Define the strategy scope by selecting target services and configuring automated inclusion conditions.",
+      "stepDescRulesAutomated": "Select and configure the automated policy to apply using this strategy.",
+      "stepDescRulesGuardrails": "Select bundled rulesets or individual rules to apply to the defined scope. We validate these rules against services to generate reports, block actions, and evaluate compliance.",
       "stepDescNameDescription": "Enter a unique name and description to identify this strategy profile.",
       "stepDescReview": "Review your governance strategy configuration before saving.",
       "editWizardTitle": "Edit Control Wizard",
       "createWizardTitle": "Create Control Wizard",
-      "editWizardDescription": "Adjust scope and rules, then review before saving changes.",
+      "editWizardDescription": "Adjust the scope and rules, and then review your changes.",
       "createWizardDescription": "Configure scope, choose rules, and review before publishing profile settings.",
       "previous": "Previous",
       "createAndActivate": "Create and activate strategy",
       "saveGuardrail": "Save Control",
       "strategyNameLabel": "Strategy Name",
-      "strategyNamePlaceholder": "e.g., PCI Compliance Rules",
+      "strategyNamePlaceholder": "Enter a name...",
       "descriptionLabel": "Description",
-      "descriptionPlaceholder": "Describe what this governance logic enforces...",
+      "descriptionPlaceholder": "Enter a description...",
       "breadcrumbAriaLabel": "Breadcrumb"
     },
     "validation": {
       "missingOrgContext": "Missing organization context.",
-      "selectTemplateFirst": "Select a policy template before continuing.",
-      "unableToResolveSchema": "We couldn't resolve the policy schema for validation. Try again.",
-      "configDoesNotMatchSchema": "Configuration does not match the selected policy schema.",
-      "configDoesNotSatisfySchema": "Configuration does not satisfy the selected policy schema.",
+      "selectTemplateFirst": "Select a policy template to continue.",
+      "unableToResolveSchema": "We couldn't resolve the policy schema for the validation. Try again.",
+      "configDoesNotMatchSchema": "The configuration doesn't match the selected policy schema.",
+      "configDoesNotSatisfySchema": "The configuration doesn't satisfy the selected policy schema.",
       "unnamedPolicyTemplate": "Unnamed policy template",
       "noDescriptionProvided": "No description provided."
     }
@@ -3335,14 +3335,14 @@
     "editConfiguration": "Edit Configuration",
     "removingPolicy": "Removing...",
     "removePolicy": "Remove Policy",
-    "unableToRemoveMissingId": "We couldn't remove the policy — policy ID is missing. Try again.",
+    "unableToRemoveMissingId": "We couldn't remove the policy because the policy ID is missing. Try again.",
     "failedToRemovePolicy": "We couldn't remove the policy. Try again.",
     "failedToReorderPolicies": "We couldn't reorder policies. Try again.",
     "failedToLoadPolicyTemplates": "We couldn't load policy templates. Try again.",
     "viewPolicyAriaLabel": "View {name}",
     "moreActionsAriaLabel": "More actions for {name}",
     "emptyStateTitle": "No policies applied",
-    "emptyStateDescription": "This instance has no policies applied. Add one to start protecting this instance.",
+    "emptyStateDescription": "This instance has no policies applied. Add a policy to start protecting it.",
     "enablePolicy": "Enable Policy"
   },
   "policiesTab": {
@@ -3358,7 +3358,7 @@
     "viewDetailsAriaLabel": "View details: {label}",
     "coverageDetailsAriaLabel": "Coverage details: {category} - {environment}",
     "emptyStateTitle": "No instances yet",
-    "emptyStateDescription": "Policy coverage appears once this service has at least one active instance. Create an instance to start applying policies."
+    "emptyStateDescription": "Policy coverage requires at least one active instance. Create an instance to start applying policies."
   },
   "versionsTab": {
     "latest": "Latest",
@@ -4429,7 +4429,7 @@
     "conformance": "Conformance",
     "governedServices": "governed services",
     "conformant": "Conformant",
-    "nonConformant": "Non-Conformant",
+    "nonConformant": "Nonconformant",
     "pending": "Pending",
     "noServicesGoverned": "No services governed",
     "conformantPercent": "{percent}% conformant",
@@ -4450,7 +4450,7 @@
     "allTypes": "All types",
     "anyProvider": "Any provider",
     "searchPlaceholder": "Search services...",
-    "loadingState": "Loading governed services…",
+    "loadingState": "Loading governed services...",
     "emptyState": "No services governed by this control.",
     "governedServicesSuffix": "governed services",
     "percentConformant": "{percent}% conformant",
@@ -4476,11 +4476,11 @@
     "rulesUsedCount": "{used} of {total} {total, plural, one {rule} other {rules}} used"
   },
   "readOnlyScopeConditionList": {
-    "allIncluded": "All matching services are automatically included.",
-    "anyMatchIncluded": "Any services that match the filter criteria will automatically be included.",
+    "allIncluded": "We automatically include all matching all services that match the filter criteria.",
+    "anyMatchIncluded": "We include any services that match the filter criteria.",
     "groupHeading": "{target} that meet all conditions ({mode})",
-    "allServicesIncluded": "All matching services are automatically included.",
-    "matchingServicesIncluded": "Any services that match the filter criteria will automatically be included.",
+    "allServicesIncluded": "We automatically include all matching services.",
+    "matchingServicesIncluded": "We automatically include all matching all services that match the filter criteria.",
     "targetMeetsConditions": "{targetLabel} that meet all conditions ({modeLabel})"
   },
   "governanceSettings": {
@@ -4494,7 +4494,7 @@
     "noMatches": "No matches",
     "legacyRulesetDescription": "Legacy ruleset from Anypoint governance catalog.",
     "latestVersion": "Latest",
-    "noActiveScopeStep": "No active governance scope step is available to apply the proposed changes.",
+    "noActiveScopeStep": "We can't apply your changes. Activate a governance scope step and try again.",
     "chooseOrganization": "Choose an organization to manage governance.",
     "loadingAriaLabel": "Loading governance configuration",
     "heading": "Governance Strategies",
@@ -4537,7 +4537,7 @@
       "previewScope": "We couldn't preview scope. Try again.",
       "createStrategy": "We couldn't create the strategy. Try again.",
       "updateStrategy": "We couldn't update the strategy. Try again.",
-      "createUncertain": "We couldn't confirm that your control was created within the time we waited. Refresh the list to check whether it exists; if not, try again."
+      "createUncertain": "We couldn't confirm that the control was created. Refresh the list, and then try again if it doesn't appear."
     },
     "success": {
       "guardrailCreated": "Control created.",
@@ -4619,7 +4619,7 @@
       "enabled": "Enabled",
       "disabled": "Disabled",
       "conditionLabel": "Condition",
-      "conditionValue": "Latest version of an API becomes non-conformant",
+      "conditionValue": "Latest version of an API becomes nonconformant",
       "channelLabel": "Channel",
       "channelValue": "Email",
       "recipientsLabel": "Recipients",
@@ -4677,7 +4677,7 @@
       "updatedLabel": "Updated",
       "ruleCount": "{count} ({total} {total, plural, one {rule} other {rules}})",
       "limitedFunctionalityTitle": "Limited Functionality for From Anypoint Controls",
-      "limitedFunctionalityDetail": "This control was created in Anypoint API Governance and has limited ruleset selection and customization options. To access advanced features like conditions configuration, rule-level selection, severity customization, and the full ruleset library, create a new control directly in the enhanced .",
+      "limitedFunctionalityDetail": "Because this control was created in Anypoint API Governance, it has limited ruleset and customization options. To access advanced features, create a new control directly in the enhanced MuleSoftexperience.",
       "configurationTab": "Configuration",
       "governedServicesTab": "Governed Services",
       "appliedPolicy": "Applied Policy",
@@ -4698,7 +4698,7 @@
     },
     "actions": "Actions",
     "pending": {
-      "guardrailCreating": "Don't leave this page — your control is still being created. We're confirming with the upstream service."
+      "guardrailCreating": "Your control is still being created. Don't leave this page."
     }
   },
   "mcpWizard": {
@@ -4935,7 +4935,7 @@
     "saveOrder": "Save Order",
     "cancel": "Cancel",
     "noItems": "No items to reorder.",
-    "positionLabel": "{name}, position {index} of {total}. Use arrow keys to reorder, Enter to confirm.",
+    "positionLabel": "{name}, position {index} of {total}. Use the arrow keys to reorder, and press Enter to confirm.",
     "changePositionFor": "Change position for {name}",
     "viewItem": "View {name}"
   },
@@ -5367,7 +5367,7 @@
     "notificationRecipientApiContact": "API contact",
     "notificationRecipientOthers": "others",
     "notificationsEnabledWithRecipients": "Enabled – {recipients}",
-    "bridgeScopeStepUnavailable": "No active governance scope step is available to apply the proposed changes.",
+    "bridgeScopeStepUnavailable": "No active scope step available.Activate a governance scope step to apply your changes.",
     "bridgeScopeStepUpdated": "Governance scope step updated successfully",
     "statusGuardrailCreated": "Control created.",
     "statusLegacyCreated": "From Anypoint strategy created.",
@@ -5375,7 +5375,7 @@
     "statusLegacyUpdated": "From Anypoint strategy updated.",
     "errorCreateFailed": "We couldn't create the strategy. Try again.",
     "errorUpdateFailed": "We couldn't update the strategy. Try again.",
-    "confirmDuplicateOverride": "A similar automated policy already exists. Continue with duplicate override?",
+    "confirmDuplicateOverride": "A similar automated policy already exists. Do you want to override it??",
     "loadingAriaLabel": "Loading governance configuration",
     "heading": "Governance Strategies",
     "subtitle": "Configure and manage strategies to monitor, report, enforce, and block noncompliant activity across your services.",
@@ -5439,12 +5439,12 @@
     "legacyBadge": "Legacy",
     "noLegacyRulesets": "No legacy rulesets available for this scope.",
     "notificationsHeading": "Notifications",
-    "notificationsDescription": "Configure settings for automated conformance notifications. You can always change it later.",
-    "notificationsReleaseBannerTitle": "This feature may fall out of May release scope",
-    "notificationsReleaseBannerBody": "Notification functionality is under review and timeline is subject to change.",
+    "notificationsDescription": "Configure settings for automated conformance notifications.",
+    "notificationsReleaseBannerTitle": "May release availability is subject to change",
+    "notificationsReleaseBannerBody": "We're still reviewing the notifications feature, and its availability is subject to change.",
     "nonconformanceNotification": "Nonconformance notification",
     "conditionLabel": "Condition",
-    "conditionValue": "Latest version of an API becomes non-conformant",
+    "conditionValue": "Latest version of an API becomes nonconformant",
     "channelLabel": "Channel",
     "channelEmail": "Email",
     "recipientsLabel": "Recipients",
@@ -5482,7 +5482,7 @@
     "createdMetaLabel": "Created",
     "updatedMetaLabel": "Updated",
     "limitedFunctionalityTitle": "Limited Functionality for From Anypoint Controls",
-    "limitedFunctionalityBody": "This control was created in Anypoint API Governance and has limited ruleset selection and customization options. To access advanced features like conditions configuration, rule-level selection, severity customization, and the full ruleset library, create a new control directly in the enhanced MuleSoft experience.",
+    "limitedFunctionalityBody": "Because this control was created in Anypoint API Governance, it has limited ruleset and customization options. To access advanced features, create a new control directly in the enhanced MuleSoft experience.",
     "tabConfiguration": "Configuration",
     "tabGovernedServices": "Governed Services",
     "appliedPolicyHeading": "Applied Policy",
