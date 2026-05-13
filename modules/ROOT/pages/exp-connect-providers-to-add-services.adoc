@@ -2,16 +2,16 @@
 
 Connect a provider so the system runs scanners against supported cloud platforms, discovers services (such as agents, APIs, and MCP servers), and registers them in the matching catalog in *Portfolio*. You supply credentials and scanner metadata so the integration is repeatable and auditable.
 
-You can start the flow from *Home* or from a specific catalog in *Portfolio*. For how this fits with manual registration, see xref:exp-add-services-to-portfolio.adoc[]. For creating and tuning scanners themselves, see xref:exp-add-scanners-from-providers.adoc[].
+You can start the flow from *Home* or from a specific catalog in *Portfolio*. To see how this relates to manual registration, see xref:exp-add-services-to-portfolio.adoc[]. For creating and tuning scanners themselves, see xref:exp-add-scanners-from-providers.adoc[].
 
 == When to Use Provider Connection
 
-Provider connection is for teams that maintain services in an external platform and want those services to appear automatically in your portfolio catalogs after authentication and discovery, instead of registering each one by hand.
+Use provider connection when your team maintains services in an external platform and wants those services to appear automatically in portfolio catalogs after authentication and discovery, instead of registering each one by hand.
 
 == Entry Points
 
 * *Home*
-+ 
++
 Use *Add Services*, select *Connect to Provider*, then work through the wizard to pick a provider, validate access, and save scanner settings. Use this path when you're not starting from a single catalog view.
 * *Portfolio*
 +
@@ -30,9 +30,9 @@ Across *Home* and *Portfolio* entry points, provider connection covers the same 
 
 When the scanner runs successfully, the system registers discovered services in the catalog you started from (for example, APIs land in the *APIs* catalog).
 
-== Catalogs and Discovery Scope
+== Catalog-Specific Flows
 
-The Agent, API, and MCP server catalog-specific flows emphasize the service type you're enriching. 
+The *Agents*, *APIs*, and *MCP Servers* catalog-specific flows emphasize the service type you're enriching. 
 Discovery results populate that catalog when the system supports provider mapping for that type.
 
 == See Also
