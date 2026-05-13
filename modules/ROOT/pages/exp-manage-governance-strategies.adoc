@@ -1,6 +1,6 @@
 = Managing Governance Strategies
 
-Keep governance strategies aligned with your portfolio by adjusting scope, rules, or status as your services and compliance requirements evolve. From *Governance* > *Governance Strategies*, you can enable, disable, edit, reorder, and delete strategies, and filter the list to focus on specific types or status values. Summary cards show active strategy counts, type breakdowns, and governance coverage at a glance.
+Keep governance strategies aligned with your portfolio by adjusting scope, rules, or status as your services and compliance requirements evolve. Summary cards show active strategy counts, type breakdowns, and governance coverage at a glance.
 
 == Display Governance Strategies
 
@@ -20,7 +20,7 @@ Use the controls above the table to narrow the list:
 
 * Use the strategy type filter to select *All*, *Controls*, or *Automated Policies*.
 * Use the status filter to select *Any Status*, *Active*, or *Disabled*.
-* Enter text in the sesrch field to match strategy names.
+* Enter text in the search field to match strategy names.
 
 The page updates to show only matching strategies.
 
