@@ -256,16 +256,16 @@
     "basePathValidating": "Checking path availability…",
     "defaultFallbackRouteName": "Route {letter}",
     "toast": {
-      "topicCreated": "Topic \"{name}\" created",
-      "topicCreatedFallback": "Topic created",
-      "failedToCreateTopic": "Failed to create topic \"{name}\"",
-      "failedToCreateTopicFallback": "Failed to create topic",
-      "topicDeleted": "Topic \"{name}\" deleted",
-      "topicDeletedFallback": "Topic deleted",
-      "failedToDeleteTopic": "Failed to delete topic \"{name}\"",
-      "failedToDeleteTopicFallback": "Failed to delete topic",
-      "topicRemovedFromRoute": "Topic \"{name}\" removed from route",
-      "topicRemovedFromRouteFallback": "Topic removed from route"
+      "topicCreated": "Topic \"{name}\" was created.",
+      "topicCreatedFallback": "Topic was created.",
+      "failedToCreateTopic": "We couldn't create topic \"{name}\".",
+      "failedToCreateTopicFallback": "We couldn't create the topic.",
+      "topicDeleted": "Topic \"{name}\" was deleted.",
+      "topicDeletedFallback": "Topic was deleted.",
+      "failedToDeleteTopic": "We couldn't delete topic \"{name}\".",
+      "failedToDeleteTopicFallback": "We couldn't delete the topic.",
+      "topicRemovedFromRoute": "Topic \"{name}\" was removed from route.",
+      "topicRemovedFromRouteFallback": "Topic was removed from route."
     }
   },
   "createVersion": {
@@ -777,7 +777,7 @@
       "delivery": "Delivery",
       "loadingPage": "Loading page"
     },
-    "deleteSuccess": "Notification deleted successfully"
+    "deleteSuccess": "Notification was deleted."
   },
   "providers": {
     "heading": "Providers"
@@ -1489,7 +1489,7 @@
     "saveChanges": "Save Changes",
     "applyPolicy": "Apply Policy",
     "wizardTitle": "Apply Policy",
-    "viewTitle": "Policy Configuration",
+    "viewTitle": "Policy configuration",
     "viewDescription": "Configuration values for {name}."
   },
   "policyConfigFieldEditor": {
@@ -4252,7 +4252,7 @@
     "createNewTopic": "Create new topic",
     "removeAriaLabel": "Remove {name} from this route",
     "selectExistingPlaceholder": "Select topics…",
-    "noSelectableTopics": "All topics are already in use"
+    "noSelectableTopics": "All topics are already in use."
   },
   "semanticServicePicker": {
     "loading": "Loading…",
@@ -4369,10 +4369,10 @@
     "fallbackCardTitle": "Fallback",
     "fallbackCardRouteLabel": "Route",
     "fallbackCardModelLabel": "Model",
-    "advancedOptions": "Advanced options",
-    "advancedOptionsDesc": "Filter prompts before they reach a route",
+    "advancedOptions": "Advanced Options",
+    "advancedOptionsDesc": "Filter prompts before they reach a route.",
     "selectPromptGuardTopicPlaceholder": "Select topics…",
-    "noSelectablePromptGuardTopics": "No topics available — all are assigned to a route or guard"
+    "noSelectablePromptGuardTopics": "No topics available — all are assigned to a route or guard."
   },
   "routeCardContent": {
     "topicsLabel": "Topics",
@@ -4782,8 +4782,8 @@
       "stepReview": "Review",
       "toastApiMissingInstanceUrl": "\"{apiName}\" can't be wrapped as an MCP server yet: the selected API Manager instance has no endpoint URL. Deploy the instance in API Manager (attach a runtime) and try again.",
       "runtimeAuthWarning": "This MCP endpoint is deployed without inbound authentication. Apply a Flex Gateway inbound auth policy (for example, client-id-enforcement or jwt-validation) before production use.",
-      "gatewayLoadErrorHeading": "Unable to Load Gateways",
-      "gatewayLoadErrorDescription": "We couldn't reach the gateway service after multiple attempts. This is usually a temporary issue — please try again.",
+      "gatewayLoadErrorHeading": "Unable to load gateways",
+      "gatewayLoadErrorDescription": "We couldn't reach the gateway service after multiple attempts. This is usually a temporary issue. Try again.",
       "retryButton": "Retry"
     },
     "versionDropdown": {
@@ -5002,16 +5002,16 @@
   "llmProxyRoutesEditor": {
     "failedToSaveChanges": "We couldn't save your changes. Try again.",
     "toast": {
-      "topicCreated": "Topic \"{name}\" created",
-      "topicCreatedFallback": "Topic created",
-      "failedToCreateTopic": "Failed to create topic \"{name}\"",
-      "failedToCreateTopicFallback": "Failed to create topic",
-      "topicDeleted": "Topic \"{name}\" deleted",
-      "topicDeletedFallback": "Topic deleted",
-      "failedToDeleteTopic": "Failed to delete topic \"{name}\"",
-      "failedToDeleteTopicFallback": "Failed to delete topic",
-      "topicRemovedFromRoute": "Topic \"{name}\" removed from route",
-      "topicRemovedFromRouteFallback": "Topic removed from route"
+      "topicCreated": "Topic \"{name}\" was created.",
+      "topicCreatedFallback": "Topic was created.",
+      "failedToCreateTopic": "We couldn't create topic \"{name}\".",
+      "failedToCreateTopicFallback": "We couldn't create the topic.",
+      "topicDeleted": "Topic \"{name}\" was deleted.",
+      "topicDeletedFallback": "Topic was deleted.",
+      "failedToDeleteTopic": "We couldn't delete topic \"{name}\".",
+      "failedToDeleteTopicFallback": "We couldn't delete the topic.",
+      "topicRemovedFromRoute": "Topic \"{name}\" was removed from route.",
+      "topicRemovedFromRouteFallback": "Topic was removed from route."
     }
   },
   "omniInlineMonitoring": {
@@ -5315,7 +5315,7 @@
     "show": "Show",
     "statusActive": "Active",
     "statusUnknown": "Unknown",
-    "enterNvidiaKey": "Enter NVIDIA API key"
+    "enterNvidiaKey": "Enter NVIDIA API key..."
   },
   "performanceOverview": {
     "heading": "Performance",
@@ -5581,7 +5581,7 @@
     "heading": "Discard unsaved changes?",
     "confirmMessage": "You have unsaved changes that will be lost.",
     "bodyMessage": "If you leave now, your in-progress configuration will not be saved.",
-    "discardButton": "Discard changes",
-    "keepEditingButton": "Keep editing"
+    "discardButton": "Discard Changes",
+    "keepEditingButton": "Keep Editing"
   }
 }
