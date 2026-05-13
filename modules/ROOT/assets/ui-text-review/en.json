@@ -352,7 +352,7 @@
     "search": "Search",
     "searchShortcut": "Search (/)",
     "openCommandPalette": "Open command palette",
-    "goToAnypoint": "Go to Anypoint",
+    "goToAnypoint": "Go to Anypoint Platform",
     "expandNavigation": "Expand navigation",
     "collapseNavigation": "Collapse navigation"
   },
@@ -381,10 +381,10 @@
     "needsLogin": {
       "heading": "Connect Anypoint for Slack",
       "description": "Sign in to Anypoint first. After signing in, return to this tab to complete the Slack connection.",
-      "goToLogin": "Sign in to Anypoint"
+      "goToLogin": "Sign in to Anypoint Platform"
     },
     "success": {
-      "heading": "Connected to Anypoint",
+      "heading": "Connected to Anypoint Platform",
       "description": "Your Anypoint account is now linked to your Slack user. Return to Slack and continue in the same thread.",
       "closeTab": "You can close this tab."
     },
@@ -397,7 +397,7 @@
       "heading": "We couldn't connect"
     },
     "connecting": {
-      "heading": "Connecting to Anypoint",
+      "heading": "Connecting to Anypoint Platform",
       "description": "Completing secure handoff…"
     }
   },
@@ -1741,7 +1741,7 @@
     "headerGovernedServices": "Governed Services",
     "headerModified": "Modified",
     "typeAutomatedPolicy": "Automated Policy",
-    "fromAnypoint": "From Anypoint",
+    "fromAnypoint": "From Anypoint Platform",
     "actionsAriaLabel": "Strategy actions",
     "actionEdit": "Edit",
     "actionDuplicate": "Duplicate",
@@ -3419,8 +3419,8 @@
     "observabilityDescription": "View performance metrics, error rates, and traffic patterns. Analyze trends and generate custom monitoring reports.",
     "platformTitle": "Platform",
     "platformDescription": "Connect and manage external providers (AWS, Google, Anthropic, etc.). Set up integrations and discovery scanners.",
-    "anypointTitle": "Go to Anypoint",
-    "anypointDescription": "Quick link to the Anypoint Platform. Opens in a new tab for seamless navigation between Omni and Anypoint.",
+    "anypointTitle": "Go to Anypoint Platform",
+    "anypointDescription": "Quick link to Anypoint Platform. Opens in a new tab for seamless navigation between Omni and Anypoint Platform.",
     "businessGroupTitle": "Business Group",
     "businessGroupDescription": "Switch between business groups to view different organizational scopes. Currently viewing: {organizationName}.",
     "themeToggleTitle": "Theme Toggle",
@@ -4532,7 +4532,7 @@
   },
   "governanceSettings": {
     "actionsButton": "Actions",
-    "editFromAnypoint": "Edit (From Anypoint)",
+    "editFromAnypoint": "Edit (From Anypoint Platform)",
     "editStrategy": "Edit Strategy",
     "deleteStrategy": "Delete Strategy",
     "optional": "(Optional)",
@@ -4589,9 +4589,9 @@
     },
     "success": {
       "guardrailCreated": "Control was created.",
-      "fromAnypointCreated": "Strategy was created from Anypoint.",
+      "fromAnypointCreated": "Strategy was created from Anypoint Platform.",
       "strategyUpdated": "Strategy was updated.",
-      "fromAnypointUpdated": "Strategy was updated from Anypoint."
+      "fromAnypointUpdated": "Strategy was updated from Anypoint Platform."
     },
     "dashboard": {
       "activeStrategies": "Active Strategies",
@@ -4690,7 +4690,7 @@
       "description": "Review your governance strategy configuration before saving.",
       "strategyType": "Strategy Type",
       "guardrails": "Controls",
-      "fromAnypoint": "From Anypoint",
+      "fromAnypoint": "From Anypoint Platform",
       "governanceScope": "Governance Scope",
       "targetLabel": "Target",
       "serviceTypesLabel": "Service Types",
@@ -4716,7 +4716,7 @@
     "details": {
       "automatedPolicy": "Automated Policy",
       "guardrails": "Controls",
-      "fromAnypoint": "From Anypoint",
+      "fromAnypoint": "From Anypoint Platform",
       "rulesetsLabel": "Rulesets",
       "targetLabel": "Target",
       "priorityLabel": "Priority",
@@ -4739,7 +4739,7 @@
       "collapseAll": "Collapse all",
       "expandAll": "Expand all",
       "noRulesets": "No rulesets configured for this strategy.",
-      "editFromAnypoint": "Edit (From Anypoint)",
+      "editFromAnypoint": "Edit (From Anypoint Platform)",
       "editStrategy": "Edit Strategy",
       "back": "Back",
       "unavailable": "Selected strategy is unavailable."
@@ -5440,9 +5440,9 @@
     "bridgeScopeStepUnavailable": "No active governance scope step is available to apply the proposed changes.",
     "bridgeScopeStepUpdated": "Governance scope step was updated.",
     "statusGuardrailCreated": "Control was created.",
-    "statusLegacyCreated": "Strategy was created from Anypoint.",
+    "statusLegacyCreated": "Strategy was created from Anypoint Platform.",
     "statusStrategyUpdated": "Strategy was updated.",
-    "statusLegacyUpdated": "Strategy was updated from Anypoint.",
+    "statusLegacyUpdated": "Strategy was updated from Anypoint Platform.",
     "errorCreateFailed": "We couldn't create the strategy. Try again.",
     "errorUpdateFailed": "We couldn't update the strategy. Try again.",
     "confirmDuplicateOverride": "A similar automated policy already exists. Continue with duplicate override?",
@@ -5529,7 +5529,7 @@
     "reviewDescription": "Review your governance strategy configuration before saving.",
     "strategyTypeLabel": "Strategy Type",
     "strategyTypeGuardrailsValue": "Controls",
-    "strategyTypeFromAnypoint": "From Anypoint",
+    "strategyTypeFromAnypoint": "From Anypoint Platform",
     "governanceScopeHeading": "Governance Scope",
     "targetLabel": "Target",
     "serviceTypesLabel": "Service Types",
@@ -5543,7 +5543,7 @@
     "saveChangesButton": "Save Changes",
     "typeBadgeAutomatedPolicy": "Automated Policy",
     "typeBadgeGuardrails": "Controls",
-    "fromAnypointBadge": "From Anypoint",
+    "fromAnypointBadge": "From Anypoint Platform",
     "rulesetsMetaLabel": "Rulesets",
     "rulesetsMetaValue": "{count} ({ruleCount, plural, one {# rule} other {# rules}})",
     "targetMetaLabel": "Target",
@@ -5566,7 +5566,7 @@
     "collapseAll": "Collapse all",
     "expandAll": "Expand all",
     "noRulesetsConfigured": "No rulesets configured for this strategy.",
-    "editFromAnypointButton": "Edit (From Anypoint)",
+    "editFromAnypointButton": "Edit (From Anypoint Platform)",
     "editStrategyButton": "Edit Strategy",
     "backButton": "Back",
     "selectedStrategyUnavailable": "Selected strategy is unavailable."
