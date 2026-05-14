@@ -1,6 +1,6 @@
 = View Service Details
 
-Open a catalog entry in *Portfolio* to see its service detail page: a single view of one service—an API, agent, MCP server, or LLM proxy—or a gateway, depending on the catalog. From there you can review status and cost, relationships to other services, deployments, policies, monitoring, conformance, and change history without switching contexts.
+Open a catalog entry in *Portfolio* to see its service detail page: a single view of one service—an agent, MCP server, LLM proxy, API, or a gateway, depending on the catalog. From there you can review status and cost, relationships to other services, deployments, policies, monitoring, conformance, and change history without switching contexts.
 
 //placeholder for image of service detail page
 

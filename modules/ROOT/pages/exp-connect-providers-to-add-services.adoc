@@ -8,14 +8,14 @@ You can start the flow from *Home* or from a specific catalog in *Portfolio*. To
 
 Use provider connection when your team maintains services in an external platform and wants those services to appear automatically in portfolio catalogs after authentication and discovery, instead of registering each one by hand.
 
-== Entry Points
+== Workflow Entry Points
 
 * *Home*
 +
 Use *Add Services*, select *Connect to Provider*, then work through the wizard to pick a provider, validate access, and save scanner settings. Use this path when you're not starting from a single catalog view.
 * *Portfolio*
 +
-Open the *Agents*, *APIs*, or *MCP Servers* catalog. Use the add control for that service type (for example *Add API* or *Add MCP Server*), select *Connect to Provider*, and complete the same style of wizard scoped to that catalog.
+Open the *Agents*, *MCP Servers*, *LLM Proxies*, *APIs*, or *Gateways* catalog. Use the add control for that service type (for example *Add API* or *Add MCP Server*), select *Connect to Provider*, and complete the same style of wizard scoped to that catalog.
 
 Labels differ by catalog and release. Match what you see in the UI.
 
@@ -31,7 +31,7 @@ Across *Home* and *Portfolio* entry points, provider connection covers the same 
 When the scanner runs successfully, the system registers discovered services in the catalog you started from (for example, APIs land in the *APIs* catalog).
 
 == Catalog-Specific Flows
-
+//EBM: Is this still valid? I am not sure how to validate this. 
 The *Agents*, *APIs*, and *MCP Servers* catalog-specific flows emphasize the service type you're enriching. 
 Discovery results populate that catalog when the system supports provider mapping for that type.
 

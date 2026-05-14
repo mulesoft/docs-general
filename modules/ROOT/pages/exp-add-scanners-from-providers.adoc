@@ -16,7 +16,7 @@ Discovered services appear in *Portfolio* where teams can govern, monitor, and d
 +
 Scheduled or on-demand scans pick up releases and configuration drift according to the options your administrator allows.
 
-== Entry Points for Adding a Scanner
+== Workflow Entry Points for Adding a Scanner
 
 The system exposes the same underlying connect-and-configure wizard from more than one place; the label depends on context:
 

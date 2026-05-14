@@ -24,8 +24,8 @@ Checks that confirm the server is reachable and that the declared MCP capabiliti
 == Steps to Create an MCP Server
 
 . Open *MCP Servers* and select *Add MCP Server* > *Create MCP Server*.
-. In *Select Source, Instance & Tools*, select the APIs or SaaS systems you want to expose, select the source instance or version, and select the tools to publish (including optional read-only filtering).
-. In *SaaS Credentials*, provide the credentials required for the selected sources so the MCP server can call them securely.
+. In *Select Source, Instance & Tools*, select the APIs or SaaS systems you want to expose, select the source instance or version, select the tools to publish (including optional read-only filtering) and then click *Next*.
+. In *SaaS Credentials*, provide the credentials required for the selected sources so the MCP server can call them securely and then click *Next*.
 . In *Review*, validate the selected sources, tools, and credential mappings, then complete creation.
 
 == After You Create an MCP Server

@@ -1,6 +1,6 @@
 = Adding Services to Your Portfolio
 
-Your *Portfolio* is organized into catalogs: *Agents*, *APIs*, *MCP Servers*, *LLM Proxies*, and *Gateways*. Each catalog holds the services (or gateway entries) that your organization registered or imported so you can govern, monitor, and deploy them from one place. Services enter a catalog either through automated provider discovery or through manual registration. For step-by-step procedures, use the topics linked in each section.
+Your *Portfolio* is organized into catalogs: *Agents*, *MCP Servers*, *LLM Proxies*, *APIs*, and *Gateways*. Each catalog holds the services (or gateway entries) that your organization registered or imported so you can govern, monitor, and deploy them from one place. Services enter a catalog either through automated provider discovery or through manual registration. For step-by-step procedures, use the topics linked in each section.
 
 [cols="1,2",options="header"]
 |===
@@ -22,23 +22,23 @@ Gateways follow the same entry points; the linked topics cover gateway-specific 
 Use *Add Services* to open provider connection or manual registration, then select the service type.
 * *Portfolio*
 +
-Open the *Agents*, *APIs*, *MCP Servers*, or *LLM Proxies* catalog. Use the add control for that type (for example, *Add API* or *Add Agent*), then select *Connect to Provider* or *Register Manually*.
+Open the *Agents*, *MCP Servers*, *LLM Proxies*, *APIs*, or *Gateways* catalog. Use the add control for that type (for example, *Add API* or *Add Agent*), then select *Connect to Provider* or *Register Manually*.
 
 Labels can vary by catalog; match what you see in the UI.
 
 == Service Type Registration Options
 
-*APIs*::
-Register with an API specification and instance details, or connect an API provider so scans import APIs into the *APIs* catalog.
-
 *Agents*::
-Register by connecting to an A2A endpoint, uploading an agent card, or registering without a card—or connect an agent provider for discovery.
+Register by connecting to an agent-to-agent (A2A) endpoint, uploading an agent card, or registering without a card—or connect an agent provider for discovery.
 
-*MCP servers*::
+*MCP Servers*::
 Register with an MCP URL or a schema file, or connect an MCP server provider.
 
-*LLM proxies*::
+*LLM Proxies*::
 Register manually by configuring a gateway and routing strategy, or use provider flows your tenant exposes for LLM proxies.
+
+*APIs*::
+Register with an API specification and instance details, or connect an API provider so scans import APIs into the *APIs* catalog.
 
 *Gateways*::
 Add a new gateway runtime by configuring a gateway and routing strategy, import an existing runtime through provider discovery, or browse the marketplace catalog to add pre-configured gateway options to the *Gateways* catalog.

@@ -1,4 +1,4 @@
-= View Your AI Portfolio Overview
+= View Your Portfolio Overview
 
 Use portfolio-level views to see how your agents, APIs, MCP servers, LLM proxies, and gateways fit together before you drill into a single service. Summaries help you spot gaps in registration, policy coverage, or health signals your organization cares about.
 
@@ -11,11 +11,11 @@ The exact layout depends on how your administrator configured your tenant and wh
 After sign-in, your landing page sometimes highlights portfolio activity, shortcuts into *Portfolio*, or high-level counts your organization chose to show.
 * *Portfolio*
 +
-Open *Portfolio* to browse catalogs (*Agents*, *APIs*, *MCP Servers*, *LLM Proxies*, *Gateways*). Each catalog lists or tiles the services your team registered or imported. Use search and filters to narrow the set before you open a service detail page.
+Browse catalogs for *Agents*, *APIs*, *MCP Servers*, *LLM Proxies*, and *Gateways* in *Portfolio*. Each catalog lists the services that your team registered or imported. To find a specific service, use search and filters, and then select the service to view its details.
 
 If you don't see a catalog or a summary you expect, confirm entitlements and permissions with your Anypoint Platform organization administrator. See xref:exp-start-home.adoc#permissions[Enhanced Experience Permissions] for more information.
 
-== Portfolio Summary
+==  Overview
 
 * Coverage
 +

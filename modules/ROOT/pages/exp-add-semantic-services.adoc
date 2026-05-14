@@ -13,20 +13,18 @@ To add semantic services, follow these steps:
 == Create a Semantic Service
 
 . In the navigation, under *Portfolio*, expand *LLM Proxies*, and select *Semantic Services*.
+. Select *Add Semantic Service*.
 . Select the scale model that matches your traffic profile and operational needs.
 +
 * *Basic scale*
 +
-Best for smaller topic sets (up to 6 topics and 10 utterances per topic). Uses managed internal LLM proxy configuration.
+Choose *Basic scale* for faster managed setup. This scale is best for smaller topic sets (up to 6 topics and 10 utterances per topic). Uses managed internal LLM proxy configuration.
 +
-Choose *Basic scale* for faster managed setup. 
 * *Advanced scale*
 +
-Best for larger utterance sets per topic. Uses external semantic infrastructure, including an embedding API connection and a vector database connection.
-+
-Choose *Advanced scale* when you need greater scale and external infrastructure control.
+Choose *Advanced scale* when you need greater scale and external infrastructure control. This scale is best for larger utterance sets per topic. Uses external semantic infrastructure, including an embedding API connection and a vector database connection.
 
-Semantic service setup defines the embedding connection used for contextual matching:
+Semantic service setup defines the embedding connection used for contextual matching. Provide a value for the following:
 
 * *Environment*
 * *Embedding service provider*

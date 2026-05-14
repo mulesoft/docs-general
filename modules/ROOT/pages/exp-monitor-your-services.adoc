@@ -18,9 +18,9 @@ Exact metrics depend on how the service is hosted, which gateway or runtime path
 
 == Where Monitoring Appears
 
+* *Home* — Your entry path sometimes highlights alerts or shortcuts back into *Portfolio* or *Observability*; use whatever your organization configured after sign-in.
 * *Portfolio* and service detail — Open a catalog entry and use the *Monitoring* tab on the service (and, where the product exposes it, on instances) to read metrics scoped to that service. This is where you typically go when checking whether a specific API or agent is degrading.
 * *Observability* — When your tenant includes it, *Observability* aggregates dashboards, reports, or notifications to compare service-level signals with organization-wide views your administrator configured.
-* *Home* — Your entry path sometimes highlights alerts or shortcuts back into *Portfolio* or *Observability*; use whatever your organization configured after sign-in.
 
 Navigation labels and depth vary by entitlement and release; follow the UI your business group was given.
 

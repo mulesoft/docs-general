@@ -11,48 +11,43 @@ For how manual registration fits with connecting providers, see xref:exp-add-ser
 Open *Add Services*, select the service type, then select manual registration if the UI offers it.
 * *Portfolio*
 +
-Open the *Agents*, *APIs*, *MCP Servers*, or *LLM Proxies* catalog, use the add control for that type (for example *Add API*), and select *Register Manually*.
+Open the *Agents*, *MCP Servers*, *LLM Proxies*, *APIs*, or *Gateways* catalog, use the add control for that type (for example *Add API*), and select *Register Manually*.
 
 Exact labels can vary by release; follow the options your tenant shows.
 
 == Agents
 
-You register an agent by supplying one of these options:
+You register an agent by supplying one of these protocols:
 
 * A2A connection
 +
 Point to an A2A endpoint to fetch an agent card.
-* Uploaded card
+* Non-A2A connection
 +
+Provide metadata and connection details when you're not using a card workflow.
+* Agent Card File
 Provide an agent card file you already have.
-* No card
-+
-Register with metadata and connection details when you're not using a card workflow.
 
 The connection gets validated, makes it possible to review metadata, and saves the agent into the *Agents* catalog.
-
-== APIs
-
-Manual API registration expects an API specification and a way to reach a running instance (or instance-only registration when that path is enabled). The choices are:
-
-* Link to spec — Reference a specification by URL so the system ingests it.
-* Upload spec — Upload a specification file from your environment.
-* Use instance only — Supply instance details when your flow doesn't start from a standalone spec file.
-
-The system uses the spec to discover endpoints, parameters, and related metadata where applicable, then writes the API into the *APIs* catalog after you confirm.
 
 == MCP Servers
 
 You define how the system reaches the MCP server and validates runtime access:
 
-* MCP URL — Connect over a URL and test the live server so tools and metadata can be discovered.
-* Schema file — Upload a schema and supply the details needed to register and test the server.
+* *By MCP URL* — Connect over a URL and test the live server so tools and metadata can be discovered.
+* *Upload Schema* — Upload a schema and supply the details needed to register and test the server.
 
 Successful registration stores the MCP server in the *MCP Servers* catalog.
 
 == LLM proxies
 
 LLM proxy registration is a two-part configuration: you associate the proxy with a gateway (and related deployment context), then define routing (and any provider connections your flow requires). After the wizard completes, the LLM proxy appears in the *LLM Proxies* catalog.
+
+== APIs
+
+Manual API registration expects an API specification and a way to reach a running instance (or instance-only registration when that path is enabled). Select the API type and then upload a specification file from your environment.
+
+The system uses the spec to discover endpoints, parameters, and related metadata where applicable, then writes the API into the *APIs* catalog after you confirm.
 
 == Gateways
 
