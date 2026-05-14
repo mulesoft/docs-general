@@ -26,8 +26,6 @@ Select the type that matches your governance objective, then proceed.
 
 Specify which services that the strategy governs and under what conditions those services are included.
 
-If shown, use *Select Services To Govern* to select whether the strategy applies to APIs, Agents, and MCP Servers, or to Gateways.
-
 Use *Select Filter Criteria* to Refine the scope by tag, environment, or other available metadata.
 
 Use *Preview Governed Scope* to see which services currently match your criteria before you move forward.
