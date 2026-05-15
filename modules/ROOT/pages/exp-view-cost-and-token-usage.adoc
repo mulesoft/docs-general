@@ -9,7 +9,7 @@ Available metrics depend on your tenant configuration and role.
 Before getting started, make sure you have:
 
 * An Anypoint Platform account.
-* All of these permissions:
+* These permissions:
 +
 ** API Manager: Manage Policies
 ** API Manager: View APIs Configuration
