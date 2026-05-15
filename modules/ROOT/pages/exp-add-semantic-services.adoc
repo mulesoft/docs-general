@@ -10,6 +10,19 @@ To add semantic services, follow these steps:
 . Associate that semantic capability with the relevant enhanced experience (for example, LLM-related routing paths where supported).
 . Operate the service as part of your broader governance and monitoring model so behavior remains reliable as traffic and use cases evolve.
 
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* Any of these permissions:
++
+** Exchange: Exchange Contributor
+** Exchange: Exchange Administrator
+** Exchange: Exchange Creator
+
+For more information, see xref:exp-start-home#permissions[Enhanced Experience Permissions].
+
 == Create a Semantic Service
 
 . In the navigation, under *Portfolio*, expand *LLM Proxies*, and select *Semantic Services*.

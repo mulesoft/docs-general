@@ -21,6 +21,19 @@ The MCP tools and resources clients can discover and invoke.
 +
 Checks that confirm the server is reachable and that the declared MCP capabilities are usable.
 
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* Any of these permissions:
++
+** Exchange: Exchange Contributor
+** Exchange: Exchange Administrator
+** Exchange: Exchange Creator
+
+For more information, see xref:exp-start-home#permissions[Enhanced Experience Permissions].
+
 == Steps to Create an MCP Server
 
 . Open *MCP Servers* and select *Add MCP Server* > *Create MCP Server*.

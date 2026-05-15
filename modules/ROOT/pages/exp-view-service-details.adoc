@@ -4,6 +4,19 @@ Open a catalog entry in *Portfolio* to see its service detail page: a single vie
 
 //placeholder for image of service detail page
 
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* Any of these permissions:
++
+** Exchange: Exchange Viewer
+** Exchange: Exchange Contributor
+** Exchange: Exchange Administrator
+
+For more information, see xref:exp-start-home#permissions[Enhanced Experience Permissions].
+
 == Service Detail Tabs
 
 The page is organized into tabs. The following table lists each tab, what it shows, and whether that tab appears on the detail page for each catalog type. *Yes* means the tab is shown in typical configurations; *No* means it is omitted or you use another area of the experience for the same job (see the note after the table). Labels and fields inside a tab can differ by service type and release. For end-to-end portfolio tasks that reference these tabs, see xref:exp-overview.adoc[].

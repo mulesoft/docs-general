@@ -4,6 +4,19 @@ Register a service to add it to your portfolio when you already have the metadat
 
 For how manual registration fits with connecting providers, see xref:exp-add-services-to-portfolio.adoc[].
 
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* Any of these permissions:
++
+** Exchange: Exchange Contributor
+** Exchange: Exchange Administrator
+** Exchange: Exchange Creator
+
+For more information, see xref:exp-start-home#permissions[Enhanced Experience Permissions].
+
 == Get Started
 
 * *Home*

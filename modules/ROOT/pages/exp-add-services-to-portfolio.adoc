@@ -15,6 +15,19 @@ Your *Portfolio* is organized into catalogs: *Agents*, *MCP Servers*, *LLM Proxi
 
 Gateways follow the same entry points; the linked topics cover gateway-specific behavior where it applies.
 
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* Any of these permissions:
++
+** Exchange: Exchange Contributor
+** Exchange: Exchange Administrator
+** Exchange: Exchange Creator
+
+For more information, see xref:exp-start-home#permissions[Enhanced Experience Permissions].
+
 == Workflow Entry Points
 
 * *Home*
