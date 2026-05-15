@@ -4,6 +4,21 @@ Use cost and token metrics to understand usage, control spend, and identify opti
 
 Available metrics depend on your tenant configuration and role.
 
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* All of these permissions:
++
+** API Manager > Manage Policies
+** API Manager > View APIs Configuration
+** API Manager > View Policies
+** Anypoint Monitoring > Monitoring Viewer
+** Exchange > Exchange Viewer
+
+For more information, see xref:exp-start-home#permissions[Enhanced Experience Permissions].
+
 == Cost and Token Data Locations
 
 The system displays token usage and performance data in several places:

@@ -4,6 +4,20 @@ Connect a provider so the system runs scanners against supported cloud platforms
 
 You can start the flow from *Home* or from a specific catalog in *Portfolio*. To see how this relates to manual registration, see xref:exp-add-services-to-portfolio.adoc[]. For creating and tuning scanners themselves, see xref:exp-add-scanners-from-providers.adoc[].
 
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* Any of these permissions:
++
+** Exchange Administrator
+** Exchange Contributor
+** API Creator
+** Manage Policies
+
+For more information, see xref:exp-start-home#permissions[Enhanced Experience Permissions].
+
 == When to Use Provider Connection
 
 Use provider connection when your team maintains services in an external platform and wants those services to appear automatically in portfolio catalogs after authentication and discovery, instead of registering each one by hand.

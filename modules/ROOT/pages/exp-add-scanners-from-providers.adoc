@@ -4,6 +4,20 @@ A scanner is the configured link between the system and a supported cloud provid
 
 For how provider connection and catalogs fit together, see xref:exp-connect-providers-to-add-services.adoc[] and xref:exp-add-services-to-portfolio.adoc[].
 
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* Any of these permissions:
++
+** Exchange Administrator
+** Exchange Contributor
+** API Creator
+** Manage Policies
+
+For more information, see xref:exp-start-home#permissions[Enhanced Experience Permissions].
+
 == Benefits of Provider Scanners
 
 * Keep catalogs current

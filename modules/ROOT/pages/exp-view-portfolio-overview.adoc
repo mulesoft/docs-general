@@ -4,6 +4,19 @@ Use portfolio-level views to see how your agents, APIs, MCP servers, LLM proxies
 
 The exact layout depends on how your administrator configured your tenant and which catalogs they enabled. Labels and widgets differ by release.
 
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* Any of these permissions:
++
+** Exchange Viewer
+** Exchange Contributor
+** Exchange Administrator
+
+For more information, see xref:exp-start-home#permissions[Enhanced Experience Permissions].
+
 == Access Portfolio Overview
 
 * *Home*

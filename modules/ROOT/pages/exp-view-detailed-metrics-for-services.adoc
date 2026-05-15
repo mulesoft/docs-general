@@ -4,6 +4,18 @@ Detailed metrics go beyond high-level status to show time series, breakdowns, an
 
 Available series depend on the gateway or runtime path, whether the deployment is managed through Omni Gateway, and what your organization connected under *Platform* and *Observability*.
 
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* Any of these permissions:
++
+** Monitoring Viewer
+** Monitoring Administrator
+
+For more information, see xref:exp-start-home#permissions[Enhanced Experience Permissions].
+
 == Open Detailed Views
 
 * From *Portfolio*, open a service and go to the *Monitoring* tab for charts scoped to that service or instance when the product exposes them.

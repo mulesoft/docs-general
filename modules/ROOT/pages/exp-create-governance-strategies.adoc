@@ -4,7 +4,17 @@ Governance strategies define which services the system evaluates or enforces pol
 
 == Before You Begin
 
-Decide whether you need validation-only monitoring or active runtime enforcement. This choice determines the strategy type and the rules or policies to apply.
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* Any of these permissions:
++
+** Governance Administrator
+** Manage Policies
+
+For more information, see xref:exp-start-home#permissions[Enhanced Experience Permissions].
+
+Also decide whether you need validation-only monitoring or active runtime enforcement. This choice determines the strategy type and the rules or policies to apply.
 
 == Open the Strategy Workflow
 

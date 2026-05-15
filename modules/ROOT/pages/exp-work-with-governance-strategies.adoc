@@ -3,6 +3,16 @@
 Use governance strategies to apply rules and policies across agents, APIs, MCP servers, LLM proxies, and gateways. You can create, manage, and monitor strategies when your tenant includes *Governance* and your account has the required role. Use strategies to validate service compliance, automate runtime enforcement, and maintain visibility as your portfolio grows.
 
 
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* Governance Administrator or Manage Policies to create governance strategies.
+* Governance Viewer or Governance Administrator to view governance reports.
+
+For more information, see xref:exp-start-home#permissions[Enhanced Experience Permissions].
+
 == Access Governance Strategy Workflows
 
 Log in through your organization’s entry path and go to *Governance*.

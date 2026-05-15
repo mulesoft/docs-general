@@ -6,6 +6,17 @@ Services such as APIs, agents, MCP servers, and LLM proxies can include instance
 
 Managed paths through Anypoint Omni Gateway can provide additional policy and monitoring integrations if your organization supports them. Unmanaged or external paths remain available when they align with your operating model.
 
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* API Creator to create instances.
+* View APIs Configuration to view instances.
+* Edit APIs Configuration to edit instances.
+
+For more information, see xref:exp-start-home#permissions[Enhanced Experience Permissions].
+
 == Open the Instances Experience
 
 . In *Portfolio*, open the catalog for the service type, such as *APIs*, *Agents*, *MCP Servers*, or *LLM Proxies*.
