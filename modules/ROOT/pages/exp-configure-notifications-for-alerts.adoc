@@ -12,11 +12,11 @@ Before getting started, make sure you have:
 * Any of these permissions to view alerts:
 +
 ** API Manager: View API Alerts
-** Runtime Manager > Read Alerts
+** Runtime Manager: Read Alerts
 * Any of these permissions to manage alerts:
 +
-** API Manager > Manage API Alerts
-** Runtime Manager > Manage Alerts
+** API Manager: Manage API Alerts
+** Runtime Manager: Manage Alerts
 
 For more information, see xref:exp-start-home#permissions[Enhanced Experience Permissions].
 

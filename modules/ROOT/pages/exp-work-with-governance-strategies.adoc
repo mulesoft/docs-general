@@ -8,8 +8,8 @@ Use governance strategies to apply rules and policies across agents, APIs, MCP s
 Before getting started, make sure you have:
 
 * An Anypoint Platform account.
-* Governance Administrator or Manage Policies to create governance strategies.
-* Governance Viewer or Governance Administrator to view governance reports.
+* API Governance: Governance Administrator or API Manager: Manage Policies to create governance strategies.
+* API Governance: Governance Viewer or API Governance: Governance Administrator to view governance reports.
 
 For more information, see xref:exp-start-home#permissions[Enhanced Experience Permissions].
 

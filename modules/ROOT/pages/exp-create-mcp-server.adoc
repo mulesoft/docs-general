@@ -28,9 +28,9 @@ Before getting started, make sure you have:
 * An Anypoint Platform account.
 * Any of these permissions:
 +
-** Exchange Contributor
-** Exchange Administrator
-** Exchange Creator
+** Exchange: Exchange Contributor
+** Exchange: Exchange Administrator
+** Exchange: Exchange Creator
 
 For more information, see xref:exp-start-home#permissions[Enhanced Experience Permissions].
 

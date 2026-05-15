@@ -11,11 +11,11 @@ Before getting started, make sure you have:
 * An Anypoint Platform account.
 * All of these permissions:
 +
-** API Manager > Manage Policies
-** API Manager > View APIs Configuration
-** API Manager > View Policies
-** Anypoint Monitoring > Monitoring Viewer
-** Exchange > Exchange Viewer
+** API Manager: Manage Policies
+** API Manager: View APIs Configuration
+** API Manager: View Policies
+** Anypoint Monitoring: Monitoring Viewer
+** Exchange: Exchange Viewer
 
 For more information, see xref:exp-start-home#permissions[Enhanced Experience Permissions].
 
