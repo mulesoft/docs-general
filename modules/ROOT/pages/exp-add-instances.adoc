@@ -11,6 +11,7 @@ Managed paths through Anypoint Omni Gateway can provide additional policy and mo
 Before getting started, make sure you have:
 
 * An Anypoint Platform account.
+* These permissions:
 * API Creator to create instances.
 * View APIs Configuration to view instances.
 * Edit APIs Configuration to edit instances.
