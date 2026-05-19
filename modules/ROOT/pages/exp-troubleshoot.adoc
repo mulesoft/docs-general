@@ -14,20 +14,20 @@ If you receive a 403 Forbidden error:
 .. Review your Access Management permissions in xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 .. Verify that you have the required permission for the action:
 +
-* Exchange Administrator or Exchange Contributor for service registration
-* API Creator for API management
-* Manage Policies for governance operations
+See xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions] for more information.
 .. Ask your administrator to review your role assignments if needed.
 
 . Check business group access:
 .. Verify that you're working in the correct business group.
 .. Confirm that you have permissions in the selected business group, not just at the organization level.
 .. Ask your administrator to grant access to the specific business group if needed.
-
+////
 . Check subscription tier:
 .. Verify whether you have API Portfolio Access or Agent + API Portfolio Access.
-.. Some features (like agents, MCP servers, LLM proxies) require Agent + API Portfolio Access.
++
+Some features (such as agents, MCP servers, and LLM proxies) require Agent + API Portfolio Access.
 .. Contact your administrator or account team about upgrading your subscription if needed.
+////
 
 === 401 Unauthorized Errors
 
@@ -35,7 +35,8 @@ If you receive a 401 Unauthorized error:
 
 . Check session status:
 .. Verify that you're still signed in to the enhanced experience.
-.. If your session expired, sign in again.
++
+If your session expired, sign in again.
 .. Check the browser console for authentication errors (if you have developer tools access).
 
 . Clear cached credentials:
@@ -52,7 +53,9 @@ If you receive a 401 Unauthorized error:
 If you can't perform a specific action:
 
 . Verify prerequisites:
-.. Some actions require specific service states (such as active or registered).
++
+Some actions require specific service states (such as active or registered).
++
 .. Check that required configurations are in place (for example, a gateway must be configured before creating instances).
 .. Verify that the service exists and hasn't been deleted.
 
@@ -97,11 +100,11 @@ If a scanner fails to connect or discover services:
 . Check scanner authentication:
 .. Verify that the scanner's authentication credentials are valid.
 .. Refresh credentials if they've expired.
-.. Re-authenticate with the provider if needed.
+.. Reauthenticate with the provider if needed.
 
-.Review scanner permissions:
+. Review scanner permissions:
 .. Confirm that the scanner has permissions to access the target resources.
-.. Check that the account has list/describe permissions for the resource types you want to discover.
+.. Check that the account has list or describe permissions for the resource types you want to discover.
 .. Verify that the scanner can access all regions or zones if applicable.
 
 . Check scanner configuration:
@@ -112,7 +115,7 @@ If a scanner fails to connect or discover services:
 . Review scan history:
 .. From *Platform* > *Providers*, select the scanner to view its scan history.
 .. Look for error messages in recent scan attempts.
-.. Check whether previous scans succeeded and when the problem started.
+.. Check whether previous scans succeeded or when the problem started.
 
 === Gateway Connection Issues
 
@@ -149,6 +152,7 @@ If you receive a 429 Too Many Requests error:
 . Wait before retrying:
 +
 Rate limits typically reset after a short period (usually 1–5 minutes).
++
 .. Check the error message for retry-after information.
 .. Wait at least 60 seconds before retrying the operation.
 
@@ -163,7 +167,9 @@ Rate limits typically reset after a short period (usually 1–5 minutes).
 .. Contact your administrator if rate limits don't align with your usage needs.
 
 . Provider rate limits:
-.. Note that provider rate limits (AWS, Azure, GCP) are separate from enhanced experience rate limits.
++
+Provider rate limits (AWS, Azure, GCP) are separate from enhanced experience rate limits.
++
 .. Check the provider's rate limit documentation for their specific limits.
 .. Consider requesting a rate limit increase from the provider if needed.
 
@@ -188,11 +194,13 @@ If a scanner ran successfully, but services aren't appearing:
 . Verify service type mapping:
 .. Confirm that the discovered services are of the expected type.
 .. Check that the provider's resources map to the catalog you're checking.
-.. Some resources might not be imported if they don't meet the criteria for the catalog.
++
+Some resources might not be imported if they don't meet the criteria for the catalog.
 
 . Check business group context:
 .. Verify that you're viewing the correct business group or organization.
-.. Services might be registered in a different business group than you're currently viewing.
++
+Services might be registered in a different business group than you're currently viewing.
 .. Switch business groups if needed to find the services.
 
 === Metrics Not Displaying
@@ -207,10 +215,13 @@ If you expect to see metrics but they're not appearing:
 . Check time range:
 .. Verify that you're viewing an appropriate time range for the data.
 .. Expand the time range to see if data exists outside the current window.
-.. Note that new services may not have historical data.
++
+New services might not have historical data.
 
 . Allow time for data collection:
-.. Metrics might take several minutes to appear after an event occurs.
++
+Metrics might take several minutes to appear after an event occurs.
++
 .. Wait at least 5–10 minutes after creating or updating a service before expecting metrics.
 .. Check again after the next monitoring collection cycle.
 
@@ -231,11 +242,13 @@ If cost or token usage data isn't appearing:
 . Allow time for data aggregation:
 .. Cost and token usage data can take several hours to appear after usage occurs.
 .. Check again after 24 hours for the most complete data.
-.. Historical data might not be available for newly registered services.
++
+Historical data might not be available for newly registered services.
 
 . Verify service type:
 .. Cost and token usage tracking applies primarily to LLM proxies and agents.
-.. APIs and other service types might not generate cost data.
++
+APIs and other service types might not generate cost data.
 .. Check the service type in *Portfolio* to confirm it supports cost tracking.
 
 == Async Operations and Delays
@@ -247,9 +260,12 @@ Some operations run in the background and can take time to complete.
 If an operation appears stuck or takes longer than expected:
 
 . Check operation type:
-.. Governance insights and conformance scoring run asynchronously and might take several minutes.
-.. Large scanner runs discovering many services can take 10-30 minutes or longer.
-.. Policy application to multiple instances might process in the background.
++
+Governance insights and conformance scoring run asynchronously and can take several minutes.
++
+.. Large scanner runs discovering many services can take 10–30 minutes or longer.
++
+Policy application to multiple instances might process in the background.
 
 . Review status indicators:
 .. Look for progress indicators or status messages in the UI.
@@ -258,8 +274,10 @@ If an operation appears stuck or takes longer than expected:
 
 . Wait for background processing:
 .. Allow at least 15–30 minutes for governance insights to complete after creating a strategy.
-.. Scanner runs can take varying amounts of time depending on the number of resources discovered.
-.. Cost data aggregation can take several hours.
++
+Scanner runs can take varying amounts of time depending on the number of resources discovered.
++
+Cost data aggregation can take several hours.
 
 . Check for errors:
 .. Review the browser console for error messages (if you have developer tools access).
@@ -273,7 +291,8 @@ To check the status of background operations:
 . Scanner runs:
 .. From *Platform* > *Providers*, select the scanner.
 .. View the scan history on the *Overview* tab.
-.. The most recent entry shows the current or last completed scan.
++
+The most recent entry shows the current or last completed scan.
 
 . Governance operations:
 .. From *Governance* > *Strategies*, select the strategy.
@@ -305,7 +324,8 @@ If pages don't load or appear correctly:
 
 . Disable browser extensions:
 .. Temporarily disable browser extensions that might interfere with the enhanced experience.
-.. Ad blockers, privacy extensions, or script blockers may prevent features from working.
++
+Ad blockers, privacy extensions, or script blockers can prevent features from working.
 .. Test with extensions disabled to identify conflicts.
 
 . Check browser console:
@@ -320,11 +340,13 @@ If your session expires frequently or unexpectedly:
 . Adjust session settings:
 .. Check your organization's session timeout policy.
 .. Ask your administrator about extending session duration if needed.
-.. Note that security policies may limit maximum session duration.
++
+Security policies can limit maximum session duration.
 
 . Stay active:
 .. Keep a tab or window with the enhanced experience open and active.
-.. Periodic interaction prevents session timeouts.
++
+Periodic interaction prevents session timeouts.
 .. Refresh the page if you've been idle for an extended period.
 
 . Re-authenticate:
@@ -357,7 +379,8 @@ If you encounter certificate validation errors:
 
 . Contact your administrator:
 .. Share certificate error details with your administrator or security team.
-.. Your organization might need to update certificate trust settings.
++
+Your organization might need to update certificate trust settings.
 .. Work with your administrator to resolve certificate trust issues.
 
 == Getting Additional Help
@@ -375,7 +398,7 @@ If these troubleshooting steps don't resolve your issue:
 .. Review xref:exp-ai-assistant-troubleshoot.adoc[] for AI assistant-specific issues.
 
 . Gather diagnostic information:
-.. Note the exact error message and error code if provided.
+.. Note exact error message and error code if provided.
 .. Record the steps to reproduce the issue.
 .. Check browser console for technical error details (F12 or Cmd+Option+I).
 .. Note the time the error occurred and any patterns (happens consistently or intermittently).
