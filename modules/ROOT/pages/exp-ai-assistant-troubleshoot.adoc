@@ -1,0 +1,262 @@
+= Troubleshoot the AI Assistant
+
+If you experience issues using the Ask MuleSoft AI assistant, use this guide to identify and resolve common problems.
+
+== AI Assistant Doesn't Respond
+
+If the AI assistant doesn't respond to your messages:
+
+Check your connection:
+. Verify that you have an active internet connection.
+. Refresh the browser page.
+. Try sending a simple message like "Hello" to test if the assistant responds.
+
+Check session status:
+. Verify that you're still signed in to the enhanced experience.
+. If your session expired, sign in again.
+. Check for any error messages in the browser console (if you have developer tools access).
+
+Try a different browser or clear cache:
+. Clear your browser cache and cookies.
+. Try using a different browser or incognito/private mode.
+. Disable browser extensions that might interfere with the assistant.
+
+If the problem persists, contact your administrator or support team.
+
+== AI Assistant Gives Incorrect or Incomplete Answers
+
+If the assistant provides answers that don't match your expectations:
+
+Provide more context:
+. Include specific names, IDs, or identifiers in your questions.
+. Mention the environment, business group, or scope if relevant.
+. Add details about what you're trying to accomplish.
+
+Example:
+[%header,cols="1,1"]
+|===
+|Instead of |Try
+
+|"Show me APIs"
+|"Show me production APIs in the Customer Services business group"
+
+|"Why isn't this working?"
+|"Why is the rate limit policy on my Payment API instance not being enforced?"
+
+|"Check errors"
+|"Show me error details for the User Authentication Agent over the last 24 hours"
+|===
+
+Rephrase your question:
+. Try asking the same question using different words.
+. Break complex questions into smaller, focused questions.
+. Use follow-up questions to narrow down the information you need.
+
+Verify the assistant has access to the data:
+. Check that the service is registered in your portfolio.
+. Verify that monitoring or governance data has been collected for the service.
+. Confirm that you have permissions to view the data you're asking about.
+
+== AI Assistant Suggests Actions I Can't Perform
+
+If the assistant suggests actions but you can't perform them:
+
+Check your permissions:
+. Verify your Access Management permissions in xref:exp-start-home.adoc#permissions[Enhanced Experience Permissions].
+. Ask your administrator to review your role assignments.
+. The assistant may suggest actions available in the product, but your specific permissions determine what you can do.
+
+Check your subscription tier:
+. Verify whether you have API Portfolio Access or Agent + API Portfolio Access.
+. Some features (like agents, MCP servers, LLM proxies) require Agent + API Portfolio Access.
+. Contact your administrator or account team about upgrading your subscription if needed.
+
+Check service state:
+. The service may need to be in a specific state (active, registered, etc.) before certain actions are available.
+. Verify that required prerequisites are met (for example, a gateway must be configured before creating instances).
+
+== Confirmation Prompts Don't Appear
+
+If the assistant describes an action but doesn't show a confirmation prompt:
+
+Check for permissions issues:
+. The assistant may detect that you don't have permission and skip the confirmation.
+. Review any messages from the assistant explaining why the action can't be performed.
+
+Verify the action type:
+. Some responses are informational only and don't require confirmation.
+. Only actions that navigate, create, update, or delete data show confirmation prompts.
+
+Refresh and retry:
+. Refresh the page and try the request again.
+. Rephrase your request more explicitly: "Apply a rate limit policy to my API instance."
+
+== Form Assistance Doesn't Work
+
+If the assistant can't help fill in forms:
+
+Check that a form is open:
+. Form assistance only works when you have an active form visible on the page.
+. Navigate to the form (for example, "Add Instance" or "Create Governance Strategy") before asking for help.
+
+Be specific about what you want:
+. Tell the assistant exactly what values to use: "Set the instance URL to https://api.example.com/v1."
+. Provide all required information for the form fields.
+
+Confirm changes manually:
+. Review the confirmation banner carefully before accepting form changes.
+. Remember that form assistance only fills in fields—you still need to submit the form.
+
+== Search Results Aren't Relevant
+
+If search results don't match what you're looking for:
+
+Use more specific terms:
+. Include the service type: "Find agents that handle payments" instead of "Find payment services."
+. Specify attributes: "Show me REST APIs with OAuth policies" instead of "Show me APIs."
+
+Check the scope:
+. Verify you're searching in the right business group or environment.
+. Ask the assistant to filter: "Show me only production services."
+
+Verify service metadata:
+. Search results depend on how services are described in their metadata.
+. If a service doesn't appear, check whether its description includes the terms you're searching for.
+. Update service descriptions to improve future search results.
+
+== Suggestions Aren't Showing
+
+If suggestion chips don't appear after the assistant responds:
+
+Check response completeness:
+. Wait for the assistant's full response to complete.
+. Suggestions appear after the assistant finishes streaming the response.
+
+Check context:
+. Suggestions are context-aware. If no relevant suggestions exist for your current situation, the assistant may not show any.
+. Try asking a more specific question that has clear follow-up actions.
+
+Refresh the conversation:
+. Scroll to the bottom of the chat panel to ensure suggestions are visible.
+. If the chat panel is too small, expand it or use the full-screen AI assistant page.
+
+== AI Assistant Is Slow to Respond
+
+If the assistant takes a long time to respond:
+
+Check current load:
+. During peak usage times, responses may be slower.
+. If using monitoring or cost queries, large datasets may take longer to process.
+
+Simplify your question:
+. Break complex questions into smaller parts.
+. Ask for summaries first, then drill into details.
+
+Check your connection:
+. Slow network connections can delay streaming responses.
+. Try refreshing the page or reconnecting to your network.
+
+== AI Assistant Isn't Visible
+
+If you can't find the AI assistant panel or icon:
+
+Check the page layout:
+. Look for an icon on the right side of the screen or in the main navigation.
+. Try different screen sizes—some layouts may move the assistant to different locations.
+
+Check feature availability:
+. Verify that the AI assistant is enabled for your organization.
+. Ask your administrator if the feature is available in your business group.
+
+Check browser compatibility:
+. Ensure you're using a supported browser version.
+. Update your browser if necessary.
+. Disable browser extensions that might hide UI elements.
+
+== AI Assistant Conversation History Is Lost
+
+If your conversation history disappears:
+
+Session expiration:
+. Conversation history is tied to your session. If your session expires, history may be cleared.
+. Sign in again and start a new conversation.
+
+Browser storage:
+. Clearing browser cache or cookies may remove conversation history.
+. Conversation history is stored locally in your browser for the current session.
+
+Intentional behavior:
+. For privacy and security, conversation history may not persist across sessions.
+. Sensitive information isn't stored long-term.
+
+== Actions Performed by AI Assistant Fail
+
+If the assistant confirms an action but the action fails:
+
+Review error messages:
+. The assistant should display any error messages from the system.
+. Look for specific error details (validation errors, permission issues, etc.).
+
+Check prerequisites:
+. Verify that all required fields and configurations are complete.
+. For instance creation, ensure the target gateway is available.
+. For policy application, ensure the service instance is active.
+
+Verify data:
+. Double-check that URLs, names, and identifiers are correct.
+. Ensure referenced services, gateways, or environments exist.
+
+Try manually:
+. Perform the action manually through the UI to see if the same error occurs.
+. This helps determine whether the issue is with the AI assistant or the underlying system.
+
+== AI Assistant Can't Access Recent Changes
+
+If the assistant doesn't recognize recently registered services or configuration changes:
+
+Wait for indexing:
+. Newly registered services may take a few minutes to appear in search results.
+. Refresh the page and try again after a few minutes.
+
+Verify registration completed:
+. Check that the service registration or configuration change was saved successfully.
+. Look for confirmation messages or check the relevant catalog.
+
+Be specific:
+. Use exact service names or IDs rather than relying on search.
+. For example: "Show me details for service ID 12345."
+
+== Getting Additional Help
+
+If these troubleshooting steps don't resolve your issue:
+
+. *Check with your administrator:*
++
+Your administrator can verify your permissions, subscription tier, and feature availability.
+
+. *Review documentation:*
++
+See xref:exp-ai-assistant-use.adoc[] for complete AI assistant usage guidance.
+
+. *Review system status:*
++
+Ask your administrator to check whether there are any known issues or maintenance windows.
+
+. *Collect diagnostic information:*
++
+Before contacting support, collect:
+* The exact question or request you sent to the assistant
+* The assistant's response
+* Any error messages displayed
+* The page you were on when the issue occurred
+* Your browser type and version
+
+. *Contact support:*
++
+Reach out to your internal IT support or MuleSoft support with the diagnostic information.
+
+== See Also
+
+* xref:exp-ai-assistant-use.adoc[]
+* xref:exp-start-home.adoc[]
+* xref:exp-overview.adoc[]
