@@ -12,7 +12,7 @@ Before getting started, make sure you have:
 ** API Governance: Governance Administrator
 ** API Manager: Manage Policies
 
-For more information, see xref:exp-start-home#permissions[Enhanced Experience Permissions].
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
 Also decide whether you need validation-only monitoring or active runtime enforcement. This choice determines the strategy type and the rules or policies to apply.
 
@@ -72,7 +72,7 @@ Work with your governance lead if your strategies affect production services or 
 
 == See Also
 
-* xref:exp-work-with-governance-strategies.adoc[]
-* xref:exp-manage-governance-strategies.adoc[]
-* xref:exp-view-cost-and-token-usage.adoc[]
-* xref:exp-view-service-details.adoc[]
+* xref:exp-governance-work-with-strategies.adoc[]
+* xref:exp-governance-strategies-manage.adoc[]
+* xref:exp-governance-view-cost-and-token-usage.adoc[]
+* xref:exp-services-view-details.adoc[]

@@ -17,7 +17,7 @@ Before getting started, make sure you have:
 ** Anypoint Monitoring: Monitoring Viewer
 ** Exchange: Exchange Viewer
 
-For more information, see xref:exp-start-home#permissions[Enhanced Experience Permissions].
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
 == Cost and Token Data Locations
 
@@ -78,9 +78,9 @@ For runtime enforcement, attach cost-related controls or policies to a governanc
 
 == See Also
 
-* xref:exp-work-with-governance-strategies.adoc[]
-* xref:exp-create-governance-strategies.adoc[]
-* xref:exp-manage-governance-strategies.adoc[]
-* xref:exp-view-service-details.adoc[]
-* xref:exp-monitor-your-services.adoc[]
-* xref:exp-view-detailed-metrics-for-services.adoc[]
+* xref:exp-governance-work-with-strategies.adoc[]
+* xref:exp-governance-create-strategy.adoc[]
+* xref:exp-governance-strategies-manage.adoc[]
+* xref:exp-services-view-details.adoc[]
+* xref:exp-services-monitoring.adoc[]
+* xref:exp-services-view-detailed-metrics.adoc[]

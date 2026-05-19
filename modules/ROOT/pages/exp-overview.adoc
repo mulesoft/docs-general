@@ -24,7 +24,7 @@ To manage and tune your AI portfolio, register assets, apply security policies, 
 
 . Complete onboarding and access the enhanced experience.
 +
-Confirm your credentials and the permissions that your administrator assigned, as described in xref:exp-start-home.adoc#permissions[Enhanced Experience Permissions]. Finish integration setup for supporting systems, such as connected providers under *Platform* > *Providers*, before you depend on the experience in production.
+Confirm your credentials and the permissions that your administrator assigned, as described in xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions]. Finish integration setup for supporting systems, such as connected providers under *Platform* > *Providers*, before you depend on the experience in production.
 . Learn the layout of the enhanced experience.
 +
 Sign in through your entry path and land on *Home*. Scan *Portfolio* catalogs, *Governance*, *Observability*, and *Platform* so that you know where to register assets, apply policies, read health signals, and manage providers. Access the AI assistant from any page to get guided help and answer questions.
@@ -55,6 +55,6 @@ Feed findings from monitoring and governance back into planning for the next cha
 
 == See Also
 
-* xref:exp-start-home.adoc[]
+* xref:exp-home-start.adoc[]
 * xref:exp-compare.adoc[]
 * xref:learning-map-exp.adoc[]

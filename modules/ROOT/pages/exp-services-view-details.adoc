@@ -15,7 +15,7 @@ Before getting started, make sure you have:
 ** Exchange: Exchange Contributor
 ** Exchange: Exchange Administrator
 
-For more information, see xref:exp-start-home#permissions[Enhanced Experience Permissions].
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
 == Service Detail Tabs
 
@@ -74,8 +74,8 @@ The page is organized into tabs. The following table lists each tab, what it sho
 == See Also
 
 * xref:exp-overview.adoc[]
-* xref:exp-add-services-to-portfolio.adoc[]
-* xref:exp-add-instances.adoc[Add Instances to a Service]
+* xref:exp-services-add-to-portfolio.adoc[]
+* xref:exp-instances-add.adoc[Add Instances to a Service]
 * xref:exp-add-policies.adoc[Add Policies to a Service]
 * xref:exp-add-monitoring.adoc[Add Monitoring to a Service]
 * xref:exp-add-governance.adoc[Add Governance to a Service]

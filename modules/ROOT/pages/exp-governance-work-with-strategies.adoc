@@ -16,7 +16,7 @@ Before getting started, make sure you have:
 *** API Governance: Governance Viewer
 *** API Governance: Governance Administrator
 
-For more information, see xref:exp-start-home#permissions[Enhanced Experience Permissions].
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
 == Access Governance Strategy Workflows
 
@@ -28,11 +28,11 @@ Work with your governance lead when strategy changes affect production or compli
 
 == Governance Strategy Workflows
 
-* Create strategies for compliance validation or runtime enforcement. See xref:exp-create-governance-strategies.adoc[].
-* Manage strategies by updating scope, rules, status, and priority. See xref:exp-manage-governance-strategies.adoc[].
-* Monitor token usage in *Governance* > *Cost Management*. See xref:exp-view-cost-and-token-usage.adoc[].
+* Create strategies for compliance validation or runtime enforcement. See xref:exp-governance-create-strategy.adoc[].
+* Manage strategies by updating scope, rules, status, and priority. See xref:exp-governance-strategies-manage.adoc[].
+* Monitor token usage in *Governance* > *Cost Management*. See xref:exp-governance-view-cost-and-token-usage.adoc[].
 * Review conformance reporting for xref:exp-overview.adoc[supported catalog types].
-* Apply policies to services from *Portfolio*. See xref:exp-view-service-details.adoc[].
+* Apply policies to services from *Portfolio*. See xref:exp-services-view-details.adoc[].
 
 == Required Permissions
 
@@ -40,9 +40,9 @@ Creating strategies typically requires the Governance Administrator role. You ca
 
 == See Also
 
-* xref:exp-create-governance-strategies.adoc[]
-* xref:exp-manage-governance-strategies.adoc[]
-* xref:exp-view-cost-and-token-usage.adoc[]
+* xref:exp-governance-create-strategy.adoc[]
+* xref:exp-governance-strategies-manage.adoc[]
+* xref:exp-governance-view-cost-and-token-usage.adoc[]
 * xref:exp-overview.adoc[]
-* xref:exp-start-home.adoc#permissions[Enhanced Experience Permissions]
-* xref:exp-view-service-details.adoc[]
+* xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions]
+* xref:exp-services-view-details.adoc[]

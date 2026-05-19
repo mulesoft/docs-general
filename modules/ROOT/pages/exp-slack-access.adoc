@@ -13,6 +13,7 @@ The display name is set during installation.
 . Follow a notification action, a pinned link, or a slash command your internal documentation describes to authenticate and open the enhanced experience in the browser or embedded client your organization chose.
 
 If authentication fails:
+
 . Confirm that you're in the correct Slack workspace.
 . Verify your Anypoint Platform user is linked according to your IT team's instructions.
 
@@ -27,6 +28,6 @@ Post links back into Slack after you verify state in *Portfolio*. This helps inc
 
 == See Also
 
-* xref:exp-start-home.adoc[]
+* xref:exp-home-start.adoc[]
 * xref:exp-overview.adoc[]
-* xref:exp-connect-experience-to-claude-desktop.adoc[]
+* xref:exp-claude-desktop-connect.adoc[]

@@ -26,7 +26,7 @@ Scanners typically run on a schedule you or an administrator configured, or manu
 
 == See Also
 
-* xref:exp-add-scanners-from-providers.adoc[]
-* xref:exp-connect-providers-to-add-services.adoc[]
-* xref:exp-add-services-to-portfolio.adoc[]
-* xref:exp-view-service-details.adoc[]
+* xref:exp-scanners-add-from-providers.adoc[]
+* xref:exp-services-connect-providers-to-add.adoc[]
+* xref:exp-services-add-to-portfolio.adoc[]
+* xref:exp-services-view-details.adoc[]

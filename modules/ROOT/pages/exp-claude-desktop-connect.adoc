@@ -10,7 +10,7 @@ Some organizations connect Claude Desktop (or similar assistants) to the enhance
 * An Anypoint Platform account.
 * Mule Developer Generative AI User permission to send prompts to agents.
 
-For more information, see xref:exp-start-home#permissions[Enhanced Experience Permissions].
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
 == Administrator Configuration
 
@@ -29,6 +29,6 @@ If the connection stops working after a client or policy update, check certifica
 
 == See Also
 
-* xref:exp-start-home.adoc[]
-* xref:exp-access-experience-from-slack.adoc[]
+* xref:exp-home-start.adoc[]
+* xref:exp-slack-access.adoc[]
 * xref:exp-overview.adoc[]

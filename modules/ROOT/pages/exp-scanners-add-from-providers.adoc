@@ -2,7 +2,7 @@
 
 A scanner is the configured link between the system and a supported cloud provider that lets discovery jobs find services—such as APIs, agents, and MCP servers—and register them in the right *Portfolio* catalogs. Scanners enable automated discovery so your catalogs stay current without manual registration. Configure a scanner once to turn on discovery for a provider, then extend it as your organization adds catalogs or entitlements.
 
-For how provider connection and catalogs fit together, see xref:exp-connect-providers-to-add-services.adoc[] and xref:exp-add-services-to-portfolio.adoc[].
+For how provider connection and catalogs fit together, see xref:exp-services-connect-providers-to-add.adoc[] and xref:exp-services-add-to-portfolio.adoc[].
 
 == Before You Begin
 
@@ -16,7 +16,7 @@ Before getting started, make sure you have:
 ** API Manager: API Creator
 ** API Manager: Manage Policies
 
-For more information, see xref:exp-start-home#permissions[Enhanced Experience Permissions].
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
 == Benefits of Provider Scanners
 
@@ -54,11 +54,11 @@ Regardless of entry point, adding a scanner establishes trust and scope. You spe
 
 When the scanner is active, it applies discovery results according to its settings and your organization's rules. You review outcomes on the *Providers* page and on scanner detail pages, and you manage discovered services from the relevant *Portfolio* catalogs.
 
-For ongoing operations (pause, edit, or delete), see xref:exp-manage-scanners.adoc[].
+For ongoing operations (pause, edit, or delete), see xref:exp-scanners-manage.adoc[].
 
 == See Also
 
-* xref:exp-connect-providers-to-add-services.adoc[]
-* xref:exp-manage-scanners.adoc[]
-* xref:exp-add-services-to-portfolio.adoc[]
-* xref:exp-view-service-details.adoc[]
+* xref:exp-services-connect-providers-to-add.adoc[]
+* xref:exp-scanners-manage.adoc[]
+* xref:exp-services-add-to-portfolio.adoc[]
+* xref:exp-services-view-details.adoc[]

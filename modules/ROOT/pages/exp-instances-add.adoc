@@ -16,7 +16,7 @@ Before getting started, make sure you have:
 ** API Manager: View APIs Configuration to view instances.
 ** API Manager: Edit APIs Configuration to edit instances.
 
-For more information, see xref:exp-start-home#permissions[Enhanced Experience Permissions].
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
 == Open the Instances Experience
 
@@ -37,7 +37,7 @@ Creating an API establishes its structure and makes it available in the portfoli
 To create an API, add it to the APIs catalog either by registering it manually or by connecting to a provider.
 
 * *Register manually* – Upload a specification file to define a new API.
-* *Connect to provider* – Discover and import APIs from external platforms. See xref:exp-connect-providers-to-add-services.adoc[].
+* *Connect to provider* – Discover and import APIs from external platforms. See xref:exp-services-connect-providers-to-add.adoc[].
 
 ==== Register an API Manually
 
@@ -98,12 +98,12 @@ After creating or updating an instance, you can continue managing the service th
 
 == Required Permissions
 
-Creating instances uses Anypoint Platform permissions such as API Creator for API-related flows. Viewing or editing instance configuration requires the corresponding permissions defined by your organization. See xref:exp-start-home.adoc#permissions[Enhanced Experience Permissions] for role details.
+Creating instances uses Anypoint Platform permissions such as API Creator for API-related flows. Viewing or editing instance configuration requires the corresponding permissions defined by your organization. See xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions] for role details.
 
 == See Also
 
-* xref:exp-add-services-to-portfolio.adoc[]
-* xref:exp-register-services-manually.adoc[]
-* xref:exp-connect-providers-to-add-services.adoc[]
-* xref:exp-view-service-details.adoc[]
-* xref:exp-monitor-your-services.adoc[]
+* xref:exp-services-add-to-portfolio.adoc[]
+* xref:exp-services-register-manually.adoc[]
+* xref:exp-services-connect-providers-to-add.adoc[]
+* xref:exp-services-view-details.adoc[]
+* xref:exp-services-monitoring.adoc[]
