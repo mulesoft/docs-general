@@ -40,77 +40,56 @@ A single provider can use multiple integration types simultaneously. For example
 
 == Supported Providers
 
-The enhanced experience supports connections to these providers:
+The enhanced experience currently supports connections to these providers through the *Platform* > *Providers* page:
 
-=== LLM and AI Platforms
-* AWS Bedrock
-* Google Vertex AI
-* Azure OpenAI
-* OpenAI
-* Anthropic
-* Meta
-* Mistral
-* xAI
-* Agentforce
-* AWS AgentCore
+Kong Konnect::
+Open-source, cloud-native API gateway with plugin-based extensibility. Supports gateway discovery and traffic monitoring.
 
-=== API Management Platforms
-* Kong
-* Apigee
-* MuleSoft
+Google Apigee::
+Google's API management platform for designing, securing, and scaling APIs across clouds and on-premises. Supports gateway discovery and traffic monitoring.
 
-=== Vector Databases and Knowledge Stores
-* Pinecone
-* Weaviate
-* ChromaDB
-* PGVector
-* Qdrant
-* Elasticsearch
-
-=== Observability and Workflow Platforms
-* LangSmith
-* Informatica
-
-Provider availability and supported integration types depend on your organization's entitlements and the provider's capabilities.
+Provider availability and supported connection types depend on your organization's entitlements and the provider's capabilities.
 
 == View Provider Details
 
-From the Providers page, select a provider to open its detail page. Provider detail pages include four tabs:
+From the Providers page, select a provider to open its detail page. Provider detail pages include five tabs:
 
 Overview::
-Summary information about the provider, including provider type, connection status, total discovered services by catalog (Agents, APIs, MCP Servers, LLMs, Gateways), and integration health.
+Summary information about the provider, including provider type, connection status, total discovered services by catalog (Agents, APIs, MCP Servers, LLMs), and connection health.
 
-Integrations::
-List of configured integrations for this provider, grouped by integration type (Scanner, Gateway, Org Link). Each integration shows configuration summary, status, and last activity timestamp. Select an integration to edit settings or view detailed status.
+Connections::
+List of configured connections for this provider, showing scanner, gateway, and org-link connections. Each connection displays configuration summary, status, schedule (for scanners), last sync time, and discovered entity count. Select a connection to view detailed status or review discovered services.
 
-Discovered Services::
-Services imported from this provider through scanner or sync operations, organized by catalog. Each service card shows name, type, version, and import timestamp. Provider badges on service cards in *Portfolio* link directly to this tab for bidirectional navigation.
+Gateways::
+Gateway inventory for the provider. For Kong and Apigee providers, displays external gateways discovered through the provider connection. For MuleSoft providers, shows Anypoint Omni Gateway (Flex Gateway) instances available in your organization.
+
+Discovered Entities::
+Services imported from this provider through scanner or sync operations, organized by catalog type (Agents, APIs, MCP Servers, LLMs). Each service card shows name, type, and status. Provider badges on service cards in *Portfolio* link directly to this tab for bidirectional navigation.
 
 Settings::
-Provider-level configuration options, including authentication credentials (when applicable), default settings for new integrations, and connection testing. Changes to settings apply to future discovery or sync operations but do not retroactively affect imported services.
+Provider-level configuration options, including provider name, region, organization ID, and website URL. Changes to settings apply to future discovery or sync operations but do not retroactively affect imported services. The disconnect action is also available from this tab.
 
-== Monitor Integration Activity
+== Monitor Connection Activity
 
-The provider detail page includes an activity timeline showing integration sync events, import history, and configuration changes. Use the activity timeline to:
+The *Connections* tab displays connection status, sync schedules, and last activity timestamps for each configured connection. Use this information to:
 
 * Verify that scanners are running on schedule
 * Review which services were discovered in recent scans
 * Identify connection failures or authentication issues
-* Audit configuration changes to integrations
+* Check sync status and schedule for org-link connections
 
-Each timeline entry includes timestamp, integration name, event type (scan completed, service imported, configuration changed, error), and affected service count.
+Each connection row shows the connection name, type (Scanner, Gateway, Org Link), status, schedule, last sync time, and count of discovered entities.
 
-== Edit Provider Integrations
+== Edit Provider Connections
 
-To modify an existing integration:
+To modify an existing connection:
 
 . From *Platform* > *Providers*, select the provider.
-. Select the *Integrations* tab.
-. Select the integration you want to change.
-. Update integration settings, such as scan schedule, credential rotation, or target catalogs.
-. Save changes.
+. Select the *Connections* tab.
+. For scanner connections, select the connection name to navigate to the scanner detail page where you can update settings.
+. For other connection types, use the configure action to update connection settings.
 
-Changes to integration settings take effect on the next scheduled operation (scan, sync, or traffic observation).
+Changes to connection settings take effect on the next scheduled operation (scan, sync, or traffic observation).
 
 == Test Provider Connectivity
 
@@ -127,9 +106,9 @@ Connection tests confirm that credentials are valid and the provider platform is
 To see which services in *Portfolio* came from a specific provider:
 
 . From *Platform* > *Providers*, select the provider.
-. Select the *Discovered Services* tab.
+. Select the *Discovered Entities* tab.
 
-The Discovered Services tab shows entity breakdown by catalog type. Select a catalog filter (Agents, APIs, MCP Servers, LLMs, Gateways) to view services from that catalog. Provider badges on service cards in *Portfolio* link back to this view for quick navigation.
+The *Discovered Entities* tab shows services organized by catalog type (Agents, APIs, MCP Servers, LLMs). Each service card displays name, type, and current status. Provider badges on service cards in *Portfolio* link back to this view for quick navigation.
 
 == Disconnect a Provider
 
@@ -139,7 +118,7 @@ To remove a provider connection:
 . Select the *Settings* tab.
 . Use the disconnect control to remove the connection.
 
-WARNING: Disconnecting a provider stops all integrations (Scanner, Gateway, Org Link) for that provider but does not delete services already imported into *Portfolio*. Services discovered by that provider remain in their catalogs with a status indicator showing the provider connection is inactive. To remove services, delete them individually from *Portfolio* catalogs or use bulk operations if your organization enables them.
+WARNING: Disconnecting a provider stops all connections (Scanner, Gateway, Org Link) for that provider but does not delete services already imported into *Portfolio*. Services discovered by that provider remain in their catalogs. To remove services, delete them individually from *Portfolio* catalogs or use bulk operations if your organization enables them.
 
 == See Also
 
