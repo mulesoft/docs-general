@@ -1,5 +1,10 @@
 = Adding Semantic Services
 
+[NOTE]
+====
+Semantic services require Agent + API Portfolio Access. If you don't see the Semantic Services option under LLM Proxies, contact your administrator to verify your subscription tier. See xref:exp-understand-access-tiers.adoc[] for more information.
+====
+
 Semantic services improve how the system interprets and routes LLM-driven requests across your portfolio. They help teams apply context-aware behavior so the system directs requests to the most relevant tools, services, or pathways that your organization configured.
 
 Use this capability when your workflows need more than static routing. With semantic context in place, the system can support better request matching, more consistent response behavior, and stronger control as usage grows across agents, APIs, MCP servers, and related integrations.

@@ -1,0 +1,288 @@
+= Get Started with Agent Portfolio Management
+
+[NOTE]
+====
+Agent portfolio management requires Agent + API Portfolio Access. If you don't see the Agents, MCP Servers, or LLM Proxies catalogs, contact your administrator to verify your subscription tier. See xref:exp-understand-access-tiers.adoc[] for more information.
+====
+
+Use the enhanced experience to register, govern, monitor, and optimize your AI-powered services, including agents, MCP servers, and LLM proxies. The agent portfolio management features provide visibility and control over your AI service estate alongside traditional APIs.
+
+== Before You Begin
+
+Confirm these requirements with your administrator:
+
+Access::
+* You have Agent + API Portfolio Access.
+* You can sign in to the enhanced experience through your organization's entry point.
+
+Permissions::
+* You have the necessary Access Management permissions to view and manage agents, MCP servers, and LLM proxies.
+* See xref:exp-start-home.adoc#permissions[Enhanced Experience Permissions] for details.
+
+Integration::
+* Your organization has configured connections to Anypoint Platform.
+* If using external AI providers, your administrator has configured the appropriate provider connections under *Platform* > *Providers*.
+
+== Agent Portfolio Workflow
+
+Follow these steps to start managing your agent portfolio:
+
+=== 1. Navigate to the Agent Catalogs
+
+. Sign in to the enhanced experience.
+. In the main navigation, select *Portfolio*.
+. Review the available catalogs:
++
+* *Agents*: AI-powered services that use the Agent-to-Agent (A2A) protocol
+* *MCP Servers*: Services that expose tools and resources via the Model Context Protocol
+* *LLM Proxies*: Gateway-backed proxies to large language models
+* *APIs*: Traditional REST, GraphQL, and AsyncAPI services
+
+=== 2. Register Your Agent Services
+
+Add agents to the catalog using one of these methods:
+
+Manual Registration with A2A Endpoint::
+Use this method when your agent exposes an A2A endpoint:
++
+. On the Agents catalog page, select *Add Agent*.
+. Enter the A2A endpoint URL.
+. The system fetches the agent card automatically.
+. Review the agent metadata and capabilities.
+. Select *Save*.
+
+Manual Registration with Agent Card::
+Use this method when you have an agent card file:
++
+. On the Agents catalog page, select *Add Agent*.
+. Choose to upload an agent card file.
+. Complete the registration form with agent metadata.
+. Select *Save*.
+
+Provider Discovery::
+Use scanners to automatically discover agents from connected AI platforms:
++
+. Configure a provider connection under *Platform* > *Providers*.
+. Create a scanner for the provider.
+. Run the scanner to discover agents automatically.
+. Review and approve discovered agents.
+
+For detailed steps, see xref:exp-register-services-manually.adoc[] and xref:exp-connect-providers-to-add-services.adoc[].
+
+=== 3. Register MCP Servers
+
+Add MCP servers to the catalog:
+
+Create from Existing API::
+. Navigate to an API detail page.
+. Select *Actions* > *Create MCP Server*.
+. Configure the MCP server endpoint and schema.
+. Select *Create*.
+
+Manual Registration::
+. On the MCP Servers catalog page, select *Add MCP Server*.
+. Enter the MCP URL or upload an MCP schema file.
+. Complete the registration form.
+. Select *Save*.
+
+For detailed steps, see xref:exp-create-mcp-server.adoc[].
+
+=== 4. Register LLM Proxies
+
+Add LLM proxies to the catalog:
+
+. On the LLM Proxies catalog page, select *Add LLM Proxy*.
+. Select the target LLM provider and model.
+. Configure the proxy instance on a gateway.
+. Set up authentication and rate limiting policies.
+. Select *Create*.
+
+=== 5. View Service Details
+
+. From any catalog, select a service to open its detail page.
+. Review the available tabs:
++
+* *Overview*: Basic metadata, description, status, and capabilities
+* *Versions*: All registered versions (where applicable)
+* *Instances*: Deployed instances on gateways
+* *Policies*: Applied runtime policies
+* *Conformance Report*: Governance compliance status
+* *Monitoring*: Performance metrics, token usage, and health data
+
+For more information, see xref:exp-view-service-details.adoc[].
+
+=== 6. Create Instances
+
+Deploy your agent services to gateways:
+
+. On the service detail page, select the *Instances* tab.
+. Select *Add Instance*.
+. Choose the gateway type:
++
+* *Managed instance*: Routes traffic through Anypoint Omni Gateway with full policy enforcement, authentication, and monitoring
+* *Unmanaged instance*: Lighter deployment without Omni Gateway
+. Configure the instance URL and target endpoint.
+. Select *Create*.
+
+For detailed steps, see xref:exp-add-instances.adoc[].
+
+=== 7. Apply Governance Policies
+
+Enforce runtime controls on your agent service instances:
+
+Instance-Level Policies::
+. On the service detail page, select the *Instances* tab.
+. Select an instance.
+. On the instance detail page, select the *Policies* tab.
+. Select *Apply Policy*.
+. Choose a policy template appropriate for agent services:
++
+* Authentication and authorization
+* Rate limiting and throttling
+* Tool mapping (control which tools an agent can invoke)
+* Tool sanitization (filter or modify tool inputs/outputs)
+* Cost controls
+. Configure policy parameters.
+. Select *Apply*.
+
+Organization-Wide Strategies::
+Create governance strategies that automatically apply policies to matching agent services:
++
+. Navigate to *Governance* > *Governance Strategies*.
+. Create a new strategy with rules, scope, and automated policies.
+. Select domains relevant to AI services (performance, cost, security, compliance).
+. Activate the strategy.
++
+For detailed steps, see xref:exp-create-governance-strategies.adoc[].
+
+=== 8. Monitor Agent Performance
+
+Track runtime health and usage:
+
+. On the service detail page, select the *Monitoring* tab.
+. Review key metrics:
++
+* Request volume and throughput
+* Response times and latency
+* Token usage and consumption
+* Error rates and failure modes
+* Tool invocation patterns (for agents)
+. Set up alerts for threshold violations under *Observability* > *Notifications*.
+
+For more information, see xref:exp-monitor-your-services.adoc[] and xref:exp-view-detailed-metrics-for-services.adoc[].
+
+=== 9. Review Compliance
+
+Check governance conformance for agent services:
+
+. On the service detail page, select the *Conformance Report* tab.
+. Review the compliance score and severity breakdown.
+. Identify rule violations and warnings related to:
++
+* Agent card schema compliance
+* Security and authentication requirements
+* Tool exposure policies
+* Cost and performance thresholds
+. Address high-priority findings by updating agent configurations or applying policies.
+
+=== 10. Manage Costs
+
+Track token usage and optimize AI spending:
+
+. Navigate to *Governance* > *Cost Management*.
+. Review token usage by service, instance, and time period.
+. Identify cost optimization opportunities:
++
+* High-volume agents with potential for caching
+* Inefficient tool usage patterns
+* Opportunities for tool mapping to reduce unnecessary invocations
+. Apply cost reduction policies:
++
+* Tool mapping to limit agent tool access
+* Rate limiting to control request volume
+* Caching policies to reduce redundant LLM calls
+
+For more information, see xref:exp-view-cost-and-token-usage.adoc[].
+
+== Use Semantic Search
+
+Search across your agent portfolio using natural language:
+
+. Navigate to *Portfolio*.
+. Use the search bar at the top of any catalog.
+. Enter a natural language query describing what you're looking for.
+. Review semantically matched results across agents, MCP servers, and APIs.
+
+Semantic search helps you find relevant services based on capabilities and descriptions, not just exact name matches.
+
+== Next Steps
+
+After establishing your agent portfolio:
+
+* Set up automated scanners for AI provider discovery
+* Define agent-specific governance strategies
+* Configure cost thresholds and alerts
+* Integrate with Slack for agent notifications
+* Connect the Platform MCP Server to Claude Desktop for agent development workflows
+* Explore the Ask MuleSoft AI assistant for guided portfolio management
+
+== Common Tasks
+
+=== Update an Agent's Capabilities
+
+. Navigate to the agent detail page.
+. Select *Actions* > *Update Agent Card*.
+. Upload the updated agent card or point to the refreshed A2A endpoint.
+. Review changes and save.
+
+=== Configure Tool Mapping for an Agent
+
+. Navigate to the agent instance detail page.
+. Select the *Policies* tab.
+. Select *Apply Policy* > *Tool Mapping*.
+. Define which tools the agent is allowed to invoke.
+. Save the policy configuration.
+
+=== Review Token Usage Trends
+
+. Navigate to *Governance* > *Cost Management*.
+. Filter by agent or MCP server.
+. Review the usage timeline chart.
+. Export data for further analysis if needed.
+
+=== Create an MCP Server from an API
+
+. Navigate to an existing API detail page.
+. Select *Actions* > *Create MCP Server*.
+. Configure how API operations map to MCP tools.
+. Save the MCP server configuration.
+. The new MCP server appears in the MCP Servers catalog.
+
+For detailed steps, see xref:exp-create-mcp-server.adoc[].
+
+== Troubleshooting
+
+*I can't see the Agents, MCP Servers, or LLM Proxies catalogs*::
+Verify that your subscription includes Agent + API Portfolio Access. Contact your administrator to confirm your subscription tier and Access Management permissions. See xref:exp-understand-access-tiers.adoc[].
+
+*My agent registration fails*::
+Check that your A2A endpoint is accessible and returns a valid agent card. Review error messages for specific validation issues. Verify that your agent card conforms to the A2A protocol schema.
+
+*Token usage data is not appearing*::
+Confirm that your agent instance is deployed to a managed gateway and is receiving traffic. Token usage data may take a few minutes to appear after instance creation. Verify that the gateway is configured to report usage metrics.
+
+*Semantic search returns no results*::
+Semantic search requires indexed service descriptions. Newly registered services may take a few minutes to appear in semantic search results. Verify that your services have detailed descriptions in their metadata.
+
+*Tool mapping policies are not being enforced*::
+Verify that the agent instance is a managed instance on Anypoint Omni Gateway. Unmanaged instances do not support policy enforcement through the enhanced experience. Confirm that the tool mapping policy is applied and active.
+
+== See Also
+
+* xref:exp-understand-access-tiers.adoc[]
+* xref:exp-overview.adoc[]
+* xref:exp-register-services-manually.adoc[]
+* xref:exp-create-mcp-server.adoc[]
+* xref:exp-add-instances.adoc[]
+* xref:exp-work-with-governance-strategies.adoc[]
+* xref:exp-view-cost-and-token-usage.adoc[]

@@ -37,6 +37,7 @@ Access and Credentials::
 +
 * Confirm that you have a user account for your organization's entry path, such as Anypoint Platform, and valid credentials to log in.
 * Confirm that you can reach the new experience and integrated services, such as Anypoint Platform, Slack, or a connected coding assistant, from the networks and locations you use.
+* Verify your subscription tier (API Portfolio Access or Agent + API Portfolio Access) to understand which catalogs and features are available to you. See xref:exp-understand-access-tiers.adoc[] for details.
 
 Platform and Product Access::
 +
@@ -100,5 +101,8 @@ Feed findings from monitoring and governance back into planning for the next cha
 
 == See Also
 
+* xref:exp-understand-access-tiers.adoc[]
+* xref:exp-get-started-api-portfolio.adoc[]
+* xref:exp-get-started-agent-portfolio.adoc[]
 * xref:exp-overview.adoc[]
 * xref:exp-compare.adoc[]
