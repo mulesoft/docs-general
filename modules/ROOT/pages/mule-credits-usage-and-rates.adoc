@@ -1,8 +1,8 @@
 = Mule Credits Usage and Rates
 
-A Mule Credit is a fungible currency that allows you to draw down from a single capacity pool as you consume services across MuleSoft. Instead of managing different usage types for all products, you purchase a package of credits that can be used flexibly across the entire MuleSoft platform. As you use these capabilities, Anypoint Platform deducts the corresponding credit amounts from your available balance.
+A Mule Credit is a fungible currency that allows you to draw down from a single capacity pool as you consume services across MuleSoft. Instead of managing different usage types for all products, you purchase a package of credits to use flexibly across the entire MuleSoft platform. As you use these capabilities, Anypoint Platform deducts the corresponding credit amounts from your available balance.
 
-Credits are shared across your entire Anypoint Platform organization and cannot be managed per business group. Use Mule Credits before the Order End Date set in the Usage Details table on your Order Form — rollovers are not permitted. To see which usage types are included in your subscription, refer to your Order Form, Subscription Plan, or Features and Entitlement Document.
+Mule Credits apply to your entire Anypoint Platform organization and you can't manage them per business group. Use Mule Credits before the Order End Date set in the Usage Details table on your Order Form — rollovers aren't permitted. To see which usage types your subscription includes, refer to your Order Form, Subscription Plan, or Features and Entitlement Document.
 
 == Mule Credits by Subscription Plan
 
@@ -35,7 +35,7 @@ NOTE: MuleSoft All-Access License supports pre-commit and unlimited usage models
 
 == Usage Types
 
-Each usage type (also referred to as a meter) tracks a specific dimension of platform consumption. Credit rates vary by monthly consumption volume and reset on the first day of each calendar month. You consume credits at the same rate across all environments, including production, pre-production, sandbox, and design. For the full tiered rate table, see the <<_rate_cards,Rate Cards>> section.
+Each usage type (also called a meter) tracks a specific dimension of platform consumption. Credit rates vary by monthly consumption volume and reset on the first day of each calendar month. You consume credits at the same rate across all environments, including production, pre-production, sandbox, and design. For the full tiered rate table, see the <<_rate_cards,Rate Cards>> section.
 
 [%header%autowidth.spread]
 |===
@@ -46,40 +46,40 @@ Each usage type (also referred to as a meter) tracks a specific dimension of pla
 
 Mule apps in production environments typically use multiple flows and subflows to divide the app into functional modules or for error-handling purposes. For example, one flow might receive a record and transform data into a given format that another flow processes.
 
-To calculate usage, MuleSoft tracks the number of flows across all business groups, environments, and applications on an hourly basis. For every 24 hour period starting at 00:00 UTC, a single hour with the highest flow count is identified as the daily max flow. Based on your contract term, MuleSoft then aggregates these daily maximums over the month or year to determine your final usage.
+To calculate usage, MuleSoft tracks the number of flows across all business groups, environments, and applications on an hourly basis. For every 24 hour period starting at 00:00 UTC, MuleSoft identifies a single hour with the highest flow count as the daily max flow. Based on your contract term, MuleSoft then aggregates these daily maximums over the month or year to determine your final usage.
 
 | *MuleSoft Messages*
-| The total volume of data containers processed by the runtime. To track message usage, the runtime report counts the number of times a Mule event source triggers a message. To calculate usage, MuleSoft aggregates the number of messages daily (UTC time) and monthly. After a message is triggered, the report doesn’t track changes to the message because the message is processed within the application’s flows.
+| The total volume of data containers processed by the runtime. To track message usage, the runtime report counts the number of times a Mule event source triggers a message. To calculate usage, MuleSoft aggregates the number of messages daily (UTC time) and monthly. After a Mule event source triggers a message, the report doesn't track changes to the message because the application's flows process it internally.
 
 | *Managed Assets*
-| An asset (API, Agent, MCP Server, or LLM) is considered managed if it has at least one active instance in https://docs.mulesoft.com/api-manager/latest/latest-overview-concept[API Manager^] deployed to a https://docs.mulesoft.com/mule-gateway/mule-gateway-capabilities-mule4[Mule Gateway^] or https://docs.mulesoft.com/gateway/latest/[Omni Gateway^]. Usage is counted per business group per day; if an asset has active instances across multiple business groups, it counts as one asset per group. 
+| An asset (API, Agent, MCP Server, or LLM) counts as managed if it has at least one active instance in https://docs.mulesoft.com/api-manager/latest/latest-overview-concept[API Manager^] deployed to a https://docs.mulesoft.com/mule-gateway/mule-gateway-capabilities-mule4[Mule Gateway^] or https://docs.mulesoft.com/gateway/latest/[Omni Gateway^]. Anypoint Platform counts usage per business group per day; if an asset has active instances across multiple business groups, it counts as one asset per group. 
 
 Multiple instances within the same business group don't incur extra charges. Anypoint Platform deducts credits as long as the asset status is Active in API Manager, even if there are no calls to the asset.
 
 | *Gateway Requests*
-| Any request received by https://docs.mulesoft.com/gateway/latest/[Omni Gateway^]. Usage is measured as the sum of all processed requests, regardless of response status.
+| Any request that https://docs.mulesoft.com/gateway/latest/[Omni Gateway^] receives. MuleSoft measures usage as the sum of all processed requests, regardless of response status.
 
 | *IDP Pages*
-| The number of individual document pages processed by Intelligent Document Processing (IDP) in https://docs.mulesoft.com/idp/[MuleSoft IDP^] or https://blogs.mulesoft.com/news/mulesoft-for-flow-intelligent-document-processing/[MuleSoft for Flow: IDP^]. Each page within a document is counted as a separate unit, and only successful LLM responses are charged.
+| The number of individual document pages that Intelligent Document Processing (IDP) processes in https://docs.mulesoft.com/idp/[MuleSoft IDP^] or https://blogs.mulesoft.com/news/mulesoft-for-flow-intelligent-document-processing/[MuleSoft for Flow: IDP^]. MuleSoft counts each page within a document as a separate unit, and charges only for successful LLM responses.
 
 | *Flow Integration Tasks*
-| Individual units of work or actions (reading, creating, or updating a record) executed within https://www.mulesoft.com/platform/flow-integration[MuleSoft for Flow: Integration^].
+| Individual units of work or actions (reading, creating, or updating a record) executed within https://help.salesforce.com/s/articleView?id=platform.automate_flow_get_started_mfi.htm&type=5[MuleSoft for Flow: Integration^].
 
 | *Private Spaces*
-| A https://docs.mulesoft.com/cloudhub-2/ch2-private-space-about[Private Space^] is a dedicated, isolated environment in CloudHub 2.0 for running your apps. Credits are consumed based on the total number of provisioned Private Spaces per day. After you deprovision a Private Space, it stops consuming credits from the next calendar date onwards.
+| A https://docs.mulesoft.com/cloudhub-2/ch2-private-space-about[Private Space^] is a dedicated, isolated environment in CloudHub 2.0 for running your apps. You consume credits based on the total number of provisioned Private Spaces per day. After you deprovision a Private Space, it stops consuming credits from the next calendar date onwards.
 
 | *Network Connections*
-| Network connections allow you to securely connect corporate data centers and on-premises applications to CloudHub 1.0 and https://docs.mulesoft.com/cloudhub-2/ch2-private-space-about#private-network[CloudHub 2.0^] using a VPN or AWS Transit Gateway. Credits are consumed based on the total number of active network connections per day. After you deprovision a network connection, it stops consuming credits from the next calendar date onwards.
+| Network connections allow you to securely connect corporate data centers and on-premises applications to CloudHub 1.0 and https://docs.mulesoft.com/cloudhub-2/ch2-private-space-about#private-network[CloudHub 2.0^] using a VPN or AWS Transit Gateway. You consume credits based on the total number of active network connections per day. After you deprovision a network connection, it stops consuming credits from the next calendar date onwards.
 
 | *Load Balancers*
-| https://docs.mulesoft.com/cloudhub/cloudhub-dedicated-load-balancer[Dedicated Load Balancers^] used to distribute incoming traffic across multiple workers or instances. Credits are consumed based on the total number of provisioned load balancers per day. After you deprovision a load balancer, it stops consuming credits from the next calendar date onwards.
+| https://docs.mulesoft.com/cloudhub/cloudhub-dedicated-load-balancer[Dedicated Load Balancers^] used to distribute incoming traffic across multiple workers or instances. You consume credits based on the total number of provisioned load balancers per day. After you deprovision a load balancer, it stops consuming credits from the next calendar date onwards.
 |===
 
 == Rate Cards
 
 You consume Mule Credits at the applicable multiplier rate based on the usage type identified in the https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/mulesoft/Mule_Credit_Rate_Card.pdf[Mule Credit Rate Card^].
 
-Mule Credits must be used before the Order End Date set forth in the Usage Details table on the Order Form, and no rollover will be permitted. If your usage happens to exceed your contracted amount, MuleSoft automatically sends a monthly overage invoice to your primary billing contact at your standard contracted rate. Contact your account team with any questions about your contract or billing.
+Use Mule Credits before the Order End Date set forth in the Usage Details table on the Order Form — MuleSoft doesn't permit rollovers. If your usage happens to exceed your contracted amount, MuleSoft automatically sends a monthly overage invoice to your primary billing contact at your standard contracted rate. Contact your account team with any questions about your contract or billing.
 
 == Viewing Usage and Billing
 
