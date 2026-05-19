@@ -51,9 +51,7 @@ Platform Configuration::
 Before using the AI assistant, make sure you have:
 
 * An Anypoint Platform account with access to the enhanced experience.
-* The following permission:
-+
-** Anypoint Code Builder: Mule Developer Generative AI User
+* Mule Developer Generative AI User permission to send prompts to the agent.
 
 The AI assistant respects your Access Management permissions and can only perform actions you're authorized to do. If you want the assistant to help with specific tasks like creating governance strategies or managing services, you also need the appropriate permissions for those actions.
 
