@@ -42,13 +42,19 @@ Each usage type (also referred to as a meter) tracks a specific dimension of pla
 | Usage Type | Description
 
 | *MuleSoft Flows*
-| A flow is a sequence of logical operations within a deployed Mule application that contains a Mule event source or APIkit route. Anypoint Platform tracks the number of flows across all business groups, environments, and applications on an hourly basis. For every 24-hour period starting at 00:00 UTC, the hour with the highest flow count is identified as the daily peak. Based on your contract term, MuleSoft aggregates these daily peaks over the month or year to determine your final usage. This is a sum-based meter — unlike the previous high-watermark model, all daily flow counts contribute to your total usage. Subflows used for error handling or modular processing are included in the count.
+| A flow is a sequence of logical operations configured within the XML `<flow/>` element of a Mule application. The runtime report tracks the flows within a deployed and running Mule application that contains a Mule event source or APIkit route requests.
+
+Mule apps in production environments typically use multiple flows and subflows to divide the app into functional modules or for error-handling purposes. For example, one flow might receive a record and transform data into a given format that another flow processes.
+
+To calculate usage, MuleSoft tracks the number of flows across all business groups, environments, and applications on an hourly basis. For every 24 hour period starting at 00:00 UTC, a single hour with the highest flow count is identified as the daily max flow. Based on your contract term, MuleSoft then aggregates these daily maximums over the month or year to determine your final usage.
 
 | *MuleSoft Messages*
-| The total volume of data containers processed by the runtime. The platform counts a message each time an event source triggers it, and aggregates message counts daily (UTC time) and monthly. Changes to a message as it moves through application flows are not tracked — only the initial trigger is counted.
+| The total volume of data containers processed by the runtime. To track message usage, the runtime report counts the number of times a Mule event source triggers a message. To calculate usage, MuleSoft aggregates the number of messages daily (UTC time) and monthly. After a message is triggered, the report doesn’t track changes to the message because the message is processed within the application’s flows.
 
 | *Managed Assets*
-| An asset is considered managed if it has at least one active instance in https://docs.mulesoft.com/api-manager/latest/latest-overview-concept[API Manager^] deployed to a https://docs.mulesoft.com/mule-gateway/mule-gateway-capabilities-mule4[Mule Gateway^] or https://docs.mulesoft.com/gateway/latest/[Omni Gateway^]. Managed assets include APIs, Agents, Model Context Protocol (MCP) Servers, and Large Language Models (LLMs). Usage is counted per business group per day; if an asset has active instances across multiple business groups, it counts as one asset per group. Multiple instances within the same business group do not incur extra charges. Anypoint Platform deducts credits as long as the asset status is Active in API Manager, even if there are no calls to the asset.
+| An asset (API, Agent, MCP Server, or LLM) is considered managed if it has at least one active instance in https://docs.mulesoft.com/api-manager/latest/latest-overview-concept[API Manager^] deployed to a https://docs.mulesoft.com/mule-gateway/mule-gateway-capabilities-mule4[Mule Gateway^] or https://docs.mulesoft.com/gateway/latest/[Omni Gateway^]. Usage is counted per business group per day; if an asset has active instances across multiple business groups, it counts as one asset per group. 
+
+Multiple instances within the same business group don't incur extra charges. Anypoint Platform deducts credits as long as the asset status is Active in API Manager, even if there are no calls to the asset.
 
 | *Gateway Requests*
 | Any request received by https://docs.mulesoft.com/gateway/latest/[Omni Gateway^]. Usage is measured as the sum of all processed requests, regardless of response status.
@@ -102,13 +108,11 @@ Digital Wallet is available in Lightning Experience in Enterprise and Unlimited 
 | https://help.salesforce.com/s/articleView?id=xcloud.wallet_get_notified.htm&type=5[Get Notifications about Your Usage^]
 |===
 
-To access Digital Wallet, see https://help.salesforce.com/s/articleView?id=xcloud.wallet_access.htm&type=5[Access Digital Wallet^].
+For more information about Digital Wallet access, see https://help.salesforce.com/s/articleView?id=xcloud.wallet_access.htm&type=5[Access Digital Wallet^].
 
 == See Also
 
-* https://ptd.salesforce.com/#0[Salesforce Product Terms Dictionary^]
 * https://help.salesforce.com/s/articleView?id=xcloud.wallet_enabled_products_rate_cards.htm&type=5[Digital Wallet–Enabled Consumption-Based Products^] (Salesforce Help)
-* https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/mulesoft/Mule-Credit-Feature-Matrix-1.pdf[Feature Mapping^]
 * https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/mulesoft/Mule_Credit_Rate_Card.pdf[Mule Credit Rate Card^]
 * https://www.salesforce.com/mulesoft/rates[MuleSoft Rates Landing Page^]
 * xref:automation-credits-usage-and-rates.adoc[]
