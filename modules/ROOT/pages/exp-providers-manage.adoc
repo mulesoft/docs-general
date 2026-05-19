@@ -1,0 +1,150 @@
+= Manage Providers
+
+Manage connected providers and their integrations from *Platform* > *Providers*. After you connect a provider through xref:exp-services-connect-providers-to-add.adoc[], you can view provider details, monitor integration activity, review discovered services, and configure settings for each provider relationship.
+
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* Any of these permissions:
++
+** Exchange: Exchange Administrator
+** Exchange: Exchange Contributor
+** API Manager: API Creator
+** API Manager: Manage Policies
+
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+
+== Access Provider Management
+
+. Sign in to the enhanced experience through your organization's entry point.
+. In the navigation, select *Platform* > *Providers*.
+
+The Providers page lists all configured provider connections for your organization, showing provider name, type, integration count, and last sync status.
+
+== Provider Integration Types
+
+Each provider supports one or more integration types that determine how the enhanced experience interacts with that provider:
+
+Scanner::
+Automated discovery and import of services with full lifecycle management. Scanners run on a schedule or on demand to find agents, APIs, MCP servers, LLMs, and gateways in the provider platform, then register them in the matching *Portfolio* catalogs. For more information, see xref:exp-scanners-add-from-providers.adoc[].
+
+Gateway::
+Traffic routing and monitoring for API requests. Gateway integrations enable the enhanced experience to observe and manage traffic flowing through external gateways (such as Kong or Apigee) or Anypoint Omni Gateway instances. Gateway connections support policy enforcement and runtime monitoring.
+
+Org Link::
+Direct account linking for bidirectional synchronization between the enhanced experience and the provider platform. Org Link integrations enable the system to push configuration changes to the provider and receive real-time updates about service state, permissions, and metadata without running scheduled scans.
+
+A single provider can use multiple integration types simultaneously. For example, you might configure a Scanner to discover APIs, a Gateway integration to monitor traffic, and an Org Link to keep service metadata synchronized.
+
+== Supported Providers
+
+The enhanced experience supports connections to these providers:
+
+=== LLM and AI Platforms
+* AWS Bedrock
+* Google Vertex AI
+* Azure OpenAI
+* OpenAI
+* Anthropic
+* Meta
+* Mistral
+* xAI
+* Agentforce
+* AWS AgentCore
+
+=== API Management Platforms
+* Kong
+* Apigee
+* MuleSoft
+
+=== Vector Databases and Knowledge Stores
+* Pinecone
+* Weaviate
+* ChromaDB
+* PGVector
+* Qdrant
+* Elasticsearch
+
+=== Observability and Workflow Platforms
+* LangSmith
+* Informatica
+
+Provider availability and supported integration types depend on your organization's entitlements and the provider's capabilities.
+
+== View Provider Details
+
+From the Providers page, select a provider to open its detail page. Provider detail pages include four tabs:
+
+Overview::
+Summary information about the provider, including provider type, connection status, total discovered services by catalog (Agents, APIs, MCP Servers, LLMs, Gateways), and integration health.
+
+Integrations::
+List of configured integrations for this provider, grouped by integration type (Scanner, Gateway, Org Link). Each integration shows configuration summary, status, and last activity timestamp. Select an integration to edit settings or view detailed status.
+
+Discovered Services::
+Services imported from this provider through scanner or sync operations, organized by catalog. Each service card shows name, type, version, and import timestamp. Provider badges on service cards in *Portfolio* link directly to this tab for bidirectional navigation.
+
+Settings::
+Provider-level configuration options, including authentication credentials (when applicable), default settings for new integrations, and connection testing. Changes to settings apply to future discovery or sync operations but do not retroactively affect imported services.
+
+== Monitor Integration Activity
+
+The provider detail page includes an activity timeline showing integration sync events, import history, and configuration changes. Use the activity timeline to:
+
+* Verify that scanners are running on schedule
+* Review which services were discovered in recent scans
+* Identify connection failures or authentication issues
+* Audit configuration changes to integrations
+
+Each timeline entry includes timestamp, integration name, event type (scan completed, service imported, configuration changed, error), and affected service count.
+
+== Edit Provider Integrations
+
+To modify an existing integration:
+
+. From *Platform* > *Providers*, select the provider.
+. Select the *Integrations* tab.
+. Select the integration you want to change.
+. Update integration settings, such as scan schedule, credential rotation, or target catalogs.
+. Save changes.
+
+Changes to integration settings take effect on the next scheduled operation (scan, sync, or traffic observation).
+
+== Test Provider Connectivity
+
+To verify that the enhanced experience can reach a provider after configuration changes:
+
+. From *Platform* > *Providers*, select the provider.
+. Select the *Settings* tab.
+. Use the connection test control to validate authentication and network access.
+
+Connection tests confirm that credentials are valid and the provider platform is reachable but do not trigger service discovery. Use on-demand scans from xref:exp-scanners-manage.adoc[] to test full discovery workflows.
+
+== View Services by Provider
+
+To see which services in *Portfolio* came from a specific provider:
+
+. From *Platform* > *Providers*, select the provider.
+. Select the *Discovered Services* tab.
+
+The Discovered Services tab shows entity breakdown by catalog type. Select a catalog filter (Agents, APIs, MCP Servers, LLMs, Gateways) to view services from that catalog. Provider badges on service cards in *Portfolio* link back to this view for quick navigation.
+
+== Disconnect a Provider
+
+To remove a provider connection:
+
+. From *Platform* > *Providers*, select the provider.
+. Select the *Settings* tab.
+. Use the disconnect control to remove the connection.
+
+WARNING: Disconnecting a provider stops all integrations (Scanner, Gateway, Org Link) for that provider but does not delete services already imported into *Portfolio*. Services discovered by that provider remain in their catalogs with a status indicator showing the provider connection is inactive. To remove services, delete them individually from *Portfolio* catalogs or use bulk operations if your organization enables them.
+
+== See Also
+
+* xref:exp-services-connect-providers-to-add.adoc[]
+* xref:exp-scanners-add-from-providers.adoc[]
+* xref:exp-scanners-manage.adoc[]
+* xref:exp-services-add-to-portfolio.adoc[]
+* xref:exp-services-view-details.adoc[]
