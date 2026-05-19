@@ -51,19 +51,13 @@ Platform Configuration::
 Before using the AI assistant, make sure you have:
 
 * An Anypoint Platform account with access to the enhanced experience.
-* Permissions appropriate for the tasks you want to perform. The AI assistant can help with tasks across these areas, and respects your Access Management permissions:
-+
-** *Portfolio Management*: Permissions to view and manage APIs, agents, MCP servers, LLM proxies, and gateways (such as Exchange Contributor, Exchange Administrator, or Exchange Creator)
-** *Governance*: Permissions to create and manage governance strategies and apply policies
-** *Monitoring*: Anypoint Monitoring Viewer or Anypoint Monitoring Administrator
-** *Cost Management*: Permissions to view token usage and cost data
-** *Platform Configuration*: Permissions to manage providers, scanners, and integrations
+* Appropriate permissions for the tasks you want the assistant to help with. The AI assistant respects your Access Management permissions and can only perform actions you're authorized to do.
 
 For more information about specific permissions, see xref:exp-start-home.adoc#permissions[Enhanced Experience Permissions].
 
 [NOTE]
 ====
-The AI assistant is available to all users with access to the enhanced experience. However, the actions it can perform depend on your individual permissions. If you ask the assistant to perform an action you don't have permission for, it informs you but can't grant permissions.
+The AI assistant is available to all users with access to the enhanced experience. However, the actions it can perform depend on your individual permissions for portfolio management, governance, monitoring, and platform configuration.
 ====
 
 == Access the AI Assistant
