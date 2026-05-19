@@ -46,7 +46,7 @@ Each usage type (also called a meter) tracks a specific dimension of platform co
 
 Mule apps in production environments typically use multiple flows and subflows to divide the app into functional modules or for error-handling purposes. For example, one flow can receive a record and transform data into a given format that another flow processes.
 
-To calculate usage, MuleSoft tracks the number of flows across all business groups, environments, and applications on an hourly basis. For every 24 hour period starting at 00:00 UTC, MuleSoft identifies a single hour with the highest flow count as the daily max flow. Based on your contract term, MuleSoft then aggregates these daily maximums over the month or year to determine your final usage.
+To calculate usage, MuleSoft tracks the number of flows across all business groups, environments, and applications on an hourly basis. For every 24-hour period starting at 00:00 UTC, MuleSoft identifies the hour with the highest flow count as the daily max flow. Based on your contract term, MuleSoft then aggregates these daily maximums over the month or year to determine final usage.
 
 | *MuleSoft Messages*
 | The total volume of data containers processed by the runtime. To track message usage, the runtime report counts the number of times a Mule event source triggers a message. To calculate usage, MuleSoft aggregates the number of messages daily (UTC time) and monthly. After a Mule event source triggers a message, the report doesn't track changes to the message because the application's flows process it internally.
