@@ -28,6 +28,6 @@ Post links back into Slack after you verify state in *Portfolio*. This helps inc
 
 == See Also
 
-* xref:exp-start-home.adoc[]
+* xref:exp-home-start.adoc[]
 * xref:exp-overview.adoc[]
-* xref:exp-connect-experience-to-claude-desktop.adoc[]
+* xref:exp-claude-desktop-connect.adoc[]

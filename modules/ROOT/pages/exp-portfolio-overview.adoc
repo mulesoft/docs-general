@@ -15,7 +15,7 @@ Before getting started, make sure you have:
 ** Exchange: Exchange Contributor
 ** Exchange: Exchange Administrator
 
-For more information, see xref:exp-start-home#permissions[Enhanced Experience Permissions].
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
 == Access Portfolio Overview
 
@@ -26,7 +26,7 @@ After sign-in, your landing page sometimes highlights portfolio activity, shortc
 +
 Browse catalogs for *Agents*, *APIs*, *MCP Servers*, *LLM Proxies*, and *Gateways* in *Portfolio*. Each catalog lists the services that your team registered or imported. To find a specific service, use search and filters, and then select the service to view its details.
 
-If you don't see a catalog or a summary you expect, confirm entitlements and permissions with your Anypoint Platform organization administrator. See xref:exp-start-home.adoc#permissions[Enhanced Experience Permissions] for more information.
+If you don't see a catalog or a summary you expect, confirm entitlements and permissions with your Anypoint Platform organization administrator. See xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions] for more information.
 
 ==  Overview
 
@@ -43,6 +43,6 @@ Entry points to add services, connect providers, or open governance and observab
 == See Also
 
 * xref:exp-overview.adoc[]
-* xref:exp-start-home.adoc[]
-* xref:exp-add-services-to-portfolio.adoc[]
-* xref:exp-view-service-details.adoc[]
+* xref:exp-home-start.adoc[]
+* xref:exp-services-add-to-portfolio.adoc[]
+* xref:exp-services-view-details.adoc[]

@@ -14,7 +14,7 @@ Before getting started, make sure you have:
 ** Anypoint Monitoring: Monitoring Viewer
 ** Anypoint Monitoring: Monitoring Administrator
 
-For more information, see xref:exp-start-home#permissions[Enhanced Experience Permissions].
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
 == Open Detailed Views
 
@@ -30,14 +30,14 @@ If you need a metric that doesn't appear, ask your platform team whether the int
 Capture before-and-after windows when you deploy instances or change policies so you can attribute shifts.
 * Align with alerts
 +
-Pair detailed charts with xref:exp-configure-notifications-for-alerts.adoc[alert notifications] so on-call engineers go to the right place.
+Pair detailed charts with xref:exp-alerts-configure-notifications.adoc[alert notifications] so on-call engineers go to the right place.
 * Respect data boundaries
 +
 Some dimensions might be redacted or aggregated for privacy. Follow your organization's data-handling standards.
 
 == See Also
 
-* xref:exp-monitor-your-services.adoc[]
-* xref:exp-configure-notifications-for-alerts.adoc[]
-* xref:exp-view-service-details.adoc[]
+* xref:exp-services-monitoring.adoc[]
+* xref:exp-alerts-configure-notifications.adoc[]
+* xref:exp-services-view-details.adoc[]
 * xref:exp-overview.adoc[]

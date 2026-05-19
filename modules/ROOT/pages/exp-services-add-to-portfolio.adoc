@@ -6,10 +6,10 @@ Your *Portfolio* is organized into catalogs: *Agents*, *MCP Servers*, *LLM Proxi
 |===
 |Approach |What Happens
 
-|xref:exp-connect-providers-to-add-services.adoc[]
+|xref:exp-services-connect-providers-to-add.adoc[]
 |You add a provider scanner from *Home* or from a catalog in *Portfolio*. Scans discover services on supported cloud platforms and register them in the matching catalog.
 
-|xref:exp-register-services-manually.adoc[]
+|xref:exp-services-register-manually.adoc[]
 |You start an *Add …* workflow from *Home* or from the catalog for that service type. You supply metadata, specifications, endpoints, or cards to register the service without a provider scanner.
 |===
 
@@ -26,7 +26,7 @@ Before getting started, make sure you have:
 ** Exchange: Exchange Administrator
 ** Exchange: Exchange Creator
 
-For more information, see xref:exp-start-home#permissions[Enhanced Experience Permissions].
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
 == Workflow Entry Points
 
@@ -56,11 +56,11 @@ Register with an API specification and instance details, or connect an API provi
 *Gateways*::
 Add a new gateway runtime by configuring a gateway and routing strategy, import an existing runtime through provider discovery, or browse the marketplace catalog to add pre-configured gateway options to the *Gateways* catalog.
 
-For more information about registering any of these types, see xref:exp-register-services-manually.adoc[] and xref:exp-connect-providers-to-add-services.adoc[].
+For more information about registering any of these types, see xref:exp-services-register-manually.adoc[] and xref:exp-services-connect-providers-to-add.adoc[].
 
 == See Also
 
-* xref:exp-connect-providers-to-add-services.adoc[]
-* xref:exp-register-services-manually.adoc[]
-* xref:exp-add-scanners-from-providers.adoc[]
-* xref:exp-view-service-details.adoc[]
+* xref:exp-services-connect-providers-to-add.adoc[]
+* xref:exp-services-register-manually.adoc[]
+* xref:exp-scanners-add-from-providers.adoc[]
+* xref:exp-services-view-details.adoc[]

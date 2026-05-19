@@ -32,7 +32,7 @@ Before getting started, make sure you have:
 ** Exchange: Exchange Administrator
 ** Exchange: Exchange Creator
 
-For more information, see xref:exp-start-home#permissions[Enhanced Experience Permissions].
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
 == Steps to Create an MCP Server
 
@@ -47,7 +47,7 @@ After you save, the MCP server is ready for governance and operations. Register 
 
 == See Also
 
-* xref:exp-add-services-to-portfolio.adoc[]
-* xref:exp-register-services-manually.adoc[]
-* xref:exp-connect-providers-to-add-services.adoc[]
-* xref:exp-view-service-details.adoc[]
+* xref:exp-services-add-to-portfolio.adoc[]
+* xref:exp-services-register-manually.adoc[]
+* xref:exp-services-connect-providers-to-add.adoc[]
+* xref:exp-services-view-details.adoc[]
