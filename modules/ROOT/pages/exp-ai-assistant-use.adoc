@@ -51,14 +51,13 @@ Platform Configuration::
 Before using the AI assistant, make sure you have:
 
 * An Anypoint Platform account with access to the enhanced experience.
-* Appropriate permissions for the tasks you want the assistant to help with. The AI assistant respects your Access Management permissions and can only perform actions you're authorized to do.
+* The following permission:
++
+** Anypoint Code Builder: Mule Developer Generative AI User
 
-For more information about specific permissions, see xref:exp-start-home.adoc#permissions[Enhanced Experience Permissions].
+The AI assistant respects your Access Management permissions and can only perform actions you're authorized to do. If you want the assistant to help with specific tasks like creating governance strategies or managing services, you also need the appropriate permissions for those actions.
 
-[NOTE]
-====
-The AI assistant is available to all users with access to the enhanced experience. However, the actions it can perform depend on your individual permissions for portfolio management, governance, monitoring, and platform configuration.
-====
+For more information, see xref:exp-start-home.adoc#permissions[Enhanced Experience Permissions].
 
 == Access the AI Assistant
 
