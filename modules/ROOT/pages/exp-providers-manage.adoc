@@ -1,6 +1,6 @@
-= View Providers
+= Viewing Providers
 
-View connected providers and filter scanners by provider from *Platform* > *Providers*. The Providers page shows which cloud platforms and API management systems are connected to the enhanced experience, and displays the scanners configured for each provider.
+The *Providers* page shows which cloud platforms and API management systems are connected to the enhanced experience. From *Platform* > *Providers*, you can view connected providers, filter scanners by provider, and connect new providers to begin discovering services.
 
 == Before You Begin
 
@@ -21,46 +21,36 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 . Sign in to the enhanced experience through your organization's entry point.
 . In the navigation, select *Platform* > *Providers*.
 
-The Providers page displays a provider list on the left and a scanner list on the right.
+The Providers page displays the provider list and scanner lists.
 
 == Provider List
 
-The left sidebar shows providers organized into two groups:
+The side panel shows providers organized into two groups:
 
 Connected::
 Providers that have active scanner connections. Each connected provider card shows the provider name, logo, number of discovered services, and number of configured scanners.
 
 Not Connected::
-Providers available for connection but not yet configured. Select a not-connected provider to begin the scanner setup workflow.
+Providers available for connection but not yet configured. Select a not-connected provider to begin the scanner setup workflow. The workflow guides you through the process of connecting the provider and configuring the scanner.
 
 == View All Scanners
 
-When *All Providers* is selected at the top of the provider list, the main panel displays all scanners across all connected providers.
+Select *All Providers* to view all scanners across all connected providers. The main panel displays the scanner list.
 
 The scanner list shows:
 
-* *Scanner Name* — The scanner identifier and provider platform
-* *Services* — Count of services discovered by this scanner
-* *Last Scanned* — Time since the last successful scan
-* *Scan Trigger* — Schedule type (Scheduled, Manual, or On-Demand)
+* *Scanner Name*: The scanner identifier and provider platform
+* *Services*: Count of services discovered by this scanner
+* *Last Scanned*: Time since the last successful scan
+* *Scan Trigger*: Schedule type (Scheduled, Manual, or On-Demand)
 
 == Filter Scanners by Provider
 
-To view scanners for a specific provider:
-
-. From *Platform* > *Providers*, select a provider from the left sidebar.
-. The scanner list updates to show only scanners configured for that provider.
-
-This filtered view helps you focus on scanners for a single cloud platform or API management system.
+To view scanners for a specific provider, select the provider from the sidebar. The scanner list updates to show only scanners configured for that provider. The main panel displays the scanner list.
 
 == View Scanner Details
 
-To see detailed information about a scanner, including scan history and settings:
-
-. From *Platform* > *Providers*, select *All Providers* or filter by a specific provider.
-. In the scanner list, select the scanner name.
-
-The scanner detail page opens with two tabs:
+To see detailed information about a scanner, including scan history and settings, select the scanner name in the scanner list. The scanner detail page opens with two tabs:
 
 Overview::
 Displays services count, instances count, and scan history. Each scan history entry shows status (Success, Failed), timestamp, and number of new services discovered.
@@ -68,7 +58,7 @@ Displays services count, instances count, and scan history. Each scan history en
 Settings::
 Shows scanner configuration including provider, created date, last scanned time, and services count. Use this tab to modify scanner settings or delete the scanner.
 
-For more information on managing scanners, see xref:exp-scanners-manage.adoc[].
+For information about managing scanners, see xref:exp-scanners-manage.adoc[].
 
 == Connect a New Provider
 
@@ -83,17 +73,14 @@ For detailed scanner setup instructions, see xref:exp-scanners-add-from-provider
 
 The enhanced experience supports connections to these providers:
 
-=== Connected (Example Providers)
 * Amazon
-* Microsoft
-* Google Cloud
-* Kong Konnect
-
-=== Available for Connection
 * Anthropic
 * Databricks
 * GoDaddy ANS
+* Google Cloud
+* Kong Konnect
 * Langchain
+* Microsoft
 * Snowflake
 
 The specific providers available depend on your organization's entitlements and the enhanced experience configuration.
