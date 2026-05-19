@@ -1,6 +1,6 @@
-= Manage Providers
+= View Providers
 
-Manage connected providers and their integrations from *Platform* > *Providers*. After you connect a provider through xref:exp-services-connect-providers-to-add.adoc[], you can view provider details, monitor integration activity, review discovered services, and configure settings for each provider relationship.
+View connected providers and filter scanners by provider from *Platform* > *Providers*. The Providers page shows which cloud platforms and API management systems are connected to the enhanced experience, and displays the scanners configured for each provider.
 
 == Before You Begin
 
@@ -16,109 +16,87 @@ Before getting started, make sure you have:
 
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
-== Access Provider Management
+== Access the Providers Page
 
 . Sign in to the enhanced experience through your organization's entry point.
 . In the navigation, select *Platform* > *Providers*.
 
-The Providers page lists all configured provider connections for your organization, showing provider name, type, integration count, and last sync status.
+The Providers page displays a provider list on the left and a scanner list on the right.
 
-== Provider Integration Types
+== Provider List
 
-Each provider supports one or more integration types that determine how the enhanced experience interacts with that provider:
+The left sidebar shows providers organized into two groups:
 
-Scanner::
-Automated discovery and import of services with full lifecycle management. Scanners run on a schedule or on demand to find agents, APIs, MCP servers, LLMs, and gateways in the provider platform, then register them in the matching *Portfolio* catalogs. For more information, see xref:exp-scanners-add-from-providers.adoc[].
+Connected::
+Providers that have active scanner connections. Each connected provider card shows the provider name, logo, number of discovered services, and number of configured scanners.
 
-Gateway::
-Traffic routing and monitoring for API requests. Gateway integrations enable the enhanced experience to observe and manage traffic flowing through external gateways (such as Kong or Apigee) or Anypoint Omni Gateway instances. Gateway connections support policy enforcement and runtime monitoring.
+Not Connected::
+Providers available for connection but not yet configured. Select a not-connected provider to begin the scanner setup workflow.
 
-Org Link::
-Direct account linking for bidirectional synchronization between the enhanced experience and the provider platform. Org Link integrations enable the system to push configuration changes to the provider and receive real-time updates about service state, permissions, and metadata without running scheduled scans.
+== View All Scanners
 
-A single provider can use multiple integration types simultaneously. For example, you might configure a Scanner to discover APIs, a Gateway integration to monitor traffic, and an Org Link to keep service metadata synchronized.
+When *All Providers* is selected at the top of the provider list, the main panel displays all scanners across all connected providers.
+
+The scanner list shows:
+
+* *Scanner Name* — The scanner identifier and provider platform
+* *Services* — Count of services discovered by this scanner
+* *Last Scanned* — Time since the last successful scan
+* *Scan Trigger* — Schedule type (Scheduled, Manual, or On-Demand)
+
+== Filter Scanners by Provider
+
+To view scanners for a specific provider:
+
+. From *Platform* > *Providers*, select a provider from the left sidebar.
+. The scanner list updates to show only scanners configured for that provider.
+
+This filtered view helps you focus on scanners for a single cloud platform or API management system.
+
+== View Scanner Details
+
+To see detailed information about a scanner, including scan history and settings:
+
+. From *Platform* > *Providers*, select *All Providers* or filter by a specific provider.
+. In the scanner list, select the scanner name.
+
+The scanner detail page opens with two tabs:
+
+Overview::
+Displays services count, instances count, and scan history. Each scan history entry shows status (Success, Failed), timestamp, and number of new services discovered.
+
+Settings::
+Shows scanner configuration including provider, created date, last scanned time, and services count. Use this tab to modify scanner settings or delete the scanner.
+
+For more information on managing scanners, see xref:exp-scanners-manage.adoc[].
+
+== Connect a New Provider
+
+To add a provider connection:
+
+. From *Platform* > *Providers*, select a provider from the *Not Connected* section.
+. Follow the connection workflow to authenticate and configure scanner settings.
+
+For detailed scanner setup instructions, see xref:exp-scanners-add-from-providers.adoc[].
 
 == Supported Providers
 
-The enhanced experience currently supports connections to these providers through the *Platform* > *Providers* page:
+The enhanced experience supports connections to these providers:
 
-Kong Konnect::
-Open-source, cloud-native API gateway with plugin-based extensibility. Supports gateway discovery and traffic monitoring.
+=== Connected (Example Providers)
+* Amazon
+* Microsoft
+* Google Cloud
+* Kong Konnect
 
-Google Apigee::
-Google's API management platform for designing, securing, and scaling APIs across clouds and on-premises. Supports gateway discovery and traffic monitoring.
+=== Available for Connection
+* Anthropic
+* Databricks
+* GoDaddy ANS
+* Langchain
+* Snowflake
 
-Provider availability and supported connection types depend on your organization's entitlements and the provider's capabilities.
-
-== View Provider Details
-
-From the Providers page, select a provider to open its detail page. Provider detail pages include five tabs:
-
-Overview::
-Summary information about the provider, including provider type, connection status, total discovered services by catalog (Agents, APIs, MCP Servers, LLMs), and connection health.
-
-Connections::
-List of configured connections for this provider, showing scanner, gateway, and org-link connections. Each connection displays configuration summary, status, schedule (for scanners), last sync time, and discovered entity count. Select a connection to view detailed status or review discovered services.
-
-Gateways::
-Gateway inventory for the provider. For Kong and Apigee providers, displays external gateways discovered through the provider connection. For MuleSoft providers, shows Anypoint Omni Gateway (Flex Gateway) instances available in your organization.
-
-Discovered Entities::
-Services imported from this provider through scanner or sync operations, organized by catalog type (Agents, APIs, MCP Servers, LLMs). Each service card shows name, type, and status. Provider badges on service cards in *Portfolio* link directly to this tab for bidirectional navigation.
-
-Settings::
-Provider-level configuration options, including provider name, region, organization ID, and website URL. Changes to settings apply to future discovery or sync operations but do not retroactively affect imported services. The disconnect action is also available from this tab.
-
-== Monitor Connection Activity
-
-The *Connections* tab displays connection status, sync schedules, and last activity timestamps for each configured connection. Use this information to:
-
-* Verify that scanners are running on schedule
-* Review which services were discovered in recent scans
-* Identify connection failures or authentication issues
-* Check sync status and schedule for org-link connections
-
-Each connection row shows the connection name, type (Scanner, Gateway, Org Link), status, schedule, last sync time, and count of discovered entities.
-
-== Edit Provider Connections
-
-To modify an existing connection:
-
-. From *Platform* > *Providers*, select the provider.
-. Select the *Connections* tab.
-. For scanner connections, select the connection name to navigate to the scanner detail page where you can update settings.
-. For other connection types, use the configure action to update connection settings.
-
-Changes to connection settings take effect on the next scheduled operation (scan, sync, or traffic observation).
-
-== Test Provider Connectivity
-
-To verify that the enhanced experience can reach a provider after configuration changes:
-
-. From *Platform* > *Providers*, select the provider.
-. Select the *Settings* tab.
-. Use the connection test control to validate authentication and network access.
-
-Connection tests confirm that credentials are valid and the provider platform is reachable but do not trigger service discovery. Use on-demand scans from xref:exp-scanners-manage.adoc[] to test full discovery workflows.
-
-== View Services by Provider
-
-To see which services in *Portfolio* came from a specific provider:
-
-. From *Platform* > *Providers*, select the provider.
-. Select the *Discovered Entities* tab.
-
-The *Discovered Entities* tab shows services organized by catalog type (Agents, APIs, MCP Servers, LLMs). Each service card displays name, type, and current status. Provider badges on service cards in *Portfolio* link back to this view for quick navigation.
-
-== Disconnect a Provider
-
-To remove a provider connection:
-
-. From *Platform* > *Providers*, select the provider.
-. Select the *Settings* tab.
-. Use the disconnect control to remove the connection.
-
-WARNING: Disconnecting a provider stops all connections (Scanner, Gateway, Org Link) for that provider but does not delete services already imported into *Portfolio*. Services discovered by that provider remain in their catalogs. To remove services, delete them individually from *Portfolio* catalogs or use bulk operations if your organization enables them.
+The specific providers available depend on your organization's entitlements and the enhanced experience configuration.
 
 == See Also
 
@@ -126,4 +104,3 @@ WARNING: Disconnecting a provider stops all connections (Scanner, Gateway, Org L
 * xref:exp-scanners-add-from-providers.adoc[]
 * xref:exp-scanners-manage.adoc[]
 * xref:exp-services-add-to-portfolio.adoc[]
-* xref:exp-services-view-details.adoc[]
