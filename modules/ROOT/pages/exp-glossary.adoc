@@ -2,6 +2,16 @@
 
 The enhanced MuleSoft experience uses a consistent set of terms across governance, portfolio, instance management, and agentic experiences. Clear definitions help you apply the right concepts when registering assets, configuring strategies, and managing instances.
 
+== Access and Subscription Terms
+
+Agent + API Portfolio Access::
+A subscription tier that includes full access to all enhanced experience catalogs: Agents, APIs, MCP Servers, LLM Proxies, and Gateways. Provides agent-specific governance, monitoring, and cost management features in addition to all API portfolio capabilities.
+
+API Portfolio Access::
+A subscription tier that includes access to APIs and Gateways catalogs, along with API-focused governance, monitoring, and cost management features. Does not include access to Agents, MCP Servers, or LLM Proxies catalogs.
+
+== Entity and Service Terms
+
 A2A endpoint::
 An endpoint that exposes an agent's capabilities using the Agent-to-Agent (A2A) protocol. Point to an A2A endpoint during agent registration to fetch the agent card automatically.
 

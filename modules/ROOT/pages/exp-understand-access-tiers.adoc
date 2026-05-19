@@ -1,0 +1,150 @@
+= Understanding Your Access to the Enhanced Experience
+
+Your MuleSoft subscription determines which portfolio catalogs and features you can access in the enhanced experience. Access levels range from API portfolio management to full agent and API portfolio management.
+
+== Access Tiers
+
+The enhanced experience provides different feature sets based on your subscription tier.
+
+API Portfolio Access::
+Includes access to the APIs catalog, gateway management, API-focused governance strategies, monitoring, cost management, and platform integration features. This tier focuses on managing and governing REST, GraphQL, and AsyncAPI services.
+
+Agent + API Portfolio Access::
+Includes everything in API Portfolio Access, plus the Agents catalog, MCP Servers catalog, LLM Proxies catalog, and agent-specific governance features. This tier provides full portfolio management for both traditional APIs and AI-powered services.
+
+[NOTE]
+====
+Your organization's MuleSoft subscription determines which tier you have access to. If you need access to additional features, contact your Anypoint Platform organization administrator or your MuleSoft account team.
+====
+
+== Check Your Access Level
+
+To identify which features are available to you:
+
+. Sign in to the enhanced experience through your organization's entry point.
+. Navigate to *Portfolio* in the main navigation.
+. Review which catalogs appear in the Portfolio section:
++
+* If you see *APIs* and *Gateways*, you have API Portfolio Access.
+* If you also see *Agents*, *MCP Servers*, and *LLM Proxies*, you have Agent + API Portfolio Access.
+
+The catalogs visible to you reflect your subscription tier and the permissions your administrator assigned.
+
+== Feature Availability by Tier
+
+The following table shows which features are available at each access tier:
+
+[%header,cols="3,1,1"]
+|===
+|Feature |API Portfolio Access |Agent + API Portfolio Access
+
+|APIs catalog
+|✓
+|✓
+
+|Agents catalog
+|
+|✓
+
+|MCP Servers catalog
+|
+|✓
+
+|LLM Proxies catalog
+|
+|✓
+
+|Gateways management
+|✓
+|✓
+
+|API governance strategies
+|✓
+|✓
+
+|Agent governance strategies
+|
+|✓
+
+|API instances and monitoring
+|✓
+|✓
+
+|Agent instances and monitoring
+|
+|✓
+
+|Cost management
+|✓
+|✓
+
+|Semantic search
+|
+|✓
+
+|Ask MuleSoft (AI assistant)
+|✓
+|✓
+
+|Platform MCP Server
+|✓
+|✓
+
+|Slack integration
+|✓
+|✓
+
+|Claude Desktop integration
+|✓
+|✓
+
+|Provider discovery and scanners
+|✓
+|✓
+
+|Observability dashboards
+|✓
+|✓
+
+|Notifications and alerts
+|✓
+|✓
+|===
+
+== Permissions vs. Subscription Tiers
+
+Access to features requires both:
+
+Subscription Tier::
+Your organization's MuleSoft contract determines which catalogs and features are enabled. This is managed at the organization or business group level.
+
+Access Management Permissions::
+Your administrator assigns specific permissions that control what actions you can perform within the available features. Even if your organization has Agent + API Portfolio Access, you need the appropriate permissions to create, modify, or delete services.
+
+For information about permissions, see xref:exp-start-home.adoc#permissions[Enhanced Experience Permissions].
+
+== Request Access
+
+If you need access to features that aren't currently available:
+
+. *For catalog access* (Agents, MCP Servers, LLMs):
++
+Contact your MuleSoft account team to discuss upgrading your subscription tier.
+
+. *For permissions* within available catalogs:
++
+Contact your Anypoint Platform organization administrator to request the appropriate role assignments.
+
+. *For technical issues* accessing the enhanced experience:
++
+Contact your internal IT support or Anypoint Platform administrator to verify:
++
+* Your user account has the correct entitlements
+* The enhanced experience is enabled for your business group
+* Required integrations are configured correctly
+
+== See Also
+
+* xref:exp-start-home.adoc[]
+* xref:exp-overview.adoc[]
+* xref:exp-compare.adoc[]

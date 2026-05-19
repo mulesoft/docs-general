@@ -1,5 +1,10 @@
 = Create an MCP Server
 
+[NOTE]
+====
+MCP server management requires Agent + API Portfolio Access. If you don't see the MCP Servers catalog, contact your administrator to verify your subscription tier. See xref:exp-understand-access-tiers.adoc[] for more information.
+====
+
 Create MCP servers to define identity, runtime connectivity, and the tools and resources exposed to MCP clients.
 
 Creating an MCP server defines a new MCP implementation—for example, by transcoding an existing REST API or creating a runtime deployment—and establishes the server identity, runtime connectivity, and the MCP capabilities (tools and resources) exposed to clients.

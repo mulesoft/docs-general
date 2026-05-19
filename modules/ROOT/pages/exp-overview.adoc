@@ -4,11 +4,16 @@ To grow and tune your AI portfolio, register and monitor agents, APIs, and gatew
 
 Your AI assets stay audit-ready with clear visibility into cost and runtime health across your org.
 
+[NOTE]
+====
+The catalogs and features available to you depend on your subscription tier. See xref:exp-understand-access-tiers.adoc[] to understand API Portfolio Access and Agent + API Portfolio Access.
+====
+
 == Enhanced Experience Capabilities
 
 The enhanced MuleSoft experience supports the full lifecycle of AI-connected integration assets:
 
-Entity Management:: Register and manage agents, REST and GraphQL APIs, MCP servers, LLMs, and gateways, including Anypoint Omni Gateway, external gateways, and unmanaged gateways. Each type has a dedicated catalog under *Portfolio*.
+Entity Management:: Register and manage agents, REST and GraphQL APIs, MCP servers, LLMs, and gateways, including Anypoint Omni Gateway, external gateways, and unmanaged gateways. Each type has a dedicated catalog under *Portfolio*. The catalogs you can access depend on your subscription tier—API Portfolio Access provides APIs and Gateways catalogs, while Agent + API Portfolio Access adds Agents, MCP Servers, and LLM Proxies catalogs.
 
 Governance and Compliance:: Define and apply policies across domains such as access and security, performance and cost, data privacy and integrity, and compliance and observability. Conformance reporting summarizes rule violations and severity so you can close gaps systematically.
 

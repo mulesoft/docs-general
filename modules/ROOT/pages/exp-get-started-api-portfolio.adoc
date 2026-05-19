@@ -1,0 +1,195 @@
+= Get Started with API Portfolio Management
+
+Use the enhanced experience to register, govern, monitor, and optimize your REST, GraphQL, and AsyncAPI services. The API portfolio management features help you maintain visibility and control over your API estate across multiple gateways and environments.
+
+== Before You Begin
+
+Confirm these requirements with your administrator:
+
+Access::
+* You have API Portfolio Access or Agent + API Portfolio Access.
+* You can sign in to the enhanced experience through your organization's entry point.
+
+Permissions::
+* You have the necessary Access Management permissions to view and manage APIs.
+* See xref:exp-start-home.adoc#permissions[Enhanced Experience Permissions] for details.
+
+Integration::
+* Your organization has configured connections to Anypoint Platform.
+* If using external gateways (Apigee, Kong), your administrator has configured the appropriate provider connections.
+
+== API Portfolio Workflow
+
+Follow these steps to start managing your API portfolio:
+
+=== 1. Navigate to the APIs Catalog
+
+. Sign in to the enhanced experience.
+. In the main navigation, select *Portfolio* > *APIs*.
+. Review any existing APIs that were discovered or previously registered.
+
+=== 2. Register Your APIs
+
+Add APIs to the catalog using one of these methods:
+
+Manual Registration::
+Use this method when you have API specification files or endpoint details:
++
+. On the APIs catalog page, select *Add API*.
+. Choose to upload a specification file (OAS, RAML, Proto, AsyncAPI) or enter API details manually.
+. Complete the registration form with API metadata.
+. Select *Save*.
++
+For detailed steps, see xref:exp-register-services-manually.adoc[].
+
+Provider Discovery::
+Use this method to automatically discover APIs from connected cloud platforms:
++
+. Configure a provider connection under *Platform* > *Providers*.
+. Create a scanner for the provider.
+. Run the scanner to discover APIs automatically.
+. Review and approve discovered APIs.
++
+For detailed steps, see xref:exp-connect-providers-to-add-services.adoc[] and xref:exp-add-scanners-from-providers.adoc[].
+
+=== 3. View API Details
+
+. From the APIs catalog, select an API to open its detail page.
+. Review the available tabs:
++
+* *Overview*: Basic metadata, description, and status
+* *Versions*: All registered versions of the API
+* *Instances*: Deployed instances on gateways
+* *Policies*: Applied runtime policies
+* *Conformance Report*: Governance compliance status
+* *Monitoring*: Performance metrics and health data
+
+For more information, see xref:exp-view-service-details.adoc[].
+
+=== 4. Create API Instances
+
+Deploy your API to a gateway by creating an instance:
+
+. On the API detail page, select the *Instances* tab.
+. Select *Add Instance*.
+. Choose the gateway type:
++
+* *Managed instance*: Routes traffic through Anypoint Omni Gateway with full policy enforcement and monitoring
+* *Unmanaged instance*: Lighter deployment without Omni Gateway
+. Configure the instance URL and target endpoint.
+. Select *Create*.
+
+For detailed steps, see xref:exp-add-instances.adoc[].
+
+=== 5. Apply Governance Policies
+
+Enforce runtime controls on your API instances:
+
+Instance-Level Policies::
+. On the API detail page, select the *Instances* tab.
+. Select an instance.
+. On the instance detail page, select the *Policies* tab.
+. Select *Apply Policy*.
+. Choose a policy template (rate limiting, authentication, security, etc.).
+. Configure policy parameters.
+. Select *Apply*.
+
+Organization-Wide Strategies::
+Create governance strategies that automatically apply policies to matching APIs:
++
+. Navigate to *Governance* > *Governance Strategies*.
+. Create a new strategy with rules, scope, and automated policies.
+. Activate the strategy.
++
+For detailed steps, see xref:exp-create-governance-strategies.adoc[].
+
+=== 6. Monitor API Performance
+
+Track runtime health and usage:
+
+. On the API detail page, select the *Monitoring* tab.
+. Review key metrics:
++
+* Request volume and throughput
+* Response times and latency
+* Error rates and status codes
+* Availability and uptime
+. Set up alerts for threshold violations under *Observability* > *Notifications*.
+
+For more information, see xref:exp-monitor-your-services.adoc[] and xref:exp-view-detailed-metrics-for-services.adoc[].
+
+=== 7. Review Compliance
+
+Check governance conformance:
+
+. On the API detail page, select the *Conformance Report* tab.
+. Review the compliance score and severity breakdown.
+. Identify rule violations and warnings.
+. Address high-priority findings by updating API specifications or configurations.
+
+=== 8. Manage Costs
+
+Track token usage and optimize spending (for APIs that integrate with LLM services):
+
+. Navigate to *Governance* > *Cost Management*.
+. Review token usage by API and instance.
+. Identify cost optimization opportunities.
+. Apply tool mapping or rate limiting policies to reduce spend.
+
+For more information, see xref:exp-view-cost-and-token-usage.adoc[].
+
+== Next Steps
+
+After establishing your API portfolio:
+
+* Set up automated scanners to keep your catalog current
+* Define organization-wide governance strategies
+* Configure observability dashboards for your team
+* Integrate with Slack for notifications
+* Connect the Platform MCP Server to Claude Desktop for development workflows
+
+== Common Tasks
+
+=== Update an API Version
+
+. Navigate to the API detail page.
+. Select the *Versions* tab.
+. Select *Add Version*.
+. Upload the updated specification file.
+. Review changes and save.
+
+=== Deactivate an API Instance
+
+. Navigate to the API detail page.
+. Select the *Instances* tab.
+. Select the instance to deactivate.
+. Select *Actions* > *Deactivate*.
+. Confirm the action.
+
+=== Review Gateway Connectivity
+
+. Navigate to *Portfolio* > *Gateways*.
+. Review gateway status and health indicators.
+. Investigate any connectivity issues or alerts.
+
+== Troubleshooting
+
+*I can't see the APIs catalog*::
+Verify that you have the required subscription tier and Access Management permissions. Contact your administrator if the catalog is not visible.
+
+*My API registration fails*::
+Check that your specification file is valid and in a supported format (OAS 2.0/3.0/3.1, RAML 0.8/1.0, Proto3, AsyncAPI 2.x/3.x). Review error messages for specific validation issues.
+
+*Monitoring data is not appearing*::
+Confirm that your API instance is deployed to a managed gateway and is receiving traffic. Monitoring data may take a few minutes to appear after instance creation.
+
+*Policies are not being enforced*::
+Verify that the instance is a managed instance on Anypoint Omni Gateway. Unmanaged instances do not support policy enforcement through the enhanced experience.
+
+== See Also
+
+* xref:exp-overview.adoc[]
+* xref:exp-understand-access-tiers.adoc[]
+* xref:exp-register-services-manually.adoc[]
+* xref:exp-add-instances.adoc[]
+* xref:exp-work-with-governance-strategies.adoc[]
