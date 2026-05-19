@@ -52,7 +52,7 @@ To calculate usage, MuleSoft tracks the number of flows across all business grou
 | The total volume of data containers processed by the runtime. To track message usage, the runtime report counts the number of times a Mule event source triggers a message. To calculate usage, MuleSoft aggregates the number of messages daily (UTC time) and monthly. After a Mule event source triggers a message, the report doesn't track changes to the message because the application's flows process it internally.
 
 | *Managed Assets*
-| An asset (API, Agent, MCP Server, or LLM) counts as managed if it has at least one active instance in https://docs.mulesoft.com/api-manager/latest/latest-overview-concept[API Manager^] deployed to a https://docs.mulesoft.com/mule-gateway/mule-gateway-capabilities-mule4[Mule Gateway^] or https://docs.mulesoft.com/gateway/latest/[Omni Gateway^]. Anypoint Platform counts usage per business group per day; if an asset has active instances across multiple business groups, it counts as one asset per group. 
+| An asset (API, Agent, MCP Server, or LLM) counts as managed if it has at least one active instance in https://docs.mulesoft.com/api-manager/latest/latest-overview-concept[API Manager] deployed to a https://docs.mulesoft.com/mule-gateway/mule-gateway-capabilities-mule4[Mule Gateway^] or https://docs.mulesoft.com/gateway/latest/[Omni Gateway^]. Anypoint Platform counts usage per business group per day; if an asset has active instances across multiple business groups, it counts as one asset per group. 
 
 Multiple instances within the same business group don't incur extra charges. Anypoint Platform deducts credits as long as the asset status is Active in API Manager, even if there are no calls to the asset.
 
