@@ -2,7 +2,7 @@
 
 A Mule Credit is a fungible currency that allows you to draw down from a single capacity pool as you consume services across MuleSoft. Instead of managing different usage types for all products, you purchase a package of credits to use flexibly across the entire MuleSoft platform. As you use these capabilities, Anypoint Platform deducts the corresponding credit amounts from your available balance.
 
-Mule Credits apply to your entire Anypoint Platform organization and you can't manage them per business group. Use Mule Credits before the Order End Date set in the Usage Details table on your Order Form — rollovers aren't permitted. To see which usage types your subscription includes, refer to your Order Form, Subscription Plan, or Features and Entitlement Document.
+Mule Credits apply to your entire Anypoint Platform organization and you can't manage them per business group. Use Mule Credits before the `Order End Date` set in the *Usage Details* table on your *Order Form* because rollovers are not permitted. To see which usage types your subscription includes, refer to your *Order Form*, *Subscription Plan*, or *Features and Entitlement Document*.
 
 == Mule Credits by Subscription Plan
 
