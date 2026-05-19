@@ -69,9 +69,7 @@ The AI assistant is available from every page in the enhanced experience.
 The assistant responds with relevant information, suggestions, or actions you can take.
 
 [TIP]
-====
-You can also access the AI assistant from a dedicated full-screen page by navigating to the AI assistant option in the main menu.
-====
+You can also use the AI assistant as a dedicated full-screen page by clicking  *Open full view* in the Ask MuleSoft menu.
 
 == Ask Questions
 
@@ -126,7 +124,7 @@ Where do I configure scanners?
 
 == Use Suggestions
 
-After the AI assistant responds, it may show suggestion chips with related follow-up actions you can take.
+After the AI assistant responds, it might show suggestion chips with related follow-up actions you can take. If you don't see any suggestions, ask the assistant to suggest actions.
 
 . Review the suggestion chips below the assistant's response.
 . Select a chip to ask that follow-up question or perform that action.
@@ -140,9 +138,7 @@ Suggestions are context-aware and change based on:
 * Common next steps for your current task
 
 [TIP]
-====
-Suggestions help you discover related capabilities and complete multi-step workflows more efficiently.
-====
+Suggestions help you discover related capabilities and complete multistep workflows more efficiently.
 
 == Perform Actions with Confirmation
 
@@ -176,9 +172,7 @@ Examples of actions that require confirmation:
 * Updating service configurations
 
 [IMPORTANT]
-====
 Always review confirmation prompts carefully before approving actions. The AI assistant performs the exact action you confirm.
-====
 
 === Form Assistance
 
@@ -313,9 +307,9 @@ If the assistant misunderstands, clarify: "No, I meant the staging environment, 
 Be aware of these limitations when using the AI assistant:
 
 * The assistant can't perform actions outside the enhanced experience or access external systems directly.
-* Some actions require specific permissions—if you don't have permission, the assistant informs you but can't grant permissions.
+* Some actions require specific permissions. If you don't have permission, the assistant informs you but can't grant permissions.
 * The assistant works with data available in the enhanced experience. For services not yet registered in your portfolio, the assistant has limited information.
-* Complex multi-step workflows may require you to confirm each step individually.
+* Complex multistep workflows may require you to confirm each step individually.
 * The assistant can't modify Access Management permissions or subscription tiers.
 
 == Privacy and Security
