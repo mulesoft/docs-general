@@ -79,7 +79,7 @@ Ask the AI assistant questions in natural language. The assistant understands co
 
 === Example Questions
 
-*Portfolio Questions:*
+Portfolio Questions:
 [source,text]
 ----
 Show me all agents in production
@@ -88,7 +88,7 @@ Find MCP servers that expose payment tools
 What instances are deployed to the staging gateway?
 ----
 
-*Governance Questions:*
+Governance Questions:
 [source,text]
 ----
 What governance strategies are active?
@@ -97,7 +97,7 @@ Show me all services with security violations
 Which policies are applied to my API instance?
 ----
 
-*Monitoring Questions:*
+Monitoring Questions:
 [source,text]
 ----
 What's the error rate for my agent today?
@@ -106,7 +106,7 @@ Which services have the highest token usage?
 Are there any service health alerts?
 ----
 
-*Cost Questions:*
+Cost Questions:
 [source,text]
 ----
 What's my total token spend this month?
@@ -115,7 +115,7 @@ How can I reduce costs for my LLM proxies?
 Show me cost trends over time
 ----
 
-*Navigation Questions:*
+Navigation Questions:
 [source,text]
 ----
 How do I register a new API?
@@ -212,7 +212,7 @@ When you have a form open, the assistant can help fill in form fields based on y
 
 === Example: Context-Aware Help
 
-*On the APIs catalog page:*
+On the APIs catalog page:
 [source,text]
 ----
 You: Show me APIs with errors
@@ -220,7 +220,7 @@ Assistant: Here are the APIs with recent errors...
 [Shows list of APIs filtered by error status]
 ----
 
-*On a specific API detail page:*
+On a specific API detail page:
 [source,text]
 ----
 You: Show me errors
