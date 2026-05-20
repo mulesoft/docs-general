@@ -3,3 +3,6 @@ title: Home
 version: ~
 nav:
 - modules/ROOT/nav.adoc
+asciidoc:
+  attributes:
+    page-component-desc: Get started with a tutorial for building your first API, resource pages with links to other guides and websites, and a glossary.
