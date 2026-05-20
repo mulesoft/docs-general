@@ -226,7 +226,6 @@
     "selectEnvironmentFirst": "Select an environment first",
     "loadingGateways": "Loading gateways…",
     "selectGateway": "Select gateway…",
-    "noGatewaysAvailable": "No Flex Gateways registered in this environment. Register one in Anypoint Flex Gateway, then return here.",
     "consumerEndpointLabel": "Consumer Endpoint",
     "consumerEndpointPlaceholder": "https://api.example.com",
     "portLabel": "Port",
@@ -293,16 +292,6 @@
       "tryAgain": "Try again"
     }
   },
-  "entityDetailLoadFailure": {
-    "gatewayTimeout": "We couldn't load the {entity} because the request timed out. Try again.",
-    "serviceUnavailable": "We couldn't load the {entity} because the service is temporarily unavailable. Try again.",
-    "serverError": "We couldn't load the {entity} because the service is temporarily unavailable. Try again.",
-    "unauthorized": "Sign in again to view this {entity}. Try again.",
-    "forbidden": "You don't have access to this {entity}. Check your permissions and try again.",
-    "notFound": "This {entity} no longer exists. Try again.",
-    "network": "We couldn't load the {entity} because of a network error. Check your connection and try again.",
-    "unknown": "We couldn't load the {entity}. Try again."
-  }, 
   "entityDetail": {
     "loadingFallback": "Loading…",
     "loadingDescription": "Loading entity details, versions, and related metadata…"
@@ -311,14 +300,13 @@
     "tab": {
       "policies": "Policies",
       "monitoring": "Monitoring",
-      "governanceChecks": "Conformance"
+      "governanceChecks": "Governance Checks"
     },
     "env": {
       "production": "Production",
       "sandbox": "Sandbox",
       "development": "Development"
     },
-    "envBadge": "{name} ({type})",
     "breadcrumbInstances": "Instances",
     "exposeAsMcp": "Expose as MCP Server",
     "instanceLabel": "{entity} Instance",
@@ -595,7 +583,6 @@
     "policyViolation": "Policy Violation",
     "logicPolicy": "Logic / Policy",
     "allPolicies": "All Policies",
-    "noPoliciesAvailable": "No policies available for this API instance.",
     "rateLimiting": "Rate Limiting",
     "spikeControl": "Spike Control",
     "clientIdEnforcement": "Client ID Enforcement",
@@ -640,14 +627,6 @@
     "successMessage": "Notification was created.",
     "creating": "Creating…",
     "createButton": "Create Notification",
-    "requiredHint": "Fields marked with * are required.",
-    "requiredAriaSuffix": "required",
-    "help": {
-      "targetService": "Start typing to filter, then use the arrow keys to highlight a result and Enter to select.",
-      "threshold": "The alert fires when the metric satisfies this comparison continuously for the selected duration.",
-      "alertName": "Use a short, descriptive name (4 or more characters). Shown in the notification list and email subjects."
-    },
-    "targetServiceListboxLabel": "Available targets",
     "serviceTypeLabel": {
       "api": "API",
       "llm": "LLM",
@@ -688,17 +667,14 @@
       "addRecipient": "Add at least one email recipient, or turn off email and use Slack.",
       "selectSlackChannel": "Select a Slack channel, or turn off Slack.",
       "noSlackChannels": "No Slack channels available. Connect Slack in Settings, then try again.",
-      "selectResponseCode": "Select a response code (or enter one) before creating this alert.",
-      "selectTarget": "Please select a target service before creating this alert."
+      "selectResponseCode": "Select a response code (or enter one) before creating this alert."
     },
     "slackChannel": "Slack channel",
     "defaultEmailSubject": "$'{'severity'}': $'{'api'}' $'{'condition'}'",
     "defaultEmailMessage": "Hello,\nYou are receiving this alert because:\n The API policy $'{'policy'}' has $'{'condition'}' of $'{'value'}' at $'{'timestamp'}'.\nThe API policy has reached the threshold based on $'{'condition'}' is $'{'operator'}' $'{'threshold'}' for $'{'period'}'.\n\nEnvironment: $'{'environment'}'\n$'{'dashboardLink'}'\n$'{'apiLink'}'",
     "errorMissingOrgOrUser": "Enter your organization and user information.",
     "errorSelectEnvironment": "Select an environment.",
-    "errorEnableChannel": "Enable at least one delivery channel (email or Slack).",
-    "noInstancesInEnvironment": "there are no instances in this environment.",
-    "noMatches": "No matches found"
+    "errorEnableChannel": "Enable at least one delivery channel (email or Slack)."
   },
   "notifications": {
     "heading": "Notifications",
@@ -718,7 +694,6 @@
       "responseTime": "Response Time",
       "responseCodes": "Response Codes",
       "policyViolation": "Policy Violation",
-      "cpuUsage": "CPU Usage",
       "allSeverities": "All Severities",
       "allDelivery": "All Delivery",
       "emailOnly": "Email Only",
@@ -849,9 +824,7 @@
     "mcpServers": "MCP Servers",
     "apis": "APIs",
     "noScanners": "No scanners for this provider yet.",
-    "noScannersAll": "No scanners configured yet.",
     "addScannerPrompt": "Click {label} to get started.",
-    "addScannerPromptAll": "Select a provider from the sidebar, then click Add Scanner to get started.",
     "scannerCount": "{count} {count, plural, one {Scanner} other {Scanners}}",
     "servicesDiscovered": "{count} Services Discovered",
     "searchPlaceholder": "Search by scanner or provider…",
@@ -1355,7 +1328,7 @@
   },
   "costManagement": {
     "heading": "Cost Management",
-    "subtitle": "Monitor usage and review optimization recommendations for your MCP servers"
+    "subtitle": "Monitor usage and review optimization recommendations across your portfolio"
   },
   "instanceDetailModal": {
     "closeDialog": "Close dialog",
@@ -1502,26 +1475,6 @@
     "defaultSelectSummary": "Selected policy {name}.",
     "back": "Back"
   },
-  "policyMetadataFields": {
-    "heading": "Policy Details",
-    "description": "Optional name + version + application conditions, matching Anypoint API Manager.",
-    "label": "Policy label",
-    "labelPlaceholder": "e.g. SLA Tier 1",
-    "labelHint": "Helps tell duplicate-applied policies apart in the policies list.",
-    "version": "Policy version",
-    "versionEmpty": "(No versions available)",
-    "versionHint": "Pick the policy-template version to apply.",
-    "applicationConditions": "Application conditions",
-    "applyAllRequests": "Apply to all requests",
-    "applySpecific": "Apply only to specific resources",
-    "method": "Method",
-    "uriTemplateRegex": "URI template regex",
-    "addRowHint": "Add a row to limit this policy to specific HTTP requests.",
-    "methodPlaceholder": "GET|POST",
-    "uriPlaceholder": "/api/orders/.*",
-    "removeCondition": "Remove condition",
-    "addCondition": "+ Add condition"
-  },
   "policyConfigForm": {
     "heading": "Configure Policy",
     "description": "Set configuration values for {name}.",
@@ -1536,38 +1489,8 @@
     "saveChanges": "Save Changes",
     "applyPolicy": "Apply Policy",
     "wizardTitle": "Apply Policy",
-    "viewTitle": "Policy Configuration",
-    "viewDescription": "Configuration values for {name}.",
-    "discardModalTitle": "Discard changes and leave?",
-    "discardModalMessage": "You have unsaved changes. Are you sure you want to leave this page?",
-    "discardModalConfirm": "Discard and Leave",
-    "discardModalCancel": "Cancel",
-    "actionsMenu": "Actions",
-    "editConfiguration": "Edit Configuration",
-    "enablePolicy": "Enable Policy",
-    "disablePolicy": "Disable Policy",
-    "removePolicy": "Remove Policy",
-    "disabledBadge": "Disabled",
-    "removeModalTitle": "Remove {name}?",
-    "removeModalMessage": "Are you sure you want to remove this policy? This action cannot be undone and the change will take effect immediately.",
-    "removeModalConfirm": "Remove Policy",
-    "removeModalCancel": "Cancel"
-  },
-  "policyDetailPage": {
-    "subtitle": "Policy Configuration",
-    "backToInstance": "Back to Instance",
-    "actionsAriaLabel": "Policy actions",
-    "edit": "Edit",
-    "disable": "Disable",
-    "enable": "Enable",
-    "delete": "Delete",
-    "noFields": "No configuration values to display.",
-    "checkboxEnabled": "Enabled",
-    "checkboxDisabled": "Disabled",
-    "valueEmpty": "—",
-    "saveChanges": "Save changes",
-    "cancel": "Cancel",
-    "configurationJson": "Configuration JSON"
+    "viewTitle": "Policy configuration",
+    "viewDescription": "Configuration values for {name}."
   },
   "policyConfigFieldEditor": {
     "configurationJson": "Configuration JSON",
@@ -1664,7 +1587,7 @@
     "title": "Import Tools from MCP Server",
     "closeModal": "Close notification window",
     "connecting": "Connecting to MCP server…",
-    "noInstance": "No upstream URL found for this MCP server instance. Confirm the instance has a configured upstream before importing tools.",
+    "noInstance": "No reachable MCP server instance found. Confirm this server has a deployed instance with a public URL before importing tools.",
     "authHint": "Check the authentication policies configured for this MCP server instance.",
     "noTools": "This MCP server has no tools available.",
     "selectAll": "Select All",
@@ -1814,7 +1737,6 @@
     "headerOrder": "Order",
     "headerStrategyName": "Strategy Name",
     "headerType": "Type",
-    "headerTarget": "Target",
     "headerStatus": "Status",
     "headerGovernedServices": "Governed Services",
     "headerModified": "Modified",
@@ -1825,8 +1747,6 @@
     "actionDuplicate": "Duplicate",
     "actionDelete": "Delete",
     "actionDeleting": "Deleting…",
-    "actionDisable": "Disable",
-    "actionEnable": "Enable",
     "emptyDefault": "No custom governance strategies created yet. Create your first to extend governance beyond the default profile.",
     "emptyFiltered": "No governance strategies match your filters.",
     "rowsPerPage": "Rows per page",
@@ -1834,8 +1754,7 @@
     "previous": "Previous",
     "next": "Next",
     "previousPageAriaLabel": "Previous page of strategies",
-    "nextPageAriaLabel": "Next page of strategies",
-    "sortByAriaLabel": "Sort by {column}"
+    "nextPageAriaLabel": "Next page of strategies"
   },
   "complianceTable": {
     "headerServiceType": "Service Type",
@@ -1877,17 +1796,6 @@
     "deleteButton": "Delete {typeLabel}",
     "typeAutomatedPolicy": "Automated Policy",
     "typeGuardrail": "Control"
-  },
-  "disableAutomatedPolicyModal": {
-    "closeAriaLabel": "Close disable dialog",
-    "heading": "Disable Automated Policy",
-    "confirmMessage": "Are you sure you want to disable {name}?",
-    "bodyMessage": "Policies currently applied through this strategy will be removed from all services. You can re-enable this strategy later to reapply the policy.",
-    "disableButton": "Disable Automated Policy"
-  },
-  "disabledAutomatedPolicyBanner": {
-    "automatedPolicy": "This automated policy is disabled. These services are not currently governed but will be once the policy is activated.",
-    "controls": "This control is disabled. These services are not currently governed but will be once the strategy is activated."
   },
   "guardrailEvaluationPanel": {
     "runEvaluation": "Run profile evaluation",
@@ -1989,34 +1897,20 @@
     "searchPlaceholder": "Search {entity}…",
     "searchAriaLabel": "Search {entity}",
     "resultCount": "{filtered} of {total}",
+    "performanceGood": "Good",
+    "performanceFair": "Fair",
+    "performancePoor": "Poor",
+    "minPlaceholder": "Min",
+    "maxPlaceholder": "Max",
+    "minScoreAriaLabel": "Minimum {label} score",
+    "maxScoreAriaLabel": "Maximum {label} score",
+    "rangeSeparator": "to",
     "cardViewLabel": "Card view",
-    "tableViewLabel": "Table view",
-    "sortLabels": {
-      "nameAsc": "Name A–Z",
-      "nameDesc": "Name Z–A",
-      "updatedAtDesc": "Most recent",
-      "updatedAtAsc": "Least recent",
-      "complianceStatusDesc": "Conformance: high to low",
-      "complianceStatusAsc": "Conformance: low to high",
-      "apiCategoryAsc": "Type A–Z",
-      "apiCategoryDesc": "Type Z–A",
-      "gatewayModeAsc": "Type A–Z",
-      "gatewayModeDesc": "Type Z–A",
-      "statusAsc": "Status A–Z",
-      "statusDesc": "Status Z–A",
-      "environmentAsc": "Environment A–Z",
-      "environmentDesc": "Environment Z–A",
-      "routingStrategyAsc": "Routing strategy A–Z",
-      "routingStrategyDesc": "Routing strategy Z–A"
-    }
+    "tableViewLabel": "Table view"
   },
   "entityCard": {
     "lastSynced": "Last synced {time}",
-    "provisioningFailed": "Provisioning failed",
-    "complianceStatusLabel": "Compliance status: {status}",
-    "complianceStatusCompliant": "Conformant",
-    "complianceStatusNonCompliant": "Non-Conformant",
-    "complianceStatusPending": "Not Validated"
+    "provisioningFailed": "Provisioning failed"
   },
   "filterDropdown": {
     "clearAll": "Clear all"
@@ -2498,7 +2392,7 @@
       "label": "Label",
       "gateway": "Gateway",
       "status": "Status",
-      "environment": "Env Type",
+      "environment": "Environment",
       "version": "Version",
       "policies": "Policies",
       "clients": "Clients",
@@ -2662,7 +2556,6 @@
     "viewFullGatewayDetails": "View Full Gateway Details",
     "gatewaySubtitle": "Gateway",
     "edit": "Edit",
-    "delete": "Delete",
     "viewFullDetails": "View Full Gateway Details"
   },
   "detailHero": {
@@ -2704,15 +2597,13 @@
     "retryTimedOut": "Retry timed out — the pipeline may still be running in the background."
   },
   "entityDetailPage": {
-    "tabConformanceReport": "Conformance",
+    "tabConformanceReport": "Conformance Report",
     "tabApis": "APIs",
     "tabReplicas": "Replicas",
     "tabLogs": "Logs",
     "tabConfiguration": "Configuration",
     "loadingTabContent": "Loading tab content…",
     "failedToDeleteAsset": "We couldn't delete the asset. Try again.",
-    "deleteMcpSuccess": "MCP server deleted",
-    "deleteMcpFailure": "Failed to delete MCP server: {message}",
     "entityLabel": {
       "agent": "Agent",
       "mcpServer": "MCP Server",
@@ -2804,15 +2695,14 @@
     "closeAriaLabel": "Close delete asset dialog",
     "titleWithEntity": "Delete {entityLabel}",
     "titleDefault": "Delete asset version",
-    "confirmMessage": "Are you sure you want to delete <b>{assetName} {version}</b>?",
-    "warningRemoveAsset": "Deleting this will remove the asset, its details page, and metadata from the catalog. This action cannot be undone.",
+    "confirmMessage": "Deleting \"{assetName} {version}\" is permanent and cannot be undone.",
+    "warningRemoveAsset": "Deleting this will remove the asset, its details page, and metadata from the catalog.",
     "warningGavReusable": "The asset in development will be deleted. Its GAV (group ID, asset ID, and version) will be reusable.",
     "warningLabel": "Warning:",
     "gavReusableCheckbox": "Allow the GAV (group ID, asset ID, and version) to be reusable.",
     "cancelButton": "Cancel",
     "deletingButton": "Deleting…",
-    "deleteButton": "Delete",
-    "deleteButtonWithEntity": "Delete {entityLabel}"
+    "deleteButton": "Delete"
   },
   "deleteScannerModal": {
     "closeAriaLabel": "Close dialog",
@@ -2832,9 +2722,7 @@
   },
   "dynamicCredentialsForm": {
     "selectPlaceholder": "Select {field}",
-    "noAuthConfig": "No authentication configuration available for this provider.",
-    "showPassword": "Show password",
-    "hidePassword": "Hide password"
+    "noAuthConfig": "No authentication configuration available for this provider."
   },
   "importRulesBuilder": {
     "valuePlaceholder": "Value",
@@ -2923,16 +2811,7 @@
     "confirmPolicyPatch": "Try the proposed policy fix in the form?",
     "confirmGatewayPatch": "Try the proposed gateway fix in the form?",
     "btnApplyProposedChanges": "Apply proposed changes",
-    "approvalGate": {
-      "heading": "Confirmation required",
-      "redactionHint": "Credentials are not shown — they were redacted before this card was rendered.",
-      "btnApprove": "Approve",
-      "btnReject": "Reject",
-      "decisionApproved": "Approved",
-      "decisionRejected": "Rejected"
-    },
     "aiFeaturesNotEnabled": "Looks like AI features aren't turned on for your organization. Ask your administrator to turn on AI features in the connected Anypoint Platform and Salesforce orgs. After AI features are turned on, try again.",
-    "aiFeaturesNoPermission": "Looks like you don't have permission to use Ask MuleSoft in this business group. Ask your organization admin to assign you the Mule Developer Generative AI User permission, then try again.",
     "aiFeaturesLearnMore": "Learn more",
     "working": "Working…"
   },
@@ -3002,9 +2881,11 @@
     "headerOptimized": "Optimized",
     "headerActions": "Actions",
     "emptyState": "No instances match your search or filters.",
-    "paginationShowing": "{start}–{end} of {total}",
+    "paginationShowing": "Showing {start}–{end} of {total} instances",
+    "firstPage": "First page",
     "previousPage": "Previous page",
     "nextPage": "Next page",
+    "lastPage": "Last page",
     "sectionHeading": "MCP Server Instances",
     "policiesCount": "{applied}/{total} Policies",
     "optimize": "Optimize…",
@@ -3059,7 +2940,6 @@
     "policyViolation": "Policy Violation",
     "logicPolicy": "Logic / Policy",
     "allPolicies": "All Policies",
-    "noPoliciesAvailable": "No policies available for this API instance.",
     "rateLimiting": "Rate Limiting",
     "spikeControl": "Spike Control",
     "clientIdEnforcement": "Client ID Enforcement",
@@ -3263,15 +3143,7 @@
     "failedToStartInstall": "We couldn't start the Slack installation. Try again.",
     "uninstallSuccess": "Slack integration was uninstalled.",
     "failedToUninstall": "We couldn't uninstall the Slack integration. Try again.",
-    "appUninstalledExternally": "Slack app is no longer installed in your workspace. Install it again to enable Slack notifications.",
-    "disconnectAdminNote": "The MuleSoft app will remain installed in your Slack workspace. To fully remove it, a Slack workspace admin needs to uninstall it from Slack.",
-    "disconnectButton": "Disconnect",
-    "disconnectDialogTitle": "Are you sure you want to disconnect Slack?",
-    "disconnectSuccess": "Slack integration disconnected successfully",
-    "disconnectWarningBody": "This will revoke MuleSoft's access to your Slack workspace. You'll stop receiving notifications immediately and won't be able to message the MuleSoft Agent.",
-    "disconnecting": "Disconnecting...",
-    "failedToDisconnect": "Failed to disconnect Slack integration",
-    "notInstalledPermissionHint": "You may need Slack admin permissions to install this app into your organization's Slack workspace, otherwise you can send a request."
+    "appUninstalledExternally": "Slack app is no longer installed in your workspace. Install it again to enable Slack notifications."
   },
   "auth": {
     "loginFailed": "We couldn't sign you in. Try again.",
@@ -3317,23 +3189,6 @@
       "flexGatewaysDescription": "Enforce governance standards across Omni Gateway configurations.",
       "selectFilterCriteria": "Select Filter Criteria",
       "filterCriteriaDescription": "Specify conditions to target the APIs, Agents, and MCP Servers you want to govern.",
-      "structuredFormSubtitle": "Configure scope criteria to identify services governed by this strategy. All criteria are combined to narrow the scope.",
-      "serviceTypeSelectAll": "Select the service types to govern",
-      "tagsLabel": "Tags",
-      "tagsHint": "Filter by tags to narrow scope",
-      "tagsPlaceholder": "Select tags...",
-      "categoriesLabel": "Categories",
-      "categoriesHint": "Filter by categories to narrow scope",
-      "categoriesPlaceholder": "Select categories...",
-      "instancesLabel": "Instances",
-      "instancesHint": "Filter by instance environment to narrow scope",
-      "deploymentAnyEnvironment": "Any environment",
-      "deploymentSpecificEnvironments": "Specific environments",
-      "deploymentNoInstances": "No instances",
-      "comingSoon": "Coming soon",
-      "noTagsAvailable": "No tags available",
-      "noCategoriesAvailable": "No categories available",
-      "noEnvNamesAvailable": "No environments available",
       "loadingScopePreview": "Loading Scope Preview…",
       "previewGovernedScope": "Preview Governed Scope",
       "conditionModeAll": "All APIs, Agents, MCP Servers",
@@ -3352,8 +3207,6 @@
       "runtimeRangeFromPlaceholder": "e.g. 4.1.1",
       "runtimeRangeTo": "Runtime range to",
       "runtimeRangeToPlaceholder": "e.g. 4.3.x",
-      "runtimeRangeInvalidVersion": "Use digits and dots, e.g. 4.4.0",
-      "runtimeRangeFromGreaterThanTo": "Range \"from\" must be less than or equal to \"to\"",
       "endpointTypes": "Endpoint Types",
       "allEndpointTypes": "All endpoint types",
       "chooseSpecificGroups": "Choose specific endpoint groups",
@@ -3407,18 +3260,11 @@
       "unableToLoadPolicies": "We couldn't load policies. Try again.",
       "noPoliciesMatch": "No policies match your search.",
       "profileSummaryFallback": "Includes the selected ruleset checks for this profile.",
-      "policyVersionPrefix": "Policy: ",
-      "allPolicyVersions": "All policy versions",
-      "policyVersionPrefix": "Policy: ",
-      "allPolicyVersions": "All policy versions",
-      "loadingPolicyConfig": "Loading policy configuration...",
+      "loadingPolicyConfig": "Loading policy configuration…",
       "selectedPolicy": "Selected Policy",
       "noPolicySelected": "No policy selected",
       "configurePolicy": "Configure Policy",
       "noPolicyInputsRequired": "This policy doesn't require configuration inputs.",
-      "allRuntimesMissingMule": "Currently this policy version doesn't support Mule runtime. In case an implementation is added to the policy, you'll be able to check for updates, and cover Mule gateways APIs.",
-      "allRuntimesMissingFlex": "Currently this policy version doesn't support Flex runtime. In case an implementation is added to the policy, you'll be able to check for updates, and cover Flex gateways APIs.",
-      "allRuntimesMissingBoth": "Currently this policy version doesn't support Flex or Mule runtime. In case an implementation is added to the policy, you'll be able to check for updates, and cover Flex or Mule gateways APIs.",
       "severity": "Severity"
     },
     "review": {
@@ -3438,7 +3284,6 @@
       "noAdditionalConditions": "No additional conditions selected",
       "noValues": "No values selected",
       "rulesToApply": "Rules to Apply",
-      "policyToApply": "Policy to Apply",
       "policySelectedCount": "{count} policy selected",
       "rulesAcrossRulesets": "{rules} rules across {rulesets} rulesets",
       "collapseAll": "Collapse All",
@@ -3504,8 +3349,7 @@
       "configDoesNotMatchSchema": "The configuration doesn't match the selected policy schema.",
       "configDoesNotSatisfySchema": "The configuration doesn't satisfy the selected policy schema.",
       "unnamedPolicyTemplate": "Unnamed policy template",
-      "noDescriptionProvided": "No description provided.",
-      "strategyNameAlreadyExists": "A strategy with this name already exists. Choose a different name."
+      "noDescriptionProvided": "No description provided."
     }
   },
   "policiesTabSingle": {
@@ -3535,16 +3379,7 @@
     "moreActionsAriaLabel": "More actions for {name}",
     "emptyStateTitle": "No policies applied",
     "emptyStateDescription": "This instance has no policies applied. Add a policy to start protecting it.",
-    "enablePolicy": "Enable Policy",
-    "removePolicyDialogBodyMessage": "This will detach the policy from this instance. Traffic that was being filtered by this policy will no longer be enforced.",
-    "removePolicyDialogCancelButton": "Cancel",
-    "removePolicyDialogCloseAriaLabel": "Close remove policy dialog",
-    "removePolicyDialogConfirmButton": "Remove Policy",
-    "removePolicyDialogConfirmMessage": "Are you sure you want to remove {name}?",
-    "removePolicyDialogHeading": "Remove policy",
-    "removePolicyToastSuccess": "Removed {name}.",
-    "enablePolicyToastSuccess": "Enabled {name}.",
-    "disablePolicyToastSuccess": "Disabled {name}."
+    "enablePolicy": "Enable Policy"
   },
   "policiesTab": {
     "policyFallback": "Policy",
@@ -3559,9 +3394,7 @@
     "viewDetailsAriaLabel": "View details: {label}",
     "coverageDetailsAriaLabel": "Coverage details: {category} - {environment}",
     "emptyStateTitle": "No instances yet",
-    "emptyStateDescription": "Policy coverage appears once this service has at least one active instance. Create an instance to start applying policies.",
-    "deletePolicy": "Delete Policy",
-    "areYouSureToDelete": "Are you sure you want to delete {policy} from this instance?"
+    "emptyStateDescription": "Policy coverage appears once this service has at least one active instance. Create an instance to start applying policies."
   },
   "versionsTab": {
     "latest": "Latest",
@@ -4110,9 +3943,7 @@
     "creatingEntity": "Creating {entity}…",
     "cancel": "Cancel",
     "nameFromZipPrefix": "Name comes from the ZIP’s ",
-    "nameFromZipSuffix": ".",
-    "typeFromZipHint": "Type comes from the ZIP’s exchange.json.",
-    "typeFromZipPlaceholder": "Auto-detected from ZIP"
+    "nameFromZipSuffix": "."
   },
   "specFileDropZone": {
     "optional": "(optional)",
@@ -4541,8 +4372,7 @@
     "advancedOptions": "Advanced Options",
     "advancedOptionsDesc": "Filter prompts before they reach a route.",
     "selectPromptGuardTopicPlaceholder": "Select topics…",
-    "noSelectablePromptGuardTopics": "No topics available — all are assigned to a route or guard.",
-    "loadingSemanticServices": "Loading semantic services…"
+    "noSelectablePromptGuardTopics": "No topics available — all are assigned to a route or guard."
   },
   "routeCardContent": {
     "topicsLabel": "Topics",
@@ -4700,28 +4530,11 @@
     "matchingServicesIncluded": "Any services that match the filter criteria will automatically be included.",
     "targetMeetsConditions": "{targetLabel} that meet all conditions ({modeLabel})"
   },
-  "structuredScopeSummary": {
-    "labelServiceType": "Service Type",
-    "labelTags": "Tags",
-    "labelCategories": "Categories",
-    "labelInstances": "Instances",
-    "allServiceTypes": "All",
-    "anyTag": "Any tag",
-    "anyCategory": "Any category",
-    "anyEnvironment": "Any environment",
-    "noInstances": "No instances",
-    "anyEnvironmentsOfType": "Any {type} environments",
-    "envTypeWithNames": "{type}: {names}"
-  },
   "governanceSettings": {
     "actionsButton": "Actions",
     "editFromAnypoint": "Edit (From Anypoint Platform)",
     "editStrategy": "Edit Strategy",
     "deleteStrategy": "Delete Strategy",
-    "automatedPolicyEdit": "Edit",
-    "automatedPolicyDelete": "Delete",
-    "automatedPolicyDisable": "Disable",
-    "automatedPolicyEnable": "Enable",
     "optional": "(Optional)",
     "removeAriaLabel": "Remove {value}",
     "addMorePlaceholder": "Add more…",
@@ -4734,11 +4547,6 @@
     "heading": "Governance Strategies",
     "pageDescription": "Configure and manage strategies to monitor, report, enforce, and block noncompliant activity across your services.",
     "createButton": "Create governance strategy",
-    "refreshReportButton": "Refresh report",
-    "refreshing": "Refreshing…",
-    "refreshQueued": "Report refresh queued. Conformance status will update shortly.",
-    "refreshBusy": "Another refresh is already running. Try again once it completes.",
-    "refreshFailed": "Unable to trigger report refresh right now.",
     "scopeType": {
       "restApi": "REST API",
       "httpApi": "HTTP API",
@@ -4783,13 +4591,7 @@
       "guardrailCreated": "Control was created.",
       "fromAnypointCreated": "Strategy was created from Anypoint Platform.",
       "strategyUpdated": "Strategy was updated.",
-      "fromAnypointUpdated": "Strategy was updated from Anypoint Platform.",
-      "guardrailDeleted": "Control deleted.",
-      "automatedPolicyDeleted": "Automated policy deleted."
-    },
-    "pending": {
-      "guardrailCreating": "Creating your control — this may take a moment.",
-      "automatedPolicyCreating": "Creating your automated policy — this may take a moment."
+      "fromAnypointUpdated": "Strategy was updated from Anypoint Platform."
     },
     "dashboard": {
       "activeStrategies": "Active Strategies",
@@ -4824,14 +4626,12 @@
       "httpApi": "HTTP API",
       "agent": "Agent",
       "mcp": "MCP",
-      "grpc": "gRPC",
       "tagsLabel": "Tags",
       "tagsPlaceholder": "Select tags…",
       "categoriesLabel": "Categories",
       "categoriesPlaceholder": "Select categories…",
       "apiInstanceHeading": "API Instance",
       "allApis": "All APIs",
-      "onlyWithInstances": "Include only APIs with instances",
       "onlyWithoutInstances": "Only APIs without instances",
       "loadingPreview": "Loading Scope Preview…",
       "previewButton": "Preview Governed Scope"
@@ -4931,7 +4731,6 @@
       "appliedPolicy": "Applied Policy",
       "policyDescription": "Policy configured through API Manager automated policy strategy.",
       "scopeHeading": "Scope",
-      "environmentLabel": "Environment",
       "runtimeLabel": "Runtime",
       "endpointTypesLabel": "Endpoint Types",
       "rulesHeading": "Rules",
@@ -4947,8 +4746,8 @@
     },
     "actions": "Actions",
     "pending": {
-      "guardrailCreating": "Creating your control — this may take a moment.",
-      "automatedPolicyCreating": "Creating your automated policy — this may take a moment."
+      "guardrailCreating": "Don't leave this page — your control is still being created. We're confirming with the upstream service.",
+      "automatedPolicyCreating": "Don't leave this page — your automated policy is still being created. We're confirming with the upstream service."
     }
   },
   "mcpWizard": {
@@ -4958,9 +4757,6 @@
       "breadcrumbEdit": "Edit MCP Server",
       "noGatewaysHeading": "No Omni Gateways Available",
       "noGatewaysDescription": "MCP servers require an Omni Gateway (v1.2.0+) to deploy. Provision an Omni Gateway in your environment first, then return here to create your MCP server.",
-      "gatewayLoadErrorHeading": "Unable to Load Gateways",
-      "gatewayLoadErrorDescription": "We couldn't reach the gateway service after multiple attempts. This is usually a temporary issue — please try again.",
-      "retryButton": "Retry",
       "backToMcpServers": "Back to MCP Servers",
       "cancelButton": "Cancel",
       "previousButton": "Previous",
@@ -5039,13 +4835,12 @@
       "envDevelopment": "QA",
       "routeLabel": "Route label",
       "routeTooltip": "Specifies the upstream service to be called when this tool is invoked.",
-      "secretGroupLabel": "Secret Group",
-      "secretGroupPlaceholder": "Select a Secret Group",
-      "tlsLabel": "TLS Context",
+      "tlsLabel": "TLS",
       "tlsOptional": "(Optional)",
       "tlsNone": "None",
-      "tlsContextPlaceholder": "Select a TLS Context",
-      "tlsNoResults": "No results found",
+      "tlsMythical": "Mythical TLS",
+      "tlsInternal": "Internal TLS",
+      "tlsProduction": "Production TLS",
       "cancel": "Cancel",
       "save": "Save"
     },
@@ -5053,7 +4848,6 @@
       "heading": "Select Tools",
       "subheading": "Choose which tools to expose from your selected APIs and SaaS systems",
       "readOnlyCheckbox": "Select read-only tools",
-      "readOnlyCheckboxTooltip": "Applies to APIs only",
       "loadingText": "Loading deployed tools…",
       "emptyStateLine1": "Select APIs or SaaS systems from the left.",
       "emptyStateLine2": "to configure their tools",
@@ -5296,13 +5090,12 @@
     "envQa": "QA",
     "routeLabel": "Route label",
     "routeLabelTooltip": "Specifies the upstream service to be called when this tool is invoked.",
-    "secretGroupLabel": "Secret Group",
-    "secretGroupPlaceholder": "Select a Secret Group",
-    "tlsLabel": "TLS Context",
+    "tlsLabel": "TLS",
     "optional": "(Optional)",
     "tlsNone": "None",
-    "tlsContextPlaceholder": "Select a TLS Context",
-    "tlsNoResults": "No results found",
+    "tlsMythical": "Mythical TLS",
+    "tlsInternal": "Internal TLS",
+    "tlsProduction": "Production TLS",
     "saveButton": "Save",
     "serverConfigTitle": "Server Configuration",
     "serverName": "Server Name",
@@ -5319,7 +5112,6 @@
     "pathHelp": "Base path on the gateway (derived from server name)",
     "pathConflict": "That path is already in use. Enter a unique path.",
     "pathImmutable": "Path cannot be changed after deployment.",
-    "gatewayMissingPublicUrl": "Selected gateway has no public URL configured. Choose a different gateway.",
     "gatewayLabel": "Gateway",
     "selectAGateway": "Select a gateway",
     "step1Label": "Select Source, Instance & Tools",
@@ -5484,8 +5276,7 @@
     "copyPublicEndpoint": "Copy public endpoint",
     "copyInternalEndpoint": "Copy internal endpoint",
     "endpointCopied": "Endpoint copied to clipboard.",
-    "endpointCopyFailed": "We couldn't copy the endpoint to clipboard.",
-    "loadingValue": "Loading {name}"
+    "endpointCopyFailed": "We couldn't copy the endpoint to clipboard."
   },
   "filterableMultiSeriesChart": {
     "all": "All",
@@ -5778,8 +5569,7 @@
     "editFromAnypointButton": "Edit (From Anypoint Platform)",
     "editStrategyButton": "Edit Strategy",
     "backButton": "Back",
-    "selectedStrategyUnavailable": "Selected strategy is unavailable.",
-    "bridgeOpenCreateAccepted": "Opened the Create Control wizard."
+    "selectedStrategyUnavailable": "Selected strategy is unavailable."
   },
   "notFound": {
     "heading": "We couldn't find that page",
@@ -5793,33 +5583,5 @@
     "bodyMessage": "If you leave now, your in-progress configuration will not be saved.",
     "discardButton": "Discard Changes",
     "keepEditingButton": "Keep Editing"
-  },
-  "slackInstall": {
-    "missingPending": "Missing install identifier. Please start the Slack installation again.",
-    "noOrganization": "No organization selected in this browser session.",
-    "adminRequired": "Only an organization administrator can install the Slack integration.",
-    "installFailed": "Failed to install Slack integration",
-    "needsLogin": {
-      "heading": "Install Slack Integration",
-      "description": "Sign in to Anypoint first. After signing in, the Slack installation will complete automatically.",
-      "goToLogin": "Sign in to Anypoint"
-    },
-    "success": {
-      "heading": "Slack Installed Successfully",
-      "description": "The Slack integration has been installed for your organization.",
-      "descriptionWithWorkspace": "The Slack integration has been installed and connected to the {workspace} workspace.",
-      "goToSettings": "Go to Notification Settings"
-    },
-    "expired": {
-      "heading": "Install link expired",
-      "description": "This installation link has expired. Please click Add to Slack again to start a new installation."
-    },
-    "error": {
-      "heading": "Installation failed"
-    },
-    "completing": {
-      "heading": "Installing Slack Integration",
-      "description": "Completing installation…"
-    }
   }
 }
