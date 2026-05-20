@@ -11,12 +11,14 @@ Before getting started, make sure you have:
 * An Anypoint Platform account.
 * These permissions:
 +
+--
 ** API Manager: Manage Policies
 ** API Manager: View APIs Configuration
 ** API Manager: View Policies
 ** Anypoint Monitoring: Monitoring Viewer
 ** Exchange: Exchange Viewer
-
+--
++
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
 == Cost and Token Data Locations
