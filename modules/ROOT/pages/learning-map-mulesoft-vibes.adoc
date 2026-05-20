@@ -11,11 +11,11 @@ MuleSoft Vibes is the natural-language assistant in Anypoint Code Builder for AP
 
 MuleSoft Vibes is a purpose-built assistant for the development lifecycle, available directly in Anypoint Code Builder. Build, deploy, and manage your projects using natural language prompts.
 
-- xref:mulesoft-vibes.adoc#capabilities[Understand capabilities in your workspace]
-- xref:mulesoft-vibes.adoc#related-ai[Compare with broader MuleSoft AI in related resources]
+- xref:anypoint-code-builder::mulesoft-vibes.adoc#capabilities[Understand capabilities in your workspace]
+- xref:anypoint-code-builder::mulesoft-vibes.adoc#related-ai[Compare with broader MuleSoft AI in related resources]
 - xref:mulesoft-mcp-server::index.adoc[Review MuleSoft MCP Server]
-- xref:vibes-checkpoints.adoc[Track workspace changes with checkpoints]
-- xref:vibes-conversation-history.adoc#browse-conversation-history[Browse conversation history]
+- xref:anypoint-code-builder::vibes-checkpoints.adoc[Track workspace changes with checkpoints]
+- xref:anypoint-code-builder::vibes-conversation-history.adoc#browse-conversation-history[Browse conversation history]
 
 | image::reuse::lm_analyze_1.png[Get started with MuleSoft Vibes]
 
@@ -23,10 +23,10 @@ MuleSoft Vibes is a purpose-built assistant for the development lifecycle, avail
 
 Set up the IDE, confirm permissions, then open MuleSoft Vibes and start prompting with confidence.
 
-- xref:start-acb.adoc[Set up and access the web or desktop IDE]
-- xref:start-workspaces.adoc[Organize workspace structure and folder levels]
-- xref:start-configure-permissions.adoc#permissions[Configure Anypoint Code Builder permissions]
-- xref:vibes-get-started.adoc#use-mulesoft-vibes[Use MuleSoft Vibes]
+- xref:anypoint-code-builder::start-acb.adoc[Set up and access the web or desktop IDE]
+- xref:anypoint-code-builder::start-workspaces.adoc[Organize workspace structure and folder levels]
+- xref:anypoint-code-builder::start-configure-permissions.adoc#permissions[Configure Anypoint Code Builder permissions]
+- xref:anypoint-code-builder::vibes-get-started.adoc#use-mulesoft-vibes[Use MuleSoft Vibes]
 
 | image::reuse::lm_develop_1.png[Design APIs, rules, and automation]
 
@@ -34,12 +34,12 @@ Set up the IDE, confirm permissions, then open MuleSoft Vibes and start promptin
 
 Shape API specs with AI, attach context, tune Vibes settings, and standardize output with rules, workflows, and commands.
 
-- xref:vibes-api-ai-create-spec.adoc#design-spec-ai[Generate and refine specs]
-- xref:vibes-api-ai-create-spec.adoc#rules-workflows[Define rules and workflows]
-- xref:vibes-api-ai-create-spec.adoc#context-files[Attach requirements and outputs]
-- xref:vibes-api-ai-create-spec.adoc#settings[Control confirmations and file access]
-- xref:vibes-workflows-commands.adoc#add-workflows-or-rules[Add workflows and rules]
-- xref:vibes-workflows-commands.adoc#add-commands[Invoke slash shortcuts]
+- xref:anypoint-code-builder::vibes-api-ai-create-spec.adoc#design-spec-ai[Generate and refine specs]
+- xref:anypoint-code-builder::vibes-api-ai-create-spec.adoc#rules-workflows[Define rules and workflows]
+- xref:anypoint-code-builder::vibes-api-ai-create-spec.adoc#context-files[Attach requirements and outputs]
+- xref:anypoint-code-builder::vibes-api-ai-create-spec.adoc#settings[Control confirmations and file access]
+- xref:anypoint-code-builder::vibes-workflows-commands.adoc#add-workflows-or-rules[Add workflows and rules]
+- xref:anypoint-code-builder::vibes-workflows-commands.adoc#add-commands[Invoke slash shortcuts]
 
 | image::reuse::lm_build_1.png[Build integration projects]
 
@@ -47,9 +47,9 @@ Shape API specs with AI, attach context, tune Vibes settings, and standardize ou
 
 Attach context to MuleSoft Vibes, open the assistant for integrations, and scaffold an integration project.
 
-- xref:vibes-get-started.adoc#provide-mulesoft-vibes-with-context[Attach folders and files]
-- xref:vibes-create-integrations.adoc#access-dev-agent[Open the assistant for creating integrations]
-- xref:vibes-create-integrations.adoc#create-integration-project[Scaffold a project]
+- xref:anypoint-code-builder::vibes-get-started.adoc#provide-mulesoft-vibes-with-context[Attach folders and files]
+- xref:anypoint-code-builder::vibes-create-integrations.adoc#access-dev-agent[Open the assistant for creating integrations]
+- xref:anypoint-code-builder::vibes-create-integrations.adoc#create-integration-project[Scaffold a project]
 
 | image::reuse::lm_code_1.png[Resume work, prompt, and improve output]
 
@@ -57,11 +57,11 @@ Attach context to MuleSoft Vibes, open the assistant for integrations, and scaff
 
 Pick up tasks from conversation history, write and verify prompts, reuse example patterns, and improve output when results are inconsistent.
 
-- xref:vibes-conversation-history.adoc#browse-conversation-history[Reopen tasks from browse conversation history]
-- xref:troubleshoot-generative-ai.adoc#_unexpected_results_when_using_mulesoft_vibes[Improve inconsistent output]
-- xref:vibes-create-integrations.adoc#craft-ai-prompt[Write your prompt]
-- xref:vibes-create-integrations.adoc#complete-gen-flow[Apply and verify results]
-- xref:vibes-prompt-examples.adoc#_order_management[Use example prompts]
+- xref:anypoint-code-builder::vibes-conversation-history.adoc#browse-conversation-history[Reopen tasks from browse conversation history]
+- xref:anypoint-code-builder::troubleshoot-generative-ai.adoc#_unexpected_results_when_using_mulesoft_vibes[Improve inconsistent output]
+- xref:anypoint-code-builder::vibes-create-integrations.adoc#craft-ai-prompt[Write your prompt]
+- xref:anypoint-code-builder::vibes-create-integrations.adoc#complete-gen-flow[Apply and verify results]
+- xref:anypoint-code-builder::vibes-prompt-examples.adoc#_order_management[Use example prompts]
 
 | image::reuse::lm_integrate_1.png[Configure and manage MCP servers]
 
@@ -69,13 +69,13 @@ Pick up tasks from conversation history, write and verify prompts, reuse example
 
 Install and tune MCP servers so MuleSoft Vibes can call the right tools with the right approvals.
 
-- xref:vibes-mcp-server.adoc[Configure MCP server]
-- xref:vibes-mcp-server.adoc#add-an-mcp-server[Add an MCP server]
-- xref:vibes-mcp-server.adoc#add-and-manage-custom-mcp-servers[Add and manage custom MCP servers]
+- xref:anypoint-code-builder::vibes-mcp-server.adoc[Configure MCP server]
+- xref:anypoint-code-builder::vibes-mcp-server.adoc#add-an-mcp-server[Add an MCP server]
+- xref:anypoint-code-builder::vibes-mcp-server.adoc#add-and-manage-custom-mcp-servers[Add and manage custom MCP servers]
 
 |===
 
 == See Also
 
-* xref:index.adoc[]
-* xref:mulesoft-vibes.adoc[]
+* xref:anypoint-code-builder::index.adoc[]
+* xref:anypoint-code-builder::mulesoft-vibes.adoc[]
