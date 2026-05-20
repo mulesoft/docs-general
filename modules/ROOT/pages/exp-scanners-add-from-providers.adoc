@@ -11,11 +11,13 @@ Before getting started, make sure you have:
 * An Anypoint Platform account.
 * Any of these permissions:
 +
+--
 ** Exchange: Exchange Administrator
 ** Exchange: Exchange Contributor
 ** API Manager: API Creator
 ** API Manager: Manage Policies
-
+--
++
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
 == Benefits of Provider Scanners

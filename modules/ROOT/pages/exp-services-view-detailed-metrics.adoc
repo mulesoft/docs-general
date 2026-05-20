@@ -11,9 +11,11 @@ Before getting started, make sure you have:
 * An Anypoint Platform account.
 * Any of these permissions:
 +
+--
 ** Anypoint Monitoring: Monitoring Viewer
 ** Anypoint Monitoring: Monitoring Administrator
-
+--
++
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
 == Open Detailed Views

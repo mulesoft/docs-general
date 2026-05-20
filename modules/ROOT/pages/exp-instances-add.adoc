@@ -12,10 +12,13 @@ Before getting started, make sure you have:
 
 * An Anypoint Platform account.
 * These permissions:
++
+--
 ** API Manager: API Creator to create instances.
 ** API Manager: View APIs Configuration to view instances.
 ** API Manager: Edit APIs Configuration to edit instances.
-
+--
++
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
 == Open the Instances Experience

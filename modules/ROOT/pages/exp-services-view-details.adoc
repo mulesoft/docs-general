@@ -11,10 +11,12 @@ Before getting started, make sure you have:
 * An Anypoint Platform account.
 * Any of these permissions:
 +
+--
 ** Exchange: Exchange Viewer
 ** Exchange: Exchange Contributor
 ** Exchange: Exchange Administrator
-
+--
++
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
 == Service Detail Tabs
@@ -60,7 +62,7 @@ The page is organized into tabs. The following table lists each tab, what it sho
 
 [NOTE]
 ====
-* *Instances* tab is available on *Agents*, *MCP Servers*, *LLMs*, and *APIs*; *Gateways* do not include an *Instances* tab. See xref:exp-overview.adoc[].
+* *Instances* tab is available on *Agents*, *MCP Servers*, *LLM Proxies*, and *APIs*; *Gateways* do not include an *Instances* tab. See xref:exp-overview.adoc[].
 
 * *Conformance Report* on the detail page aligns with *Agents*, *APIs*, and *MCP Servers*; for gateways, compliance work is framed through *Governance* and related flows at the scope the system supports. See xref:exp-overview.adoc[].
 ====

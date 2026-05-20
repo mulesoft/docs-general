@@ -11,10 +11,12 @@ Before getting started, make sure you have:
 * An Anypoint Platform account.
 * Any of these permissions:
 +
+--
 ** Exchange: Exchange Contributor
 ** Exchange: Exchange Administrator
 ** Exchange: Exchange Creator
-
+--
++
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
 == Get Started

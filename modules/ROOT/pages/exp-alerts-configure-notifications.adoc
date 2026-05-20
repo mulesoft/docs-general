@@ -11,13 +11,18 @@ Before getting started, make sure you have:
 * An Anypoint Platform account.
 * Any of these permissions to view alerts:
 +
+--
 ** API Manager: View API Alerts
 ** Runtime Manager: Read Alerts
+--
++
 * Any of these permissions to manage alerts:
 +
+--
 ** API Manager: Manage API Alerts
 ** Runtime Manager: Manage Alerts
-
+--
++
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
 == Alert Configuration

@@ -8,7 +8,7 @@ Your AI assets stay audit-ready with clear visibility into cost and runtime heal
 
 The enhanced MuleSoft experience supports the full lifecycle of AI-connected integration assets:
 
-Entity Management:: Register and manage agents, REST and GraphQL APIs, MCP servers, LLMs, and gateways, including Anypoint Omni Gateway, external gateways, and unmanaged gateways. Each type has a dedicated catalog under *Portfolio*.
+Entity Management:: Register and manage agents, REST and GraphQL APIs, MCP servers, LLM proxies, and gateways, including Anypoint Omni Gateway, external gateways, and unmanaged gateways. Each type has a dedicated catalog under *Portfolio*.
 
 Governance and Compliance:: Define and apply policies across domains such as access and security, performance and cost, data privacy and integrity, and compliance and observability. Conformance reporting summarizes rule violations and severity so you can close gaps systematically.
 
@@ -28,12 +28,12 @@ Confirm your credentials and the permissions that your administrator assigned, a
 . Learn the layout of the enhanced experience.
 +
 Sign in through your entry path and land on *Home*. Scan *Portfolio* catalogs, *Governance*, *Observability*, and *Platform* so that you know where to register assets, apply policies, read health signals, and manage providers. Access the AI assistant from any page to get guided help and answer questions.
-. Register assets in Portfolio
+. Register assets in *Portfolio*.
 +
-Under *Portfolio*, open *Agents*, *MCP Servers*, *LLMs*, *APIs*, or *Gateways*. Add assets to work with. Register manually or use connected providers under *Platform* > *Providers* if your organization enables discovery flows.
+Under *Portfolio*, open *Agents*, *MCP Servers*, *LLM Proxies*, *APIs*, or *Gateways*. Add assets to work with. Register manually or use connected providers under *Platform* > *Providers* if your organization enables discovery flows.
 . Create and manage instances.
 +
-On *Agents*, *MCP Servers*, *LLMs*, and *APIs*, open *Instances* to create managed or unmanaged deployments that match your needs. Managed instances on Omni Gateway give stronger governance and monitoring when the new experience exposes them. *Gateways* don't include an *Instances* tab.
+On *Agents*, *MCP Servers*, *LLM Proxies*, and *APIs*, open *Instances* to create managed or unmanaged deployments that match your needs. Managed instances on Omni Gateway give stronger governance and monitoring when the new experience exposes them. *Gateways* don't include an *Instances* tab.
 . Configure policies
 +
 On the *Policies* tab for a service or instance, apply governance policies that match access control, data privacy, performance, and compliance goals. Use *Governance* for gateway-wide policy work, organization strategies, and cost tools.
@@ -48,7 +48,7 @@ On *Monitoring*, review live metrics such as latency, error rates, and request v
 Under *Governance*, open *Cost Management* to study token usage and related spend signals. Apply the cost reduction strategies your organization adopted, such as tool mapping or tool sanitization, where the new experience supports them.
 . Operate and tune the portfolio.
 +
-Coordinate agents, APIs, gateways, MCP servers, and LLMs so traffic, policies, and integrations stay aligned. Open *Versions* when you need configuration history before you change instances or policies. Adjust policies, instances, or registrations when monitoring and governance insights show drift or new risk.
+Coordinate agents, APIs, gateways, MCP servers, and LLM proxies so traffic, policies, and integrations stay aligned. Open *Versions* when you need configuration history before you change instances or policies. Adjust policies, instances, or registrations when monitoring and governance insights show drift or new risk.
 . Improve on each cycle.
 +
 Feed findings from monitoring and governance back into planning for the next change window.
