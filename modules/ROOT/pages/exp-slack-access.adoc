@@ -1,8 +1,20 @@
 = Access the Enhanced Experience from Slack
 
+
+
 After your administrator installs and configures the Slack integration, you can receive notifications, run shortcuts, and open deep links from the enhanced MuleSoft experience using your existing identity. Slack becomes a companion connection for alerts and collaboration while *Portfolio* and *Governance* remain the source of truth for configuration.
 
 Available commands, message templates, and workspaces depend on how your organization configured the Slack app. Internal runbooks list the slash commands or shortcuts approved for your workspace.
+
+== Install MuleSoft for Slack
+
+You must be an administrator to install the MuleSoft for Slack app.
+
+. Log in and go to *Notifications* > *Settings*.
+. Click *Install*.
++
+You may need Slack admin permissions to install this app in your organization's Slack workspace. Submit a request to install the app to your Slack administrator if you don't have the permissions.
+
 
 == Sign In and Open the Experience
 
