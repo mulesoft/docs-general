@@ -27,6 +27,12 @@ Follow the internal instructions your platform team published, for example a sta
 
 If the connection stops working after a client or policy update, check certificates, proxy settings, and token expiry with your administrator before opening a support case.
 
+== Work with the Enhanced Experience via MuleSoft MCP Server
+
+Maintain velocity from your own work environment by executing end-to-end lifecycle tasks in the enhanced experience using MuleSoft Platform MCP Server. Manage assets, run scanners, configure gateways, handle governance, and more entirely in natural language from Claude Desktop, VS Code, ChatGPT, Windsurf, and Cursor.
+
+To get started, see [MuleSoft Platform MCP Server](linktbd).
+
 == See Also
 
 * xref:exp-home-start.adoc[]
