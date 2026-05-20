@@ -1,20 +1,23 @@
-= Access the Enhanced Experience from Slack
+= Integrate the Enhanced Experience with Slack
 
-
-
-After your administrator installs and configures the Slack integration, you can receive notifications, run shortcuts, and open deep links from the enhanced MuleSoft experience using your existing identity. Slack becomes a companion connection for alerts and collaboration while *Portfolio* and *Governance* remain the source of truth for configuration.
+Install the Mulesoft for Slack app in your Slack workspace to receive notifications, run shortcuts, and provide deep links for responders to jump directly into the enhanced experience.
 
 Available commands, message templates, and workspaces depend on how your organization configured the Slack app. Internal runbooks list the slash commands or shortcuts approved for your workspace.
 
 == Install MuleSoft for Slack
 
-You must be an administrator to install the MuleSoft for Slack app.
+You must be a MuleSoft organization administrator to connect or disconnect the Slack integration.
+
+Each MuleSoft organization can connect to only one Slack workspace, and each Slack workspace can connect to only one MuleSoft organization.
 
 . Log in and go to *Notifications* > *Settings*.
-. Click *Install*.
+. In *Slack Setup*, click *Install*.
+. Make sure the MuleSoft Agent app variant matches your MuleSoft organization's region.
+. Select the Slack workspace you want to connect to your MuleSoft organization.
+. Click *Allow*.
 +
 You may need Slack admin permissions to install this app in your organization's Slack workspace. Submit a request to install the app to your Slack administrator if you don't have the permissions.
-
+. After your app is installed you can select Slack as a notifcation delivery channel when configuring alerts and run shortcuts by using the `@MuleSoft Agent` in your Slack workspace.
 
 == Sign In and Open the Experience
 
@@ -34,6 +37,7 @@ If authentication fails:
 * Respond to alerts
 +
 Open a thread from an alert message and follow the link into the service or dashboard referenced in the payload.
+
 * Share context
 +
 Post links back into Slack after you verify state in *Portfolio*. This helps incident channels stay aligned with what you saw in the product.
