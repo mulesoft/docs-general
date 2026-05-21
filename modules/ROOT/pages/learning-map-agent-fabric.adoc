@@ -82,6 +82,7 @@ Visualize your agent network and monitor performance and behavior.
 [discrete]
 == See Also
 
+* xref:agent-fabric-overview.adoc[Agent Fabric Overview]
 * xref:anypoint-code-builder::index.adoc[Anypoint Code Builder]
 * xref:exchange::index.adoc[Anypoint Exchange]
 * xref:monitoring::index.adoc[Anypoint Monitoring]
