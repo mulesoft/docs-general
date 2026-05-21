@@ -32,7 +32,7 @@ Work with your governance lead when strategy changes affect production or compli
 == Governance Strategy Workflows
 
 * Create strategies for compliance validation or runtime enforcement. See xref:exp-governance-create-strategy.adoc[].
-* Manage strategies by updating scope, rules, status, and priority. See xref:exp-governance-strategies-manage.adoc[].
+* Manage strategies by updating scope, rules, status, and priority. See xref:exp-governance-manage-strategies.adoc[].
 * Monitor token usage in *Governance* > *Cost Management*. See xref:exp-governance-view-cost-and-token-usage.adoc[].
 * Review conformance reporting for xref:exp-overview.adoc[supported catalog types].
 * Apply policies to services from *Portfolio*. See xref:exp-services-view-details.adoc[].
@@ -44,7 +44,7 @@ Creating strategies typically requires the Governance Administrator role. You ca
 == See Also
 
 * xref:exp-governance-create-strategy.adoc[]
-* xref:exp-governance-strategies-manage.adoc[]
+* xref:exp-governance-manage-strategies.adoc[]
 * xref:exp-governance-view-cost-and-token-usage.adoc[]
 * xref:exp-overview.adoc[]
 * xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions]
