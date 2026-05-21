@@ -1,6 +1,6 @@
 = Create Governance Strategies
 
-Governance strategies define which services the system evaluates or enforces policy against and under what conditions. A Control strategy monitors compliance and can block noncompliant activity. An Automated Policy strategy enforces requirements at the gateway or runtime layer. You can create strategies when your tenant includes *Governance* and you have the required administrator role.
+Governance strategies define which services the system evaluates or enforces policy against and under what conditions. A Control strategy monitors compliance and can block noncompliant activity. An Automated Policy strategy enforces requirements at the gateway or runtime layer. You can create strategies if your tenant includes *Governance* and you have the required administrator role.
 
 == Before You Begin
 
@@ -27,7 +27,7 @@ The setup flow guides you through type, scope, rules or policies, and activation
 
 == Select Strategy Type
 
-Choose from these types:
+Select from these types:
 
 * *Controls* validate targeted services against control rules. Use controls to monitor compliance and, when supported, block noncompliant activity.
 * *Automated Policy* enforces runtime policy requirements across targeted services.
@@ -36,9 +36,27 @@ Select the type that matches your governance objective, then proceed.
 
 == Define Governance Scope
 
-Specify the services that the strategy governs and under what conditions they're included.
+Configure scope criteria to identify the services that the strategy governs. All criteria are combined to narrow the scope.
 
-Use *Select Filter Criteria* to refine the scope by tag, environment, or other available metadata.
+Set these filters:
+
+*Service Type*::
+Select one or more service types to govern.
+
+*Tags*::
+Select tags to include only services that match those tags.
+
+*Categories*::
+Select categories to further narrow the scope.
+
+*Instances*::
+Filter by instance status:
++
+--
+* *All APIs*: Include all matching services regardless of instance status.
+* *Include only APIs with instances*: Include only services that have at least one associated instance.
+* *Only APIs without instances*: Include only services with no associated instances.
+--
 
 Use *Preview Governed Scope* to see which services currently match your criteria before you move forward.
 
@@ -61,7 +79,7 @@ Review your selections: strategy type, scope, rules or policies, and general inf
 
 Select *Create and Activate Strategy*.
 
-Strategies are active by default. You can disable a strategy later from *Governance Strategies*.
+Strategies are active by default. To disable a strategy, go to *Governance Strategies*.
 
 == After Strategy Activation
 
@@ -70,7 +88,7 @@ Strategies are active by default. You can disable a strategy later from *Governa
 * For *Automated Policy*, enforcement runs at the gateway or runtime layer.
 * Edit the strategy from *Governance Strategies* when scope, rules, or naming change.
 
-Work with your governance lead if your strategies affect production services or if you need to coordinate rollout timing.
+Work with your governance lead if strategies affect production services or if rollout timing requires coordination.
 
 == See Also
 
