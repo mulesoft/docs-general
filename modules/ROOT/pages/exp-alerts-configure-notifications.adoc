@@ -37,18 +37,14 @@ Map critical alerts to high-priority channels and informational alerts to lower-
 +
 When your organization uses Slack or another integrated client, follow notifications back into the enhanced experience using the shortcuts your administrator enabled.
 
-Find detailed steps in the 
-xref:runtime-manager::alerts-on-runtime-manager.adoc[Runtime Manager alerts] and 
+Find detailed steps in the
+xref:runtime-manager::alerts-on-runtime-manager.adoc[Runtime Manager alerts] and
 xref:api-manager::add-api-alert-task.adoc[API Manager instance alerts] documentation.
 
 == Relate Alerts to Portfolio Work
 
 When an alert references a service you govern in the enhanced experience, open the service from *Portfolio* and review *Monitoring*, *Policies*, and *Instances* together.
 xref:exp-services-monitoring.adoc[Monitoring] explains how service-level signals relate to organization-wide observability.
-
-== Permissions Overview
-
-Managing alert subscriptions requires *API Manager* > *Manage API Alerts* or *Runtime Manager* > *Manage Alerts*. Viewing alerts uses the corresponding view permissions. See xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions] for how those roles appear in access guides.
 
 == See Also
 
