@@ -1538,8 +1538,8 @@
     "wizardTitle": "Apply Policy",
     "viewTitle": "Policy Configuration",
     "viewDescription": "Review and edit configuration values for {name}.",
-    "discardModalTitle": "Discard changes and leave?",
-    "discardModalMessage": "Any unsaved changes will be discarded when you leave this page.",
+    "discardModalTitle": "Leave this page?",
+    "discardModalMessage": "Any unsaved changes are discarded when you leave the page.",
     "discardModalConfirm": "Discard and Leave",
     "discardModalCancel": "Cancel",
     "actionsMenu": "Actions",
@@ -1549,7 +1549,7 @@
     "removePolicy": "Remove Policy",
     "disabledBadge": "Disabled",
     "removeModalTitle": "Remove {name}?",
-    "removeModalMessage": "Removing this policy cannot be undone. The change takes effect immediately.",
+    "removeModalMessage": "If you remove this policy, you can't undo it. The change takes effect immediately.",
     "removeModalConfirm": "Remove Policy",
     "removeModalCancel": "Cancel"
   },
@@ -1872,7 +1872,7 @@
     "closeAriaLabel": "Close delete dialog",
     "heading": "Delete {typeLabel}",
     "confirmMessage": "Delete {name}?",
-    "bodyMessage": "Deleting this {bodyNoun} permanently removes it. Services governed by this {bodyNoun} are no longer validated against its rules.",
+    "bodyMessage": "Deleting this {bodyNoun} permanently removes it. Services governed by it this {bodyNoun} are no longer validated against its rules.",
     "deleting": "Deleting…",
     "deleteButton": "Delete {typeLabel}",
     "typeAutomatedPolicy": "Automated Policy",
@@ -1881,7 +1881,7 @@
   "disableAutomatedPolicyModal": {
     "closeAriaLabel": "Close disable dialog",
     "heading": "Disable {name}?",
-    "bodyMessage": "All policies applied through this strategy will be removed. You can re-enable the strategy later.",
+    "bodyMessage": "Disabling this strategy removes all applied policies. You can re-enable it later.",
     "disableButton": "Disable"
   },
   "disabledAutomatedPolicyBanner": {
@@ -3481,12 +3481,12 @@
       "stepDescRulesGuardrails": "Select bundled rulesets or individual rules to apply to the defined scope. We validate these rules against services to generate reports, block actions, and evaluate compliance.",
       "stepDescNameDescription": "Enter a unique name and description to identify this strategy profile.",
       "stepDescReview": "Review your governance strategy configuration before saving.",
-      "editWizardTitle": "Edit Control Wizard",
-      "createWizardTitle": "Create Control Wizard",
+      "editWizardTitle": "Edit Control Setup Flow",
+      "createWizardTitle": "Create Control Setup Flow",
       "editWizardDescription": "Adjust scope and rules, then review before saving changes.",
       "createWizardDescription": "Configure scope, choose rules, and review before publishing profile settings.",
       "previous": "Previous",
-      "createAndActivate": "Create and activate strategy",
+      "createAndActivate": "Create and Activate Strategy",
       "saveGuardrail": "Save Control",
       "strategyNameLabel": "Strategy Name",
       "strategyNamePlaceholder": "Enter a name…",
@@ -5778,7 +5778,7 @@
     "editStrategyButton": "Edit Strategy",
     "backButton": "Back",
     "selectedStrategyUnavailable": "Selected strategy is unavailable.",
-    "bridgeOpenCreateAccepted": "Create Control wizard opened."
+    "bridgeOpenCreateAccepted": "Create Control setup flow opened."
   },
   "notFound": {
     "heading": "We couldn't find that page",
@@ -5788,10 +5788,10 @@
   "unsavedChangesModal": {
     "closeAriaLabel": "Close unsaved changes dialog",
     "heading": "Discard unsaved changes?",
-    "confirmMessage": "You have unsaved changes that will be lost.",
-    "bodyMessage": "If you leave now, your in-progress configuration will not be saved.",
-    "discardButton": "Discard Changes",
-    "keepEditingButton": "Keep Editing"
+    "confirmMessage": "If you discard your changes, you can't get them back.",
+    "bodyMessage": "Any unsaved changes are discarded when you leave the page.",
+    "discardButton": "Discard",
+    "keepEditingButton": "Cancel"
   },
   "slackInstall": {
     "missingPending": "Missing install identifier. Start the Slack installation again.",
