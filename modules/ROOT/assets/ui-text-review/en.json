@@ -2509,11 +2509,11 @@
     "exposeAsMcpServer": "Expose as MCP Server",
     "manage": "Manage",
     "managedTooltipBeforeFlex": "Instances from ",
-    "managedTooltipFlexStrong": "Flex gateways",
+    "managedTooltipFlexStrong": "Omni gateways",
     "managedTooltipBetween": " have full read/write support for data and governance. For instances from ",
     "managedTooltipFederatedStrong": "federated gateways",
     "managedTooltipAfterFederated": ", support depends on gateway settings.",
-    "managedTooltipAria": "Instances from Flex gateways have full read/write support for data and governance. For instances from federated gateways, support depends on gateway settings.",
+    "managedTooltipAria": "Instances from Omni gateways have full read/write support for data and governance. For instances from federated gateways, support depends on gateway settings.",
     "unmanagedTargetsTooltip": "External endpoints registered in Exchange without a managed gateway.",
     "unmanagedTooltip": "These endpoints have no known gateways and are not shown elsewhere. Manage them to add support for authentication, monitoring, and governance.",
     "viewGatewayTitle": "View {name} gateway"
