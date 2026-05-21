@@ -62,7 +62,7 @@ Some actions require specific service states (such as active or registered).
 . Check feature availability:
 .. Confirm that the feature is available in your environment.
 +
-Some features might be in preview or require specific entitlements.
+Some features might be in preview or require specific product access.
 .. Ask your administrator about feature availability if needed.
 
 == Connection Failures

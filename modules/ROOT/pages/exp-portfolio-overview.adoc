@@ -29,7 +29,7 @@ After sign-in, your landing page sometimes highlights portfolio activity, shortc
 +
 Browse catalogs for *Agents*, *APIs*, *MCP Servers*, *LLM Proxies*, and *Gateways* in *Portfolio*. Each catalog lists the services that your team registered or imported. To find a specific service, use search and filters, and then select the service to view its details.
 
-If you don't see a catalog or a summary you expect, confirm entitlements and permissions with your Anypoint Platform organization administrator. See xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions] for more information.
+If you don't see a catalog or a summary you expect, confirm product access and permissions with your Anypoint Platform organization administrator. See xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions] for more information.
 
 ==  Overview
 

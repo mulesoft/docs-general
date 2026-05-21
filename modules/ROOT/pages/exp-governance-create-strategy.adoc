@@ -67,7 +67,7 @@ Depending on the strategy type, select the rules or policies the strategy enforc
 * For *Controls*, select controls from the catalog available in your tenant.
 * For *Automated Policy*, define runtime details such as gateway runtime, endpoint type, and environment.
 
-Available options depend on your earlier selections and entitlements.
+Available options depend on your earlier selections and your organization's enabled products.
 
 == Name and Describe the Strategy
 
