@@ -1,4 +1,5 @@
 = Tutorial: Build an API from Start to Finish
+:page-llms-exclude: true
 
 API-led connectivity enables delightful experiences on a variety of devices for your customers. Different software applications communicate and share information across different systems. An Application Programming Interface (API) acts as a digital messenger and translator between those applications and systems, ensuring you can adapt to changes, reuse solutions efficiently, and build security into the digital touchpoints of your business.
 
