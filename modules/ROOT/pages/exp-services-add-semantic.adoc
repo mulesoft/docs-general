@@ -39,7 +39,7 @@ Choose *Basic scale* for faster managed setup. This scale is best for smaller to
 +
 Choose *Advanced scale* when you need greater scale and external infrastructure control. This scale is best for larger utterance sets per topic. Uses external semantic infrastructure, including an embedding API connection and a vector database connection.
 
-Semantic service setup defines the embedding connection used for contextual matching. Provide a value for these fields:
+Semantic service setup defines the embedding connection used for contextual matching. Provide values for these fields:
 
 * *Environment*
 * *Embedding service provider*
