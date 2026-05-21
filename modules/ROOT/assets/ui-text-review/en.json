@@ -4732,7 +4732,7 @@
     "loadingAriaLabel": "Loading governance configuration",
     "heading": "Governance Strategies",
     "pageDescription": "Configure and manage strategies to monitor, report, enforce, and block noncompliant activity across your services.",
-    "createButton": "Create governance strategy",
+    "createButton": "Create Governance Strategy",
     "refreshReportButton": "Refresh Report",
     "refreshing": "Refreshing…",
     "refreshQueued": "Report refresh queued. Conformance status will update shortly.",
