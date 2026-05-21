@@ -21,9 +21,9 @@ Also decide whether you need validation-only monitoring or active runtime enforc
 == Open the Strategy Workflow
 
 . Log in and go to *Governance* > *Governance Strategies*.
-. Select *Create governance strategy* to start the wizard.
+. Select *Create Governance Strategy* to start the setup flow.
 
-The wizard guides you through type, scope, rules or policies, and activation.
+The setup flow guides you through type, scope, rules or policies, and activation.
 
 == Select Strategy Type
 
