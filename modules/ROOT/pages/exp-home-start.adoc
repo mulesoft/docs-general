@@ -42,7 +42,7 @@ Platform and Product Access::
 +
 * Confirm that your organization has the entitlements required for the new experience and that an administrator enabled it for your Anypoint Platform business group or organization.
 +
-If the experience isn't available, contact your MuleSoft account team or Anypoint Platform organization administrator.
+If the experience isn't available, contact your Anypoint Platform organization administrator or MuleSoft account team.
 * Confirm that required integrations with Anypoint Platform, Slack, or your development environment work end to end.
 * If the new experience connects to other services, work with your administrator to configure authentication, such as API keys or OAuth tokens, to ensure successful connections.
 * Confirm that your administrator approved and configured required external connections, such as cloud providers under *Providers*.
