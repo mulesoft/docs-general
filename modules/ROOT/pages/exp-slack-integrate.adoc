@@ -1,6 +1,6 @@
 = Integrate the Enhanced Experience with Slack
 
-Install the Mulesoft for Slack app in your Slack workspace to receive notifications, run shortcuts, and provide deep links for responders to jump directly into the enhanced experience.
+Install the MuleSoft for Slack app in your Slack workspace to receive notifications, run shortcuts, and provide deep links for responders to jump directly into the enhanced experience.
 
 Available commands, message templates, and workspaces depend on how your organization configured the Slack app. Internal runbooks list the slash commands or shortcuts approved for your workspace.
 
@@ -17,30 +17,47 @@ Each MuleSoft organization can connect to only one Slack workspace, and each Sla
 . Click *Allow*.
 +
 You may need Slack admin permissions to install this app in your organization's Slack workspace. Submit a request to install the app to your Slack administrator if you don't have the permissions.
-. After your app is installed you can select Slack as a notifcation delivery channel when configuring alerts and run shortcuts by using the `@MuleSoft Agent` in your Slack workspace.
+. After the app is installed, select Slack as a notification delivery channel when you configure alerts. You can also run shortcuts by using `@MuleSoft Agent` in your Slack workspace.
 
-== Sign In and Open the Experience
+== Sign In and Begin Using the MuleSoft Agent
 
 . Open Slack in the workspace your company uses for MuleSoft or platform notifications.
-. Use the app your administrator added.
+. Use the app your MuleSoft administrator added.
 +
 The display name is set during installation.
-. Follow a notification action, a pinned link, or a slash command your internal documentation describes to authenticate and open the enhanced experience in the browser or embedded client your organization chose.
+. Enter `/mule signin` in the Slack message input field and press Enter.
+. Follow the authentication flow to connect your Anypoint account to Slack.
++
+If authentication fails, confirm that you're in the correct Slack workspace for your MuleSoft organization credentials.
 
-If authentication fails:
+== MuleSoft Agent Available Slash Commands
 
-. Confirm that you're in the correct Slack workspace.
-. Verify your Anypoint Platform user is linked according to your IT team's instructions.
+* `/mule help`
++ 
+Shows available commands and short usage notes in Slack.
+
+* `/mule feedback`
++ 
+Opens a feedback form to report bugs, request features, or send product feedback.
+
+* `/mule signin`
++
+Opens the authentication flow to connect your Anypoint account to Slack. If you’re already signed in it may show your connection status or prompt to re-authenticate.
 
 == Common Tasks from Slack
 
-* Respond to alerts
-+
-Open a thread from an alert message and follow the link into the service or dashboard referenced in the payload.
+You can use the MuleSoft Agent to perform these platform tasks in Slack:
 
-* Share context
-+
-Post links back into Slack after you verify state in *Portfolio*. This helps incident channels stay aligned with what you saw in the product.
+* *Respond to alerts*: Open a thread from an alert and follow links to the referenced service or dashboard.
+* *Share context*: Post links in Slack after you verify state in *Portfolio* to keep incident channels aligned.
+* *Switch and show business groups*: List available business groups and set the active business group context.
+* *Select context*: Choose a provider or environment when Omni Gateway workflows require a context.
+* *Find services by capability*: Use natural-language search to discover APIs, agents, LLMs, and MCP servers.
+* *Show managed instance pages*: Open read-only managed instance detail, policy, and monitoring pages for APIs.
+* *Show API version instances*: Open the instance selector for a specific API version.
+* *Search repository docs*: Return cited snippets from platform documentation.
+* *Run governance, monitoring, and cost drill-ins*: Generate governance, monitoring, and cost reports on request.
+
 
 == See Also
 
