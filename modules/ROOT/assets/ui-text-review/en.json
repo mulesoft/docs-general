@@ -211,6 +211,9 @@
     "deployInstance": "Deploy Instance"
   },
   "createLlmProxyPage": {
+    "routeNameFallback": "Route {letter}",
+    "deleteBlockedModelBased": "Model-based routing requires at least one route.",
+    "deleteBlockedSemantic": "Semantic routing requires at least two routes.",
     "heading": "Create an LLM Proxy",
     "description": "Register an LLM proxy: choose a gateway, then connect providers and routing.",
     "proxyNameLabel": "Proxy Name",
@@ -343,7 +346,12 @@
     "signInFailed": "We couldn't sign you in. Try again.",
     "backToLogin": "Back to login"
   },
+  "appShell": {
+    "skipToMain": "Skip to main content",
+    "mainContent": "Main content"
+  },
   "leftNav": {
+    "landmarkLabel": "Primary",
     "home": "Home",
     "portfolio": "Portfolio",
     "agents": "Agents",
@@ -380,6 +388,7 @@
     "closeSidebar": "Close sidebar"
   },
   "aiSidebar": {
+    "landmarkLabel": "Ask MuleSoft",
     "closeAiSidebar": "Close AI sidebar"
   },
   "dragHandle": {
@@ -1881,6 +1890,7 @@
   "disableAutomatedPolicyModal": {
     "closeAriaLabel": "Close disable dialog",
     "heading": "Disable {name}?",
+    "confirmMessage": "Disable {name}?",
     "bodyMessage": "Disabling this strategy removes all applied policies. You can re-enable it later.",
     "disableButton": "Disable"
   },
@@ -2015,7 +2025,8 @@
     "complianceStatusLabel": "Compliance Status: {status}",
     "complianceStatusCompliant": "Compliant",
     "complianceStatusNonCompliant": "Noncompliant",
-    "complianceStatusPending": "Pending"
+    "complianceStatusPending": "Pending",
+    "viewConformanceReport": "View {status} conformance report"
   },
   "filterDropdown": {
     "clearAll": "Clear all"
@@ -2389,6 +2400,14 @@
   "governanceReportTab": {
     "notValidatedTitle": "No governance rules applied",
     "notValidatedDescription": "No governance rules apply to this service. Add a governance strategy to start enforcing standards.",
+    "notValidatedInstanceDescription": "No governance rules apply to this instance. Add a governance strategy to start enforcing standards.",
+    "noErrorsFoundTitle": "No errors found",
+    "noErrorsFoundDescription": "Governance rules ran on this service and reported no findings.",
+    "noErrorsFoundInstanceDescription": "Governance rules ran on this instance and reported no findings.",
+    "pendingEvaluationTitle": "Pending evaluation",
+    "pendingEvaluationDescription": "Governance evaluation is in progress. Check back in a moment.",
+    "instanceLevelOnlyTitle": "No service-level errors",
+    "instanceLevelOnlyDescription": "This service's conformance status reflects instance-level checks. Open the Instances tab to see the per-instance findings.",
     "loadingConformance": "Loading conformance report…",
     "noGovernanceReport": "No governance report available for this API.",
     "reportDetails": "Report Details",
@@ -2443,9 +2462,7 @@
       "severityWarning": "Warning",
       "severityInfo": "Info"
     },
-    "goToGovernanceStrategies": "Go to Governance Strategies",
-    "pendingEvaluationTitle": "Evaluating governance rules…",
-    "pendingEvaluationDescription": "This service hasn't been evaluated yet. Results will appear shortly."
+    "goToGovernanceStrategies": "Go to Governance Strategies"
   },
   "governanceReportControls": {
     "latest": "(Latest)",
@@ -3329,6 +3346,11 @@
       "deploymentAnyEnvironment": "Any environment",
       "deploymentSpecificEnvironments": "Specific environments",
       "deploymentNoInstances": "No instances",
+      "environmentTypeLabel": "Environment Type",
+      "environmentTypeAny": "Any",
+      "environmentTypeProduction": "Production",
+      "environmentTypeSandbox": "Sandbox",
+      "environmentNameLabel": "Environment Name (optional)",
       "comingSoon": "Coming soon",
       "noTagsAvailable": "No tags available",
       "noCategoriesAvailable": "No categories available",
@@ -4491,6 +4513,8 @@
     "dropHintInitial": "or drag and drop a file here"
   },
   "routeListEditor": {
+    "deleteBlockedModelBased": "Model-based routing requires at least one route.",
+    "deleteBlockedSemantic": "Semantic routing requires at least two routes.",
     "noFallback": "No fallback",
     "routingStrategyLabel": "Routing strategy",
     "routingStrategyTooltip": "Model-based routes by model parameter. Semantic routes by prompt content.",
@@ -4939,6 +4963,9 @@
       "collapseAll": "Collapse all",
       "expandAll": "Expand all",
       "noRulesets": "No rulesets configured for this strategy.",
+      "creatingPlaceholder": "Strategy is being created. Rules will appear here once the publication completes.",
+      "updatingPlaceholder": "Strategy is being updated. Rules will refresh here once the publication completes.",
+      "failedPlaceholder": "We couldn't publish the strategy. Try again.",
       "editFromAnypoint": "Edit (From Anypoint Platform)",
       "editStrategy": "Edit Strategy",
       "back": "Back",
@@ -5206,6 +5233,9 @@
   },
   "llmProxyRoutesEditor": {
     "failedToSaveChanges": "We couldn't save your changes. Try again.",
+    "routeNameFallback": "Route {letter}",
+    "deleteBlockedModelBased": "Model-based routing requires at least one route.",
+    "deleteBlockedSemantic": "Semantic routing requires at least two routes.",
     "toast": {
       "topicCreated": "Topic \"{name}\" was created.",
       "topicCreatedFallback": "Topic was created.",
@@ -5496,6 +5526,7 @@
     "enterOpenAiKey": "Enter OpenAI API key",
     "enterGeminiKey": "Enter Gemini API key",
     "enterAzureKey": "Enter Azure OpenAI API key",
+    "azureUrlHint": "Enter your Azure OpenAI endpoint, such as https://my-test-resource.openai.azure.com/.",
     "deploymentId": "Deployment ID",
     "deploymentIdPlaceholder": "gpt-4-deployment",
     "apiVersion": "API Version",
