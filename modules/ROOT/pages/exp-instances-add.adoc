@@ -99,10 +99,6 @@ After creating or updating an instance, you can continue managing the service th
 * Use the *Monitoring* tab to review metrics and runtime performance when monitoring is available.
 * Coordinate with platform owners if DNS, certificates, or upstream routing changes must happen outside the product.
 
-== Required Permissions
-
-Creating instances uses Anypoint Platform permissions such as API Creator for API-related flows. Viewing or editing instance configuration requires the corresponding permissions defined by your organization. See xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions] for role details.
-
 == See Also
 
 * xref:exp-services-add-to-portfolio.adoc[]
