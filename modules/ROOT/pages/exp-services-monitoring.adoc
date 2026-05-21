@@ -30,7 +30,9 @@ Use sustained load or usage patterns as inputs when you tune scaling, routing, o
 
 Exact metrics depend on how the service is hosted, which gateway or runtime path applies, and which observability backend your organization has connected.
 
-== Where Monitoring Appears
+== Access Monitoring
+
+Monitoring appears in these areas of the experience:
 
 * *Home* — Your entry path sometimes highlights alerts or shortcuts back into *Portfolio* or *Observability*; use whatever your organization configured after sign-in.
 * *Portfolio* and service detail — Open a catalog entry and use the *Monitoring* tab on the service (and, where the product exposes it, on instances) to read metrics scoped to that service. This is where you typically go when checking whether a specific API or agent is degrading.

@@ -33,11 +33,11 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 +
 * *Basic scale*
 +
-Choose *Basic scale* for faster managed setup. This scale is best for smaller topic sets (up to 6 topics and 10 utterances per topic). Uses managed internal LLM proxy configuration.
+Choose *Basic scale* for faster managed setup. This scale is best for smaller topic sets (up to 6 topics and 10 utterances per topic) and uses managed internal LLM proxy configuration.
 +
 * *Advanced scale*
 +
-Choose *Advanced scale* when you need greater scale and external infrastructure control. This scale is best for larger utterance sets per topic. Uses external semantic infrastructure, including an embedding API connection and a vector database connection.
+Choose *Advanced scale* when you need greater scale and external infrastructure control. This scale is best for larger utterance sets per topic. It uses external semantic infrastructure, including an embedding API connection and a vector database connection.
 
 Semantic service setup defines the embedding connection used for contextual matching. Provide values for these fields:
 
