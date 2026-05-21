@@ -8,11 +8,11 @@ Go to *Governance* > *Governance Strategies* to view all strategies. Check the n
 
 == Available Strategy Actions
 
-* *View details*: Open a strategy to review scope, rules or policies, and metadata.
-* *Enable or disable*: Pause a strategy without deleting it.
-* *Edit configuration*: Update scope, rules, name, or description, then save.
-* *Reorder strategies*: Change strategy order when multiple strategies govern the same services.
-* *Delete a strategy*: Permanently remove a strategy that you no longer need.
+* View details: Open a strategy to review scope, rules or policies, and metadata.
+* Enable or disable: Pause a strategy without deleting it.
+* Edit configuration: Update scope, rules, name, or description, then save.
+* Reorder strategies: Change strategy order when multiple strategies govern the same services.
+* Delete a strategy: Permanently remove a strategy that you no longer need.
 
 == Filter and Search Strategies
 
