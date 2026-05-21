@@ -4958,7 +4958,7 @@
       "noGatewaysHeading": "No Omni Gateways Available",
       "noGatewaysDescription": "MCP servers require an Omni Gateway (v1.2.0+) to deploy. Provision an Omni Gateway in your environment first, then return here to create your MCP server.",
       "gatewayLoadErrorHeading": "Unable to Load Gateways",
-      "gatewayLoadErrorDescription": "We couldn't reach the gateway service after multiple attempts. This is usually a temporary issue — please try again.",
+      "gatewayLoadErrorDescription": "We couldn't reach the gateway service after multiple attempts. This is usually a temporary issue. Try again.",
       "retryButton": "Retry",
       "backToMcpServers": "Back to MCP Servers",
       "cancelButton": "Cancel",
@@ -5794,7 +5794,7 @@
     "keepEditingButton": "Keep Editing"
   },
   "slackInstall": {
-    "missingPending": "Missing install identifier. Please start the Slack installation again.",
+    "missingPending": "Missing install identifier. Start the Slack installation again.",
     "noOrganization": "No organization selected in this browser session.",
     "adminRequired": "Only an organization administrator can install the Slack integration.",
     "installFailed": "We couldn't install the Slack integration.",
@@ -5811,7 +5811,7 @@
     },
     "expired": {
       "heading": "Install Link Expired",
-      "description": "This installation link has expired. Please click Add to Slack again to start a new installation."
+      "description": "This installation link has expired. Click Add to Slack again to start a new installation."
     },
     "error": {
       "heading": "Installation failed"
