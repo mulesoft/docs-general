@@ -29,7 +29,7 @@ The system displays token usage and performance data in several places:
 * Service detail pages: Usage and performance summaries for supported services
 * *Observability*: Aggregated token and latency trends, when configured
 
-Navigation labels can vary by release.
+include::partial$exp-navigation-labels.adoc[tag=ExpNavigationLabels]
 
 == Open Cost Management
 
@@ -72,7 +72,7 @@ Cost and performance data inform multiple workflows:
 
 This dashboard doesn't automatically cap usage. To limit consumption, apply governance strategies or rate-limiting policies.
 
-== Cost Data and Governance 
+== Cost Data and Governance
 
 Use *Cost Management* data to create or refine governance strategies.
 

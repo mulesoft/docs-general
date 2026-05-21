@@ -39,7 +39,7 @@ Use *Add Services* to open provider connection or manual registration, then sele
 +
 Open the *Agents*, *MCP Servers*, *LLM Proxies*, *APIs*, or *Gateways* catalog. Use the add control for that type (for example, *Add API* or *Add Agent*), then select *Connect to Provider* or *Register Manually*.
 
-Labels can vary by catalog; match what you see in the UI.
+include::partial$exp-navigation-labels.adoc[tag=ExpNavigationLabels]
 
 == Service Type Registration Options
 

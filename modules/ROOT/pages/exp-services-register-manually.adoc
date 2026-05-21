@@ -28,7 +28,7 @@ Open *Add Services*, select the service type, then select manual registration if
 +
 Open the *Agents*, *MCP Servers*, *LLM Proxies*, *APIs*, or *Gateways* catalog, use the add control for that type (for example *Add API*), and select *Register Manually*.
 
-Exact labels can vary by release; follow the options your tenant shows.
+include::partial$exp-navigation-labels.adoc[tag=ExpNavigationLabels]
 
 == Agents
 

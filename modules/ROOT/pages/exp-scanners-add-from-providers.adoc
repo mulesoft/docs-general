@@ -46,7 +46,7 @@ Use the area dedicated to provider and scanner management if your navigation inc
 +
 Open the catalog that matches the service type you want (*Agents*, *APIs*, *MCP Servers*, and others your tenant supports). Use that catalog's add control—the label indicates the type (for example *Add API*)—then choose provider connection to scan and discover services to add to that catalog.
 
-Exact labels and options can vary by release; follow the UI your organization provides.
+include::partial$exp-navigation-labels.adoc[tag=ExpNavigationLabels]
 
 == Scanner Configuration Overview
 
