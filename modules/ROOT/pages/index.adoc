@@ -1,4 +1,5 @@
 = [.brand]#MuleSoft# Documentation
+:page-llms-exclude: true
 :page-layout: home
 :page-fragmentize:
 :!sectids:
