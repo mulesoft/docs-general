@@ -2,11 +2,11 @@
 
 To grow and tune your AI portfolio, register and monitor agents, APIs, and gateways in centralized catalogs. Sign in through the entry point your organization provides, such as Anypoint Platform, Slack, or a direct URL, to access dashboards and governance strategies based on your assigned permissions. Review live performance metrics, manage security policies, and track rule-level compliance through automated conformance reports.
 
-Your AI assets stay audit-ready with clear visibility into cost and runtime health across your org.
+Your AI services stay audit-ready with clear visibility into cost and runtime health across your org.
 
 == Enhanced Experience Capabilities
 
-The enhanced MuleSoft experience supports the full lifecycle of AI-connected integration assets:
+The enhanced MuleSoft experience supports the full lifecycle of AI-connected integration services:
 
 Entity Management:: Register and manage agents, REST and GraphQL APIs, MCP servers, LLM proxies, and gateways, including Anypoint Omni Gateway, external gateways, and unmanaged gateways. Each type has a dedicated catalog under *Portfolio*.
 
@@ -20,17 +20,17 @@ AI Assistant (Ask MuleSoft):: Get help navigating, searching, and managing your 
 
 == Enhanced Experience High-Level Workflow
 
-To manage and tune your AI portfolio, register assets, apply security policies, and monitor runtime health, access centralized catalogs to track agents and gateways while verifying compliance through conformance reports and cost management tools. These integrated features help you optimize performance and maintain audit readiness across your environment.
+To manage and tune your AI portfolio, register services, apply security policies, and monitor runtime health, access centralized catalogs to track agents and gateways while verifying compliance through conformance reports and cost management tools. These integrated features help you optimize performance and maintain audit readiness across your environment.
 
 . Complete onboarding and access the enhanced experience.
 +
 Confirm your credentials and the permissions that your administrator assigned, as described in xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions]. Finish integration setup for supporting systems, such as connected providers under *Platform* > *Providers*, before you rely on the experience in production. For onboarding details, see xref:exp-home-start.adoc[].
 . Learn the layout of the enhanced experience.
 +
-Sign in through your entry path and land on *Home*. Scan *Portfolio* catalogs, *Governance*, *Observability*, and *Platform* so that you know where to register assets, apply policies, read health signals, and manage providers. Access the AI assistant from any page to get guided help and answer questions. To orient yourself in portfolio views, see xref:exp-portfolio-overview.adoc[].
-. Register assets in *Portfolio*.
+Sign in through your entry path and land on *Home*. Scan *Portfolio* catalogs, *Governance*, *Observability*, and *Platform* so that you know where to register services, apply policies, read health signals, and manage providers. Access the AI assistant from any page to get guided help and answer questions. For more information about portfolio views, see xref:exp-portfolio-overview.adoc[]. For AI assistant usage, see xref:exp-ai-assistant-use.adoc[].
+. Register services in *Portfolio*.
 +
-Under *Portfolio*, open *Agents*, *MCP Servers*, *LLM Proxies*, *APIs*, or *Gateways*. Add assets to work with. Register them manually or use connected providers under *Platform* > *Providers* if your organization enables discovery flows. For registration methods, see xref:exp-services-add-to-portfolio.adoc[].
+Under *Portfolio*, open *Agents*, *MCP Servers*, *LLM Proxies*, *APIs*, or *Gateways*. Add services to work with. Register them manually or use connected providers under *Platform* > *Providers* if your organization enables discovery flows. For registration methods, see xref:exp-services-add-to-portfolio.adoc[].
 . Create and manage instances.
 +
 In *Portfolio*, open a service detail page from *Agents*, *MCP Servers*, *LLM Proxies*, or *APIs*, then open the *Instances* tab to create managed or unmanaged deployments that match your needs. Managed instances on Omni Gateway give stronger governance and monitoring when the new experience exposes them. *Gateways* don't include an *Instances* tab on their detail page. For instance workflows, see xref:exp-instances-add.adoc[].
