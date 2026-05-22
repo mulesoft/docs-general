@@ -52,7 +52,7 @@ Use controls at the top of the page to narrow the view:
 
 * Search for service or instance names.
 * Use *Filters* to refine your search by service type, environment, or metadata.
-* Select 1H, 6H, 24H, 7D, or 30D to search per time range.
+* Select a time range to search, such as 1 hour (1H), 6 hours (6H), 24 hours (24H), 7 days (7D), or 30 days (30D).
 
 The counter updates to show the number of matching services.
 
