@@ -1,7 +1,8 @@
 = MuleSoft Vibes for Anypoint Code Builder
 :page-article-style: learning-map
 
-MuleSoft Vibes is the natural-language assistant in Anypoint Code Builder for API specifications, integrations, and related tasks by using the built-in MuleSoft MCP Server and optional custom MCP servers. Use the columns in order for a typical journey from discovery through design, build, session recovery and prompting, to MCP configuration—or jump to the section that matches your goal.
+MuleSoft Vibes is the natural-language assistant in Anypoint Code Builder for API specifications, integrations, and related tasks by using the built-in MuleSoft MCP Server and optional custom MCP servers. 
+The end-to-end journey for MuleSoft Vibes consists of various tasks, each with links to relevant content to assist you in completing them.
 
 [.lm-table, cols="1a,1a,1a", grid="none"]
 |===
