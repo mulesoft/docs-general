@@ -1364,7 +1364,7 @@
   },
   "costManagement": {
     "heading": "Cost Management",
-    "subtitle": "Monitor usage and get optimization recommendations for your MCP servers."
+    "subtitle": "Monitor usage and review optimization recommendations for your MCP servers"
   },
   "instanceDetailModal": {
     "closeDialog": "Close dialog",
@@ -1514,6 +1514,7 @@
   "policyMetadataFields": {
     "heading": "Policy Details",
     "description": "Add an optional name, version, and application conditions.",
+    "automatedDescription": "Label, version, and rule of application for this automated policy.",
     "label": "Policy label",
     "labelPlaceholder": "SLA Tier 1",
     "labelHint": "Use labels to distinguish between multiple instances of the same policy.",
@@ -1529,7 +1530,16 @@
     "methodPlaceholder": "GET|POST",
     "uriPlaceholder": "/api/orders/.*",
     "removeCondition": "Remove condition",
-    "addCondition": "+ Add condition"
+    "addCondition": "+ Add condition",
+    "ruleOfApplication": "Rule of application",
+    "ruleOfApplicationDescription": "This automated policy is applied to APIs matching the criteria below.",
+    "ruleOfApplicationEnvironment": "Environment",
+    "ruleOfApplicationTechnologies": "API technologies",
+    "ruleOfApplicationEndpointTypes": "Endpoint types",
+    "ruleOfApplicationRange": "API version range",
+    "ruleOfApplicationRangeFrom": "From",
+    "ruleOfApplicationRangeTo": "To",
+    "ruleOfApplicationAny": "Any"
   },
   "policyConfigForm": {
     "heading": "Configure Policy",
@@ -1560,7 +1570,11 @@
     "removeModalTitle": "Remove {name}?",
     "removeModalMessage": "If you remove this policy, you can't undo it. The change takes effect immediately.",
     "removeModalConfirm": "Remove Policy",
-    "removeModalCancel": "Cancel"
+    "removeModalCancel": "Cancel",
+    "reviewPolicyStep": "Review Policy",
+    "allowDuplicateAcknowledgement": "I understand that there is already a policy configured and want to continue.",
+    "publishDuplicate": "Publish Duplicate",
+    "publishingDuplicate": "Publishing Duplicate…"
   },
   "policyDetailPage": {
     "subtitle": "Policy Configuration",
@@ -1673,7 +1687,8 @@
     "title": "Import Tools from MCP Server",
     "closeModal": "Close notification window",
     "connecting": "Connecting to MCP server…",
-    "noInstance": "This MCP server instance has no upstream URL. Configure one before importing tools.",
+    "noInstance": "No MCP server selected",
+    "noInstanceBody": "Select an MCP server from the list to view and import its tools.",
     "authHint": "Check the authentication policies configured for this MCP server instance.",
     "noTools": "This MCP server has no tools available.",
     "selectAll": "Select All",
@@ -1827,6 +1842,7 @@
     "headerStatus": "Status",
     "headerGovernedServices": "Governed Services",
     "headerModified": "Modified",
+    "headerEnvironment": "Environment",
     "typeAutomatedPolicy": "Automated Policy",
     "fromAnypoint": "From Anypoint Platform",
     "actionsAriaLabel": "Strategy actions",
@@ -1881,7 +1897,7 @@
     "closeAriaLabel": "Close delete dialog",
     "heading": "Delete {typeLabel}",
     "confirmMessage": "Delete {name}?",
-    "bodyMessage": "Deleting this {bodyNoun} permanently removes it. Services governed by it this {bodyNoun} are no longer validated against its rules.",
+    "bodyMessage": "Deleting this strategy removes all of its applied policies from your API instances. This action can't be undone.",
     "deleting": "Deleting…",
     "deleteButton": "Delete {typeLabel}",
     "typeAutomatedPolicy": "Automated Policy",
@@ -1889,14 +1905,14 @@
   },
   "disableAutomatedPolicyModal": {
     "closeAriaLabel": "Close disable dialog",
-    "heading": "Disable {name}?",
-    "confirmMessage": "Disable {name}?",
-    "bodyMessage": "Disabling this strategy removes all applied policies. You can re-enable it later.",
-    "disableButton": "Disable"
+    "title": "Disable Automated Policy?",
+    "body": "Disabling this policy stops automated policy enforcement for all matching API instances. You can re-enable it later.",
+    "confirmButton": "Disable Automated Policy",
+    "cancelButton": "Cancel"
   },
   "disabledAutomatedPolicyBanner": {
-    "automatedPolicy": "This automated policy is disabled. Activate it to govern these services.",
-    "controls": "This control is disabled. Activate the strategy to govern these services."
+    "automatedPolicy": "This automated policy is disabled. Enable it to govern these services.",
+    "controls": "This control is disabled. Enable it to govern these services."
   },
   "guardrailEvaluationPanel": {
     "runEvaluation": "Run profile evaluation",
