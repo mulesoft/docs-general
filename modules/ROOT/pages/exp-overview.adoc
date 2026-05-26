@@ -27,7 +27,8 @@ To manage and tune your AI portfolio, register services, apply security policies
 Confirm your credentials and the permissions that your administrator assigned, as described in xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions]. Finish integration setup for supporting systems, such as connected providers under *Platform* > *Providers*, before you rely on the experience in production. For onboarding details, see xref:exp-home-start.adoc[].
 . Learn the layout of the enhanced experience.
 +
-Sign in through your entry path and land on *Home*. Scan *Portfolio* catalogs, *Governance*, *Observability*, and *Platform* so that you know where to register services, apply policies, read health signals, and manage providers. Access the AI assistant from any page to get guided help and answer questions. For more information about portfolio views, see xref:exp-portfolio-overview.adoc[]. For AI assistant usage, see xref:exp-ai-assistant-use.adoc[].
+Sign in through your entry path and land on *Home*. Scan *Portfolio* catalogs, *Governance*, *Observability*, and *Platform* so that you know where to register services, apply policies, read health signals, and manage providers. Access the AI assistant from any page to get guided help and answer questions. For more information about portfolio views, see xref:exp-portfolio-overview.adoc[].
+// For AI assistant usage, see xref:exp-ai-assistant-use.adoc[].
 . Register services in *Portfolio*.
 +
 Under *Portfolio*, open *Agents*, *MCP Servers*, *LLM Proxies*, *APIs*, or *Gateways*. Add services to work with. Register them manually or use connected providers under *Platform* > *Providers* if your organization enables discovery flows. For registration methods, see xref:exp-services-add-to-portfolio.adoc[].
