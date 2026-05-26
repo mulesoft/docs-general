@@ -60,9 +60,28 @@ LLM proxy registration is a two-part configuration: you associate the proxy with
 
 == APIs
 
-Manual API registration expects an API specification and a way to reach a running instance (or instance-only registration when that path is enabled). Select the API type and then upload a specification file from your environment.
+To create an API, add it to the APIs catalog either by registering it manually or by connecting to a provider.
 
-The system uses the spec to discover endpoints, parameters, and related metadata where applicable, then writes the API into the *APIs* catalog after you confirm.
+* *Register manually* – Upload a specification file to define a new API.
+* *Connect to provider* – Discover and import APIs from external platforms. See xref:exp-services-connect-providers-to-add.adoc[].
+
+=== Register an API Manually
+
+When you register an API manually, you provide a specification file that defines the API structure, including endpoints, operations, and data types.
+
+. In the navigation pane, select *APIs*.
+. Click *Add API*.
+. Select *Register manually*.
+. Enter a name for the API.
+. Select the API type.
+. Upload the specification file.
+. Click *Create*.
+
+The experience supports multiple API types and specification formats:
+
+* REST APIs (OAS, RAML)
+* gRPC APIs (Proto files)
+* Async APIs (AsyncAPI specification)
 
 == Gateways
 

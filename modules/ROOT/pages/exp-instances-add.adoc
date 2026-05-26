@@ -21,7 +21,7 @@ Before getting started, make sure you have:
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
-== Open the Instances Experience
+== Open the APIs Catalog
 
 . In *Portfolio*, open the catalog for the service type, such as *APIs*, *Agents*, *MCP Servers*, or *LLM Proxies*.
 . Select a service to open its detail page.
@@ -29,67 +29,25 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 
 Field names, required metadata, and available gateway or runtime options depend on the selected service type and your organization's configuration.
 
-== API Instances
+== Create an Instance
 
-Register APIs as services defined by formal specifications and manage them alongside other service types in the enhanced experience.
-
-Creating an API establishes its structure and makes it available in the portfolio, while instances represent deployed or managed versions of that API across environments or providers.
-
-=== Create an API
-
-To create an API, add it to the APIs catalog either by registering it manually or by connecting to a provider.
-
-* *Register manually* – Upload a specification file to define a new API.
-* *Connect to provider* – Discover and import APIs from external platforms. See xref:exp-services-connect-providers-to-add.adoc[].
-
-==== Register an API Manually
-
-When you register an API manually, you provide a specification file that defines the API structure, including endpoints, operations, and data types.
-
-. In the navigation pane, select *APIs*.
-. Click *Add API*.
-. Select *Register manually*.
-. Enter a name for the API.
-. Select the API type.
-. Upload the specification file.
-. Click *Create*.
-
-The experience supports multiple API types and specification formats:
-
-* REST APIs (OAS, RAML)
-* gRPC APIs (Proto files)
-* Async APIs (AsyncAPI specification)
-
-=== View API Details
-
-After creating or selecting an API, the detail page displays multiple views that expose its structure, runtime state, and governance status.
-
-The API detail view is organized into tabs:
-
-* *Overview* – Displays API structure and metadata
-* *Instances* – Lists and manages API instances
-* *Monitoring* – Displays performance metrics
-* *Policies* – Displays applied policies
-* *Conformance Report* – Displays governance status
-* *Versions* – Displays available API versions
-
-NOTE: Manage monitoring, policies, and conformance details in their respective sections.
-
-==== Overview Tab
-
-The *Overview* tab displays information derived from the API specification.
-
-Depending on the API type, this includes:
-
-* Endpoints or resources defined in the API
-* Available methods, such as GET, POST, PUT, and DELETE
-* Request and response details
-* Parameters and headers
-* Example requests and responses
-* Data types and schemas
-* Security definitions
-
-This view reflects the structure and behavior defined in the uploaded specification.
+. In the *Instances* tab, click *Add Instance*.
+. Select the instance type:
++
+--
+* *Managed Instance* – Creates a new instance on an Omni Gateway with full support for authentication, monitoring, and policy enforcement.
+* *Unmanaged Target* – Creates a basic record of an API endpoint. You can add management for this endpoint later.
+--
+. Complete the *Instance* fields:
++
+--
+** *Environment* – Select the environment where the instance runs, such as Sandbox or Production.
+** *Omni Gateway* – Select the gateway to route traffic through. Required for managed instances.
+** *Version* – Select the API version for this instance.
+** *Label* – Optional label to identify the instance.
+--
+. Under *Target*, enter the *Target URL* where the instance proxies requests.
+. Click *Create Instance*.
 
 == After You Create or Change an Instance
 
