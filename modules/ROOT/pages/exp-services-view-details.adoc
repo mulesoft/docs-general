@@ -40,7 +40,7 @@ The page is organized into tabs. The following table lists each tab, what it sho
 |Yes |Yes |Yes |Yes |No
 
 |*Policies*
-|Governance policies attached to the service or its instances (access, data, performance, compliance, and related domains your organization uses).
+|Governance policies attached to the service or its instances (access, data, performance, compliance, and related domains your organization uses). When the instance uses a Kong gateway, the listed policies are gateway-level policies (plugins). Additional service-level policies (plugins) may be applicable to this instance beyond the gateway-level policies listed.
 |Yes |Yes |Yes |Yes |Yes
 
 |*Monitoring*
