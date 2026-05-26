@@ -4,6 +4,8 @@ Install the MuleSoft for Slack app in your Slack workspace to receive notificati
 
 Available commands, message templates, and workspaces depend on how your organization configured the Slack app. Internal runbooks list the slash commands or shortcuts approved for your workspace.
 
+NOTE: This tool uses generative AI, which can produce inaccurate or harmful responses. Review for accuracy and safety before using.
+
 == Connect Your Slack Workspace to the MuleSoft Organization
 
 You must be a MuleSoft organization administrator to connect or disconnect the Slack integration.
@@ -20,8 +22,6 @@ You may need Slack admin permissions to install this app in your organization's 
 . After the app is installed, select Slack as a notification delivery channel when you configure alerts and run shortcuts by using `@MuleSoft Agent` in your Slack workspace.
 
 == Begin Using the MuleSoft Agent
-
-
 
 . Open Slack in the workspace your company uses for MuleSoft or platform notifications.
 . Use the app your MuleSoft administrator added.
