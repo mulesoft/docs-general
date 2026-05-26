@@ -85,6 +85,11 @@ The enhanced experience supports connections to these providers:
 * Microsoft
 * Snowflake
 
+[NOTE]
+====
+When scanning Kong Konnect, the enhanced experience discovers gateway-level plugin information in addition to services.
+====
+
 The specific providers available depend on your organization's enabled products and enhanced experience configuration.
 
 == See Also
