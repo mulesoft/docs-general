@@ -37,7 +37,7 @@ Data for API Manager is available starting in October 2024.
 a|If an API is governed, all versions of that API are considered one governed API. Instances of API Governance are aggregated using a Max Concurrent model. The usage for a month is the highest number of APIs governed in a single given hour during a month.
 
 |Omni Gateway	
-|Omni Gateway API call: Any access request received by Anypoint Omni Gateway regardless of whether the response to the request is successful 
+|Omni Gateway API call: Any access request received by Omni Gateway regardless of whether the response to the request is successful 
 |Omni Gateway requests are aggregated as a total of all requests during a month.
 
 .3+|LLM Proxy	

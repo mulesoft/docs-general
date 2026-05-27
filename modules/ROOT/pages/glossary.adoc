@@ -25,7 +25,7 @@ Web-based graphical environment for designing, documenting, and testing APIs.
 Anypoint Exchange (Exchange)::
 A curated catalog of reusable assets such as APIs, policies, API spec fragments, API groups, GraphQL APIs, templates, examples, custom assets, rulesets, and integration assets such as connectors. 
 
-Anypoint Omni Gateway::
+Omni Gateway::
 An Envoy-based, ultrafast lightweight API gateway designed to manage and secure APIs running anywhere.
 
 Anypoint Management Center (Management Center)::
