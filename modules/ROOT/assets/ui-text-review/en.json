@@ -350,6 +350,9 @@
     "skipToMain": "Skip to main content",
     "mainContent": "Main content"
   },
+  "aiSidebar": {
+    "landmarkLabel": "Ask MuleSoft"
+  },
   "leftNav": {
     "landmarkLabel": "Primary",
     "home": "Home",
@@ -634,6 +637,7 @@
     "recipientSearchPlaceholder": "Search by name or type emails (comma-separated)…",
     "noUsersFound": "No users found matching \"{query}\"",
     "recipientHint": "Search and select users to receive email notifications.",
+    "removeRecipientLabel": "Remove recipient",
     "subject": "Subject",
     "subjectVariablesHint": "Variables: $'{'severity'}', $'{'api'}', $'{'condition'}', $'{'environment'}'",
     "message": "Message",
@@ -858,7 +862,7 @@
     "mcpServers": "MCP Servers",
     "apis": "APIs",
     "noScanners": "No scanners for this provider yet.",
-    "noScannersAll": "No scanners configured yet",
+    "noScannersAll": "No scanners configured yet.",
     "addScannerPrompt": "Select {label} to get started.",
     "addScannerPromptAll": "Select a provider from the sidebar, then click Add Scanner to get started.",
     "scannerCount": "{count} {count, plural, one {Scanner} other {Scanners}}",
@@ -983,6 +987,7 @@
     "never": "Never",
     "tab": {
       "overview": "Overview",
+      "services": "Services",
       "settings": "Settings"
     },
     "toastScanStarted": "Scan started",
@@ -1145,6 +1150,15 @@
     "servicesTitle": "Services {action} ({count})",
     "typeAgent": "Agent",
     "typeApi": "API"
+  },
+  "scannerServicesTab": {
+    "noServices": "No services discovered yet",
+    "loading": "Loading services…",
+    "discoveredServices": "Discovered Services",
+    "sectionAgents": "Agents",
+    "sectionApis": "APIs",
+    "sectionMcpServers": "MCP Servers",
+    "sectionLlms": "LLM Proxies"
   },
   "scanDetailView": {
     "scanDetails": "Scan Details",
@@ -1474,7 +1488,9 @@
     "heading": "Apply Policy",
     "selectPolicyStep": "Select Policy",
     "configurePolicyStep": "Configure Policy",
+    "reviewPolicyStep": "Review Policy",
     "description": "Select a policy to apply to this instance.",
+    "descriptionKong": "Select a policy to be applied at gateway of this instance, protecting all services in the gateway.",
     "searchAriaLabel": "Search policies",
     "searchPlaceholder": "Search policies…",
     "trafficFlow": "Traffic Flow",
@@ -1490,6 +1506,7 @@
     "statusFilterLabel": "Status",
     "trafficFlowLabel": "Traffic Flow",
     "trafficFlowTooltip": "Filter policies by traffic direction: Inbound policies apply to incoming requests. Outbound policies apply to backend calls.",
+    "trafficFlowInfoLabel": "Traffic flow information",
     "noFilterMatch": "No policies match your filters.",
     "allApplied": "All available policies are already applied to this instance.",
     "selectAriaLabel": "Select {name}",
@@ -1681,7 +1698,8 @@
     "fromExchange": "From Exchange",
     "fromExchangeDescription": "Import published tool definitions",
     "fromMcpServer": "From MCP Server",
-    "fromMcpServerDescription": "Discover tools from the live instance"
+    "fromMcpServerDescription": "Discover tools from the live instance",
+    "fromMcpServerCheckingDescription": "Checking server type…"
   },
   "importToolsFromMcp": {
     "title": "Import Tools from MCP Server",
@@ -2134,6 +2152,9 @@
       "contentTypeDescription": "Media type of the request body"
     }
   },
+  "apiSpecNav": {
+    "toggleSectionLabel": "Toggle section"
+  },
   "detailOverviewTab": {
     "section": {
       "skills": "Skills",
@@ -2490,6 +2511,7 @@
   "addVersionModal": {
     "heading": "Add a new version",
     "closeDialog": "Close add version dialog",
+    "closeModalLabel": "Close modal",
     "publishingStatus": "Publishing version…",
     "waitingDeployment": "Waiting for deployment to complete",
     "publishingButton": "Publishing…",
@@ -2729,6 +2751,8 @@
     "actionsAriaLabel": "Actions",
     "loadingValue": "Loading {name}…",
     "exposeAsMcpServerDisabledTooltip": "This API only has a Mocking Service instance. Deploy a real (managed or self-managed) instance before exposing it as an MCP server.",
+    "editNotSupportedTooltip": "Editing is not supported for this entity yet.",
+    "deleteNotSupportedTooltip": "Deleting is not supported for this entity yet.",
     "provisioningFailedTooltip": "Provisioning failed",
     "provisioningFailedBanner": "Provisioning couldn't complete. Click Retry to resume from where it left off.",
     "retryButton": "Retry",
@@ -3624,14 +3648,14 @@
     "anypointTitle": "Go to Anypoint Platform",
     "anypointDescription": "Quick link to Anypoint Platform. Opens in a new tab for seamless navigation between the enhanced MuleSoft experience and Anypoint Platform.",
     "businessGroupTitle": "Business Group",
-    "businessGroupDescription": "Switch between business groups to change your organization scope. Currently viewing: Mythical Division.",
+    "businessGroupDescription": "Switch between business groups to change your organization scope. Currently viewing: {organizationName}.",
     "themeToggleTitle": "Theme Toggle",
     "themeToggleDescription": "Switch between light and dark modes. Your changes take effect immediately.",
     "navToggleTitle": "Navigation Toggle",
     "navToggleDescription": "Collapse the navigation to icon-only mode for more screen space, or expand it to see full labels.",
     "omniAssistantTitle": "Ask MuleSoft",
     "omniAssistantDescription": "Ask questions, get insights, and take actions across your AI portfolio. Press ⌘K (Mac) or Ctrl+K (Windows) to open.",
-    "businessGroupDescriptionNoOrg": "Switch between business groups to view different organizational scopes."
+    "businessGroupDescriptionNoOrg": "Switch between business groups to change your organization scope."
   },
   "welcomeFeatures": {
     "registerLabel": "Register",
@@ -3784,7 +3808,8 @@
       "filterOperatorExcludes": "excludes",
       "namePlaceholder": "Production Vertex Scanner",
       "descriptionPlaceholder": "Describe what this scanner monitors…",
-      "valuesPlaceholder": "Values…"
+      "valuesPlaceholder": "Values…",
+      "removeFilterLabel": "Remove filter"
     },
     "publishAssetForm": {
       "heading": "Publish a new {type}",
@@ -4032,7 +4057,8 @@
     "errorTitleRateLimited": "Too Many Requests",
     "errorTitleInternal": "Unexpected Error",
     "versionLabel": "Version",
-    "zipFileTypeHint": "ZIP"
+    "zipFileTypeHint": "ZIP",
+    "clearFileLabel": "Clear selected file"
   },
   "complianceBadge": {
     "compliant": "Conformant",
@@ -4154,7 +4180,8 @@
     "clickToBrowseOrDragAndDrop": "Click to browse or drag and drop",
     "uploadAriaLabel": "Upload {entityLabel} spec or ZIP",
     "zipPackage": "ZIP package",
-    "specFile": "Spec file"
+    "specFile": "Spec file",
+    "clearFileLabel": "Clear selected file"
   },
   "testConnectionRow": {
     "test": "Test connection",
@@ -4309,6 +4336,7 @@
     "selectActiveProvider": "Selecting provider",
     "selectActiveEnvironment": "Selecting environment",
     "selectActiveBusinessGroup": "Selecting business group",
+    "findAssets": "Searching for assets",
     "fallback": "Working",
     "tool": {
       "login": "Logging in to Anypoint Platform",
@@ -4385,7 +4413,8 @@
       "query_topology_aggregates": "Analyzing API topology",
       "select_active_provider": "Selecting provider",
       "select_active_environment": "Selecting environment",
-      "select_active_business_group": "Selecting business group"
+      "select_active_business_group": "Selecting business group",
+      "find_assets": "Searching for assets"
     }
   },
   "metricDrillDownPanel": {
@@ -4579,7 +4608,11 @@
     "advancedOptionsDesc": "Filter prompts before they reach a route.",
     "selectPromptGuardTopicPlaceholder": "Select topics…",
     "noSelectablePromptGuardTopics": "No topics available — all are assigned to a route or guard.",
-    "loadingSemanticServices": "Loading semantic services…"
+    "loadingSemanticServices": "Loading semantic services…",
+    "switchServiceWarningTitle": "Change semantic service?",
+    "switchServiceWarningMessage": "Topics are scoped to the current semantic service. Switching to a different service will remove all topics assigned to your routes and the prompt guard. This cannot be undone.",
+    "switchServiceWarningConfirm": "Change service",
+    "switchServiceWarningCancel": "Cancel"
   },
   "routeCardContent": {
     "topicsLabel": "Topics",
@@ -4754,6 +4787,7 @@
   },
   "governanceSettings": {
     "actionsButton": "Actions",
+    "toggleOptionsLabel": "Toggle options",
     "editFromAnypoint": "Edit (From Anypoint Platform)",
     "editStrategy": "Edit Strategy",
     "deleteStrategy": "Delete Strategy",
@@ -4999,7 +5033,10 @@
       "breadcrumbCreate": "Create MCP Server",
       "breadcrumbEdit": "Edit MCP Server",
       "noGatewaysHeading": "No Omni Gateways Available",
-      "noGatewaysDescription": "MCP servers require an Omni Gateway (v1.2.0+) to deploy. Provision an Omni Gateway in your environment first, then return here to create your MCP server.",
+      "noGatewaysDescription": "MCP servers require an Omni Gateway to deploy. Provision an Omni Gateway in your environment first, then return here to create your MCP server.",
+      "noEligibleGatewaysHeading": "No Eligible Omni Gateways",
+      "noEligibleGatewaysDescription": "All available Omni Gateways are running versions that cannot host MCP servers. Upgrade at least one gateway to a supported version, then return here to create your MCP server.",
+      "ineligibleGatewaysListHeading": "Available gateways and why they are blocked:",
       "gatewayLoadErrorHeading": "Unable to Load Gateways",
       "gatewayLoadErrorDescription": "We couldn't reach the gateway service after multiple attempts. This is usually a temporary issue. Try again.",
       "retryButton": "Retry",
