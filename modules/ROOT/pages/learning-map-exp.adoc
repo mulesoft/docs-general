@@ -23,7 +23,6 @@ The experience helps you manage, optimize, and govern a multi-agent ecosystem fr
 - xref:exp-overview.adoc[]
 - xref:exp-compare.adoc[]
 - xref:exp-home-start.adoc[]
-- xref:exp-slack-integrate.adoc[]
 - xref:exp-claude-desktop-connect.adoc[]
 - https://trailhead.salesforce.com/content/learn/modules/get-to-know-the-enhanced-mulesoft-experience[Get to Know the Enhanced MuleSoft Experience: Quick Look]
 
@@ -51,7 +50,6 @@ Monitor latency, cost, invocations, and failures in real time.
 - xref:exp-services-monitoring.adoc[]
 - xref:exp-governance-view-cost-and-token-usage.adoc[]
 - xref:exp-services-view-detailed-metrics.adoc[]
-- xref:exp-alerts-configure-notifications.adoc[]
 
 |===
 
