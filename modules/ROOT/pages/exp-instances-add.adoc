@@ -53,7 +53,7 @@ Field names, required metadata, and available gateway or runtime options depend 
 
 After creating or updating an instance, you can continue managing the service through related areas of the experience.
 
-* Use the *Policies* tab to review or apply policies to the instance.
+* Use the *Policies* tab to review or apply policies to the instance. If the instance uses a Kong gateway, applying a policy targets the gateway level and protects all services in that gateway.
 * Use the *Monitoring* tab to review metrics and runtime performance when monitoring is available.
 * Coordinate with platform owners if DNS, certificates, or upstream routing changes must happen outside the product.
 
