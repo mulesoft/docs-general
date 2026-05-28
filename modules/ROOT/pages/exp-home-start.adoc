@@ -12,9 +12,9 @@ Your organization determines how you access the new experience. Common options i
 * Anypoint Platform
 +
 In Anypoint Platform, look for the new experience banner or shortcut and choose *Go to the new experience*. Your administrator can also add a direct link in the main navigation or workspace.
-* Slack
-+
-If your organization integrates the new experience with Slack, use the new experience Slack app to receive notifications and alerts, and follow links back into the product. Your workspace can also offer shortcuts or slash commands your admin configures.
+// * Slack
+// +
+// If your organization integrates the new experience with Slack, use the new experience Slack app to receive notifications and alerts, and follow links back into the product. Your workspace can also offer shortcuts or slash commands your admin configures.
 * Coding assistants
 +
 If your organization connects the new experience to a supported assistant, such as Claude Code, follow your internal instructions to open the new experience features from that development environment.
