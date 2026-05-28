@@ -1,0 +1,59 @@
+= Connect to Providers to Add Services
+
+Connect a provider so the system runs scanners against supported cloud platforms, discovers services (such as agents, APIs, and MCP servers), and registers them in the matching catalog in *Portfolio*. You supply credentials and scanner metadata so the integration is repeatable and auditable.
+
+You can start the flow from *Home* or from a specific catalog in *Portfolio*. To see how this relates to manual registration, see xref:exp-services-add-to-portfolio.adoc[]. For creating and tuning scanners themselves, see xref:exp-scanners-add-from-providers.adoc[].
+
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* Any of these permissions:
++
+--
+** Exchange: Exchange Administrator
+** Exchange: Exchange Contributor
+** API Manager: API Creator
+** API Manager: Manage Policies
+--
++
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+
+== When to Use Provider Connection
+
+Use provider connection when your team maintains services in an external platform and wants those services to appear automatically in portfolio catalogs after authentication and discovery, instead of registering each one by hand.
+
+== Workflow Entry Points
+
+* *Home*
++
+Use *Add Services*, select *Connect to Provider*, then work through the wizard to pick a provider, validate access, and save scanner settings. Use this path when you're not starting from a single catalog view.
+* *Portfolio*
++
+Open the *Agents*, *MCP Servers*, *LLM Proxies*, *APIs*, or *Gateways* catalog. Use the add control for that service type (for example *Add API* or *Add MCP Server*), select *Connect to Provider*, and complete the same style of wizard scoped to that catalog.
+
+Labels differ by catalog and release. Match what you see in the UI.
+
+== Wizard Settings
+
+Across *Home* and *Portfolio* entry points, provider connection covers the same decisions:
+
+* Which provider or platform to target for discovery and import.
+* Credentials and authentication so the system can reach the provider securely.
+* Connection validation so you know discovery can run against live data.
+* Scanner identity and settings: name, description, and options your administrator expects before you save the connection.
+
+When the scanner runs successfully, the system registers discovered services in the catalog you started from (for example, APIs land in the *APIs* catalog).
+
+== Catalog-Specific Flows
+//EBM: Is this still valid? I am not sure how to validate this. 
+The *Agents*, *APIs*, and *MCP Servers* catalog-specific flows emphasize the service type you're enriching. 
+Discovery results populate that catalog when the system supports provider mapping for that type.
+
+== See Also
+
+* xref:exp-services-add-to-portfolio.adoc[]
+* xref:exp-services-register-manually.adoc[]
+* xref:exp-scanners-add-from-providers.adoc[]
+* xref:exp-services-view-details.adoc[]

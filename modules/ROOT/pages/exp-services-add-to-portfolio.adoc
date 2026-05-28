@@ -1,0 +1,68 @@
+= Adding Services to Your Portfolio
+
+Your *Portfolio* is organized into catalogs: *Agents*, *MCP Servers*, *LLM Proxies*, *APIs*, and *Gateways*. Each catalog holds the services (or gateway entries) that your organization registered or imported so you can govern, monitor, and deploy them from one place. Services enter a catalog either through automated provider discovery or through manual registration. For step-by-step procedures, use the topics linked in each section.
+
+[cols="1,2",options="header"]
+|===
+|Approach |What Happens
+
+|xref:exp-services-connect-providers-to-add.adoc[]
+|You add a provider scanner from *Home* or from a catalog in *Portfolio*. Scans discover services on supported cloud platforms and register them in the matching catalog.
+
+|xref:exp-services-register-manually.adoc[]
+|You start an *Add …* workflow from *Home* or from the catalog for that service type. You supply metadata, specifications, endpoints, or cards to register the service without a provider scanner.
+|===
+
+Gateways follow the same entry points; the linked topics cover gateway-specific behavior where it applies.
+
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* Any of these permissions:
++
+--
+** Exchange: Exchange Contributor
+** Exchange: Exchange Administrator
+** Exchange: Exchange Creator
+--
++
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+
+== Workflow Entry Points
+
+* *Home*
++
+Use *Add Services* to open provider connection or manual registration, then select the service type.
+* *Portfolio*
++
+Open the *Agents*, *MCP Servers*, *LLM Proxies*, *APIs*, or *Gateways* catalog. Use the add control for that type (for example, *Add API* or *Add Agent*), then select *Connect to Provider* or *Register Manually*.
+
+include::partial$exp-navigation-labels.adoc[tag=ExpNavigationLabels]
+
+== Service Type Registration Options
+
+*Agents*::
+Register by connecting to an agent-to-agent (A2A) endpoint, uploading an agent card, or registering without a card—or connect an agent provider for discovery.
+
+*MCP Servers*::
+Register with an MCP URL or a schema file, or connect an MCP server provider.
+
+*LLM Proxies*::
+Register manually by configuring a gateway and routing strategy, or use provider flows your tenant exposes for LLM proxies.
+
+*APIs*::
+Register with an API specification and instance details, or connect an API provider so scans import APIs into the *APIs* catalog.
+
+*Gateways*::
+Add a new gateway runtime by configuring a gateway and routing strategy, import an existing runtime through provider discovery, or browse the marketplace catalog to add pre-configured gateway options to the *Gateways* catalog.
+
+For more information about registering any of these types, see xref:exp-services-register-manually.adoc[] and xref:exp-services-connect-providers-to-add.adoc[].
+
+== See Also
+
+* xref:exp-services-connect-providers-to-add.adoc[]
+* xref:exp-services-register-manually.adoc[]
+* xref:exp-scanners-add-from-providers.adoc[]
+* xref:exp-services-view-details.adoc[]

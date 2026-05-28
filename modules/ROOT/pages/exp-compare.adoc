@@ -1,0 +1,73 @@
+= Enhanced MuleSoft Experience and Anypoint Platform Comparison
+
+Both the enhanced MuleSoft experience and Anypoint Platform include robust capabilities, but they emphasize different strengths, especially if you manage AI services such as agents, LLM proxies, and MCP servers next to APIs and gateways.
+
+Adopting the new experience gives you a fuller way to manage and optimize AI services, with the flexibility and governance modern AI-driven environments need. You configure AI policies and map relationships among services faster and more seamlessly in the new experience because the UI targets that portfolio. The enhanced experience is especially useful when AI is central to your strategy.
+
+You still rely on Anypoint Platform for API and integration work, such as designing and evolving specifications, implementing and testing Mule apps in Anypoint Code Builder or Anypoint Studio, running CI/CD, deploying to runtimes such as CloudHub or Runtime Fabric, and using *Exchange* and *API Manager* for publishing, deep lifecycle policy, and runtime management.
+
+== Benefits of Adopting the Experience
+
+Unified Relationships Across Entity Types:: *Overview* and graph-style context show how agents, MCP servers, LLM proxies, APIs, and gateways connect. You can reason about dependencies and impact more easily than when each silo lives only in its legacy console.
+Governance Framed for AI as Well as APIs:: You apply and review governance across domains such as access and security, performance and cost, data privacy and integrity, and compliance and observability, aligned to the asset you're viewing. Policy and conformance work stays adjacent to the asset instead of only in a separate API-only mental model.
+Cost and Usage Signals for AI Operations:: The experience includes cost management tooling aimed at portfolio spend, including visibility into token usage and optimization strategies for MCP servers and related AI paths. Use it when you need instance-level usage context tied to the same catalog as the rest of the portfolio.
+Instance-Level Policy Control:: For instances backed by Omni Gateway where the product supports it, the experience elevates instance-level governance, including options to tune policy order and draw from a named policy catalog. Use the enhanced experience when you need fine-grained control in the portfolio UI, and use the deeper runtime-only workflows in Anypoint Platform when the experience links you there.
+Provider Breadth for AI Connections:: *Platform* includes *Providers* and related configuration so the experience can connect AI and integration services across multiple vendors, such as AWS Bedrock and Google Vertex AI, in addition to your existing MuleSoft footprint. The interface supports multi-vendor AI stacks without forcing each vendor's console to be your only view.
+Managed and Unmanaged Instances:: The experience supports creating managed instances on Omni Gateway when you want full support paths including authentication and monitoring, or unmanaged-style instances when you want a lighter footprint. Select the model per asset and gateway strategy.
+Assistant Across the Portfolio:: The in-product Ask MuleSoft assistant targets setup, questions, and recommendations across the services the experience tracks. The classic Anypoint Platform control plane doesn't provide that same assistant-led experience.
+
+== Task Management by Platform
+
+The enhanced MuleSoft experience and Anypoint Platform each offer distinct capabilities that can guide where you perform different tasks. Understanding each platform's strengths helps you pick the right environment and still combine tools when a workflow spans both.
+
+[cols="1,1,2a,2a",options="header"]
+|===
+| Task | Preferred Experience | Why | Example for Dual Use
+
+| API design and documentation
+| Anypoint Platform
+a|
+Anypoint Platform offers powerful tools like Anypoint Code Builder for crafting APIs with RAML or OAS and publishing detailed documentation.
+a|
+To cross-reference API design with governance policies established in the enhanced experience, add your API to the enhanced experience portfolio, then open the asset to review its compliance details alongside the design. See xref:exp-services-add-to-portfolio.adoc[].
+
+| Policy enforcement and governance
+| Enhanced MuleSoft experience
+a|
+The new experience excels in applying and managing governance policies across agents, APIs, and other services with detailed compliance tracking and reporting features.
+a|
+Use Anypoint Platform for initial policy setup when launching a new API. Use the new experience for ongoing monitoring and adjustment to make sure policies remain effective and compliant.
+
+| Integration development
+| Anypoint Platform
+a|
+Anypoint Code Builder is specifically designed for developing integrations and flows, offering seamless tools for connecting systems and designing workflows.
+a|
+If an integration involves workflows managed by multiple AI agents, start in Anypoint Platform and then use the new experience to make sure each agent complies with integration standards.
+
+| Multi-agent ecosystem management
+| Enhanced MuleSoft experience
+a|
+The new experience monitors and optimizes interactions between AI agents to maintain cohesive operation across the ecosystem.
+a|
+Conduct initial API integration testing in Anypoint Platform to verify functionality, then switch to the new experience for monitoring agents that interact with those APIs.
+
+| Cost and performance optimization
+| Enhanced MuleSoft experience
+a|
+The new experience provides cost management, token usage tracking, and performance metrics across agents, APIs, MCP servers, and related services in the portfolio.
+a|
+Use Anypoint Platform to initially monitor API performance under load during development, and use the new experience for ongoing cost optimization after APIs are in full production.
+
+| Runtime application management
+| Anypoint Platform
+a|
+Use Anypoint Runtime Manager to deploy, manage, and monitor Mule applications during runtime operations.
+a|
+Deploy applications via Anypoint Platform to leverage its runtime monitoring, then switch to the new experience for broader operational oversight involving governance and policy application across running services.
+|===
+
+== See Also
+
+* xref:exp-overview.adoc[]
+* xref:exp-home-start.adoc[]

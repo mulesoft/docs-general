@@ -1,0 +1,39 @@
+= Connect the Enhanced Experience to Claude Desktop
+
+Some organizations connect Claude Desktop (or similar assistants) to the enhanced MuleSoft experience so developers can jump from conversational workflows into governed catalogs and policies without leaving their preferred environment. Your IT team controls whether this integration is available, which OAuth scopes apply, and which actions the assistant can initiate on your behalf.
+
+
+== Before You Begin
+
+* A supported Claude Desktop release and any enterprise controls your company applies to assistant software.
+* Network access from your workstation to both the assistant vendor endpoints and MuleSoft endpoints your security team approved.
+* An Anypoint Platform account.
+* Mule Developer Generative AI User permission to send prompts to agents.
++
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+
+== Administrator Configuration
+
+* Identity and consent
++
+Map your Anypoint Platform identity to the assistant context and document which business groups can use the integration.
+* Allowed actions
++
+Decide whether the workflow is read-only (for example opening catalog links) or triggers guarded operations, then enforce that with roles and internal process.
+
+== Use the Integration
+
+Follow the internal instructions your platform team published, for example a starter prompt, a packaged connector, or a bookmark that opens the enhanced experience with the required query parameters. In the browser, complete any additional sign-in or verification your organization requires.
+
+If the connection stops working after a client or policy update, check certificates, proxy settings, and token expiry with your administrator before opening a support case.
+
+== Work with the Enhanced Experience via MuleSoft MCP Server
+
+Maintain velocity from your own work environment by executing end-to-end lifecycle tasks in the enhanced experience using MuleSoft Platform MCP Server. Manage assets, run scanners, configure gateways, handle governance, and more entirely in natural language from Claude Desktop, VS Code, ChatGPT, Windsurf, and Cursor.
+
+To get started, see xref:mulesoft-mcp-server::getting-started-platform.adoc[].
+
+== See Also
+
+* xref:exp-home-start.adoc[]
+* xref:exp-overview.adoc[]

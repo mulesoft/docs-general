@@ -1,0 +1,41 @@
+= View Detailed Metrics for Your Services
+
+Detailed metrics go beyond high-level status to show time series, breakdowns, and dimensions your observability stack forwards into the enhanced experience. Use them to debug incidents, validate policy changes, and compare behavior across instances or environments.
+
+Available metric time series depend on the gateway or runtime path, whether the deployment is managed through Omni Gateway, and what your organization connected under *Platform* and *Observability*.
+
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* Any of these permissions:
++
+--
+** Anypoint Monitoring: Monitoring Viewer
+** Anypoint Monitoring: Monitoring Administrator
+--
++
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+
+== Open Detailed Views
+
+* From *Portfolio*, open a service and go to the *Monitoring* tab for charts scoped to that service or instance when the product exposes them.
+* From *Observability*, open dashboards or explorers your administrator pinned for the organization. 
+
+If you need a metric that doesn't appear, ask your platform team whether the integration or retention policy supports it.
+
+== Metrics Best Practices
+
+* Baseline after changes
++
+Capture before-and-after windows when you deploy instances or change policies so you can attribute shifts.
+* Respect data boundaries
++
+Some dimensions might be redacted or aggregated for privacy. Follow your organization's data-handling standards.
+
+== See Also
+
+* xref:exp-services-monitoring.adoc[]
+* xref:exp-services-view-details.adoc[]
+* xref:exp-overview.adoc[]

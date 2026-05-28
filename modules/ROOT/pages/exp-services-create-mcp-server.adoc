@@ -1,0 +1,55 @@
+= Create an MCP Server
+
+Create MCP servers to define identity, runtime connectivity, and the tools and resources exposed to MCP clients.
+
+Creating an MCP server defines a new MCP implementation—for example, by transcoding an existing REST API or creating a runtime deployment—and establishes the server identity, runtime connectivity, and the MCP capabilities (tools and resources) exposed to clients.
+
+Creating an MCP server is different from adding one to *Portfolio*. Creation defines the MCP implementation and runtime behavior. Adding to *Portfolio* registers an existing MCP server so teams can govern, monitor, and manage lifecycle in the enhanced experience.
+
+During creation, you define:
+
+* *Service definition*
++
+Name, description, and ownership metadata so teams can identify the server in catalogs and governance views.
+* *Connection/runtime details*
++
+Endpoint and access settings the enhanced experience uses to connect to and validate the server.
+* *Capability surface* 
++
+The MCP tools and resources clients can discover and invoke.
+* *Validation and readiness*
++
+Checks that confirm the server is reachable and that the declared MCP capabilities are usable.
+
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* Any of these permissions:
++
+--
+** Exchange: Exchange Contributor
+** Exchange: Exchange Administrator
+** Exchange: Exchange Creator
+--
++
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+
+== Steps to Create an MCP Server
+
+. Open *MCP Servers* and select *Add MCP Server* > *Create MCP Server*.
+. In *Select Source, Instance & Tools*, select the APIs or SaaS systems you want to expose, select the source instance or version, select the tools to publish (including optional read-only filtering) and then click *Next*.
+. In *SaaS Credentials*, provide the credentials required for the selected sources so the MCP server can call them securely and then click *Next*.
+. In *Review*, validate the selected sources, tools, and credential mappings, then complete creation.
+
+== After You Create an MCP Server
+
+After you save, the MCP server is ready for governance and operations. Register the MCP server in *Portfolio* so it appears in the *MCP Servers* catalog for governance, monitoring, and operations.
+
+== See Also
+
+* xref:exp-services-add-to-portfolio.adoc[]
+* xref:exp-services-register-manually.adoc[]
+* xref:exp-services-connect-providers-to-add.adoc[]
+* xref:exp-services-view-details.adoc[]

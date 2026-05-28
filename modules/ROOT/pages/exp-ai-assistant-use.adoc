@@ -1,0 +1,482 @@
+// = Use the AI Assistant (Ask MuleSoft)
+
+// The enhanced experience includes an AI assistant called Ask MuleSoft that helps you navigate, search, and manage your portfolio through natural language conversations. Access the assistant from any page to get guidance, perform tasks, and discover features without navigating through menus.
+
+// == What Ask MuleSoft Can Do
+
+// The AI assistant provides context-aware help based on where you are in the enhanced experience:
+
+// Portfolio Management::
+// +
+// * Search for agents, APIs, MCP servers, LLM proxies, and gateways.
+// * Get details about specific services.
+// * Find services by capability or description.
+// * Register new services with guided workflows.
+// * Create and manage instances.
+
+// Governance::
+// +
+// * Create and manage governance strategies. 
+// * Review conformance reports.
+// * Apply policies to services and instances.
+// * Check compliance status.
+// * Configure automated policies.
+
+// Monitoring and Observability::
+// +
+// * Review performance metrics for services.
+// * Analyze error rates and latency trends.
+// * Check service health and availability.
+// * Set up alerts and notifications.
+// * View monitoring dashboards.
+
+// Cost Management::
+// +
+// * Review token usage and spending.
+// * Identify cost optimization opportunities.
+// * Analyze usage patterns.
+// * Get recommendations for reducing costs.
+// * Apply cost control policies.
+
+// Navigation and Discovery::
+// +
+// * Navigate to specific pages and catalogs.
+// * Find features and capabilities.
+// * Get step-by-step guidance for tasks.
+// * Learn about enhanced experience features.
+
+// Platform Configuration::
+// +
+// * Connect and manage providers.
+// * Configure scanners for service discovery.
+// * Set up integrations (Slack, Claude Desktop).
+// * Manage business group settings.
+
+// == Before You Begin
+
+// Before using the AI assistant, make sure you have:
+
+// * An Anypoint Platform account with access to the enhanced experience
+// * Mule Developer Generative AI User permission to send prompts to the agent
+// +
+// The AI assistant respects your Access Management permissions and can only perform actions you're authorized to do. If you want the assistant to help with specific tasks like creating governance strategies or managing services, you also need the appropriate permissions for those actions.
+// +
+// For more information, see xref:exp-start-home.adoc#permissions[Enhanced Experience Permissions].
+
+// == Access the AI Assistant
+
+// The AI assistant is available from every page in the enhanced experience.
+
+// . Look for the AI assistant icon or panel.
+// . Select the icon to open the chat panel.
+// . Type your question or request in the message box.
+// . Press Enter or select the send button.
+
+// The assistant responds with relevant information, suggestions, or actions you can take.
+
+// [TIP]
+// You can also use the AI assistant as a dedicated full-screen page by clicking  *Open full view* in the Ask MuleSoft menu.
+
+// == Ask Questions
+
+// Ask the AI assistant questions in natural language. The assistant understands context from the page you're on and provides relevant answers.
+
+// === Example Portfolio Questions
+
+// [source,text]
+// ----
+// Show me all agents in production
+// ----
+
+// [source,text]
+// ----
+// Which APIs have governance violations?
+// ----
+
+// [source,text]
+// ----
+// Find MCP servers that expose payment tools
+// ----
+
+// [source,text]
+// ----
+// What instances are deployed to the staging gateway?
+// ----
+
+// === Example Governance Questions
+
+// [source,text]
+// ----
+// What governance strategies are active?
+// ----
+
+// [source,text]
+// ----
+// How do I create a new governance strategy?
+// ----
+
+// [source,text]
+// ----
+// Show me all services with security violations
+// ----
+
+// [source,text]
+// ----
+// Which policies are applied to my API instance?
+// ----
+
+// === Example Monitoring Questions
+
+// [source,text]
+// ----
+// What's the error rate for my agent today?
+// ----
+
+// [source,text]
+// ----
+// Show me latency trends for the last week
+// ----
+
+// [source,text]
+// ----
+// Which services have the highest token usage?
+// ----
+
+// [source,text]
+// ----
+// Are there any service health alerts?
+// ----
+
+// === Example Cost Questions
+
+// [source,text]
+// ----
+// What's my total token spend this month?
+// ----
+
+// [source,text]
+// ----
+// Which agents are using the most tokens?
+// ----
+
+// [source,text]
+// ----
+// How can I reduce costs for my LLM proxies?
+// ----
+
+// [source,text]
+// ----
+// Show me cost trends over time
+// ----
+
+// === Example Navigation Questions
+
+// [source,text]
+// ----
+// How do I register a new API?
+// ----
+
+// [source,text]
+// ----
+// Show me the governance strategies page
+// ----
+
+// [source,text]
+// ----
+// Take me to monitoring for my agent
+// ----
+
+// [source,text]
+// ----
+// Where do I configure scanners?
+// ----
+
+// == Use Suggestions
+
+// After the AI assistant responds, it might show suggestion chips with related follow-up actions you can take. If you don't see any suggestions, ask the assistant to suggest actions.
+
+// . Review the suggestion chips below the assistant's response.
+// . Select a chip to ask that follow-up question or perform that action.
+// . The assistant executes the suggestion and shows the results.
+
+// Suggestions are context-aware and change based on:
+
+// * The page you're currently viewing
+// * The question you just asked
+// * The services and features available to you
+// * Common next steps for your current task
+
+// [TIP]
+// Suggestions help you discover related capabilities and complete multistep workflows more efficiently.
+
+// == Perform Actions with Confirmation
+
+// The AI assistant can perform actions on your behalf with your confirmation. When the assistant proposes an action that modifies data or navigates to a new page, it shows a confirmation prompt.
+
+// === Navigation Actions
+
+// When the assistant wants to navigate you to a different page:
+
+// . The assistant shows a confirmation banner with the navigation target.
+// . Review where the assistant wants to take you.
+// . Select *Confirm* to navigate, or *Cancel* to stay on the current page.
+// +
+// If you confirm, the page navigates to the destination.
+
+// === Data Modification Actions
+
+// When the assistant wants to create, update, or delete services or configurations:
+
+// . The assistant shows a confirmation banner with details of the proposed action.
+// . Review what the assistant will do.
+// . Select *Confirm* to execute the action, or *Cancel* to reject it.
+// +
+// If you confirm, the assistant performs the action and shows the results.
+
+// Examples of actions that require confirmation:
+
+// * Creating new services (agents, APIs, MCP servers)
+// * Applying or removing policies
+// * Creating or modifying governance strategies
+// * Running or deleting scanners
+// * Creating or deleting alerts
+// * Updating service configurations
+
+// [IMPORTANT]
+// Always review confirmation prompts carefully before approving actions. The AI assistant performs the exact action you confirm.
+
+// === Form Assistance
+
+// When you have a form open (such as creating an instance or configuring a policy), the assistant can help fill in fields:
+
+// . Ask the assistant for help with the form (for example, "Fill in the instance details for my production API").
+// . The assistant proposes changes to specific form fields.
+// +
+// A confirmation banner shows which fields will be updated and with what values.
+// . Review the proposed changes.
+// . Select *Confirm* to apply the changes to the form, or *Cancel* to reject them.
+// +
+// If you confirm, the form fields update, but the form itself isn't submitted—you still need to review and submit the form manually.
+
+// == Context-Aware Responses
+
+// The AI assistant tailors its responses based on:
+
+// Current Page::
+// +
+// When you ask questions from a specific page (such as an API detail page or the monitoring dashboard), the assistant prioritizes information relevant to that context.
+
+// Available Features::
+// +
+// The assistant only suggests actions and features available to your subscription tier. If you have API Portfolio Access, it focuses on API-related capabilities. If you have Agent + API Portfolio Access, it includes agent-specific features.
+
+// Your Permissions::
+// +
+// The assistant respects your Access Management permissions. It won't suggest actions you don't have permission to perform.
+
+// Active Services::
+// +
+// When viewing a service detail page, the assistant knows which service you're looking at and can answer questions about that specific service.
+
+// Open Forms::
+// +
+// When you have a form open, the assistant can help fill in form fields based on your requirements.
+
+// === Example: Context-Aware Help
+
+// On the APIs catalog page:
+
+// * Prompt: `Show me APIs with errors`
+// * Assistant: `Here are the APIs with recent errors...`
+
+// On a specific API detail page:
+
+// * You: `Show me errors`
+// * Assistant: `Here are the recent errors for Payment Processing API...`
+
+// == Search with Natural Language
+
+// Use the AI assistant to search your portfolio using natural language descriptions:
+
+// Semantic Search::
+// +
+// Describe what you're looking for conceptually, and the assistant finds matching services based on capabilities and descriptions, not just exact name matches.
+// +
+// [source,text]
+// ----
+// Find services that handle payments
+// ----
+// +
+// [source,text]
+// ----
+// Show me agents that use GPT-4
+// ----
+// +
+// [source,text]
+// ----
+// Which APIs expose customer data?
+// ----
+// +
+// [source,text]
+// ----
+// Find MCP servers for database operations
+// ----
+
+// Filtered Search::
+// +
+// Ask for services with specific characteristics:
+// +
+// [source,text]
+// ----
+// Show me production APIs with rate limiting policies
+// ----
+// +
+// [source,text]
+// ----
+// Find staging agents with high token usage
+// ----
+// +
+// [source,text]
+// ----
+// Which services don't have governance strategies applied?
+// ----
+// +
+// [source,text]
+// ----
+// Show me APIs registered in the last week
+// ----
+
+// == Get Guided Workflows
+
+// Ask the AI assistant to guide you through complex tasks:
+
+// [source,text]
+// ----
+// How do I create a governance strategy for my APIs?
+// ----
+
+// [source,text]
+// ----
+// Walk me through registering a new agent
+// ----
+
+// [source,text]
+// ----
+// Help me set up monitoring for my MCP server
+// ----
+
+// [source,text]
+// ----
+// Guide me through connecting a provider
+// ----
+
+// The assistant provides step-by-step instructions and can perform actions at each step with your confirmation.
+
+// == Troubleshooting with the AI Assistant
+
+// The AI assistant can help diagnose and resolve issues:
+
+// [source,text]
+// ----
+// Why isn't my policy being enforced?
+// ----
+
+// [source,text]
+// ----
+// My instance shows a connection error, what should I check?
+// ----
+
+// [source,text]
+// ----
+// Why can't I see monitoring data for my service?
+// ----
+
+// [source,text]
+// ----
+// My scanner failed, how do I fix it?
+// ----
+
+// The assistant reviews your configuration, identifies potential issues, and suggests fixes.
+
+// == Best Practices
+
+// Follow these practices for effective interactions with the AI assistant:
+
+// Be Specific::
+// +
+// Instead of "Show me APIs," try "Show me production APIs with governance violations."
+
+// Provide Context::
+// +
+// If asking about a specific service, mention its name: "What's the error rate for Payment Processing API?"
+
+// Use Follow-Up Questions::
+// +
+// Build on previous responses with follow-up questions like "Show me more details" or "Apply a rate limit policy to that instance."
+
+// Review Confirmations::
+// +
+// Always review confirmation prompts carefully before approving actions.
+
+// Use Suggestions::
+// +
+// Explore the suggestion chips to discover related capabilities and next steps.
+
+// Ask for Help::
+// +
+// If you're unsure how to do something, ask: "How do I..." or "Show me how to..."
+
+// Correct Mistakes::
+// +
+// If the assistant misunderstands, clarify: "No, I meant the staging environment, not production."
+
+// == Limitations
+
+// Be aware of these limitations when using the AI assistant:
+
+// * The assistant can't perform actions outside the enhanced experience or access external systems directly.
+// * Some actions require specific permissions. If you don't have permission, the assistant informs you but can't grant permissions.
+// * The assistant works with data available in the enhanced experience. For services not yet registered in your portfolio, the assistant has limited information.
+// * Complex multistep workflows may require you to confirm each step individually.
+// * The assistant can't modify Access Management permissions or subscription tiers.
+
+// == Privacy and Security
+
+// The AI assistant operates within your organization's security and privacy controls:
+
+// * All interactions respect your Access Management permissions.
+// * The assistant only accesses data you have permission to view.
+// * Conversations are associated with your user session and aren't shared with other users.
+// * The assistant doesn't store sensitive data like API keys or credentials in conversation history.
+// * All actions performed by the assistant are logged and auditable.
+
+// == Tips for Advanced Use
+
+// Combine with Manual Actions::
+// +
+// Use the assistant for discovery and research, then perform detailed configuration manually when you need precise control.
+
+// Explore Capabilities::
+// +
+// Ask "What can you help me with?" to learn about available features for your current context.
+
+// Check Status::
+// +
+// Regularly ask for summaries: "Show me my portfolio health status" or "What governance issues need attention?"
+
+// Automate Repetitive Tasks::
+// +
+// Use the assistant for tasks you perform frequently, like checking monitoring data or reviewing compliance reports.
+
+// Learn Features::
+// +
+// Ask the assistant to explain features: "What is tool mapping?" or "How do governance strategies work?"
+
+// == See Also
+
+// * xref:exp-ai-assistant-troubleshoot.adoc[]
+// * xref:exp-start-home.adoc[]
+// * xref:exp-overview.adoc[]
+// * xref:exp-view-portfolio-overview.adoc[]
+// * xref:exp-monitor-your-services.adoc[]
+// * xref:exp-work-with-governance-strategies.adoc[]

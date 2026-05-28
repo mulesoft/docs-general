@@ -96,7 +96,8 @@ Monitor your APIs and integrations using dashboards, metrics, and visualization.
 
 ////
 
-// Updated 2026/03/23 - valkyrie
+// Updated 2026/05/11 - hanna
+* xref:learning-map-exp.adoc[]
 * xref:monitoring::integration-intelligence.adoc[]
 * xref:general::learning-map-mulesoft-ai.adoc[]
 * xref:general::learning-map-agent-fabric.adoc[]
@@ -108,6 +109,6 @@ Monitor your APIs and integrations using dashboards, metrics, and visualization.
 * xref:monitoring::anypoint-insights-agentic.adoc[]
 * xref:mulesoft-mcp-server::index.adoc[]
 * xref:mcp-connector::index.adoc[MCP Connector User Guide]
-* xref:learning-map-api-management.adoc[]
+// * xref:learning-map-api-management.adoc[]
 //* xref:cloudhub::app-migration.adoc[]
 //* xref:hyperforce::index.adoc[Salesforce Hyperforce]
