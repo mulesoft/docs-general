@@ -36,7 +36,7 @@ Before you rely on the new experience in production, complete these checks with 
 Access and Credentials::
 +
 * Confirm that you have a user account for your organization's entry path, such as Anypoint Platform, and valid credentials to log in.
-* Confirm that you can reach the new experience and integrated services, such as Anypoint Platform, Slack, or a connected coding assistant, from the networks and locations you use.
+* Confirm that you can reach the new experience and integrated services, such as Anypoint Platform, or a connected coding assistant, from the networks and locations you use.
 
 Platform and Product Access::
 +
