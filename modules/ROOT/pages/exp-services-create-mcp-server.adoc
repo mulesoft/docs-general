@@ -4,16 +4,16 @@ Create MCP servers to define identity, runtime connectivity, and the tools and r
 
 Creating an MCP server defines a new MCP implementation—for example, by transcoding an existing REST API or creating a runtime deployment—and establishes the server identity, runtime connectivity, and the MCP capabilities (tools and resources) exposed to clients.
 
-Creating an MCP server is different from adding one to *Portfolio*. Creation defines the MCP implementation and runtime behavior. Adding to *Portfolio* registers an existing MCP server so teams can govern, monitor, and manage lifecycle in the enhanced experience.
+When you create an MCP server in Enhanced Experience, the server is added to *Portfolio* automatically.
 
 During creation, you define:
 
 * *Service definition*
 +
 Name, description, and ownership metadata so teams can identify the server in catalogs and governance views.
-* *Connection/runtime details*
+* *Connection and runtime details*
 +
-Endpoint and access settings the enhanced experience uses to connect to and validate the server.
+Endpoint and access settings Enhanced Experience uses at runtime to connect to underlying SaaS systems.
 * *Capability surface* 
 +
 The MCP tools and resources clients can discover and invoke.
@@ -23,10 +23,10 @@ Checks that confirm the server is reachable and that the declared MCP capabiliti
 
 == Before You Begin
 
-Before getting started, make sure you have:
+Before you begin, have:
 
 * An Anypoint Platform account.
-* Any of these permissions:
+* One of these permissions:
 +
 --
 ** Exchange: Exchange Contributor
@@ -39,13 +39,13 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 == Steps to Create an MCP Server
 
 . Open *MCP Servers* and select *Add MCP Server* > *Create MCP Server*.
-. In *Select Source, Instance & Tools*, select the APIs or SaaS systems you want to expose, select the source instance or version, select the tools to publish (including optional read-only filtering) and then click *Next*.
-. In *SaaS Credentials*, provide the credentials required for the selected sources so the MCP server can call them securely and then click *Next*.
+. In *Select Source, Instance & Tools*, select the APIs or SaaS systems you want to expose. Select the source instance or version, then select the tools to publish, including optional read-only filtering. Click *Next*.
+. In *SaaS Credentials*, provide the credentials required for the selected sources so the MCP server can call them securely. Click *Next*.
 . In *Review*, validate the selected sources, tools, and credential mappings, then complete creation.
 
 == After You Create an MCP Server
 
-After you save, the MCP server is ready for governance and operations. Register the MCP server in *Portfolio* so it appears in the *MCP Servers* catalog for governance, monitoring, and operations.
+After you click *Save*, the MCP server is automatically added to the *MCP Servers* catalog in *Portfolio*. No additional action is required.
 
 == See Also
 

@@ -1,21 +1,21 @@
-= Adding Semantic Services
+= Add Semantic Services
 
-Semantic services improve how the system interprets and routes LLM-driven requests across your portfolio. They help teams apply context-aware behavior so the system directs requests to the most relevant tools, services, or pathways that your organization configured.
+Semantic services improve how the system interprets and routes LLM-driven requests across your portfolio. They apply context-aware behavior so the system directs requests to the most relevant tools, services, or pathways your organization configured.
 
-Use this capability when your workflows need more than static routing. With semantic context in place, the system can support better request matching, more consistent response behavior, and stronger control as usage grows across agents, APIs, MCP servers, and related integrations.
+Use this capability when workflows need more than static routing. With semantic context in place, the system supports better request matching, more consistent response behavior, and stronger control as usage grows across agents, APIs, MCP servers, and related integrations.
 
 To add semantic services, follow these steps:
 
 . Define the semantic service your organization uses for contextual matching.
-. Associate that semantic capability with the relevant enhanced experience (for example, LLM-related routing paths where supported).
+. Associate that semantic capability with the relevant Enhanced Experience flow (for example, supported LLM routing paths).
 . Operate the service as part of your broader governance and monitoring model so behavior remains reliable as traffic and use cases evolve.
 
 == Before You Begin
 
-Before getting started, make sure you have:
+Before you begin, have:
 
 * An Anypoint Platform account.
-* Any of these permissions:
+* One of these permissions:
 +
 --
 ** Exchange: Exchange Contributor
@@ -33,13 +33,15 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 +
 * *Basic scale*
 +
-Choose *Basic scale* for faster managed setup. This scale is best for smaller topic sets (up to 6 topics and 10 utterances per topic) and uses managed internal LLM proxy configuration.
+Choose *Basic scale* for smaller topic sets (up to 6 topics and 10 utterances per topic). This scale is managed through internal LLM proxy configuration.
 +
 * *Advanced scale*
 +
-Choose *Advanced scale* when you need greater scale and external infrastructure control. This scale is best for larger utterance sets per topic. It uses external semantic infrastructure, including an embedding API connection and a vector database connection.
+Choose *Advanced scale* for larger utterance sets per topic. This scale requires a dedicated external vector database connection.
 
-Semantic service setup defines the embedding connection used for contextual matching. Provide values for these fields:
+== Configure Semantic Service Fields
+
+Basic and Advanced scales use the same setup fields. Provide values for:
 
 * *Environment*
 * *Embedding service provider*
@@ -47,6 +49,8 @@ Semantic service setup defines the embedding connection used for contextual matc
 * *URL*
 * *Model*
 * *Auth key*
+
+For *Advanced scale*, also configure the dedicated external vector database connection required by your selected provider.
 
 
 == See Also
