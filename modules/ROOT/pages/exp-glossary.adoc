@@ -59,8 +59,8 @@ An instance backed by Anypoint Omni Gateway that enables full policy enforcement
 MCP Server::
 A server that implements the Model Context Protocol, exposing tools and resources to MCP clients. Create MCP servers from existing APIs, register them manually with an MCP URL or schema file, or import them via provider scanners.
 
-MuleSoft Agent::
-The agentic experience for MuleSoft available in Slack. Use MuleSoft Agent to receive notifications, run shortcuts, and navigate back into the enhanced experience from your messaging workspace.
+// MuleSoft Agent::
+// The agentic experience for MuleSoft available in Slack. Use MuleSoft Agent to receive notifications, run shortcuts, and navigate back into the enhanced experience from your messaging workspace.
 
 Observability::
 A section that aggregates org-wide dashboards, reports, and notifications when your administrator enables and connects the observability backend for your business group. Use Observability to compare service-level monitoring signals with broader traffic patterns.
