@@ -68,7 +68,7 @@ Some features might be in preview or require specific product access.
 [[cant-authorize-app-error-for-organizations-with-restricted-connected-app-policy]]
 === "Can't Authorize App" Error for Organizations with Restricted Connected App Policy
 
-If you see a "Can't Authorize App" error when attempting to access the Enhanced MuleSoft Experience:
+If you see a "Can't Authorize App" error when attempting to access the enhanced MuleSoft experience:
 
 . Identify the error:
 +
@@ -90,27 +90,27 @@ The dialog includes a button labeled *Go to add the app to allowlist* and a link
 This error occurs when your organization's *Connected App Authorization Policy* is set to *restricted*.
 +
 .. By default, newly created organizations have this policy set to *unrestricted*, which allows users to access connected apps without additional approval.
-.. When the policy is set to *restricted*, it indicates that an organization administrator has intentionally configured this security setting to control which connected apps can access organizational data.
+.. When the policy is set to *restricted*, it indicates that your administrator has intentionally configured this security setting to control which connected apps can access organizational data.
 .. This restricted policy takes precedence over any application allowlisting configured on the MuleSoft side.
 +
 For more information about Connected App Authorization Policies, see xref:access-management::connected-apps-org-admin.adoc#configure-authorization-policies[Configure Authorization Policies].
 
-. Contact your organization administrator:
+. Contact your administrator:
 +
-Only an *organization administrator* can resolve this issue. Regular users cannot add apps to the allowlist.
+Only an administrator can resolve this issue. Regular users can't add apps to the allowlist.
 +
 .. Inform your administrator that the MuleSoft Omni app needs to be added to your organization's allowlist.
 .. Provide them with the error message screenshot if helpful.
 
 . Administrator resolution steps:
 +
-If you are an organization administrator:
+If you are an administrator:
 +
 .. When the "Can't Authorize App" error appears, click the *Go to add the app to allowlist* button.
 .. Complete the authorization flow to add MuleSoft Omni to your organization's allowlist.
 .. This is a *one-time action* that applies to the entire organization.
 +
-After completing this step, all users in the organization will be able to access the Enhanced MuleSoft Experience without encountering this error.
+After completing this step, all users in the organization will be able to access the enhanced MuleSoft experience without encountering this error.
 
 . Verify resolution:
 +
