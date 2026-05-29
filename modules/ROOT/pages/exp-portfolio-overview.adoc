@@ -25,7 +25,7 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 
 * *Home*
 +
-After login, *Home* shows an overview of services discovered, consumed, and governed, a list of scanners, and actions to add a service.
+After you log in, *Home* shows an overview of services discovered, consumed, and governed, as well as a list of scanners and actions to add a service.
 * *Portfolio*
 +
 Browse catalogs for *Agents*, *APIs*, *MCP Servers*, *LLM Proxies*, and *Gateways* in *Portfolio*. Each catalog lists the services that your team registered or imported. To find a specific service, use search and filters, and then select the service to view its details.
