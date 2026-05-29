@@ -1,6 +1,6 @@
 = View Your Portfolio Overview
 
-Use portfolio-level views to see how your agents, APIs, MCP servers, LLM proxies, and gateways fit together before you drill into a single service. After: These summaries help you spot gaps in registration, policy coverage, and health signals.
+Use portfolio-level views to see how your agents, APIs, MCP servers, LLM proxies, and gateways fit together before you drill into a single service. These summaries help you spot gaps in registration, policy coverage, and health signals.
 
 
 The exact layout depends on how your administrator configured your tenant and which catalogs they enabled.
