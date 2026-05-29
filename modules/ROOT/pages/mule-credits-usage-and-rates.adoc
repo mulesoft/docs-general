@@ -35,7 +35,7 @@ NOTE: MuleSoft All-Access License supports pre-commit and unlimited usage models
 
 == Usage Types
 
-Each usage type (also called a meter) tracks a specific dimension of platform consumption. Credit rates vary by monthly consumption volume and reset on the first day of each calendar month. You consume credits at the same rate across all environments, including production, pre-production, sandbox, and design. For the full tiered rate table, see <<_rate_cards,Rate Cards>>.
+Each usage type (also called a meter) tracks a specific dimension of platform consumption. Credit rates vary by monthly consumption volume and reset on the first day of each calendar month. You consume credits at the same rate across all environments, including production, pre-production, sandbox, and design. For the full tiered rate table, see <<rate-cards,Rate Cards>>.
 
 [%header%autowidth.spread]
 |===
@@ -75,6 +75,7 @@ Multiple instances within the same business group don't incur extra charges. Any
 | https://docs.mulesoft.com/cloudhub/cloudhub-dedicated-load-balancer[Dedicated Load Balancers^] used to distribute incoming traffic across multiple workers or instances. You consume credits based on the total number of provisioned load balancers per day. After you deprovision a load balancer, it stops consuming credits from the next calendar date onwards.
 |===
 
+[[rate-cards]]
 == Rate Cards
 
 You consume Mule Credits at the applicable multiplier rate based on the usage type identified in the https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/mulesoft/Mule_Credit_Rate_Card.pdf[Mule Credit Rate Card^].
