@@ -23,7 +23,7 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 
 * *Home*
 +
-Open *Add Services*, select the service type, then select manual registration if it is available.
+Open *Add Services*, select the service type, then, if it is available, select manual registration .
 * *Portfolio*
 +
 Open the *Agents*, *MCP Servers*, *LLM Proxies*, or *APIs* catalog, use the add control for that type (for example *Add API*), and select *Register Manually*.
