@@ -48,7 +48,7 @@ When the scanner runs successfully, the system registers discovered services in 
 
 == What Changes by Catalog
 
-The scanner setup decisions stay the same across catalogs. What changes is the service catalog where discovered results appear after a successful run.
+Scanner setup decisions stay the same across catalogs. However, after successful runs, discovered results get registered in specific service catalogs. 
 
 For example, when you start from *APIs*, discovered APIs are registered in the *APIs* catalog.
 
