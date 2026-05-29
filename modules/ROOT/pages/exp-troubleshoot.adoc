@@ -70,21 +70,6 @@ Some features might be in preview or require specific product access.
 
 If you see a "Can't Authorize App" error when attempting to access the enhanced MuleSoft experience:
 
-. Identify the error:
-+
-The error message displays:
-+
-----
-Can't Authorize App
-Mulesoft Omni - US → [Your Organization Name]
-
-Mulesoft Omni - US wants to access your [username] account in the [Organization Name] organization.
-
-As an admin, you can add this app to the allowlist for your organization.
-----
-+
-The dialog includes a button labeled *Go to add the app to allowlist* and a link to *Sign in with Another Account*.
-
 . Understand the cause:
 +
 This error occurs when your organization's *Connected App Authorization Policy* is set to *restricted*.
@@ -118,7 +103,7 @@ If you continue to experience issues after your administrator has added the app 
 +
 .. Clear your browser cache and cookies.
 .. Verify that you're signed in with the correct organizational account.
-.. Confirm that your network connectivity to `omni.mulesoft.com` is functioning properly.
+.. Confirm that your network connectivity is functioning properly.
 .. Contact your organization's Anypoint Platform administrator for additional assistance.
 
 == Connection Failures
