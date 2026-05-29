@@ -61,7 +61,7 @@ Before using the AI assistant, make sure you have:
 +
 The AI assistant respects your Access Management permissions and can only perform actions you're authorized to do. If you want the assistant to help with specific tasks like creating governance strategies or managing services, you also need the appropriate permissions for those actions.
 +
-For more information, see xref:exp-start-home.adoc#permissions[Enhanced Experience Permissions].
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
 == Access the AI Assistant
 
@@ -475,8 +475,8 @@ Ask the assistant to explain features: "What is tool mapping?" or "How do govern
 == See Also
 
 * xref:exp-ai-assistant-troubleshoot.adoc[]
-* xref:exp-start-home.adoc[]
+* xref:exp-home-start.adoc[]
 * xref:exp-overview.adoc[]
-* xref:exp-view-portfolio-overview.adoc[]
-* xref:exp-monitor-your-services.adoc[]
-* xref:exp-work-with-governance-strategies.adoc[]
+* xref:exp-portfolio-overview.adoc[]
+* xref:exp-services-monitoring.adoc[]
+* xref:exp-governance-work-with-strategies.adoc[]
