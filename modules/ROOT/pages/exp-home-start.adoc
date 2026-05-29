@@ -37,6 +37,9 @@ Access and Credentials::
 +
 * Confirm that you have a user account for your organization's entry path, such as Anypoint Platform, and valid credentials to log in.
 * Confirm that you can reach the new experience and integrated services, such as Anypoint Platform, or a connected coding assistant, from the networks and locations you use.
++
+[NOTE]
+If your organization has set the Connected App Authorization Policy to *restricted*, an organization administrator must add the MuleSoft Omni app to the allowlist before users can access the Enhanced Experience. This is a one-time action per organization. See xref:exp-troubleshoot.adoc#cant-authorize-app-error-for-organizations-with-restricted-connected-app-policy["Can't Authorize App" Error] for details.
 
 Platform and Product Access::
 +
