@@ -12,7 +12,7 @@ To add semantic services, follow these steps:
 
 == Before You Begin
 
-Before you begin, have:
+Before getting started, make sure you have:
 
 * An Anypoint Platform account.
 * One of these permissions:
@@ -33,7 +33,7 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 +
 * *Basic scale*
 +
-Choose *Basic scale* for smaller topic sets (up to 6 topics and 10 utterances per topic). This scale is managed through internal LLM proxy configuration.
+Choose *Basic scale* for smaller topic sets (up to 6 topics and 10 utterances per topic). This scale is managed through an internal LLM proxy configuration.
 +
 * *Advanced scale*
 +

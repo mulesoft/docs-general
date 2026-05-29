@@ -6,7 +6,7 @@ Start the flow from *Home* or from a specific catalog in *Portfolio*. To see how
 
 == Before You Begin
 
-Before you begin, have:
+Before getting started, make sure you have:
 
 * An Anypoint Platform account.
 * One of these permissions:
@@ -37,7 +37,7 @@ Labels differ by catalog and release. Match what you see in the UI.
 
 == Create a Scanner
 
-Across *Home* and *Portfolio* entry points, creating a scanner includes the same decisions:
+Across *Home* and *Portfolio* entry points, scanner creation includes the same decisions:
 
 * Which provider or platform to target for discovery and import.
 * Credentials and authentication so the system can reach the provider securely.
