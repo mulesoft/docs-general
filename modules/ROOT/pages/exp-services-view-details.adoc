@@ -1,6 +1,6 @@
 = View Service Details
 
-Open a catalog entry in *Portfolio* to see its service detail page: a single view of one service—an agent, MCP server, LLM proxy, API, or a gateway, depending on the catalog. From there you can review status and cost, relationships to other services, deployments, policies, monitoring, conformance, and change history without switching contexts.
+Open a catalog entry in *Portfolio* to see its service detail page: a single view of one service, such as an agent, MCP server, LLM proxy, API, or gateway. From this page, review status and cost, relationships to other services, deployments, policies, monitoring, conformance, and change history without switching contexts.
 
 //placeholder for image of service detail page
 
@@ -9,7 +9,7 @@ Open a catalog entry in *Portfolio* to see its service detail page: a single vie
 Before getting started, make sure you have:
 
 * An Anypoint Platform account.
-* Any of these permissions:
+* One of these permissions:
 +
 --
 ** Exchange: Exchange Viewer
@@ -25,44 +25,32 @@ The page is organized into tabs. The following table lists each tab, what it sho
 
 [cols="2,3,^.^,^.^,^.^,^.^,^.^",options="header"]
 |===
-|Tab |What You See |API |Agent |MCP server |LLM proxy |Gateway
+|Tab |What You See |API |Agent |MCP Server |LLM Proxy |Gateway
 
 |*Overview*
-|Status, average latency, daily cost, and a short summary of what the service does.
-|Yes |Yes |Yes |Yes |Yes
-
-|*Connections*
-|Relationships and integrations with other services, such as APIs, agents, or MCP servers.
+|Short summary of what the service does and its specification.
 |Yes |Yes |Yes |Yes |Yes
 
 |*Instances*
 |Deployed instances, environments (for example production or sandbox), and gateways when that catalog type supports instances.
-|Yes |Yes |Yes |Yes |No
+|Yes |Yes |Yes |Each LLM Proxy is exactly one instance so there is no *Instances* tab. |No
 
 |*Policies*
 |Governance policies attached to the service or its instances (access, data, performance, compliance, and related domains your organization uses). If the instance uses a Kong gateway, the listed policies are gateway-level policies (plugins). Other service-level policies (plugins) can also apply.
-|Yes |Yes |Yes |Yes |Yes
+|Yes |Yes |Yes |Yes |No
 
 |*Monitoring*
 |Runtime metrics and analytics for health and usage when the system surfaces them for the service or gateway you are viewing.
-|Yes |Yes |Yes |Yes |Yes
+|Yes |Yes |Yes |Yes |No
 
 |*Conformance Report*
 |Compliance score and rule-level analysis for conformance reporting where that tab is available.
 |Yes |Yes |Yes |No |No
 
-|*Governance*
-|Governance policies and rules for the service and its instances, including gateway-wide or organization-level views where the system exposes them.
-|Yes |Yes |Yes |Yes |Yes
-
-|*Versions*
-|History of changes to the service configuration so you can compare before and after updates.
-|Yes |Yes |Yes |Yes |Yes
 |===
-
 [NOTE]
 ====
-* *Instances* tab is available on *Agents*, *MCP Servers*, *LLM Proxies*, and *APIs*; *Gateways* do not include an *Instances* tab. See xref:exp-overview.adoc[].
+* *Instances* tab is available on *Agents*, *MCP Servers*, and *APIs*; *LLM Proxies* and *Gateways* do not include an *Instances* tab. See xref:exp-overview.adoc[].
 
 * *Conformance Report* on the detail page aligns with *Agents*, *APIs*, and *MCP Servers*; for gateways, compliance work is framed through *Governance* and related flows at the scope the system supports. See xref:exp-overview.adoc[].
 ====
@@ -71,7 +59,7 @@ The page is organized into tabs. The following table lists each tab, what it sho
 
 . In *Portfolio*, open the catalog for the service type (for example *APIs* or *Agents*).
 . Use the search box to find the service by name or description, or scan the list or grid.
-. Click the service card to open its detail page.
+. Select the service card to open its detail page.
 
 == See Also
 

@@ -1,15 +1,15 @@
 = Register Services Manually
 
-Register a service to add it to your portfolio when you already have the metadata, specification, endpoint, or card the new experience needs—without running a provider scan. You start from *Home* or from the catalog for that service type in *Portfolio*; completed registrations appear in the matching catalog.
+Register a service to add it to your portfolio when you already have the metadata, specification, endpoint, or card required in Enhanced Experience, without running a provider scan. Start from *Home* or from the catalog for that service type in *Portfolio*. Completed registrations appear in the matching catalog.
 
-For how manual registration fits with connecting providers, see xref:exp-services-add-to-portfolio.adoc[].
+To learn how manual registration relates to provider connections, see xref:exp-services-add-to-portfolio.adoc[].
 
 == Before You Begin
 
 Before getting started, make sure you have:
 
 * An Anypoint Platform account.
-* Any of these permissions:
+* One of these permissions:
 +
 --
 ** Exchange: Exchange Contributor
@@ -23,44 +23,36 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 
 * *Home*
 +
-Open *Add Services*, select the service type, then select manual registration if the UI offers it.
+Open *Add Services*, select the service type, then, if it is available, select manual registration .
 * *Portfolio*
 +
-Open the *Agents*, *MCP Servers*, *LLM Proxies*, *APIs*, or *Gateways* catalog, use the add control for that type (for example *Add API*), and select *Register Manually*.
+Open the *Agents*, *MCP Servers*, *LLM Proxies*, or *APIs* catalog, use the add control for that type (for example *Add API*), and select *Register Manually*.
 
-include::partial$exp-navigation-labels.adoc[tag=ExpNavigationLabels]
+To set up a gateway, select *Add Gateway* to open gateway setup in Anypoint Platform.
+include::_partials/exp-navigation-labels.adoc[tag=ExpNavigationLabels]
 
 == Agents
 
-You register an agent by supplying one of these protocols:
+Register an agent by uploading an agent card file for an A2A or non-A2A agent.
 
-* A2A connection
-+
-Point to an A2A endpoint to fetch an agent card.
-* Non-A2A connection
-+
-Provide metadata and connection details when you're not using a card workflow.
-* Agent Card File
-Provide an agent card file you already have.
-
-The connection gets validated, makes it possible to review metadata, and saves the agent into the *Agents* catalog.
+Manual registration does not support A2A or non-A2A connection routes, and the system does not validate a connection before creating the agent.
 
 == MCP Servers
 
-You define how the system reaches the MCP server and validates runtime access:
+For MCP servers, define how the system reaches the server and validates runtime access:
 
 * *By MCP URL* — Connect over a URL and test the live server so tools and metadata can be discovered.
 * *Upload Schema* — Upload a schema and supply the details needed to register and test the server.
 
 Successful registration stores the MCP server in the *MCP Servers* catalog.
 
-== LLM proxies
+== LLM Proxies
 
-LLM proxy registration is a two-part configuration: you associate the proxy with a gateway (and related deployment context), then define routing (and any provider connections your flow requires). After the wizard completes, the LLM proxy appears in the *LLM Proxies* catalog.
+LLM proxy registration has two parts: associate the proxy with a gateway and deployment context, then define routing (and any provider connections your flow requires). After setup is complete, the LLM proxy appears in the *LLM Proxies* catalog.
 
 == APIs
 
-To create an API, add it to the APIs catalog either by registering it manually or by connecting to a provider.
+Add an API to the *APIs* catalog by registering it manually or by connecting to a provider.
 
 * *Register manually* – Upload a specification file to define a new API.
 * *Connect to provider* – Discover and import APIs from external platforms. See xref:exp-services-connect-providers-to-add.adoc[].
@@ -85,16 +77,9 @@ The experience supports multiple API types and specification formats:
 
 == Gateways
 
-Register gateways manually when you want to add an existing gateway runtime to *Portfolio* without using provider discovery. This flow establishes gateway identity, connection context, and metadata so teams can govern and monitor gateway traffic in the enhanced experience.
+Manual gateway registration is not supported in Enhanced Experience.
 
-Manual gateway registration includes:
-
-* Defining gateway identity and descriptive metadata used in catalog and governance views.
-* Providing environment and runtime connection details so the gateway maps to your organization topology.
-* Validating registration inputs before saving to make the gateway ready for operational workflows.
-
-After registration, the gateway appears in the *Gateways* catalog in *Portfolio*, where teams can review details and apply supported governance workflows.
-
+To set up a gateway, select *Add Gateway* to open gateway setup in Anypoint Platform.
 == See Also
 
 * xref:exp-services-add-to-portfolio.adoc[]
