@@ -35,7 +35,8 @@ NOTE: MuleSoft All-Access License supports pre-commit and unlimited usage models
 
 == Usage Types
 
-Each usage type (also called a meter) tracks a specific dimension of platform consumption. Credit rates vary by monthly consumption volume and reset on the first day of each calendar month. You consume credits at the same rate across all environments, including production, pre-production, sandbox, and design. For the full tiered rate table, see <<rate-cards,Rate Cards>>.
+
+Each usage type (also called a meter) tracks a specific dimension of platform consumption. Credit rates vary by monthly consumption volume and reset on the first day of each calendar month. You consume credits at the same rate across all environments, including production, pre-production, sandbox, and design. For the full tiered rate table, see <<rate-cards>>.
 
 [%header%autowidth.spread]
 |===
