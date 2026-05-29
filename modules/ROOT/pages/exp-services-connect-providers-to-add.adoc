@@ -1,6 +1,6 @@
 = Create a Scanner for Provider Services
 
-Create a scanner by connecting to a provider. The system runs scanners against supported cloud platforms, discovers services (such as agents, APIs, and MCP servers), and registers them in the matching catalog in *Portfolio*. You supply credentials and scanner metadata so the integration is repeatable and auditable.
+To create a scanner, connect to a provider. The system runs scanners against supported cloud platforms, discovers services (such as agents, APIs, and MCP servers), and registers them in the matching catalog in *Portfolio*. You supply credentials and scanner metadata so the integration is repeatable and auditable.
 
 Start the flow from *Home* or from a specific catalog in *Portfolio*. To see how this flow relates to manual registration, see xref:exp-services-add-to-portfolio.adoc[]. To create and tune scanners, see xref:exp-scanners-add-from-providers.adoc[].
 
