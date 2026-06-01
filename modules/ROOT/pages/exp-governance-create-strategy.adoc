@@ -62,7 +62,7 @@ Use *Preview Governed Scope* to see which services currently match your criteria
 
 == Configure Controls or Policies
 
-In the enhanced experience, your existing Anypoint profiles appear as controls. Controls offer expanded capabilities, such as governing new services and providing rules to control API and AI state behavior.
+In the enhanced experience, your existing Anypoint profiles appear as controls. Controls offer expanded capabilities, such as governing new services and providing rules to control service and AI state behavior.
 
 Depending on the strategy type, select the controls or policies the strategy enforces:
 
