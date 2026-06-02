@@ -352,7 +352,7 @@
   },
   "aiSidebar": {
     "landmarkLabel": "Ask MuleSoft",
-    "closeAiSidebar": "Close AI sidebar"
+    "closeAiSidebar": "Close AI Sidebar"
   },
   "leftNav": {
     "landmarkLabel": "Primary",
@@ -393,7 +393,7 @@
   },
   "aiSidebar": {
     "landmarkLabel": "Ask MuleSoft",
-    "closeAiSidebar": "Close AI sidebar"
+    "closeAiSidebar": "Close AI Sidebar"
   },
   "dragHandle": {
     "resizeSidebar": "Resize sidebar"
@@ -2765,7 +2765,7 @@
     "retryButton": "Retry",
     "retryingStatus": "Retrying…",
     "retryTimedOut": "Retry timed out — the pipeline may still be running in the background.",
-    "retryPrefillUnavailable": "We couldn't load your previous selections — please start the wizard again."
+    "retryPrefillUnavailable": "We couldn't load your previous selections. Start the wizard again."
   },
   "entityDetailPage": {
     "tabConformanceReport": "Conformance",
@@ -2784,7 +2784,7 @@
     },
     "loadingDetailsAnnouncement": "Loading {label} details…",
     "mcpUnavailableTitle": "This MCP server isn't available",
-    "mcpUnavailableDescription": "It may still be provisioning, or it has been deleted. Refresh in a moment, or return to the catalog.",
+    "mcpUnavailableDescription": "It's still provisioning, or it has been deleted. Refresh in a moment, or return to the catalog.",
     "mcpUnavailableBackToCatalog": "Back to MCP Servers"
   },
   "apiInstanceSelectorCard": {
@@ -3621,7 +3621,7 @@
     "removePolicyToastSuccess": "Policy {name} was removed.",
     "enablePolicyToastSuccess": "Policy {name} was enabled.",
     "disablePolicyToastSuccess": "Policy {name} was disabled.",
-    "kongGatewayLevelNotice": "Additional service level policies(plugins) may be applicable to this instance, beyond below mentioned gateway level policies(plugins)."
+    "kongGatewayLevelNotice": "Additional service level policies (plugins) can apply to this instance, beyond the gateway level policies (plugins) mentioned below."
   },
   "policiesTab": {
     "policyFallback": "Policy",
@@ -4137,9 +4137,9 @@
     "hoursAgo": "{count}h ago",
     "daysAgo": "{count}d ago",
     "monthsAgo": "{count}mo ago",
-    "dismissFailed": "Couldn't dismiss the failed job. Please try again.",
-    "provisioningFailed": "Provisioning failed",
-    "retryPrefillUnavailable": "We couldn't load your previous selections — please start the wizard again."
+    "dismissFailed": "Couldn't dismiss the failed job. Try again.",
+    "provisioningFailed": "Provisioning didn't complete",
+    "retryPrefillUnavailable": "We couldn't load your previous selections. Start the wizard again."
   },
   "addInstanceShared": {
     "stepGatewayApi": "Gateway & API",
@@ -5089,7 +5089,7 @@
       "gatewayLoadErrorHeading": "Unable to Load Gateways",
       "gatewayLoadErrorDescription": "We couldn't reach the gateway service after multiple attempts. This is usually a temporary issue. Try again.",
       "retryButton": "Retry",
-      "retryPrefillNotice": "We restored your previous selections — please re-enter credentials before continuing."
+      "retryPrefillNotice": "We restored your previous selections. Re-enter credentials before continuing."
     },
     "versionDropdown": {
       "latest": "latest",
@@ -5934,6 +5934,6 @@
   },
   "stringListInput": {
     "removeAriaLabel": "Remove {item}",
-    "placeholder": "Type a value and press Enter"
+    "placeholder": "Type a value and press Enter..."
   }
 }
