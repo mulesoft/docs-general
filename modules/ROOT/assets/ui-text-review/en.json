@@ -11,7 +11,6 @@
     "close": "Close",
     "search": "Search",
     "noResults": "No results found",
-    "justNow": "Just now",
     "hoursAgo": "{hours}h ago",
     "daysAgo": "{days}d ago",
     "monthsAgo": "{months}mo ago",
@@ -305,7 +304,7 @@
     "notFound": "This {entity} no longer exists.",
     "network": "We couldn't load the {entity}. Check your connection and try again.",
     "unknown": "We couldn't load the {entity}. Try again."
-  }, 
+  },
   "entityDetail": {
     "loadingFallback": "Loading…",
     "loadingDescription": "Loading entity details, versions, and related metadata…"
@@ -351,7 +350,8 @@
     "mainContent": "Main content"
   },
   "aiSidebar": {
-    "landmarkLabel": "Ask MuleSoft"
+    "landmarkLabel": "Ask MuleSoft",
+    "closeAiSidebar": "Close AI sidebar"
   },
   "leftNav": {
     "landmarkLabel": "Primary",
@@ -389,10 +389,6 @@
     "conversationHistory": "Conversation history",
     "openFullView": "Open full view",
     "closeSidebar": "Close sidebar"
-  },
-  "aiSidebar": {
-    "landmarkLabel": "Ask MuleSoft",
-    "closeAiSidebar": "Close AI sidebar"
   },
   "dragHandle": {
     "resizeSidebar": "Resize sidebar"
@@ -1926,7 +1922,8 @@
     "title": "Disable Automated Policy?",
     "body": "Disabling this policy stops automated policy enforcement for all matching API instances. You can re-enable it later.",
     "confirmButton": "Disable Automated Policy",
-    "cancelButton": "Cancel"
+    "cancelButton": "Cancel",
+    "disableButton": "Disable Automated Policy"
   },
   "disabledAutomatedPolicyBanner": {
     "automatedPolicy": "This automated policy is disabled. Enable it to govern these services.",
@@ -2261,7 +2258,8 @@
     "allEnvironments": "All Environments",
     "unknownEnvironment": "Unknown",
     "environmentWithType": "{label} ({type})",
-    "noInstancesMatchFilters": "No instances match the selected filters."
+    "noInstancesMatchFilters": "No instances match the selected filters.",
+    "unknownVersion": "Unknown"
   },
   "monitoringTab": {
     "noMonitoring": "No monitoring available for this entity type.",
@@ -2395,7 +2393,11 @@
     "categoriesHeading": "Categories",
     "schemaHeading": "Schema",
     "typeBadge": "Type: {type}",
-    "versionBadge": "Version: {version}"
+    "versionBadge": "Version: {version}",
+    "documentation": "Documentation",
+    "provider": "Provider",
+    "providerOrganization": "Organization",
+    "providerUrl": "Website"
   },
   "governanceTab": {
     "loadingReportDetails": "Loading report details…",
@@ -2757,7 +2759,8 @@
     "provisioningFailedBanner": "Provisioning couldn't complete. Click Retry to resume from where it left off.",
     "retryButton": "Retry",
     "retryingStatus": "Retrying…",
-    "retryTimedOut": "Retry timed out — the pipeline may still be running in the background."
+    "retryTimedOut": "Retry timed out — the pipeline may still be running in the background.",
+    "retryPrefillUnavailable": "We couldn't load your previous selections — please start the wizard again."
   },
   "entityDetailPage": {
     "tabConformanceReport": "Conformance",
@@ -2774,7 +2777,10 @@
       "mcpServer": "MCP Server",
       "api": "API"
     },
-    "loadingDetailsAnnouncement": "Loading {label} details…"
+    "loadingDetailsAnnouncement": "Loading {label} details…",
+    "mcpUnavailableTitle": "This MCP server isn't available",
+    "mcpUnavailableDescription": "It may still be provisioning, or it has been deleted. Refresh in a moment, or return to the catalog.",
+    "mcpUnavailableBackToCatalog": "Back to MCP Servers"
   },
   "apiInstanceSelectorCard": {
     "environment": "Environment",
@@ -3345,7 +3351,9 @@
       "guardrails": "Controls",
       "guardrailsDescription": "Validate targeted services against selected control rules and optionally block non-compliant actions, while automatically publishing your live compliance posture.",
       "automatedPolicy": "Automated Policy",
-      "automatedPolicyDescription": "Enforce consistent policy requirements across targeted services to ensure uniform governance and automated security."
+      "automatedPolicyDescription": "Enforce consistent policy requirements across targeted services to ensure uniform governance and automated security.",
+      "requiresRolePermission": "Requires the {role} permission in this business group.",
+      "requiresPermission": "Requires the following permissions in this business group: {permissions}."
     },
     "scope": {
       "filterRestApi": "REST API",
@@ -3435,7 +3443,11 @@
       "noServicesMatch": "No services match the current scope criteria.",
       "filterGraphql": "GraphQL",
       "filterSoapApi": "SOAP API",
-      "filterGrpcApi": "gRPC API"
+      "filterGrpcApi": "gRPC API",
+      "instanceModeAnyEnvironment": "Any environment",
+      "instanceModeProduction": "Production",
+      "instanceModeSandbox": "Sandbox",
+      "instanceModeNoInstances": "No instances"
     },
     "rules": {
       "heading": "Relevant rulesets for your selected scope",
@@ -3603,7 +3615,8 @@
     "removePolicyDialogHeading": "Remove {name}?",
     "removePolicyToastSuccess": "Policy {name} was removed.",
     "enablePolicyToastSuccess": "Policy {name} was enabled.",
-    "disablePolicyToastSuccess": "Policy {name} was disabled."
+    "disablePolicyToastSuccess": "Policy {name} was disabled.",
+    "kongGatewayLevelNotice": "Additional service level policies(plugins) may be applicable to this instance, beyond below mentioned gateway level policies(plugins)."
   },
   "policiesTab": {
     "policyFallback": "Policy",
@@ -4118,7 +4131,10 @@
     "minutesAgo": "{count}m ago",
     "hoursAgo": "{count}h ago",
     "daysAgo": "{count}d ago",
-    "monthsAgo": "{count}mo ago"
+    "monthsAgo": "{count}mo ago",
+    "dismissFailed": "Couldn't dismiss the failed job. Please try again.",
+    "provisioningFailed": "Provisioning failed",
+    "retryPrefillUnavailable": "We couldn't load your previous selections — please start the wizard again."
   },
   "addInstanceShared": {
     "stepGatewayApi": "Gateway & API",
@@ -5021,11 +5037,7 @@
       "back": "Back",
       "unavailable": "Selected strategy is unavailable."
     },
-    "actions": "Actions",
-    "pending": {
-      "guardrailCreating": "Creating your control — this may take a moment.",
-      "automatedPolicyCreating": "Creating your automated policy — this may take a moment."
-    }
+    "actions": "Actions"
   },
   "mcpWizard": {
     "wizard": {
@@ -5065,9 +5077,7 @@
       "stepReview": "Review",
       "toastApiMissingInstanceUrl": "\"{apiName}\" can't be wrapped as an MCP server yet. The selected API Manager instance has no endpoint URL. Deploy the instance in API Manager and try again.",
       "runtimeAuthWarning": "This MCP endpoint is deployed without inbound authentication. Apply an Omni Gateway inbound auth policy (such as client-id-enforcement or jwt-validation) before production use.",
-      "gatewayLoadErrorHeading": "Unable to Load Gateways",
-      "gatewayLoadErrorDescription": "We couldn't reach the gateway service after multiple attempts. This is usually a temporary issue. Try again.",
-      "retryButton": "Retry"
+      "retryPrefillNotice": "We restored your previous selections — please re-enter credentials before continuing."
     },
     "versionDropdown": {
       "latest": "latest",
@@ -5126,7 +5136,11 @@
       "tlsContextPlaceholder": "Select a TLS Context…",
       "tlsNoResults": "No results found",
       "cancel": "Cancel",
-      "save": "Save"
+      "save": "Save",
+      "typeHeader": "Type",
+      "typeManaged": "Managed",
+      "typeUnmanaged": "Unmanaged",
+      "notAvailable": "N/A"
     },
     "toolSelectionPanel": {
       "heading": "Select Tools",
@@ -5143,7 +5157,8 @@
       "editUpstreamUrlAria": "Edit upstream URL",
       "saveChangesAria": "Save changes",
       "discardChangesAria": "Discard changes",
-      "noToolsWarning": "Select at least one tool to proceed."
+      "noToolsWarning": "Select at least one tool to proceed.",
+      "noInstancesError": "No deployed instance is available for this version. Pick a different version or deploy an instance before continuing."
     },
     "stepSelectSource": {
       "heading": "Select APIs and SaaS systems",
@@ -5904,5 +5919,9 @@
       "heading": "Installing Slack Integration",
       "description": "Completing installation…"
     }
+  },
+  "stringListInput": {
+    "removeAriaLabel": "Remove {item}",
+    "placeholder": "Type a value and press Enter"
   }
 }
