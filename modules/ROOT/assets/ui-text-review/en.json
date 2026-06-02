@@ -211,10 +211,13 @@
     "deployInstance": "Deploy Instance"
   },
   "createLlmProxyPage": {
+    "routeNameFallback": "Route {letter}",
+    "deleteBlockedModelBased": "Model-based routing requires at least one route.",
+    "deleteBlockedSemantic": "Semantic routing requires at least two routes.",
     "heading": "Create an LLM Proxy",
     "description": "Register an LLM proxy: choose a gateway, then connect providers and routing.",
     "proxyNameLabel": "Proxy Name",
-    "proxyNamePlaceholder": "e.g. Billing Triage Proxy",
+    "proxyNamePlaceholder": "Billing Triage Proxy",
     "descriptionLabel": "Description",
     "descriptionPlaceholder": "Describe what this proxy does…",
     "basePathLabel": "Base Path",
@@ -222,10 +225,11 @@
     "environmentLabel": "Environment",
     "loadingEnvironments": "Loading environments…",
     "selectEnvironment": "Select environment…",
-    "flexGatewayLabel": "Flex Gateway",
+    "flexGatewayLabel": "Omni Gateway",
     "selectEnvironmentFirst": "Select an environment first",
     "loadingGateways": "Loading gateways…",
     "selectGateway": "Select gateway…",
+    "noGatewaysAvailable": "No Omni Gateways registered in this environment. Register one in Anypoint Omni Gateway, then return here.",
     "consumerEndpointLabel": "Consumer Endpoint",
     "consumerEndpointPlaceholder": "https://api.example.com",
     "portLabel": "Port",
@@ -244,7 +248,7 @@
     "proxyName": "Proxy Name",
     "basePath": "Base Path",
     "environment": "Environment",
-    "flexGateway": "Flex Gateway",
+    "flexGateway": "Omni Gateway",
     "consumerEndpoint": "Consumer Endpoint",
     "port": "Port",
     "continueButton": "Continue",
@@ -292,6 +296,16 @@
       "tryAgain": "Try again"
     }
   },
+  "entityDetailLoadFailure": {
+    "gatewayTimeout": "We couldn't load the {entity}. Try again.",
+    "serviceUnavailable": "We couldn't load the {entity}. Try again.",
+    "serverError": "We couldn't load the {entity}. Try again.",
+    "unauthorized": "Sign in again to view this {entity}.",
+    "forbidden": "You don't have access to this {entity}. Check your permissions and try again.",
+    "notFound": "This {entity} no longer exists.",
+    "network": "We couldn't load the {entity}. Check your connection and try again.",
+    "unknown": "We couldn't load the {entity}. Try again."
+  },
   "entityDetail": {
     "loadingFallback": "Loading…",
     "loadingDescription": "Loading entity details, versions, and related metadata…"
@@ -300,13 +314,14 @@
     "tab": {
       "policies": "Policies",
       "monitoring": "Monitoring",
-      "governanceChecks": "Governance Checks"
+      "governanceChecks": "Conformance"
     },
     "env": {
       "production": "Production",
       "sandbox": "Sandbox",
       "development": "Development"
     },
+    "envBadge": "{name} ({type})",
     "breadcrumbInstances": "Instances",
     "exposeAsMcp": "Expose as MCP Server",
     "instanceLabel": "{entity} Instance",
@@ -331,7 +346,16 @@
     "signInFailed": "We couldn't sign you in. Try again.",
     "backToLogin": "Back to login"
   },
+  "appShell": {
+    "skipToMain": "Skip to main content",
+    "mainContent": "Main content"
+  },
+  "aiSidebar": {
+    "landmarkLabel": "Ask MuleSoft",
+    "closeAiSidebar": "Close AI Sidebar"
+  },
   "leftNav": {
+    "landmarkLabel": "Primary",
     "home": "Home",
     "portfolio": "Portfolio",
     "agents": "Agents",
@@ -368,7 +392,8 @@
     "closeSidebar": "Close sidebar"
   },
   "aiSidebar": {
-    "closeAiSidebar": "Close AI sidebar"
+    "landmarkLabel": "Ask MuleSoft",
+    "closeAiSidebar": "Close AI Sidebar"
   },
   "dragHandle": {
     "resizeSidebar": "Resize sidebar"
@@ -389,7 +414,7 @@
       "closeTab": "You can close this tab."
     },
     "expired": {
-      "heading": "Link expired",
+      "heading": "Link Expired",
       "description": "This connection link has expired. Return to Slack and click Connect to Anypoint again to get a fresh link.",
       "closeTab": "You can close this tab."
     },
@@ -583,6 +608,7 @@
     "policyViolation": "Policy Violation",
     "logicPolicy": "Logic / Policy",
     "allPolicies": "All Policies",
+    "noPoliciesAvailable": "No policies available for this API instance.",
     "rateLimiting": "Rate Limiting",
     "spikeControl": "Spike Control",
     "clientIdEnforcement": "Client ID Enforcement",
@@ -612,6 +638,7 @@
     "recipientSearchPlaceholder": "Search by name or type emails (comma-separated)…",
     "noUsersFound": "No users found matching \"{query}\"",
     "recipientHint": "Search and select users to receive email notifications.",
+    "removeRecipientLabel": "Remove recipient",
     "subject": "Subject",
     "subjectVariablesHint": "Variables: $'{'severity'}', $'{'api'}', $'{'condition'}', $'{'environment'}'",
     "message": "Message",
@@ -627,6 +654,14 @@
     "successMessage": "Notification was created.",
     "creating": "Creating…",
     "createButton": "Create Notification",
+    "requiredHint": "* indicates a required field.",
+    "requiredAriaSuffix": "Required",
+    "help": {
+      "targetService": "Start typing to filter. Use the arrow keys to navigate and Enter to select.",
+      "threshold": "The alert fires when the metric meets this comparison continuously for the selected duration.",
+      "alertName": "Use a short, descriptive name (4 or more characters). This name appears in the notification list and email subjects."
+    },
+    "targetServiceListboxLabel": "Available targets",
     "serviceTypeLabel": {
       "api": "API",
       "llm": "LLM",
@@ -667,14 +702,17 @@
       "addRecipient": "Add at least one email recipient, or turn off email and use Slack.",
       "selectSlackChannel": "Select a Slack channel, or turn off Slack.",
       "noSlackChannels": "No Slack channels available. Connect Slack in Settings, then try again.",
-      "selectResponseCode": "Select a response code (or enter one) before creating this alert."
+      "selectResponseCode": "Select or enter a response code.",
+      "selectTarget": "Select a target service."
     },
     "slackChannel": "Slack channel",
     "defaultEmailSubject": "$'{'severity'}': $'{'api'}' $'{'condition'}'",
     "defaultEmailMessage": "Hello,\nYou are receiving this alert because:\n The API policy $'{'policy'}' has $'{'condition'}' of $'{'value'}' at $'{'timestamp'}'.\nThe API policy has reached the threshold based on $'{'condition'}' is $'{'operator'}' $'{'threshold'}' for $'{'period'}'.\n\nEnvironment: $'{'environment'}'\n$'{'dashboardLink'}'\n$'{'apiLink'}'",
     "errorMissingOrgOrUser": "Enter your organization and user information.",
     "errorSelectEnvironment": "Select an environment.",
-    "errorEnableChannel": "Enable at least one delivery channel (email or Slack)."
+    "errorEnableChannel": "Enable at least one delivery channel (email or Slack).",
+    "noInstancesInEnvironment": "There are no instances in this environment.",
+    "noMatches": "No matches found"
   },
   "notifications": {
     "heading": "Notifications",
@@ -694,6 +732,7 @@
       "responseTime": "Response Time",
       "responseCodes": "Response Codes",
       "policyViolation": "Policy Violation",
+      "cpuUsage": "CPU Usage",
       "allSeverities": "All Severities",
       "allDelivery": "All Delivery",
       "emailOnly": "Email Only",
@@ -801,7 +840,7 @@
     "connectedTo": "Connected to {name}.",
     "continueButton": "Continue",
     "connectionNameLabel": "Connection Name",
-    "connectionNamePlaceholder": "e.g., Production Account - Marketing",
+    "connectionNamePlaceholder": "Production Account - Marketing",
     "descriptionLabel": "Description",
     "descriptionPlaceholder": "Add a description…",
     "importWarning": "All discovered services will be imported into the portfolio.",
@@ -824,7 +863,9 @@
     "mcpServers": "MCP Servers",
     "apis": "APIs",
     "noScanners": "No scanners for this provider yet.",
-    "addScannerPrompt": "Click {label} to get started.",
+    "noScannersAll": "No scanners configured yet.",
+    "addScannerPrompt": "Select {label} to get started.",
+    "addScannerPromptAll": "Select a provider from the sidebar, then click Add Scanner to get started.",
     "scannerCount": "{count} {count, plural, one {Scanner} other {Scanners}}",
     "servicesDiscovered": "{count} Services Discovered",
     "searchPlaceholder": "Search by scanner or provider…",
@@ -947,6 +988,7 @@
     "never": "Never",
     "tab": {
       "overview": "Overview",
+      "services": "Services",
       "settings": "Settings"
     },
     "toastScanStarted": "Scan started",
@@ -1065,9 +1107,9 @@
     "authTokenLabel": "Auth Token",
     "authTokenPlaceholder": "Enter auth token",
     "regionLabel": "Region",
-    "regionPlaceholder": "e.g. us-east-1",
+    "regionPlaceholder": "us-east-1",
     "orgIdLabel": "Organization / Account ID",
-    "orgIdPlaceholder": "e.g. 123456789",
+    "orgIdPlaceholder": "123456789",
     "websiteLabel": "Website URL",
     "websitePlaceholder": "https://…",
     "loadingGateways": "Loading gateways…",
@@ -1109,6 +1151,15 @@
     "servicesTitle": "Services {action} ({count})",
     "typeAgent": "Agent",
     "typeApi": "API"
+  },
+  "scannerServicesTab": {
+    "noServices": "No services discovered yet",
+    "loading": "Loading services…",
+    "discoveredServices": "Discovered Services",
+    "sectionAgents": "Agents",
+    "sectionApis": "APIs",
+    "sectionMcpServers": "MCP Servers",
+    "sectionLlms": "LLM Proxies"
   },
   "scanDetailView": {
     "scanDetails": "Scan Details",
@@ -1306,9 +1357,9 @@
       "authTokenLabel": "Auth Token",
       "authTokenPlaceholder": "Enter auth token",
       "regionLabel": "Region",
-      "regionPlaceholder": "e.g. us-east-1",
+      "regionPlaceholder": "us-east-1",
       "orgIdLabel": "Organization / Account ID",
-      "orgIdPlaceholder": "e.g. 123456789",
+      "orgIdPlaceholder": "123456789",
       "websiteLabel": "Website URL",
       "websitePlaceholder": "https://…",
       "loadingGateways": "Loading gateways…",
@@ -1328,7 +1379,7 @@
   },
   "costManagement": {
     "heading": "Cost Management",
-    "subtitle": "Monitor usage and review optimization recommendations across your portfolio"
+    "subtitle": "Monitor usage and review optimization recommendations for your MCP servers"
   },
   "instanceDetailModal": {
     "closeDialog": "Close dialog",
@@ -1362,7 +1413,7 @@
   "mcpTokenAnalysis": {
     "summaryHeading": "Summary",
     "timeRangeAriaLabel": "Time range",
-    "estimationTooltip": "Estimated token counts based on payload byte lengths. Actual token counts sometimes differ.",
+    "estimationTooltip": "Estimated token counts based on payload byte lengths. Actual token counts sometimes differ",
     "acrossInstances": "Across {count} instances",
     "instancesCount": "{count} instances",
     "topOpportunities": "Top Opportunities",
@@ -1398,7 +1449,7 @@
       "savingsPercent": "({percent}%)",
       "skipForNow": "Skip for now"
     },
-    "timeRangeTooltip": "Time range only filters this panel. Recommendations and the instance table always use the full 30-day window."
+    "timeRangeTooltip": "Time range only filters this panel. Recommendations and the instance table always use the full 30-day window"
   },
   "policyCatalog": {
     "placeholderBanner": "Conceptual placeholder — needs deeper exploration and thinking",
@@ -1438,11 +1489,13 @@
     "heading": "Apply Policy",
     "selectPolicyStep": "Select Policy",
     "configurePolicyStep": "Configure Policy",
+    "reviewPolicyStep": "Review Policy",
     "description": "Select a policy to apply to this instance.",
+    "descriptionKong": "Select a policy to be applied at gateway of this instance, protecting all services in the gateway.",
     "searchAriaLabel": "Search policies",
     "searchPlaceholder": "Search policies…",
     "trafficFlow": "Traffic Flow",
-    "trafficTooltip": "Filter policies by traffic direction: Inbound policies apply to incoming requests. Outbound policies apply to backend calls.",
+    "trafficTooltip": "Filter policies by traffic direction: Inbound policies apply to incoming requests. Outbound policies apply to backend calls",
     "domain": "Domain",
     "direction": {
       "inbound": "Inbound",
@@ -1453,7 +1506,8 @@
     "statusAutomated": "Automated",
     "statusFilterLabel": "Status",
     "trafficFlowLabel": "Traffic Flow",
-    "trafficFlowTooltip": "Filter policies by traffic direction: Inbound policies apply to incoming requests. Outbound policies apply to backend calls.",
+    "trafficFlowTooltip": "Filter policies by traffic direction: Inbound policies apply to incoming requests. Outbound policies apply to backend calls",
+    "trafficFlowInfoLabel": "Traffic flow information",
     "noFilterMatch": "No policies match your filters.",
     "allApplied": "All available policies are already applied to this instance.",
     "selectAriaLabel": "Select {name}",
@@ -1475,6 +1529,36 @@
     "defaultSelectSummary": "Selected policy {name}.",
     "back": "Back"
   },
+  "policyMetadataFields": {
+    "heading": "Policy Details",
+    "description": "Add an optional name, version, and application conditions.",
+    "automatedDescription": "Label, version, and rule of application for this automated policy.",
+    "label": "Policy label",
+    "labelPlaceholder": "SLA Tier 1",
+    "labelHint": "Use labels to distinguish between multiple instances of the same policy.",
+    "version": "Policy version",
+    "versionEmpty": "No versions available",
+    "versionHint": "Select the version of this policy to apply.",
+    "applicationConditions": "Application conditions",
+    "applyAllRequests": "Apply to all requests",
+    "applySpecific": "Apply only to specific resources",
+    "method": "Method",
+    "uriTemplateRegex": "URI template regex",
+    "addRowHint": "Add a condition to apply this policy to specific HTTP requests only.",
+    "methodPlaceholder": "GET|POST",
+    "uriPlaceholder": "/api/orders/.*",
+    "removeCondition": "Remove condition",
+    "addCondition": "+ Add condition",
+    "ruleOfApplication": "Rule of application",
+    "ruleOfApplicationDescription": "This automated policy is applied to APIs matching the criteria below.",
+    "ruleOfApplicationEnvironment": "Environment",
+    "ruleOfApplicationTechnologies": "API technologies",
+    "ruleOfApplicationEndpointTypes": "Endpoint types",
+    "ruleOfApplicationRange": "API version range",
+    "ruleOfApplicationRangeFrom": "From",
+    "ruleOfApplicationRangeTo": "To",
+    "ruleOfApplicationAny": "Any"
+  },
   "policyConfigForm": {
     "heading": "Configure Policy",
     "description": "Set configuration values for {name}.",
@@ -1489,8 +1573,42 @@
     "saveChanges": "Save Changes",
     "applyPolicy": "Apply Policy",
     "wizardTitle": "Apply Policy",
-    "viewTitle": "Policy configuration",
-    "viewDescription": "Configuration values for {name}."
+    "viewTitle": "Policy Configuration",
+    "viewDescription": "Review and edit configuration values for {name}.",
+    "discardModalTitle": "Leave this page?",
+    "discardModalMessage": "Any unsaved changes are discarded when you leave the page.",
+    "discardModalConfirm": "Discard and Leave",
+    "discardModalCancel": "Cancel",
+    "actionsMenu": "Actions",
+    "editConfiguration": "Edit Configuration",
+    "enablePolicy": "Enable Policy",
+    "disablePolicy": "Disable Policy",
+    "removePolicy": "Remove Policy",
+    "disabledBadge": "Disabled",
+    "removeModalTitle": "Remove {name}?",
+    "removeModalMessage": "If you remove this policy, you can't undo it. The change takes effect immediately.",
+    "removeModalConfirm": "Remove Policy",
+    "removeModalCancel": "Cancel",
+    "reviewPolicyStep": "Review Policy",
+    "allowDuplicateAcknowledgement": "I understand that there is already a policy configured and want to continue.",
+    "publishDuplicate": "Publish Duplicate",
+    "publishingDuplicate": "Publishing Duplicate…"
+  },
+  "policyDetailPage": {
+    "subtitle": "Policy Configuration",
+    "backToInstance": "Back to Instance",
+    "actionsAriaLabel": "Policy actions",
+    "edit": "Edit",
+    "disable": "Disable",
+    "enable": "Enable",
+    "delete": "Delete",
+    "noFields": "This policy has no configurable values.",
+    "checkboxEnabled": "Enabled",
+    "checkboxDisabled": "Disabled",
+    "valueEmpty": "—",
+    "saveChanges": "Save Changes",
+    "cancel": "Cancel",
+    "configurationJson": "Configuration JSON"
   },
   "policyConfigFieldEditor": {
     "configurationJson": "Configuration JSON",
@@ -1581,13 +1699,15 @@
     "fromExchange": "From Exchange",
     "fromExchangeDescription": "Import published tool definitions",
     "fromMcpServer": "From MCP Server",
-    "fromMcpServerDescription": "Discover tools from the live instance"
+    "fromMcpServerDescription": "Discover tools from the live instance",
+    "fromMcpServerCheckingDescription": "Checking server type…"
   },
   "importToolsFromMcp": {
     "title": "Import Tools from MCP Server",
     "closeModal": "Close notification window",
     "connecting": "Connecting to MCP server…",
-    "noInstance": "No reachable MCP server instance found. Confirm this server has a deployed instance with a public URL before importing tools.",
+    "noInstance": "No MCP server selected",
+    "noInstanceBody": "Select an MCP server from the list to view and import its tools.",
     "authHint": "Check the authentication policies configured for this MCP server instance.",
     "noTools": "This MCP server has no tools available.",
     "selectAll": "Select All",
@@ -1737,9 +1857,11 @@
     "headerOrder": "Order",
     "headerStrategyName": "Strategy Name",
     "headerType": "Type",
+    "headerTarget": "Target",
     "headerStatus": "Status",
     "headerGovernedServices": "Governed Services",
     "headerModified": "Modified",
+    "headerEnvironment": "Environment",
     "typeAutomatedPolicy": "Automated Policy",
     "fromAnypoint": "From Anypoint Platform",
     "actionsAriaLabel": "Strategy actions",
@@ -1747,6 +1869,8 @@
     "actionDuplicate": "Duplicate",
     "actionDelete": "Delete",
     "actionDeleting": "Deleting…",
+    "actionDisable": "Disable",
+    "actionEnable": "Enable",
     "emptyDefault": "No custom governance strategies created yet. Create your first to extend governance beyond the default profile.",
     "emptyFiltered": "No governance strategies match your filters.",
     "rowsPerPage": "Rows per page",
@@ -1754,7 +1878,8 @@
     "previous": "Previous",
     "next": "Next",
     "previousPageAriaLabel": "Previous page of strategies",
-    "nextPageAriaLabel": "Next page of strategies"
+    "nextPageAriaLabel": "Next page of strategies",
+    "sortByAriaLabel": "Sort by {column}"
   },
   "complianceTable": {
     "headerServiceType": "Service Type",
@@ -1791,11 +1916,23 @@
     "closeAriaLabel": "Close delete dialog",
     "heading": "Delete {typeLabel}",
     "confirmMessage": "Delete {name}?",
-    "bodyMessage": "Deleting this {bodyNoun} permanently removes it. Services governed by this {bodyNoun} are no longer validated against its rules.",
+    "bodyMessage": "Deleting this strategy removes all of its applied policies from your API instances. This action can't be undone.",
     "deleting": "Deleting…",
     "deleteButton": "Delete {typeLabel}",
     "typeAutomatedPolicy": "Automated Policy",
     "typeGuardrail": "Control"
+  },
+  "disableAutomatedPolicyModal": {
+    "closeAriaLabel": "Close disable dialog",
+    "title": "Disable Automated Policy?",
+    "body": "Disabling this policy stops automated policy enforcement for all matching API instances. You can re-enable it later.",
+    "confirmButton": "Disable Automated Policy",
+    "cancelButton": "Cancel",
+    "disableButton": "Disable Automated Policy"
+  },
+  "disabledAutomatedPolicyBanner": {
+    "automatedPolicy": "This automated policy is disabled. Enable it to govern these services.",
+    "controls": "This control is disabled. Enable it to govern these services."
   },
   "guardrailEvaluationPanel": {
     "runEvaluation": "Run profile evaluation",
@@ -1897,20 +2034,35 @@
     "searchPlaceholder": "Search {entity}…",
     "searchAriaLabel": "Search {entity}",
     "resultCount": "{filtered} of {total}",
-    "performanceGood": "Good",
-    "performanceFair": "Fair",
-    "performancePoor": "Poor",
-    "minPlaceholder": "Min",
-    "maxPlaceholder": "Max",
-    "minScoreAriaLabel": "Minimum {label} score",
-    "maxScoreAriaLabel": "Maximum {label} score",
-    "rangeSeparator": "to",
-    "cardViewLabel": "Card view",
-    "tableViewLabel": "Table view"
+    "cardViewLabel": "Card View",
+    "tableViewLabel": "Table View",
+    "sortLabels": {
+      "nameAsc": "Name A–Z",
+      "nameDesc": "Name Z–A",
+      "updatedAtDesc": "Most recent",
+      "updatedAtAsc": "Least recent",
+      "complianceStatusDesc": "Conformance: high to low",
+      "complianceStatusAsc": "Conformance: low to high",
+      "apiCategoryAsc": "Type A–Z",
+      "apiCategoryDesc": "Type Z–A",
+      "gatewayModeAsc": "Type A–Z",
+      "gatewayModeDesc": "Type Z–A",
+      "statusAsc": "Status A–Z",
+      "statusDesc": "Status Z–A",
+      "environmentAsc": "Environment A–Z",
+      "environmentDesc": "Environment Z–A",
+      "routingStrategyAsc": "Routing Strategy A–Z",
+      "routingStrategyDesc": "Routing Strategy Z–A"
+    }
   },
   "entityCard": {
     "lastSynced": "Last synced {time}",
-    "provisioningFailed": "Provisioning failed"
+    "provisioningFailed": "Provisioning failed",
+    "complianceStatusLabel": "Compliance Status: {status}",
+    "complianceStatusCompliant": "Compliant",
+    "complianceStatusNonCompliant": "Noncompliant",
+    "complianceStatusPending": "Pending",
+    "viewConformanceReport": "View {status} conformance report"
   },
   "filterDropdown": {
     "clearAll": "Clear all"
@@ -1955,7 +2107,7 @@
     "clientProvider": "Client Provider",
     "clientProviderHelp": "Automatically derived from the selected gateway environment.",
     "instanceLabel": "Instance Label",
-    "instanceLabelPlaceholder": "e.g. production-v1",
+    "instanceLabelPlaceholder": "production-v1",
     "instanceLabelHelp": "Recommended when managing multiple instances of the same API.",
     "upstreamHeading": "Upstream",
     "upstreamHelp": "Where traffic is routed",
@@ -2001,6 +2153,9 @@
       "basicAuthorizationDescription": "Credentials for HTTP Basic authentication",
       "contentTypeDescription": "Media type of the request body"
     }
+  },
+  "apiSpecNav": {
+    "toggleSectionLabel": "Toggle section"
   },
   "detailOverviewTab": {
     "section": {
@@ -2108,7 +2263,8 @@
     "allEnvironments": "All Environments",
     "unknownEnvironment": "Unknown",
     "environmentWithType": "{label} ({type})",
-    "noInstancesMatchFilters": "No instances match the selected filters."
+    "noInstancesMatchFilters": "No instances match the selected filters.",
+    "unknownVersion": "Unknown"
   },
   "monitoringTab": {
     "noMonitoring": "No monitoring available for this entity type.",
@@ -2242,7 +2398,11 @@
     "categoriesHeading": "Categories",
     "schemaHeading": "Schema",
     "typeBadge": "Type: {type}",
-    "versionBadge": "Version: {version}"
+    "versionBadge": "Version: {version}",
+    "documentation": "Documentation",
+    "provider": "Provider",
+    "providerOrganization": "Organization",
+    "providerUrl": "Website"
   },
   "governanceTab": {
     "loadingReportDetails": "Loading report details…",
@@ -2284,6 +2444,14 @@
   "governanceReportTab": {
     "notValidatedTitle": "No governance rules applied",
     "notValidatedDescription": "No governance rules apply to this service. Add a governance strategy to start enforcing standards.",
+    "notValidatedInstanceDescription": "No governance rules apply to this instance. Add a governance strategy to start enforcing standards.",
+    "noErrorsFoundTitle": "No errors found",
+    "noErrorsFoundDescription": "Governance rules ran on this service and reported no findings.",
+    "noErrorsFoundInstanceDescription": "Governance rules ran on this instance and reported no findings.",
+    "pendingEvaluationTitle": "Pending evaluation",
+    "pendingEvaluationDescription": "Governance evaluation is in progress. Check back in a moment.",
+    "instanceLevelOnlyTitle": "No service-level errors",
+    "instanceLevelOnlyDescription": "This service's conformance status reflects instance-level checks. Open the Instances tab to see the per-instance findings.",
     "loadingConformance": "Loading conformance report…",
     "noGovernanceReport": "No governance report available for this API.",
     "reportDetails": "Report Details",
@@ -2315,7 +2483,7 @@
     "results": {
       "issuesFromRules": "{issueCount, plural, one {# issue} other {# issues}} from {ruleCount, plural, one {# rule} other {# rules}}",
       "issuesFromRulesets": "{issueCount, plural, one {# issue} other {# issues}} from {rulesetCount, plural, one {# ruleset} other {# rulesets}}",
-      "groupByRuleset": "Group By Ruleset",
+      "groupByRuleset": "Group by Ruleset",
       "expandAll": "Expand All",
       "collapseAll": "Collapse All",
       "noOccurrencesToDisplay": "No occurrences to display.",
@@ -2338,9 +2506,7 @@
       "severityWarning": "Warning",
       "severityInfo": "Info"
     },
-    "goToGovernanceStrategies": "Go to Governance Strategies",
-    "pendingEvaluationTitle": "Evaluating governance rules…",
-    "pendingEvaluationDescription": "This service hasn't been evaluated yet. Results will appear shortly."
+    "goToGovernanceStrategies": "Go to Governance Strategies"
   },
   "governanceReportControls": {
     "latest": "(Latest)",
@@ -2352,6 +2518,7 @@
   "addVersionModal": {
     "heading": "Add a new version",
     "closeDialog": "Close add version dialog",
+    "closeModalLabel": "Close modal",
     "publishingStatus": "Publishing version…",
     "waitingDeployment": "Waiting for deployment to complete",
     "publishingButton": "Publishing…",
@@ -2366,12 +2533,12 @@
     "fieldGroupId": "GroupId",
     "fieldAssetId": "AssetId",
     "fieldVersion": "Version",
-    "versionPlaceholder": "e.g. 2.0.1",
+    "versionPlaceholder": "2.0.1",
     "versionHintPrefix": "Version should use the",
     "versionHintLink": "SemVer",
     "versionHintSuffix": "format. Examples: 1.0.0 or 2.1.3",
     "fieldApiVersion": "API version",
-    "apiVersionPlaceholder": "e.g. v2",
+    "apiVersionPlaceholder": "v2",
     "fieldLifecycleState": "Lifecycle state",
     "lifecycleStable": "Stable",
     "lifecycleStableDesc": "Released and ready to consume",
@@ -2392,7 +2559,7 @@
       "label": "Label",
       "gateway": "Gateway",
       "status": "Status",
-      "environment": "Environment",
+      "environment": "Env Type",
       "version": "Version",
       "policies": "Policies",
       "clients": "Clients",
@@ -2404,13 +2571,13 @@
     "exposeAsMcpServer": "Expose as MCP Server",
     "manage": "Manage",
     "managedTooltipBeforeFlex": "Instances from ",
-    "managedTooltipFlexStrong": "Flex gateways",
+    "managedTooltipFlexStrong": "Omni gateways",
     "managedTooltipBetween": " have full read/write support for data and governance. For instances from ",
     "managedTooltipFederatedStrong": "federated gateways",
-    "managedTooltipAfterFederated": ", support depends on gateway settings.",
-    "managedTooltipAria": "Instances from Flex gateways have full read/write support for data and governance. For instances from federated gateways, support depends on gateway settings.",
-    "unmanagedTargetsTooltip": "External endpoints registered in Exchange without a managed gateway.",
-    "unmanagedTooltip": "These endpoints have no known gateways and are not shown elsewhere. Manage them to add support for authentication, monitoring, and governance.",
+    "managedTooltipAfterFederated": ", support depends on gateway settings",
+    "managedTooltipAria": "Instances from Omni gateways have full read/write support for data and governance. For instances from federated gateways, support depends on gateway settings",
+    "unmanagedTargetsTooltip": "External endpoints registered in Exchange without a managed gateway",
+    "unmanagedTooltip": "These endpoints have no known gateways and are not shown elsewhere. Manage them to add support for authentication, monitoring, and governance",
     "viewGatewayTitle": "View {name} gateway"
   },
   "instancesPipelineView": {
@@ -2425,11 +2592,11 @@
   "instancesNonApiTables": {
     "noMatchFilters": "No instances match the selected filters.",
     "flexGateway": "Omni Gateway ({count})",
-    "flexTooltip": "These instances are protected by an Anypoint Omni Gateway.",
+    "flexTooltip": "These instances are protected by an Anypoint Omni Gateway",
     "externalGateway": "External Gateway ({count})",
-    "externalTooltip": "These instances are protected by a non-MuleSoft gateway. Runtime data is not available.",
+    "externalTooltip": "These instances are protected by a non-MuleSoft gateway. Runtime data is not available",
     "unmanagedTitle": "Unmanaged",
-    "unmanagedTooltip": "These instances have no known gateway. For unmanaged instances, only a label and URL are known.",
+    "unmanagedTooltip": "These instances have no known gateway. For unmanaged instances, only a label and URL are known",
     "column": {
       "id": "ID",
       "label": "Label",
@@ -2556,6 +2723,7 @@
     "viewFullGatewayDetails": "View Full Gateway Details",
     "gatewaySubtitle": "Gateway",
     "edit": "Edit",
+    "delete": "Delete",
     "viewFullDetails": "View Full Gateway Details"
   },
   "detailHero": {
@@ -2589,27 +2757,35 @@
     "complianceStatusText": "Compliance status",
     "actionsAriaLabel": "Actions",
     "loadingValue": "Loading {name}…",
-    "exposeAsMcpServerDisabledTooltip": "This API only has a Mocking Service instance. Deploy a real (managed or self-managed) instance before exposing it as an MCP server.",
+    "exposeAsMcpServerDisabledTooltip": "This API only has a Mocking Service instance. Deploy a real (managed or self-managed) instance before exposing it as an MCP server",
+    "editNotSupportedTooltip": "Editing is not supported for this entity yet",
+    "deleteNotSupportedTooltip": "Deleting is not supported for this entity yet",
     "provisioningFailedTooltip": "Provisioning failed",
     "provisioningFailedBanner": "Provisioning couldn't complete. Click Retry to resume from where it left off.",
     "retryButton": "Retry",
     "retryingStatus": "Retrying…",
-    "retryTimedOut": "Retry timed out — the pipeline may still be running in the background."
+    "retryTimedOut": "Retry timed out — the pipeline may still be running in the background.",
+    "retryPrefillUnavailable": "We couldn't load your previous selections. Start the wizard again."
   },
   "entityDetailPage": {
-    "tabConformanceReport": "Conformance Report",
+    "tabConformanceReport": "Conformance",
     "tabApis": "APIs",
     "tabReplicas": "Replicas",
     "tabLogs": "Logs",
     "tabConfiguration": "Configuration",
     "loadingTabContent": "Loading tab content…",
     "failedToDeleteAsset": "We couldn't delete the asset. Try again.",
+    "deleteMcpSuccess": "MCP server was deleted.",
+    "deleteMcpFailure": "We couldn't delete the MCP server. {message}",
     "entityLabel": {
       "agent": "Agent",
       "mcpServer": "MCP Server",
       "api": "API"
     },
-    "loadingDetailsAnnouncement": "Loading {label} details…"
+    "loadingDetailsAnnouncement": "Loading {label} details…",
+    "mcpUnavailableTitle": "This MCP server isn't available",
+    "mcpUnavailableDescription": "It's still provisioning, or it has been deleted. Refresh in a moment, or return to the catalog.",
+    "mcpUnavailableBackToCatalog": "Back to MCP Servers"
   },
   "apiInstanceSelectorCard": {
     "environment": "Environment",
@@ -2651,7 +2827,7 @@
     "nameAriaLabel": "Name",
     "assetTypesAriaLabel": "Asset types",
     "mainFileAriaLabel": "Main file",
-    "mainFilePlaceholder": "Select a main file",
+    "mainFilePlaceholder": "Select a main file…",
     "apiVersionAriaLabel": "API version",
     "publishingApi": "Publishing API…",
     "waitingDeployment": "Waiting for deployment to complete",
@@ -2664,7 +2840,7 @@
     "searchPlaceholder": "Search entities…"
   },
   "scannerSetup": {
-    "namePlaceholder": "e.g., Production Vertex Scanner",
+    "namePlaceholder": "Production Vertex Scanner",
     "descriptionPlaceholder": "Describe what this scanner monitors…",
     "emailPlaceholder": "user@example.com, team@example.com",
     "slackPlaceholder": "https://hooks.slack.com/services/…",
@@ -2695,14 +2871,15 @@
     "closeAriaLabel": "Close delete asset dialog",
     "titleWithEntity": "Delete {entityLabel}",
     "titleDefault": "Delete asset version",
-    "confirmMessage": "Deleting \"{assetName} {version}\" is permanent and cannot be undone.",
-    "warningRemoveAsset": "Deleting this will remove the asset, its details page, and metadata from the catalog.",
+    "confirmMessage": "You're about to delete <b>{assetName} {version}</b>?",
+    "warningRemoveAsset": "Deleting this asset removes it, its details page, and metadata from the catalog. This action can't be undone.",
     "warningGavReusable": "The asset in development will be deleted. Its GAV (group ID, asset ID, and version) will be reusable.",
     "warningLabel": "Warning:",
     "gavReusableCheckbox": "Allow the GAV (group ID, asset ID, and version) to be reusable.",
     "cancelButton": "Cancel",
     "deletingButton": "Deleting…",
-    "deleteButton": "Delete"
+    "deleteButton": "Delete",
+    "deleteButtonWithEntity": "Delete {entityLabel}"
   },
   "deleteScannerModal": {
     "closeAriaLabel": "Close dialog",
@@ -2721,8 +2898,10 @@
     "deleteScanner": "Delete Scanner"
   },
   "dynamicCredentialsForm": {
-    "selectPlaceholder": "Select {field}",
-    "noAuthConfig": "No authentication configuration available for this provider."
+    "selectPlaceholder": "Select {field}…",
+    "noAuthConfig": "No authentication configuration available for this provider.",
+    "showPassword": "Show Password",
+    "hidePassword": "Hide Password"
   },
   "importRulesBuilder": {
     "valuePlaceholder": "Value",
@@ -2789,7 +2968,7 @@
     "errorHeading": "Something went wrong",
     "errorRetryHint": "Try sending your message again.",
     "sendMessage": "Send message",
-    "disclaimer": "Omni can make mistakes. Verify important information.",
+    "disclaimer": "Ask MuleSoft can make mistakes. Verify important information.",
     "riskLevel": "Risk: {level}",
     "confirmationRequired": " - confirmation required",
     "confirmMonitoringCard": "Insert the proposed monitoring card?",
@@ -2811,7 +2990,16 @@
     "confirmPolicyPatch": "Try the proposed policy fix in the form?",
     "confirmGatewayPatch": "Try the proposed gateway fix in the form?",
     "btnApplyProposedChanges": "Apply proposed changes",
-    "aiFeaturesNotEnabled": "Looks like AI features aren't turned on for your organization. Ask your administrator to turn on AI features in the connected Anypoint Platform and Salesforce orgs. After AI features are turned on, try again.",
+    "approvalGate": {
+      "heading": "Confirmation Required",
+      "redactionHint": "Credentials aren't shown for security reasons.",
+      "btnApprove": "Approve",
+      "btnReject": "Reject",
+      "decisionApproved": "Approved",
+      "decisionRejected": "Rejected"
+    },
+    "aiFeaturesNotEnabled": "Looks like AI features aren't enabled on for your organization. Ask your administrator to enable AI features in the connected Anypoint Platform and Salesforce orgs, then try again.",
+    "aiFeaturesNoPermission": "Looks like you don't have permission to use Ask MuleSoft in this business group. Contact your organization admin to get the Mule Developer Generative AI User permission, then try again.",
     "aiFeaturesLearnMore": "Learn more",
     "working": "Working…"
   },
@@ -2872,20 +3060,18 @@
     "filterOptimized": "Optimized",
     "filterNotOptimized": "Not optimized",
     "applyFilters": "Apply Filters",
-    "headerInstance": "Service & instance",
-    "headerTokensPerCall": "Tokens / call",
-    "headerTotalTokens": "Total tokens",
+    "headerInstance": "Service & Instance",
+    "headerTokensPerCall": "Tokens/Call",
+    "headerTotalTokens": "Total Tokens",
     "totalTokensInfoAriaLabel": "Token count information",
-    "totalTokensTooltip": "Estimated token count for this instance. The value in parentheses shows the share of total MCP server tokens consumed over the last 30 days.",
-    "headerTokensSaved": "Tokens saved",
+    "totalTokensTooltip": "Estimated token count for this instance. The value in parentheses shows the share of total MCP server tokens consumed over the last 30 days",
+    "headerTokensSaved": "Tokens Saved",
     "headerOptimized": "Optimized",
     "headerActions": "Actions",
     "emptyState": "No instances match your search or filters.",
-    "paginationShowing": "Showing {start}–{end} of {total} instances",
-    "firstPage": "First page",
+    "paginationShowing": "{start}–{end} of {total}",
     "previousPage": "Previous page",
     "nextPage": "Next page",
-    "lastPage": "Last page",
     "sectionHeading": "MCP Server Instances",
     "policiesCount": "{applied}/{total} Policies",
     "optimize": "Optimize…",
@@ -2901,14 +3087,14 @@
     "largeToolDescriptions": "Large tool descriptions detected",
     "largeToolResponses": "Large tool responses detected",
     "potentialSavings": "Potential Savings",
-    "savingsTooltip": "Projects best-case token savings from all unapplied optimization policies. Keep corresponding Exchange assets current to maintain projection accuracy.",
+    "savingsTooltip": "Projects best-case token savings from all unapplied optimization policies. Keep corresponding Exchange assets current to maintain projection accuracy",
     "savingsUnavailable": "Savings estimate unavailable",
     "tokensPerTimeframe": "tokens / {timeframe}",
     "optimizeThisInstance": "Optimize This Instance",
     "skipForNow": "Skip for now",
     "largeToolDescriptionsDetected": "Large tool descriptions detected",
     "largeToolResponsesDetected": "Large tool responses detected",
-    "potentialSavingsTooltip": "Projects best-case token savings from all unapplied optimization policies. Keep corresponding Exchange assets current to maintain projection accuracy.",
+    "potentialSavingsTooltip": "Projects best-case token savings from all unapplied optimization policies. Keep corresponding Exchange assets current to maintain projection accuracy",
     "savingsEstimateUnavailable": "Savings estimate unavailable",
     "savingsPercent": "({percent}%)"
   },
@@ -2940,6 +3126,7 @@
     "policyViolation": "Policy Violation",
     "logicPolicy": "Logic / Policy",
     "allPolicies": "All Policies",
+    "noPoliciesAvailable": "No policies available for this API instance.",
     "rateLimiting": "Rate Limiting",
     "spikeControl": "Spike Control",
     "clientIdEnforcement": "Client ID Enforcement",
@@ -3143,7 +3330,15 @@
     "failedToStartInstall": "We couldn't start the Slack installation. Try again.",
     "uninstallSuccess": "Slack integration was uninstalled.",
     "failedToUninstall": "We couldn't uninstall the Slack integration. Try again.",
-    "appUninstalledExternally": "Slack app is no longer installed in your workspace. Install it again to enable Slack notifications."
+    "appUninstalledExternally": "Slack app is no longer installed in your workspace. Install it again to enable Slack notifications.",
+    "disconnectAdminNote": "The MuleSoft app will remain installed in your Slack workspace. To fully remove it, a Slack workspace admin needs to uninstall it from Slack.",
+    "disconnectButton": "Disconnect",
+    "disconnectDialogTitle": "Disconnect Slack?",
+    "disconnectSuccess": "Slack integration was disconnected.",
+    "disconnectWarningBody": "This will revoke MuleSoft's access to your Slack workspace. You'll stop receiving notifications immediately and won't be able to message the MuleSoft Agent.",
+    "disconnecting": "Disconnecting…",
+    "failedToDisconnect": "We couldn't disconnect the Slack integration. Try again.",
+    "notInstalledPermissionHint": "Installing this app may require Slack admin permissions. If you don't have them, send a request."
   },
   "auth": {
     "loginFailed": "We couldn't sign you in. Try again.",
@@ -3161,7 +3356,9 @@
       "guardrails": "Controls",
       "guardrailsDescription": "Validate targeted services against selected control rules and optionally block non-compliant actions, while automatically publishing your live compliance posture.",
       "automatedPolicy": "Automated Policy",
-      "automatedPolicyDescription": "Enforce consistent policy requirements across targeted services to ensure uniform governance and automated security."
+      "automatedPolicyDescription": "Enforce consistent policy requirements across targeted services to ensure uniform governance and automated security.",
+      "requiresRolePermission": "Requires the {role} permission in this business group.",
+      "requiresPermission": "Requires the following permissions in this business group: {permissions}."
     },
     "scope": {
       "filterRestApi": "REST API",
@@ -3182,13 +3379,35 @@
       "operatorIncludesAnyCategory": "Includes Any Category",
       "operatorHasNoInstance": "Has No Instance",
       "operatorIs": "Is",
-      "selectServicesToGovern": "Select Services To Govern",
+      "selectServicesToGovern": "Select Services to Govern",
       "apisAgentsMcpServers": "APIs, Agents, MCP Servers",
       "gateways": "Gateways",
       "flexGateways": "Omni Gateways",
       "flexGatewaysDescription": "Enforce governance standards across Omni Gateway configurations.",
       "selectFilterCriteria": "Select Filter Criteria",
       "filterCriteriaDescription": "Specify conditions to target the APIs, Agents, and MCP Servers you want to govern.",
+      "structuredFormSubtitle": "Select criteria to identify services governed by this strategy. Multiple criteria narrow the scope.",
+      "serviceTypeSelectAll": "Select the service types to govern.",
+      "tagsLabel": "Tags",
+      "tagsHint": "Select tags to filter which services are governed.",
+      "tagsPlaceholder": "Select tags…",
+      "categoriesLabel": "Categories",
+      "categoriesHint": "Select categories to filter which services are governed.",
+      "categoriesPlaceholder": "Select categories…",
+      "instancesLabel": "Instances",
+      "instancesHint": "Select the instance environment to filter which services are governed.",
+      "deploymentAnyEnvironment": "Any environment",
+      "deploymentSpecificEnvironments": "Specific environments",
+      "deploymentNoInstances": "No instances",
+      "environmentTypeLabel": "Environment Type",
+      "environmentTypeAny": "Any",
+      "environmentTypeProduction": "Production",
+      "environmentTypeSandbox": "Sandbox",
+      "environmentNameLabel": "Environment Name (optional)",
+      "comingSoon": "Coming soon",
+      "noTagsAvailable": "No tags available",
+      "noCategoriesAvailable": "No categories available",
+      "noEnvNamesAvailable": "No environments available",
       "loadingScopePreview": "Loading Scope Preview…",
       "previewGovernedScope": "Preview Governed Scope",
       "conditionModeAll": "All APIs, Agents, MCP Servers",
@@ -3204,9 +3423,11 @@
       "selectOneRuntime": "Select one runtime.",
       "muleRuntimeDescription": "Define Mule runtime version range for automated policy application.",
       "runtimeRangeFrom": "Runtime range from",
-      "runtimeRangeFromPlaceholder": "e.g. 4.1.1",
+      "runtimeRangeFromPlaceholder": "4.1.1",
       "runtimeRangeTo": "Runtime range to",
-      "runtimeRangeToPlaceholder": "e.g. 4.3.x",
+      "runtimeRangeToPlaceholder": "4.3.x",
+      "runtimeRangeInvalidVersion": "Enter a valid version number. For example: 4.4.0",
+      "runtimeRangeFromGreaterThanTo": "The starting version must be less than or equal to the ending version.",
       "endpointTypes": "Endpoint Types",
       "allEndpointTypes": "All endpoint types",
       "chooseSpecificGroups": "Choose specific endpoint groups",
@@ -3227,7 +3448,11 @@
       "noServicesMatch": "No services match the current scope criteria.",
       "filterGraphql": "GraphQL",
       "filterSoapApi": "SOAP API",
-      "filterGrpcApi": "gRPC API"
+      "filterGrpcApi": "gRPC API",
+      "instanceModeAnyEnvironment": "Any environment",
+      "instanceModeProduction": "Production",
+      "instanceModeSandbox": "Sandbox",
+      "instanceModeNoInstances": "No instances"
     },
     "rules": {
       "heading": "Relevant rulesets for your selected scope",
@@ -3248,7 +3473,7 @@
       "ruleNameDescription": "Rule Name & Description",
       "action": "Action",
       "reportingSeverity": "Reporting Severity",
-      "severityTooltip": "Choose how strictly to enforce this rule. The severity level triggers different system action.\n\nViolation — Prevents new failed attempts and reports all existing non-compliance.\n\nWarning — Warns on new failed attempts without blocking. Reports all non-compliance.\n\nInfo — Informs failed attempts for visibility without blocking. Reports all non-compliance.",
+      "severityTooltip": "Choose how strictly to enforce this rule. The severity level triggers different system action.\n\nViolation — Prevents new failed attempts and reports all existing non-compliance.\n\nWarning — Warns on new failed attempts without blocking. Reports all non-compliance.\n\nInfo — Informs failed attempts for visibility without blocking. Reports all non-compliance",
       "noRulesetsMatch": "No rulesets match your search or filter.",
       "selectPolicyHeading": "Select a policy to apply automatically",
       "allDomains": "All Domains ({count})",
@@ -3260,11 +3485,16 @@
       "unableToLoadPolicies": "We couldn't load policies. Try again.",
       "noPoliciesMatch": "No policies match your search.",
       "profileSummaryFallback": "Includes the selected ruleset checks for this profile.",
+      "policyVersionPrefix": "Policy: ",
+      "allPolicyVersions": "All policy versions",
       "loadingPolicyConfig": "Loading policy configuration…",
       "selectedPolicy": "Selected Policy",
       "noPolicySelected": "No policy selected",
       "configurePolicy": "Configure Policy",
       "noPolicyInputsRequired": "This policy doesn't require configuration inputs.",
+      "allRuntimesMissingMule": "This policy version doesn't support Mule runtime yet.",
+      "allRuntimesMissingFlex": "This policy version doesn't support Flex runtime yet.",
+      "allRuntimesMissingBoth": "This policy version doesn't support Flex or Mule runtime yet.",
       "severity": "Severity"
     },
     "review": {
@@ -3284,6 +3514,7 @@
       "noAdditionalConditions": "No additional conditions selected",
       "noValues": "No values selected",
       "rulesToApply": "Rules to Apply",
+      "policyToApply": "Policy to Apply",
       "policySelectedCount": "{count} policy selected",
       "rulesAcrossRulesets": "{rules} rules across {rulesets} rulesets",
       "collapseAll": "Collapse All",
@@ -3329,12 +3560,12 @@
       "stepDescRulesGuardrails": "Select bundled rulesets or individual rules to apply to the defined scope. We validate these rules against services to generate reports, block actions, and evaluate compliance.",
       "stepDescNameDescription": "Enter a unique name and description to identify this strategy profile.",
       "stepDescReview": "Review your governance strategy configuration before saving.",
-      "editWizardTitle": "Edit Control Wizard",
-      "createWizardTitle": "Create Control Wizard",
+      "editWizardTitle": "Edit Control Setup Flow",
+      "createWizardTitle": "Create Control Setup Flow",
       "editWizardDescription": "Adjust scope and rules, then review before saving changes.",
       "createWizardDescription": "Configure scope, choose rules, and review before publishing profile settings.",
       "previous": "Previous",
-      "createAndActivate": "Create and activate strategy",
+      "createAndActivate": "Create and Activate Strategy",
       "saveGuardrail": "Save Control",
       "strategyNameLabel": "Strategy Name",
       "strategyNamePlaceholder": "Enter a name…",
@@ -3349,7 +3580,8 @@
       "configDoesNotMatchSchema": "The configuration doesn't match the selected policy schema.",
       "configDoesNotSatisfySchema": "The configuration doesn't satisfy the selected policy schema.",
       "unnamedPolicyTemplate": "Unnamed policy template",
-      "noDescriptionProvided": "No description provided."
+      "noDescriptionProvided": "No description provided.",
+      "strategyNameAlreadyExists": "A strategy with this name already exists. Choose a different name."
     }
   },
   "policiesTabSingle": {
@@ -3379,7 +3611,17 @@
     "moreActionsAriaLabel": "More actions for {name}",
     "emptyStateTitle": "No policies applied",
     "emptyStateDescription": "This instance has no policies applied. Add a policy to start protecting it.",
-    "enablePolicy": "Enable Policy"
+    "enablePolicy": "Enable Policy",
+    "removePolicyDialogBodyMessage": "This removes the policy from this instance. The policy will no longer filter traffic.",
+    "removePolicyDialogCancelButton": "Cancel",
+    "removePolicyDialogCloseAriaLabel": "Close remove policy dialog",
+    "removePolicyDialogConfirmButton": "Remove Policy",
+    "removePolicyDialogConfirmMessage": "Remove {name}?",
+    "removePolicyDialogHeading": "Remove {name}?",
+    "removePolicyToastSuccess": "Policy {name} was removed.",
+    "enablePolicyToastSuccess": "Policy {name} was enabled.",
+    "disablePolicyToastSuccess": "Policy {name} was disabled.",
+    "kongGatewayLevelNotice": "Additional service level policies (plugins) can apply to this instance, beyond the gateway level policies (plugins) mentioned below."
   },
   "policiesTab": {
     "policyFallback": "Policy",
@@ -3394,7 +3636,9 @@
     "viewDetailsAriaLabel": "View details: {label}",
     "coverageDetailsAriaLabel": "Coverage details: {category} - {environment}",
     "emptyStateTitle": "No instances yet",
-    "emptyStateDescription": "Policy coverage appears once this service has at least one active instance. Create an instance to start applying policies."
+    "emptyStateDescription": "Policy coverage appears once this service has at least one active instance. Create an instance to start applying policies.",
+    "deletePolicy": "Delete Policy",
+    "areYouSureToDelete": "Delete {policy} from this instance?"
   },
   "versionsTab": {
     "latest": "Latest",
@@ -3422,14 +3666,14 @@
     "anypointTitle": "Go to Anypoint Platform",
     "anypointDescription": "Quick link to Anypoint Platform. Opens in a new tab for seamless navigation between the enhanced MuleSoft experience and Anypoint Platform.",
     "businessGroupTitle": "Business Group",
-    "businessGroupDescription": "Switch between business groups to change your organization scope. Currently viewing: Mythical Division.",
+    "businessGroupDescription": "Switch between business groups to change your organization scope. Currently viewing: {organizationName}.",
     "themeToggleTitle": "Theme Toggle",
     "themeToggleDescription": "Switch between light and dark modes. Your changes take effect immediately.",
     "navToggleTitle": "Navigation Toggle",
     "navToggleDescription": "Collapse the navigation to icon-only mode for more screen space, or expand it to see full labels.",
     "omniAssistantTitle": "Ask MuleSoft",
     "omniAssistantDescription": "Ask questions, get insights, and take actions across your AI portfolio. Press ⌘K (Mac) or Ctrl+K (Windows) to open.",
-    "businessGroupDescriptionNoOrg": "Switch between business groups to view different organizational scopes."
+    "businessGroupDescriptionNoOrg": "Switch between business groups to change your organization scope."
   },
   "welcomeFeatures": {
     "registerLabel": "Register",
@@ -3580,9 +3824,10 @@
       "filterFieldLlmUsed": "LLM Used",
       "filterOperatorIncludes": "includes",
       "filterOperatorExcludes": "excludes",
-      "namePlaceholder": "e.g., Production Vertex Scanner",
+      "namePlaceholder": "Production Vertex Scanner",
       "descriptionPlaceholder": "Describe what this scanner monitors…",
-      "valuesPlaceholder": "Values…"
+      "valuesPlaceholder": "Values…",
+      "removeFilterLabel": "Remove filter"
     },
     "publishAssetForm": {
       "heading": "Publish a new {type}",
@@ -3664,8 +3909,8 @@
     "utterancesRequired": "Enter at least one utterance.",
     "utterancesLineCap": "At most {max} utterance lines allowed for this semantic service scale.",
     "closeAriaLabel": "Close",
-    "namePlaceholder": "e.g. billing-queries",
-    "utterancesTooltip": "Example prompts for this topic; one per line is typical.",
+    "namePlaceholder": "billing-queries",
+    "utterancesTooltip": "Example prompts for this topic; one per line is typical",
     "utterancesPlaceholder": "Type prompt utterances here…",
     "uploadUtterances": "Upload utterances",
     "dragAndDrop": "or drag and drop a file here",
@@ -3721,21 +3966,21 @@
     "embeddingSection": {
       "heading": "Embedding connection",
       "providerLabel": "Embedding service provider",
-      "serviceLabelPlaceholder": "e.g. Production embeddings",
+      "serviceLabelPlaceholder": "Production embeddings",
       "authKeyPlaceholderNew": "Enter auth key",
       "authKeyPlaceholderEdit": "Enter new auth key",
       "hidePassword": "Hide password",
       "showPassword": "Show password",
       "environment": "Environment",
       "authKeyLabel": "Auth key",
-      "authKeyTooltip": "Leave blank to keep the existing key (re-enter to update).",
+      "authKeyTooltip": "Leave blank to keep the existing key (re-enter to update)",
       "urlLabel": "URL",
       "modelLabel": "Model"
     },
     "vectorSection": {
       "heading": "Vector connection",
       "providerLabel": "Vector Database provider",
-      "serviceLabelPlaceholder": "e.g. Production vector search",
+      "serviceLabelPlaceholder": "Production vector search",
       "apiKeyPlaceholderNew": "Enter API key",
       "apiKeyPlaceholderEdit": "Enter new API key"
     },
@@ -3830,7 +4075,8 @@
     "errorTitleRateLimited": "Too Many Requests",
     "errorTitleInternal": "Unexpected Error",
     "versionLabel": "Version",
-    "zipFileTypeHint": "ZIP"
+    "zipFileTypeHint": "ZIP",
+    "clearFileLabel": "Clear selected file"
   },
   "complianceBadge": {
     "compliant": "Conformant",
@@ -3890,7 +4136,10 @@
     "minutesAgo": "{count}m ago",
     "hoursAgo": "{count}h ago",
     "daysAgo": "{count}d ago",
-    "monthsAgo": "{count}mo ago"
+    "monthsAgo": "{count}mo ago",
+    "dismissFailed": "Couldn't dismiss the failed job. Try again.",
+    "provisioningFailed": "Provisioning didn't complete",
+    "retryPrefillUnavailable": "We couldn't load your previous selections. Start the wizard again."
   },
   "addInstanceShared": {
     "stepGatewayApi": "Gateway & API",
@@ -3929,7 +4178,7 @@
     "doesntMatch": "Doesn't Match"
   },
   "createServiceEntityForm": {
-    "namePlaceholder": "e.g. Customer Support {placeholder}",
+    "namePlaceholder": "Customer Support {placeholder}",
     "specificationFile": "Specification File",
     "selectAnOption": "Select an option",
     "zipValueFromExchangeJson": "Value comes from the ZIP’s exchange.json.",
@@ -3939,18 +4188,21 @@
     "nameLabel": "Name",
     "nameFromZipHint": "Name comes from the ZIP’s exchange.json.",
     "versionLabel": "Version",
-    "versionPlaceholder": "e.g. v2",
+    "versionPlaceholder": "v2",
     "creatingEntity": "Creating {entity}…",
     "cancel": "Cancel",
     "nameFromZipPrefix": "Name comes from the ZIP’s ",
-    "nameFromZipSuffix": "."
+    "nameFromZipSuffix": ".",
+    "typeFromZipHint": "Type comes from the ZIP’s exchange.json.",
+    "typeFromZipPlaceholder": "Auto-detected from ZIP"
   },
   "specFileDropZone": {
     "optional": "(optional)",
     "clickToBrowseOrDragAndDrop": "Click to browse or drag and drop",
     "uploadAriaLabel": "Upload {entityLabel} spec or ZIP",
     "zipPackage": "ZIP package",
-    "specFile": "Spec file"
+    "specFile": "Spec file",
+    "clearFileLabel": "Clear selected file"
   },
   "testConnectionRow": {
     "test": "Test connection",
@@ -4105,6 +4357,7 @@
     "selectActiveProvider": "Selecting provider",
     "selectActiveEnvironment": "Selecting environment",
     "selectActiveBusinessGroup": "Selecting business group",
+    "findAssets": "Searching for assets",
     "fallback": "Working",
     "tool": {
       "login": "Logging in to Anypoint Platform",
@@ -4181,7 +4434,8 @@
       "query_topology_aggregates": "Analyzing API topology",
       "select_active_provider": "Selecting provider",
       "select_active_environment": "Selecting environment",
-      "select_active_business_group": "Selecting business group"
+      "select_active_business_group": "Selecting business group",
+      "find_assets": "Searching for assets"
     }
   },
   "metricDrillDownPanel": {
@@ -4315,35 +4569,37 @@
     "fileReadError": "We couldn't read the file. Try again.",
     "utterancesHeading": "Prompt utterances (type or upload)",
     "utterancesTooltipAriaLabel": "Prompt utterances guidance",
-    "utterancesTooltipLine1": "Type or paste utterances, separating by line break.",
-    "utterancesTooltipLine2": "Max 10 utterances / 500 characters per line.",
-    "utterancesTooltipLine3": "Supported file types: .csv, .txt.",
-    "utterancesTooltipLine4": "Max file size: 500 KB.",
+    "utterancesTooltipLine1": "Type or paste utterances, separating by line break",
+    "utterancesTooltipLine2": "Max 10 utterances / 500 characters per line",
+    "utterancesTooltipLine3": "Supported file types: .csv, .txt",
+    "utterancesTooltipLine4": "Max file size: 500 KB",
     "uploadMore": "Upload more utterances",
     "uploadInitial": "Upload utterances",
     "dropHintMore": "or drag and drop more files here to append",
     "dropHintInitial": "or drag and drop a file here"
   },
   "routeListEditor": {
+    "deleteBlockedModelBased": "Model-based routing requires at least one route.",
+    "deleteBlockedSemantic": "Semantic routing requires at least two routes.",
     "noFallback": "No fallback",
     "routingStrategyLabel": "Routing strategy",
-    "routingStrategyTooltip": "Model-based routes by model parameter. Semantic routes by prompt content.",
+    "routingStrategyTooltip": "Model-based routes by model parameter. Semantic routes by prompt content",
     "modelBased": "Model-based",
     "semantic": "Semantic",
     "semanticServiceLabel": "Semantic service setup",
-    "semanticServiceTooltip": "Select a semantic service for prompt-based routing.",
+    "semanticServiceTooltip": "Select a semantic service for prompt-based routing",
     "routeCount": "{count} {count, plural, one {route} other {routes}} configured",
     "deleteRouteAriaLabel": "Delete route",
     "addRoute": "Add Route",
     "advancedRouting": "Advanced routing",
     "fallbackRouteLabel": "Fallback route",
-    "fallbackRouteTooltip": "When the primary route is unavailable, traffic will be directed to this fallback route.",
+    "fallbackRouteTooltip": "When the primary route is unavailable, traffic will be directed to this fallback route",
     "semanticThresholdDesc": "When semantic match fails or accuracy is less than:",
-    "semanticThresholdTooltip": "Set the confidence threshold below which the fallback route is used.",
-    "modelPlaceholder": "e.g., anthropic.claude-3-5-sonnet-v2:0",
+    "semanticThresholdTooltip": "Set the confidence threshold below which the fallback route is used",
+    "modelPlaceholder": "anthropic.claude-3-5-sonnet-v2:0",
     "notApplicable": "Not Applicable",
     "promptGuardLabel": "Semantic prompt guard",
-    "promptGuardTooltip": "Add phrases or keywords that should be blocked from reaching any route.",
+    "promptGuardTooltip": "Add phrases or keywords that should be blocked from reaching any route",
     "removeAriaLabel": "Remove",
     "promptGuardPlaceholder": "Add prompt guard entries…",
     "addPromptGuard": "Add prompt guard",
@@ -4354,13 +4610,13 @@
     "fallbackOptionLabel": "{name}: {providerName}",
     "routingStrategy": "Routing strategy",
     "semanticServiceSetup": "Semantic service setup",
-    "semanticServiceSetupTooltip": "Select a semantic service for prompt-based routing.",
+    "semanticServiceSetupTooltip": "Select a semantic service for prompt-based routing",
     "routesConfigured": "{count, plural, one {# route configured} other {# routes configured}}",
     "fallbackRoute": "Fallback route",
     "semanticMatchFailsPrefix": "When semantic match fails or accuracy is less than:",
-    "fallbackModelPlaceholder": "e.g., anthropic.claude-3-5-sonnet-v2:0",
+    "fallbackModelPlaceholder": "anthropic.claude-3-5-sonnet-v2:0",
     "semanticPromptGuard": "Semantic prompt guard",
-    "semanticPromptGuardTooltip": "Add phrases or keywords that should be blocked from reaching any route.",
+    "semanticPromptGuardTooltip": "Add phrases or keywords that should be blocked from reaching any route",
     "editEntryAriaLabel": "Edit {name}",
     "removeEntryAriaLabel": "Remove {name}",
     "advancedRoutingDescription": "Route fallback and filtering options",
@@ -4372,15 +4628,20 @@
     "advancedOptions": "Advanced Options",
     "advancedOptionsDesc": "Filter prompts before they reach a route.",
     "selectPromptGuardTopicPlaceholder": "Select topics…",
-    "noSelectablePromptGuardTopics": "No topics available — all are assigned to a route or guard."
+    "noSelectablePromptGuardTopics": "No topics available — all are assigned to a route or guard.",
+    "loadingSemanticServices": "Loading semantic services…",
+    "switchServiceWarningTitle": "Change semantic service?",
+    "switchServiceWarningMessage": "Topics are scoped to the current semantic service. Switching to a different service will remove all topics assigned to your routes and the prompt guard. This cannot be undone.",
+    "switchServiceWarningConfirm": "Change service",
+    "switchServiceWarningCancel": "Cancel"
   },
   "routeCardContent": {
     "topicsLabel": "Topics",
-    "topicsTooltip": "Assign prompt topics to this route.",
+    "topicsTooltip": "Assign prompt topics to this route",
     "targetHeading": "Target",
     "providerLabel": "Provider",
     "modelLabel": "Model",
-    "modelPlaceholder": "e.g., anthropic.claude-3-5-sonnet-v2:0",
+    "modelPlaceholder": "anthropic.claude-3-5-sonnet-v2:0",
     "notApplicable": "Not Applicable",
     "authenticationHeading": "Authentication",
     "configurationHeading": "Configuration",
@@ -4499,10 +4760,12 @@
     "searchPlaceholder": "Search services…",
     "loadingState": "Loading governed services…",
     "emptyState": "No services governed by this control.",
+    "emptyStateAutomatedPolicy": "No services governed by this automated policy.",
     "governedServicesSuffix": "governed services",
     "percentConformant": "{percent}% conformant",
     "governedServicesHeading": "Governed Services ({count})",
-    "noMatchingServices": "No services governed by this control."
+    "noMatchingServices": "No services governed by this control.",
+    "noMatchingServicesAutomatedPolicy": "No services governed by this automated policy."
   },
   "guardrailRulesetCard": {
     "violation": "violation",
@@ -4530,11 +4793,29 @@
     "matchingServicesIncluded": "Any services that match the filter criteria will automatically be included.",
     "targetMeetsConditions": "{targetLabel} that meet all conditions ({modeLabel})"
   },
+  "structuredScopeSummary": {
+    "labelServiceType": "Service Type",
+    "labelTags": "Tags",
+    "labelCategories": "Categories",
+    "labelInstances": "Instances",
+    "allServiceTypes": "All",
+    "anyTag": "Any Tag",
+    "anyCategory": "Any Category",
+    "anyEnvironment": "Any Environment",
+    "noInstances": "No Instances",
+    "anyEnvironmentsOfType": "Any {type} Environments",
+    "envTypeWithNames": "{type}: {names}"
+  },
   "governanceSettings": {
     "actionsButton": "Actions",
+    "toggleOptionsLabel": "Toggle options",
     "editFromAnypoint": "Edit (From Anypoint Platform)",
     "editStrategy": "Edit Strategy",
     "deleteStrategy": "Delete Strategy",
+    "automatedPolicyEdit": "Edit",
+    "automatedPolicyDelete": "Delete",
+    "automatedPolicyDisable": "Disable",
+    "automatedPolicyEnable": "Enable",
     "optional": "(Optional)",
     "removeAriaLabel": "Remove {value}",
     "addMorePlaceholder": "Add more…",
@@ -4546,7 +4827,12 @@
     "loadingAriaLabel": "Loading governance configuration",
     "heading": "Governance Strategies",
     "pageDescription": "Configure and manage strategies to monitor, report, enforce, and block noncompliant activity across your services.",
-    "createButton": "Create governance strategy",
+    "createButton": "Create Governance Strategy",
+    "refreshReportButton": "Refresh Report",
+    "refreshing": "Refreshing…",
+    "refreshQueued": "Report refresh queued. Conformance status will update shortly.",
+    "refreshBusy": "Another refresh is already running. Try again once it completes.",
+    "refreshFailed": "We couldn't refresh the report. Try again.",
     "scopeType": {
       "restApi": "REST API",
       "httpApi": "HTTP API",
@@ -4591,7 +4877,13 @@
       "guardrailCreated": "Control was created.",
       "fromAnypointCreated": "Strategy was created from Anypoint Platform.",
       "strategyUpdated": "Strategy was updated.",
-      "fromAnypointUpdated": "Strategy was updated from Anypoint Platform."
+      "fromAnypointUpdated": "Strategy was updated from Anypoint Platform.",
+      "guardrailDeleted": "Control was deleted.",
+      "automatedPolicyDeleted": "Automated policy was deleted."
+    },
+    "pending": {
+      "guardrailCreating": "Creating your control — this may take a moment.",
+      "automatedPolicyCreating": "Creating your automated policy — this may take a moment."
     },
     "dashboard": {
       "activeStrategies": "Active Strategies",
@@ -4617,7 +4909,7 @@
       "review": "Review"
     },
     "scope": {
-      "heading": "Select Services To Govern",
+      "heading": "Select Services to Govern",
       "apisAgentsMcp": "APIs, Agents, MCP Servers",
       "gateways": "Gateways",
       "serviceTypesLabel": "Service Types",
@@ -4626,13 +4918,15 @@
       "httpApi": "HTTP API",
       "agent": "Agent",
       "mcp": "MCP",
+      "grpc": "gRPC",
       "tagsLabel": "Tags",
       "tagsPlaceholder": "Select tags…",
       "categoriesLabel": "Categories",
       "categoriesPlaceholder": "Select categories…",
       "apiInstanceHeading": "API Instance",
       "allApis": "All APIs",
-      "onlyWithoutInstances": "Only APIs without instances",
+      "onlyWithInstances": "Include only APIs with instances",
+      "onlyWithoutInstances": "Include only APIs without instances",
       "loadingPreview": "Loading Scope Preview…",
       "previewButton": "Preview Governed Scope"
     },
@@ -4724,13 +5018,14 @@
       "createdLabel": "Created",
       "updatedLabel": "Updated",
       "ruleCount": "{count} ({total} {total, plural, one {rule} other {rules}})",
-      "limitedFunctionalityTitle": "Limited Functionality for From Anypoint Controls",
+      "limitedFunctionalityTitle": "Limited Functionality for from Anypoint Controls",
       "limitedFunctionalityDetail": "This control was created in Anypoint API Governance and has limited ruleset selection and customization options. To access advanced features like conditions configuration, rule-level selection, severity customization, and the full ruleset library, create a new control directly in the enhanced MuleSoft experience.",
       "configurationTab": "Configuration",
       "governedServicesTab": "Governed Services",
       "appliedPolicy": "Applied Policy",
       "policyDescription": "Policy configured through API Manager automated policy strategy.",
       "scopeHeading": "Scope",
+      "environmentLabel": "Environment",
       "runtimeLabel": "Runtime",
       "endpointTypesLabel": "Endpoint Types",
       "rulesHeading": "Rules",
@@ -4739,6 +5034,9 @@
       "collapseAll": "Collapse all",
       "expandAll": "Expand all",
       "noRulesets": "No rulesets configured for this strategy.",
+      "creatingPlaceholder": "Strategy is being created. Rules will appear here once the publication completes.",
+      "updatingPlaceholder": "Strategy is being updated. Rules will refresh here once the publication completes.",
+      "failedPlaceholder": "We couldn't publish the strategy. Try again.",
       "editFromAnypoint": "Edit (From Anypoint Platform)",
       "editStrategy": "Edit Strategy",
       "back": "Back",
@@ -4746,8 +5044,8 @@
     },
     "actions": "Actions",
     "pending": {
-      "guardrailCreating": "Don't leave this page — your control is still being created. We're confirming with the upstream service.",
-      "automatedPolicyCreating": "Don't leave this page — your automated policy is still being created. We're confirming with the upstream service."
+      "guardrailCreating": "Creating your control — this may take a moment.",
+      "automatedPolicyCreating": "Creating your automated policy — this may take a moment."
     }
   },
   "mcpWizard": {
@@ -4756,7 +5054,13 @@
       "breadcrumbCreate": "Create MCP Server",
       "breadcrumbEdit": "Edit MCP Server",
       "noGatewaysHeading": "No Omni Gateways Available",
-      "noGatewaysDescription": "MCP servers require an Omni Gateway (v1.2.0+) to deploy. Provision an Omni Gateway in your environment first, then return here to create your MCP server.",
+      "noGatewaysDescription": "MCP servers require an Omni Gateway to deploy. Provision an Omni Gateway in your environment first, then return here to create your MCP server.",
+      "noEligibleGatewaysHeading": "No Eligible Omni Gateways",
+      "noEligibleGatewaysDescription": "All available Omni Gateways are running versions that cannot host MCP servers. Upgrade at least one gateway to a supported version, then return here to create your MCP server.",
+      "ineligibleGatewaysListHeading": "Available gateways and why they are blocked:",
+      "gatewayLoadErrorHeading": "Unable to Load Gateways",
+      "gatewayLoadErrorDescription": "We couldn't reach the gateway service after multiple attempts. This is usually a temporary issue. Try again.",
+      "retryButton": "Retry",
       "backToMcpServers": "Back to MCP Servers",
       "cancelButton": "Cancel",
       "previousButton": "Previous",
@@ -4780,11 +5084,12 @@
       "stepSelectSource": "Select Source, Instance & Tools",
       "stepSaasCredentials": "SaaS Credentials",
       "stepReview": "Review",
-      "toastApiMissingInstanceUrl": "\"{apiName}\" can't be wrapped as an MCP server yet: the selected API Manager instance has no endpoint URL. Deploy the instance in API Manager (attach a runtime) and try again.",
-      "runtimeAuthWarning": "This MCP endpoint is deployed without inbound authentication. Apply a Flex Gateway inbound auth policy (for example, client-id-enforcement or jwt-validation) before production use.",
-      "gatewayLoadErrorHeading": "Unable to load gateways",
+      "toastApiMissingInstanceUrl": "\"{apiName}\" can't be wrapped as an MCP server yet. The selected API Manager instance has no endpoint URL. Deploy the instance in API Manager and try again.",
+      "runtimeAuthWarning": "This MCP endpoint is deployed without inbound authentication. Apply an Omni Gateway inbound auth policy (such as client-id-enforcement or jwt-validation) before production use.",
+      "gatewayLoadErrorHeading": "Unable to Load Gateways",
       "gatewayLoadErrorDescription": "We couldn't reach the gateway service after multiple attempts. This is usually a temporary issue. Try again.",
-      "retryButton": "Retry"
+      "retryButton": "Retry",
+      "retryPrefillNotice": "We restored your previous selections. Re-enter credentials before continuing."
     },
     "versionDropdown": {
       "latest": "latest",
@@ -4834,20 +5139,26 @@
       "envSandbox": "Staging",
       "envDevelopment": "QA",
       "routeLabel": "Route label",
-      "routeTooltip": "Specifies the upstream service to be called when this tool is invoked.",
-      "tlsLabel": "TLS",
+      "routeTooltip": "Specifies the upstream service to be called when this tool is invoked",
+      "secretGroupLabel": "Secret Group",
+      "secretGroupPlaceholder": "Select a Secret Group…",
+      "tlsLabel": "TLS Context",
       "tlsOptional": "(Optional)",
       "tlsNone": "None",
-      "tlsMythical": "Mythical TLS",
-      "tlsInternal": "Internal TLS",
-      "tlsProduction": "Production TLS",
+      "tlsContextPlaceholder": "Select a TLS Context…",
+      "tlsNoResults": "No results found",
       "cancel": "Cancel",
-      "save": "Save"
+      "save": "Save",
+      "typeHeader": "Type",
+      "typeManaged": "Managed",
+      "typeUnmanaged": "Unmanaged",
+      "notAvailable": "N/A"
     },
     "toolSelectionPanel": {
       "heading": "Select Tools",
       "subheading": "Choose which tools to expose from your selected APIs and SaaS systems",
       "readOnlyCheckbox": "Select read-only tools",
+      "readOnlyCheckboxTooltip": "Applies to APIs only",
       "loadingText": "Loading deployed tools…",
       "emptyStateLine1": "Select APIs or SaaS systems from the left.",
       "emptyStateLine2": "to configure their tools",
@@ -4858,7 +5169,8 @@
       "editUpstreamUrlAria": "Edit upstream URL",
       "saveChangesAria": "Save changes",
       "discardChangesAria": "Discard changes",
-      "noToolsWarning": "Select at least one tool to proceed."
+      "noToolsWarning": "Select at least one tool to proceed.",
+      "noInstancesError": "No deployed instance is available for this version. Pick a different version or deploy an instance before continuing."
     },
     "stepSelectSource": {
       "heading": "Select APIs and SaaS systems",
@@ -4938,16 +5250,16 @@
       "heading": "Server Configuration",
       "closeAriaLabel": "Close",
       "serverNameLabel": "Server Name",
-      "serverNameTooltip": "Only letters and numbers are allowed (no spaces or special characters). This will be used as the subdomain in your server's URL.",
-      "serverNamePlaceholder": "e.g., SalesOperationsMCPServer",
+      "serverNameTooltip": "Only letters and numbers are allowed (no spaces or special characters). This will be used as the subdomain in your server's URL",
+      "serverNamePlaceholder": "SalesOperationsMCPServer",
       "serverNameHelperText": "This name identifies your MCP server and becomes the subdomain for your server's URL.",
       "serverNameConflict": "That server name is already taken. Enter a unique name.",
       "versionLabel": "Version",
       "versionPlaceholder": "e.g., 1.0.0",
       "versionHelperText": "Semantic version for this MCP server (e.g., 1.0.0, v2.1.3)",
       "pathLabel": "Path",
-      "pathTooltip": "The base path on the gateway for this MCP server. Defaults to a slug derived from the server name (e.g., /my-mcp-server). Must be unique per gateway.",
-      "pathPlaceholder": "e.g., /my-mcp-server",
+      "pathTooltip": "The base path on the gateway for this MCP server. Defaults to a slug derived from the server name (e.g., /my-mcp-server). Must be unique per gateway",
+      "pathPlaceholder": "/my-mcp-server",
       "pathHelperText": "Base path on the gateway (derived from server name)",
       "pathConflict": "That path is already in use. Enter a unique path.",
       "pathLockedNote": "Path cannot be changed after deployment.",
@@ -5001,6 +5313,9 @@
   },
   "llmProxyRoutesEditor": {
     "failedToSaveChanges": "We couldn't save your changes. Try again.",
+    "routeNameFallback": "Route {letter}",
+    "deleteBlockedModelBased": "Model-based routing requires at least one route.",
+    "deleteBlockedSemantic": "Semantic routing requires at least two routes.",
     "toast": {
       "topicCreated": "Topic \"{name}\" was created.",
       "topicCreatedFallback": "Topic was created.",
@@ -5089,29 +5404,31 @@
     "envStaging": "Staging",
     "envQa": "QA",
     "routeLabel": "Route label",
-    "routeLabelTooltip": "Specifies the upstream service to be called when this tool is invoked.",
-    "tlsLabel": "TLS",
+    "routeLabelTooltip": "Specifies the upstream service to be called when this tool is invoked",
+    "secretGroupLabel": "Secret Group",
+    "secretGroupPlaceholder": "Select a Secret Group…",
+    "tlsLabel": "TLS Context",
     "optional": "(Optional)",
     "tlsNone": "None",
-    "tlsMythical": "Mythical TLS",
-    "tlsInternal": "Internal TLS",
-    "tlsProduction": "Production TLS",
+    "tlsContextPlaceholder": "Select a TLS Context…",
+    "tlsNoResults": "No results found",
     "saveButton": "Save",
     "serverConfigTitle": "Server Configuration",
     "serverName": "Server Name",
-    "serverNameTooltip": "Only letters and numbers are allowed (no spaces or special characters). This will be used as the subdomain in your server's URL.",
-    "serverNamePlaceholder": "e.g., SalesOperationsMCPServer",
+    "serverNameTooltip": "Only letters and numbers are allowed (no spaces or special characters). This will be used as the subdomain in your server's URL",
+    "serverNamePlaceholder": "SalesOperationsMCPServer",
     "serverNameHelp": "This name identifies your MCP server and becomes the subdomain for your server's URL.",
     "serverNameConflict": "That server name is already taken. Enter a unique name.",
     "versionLabel": "Version",
-    "versionPlaceholder": "e.g., 1.0.0",
+    "versionPlaceholder": "1.0.0",
     "versionHelp": "Semantic version for this MCP server (e.g., 1.0.0, v2.1.3)",
     "pathLabel": "Path",
-    "pathTooltip": "The base path on the gateway for this MCP server. Defaults to a slug derived from the server name (e.g., /my-mcp-server). Must be unique per gateway.",
+    "pathTooltip": "The base path on the gateway for this MCP server. Defaults to a slug derived from the server name (e.g., /my-mcp-server). Must be unique per gateway",
     "pathPlaceholder": "e.g., /my-mcp-server",
     "pathHelp": "Base path on the gateway (derived from server name)",
     "pathConflict": "That path is already in use. Enter a unique path.",
     "pathImmutable": "Path cannot be changed after deployment.",
+    "gatewayMissingPublicUrl": "Selected gateway has no public URL configured. Choose a different gateway.",
     "gatewayLabel": "Gateway",
     "selectAGateway": "Select a gateway",
     "step1Label": "Select Source, Instance & Tools",
@@ -5276,7 +5593,8 @@
     "copyPublicEndpoint": "Copy public endpoint",
     "copyInternalEndpoint": "Copy internal endpoint",
     "endpointCopied": "Endpoint copied to clipboard.",
-    "endpointCopyFailed": "We couldn't copy the endpoint to clipboard."
+    "endpointCopyFailed": "We couldn't copy the endpoint to the clipboard.",
+    "loadingValue": "Loading {name}"
   },
   "filterableMultiSeriesChart": {
     "all": "All",
@@ -5288,10 +5606,11 @@
     "enterOpenAiKey": "Enter OpenAI API key",
     "enterGeminiKey": "Enter Gemini API key",
     "enterAzureKey": "Enter Azure OpenAI API key",
+    "azureUrlHint": "Enter your Azure OpenAI endpoint, such as https://my-test-resource.openai.azure.com/.",
     "deploymentId": "Deployment ID",
-    "deploymentIdPlaceholder": "e.g., gpt-4-deployment",
+    "deploymentIdPlaceholder": "gpt-4-deployment",
     "apiVersion": "API Version",
-    "apiVersionPlaceholder": "e.g., 2024-10-21",
+    "apiVersionPlaceholder": "2024-10-21",
     "accessKeyId": "Access Key ID",
     "enterAccessKeyId": "Enter AWS Access Key ID",
     "secretAccessKey": "Secret Access Key",
@@ -5399,7 +5718,7 @@
   },
   "semanticServiceSharedFields": {
     "serviceLabel": "Service label",
-    "serviceLabelTooltip": "Shown as the title in the Semantic Services catalog.",
+    "serviceLabelTooltip": "Shown as the title in the Semantic Services catalog",
     "environment": "Environment"
   },
   "routeCard": {
@@ -5569,7 +5888,8 @@
     "editFromAnypointButton": "Edit (From Anypoint Platform)",
     "editStrategyButton": "Edit Strategy",
     "backButton": "Back",
-    "selectedStrategyUnavailable": "Selected strategy is unavailable."
+    "selectedStrategyUnavailable": "Selected strategy is unavailable.",
+    "bridgeOpenCreateAccepted": "Create Control setup flow opened."
   },
   "notFound": {
     "heading": "We couldn't find that page",
@@ -5579,9 +5899,41 @@
   "unsavedChangesModal": {
     "closeAriaLabel": "Close unsaved changes dialog",
     "heading": "Discard unsaved changes?",
-    "confirmMessage": "You have unsaved changes that will be lost.",
-    "bodyMessage": "If you leave now, your in-progress configuration will not be saved.",
-    "discardButton": "Discard Changes",
-    "keepEditingButton": "Keep Editing"
+    "confirmMessage": "If you discard your changes, you can't get them back.",
+    "bodyMessage": "Any unsaved changes are discarded when you leave the page.",
+    "discardButton": "Discard",
+    "keepEditingButton": "Cancel"
+  },
+  "slackInstall": {
+    "missingPending": "Missing install identifier. Start the Slack installation again.",
+    "noOrganization": "No organization selected in this browser session.",
+    "adminRequired": "Only an organization administrator can install the Slack integration.",
+    "installFailed": "We couldn't install the Slack integration.",
+    "needsLogin": {
+      "heading": "Install Slack Integration",
+      "description": "Sign in to Anypoint first. After signing in, the Slack installation will complete automatically.",
+      "goToLogin": "Sign in to Anypoint"
+    },
+    "success": {
+      "heading": "Slack Installed Successfully",
+      "description": "The Slack integration was installed for your organization.",
+      "descriptionWithWorkspace": "The Slack integration was installed and connected to the {workspace} workspace.",
+      "goToSettings": "Go to Notification Settings"
+    },
+    "expired": {
+      "heading": "Install Link Expired",
+      "description": "This installation link has expired. Click Add to Slack again to start a new installation."
+    },
+    "error": {
+      "heading": "Installation failed"
+    },
+    "completing": {
+      "heading": "Installing Slack Integration",
+      "description": "Completing installation…"
+    }
+  },
+  "stringListInput": {
+    "removeAriaLabel": "Remove {item}",
+    "placeholder": "Type a value and press Enter..."
   }
 }
