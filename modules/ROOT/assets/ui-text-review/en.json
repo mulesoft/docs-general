@@ -11,6 +11,7 @@
     "close": "Close",
     "search": "Search",
     "noResults": "No results found",
+    "justNow": "Just now",
     "hoursAgo": "{hours}h ago",
     "daysAgo": "{days}d ago",
     "monthsAgo": "{months}mo ago",
@@ -389,6 +390,10 @@
     "conversationHistory": "Conversation history",
     "openFullView": "Open full view",
     "closeSidebar": "Close sidebar"
+  },
+  "aiSidebar": {
+    "landmarkLabel": "Ask MuleSoft",
+    "closeAiSidebar": "Close AI sidebar"
   },
   "dragHandle": {
     "resizeSidebar": "Resize sidebar"
@@ -5037,7 +5042,11 @@
       "back": "Back",
       "unavailable": "Selected strategy is unavailable."
     },
-    "actions": "Actions"
+    "actions": "Actions",
+    "pending": {
+      "guardrailCreating": "Creating your control — this may take a moment.",
+      "automatedPolicyCreating": "Creating your automated policy — this may take a moment."
+    }
   },
   "mcpWizard": {
     "wizard": {
@@ -5077,6 +5086,9 @@
       "stepReview": "Review",
       "toastApiMissingInstanceUrl": "\"{apiName}\" can't be wrapped as an MCP server yet. The selected API Manager instance has no endpoint URL. Deploy the instance in API Manager and try again.",
       "runtimeAuthWarning": "This MCP endpoint is deployed without inbound authentication. Apply an Omni Gateway inbound auth policy (such as client-id-enforcement or jwt-validation) before production use.",
+      "gatewayLoadErrorHeading": "Unable to Load Gateways",
+      "gatewayLoadErrorDescription": "We couldn't reach the gateway service after multiple attempts. This is usually a temporary issue. Try again.",
+      "retryButton": "Retry",
       "retryPrefillNotice": "We restored your previous selections — please re-enter credentials before continuing."
     },
     "versionDropdown": {
