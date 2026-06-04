@@ -127,7 +127,7 @@ Before agents can orchestrate across your enterprise, your existing systems need
 ** Integrate B2B workflows into broader agentic orchestration patterns
 
 * When you need it: Use Partner Manager when agents need to participate in B2B ecosystems for use cases like order to cash, procure to pay, logistics planning, warehouse management, or transportation execution where automated B2B message exchange with external partners is required.
-* Learn more: <link to B2B (Partner Manager) doc>
+* Learn more: xref:partner-manager::index.adoc[]
 
 === IDP (Intelligent Document Processing)
 
@@ -144,7 +144,7 @@ Before agents can orchestrate across your enterprise, your existing systems need
    
 * When you need it: Use IDP when agents need to extract and act on data trapped in documents as part of procurement, accounts payable, order processing, or any workflow where unstructured document data must become structured, actionable information within your agent network.
 
-* Learn more: <link to IDP (Intelligent Document Processing) doc>
+* Learn more: xref:idp::index.adoc[]
 
 
 [[discover]]
@@ -152,10 +152,10 @@ Before agents can orchestrate across your enterprise, your existing systems need
 
 Agent Fabric provides a central registry and automated discovery tools that surface every agent in your organization, regardless of platform. Before you can govern, orchestrate, or observe agents, you need a complete picture of what exists. Discovery gives you that foundation and enables coordinated control across your entire agent ecosystem.
 
-=== Agent Registry
+=== Registry (Exchange)
 
-* What it is: The agent registry is the central catalog for all agentic assets across your organization. In the enhanced MuleSoft experience, your Portfolio serves as the registry, organized into catalogs for Agents, MCP Servers, LLM Proxies, APIs, and Gateways. Each catalog holds the services your organization has registered or discovered, so you can govern, monitor, and manage them from one place, regardless of which platform or provider built them. MuleSoft also provides access to a curated set of public MCP servers from the Official MCP Registry and Informatica, giving teams a starting point for common integrations without building from scratch.
-* Role in Agent Fabric: The agent registry is where Agent Fabric makes every agent, tool, and model visible and reusable. The registry gives teams a trusted source of truth for all agentic assets, so they can reuse what already exists instead of duplicating work. The registry forms the foundation of discovery. 
+* What it is: The registry is the central catalog for all agentic assets across your organization. In the enhanced MuleSoft experience, your Portfolio serves as the registry, organized into catalogs for Agents, MCP Servers, LLM Proxies, APIs, and Gateways. Each catalog holds the services your organization has registered or discovered, so you can govern, monitor, and manage them from one place, regardless of which platform or provider built them. MuleSoft also provides access to a curated set of public MCP servers from the Official MCP Registry and Informatica, giving teams a starting point for common integrations without building from scratch.
+* Role in Agent Fabric: The registry is where Agent Fabric makes every agent, tool, and model visible and reusable. The registry gives teams a trusted source of truth for all agentic assets, so they can reuse what already exists instead of duplicating work. The registry forms the foundation of discovery. 
 * What you can do:
 ** Browse and search registered agents, MCP servers, LLM proxies, APIs, and gateways
 ** View service details, conformance status, and instance health at a glance
@@ -164,21 +164,21 @@ Agent Fabric provides a central registry and automated discovery tools that surf
 ** Publish agent networks and MCP servers for organizational reuse
 
 * When you need it: Whenever you are starting a new agentic project and want to find existing assets before building from scratch, or when you want to share what your team built with the rest of the organization.
-* Learn more: xref:exp-portfolio-overview.adoc[View Your Portfolio Overview]
+* Learn more: xref:exp-portfolio-overview.adoc[]
 
 === Scanners
 
 * What it is: A scanner connects the enhanced MuleSoft experience to a supported cloud provider. When a scanner runs, it discovers services on that platform, such as agents, APIs, and MCP servers, and registers them automatically in the matching portfolio catalog.
-* Role in Agent Fabric: Scanners enable continuous, automated discovery across a multi-provider landscape. Teams configure scanners once, and the scanners keep the registry current as services are added, changed, or retired on external platforms. A scanner monitors connected platforms for new and updated agents and pulls them automatically into the agent registry, providing a real-time, single source of truth for every agent across your enterprise.
+* Role in Agent Fabric: Scanners enable continuous, automated discovery across a multi-provider landscape. Teams configure scanners once, and the scanners keep the registry current as services are added, changed, or retired on external platforms. A scanner monitors connected platforms for new and updated agents and pulls them automatically into the registry, providing a real-time, single source of truth for every agent across your enterprise.
 * What you can do:
 ** Connect cloud providers as scanner sources
 ** Automatically discover and register agents, MCP servers, and APIs across ecosystems
 ** Schedule scans to run continuously or trigger them on demand
 ** View scanner status, last-run results, and the number of assets discovered
-** Manage scanners from Platform > Providers in the enhanced MuleSoft experience
+** Manage scanners from *Platform* > *Providers* in the enhanced MuleSoft experience
 
 * When you need it: When your organization has agents built across multiple platforms and you need a continuous, automated way to keep your registry current without manually registering every asset.
-* Learn more: xref:exp-scanners-add-from-providers.adoc[Adding Scanners from Providers]
+* Learn more: xref:exp-scanners-add-from-providers.adoc[]
 
 [[govern]]
 == Govern
@@ -196,7 +196,7 @@ Without governance, orchestration turns to chaos. Agent Fabric provides enterpri
 ** Log and audit agent traffic for security and compliance purposes
 
 * When you need it: Use Omni Gateway for any production deployment where agents handle sensitive data, call external APIs, or need consistent security and compliance enforcement across your organization.
-* Learn more: xref:exp-governance-create-strategy.adoc[Create Governance Strategies]
+* Learn more: xref:exp-governance-create-strategy.adoc[]
 
 === Governance Strategies
 
@@ -223,8 +223,9 @@ Without governance, orchestration turns to chaos. Agent Fabric provides enterpri
 ** Keep every agent action authenticated and attributable to the user who initiated it
 ** Maintain a complete audit trail of agent actions tied to real user authorization
 * When you need it: Use Cost Management when LLM token consumption is a significant operational concern, or when you need to enforce spending limits and audit agent interactions across your organization.
-* Learn more: xref:exp-governance-view-cost-and-token-usage.adoc[Viewing Cost and Token Usage] and xref:exp-governance-create-strategy.adoc[Create Governance Strategies]
+* Learn more: For more information, see xref:exp-governance-view-cost-and-token-usage.adoc[] and xref:exp-governance-create-strategy.adoc[]
 
+//// ////
 === Trusted Agent Identity
 
 * What it is: Trusted Agent Identity is a set of identity and authorization policies that ensure agents act with a specific user's identity and proper authentication on every interaction, so access follows the calling user's permissions rather than granting blanket agent access.
@@ -235,8 +236,8 @@ Without governance, orchestration turns to chaos. Agent Fabric provides enterpri
 ** Maintain a complete audit trail of agent actions tied to real user authorization
 
 * When you need it: Use Trusted Agent Identity any time agents call APIs or services on behalf of users, or when compliance requires knowing not just that an agent made a call, but who authorized it.
-* Learn more: <Link to exp-trusted-agent-identity>
-
+* Learn more: 
+//// ////
 
 
 [[orchestrate]]
@@ -291,7 +292,7 @@ Agent Visualizer provides a detailed visual graph of your agent network so you c
 
 * When you need it: Use Agent Visualizer during development to verify your network is wired correctly, at deployment to confirm traffic is routing as expected, and in production to troubleshoot.
 
-* Learn more: xref:agent-visualizer::index.adoc[Agent Visualizer Overview]
+* Learn more: xref:agent-visualizer::index.adoc[]
 
 === Monitor
 
@@ -305,7 +306,7 @@ Agent Visualizer provides a detailed visual graph of your agent network so you c
 
 * When you need it: Use monitoring during development for performance validation, and continuously in production to ensure reliability, meet SLAs, and catch issues before they affect users.
 
-* Learn more: xref:exp-services-monitoring.adoc[Monitoring Your Services]
+* Learn more: xref:exp-services-monitoring.adoc[]
 
 [[supporting-tools]]
 == Supporting Tools
@@ -320,7 +321,7 @@ Agent Visualizer provides a detailed visual graph of your agent network so you c
 ** Build and test agent workflows locally before deploying
 ** Develop custom MCP servers for specific integration needs
 ** Use MuleSoft Vibes to generate and validate network configurations from natural language
-* Learn more: xref:anypoint-code-builder::index.adoc[Anypoint Code Builder Overview]
+* Learn more: xref:anypoint-code-builder::index.adoc[]
 
 === MuleSoft Vibes
 
@@ -331,11 +332,11 @@ Agent Visualizer provides a detailed visual graph of your agent network so you c
 ** Validate network structure and routing logic against architecture best practices
 ** Accelerate development from initial design through testing and refinement
 * When you need it: Use MuleSoft Vibes throughout the development lifecycle, from initial network design through iterating on routing logic and agent configurations.
-* Learn more: xref:anypoint-code-builder::vibes-get-started.adoc[Get Started with MuleSoft Vibes]
+* Learn more: xref:anypoint-code-builder::vibes-get-started.adoc[]
 
 == What's Next
 
-* Get started with the xref:learning-map-agent-fabric.adoc[Agent Fabric Learning Map] for a guided path through discovering assets, building your first agent network, and deploying it with governance and monitoring.
+* Get started with the xref:learning-map-agent-fabric.adoc[] for a guided path through discovering assets, building your first agent network, and deploying it with governance and monitoring.
 
 * Explore the https://www.mulesoft.com/lp/ebook/mulesoft-agent-fabric-technical-overview[MuleSoft Agent Fabric Technical Overview] for a comprehensive guide to the technical foundations, capability pillars, and architectural best practices that power enterprise agentic transformation.
 
