@@ -11,8 +11,6 @@ MuleSoft Agent Fabric helps you turn your agent sprawl into a governed and highl
 +
 View metrics, logs, and traces in Anypoint Monitoring.
 
-image::agent-fabric-pillars.png[]
-
 The end-to-end journey for Agent Fabric consists of various tasks, each with links to relevant content to assist you in completing them.
 
 [.lm-table, cols="1a,1a,1a", grid="none"]
@@ -31,15 +29,15 @@ Agent Fabric helps you design and orchestrate a network of agents, brokers, and 
 Use Anypoint Exchange to discover agentic assets for reuse across your enterprise.
 
 - https://www.mulesoft.com/platform/exchange[Discover Assets in Anypoint Exchange]
-- xref:exchange::asset-types.adoc[Learn About Asset Types Published in Exchange]
-- xref:exchange::discovering-and-importing-external-agents.adoc[Discover and Catalog External Agents With Scanners]
+- xref:exp-portfolio-overview.adoc[View Your Portfolio]
+- xref:exp-services-add-to-portfolio.adoc[Add Services to Your Portfolio]
+- xref:exp-scanners-add-from-providers.adoc[Discover and Catalog External Agents With Scanners]
 - https://videos.mulesoft.com/watch/GJxX42uWd1gGComp3KQqEB[Watch a Video to Learn About Agent Fabric and GoDaddy ANS Integration]
 - https://blogs.mulesoft.com/news/agent-scanners/[Learn How to Catalog Agents Automatically With Scanners]
 - xref:exchange::importing-agentforce-agents.adoc[Import Agentforce Agents]
 - xref:exchange::to-create-an-asset.adoc#create-agent[Create and Publish an Agent in Exchange]
-- xref:exchange::to-create-an-asset.adoc#create-mcp[Create and Publish an MCP Server in Exchange]
+- xref:exp-services-create-mcp-server.adoc[Create an MCP Server]
 - xref:exchange::to-create-an-asset.adoc#create-llm[Create and Publish an LLM in Exchange]
-- xref:exchange::to-find-info.adoc[Search and Filter Assets in Exchange]
 
 | image::lm_build_1.png[]
 [.lm-bold]##Build and Orchestrate Agent Networks##
@@ -72,6 +70,7 @@ Visualize your agent network and monitor performance and behavior.
 
 - xref:agent-visualizer::index.adoc[Visualize Your Agent Network in Agent Visualizer]
 - xref:monitoring::anypoint-insights-agentic.adoc[View Agent Metrics in Anypoint Monitoring]
+- xref:exp-services-view-detailed-metrics.adoc[View Detailed Metrics for Your Services]
 - xref:monitoring::logs-us-eu.adoc#search-agentic[View Logs for Agentic Assets in Anypoint Monitoring]
 - xref:monitoring::traces.adoc[View Traces in Anypoint Monitoring]
 
@@ -82,6 +81,8 @@ Visualize your agent network and monitor performance and behavior.
 [discrete]
 == See Also
 
+* xref:agent-fabric-overview.adoc[Agent Fabric Overview]
+* xref:exp-overview.adoc[]
 * xref:anypoint-code-builder::index.adoc[Anypoint Code Builder]
 * xref:exchange::index.adoc[Anypoint Exchange]
 * xref:monitoring::index.adoc[Anypoint Monitoring]
