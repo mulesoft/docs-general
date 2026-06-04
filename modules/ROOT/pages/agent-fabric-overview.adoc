@@ -75,7 +75,7 @@ Before agents can orchestrate across your enterprise, your existing systems need
 ** Define custom logic for how agent requests are handled
 ** Orchestrate workflows that incorporate AI agents and external MCP services
 * When you need it: Use MCP Connector when you need to expose capabilities to agents that require custom logic, multi-system composition, orchestration with external MCP services, or transformation that configuration-based tools like MCP Bridge don’t cover.
-* Learn more: xref:connectors::mcp::index.adoc[MCP Connector]
+* Learn more: xref:mcp-connector::index.adoc[MCP Connector]
 
 === A2A Connector
 
@@ -90,7 +90,7 @@ Before agents can orchestrate across your enterprise, your existing systems need
 
 * When you need it: Use A2A Connector when you have existing Mule applications that need to participate in agent networks as A2A-compliant agents.
 
-* Learn more: xref:connectors::a2a::index.adoc[A2A Connector]
+* Learn more: xref:a2a-connector::index.adoc[A2A Connector]
 
 === Other AI Connectors
 
@@ -106,12 +106,12 @@ Before agents can orchestrate across your enterprise, your existing systems need
 * When you need it: Use AI Connectors when your agents need to reason with LLMs or retrieve context from vector databases your organization already operates.
 
 * Learn more:
-** xref:connectors::agentforce::index.adoc[Agentforce Connector]
-** xref:connectors::amazon-bedrock::index.adoc[Amazon Bedrock Connector]
-** xref:connectors::einstein-ai::index.adoc[Einstein AI Connector]
-** xref:connectors::mulesoft-ai-chain::index.adoc[MuleSoft AI Chain Connector]
-** xref:connectors::mulesoft-inference::index.adoc[MuleSoft Inference Connector]
-** xref:connectors::mulesoft-vectors::index.adoc[MuleSoft Vectors Connector]
+** xref:agentforce-connector::index.adoc[Agentforce Connector]
+** xref:amazon-bedrock-connector::index.adoc[Amazon Bedrock Connector]
+** xref:einstein-ai-connector::index.adoc[Einstein AI Connector]
+** xref:mulesoft-ai-chain-connector::index.adoc[MuleSoft AI Chain Connector]
+** xref:mulesoft-inference-connector::index.adoc[MuleSoft Inference Connector]
+** xref:mulesoft-vectors-connector::index.adoc[MuleSoft Vectors Connector]
 
 
 === B2B (Partner Manager)
