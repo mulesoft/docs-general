@@ -1,0 +1,60 @@
+= Add Semantic Services
+
+Semantic services improve how the system interprets and routes LLM-driven requests across your portfolio. They apply context-aware behavior so the system directs requests to the most relevant tools, services, or pathways configured in your organization.
+
+Use this capability when workflows need more than static routing. With semantic context in place, the system supports better request matching, more consistent response behavior, and stronger control as usage grows across agents, APIs, MCP servers, and related integrations.
+
+To add semantic services, follow these steps:
+
+. Define the semantic service your organization uses for contextual matching.
+. Associate that semantic capability with the relevant Enhanced Experience flow (for example, supported LLM routing paths).
+. Operate the service as part of your broader governance and monitoring model so behavior remains reliable as traffic and use cases evolve.
+
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* One of these permissions:
++
+--
+** Exchange: Exchange Contributor
+** Exchange: Exchange Administrator
+** Exchange: Exchange Creator
+--
++
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+
+== Create a Semantic Service
+
+. In the navigation, under *Portfolio*, expand *LLM Proxies*, and select *Semantic Services*.
+. Select *Add Semantic Service*.
+. Select the scale model that matches your traffic profile and operational needs.
++
+* *Basic scale*
++
+Choose *Basic scale* for smaller topic sets (up to 6 topics and 10 utterances per topic). This scale is managed through an internal LLM proxy configuration.
++
+* *Advanced scale*
++
+Choose *Advanced scale* for larger utterance sets per topic. This scale requires a dedicated external vector database connection.
+
+== Configure Semantic Service Fields
+
+Basic and Advanced scales use the same setup fields. Provide values for:
+
+* *Environment*
+* *Embedding service provider*
+* *Service label*
+* *URL*
+* *Model*
+* *Auth key*
+
+For *Advanced scale*, also configure the dedicated external vector database connection required by your selected provider.
+
+
+== See Also
+
+* xref:exp-services-add-to-portfolio.adoc[]
+* xref:exp-services-view-details.adoc[]
+* xref:exp-services-monitoring.adoc[]
