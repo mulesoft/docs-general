@@ -10,7 +10,7 @@ Every organization has systems, agents, LLMs, and data sources scattered across 
 
 Agent Fabric starts with enterprise actionability, bridging the gap between your existing enterprise stack and the agentic world. It makes every system, agent, LLM, and data source directly usable in agentic workflows without rebuilding them, giving the entire fabric a foundation to build on.
 
-MuleSoft supports two complementary products that can be used together for agentic enterprises. Each serves a distinct role in building and managing your organization's AI agent strategy:
+MuleSoft supports Agentforce and Agent Fabric, which can be used together for agentic enterprises. Each serves a distinct role in building and managing your organization's AI agent strategy:
 
 * Agentforce
 +
@@ -35,7 +35,7 @@ A central registry, supported with automated discovery, where every agent and MC
 Enterprise-grade guardrails ensuring every agent, MCP server, and LLM interaction is secure, compliant, and cost-controlled, so teams can innovate with confidence.
 * <<orchestrate,Orchestrate>>
 +
-The ability to coordinate agents and tools across ecosystems with guided determinism, so multi-step processes run smoothly and every agent works together to deliver reliable business outcomes.
+The coordination of agents and tools across ecosystems with guided determinism, so multi-step processes run smoothly and every agent works together to deliver reliable business outcomes.
 * <<observe,Observe>>
 +
 End-to-end visibility into how agents make decisions and perform, turning black-box AI into transparent, accountable systems.
@@ -118,7 +118,7 @@ Before agents can orchestrate across your enterprise, your existing systems need
 
 * What it is: Anypoint Partner Manager enables bidirectional Business-to-Business message exchanges with external trading partner ecosystems through configuration-driven integration. Partner Manager handles technical partner onboarding, message flow orchestration, and transaction monitoring across multiple transport protocols (AS2, SFTP, HTTP/S, FTP) and message formats (X12, EDIFACT, CSV, JSON, XML).
 
-* Role in Agent Fabric: Partner Manager makes B2B trading partner networks directly actionable for agents without requiring them to understand complex EDI standards or protocol-specific integration patterns. Agents can initiate B2B transactions, query partner message flows, monitor transmission status, and respond to partner interactions as part of multi-step workflows, turning manual B2B operations into automated, agent-driven processes.
+* Role in Agent Fabric: Partner Manager makes B2B trading partner networks directly actionable for agents without requiring them to understand complex EDI standards or protocol-specific integration patterns. Agents can initiate B2B transactions, query partner message flows, monitor transmission status, and respond to partner interactions as part of multi-step workflows, turning manual B2B operations into automated agent-driven processes.
 * What you can do:
 ** Enable agents to send and receive B2B transactions with trading partners
 ** Query message flow status, transmission tracking, and acknowledgment statuses
@@ -296,7 +296,7 @@ Agent Visualizer provides a detailed visual graph of your agent network so you c
 
 === Monitor
 
-* What it is: In the enhanced MuleSoft experience, monitoring is available at both the service level and the organization level. At the service level, each agent, API, MCP server, LLM proxy, and gateway has a Monitoring tab showing runtime health signals and detailed time-series breakdowns, depending on your gateway, runtime path, and platform connections. At the organization level, Observability aggregates dashboards, reports, and alerts when your administrator has connected the observability backend for your business group.
+* What it is: In the enhanced MuleSoft experience, monitoring is available at both the service level and the organization level. At the service level, each agent, API, MCP server, LLM proxy, and gateway has a Monitoring tab showing runtime health signals and detailed time-series breakdowns, depending on your gateway, runtime path, and platform connections. At the organization level, observability aggregates dashboards, reports, and alerts when your administrator has connected the observability backend for your business group.
 * Role in Agent Fabric: Monitoring closes the loop between governance and operations. Governance strategies define what should happen; monitoring tells you whether it is happening. It surfaces latency, error rates, request volume, and other runtime signals so you can catch regressions early, triage incidents quickly, and make informed decisions about policy changes and capacity.
 * What you can do:
 ** View runtime health metrics such as latency, error rates, and request volume, including detailed time series and dimensions per service on its Monitoring tab
@@ -314,9 +314,9 @@ Agent Visualizer provides a detailed visual graph of your agent network so you c
 === Anypoint Code Builder
 
 * What it is: Anypoint Code Builder is the development environment for building agent networks, configuring agent interactions, and developing custom MCP servers.
-* Role in Agent Fabric: Anypoint Code Builder is where agent networks come to life. It provides the visual editor canvas and tooling to define an agent network YAML and develop custom MCP servers, all before deploying to production.
+* Role in Agent Fabric: Anypoint Code Builder is where agent networks come to life. It provides the visual canvas and tooling to define an agent network YAML and develop custom MCP servers, all before deploying to production.
 * Key capabilities:
-** Design and configure agent network structures with visual editors
+** Design and configure agent network structures with the visual canvas
 ** Define routing logic and agent interactions in YAML
 ** Build and test agent workflows locally before deploying
 ** Develop custom MCP servers for specific integration needs
@@ -338,6 +338,6 @@ Agent Visualizer provides a detailed visual graph of your agent network so you c
 
 * Get started with the xref:learning-map-agent-fabric.adoc[] for a guided path through discovering assets, building your first agent network, and deploying it with governance and monitoring.
 
-* Explore the https://www.mulesoft.com/lp/ebook/mulesoft-agent-fabric-technical-overview[MuleSoft Agent Fabric Technical Overview] for a comprehensive guide to the technical foundations, capability pillars, and architectural best practices that power enterprise agentic transformation.
+* For a comprehensive guide to the technical foundations, capability pillars, and architectural best practices that power enterprise agentic transformation, explore the https://www.mulesoft.com/lp/ebook/mulesoft-agent-fabric-technical-overview[MuleSoft Agent Fabric Technical Overview].
 
 * Learn about the technical foundations, capability pillars, and architectural details https://architect.salesforce.com/docs/architect/fundamentals/guide/mulesoft-agent-fabric-deep-dive.html#Agent_Orchestration_Design_Patterns[MuleSoft Agent Fabric Deep Dive].
