@@ -1,0 +1,47 @@
+= Working with Governance Strategies
+
+Use governance strategies to apply rules and policies across agents, APIs, MCP servers, LLM proxies, and gateways. You can create, manage, and monitor strategies when your tenant includes *Governance* and your account has the required role. Use strategies to validate service compliance, automate runtime enforcement, and maintain visibility as your portfolio grows.
+
+
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* These permissions:
++
+--
+** To create governance strategies, either:
+*** API Governance: Governance Administrator
+*** API Manager: Manage Policies
+** To view governance reports, either:
+*** API Governance: Governance Viewer
+*** API Governance: Governance Administrator
+--
++
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+
+== Access Governance Strategy Workflows
+
+Log in through your organization’s entry path and go to *Governance*.
+
+From *Governance* > *Governance Strategies*, create strategies and map them to approved services or scopes. You can also edit, enable, disable, reorder, or delete existing strategies.
+
+Work with your governance lead when strategy changes affect production or compliance workflows.
+
+== Governance Strategy Workflows
+
+* Create strategies for compliance validation or runtime enforcement. See xref:exp-governance-create-strategy.adoc[].
+* Manage strategies by updating scope, rules, status, and priority. See xref:exp-governance-manage-strategies.adoc[].
+* Monitor token usage in *Governance* > *Cost Management*. See xref:exp-governance-view-cost-and-token-usage.adoc[].
+* Review conformance reporting for xref:exp-overview.adoc[supported catalog types].
+* Apply policies to services from *Portfolio*. See xref:exp-services-view-details.adoc[].
+
+== See Also
+
+* xref:exp-governance-create-strategy.adoc[]
+* xref:exp-governance-manage-strategies.adoc[]
+* xref:exp-governance-view-cost-and-token-usage.adoc[]
+* xref:exp-overview.adoc[]
+* xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions]
+* xref:exp-services-view-details.adoc[]

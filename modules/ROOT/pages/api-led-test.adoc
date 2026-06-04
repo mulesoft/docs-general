@@ -1,7 +1,7 @@
 = Step 4. Test the API
 :page-pagination:
 
-Test your API locally before deploying it to the cloud. You run the API in Anypoint Code Builder, send requests using Postman, and use the built-in debugger to inspect the Mule message at each step. You also add input validation and logging to make the API more robust.
+Test your API locally before deploying it to the cloud. You run the API in Anypoint Code Builder, send requests using Postman, add logging to track requests, and use the built-in debugger to inspect the Mule message at each step.
 
 == Step 4.1: Run and Test Your API
 
@@ -43,73 +43,11 @@ http://localhost:8081/api/greeting?name=World
 }
 ----
 +
-Your API works! Now let's add validation and debugging.
+Your API works! Now let's add logging and explore debugging.
 
 . Click image:icon-stop.png["",15,15] (*Stop*) in the debug toolbar.
 
-== Step 4.2: Add Validation
-
-Now add validation to ensure your API handles requests without a `name` parameter.
-
-. In the canvas, navigate to your *get:\greeting* flow.
-+
-Your flow currently has a Logger component followed by a Transform component from the previous step.
-. Click image:icon-plus.png["",15,15] (*Add component*) before the *Logger* component (at the start of the flow).
-. Search for *Choice* and select it from the results.
-+
-The Choice component adds a *When* branch and an *Otherwise* branch. Execution continues to Logger and Transform after the Choice unless the When branch stops it (with Raise Error).
-. Click image:icon-plus.png["",15,15] (*Add component*) inside the *When* branch.
-. Search for *Raise error* and select it.
-+
-[IMPORTANT]
-Add the *Raise Error* component to the *When* branch before setting the condition. The *When* branch must contain at least one component or the XML will be invalid.
-. Configure the *Raise Error* component:
-+
-* *Type*: `APP:BAD_REQUEST`
-* *Description*: `Name parameter is required`
-+
-image::api-tutorial-raise-error-component-acb.png[The Raise Error component with the Type and Description configured]
-. Click the *Choice* component's *When* condition, and enter this expression:
-+
-[source,dataweave]
-----
-#[attributes.queryParams.name == null or attributes.queryParams.name == ""]
-----
-+
-This expression checks whether the `name` query parameter is missing from the request or sent as an empty string. The `name` parameter is the one you defined in your API spec at `/greeting?name=`.
-+
-image::api-tutorial-when-condition-acb.png[The flow withe the When condition highlighted and the configuration panel with the expression entered]
-. Save your changes.
-+
-Your flow order is now: *Choice* → *Logger* → *Transform*. When the `name` query parameter is missing or empty, the *When* condition triggers the *Raise Error* component and the flow stops. When `name` has a value, execution continues to *Logger* and *Transform*.
-
-== Step 4.3: Test the Validation
-
-. Start your application by clicking image:icon-start-debug.png["",15,15] (*Run*) in the debug toolbar.
-
-. In Postman, test with a valid name parameter:
-+
-[source,text]
-----
-http://localhost:8081/api/greeting?name=World
-----
-+
-You should receive: `{"message": "Hello, World!"}`
-
-. Test without the name parameter:
-+
-[source,text]
-----
-http://localhost:8081/api/greeting
-----
-+
-You should receive a validation error with status `400`.
-
-. Click image:icon-stop.png["",15,15] (*Stop*) in the debug toolbar.
-
-Your API now validates input before processing.
-
-== Step 4.4: Add Logging
+== Step 4.2: Add Logging
 
 Logging helps you see what's happening inside your flows.
 
@@ -128,7 +66,7 @@ This message logs the `name` query parameter value or "not provided" if it's mis
 image::api-tutorial-logger-component-configured-acb.png[The Logger component with the Message and Level configured]
 . Save your changes.
 
-== Step 4.5: Test with Logging
+== Step 4.3: Test with Logging
 
 . Start your application by clicking image:icon-start-debug.png["",15,15] (*Run*) in the debug toolbar.
 . Open the Terminal panel to see your application logs:
@@ -159,7 +97,29 @@ INFO  [hello-world-impl].get:\greeting  Received greeting request for name: Worl
 
 . Click image:icon-stop.png["",15,15] (*Stop*) when done.
 
-== Step 4.6: Use Breakpoints for Debugging
+== Step 4.4: Understanding APIKit Validation
+
+APIKit automatically validates incoming requests against your API specification. Since your API spec defines the `name` query parameter as required, APIKit:
+
+* Validates that the `name` parameter is present before routing to your implementation flow
+* Returns a `400 Bad Request` error automatically if the parameter is missing
+* Ensures your flow only executes with valid requests that match the API contract
+
+Try it:
+
+. Start the application.
+. In Postman, send a request without the name parameter:
++
+[source,text]
+----
+http://localhost:8081/api/greeting
+----
+. Observe that APIKit returns an error response before your flow executes.
+. Check the Terminal — you won't see your Logger message because APIKit blocked the invalid request.
+
+This automatic validation is one of the key benefits of using APIKit — you don't need to write manual validation code for contract requirements defined in your API specification.
+
+== Step 4.5: Use Breakpoints for Debugging
 
 Breakpoints pause execution so you can inspect the Mule message at a specific point in your flow.
 
@@ -204,7 +164,7 @@ image::api-tutorial-debug-panel-variables-acb.png[The Variables panel in the Run
 
 == What You Learned
 
-You ran the API locally and tested it with Postman, then added input validation using a *Choice* router and *Raise Error* component to handle missing `name` parameters. You configured a *Logger* to record each request, then used Anypoint Code Builder's debugger, including breakpoints and the Variables panel, to pause execution and inspect the Mule message at each step.
+You ran the API locally and tested it with Postman, then configured a *Logger* to record each request. You learned how APIKit automatically validates requests against your API specification, and used Anypoint Code Builder's debugger, including breakpoints and the Variables panel, to pause execution and inspect the Mule message at each step.
 
 == Developer Deep Dive
 
