@@ -2,6 +2,7 @@
 
 Use portfolio-level views to see how your agents, APIs, MCP servers, LLM proxies, and gateways fit together before you drill into a single service. These summaries help you spot gaps in registration, policy coverage, and health signals.
 
+image::exp-portfolio-overview-home.png[Portfolio Overview showing discovered services, consumed instances, and governed instances]
 
 The exact layout depends on how your administrator configured your tenant and which catalogs they enabled.
 include::_partials/exp-navigation-labels.adoc[tag=ExpNavigationLabels]
