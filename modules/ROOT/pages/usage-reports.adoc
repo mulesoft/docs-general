@@ -13,7 +13,7 @@ Daily usage retention is three months and monthly usage retention is up to five 
 
 Usage reports support different customer types:
 
-* vCore ELA customers: Monitor combined vCore consumption across CloudHub and CloudHub 2.0, including usage from horizontal pod autoscaling (HPA). Your contracted vCore allotment governs your renewal.
+* vCore customers: Monitor combined vCore consumption across CloudHub and CloudHub 2.0. Your contracted vCore allotment governs your renewal.
 * Usage-based pricing customers (Anypoint Integration Advanced, Platinum, or Titanium): Compare actual usage from the report against the existing contract to avoid overages.
 
 Usage reports are not for billing purposes. For more information about usage metrics and pricing, read xref:pricing.adoc[] and xref:usage-metrics.adoc[]
