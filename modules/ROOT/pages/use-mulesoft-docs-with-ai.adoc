@@ -8,7 +8,7 @@ MuleSoft documentation is optimized for AI. Whether you're a human pasting conte
 [[page-options]]
 == Page Options
 
-Every page on MuleSoft documentation includes a dropdown menu for AI consumption.
+Every page of MuleSoft documentation includes a dropdown menu for AI consumption.
 
 image::ai-context-menu.png["Dropdown menu on MuleSoft documentation pages with options shown for AI consumption", 200]
 
@@ -21,11 +21,13 @@ Use these options to quickly grab clean text or jump straight into your workflow
 * *Open in ChatGPT / Claude / Perplexity*: Opens a conversation with the current page as context so the LLM can answer your questions instantly.
 
 [[llms-txt]]
-== llms.txt & llms-full.txt 
+== `llms.txt` and `llms-full.txt` 
 
-MuleSoft documentation publishes `llms.txt` and `llms-full.txt` index files, which are machine-readable Markdown directories that let AI tools and RAG pipelines cleanly discover, search, or bulk-ingest our documentation without crawling raw HTML.
+MuleSoft documentation publishes `llms.txt` and `llms-full.txt` index files, which are machine-readable Markdown catalogs that let AI tools and RAG pipelines cleanly discover, search, or bulk-ingest our documentation without crawling raw HTML.
 
-Depending on your data scope, you can target three different endpoints:
+For example, you can point an AI coding assistant to the sitewide or product `llms.txt` URL for real-time integration context, or import the `llms-full.txt` file into an vector database to ground AI agents.
+
+Depending on your data scope, you can target three types of endpoints:
 
 * Sitewide `llms.txt`
 +
