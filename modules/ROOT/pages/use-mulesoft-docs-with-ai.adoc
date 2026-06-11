@@ -21,7 +21,7 @@ Use these options to quickly grab clean text or jump straight into your workflow
 * *Open in ChatGPT / Claude / Perplexity*: Opens a conversation with the current page as context so the LLM can answer your questions instantly.
 
 [[llms-txt]]
-== `llms.txt` and `llms-full.txt` 
+== llms.txt and llms-full.txt 
 
 MuleSoft documentation publishes `llms.txt` and `llms-full.txt` index files, which are machine-readable Markdown catalogs that let AI tools and RAG pipelines cleanly discover, search, or bulk-ingest our documentation without crawling raw HTML.
 
