@@ -3,7 +3,7 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-MuleSoft documentation is optimized for AI. Whether you're a human pasting context into an LLM or an AI agent ingesting docs autonomously, our content is structured to save tokens, stay grounded, and maximize technical accuracy.
+MuleSoft documentation is optimized for AI. Whether you're a human pasting context into an LLM or an AI agent ingesting documentation autonomously, our content is structured to save tokens, stay grounded, and maximize technical accuracy.
 
 [[page-options]]
 == Page Options
