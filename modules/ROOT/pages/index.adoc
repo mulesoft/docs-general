@@ -16,20 +16,20 @@ This documentation is for reference purposes only and won't be updated.
   xref:release-notes::index.adoc[Release Notes]
 
 .8+| Accelerators s| Cloud Information Model |
-  xref:1.3@accelerators-cim::index.adoc[v1.3 Archive] 
+  xref:1.3@accelerators-cim::index.adoc[v1.3 Archive]
 
 s| Consumer Goods |
   xref:5.2@consumer-goods::index.adoc[v5.2 Archive] +
   xref:5.1@consumer-goods::index.adoc[v5.1 Archive] +
   xref:5.0@consumer-goods::index.adoc[v5.0 Archive] +
   xref:4.0@consumer-goods::index.adoc[v4.0 Archive] +
-  xref:3.0@consumer-goods::index.adoc[v3.0 Archive] 
+  xref:3.0@consumer-goods::index.adoc[v3.0 Archive]
 
 s| Financial Services |
   xref:1.11@financial-services::index.adoc[v1.11 Archive] +
   xref:1.10@financial-services::index.adoc[v1.10 Archive] +
   xref:1.9@financial-services::index.adoc[v1.9 Archive] +
-  xref:1.8@financial-services::index.adoc[v1.8 Archive] 
+  xref:1.8@financial-services::index.adoc[v1.8 Archive]
 
 s| Healthcare |
   xref:2.23@healthcare::index.adoc[v2.23 Archive] +
@@ -37,22 +37,22 @@ s| Healthcare |
   xref:2.21@healthcare::index.adoc[v2.21 Archive] +
   xref:2.20@healthcare::index.adoc[v2.20 Archive] +
   xref:2.19@healthcare::index.adoc[v2.19 Archive] +
-  xref:2.18@healthcare::index.adoc[v2.18 Archive] 
+  xref:2.18@healthcare::index.adoc[v2.18 Archive]
 
 s| Life Sciences  |
-  xref:1.1@life-sciences::index.adoc[v1.1 Archive] 
+  xref:1.1@life-sciences::index.adoc[v1.1 Archive]
 
 s| Manufacturing  |
-  xref:1.3@manufacturing::index.adoc[v1.3 Archive] 
+  xref:1.3@manufacturing::index.adoc[v1.3 Archive]
 
 s| Retail  |
   xref:3.1@retail::index.adoc[v3.1 Archive] +
   xref:3.0@retail::index.adoc[v3.0 Archive] +
-  xref:2.7@retail::index.adoc[v2.7 Archive] 
+  xref:2.7@retail::index.adoc[v2.7 Archive]
 
 s| Salesforce OMS  |
-  xref:1.0@salesforce-oms::index.adoc[v1.0 Archive] 
-  
+  xref:1.0@salesforce-oms::index.adoc[v1.0 Archive]
+
 | Anypoint Platform Command-Line Interface 1+| |
   xref:2.x@anypoint-cli::index.adoc[v2.x Archive]
 
@@ -88,12 +88,16 @@ s| Salesforce OMS  |
   xref:3.2@connector-devkit::index.adoc[v3.2 Archive]
 
 | Connectors | |
-  xref:connectors::index.adoc[Archive] 
+  xref:connectors::index.adoc[Archive]
 
 | Data Gateway | |
   xref:data-gateway::index.adoc[Archive]
 
 | DataWeave | |
+  xref:2.10@dataweave::index.adoc[v2.10 Archive] +
+  xref:2.8@dataweave::index.adoc[v2.8 Archive] +
+  xref:2.7@dataweave::index.adoc[v2.7 Archive] +
+  xref:2.5@dataweave::index.adoc[v2.5 Archive] +
   xref:2.2@dataweave::index.adoc[v2.2 Archive] +
   xref:2.1@dataweave::index.adoc[v2.1 Archive] +
   xref:1.2@dataweave::index.adoc[v1.2 Archive] +
@@ -135,6 +139,10 @@ s| Salesforce OMS  |
   xref:3.2@mule-management-console::index.adoc[v3.2 Archive]
 
 | Mule Runtime (Mule User Guide) | |
+  xref:4.10@mule-runtime::index.adoc[v4.10 Archive] +
+  xref:4.8@mule-runtime::index.adoc[v4.8 Archive] +
+  xref:4.7@mule-runtime::index.adoc[v4.7 Archive] +
+  xref:4.5@mule-runtime::index.adoc[v4.5 Archive] +
   xref:4.2@mule-runtime::index.adoc[v4.2 Archive] +
   xref:4.1@mule-runtime::index.adoc[v4.1 Archive] +
   xref:3.9@mule-runtime::index.adoc[v3.9 Archive] +
@@ -171,7 +179,7 @@ s| Salesforce OMS  |
   xref:1.3@rpa-bot::index.adoc[v1.3 Archive] +
   xref:1.2@rpa-bot::index.adoc[v1.2 Archive] +
   xref:1.1@rpa-bot::index.adoc[v1.1 Archive] +
-  xref:1.0@rpa-bot::index.adoc[v1.0 Archive] 
+  xref:1.0@rpa-bot::index.adoc[v1.0 Archive]
 
 s| RPA Builder |
   xref:6.5@rpa-builder::index.adoc[v6.5 Archive] +
@@ -179,14 +187,14 @@ s| RPA Builder |
   xref:6.3@rpa-builder::index.adoc[v6.3 Archive] +
   xref:6.2@rpa-builder::index.adoc[v6.2 Archive] +
   xref:6.1@rpa-builder::index.adoc[v6.1 Archive] +
-  xref:6.0@rpa-builder::index.adoc[v6.0 Archive] 
+  xref:6.0@rpa-builder::index.adoc[v6.0 Archive]
 
 s| RPA Recorder |
   xref:6.4@rpa-recorder::index.adoc[v6.4 Archive] +
   xref:6.3@rpa-recorder::index.adoc[v6.3 Archive] +
   xref:6.2@rpa-recorder::index.adoc[v6.2 Archive] +
   xref:6.1@rpa-recorder::index.adoc[v6.1 Archive] +
-  xref:6.0@rpa-recorder::index.adoc[v6.0 Archive] 
+  xref:6.0@rpa-recorder::index.adoc[v6.0 Archive]
 
 
 | Runtime Fabric 1+| |
