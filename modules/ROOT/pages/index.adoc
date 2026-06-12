@@ -101,7 +101,7 @@ Monitor your APIs and integrations using dashboards, metrics, and visualization.
 * xref:monitoring::integration-intelligence.adoc[]
 * xref:general::learning-map-mulesoft-ai.adoc[]
 * xref:general::learning-map-agent-fabric.adoc[]
-* xref:anypoint-code-builder::af-get-started.adoc[]
+* xref:agent-network::af-get-started.adoc[]
 * xref:exchange::importing-agentforce-agents.adoc[]
 // * xref:gateway::flex-gateway-managed-ingress-egress.adoc[]
 * xref:api-manager::create-instance-task-agent-tool.adoc[]

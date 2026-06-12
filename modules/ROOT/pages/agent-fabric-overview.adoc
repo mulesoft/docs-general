@@ -259,7 +259,7 @@ Coordinate agents and tools across ecosystems with guided determinism, so multi-
 
 * When you need it: when your agent network includes multiple agents with different specializations and you need a component to intelligently route work to the right agent based on context. Add a broker when routing logic needs to go beyond a single agent.
 
-* Learn more: xref:anypoint-code-builder::af-define-your-agent-network-specification.adoc[]
+* Learn more: xref:agent-network::af-define-your-agent-network-specification.adoc[]
 
 === Agent Network
 
@@ -274,7 +274,7 @@ Coordinate agents and tools across ecosystems with guided determinism, so multi-
 
 * When you need it: Use an agent network any time you are building an agentic solution that involves multiple agents, LLMs, or MCP servers working together. Agent networks do not require a broker. You can start with just agents and MCP servers and add a broker when you need intelligent routing across specialized agents.
 
-* Learn more: xref:anypoint-code-builder::af-agent-networks.adoc[]
+* Learn more: xref:agent-network::af-agent-networks.adoc[]
 
 [[observe]]
 == Observe
