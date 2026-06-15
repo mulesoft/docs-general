@@ -1,6 +1,6 @@
 = AI Features and Data Usage
 
-AI in MuleSoft Anypoint Platform is built on data. Before you use a feature with AI in MuleSoft, it is important to understand what data is used and how.
+MuleSoft AI features use your data to generate responses. Understanding what data each feature uses helps you make informed decisions about privacy, compliance, and how you work with AI in MuleSoft.
 
 All MuleSoft AI features access large language models (LLMs) within the Salesforce Trust Boundary. Data that you submit to MuleSoft AI features is processed securely within Salesforce-managed boundaries and routed through your connected Salesforce organization for tracking and billing.
 
