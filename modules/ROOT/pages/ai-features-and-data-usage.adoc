@@ -15,7 +15,7 @@ For more information about data usage, see Customer Data and Usage Data in the M
 | Intelligent Document Processing (IDP)
 | Document Analysis with Custom Schemas
 a|
-This feature uses document images that you upload in base64-encoded format and the extracted text from them, along with natural language prompts and questions that you provide. It also uses document schema metadata that you define, such as field names, descriptions, and data types, and sample data that conveys the expected output format.
+This feature uses document images that you upload and the extracted text from them, along with natural language prompts and questions that you provide. It also uses document schema metadata that you define, such as field names, descriptions, and data types, and sample data that conveys the expected output format.
 a|
 IDP supports multiple AI models:
 
