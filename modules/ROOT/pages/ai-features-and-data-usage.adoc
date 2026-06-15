@@ -47,3 +47,9 @@ a|
 This feature uses Java thread dumps from your deployed applications and the Diagnostic Information Analysis File (DIAF), which includes application metadata, performance statistics, error messages and stack traces, and recent log entries. It also uses CloudHub or CloudHub 2.0 instance information and deployment configuration.
 | Google Gemini 2.5 Flash
 |===
+
+== See also
+
+* xref:usage-reports.adoc[]
+* xref:pricing.adoc[]
+* xref:usage-metrics.adoc[]
