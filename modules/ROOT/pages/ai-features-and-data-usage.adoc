@@ -4,7 +4,7 @@ MuleSoft AI features use your data to generate responses. Understanding what dat
 
 All MuleSoft AI features access LLMs within the Salesforce Trust Boundary, a set of security and data governance controls that keeps your data within Salesforce-managed infrastructure. MuleSoft AI features process data you submit securely within Salesforce-managed boundaries and route it through your connected Salesforce organization for tracking and billing.
 
-The following table lists the Customer Data you submit to our services, as defined in our https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/legal/Salesforce_MSA.pdf[Main Services Agreement (MSA)^], and the usage data relating to your interactions with MuleSoft AI features. Customer Data that you submit to MuleSoft AI features is not used to train AI models or shared across customers.
+This table lists the Customer Data you submit to our services, as defined in our https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/legal/Salesforce_MSA.pdf[Main Services Agreement (MSA)^], and usage data about your interactions with MuleSoft AI features. Customer Data that you submit to MuleSoft AI features is not used to train AI models or shared across customers.
 
 For more information about data usage, see Customer Data and Usage Data in the MSA. For billing information, see https://help.salesforce.com/s/articleView?id=ai.generative_ai_usage.htm&type=5[Agentforce and Generative AI Usage and Billing^].
 
