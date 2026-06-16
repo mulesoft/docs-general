@@ -46,11 +46,33 @@ Before upgrading and testing your custom connector for Java 17, you must be fami
 
 * Target compilation level
 +
-In Mule 4.9.0 and later, you can compile any Mule project for Java 17 or lower. Additional dependencies must be compiled for Java 17 or lower. 
+In Mule 4.9.0 and later, you can compile any Mule project for Java 17 or lower. Additional dependencies must be compiled for Java 17 or lower.
+
+* Declaring the minimum Mule version
 +
-If you compile for Java 17, upgrade the `mule-modules-parent` to version 1.9.0 or later. The connector's minimum Mule version will also be 4.9.0, ensuring compatibility only with Mule 4.9.0 or later. Verify that `minMuleVersion` in `META-INF/mule-artifact/mule-artifact.json` is 4.9.0 or later. See xref:mule-sdk::java-version-support.adoc#specify-java-compatibility[Specify Java Compatibility].
+Two approaches are supported for declaring the minimum Mule version. 
 +
-If the `mule-modules-parent` version is earlier than 1.9.0, the bytecode level for the connector and its additional dependencies must be for Java 8. You can’t use language features from Java 11 or Java 17. 
+** `mule-java-extension-parent` (recommended)
++
+This parent POM provides full control over the minimum Mule version. New connectors should use this parent, and existing connectors can migrate to it. For migration instructions, see xref:mule-sdk::forward-compatibility-setup.adoc#upgrading-existing-modules[Upgrading Existing Modules].
+
+** `mule-modules-parent`
++
+This approach is still supported for compatibility. Be aware of this version-specific behavior:
++
+*** For versions 1.9.0 through 1.10.x, the connector’s minimum Mule version is automatically set based on the parent version. For example, version 1.9.0 sets `minMuleVersion` to 4.9.0.
+*** For version 1.11.0 and later, you must explicitly specify `min.mule.version` in your `pom.xml`. If you don't set this property, the `minMuleVersion` defaults to 4.1.1, which is incorrect for connectors compiled with Java 17. Add this property to your `pom.xml`:
++
+[source,xml]
+----
+<properties>
+  <min.mule.version>4.11.0</min.mule.version>
+</properties>
+----
++
+*** For versions earlier than 1.9.0, the bytecode level for the connector and its additional dependencies must be for Java 8. You can’t use language features from Java 11 or Java 17.
++
+Verify that `minMuleVersion` in `META-INF/mule-artifact/mule-artifact.json` reflects the correct version. See xref:mule-sdk::java-version-support.adoc#specify-java-compatibility[Specify Java Compatibility].
 
 * Unsupported directives
 +
