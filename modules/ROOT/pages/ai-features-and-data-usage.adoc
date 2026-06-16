@@ -38,7 +38,7 @@ This feature uses input and output sample data that you provide, such as JSON, X
 | API Documentation Generation
 a|
 This feature uses API specifications that you upload, such as RAML, OAS, SOAP, WSDL, AsyncAPI, GraphQL, and gRPC, along with asset metadata such as name, description, tags, and version.
-| OpenAI GPT-4o Mini
+| OpenAI GPT-4o Mini and GPT-5.1
 
 | Runtime Manager
 | Diagnostics Agent
