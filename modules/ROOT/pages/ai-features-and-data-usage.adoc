@@ -15,14 +15,13 @@ For more information about data usage, see Customer Data and Usage Data in the M
 | Intelligent Document Processing (IDP)
 | Document Analysis with Custom Schemas
 a|
-This feature uses document images that you upload and the extracted text from them, along with natural language prompts and questions that you provide. It also uses document schema metadata that you define, such as field names, descriptions, and data types, and sample data that conveys the expected output format.
+This feature uses documents that you upload in supported formats (images, PDFs, and TIFFs) as input, along with natural language prompts and questions that you provide. It also uses document schema metadata that you define, such as field names, descriptions, and data types, and sample data that conveys the expected output format.
 a|
 IDP supports multiple AI models:
 
-* OpenAI GPT-4o
-* OpenAI GPT-4o Mini
-* Google Gemini 2.0 Flash 001
-* Google Gemini 2.5 Flash
+* OpenAI GPT-4o, GPT-4o Mini, GPT-5.1, and GPT-5.2
+* Google Gemini 2.0 Flash 001 and 2.5 Flash
+* Anthropic Claude Sonnet 4.6
 
 .2+| MuleSoft Vibes
 | Agent-Driven Development (flow generation, API specification generation, asset publishing, and more)
