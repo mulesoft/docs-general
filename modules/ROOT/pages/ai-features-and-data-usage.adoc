@@ -1,0 +1,66 @@
+= AI Features and Data Usage
+
+MuleSoft AI features use your data to generate responses. Understanding what data each feature uses helps you make informed decisions about privacy, compliance, and how you work with AI in MuleSoft.
+
+All MuleSoft AI features access LLMs within the Salesforce Trust Boundary, a set of security and data governance controls that keeps your data within Salesforce-managed infrastructure. MuleSoft AI features process data you submit securely within Salesforce-managed boundaries and route it through your connected Salesforce organization for tracking and billing.
+
+This table lists the Customer Data you submit to our services, as defined in our https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/legal/Salesforce_MSA.pdf[Main Services Agreement (MSA)^], and usage data about your interactions with MuleSoft AI features. Customer Data that you submit to MuleSoft AI features is not used to train AI models or shared across customers.
+
+For more information about data usage, see Customer Data and Usage Data in the MSA. For billing information, see https://help.salesforce.com/s/articleView?id=ai.generative_ai_usage.htm&type=5[Agentforce and Generative AI Usage and Billing^].
+
+[cols="1,1,3a,2a",options="header"]
+|===
+| Product | Feature | Data Used | Uses Generative AI
+
+| Intelligent Document Processing (IDP)
+| Document Analysis with Custom Schemas
+a|
+This feature uses documents that you upload in supported formats (images, PDFs, and TIFFs) as input, along with natural language prompts and questions that you provide. It also uses document schema metadata that you define, such as field names, descriptions, and data types, and sample data that conveys the expected output format.
+a|
+Yes
+
+* OpenAI GPT-4o, GPT-4o Mini, GPT-5.1, and GPT-5.2
+* Google Gemini 2.0 Flash 001 and 2.5 Flash
+* Anthropic Claude Sonnet 4.6
+
+.2+| MuleSoft Vibes
+| Agent-Driven Development (flow generation, API specification generation, asset publishing, and more)
+a|
+This feature uses natural language prompts that you type and, with your permission, project files such as code, requirements, and configuration, along with context that you attach such as logs, terminal output, and URLs. It grounds responses with MuleSoft metadata, such as connector and component descriptions, API design documentation, and public Anypoint Exchange metadata.
+a|
+Yes
+
+Anthropic Claude Sonnet 3.5 with OpenAI GPT-4o Mini for planning (via Amazon Bedrock)
+
+| DataWeave Generation
+a|
+This feature uses input and output sample data that you provide, such as JSON, XML, and CSV, along with optional structure metadata and natural language instructions. It grounds responses with MuleSoft DataWeave function and operator documentation.
+a|
+Yes
+
+OpenAI GPT-4o
+
+| Anypoint Exchange
+| API Documentation Generation
+a|
+This feature uses API specifications that you upload, such as RAML, OAS, SOAP, WSDL, AsyncAPI, GraphQL, and gRPC, along with asset metadata such as name, description, tags, and version.
+a|
+Yes
+
+OpenAI GPT-5
+
+| Runtime Manager
+| Diagnostics Agent
+a|
+This feature uses Java thread dumps from your deployed applications and the Diagnostic Information Analysis File (DIAF), which includes application metadata, performance statistics, error messages and stack traces, and recent log entries. It also uses CloudHub or CloudHub 2.0 instance information and deployment configuration.
+a|
+Yes
+
+Google Gemini 2.5 Flash
+|===
+
+== See also
+
+* xref:usage-reports.adoc[]
+* xref:pricing.adoc[]
+* xref:usage-metrics.adoc[]
