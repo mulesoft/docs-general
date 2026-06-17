@@ -19,7 +19,18 @@ Each MuleSoft organization can connect to only one Slack workspace, and each Sla
 . Click *Allow*.
 +
 You may need Slack admin permissions to install this app in your organization's Slack workspace. Submit a request to install the app to your Slack administrator if you don't have the permissions.
-. After the app is installed, select Slack as a notification delivery channel when you configure alerts and run shortcuts by using `@MuleSoft Agent` in your Slack workspace.
+. After the app is installed, select Slack as a notification delivery channel when you configure alerts and run shortcuts by using `@MuleSoft` in your Slack workspace.
+
+== Connect Slackbot to the Mulesoft Platform MCP Server
+
+After installing the Slack app app, connect Slackbot to the Mulesoft Platform MCP server to answer questions about the MuleSoft platform.
+
+. Open up Slackbot.
+. Click the Slackbot logo again.
+. Click *Integrations*.
+. Click *Connect* next to *MuleSoft Platform - MCP* and sign into Anypoint Platform.
++
+Slackbot can now access information from the MCP Platform Server.
 
 == Begin Using the MuleSoft Agent
 
@@ -27,7 +38,7 @@ You may need Slack admin permissions to install this app in your organization's 
 . Use the app your MuleSoft administrator added.
 +
 The display name is set during installation.
-. Begin using slash commands or message the agent (`@MuleSoft Agent`) in your Slack workspace.
+. Begin using slash commands or message the agent (`@MuleSoft`) in your Slack workspace.
 . If it is your first time using the agent, follow the authentication flow when prompted to connect your Anypoint account to Slack.
 
 == MuleSoft Agent Available Slash Commands
@@ -52,6 +63,7 @@ You can use the MuleSoft Agent to perform these platform tasks in Slack:
 * *Find services by capability*: Use natural-language search to discover APIs, agents, LLMs, and MCP servers.
 * *Run governance, monitoring, and cost drill-ins*: Generate governance, monitoring, and cost reports on request.
 * *Take governance actions*: Apply policies and apply cost management recommendations.
+
 
 
 == See Also
