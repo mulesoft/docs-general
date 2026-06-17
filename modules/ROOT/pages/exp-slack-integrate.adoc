@@ -23,12 +23,12 @@ You may need Slack admin permissions to install this app in your organization's 
 
 == Connect Slackbot to the Mulesoft Platform MCP Server
 
-After installing the Slack app app, connect Slackbot to the xref:mulesoft-mcp-server::getting-started-platform.adoc[Mulesoft Platform MCP server] to answer questions about the MuleSoft platform.
+After installing the Slack app app, connect Slackbot to the xref:mulesoft-mcp-server::getting-started-platform.adoc[Mulesoft Platform MCP Server] to answer questions about the MuleSoft platform.
 
-. Open up Slackbot.
+. Open Slackbot.
 . Click the Slackbot logo again.
 . Click *Integrations*.
-. Click *Connect* next to *MuleSoft Platform - MCP* and sign into Anypoint Platform.
+. Click *Connect* for *MuleSoft Platform - MCP* and sign in to Anypoint Platform.
 +
 Slackbot can now access information from the MCP Platform Server.
 
