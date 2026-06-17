@@ -23,7 +23,7 @@ You may need Slack admin permissions to install this app in your organization's 
 
 == Connect Slackbot to the Mulesoft Platform MCP Server
 
-After installing the Slack app app, connect Slackbot to the Mulesoft Platform MCP server to answer questions about the MuleSoft platform.
+After installing the Slack app app, connect Slackbot to the xref:mulesoft-mcp-server::getting-started-platform.adoc[Mulesoft Platform MCP server] to answer questions about the MuleSoft platform.
 
 . Open up Slackbot.
 . Click the Slackbot logo again.
