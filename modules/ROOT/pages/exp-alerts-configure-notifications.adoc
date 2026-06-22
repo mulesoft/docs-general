@@ -57,9 +57,9 @@ To create an alert:
 
 . Select an *Alert Metric* from the dropdown (Request Count, Response Time, Response Code, or Policy Violation).
 . Configure the alert condition:
-** Choose a comparison operator (such as `>` for greater than)
-** Enter the threshold value
-** Select the time window ( 5 min, 10 min, 15 min, 20 min)
+** Choose a comparison operator (such as `>` for greater than).
+** Enter the threshold value.
+** Select the time window ( 5 min, 10 min, 15 min, 20 min).
 +
 The alert triggers when the metric satisfies the comparison for the selected duration.
 
@@ -73,11 +73,11 @@ The alert triggers when the metric satisfies the comparison for the selected dur
 +
 This name appears in the notification list and email subjects.
 . Configure *Delivery Channels*:
-** Toggle *Email* on or off to send alerts to email addresses
+** Toggle *Email* on or off to send alerts to email addresses.
 ** Toggle *Slack* on or off to send alerts to Slack if enabled.
 . If *Slack* is enabled, select your delivery destination:
-** Choose a Slack channel from your workspace
-** Or select a direct message recipient
+** Choose a Slack channel from your workspace.
+** Or select a direct message recipient.
 . Click *Create Alert* to save.
 
 == Edit an Existing Alert
@@ -88,9 +88,9 @@ To modify an existing alert:
 . Locate the alert you want to modify.
 . Click to edit the alert.
 . Update any section as needed:
-** *Select Alert Target*: Change the environment, service type, target service, or API instance
-** *Specify Alert Configuration*: Modify the metric, condition, threshold, or time window
-** *Set Alert Delivery*: Change severity, alert name, or delivery channels (Email, Slack)
+** *Select Alert Target*: Change the environment, service type, target service, or API instance.
+** *Specify Alert Configuration*: Modify the metric, condition, threshold, or time window.
+** *Set Alert Delivery*: Change severity, alert name, or delivery channels (Email, Slack).
 . Save your changes.
 
 == How Alerts Appear in Slack
