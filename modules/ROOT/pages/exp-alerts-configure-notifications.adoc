@@ -1,6 +1,6 @@
 = Configure Notifications for Alerts
 
-Route API and runtime alerts from Anypoint Platform into channels your team monitors, such as email, Slack, or ticketing integrations your administrator configured. Connect alerts to the enhanced experience so responders can jump directly from a signal into *Portfolio* or *Observability*.
+Route API and runtime alerts from Anypoint Platform into email or Slack. Connect alerts to the enhanced experience so responders can jump directly from a signal into *Portfolio* or *Observability*.
 
 Delivery channels and alert types depend on API Manager, Runtime Manager, and any add-on connectors your organization purchased. You configure the subscription side in those products; the enhanced experience surfaces links and context when your entry path integrates them.
 
@@ -52,3 +52,68 @@ xref:exp-services-monitoring.adoc[Monitoring] explains how service-level signals
 * xref:exp-services-view-detailed-metrics.adoc[]
 * xref:exp-home-start.adoc[]
 * xref:exp-overview.adoc[]
+
+'''
+
+== MuleSoft for Slack: Platform Access Where Your Team Works
+
+Many platform tasks start with a message: an alert fires, a service is down, an agent triggers a notification, or someone asks what changed. Those conversations often happen in Slack before anyone opens a dashboard.
+
+MuleSoft serves as the agent control plane to connect, manage, and govern your apps and AI ecosystem. With MuleSoft for Slack, platform context arrives in the channels where your teams already make decisions.
+
+=== Capabilities
+
+MuleSoft for Slack includes three capabilities:
+
+==== Native Alerts in Slack
+
+The alerts you configure in MuleSoft to monitor your apps, integrations, and agents now deliver directly to channels and DMs. Teams see them in one place and make decisions on triaging and fixing where they already work, eliminating the need to check email inboxes.
+
+==== MuleSoft's Platform MCP Server in Slackbot
+
+MCP servers provide AI assistants with structured, permission-scoped access to your platform's tools and data. After you install the MuleSoft App for Slack and connect the MuleSoft Platform MCP server through Slackbot's Integrations tab, Slackbot can:
+
+* Answer questions about your MuleSoft environment
+* Surface relevant assets
+* Display structured cards for taking action
+
+Slackbot's native capabilities (skills, web search, Slack context) combine with full MuleSoft platform awareness.
+
+Setup is minimal: install the MuleSoft Slack app, connect the MuleSoft Platform MCP Server in Slackbot's Integrations tab, and you're live.
+
+==== MuleSoft Agent for Slack (Limited Availability)
+
+Users ask questions about the platform in natural language, receive scoped answers, and take action from a prompt. MuleSoft Agent is releasing with limited availability. Contact your account executive to enable it for free in your organization.
+
+=== Example Workflow
+
+A team receives a notification in a team Slack channel that an API exceeds accepted 404 error thresholds. In the same channel, they ask MuleSoft Agent to pull up related service details and check governance policies. With all the information in one place, the team can coordinate a fix and even ask MuleSoft Agent to implement it. No one switches tools or forwards an email.
+
+With easier access from familiar tools, your broader organization can discover APIs, catalog agents and MCP servers, and see what's available without learning a new interface.
+
+=== Getting Started
+
+To get started, ask your MuleSoft administrator to:
+
+. Navigate to the notifications settings within the enhanced experience.
+. Install the MuleSoft for Slack app by clicking *Connect*. Your Slack Workspace administrator may need to approve the app.
+. After the connection completes, configure existing alerts and notifications to send to specific Slack channels or DMs alongside email, connect the MCP to Slackbot, and ask MuleSoft questions in natural language.
+
+Setting up alerts in the enhanced experience:
+
+. Navigate to the *Notifications* tab to view all alerts for APIs, MCPs, Agents, and LLMs.
+. Filter by alert type, severity, or delivery channel.
+. To add Slack as a delivery channel:
+.. Install the MuleSoft Slack app into your workspace.
+.. Create a new alert or edit an existing alert in the Notifications page.
+.. Toggle on *Slack* and select the channel or MuleSoft DM to receive the alert.
+
+For customers collaborating on Microsoft Teams, the same functionalities for sending notifications, asking questions, and taking action are coming soon.
+
+=== Consistent Assets Across Surfaces
+
+A developer might use Windsurf or Claude Desktop to discover an API and review its governance status. Later, a platform team might receive a Slack alert about that same API, pull up context, and act from the channel. An agent might use the MCP server to find an approved tool or inspect an MCP server. A developer might use Slack to review the alert and decide what to do.
+
+The surface changes, but the underlying MuleSoft assets and controls stay connected.
+
+When users access MuleSoft from Claude, MuleSoft Vibes, Slack, or other tools, MuleSoft still manages the permissions, policies, monitoring, and governance. The experience changes, but the control model stays the same. Teams get flexibility in how they access the platform while IT maintains a single control model—no shadow access, no fragmented permissions.

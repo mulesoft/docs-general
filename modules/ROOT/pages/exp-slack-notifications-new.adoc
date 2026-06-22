@@ -1,0 +1,104 @@
+= Configure Slack Notifications for Alerts
+
+Send API Manager alerts from Anypoint Platform directly to Slack channels and email. Configure alerts in the enhanced experience so teams can see notifications where they work and jump directly into *Portfolio* or *Observability* to respond.
+
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account
+* Access to the enhanced experience at omni.mulesoft.com
+* Any of these permissions to view alerts:
++
+--
+** API Manager: View API Alerts
+--
++
+* Any of these permissions to manage alerts:
++
+--
+** API Manager: Manage API Alerts
+--
++
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+
+* Before you can send alerts to Slack, your MuleSoft administrator must install the MuleSoft Slack app.
++
+To install the MuleSoft Slack app, see xref:exp-slack-integrate.adoc[].
+
+== View and Manage Alerts
+
+The enhanced experience provides a unified view of all your alerts:
+
+. Navigate to the *Notifications* tab in the enhanced experience.
+. View all alerts for APIs, MCPs, Agents, and LLMs in one place.
+. Filter alerts by:
+** Alert type (request count, response time, response codes, and policy violation)
+** Severity level (critical, warning, informational)
+** Delivery channel (Slack, email, both)
+
+== Configure Slack Delivery for Alerts
+
+After installing the MuleSoft Slack app, you can configure alerts to deliver to Slack channels or direct messages:
+
+=== Create a New Alert with Slack Delivery
+
+. Navigate to the *Notifications* page in the enhanced experience.
+. Click *Create Alert* or *New Alert*.
+. Configure the alert parameters:
+** Select the asset type (API, MCP, Agent, or LLM)
+** Choose the specific asset to monitor
+** Define alert conditions and severity thresholds
+. In the delivery section, toggle on *Slack*.
+. Select the destination:
+** Choose a Slack channel from your workspace
+** Or select a MuleSoft DM for direct messages
+. Configure email delivery if desired (optional).
+. Save the alert.
+
+=== Edit an Existing Alert to Add Slack Delivery
+
+. Navigate to the *Notifications* page in the enhanced experience.
+. Locate the alert you want to modify.
+. Click to edit the alert.
+. In the delivery section, toggle on *Slack*.
+. Select the Slack channel or MuleSoft DM to receive the alert.
+. Save your changes.
+
+== How Alerts Appear in Slack
+
+When an alert triggers, your team receives a notification directly in the configured Slack channel or DM:
+
+* Alerts display key information about the condition that triggered them
+* Teams can see and respond to alerts where they already collaborate
+* Alerts include context to help with triage and decision-making
+* No need to check email inboxes or switch to the platform console
+
+== Alert Severity and Routing
+
+Map alerts to appropriate channels based on severity to reduce noise:
+
+* *Critical alerts*: Route to high-priority channels monitored by on-call teams
+* *Warning alerts*: Send to team channels for awareness and investigation
+* *Informational alerts*: Deliver to lower-traffic channels or aggregated reporting channels
+
+This routing strategy ensures teams see the most important signals first without alert fatigue.
+
+== Access Across Surfaces
+
+MuleSoft assets and controls stay connected regardless of where you access them:
+
+* A developer might discover an API and review its governance in Claude Desktop
+* A platform team might receive a Slack alert about that same API and respond from the channel
+* An agent might use the MCP server to inspect the API's configuration
+* All access follows the same permission model and governance controls
+
+The surface changes, but the underlying MuleSoft platform manages permissions, policies, monitoring, and governance consistently. Teams get flexibility in how they access the platform while IT maintains a single control model—no shadow access, no fragmented permissions.
+
+
+== See Also
+
+* xref:exp-services-monitoring.adoc[]
+* xref:exp-services-view-detailed-metrics.adoc[]
+* xref:exp-home-start.adoc[]
+* xref:exp-overview.adoc[]
