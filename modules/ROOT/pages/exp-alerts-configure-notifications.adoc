@@ -1,50 +1,117 @@
 = Configure Notifications for Alerts
 
-Route API and runtime alerts from Anypoint Platform into channels your team monitors, such as email, Slack, or ticketing integrations your administrator configured. Connect alerts to the enhanced experience so responders can jump directly from a signal into *Portfolio* or *Observability*.
-
-Delivery channels and alert types depend on API Manager, Runtime Manager, and any add-on connectors your organization purchased. You configure the subscription side in those products; the enhanced experience surfaces links and context when your entry path integrates them.
+Send API Manager alerts from Anypoint Platform directly to Slack channels and email. Configure alerts in the enhanced experience so teams can see notifications where they work and jump directly into *Portfolio* or *Observability* to respond.
 
 == Before You Begin
 
 Before getting started, make sure you have:
 
-* An Anypoint Platform account.
+* An Anypoint Platform account
+* Access to the enhanced experience at omni.mulesoft.com
 * Any of these permissions to view alerts:
 +
 --
 ** API Manager: View API Alerts
-** Runtime Manager: Read Alerts
 --
 +
 * Any of these permissions to manage alerts:
 +
 --
 ** API Manager: Manage API Alerts
-** Runtime Manager: Manage Alerts
 --
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
-== Alert Configuration
+* The MuleSoft Slack app installed in your workspace (see xref:exp-slack-integrate.adoc[] for installation steps)
 
-* Who receives alerts
+== View and Manage Alerts
+
+The enhanced experience provides a unified view of all your alerts:
+
+. Navigate to the *Notifications* tab in the enhanced experience.
+. View all alerts for APIs, MCPs, Agents, and LLMs in one place.
+. Filter alerts by:
+** Alert type (request count, response time, response codes, and policy violation)
+** Severity level (critical, warning, informational)
+** Delivery channel (Slack, email, both)
+
+== Create an Alert
+
+To create an alert:
+
+. Navigate to the *Notifications* page in the enhanced experience at omni.mulesoft.com.
+. Click *Create Alert*.
+
+=== Select Alert Target
+
+. Select your *Environment* from the dropdown.
+. Choose a *Service Type*:
+** *API*
+** *LLM*
+** *MCP*
+** *Agent*
+. In the *Target Service* field, search for and select the specific service to monitor.
+. If available for your service type, select an *API instance* from the dropdown.
+
+=== Specify Alert Configuration
+
+. Select an *Alert Metric* from the dropdown (Request Count, Response Time, Response Code, or Policy Violation).
+. Configure the alert condition:
+** Choose a comparison operator (such as `>` for greater than).
+** Enter the threshold value.
+** Select the time window ( 5 min, 10 min, 15 min, 20 min).
 +
-Assign viewers or managers for API alerts in API Manager and for runtime alerts in Runtime Manager.
-* Severity and routing
+The alert triggers when the metric satisfies the comparison for the selected duration.
+
+=== Set Alert Delivery
+
+. Select a *Severity* level:
+** *Critical*
+** *Warning*
+** *Info*
+. Enter an *Alert Name* (minimum 4 characters).
 +
-Map critical alerts to high-priority channels and informational alerts to lower-noise destinations to reduce noise for your team.
-* Deep links
-+
-When your organization uses Slack or another integrated client, follow notifications back into the enhanced experience using the shortcuts your administrator enabled.
+This name appears in the notification list and email subjects.
+. Configure *Delivery Channels*:
+** Toggle *Email* on or off to send alerts to email addresses.
+** Toggle *Slack* on or off to send alerts to Slack if enabled.
+. If *Slack* is enabled, select your delivery destination:
+** Choose a Slack channel from your workspace.
+** Or select a direct message recipient.
+. Click *Create Alert* to save.
 
-Find detailed steps in the
-xref:runtime-manager::alerts-on-runtime-manager.adoc[Runtime Manager alerts] and
-xref:api-manager::add-api-alert-task.adoc[API Manager instance alerts] documentation.
+== Edit an Existing Alert
 
-== Relate Alerts to Portfolio Work
+To modify an existing alert:
 
-When an alert references a service you govern in the enhanced experience, open the service from *Portfolio* and review *Monitoring*, *Policies*, and *Instances* together.
-xref:exp-services-monitoring.adoc[Monitoring] explains how service-level signals relate to organization-wide observability.
+. Navigate to the *Notifications* page in the enhanced experience.
+. Locate the alert you want to modify.
+. Click to edit the alert.
+. Update any section as needed:
+** *Select Alert Target*: Change the environment, service type, target service, or API instance.
+** *Specify Alert Configuration*: Modify the metric, condition, threshold, or time window.
+** *Set Alert Delivery*: Change severity, alert name, or delivery channels (Email, Slack).
+. Save your changes.
+
+== How Alerts Appear in Slack
+
+When an alert triggers, your team receives a notification directly in the configured Slack channel or DM:
+
+* Alerts display key information about the condition that triggered them
+* Teams can see and respond to alerts where they already collaborate
+* Alerts include context to help with triage and decision-making
+* No need to check email inboxes or switch to the platform console
+
+== Alert Severity and Routing
+
+Map alerts to appropriate channels based on severity to reduce noise:
+
+* *Critical alerts*: Route to high-priority channels monitored by on-call teams
+* *Warning alerts*: Send to team channels for awareness and investigation
+* *Informational alerts*: Deliver to lower-traffic channels or aggregated reporting channels
+
+This routing strategy ensures teams see the most important signals first without alert fatigue.
+
 
 == See Also
 
