@@ -30,6 +30,9 @@ If you need a metric that doesn't appear, ask your platform team whether the int
 * Baseline after changes
 +
 Capture before-and-after windows when you deploy instances or change policies so you can attribute shifts.
+* Align with alerts
++
+Pair detailed charts with xref:exp-alerts-configure-notifications.adoc[alert notifications] so on-call engineers go to the right place.
 * Respect data boundaries
 +
 Some dimensions might be redacted or aggregated for privacy. Follow your organization's data-handling standards.
@@ -37,5 +40,6 @@ Some dimensions might be redacted or aggregated for privacy. Follow your organiz
 == See Also
 
 * xref:exp-services-monitoring.adoc[]
+* xref:exp-alerts-configure-notifications.adoc[]
 * xref:exp-services-view-details.adoc[]
 * xref:exp-overview.adoc[]
