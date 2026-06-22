@@ -14,7 +14,7 @@ Cost and Usage Signals for AI Operations:: The experience includes cost manageme
 Instance-Level Policy Control:: For instances backed by Omni Gateway where the product supports it, the experience elevates instance-level governance, including options to tune policy order and draw from a named policy catalog. Use the enhanced experience when you need fine-grained control in the portfolio UI, and use the deeper runtime-only workflows in Anypoint Platform when the experience links you there.
 Provider Breadth for AI Connections:: *Platform* includes *Providers* and related configuration so the experience can connect AI and integration services across multiple vendors, such as AWS Bedrock and Google Vertex AI, in addition to your existing MuleSoft footprint. The interface supports multi-vendor AI stacks without forcing each vendor's console to be your only view.
 Managed and Unmanaged Instances:: The experience supports creating managed instances on Omni Gateway when you want full support paths including authentication and monitoring, or unmanaged-style instances when you want a lighter footprint. Select the model per asset and gateway strategy.
-// Assistant Across the Portfolio:: The in-product Ask MuleSoft assistant targets setup, questions, and recommendations across the services the experience tracks. The classic Anypoint Platform control plane doesn't provide that same assistant-led experience.
+Assistant Across the Portfolio:: The in-product MuleSoft Agent assistant targets setup, questions, and recommendations across the services the experience tracks. The classic Anypoint Platform control plane doesn't provide that same assistant-led experience.
 
 == Task Management by Platform
 
