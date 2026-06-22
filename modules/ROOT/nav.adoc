@@ -46,6 +46,7 @@
 * xref:usage-reports.adoc[Usage Reports]
   ** xref:usage-reports-release-notes.adoc[Release Notes]
   ** xref:usage-metrics.adoc[Usage and Pricing Metrics Reference]
+  ** xref:ai-features-and-data-usage.adoc[]
   ** xref:pricing.adoc[Pricing]
   ** xref:mule-credits-usage-and-rates.adoc[]
   ** xref:automation-credits-usage-and-rates.adoc[]
@@ -60,4 +61,5 @@
 * xref:browser-support.adoc[Browser Support]
 * https://dev-portal.mulesoft.com[MuleSoft Developer Hub]
 * xref:glossary.adoc[Glossary]
+* xref:use-mulesoft-docs-with-ai.adoc[Use MuleSoft Documentation with AI]
 * xref:contribute.adoc[Contribute to MuleSoft Documentation]

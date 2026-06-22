@@ -16,7 +16,7 @@ Cost and Performance Optimization:: Monitor token usage, per-instance signals, a
 
 Instance Management:: Create and review instances for supported asset types. Choose managed paths through Omni Gateway when you need deeper monitoring and policy enforcement, or choose lighter models when that matches your operating model.
 
- AI Assistant (Ask MuleSoft):: Get help navigating, searching, and managing your portfolio through natural language conversations. The AI assistant provides context-aware guidance, performs actions with your confirmation, and suggests next steps based on your current task. Available from every page in the enhanced experience.
+AI Assistant (MuleSoft Agent):: Get help navigating, searching, and managing your portfolio through natural language conversations. The AI assistant provides context-aware guidance, performs actions with your confirmation, and suggests next steps based on your current task. Available from every page in the enhanced experience.
 
 == Enhanced Experience High-Level Workflow
 
