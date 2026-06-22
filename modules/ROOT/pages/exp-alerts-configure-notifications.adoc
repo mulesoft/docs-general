@@ -41,8 +41,6 @@ To create an alert:
 
 . Navigate to the *Notifications* page in the enhanced experience at omni.mulesoft.com.
 . Click *Create Alert*.
-+
-The alert creation wizard opens with three sections: Select Alert Target, Specify Alert Configuration, and Set Alert Delivery.
 
 === Select Alert Target
 
@@ -57,13 +55,13 @@ The alert creation wizard opens with three sections: Select Alert Target, Specif
 
 === Specify Alert Configuration
 
-. Select an *Alert Metric* from the dropdown (for example, Request Count, Response Time, Response Code, or Policy Violation).
+. Select an *Alert Metric* from the dropdown (Request Count, Response Time, Response Code, or Policy Violation).
 . Configure the alert condition:
 ** Choose a comparison operator (such as `>` for greater than)
 ** Enter the threshold value
-** Select the time window (for example, 5 min, 10 min, 15 min)
+** Select the time window ( 5 min, 10 min, 15 min, 20 min)
 +
-The alert fires when the metric satisfies the comparison continuously for the selected duration.
+The alert triggers when the metric satisfies the comparison for the selected duration.
 
 === Set Alert Delivery
 
