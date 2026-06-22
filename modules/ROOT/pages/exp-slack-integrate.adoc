@@ -34,6 +34,13 @@ Slackbot can now access information from the MCP Platform Server.
 
 == Begin Using the MuleSoft Agent
 
+[NOTE]
+====
+Manage your MuleSoft environment with MuleSoft Agent, an agentic experience available in the control plane. Use MuleSoft Agent to create scanners, apply policies, deploy instances, and perform other management tasks.
+
+To request access, contact your account executive.
+====
+
 . Open Slack in the workspace your company uses for MuleSoft or platform notifications.
 . Use the app your MuleSoft administrator added.
 +
