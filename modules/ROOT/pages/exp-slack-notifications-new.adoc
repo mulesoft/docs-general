@@ -22,9 +22,7 @@ Before getting started, make sure you have:
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
-* Before you can send alerts to Slack, your MuleSoft administrator must install the MuleSoft Slack app.
-+
-To install the MuleSoft Slack app, see xref:exp-slack-integrate.adoc[].
+* The MuleSoft Slack app installed in your workspace (see xref:exp-slack-integrate.adoc[] for installation steps)
 
 == View and Manage Alerts
 
@@ -37,32 +35,64 @@ The enhanced experience provides a unified view of all your alerts:
 ** Severity level (critical, warning, informational)
 ** Delivery channel (Slack, email, both)
 
-== Configure Slack Delivery for Alerts
+== Create an Alert
 
-After installing the MuleSoft Slack app, you can configure alerts to deliver to Slack channels or direct messages:
+To create an alert:
 
-=== Create a New Alert with Slack Delivery
+. Navigate to the *Notifications* page in the enhanced experience at omni.mulesoft.com.
+. Click *Create Alert*.
++
+The alert creation wizard opens with three sections: Select Alert Target, Specify Alert Configuration, and Set Alert Delivery.
 
-. Navigate to the *Notifications* page in the enhanced experience.
-. Click *Create Alert* or *New Alert*.
-. Configure the alert parameters:
-** Select the asset type (API, MCP, Agent, or LLM)
-** Choose the specific asset to monitor
-** Define alert conditions and severity thresholds
-. In the delivery section, toggle on *Slack*.
-. Select the destination:
+=== Select Alert Target
+
+. Select your *Environment* from the dropdown.
+. Choose a *Service Type*:
+** *API*
+** *LLM*
+** *MCP*
+** *Agent*
+. In the *Target Service* field, search for and select the specific service to monitor.
+. If available for your service type, select an *API instance* from the dropdown.
+
+=== Specify Alert Configuration
+
+. Select an *Alert Metric* from the dropdown (for example, Request Count, Response Time, Response Code, or Policy Violation).
+. Configure the alert condition:
+** Choose a comparison operator (such as `>` for greater than)
+** Enter the threshold value
+** Select the time window (for example, 5 min, 10 min, 15 min)
++
+The alert fires when the metric satisfies the comparison continuously for the selected duration.
+
+=== Set Alert Delivery
+
+. Select a *Severity* level:
+** *Critical*
+** *Warning*
+** *Info*
+. Enter an *Alert Name* (minimum 4 characters).
++
+This name appears in the notification list and email subjects.
+. Configure *Delivery Channels*:
+** Toggle *Email* on or off to send alerts to email addresses
+** Toggle *Slack* on or off to send alerts to Slack if enabled.
+. If *Slack* is enabled, select your delivery destination:
 ** Choose a Slack channel from your workspace
-** Or select a MuleSoft DM for direct messages
-. Configure email delivery if desired (optional).
-. Save the alert.
+** Or select a direct message recipient
+. Click *Create Alert* to save.
 
-=== Edit an Existing Alert to Add Slack Delivery
+== Edit an Existing Alert
+
+To modify an existing alert:
 
 . Navigate to the *Notifications* page in the enhanced experience.
 . Locate the alert you want to modify.
 . Click to edit the alert.
-. In the delivery section, toggle on *Slack*.
-. Select the Slack channel or MuleSoft DM to receive the alert.
+. Update any section as needed:
+** *Select Alert Target*: Change the environment, service type, target service, or API instance
+** *Specify Alert Configuration*: Modify the metric, condition, threshold, or time window
+** *Set Alert Delivery*: Change severity, alert name, or delivery channels (Email, Slack)
 . Save your changes.
 
 == How Alerts Appear in Slack
@@ -83,17 +113,6 @@ Map alerts to appropriate channels based on severity to reduce noise:
 * *Informational alerts*: Deliver to lower-traffic channels or aggregated reporting channels
 
 This routing strategy ensures teams see the most important signals first without alert fatigue.
-
-== Access Across Surfaces
-
-MuleSoft assets and controls stay connected regardless of where you access them:
-
-* A developer might discover an API and review its governance in Claude Desktop
-* A platform team might receive a Slack alert about that same API and respond from the channel
-* An agent might use the MCP server to inspect the API's configuration
-* All access follows the same permission model and governance controls
-
-The surface changes, but the underlying MuleSoft platform manages permissions, policies, monitoring, and governance consistently. Teams get flexibility in how they access the platform while IT maintains a single control model—no shadow access, no fragmented permissions.
 
 
 == See Also
