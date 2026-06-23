@@ -58,7 +58,7 @@ This is the recommended parent POM for all new extensions and for existing exten
 +
 For migration instructions, see xref:mule-sdk::forward-compatibility-setup.adoc#upgrading-existing-modules[Upgrading Existing Modules].
 +
-NOTE: Switching parent POMs for existing connectors may not be straightforward depending on the connector’s complexity. If you need to upgrade with minimal changes, you can continue to use `mule-modules-parent` as described below.
+NOTE: Switching parent POMs for existing connectors may not be straightforward depending on the connector’s complexity. If you must upgrade with minimal changes, you can continue to use `mule-modules-parent` as described below.
 
 ** `mule-modules-parent` (deprecated)
 +
