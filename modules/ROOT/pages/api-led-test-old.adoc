@@ -26,7 +26,7 @@ image:validation-module.png[View of Mule Palette with the Validation module sele
 image:validate-size.png[Validate size dropped into GET module]
 . Click *Validate size* to display the *General* configuration tab.
 +
-image:configure-validate.png[Validate size configuration tab]
+image:configure-validate.png["Validate size configuration panel showing a tab interface with input fields for size validation settings"]
 . Set these values in the *General* tab:
   .. *Value*: Click the *fx* button to change from literal mode to expression mode, and then enter `payload` after the characters in the text box. Notice the closing bracket is supplied for you.
   .. *Min*: `6`
@@ -91,7 +91,11 @@ Now you'll add an error handler for the validation you've set up.
 
 . In Studio *Mule Palette*, select *Core > On Error Propagate*, and then drag the error handler on to *Error handling* in *get:\greeting:hello-world-app-config*.
 +
-image:on-error.png[Adding an error handler to GET module and configuring it]
+image:on-error.png["I can see a MuleSoft Studio configuration screenshot showing an error handler being added to a GET flow with configuration settings visible.
+
+**Alt text:**
+
+Error handler configuration panel in Anypoint Studio showing a GET flow with On Error Continue component, Error Type field set to ANY, and Enable Notifications checkbox unchecked"]
 . In the *General* configuration tab, configure the error handler:
   ** *Display Name:* `On Error Propagate`
   ** *Type:* Click the search icon and select *VALIDATION:INVALID_SIZE*.

@@ -112,11 +112,11 @@ To test the API specification:
 +
 link:https://anypoint.mulesoft.com/designcenter/#/projects["Take me to API Designer^" role="button-primary"]
 +
-image:api-spec1.png[Completed specification]
+image:api-spec1.png["Annotated API specification editor showing RAML code with response types, query parameters, and examples in a dark-themed interface"]
 +
 . Click the Documentation icon if the Documentation panel isn't already open.
 +
-image:api-documentation-icon.png[API Designer Documentation icon]
+image:api-documentation-icon.png["Documentation icon showing a book with a magnifying glass overlay, representing API documentation search or reference"]
 +
 . Look for the label *API endpoints*. You can see the endpoint you defined. HTTP requests appear in green boxes.
 +
@@ -128,17 +128,17 @@ image:code-response1.png[Response field, 500]
 . Click the *200* and *404* tabs to review the responses defined in the API specification.
 . Click the *Try it* button:
 +
-image:try-it.png[The Try It button, 500]
+image:try-it.png["Try It button highlighted in the API Console panel with a dark background and white text", 500]
 . Click *Send* to send your request to the temporary request URL that the mocking service creates from your specification.
 +
 It's safe to ignore any error messages on this screen. A successful request returns `200 OK` and the test message:
 +
-image:successful-test1.png[Results of a successful test, 500]
+image:successful-test1.png["Successful API test results showing 200 status code, response time, and green checkmark indicators in Anypoint Platform", 500]
 . Select *Response details* in the more (...) menu to examine the response headers and request headers in the mocking service to help diagnose issues or understand the behavior of your API specification.
 . When you finish testing, open the *Mocking Service Configuration* panel.
 . In *Local Settings*, enable *Select By Default*.
 +
-image:api-mocking-service-configuration-icon.png[Mocking service icon]
+image:api-mocking-service-configuration-icon.png["Mocking service configuration icon button in the API design toolbar, showing a toggle/switch UI control"]
 
 == Step 2.4. Publish Your API Specification
 
@@ -150,7 +150,7 @@ link:https://anypoint.mulesoft.com/designcenter/#/projects["Take me to API Desig
 . Click *Publish*.
 . In the *Publishing to Exchange* dialog, accept the defaults and click *Publish to Exchange*:
 +
-image:publish-to-exchange1.png[User interface for publishing to Exchange, 500]
+image:publish-to-exchange1.png["Publish API to Exchange dialog showing API Name, Asset Version, API Version fields and Save button", 500]
 +
 . Click *Close* in the confirmation dialog.
 

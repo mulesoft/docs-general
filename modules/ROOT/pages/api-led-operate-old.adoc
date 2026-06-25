@@ -6,7 +6,7 @@ endif::[]
 
 MuleSoft provides tools to help you manage your deployed APIs.
 
-image::runtime-overview.png[Runtime Manager user interface showing the Dashboard]
+image::runtime-overview.png["Runtime Manager dashboard with list of deployed applications showing name, status, server, and last modified columns"]
 
 To check the health of your API:
 
