@@ -1,6 +1,6 @@
 = Working with Governance Strategies
 
-Use governance strategies to apply rules and policies across agents, APIs, MCP servers, LLM proxies, and gateways. You can create, manage, and monitor strategies when your tenant includes *Governance* and your account has the required role. Use strategies to validate service compliance, automate runtime enforcement, and maintain visibility as your portfolio grows.
+Use governance strategies to apply conformance rules and policies across agents, APIs and MCP servers. When your tenant includes *Governance* and your account has the required role, you can create, manage, and monitor these strategies to validate service design compliance, automate runtime enforcement, and maintain visibility as your portfolio grows.
 
 
 == Before You Begin
