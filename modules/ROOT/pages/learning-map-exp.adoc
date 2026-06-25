@@ -65,7 +65,7 @@ Secure instances with compatible policies across your entire registry.
 - xref:exp-instances-add.adoc[]
 - xref:exp-governance-work-with-strategies.adoc[]
 
-| image::lm_analyze_1.png[]
+| image::lm_analyze_1.png[""]
 [.lm-bold]##Transcode##
 
 Transcode existing REST APIs into MCP servers instantly.
