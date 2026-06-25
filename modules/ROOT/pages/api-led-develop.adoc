@@ -96,7 +96,7 @@ Now add the logic to return your greeting.
 
 . Navigate to the *get:\greeting:hello-world-api-config* flow in the canvas.
 +
-image::api-tutorial-api-config-flow-acb.png[The get:\greeting:hello-world-api-config flow highlighted in the flow list]
+image::api-tutorial-api-config-flow-acb.png["get:\greeting:hello-world-api-config flow highlighted in the Anypoint Code Builder flow list panel"]
 +
 The flow contains a *Logger* component by default. You'll add a *Transform* component after it to return your greeting.
 
