@@ -32,16 +32,16 @@ image::api-tutorial-implement-prompt.png["Prompt: We'll create a workspace to ke
 +
 [IMPORTANT]
 --
-Don't accept the default location. The default saves the `.code-workspace` file inside your `hello-world-api` spec folder, which causes errors. You must save it one level up — in your home directory — so it sits alongside (not inside) your projects.
+Don't accept the default location. The default saves the `.code-workspace` file inside your `hello-world-api` spec folder, which causes errors. You must save it one level up â in your home directory â so it sits alongside (not inside) your projects.
 --
 +
 For example, if you created your API spec in `~/hello-world-api/`, navigate up to `~` (your home directory) and save the file there. Your folder structure should look like this:
 +
 ----
 ~/ (home directory)
-├── hello-world-api/          <- your API spec project
-│   └── hello-world-api.yaml
-└── hello-world.code-workspace  <- save the file HERE
+âââ hello-world-api/          <- your API spec project
+â   âââ hello-world-api.yaml
+âââ hello-world.code-workspace  <- save the file HERE
 ----
 
 . When prompted, provide project configuration details:
@@ -54,10 +54,10 @@ This is where Anypoint Code Builder creates the `hello-world-impl` project folde
 +
 ----
 ~/ (home directory)
-├── hello-world-api/          <- API spec project
-│   └── hello-world-api.yaml
-├── hello-world-impl/         <- implementation project (created here)
-└── hello-world.code-workspace
+âââ hello-world-api/          <- API spec project
+â   âââ hello-world-api.yaml
+âââ hello-world-impl/         <- implementation project (created here)
+âââ hello-world.code-workspace
 ----
 .. Select a Mule runtime version for the project.
 .. Select a Java version for the project.
@@ -96,7 +96,7 @@ Now add the logic to return your greeting.
 
 . Navigate to the *get:\greeting:hello-world-api-config* flow in the canvas.
 +
-image::api-tutorial-api-config-flow-acb.png[The get:\greeting:hello-world-api-config flow highlighted in the flow list]
+image::api-tutorial-api-config-flow-acb.png["get:\greeting:hello-world-api-config flow highlighted in the Anypoint Code Builder flow list panel",The get:\greeting:hello-world-api-config flow highlighted in the flow list]
 +
 The flow contains a *Logger* component by default. You'll add a *Transform* component after it to return your greeting.
 
