@@ -32,7 +32,7 @@ You can also check whether an API spec with the same objectives isn't already in
 Looking for an API spec that already does what you need is easy:
 
 . Look at the public Anypoint Exchange, which is a portal hosted by MuleSoft that contains API specs, connectors, and other assets that you can download and use.
-You’ll see some of the most popular API specs, connectors, and other assets displayed on the landing page.
+Youâll see some of the most popular API specs, connectors, and other assets displayed on the landing page.
 +
 link:https://www.mulesoft.com/exchange[Take me to Exchange]
 +
@@ -185,7 +185,7 @@ Use the Mocking Service in the API Console to test your spec before implementing
 
 . With `hello-world-api.yaml` still open, click image:icon-api-console.png["",14,14] (*API Console*) in the editor toolbar.
 +
-image:api-tutorial-open-api-console-acb.png[Yaml file is open and API Console icon is selected in the toolbar]
+image:api-tutorial-open-api-console-acb.png[alt="API Console icon highlighted in toolbar while YAML file is open in Anypoint Code Builder API design editor"]
 +
 The API Console displays your spec.
 
