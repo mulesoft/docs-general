@@ -63,7 +63,7 @@ Apply policies to your agents, brokers, LLM proxies, and MCP servers to help man
 - xref:gateway::flex-gateway-managed-ingress-egress.adoc[Deploy Agent Fabric Ingress and Egress Managed Omni Gateways]
 - xref:gateway::flex-gateway-secure-apis.adoc[Secure Omni Gateway Instances with Policies]
 
-| image::lm_analyze_1.png[]
+| image::lm_analyze_1.png[alt=""]
 [.lm-bold]##Observe and Gain Actionable Insights##
 
 Visualize your agent network and monitor performance and behavior.
