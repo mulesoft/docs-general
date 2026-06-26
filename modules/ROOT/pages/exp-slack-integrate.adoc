@@ -74,7 +74,7 @@ Opens the authentication flow to connect your Anypoint account to Slack. If youâ
 
 You can use the MuleSoft Agent to perform these platform tasks in Slack:
 
-* *Receive alerts*: Receive alerts to channels or direct messages (DMs). You can configure notifications to be sent to Slack. For more information, see xref:notifications.adoc[].
+* *Receive alerts*: Receive alerts to channels or direct messages (DMs). You can configure notifications to be sent to Slack. For more information, see xref:exp-alerts-configure-notifications.adoc[].
 * *Find services by capability*: Use natural-language search to discover APIs, agents, LLMs, and MCP servers.
 * *Run governance, monitoring, and cost drill-ins*: Generate governance, monitoring, and cost reports on request.
 * *Take governance actions*: Apply policies and apply cost management recommendations.
