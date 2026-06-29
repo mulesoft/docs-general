@@ -23,10 +23,10 @@ Add the *Validate size* operation to the `hello-world-app` project:
 image:validation-module.png[View of Mule Palette with the Validation module selected]
 . From the list of operations, drag *Validate size* to the Studio canvas and drop it inside the endpoint module to the right of *Set Payload*.
 +
-image:validate-size.png[Validate size dropped into GET module]
+image:validate-size.png["Validate Size module dropped into a GET flow in Anypoint Studio canvas with connected processors"]
 . Click *Validate size* to display the *General* configuration tab.
 +
-image:configure-validate.png["Validate size configuration panel showing a tab interface with input fields for size validation settings"]
+image:configure-validate.png[Validate size configuration tab]
 . Set these values in the *General* tab:
   .. *Value*: Click the *fx* button to change from literal mode to expression mode, and then enter `payload` after the characters in the text box. Notice the closing bracket is supplied for you.
   .. *Min*: `6`
@@ -70,7 +70,7 @@ http://localhost:8081/api/greeting
 Since you configured the *Validate size* operation to have a minimum of 6 characters, this will trigger an error.
 . Click the *Next processor* (curved yellow arrow) above the debugger window.
 +
-image:next-toggle.png[Next processor control to move to next toggle point, 500]
+image:next-toggle.png["Blue circular arrow icon pointing right, used as a navigation control to advance to the next toggle point", 500]
 +
 If you hover over it to ensure you have the correct control, the label *Next processor (F6)* appears. The debugger pane now shows the Logger connector.
 . Click the curved yellow arrow again to move to the *Validate size* operation.
@@ -91,11 +91,7 @@ Now you'll add an error handler for the validation you've set up.
 
 . In Studio *Mule Palette*, select *Core > On Error Propagate*, and then drag the error handler on to *Error handling* in *get:\greeting:hello-world-app-config*.
 +
-image:on-error.png["I can see a MuleSoft Studio configuration screenshot showing an error handler being added to a GET flow with configuration settings visible.
-
-**Alt text:**
-
-Error handler configuration panel in Anypoint Studio showing a GET flow with On Error Continue component, Error Type field set to ANY, and Enable Notifications checkbox unchecked"]
+image:on-error.png["On-error-propagate scope added to GET flow, showing Error Type field set to ANY and Description field empty"]
 . In the *General* configuration tab, configure the error handler:
   ** *Display Name:* `On Error Propagate`
   ** *Type:* Click the search icon and select *VALIDATION:INVALID_SIZE*.

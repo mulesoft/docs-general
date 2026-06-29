@@ -34,9 +34,11 @@ Use Anypoint Exchange to discover agentic assets for reuse across your enterpris
 - xref:exp-scanners-add-from-providers.adoc[Discover and Catalog External Agents With Scanners]
 - https://videos.mulesoft.com/watch/GJxX42uWd1gGComp3KQqEB[Watch a Video to Learn About Agent Fabric and GoDaddy ANS Integration]
 - https://blogs.mulesoft.com/news/agent-scanners/[Learn How to Catalog Agents Automatically With Scanners]
+- https://videos.mulesoft.com/watch/fqPcAHf5h7RYdfdSqhY9ju[Watch a Video to Learn About New Scanners for Agent Management]
 - xref:exchange::importing-agentforce-agents.adoc[Import Agentforce Agents]
 - xref:exchange::to-create-an-asset.adoc#create-agent[Create and Publish an Agent in Exchange]
 - xref:exp-services-create-mcp-server.adoc[Create an MCP Server]
+- https://videos.mulesoft.com/watch/Dn9QXJKDzTxSJPNgra9LoM[Watch a Video to Learn About MCP Bridge]
 - xref:exchange::to-create-an-asset.adoc#create-llm[Create and Publish an LLM in Exchange]
 
 | image::lm_build_1.png[""]
@@ -59,7 +61,8 @@ Build your agent network and coordinate brokers and agents using a declarative Y
 Apply policies to your agents, brokers, LLM proxies, and MCP servers to help manage security and control traffic.
 
 - xref:api-manager::create-instance-task-agent-tool.adoc[Add an Omni Gateway Agent or Tool Instance in API Manager]
-- https://videos.mulesoft.com/watch/2E2PkqzMnLEjoDhL5YkywT[Watch a Video to Learn About AI Gateway from MuleSoft] 
+- https://videos.mulesoft.com/watch/2E2PkqzMnLEjoDhL5YkywT[Watch a Video to Learn About AI Gateway from MuleSoft]
+- https://videos.mulesoft.com/watch/uQtoaAv9AUGmZQteNTTZF1[Watch a Video to Learn About Governing Headless 360 with Agent Fabric]
 - xref:gateway::flex-gateway-managed-ingress-egress.adoc[Deploy Agent Fabric Ingress and Egress Managed Omni Gateways]
 - xref:gateway::flex-gateway-secure-apis.adoc[Secure Omni Gateway Instances with Policies]
 

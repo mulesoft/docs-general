@@ -71,7 +71,7 @@ Choose a deployment option, deploy APIs and apps, and secure them with policies.
 * xref:api-manager::manage-policies-overview.adoc[Protect your APIs with policies.]
 --
 
-image::monitor.png[""]
+image::monitor.png["Anypoint Monitoring dashboard interface showing navigation and monitoring configuration options"]
 
 --
 [discrete]

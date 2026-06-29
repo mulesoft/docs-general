@@ -72,7 +72,7 @@ Your browser opens to Runtime Manager in Anypoint Platform, showing your applica
 
 . Wait for the status to change from *Deploying* to *Running*.
 +
-image::api-tutorial-app-running-runtime-manager.png["Runtime Manager Applications page showing hello-world app with Running status indicator"]
+image::api-tutorial-app-running-runtime-manager.png[The application status is Running in Runtime Manager]
 +
 [NOTE]
 The first deployment typically takes 5–10 minutes. You can monitor progress in the Output panel (*Mule Maven Output*) in Anypoint Code Builder. As long as the status shows *Deploying* and not an error, the deployment is working.
