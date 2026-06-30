@@ -1,4 +1,6 @@
 = Working with Governance Strategies
+:description: Learn how to create, configure, and manage governance strategies to enforce API standards and compliance across your organization.
+:keywords: governance strategies, api governance, anypoint platform, api compliance, governance rules, api standards, strategy configuration
 
 Use governance strategies to apply conformance rules and policies across agents, APIs and MCP servers. When your tenant includes *Governance* and your account has the required role, you can create, manage, and monitor these strategies to validate service design compliance, automate runtime enforcement, and maintain visibility as your portfolio grows.
 
@@ -23,7 +25,7 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 
 == Access Governance Strategy Workflows
 
-Log in through your organization’s entry path and go to *Governance*.
+Log in through your organizationâs entry path and go to *Governance*.
 
 From *Governance* > *Governance Strategies*, create strategies and map them to approved services or scopes. You can also edit, enable, disable, reorder, or delete existing strategies.
 

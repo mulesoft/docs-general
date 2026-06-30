@@ -1,4 +1,6 @@
 = Troubleshooting Usage Reports
+:description: Learn how to troubleshoot common issues with usage reports in MuleSoft, including data discrepancies, missing data, and report generation errors.
+:keywords: usage reports, troubleshooting, mulesoft, report errors, data discrepancies, anypoint platform, usage analytics
 
 Because platform data availability depends on activity in your organization, in some cases, usage reports are unavailable. 
 

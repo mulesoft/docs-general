@@ -1,4 +1,6 @@
 = Create Governance Strategies
+:description: Learn how to create and configure a governance strategy to enforce policies and standards across your APIs and integrations in Anypoint Platform.
+:keywords: governance strategy, api governance, anypoint platform, create strategy, policy enforcement, api standards, governance rules
 
 Governance strategies define which services the system evaluates or enforces policy against and under what conditions. A Control strategy monitors compliance and can block noncompliant activity. An Automated Policy strategy enforces requirements at the gateway or runtime layer. You can create strategies if your tenant includes *Governance* and you have the required administrator role.
 

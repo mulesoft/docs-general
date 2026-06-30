@@ -1,4 +1,6 @@
 = Creating and Managing Instances
+:description: Learn how to add experience instances in MuleSoft to extend and configure your integration deployments efficiently.
+:keywords: experience instances, add instances, mulesoft instances, api experience hub, instance configuration, deployment, integration
 
 Instances represent how a service runs in a specific environment, such as production or sandbox, and how traffic reaches it through gateways or runtimes your organization manages.
 
@@ -35,16 +37,16 @@ Field names, required metadata, and available gateway or runtime options depend 
 . Select the instance type:
 +
 --
-* *Managed Instance* – Creates a new instance on an Omni Gateway with full support for authentication, monitoring, and policy enforcement.
-* *Unmanaged Target* – Creates a basic record of an API endpoint. You can add management for this endpoint later.
+* *Managed Instance* â Creates a new instance on an Omni Gateway with full support for authentication, monitoring, and policy enforcement.
+* *Unmanaged Target* â Creates a basic record of an API endpoint. You can add management for this endpoint later.
 --
 . Complete the *Instance* fields:
 +
 --
-** *Environment* – Select the environment where the instance runs, such as Sandbox or Production.
-** *Omni Gateway* – Select the gateway to route traffic through. Required for managed instances.
-** *Version* – Select the API version for this instance.
-** *Label* – Optional label to identify the instance.
+** *Environment* â Select the environment where the instance runs, such as Sandbox or Production.
+** *Omni Gateway* â Select the gateway to route traffic through. Required for managed instances.
+** *Version* â Select the API version for this instance.
+** *Label* â Optional label to identify the instance.
 --
 . Under *Target*, enter the *Target URL* where the instance proxies requests.
 . Click *Create Instance*.

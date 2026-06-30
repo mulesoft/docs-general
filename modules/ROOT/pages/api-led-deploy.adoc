@@ -1,11 +1,13 @@
 = Step 5. Deploy the API to CloudHub 2.0
+:description: Learn how to deploy APIs and Mule applications using API-led connectivity architecture on CloudHub and Anypoint Platform.
+:keywords: api-led connectivity, deploy api, mule application deployment, cloudhub, anypoint platform, mule runtime, api deployment
 :page-pagination:
 
 Deploy your tested API to CloudHub 2.0 to make it accessible from anywhere. You update the project version, configure deployment settings, and deploy directly from Anypoint Code Builder. After deployment, verify the API is running by sending a request to its public CloudHub URL.
 
 == Step 5.1: Prepare for Deployment
 
-CloudHub 2.0 requires a release version (not a snapshot). When you scaffolded the project, Anypoint Code Builder created a `pom.xml` with `-SNAPSHOT` in the version (Maven’s convention for work-in-progress code). Remove it before deploying.
+CloudHub 2.0 requires a release version (not a snapshot). When you scaffolded the project, Anypoint Code Builder created a `pom.xml` with `-SNAPSHOT` in the version (Mavenâs convention for work-in-progress code). Remove it before deploying.
 
 . In Anypoint Code Builder, open `pom.xml` in your project.
 
@@ -75,7 +77,7 @@ Your browser opens to Runtime Manager in Anypoint Platform, showing your applica
 image::api-tutorial-app-running-runtime-manager.png[The application status is Running in Runtime Manager]
 +
 [NOTE]
-The first deployment typically takes 5–10 minutes. You can monitor progress in the Output panel (*Mule Maven Output*) in Anypoint Code Builder. As long as the status shows *Deploying* and not an error, the deployment is working.
+The first deployment typically takes 5â10 minutes. You can monitor progress in the Output panel (*Mule Maven Output*) in Anypoint Code Builder. As long as the status shows *Deploying* and not an error, the deployment is working.
 
 . After the app is running, copy the application URL from Runtime Manager.
 +

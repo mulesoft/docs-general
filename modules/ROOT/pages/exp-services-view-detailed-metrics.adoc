@@ -1,4 +1,6 @@
 = View Detailed Metrics for Your Services
+:description: Learn how to view detailed performance metrics for Experience Services, including request rates, error rates, and latency data to monitor API health.
+:keywords: experience services metrics, api metrics, performance monitoring, anypoint platform, request rates, error rates, latency monitoring
 
 Detailed metrics go beyond high-level status to show time series, breakdowns, and dimensions your observability stack forwards into the enhanced experience. Use them to debug incidents, validate policy changes, and compare behavior across instances or environments.
 

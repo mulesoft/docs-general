@@ -1,4 +1,6 @@
 = Adding Services to Your Portfolio
+:description: Learn how to add experience services to your portfolio in Anypoint Platform, making APIs discoverable and reusable across your organization.
+:keywords: experience services, api portfolio, anypoint platform, add to portfolio, api management, service catalog, mulesoft
 
 Your *Portfolio* is organized into catalogs: *Agents*, *MCP Servers*, *LLM Proxies*, *APIs*, and *Gateways*. Each catalog holds the services (or gateway entries) your organization registered or imported for governance, monitoring, and deployment. Services enter a catalog through automated provider discovery or manual registration. For procedures, use the topics linked in each section.
 
@@ -10,7 +12,7 @@ Your *Portfolio* is organized into catalogs: *Agents*, *MCP Servers*, *LLM Proxi
 |You add a provider scanner from *Home* or from a catalog in *Portfolio*. Scans discover services on supported cloud platforms and register them in the matching catalog.
 
 |xref:exp-services-register-manually.adoc[]
-|You start an *Add …* workflow from *Home* or from the catalog for that service type. You supply metadata, specifications, endpoints, or cards to register the service without a provider scanner.
+|You start an *Add â¦* workflow from *Home* or from the catalog for that service type. You supply metadata, specifications, endpoints, or cards to register the service without a provider scanner.
 |===
 
 Gateway creation starts in Anypoint Platform, which you can open from the Enhanced Experience.

@@ -1,4 +1,6 @@
 = View Your Portfolio Overview
+:description: Learn how Experience Portfolio organizes and manages your APIs and integrations, providing a centralized view of your digital assets.
+:keywords: experience portfolio, api management, mulesoft anypoint platform, portfolio overview, api organization, digital assets, integration management
 
 Use portfolio-level views to see how your agents, APIs, MCP servers, LLM proxies, and gateways fit together before you drill into a single service. These summaries help you spot gaps in registration, policy coverage, and health signals.
 

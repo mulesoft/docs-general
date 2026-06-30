@@ -1,8 +1,10 @@
 = Create an MCP Server
+:description: Learn how to create and configure an MCP server using MuleSoft Experience Services to expose APIs and data to AI agents and applications.
+:keywords: mcp server, model context protocol, experience services, anypoint platform, ai integration, mcp configuration, api exposure
 
 Create MCP servers to define identity, runtime connectivity, and the tools and resources exposed to MCP clients.
 
-Creating an MCP server defines a new MCP implementation—for example, by transcoding an existing REST API or creating a runtime deployment—and establishes the server identity, runtime connectivity, and the MCP capabilities (tools and resources) exposed to clients.
+Creating an MCP server defines a new MCP implementationâfor example, by transcoding an existing REST API or creating a runtime deploymentâand establishes the server identity, runtime connectivity, and the MCP capabilities (tools and resources) exposed to clients.
 
 When you create an MCP server in Enhanced Experience, the server is added to *Portfolio* automatically.
 

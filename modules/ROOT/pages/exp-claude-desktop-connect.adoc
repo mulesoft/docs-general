@@ -1,4 +1,6 @@
 = Connect the Enhanced Experience to Claude Desktop
+:description: Learn how to connect Claude Desktop to MuleSoft tools and APIs using Model Context Protocol (MCP) to enable AI-assisted integration workflows.
+:keywords: claude desktop, mcp, model context protocol, ai integration, anypoint platform, mulesoft connection, ai assistant
 
 Some organizations connect Claude Desktop (or similar assistants) to the enhanced MuleSoft experience so developers can jump from conversational workflows into governed catalogs and policies without leaving their preferred environment. Your IT team controls whether this integration is available, which OAuth scopes apply, and which actions the assistant can initiate on your behalf.
 

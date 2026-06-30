@@ -1,4 +1,6 @@
 = View Service Details
+:description: Learn how to view detailed information about Experience Services, including configuration, status, and deployment details in Anypoint Platform.
+:keywords: experience services, view details, anypoint platform, api manager, service configuration, mulesoft, service details
 
 Open a catalog entry in *Portfolio* to see its service detail page: a single view of one service, such as an agent, MCP server, LLM proxy, API, or gateway. From this page, review status and cost, relationships to other services, deployments, policies, monitoring, conformance, and change history without switching contexts.
 

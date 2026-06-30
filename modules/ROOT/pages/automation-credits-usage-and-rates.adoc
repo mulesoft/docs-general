@@ -1,4 +1,6 @@
 = Automation Credits Usage and Rates
+:description: Learn how automation credits are consumed and calculated across MuleSoft products, including usage rates and billing details for automation features.
+:keywords: automation credits, credit usage, mulesoft pricing, credit rates, anypoint platform, consumption rates, billing, automation licensing
 :page-aliases: rpa-home::ms-automation-credits-usage-types.adoc, idp::ms-automation-credits-usage-types.adoc, composer::ms_composer_hyperautomation.adoc
 
 Your MuleSoft Automation subscription plan includes a quota of Automation Credits that depletes as you create and execute automations.
@@ -135,5 +137,5 @@ For more information about the reports, the list of recipients, and other detail
 * xref:mulesoft-automation-credits-3-0.adoc[]
 * xref:mulesoft-automation-credits-2-0.adoc[]
 * xref:mulesoft-automation-credits-1-0.adoc[]
-* https://help.salesforce.com/s/articleView?id=xcloud.wallet_enabled_products_rate_cards.htm&type=5[Digital Wallet–Enabled Consumption-Based Products^] (Salesforce Help)
+* https://help.salesforce.com/s/articleView?id=xcloud.wallet_enabled_products_rate_cards.htm&type=5[Digital WalletâEnabled Consumption-Based Products^] (Salesforce Help)
 

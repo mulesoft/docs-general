@@ -1,4 +1,6 @@
 = Anypoint Platform Glossary
+:description: Explore key MuleSoft and Anypoint Platform terms and definitions to understand core concepts used across integration and API development.
+:keywords: mulesoft glossary, anypoint platform terms, integration concepts, api terminology, mule definitions, platform vocabulary
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
@@ -40,7 +42,7 @@ Storage for data and states across batch processes and Mule components from with
 Anypoint Partner Manager v2::
 The web-based user interface for partner configuration, document flow,  and transaction monitoring.
 
-Anypoint Platform™::
+Anypoint Platformâ¢::
 A MuleSoft product to design, build, and manage APIs and integrations.
 
 Anypoint Platform Private Cloud Edition::
@@ -54,7 +56,7 @@ A console where you deploy and manage applications built with any Mule. Deploy t
 
 Anypoint Security::
 Layers of features that secure your application network.
-These layers work together to protect both the application network and the network’s individual nodes by controlling access to APIs, enforcing policies, and proxying all inbound or outbound traffic to mitigate external threats and attacks.
+These layers work together to protect both the application network and the networkâs individual nodes by controlling access to APIs, enforcing policies, and proxying all inbound or outbound traffic to mitigate external threats and attacks.
 
 Anypoint Studio (Studio)::
 An integrated development environment with visual and XML editors to design, debug and test Mule applications. Using the visual interface, you can drag and drop connectors, loggers, flow control, routers, data transformers, and much more to the design canvas. You can also debug and test from the Studio user interface.
@@ -184,7 +186,7 @@ message processor::
 A basic building block used to construct flows. A message processor controls how messages are sent and received within a flow.
 
 message receiver::
-A Java class used by a connector to read the incoming data, package it as a message, and pass it to a service component’s inbound router. The message receiver can use a transformer if necessary to convert the data.
+A Java class used by a connector to read the incoming data, package it as a message, and pass it to a service componentâs inbound router. The message receiver can use a transformer if necessary to convert the data.
 
 mocking service::
 Provides a public URI to test or explore an API.
@@ -192,7 +194,7 @@ Provides a public URI to test or explore an API.
 module::
 A group of components. Modules add flexibility to your apps by allowing you to aggregate values, compress data, use Java features, and process JSON.
 
-Mule® application::
+MuleÂ® application::
 A Mule application is an integration solution built using the Mule runtime engine, which processes and transforms data through a series of flows. These flows consist of message sources and processors that define how messages are received, processed, and routed to destinations. Mule applications can handle various types of data, including messages from different external sources such as HTTP endpoints, and support sophisticated processing mechanisms like transactions and batch jobs.
 
 Mule configuration file (configuration XML)::
@@ -201,7 +203,7 @@ An XML file in which you configure Mule applications, domains, and policies.
 Mule Enterprise Edition (EE)::
 The enterprise version of Mule, available for 30-day trial download. The Enterprise Edition includes full development cycles, testing, technical support, maintenance releases and hot fixes, and management and monitoring tools from MuleSoft.
 
-Mule® runtime engine (Mule® or Mule)::
+MuleÂ® runtime engine (MuleÂ® or Mule)::
 Java-based integration runtime engine for Anypoint Platform.
 
 == O
@@ -222,7 +224,7 @@ An object that controls authentication, access, consumption rates, and service l
 
 == R
 
-RAML®::
+RAMLÂ®::
 RESTful API Modeling Language (RAML) provides a specification language that you use to define an API.
 
 Runtime Manager agent::

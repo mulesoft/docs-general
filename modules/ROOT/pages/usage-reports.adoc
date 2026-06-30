@@ -1,4 +1,6 @@
 = Usage Reports
+:description: Learn how to view and interpret usage reports to monitor API consumption, track metrics, and analyze application usage trends in MuleSoft.
+:keywords: usage reports, api consumption, metrics, analytics, monitoring, mulesoft usage, reporting dashboard
 :page-aliases: gateway::flex-view-usage-reports.adoc
 
 Usage reports provide comprehensive monthly and daily summaries that give you valuable insights into your resource use across Anypoint Platform products. By correlating your usage with billing cycles, you can gain insights into the factors influencing your costs. This enables you to proactively manage your budget and make informed decisions to optimize your resource allocation.

@@ -1,4 +1,6 @@
 = Step 3. Develop the API
+:description: Learn how to develop APIs using MuleSoft's API-led connectivity approach, building integration layers with Anypoint Platform tools and best practices.
+:keywords: api-led connectivity, mulesoft development, anypoint platform, api development, integration layers, mule application, rest api, anypoint studio
 :page-pagination:
 
 Now that you've created an API spec, you'll turn it into a working Mule application. Anypoint Code Builder includes an embedded Mule runtime for local testing. Later, you'll deploy your application to xref:cloudhub-2::ch2-deploy.adoc[CloudHub 2.0], where it runs on Mule runtime in the cloud.
@@ -32,16 +34,16 @@ image::api-tutorial-implement-prompt.png["Implement API specification dialog pro
 +
 [IMPORTANT]
 --
-Don't accept the default location. The default saves the `.code-workspace` file inside your `hello-world-api` spec folder, which causes errors. You must save it one level up — in your home directory — so it sits alongside (not inside) your projects.
+Don't accept the default location. The default saves the `.code-workspace` file inside your `hello-world-api` spec folder, which causes errors. You must save it one level up â in your home directory â so it sits alongside (not inside) your projects.
 --
 +
 For example, if you created your API spec in `~/hello-world-api/`, navigate up to `~` (your home directory) and save the file there. Your folder structure should look like this:
 +
 ----
 ~/ (home directory)
-├── hello-world-api/          <- your API spec project
-│   └── hello-world-api.yaml
-└── hello-world.code-workspace  <- save the file HERE
+âââ hello-world-api/          <- your API spec project
+â   âââ hello-world-api.yaml
+âââ hello-world.code-workspace  <- save the file HERE
 ----
 
 . When prompted, provide project configuration details:
@@ -54,10 +56,10 @@ This is where Anypoint Code Builder creates the `hello-world-impl` project folde
 +
 ----
 ~/ (home directory)
-├── hello-world-api/          <- API spec project
-│   └── hello-world-api.yaml
-├── hello-world-impl/         <- implementation project (created here)
-└── hello-world.code-workspace
+âââ hello-world-api/          <- API spec project
+â   âââ hello-world-api.yaml
+âââ hello-world-impl/         <- implementation project (created here)
+âââ hello-world.code-workspace
 ----
 .. Select a Mule runtime version for the project.
 .. Select a Java version for the project.

@@ -1,4 +1,6 @@
 = MuleSoft Automation Credits 3.0
+:description: Learn how MuleSoft Automation Credits 3.0 works, including credit consumption rates, supported products, and how to manage your automation credit usage.
+:keywords: mulesoft automation credits, automation credits 3.0, credit consumption, anypoint platform, rpa credits, mulesoft licensing
 
 MuleSoft Automation Credits 3.0 is available in Digital Wallet. Use Automation Credits 3.0 with MuleSoft for Flow: Integration, Anypoint IDP, MuleSoft for Flow: IDP, or a combination of these products, as more fully described in the applicable https://www.salesforce.com/company/legal/mulesoft-subscription-plan/[Subscription Plan] or Features and Entitlement Document.
 
@@ -31,4 +33,4 @@ To learn more about how Omni Credits are consumed, and when other types of credi
 
 * xref:automation-credits-usage-and-rates.adoc[]
 * xref:usage-reports.adoc[]
-* https://help.salesforce.com/s/articleView?id=xcloud.wallet_enabled_products_rate_cards.htm&type=5[Digital Wallet–Enabled Consumption-Based Products^] (Salesforce Help)
+* https://help.salesforce.com/s/articleView?id=xcloud.wallet_enabled_products_rate_cards.htm&type=5[Digital WalletâEnabled Consumption-Based Products^] (Salesforce Help)

@@ -1,4 +1,6 @@
 = Integrate the Enhanced Experience with Slack
+:description: Learn how to integrate Slack with Anypoint Exchange to enable notifications and collaboration features directly within your Slack workspace.
+:keywords: anypoint exchange, slack integration, slack notifications, mulesoft slack, exchange collaboration, workspace integration, slack connector
 
 Install the MuleSoft for Slack app in your Slack workspace to receive notifications, run shortcuts, and provide deep links for responders to jump directly into the enhanced experience. The Slack app enables you to:
 
@@ -67,7 +69,7 @@ Opens a feedback form to report bugs, request features, or send product feedback
 
 * `/mule signin`
 +
-Opens the authentication flow to connect your Anypoint account to Slack. If you’re already signed in it may show your connection status or prompt to re-authenticate.
+Opens the authentication flow to connect your Anypoint account to Slack. If youâre already signed in it may show your connection status or prompt to re-authenticate.
 
 [[common-use-cases]]
 == Common Use Cases for the MuleSoft Agent

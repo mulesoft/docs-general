@@ -1,4 +1,6 @@
 = Use the AI Assistant (MuleSoft Agent)
+:description: Learn how to use the AI Assistant in Anypoint Experience Hub to generate content, answer questions, and accelerate development tasks.
+:keywords: ai assistant, anypoint experience hub, ai-powered assistance, mulesoft ai, content generation, developer productivity, anypoint platform
 
 The enhanced experience includes an AI assistant called MuleSoft Agent that helps you navigate, search, and manage your portfolio through natural language conversations. Access the assistant from any page to get guidance, perform tasks, and discover features without navigating through menus.
 
@@ -252,7 +254,7 @@ A confirmation banner shows which fields will be updated and with what values.
 . Review the proposed changes.
 . Select *Confirm* to apply the changes to the form, or *Cancel* to reject them.
 +
-If you confirm, the form fields update, but the form itself isn't submitted—you still need to review and submit the form manually.
+If you confirm, the form fields update, but the form itself isn't submittedâyou still need to review and submit the form manually.
 
 == Get Guided Workflows
 

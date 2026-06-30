@@ -1,6 +1,8 @@
 = Monitoring Your Services
+:description: Learn how to monitor experience services in MuleSoft, track performance metrics, and troubleshoot issues to ensure reliable API delivery.
+:keywords: experience services monitoring, mulesoft monitoring, api performance metrics, service health, troubleshooting, anypoint platform, api observability
 
-Monitoring helps you see whether the services in your portfolio—and the paths that carry their traffic—are healthy, performant, and stable over time. You work from service context (what a single API, agent, MCP server, LLM proxy, or gateway is doing) and, when your administrator enables it, from broader observability surfaces that sit alongside *Portfolio* and *Governance*.
+Monitoring helps you see whether the services in your portfolioâand the paths that carry their trafficâare healthy, performant, and stable over time. You work from service context (what a single API, agent, MCP server, LLM proxy, or gateway is doing) and, when your administrator enables it, from broader observability surfaces that sit alongside *Portfolio* and *Governance*.
 
 == Before You Begin
 
@@ -34,15 +36,15 @@ Exact metrics depend on how the service is hosted, which gateway or runtime path
 
 Monitoring appears in these areas of the experience:
 
-* *Home* — Your entry path sometimes highlights alerts or shortcuts back into *Portfolio* or *Observability*; use whatever your organization configured after sign-in.
-* *Portfolio* and service detail — Open a catalog entry and use the *Monitoring* tab on the service (and, where the product exposes it, on instances) to read metrics scoped to that service. This is where you typically go when checking whether a specific API or agent is degrading.
-* *Observability* — When your tenant includes it, *Observability* aggregates dashboards, reports, or notifications to compare service-level signals with organization-wide views your administrator configured. Use filters to narrow to the service, environment, or route you're investigating.
+* *Home* â Your entry path sometimes highlights alerts or shortcuts back into *Portfolio* or *Observability*; use whatever your organization configured after sign-in.
+* *Portfolio* and service detail â Open a catalog entry and use the *Monitoring* tab on the service (and, where the product exposes it, on instances) to read metrics scoped to that service. This is where you typically go when checking whether a specific API or agent is degrading.
+* *Observability* â When your tenant includes it, *Observability* aggregates dashboards, reports, or notifications to compare service-level signals with organization-wide views your administrator configured. Use filters to narrow to the service, environment, or route you're investigating.
 
 include::partial$exp-navigation-labels.adoc[tag=ExpNavigationLabels]
 
 == Monitoring Signals
 
-The system emphasizes runtime health for managed integration paths—for example latency, error rates, and request volume when the new experience surfaces Omni Gateway data for routes your team operates under policy. Not every catalog type exposes the same charts; some services show richer series only after you complete instance setup or connect the observability backend your administrator approved.
+The system emphasizes runtime health for managed integration pathsâfor example latency, error rates, and request volume when the new experience surfaces Omni Gateway data for routes your team operates under policy. Not every catalog type exposes the same charts; some services show richer series only after you complete instance setup or connect the observability backend your administrator approved.
 
 If a tab is missing, confirm with your administrator that monitoring data is flowing for that environment and that your account has the right permissions.
 

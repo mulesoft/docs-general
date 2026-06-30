@@ -1,4 +1,6 @@
 = Anypoint Platform Security
+:description: Learn how to configure and manage security settings in MuleSoft, including authentication, authorization, and data protection for your integrations.
+:keywords: mulesoft security, authentication, authorization, data protection, security configuration, integration security, encryption, access control
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]

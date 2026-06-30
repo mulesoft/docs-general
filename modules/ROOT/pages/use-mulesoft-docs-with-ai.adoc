@@ -1,4 +1,6 @@
 = Use MuleSoft Documentation with AI
+:description: Learn how to use MuleSoft documentation with AI tools and assistants to accelerate development and get accurate, context-aware answers.
+:keywords: mulesoft documentation, ai tools, ai assistant, mulesoft ai, documentation search, llm, developer productivity, mulesoft help
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]

@@ -1,4 +1,6 @@
 = Contribute to MuleSoft Documentation
+:description: Learn how to contribute to MuleSoft documentation by submitting edits, reporting issues, and following content guidelines.
+:keywords: contribute, documentation contribution, mulesoft docs, content guidelines, submit edits, open source, pull request
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]

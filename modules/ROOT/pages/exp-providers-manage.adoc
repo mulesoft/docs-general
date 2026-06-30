@@ -1,4 +1,6 @@
 = Viewing Providers
+:description: Learn how to manage experience providers in MuleSoft, including configuring, updating, and monitoring provider settings for your APIs.
+:keywords: experience providers, manage providers, anypoint platform, api management, provider configuration, mulesoft, provider settings
 
 The *Providers* page shows which cloud platforms and API management systems are connected to the enhanced experience. From *Platform* > *Providers*, you can view connected providers, filter scanners by provider, and connect new providers to begin discovering services.
 

@@ -1,3 +1,5 @@
 = Get Started with Agent Networks
+:description: Learn how to get started with agent networks in MuleSoft, including setup, configuration, and deploying connected AI agents for automation workflows.
+:keywords: agent networks, mulesoft agents, ai agents, getting started, agent configuration, autonomous agents, mulesoft ai, agent deployment
 
 include::anypoint-code-builder::partial$af-shared.adoc[tag=get-started]
