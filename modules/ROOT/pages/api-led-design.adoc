@@ -53,7 +53,7 @@ After exploring Exchange to see the range of assets available, use Anypoint Code
 
 . Open the desktop IDE (VS Code) with Anypoint Code Builder installed.
 
-. In the activity bar of the IDE, click image:icon-ms-logo.png[alt="","",20,20] (*Anypoint Code Builder*).
+. In the activity bar of the IDE, click image:icon-ms-logo.png["",20,20] (*Anypoint Code Builder*).
 
 == Step 2.3: Create Your API Spec
 
@@ -183,7 +183,7 @@ paths:
 
 Use the Mocking Service in the API Console to test your spec before implementing it.
 
-. With `hello-world-api.yaml` still open, click image:icon-api-console.png[alt="","",14,14] (*API Console*) in the editor toolbar.
+. With `hello-world-api.yaml` still open, click image:icon-api-console.png["",14,14] (*API Console*) in the editor toolbar.
 +
 image:api-tutorial-open-api-console-acb.png[Yaml file is open and API Console icon is selected in the toolbar]
 +
