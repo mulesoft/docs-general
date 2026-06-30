@@ -5,7 +5,7 @@ Now that you've created an API spec, you'll turn it into a working Mule applicat
 
 == Step 3.1: Create the Implementation Project
 
-. Open your API spec file in the editor, then click image:icon-implement-api.png[alt="","",15,15] (*Implement this local API*) in the activity bar.
+. Open your API spec file in the editor, then click image:icon-implement-api.png["","",15,15] (*Implement this local API*) in the activity bar.
 +
 [NOTE]
 The icon and command are only available when your API spec file is open and active in the editor.
@@ -82,7 +82,7 @@ HTTP Listener that receives requests on port 8081
 Your GET endpoint implementation
 * Error handling flows
 
-Click the *Listener* component, then select *Edit Connection* (image:icon-gear.png[alt="","",15,15]) to review the connection configuration, including:
+Click the *Listener* component, then select *Edit Connection* (image:icon-gear.png["","",15,15]) to review the connection configuration, including:
 
 * *Path*: `/api/*` (receives all API requests)
 * *Host*: `0.0.0.0` (listens to all interfaces)
@@ -100,7 +100,7 @@ image::api-tutorial-api-config-flow-acb.png[The get:\greeting:hello-world-api-co
 +
 The flow contains a *Logger* component by default. You'll add a *Transform* component after it to return your greeting.
 
-. Click image:icon-plus.png[alt="","",15,15] (*Add component*) after the Logger component in the flow.
+. Click image:icon-plus.png["","",15,15] (*Add component*) after the Logger component in the flow.
 
 . In the *Add Component* panel, search for `Transform` and select *Transform* from the results.
 

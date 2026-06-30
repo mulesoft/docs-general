@@ -25,7 +25,7 @@ CloudHub 2.0 requires a release version (not a snapshot). When you scaffolded th
 
 . Open `hello-world-api.xml` in the editor.
 
-. Click image:icon-deploy.png[alt="","",20,20] (*Deploy to CloudHub*).
+. Click image:icon-deploy.png["","",20,20] (*Deploy to CloudHub*).
 +
 Alternatively, open the Command Palette and select `MuleSoft: Deploy to CloudHub`.
 
