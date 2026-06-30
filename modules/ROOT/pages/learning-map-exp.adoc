@@ -14,7 +14,7 @@ The end-to-end journey for the experience consists of these tasks, each with lin
 
 [.lm-table, cols="1a,1a,1a", grid="none"]
 |===
-| image::lm_start.png[]
+| image::lm_start.png[alt=""]
 [.lm-bold]##Learn About Enhanced MuleSoft Experience##
 
 The experience helps you manage, optimize, and govern a multi-agent ecosystem from one place.
@@ -28,7 +28,7 @@ The experience helps you manage, optimize, and govern a multi-agent ecosystem fr
 // - https://trailhead.salesforce.com/content/learn/modules/get-to-know-the-enhanced-mulesoft-experience[Get to Know the Enhanced MuleSoft Experience: Quick Look]
 
 
-| image::lm_explore_1.png[]
+| image::lm_explore_1.png[alt=""]
 [.lm-bold]##Register##
 
 Register agents, APIs, and MCP servers from any provider or registry, and add LLM proxies and gateways.
@@ -43,7 +43,7 @@ Register agents, APIs, and MCP servers from any provider or registry, and add LL
 
 
 
-| image::lm_build_1.png[]
+| image::lm_build_1.png[alt=""]
 [.lm-bold]##Monitor##
 
 Monitor latency, cost, invocations, and failures in real time.
@@ -57,7 +57,7 @@ Monitor latency, cost, invocations, and failures in real time.
 
 [.lm-table, cols="1a,1a", width="66%", grid="none"]
 |===
-| image::lm_build_1.png[]
+| image::lm_build_1.png[alt=""]
 [.lm-bold]##Secure##
 
 Secure instances with compatible policies across your entire registry.
@@ -65,7 +65,7 @@ Secure instances with compatible policies across your entire registry.
 - xref:exp-instances-add.adoc[]
 - xref:exp-governance-work-with-strategies.adoc[]
 
-| image::lm_analyze_1.png[]
+| image::lm_analyze_1.png[alt=""]
 [.lm-bold]##Transcode##
 
 Transcode existing REST APIs into MCP servers instantly.
