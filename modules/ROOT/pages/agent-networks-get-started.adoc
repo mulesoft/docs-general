@@ -1,3 +1,5 @@
 = Get Started with Agent Networks
+:description: Learn how to set up and configure agent networks in MuleSoft to enable multi-agent collaboration and orchestration for AI-powered applications.
+:keywords: agent networks, multi-agent, mulesoft ai, agent orchestration, getting started, agent collaboration, anypoint platform
 
 include::anypoint-code-builder::partial$af-shared.adoc[tag=get-started]

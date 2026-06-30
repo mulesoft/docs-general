@@ -1,4 +1,6 @@
 = Anypoint API Governance Usage Reports
+:description: Learn how to use MuleSoft API Governance to apply rulesets, monitor API conformance, and ensure APIs meet organizational standards.
+:keywords: api governance, mulesoft api governance, governance rulesets, api conformance, api standards, api management, anypoint platform
 
 include::partial$api-eh-metrics.adoc[tag=apiGdescription]
 

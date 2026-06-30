@@ -1,4 +1,6 @@
 = Step 6. Monitor and Manage
+:description: Learn how to operate and manage applications in an API-led connectivity architecture, including deployment, monitoring, and runtime management.
+:keywords: api-led connectivity, operate apis, mule application deployment, api management, runtime manager, anypoint platform, api monitoring
 :page-pagination: prev
 
 In this final step, you'll learn how to monitor your deployed API using Runtime Manager, your operations dashboard for CloudHub applications.

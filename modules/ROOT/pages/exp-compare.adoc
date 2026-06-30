@@ -1,4 +1,6 @@
 = Enhanced MuleSoft Experience and Anypoint Platform Comparison
+:description: Learn how to use comparison operators in DataWeave expressions to evaluate and compare values, enabling conditional logic in your Mule applications.
+:keywords: dataweave comparison operators, expression comparison, mule expressions, conditional logic, dataweave operators, value comparison, mule 4
 
 Both the enhanced MuleSoft experience and Anypoint Platform include robust capabilities, but they emphasize different strengths, especially if you manage AI services such as agents, LLM proxies, and MCP servers next to APIs and gateways.
 

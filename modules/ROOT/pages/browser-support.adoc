@@ -1,4 +1,6 @@
 = Browser Support for Anypoint Platform
+:description: Learn which web browsers are supported for MuleSoft tools and platforms, including recommended versions and compatibility requirements.
+:keywords: browser support, supported browsers, browser compatibility, web browser requirements, mulesoft platform, browser versions, compatibility matrix
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]

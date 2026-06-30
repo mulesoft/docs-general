@@ -1,3 +1,5 @@
+:description: Learn key API Governance concepts in MuleSoft, including governance profiles, rulesets, and how to validate and enforce API standards.
+:keywords: api governance, mulesoft api governance, governance concepts, governance profiles, rulesets, api validation, api standards
 // Partial reused in index.adoc and monitor-api-conformance.adoc; part of governance rulesets reused in create-custom-rulesets.adoc
 
 // tag::governance-profiles[]

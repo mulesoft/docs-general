@@ -1,4 +1,6 @@
 = Understand Mule Credits Usage and Rates
+:description: Learn how Mule credits are consumed and calculated across deployment targets, including rates for CloudHub, Runtime Fabric, and on-premises deployments.
+:keywords: mule credits, usage rates, credit consumption, cloudhub credits, runtime fabric credits, mule licensing, deployment costs
 
 A Mule Credit is a fungible currency that allows you to draw down from a single capacity pool as you consume services across MuleSoft. Instead of managing different usage types for all products, you purchase a package of credits to use flexibly across the entire MuleSoft platform. As you use these capabilities, Anypoint Platform deducts the corresponding credit amounts from your available balance.
 
@@ -114,7 +116,7 @@ For more information about Digital Wallet access, see https://help.salesforce.co
 
 == See Also
 
-* https://help.salesforce.com/s/articleView?id=xcloud.wallet_enabled_products_rate_cards.htm&type=5[Digital Wallet–Enabled Consumption-Based Products^] (Salesforce Help)
+* https://help.salesforce.com/s/articleView?id=xcloud.wallet_enabled_products_rate_cards.htm&type=5[Digital WalletâEnabled Consumption-Based Products^] (Salesforce Help)
 * https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/mulesoft/Mule_Credit_Rate_Card.pdf[Mule Credit Rate Card^]
 * https://www.salesforce.com/mulesoft/rates[MuleSoft Rates Landing Page^]
 * xref:automation-credits-usage-and-rates.adoc[]

@@ -1,4 +1,6 @@
 = Step 5. Deploy the API to CloudHub
+:description: Learn how to deploy APIs using the API-led connectivity approach. Follow step-by-step instructions to deploy your Mule applications successfully.
+:keywords: api-led connectivity, api deployment, mule application deployment, anypoint platform, mule runtime, api lifecycle
 :page-llms-exclude: true
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]

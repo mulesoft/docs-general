@@ -1,4 +1,6 @@
 = Managing Scanners
+:description: Learn how to manage scanners in MuleSoft, including configuring, enabling, and disabling scanners to detect vulnerabilities and ensure API security compliance.
+:keywords: scanners, manage scanners, api security, vulnerability detection, mulesoft security, scanner configuration, api governance
 
 After you configure scanners, you run them day to day. Most of that work happens under *Providers*, where you manage provider connections, scanners, and scan activity in one place.
 
@@ -12,7 +14,7 @@ Start a manual scan when you want fresh metadata without waiting for the next sc
 Inspect connection health, the last completed run, and scan history to verify whether discovery is healthy, slow, or failing authentication.
 * Pause scheduled scans.
 +
-Temporarily stop scheduled triggers when you need a quiet period—for example during maintenance or while you fix credentials—without deleting the scanner.
+Temporarily stop scheduled triggers when you need a quiet periodâfor example during maintenance or while you fix credentialsâwithout deleting the scanner.
 * Edit configuration.
 +
 Change names, descriptions, credentials, provider scope, or scan-related settings your product exposes, then save so future runs use the new definition.

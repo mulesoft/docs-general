@@ -1,4 +1,6 @@
 = AI Features and Data Usage
+:description: Learn how MuleSoft AI features work, what data they collect and process, and how to manage data usage and privacy settings for AI-powered functionality.
+:keywords: ai features, data usage, mulesoft ai, data privacy, ai data collection, anypoint platform ai, data management
 
 MuleSoft AI features use your data to generate responses. Understanding what data each feature uses helps you make informed decisions about privacy, compliance, and how you work with AI in MuleSoft.
 

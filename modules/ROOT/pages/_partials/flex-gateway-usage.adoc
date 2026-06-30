@@ -1,4 +1,6 @@
 = Omni Gateway Usage Reports
+:description: Learn how to monitor and understand Flex Gateway usage metrics, including resource consumption and capacity tracking for your deployments.
+:keywords: flex gateway, usage metrics, resource consumption, capacity tracking, mulesoft gateway, deployment monitoring, api gateway usage
 
 include::partial$flex-gateway-metrics.adoc[tag=intro]
 

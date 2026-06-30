@@ -1,3 +1,5 @@
+:description: Learn how to monitor and analyze API event handler metrics to track performance, errors, and usage patterns in your MuleSoft integrations.
+:keywords: api event handler metrics, api monitoring, mulesoft analytics, api performance, event handler, api metrics, integration monitoring
 // tag::intro[]
 
 API Experience Hub usage reports track the number of approved access requests on a daily and monthly basis by Salesforce org ID and Salesforce portal name. 

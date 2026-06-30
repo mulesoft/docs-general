@@ -1,4 +1,6 @@
 = Step 1. Prerequisites for Building an API
+:description: Learn the prerequisites required to get started with API-led connectivity in MuleSoft, including tools, accounts, and software needed.
+:keywords: api-led connectivity, prerequisites, mulesoft, anypoint platform, getting started, api development, requirements
 :page-llms-exclude: true
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]

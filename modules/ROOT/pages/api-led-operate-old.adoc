@@ -1,4 +1,6 @@
 = Step 6. Operate the Deployed API
+:description: Learn how to operate and manage APIs using API-led connectivity, including monitoring, troubleshooting, and maintaining API networks in Anypoint Platform.
+:keywords: api-led connectivity, api management, anypoint platform, api monitoring, api operations, mulesoft apis, api network
 :page-llms-exclude: true
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]

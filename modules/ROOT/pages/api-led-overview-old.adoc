@@ -1,4 +1,6 @@
 = Tutorial: Build an API from Start to Finish
+:description: Learn how API-led connectivity organizes APIs into system, process, and experience layers to build scalable, reusable integrations with MuleSoft Anypoint Platform.
+:keywords: api-led connectivity, anypoint platform, system apis, process apis, experience apis, mulesoft integration, api layers
 :page-llms-exclude: true
 
 API-led connectivity enables delightful experiences on a variety of devices for your customers. Different software applications communicate and share information across different systems. An Application Programming Interface (API) acts as a digital messenger and translator between those applications and systems, ensuring you can adapt to changes, reuse solutions efficiently, and build security into the digital touchpoints of your business.

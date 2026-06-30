@@ -1,4 +1,6 @@
 = API Experience Hub Usage Reports
+:description: Learn how to track and manage API Experience Hub usage, including consumption metrics and portal activity across your organization.
+:keywords: api experience hub, usage metrics, portal consumption, api portal, usage tracking, mulesoft, anypoint platform
 
 include::partial$api-eh-metrics.adoc[tag=intro]
 

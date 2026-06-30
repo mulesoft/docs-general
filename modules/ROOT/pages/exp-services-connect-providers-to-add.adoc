@@ -1,4 +1,6 @@
 = Create a Scanner for Provider Services
+:description: Learn how to connect providers to add experience services in MuleSoft, enabling seamless integration and service configuration.
+:keywords: experience services, connect providers, mulesoft integration, service configuration, api services, provider connection
 
 To create a scanner, connect to a provider. The system runs scanners against supported cloud platforms, discovers services (such as agents, APIs, and MCP servers), and registers them in the matching catalog in *Portfolio*. You supply credentials and scanner metadata so the integration is repeatable and auditable.
 

@@ -1,4 +1,6 @@
 = Step 1. Prerequisites for Building an API-Led Solution
+:description: Learn the requirements and setup steps needed before building API-led connectivity solutions with MuleSoft Anypoint Platform.
+:keywords: api-led connectivity, prerequisites, anypoint platform, mulesoft, api design, setup requirements, integration
 :page-pagination: next
 
 Set up your environment before starting the tutorial. You need an Anypoint Platform account, Anypoint Code Builder, and a REST client such as Postman. Specific permissions are also required for deployment and, optionally, for AI-assisted API design with MuleSoft Vibes.
@@ -47,7 +49,7 @@ To avoid installation errors, don't install the individual Anypoint Code Builder
 . Select *Install*.
 +
 [NOTE] 
-Make sure that the Anypoint extensions update automatically by right-clicking each extension to see if *Auto Update All (From Publisher)* is selected. If it’s not, select *Auto Update* for each extension.
+Make sure that the Anypoint extensions update automatically by right-clicking each extension to see if *Auto Update All (From Publisher)* is selected. If itâs not, select *Auto Update* for each extension.
 . If you have an Anypoint Platform account running in the EU cloud, change the *Mule: Control Plane* setting to *EU cloud*:
 .. Press Cmd+Shift+P (Mac) or Ctrl+Shift+P (Windows/Linux) to open the Command Palette.
 .. Type *Preferences: Open Settings* and select it.

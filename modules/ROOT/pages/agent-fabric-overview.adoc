@@ -1,4 +1,6 @@
 = MuleSoft Agent Fabric Overview
+:description: Learn how Agent Fabric enables orchestration and coordination of AI agents in MuleSoft, providing a unified framework for multi-agent workflows.
+:keywords: agent fabric, ai agents, multi-agent orchestration, mulesoft ai, agent coordination, autonomous agents, agent framework
 
 
 MuleSoft Agent Fabric helps you turn agent sprawl into a governed, coordinated, intelligent network. Regardless of the platform where your AI agents were built or are running, Agent Fabric provides the infrastructure to discover, orchestrate, govern, and observe agents across your enterprise. Agent Fabric enables you to build intelligent agent networks where multiple agents work together, access enterprise systems securely, and operate under consistent governance and observability.
@@ -29,7 +31,7 @@ As the agent control plane for your enterprise, Agent Fabric delivers four core 
 
 * <<discover,Discover>>
 +
-A central registry, supported with automated discovery, where every agent and MCP server — regardless of where it's built — can be cataloged, discovered, and reused. This eliminates duplication and makes it easy to compose solutions from existing assets.
+A central registry, supported with automated discovery, where every agent and MCP server â regardless of where it's built â can be cataloged, discovered, and reused. This eliminates duplication and makes it easy to compose solutions from existing assets.
 * <<govern,Govern>>
 +
 Enterprise-grade guardrails ensuring every agent, MCP server, and LLM interaction is secure, compliant, and cost-controlled, so teams can innovate with confidence.
@@ -66,7 +68,7 @@ Before agents can orchestrate across your enterprise, your existing systems need
 
 * What it is: Anypoint Connector for MCP (MCP Connector) lets you build Mule applications that act as MCP servers and clients, giving you full programmatic control over what tools and resources you expose to agents and enabling Mule apps to connect to external MCP servers.
 
-* Role in Agent Fabric: MCP Bridge converts existing APIs automatically through configuration. MCP Connector is for teams that need to build custom MCP server logic, compose multiple systems, apply transformation, orchestrate interactions with external MCP services, or expose capabilities that don’t map directly to a single existing API.
+* Role in Agent Fabric: MCP Bridge converts existing APIs automatically through configuration. MCP Connector is for teams that need to build custom MCP server logic, compose multiple systems, apply transformation, orchestrate interactions with external MCP services, or expose capabilities that donât map directly to a single existing API.
 
 * What you can do:
 ** Build Mule applications that expose tools and resources to MCP clients
@@ -74,7 +76,7 @@ Before agents can orchestrate across your enterprise, your existing systems need
 ** Compose multiple backend systems into a single MCP server
 ** Define custom logic for how agent requests are handled
 ** Orchestrate workflows that incorporate AI agents and external MCP services
-* When you need it: Use MCP Connector when you need to expose capabilities to agents that require custom logic, multi-system composition, orchestration with external MCP services, or transformation that configuration-based tools like MCP Bridge don’t cover.
+* When you need it: Use MCP Connector when you need to expose capabilities to agents that require custom logic, multi-system composition, orchestration with external MCP services, or transformation that configuration-based tools like MCP Bridge donât cover.
 * Learn more: xref:mcp-connector::index.adoc[]
 
 === A2A Connector
@@ -131,7 +133,7 @@ Before agents can orchestrate across your enterprise, your existing systems need
 
 === IDP (Intelligent Document Processing)
 
-* What it is: MuleSoft Intelligent Document Processing (IDP) uses multimodal large language models to extract structured data from unstructured or semi-structured documents like invoices, purchase orders, receipts, and custom document types. IDP creates document actions—configurable schemas with AI-powered extraction instructions—that are published as APIs for consumption by agents, RPA, and Mule applications.
+* What it is: MuleSoft Intelligent Document Processing (IDP) uses multimodal large language models to extract structured data from unstructured or semi-structured documents like invoices, purchase orders, receipts, and custom document types. IDP creates document actionsâconfigurable schemas with AI-powered extraction instructionsâthat are published as APIs for consumption by agents, RPA, and Mule applications.
 
 * Role in Agent Fabric: IDP makes document data directly actionable for agents by transforming locked information in PDFs, images, and paper documents into structured, queryable data that agents can reason over and act upon. Instead of requiring manual document review or rigid OCR templates, agents can process documents intelligently, extract key fields with confidence scoring, and route documents for human review when needed, seamlessly blending AI extraction with agent-driven workflows.
 
@@ -279,7 +281,7 @@ Coordinate agents and tools across ecosystems with guided determinism, so multi-
 [[observe]]
 == Observe
 
-Agent Visualizer provides a detailed visual graph of your agent network so you can see, understand, and interact with your enterprise’s evolving network of agents, Model Context Protocol (MCP) servers, and large language models (LLMs), including agents created in external platforms.
+Agent Visualizer provides a detailed visual graph of your agent network so you can see, understand, and interact with your enterpriseâs evolving network of agents, Model Context Protocol (MCP) servers, and large language models (LLMs), including agents created in external platforms.
 
 === Agent Visualizer
 

@@ -1,4 +1,6 @@
 = Step 2. Design an API Specification
+:description: Learn how to design APIs using the API-led connectivity approach in MuleSoft, structuring integrations across experience, process, and system layers.
+:keywords: api-led connectivity, api design, experience api, process api, system api, mulesoft integration, anypoint platform
 :page-llms-exclude: true
 
 To design an API, assess the purpose and requirements:
@@ -31,7 +33,7 @@ You can also check whether an API specification with the same objectives is not 
 Looking for an API specification that already does what you need is easy:
 
 * Look at the public Exchange, which is a portal hosted by MuleSoft that contains API specifications, connectors, and other assets that you can download and use.
-You’ll see some of the most popular API specifications, connectors, and other assets displayed on the landing page.
+Youâll see some of the most popular API specifications, connectors, and other assets displayed on the landing page.
 +
 link:https://www.mulesoft.com/exchange["Take me to Exchange^", role="button-primary"]
 +
@@ -156,7 +158,7 @@ image:publish-to-exchange1.png[User interface for publishing to Exchange, 500]
 
 After publication, anyone in your organization can see the `hello-world-api` API specification and reuse it.
 
-== What’s Next
+== Whatâs Next
 
 Now that you have designed an API and created an API specification for it,
 use Anypoint Studio (Studio) to xref:api-led-develop.adoc[create a Mule app] that contains the implementation and interface for the API.
@@ -169,7 +171,7 @@ If you're curious about the details, dive right in.
 
 You can publish assets to the public Exchange, your internal Exchange, or your public developer portal.
 
-* In addition to the public Exchange, you can review your own organization’s internal offerings.
+* In addition to the public Exchange, you can review your own organizationâs internal offerings.
 +
 link:https://anypoint.mulesoft.com/exchange/["Take me to Exchange^", role="button-primary"]
 +
@@ -177,7 +179,7 @@ link:https://anypoint.mulesoft.com/exchange/["Take me to Exchange^", role="butto
 
 === Deep Dive: API Features
 
-In a typical API project, you’d likely want to do a few more things:
+In a typical API project, youâd likely want to do a few more things:
 
 * Add xref:studio::set-credentials-in-studio-to.adoc[authentication].
 * Add annotations as defined in the RAML specification.

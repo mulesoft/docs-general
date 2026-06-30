@@ -1,4 +1,6 @@
 = Troubleshooting Usage Reports
+:description: Learn how to troubleshoot common issues with usage reports in Anypoint Platform, including data discrepancies and report generation errors.
+:keywords: usage reports, troubleshooting, anypoint platform, report errors, data discrepancies, mulesoft analytics, billing reports
 
 Because platform data availability depends on activity in your organization, in some cases, usage reports are unavailable. 
 

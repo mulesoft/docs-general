@@ -1,3 +1,5 @@
+:description: Learn how to monitor and manage Runtime Fabric usage metrics, including resource consumption and capacity planning for your deployments.
+:keywords: runtime fabric, rtf usage, resource consumption, usage metrics, capacity planning, mulesoft runtime fabric, deployment resources
 // Partials used in RTF usage-metrics
 
 // tag::max-metric[]

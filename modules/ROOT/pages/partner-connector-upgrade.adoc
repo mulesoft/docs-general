@@ -1,4 +1,6 @@
 = Upgrading Java for Custom Connectors (Partners)
+:description: Learn how to upgrade your MuleSoft partner connector to the latest version, ensuring compatibility and access to new features and fixes.
+:keywords: partner connector upgrade, mulesoft connector, connector migration, anypoint connector, upgrade guide, connector compatibility, mulesoft integration
 
 include::reuse::partial$java8-eoss-banner.adoc[tag=java8-eoss]
 

@@ -1,3 +1,5 @@
+:description: Learn the prerequisites required before using this feature, including required permissions, software versions, and configuration steps.
+:keywords: prerequisites, requirements, mulesoft setup, configuration, permissions, software requirements, getting started
 // tag::permissions[]
 To view usage reports, you must have the Usage Viewer permission for your root organization.
 // end::permissions[]

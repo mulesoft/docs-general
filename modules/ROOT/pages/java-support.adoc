@@ -1,4 +1,6 @@
 = Java Support
+:description: Learn how MuleSoft supports Java in your integrations, including supported versions, configuration, and best practices for using Java components.
+:keywords: java support, mulesoft java, java integration, java components, java version compatibility, mule java, java configuration
 
 include::reuse::partial$java8-eoss-banner.adoc[tag=java8-eoss]
 
@@ -115,7 +117,7 @@ If your apps are deployed on-premises:
 
 * If your workloads run on Runtime Fabric, you must allocate at least 1400 MB of memory for 0.50 vCPU replica sizes. Because memory requirements vary for individual apps, this minimum provides the best memory allocation configuration for most applications.
 
-* If your workloads run on-premises, such as in a hybrid or standalone environment, you must tune your operating system’s garbage collection algorithm.
+* If your workloads run on-premises, such as in a hybrid or standalone environment, you must tune your operating systemâs garbage collection algorithm.
 
 [[default-tls-cipher-selection]]
 === Default TLS Cipher Selection
@@ -229,7 +231,7 @@ For details about how to upgrade your policies, see xref:upgrade-policies-proxie
 [[api-proxies]]
 == API Proxies
 
-The MuleSoft-included API proxies are compatible with Java 17 beginning with the Mule runtime 4.6 release. These API proxies continue to have standard support for Java 8 until February 2025, so it’s best to start updating your API proxies as soon as possible.
+The MuleSoft-included API proxies are compatible with Java 17 beginning with the Mule runtime 4.6 release. These API proxies continue to have standard support for Java 8 until February 2025, so itâs best to start updating your API proxies as soon as possible.
 
 [IMPORTANT]
 To ensure your API proxies or Mule apps are protected when upgrading, upgrade your API policies _before_ upgrading your API proxies or Mule apps.

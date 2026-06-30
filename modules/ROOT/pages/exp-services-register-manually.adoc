@@ -1,4 +1,6 @@
 = Register Services Manually
+:description: Learn how to manually register experience services in MuleSoft to manage and secure your APIs without automatic discovery.
+:keywords: experience services, manual registration, api manager, service registration, mulesoft, api management, flex gateway
 
 Register a service to add it to your portfolio when you already have the metadata, specification, endpoint, or card required in Enhanced Experience, without running a provider scan. Start from *Home* or from the catalog for that service type in *Portfolio*. Completed registrations appear in the matching catalog.
 
@@ -41,8 +43,8 @@ Manual registration does not support A2A or non-A2A connection routes, and the s
 
 For MCP servers, define how the system reaches the server and validates runtime access:
 
-* *By MCP URL* — Connect over a URL and test the live server so tools and metadata can be discovered.
-* *Upload Schema* — Upload a schema and supply the details needed to register and test the server.
+* *By MCP URL* â Connect over a URL and test the live server so tools and metadata can be discovered.
+* *Upload Schema* â Upload a schema and supply the details needed to register and test the server.
 
 Successful registration stores the MCP server in the *MCP Servers* catalog.
 
@@ -54,8 +56,8 @@ LLM proxy registration has two parts: associate the proxy with a gateway and dep
 
 Add an API to the *APIs* catalog by registering it manually or by connecting to a provider.
 
-* *Register manually* – Upload a specification file to define a new API.
-* *Connect to provider* – Discover and import APIs from external platforms. See xref:exp-services-connect-providers-to-add.adoc[].
+* *Register manually* â Upload a specification file to define a new API.
+* *Connect to provider* â Discover and import APIs from external platforms. See xref:exp-services-connect-providers-to-add.adoc[].
 
 === Register an API Manually
 

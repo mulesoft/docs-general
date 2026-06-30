@@ -1,3 +1,5 @@
+:description: Learn how to view and analyze API Manager metrics to monitor API performance, usage trends, and request data across your managed APIs.
+:keywords: api manager metrics, anypoint platform, api analytics, api monitoring, api performance, usage metrics, mulesoft api management
 // tag::intro[]
 
 API Manager usage reports track the maximum number of xref:api-manager::latest-overview-concept.adoc#api-instances[API instances] deployed in a given month per business group, environment, and runtime. 

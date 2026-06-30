@@ -1,3 +1,5 @@
+:description: Defines shared AsciiDoc attributes and variables used across MuleSoft documentation pages for consistent formatting and content reuse.
+:keywords: asciidoc attributes, mulesoft documentation, content reuse, documentation variables, page attributes
 :attachmentsdir: {moduledir}/assets/attachments
 :partialsdir: {moduledir}/pages/_partials
 :imagesdir: {moduledir}/assets/images

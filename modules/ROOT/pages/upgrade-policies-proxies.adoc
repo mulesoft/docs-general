@@ -1,4 +1,6 @@
 = Upgrading Java for Policies and API Proxies 
+:description: Learn how to upgrade API policies and proxies in Anypoint Platform to keep your APIs secure and up to date with the latest versions.
+:keywords: upgrade policies, upgrade proxies, api policies, anypoint platform, api manager, policy upgrade, proxy upgrade
 
 include::reuse::partial$java8-eoss-banner.adoc[tag=java8-eoss]
 

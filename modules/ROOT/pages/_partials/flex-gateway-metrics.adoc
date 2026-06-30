@@ -1,3 +1,5 @@
+:description: Learn how to configure and monitor metrics for Flex Gateway, including supported metric types, collection methods, and integration with observability tools.
+:keywords: flex gateway metrics, observability, monitoring, metric collection, flex gateway monitoring, telemetry, api gateway metrics
 // tag::intro[]
 
 Omni Gateway usage reports track daily and monthly API calls. You can view API calls by business group, environment, and registration.

@@ -1,3 +1,5 @@
+:description: Defines navigation labels for the experience interface, providing reusable UI text and terminology used across MuleSoft documentation pages.
+:keywords: navigation labels, anypoint exchange, experience api, ui navigation, mulesoft portal, reusable content, interface labels
 // Partial reused across all pages in the Enhanced Experience were needed.
 // tag::ExpNavigationLabels[]
 Navigation labels can vary by catalog, enabled features, and release.

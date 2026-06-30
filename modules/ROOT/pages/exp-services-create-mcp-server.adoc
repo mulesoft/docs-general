@@ -1,8 +1,10 @@
 = Create an MCP Server
+:description: Learn how to create and configure an MCP server in Anypoint Platform to expose tools and resources for AI agent integrations.
+:keywords: mcp server, model context protocol, anypoint platform, ai agents, experience services, create mcp server, api integration
 
 Create MCP servers to define identity, runtime connectivity, and the tools and resources exposed to MCP clients.
 
-Creating an MCP server defines a new MCP implementation—for example, by transcoding an existing REST API or creating a runtime deployment—and establishes the server identity, runtime connectivity, and the MCP capabilities (tools and resources) exposed to clients.
+Creating an MCP server defines a new MCP implementationâfor example, by transcoding an existing REST API or creating a runtime deploymentâand establishes the server identity, runtime connectivity, and the MCP capabilities (tools and resources) exposed to clients.
 
 When you create an MCP server in Enhanced Experience, the server is added to *Portfolio* automatically.
 

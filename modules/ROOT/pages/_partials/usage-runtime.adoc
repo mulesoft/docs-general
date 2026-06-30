@@ -1,3 +1,5 @@
+:description: Learn how to monitor and manage runtime usage metrics in MuleSoft, including tracking resource consumption and performance data.
+:keywords: mulesoft runtime, usage metrics, runtime monitoring, resource consumption, performance tracking, anypoint platform
 To view usage reports for Mule runtime, all applications (in production and sandbox) must use these Mule versions:
 
 [cols="2*"]

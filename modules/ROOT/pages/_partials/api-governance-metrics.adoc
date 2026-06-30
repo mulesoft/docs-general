@@ -1,3 +1,5 @@
+:description: Learn how to monitor and interpret API governance metrics to track conformance, ruleset validation, and API quality across your organization.
+:keywords: api governance metrics, api conformance, ruleset validation, api quality, governance dashboard, muleSoft api governance, api monitoring
 // tag::intro[]
 
 Anypoint API Governance usage reports track the maximum number of xref:api-governance::index.adoc#governed-apis[APIs governed] in a given month per business group. 

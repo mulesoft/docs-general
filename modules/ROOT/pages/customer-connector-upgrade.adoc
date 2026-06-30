@@ -1,4 +1,6 @@
 = Upgrading Java for Custom Connectors (Customers)
+:description: Learn how to upgrade customer connectors in MuleSoft, including step-by-step instructions for migrating to newer connector versions.
+:keywords: customer connector upgrade, mulesoft connector migration, connector version upgrade, anypoint connector, mule connector update, connector compatibility
 
 include::reuse::partial$java8-eoss-banner.adoc[tag=java8-eoss]
 

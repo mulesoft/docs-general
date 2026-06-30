@@ -1,3 +1,5 @@
+:description: Learn how to report security vulnerabilities in MuleSoft projects responsibly and understand the security disclosure process.
+:keywords: security vulnerabilities, security disclosure, reporting vulnerabilities, mulesoft security, responsible disclosure, security policy
 == Security
 
 Please report any security issue to link:mailto:security@salesforce.com[security@salesforce.com] as soon as it is discovered.

@@ -1,4 +1,6 @@
 = Add Semantic Services
+:description: Learn how to add semantic search capabilities to experience services, enabling intelligent content discovery and enhanced API functionality.
+:keywords: semantic search, experience services, mulesoft, api design, intelligent search, anypoint platform, semantic capabilities
 
 Semantic services improve how the system interprets and routes LLM-driven requests across your portfolio. They apply context-aware behavior so the system directs requests to the most relevant tools, services, or pathways configured in your organization.
 

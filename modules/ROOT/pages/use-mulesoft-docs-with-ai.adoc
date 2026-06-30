@@ -1,4 +1,6 @@
 = Use MuleSoft Documentation with AI
+:description: Learn how to use MuleSoft documentation effectively with AI tools and assistants to accelerate integration development and find answers faster.
+:keywords: mulesoft documentation, ai tools, ai assistant, mulesoft ai, documentation search, integration development, llm, anypoint platform
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]

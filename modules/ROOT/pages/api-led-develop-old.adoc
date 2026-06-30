@@ -1,4 +1,6 @@
 = Step 3. Develop the API 
+:description: Learn how to develop APIs using MuleSoft's API-led connectivity approach, building integration layers with reusable assets and Anypoint Platform tools.
+:keywords: api-led connectivity, mule development, anypoint platform, api development, integration development, reusable apis, mulesoft tutorial
 :page-llms-exclude: true
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]

@@ -1,4 +1,6 @@
 = Step 4. Add Validation and Error Handling
+:description: Learn how to test APIs and integrations in an API-led connectivity architecture using MuleSoft tools and best practices.
+:keywords: api-led connectivity, api testing, mulesoft testing, integration testing, anypoint platform, unit testing, munit
 :page-llms-exclude: true
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]

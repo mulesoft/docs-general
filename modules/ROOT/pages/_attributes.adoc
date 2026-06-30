@@ -1,2 +1,4 @@
+:description: Defines shared AsciiDoc attributes and variables used across MuleSoft documentation pages for consistent formatting and referencing.
+:keywords: asciidoc attributes, mulesoft documentation, page variables, documentation configuration, shared attributes
 :moduledir: ..
 include::{moduledir}/_attributes.adoc[]
