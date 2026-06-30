@@ -1,6 +1,4 @@
 = Step 4. Test the API
-:description: Learn how to test your API-led connectivity implementation in MuleSoft, ensuring each API layer functions correctly before deployment.
-:keywords: api-led connectivity, api testing, mulesoft testing, anypoint platform, integration testing, api validation, unit testing
 :page-pagination:
 
 Test your API locally before deploying it to the cloud. You run the API in Anypoint Code Builder, send requests using Postman, add logging to track requests, and use the built-in debugger to inspect the Mule message at each step.
@@ -117,9 +115,9 @@ Try it:
 http://localhost:8081/api/greeting
 ----
 . Observe that APIKit returns an error response before your flow executes.
-. Check the Terminal â you won't see your Logger message because APIKit blocked the invalid request.
+. Check the Terminal — you won't see your Logger message because APIKit blocked the invalid request.
 
-This automatic validation is one of the key benefits of using APIKit â you don't need to write manual validation code for contract requirements defined in your API specification.
+This automatic validation is one of the key benefits of using APIKit — you don't need to write manual validation code for contract requirements defined in your API specification.
 
 == Step 4.5: Use Breakpoints for Debugging
 
