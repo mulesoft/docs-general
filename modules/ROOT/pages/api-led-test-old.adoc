@@ -23,7 +23,7 @@ Add the *Validate size* operation to the `hello-world-app` project:
 image:validation-module.png[View of Mule Palette with the Validation module selected]
 . From the list of operations, drag *Validate size* to the Studio canvas and drop it inside the endpoint module to the right of *Set Payload*.
 +
-image:validate-size.png[Validate size dropped into GET module]
+image:validate-size.png["Validate Size module card dropped into a GET flow in Anypoint Studio's Mule Palette canvas view"]
 . Click *Validate size* to display the *General* configuration tab.
 +
 image:configure-validate.png[Validate size configuration tab]
@@ -70,7 +70,7 @@ http://localhost:8081/api/greeting
 Since you configured the *Validate size* operation to have a minimum of 6 characters, this will trigger an error.
 . Click the *Next processor* (curved yellow arrow) above the debugger window.
 +
-image:next-toggle.png[Next processor control to move to next toggle point, 500]
+image:next-toggle.png["Blue circular button with a right-pointing arrow icon used to advance to the next toggle point in a flow", 500]
 +
 If you hover over it to ensure you have the correct control, the label *Next processor (F6)* appears. The debugger pane now shows the Logger connector.
 . Click the curved yellow arrow again to move to the *Validate size* operation.

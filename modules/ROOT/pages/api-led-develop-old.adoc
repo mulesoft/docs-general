@@ -67,7 +67,7 @@ Scroll down the canvas to see the scaffolding that was added to your app:
 
 There are three different views of the canvas:
 
-image:canvas-tabs.png[One canvas and links to all three views, 500]
+image:canvas-tabs.png["Anypoint Studio canvas showing four tabs: one canvas tab and links to Configuration XML, Global Elements, and Mule Properties views", 500]
 
 * Use *Message Flow* to drag modules, connectors, and other assets on to the canvas and create the relationships between them.
 * Use *Global Elements* to specify global elements used in multiple projects.
@@ -76,7 +76,7 @@ image:canvas-tabs.png[One canvas and links to all three views, 500]
 Verify the values set in the *Listener* component in the canvas:
 
 . Double-click *Listener* to display its general configuration values.
-. Click the edit icon image:edit-module-version-icon.png[Pencil on notebook] next to the configuration name, and verify that the host is `0.0.0.0` and the port is `8081`.
+. Click the edit icon image:edit-module-version-icon.png["Pencil icon used to edit a module version in the API development interface"] next to the configuration name, and verify that the host is `0.0.0.0` and the port is `8081`.
 . Click *Test Connection*, and then click *OK* when a successful test connection is reported.
 . Click *OK* to close the configuration.
 +
@@ -101,7 +101,7 @@ image:greeting-module.png[View of GET connector as created by scaffolding, 500]
 . Specify the logic that displays the data sent in a response from the `hello-world-api` API:
   .. Click the *Set Payload* transformer you just added to the flow.
 +
-image:set-payload.png[View of canvas and configuration dialog for Set Payload connector, 500]
+image:set-payload.png["Mule canvas showing Set Payload transformer selected, with General configuration tab displaying Value field set to Hello World", 500]
   .. In the *General* tab, click the *fx* (function) button to deselect it. For this tutorial, you are hard-coding the value.
   .. In *Settings*, set the *Value* to `Today the greeting is Hello.`
 . In the Anypoint Studio menu, select *File > Save All*.
@@ -186,7 +186,7 @@ After the project is uploaded to Exchange, you are provided with a direct link t
 image:link-to-published-api.png[Dialog showing link to API published in Exchange, 600] 
 . Click the link to view the project in Exchange:
 +
-image:api-led-assets-list-arrow.png[Home page of the hello-world-app you deployed]
+image:api-led-assets-list-arrow.png["Anypoint Exchange Assets list page with an arrow highlighting the hello-world-app asset"]
 +
 . Click *Back to Assets List*. 
 +

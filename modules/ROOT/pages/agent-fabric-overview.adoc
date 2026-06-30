@@ -23,7 +23,7 @@ Agentforce and Agent Fabric are core components of Salesforce's Agentic Enterpri
 
 Agent Fabric operates in the orchestration layer, providing the control plane for multi-vendor agent coordination.
 
-image::agent-fabric-pillars.png[Agent Fabric pillars, discover, govern, orchestrate, and observe]
+image::agent-fabric-pillars.png["Five colored pillars labeled Discovery, Governance, Security, Operations, and Runtime labeled as the foundation of Agent Fabric", discover, govern, orchestrate, and observe]
 
 As the agent control plane for your enterprise, Agent Fabric delivers four core capabilities that work together, whether you're managing Agentforce agents, third-party agents, or both:
 
