@@ -1,4 +1,6 @@
 = Adding Scanners from Providers
+:description: Learn how to add scanners from external providers to analyze and detect issues in your APIs and integrations using MuleSoft tools.
+:keywords: scanners, providers, add scanners, api security, mulesoft exchange, vulnerability scanning, integration tools, external providers
 
 A scanner is the configured link between the system and a supported cloud provider that lets discovery jobs find services—such as APIs, agents, and MCP servers—and register them in the right *Portfolio* catalogs. Scanners enable automated discovery so your catalogs stay current without manual registration. Configure a scanner once to turn on discovery for a provider, then extend it as your organization adds catalogs or enabled features.
 

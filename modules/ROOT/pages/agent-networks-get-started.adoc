@@ -1,3 +1,5 @@
 = Get Started with Agent Networks
+:description: Learn how to get started with agent networks in MuleSoft, including setup steps, prerequisites, and configuration to connect and orchestrate multiple agents.
+:keywords: agent networks, mulesoft agents, multi-agent, agentforce, agent orchestration, getting started, ai agents, configuration
 
 include::anypoint-code-builder::partial$af-shared.adoc[tag=get-started]

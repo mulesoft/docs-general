@@ -1,4 +1,6 @@
 = Managing Scanners
+:description: Learn how to manage scanners in MuleSoft, including configuring, enabling, and monitoring scanner settings for your integrations.
+:keywords: scanners, manage scanners, scanner configuration, mulesoft scanners, api scanning, scanner settings, integration security
 
 After you configure scanners, you run them day to day. Most of that work happens under *Providers*, where you manage provider connections, scanners, and scan activity in one place.
 

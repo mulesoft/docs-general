@@ -1,1 +1,3 @@
+:description: Explore release notes for the Anypoint Runtime Fabric agent, including new features, bug fixes, and compatibility updates across versions.
+:keywords: runtime fabric agent, release notes, anypoint runtime fabric, agent updates, mulesoft fabric, version history, bug fixes
 include::release-notes::partial$agent-fabric/agent-fabric-rn-landing-page.adoc[]

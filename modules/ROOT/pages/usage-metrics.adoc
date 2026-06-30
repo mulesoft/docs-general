@@ -1,4 +1,6 @@
 = Usage and Pricing Metrics Reference
+:description: Learn how to view and interpret usage metrics in Anypoint Platform to monitor API and integration resource consumption across your organization.
+:keywords: usage metrics, anypoint platform, resource consumption, api monitoring, mulesoft analytics, usage tracking, capacity planning
 :page-aliases: pricing-metrics.adoc
 
 Anypoint Platform captures usage metrics across products, but not all metrics are billable or reflected in usage reports.

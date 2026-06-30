@@ -1,4 +1,6 @@
 = Creating and Managing Instances
+:description: Learn how to add and configure experiment instances in MuleSoft to manage and deploy your integration experiments effectively.
+:keywords: experiment instances, add instances, mulesoft experiments, instance configuration, integration deployment, runtime instances
 
 Instances represent how a service runs in a specific environment, such as production or sandbox, and how traffic reaches it through gateways or runtimes your organization manages.
 

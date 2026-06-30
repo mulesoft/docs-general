@@ -1,4 +1,6 @@
 = Monitoring Your Services
+:description: Learn how to monitor experience services in MuleSoft, track performance metrics, and gain visibility into service health and behavior.
+:keywords: experience services monitoring, anypoint platform, service health, performance metrics, mulesoft monitoring, api observability, service visibility
 
 Monitoring helps you see whether the services in your portfolio—and the paths that carry their traffic—are healthy, performant, and stable over time. You work from service context (what a single API, agent, MCP server, LLM proxy, or gateway is doing) and, when your administrator enables it, from broader observability surfaces that sit alongside *Portfolio* and *Governance*.
 

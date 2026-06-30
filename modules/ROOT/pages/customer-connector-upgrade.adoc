@@ -1,4 +1,6 @@
 = Upgrading Java for Custom Connectors (Customers)
+:description: Learn how to upgrade custom connectors built by customers or partners to ensure compatibility with the latest MuleSoft runtime versions.
+:keywords: custom connector upgrade, mulesoft connector, connector migration, partner connector, anypoint connector, runtime compatibility, connector development
 
 include::reuse::partial$java8-eoss-banner.adoc[tag=java8-eoss]
 

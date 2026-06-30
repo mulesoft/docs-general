@@ -1,4 +1,6 @@
 = Integrate the Enhanced Experience with Slack
+:description: Learn how to integrate Slack with MuleSoft to automate workflows, send notifications, and connect Slack with enterprise systems using APIs.
+:keywords: slack integration, mulesoft slack, slack connector, anypoint platform, workflow automation, slack api, enterprise integration
 
 Install the MuleSoft for Slack app in your Slack workspace to receive notifications, run shortcuts, and provide deep links for responders to jump directly into the enhanced experience. The Slack app enables you to:
 

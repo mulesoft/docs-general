@@ -1,4 +1,6 @@
 = Automation Credits Usage and Rates
+:description: Learn how automation credits are consumed across MuleSoft products, including usage rates and billing calculations for Anypoint Platform services.
+:keywords: automation credits, usage rates, anypoint platform, credit consumption, mulesoft billing, credit-based pricing, platform licensing
 :page-aliases: rpa-home::ms-automation-credits-usage-types.adoc, idp::ms-automation-credits-usage-types.adoc, composer::ms_composer_hyperautomation.adoc
 
 Your MuleSoft Automation subscription plan includes a quota of Automation Credits that depletes as you create and execute automations.

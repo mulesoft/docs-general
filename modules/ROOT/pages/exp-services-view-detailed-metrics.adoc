@@ -1,4 +1,6 @@
 = View Detailed Metrics for Your Services
+:description: Learn how to view detailed performance metrics for experience services, including response times, error rates, and throughput data.
+:keywords: experience services, detailed metrics, anypoint platform, api analytics, performance monitoring, service metrics, mulesoft observability
 
 Detailed metrics go beyond high-level status to show time series, breakdowns, and dimensions your observability stack forwards into the enhanced experience. Use them to debug incidents, validate policy changes, and compare behavior across instances or environments.
 

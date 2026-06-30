@@ -1,3 +1,5 @@
+:description: Explore release notes for MuleSoft usage reports, including new features, enhancements, and fixes across versions.
+:keywords: usage reports, release notes, mulesoft usage reporting, anypoint platform, version history, updates, changelog
 //= Usage Reports Release Notes
 
 include::release-notes::partial$usage-reports/usage-reports-rn-landing-page.adoc[]

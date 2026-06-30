@@ -1,4 +1,6 @@
 = Step 5. Deploy the API to CloudHub 2.0
+:description: Learn how to deploy Mule applications using API-led connectivity, covering deployment steps, environments, and runtime configurations in Anypoint Platform.
+:keywords: api-led connectivity, deploy mule application, anypoint platform, runtime manager, deployment, cloudhub, mule runtime
 :page-pagination:
 
 Deploy your tested API to CloudHub 2.0 to make it accessible from anywhere. You update the project version, configure deployment settings, and deploy directly from Anypoint Code Builder. After deployment, verify the API is running by sending a request to its public CloudHub URL.

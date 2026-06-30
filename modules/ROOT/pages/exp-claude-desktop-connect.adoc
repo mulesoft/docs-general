@@ -1,4 +1,6 @@
 = Connect the Enhanced Experience to Claude Desktop
+:description: Learn how to connect Claude desktop to MuleSoft APIs and integration flows to enable AI-powered automation and intelligent data exchange.
+:keywords: claude desktop, mulesoft integration, ai connector, claude api, desktop connection, mulesoft anypoint, ai automation
 
 Some organizations connect Claude Desktop (or similar assistants) to the enhanced MuleSoft experience so developers can jump from conversational workflows into governed catalogs and policies without leaving their preferred environment. Your IT team controls whether this integration is available, which OAuth scopes apply, and which actions the assistant can initiate on your behalf.
 

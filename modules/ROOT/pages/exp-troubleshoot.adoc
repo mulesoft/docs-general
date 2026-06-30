@@ -1,4 +1,6 @@
 = Troubleshoot the Enhanced Experience
+:description: Troubleshoot common issues with Experience APIs in MuleSoft, including error codes, root causes, and step-by-step resolutions to restore functionality.
+:keywords: experience api troubleshooting, mulesoft errors, api troubleshooting, error resolution, experience layer, anypoint platform, api errors, debugging
 
 When authentication, connection, or data issues occur in the enhanced experience, use this information to identify the cause and find solutions. Common issues include permission errors, provider connection failures, rate limiting, missing data, and SSL certificate problems.
 

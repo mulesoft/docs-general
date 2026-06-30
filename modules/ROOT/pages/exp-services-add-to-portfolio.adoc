@@ -1,4 +1,6 @@
 = Adding Services to Your Portfolio
+:description: Learn how to add experience services to your portfolio, enabling discovery and reuse of APIs and integrations across your organization.
+:keywords: experience services, portfolio, anypoint platform, api portfolio, service discovery, api management, mulesoft
 
 Your *Portfolio* is organized into catalogs: *Agents*, *MCP Servers*, *LLM Proxies*, *APIs*, and *Gateways*. Each catalog holds the services (or gateway entries) your organization registered or imported for governance, monitoring, and deployment. Services enter a catalog through automated provider discovery or manual registration. For procedures, use the topics linked in each section.
 

@@ -1,4 +1,6 @@
 = Upgrading Java for Policies and API Proxies 
+:description: Learn how to upgrade API policies and proxies in API Manager to keep your APIs secure and running on the latest versions.
+:keywords: upgrade policies, upgrade proxies, api manager, api policies, mulesoft proxies, policy upgrade, proxy upgrade, api gateway
 
 include::reuse::partial$java8-eoss-banner.adoc[tag=java8-eoss]
 

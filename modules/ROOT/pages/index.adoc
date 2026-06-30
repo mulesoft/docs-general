@@ -1,4 +1,6 @@
 = [.brand]#MuleSoft# Documentation
+:description: Explore MuleSoft documentation to learn how to design, build, and manage APIs and integrations using Anypoint Platform.
+:keywords: mulesoft, anypoint platform, api integration, mule runtime, documentation, getting started, integration platform
 :page-llms-exclude: true
 :page-layout: home
 :page-fragmentize:

@@ -1,4 +1,6 @@
 = Step 3. Develop the API
+:description: Learn how to develop APIs and integrations using API-led connectivity in Anypoint Platform, following best practices for building scalable Mule applications.
+:keywords: api-led connectivity, anypoint platform, mule application development, api development, mulesoft, integration development, anypoint studio
 :page-pagination:
 
 Now that you've created an API spec, you'll turn it into a working Mule application. Anypoint Code Builder includes an embedded Mule runtime for local testing. Later, you'll deploy your application to xref:cloudhub-2::ch2-deploy.adoc[CloudHub 2.0], where it runs on Mule runtime in the cloud.

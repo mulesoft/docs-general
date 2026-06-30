@@ -1,4 +1,6 @@
 = Working with Governance Strategies
+:description: Learn how to create, configure, and manage governance strategies to enforce API and integration standards across your organization.
+:keywords: governance strategies, api governance, anypoint platform, governance rules, api standards, mulesoft governance, strategy configuration
 
 Use governance strategies to apply conformance rules and policies across agents, APIs and MCP servers. When your tenant includes *Governance* and your account has the required role, you can create, manage, and monitor these strategies to validate service design compliance, automate runtime enforcement, and maintain visibility as your portfolio grows.
 

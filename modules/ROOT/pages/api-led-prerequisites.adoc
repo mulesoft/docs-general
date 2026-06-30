@@ -1,4 +1,6 @@
 = Step 1. Prerequisites for Building an API-Led Solution
+:description: Learn the prerequisites required before implementing API-led connectivity, including required tools, permissions, and setup steps to get started.
+:keywords: api-led connectivity, prerequisites, anypoint platform, mulesoft setup, api design, getting started, requirements
 :page-pagination: next
 
 Set up your environment before starting the tutorial. You need an Anypoint Platform account, Anypoint Code Builder, and a REST client such as Postman. Specific permissions are also required for deployment and, optionally, for AI-assisted API design with MuleSoft Vibes.

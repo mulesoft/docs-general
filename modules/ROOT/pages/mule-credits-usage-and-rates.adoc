@@ -1,4 +1,6 @@
 = Understand Mule Credits Usage and Rates
+:description: Learn how Mule credits are consumed across deployment models and view rate tables for vCores, workers, and other resources in MuleSoft Anypoint Platform.
+:keywords: mule credits, credit usage, credit rates, anypoint platform licensing, vcores, deployment models, mule pricing, credit consumption
 
 A Mule Credit is a fungible currency that allows you to draw down from a single capacity pool as you consume services across MuleSoft. Instead of managing different usage types for all products, you purchase a package of credits to use flexibly across the entire MuleSoft platform. As you use these capabilities, Anypoint Platform deducts the corresponding credit amounts from your available balance.
 

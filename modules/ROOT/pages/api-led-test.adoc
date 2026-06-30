@@ -1,4 +1,6 @@
 = Step 4. Test the API
+:description: Learn how to test your API-led connectivity implementation using MuleSoft tools to validate flows, integrations, and API behavior end-to-end.
+:keywords: api-led connectivity, api testing, mule application testing, integration testing, mulesoft testing, api validation, test flows
 :page-pagination:
 
 Test your API locally before deploying it to the cloud. You run the API in Anypoint Code Builder, send requests using Postman, add logging to track requests, and use the built-in debugger to inspect the Mule message at each step.

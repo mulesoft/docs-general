@@ -1,4 +1,6 @@
 = Enhanced MuleSoft Experience and Anypoint Platform Comparison
+:description: Learn how to use comparison expressions in MuleSoft to evaluate and compare values using operators like equal, less than, and greater than.
+:keywords: comparison expressions, dataweave, operators, equal operator, less than, greater than, mulsoft expressions, value comparison
 
 Both the enhanced MuleSoft experience and Anypoint Platform include robust capabilities, but they emphasize different strengths, especially if you manage AI services such as agents, LLM proxies, and MCP servers next to APIs and gateways.
 

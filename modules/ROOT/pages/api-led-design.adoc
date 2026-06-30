@@ -1,4 +1,6 @@
 = Step 2. Design an API Spec
+:description: Learn how to design APIs using an API-led connectivity approach to create reusable, discoverable, and scalable integrations in MuleSoft Anypoint Platform.
+:keywords: api-led design, api-led connectivity, anypoint platform, api design, mulesoft integration, reusable apis, system apis, experience apis
 :page-pagination:
 
 API-led development means designing the contract before writing any code. By defining your API spec upfront, you give your team, consumers, and tools a shared contract to build against, which reduces rework and increases reuse.

@@ -1,5 +1,6 @@
 = Tutorial: Build an API from Start to Finish
-:description: Overview of a multipart tutorial for MuleSoft's API development workflow, covering how to build your first API from design to deployment using Anypoint Code Builder.
+:description: Learn MuleSoft's API-led development workflow with Anypoint Code Builder, from API design and implementation to deployment and testing.
+:keywords: api-led development, anypoint code builder, api design, mulesoft tutorial, api implementation, api deployment, mule application
 :page-pagination: next
 
 Build your first API from design to deployment using Anypoint Code Builder. Design an API spec, implement the logic, test locally, and deploy to CloudHub 2.0 to learn the complete MuleSoft API development workflow.

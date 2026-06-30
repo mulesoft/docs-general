@@ -1,4 +1,6 @@
 = Step 6. Monitor and Manage
+:description: Learn how to operate and manage APIs in an API-led connectivity architecture using MuleSoft Anypoint Platform tools and best practices.
+:keywords: api-led connectivity, operate apis, anypoint platform, api management, mulesoft operations, api monitoring, runtime manager
 :page-pagination: prev
 
 In this final step, you'll learn how to monitor your deployed API using Runtime Manager, your operations dashboard for CloudHub applications.

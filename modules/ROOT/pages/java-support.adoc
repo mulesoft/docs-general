@@ -1,4 +1,6 @@
 = Java Support
+:description: Learn how DataWeave supports Java types and enables seamless data transformation between Java objects and DataWeave formats in Mule applications.
+:keywords: dataweave java support, java types, java objects, data transformation, mule applications, java integration, dataweave formats
 
 include::reuse::partial$java8-eoss-banner.adoc[tag=java8-eoss]
 

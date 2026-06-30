@@ -1,4 +1,6 @@
 = Anypoint Platform Glossary
+:description: Explore key MuleSoft and Anypoint Platform terms and definitions to understand integration, API management, and runtime concepts.
+:keywords: mulesoft glossary, anypoint platform terms, integration terminology, api management definitions, mule runtime concepts, mulesoft terminology
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]

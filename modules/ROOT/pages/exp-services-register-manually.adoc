@@ -1,4 +1,6 @@
 = Register Services Manually
+:description: Learn how to manually register experience services in MuleSoft to expose and manage APIs effectively within your integration architecture.
+:keywords: experience services, manual registration, api registration, mulesoft, anypoint platform, service management, api manager
 
 Register a service to add it to your portfolio when you already have the metadata, specification, endpoint, or card required in Enhanced Experience, without running a provider scan. Start from *Home* or from the catalog for that service type in *Portfolio*. Completed registrations appear in the matching catalog.
 
