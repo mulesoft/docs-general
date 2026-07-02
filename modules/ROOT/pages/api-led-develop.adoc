@@ -1,4 +1,5 @@
 = Step 3. Develop the API
+:keywords: api-led connectivity, implementation project, scaffolded structure, hello world, mulesoft development, anypoint studio, api implementation
 :page-pagination:
 
 Now that you've created an API spec, you'll turn it into a working Mule application. Anypoint Code Builder includes an embedded Mule runtime for local testing. Later, you'll deploy your application to xref:cloudhub-2::ch2-deploy.adoc[CloudHub 2.0], where it runs on Mule runtime in the cloud.

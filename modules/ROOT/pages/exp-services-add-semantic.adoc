@@ -1,4 +1,5 @@
 = Add Semantic Services
+:keywords: semantic services, add semantic service, configure semantic service, anypoint platform, service configuration, mulesoft services
 
 Semantic services improve how the system interprets and routes LLM-driven requests across your portfolio. They apply context-aware behavior so the system directs requests to the most relevant tools, services, or pathways configured in your organization.
 

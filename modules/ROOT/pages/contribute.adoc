@@ -1,4 +1,5 @@
 = Contribute to MuleSoft Documentation
+:keywords: contribute, mulesoft documentation, feedback, documentation updates, open source docs, edit documentation, pull request
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
