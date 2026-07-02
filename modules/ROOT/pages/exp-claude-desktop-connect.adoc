@@ -1,4 +1,5 @@
 = Connect the Enhanced Experience to Claude Desktop
+:keywords: claude desktop, mulesoft mcp server, enhanced experience, administrator configuration, mcp integration, ai integration, mulesoft claude
 
 Some organizations connect Claude Desktop (or similar assistants) to the enhanced MuleSoft experience so developers can jump from conversational workflows into governed catalogs and policies without leaving their preferred environment. Your IT team controls whether this integration is available, which OAuth scopes apply, and which actions the assistant can initiate on your behalf.
 

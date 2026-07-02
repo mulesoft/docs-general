@@ -1,4 +1,5 @@
 = MuleSoft Agent Fabric Overview
+:keywords: mulesoft agent fabric, mcp bridge, mcp connector, enterprise actionability, ai agents, mulesoft integration, model context protocol
 
 
 MuleSoft Agent Fabric helps you turn agent sprawl into a governed, coordinated, intelligent network. Regardless of the platform where your AI agents were built or are running, Agent Fabric provides the infrastructure to discover, orchestrate, govern, and observe agents across your enterprise. Agent Fabric enables you to build intelligent agent networks where multiple agents work together, access enterprise systems securely, and operate under consistent governance and observability.

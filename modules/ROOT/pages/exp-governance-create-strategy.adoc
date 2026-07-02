@@ -1,4 +1,5 @@
 = Create Governance Strategies
+:keywords: governance strategies, create strategy, strategy workflow, governance scope, strategy type, api governance, mulesoft
 
 Governance strategies define which services the system evaluates or enforces policy against and under what conditions. A Control strategy monitors compliance and can block noncompliant activity. An Automated Policy strategy enforces requirements at the gateway or runtime layer. You can create strategies if your tenant includes *Governance* and you have the required administrator role.
 
