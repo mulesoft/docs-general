@@ -53,10 +53,13 @@ To view scanners for a specific provider, select the provider from the sidebar. 
 
 == View Scanner Details
 
-To see detailed information about a scanner, including scan history and settings, select the scanner name in the scanner list. The scanner detail page opens with two tabs:
+To see detailed information about a scanner, including scan history and settings, select the scanner name in the scanner list. The scanner detail page opens with three tabs:
 
 Overview::
 Displays services count, instances count, and scan history. Each scan history entry shows status (Success, Failed), timestamp, and number of new services discovered.
+
+Services::
+Lists all services discovered by this scanner, organized by type: Agents, APIs, MCP Servers, and LLM Proxies.
 
 Settings::
 Shows scanner configuration including provider, created date, last scanned time, and services count. Use this tab to modify scanner settings or delete the scanner.
@@ -68,14 +71,22 @@ For information about managing scanners, see xref:exp-scanners-manage.adoc[].
 To add a provider connection:
 
 . From *Platform* > *Providers*, select a provider from the *Not Connected* section.
-. Follow the connection workflow to authenticate and configure scanner settings.
+. Follow the connection workflow to authenticate and configure scanner settings. The wizard walks through three steps: *Choose Provider*, *Connect to Provider*, and *Connection Setup*.
 
 For detailed scanner setup instructions, see xref:exp-scanners-add-from-providers.adoc[].
+
+== Akamai API Security Data in Portfolio
+
+When Akamai API Security is connected and scans have completed, security risk data appears on the detail pages of scanned APIs:
+
+* A *Security Risk* column in the *Instances* tab shows a color-coded risk level per instance: Low, Medium, High, or Critical.
+* An *Akamai* section in the *Conformance Report* tab shows full findings and incidents from the scan.
 
 == Supported Providers
 
 The enhanced experience supports connections to these providers:
 
+* Akamai API Security
 * Amazon
 * Anthropic
 * Databricks
@@ -89,6 +100,8 @@ The enhanced experience supports connections to these providers:
 [NOTE]
 ====
 When scanning Kong Konnect, the enhanced experience discovers gateway-level plugin information in addition to services.
+
+*Akamai API Security* is available only when your administrator has enabled the feature for your organization. When enabled, it appears in the *Not Connected* section of the Providers sidebar.
 ====
 
 The specific providers available depend on your organization's enabled products and enhanced experience configuration.
