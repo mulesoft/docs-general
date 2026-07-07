@@ -5,7 +5,7 @@ Keep governance strategies aligned with your portfolio by adjusting scope, rules
 
 == Display Governance Strategies
 
-Go to *Governance* > *Governance Strategies* to view all strategies. Check the name, type, status, governed services, and last modified time.
+Go to *Governance* > *Governance Strategies* to view all strategies. Check the strategy name, type, environment, target, status, governed services count, and last modified time.
 
 == Available Strategy Actions
 
@@ -19,7 +19,7 @@ Go to *Governance* > *Governance Strategies* to view all strategies. Check the n
 
 Use the controls above the table to narrow the list:
 
-* Use the strategy type filter to select *All*, *Controls*, or *Automated Policies*.
+* Use the strategy type tabs to show *All*, *Controls*, or *Automated Policies*.
 * Use the status filter to select *Any Status*, *Active*, or *Disabled*.
 * Enter text in the search field to match strategy names.
 
@@ -34,6 +34,14 @@ Review the summary cards:
 * *Governance Coverage*: When available, the portion of the portfolio governed by at least one strategy
 
 Use these cards to spot governance gaps quickly.
+
+== Governed Services Tab
+
+Open a strategy to view its *Governed Services* tab. The tab lists each service in scope with columns for service name, type, provider, and conformance status (compliant, non-compliant, or pending).
+
+When Akamai API Security is enabled by your administrator, the table also shows a *Security Risk* column with a color-coded risk level per service: Low, Medium, High, or Critical.
+
+Check the *Governed Services* count before and after scope changes to confirm the adjustment applied as expected.
 
 == When to Adjust a Strategy
 
