@@ -586,6 +586,76 @@ For nodes not intended to run Mule apps, exclude the nodes from your Runtime Fab
 [NOTE]
 Use a dedicated cluster for Runtime Fabric instances for accurate measurements
 
+[[cloudhub-vcore-usage]]
+== CloudHub vCore Usage
+
+CloudHub vCore usage reports show the combined vCore consumption across CloudHub (CH1) and CloudHub 2.0 (CH2) deployments in tables and cards.
+
+=== vCore Usage Calculation
+
+MuleSoft calculates vCore consumption differently depending on the deployment platform:
+
+[%header%autowidth.spread]
+|===
+| Platform | Calculation | Source
+
+| CloudHub (CH1)
+| Worker size × worker count
+| CH1 infrastructure
+
+| CloudHub 2.0 (CH2)
+| Application vCores × replica count
+| CloudHub 2.0 infrastructure
+|===
+
+The usage pipeline aggregates CH1 and CH2 consumption into a single combined metric without differentiating between platforms.
+
+=== Data Granularity
+
+vCore usage is sampled every hour. The peak hourly value is used to calculate the daily and monthly maximum:
+
+* *Hourly*: Peak vCore consumption captured each hour
+* *Daily*: Highest hourly peak within the day
+* *Monthly*: Highest hourly peak within the month
+
+=== CloudHub vCore Usage Card
+
+The usage report displays a metric card:
+
+CloudHub Maximum vCore Usage (CH1/CH2 Combined)::
+The highest peak vCore consumption across all CloudHub and CloudHub 2.0 applications in the organization, displayed with the date and time (UTC) of the peak.
+
+=== CloudHub vCore Usage Table
+
+Click the *Usage by Application* tab to view per-application vCore details.
+
+The table displays all CloudHub (CH1), CloudHub 2.0 (CH2), and Runtime Fabric (RTF) applications with their respective vCore consumption details.
+
+[%header%autowidth.spread]
+|===
+| Column | Description
+
+| Deployment Type
+| Deployment platform for the application: *CH1 (CloudHub), CH2 (CloudHub 2.0), or RTF (Runtime Fabric)*.
+
+| HPA Status
+| Indicates whether Horizontal Pod Autoscaling (HPA) is enabled for the application. Displays *Enabled* or *N/A*.
+
+| vCore Peak
+| Highest hourly vCore consumption for the application within the selected time period.
+
+| vCore Min
+| Guaranteed base vCore allocation based on the minimum replica configuration. Displays *N/A* for applications where HPA is not applicable.
+|===
+
+=== Horizontal Pod Autoscaling (HPA) and vCore Usage
+
+For CloudHub 2.0 applications with HPA enabled, the application can scale beyond its base vCore allocation to handle demand surges. When HPA is active:
+
+* The *vCore Min* value represents the guaranteed base allocation (minimum replicas × application vCores).
+* The *vCore Peak* value reflects the highest actual consumption, which can exceed the base allocation during scaling events.
+
+HPA is available to vCore customers who hold an Enterprise License Agreement (ELA) with the Autoscaling SKU attached. Customers on usage-based pricing already have access to CloudHub 2.0 HPA and do not require the Autoscaling SKU.
 
 == See Also
 
