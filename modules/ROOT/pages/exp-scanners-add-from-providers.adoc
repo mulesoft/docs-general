@@ -20,6 +20,7 @@ Before getting started, make sure you have:
 --
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+For provider-specific roles, credentials, and permission scopes, see xref:exp-scanners-prerequisites-reference.adoc[].
 
 == Benefits of Provider Scanners
 
@@ -43,9 +44,12 @@ Start from the general *Add Services* area and choose the path that connects a p
 * *Providers*
 +
 Use the area dedicated to provider and scanner management if your navigation includes it. Add or refine scanners alongside other provider work.
++
+The Akamai API Security scanner discovers security vulnerabilities in your Akamai-based applications and services.
 * *Portfolio*
 +
-Open the catalog that matches the service type you want (*Agents*, *APIs*, *MCP Servers*, and others your tenant supports). Use that catalog's add control—the label indicates the type (for example *Add API*)—then choose provider connection to scan and discover services to add to that catalog.
+Open the catalog that matches the service type you want (*Agents*, *APIs*, *MCP Servers*, and others your tenant supports). Use that catalog's add control—the label indicates the type (for example *Add API*)—then choose provider connection to scan and discover services to add to that catalog. Not all services have a catalog. If the service doesn't have a catalog, you can still add it to the system by using the *Add Service* button on the *Providers* page.
+
 
 include::partial$exp-navigation-labels.adoc[tag=ExpNavigationLabels]
 
@@ -61,6 +65,7 @@ For ongoing operations (pause, edit, or delete), see xref:exp-scanners-manage.ad
 
 == See Also
 
+* xref:exp-scanners-prerequisites-reference.adoc[]
 * xref:exp-services-connect-providers-to-add.adoc[]
 * xref:exp-scanners-manage.adoc[]
 * xref:exp-services-add-to-portfolio.adoc[]

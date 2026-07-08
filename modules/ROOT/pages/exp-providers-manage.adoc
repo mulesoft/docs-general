@@ -76,12 +76,13 @@ For detailed scanner setup instructions, see xref:exp-scanners-add-from-provider
 
 The enhanced experience supports connections to these providers:
 
+* Akamai
 * Amazon
 * Anthropic
 * Databricks
-* GoDaddy ANS
-* Google Cloud
-* Kong Konnect
+* GoDaddy 
+* Google 
+* Kong 
 * Langchain
 * Microsoft
 * Snowflake

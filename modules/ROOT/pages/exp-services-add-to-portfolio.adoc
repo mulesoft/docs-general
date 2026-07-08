@@ -63,6 +63,7 @@ For more information about registering any of these types, see xref:exp-services
 
 == See Also
 
+* xref:exp-scanners-prerequisites-reference.adoc[]
 * xref:exp-services-connect-providers-to-add.adoc[]
 * xref:exp-services-register-manually.adoc[]
 * xref:exp-scanners-add-from-providers.adoc[]
