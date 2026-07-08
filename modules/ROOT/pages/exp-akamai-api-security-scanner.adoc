@@ -26,6 +26,13 @@ For credential and role details, see xref:exp-scanners-prerequisites-reference.a
 . Apply the Akamai correlation policy to selected environments.
 . Save the scanner and run a discovery scan.
 
+== Review Scanner Detail Tabs
+
+After you select a configured Akamai scanner from the provider list, use scanner detail tabs to monitor scanner status, related services, and configuration values.
+
+For common tab behavior across scanners, see xref:exp-scanners-view-detail-tabs.adoc[].
+For Akamai scanners, the *Overview* tab highlights correlation policy status and enrichment activity for existing services.
+
 == Where Security Results Appear
 
 After a successful run, Akamai results appear on existing services:
@@ -61,4 +68,5 @@ If a scan completes but results do not appear:
 
 * xref:exp-scanners-add-from-providers.adoc[]
 * xref:exp-providers-manage.adoc[]
+* xref:exp-scanners-view-detail-tabs.adoc[]
 * xref:exp-scanners-manage.adoc[]
