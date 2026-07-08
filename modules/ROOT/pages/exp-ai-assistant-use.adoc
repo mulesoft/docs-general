@@ -53,28 +53,18 @@ Platform Configuration::
 * Set up integrations (Slack, Claude Desktop).
 * Manage business group settings.
 
-== Before You Begin
-
-Before using the AI assistant, make sure you have:
-
-* An Anypoint Platform account with access to the enhanced experience
-* Make sure that your administrator enabled Agentforce in your Anypoint Platform organization
-* Mule Developer Generative AI User permission to send prompts to the agent
-+
-The AI assistant respects your Access Management permissions and can only perform actions you're authorized to do. If you want the assistant to help with specific tasks like creating governance strategies or managing services, you also need the appropriate permissions for those actions.
-+
-For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
-
 == Access the AI Assistant
 
-The AI assistant is available from every page in the enhanced experience.
+[IMPORTANT]
+The MuleSoft Agent is available on request. To get access, contact your account executive or MuleSoft representative to request enablement.
 
-. Look for the AI assistant icon or panel.
-. Select the icon to open the chat panel.
-. Type your question or request in the message box.
-. Press Enter or select the send button.
+Once enabled, make sure you have:
 
-The assistant responds with relevant information, suggestions, or actions you can take.
+* An Anypoint Platform account with access to the enhanced experience
+* Agentforce enabled in your Anypoint Platform and Salesforce organizations by your administrator
+* The *MuleSoft Omni Agent for Anypoint* role assigned to each user who needs to send prompts to the agent
+
+The MuleSoft Agent respects your Access Management permissions and can only perform actions you're authorized to do. Tasks like creating governance strategies or managing services require the appropriate permissions for those actions. For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
 == Ask Questions
 
