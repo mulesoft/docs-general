@@ -57,11 +57,14 @@ To see detailed information about a scanner, including scan history and settings
 
 Overview::
 Displays services count, instances count, and scan history. Each scan history entry shows status (Success, Failed), timestamp, and number of new services discovered.
++
+For Akamai API Security scanners, the overview reflects correlation and security enrichment activity for existing services. Akamai scanners do not import new services.
 
 Settings::
 Shows scanner configuration including provider, created date, last scanned time, and services count. Use this tab to modify scanner settings or delete the scanner.
 
 For information about managing scanners, see xref:exp-scanners-manage.adoc[].
+For Akamai-specific setup and result interpretation, see xref:exp-akamai-api-security-scanner.adoc[].
 
 == Connect a New Provider
 
@@ -97,6 +100,7 @@ The specific providers available depend on your organization's enabled products 
 == See Also
 
 * xref:exp-services-connect-providers-to-add.adoc[]
+* xref:exp-akamai-api-security-scanner.adoc[]
 * xref:exp-scanners-add-from-providers.adoc[]
 * xref:exp-scanners-manage.adoc[]
 * xref:exp-services-add-to-portfolio.adoc[]

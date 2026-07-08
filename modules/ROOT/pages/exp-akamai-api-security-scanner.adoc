@@ -1,0 +1,64 @@
+= Using Akamai API Security Scanner for Risk Correlation
+:keywords: akamai api security scanner, akamai integration, security risk, vulnerability findings, incident correlation, portfolio catalogs
+
+Use Akamai API Security scanner to correlate security findings and risk signals with services that already exist in *Portfolio* catalogs. The scanner does not import or register third-party services. It applies Akamai security correlation so teams can review risk scores, findings, and incidents in one governance workflow for APIs, agents, and MCP services.
+
+== How Akamai Scanner Differs from Import Scanners
+
+Most provider scanners discover metadata in external platforms and import services into *Portfolio* catalogs. The Akamai API Security scanner works differently. It enriches existing services with security data from Akamai instead of creating new service records.
+
+== Before You Begin
+
+Before setting up the Akamai scanner, make sure you have:
+
+* Exchange Administrator permission in the target business group.
+* Akamai Security base URL, client ID, and client secret.
+* Access to apply Akamai correlation policy in the environments you want to scan.
+* Existing APIs and MCP services in *Portfolio* catalogs for correlation targets.
+
+For credential and role details, see xref:exp-scanners-prerequisites-reference.adoc[].
+
+== Set Up the Akamai Scanner
+
+. From *Platform* > *Providers*, select *Akamai*.
+. Enter connection values, and test the connection.
+. Enter scanner metadata, such as scanner name, description, frequency, and time.
+. Apply the Akamai correlation policy to selected environments.
+. Save the scanner and run a discovery scan.
+
+== Where Security Results Appear
+
+After a successful run, Akamai results appear on existing services:
+
+* API list views show values in the *Security Risk* column.
+* API detail pages show Akamai security data in *Conformance*.
+* Security sections display violation totals, findings, incidents, and endpoint context.
+* Finding detail views show fields such as status, type, endpoint path, and mapped frameworks.
+
+== Interpret Risk Status Levels
+
+The *Security Risk* column shows the risk level assigned to correlated Akamai findings:
+
+Low::
+Lower urgency risk. Review and remediate in your normal security lifecycle.
+
+Medium::
+Moderate risk. Prioritize remediation after high-risk issues.
+
+High::
+Elevated risk. Investigate and remediate first.
+
+== Troubleshoot Missing Akamai Findings
+
+If a scan completes but results do not appear:
+
+* Verify correlation policy is applied in the same environment as the service instance.
+* Confirm the target service already exists in *Portfolio* catalogs.
+* Confirm scanner scope and business group match the service location.
+* Re-run the scanner after connection or policy changes.
+
+== See Also
+
+* xref:exp-scanners-add-from-providers.adoc[]
+* xref:exp-providers-manage.adoc[]
+* xref:exp-scanners-manage.adoc[]

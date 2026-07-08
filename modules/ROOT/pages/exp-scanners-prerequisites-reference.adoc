@@ -163,6 +163,8 @@ a|
 * Akamai Security client ID
 * Akamai Security client secret
 * Access to create service accounts in Akamai Security
+* Access to apply Akamai correlation policy in target environments
+* Existing services in *Portfolio* catalogs for correlation targets
 
 | Amazon Bedrock AgentCore MCP
 | MCP

@@ -45,13 +45,22 @@ Start from the general *Add Services* area and choose the path that connects a p
 +
 Use the area dedicated to provider and scanner management if your navigation includes it. Add or refine scanners alongside other provider work.
 +
-The Akamai API Security scanner discovers security vulnerabilities in your Akamai-based applications and services.
+The Akamai API Security scanner does not import services; it scans third-party provider security policies and surfaces vulnerability findings for related APIs, agents, and MCP services already in *Portfolio* catalogs.
 * *Portfolio*
 +
 Open the catalog that matches the service type you want (*Agents*, *APIs*, *MCP Servers*, and others your tenant supports). Use that catalog's add control—the label indicates the type (for example *Add API*)—then choose provider connection to scan and discover services to add to that catalog. Not all services have a catalog. If the service doesn't have a catalog, you can still add it to the system by using the *Add Service* button on the *Providers* page.
 
 
-include::partial$exp-navigation-labels.adoc[tag=ExpNavigationLabels]
+include::_partials/exp-navigation-labels.adoc[tag=ExpNavigationLabels]
+
+[IMPORTANT]
+====
+The Akamai API Security scanner behaves differently from import-based scanners. It does not discover and import services from third-party providers into *Portfolio* catalogs.
+
+Instead, it scans third-party provider security policies and observed security data, correlates those results to existing services, and surfaces risk scores and vulnerability findings in related *Portfolio* catalogs.
+====
+
+For Akamai-specific setup and result interpretation, see xref:exp-akamai-api-security-scanner.adoc[].
 
 == Scanner Configuration Overview
 
@@ -66,6 +75,7 @@ For ongoing operations (pause, edit, or delete), see xref:exp-scanners-manage.ad
 == See Also
 
 * xref:exp-scanners-prerequisites-reference.adoc[]
+* xref:exp-akamai-api-security-scanner.adoc[]
 * xref:exp-services-connect-providers-to-add.adoc[]
 * xref:exp-scanners-manage.adoc[]
 * xref:exp-services-add-to-portfolio.adoc[]

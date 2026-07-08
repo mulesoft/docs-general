@@ -10,6 +10,9 @@ Your *Portfolio* is organized into catalogs: *Agents*, *MCP Servers*, *LLM Proxi
 |xref:exp-services-connect-providers-to-add.adoc[]
 |You add a provider scanner from *Home* or from a catalog in *Portfolio*. Scans discover services on supported cloud platforms and register them in the matching catalog.
 
+|xref:exp-akamai-api-security-scanner.adoc[]
+|Akamai API Security scanner does not import or register services. It correlates Akamai security data to existing services and surfaces risk scores, findings, and incidents in catalog views.
+
 |xref:exp-services-register-manually.adoc[]
 |You start an *Add …* workflow from *Home* or from the catalog for that service type. You supply metadata, specifications, endpoints, or cards to register the service without a provider scanner.
 |===
@@ -64,6 +67,7 @@ For more information about registering any of these types, see xref:exp-services
 == See Also
 
 * xref:exp-scanners-prerequisites-reference.adoc[]
+* xref:exp-akamai-api-security-scanner.adoc[]
 * xref:exp-services-connect-providers-to-add.adoc[]
 * xref:exp-services-register-manually.adoc[]
 * xref:exp-scanners-add-from-providers.adoc[]
