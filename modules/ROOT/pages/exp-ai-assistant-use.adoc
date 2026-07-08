@@ -64,7 +64,7 @@ Once enabled, make sure you have:
 * Agentforce enabled in your Anypoint Platform and Salesforce organizations by your administrator
 * The *MuleSoft Omni Agent for Anypoint* role assigned to each user who needs to send prompts to the agent
 
-The MuleSoft Agent respects your Access Management permissions and can only perform actions you're authorized to do. Tasks like creating governance strategies or managing services require the appropriate permissions for those actions. For more information, see xref:exp-home-start.adoc#permissions[].
+The MuleSoft Agent uses your Access Management permissions and can only perform actions you're authorized to do. Tasks like creating governance strategies or managing services require specific permissions. For more information, see xref:exp-home-start.adoc#permissions[].
 
 == Ask Questions
 
