@@ -16,10 +16,11 @@
     *** xref:exp-services-add-semantic.adoc[]
     *** xref:exp-services-view-details.adoc[]
   ** xref:exp-scanners-add-from-providers.adoc[]
-    *** xref:exp-akamai-api-security-scanner.adoc[]
+    
     *** xref:exp-scanners-prerequisites-reference.adoc[]
     *** xref:exp-scanners-view-details.adoc[]
     *** xref:exp-scanners-manage.adoc[]
+    *** xref:exp-akamai-api-security-scanner.adoc[]
   ** xref:exp-providers-manage.adoc[]
   ** xref:exp-instances-add.adoc[]
   ** xref:exp-governance-work-with-strategies.adoc[]
