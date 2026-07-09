@@ -55,7 +55,7 @@ To view scanners for a specific provider, select the provider from the sidebar. 
 
 To see detailed information about a scanner, including scan history and configuration, select the scanner name in the scanner list. The scanner detail page includes *Overview*, *Services*, and *Settings* tabs.
 
-For detailed tab behavior and scanner-type differences, see xref:exp-scanners-view-detail-tabs.adoc[].
+For detailed tab behavior and scanner-type differences, see xref:exp-scanners-view-details.adoc[].
 
 For information about managing scanners, see xref:exp-scanners-manage.adoc[].
 For Akamai-specific setup and result interpretation, see xref:exp-akamai-api-security-scanner.adoc[].
@@ -95,7 +95,7 @@ The specific providers available depend on your organization's enabled products 
 
 * xref:exp-services-connect-providers-to-add.adoc[]
 * xref:exp-akamai-api-security-scanner.adoc[]
-* xref:exp-scanners-view-detail-tabs.adoc[]
+* xref:exp-scanners-view-details.adoc[]
 * xref:exp-scanners-add-from-providers.adoc[]
 * xref:exp-scanners-manage.adoc[]
 * xref:exp-services-add-to-portfolio.adoc[]
