@@ -11,7 +11,7 @@ MuleSoft documentation is optimized for AI. Whether you're a human pasting conte
 
 Every page of MuleSoft documentation includes a dropdown menu for AI consumption.
 
-image::ai-context-menu.png["Dropdown menu with options Copy page URL, Copy page content, and Download page content for AI use"]
+image::ai-context-menu.png["Dropdown menu with options Copy as Markdown, View as Markdown, View on GitHub, View llms.txt, Use Docs MCP Server, and Open in ChatGPT, Claude, or Perplexity"] // CHANGE IMAGE
 
 Use these options to quickly grab clean text or jump straight into your workflow:
 
@@ -19,14 +19,29 @@ Use these options to quickly grab clean text or jump straight into your workflow
 * *View as Markdown*: Opens the Markdown version of the page in a new tab for sharing or inspecting. 
 * *View on GitHub*: Opens the page's source on GitHub to review, suggest changes, or log issues.
 * *View llms.txt*: Opens the sitewide `llms.txt` index file. See <<llms-txt>>.
+* *Use Docs MCP Server*: Connects your AI assistant to MuleSoft documentation through the Salesforce Docs MCP Server. See <<docs-mcp-server>>.
 * *Open in ChatGPT / Claude / Perplexity*: Opens a conversation with the current page as context so the LLM can answer your questions instantly.
 
+[[docs-mcp-server]]
+== Docs MCP Server
+
+The Salesforce Docs MCP Server gives AI assistants live access to MuleSoft documentation through the https://modelcontextprotocol.io/[Model Context Protocol (MCP)]. Instead of relying on outdated training data or unstructured web scrapes, your MCP-compatible client can discover, search, fetch, and ask questions about MuleSoft documentation directly. It requires no API key and no sign-up, and it refreshes daily.
+
+Connect any MCP-compatible client to:
+
+[source,text]
+----
+https://mcp.docs.salesforce.com/
+----
+
+For setup instructions, the full tool reference, and example prompts, see https://mcp.docs.salesforce.com/[Salesforce Docs MCP Server].
+
 [[llms-txt]]
-== llms.txt and llms-full.txt 
+== llms.txt and llms-full.txt
 
 MuleSoft documentation publishes `llms.txt` and `llms-full.txt` index files, which are machine-readable Markdown catalogs that let AI tools and RAG pipelines cleanly discover, search, or bulk-ingest our documentation without crawling raw HTML.
 
-For example, you can point an AI coding assistant to the sitewide or product `llms.txt` URL for real-time integration context, or import the `llms-full.txt` file into an vector database to ground AI agents.
+For example, you can point an AI coding assistant to the sitewide or product `llms.txt` URL for real-time integration context, or import the `llms-full.txt` file into a vector database to ground AI agents.
 
 Depending on your data scope, you can target three types of endpoints:
 
