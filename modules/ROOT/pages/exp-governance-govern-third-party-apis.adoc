@@ -1,0 +1,85 @@
+= Govern Third-Party Provider APIs
+:keywords: third-party apis, cross-gateway governance, provider governance, api compliance, policy enforcement
+
+After connecting to a third-party API gateway provider, you can govern discovered APIs through the same governance workflow used for Anypoint Platform APIs. This enables unified governance across multiple gateway platforms.
+
+== End-to-End Workflow
+
+Follow these steps to govern APIs from third-party providers:
+
+. *Connect to Provider*: Use the xref:exp-governance-setup-third-party-providers.adoc[provider connection wizard] to establish a connection to your third-party API gateway (such as Akamai). The system creates a scanner and begins discovering APIs.
+
+. *Verify Discovered APIs*: Go to *Portfolio Overview* and verify that discovered APIs appear with the provider name in the *Gateway/Provider* column. APIs are automatically added to the portfolio as they are discovered.
+
+. *Create Governance Strategy*: Create a xref:exp-governance-create-strategy.adoc[governance strategy] with the *Gateway/Provider* filter to target specific third-party providers or all runtimes. Select the control rules or automated policies to apply.
+
+. *Monitor Conformance*: Track conformance status for provider-hosted APIs through the governance strategy dashboard. Filter by specific providers to focus on a subset of your cross-gateway environment.
+
+. *Apply Policies*: For targeted or supplemental policy application, use xref:exp-governance-policy-library-apply.adoc[Policy Library] to select and apply policies directly to provider-hosted API instances.
+
+. *Export Reports*: Export cross-gateway policy and conformance reports to CSV for compliance audits and stakeholder reviews.
+
+== Gateway/Provider Filter
+
+When creating a governance strategy, use the *Gateway/Provider* filter to target third-party provider APIs:
+
+. In the governance strategy creation workflow, expand the *Gateway/Provider* filter.
+. Select one or more connected providers from the list (such as *Akamai*), or select *All Runtimes* to include both Anypoint Platform and third-party provider APIs.
+
+The strategy applies only to APIs hosted on the selected providers.
+
+== Cross-Gateway Conformance Monitoring
+
+Monitor conformance across multiple gateway platforms:
+
+. Go to *Governance* > *Governance Strategies*.
+. Select an active strategy that targets multiple providers or *All Runtimes*.
+. Review the conformance summary. The *Gateway/Provider* column shows which platform hosts each API.
+. Use the *Gateway/Provider* filter to focus on conformance for a specific provider.
+
+*Read-Only Policy Status*: If a policy shows *Read-Only* status, the provider connection uses read-only credentials. To enable policy writes, xref:exp-governance-setup-third-party-providers.adoc#update-credentials[update credentials] with write-enabled permissions.
+
+== Policy Library for Third-Party APIs
+
+xref:exp-governance-policy-library-apply.adoc[Policy Library] provides a targeted way to apply individual policies to third-party provider services:
+
+. Go to *Governance* > *Governance Strategies* > *Policy Library*.
+. Complete the 4-step wizard:
++
+--
+** *Select Policy*: Choose from Universal, Access and Security, Performance and Cost, Data Privacy and Integrity, or Compliance and Observability categories.
+** *Configure Policy*: Set policy parameters.
+** *Select Instances*: Choose API instances hosted on third-party providers.
+** *Review & Apply*: Confirm and apply the policy.
+--
+
+Use Policy Library when you need supplemental or one-off policy application outside of governance strategies.
+
+== Export Cross-Gateway Reports
+
+Export policy and conformance data for compliance audits:
+
+. Go to *Governance* > *Governance Strategies*.
+. Select the strategy you want to report on.
+. Select *Export to CSV*.
+
+The CSV includes:
+
+* Organization ID
+* API ID
+* API Version
+* Gateway/Provider
+* Applied policies
+* Policy Application Status (Enabled or Read-Only)
+* Conformance status
+* Timestamp
+
+Read-Only entries indicate that policies are applied in monitoring mode only. To enable write access, xref:exp-governance-setup-third-party-providers.adoc#update-credentials[update provider credentials].
+
+== Related Topics
+
+* xref:exp-governance-setup-third-party-providers.adoc[Connect to Third-Party API Providers]
+* xref:exp-governance-create-strategy.adoc[Create Governance Strategies]
+* xref:exp-governance-policy-library-apply.adoc[Apply Policies via Policy Library]
+* xref:exp-governance-monitor-cross-gateway-conformance.adoc[Monitor Cross-Gateway Conformance]
+* xref:exp-governance-cross-gateway-policy-audit-export.adoc[Export Cross-Gateway Policy Audit Reports]

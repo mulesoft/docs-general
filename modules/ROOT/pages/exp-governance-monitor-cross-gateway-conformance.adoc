@@ -1,0 +1,80 @@
+= Monitor Cross-Gateway Conformance
+:keywords: cross-gateway conformance, provider conformance, governance monitoring, compliance tracking, multi-gateway governance
+
+After creating governance strategies that target multiple gateway platforms or third-party providers, monitor conformance across your entire API ecosystem through a unified dashboard. The conformance summary shows compliance status for APIs hosted on Anypoint Platform gateways and connected third-party providers.
+
+== Before You Begin
+
+Before monitoring cross-gateway conformance:
+
+* xref:exp-governance-setup-third-party-providers.adoc[Connect to one or more third-party providers] to enable cross-gateway governance.
+* xref:exp-governance-create-strategy.adoc[Create a governance strategy] that targets multiple providers or *All Runtimes* using the xref:exp-governance-create-profiles-gateway-provider-filter.adoc[Gateway/Provider filter].
+* Verify that the strategy is active and has evaluated the targeted APIs.
+
+== View Cross-Gateway Conformance
+
+. Log in and go to *Governance* > *Governance Strategies*.
+. Select an active strategy that targets multiple providers or *All Runtimes*.
+. Review the conformance summary dashboard.
+
+The dashboard displays:
+
+* *Conformance Status*: The percentage of targeted APIs that comply with the strategy's control rules or automated policies.
+* *Gateway/Provider Column*: Shows which platform hosts each API (such as *Anypoint Platform*, *Akamai*, or other connected providers).
+* *Compliant vs Non-Compliant APIs*: A breakdown of APIs that meet or fail the strategy's requirements.
+* *Policy Application Status*: Indicates whether policies are *Enabled* (actively enforced) or *Read-Only* (monitoring mode only).
+
+== Filter by Specific Provider
+
+To focus on conformance for a specific provider:
+
+. In the conformance dashboard, locate the *Gateway/Provider* filter.
+. Select one or more providers from the list (such as *Akamai*).
+. The dashboard updates to show only APIs hosted on the selected platforms.
+
+Use this filter to:
+
+* Compare conformance across providers.
+* Identify provider-specific compliance gaps.
+* Focus on a subset of your multi-gateway environment during reviews or audits.
+
+== Understanding Read-Only Policy Status
+
+If a policy shows *Read-Only* status in the conformance dashboard:
+
+* The provider connection uses credentials with read-only permissions.
+* Policies are applied in monitoring mode only and do not enforce requirements on the provider gateway.
+* The system can track conformance but cannot automatically remediate violations.
+
+*How to Remediate*: xref:exp-governance-setup-third-party-providers.adoc#update-credentials[Update provider credentials] to grant write-enabled permissions. After updating credentials, policies transition from *Read-Only* to *Enabled* status and can enforce requirements on the provider gateway.
+
+== Monitor Conformance Over Time
+
+Track conformance trends to identify improvements or regressions:
+
+. Select a governance strategy from the dashboard.
+. Review the *Conformance History* chart (if available) to see how compliance has changed over time.
+. Use the *Gateway/Provider* filter to compare trends across platforms.
+
+Regular monitoring helps you:
+
+* Identify APIs that consistently fail compliance checks.
+* Measure the impact of policy changes or governance strategy adjustments.
+* Demonstrate compliance improvements to stakeholders during audits.
+
+== Export Conformance Reports
+
+To share conformance data with stakeholders or include it in compliance audits:
+
+. From the governance strategy dashboard, select *Export to CSV*.
+. The CSV includes conformance status, Gateway/Provider, applied policies, and policy application status for each API.
+
+For more information about the CSV schema and how to use exported reports, see xref:exp-governance-cross-gateway-policy-audit-export.adoc[Export Cross-Gateway Policy Audit Reports].
+
+== Related Topics
+
+* xref:exp-governance-create-strategy.adoc[Create Governance Strategies]
+* xref:exp-governance-create-profiles-gateway-provider-filter.adoc[Filter Governance Scope by Gateway or Provider]
+* xref:exp-governance-setup-third-party-providers.adoc[Connect to Third-Party API Providers]
+* xref:exp-governance-cross-gateway-policy-audit-export.adoc[Export Cross-Gateway Policy Audit Reports]
+* xref:exp-governance-govern-third-party-apis.adoc[Govern Third-Party Provider APIs]

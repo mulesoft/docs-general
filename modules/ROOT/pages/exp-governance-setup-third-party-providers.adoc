@@ -1,0 +1,99 @@
+= Connect to Third-Party API Providers
+:keywords: third-party providers, akamai, api discovery, provider connection, scanner, api governance
+
+Connect to third-party API gateway providers such as Akamai to automatically discover and govern APIs hosted on those platforms. When you connect to a supported provider, the system creates scanners, discovers APIs, and applies correlation policies to enable cross-gateway governance.
+
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* Any of these permissions:
++
+--
+** API Governance: Governance Administrator
+** Platform: Manage Providers
+--
++
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+
+* Provider credentials with appropriate API access permissions.
+
+== Connect to a Provider
+
+. Log in and go to *Platform* > *Providers*.
+. Select *Add Provider* to start the connection wizard.
+
+The wizard guides you through provider selection, connection setup, and credential configuration.
+
+=== Choose Provider
+
+Select the third-party API gateway provider you want to connect to:
+
+* *Akamai* - Connect to Akamai API Gateway to discover and govern APIs hosted on Akamai infrastructure.
+* Additional providers may appear as support is added.
+
+Select your provider and select *Next*.
+
+=== Connect to Provider
+
+Enter the connection details for your selected provider:
+
+*Provider Name*::
+A descriptive name to identify this provider connection in the platform.
+
+*Base URL*::
+The API endpoint URL for your provider instance (for example, `https://api.akamai.com`).
+
+*Region*::
+The geographic region where your provider instance is hosted (if applicable).
+
+Select *Next* to proceed to credential configuration.
+
+=== Connection Setup
+
+Configure authentication credentials to enable API access:
+
+*Authentication Method*::
+Select the authentication method supported by your provider (API Key, OAuth, or Client Credentials).
+
+*Credentials*::
+Enter the required authentication credentials for your provider account. The specific fields depend on your selected authentication method:
++
+--
+** *API Key*: Enter your API key and secret.
+** *OAuth*: Provide client ID, client secret, and authorization URL.
+** *Client Credentials*: Enter client ID and client secret.
+--
+
+*Read-Only Access*::
+If your credentials have read-only permissions, the system can discover APIs and monitor conformance but cannot apply policies directly to the provider gateway. You can use xref:exp-governance-policy-library-apply.adoc[Policy Library] to apply policies in read-only mode, or update credentials later to enable write access.
+
+Select *Connect* to establish the connection.
+
+== What Happens Next
+
+After you connect to a provider:
+
+* *Scanner Auto-Creation*: The system automatically creates a scanner for the connected provider to enable API discovery.
+* *API Discovery*: The scanner begins discovering APIs hosted on the provider platform. Discovered APIs appear in *Portfolio Overview* with the provider name in the Gateway/Provider column.
+* *Akamai Correlation Policy*: For Akamai providers, the system automatically applies a correlation policy to discovered APIs to enable cross-gateway observability and governance.
+
+== Update Credentials
+
+If your initial credentials were read-only and you need to enable policy application:
+
+. Go to *Platform* > *Providers*.
+. Locate your provider connection and select *Edit*.
+. Select *Update Credentials*.
+. Enter credentials with write permissions.
+. Select *Save*.
+
+After updating to write-enabled credentials, you can apply policies directly to APIs on the provider gateway through governance strategies or xref:exp-governance-policy-library-apply.adoc[Policy Library].
+
+== Related Topics
+
+* xref:exp-governance-govern-third-party-apis.adoc[Govern Third-Party Provider APIs]
+* xref:exp-governance-create-strategy.adoc[Create Governance Strategies]
+* xref:exp-providers-manage.adoc[Manage API Gateway Providers]
+* xref:exp-scanners-manage.adoc[Manage API Scanners]
