@@ -18,7 +18,7 @@ MuleSoft documentation offers several ways to feed content to AI depending on yo
 
 | <<docs-mcp-server>>
 | Live, interactive lookups in an AI assistant
-| Your MCP-compatible client (such as Claude, Cursor, or VS Code) accesses documentation on demand without leaving your IDE or chat window, with no files or infrastructure to manage.
+| You want documentation on demand without leaving your IDE or chat window. Your MCP-compatible client (such as Claude, Cursor, or VS Code) accesses it for you, with no files or infrastructure to manage.
 
 | <<llms-txt>>
 | Bulk ingest into your own pipeline, or browsing the documentation structure
