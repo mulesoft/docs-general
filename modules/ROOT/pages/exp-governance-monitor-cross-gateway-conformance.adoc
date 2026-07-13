@@ -65,20 +65,9 @@ Regular monitoring helps you:
 * Measure the impact of policy changes or governance strategy adjustments.
 * Demonstrate compliance improvements to stakeholders during audits.
 
-== Export Conformance Reports
-
-To share conformance data with stakeholders or include it in compliance audits:
-
-. From the governance strategy dashboard, select *Export to CSV*.
-// FLAG: Aug 13 release (policy write scope). "policy application status" reflects enforcement state (Enabled/Read-Only), which is Policy Write — GA Aug 13. For Jul 16, the CSV covers read/conformance data only. Restore the fuller list when the Aug 13 write release is documented.
-. The CSV includes conformance status, Gateway/Provider, and applied policies for each API.
-
-For more information about the CSV schema and how to use exported reports, see xref:exp-governance-cross-gateway-policy-audit-export.adoc[Export Cross-Gateway Policy Audit Reports].
-
 == Related Topics
 
 * xref:exp-governance-create-strategy.adoc[Create Governance Strategies]
 * xref:exp-governance-create-profiles-gateway-provider-filter.adoc[Filter Governance Scope by Gateway or Provider]
 * xref:exp-governance-setup-third-party-providers.adoc[Connect to Third-Party API Providers]
-* xref:exp-governance-cross-gateway-policy-audit-export.adoc[Export Cross-Gateway Policy Audit Reports]
 * xref:exp-governance-govern-third-party-apis.adoc[Govern Third-Party Provider APIs]

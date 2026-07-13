@@ -18,8 +18,6 @@ Follow these steps to govern APIs from third-party providers:
 // FLAG: Aug 13 release (policy write scope). The "Apply Policies" workflow step applies policies directly to provider-hosted instances, which is Policy Write (GA Aug 13). The Jul 16 release governs third-party APIs in read/conformance mode only. Uncomment when the Aug 13 write release is documented.
 // . *Apply Policies*: For targeted or supplemental policy application, use xref:exp-governance-policy-library-apply.adoc[Policy Library] to select and apply policies directly to provider-hosted API instances.
 
-. *Export Reports*: Export cross-gateway policy and conformance reports to CSV for compliance audits and stakeholder reviews.
-
 == Gateway/Provider Filter
 
 When creating a governance strategy, use the *Gateway/Provider* filter to target third-party provider APIs:
@@ -58,28 +56,6 @@ Monitor conformance across multiple gateway platforms:
 //
 // Use the Policy Library when you need supplemental or one-off policy application outside governance strategies.
 
-== Export Cross-Gateway Reports
-
-Export policy and conformance data for compliance audits:
-
-. Go to *Governance* > *Governance Strategies*.
-. Select the strategy you want to report on.
-. Select *Export to CSV*.
-
-The CSV includes:
-
-* Organization ID
-* API ID
-* API Version
-* Gateway/Provider
-* Applied policies
-* Conformance status
-* Timestamp
-// FLAG: Aug 13 release (policy write scope). The "Policy Application Status (Enabled or Read-Only)" column and the read-only/write-access note describe policy enforcement state, which is Policy Write (GA Aug 13). Uncomment when the Aug 13 write release is documented.
-// * Policy Application Status (Enabled or Read-Only)
-//
-// Read-Only entries indicate that policies are applied in monitoring mode only. To enable write access, xref:exp-governance-setup-third-party-providers.adoc#update-credentials[update provider credentials].
-
 == Related Topics
 
 * xref:exp-governance-setup-third-party-providers.adoc[Connect to Third-Party API Providers]
@@ -87,4 +63,3 @@ The CSV includes:
 // FLAG: Aug 13 release (policy write scope). Link to the Policy Library apply topic, which is commented out until the Aug 13 write release. Uncomment together with that topic.
 // * xref:exp-governance-policy-library-apply.adoc[Apply Policies via Policy Library]
 * xref:exp-governance-monitor-cross-gateway-conformance.adoc[Monitor Cross-Gateway Conformance]
-* xref:exp-governance-cross-gateway-policy-audit-export.adoc[Export Cross-Gateway Policy Audit Reports]
