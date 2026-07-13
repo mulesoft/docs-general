@@ -318,7 +318,7 @@ Agent Visualizer provides a detailed visual graph of your agent network so you c
 * Role in Agent Fabric: Anypoint Code Builder is where agent networks come to life. It provides the visual canvas and tooling to define an agent network YAML and develop custom MCP servers, all before deploying to production.
 * Key capabilities:
 ** Design and configure agent network structures with the visual canvas
-** Define routing logic and agent interactions in YAML
+** Define routing logic and agent interactions in Agent Script
 ** Build and test agent workflows locally before deploying
 ** Develop custom MCP servers for specific integration needs
 ** Use MuleSoft Vibes to generate and validate network configurations from natural language
