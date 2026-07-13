@@ -247,13 +247,13 @@ Coordinate agents and tools across ecosystems with guided determinism, so multi-
 
 === Agent Broker
 
-* What it is: An intelligent routing service that coordinates task delegation across A2A-compliant agents in your agent network. You define a broker and its nodes in Agent Script. Nodes are connected in a graph that encapsulates all steps that describe the orchestration of agents, tools, and large language models. A graph-based approach to agent brokers ensures that connected paths guarantee a specific order of operations and enable more complex orchestration that combines deterministic and non-deterministic elements. 
+* What it is: An intelligent routing service that coordinates task delegation across A2A-compliant agents in your agent network. You define a broker and its nodes in Agent Script. Nodes are connected in a graph that encapsulates all steps that describe the orchestration of agents, tools, and LLMs. A graph-based approach to agent brokers ensures that connected paths guarantee a specific order of operations and enable more complex orchestration that combines deterministic and non-deterministic elements. 
 * Role in Agent Fabric: The broker is the orchestration intelligence in your agent network. When a request arrives, the broker determines which agent or other broker is best suited to handle it and delegates accordingly, generating a contextId and taskId to track task state across the interaction. 
 * By dynamically matching tasks with other agents and enabling seamless collaboration across ecosystems, the broker transforms scattered agents into a coordinated workforce. Brokers appear in your portfolio and can be discovered and reused by other brokers across your organization.
 * What you can do:
 ** Build hierarchical orchestration by delegating tasks to specialized A2A-compliant agents or other brokers
 ** Publish brokers to your portfolio for discovery and reuse across your organization
-** Define brokers in your agent network YAML configuration
+** Define brokers in Agent Script
 ** Configure the broker's routing logic and orchestration patterns
 ** Deploy the full agent network (including the broker) to CloudHub 2.0 
 ** Monitor broker routing decisions and performance using Agent Visualizer
