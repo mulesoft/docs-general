@@ -1,4 +1,5 @@
 = Get Started with Agent Fabric
+:keywords: agent fabric, mulesoft, getting started, ai agents, learning map, anypoint platform
 :page-aliases: agent-fabric::agent-fabric-get-started.adoc, agent-fabric::index.adoc
 :page-article-style: learning-map
 
@@ -15,7 +16,7 @@ The end-to-end journey for Agent Fabric consists of various tasks, each with lin
 
 [.lm-table, cols="1a,1a,1a", grid="none"]
 |===
-| image::lm_start.png[]
+| image::lm_start.png[""]
 [.lm-bold]##Learn About Agent Fabric##
 
 Agent Fabric helps you design and orchestrate a network of agents, brokers, and MCP servers to achieve complex goals across your enterprise.
@@ -23,7 +24,7 @@ Agent Fabric helps you design and orchestrate a network of agents, brokers, and 
 - https://www.youtube.com/watch?v=GAqwPie16ic[Watch a Video to Learn About Agent Fabric]
 - https://www.mulesoft.com/lp/demo/agent-fabric-interactive-demo[Watch an Interactive Demo of Agent Fabric]
 
-| image::lm_explore_1.png[]
+| image::lm_explore_1.png[""]
 [.lm-bold]##Discover Agentic Assets##
 
 Use Anypoint Exchange to discover agentic assets for reuse across your enterprise.
@@ -34,12 +35,14 @@ Use Anypoint Exchange to discover agentic assets for reuse across your enterpris
 - xref:exp-scanners-add-from-providers.adoc[Discover and Catalog External Agents With Scanners]
 - https://videos.mulesoft.com/watch/GJxX42uWd1gGComp3KQqEB[Watch a Video to Learn About Agent Fabric and GoDaddy ANS Integration]
 - https://blogs.mulesoft.com/news/agent-scanners/[Learn How to Catalog Agents Automatically With Scanners]
+- https://videos.mulesoft.com/watch/fqPcAHf5h7RYdfdSqhY9ju[Watch a Video to Learn About New Scanners for Agent Management]
 - xref:exchange::importing-agentforce-agents.adoc[Import Agentforce Agents]
 - xref:exchange::to-create-an-asset.adoc#create-agent[Create and Publish an Agent in Exchange]
 - xref:exp-services-create-mcp-server.adoc[Create an MCP Server]
+- https://videos.mulesoft.com/watch/Dn9QXJKDzTxSJPNgra9LoM[Watch a Video to Learn About MCP Bridge]
 - xref:exchange::to-create-an-asset.adoc#create-llm[Create and Publish an LLM in Exchange]
 
-| image::lm_build_1.png[]
+| image::lm_build_1.png[""]
 [.lm-bold]##Build and Orchestrate Agent Networks##
 
 Build your agent network and coordinate brokers and agents using a declarative YAML approach. 
@@ -53,17 +56,18 @@ Build your agent network and coordinate brokers and agents using a declarative Y
 
 [.lm-table, cols="1a,1a", width="66%", grid="none"]
 |===
-| image::lm_build_1.png[]
+| image::lm_build_1.png[""]
 [.lm-bold]##Govern and Secure the Agent Network##
 
 Apply policies to your agents, brokers, LLM proxies, and MCP servers to help manage security and control traffic.
 
 - xref:api-manager::create-instance-task-agent-tool.adoc[Add an Omni Gateway Agent or Tool Instance in API Manager]
-- https://videos.mulesoft.com/watch/2E2PkqzMnLEjoDhL5YkywT[Watch a Video to Learn About AI Gateway from MuleSoft] 
+- https://videos.mulesoft.com/watch/2E2PkqzMnLEjoDhL5YkywT[Watch a Video to Learn About AI Gateway from MuleSoft]
+- https://videos.mulesoft.com/watch/uQtoaAv9AUGmZQteNTTZF1[Watch a Video to Learn About Governing Headless 360 with Agent Fabric]
 - xref:gateway::flex-gateway-managed-ingress-egress.adoc[Deploy Agent Fabric Ingress and Egress Managed Omni Gateways]
 - xref:gateway::flex-gateway-secure-apis.adoc[Secure Omni Gateway Instances with Policies]
 
-| image::lm_analyze_1.png[]
+| image::lm_analyze_1.png[""]
 [.lm-bold]##Observe and Gain Actionable Insights##
 
 Visualize your agent network and monitor performance and behavior.

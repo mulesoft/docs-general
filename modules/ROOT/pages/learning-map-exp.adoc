@@ -1,4 +1,5 @@
 = Enhanced MuleSoft Experience
+:keywords: enhanced mulesoft experience, learning map, mulesoft training, getting started, mulesoft resources
 :page-article-style: learning-map
 
 The enhanced MuleSoft experience helps you manage, optimize, and govern a multi-agent ecosystem from one place. Work with agents, APIs, MCP servers, LLM proxies, and gateways as a single portfolio. View asset relationships, apply governance and cost discipline, and act on observability signals instead of working in separate silos. The experience pairs this portfolio view with an in-product assistant to connect integrations, tune configurations, and get answers in context.
@@ -8,13 +9,13 @@ The enhanced MuleSoft experience helps you manage, optimize, and govern a multi-
 * Govern services with runtime policies and governance strategies for design and runtime consistency.
 * Observe service health and monitor overview dashboards across services and environments.
 
-image::enhanced-experience-pillars.png[]
+image::enhanced-experience-pillars.png[""]
 
 The end-to-end journey for the experience consists of these tasks, each with links to relevant content to assist you in completing them.
 
 [.lm-table, cols="1a,1a,1a", grid="none"]
 |===
-| image::lm_start.png[]
+| image::lm_start.png[""]
 [.lm-bold]##Learn About Enhanced MuleSoft Experience##
 
 The experience helps you manage, optimize, and govern a multi-agent ecosystem from one place.
@@ -23,11 +24,12 @@ The experience helps you manage, optimize, and govern a multi-agent ecosystem fr
 - xref:exp-overview.adoc[]
 - xref:exp-compare.adoc[]
 - xref:exp-home-start.adoc[]
+- xref:exp-slack-integrate.adoc[]
 - xref:exp-claude-desktop-connect.adoc[]
 // - https://trailhead.salesforce.com/content/learn/modules/get-to-know-the-enhanced-mulesoft-experience[Get to Know the Enhanced MuleSoft Experience: Quick Look]
 
 
-| image::lm_explore_1.png[]
+| image::lm_explore_1.png[""]
 [.lm-bold]##Register##
 
 Register agents, APIs, and MCP servers from any provider or registry, and add LLM proxies and gateways.
@@ -42,7 +44,7 @@ Register agents, APIs, and MCP servers from any provider or registry, and add LL
 
 
 
-| image::lm_build_1.png[]
+| image::lm_build_1.png[""]
 [.lm-bold]##Monitor##
 
 Monitor latency, cost, invocations, and failures in real time.
@@ -50,12 +52,13 @@ Monitor latency, cost, invocations, and failures in real time.
 - xref:exp-services-monitoring.adoc[]
 - xref:exp-governance-view-cost-and-token-usage.adoc[]
 - xref:exp-services-view-detailed-metrics.adoc[]
+- xref:exp-alerts-configure-notifications.adoc[]
 
 |===
 
 [.lm-table, cols="1a,1a", width="66%", grid="none"]
 |===
-| image::lm_build_1.png[]
+| image::lm_build_1.png[""]
 [.lm-bold]##Secure##
 
 Secure instances with compatible policies across your entire registry.
@@ -63,7 +66,7 @@ Secure instances with compatible policies across your entire registry.
 - xref:exp-instances-add.adoc[]
 - xref:exp-governance-work-with-strategies.adoc[]
 
-| image::lm_analyze_1.png[]
+| image::lm_analyze_1.png[""]
 [.lm-bold]##Transcode##
 
 Transcode existing REST APIs into MCP servers instantly.

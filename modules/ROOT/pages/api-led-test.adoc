@@ -1,4 +1,5 @@
 = Step 4. Test the API
+:keywords: api testing, apikit validation, mulesoft api, logging, api-led connectivity, run api, test api
 :page-pagination:
 
 Test your API locally before deploying it to the cloud. You run the API in Anypoint Code Builder, send requests using Postman, add logging to track requests, and use the built-in debugger to inspect the Mule message at each step.
@@ -63,7 +64,7 @@ Logging helps you see what's happening inside your flows.
 This message logs the `name` query parameter value or "not provided" if it's missing.
 * *Level*: INFO
 +
-image::api-tutorial-logger-component-configured-acb.png[The Logger component with the Message and Level configured]
+image::api-tutorial-logger-component-configured-acb.png["Logger component configuration panel showing Message field set to payload and Level field set to INFO"]
 . Save your changes.
 
 == Step 4.3: Test with Logging

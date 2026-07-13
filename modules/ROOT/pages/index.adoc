@@ -1,4 +1,5 @@
 = [.brand]#MuleSoft# Documentation
+:keywords: mulesoft documentation, digital transformation, getting started, api design, integration, mulesoft platform, discover mulesoft
 :page-llms-exclude: true
 :page-layout: home
 :page-fragmentize:
@@ -8,7 +9,7 @@ ifndef::env-site[:imagesdir: ../images]
 [[the-road]]
 == The Road to Digital Transformation
 
-image::getting-started.png[alt=""]
+image::getting-started.png[""]
 
 --
 [discrete]
@@ -19,7 +20,7 @@ Build the digital transformation your business needs.
 * xref:api-led-overview.adoc[Tutorial: Build an API from start to finish.]
 --
 
-image::discover.png[alt=""]
+image::discover.png[""]
 
 --
 [discrete]
@@ -30,7 +31,7 @@ Browse Exchange to find existing API specifications, templates, examples, and ot
 * https://www.anypoint.mulesoft.com/exchange/[Discover reusable assets.^]
 --
 
-image::design.png[alt=""]
+image::design.png[""]
 
 --
 [discrete]
@@ -43,7 +44,7 @@ Create and publish new API specifications from scratch.
 * xref:general::security.adoc[Build security into your application network.]
 --
 
-image::develop.png[alt=""]
+image::develop.png[""]
 
 --
 [discrete]
@@ -58,7 +59,7 @@ Build and test APIs and integration apps.
 * xref:munit::index.adoc[Build automated tests for your APIs and integrations.]
 --
 
-image::deploy.png[alt=""]
+image::deploy.png[""]
 
 --
 [discrete]
@@ -71,7 +72,7 @@ Choose a deployment option, deploy APIs and apps, and secure them with policies.
 * xref:api-manager::manage-policies-overview.adoc[Protect your APIs with policies.]
 --
 
-image::monitor.png[alt=""]
+image::monitor.png[""]
 
 --
 [discrete]
@@ -96,7 +97,8 @@ Monitor your APIs and integrations using dashboards, metrics, and visualization.
 
 ////
 
-// Updated 2026/05/11 - hanna
+// Updated 2026/06/17 - sathya
+* xref:general::use-mulesoft-docs-with-ai.adoc[]
 * xref:learning-map-exp.adoc[]
 * xref:monitoring::integration-intelligence.adoc[]
 * xref:general::learning-map-mulesoft-ai.adoc[]
@@ -107,8 +109,8 @@ Monitor your APIs and integrations using dashboards, metrics, and visualization.
 * xref:api-manager::create-instance-task-agent-tool.adoc[]
 * xref:agent-visualizer::index.adoc[]
 * xref:monitoring::anypoint-insights-agentic.adoc[]
-* xref:mulesoft-mcp-server::index.adoc[]
-* xref:mcp-connector::index.adoc[MCP Connector User Guide]
+// * xref:mulesoft-mcp-server::index.adoc[]
+// * xref:mcp-connector::index.adoc[MCP Connector User Guide]
 // * xref:learning-map-api-management.adoc[]
 //* xref:cloudhub::app-migration.adoc[]
 //* xref:hyperforce::index.adoc[Salesforce Hyperforce]

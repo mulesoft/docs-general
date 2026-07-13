@@ -1,4 +1,5 @@
 = Step 2. Design an API Spec
+:keywords: api spec design, anypoint code builder, api-led connectivity, raml, rest api, api specification, mulesoft
 :page-pagination:
 
 API-led development means designing the contract before writing any code. By defining your API spec upfront, you give your team, consumers, and tools a shared contract to build against, which reduces rework and increases reuse.

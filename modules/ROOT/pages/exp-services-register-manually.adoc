@@ -1,4 +1,5 @@
 = Register Services Manually
+:keywords: register services manually, mcp servers, agents, service registration, mulesoft, anypoint platform, manual configuration
 
 Register a service to add it to your portfolio when you already have the metadata, specification, endpoint, or card required in Enhanced Experience, without running a provider scan. Start from *Home* or from the catalog for that service type in *Portfolio*. Completed registrations appear in the matching catalog.
 

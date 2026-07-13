@@ -1,4 +1,5 @@
 = Troubleshoot the Enhanced Experience
+:keywords: enhanced experience, troubleshooting, authentication errors, 403 forbidden, 401 unauthorized, permission errors, mulesoft
 
 When authentication, connection, or data issues occur in the enhanced experience, use this information to identify the cause and find solutions. Common issues include permission errors, provider connection failures, rate limiting, missing data, and SSL certificate problems.
 
@@ -395,7 +396,7 @@ If these troubleshooting steps don't resolve your issue:
 . Check documentation:
 .. Review feature-specific documentation for additional guidance.
 .. Check xref:exp-release-notes.adoc[Release Notes] for known issues.
-// .. Review xref:exp-ai-assistant-troubleshoot.adoc[] for AI assistant-specific issues.
+.. Review xref:exp-ai-assistant-troubleshoot.adoc[] for AI assistant-specific issues.
 
 . Gather diagnostic information:
 .. Note exact error message and error code if provided.
@@ -406,7 +407,7 @@ If these troubleshooting steps don't resolve your issue:
 == See Also
 
 * xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions]
-// * xref:exp-ai-assistant-troubleshoot.adoc[]
+* xref:exp-ai-assistant-troubleshoot.adoc[]
 * xref:exp-providers-manage.adoc[]
 * xref:exp-scanners-manage.adoc[]
 * xref:browser-support.adoc[]

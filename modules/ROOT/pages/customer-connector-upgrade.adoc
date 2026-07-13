@@ -1,4 +1,5 @@
 = Upgrading Java for Custom Connectors (Customers)
+:keywords: java upgrade, custom connectors, mulesoft connectors, connector migration, java compatibility, mule 4, customer upgrade
 
 include::reuse::partial$java8-eoss-banner.adoc[tag=java8-eoss]
 

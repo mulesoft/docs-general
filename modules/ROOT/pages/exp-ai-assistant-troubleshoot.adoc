@@ -1,6 +1,7 @@
 = Troubleshoot the AI Assistant
+:keywords: ai assistant troubleshooting, ai assistant errors, incorrect answers, search results, mulesoft ai assistant, anypoint platform
 
-If you experience issues using the Ask MuleSoft AI assistant, use this guide to identify and resolve common problems.
+If you experience issues using the MuleSoft Agent AI assistant, use this guide to identify and resolve common problems.
 
 == AI Assistant Doesn't Respond
 
@@ -84,44 +85,6 @@ Check service state:
 . The service may need to be in a specific state (active, registered, etc.) before certain actions are available.
 . Verify that required prerequisites are met (for example, a gateway must be configured before creating instances).
 
-== Confirmation Prompts Don't Appear
-
-If the assistant describes an action but doesn't show a confirmation prompt:
-
-Check for permissions issues:
-
-. The assistant may detect that you don't have permission and skip the confirmation.
-. Review any messages from the assistant explaining why the action can't be performed.
-
-Verify the action type:
-
-. Some responses are informational only and don't require confirmation.
-. Only actions that navigate, create, update, or delete data show confirmation prompts.
-
-Refresh and retry:
-
-. Refresh the page and try the request again.
-. Rephrase your request more explicitly: "Apply a rate limit policy to my API instance."
-
-== Form Assistance Doesn't Work
-
-If the assistant can't help fill in forms:
-
-Check that a form is open:
-
-. Form assistance only works when you have an active form visible on the page.
-. Navigate to the form (for example, "Add Instance" or "Create Governance Strategy") before asking for help.
-
-Be specific about what you want:
-
-. Tell the assistant exactly what values to use: "Set the instance URL to https://api.example.com/v1."
-. Provide all required information for the form fields.
-
-Confirm changes manually:
-
-. Review the confirmation banner carefully before accepting form changes.
-. Remember that form assistance only fills in fields—you still need to submit the form.
-
 == Search Results Aren't Relevant
 
 If search results don't match what you're looking for:
@@ -142,25 +105,6 @@ Verify service metadata:
 . If a service doesn't appear, check whether its description includes the terms you're searching for.
 . Update service descriptions to improve future search results.
 
-== Suggestions Aren't Showing
-
-If suggestion chips don't appear after the assistant responds:
-
-Check response completeness:
-
-. Wait for the assistant's full response to complete.
-. Suggestions appear after the assistant finishes streaming the response.
-
-Check context:
-
-. Suggestions are context-aware. If no relevant suggestions exist for your current situation, the assistant may not show any.
-. Try asking a more specific question that has clear follow-up actions.
-
-Refresh the conversation:
-
-. Scroll to the bottom of the chat panel to ensure suggestions are visible.
-. If the chat panel is too small, expand it or use the full-screen AI assistant page.
-
 == AI Assistant Is Slow to Respond
 
 If the assistant takes a long time to respond:
@@ -179,26 +123,6 @@ Check your connection:
 
 . Slow network connections can delay streaming responses.
 . Try refreshing the page or reconnecting to your network.
-
-== AI Assistant Isn't Visible
-
-If you can't find the AI assistant panel or icon:
-
-Check the page layout:
-
-. Look for an icon on the right side of the screen or in the main navigation.
-. Try different screen sizes—some layouts may move the assistant to different locations.
-
-Check feature availability:
-
-. Verify that the AI assistant is enabled for your organization.
-. Ask your administrator if the feature is available in your business group.
-
-Check browser compatibility:
-
-. Ensure you're using a supported browser version.
-. Update your browser if necessary.
-. Disable browser extensions that might hide UI elements.
 
 == AI Assistant Conversation History Is Lost
 

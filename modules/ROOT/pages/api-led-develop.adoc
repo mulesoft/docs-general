@@ -1,4 +1,5 @@
 = Step 3. Develop the API
+:keywords: api-led connectivity, implementation project, scaffolded structure, hello world, mulesoft development, anypoint studio, api implementation
 :page-pagination:
 
 Now that you've created an API spec, you'll turn it into a working Mule application. Anypoint Code Builder includes an embedded Mule runtime for local testing. Later, you'll deploy your application to xref:cloudhub-2::ch2-deploy.adoc[CloudHub 2.0], where it runs on Mule runtime in the cloud.
@@ -26,7 +27,7 @@ Don't select `MuleSoft: Implement an API Specification`. That command is for spe
 
 . At the prompt, click *OK*.
 +
-image::api-tutorial-implement-prompt.png["Prompt: We'll create a workspace to keep your API spec and Mule project in sync."]
+image::api-tutorial-implement-prompt.png["Implement API specification dialog prompting to create a workspace to keep API spec and Mule project in sync"]
 
 . When prompted to save a `.code-workspace` file, navigate to your home directory and click *Save*.
 +

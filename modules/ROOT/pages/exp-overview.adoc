@@ -1,4 +1,5 @@
 = Enhanced MuleSoft Experience Overview
+:keywords: enhanced mulesoft experience, enhanced experience, capabilities, workflow, mulesoft overview, experience features
 
 To grow and tune your AI portfolio, register and monitor agents, APIs, and gateways in centralized catalogs. Sign in through the entry point your organization provides, such as Anypoint Platform  or a direct URL, to access dashboards and governance strategies based on your assigned permissions. Review live performance metrics, manage security policies, and track rule-level compliance through automated conformance reports.
 
@@ -16,7 +17,7 @@ Cost and Performance Optimization:: Monitor token usage, per-instance signals, a
 
 Instance Management:: Create and review instances for supported asset types. Choose managed paths through Omni Gateway when you need deeper monitoring and policy enforcement, or choose lighter models when that matches your operating model.
 
-// AI Assistant (Ask MuleSoft):: Get help navigating, searching, and managing your portfolio through natural language conversations. The AI assistant provides context-aware guidance, performs actions with your confirmation, and suggests next steps based on your current task. Available from every page in the enhanced experience.
+AI Assistant (MuleSoft Agent):: Get help navigating, searching, and managing your portfolio through natural language conversations. The AI assistant provides context-aware guidance, performs actions with your confirmation, and suggests next steps based on your current task. Available from every page in the enhanced experience.
 
 == Enhanced Experience High-Level Workflow
 
@@ -28,7 +29,7 @@ Confirm your credentials and the permissions that your administrator assigned, a
 . Learn the layout of the enhanced experience.
 +
 Sign in through your entry path and land on *Home*. Scan *Portfolio* catalogs, *Governance*, *Observability*, and *Platform* so that you know where to register services, apply policies, read health signals, and manage providers. For more information about portfolio views, see xref:exp-portfolio-overview.adoc[].
-// For AI assistant usage, see xref:exp-ai-assistant-use.adoc[].
+For AI assistant usage, see xref:exp-ai-assistant-use.adoc[].
 . Register services in *Portfolio*.
 +
 Under *Portfolio*, open *Agents*, *MCP Servers*, *LLM Proxies*, *APIs*, or *Gateways*. Add services to work with. Register them manually or use connected providers under *Platform* > *Providers* if your organization enables discovery flows. For registration methods, see xref:exp-services-add-to-portfolio.adoc[].

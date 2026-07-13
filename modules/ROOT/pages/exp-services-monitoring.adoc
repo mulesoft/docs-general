@@ -1,4 +1,5 @@
 = Monitoring Your Services
+:keywords: service monitoring, monitoring signals, access monitoring, mulesoft services, monitoring use cases, api monitoring
 
 Monitoring helps you see whether the services in your portfolio—and the paths that carry their traffic—are healthy, performant, and stable over time. You work from service context (what a single API, agent, MCP server, LLM proxy, or gateway is doing) and, when your administrator enables it, from broader observability surfaces that sit alongside *Portfolio* and *Governance*.
 
