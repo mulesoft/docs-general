@@ -1,17 +1,26 @@
 = Export Cross-Gateway Policy Audit Reports
 :keywords: policy audit, cross-gateway reports, compliance reports, csv export, governance audit, soc 2, gdpr
 
-Export governance strategy data to CSV to support compliance audits, stakeholder reviews, and regulatory reporting. The export includes policy application status, conformance data, and gateway/provider information for all APIs targeted by the strategy.
+Export governance strategy data to CSV to support compliance audits, stakeholder reviews, and regulatory reporting. The export includes conformance data and gateway/provider information for all APIs targeted by the strategy.
 
 == Use Cases
 
 Export cross-gateway policy audit reports to:
 
-* *SOC 2 Compliance Audits*: Demonstrate that policies are consistently applied and enforced across all gateway platforms.
-* *GDPR Compliance Reporting*: Provide evidence that data privacy policies (such as PII masking) are applied to APIs across your organization.
-* *Stakeholder Reviews*: Share governance posture with executives, compliance teams, or external auditors.
-* *Trend Analysis*: Track policy application and conformance over time by exporting reports at regular intervals.
-* *Incident Response*: Identify which APIs have policies in read-only mode during security or compliance incidents.
+SOC 2 compliance audits::
+Demonstrate that policies are consistently applied and enforced across all gateway platforms.
+
+GDPR compliance reporting::
+Provide evidence that data privacy policies, such as PII masking, are applied to APIs across your organization.
+
+Stakeholder reviews::
+Share governance posture with executives, compliance teams, or external auditors.
+
+Trend analysis::
+Track policy application and conformance over time by exporting reports at regular intervals.
+
+Incident response::
+Identify which APIs are non-conformant during security or compliance incidents.
 
 == Before You Begin
 
@@ -38,55 +47,65 @@ The exported CSV includes these columns:
 |===
 |Column |Description
 
-|*Organization ID*
+|Organization ID
 |The unique identifier for your Anypoint Platform organization.
 
-|*API ID*
+|API ID
 |The unique identifier for the API.
 
-|*API Version*
+|API Version
 |The version of the API instance.
 
-|*Gateway/Provider*
-|The platform hosting the API (such as *Anypoint Platform*, *Akamai*, or other connected providers).
+|Gateway/Provider
+|The platform hosting the API (such as Anypoint Platform, Akamai, or other connected providers).
 
-|*Applied Policies*
+|Applied Policies
 |A list of policies applied to the API instance.
 
-|*Policy Application Status*
-|The enforcement state of each policy:
+// FLAG: Aug 13 release (policy write scope). The "Policy Application Status" column (Enabled/Read-Only enforcement state) reflects policy enforcement, which is Policy Write — GA Aug 13. Uncomment when the Aug 13 write release is documented.
+// |Policy Application Status
+// |The enforcement state of each policy:
+//
+// * *Enabled*: The policy is actively enforced on the gateway.
+// * *Read-Only*: The policy is applied in monitoring mode only.
 
-* *Enabled*: The policy is actively enforced on the gateway.
-* *Read-Only*: The policy is applied in monitoring mode only.
+|Conformance Status
+|Whether the API conforms to the governance strategy's control rules or automated policies:
 
-|*Conformance Status*
-|Whether the API complies with the governance strategy's control rules or automated policies:
+* *Conformant*: The API meets all requirements.
+* *Non-Conformant*: The API fails one or more requirements.
 
-* *Compliant*: The API meets all requirements.
-* *Non-Compliant*: The API fails one or more requirements.
-
-|*Timestamp*
+|Timestamp
 |The date and time when the strategy last evaluated the API.
 |===
 
-== Understanding Read-Only Entries
-
-If the *Policy Application Status* column shows *Read-Only*:
-
-* The provider connection uses credentials with read-only permissions.
-* Policies are applied in monitoring mode and don't enforce requirements on the provider gateway.
-* Conformance data is available, but policy violations aren't automatically remediated.
-
-*How to Remediate*: xref:exp-governance-setup-third-party-providers.adoc#update-credentials[Update provider credentials] to grant write-enabled permissions. After updating credentials, re-export the report to verify that policies transition to *Enabled* status.
+// FLAG: Aug 13 release (policy write scope). The entire "Understanding Read-Only Entries" section describes policy enforcement state and credential-based write access, which is Policy Write — GA Aug 13. Uncomment when the Aug 13 write release is documented.
+// == Understanding Read-Only Entries
+//
+// If the Policy Application Status column shows *Read-Only*:
+//
+// * The provider connection uses credentials with read-only permissions.
+// * Policies are applied in monitoring mode and don't enforce requirements on the provider gateway.
+// * Conformance data is available, but policy violations aren't automatically remediated.
+//
+// To enforce these policies on the provider gateway, xref:exp-governance-setup-third-party-providers.adoc#update-credentials[update provider credentials] to grant write-enabled permissions. After updating credentials, re-export the report to verify that policies transition to *Enabled* status.
 
 == Analyze Exported Data
 
 Use the exported CSV to:
 
-* *Identify Read-Only Policies*: Filter the *Policy Application Status* column for *Read-Only* entries to find APIs where policies aren't fully enforced.
-* *Compare Providers*: Group by the *Gateway/Provider* column to compare conformance across Anypoint Platform and third-party providers.
-* *Track Non-Compliant APIs*: Filter by *Conformance Status* to identify APIs that fail compliance checks.
-* *Audit Policy Coverage*: Review the *Applied Policies* column to verify that required policies are applied to all targeted APIs.
+// FLAG: Aug 13 release (policy write scope). "Identify read-only policies" depends on the Policy Application Status enforcement column, which is Policy Write — GA Aug 13. Uncomment when the Aug 13 write release is documented.
+// Identify read-only policies::
+// Filter the Policy Application Status column for *Read-Only* entries to find APIs where policies aren't fully enforced.
+
+Compare providers::
+Group by the Gateway/Provider column to compare conformance across Anypoint Platform and third-party providers.
+
+Track non-conformant APIs::
+Filter by Conformance Status to identify APIs that fail conformance checks.
+
+Audit policy coverage::
+Review the Applied Policies column to verify that required policies are applied to all targeted APIs.
 
 Import the CSV into spreadsheet software, BI tools, or compliance management platforms for deeper analysis.
 
@@ -94,13 +113,13 @@ Import the CSV into spreadsheet software, BI tools, or compliance management pla
 
 For ongoing compliance tracking:
 
-* Export reports at regular intervals (such as monthly or quarterly).
+* Export reports at regular intervals, such as monthly or quarterly.
 * Compare exports over time to track conformance improvements or regressions.
 * Share reports with compliance teams as part of your organization's governance review process.
 
 Regular exports help you maintain audit readiness and demonstrate continuous compliance.
 
-== Related Topics
+== See ALso
 
 * xref:exp-governance-monitor-cross-gateway-conformance.adoc[Monitor Cross-Gateway Conformance]
 * xref:exp-governance-create-strategy.adoc[Create Governance Strategies]

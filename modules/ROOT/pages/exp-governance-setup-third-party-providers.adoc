@@ -66,8 +66,9 @@ Enter the required authentication credentials for your provider account. The spe
 ** *Client Credentials*: Enter client ID and client secret.
 --
 
-*Read-Only Access*::
-If your credentials have read-only permissions, the system can discover APIs and monitor conformance but can't apply policies directly to the provider gateway. Use xref:exp-governance-policy-library-apply.adoc[Policy Library] to apply policies in read-only mode, or update credentials later to enable write access.
+// FLAG: Aug 13 release (policy write scope). This "Read-Only Access" note describes applying policies to a provider gateway, which is Policy Write (GA Aug 13), not Jul 16 Policy Read. Uncomment when the Aug 13 write release is documented.
+// *Read-Only Access*::
+// If your credentials have read-only permissions, the system can discover APIs and monitor conformance but can't apply policies directly to the provider gateway. Use xref:exp-governance-policy-library-apply.adoc[Policy Library] to apply policies in read-only mode, or update credentials later to enable write access.
 
 Select *Connect* to establish the connection.
 
@@ -79,17 +80,18 @@ After you connect to a provider:
 * *API Discovery*: The scanner begins discovering APIs hosted on the provider platform. Discovered APIs appear in *Portfolio Overview* with the provider name in the *Gateway/Provider* column.
 * *Akamai Correlation Policy*: For Akamai providers, the system automatically applies a correlation policy to discovered APIs to enable cross-gateway observability and governance.
 
-== Update Credentials
-
-If your initial credentials were read-only and you want to enable policy application:
-
-. Go to *Platform* > *Providers*.
-. Locate your provider connection and select *Edit*.
-. Select *Update Credentials*.
-. Enter credentials with write permissions.
-. Select *Save*.
-
-After updating to write-enabled credentials, you can apply policies directly to APIs on the provider gateway through governance strategies or the xref:exp-governance-policy-library-apply.adoc[Policy Library].
+// FLAG: Aug 13 release (policy write scope). This "Update Credentials" section describes enabling write-enabled credentials to apply policies to a provider gateway. Policy Write is GA Aug 13; the Jul 16 release is read/conformance only (except Kong, which already ships read+apply). Uncomment when the Aug 13 write release is documented.
+// == Update Credentials
+//
+// If your initial credentials were read-only and you want to enable policy application:
+//
+// . Go to *Platform* > *Providers*.
+// . Locate your provider connection and select *Edit*.
+// . Select *Update Credentials*.
+// . Enter credentials with write permissions.
+// . Select *Save*.
+//
+// After updating to write-enabled credentials, you can apply policies directly to APIs on the provider gateway through governance strategies or the xref:exp-governance-policy-library-apply.adoc[Policy Library].
 
 == Related Topics
 

@@ -1,6 +1,8 @@
 = Filter Governance Scope by Gateway or Provider
 :keywords: gateway filter, provider filter, governance scope, cross-gateway governance, third-party providers
 
+// FLAG: SCOPE REVIEW NEEDED — PM confirmation before publishing. The Jul 16 PRD (policy read scope) scopes governance strategies by `environment` and `applied_at_level`, and STRIKES THROUGH `source_gateway` ("scope rulesets to specific providers"). The omni-app code confirms a Gateway/Provider *column* (conformance findings are attributed per gateway) but does NOT confirm a Gateway/Provider *filter* as a strategy-scoping control. This topic may describe a control that isn't in Jul 16 scope. Confirm with the PM whether provider-level strategy scoping ships for Jul 16; if not, hold or reframe this topic (the Gateway/Provider column content used elsewhere remains valid).
+
 When creating a governance strategy, use the *Gateway/Provider* filter to target specific API gateway platforms or third-party providers. This filter enables unified governance across Anypoint Platform gateways and connected third-party provider platforms such as Akamai.
 
 == When the Gateway/Provider Filter Appears
@@ -10,7 +12,7 @@ The *Gateway/Provider* filter appears in the governance strategy scope configura
 * Your organization has connected one or more third-party API gateway providers through *Platform* > *Providers*.
 * The connected providers have discovered APIs that are registered in the portfolio.
 
-If no providers are connected, the filter doesn't appear, and the strategy applies only to Anypoint Platform-hosted APIs.
+The filter appears only if you connect providers. Otherwise, the strategy applies only to Anypoint Platform-hosted APIs.
 
 == Before You Begin
 
@@ -30,7 +32,7 @@ In the governance strategy creation workflow:
 --
 ** *All Runtimes*: The strategy applies to all APIs across Anypoint Platform gateways and all connected third-party providers.
 ** *Anypoint Platform*: The strategy applies only to APIs hosted on Anypoint Platform gateways (Flex Gateway, Mule Gateway).
-** *Third-Party Provider Names*: Select specific providers (such as *Akamai*) to limit the strategy to APIs hosted on those platforms.
+** Individual provider: Select specific providers to limit the strategy to APIs hosted on those platforms.
 --
 
 You can select multiple providers to govern APIs across a subset of platforms without including all runtimes.
@@ -39,9 +41,9 @@ You can select multiple providers to govern APIs across a subset of platforms wi
 
 The *Gateway/Provider* filter narrows the governance scope to APIs hosted on the selected platforms:
 
-* APIs that don't match the selected gateway or provider are excluded from the strategy, even if they match other scope criteria (such as tags or categories).
+* APIs that don't match the selected gateway or provider are excluded from the strategy, even if they match other scope criteria, such as tags or categories.
 * If you select multiple providers, the strategy applies to APIs hosted on any of the selected platforms (OR logic).
-* Combining the *Gateway/Provider* filter with other filters (Service Type, Tags, Categories) narrows the scope further. An API matches only when it satisfies all selected filters (AND logic).
+* Combining the *Gateway/Provider* filter with other filters narrows the scope further. An API matches only when it satisfies all selected filters (AND logic).
 
 == Example: Govern Only Akamai APIs
 
@@ -49,7 +51,7 @@ To create a governance strategy that applies only to APIs discovered from Akamai
 
 . In the *Define Governance Scope* step, expand the *Gateway/Provider* filter.
 . Select *Akamai* from the provider list.
-. Configure other scope filters as needed (such as *Tags* or *Service Type*).
+. Configure other scope filters as needed, such as *Tags* or *Service Type*.
 . Proceed through the strategy creation workflow.
 
 The resulting strategy applies only to APIs hosted on Akamai, as indicated in the *Gateway/Provider* column on the governance strategy dashboard.
@@ -65,7 +67,7 @@ To create a governance strategy that applies across all gateway platforms:
 
 The strategy applies to all APIs across Anypoint Platform and all connected third-party providers.
 
-== Related Topics
+== See Also
 
 * xref:exp-governance-create-strategy.adoc[Create Governance Strategies]
 * xref:exp-governance-setup-third-party-providers.adoc[Connect to Third-Party API Providers]

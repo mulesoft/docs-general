@@ -1,6 +1,8 @@
 = Apply Policies via Policy Library
 :keywords: policy library, apply policies, policy enforcement, targeted policies, governance policies
 
+// FLAG: Aug 13 release (policy write scope). This entire topic documents applying policies to API instances (including third-party provider instances), which is Policy Write — GA Aug 13. It is out of scope for the Jul 16 Policy Read GA. The topic body is commented out below; uncomment when the Aug 13 write release is documented. Note: for MuleSoft-native and Kong instances, policy application already ships, but cross-gateway apply as described here aligns with the Aug 13 milestone — confirm scope with the PM before publishing.
+////
 The Policy Library provides a wizard-driven workflow to apply individual policies directly to selected API instances. Use the Policy Library for targeted or supplemental policy application when you want more control than governance strategies provide.
 
 == When to Use the Policy Library
@@ -119,3 +121,4 @@ If the policy is in read-only mode and you want enforcement, xref:exp-governance
 * xref:exp-governance-setup-third-party-providers.adoc[Connect to Third-Party API Providers]
 * xref:exp-governance-govern-third-party-apis.adoc[Govern Third-Party Provider APIs]
 * xref:exp-services-view-details.adoc[View Service Details]
+////

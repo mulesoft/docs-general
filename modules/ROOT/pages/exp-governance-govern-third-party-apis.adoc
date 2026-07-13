@@ -15,7 +15,8 @@ Follow these steps to govern APIs from third-party providers:
 
 . *Monitor Conformance*: Track conformance status for provider-hosted APIs through the governance strategy dashboard. Filter by specific providers to focus on a subset of your cross-gateway environment.
 
-. *Apply Policies*: For targeted or supplemental policy application, use xref:exp-governance-policy-library-apply.adoc[Policy Library] to select and apply policies directly to provider-hosted API instances.
+// FLAG: Aug 13 release (policy write scope). The "Apply Policies" workflow step applies policies directly to provider-hosted instances, which is Policy Write (GA Aug 13). The Jul 16 release governs third-party APIs in read/conformance mode only. Uncomment when the Aug 13 write release is documented.
+// . *Apply Policies*: For targeted or supplemental policy application, use xref:exp-governance-policy-library-apply.adoc[Policy Library] to select and apply policies directly to provider-hosted API instances.
 
 . *Export Reports*: Export cross-gateway policy and conformance reports to CSV for compliance audits and stakeholder reviews.
 
@@ -37,23 +38,25 @@ Monitor conformance across multiple gateway platforms:
 . Review the conformance summary. The *Gateway/Provider* column shows which platform hosts each API.
 . Use the *Gateway/Provider* filter to focus on conformance for a specific provider.
 
-*Read-Only Policy Status*: If a policy shows *Read-Only* status, the provider connection uses read-only credentials. To enable policy writes, xref:exp-governance-setup-third-party-providers.adoc#update-credentials[update the credentials] with write-enabled permissions.
+// FLAG: Aug 13 release (policy write scope). "Read-Only Policy Status" and the credential-update-to-enable-writes flow describe Policy Write (GA Aug 13). Uncomment when the Aug 13 write release is documented.
+// *Read-Only Policy Status*: If a policy shows *Read-Only* status, the provider connection uses read-only credentials. To enable policy writes, xref:exp-governance-setup-third-party-providers.adoc#update-credentials[update the credentials] with write-enabled permissions.
 
-== Policy Library for Third-Party APIs
-
-The xref:exp-governance-policy-library-apply.adoc[Policy Library] provides a targeted way to apply individual policies to third-party provider services:
-
-. Go to *Governance* > *Governance Strategies* > *Policy Library*.
-. Complete the four-step wizard:
-+
---
-** *Select Policy*: Choose from Universal, Access and Security, Performance and Cost, Data Privacy and Integrity, or Compliance and Observability categories.
-** *Configure Policy*: Set policy parameters.
-** *Select Instances*: Choose API instances hosted on third-party providers.
-** *Review & Apply*: Confirm and apply the policy.
---
-
-Use the Policy Library when you need supplemental or one-off policy application outside governance strategies.
+// FLAG: Aug 13 release (policy write scope). The entire "Policy Library for Third-Party APIs" section applies policies to provider instances, which is Policy Write (GA Aug 13), not Jul 16 Policy Read. Uncomment when the Aug 13 write release is documented.
+// == Policy Library for Third-Party APIs
+//
+// The xref:exp-governance-policy-library-apply.adoc[Policy Library] provides a targeted way to apply individual policies to third-party provider services:
+//
+// . Go to *Governance* > *Governance Strategies* > *Policy Library*.
+// . Complete the four-step wizard:
+// +
+// --
+// ** *Select Policy*: Choose from Universal, Access and Security, Performance and Cost, Data Privacy and Integrity, or Compliance and Observability categories.
+// ** *Configure Policy*: Set policy parameters.
+// ** *Select Instances*: Choose API instances hosted on third-party providers.
+// ** *Review & Apply*: Confirm and apply the policy.
+// --
+//
+// Use the Policy Library when you need supplemental or one-off policy application outside governance strategies.
 
 == Export Cross-Gateway Reports
 
@@ -70,16 +73,18 @@ The CSV includes:
 * API Version
 * Gateway/Provider
 * Applied policies
-* Policy Application Status (Enabled or Read-Only)
 * Conformance status
 * Timestamp
-
-Read-Only entries indicate that policies are applied in monitoring mode only. To enable write access, xref:exp-governance-setup-third-party-providers.adoc#update-credentials[update provider credentials].
+// FLAG: Aug 13 release (policy write scope). The "Policy Application Status (Enabled or Read-Only)" column and the read-only/write-access note describe policy enforcement state, which is Policy Write (GA Aug 13). Uncomment when the Aug 13 write release is documented.
+// * Policy Application Status (Enabled or Read-Only)
+//
+// Read-Only entries indicate that policies are applied in monitoring mode only. To enable write access, xref:exp-governance-setup-third-party-providers.adoc#update-credentials[update provider credentials].
 
 == Related Topics
 
 * xref:exp-governance-setup-third-party-providers.adoc[Connect to Third-Party API Providers]
 * xref:exp-governance-create-strategy.adoc[Create Governance Strategies]
-* xref:exp-governance-policy-library-apply.adoc[Apply Policies via Policy Library]
+// FLAG: Aug 13 release (policy write scope). Link to the Policy Library apply topic, which is commented out until the Aug 13 write release. Uncomment together with that topic.
+// * xref:exp-governance-policy-library-apply.adoc[Apply Policies via Policy Library]
 * xref:exp-governance-monitor-cross-gateway-conformance.adoc[Monitor Cross-Gateway Conformance]
 * xref:exp-governance-cross-gateway-policy-audit-export.adoc[Export Cross-Gateway Policy Audit Reports]

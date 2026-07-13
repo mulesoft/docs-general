@@ -1,7 +1,7 @@
 = Monitor Cross-Gateway Conformance
 :keywords: cross-gateway conformance, provider conformance, governance monitoring, compliance tracking, multi-gateway governance
 
-After creating governance strategies that target multiple gateway platforms or third-party providers, monitor conformance across your entire API ecosystem through a unified dashboard. The conformance summary shows compliance status for APIs hosted on Anypoint Platform gateways and connected third-party providers.
+After creating governance strategies that target multiple gateway platforms or third-party providers, monitor conformance across your entire API ecosystem through a unified dashboard. The conformance summary shows conformance status for APIs hosted on Anypoint Platform gateways and connected third-party providers.
 
 == Before You Begin
 
@@ -19,10 +19,11 @@ Before monitoring cross-gateway conformance:
 
 The dashboard displays:
 
-* *Conformance Status*: The percentage of targeted APIs that comply with the strategy's control rules or automated policies.
-* *Gateway/Provider Column*: Shows which platform hosts each API (such as *Anypoint Platform*, *Akamai*, or other connected providers).
-* *Compliant vs. Non-Compliant APIs*: A breakdown of APIs that meet or fail the strategy's requirements.
-* *Policy Application Status*: Indicates whether policies are *Enabled* (actively enforced) or *Read-Only* (monitoring mode only).
+* *Conformance Status*: The percentage of targeted APIs that conform to the strategy's control rules or automated policies.
+* Gateway/Provider column: Shows which platform hosts each API (such as Anypoint Platform, Akamai, or other connected providers).
+* Conformant vs. Non-Conformant APIs: A breakdown of APIs that meet or fail the strategy's requirements.
+// FLAG: Aug 13 release (policy write scope). "Policy Application Status" (Enabled/Read-Only enforcement state) reflects policy enforcement, which is Policy Write — GA Aug 13. Uncomment when the Aug 13 write release is documented.
+// * *Policy Application Status*: Indicates whether policies are *Enabled* (actively enforced) or *Read-Only* (monitoring mode only).
 
 == Filter by Specific Provider
 
@@ -39,22 +40,23 @@ Use this filter to:
 * Identify provider-specific compliance gaps.
 * Focus on a subset of your multi-gateway environment during reviews or audits.
 
-== Understanding Read-Only Policy Status
-
-If a policy shows *Read-Only* status in the conformance dashboard:
-
-* The provider connection uses credentials with read-only permissions.
-* Policies are applied in monitoring mode only and don't enforce requirements on the provider gateway.
-* The system can track conformance but can't automatically remediate violations.
-
-*How to Remediate*: xref:exp-governance-setup-third-party-providers.adoc#update-credentials[Update provider credentials] to grant write-enabled permissions. After updating credentials, policies transition from *Read-Only* to *Enabled* status and can enforce requirements on the provider gateway.
+// FLAG: Aug 13 release (policy write scope). The entire "Understanding Read-Only Policy Status" section describes policy enforcement and credential-based write access, which is Policy Write — GA Aug 13. The Jul 16 Policy Read GA monitors conformance in read-only mode only. Uncomment when the Aug 13 write release is documented.
+// == Understanding Read-Only Policy Status
+//
+// If a policy shows *Read-Only* status in the conformance dashboard:
+//
+// * The provider connection uses credentials with read-only permissions.
+// * Policies are applied in monitoring mode only and don't enforce requirements on the provider gateway.
+// * The system can track conformance but can't automatically remediate violations.
+//
+// *How to Remediate*: xref:exp-governance-setup-third-party-providers.adoc#update-credentials[Update provider credentials] to grant write-enabled permissions. After updating credentials, policies transition from *Read-Only* to *Enabled* status and can enforce requirements on the provider gateway.
 
 == Monitor Conformance Over Time
 
 Track conformance trends to identify improvements or regressions:
 
 . Select a governance strategy from the dashboard.
-. Review the *Conformance History* chart (if available) to see how compliance has changed over time.
+. Review the *Conformance History* chart (if available) to see how conformance has changed over time.
 . Use the *Gateway/Provider* filter to compare trends across platforms.
 
 Regular monitoring helps you:
@@ -68,7 +70,8 @@ Regular monitoring helps you:
 To share conformance data with stakeholders or include it in compliance audits:
 
 . From the governance strategy dashboard, select *Export to CSV*.
-. The CSV includes conformance status, Gateway/Provider, applied policies, and policy application status for each API.
+// FLAG: Aug 13 release (policy write scope). "policy application status" reflects enforcement state (Enabled/Read-Only), which is Policy Write — GA Aug 13. For Jul 16, the CSV covers read/conformance data only. Restore the fuller list when the Aug 13 write release is documented.
+. The CSV includes conformance status, Gateway/Provider, and applied policies for each API.
 
 For more information about the CSV schema and how to use exported reports, see xref:exp-governance-cross-gateway-policy-audit-export.adoc[Export Cross-Gateway Policy Audit Reports].
 
