@@ -247,15 +247,15 @@ Coordinate agents and tools across ecosystems with guided determinism, so multi-
 
 === Agent Broker
 
-* What it is: An intelligent routing service that coordinates task delegation across A2A-compliant agents in your agent network. Brokers originate from MuleSoft and are defined in your agent network YAML alongside the agents and MCP servers they can leverage to accomplish tasks.
+* What it is: An intelligent routing service that coordinates task delegation across A2A-compliant agents in your agent network. You define a broker and its nodes in Agent Script. Nodes are connected in a graph that encapsulates all steps that describe the orchestration of agents, tools, and large language models. A graph-based approach to agent brokers ensures that connected paths guarantee a specific order of operations and enable more complex orchestration that combines deterministic and non-deterministic elements. 
 * Role in Agent Fabric: The broker is the orchestration intelligence in your agent network. When a request arrives, the broker determines which agent or other broker is best suited to handle it and delegates accordingly, generating a contextId and taskId to track task state across the interaction. 
-* By dynamically matching tasks with other agents and enabling seamless collaboration across ecosystems, balancing fixed rules and LLM reasoning, the broker transforms scattered agents into a coordinated workforce. Brokers appear in your portfolio and can be discovered and reused by other brokers across your organization.
+* By dynamically matching tasks with other agents and enabling seamless collaboration across ecosystems, the broker transforms scattered agents into a coordinated workforce. Brokers appear in your portfolio and can be discovered and reused by other brokers across your organization.
 * What you can do:
 ** Build hierarchical orchestration by delegating tasks to specialized A2A-compliant agents or other brokers
 ** Publish brokers to your portfolio for discovery and reuse across your organization
 ** Define brokers in your agent network YAML configuration
 ** Configure the broker's routing logic and orchestration patterns
-** Deploy the full agent network (including the broker) to CloudHub 2.0 or Runtime Fabric
+** Deploy the full agent network (including the broker) to CloudHub 2.0 
 ** Monitor broker routing decisions and performance using Agent Visualizer
 
 * When you need it: when your agent network includes multiple agents with different specializations and you need a component to intelligently route work to the right agent based on context. Add a broker when routing logic needs to go beyond a single agent.
@@ -264,7 +264,7 @@ Coordinate agents and tools across ecosystems with guided determinism, so multi-
 
 === Agent Network
 
-* What it is: An agent network is a coordinated group of agents, brokers, LLMs, and MCP servers that acts as a central hub for defining, validating, and running agentic processes across your enterprise. You configure an agent network in a human-readable YAML file  that details the required structure and properties that define your project's assets, connections, and policies. 
+* What it is: An agent network is a coordinated group of agents, brokers, LLMs, and MCP servers that acts as a central hub for defining, validating, and running agentic processes across your enterprise. You configure an agent network in a human-readable YAML file that details the required structure and properties that define your project's assets, connections, and policies. If your network project uses brokers, you define them and their nodes in Agent Script. Agent Script enables you to build predictable, context-aware agent workflows between nodes.  
 * Role in Agent Fabric: The agent network is the configuration and infrastructure layer that brings all the components of your agentic solution together. It defines the composition of your network, specifying which agents are available, which brokers orchestrate them, which LLMs provide reasoning, and which MCP servers connect agents to backend systems. Without an agent network, agents operate in isolation. With one, they become a coordinated system capable of handling complex, multi-step workflows.
 * What you can do:
 ** Define the composition of a multi-agent system in a single YAML configuration
