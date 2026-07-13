@@ -1,24 +1,24 @@
 = Find and Fix Policy Drift on Third-Party API Instances
 :keywords: policy drift, third-party apis, conformance, policy detection, governance drift, provider compliance
 
-Policy drift occurs when the policies applied on a third-party API gateway instance differ from the policies defined in your governance strategy. API Governance detects policy drift for APIs hosted on Kong, Apigee, AWS API Gateway, and Akamai, enabling you to identify and remediate configuration inconsistencies across your multi-gateway environment.
+Policy drift occurs when the policies applied on a third-party API gateway instance differ from the policies defined in your governance strategy. API Governance detects policy drift for APIs hosted on Kong, Apigee, AWS API Gateway, and Akamai so that you can identify and remediate configuration inconsistencies across your multi-gateway environment.
 
 == What Is Policy Drift?
 
 Policy drift happens when:
 
-* A policy defined in your governance strategy is not applied to a third-party gateway instance.
-* A policy applied on the gateway has been modified or removed outside of API Governance.
-* Policy parameters on the gateway instance do not match the configuration defined in your governance strategy.
+* A policy defined in your governance strategy isn't applied to a third-party gateway instance.
+* A policy applied on the gateway is modified or removed outside API Governance.
+* Policy parameters on the gateway instance don't match the configuration defined in your governance strategy.
 
 Policy drift can occur due to:
 
 * Manual changes made directly on the third-party gateway console.
-* Automated configuration management tools modifying gateway policies.
-* Policy application failures that were not detected or remediated.
-* Credential or permission issues preventing API Governance from applying policies.
+* Automated configuration management tools that modify gateway policies.
+* Policy application failures that aren't detected or remediated.
+* Credential or permission issues that prevent API Governance from applying policies.
 
-Detecting and fixing policy drift ensures that your governance policies are consistently enforced across all gateway platforms.
+Detecting and fixing policy drift keeps your governance policies consistently enforced across all gateway platforms.
 
 == Before You Begin
 
@@ -37,13 +37,13 @@ Before detecting policy drift:
 
 The API detail view shows:
 
-* *Expected Policies*: Policies defined in the governance strategy that should be applied to the instance.
+* *Expected Policies*: Policies defined in the governance strategy to apply to the instance.
 * *Applied Policies*: Policies currently applied on the third-party gateway instance.
 * *Drift Indicators*: Highlights where expected and applied policies differ.
 
 Drift indicators include:
 
-* *Missing Policy*: A policy defined in the strategy is not applied on the gateway.
+* *Missing Policy*: A policy defined in the strategy isn't applied on the gateway.
 * *Extra Policy*: A policy applied on the gateway is not defined in the strategy.
 * *Configuration Mismatch*: A policy is applied but its parameters differ from the strategy definition.
 
@@ -62,7 +62,7 @@ After applying the policy, return to the conformance dashboard to verify that th
 
 == Update Scanner Credentials for Programmatic Policy Application
 
-If policy drift persists or you see *Read-Only* status indicators, your provider connection may use read-only credentials that prevent programmatic policy application.
+If policy drift persists or you see *Read-Only* status indicators, your provider connection might use read-only credentials that prevent programmatic policy application.
 
 To enable write access:
 
@@ -88,8 +88,8 @@ To track policy drift trends:
 +
 --
 ** APIs with frequent policy drift (potential for manual gateway changes).
-** Providers with higher drift rates (may indicate integration or credential issues).
-** Policy types that commonly drift (may require additional controls or documentation).
+** Providers with higher drift rates (a sign of integration or credential issues).
+** Policy types that commonly drift (a sign that additional controls or documentation are needed).
 --
 
 Regular monitoring helps you:
@@ -104,7 +104,7 @@ To reduce policy drift:
 
 * *Restrict Direct Gateway Access*: Limit who can modify policies directly on third-party gateway consoles.
 * *Document Governance-Managed Policies*: Clearly communicate which policies are managed by API Governance to prevent manual changes.
-* *Use Write-Enabled Credentials*: Ensure provider connections use credentials with write permissions to enable automated policy application and updates.
+* *Use Write-Enabled Credentials*: Make sure that provider connections use credentials with write permissions to enable automated policy application and updates.
 * *Enable Automated Policy Strategies*: Use xref:exp-governance-create-strategy.adoc[Automated Policy strategies] to enforce policies at runtime rather than relying on manual application.
 * *Schedule Regular Conformance Reviews*: Review conformance dashboards regularly to detect and remediate drift before it becomes widespread.
 

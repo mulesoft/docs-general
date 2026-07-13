@@ -30,8 +30,8 @@ The wizard guides you through provider selection, connection setup, and credenti
 
 Select the third-party API gateway provider you want to connect to:
 
-* *Akamai* - Connect to Akamai API Gateway to discover and govern APIs hosted on Akamai infrastructure.
-* Additional providers may appear as support is added.
+* *Akamai*—Connect to Akamai API Gateway to discover and govern APIs hosted on Akamai infrastructure.
+* Additional providers appear as support is added.
 
 Select your provider and select *Next*.
 
@@ -67,7 +67,7 @@ Enter the required authentication credentials for your provider account. The spe
 --
 
 *Read-Only Access*::
-If your credentials have read-only permissions, the system can discover APIs and monitor conformance but cannot apply policies directly to the provider gateway. You can use xref:exp-governance-policy-library-apply.adoc[Policy Library] to apply policies in read-only mode, or update credentials later to enable write access.
+If your credentials have read-only permissions, the system can discover APIs and monitor conformance but can't apply policies directly to the provider gateway. Use xref:exp-governance-policy-library-apply.adoc[Policy Library] to apply policies in read-only mode, or update credentials later to enable write access.
 
 Select *Connect* to establish the connection.
 
@@ -76,12 +76,12 @@ Select *Connect* to establish the connection.
 After you connect to a provider:
 
 * *Scanner Auto-Creation*: The system automatically creates a scanner for the connected provider to enable API discovery.
-* *API Discovery*: The scanner begins discovering APIs hosted on the provider platform. Discovered APIs appear in *Portfolio Overview* with the provider name in the Gateway/Provider column.
+* *API Discovery*: The scanner begins discovering APIs hosted on the provider platform. Discovered APIs appear in *Portfolio Overview* with the provider name in the *Gateway/Provider* column.
 * *Akamai Correlation Policy*: For Akamai providers, the system automatically applies a correlation policy to discovered APIs to enable cross-gateway observability and governance.
 
 == Update Credentials
 
-If your initial credentials were read-only and you need to enable policy application:
+If your initial credentials were read-only and you want to enable policy application:
 
 . Go to *Platform* > *Providers*.
 . Locate your provider connection and select *Edit*.
@@ -89,7 +89,7 @@ If your initial credentials were read-only and you need to enable policy applica
 . Enter credentials with write permissions.
 . Select *Save*.
 
-After updating to write-enabled credentials, you can apply policies directly to APIs on the provider gateway through governance strategies or xref:exp-governance-policy-library-apply.adoc[Policy Library].
+After updating to write-enabled credentials, you can apply policies directly to APIs on the provider gateway through governance strategies or the xref:exp-governance-policy-library-apply.adoc[Policy Library].
 
 == Related Topics
 

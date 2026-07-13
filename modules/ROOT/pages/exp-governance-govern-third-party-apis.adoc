@@ -11,7 +11,7 @@ Follow these steps to govern APIs from third-party providers:
 
 . *Verify Discovered APIs*: Go to *Portfolio Overview* and verify that discovered APIs appear with the provider name in the *Gateway/Provider* column. APIs are automatically added to the portfolio as they are discovered.
 
-. *Create Governance Strategy*: Create a xref:exp-governance-create-strategy.adoc[governance strategy] with the *Gateway/Provider* filter to target specific third-party providers or all runtimes. Select the control rules or automated policies to apply.
+. *Create Governance Strategy*: Create a xref:exp-governance-create-strategy.adoc[governance strategy] with the *Gateway/Provider* filter to target specific third-party providers or *All Runtimes*. Select the control rules or automated policies to apply.
 
 . *Monitor Conformance*: Track conformance status for provider-hosted APIs through the governance strategy dashboard. Filter by specific providers to focus on a subset of your cross-gateway environment.
 
@@ -37,14 +37,14 @@ Monitor conformance across multiple gateway platforms:
 . Review the conformance summary. The *Gateway/Provider* column shows which platform hosts each API.
 . Use the *Gateway/Provider* filter to focus on conformance for a specific provider.
 
-*Read-Only Policy Status*: If a policy shows *Read-Only* status, the provider connection uses read-only credentials. To enable policy writes, xref:exp-governance-setup-third-party-providers.adoc#update-credentials[update credentials] with write-enabled permissions.
+*Read-Only Policy Status*: If a policy shows *Read-Only* status, the provider connection uses read-only credentials. To enable policy writes, xref:exp-governance-setup-third-party-providers.adoc#update-credentials[update the credentials] with write-enabled permissions.
 
 == Policy Library for Third-Party APIs
 
-xref:exp-governance-policy-library-apply.adoc[Policy Library] provides a targeted way to apply individual policies to third-party provider services:
+The xref:exp-governance-policy-library-apply.adoc[Policy Library] provides a targeted way to apply individual policies to third-party provider services:
 
 . Go to *Governance* > *Governance Strategies* > *Policy Library*.
-. Complete the 4-step wizard:
+. Complete the four-step wizard:
 +
 --
 ** *Select Policy*: Choose from Universal, Access and Security, Performance and Cost, Data Privacy and Integrity, or Compliance and Observability categories.
@@ -53,7 +53,7 @@ xref:exp-governance-policy-library-apply.adoc[Policy Library] provides a targete
 ** *Review & Apply*: Confirm and apply the policy.
 --
 
-Use Policy Library when you need supplemental or one-off policy application outside of governance strategies.
+Use the Policy Library when you need supplemental or one-off policy application outside governance strategies.
 
 == Export Cross-Gateway Reports
 

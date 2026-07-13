@@ -21,7 +21,7 @@ The dashboard displays:
 
 * *Conformance Status*: The percentage of targeted APIs that comply with the strategy's control rules or automated policies.
 * *Gateway/Provider Column*: Shows which platform hosts each API (such as *Anypoint Platform*, *Akamai*, or other connected providers).
-* *Compliant vs Non-Compliant APIs*: A breakdown of APIs that meet or fail the strategy's requirements.
+* *Compliant vs. Non-Compliant APIs*: A breakdown of APIs that meet or fail the strategy's requirements.
 * *Policy Application Status*: Indicates whether policies are *Enabled* (actively enforced) or *Read-Only* (monitoring mode only).
 
 == Filter by Specific Provider
@@ -30,7 +30,8 @@ To focus on conformance for a specific provider:
 
 . In the conformance dashboard, locate the *Gateway/Provider* filter.
 . Select one or more providers from the list (such as *Akamai*).
-. The dashboard updates to show only APIs hosted on the selected platforms.
+
+The dashboard updates to show only APIs hosted on the selected platforms.
 
 Use this filter to:
 
@@ -43,8 +44,8 @@ Use this filter to:
 If a policy shows *Read-Only* status in the conformance dashboard:
 
 * The provider connection uses credentials with read-only permissions.
-* Policies are applied in monitoring mode only and do not enforce requirements on the provider gateway.
-* The system can track conformance but cannot automatically remediate violations.
+* Policies are applied in monitoring mode only and don't enforce requirements on the provider gateway.
+* The system can track conformance but can't automatically remediate violations.
 
 *How to Remediate*: xref:exp-governance-setup-third-party-providers.adoc#update-credentials[Update provider credentials] to grant write-enabled permissions. After updating credentials, policies transition from *Read-Only* to *Enabled* status and can enforce requirements on the provider gateway.
 

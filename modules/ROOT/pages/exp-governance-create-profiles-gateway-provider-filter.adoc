@@ -10,7 +10,7 @@ The *Gateway/Provider* filter appears in the governance strategy scope configura
 * Your organization has connected one or more third-party API gateway providers through *Platform* > *Providers*.
 * The connected providers have discovered APIs that are registered in the portfolio.
 
-If no providers are connected, the filter does not appear and the strategy applies only to Anypoint Platform-hosted APIs.
+If no providers are connected, the filter doesn't appear, and the strategy applies only to Anypoint Platform-hosted APIs.
 
 == Before You Begin
 
@@ -23,7 +23,7 @@ Before using the Gateway/Provider filter:
 
 In the governance strategy creation workflow:
 
-. Navigate to the *Define Governance Scope* step.
+. Go to the *Define Governance Scope* step.
 . Expand the *Gateway/Provider* filter.
 . Select one or more options:
 +
@@ -39,9 +39,9 @@ You can select multiple providers to govern APIs across a subset of platforms wi
 
 The *Gateway/Provider* filter narrows the governance scope to APIs hosted on the selected platforms:
 
-* APIs that do not match the selected gateway or provider are excluded from the strategy, even if they match other scope criteria (such as tags or categories).
+* APIs that don't match the selected gateway or provider are excluded from the strategy, even if they match other scope criteria (such as tags or categories).
 * If you select multiple providers, the strategy applies to APIs hosted on any of the selected platforms (OR logic).
-* Combining the *Gateway/Provider* filter with other filters (Service Type, Tags, Categories) narrows the scope further. All selected filters must match (AND logic).
+* Combining the *Gateway/Provider* filter with other filters (Service Type, Tags, Categories) narrows the scope further. An API matches only when it satisfies all selected filters (AND logic).
 
 == Example: Govern Only Akamai APIs
 

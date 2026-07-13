@@ -19,7 +19,7 @@ Before exporting a report:
 
 * xref:exp-governance-create-strategy.adoc[Create a governance strategy] that targets the APIs you want to report on.
 * Verify that the strategy is active and has evaluated the targeted APIs.
-* For cross-gateway reports, ensure that xref:exp-governance-setup-third-party-providers.adoc[third-party providers are connected] and have discovered APIs.
+* For cross-gateway reports, make sure that xref:exp-governance-setup-third-party-providers.adoc[third-party providers are connected] and have discovered APIs.
 
 == Export a Governance Strategy Report
 
@@ -32,7 +32,7 @@ The export includes all APIs targeted by the selected strategy, along with their
 
 == CSV Report Schema
 
-The exported CSV includes the following columns:
+The exported CSV includes these columns:
 
 [cols="1,3"]
 |===
@@ -74,8 +74,8 @@ The exported CSV includes the following columns:
 If the *Policy Application Status* column shows *Read-Only*:
 
 * The provider connection uses credentials with read-only permissions.
-* Policies are applied in monitoring mode and do not enforce requirements on the provider gateway.
-* Conformance data is available, but policy violations are not automatically remediated.
+* Policies are applied in monitoring mode and don't enforce requirements on the provider gateway.
+* Conformance data is available, but policy violations aren't automatically remediated.
 
 *How to Remediate*: xref:exp-governance-setup-third-party-providers.adoc#update-credentials[Update provider credentials] to grant write-enabled permissions. After updating credentials, re-export the report to verify that policies transition to *Enabled* status.
 
@@ -83,7 +83,7 @@ If the *Policy Application Status* column shows *Read-Only*:
 
 Use the exported CSV to:
 
-* *Identify Read-Only Policies*: Filter the *Policy Application Status* column for *Read-Only* entries to find APIs where policies are not fully enforced.
+* *Identify Read-Only Policies*: Filter the *Policy Application Status* column for *Read-Only* entries to find APIs where policies aren't fully enforced.
 * *Compare Providers*: Group by the *Gateway/Provider* column to compare conformance across Anypoint Platform and third-party providers.
 * *Track Non-Compliant APIs*: Filter by *Conformance Status* to identify APIs that fail compliance checks.
 * *Audit Policy Coverage*: Review the *Applied Policies* column to verify that required policies are applied to all targeted APIs.
