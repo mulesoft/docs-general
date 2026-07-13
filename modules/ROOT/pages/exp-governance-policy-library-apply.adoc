@@ -80,7 +80,7 @@ Choose the API instances where you want to apply the policy:
 . Use filters to narrow the list by:
 +
 --
-** *Gateway/Provider*: Filter by specific providers (such as Akamai) or Anypoint Platform gateways.
+** *Provider*: Filter by specific providers (such as Akamai) or Anypoint Platform gateways.
 ** *Service Type*: Filter by service type (such as REST API or GraphQL).
 ** *Tags*: Filter by tags assigned to services.
 --

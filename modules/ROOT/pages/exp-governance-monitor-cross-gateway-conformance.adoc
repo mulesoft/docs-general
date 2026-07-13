@@ -8,19 +8,19 @@ After creating governance strategies that target multiple gateway platforms or t
 Before monitoring cross-gateway conformance:
 
 * xref:exp-governance-setup-third-party-providers.adoc[Connect to one or more third-party providers] to enable cross-gateway governance.
-* xref:exp-governance-create-strategy.adoc[Create a governance strategy] that targets multiple providers or *All Runtimes* using the xref:exp-governance-create-profiles-gateway-provider-filter.adoc[Gateway/Provider filter].
+* xref:exp-governance-create-strategy.adoc[Create a governance strategy] that evaluates the APIs you want to monitor.
 * Verify that the strategy is active and has evaluated the targeted APIs.
 
 == View Cross-Gateway Conformance
 
 . Log in and go to *Governance* > *Governance Strategies*.
-. Select an active strategy that targets multiple providers or *All Runtimes*.
+. Select an active strategy.
 . Review the conformance summary dashboard.
 
 The dashboard displays:
 
 * *Conformance Status*: The percentage of targeted APIs that conform to the strategy's control rules or automated policies.
-* Gateway/Provider column: Shows which platform hosts each API (such as Anypoint Platform, Akamai, or other connected providers).
+* Provider column: Shows which platform hosts each API (such as Anypoint Platform, Akamai, or other connected providers).
 * Conformant vs. Non-Conformant APIs: A breakdown of APIs that meet or fail the strategy's requirements.
 // FLAG: Aug 13 release (policy write scope). "Policy Application Status" (Enabled/Read-Only enforcement state) reflects policy enforcement, which is Policy Write — GA Aug 13. Uncomment when the Aug 13 write release is documented.
 // * *Policy Application Status*: Indicates whether policies are *Enabled* (actively enforced) or *Read-Only* (monitoring mode only).
@@ -29,10 +29,10 @@ The dashboard displays:
 
 To focus on conformance for a specific provider:
 
-. In the conformance dashboard, locate the *Gateway/Provider* filter.
-. Select one or more providers from the list (such as *Akamai*).
+. In the conformance dashboard, locate the *Provider* filter.
+. Select a provider from the list (such as *Akamai*).
 
-The dashboard updates to show only APIs hosted on the selected platforms.
+The dashboard updates to show only APIs hosted on the selected provider.
 
 Use this filter to:
 
@@ -57,7 +57,7 @@ Track conformance trends to identify improvements or regressions:
 
 . Select a governance strategy from the dashboard.
 . Review the *Conformance History* chart (if available) to see how conformance has changed over time.
-. Use the *Gateway/Provider* filter to compare trends across platforms.
+. Use the *Provider* filter to compare trends across platforms.
 
 Regular monitoring helps you:
 
@@ -68,6 +68,5 @@ Regular monitoring helps you:
 == Related Topics
 
 * xref:exp-governance-create-strategy.adoc[Create Governance Strategies]
-* xref:exp-governance-create-profiles-gateway-provider-filter.adoc[Filter Governance Scope by Gateway or Provider]
 * xref:exp-governance-setup-third-party-providers.adoc[Connect to Third-Party API Providers]
 * xref:exp-governance-govern-third-party-apis.adoc[Govern Third-Party Provider APIs]

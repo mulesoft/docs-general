@@ -9,32 +9,23 @@ Follow these steps to govern APIs from third-party providers:
 
 . *Connect to Provider*: Use the xref:exp-governance-setup-third-party-providers.adoc[provider connection wizard] to establish a connection to your third-party API gateway (such as Akamai). The system creates a scanner and begins discovering APIs.
 
-. *Verify Discovered APIs*: Go to *Portfolio Overview* and verify that discovered APIs appear with the provider name in the *Gateway/Provider* column. APIs are automatically added to the portfolio as they are discovered.
+. *Verify Discovered APIs*: Go to *Portfolio Overview* and verify that discovered APIs appear with the provider name in the *Provider* column. APIs are automatically added to the portfolio as they are discovered.
 
-. *Create Governance Strategy*: Create a xref:exp-governance-create-strategy.adoc[governance strategy] with the *Gateway/Provider* filter to target specific third-party providers or *All Runtimes*. Select the control rules or automated policies to apply.
+. *Create Governance Strategy*: Create a xref:exp-governance-create-strategy.adoc[governance strategy] and select the control rules or automated policies to apply. The strategy evaluates conformance for all in-scope APIs, including those discovered from third-party providers.
 
-. *Monitor Conformance*: Track conformance status for provider-hosted APIs through the governance strategy dashboard. Filter by specific providers to focus on a subset of your cross-gateway environment.
+. *Monitor Conformance*: Track conformance status for provider-hosted APIs through the governance strategy dashboard. Use the *Provider* filter to focus on a subset of your cross-gateway environment.
 
 // FLAG: Aug 13 release (policy write scope). The "Apply Policies" workflow step applies policies directly to provider-hosted instances, which is Policy Write (GA Aug 13). The Jul 16 release governs third-party APIs in read/conformance mode only. Uncomment when the Aug 13 write release is documented.
 // . *Apply Policies*: For targeted or supplemental policy application, use xref:exp-governance-policy-library-apply.adoc[Policy Library] to select and apply policies directly to provider-hosted API instances.
-
-== Gateway/Provider Filter
-
-When creating a governance strategy, use the *Gateway/Provider* filter to target third-party provider APIs:
-
-. In the governance strategy creation workflow, expand the *Gateway/Provider* filter.
-. Select one or more connected providers from the list (such as *Akamai*), or select *All Runtimes* to include both Anypoint Platform and third-party provider APIs.
-
-The strategy applies only to APIs hosted on the selected providers.
 
 == Cross-Gateway Conformance Monitoring
 
 Monitor conformance across multiple gateway platforms:
 
 . Go to *Governance* > *Governance Strategies*.
-. Select an active strategy that targets multiple providers or *All Runtimes*.
-. Review the conformance summary. The *Gateway/Provider* column shows which platform hosts each API.
-. Use the *Gateway/Provider* filter to focus on conformance for a specific provider.
+. Select an active strategy.
+. Review the conformance summary. The *Provider* column shows which platform hosts each API.
+. Use the *Provider* filter to focus on conformance for a specific provider.
 
 // FLAG: Aug 13 release (policy write scope). "Read-Only Policy Status" and the credential-update-to-enable-writes flow describe Policy Write (GA Aug 13). Uncomment when the Aug 13 write release is documented.
 // *Read-Only Policy Status*: If a policy shows *Read-Only* status, the provider connection uses read-only credentials. To enable policy writes, xref:exp-governance-setup-third-party-providers.adoc#update-credentials[update the credentials] with write-enabled permissions.
