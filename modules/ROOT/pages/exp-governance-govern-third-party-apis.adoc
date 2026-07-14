@@ -30,7 +30,7 @@ Follow these steps to govern APIs from third-party providers:
 // . Complete the four-step wizard:
 // +
 // --
-// ** *Select Policy*: Choose from Universal, Access and Security, Performance and Cost, Data Privacy and Integrity, or Compliance and Observability categories.
+// ** *Select Policy*: Browse policies and filter by the Access and Security, Performance and Cost, Data Privacy and Integrity, or Compliance and Observability categories. Policies that apply to any service are marked with a *Universal* badge.
 // ** *Configure Policy*: Set policy parameters.
 // ** *Select Instances*: Choose API instances hosted on third-party providers.
 // ** *Review & Apply*: Confirm and apply the policy.

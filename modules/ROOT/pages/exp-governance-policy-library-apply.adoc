@@ -41,10 +41,7 @@ The wizard guides you through policy selection, configuration, instance selectio
 
 == Select Policy
 
-Choose the policy you want to apply from these categories:
-
-*Universal*::
-Policies that apply across all gateway types and service types, such as message logging or header injection.
+Browse the available policies and filter by category:
 
 *Access and Security*::
 Authentication and authorization policies, including OAuth 2.0, JWT validation, IP filtering, and rate limiting.
@@ -57,6 +54,8 @@ Policies that protect data privacy and ensure data integrity, such as PII maskin
 
 *Compliance and Observability*::
 Policies that enable compliance tracking and observability, such as audit logging, correlation ID injection, and OpenTelemetry tracing.
+
+Policies that apply to any service, including scanned and federated APIs, are marked with a *Universal* badge.
 
 Select the policy you want to apply and select *Next*.
 
@@ -115,7 +114,7 @@ After applying the policy:
 
 If the policy is in read-only mode and you want enforcement, xref:exp-governance-setup-third-party-providers.adoc#update-credentials[update provider credentials] to grant write access.
 
-== Related Topics
+== See Also
 
 * xref:exp-governance-create-strategy.adoc[Create Governance Strategies]
 * xref:exp-governance-setup-third-party-providers.adoc[Connect to Third-Party API Providers]
