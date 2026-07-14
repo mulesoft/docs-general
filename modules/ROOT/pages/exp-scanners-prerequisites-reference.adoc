@@ -1,0 +1,219 @@
+= Provider Prerequisites Reference
+:keywords: scanner prerequisites, exchange scanners, provider scanners, required roles, required credentials, scanner setup
+
+Scanner prerequisites by provider help you confirm required roles, credentials, and permissions before creating a scanner. Use this reference to prevent connection test failures and incomplete discovery by validating provider-specific access in advance. Each scanner still requires Exchange Administrator permission and the correct business group context.
+
+== Before You Begin
+
+Before adding any scanner, make sure you have:
+
+* Exchange Administrator permission.
+* Access to, and active context in, the business group where you want to add the scanner.
+
+== Scanner Prerequisites Cross-Reference
+
+In the table, bullets prefixed with *Policy Read* identify permissions, roles, or scopes required specifically for policy-read scanning.
+
+[cols="1,1,1,2",options="header"]
+|===
+| Scanner
+| Scanner Type
+| Required Roles
+| Required Credentials and Permissions
+
+| Amazon Bedrock
+| Agent
+| Exchange Administrator
+a|
+* AWS region knowledge
+* Access key ID and secret access key
+* `bedrock:ListAgents`
+* `bedrock:GetAgent`
+* `bedrock:ListAgentAliases`
+* `bedrock:GetAgentAlias`
+* `bedrock:ListAgentVersions`
+* `bedrock:GetAgentVersion`
+* Optional for agent invocation workflows: `bedrock:InvokeModel`, `bedrock:InvokeAgent`, `bedrock:InvokeInlineAgent`
+* Policy Read permissions: `bedrock:ListAgents`, `bedrock:GetAgent`, and `bedrock:ListAgentAliases`
+* Agents must have an alias linked to a version and an invocable URL
+
+| Amazon Bedrock AgentCore Runtime
+| Agent
+| Exchange Administrator
+a|
+* Active AWS account and AgentCore access
+* AWS region
+* Access key ID and secret access key
+* `bedrock-agentcore:ListAgentRuntimes`
+* `bedrock-agentcore:ListAgentRuntimeEndpoints`
+* `bedrock-agentcore:GetAgentCard`
+* `bedrock-agentcore:GetAgentRuntime`
+* `bedrock-agentcore:ListAgentRuntimeVersions`
+* `bedrock:GetAgent`
+* `bedrock:ListAgents`
+* Agents must be published with an active endpoint/version
+
+| Anthropic Claude Managed Agents
+| Agent
+| Exchange Administrator
+a|
+* Paid Anthropic account
+* Claude API key
+
+| Databricks Agent Bricks
+| Agent
+| Exchange Administrator
+a|
+* Databricks workspace access
+* Workspace URL
+* Client ID and client secret
+* Service principal `CAN_QUERY` on serving endpoints
+* `CAN_VIEW` or higher on endpoint metadata APIs
+* Discoverable agents must be custom Unity Catalog models in `READY` state
+
+| GoDaddy ANS
+| Agent
+| Exchange Administrator
+a|
+* API key
+* API secret
+
+| Google Gemini Agent Enterprise Platform
+| Agent
+| Exchange Administrator, Vertex AI Viewer
+a|
+* GCP project ID
+* Service account email
+* Private key
+
+| LangChain LangSmith
+| Agent
+| Exchange Administrator
+a|
+* LangSmith Plus plan (or higher) workspace
+* LangSmith API key
+* LangSmith workspace ID
+* Optional API host for region routing (for example, US or EU cloud host)
+
+| Microsoft Azure Copilot
+| Agent
+| Exchange Administrator, Copilot Studio Scanner Role
+a|
+* Azure app registration
+* Tenant ID, client ID, client secret
+* App added as an Application User in Power Platform
+* Scope set to Dataverse environment URL
+
+| Microsoft Foundry
+| Agent
+| Exchange Administrator, Azure AI Developer
+a|
+* Active Azure subscription
+* Azure app registration
+* Tenant ID, client ID, client secret
+* Project endpoint URLs (discovery is project-specific)
+
+| Snowflake Cortex AI
+| Agent
+| Exchange Administrator, Snowflake ACCOUNTADMIN
+a|
+* Snowflake account with Cortex Agents enabled (Enterprise edition)
+* A user with `ACCOUNTADMIN` privileges for one-time setup only
+* At least one Cortex Agent created in a schema to be scanned
+* Scanner egress IP ranges from your Anypoint deployment team (`<SCANNER_EGRESS_CIDRS>`)
+* Snowflake account URL
+* Programmatic access token (PAT)
+
+| Amazon API Gateway
+| API
+| Exchange Administrator
+a|
+* IAM read-only policy for API Gateway (for example, `apigateway:GET`)
+* Policy Read permission: `apigateway:GET`
+* Policy Read action group: `apigateway:GET*` on REST and HTTP API resources
+* Policy Read resource scope (REST APIs): `arn:aws:apigateway:{region}::/restapis/*`
+* Policy Read resource scope (HTTP APIs): `arn:aws:apigateway:{region}::/apis/*`
+* Policy Read note: for WAF-oriented extraction, scanner integrations also use WAFv2 and Route53 SDK access
+* AWS region knowledge
+* AWS access key ID and secret access key
+
+| Azure API Management
+| API
+| Exchange Administrator, API Management Service Reader
+a|
+* Policy Read role scope: API Management Service Reader at APIM resource or resource group scope
+* Policy Read OAuth scope: `https://management.azure.com/.default`
+* Tenant ID
+* Client ID
+* Client secret
+* Subscription ID
+* Resource group
+* Service name
+
+| Google Apigee
+| API
+| Exchange Administrator, Apigee Read-only Admin
+a|
+* Policy Read role: service account with Viewer role or an Apigee permission role with equivalent read access
+* GCP project ID
+* Service account email
+* Private key
+
+| Kong Gateway
+| API
+| Exchange Administrator, Kong Control Plane Viewer
+a|
+* Kong Gateway region
+* Personal access token (PAT)
+
+| Akamai Security
+| API Security
+| Exchange Administrator
+a|
+* Akamai Security base URL
+* Akamai Security client ID
+* Akamai Security client secret
+* Access to create service accounts in Akamai Security
+* Access to apply Akamai correlation policy in target environments
+* Existing services in *Portfolio* catalogs for correlation targets
+
+| Amazon Bedrock AgentCore MCP
+| MCP
+| Exchange Administrator
+a|
+* Active AWS account
+* AWS region
+* Access key ID and secret access key
+* `bedrock-agentcore:ListAgentRuntimes`
+* `bedrock-agentcore:GetAgentRuntime`
+* `bedrock-agentcore:ListAgentRuntimeVersions`
+* `bedrock-agentcore:ListAgentRuntimeEndpoints`
+* `bedrock-agentcore:InvokeAgentRuntime`
+* Policy Read permissions: runtime read actions, including `bedrock-agentcore:ListAgentRuntimes` and `bedrock-agentcore:GetAgentRuntime`
+
+| Azure API Management MCP Server
+| MCP
+| Exchange Administrator, API Management Service Reader
+a|
+* Tenant ID
+* Client ID
+* Client secret
+* Subscription ID
+* Resource group
+* Service name
+
+| Snowflake MCP Server
+| MCP
+| Exchange Administrator, Snowflake ACCOUNTADMIN
+a|
+* Snowflake Enterprise account with MCP servers enabled
+* Snowflake account URL
+* Programmatic access token (PAT)
+
+|===
+
+== See Also
+
+* xref:exp-scanners-add-from-providers.adoc[]
+* xref:exp-providers-manage.adoc[]
+* xref:exp-scanners-manage.adoc[]
