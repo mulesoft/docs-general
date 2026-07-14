@@ -133,7 +133,7 @@ a|
 * Policy Read action group: `apigateway:GET*` on REST and HTTP API resources
 * Policy Read resource scope (REST APIs): `arn:aws:apigateway:{region}::/restapis/*`
 * Policy Read resource scope (HTTP APIs): `arn:aws:apigateway:{region}::/apis/*`
-* Policy Read note: for WAF-oriented extraction, scanner integrations also use WAFv2 and Route53 SDK access
+* Policy Read note: For web application firewall (WAF) policies, the scanner also uses `software.amazon.awssdk:wafv2` and `software.amazon.awssdk:route53`
 * AWS region knowledge
 * AWS access key ID and secret access key
 
