@@ -68,9 +68,9 @@ Select *Connect* to establish the connection.
 
 After you connect to a provider:
 
-* *Scanner Auto-Creation*: The system automatically creates a scanner for the connected provider to enable API discovery.
-* *API Discovery*: The scanner begins discovering APIs hosted on the provider platform. Discovered APIs appear in *Portfolio* > *APIs*, each labeled with its provider (for example, *AWS*).
-* *Akamai Correlation Policy*: For Akamai providers, the system automatically applies a correlation policy to discovered APIs to enable cross-gateway observability and governance.
+* The system automatically creates a scanner for the connected provider to enable API discovery.
+* The scanner discovers APIs hosted on the provider platform. Discovered APIs appear in *Portfolio* > *APIs*, each labeled with its provider (for example, *AWS*).
+* For Akamai providers, the system automatically applies a correlation policy to discovered APIs to enable cross-gateway observability and governance.
 
 // FLAG: Aug 13 release (policy write scope). This "Update Credentials" section describes enabling write-enabled credentials to apply policies to a provider gateway. Policy Write is GA Aug 13; the Jul 16 release is read/conformance only (except Kong, which already ships read+apply). Uncomment when the Aug 13 write release is documented.
 // == Update Credentials
