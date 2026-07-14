@@ -1,7 +1,7 @@
 = Connect to Third-Party API Providers
 :keywords: third-party providers, akamai, api discovery, provider connection, scanner, api governance
 
-Connect to third-party API gateway providers such as Akamai to automatically discover and govern APIs hosted on those platforms. When you connect to a supported provider, the system creates scanners, discovers APIs, and applies correlation policies to enable cross-gateway governance.
+Connect to third-party API gateway providers to automatically discover and govern APIs hosted on those platforms. When you connect to a supported provider, the system creates scanners, discovers APIs, and applies correlation policies to enable cross-gateway governance.
 
 == Before You Begin
 
