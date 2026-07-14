@@ -5,7 +5,7 @@
 
 The Policy Library is a catalog of predefined policies that you can browse from *Governance* > *Governance Strategies* > *Policy Library*. Use it to explore the policies available to your organization and understand what each one enforces before you govern your APIs.
 
-== What You Can See in the Policy Library
+== Browse Policies by Category
 
 The Policy Library displays each available policy as a card that shows the policy name, its category, and a short description of what the policy does.
 
@@ -23,7 +23,7 @@ To find a policy, you can:
 
 Policies that apply to any service, including scanned and federated APIs, are marked with a *Universal* badge.
 
-== Related Topics
+== See Also
 
 * xref:exp-governance-create-strategy.adoc[Create Governance Strategies]
 * xref:exp-governance-setup-third-party-providers.adoc[Connect to Third-Party API Providers]
