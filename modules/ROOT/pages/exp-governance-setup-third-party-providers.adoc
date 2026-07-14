@@ -93,7 +93,7 @@ After you connect to a provider:
 //
 // After updating to write-enabled credentials, you can apply policies directly to APIs on the provider gateway through governance strategies or the xref:exp-governance-policy-library-apply.adoc[Policy Library].
 
-== Related Topics
+== See Also
 
 * xref:exp-governance-govern-third-party-apis.adoc[Govern Third-Party Provider APIs]
 * xref:exp-governance-create-strategy.adoc[Create Governance Strategies]

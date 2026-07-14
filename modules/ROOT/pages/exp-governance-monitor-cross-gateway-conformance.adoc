@@ -51,7 +51,7 @@ Use this filter to:
 //
 // *How to Remediate*: xref:exp-governance-setup-third-party-providers.adoc#update-credentials[Update provider credentials] to grant write-enabled permissions. After updating credentials, policies transition from *Read-Only* to *Enabled* status and can enforce requirements on the provider gateway.
 
-== Related Topics
+== See Also
 
 * xref:exp-governance-create-strategy.adoc[Create Governance Strategies]
 * xref:exp-governance-setup-third-party-providers.adoc[Connect to Third-Party API Providers]
