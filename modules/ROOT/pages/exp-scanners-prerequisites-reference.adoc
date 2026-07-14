@@ -165,17 +165,8 @@ a|
 a|
 * Kong Gateway region
 * Personal access token (PAT)
+* Policy Apply write scope: Admin API write permission required to apply policy in target environments
 
-| Akamai Security
-| API Security
-| Exchange Administrator
-a|
-* Akamai Security base URL
-* Akamai Security client ID
-* Akamai Security client secret
-* Access to create service accounts in Akamai Security
-* Access to apply Akamai correlation policy in target environments
-* Existing services in *Portfolio* catalogs for correlation targets
 
 | Amazon Bedrock AgentCore MCP
 | MCP
