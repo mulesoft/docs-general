@@ -104,7 +104,7 @@ Select *Apply* to apply the policy to the selected instances.
 
 After applying the policy:
 
-. Go to *Portfolio Overview* and open the affected API instance.
+. Go to *Portfolio* > *APIs* and open the affected API instance.
 . Review the *Applied Policies* tab to verify the policy appears in the list.
 . Check the *Policy Application Status*:
 +
