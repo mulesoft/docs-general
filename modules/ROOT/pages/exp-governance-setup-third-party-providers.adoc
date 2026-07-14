@@ -5,7 +5,7 @@ Connect to third-party API gateway providers to automatically discover and gover
 
 == Before You Begin
 
-Before getting started, make sure you have:
+Before you connect to a provider, make sure you have:
 
 * An Anypoint Platform account.
 * Any of these permissions:
@@ -23,17 +23,9 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 
 . Log in and go to *Platform* > *Providers*.
 . Select *Add Provider* to start the connection wizard.
-
++
 The wizard guides you through provider selection, connection setup, and credential configuration.
-
-=== Choose Provider
-
-Select the third-party API gateway provider you want to connect to:
-
-* *Akamai*—Connect to Akamai API Gateway to discover and govern APIs hosted on Akamai infrastructure.
-* Additional providers appear as support is added.
-
-Select your provider and select *Next*.
+. Select your provider and select *Next*.
 
 === Connect to Provider
 
@@ -72,7 +64,7 @@ Enter the required authentication credentials for your provider account. The spe
 
 Select *Connect* to establish the connection.
 
-== What Happens Next
+== Provider Connection Results
 
 After you connect to a provider:
 
