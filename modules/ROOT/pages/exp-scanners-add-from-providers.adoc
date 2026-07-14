@@ -33,6 +33,10 @@ Discovered services appear in *Portfolio* where teams can govern, monitor, and d
 +
 Scheduled or on-demand scans pick up releases and configuration drift according to the options your administrator allows.
 
+* Policy-visibility
++
+When a scanner is enabled, it can discover and read policies from API configurations. This allows the system to enforce policies on the discovered services. This is especially useful for API-based policies, such as web application firewall (WAF) policies.
+
 == Workflow Entry Points for Adding a Scanner
 
 The system exposes the same underlying connect-and-configure wizard from more than one place; the label depends on context:
