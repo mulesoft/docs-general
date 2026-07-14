@@ -14,14 +14,14 @@ Before monitoring cross-gateway conformance:
 == View Cross-Gateway Conformance
 
 . Log in and go to *Governance* > *Governance Strategies*.
-. Select an active strategy.
-. Review the conformance summary dashboard.
+. Select an active strategy. The strategy opens on the *Configuration* tab, which shows the scope and rules.
+. Select the *Governed Services* tab to view conformance results.
 
-The dashboard displays:
+The *Governed Services* tab displays:
 
-* *Conformance Status*: The percentage of targeted APIs that conform to the strategy's control rules or automated policies.
-* Provider column: Shows which platform hosts each API (such as Anypoint Platform, Akamai, or other connected providers).
-* Conformant vs. Non-Conformant APIs: A breakdown of APIs that meet or fail the strategy's requirements.
+* A *Conformance* summary: the total number of governed services, broken down into *Conformant*, *Nonconformant*, and *Pending*.
+* An *Identified Issues* summary: counts of violations, warnings, and info-level findings.
+* A table of governed services with *Service*, *Type*, *Provider*, and *Conformance* columns. The *Provider* column shows which platform hosts each API, such as Anypoint Platform, Akamai, or other connected providers.
 // FLAG: Aug 13 release (policy write scope). "Policy Application Status" (Enabled/Read-Only enforcement state) reflects policy enforcement, which is Policy Write — GA Aug 13. Uncomment when the Aug 13 write release is documented.
 // * *Policy Application Status*: Indicates whether policies are *Enabled* (actively enforced) or *Read-Only* (monitoring mode only).
 
@@ -29,15 +29,15 @@ The dashboard displays:
 
 To focus on conformance for a specific provider:
 
-. In the conformance dashboard, locate the *Provider* filter.
-. Select a provider from the list (such as *Akamai*).
+. On the *Governed Services* tab, locate the *Any provider* filter.
+. Select a provider from the list.
 
-The dashboard updates to show only APIs hosted on the selected provider.
+The list updates to show only APIs hosted on the selected provider.
 
 Use this filter to:
 
 * Compare conformance across providers.
-* Identify provider-specific compliance gaps.
+* Identify provider-specific conformance gaps.
 * Focus on a subset of your multi-gateway environment during reviews or audits.
 
 // FLAG: Aug 13 release (policy write scope). The entire "Understanding Read-Only Policy Status" section describes policy enforcement and credential-based write access, which is Policy Write — GA Aug 13. The Jul 16 Policy Read GA monitors conformance in read-only mode only. Uncomment when the Aug 13 write release is documented.
@@ -50,20 +50,6 @@ Use this filter to:
 // * The system can track conformance but can't automatically remediate violations.
 //
 // *How to Remediate*: xref:exp-governance-setup-third-party-providers.adoc#update-credentials[Update provider credentials] to grant write-enabled permissions. After updating credentials, policies transition from *Read-Only* to *Enabled* status and can enforce requirements on the provider gateway.
-
-== Monitor Conformance Over Time
-
-Track conformance trends to identify improvements or regressions:
-
-. Select a governance strategy from the dashboard.
-. Review the *Conformance History* chart (if available) to see how conformance has changed over time.
-. Use the *Provider* filter to compare trends across platforms.
-
-Regular monitoring helps you:
-
-* Identify APIs that consistently fail compliance checks.
-* Measure the impact of policy changes or governance strategy adjustments.
-* Demonstrate compliance improvements to stakeholders during audits.
 
 == Related Topics
 
