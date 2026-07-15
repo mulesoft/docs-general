@@ -1,8 +1,6 @@
 = Make APIs Agent-Ready with MCP Bridge
 
-Agent Fabric's MCP Bridge converts your existing API instances into MCP servers through configuration, exposing their operations as MCP tools that agents can discover and call without modifying the underlying API.
-Choose which operations to expose and apply optional read-only filtering to limit what agents can do, giving you control over agent access without rewriting anything.
-Use this approach to make your existing Mule or API management investment immediately available to agents, with governance policies applied from the same portfolio.
+Agent Fabric's MCP Bridge transforms your existing API instances into agent-ready tools without touching code. Choose which operations to expose, apply read-only filtering where needed, and make your Mule or API management investment immediately available to agents with the same governance policies you already use.
 
 == The Problem
 
