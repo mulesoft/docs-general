@@ -29,13 +29,16 @@ Before you begin, make sure you have:
 
 * An existing REST API instance in Anypoint Platform
 +
-If you don't have one, use the sample Slack API instance in the tip in <<Step 1,Step 1>>.
+If you don't have one, use the sample API instance in the tip in <<Step 1,Step 1>>.
 * xref:access-management::permissions-by-product.adoc[API Manager permissions]:
 ** Manage APIs
 ** Deploy API Proxies
 * Agent Fabric enabled for your Anypoint Platform organization
 +
 Contact your Anypoint Platform organization administrator or MuleSoft account team if you're unsure.
+* An Omni Gateway provisioned in your organization
++
+If you don't have one, see xref:gateway::flex-gateway-managed-getting-started.adoc[]. MCP Bridge requires an Omni Gateway to deploy and manage the MCP server endpoint.
 * An AI agent to test with (the steps use the test console in *Portfolio* > *MCP Servers*)
 
 *Time to complete:* Approximately 15 minutes
@@ -52,7 +55,7 @@ Your REST API          MCP Bridge             AI Agent
    | POST /messages/send  | Converts to →        | discovers:
    | DELETE /messages     |                      | - list_channels (tool)
    |                      | Exposes only         | - send_message (tool)
-   |                      | selected ops         | [delete not visible]
+   |                      | selected ops         | [DELETE: not exposed]
 ----
 
 MCP Bridge creates an MCP server that exposes your API operations as tools that agents can discover and call. You select which operations to expose.
@@ -67,14 +70,11 @@ MCP Bridge creates an MCP server that exposes your API operations as tools that 
 ====
 Don't have an API ready? Use the sample Slack API for this tutorial:
 
-. In API Manager, click *Manage API* → *Manage API from Exchange*.
-. Search for `Slack API`.
-. Select version `1.0.0`.
-. Click *Next* and configure these settings:
-  * *API Name*: slack-api-tutorial
-  * *Asset Version*: `1.0.0`
-  * *Managing Type*: Basic Endpoint
-. Click *Save*.
+. In Anypoint Platform, look for the new experience banner or shortcut and choose *Go to the new experience*.
+. Select *Portfolio* > *APIs*.
+. Search for `American Flights API`, and then select it.
+. Click *Expose as MCP Server*.
+.
 ====
 
 Result: Your API should now appear in the API Manager dashboard with status *Active*.
