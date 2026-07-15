@@ -23,47 +23,7 @@ Agent Fabric's Model Context Protocol (MCP) Bridge enables safe, efficient API i
 * **Optional read-only filtering**: Limits agent access to read-only operations when needed, without modifying the underlying API.
 * **Centralized management**: Provides a single point of control for API access, with governance policies applied from the same portfolio.
 * **Agent-facing abstraction**: Exposes existing REST API operations as MCP tools so agents can call them without needing API-specific details.
-* **Existing tool compatibility**: Integrates with Mule and other API management platforms without rebuilding existing assets.
-
-== Who This Is For
-
-MCP Bridge is ideal for:
-
-* **Organizations with existing API infrastructure** (especially Mule users)
-* **Security teams** who are concerned about agent access to sensitive operations
-* **Integration teams** looking to enable agents quickly without custom development
-* **Architects** who are designing safe agent access to enterprise systems
-* **Teams** who want to leverage existing investments in API management
-
-== Selecting Operations to Expose as Tools
-
-MCP Bridge lets you choose which API operations to expose as discrete MCP tools that agents can discover and call. Expose all operations, a subset, or apply optional read-only filtering — without modifying the underlying API.
-
-=== Full API (All Operations Available)
-
-[source,text]
-----
-Customer API:
-- GET /customers/{id}          (read)
-- POST /customers               (create)
-- PUT /customers/{id}           (update)
-- DELETE /customers/{id}        (delete)
-- GET /customers/{id}/orders    (read)
-- POST /customers/{id}/orders   (create)
-----
-
-=== Configured Tool Surface (Read Operations Only)
-
-When you configure MCP Bridge to expose only read operations, agents see a reduced tool surface drawn from the same Customer API.
-
-[source,text]
-----
-Customer API (Agent Tool Surface):
-- GET /customers/{id}          (read - exposed as tool)
-- GET /customers/{id}/orders    (read - exposed as tool)
-----
-
-The agent can read customer and order data but can't create, modify, or delete anything. The write operations exist in the underlying API but are not exposed as MCP tools.
+* **Existing tool compatibility**: Integrates with MuleSoft and other API management platforms without rebuilding existing assets.
 
 == How MCP Bridge Works
 
@@ -79,6 +39,16 @@ Each agent request follows this path:
 . Only operations you exposed as MCP tools are reachable.
 . The call reaches the backend API.
 . Responses flow back through the bridge to the agent.
+
+== Who This Is For
+
+MCP Bridge is ideal for:
+
+* Organizations with existing API infrastructure
+* Security teams who are concerned about agent access to sensitive operations
+* Integration teams looking to enable agents quickly without custom development
+* Architects who are designing safe agent access to enterprise systems
+* Teams who want to leverage existing investments in API management and governance
 
 == Example Scenarios
 
@@ -147,6 +117,36 @@ Each agent request follows this path:
 . Use existing monitoring and governance.
 
 *Result:* Extend existing Mule investment to agentic use cases.
+
+== Selecting Operations to Expose as Tools
+
+MCP Bridge lets you choose which API operations to expose as discrete MCP tools that agents can discover and call. Expose all operations, a subset, or apply optional read-only filtering, without modifying the underlying API.
+
+=== Example: Limiting Agent Access to Read Operations
+
+Consider a Customer API with both read and write operations:
+
+[source,text]
+----
+Customer API:
+- GET /customers/{id}          (read)
+- POST /customers               (create)
+- PUT /customers/{id}           (update)
+- DELETE /customers/{id}        (delete)
+- GET /customers/{id}/orders    (read)
+- POST /customers/{id}/orders   (create)
+----
+
+After you configure MCP Bridge to expose only read operations, agents see a reduced tool surface:
+
+[source,text]
+----
+Customer API (Agent Tool Surface):
+- GET /customers/{id}          (read - exposed as an MCP tool)
+- GET /customers/{id}/orders    (read - exposed as an MCP tool)
+----
+
+The agent can read customer and order data but can't create, modify, or delete anything. The write operations exist in the underlying API but aren't exposed as MCP tools.
 
 == Implementation Steps
 
