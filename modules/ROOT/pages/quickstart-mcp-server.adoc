@@ -1,17 +1,16 @@
 = Quick Start: Your First MCP Server
 :keywords: mcp bridge, mcp server, tutorial, getting started, api integration, agent tools
 
-Expose an existing API as an MCP server in 15 minutes, making it callable by AI agents through the Model Context Protocol.
+Expose an existing API as an MCP server in 15 minutes, making the API callable by AI agents through the Model Context Protocol.
 
 == What You'll Build
 
 In this quick start, you'll:
 
-* Take an existing REST API
-* Use MCP Bridge to expose it as an MCP server
-* Select which operations to expose as MCP tools
+* Take an existing REST API and use MCP Bridge to expose the REST API as an MCP server
+* Select which API operations to expose as MCP tools
 * Apply read-only filtering for security
-* Test it with an agent
+* Test the MCP server with an agent
 * See the agent call your API through MCP
 
 This is the fastest way to make your existing APIs agent-ready.
@@ -161,7 +160,7 @@ tools:
           type: integer
 ----
 
-This is what agents see when they discover your MCP server.
+The YAML is what agents see when they discover your MCP server.
 
 *Result:* The Tool Preview shows three tools corresponding to your selected operations.
 
@@ -180,7 +179,7 @@ If this filter is enabled, any operation that modifies data (POST, PUT, PATCH, D
 * Tool Selection controls which operations are visible as tools to agents
 * Read-Only Filter is the runtime safety net that blocks write operations even if exposed
 
-Using both gives you a second line of defense if a write operation is accidentally exposed.
+Using both tool selection and the read-only filter gives you a second line of defense if a write operation is accidentally exposed.
 ====
 
 *Result:* Read-Only filtering is applied.
@@ -201,8 +200,7 @@ MCP Bridge will:
 . Generate MCP tool definitions for selected operations
 . Create the MCP server configuration
 . Deploy the MCP server endpoint
-. Register it in *Portfolio* > *MCP Servers* automatically.
-
+. Register the MCP server in *Portfolio* > *MCP Servers* automatically.
 *Result:* You see `MCP Server Created Successfully` with a server URL.
 
 == Step 6: Copy the MCP Server URL
@@ -232,7 +230,7 @@ Your MCP server is now registered in *Portfolio* > *MCP Servers*.
 
 . In *Portfolio*, select *MCP Servers*.
 . Find your MCP server: `slack-reader-mcp`.
-. Click on it to see the details:
+. Click `slack-reader-mcp` to see its details:
 +
 * Available tools (list_conversations, get_conversation_history, list_users)
 * Source API
@@ -440,26 +438,18 @@ Agents see MCP tools (`list_conversations`) rather than REST endpoints (`GET /co
 
 Now that you've created your first MCP server, enhance it:
 
-=== Add Write Operations
-
-Ready to let agents create data?
-
-. Go to API Manager → Your API → Settings → MCP Integration
-. Click *Edit MCP Server*.
-. Add write operations:
-  * `POST /chat.postMessage` → `send_message` tool (select)
-. Update the server
-
-Now agents can send messages (use with caution!).
-
 === Add Multiple MCP Servers
 
 Create different MCP servers from the same API with different tool selections:
 
-* `slack-reader-mcp` → Read-only (for general agents)
-* `slack-admin-mcp` → Read + write (for privileged agents)
+* `slack-reader-mcp`
++ 
+Read-only (for general agents)
+* `slack-admin-mcp`
++
+Read and write (for privileged agents)
 
-Each gets its own URL and tool surface.
+Each MCP server has its own URL and tool surface.
 
 === Apply Gateway Policies
 
@@ -470,7 +460,7 @@ Add runtime governance through Omni Gateway:
 * Audit logging
 * PII detection
 
-See xref:use-case-policy-enforcement.adoc[Policy Enforcement Guide]
+See xref:use-case-policy-enforcement.adoc[Policy Enforcement Use Case]
 
 === Add User Context
 
@@ -495,44 +485,49 @@ Build a portfolio of agent-ready APIs.
 
 === Use in Agent Networks
 
-Add your MCP server to agent networks:
+To use your MCP server in an agent network, declare it under `registry.mcps` in your `agent-network.yaml` file and define a corresponding connection in the `context.connections` section.
 
 [source,yaml]
 ----
+agentNetwork: "2.0"
+
 registry:
-  tools:
-    slackReader:
-      # Your MCP server configuration
+  mcps:
+    slack_reader_mcp:
+      info:
+        label: Slack Reader MCP
+      metadata:
+        transport:
+          kind: streamableHttp
+          path: /mcp
+
+context:
+  connections:
+    slack_reader_mcp:
+      kind: mcp
+      ref:
+        name: slack_reader_mcp
+      url: https://mcp.anypoint.mulesoft.com/orgs/{org-id}/servers/slack-reader-mcp
 
 brokers:
-  customerSupport:
-    source: ./brokers/support-bot.agent
-    # This broker can now use Slack tools
+  customer_support:
+    kind: AgentScript
+    implementation: ./brokers/customer-support.agent
+    interfaces:
+      a2a:
+        card: ...
 ----
 
-See xref:tutorial-your-first-agent-network.adoc[Your First Agent Network Tutorial]
+The broker behavior — including which MCP tools the broker calls and how the broker responds — is defined in `./brokers/customer-support.agent` using Agent Script.
 
-== Related Content
+See xref:agent-network::af-agent-networks.adoc[Building Agent Networks for Agent Fabric] for the complete setup.
 
-=== Tutorials
-
-* xref:tutorial-your-first-agent-network.adoc[Tutorial: Your First Agent Network]
-// TODO: Uncomment when published: xref:tutorial-add-mcp-server-to-agent-network.adoc[Tutorial: Add MCP Server to Agent Network]
-
-=== Use Cases
+== See Also
 
 * xref:use-case-mcp-bridge.adoc[MCP Bridge and Selective Tool Exposure]
 * xref:use-case-policy-enforcement.adoc[Policy Enforcement]
 * xref:use-case-identity.adoc[Identity and Production Readiness]
-
-=== Reference
-
-// TODO: Uncomment when published: xref:mcp-bridge-reference.adoc[MCP Bridge Reference]
-// TODO: Uncomment when published: xref:mcp-tool-selection-patterns.adoc[Tool Selection Patterns]
-* xref:exp-services-create-mcp-server.adoc[Create MCP Servers]
-
-== See Also
-
 * xref:agent-fabric-use-cases.adoc[Agent Fabric Use Cases Overview]
 * xref:exp-home-start.adoc[Get Started with Agent Fabric]
 * https://modelcontextprotocol.io[Model Context Protocol Specification]
+* xref:exp-services-create-mcp-server.adoc[Create MCP Servers]
