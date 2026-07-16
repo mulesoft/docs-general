@@ -32,6 +32,8 @@ After you select a configured Akamai scanner from the provider list, use scanner
 
 For common tab behavior across scanners, see xref:exp-scanners-view-details.adoc[].
 For Akamai scanners, the *Overview* tab highlights correlation policy status and enrichment activity for existing services.
+The *Services* tab lists services associated with the scanner and shows which existing services are receiving correlated Akamai security data.
+The *Settings* tab shows scanner configuration values, including schedule and provider connection values, and provides options to edit or delete the scanner.
 
 == Where Security Results Appear
 

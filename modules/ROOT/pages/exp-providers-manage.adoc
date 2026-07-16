@@ -76,6 +76,8 @@ When Akamai API Security is connected and scans have completed, security risk da
 * A *Security Risk* column in the *Instances* tab shows a color-coded risk level per instance: Low, Medium, High, or Critical.
 * An *Akamai* section in the *Conformance Report* tab shows full findings and incidents from the scan.
 
+In list and card views, the numeric *Security Risk* value is the raw Akamai risk score, and the color-coded label (Low, Medium, High, or Critical) is the severity band derived from that score.
+
 == Supported Providers
 
 The enhanced experience supports connections to these providers:
