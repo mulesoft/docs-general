@@ -37,7 +37,7 @@ Use these cards to spot governance gaps quickly.
 
 == Akamai-Generated Strategy
 
-When you connect Akamai API Security as a provider, the system automatically creates a pre-configured Akamai security strategy in the strategy list. This strategy attributes Akamai security findings to your MuleSoft APIs and MCP servers. Do not delete it unless you also remove the Akamai scanner, because deleting the strategy stops security findings from appearing in conformance reports.
+When you connect Akamai API Security as a provider, the system automatically creates a pre-configured Akamai security strategy in the strategy list. This strategy attributes Akamai security findings to your MuleSoft APIs and MCP servers. Don't delete it unless you also remove the Akamai scanner. Deleting the strategy stops security findings from appearing in conformance reports.
 
 == When to Adjust a Strategy
 
