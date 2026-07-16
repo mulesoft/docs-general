@@ -1,11 +1,11 @@
 = Using Akamai API Security Scanner for Risk Correlation
 :keywords: akamai api security scanner, akamai integration, security risk, vulnerability findings, incident correlation, portfolio catalogs
 
-Use Akamai API Security scanner to correlate security findings and risk signals with services that already exist in *Portfolio* catalogs. The scanner does not import or register third-party services. It applies Akamai security correlation so teams can review risk scores, findings, and incidents in one governance workflow for APIs, agents, and MCP services.
+Use Akamai API Security scanner to correlate security findings and risk signals with services that already exist in *Portfolio* catalogs. The scanner doesn't import or register third-party services. It applies Akamai security correlation so teams can review risk scores, findings, and incidents in one governance workflow for APIs and MCP services.
 
 == How Akamai Scanner Differs from Import Scanners
 
-Most provider scanners discover metadata in external platforms and import services into *Portfolio* catalogs. The Akamai API Security scanner works differently. It enriches existing services with security data from Akamai instead of creating new service records.
+Most provider scanners discover metadata in external platforms and import services into *Portfolio* catalogs. The Akamai API Security scanner works differently. It enriches existing services with security data from Akamai instead of creating new services.
 
 == Before You Begin
 
@@ -57,7 +57,7 @@ Elevated risk. Investigate and remediate first.
 
 == Troubleshoot Missing Akamai Findings
 
-If a scan completes but results do not appear:
+If a scan completes but results don't appear:
 
 * Verify correlation policy is applied in the same environment as the service instance.
 * Confirm the target service already exists in *Portfolio* catalogs.
