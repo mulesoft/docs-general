@@ -41,7 +41,7 @@ If some environments show that correlation policy isn't applied, you can apply m
 
 . Open *Platform* > *Providers* and select the configured Akamai scanner.
 . In *Overview*, check the *Akamai Correlation Policy* status.
-. If status shows missing environments, click *Retry * to apply policy only to those environments.
+. If status shows missing environments, click *Retry N missing* to apply policy only to those environments.
 . Wait for status to change to *Applied* and confirm all target environments are covered.
 
 If policy application fails, verify your Admin API write permissions and environment access, then retry.
@@ -67,6 +67,18 @@ Moderate risk. Prioritize remediation after high-risk issues.
 
 High::
 Elevated risk. Investigate and remediate first.
+
+== Remediate Risks from the API Conformance Tab
+
+Use the API *Conformance* tab in *Portfolio* to triage and remediate Akamai findings:
+
+. Open the API from the *APIs* catalog in *Portfolio*.
+. Select *Conformance* and review the *Akamai* section, including findings and incidents.
+. Select a finding to open details, such as endpoint, severity, and mapped standards.
+. Apply recommended remediation policies directly from the finding detail view when available.
+. Re-run the scanner after remediation to confirm updated findings and risk levels.
+
+If no direct remediation policy is available for a finding, use the finding details to update the API configuration in your gateway or upstream system, then scan again to verify the result.
 
 == Troubleshoot Missing Akamai Findings
 
