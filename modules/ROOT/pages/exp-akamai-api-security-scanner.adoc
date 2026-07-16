@@ -31,9 +31,20 @@ For credential and role details, see xref:exp-scanners-prerequisites-reference.a
 After you select a configured Akamai scanner from the provider list, use scanner detail tabs to monitor scanner status, related services, and configuration values.
 
 For common tab behavior across scanners, see xref:exp-scanners-view-details.adoc[].
-For Akamai scanners, the *Overview* tab highlights correlation policy status and enrichment activity for existing services.
+For Akamai scanners, the *Overview* tab highlights correlation policy status and shows whether existing services are being updated with Akamai risk, findings, and incident data.
 The *Services* tab lists services associated with the scanner and shows which existing services are receiving correlated Akamai security data.
 The *Settings* tab shows scanner configuration values, including schedule and provider connection values, and provides options to edit or delete the scanner.
+
+== Apply Missing Correlation Policies
+
+If some environments show that correlation policy isn't applied, you can apply missing policies from the scanner detail page:
+
+. Open *Platform* > *Providers* and select the configured Akamai scanner.
+. In *Overview*, check the *Akamai Correlation Policy* status.
+. If status shows missing environments, click *Retry * to apply policy only to those environments.
+. Wait for status to change to *Applied* and confirm all target environments are covered.
+
+If policy application fails, verify your Admin API write permissions and environment access, then retry.
 
 == Where Security Results Appear
 
