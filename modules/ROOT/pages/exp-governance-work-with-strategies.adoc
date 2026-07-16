@@ -47,7 +47,7 @@ The Conformance tab includes a dedicated Akamai section with two tables:
 * *Security Findings*: Individual security issues detected by Akamai through live traffic inspection, broken down per instance and per endpoint.
 * *Incidents*: Recurring threats aggregated over time, with first- and last-seen timestamps and occurrence counts.
 
-Both tables have the following columns, each sortable: *Finding*, *Instance*, *Endpoint*, and *Risk*.
+Both tables have these sortable columns: *Finding*, *Instance*, *Endpoint*, and *Risk*.
 
 Akamai severity levels map to conformance tiers as follows:
 
