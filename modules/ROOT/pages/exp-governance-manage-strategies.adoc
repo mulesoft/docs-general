@@ -5,7 +5,7 @@ Keep governance strategies aligned with your portfolio by adjusting scope, rules
 
 == Display Governance Strategies
 
-Go to *Governance* > *Governance Strategies* to view all strategies. Check the name, type, status, governed services, and last modified time.
+Go to *Governance* > *Governance Strategies* to view all strategies. Check the strategy name, type, environment, target, status, governed services count, and last modified time.
 
 == Available Strategy Actions
 
@@ -15,11 +15,15 @@ Go to *Governance* > *Governance Strategies* to view all strategies. Check the n
 * Reorder strategies: Change strategy order when multiple strategies govern the same services.
 * Delete a strategy: Permanently remove a strategy that you no longer need.
 
+== View Strategy Details
+
+When you open a strategy, the *Governed Services* tab lists each service in scope with its conformance status. When Akamai API Security is enabled, a *Security Risk* column also appears showing the per-service risk level: *Critical*, *High*, *Medium*, or *Low*.
+
 == Filter and Search Strategies
 
 Use the controls above the table to narrow the list:
 
-* Use the strategy type filter to select *All*, *Controls*, or *Automated Policies*.
+* Use the strategy type tabs to show *All*, *Controls*, or *Automated Policies*.
 * Use the status filter to select *Any Status*, *Active*, or *Disabled*.
 * Enter text in the search field to match strategy names.
 
@@ -34,6 +38,10 @@ Review the summary cards:
 * *Governance Coverage*: When available, the portion of the portfolio governed by at least one strategy
 
 Use these cards to spot governance gaps quickly.
+
+== Akamai-Generated Strategy
+
+When you connect Akamai API Security as a provider, the system automatically creates a pre-configured Akamai security strategy in the strategy list. This strategy attributes Akamai security findings to your MuleSoft APIs and MCP servers. Do not delete it unless you also remove the Akamai scanner, because deleting the strategy stops security findings from appearing in conformance reports.
 
 == When to Adjust a Strategy
 
