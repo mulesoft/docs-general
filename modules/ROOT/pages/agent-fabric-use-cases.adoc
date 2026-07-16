@@ -1,0 +1,104 @@
+= Agent Fabric Use Cases
+
+Agent Fabric helps you design and orchestrate a network of agents, brokers, and MCP servers across your enterprise. Use Agent Fabric to manage agents across multiple platforms, enforce consistent policies, control costs, and build workflows.
+
+Solve common challenges when you deploy agentic systems at scale.
+
+== Find your use case
+
+[cols="1,2,1"]
+|===
+|If you want to... |Use Case |Go to
+
+|Catalog and manage agents across multiple platforms
+|Registry and Visibility
+|xref:use-case-registry.adoc[Registry and Visibility]
+
+|Apply consistent business rules and guardrails across all agents
+|Policy Enforcement
+|xref:use-case-policy-enforcement.adoc[Policy Enforcement]
+
+|Control token usage and optimize model selection
+|Cost Control and Semantic Routing
+|xref:use-case-cost-control.adoc[Cost Control]
+
+|Move agents from proof-of-concept to production with proper identity management
+|Identity and Production Readiness
+|xref:use-case-identity.adoc[Identity and Production Readiness]
+
+|Build complex, deterministic workflows with error handling
+|Workflow Orchestration
+|xref:use-case-orchestration.adoc[Workflow Orchestration]
+
+|Make existing APIs agent-ready without modifying code
+|MCP Bridge
+|xref:af-use-case-mcp-bridge.adoc[MCP Bridge]
+|===
+
+
+== Registry and Visibility
+
+If you have multiplatform agent deployments, use a centralized way to discover, catalog, and manage your agent estate. Know what exists and where before you apply governance.
+
+*Best for:* BPOs, holding companies, large system integrators, and enterprises with agents across multiple platforms
+
+xref:use-case-registry.adoc[Learn more →]
+
+== Policy Enforcement
+
+Consistently enforce business rules, PII policies, and guardrails across all agents regardless of platform. Apply policies once through a gateway rather than reimplementing them for each platform.
+
+*Best for:* Enterprises that require uniform compliance, security, and governance across different agent environments
+
+xref:use-case-policy-enforcement.adoc[Learn more →]
+
+== Cost Control and Semantic Routing
+
+Monitor token usage across applications and agents, then optimize costs by routing simple queries to cost-effective models while reserving powerful models for complex tasks.
+
+*Best for:* Organizations that manage large-scale agent deployments with budget constraints and efficiency requirements
+
+xref:use-case-cost-control.adoc[Learn more →]
+
+== Identity and Production Readiness
+
+Move from proof-of-concept to production by implementing proper identity verification and data scoping. Make sure agents operate in user context, not system context.
+
+*Best for:* Teams that are ready to move from POC to production deployments with proper access controls
+
+xref:use-case-identity.adoc[Learn more →]
+
+== Workflow Orchestration
+
+Build multi-step workflows with deterministic outcomes. Handle complex business logic, error scenarios, and unhappy paths that simple agent loops cannot address.
+
+*Best for:* Advanced use cases that require reliable, predictable multi-agent workflows
+
+xref:use-case-orchestration.adoc[Learn more →]
+
+== MCP Bridge
+
+Transform your existing API instances into agent-ready tools without touching code. Choose which operations to expose, apply read-only filtering where needed, and control agent access to your APIs.
+
+*Best for:* Organizations with existing API infrastructure (like Mule) that want to enable agentic access safely
+
+xref:use-case-mcp-bridge.adoc[Learn more →]
+
+== Get started
+
+New to Agent Fabric? Start with the learning map to understand the fundamentals:
+
+* https://help.mulesoft.com/s/article/Get-Started-with-Agent-Fabric[Get Started with Agent Fabric]
+* Watch a video to learn about Agent Fabric.
+* Watch an interactive demo of Agent Fabric.
+
+After you understand the basics, return to this guide to implement your use cases.
+
+== See also
+
+* xref:use-case-cost-control.adoc[]
+* xref:use-case-identity.adoc[]
+* xref:use-case-mcp-bridge.adoc[]
+* xref:use-case-orchestration.adoc[]
+* xref:use-case-policy-enforcement.adoc[]
+* xref:use-case-registry.adoc[]
