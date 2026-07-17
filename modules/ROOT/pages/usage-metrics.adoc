@@ -626,7 +626,7 @@ The table displays all CloudHub (CH1), CloudHub 2.0 (CH2), and Runtime Fabric (R
 | Highest hourly vCore consumption for the application within the selected time period.
 
 | vCore Min
-| For CloudHub 2.0 applications with HPA enabled, the guaranteed base vCore allocation based on the minimum replica configuration. For applications without HPA (CloudHub and CloudHub 2.0 non-HPA apps), vCore Min equals vCore Peak.
+| For CloudHub 2.0 applications with HPA enabled, the guaranteed base vCore allocation is based on the minimum replica configuration. For applications without HPA (CloudHub and CloudHub 2.0 non-HPA apps), vCore Min equals vCore Peak.
 |===
 
 === Horizontal Pod Autoscaling (HPA) and vCore Usage
