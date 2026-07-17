@@ -591,25 +591,6 @@ Use a dedicated cluster for Runtime Fabric instances for accurate measurements
 
 CloudHub vCore usage reports show the combined vCore consumption across CloudHub (CH1) and CloudHub 2.0 (CH2) deployments in tables and cards.
 
-=== vCore Usage Calculation
-
-MuleSoft calculates vCore consumption differently depending on the deployment platform:
-
-[%header%autowidth.spread]
-|===
-| Platform | Calculation | Source
-
-| CloudHub (CH1)
-| Worker size × worker count
-| CH1 infrastructure
-
-| CloudHub 2.0 (CH2)
-| Application vCores × replica count
-| CloudHub 2.0 infrastructure
-|===
-
-The usage pipeline aggregates CH1 and CH2 consumption into a single combined metric without differentiating between platforms.
-
 === Data Granularity
 
 vCore usage is sampled every hour. The peak hourly value is used to calculate the daily and monthly maximum:
