@@ -617,7 +617,7 @@ The table displays all CloudHub (CH1), CloudHub 2.0 (CH2), and Runtime Fabric (R
 | Column | Description
 
 | Deployment Type
-| Deployment platform for the application: *CH1 (CloudHub), CH2 (CloudHub 2.0), or RTF (Runtime Fabric)*.
+| Deployment platform for the application: CH1 (CloudHub), CH2 (CloudHub 2.0), or RTF (Runtime Fabric).
 
 | HPA Status
 | Indicates whether Horizontal Pod Autoscaling (HPA) is enabled for the application. Displays *Enabled* or *N/A*.
@@ -633,7 +633,7 @@ The table displays all CloudHub (CH1), CloudHub 2.0 (CH2), and Runtime Fabric (R
 
 For CloudHub 2.0 applications with HPA enabled, the application can scale beyond its base vCore allocation to handle demand surges. When HPA is active:
 
-* The *vCore Min* value represents the guaranteed base allocation (minimum replicas × application vCores).
+* The *vCore Min* value represents the guaranteed base allocation.
 * The *vCore Peak* value reflects the highest actual consumption, which can exceed the base allocation during scaling events.
 
 HPA is available to customers who are opted into the new pricing and packaging model.
