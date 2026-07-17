@@ -58,6 +58,8 @@ MCP Bridge is ideal for:
 
 == Example Scenarios
 
+These scenarios demonstrate how different organizations use MCP Bridge to solve specific agent access challenges.
+
 === Scenario 1: Customer Service Agent with Read-Only Access
 
 *Challenge:* Customer service agents need to answer questions about customer accounts and orders but can't modify data. Without MCP Bridge, you would need to build custom integrations for each agent platform. This risks exposure of write operations and creates inconsistent behavior across platforms.
@@ -112,6 +114,8 @@ With MCP Bridge you extend your existing Mule investment to agentic use cases:
 
 == Implementation Steps
 
+Follow these steps to deploy MCP Bridge and make your APIs available to agents.
+
 === Step 1: Identify APIs for Agent Access
 
 . List APIs that agents access.
@@ -128,7 +132,7 @@ For each API instance, decide:
 * If agents require write access, which specific write operations do they use?
 * What Omni Gateway policies apply to the resulting MCP server?
 
-=== Step 3: Deploy MCP Bridge
+=== Step 3: Create and Deploy MCP Bridge Instance
 
 . In API Manager, create an MCP Bridge instance for your target API.
 . Configure downstream settings (base path, protocol, port) and upstream settings (route label, upstream URL).
@@ -205,6 +209,8 @@ For runtime controls such as rate limiting and time-based access restrictions, s
 
 == Common Tool Selection Patterns
 
+These patterns represent typical approaches to selecting which operations to expose as tools based on your security requirements and use cases.
+
 === Read-Only Tool Surface
 
 Use this pattern when agents only retrieve data. Expose all GET/read operations as tools and exclude all write (POST, PUT, DELETE) operations.
@@ -256,6 +262,8 @@ Use this pattern for fine-grained control, exposing specific safe operations and
 
 == Security Considerations
 
+When deploying MCP Bridge, follow security best practices to minimize risk and maintain control over agent access to your APIs.
+
 === Default Deny
 
 Start with no access and explicitly enable only what agents use.
@@ -272,6 +280,8 @@ Periodically review:
 
 == Integration with Existing Tools
 
+MCP Bridge integrates with your existing MuleSoft infrastructure, identity systems, and gateway deployment to leverage investments you have already made.
+
 === Mule Integration
 
 MCP Bridge works directly with Mule APIs managed in Anypoint Platform, so you can expose existing Mule API instances as MCP servers without rebuilding them.
@@ -285,7 +295,7 @@ MCP Bridge works directly with Mule APIs managed in Anypoint Platform, so you ca
 
 MCP Bridge runs on Omni Gateway infrastructure. MCP server instances are managed through API Manager and protected by Omni Gateway policies, just like API instances.
 
-* Deploy MCP Bridge instances on the same Omni Gateway that manages your APIs.
+* Create and deploy MCP Bridge instances on the same Omni Gateway that manages your APIs.
 * Apply policies to MCP servers the same way you apply them to APIs.
 * Use unified monitoring and alerting across APIs and MCP servers.
 
