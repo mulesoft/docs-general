@@ -1,4 +1,5 @@
 = Step 5. Deploy the API to CloudHub 2.0
+:keywords: cloudhub 2.0, api deployment, runtime manager, api-led connectivity, mulesoft deploy, cloudhub deployment, api verification
 :page-pagination:
 
 Deploy your tested API to CloudHub 2.0 to make it accessible from anywhere. You update the project version, configure deployment settings, and deploy directly from Anypoint Code Builder. After deployment, verify the API is running by sending a request to its public CloudHub URL.

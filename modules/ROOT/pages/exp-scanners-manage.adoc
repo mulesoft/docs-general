@@ -1,4 +1,5 @@
 = Managing Scanners
+:keywords: scanners, managing scanners, scanner actions, security scanning, mulesoft, vulnerability detection
 
 After you configure scanners, you run them day to day. Most of that work happens under *Providers*, where you manage provider connections, scanners, and scan activity in one place.
 

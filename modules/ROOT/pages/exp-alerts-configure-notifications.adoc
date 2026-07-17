@@ -1,4 +1,5 @@
 = Configure Notifications for Alerts
+:keywords: alerts, notifications, configure alerts, alert target, manage alerts, anypoint platform, monitoring
 
 Send API Manager alerts from Anypoint Platform directly to Slack channels and email. Configure alerts in the enhanced experience so teams can see notifications where they work and jump directly into *Portfolio* or *Observability* to respond.
 

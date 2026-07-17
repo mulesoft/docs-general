@@ -1,4 +1,5 @@
 = Get Started with Agent Fabric
+:keywords: agent fabric, mulesoft, getting started, ai agents, learning map, anypoint platform
 :page-aliases: agent-fabric::agent-fabric-get-started.adoc, agent-fabric::index.adoc
 :page-article-style: learning-map
 
@@ -15,7 +16,7 @@ The end-to-end journey for Agent Fabric consists of various tasks, each with lin
 
 [.lm-table, cols="1a,1a,1a", grid="none"]
 |===
-| image::lm_start.png[alt=""]
+| image::lm_start.png[""]
 [.lm-bold]##Learn About Agent Fabric##
 
 Agent Fabric helps you design and orchestrate a network of agents, brokers, and MCP servers to achieve complex goals across your enterprise.
@@ -23,7 +24,7 @@ Agent Fabric helps you design and orchestrate a network of agents, brokers, and 
 - https://www.youtube.com/watch?v=GAqwPie16ic[Watch a Video to Learn About Agent Fabric]
 - https://www.mulesoft.com/lp/demo/agent-fabric-interactive-demo[Watch an Interactive Demo of Agent Fabric]
 
-| image::lm_explore_1.png[alt=""]
+| image::lm_explore_1.png[""]
 [.lm-bold]##Discover Agentic Assets##
 
 Use Anypoint Exchange to discover agentic assets for reuse across your enterprise.
@@ -41,21 +42,21 @@ Use Anypoint Exchange to discover agentic assets for reuse across your enterpris
 - https://videos.mulesoft.com/watch/Dn9QXJKDzTxSJPNgra9LoM[Watch a Video to Learn About MCP Bridge]
 - xref:exchange::to-create-an-asset.adoc#create-llm[Create and Publish an LLM in Exchange]
 
-| image::lm_build_1.png[alt=""]
+| image::lm_build_1.png[""]
 [.lm-bold]##Build and Orchestrate Agent Networks##
 
 Build your agent network and coordinate brokers and agents using a declarative YAML approach. 
 
-- xref:anypoint-code-builder::af-get-started.adoc[Get Started with Agent Networks]
-- xref:anypoint-code-builder::af-create-agent-network.adoc[Build an Agent Network Project in Anypoint Code Builder]
-- xref:anypoint-code-builder::af-define-your-agent-network-specification.adoc[Define the Agent Network in a YAML File]
-- xref:anypoint-code-builder::af-publish-agent-network-assets.adoc[Publish the Agent Network Project to Exchange]
-- xref:anypoint-code-builder::af-deploy-agent-network-targets.adoc[Deploy the Agent Network Assets to Exchange]
+- xref:agent-network::af-get-started.adoc[Get Started with Agent Networks]
+- xref:agent-network::af-create-agent-network.adoc[Build an Agent Network Project in Anypoint Code Builder]
+- xref:agent-network::af-define-your-agent-network-specification.adoc[Define the Agent Network in a YAML File]
+- xref:agent-network::af-publish-agent-network-assets.adoc[Publish the Agent Network Project to Exchange]
+- xref:agent-network::af-deploy-agent-network-targets.adoc[Deploy the Agent Network Assets to Exchange]
 |===
 
 [.lm-table, cols="1a,1a", width="66%", grid="none"]
 |===
-| image::lm_build_1.png[alt=""]
+| image::lm_build_1.png[""]
 [.lm-bold]##Govern and Secure the Agent Network##
 
 Apply policies to your agents, brokers, LLM proxies, and MCP servers to help manage security and control traffic.
@@ -66,7 +67,7 @@ Apply policies to your agents, brokers, LLM proxies, and MCP servers to help man
 - xref:gateway::flex-gateway-managed-ingress-egress.adoc[Deploy Agent Fabric Ingress and Egress Managed Omni Gateways]
 - xref:gateway::flex-gateway-secure-apis.adoc[Secure Omni Gateway Instances with Policies]
 
-| image::lm_analyze_1.png[alt=""]
+| image::lm_analyze_1.png[""]
 [.lm-bold]##Observe and Gain Actionable Insights##
 
 Visualize your agent network and monitor performance and behavior.

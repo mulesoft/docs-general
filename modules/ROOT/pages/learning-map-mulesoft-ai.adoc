@@ -1,4 +1,5 @@
 = MuleSoft AI
+:keywords: mulesoft ai, ai integration, artificial intelligence, mulesoft, learning resources, ai capabilities
 :page-article-style: learning-map
 
 MuleSoft AI empowers agent action with flexible intelligent tooling that integrates systems and automates processes with AI to help accelerate your ability to deliver an actionable, connected enterprise by helping you build, orchestrate, and manage AI-driven experiences. 
@@ -34,9 +35,9 @@ Design and coordinate AI agents using a declarative approach that promotes reuse
 
 - xref:exchange::asset-types.adoc[Learn About Agentic Asset Types Supported in Exchange]
 - xref:exchange::importing-agentforce-agents.adoc[Import Agentforce Agents]
-- xref:anypoint-code-builder::af-get-started.adoc[Get Started with Agent Networks]
-- xref:anypoint-code-builder::af-create-agent-network.adoc[Build Agent Networks for Agent Fabric]
-- xref:anypoint-code-builder::af-deploy-agent-network-targets.adoc[Deploy Your Agent Network Instances]
+- xref:agent-network::af-get-started.adoc[Get Started with Agent Networks]
+- xref:agent-network::af-create-agent-network.adoc[Build Agent Networks for Agent Fabric]
+- xref:agent-network::af-deploy-agent-network-targets.adoc[Deploy Your Agent Network Instances]
 - https://videos.mulesoft.com/watch/wgZ5WuV6VgDbyK3bFKV2RJ[Watch a Demo About Agent Orchestration]
 - https://www.mulesoft.com/exchange/org.mule.examples/mcp-b2b-partner-manager-template/minor/0.1/[Try an MCP Tools Template for Partner Manager]
 |===

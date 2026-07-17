@@ -1,4 +1,5 @@
 = Step 4. Test the API
+:keywords: api testing, apikit validation, mulesoft api, logging, api-led connectivity, run api, test api
 :page-pagination:
 
 Test your API locally before deploying it to the cloud. You run the API in Anypoint Code Builder, send requests using Postman, add logging to track requests, and use the built-in debugger to inspect the Mule message at each step.

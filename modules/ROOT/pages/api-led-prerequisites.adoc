@@ -1,4 +1,5 @@
 = Step 1. Prerequisites for Building an API-Led Solution
+:keywords: api-led connectivity, anypoint code builder, cloudhub 2.0, prerequisites, mulesoft setup, api-led solution, installation
 :page-pagination: next
 
 Set up your environment before starting the tutorial. You need an Anypoint Platform account, Anypoint Code Builder, and a REST client such as Postman. Specific permissions are also required for deployment and, optionally, for AI-assisted API design with MuleSoft Vibes.

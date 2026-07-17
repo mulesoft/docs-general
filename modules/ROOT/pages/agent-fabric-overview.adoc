@@ -1,4 +1,5 @@
 = MuleSoft Agent Fabric Overview
+:keywords: mulesoft agent fabric, mcp bridge, mcp connector, enterprise actionability, ai agents, mulesoft integration, model context protocol
 
 
 MuleSoft Agent Fabric helps you turn agent sprawl into a governed, coordinated, intelligent network. Regardless of the platform where your AI agents were built or are running, Agent Fabric provides the infrastructure to discover, orchestrate, govern, and observe agents across your enterprise. Agent Fabric enables you to build intelligent agent networks where multiple agents work together, access enterprise systems securely, and operate under consistent governance and observability.
@@ -246,24 +247,24 @@ Coordinate agents and tools across ecosystems with guided determinism, so multi-
 
 === Agent Broker
 
-* What it is: An intelligent routing service that coordinates task delegation across A2A-compliant agents in your agent network. Brokers originate from MuleSoft and are defined in your agent network YAML alongside the agents and MCP servers they can leverage to accomplish tasks.
+* What it is: An intelligent routing service that coordinates task delegation across A2A-compliant agents in your agent network. You define a broker and its nodes in Agent Script. Nodes are connected in a graph that encapsulates all steps that describe the orchestration of agents, tools, and LLMs. A graph-based approach to agent brokers ensures that connected paths guarantee a specific order of operations and enable more complex orchestration that combines deterministic and non-deterministic elements. 
 * Role in Agent Fabric: The broker is the orchestration intelligence in your agent network. When a request arrives, the broker determines which agent or other broker is best suited to handle it and delegates accordingly, generating a contextId and taskId to track task state across the interaction. 
-* By dynamically matching tasks with other agents and enabling seamless collaboration across ecosystems, balancing fixed rules and LLM reasoning, the broker transforms scattered agents into a coordinated workforce. Brokers appear in your portfolio and can be discovered and reused by other brokers across your organization.
+* By dynamically matching tasks with other agents and enabling seamless collaboration across ecosystems, the broker transforms scattered agents into a coordinated workforce. Brokers appear in your portfolio and can be discovered and reused by other brokers across your organization.
 * What you can do:
 ** Build hierarchical orchestration by delegating tasks to specialized A2A-compliant agents or other brokers
 ** Publish brokers to your portfolio for discovery and reuse across your organization
-** Define brokers in your agent network YAML configuration
+** Define brokers in Agent Script
 ** Configure the broker's routing logic and orchestration patterns
-** Deploy the full agent network (including the broker) to CloudHub 2.0 or Runtime Fabric
+** Deploy the full agent network (including the broker) to CloudHub 2.0 
 ** Monitor broker routing decisions and performance using Agent Visualizer
 
 * When you need it: when your agent network includes multiple agents with different specializations and you need a component to intelligently route work to the right agent based on context. Add a broker when routing logic needs to go beyond a single agent.
 
-* Learn more: xref:anypoint-code-builder::af-define-your-agent-network-specification.adoc[]
+* Learn more: xref:agent-network::af-define-your-agent-network-specification.adoc[]
 
 === Agent Network
 
-* What it is: An agent network is a coordinated group of agents, brokers, LLMs, and MCP servers that acts as a central hub for defining, validating, and running agentic processes across your enterprise. You configure an agent network in a human-readable YAML file  that details the required structure and properties that define your project's assets, connections, and policies. 
+* What it is: An agent network is a coordinated group of agents, brokers, LLMs, and MCP servers that acts as a central hub for defining, validating, and running agentic processes across your enterprise. You configure an agent network in a human-readable YAML file that details the required structure and properties that define your project's assets, connections, and policies. If your network project uses brokers, you define them and their nodes in Agent Script. Agent Script enables you to build predictable, context-aware agent workflows between nodes.  
 * Role in Agent Fabric: The agent network is the configuration and infrastructure layer that brings all the components of your agentic solution together. It defines the composition of your network, specifying which agents are available, which brokers orchestrate them, which LLMs provide reasoning, and which MCP servers connect agents to backend systems. Without an agent network, agents operate in isolation. With one, they become a coordinated system capable of handling complex, multi-step workflows.
 * What you can do:
 ** Define the composition of a multi-agent system in a single YAML configuration
@@ -274,7 +275,7 @@ Coordinate agents and tools across ecosystems with guided determinism, so multi-
 
 * When you need it: Use an agent network any time you are building an agentic solution that involves multiple agents, LLMs, or MCP servers working together. Agent networks do not require a broker. You can start with just agents and MCP servers and add a broker when you need intelligent routing across specialized agents.
 
-* Learn more: xref:anypoint-code-builder::af-agent-networks.adoc[]
+* Learn more: xref:agent-network::af-agent-networks.adoc[]
 
 [[observe]]
 == Observe
@@ -317,7 +318,7 @@ Agent Visualizer provides a detailed visual graph of your agent network so you c
 * Role in Agent Fabric: Anypoint Code Builder is where agent networks come to life. It provides the visual canvas and tooling to define an agent network YAML and develop custom MCP servers, all before deploying to production.
 * Key capabilities:
 ** Design and configure agent network structures with the visual canvas
-** Define routing logic and agent interactions in YAML
+** Define routing logic and agent interactions in Agent Script
 ** Build and test agent workflows locally before deploying
 ** Develop custom MCP servers for specific integration needs
 ** Use MuleSoft Vibes to generate and validate network configurations from natural language
