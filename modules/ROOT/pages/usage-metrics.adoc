@@ -590,7 +590,7 @@ Use a dedicated cluster for Runtime Fabric instances for accurate measurements
 [[cloudhub-vcore-usage]]
 == CloudHub vCore Usage
 
-CloudHub vCore usage reports show the combined vCore consumption across CloudHub (CH1) and CloudHub 2.0 (CH2) deployments in tables and cards.
+CloudHub vCore usage reports show the combined vCore consumption across CloudHub and CloudHub 2.0 deployments in tables and cards.
 
 === Data Granularity
 
