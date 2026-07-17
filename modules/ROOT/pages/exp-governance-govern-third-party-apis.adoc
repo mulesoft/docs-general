@@ -7,7 +7,7 @@ After connecting to a third-party API gateway provider, you can govern discovere
 
 Follow these steps to govern APIs from third-party providers:
 
-. Use the xref:exp-governance-setup-third-party-providers.adoc[provider connection wizard] to connect to your third-party API gateway. The system creates a scanner and begins discovering APIs.
+. Connect and create a scanner. When the scanner runs, it discovers and catalogs APIs and their read-only policies. See xref:[placeholder] 
 
 . Go to *Portfolio* > *APIs* and verify that discovered APIs appear, each labeled with its provider (for example, *AWS*). APIs are automatically added to the portfolio as they are discovered.
 
