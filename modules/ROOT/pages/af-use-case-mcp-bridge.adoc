@@ -114,7 +114,7 @@ With MCP Bridge you extend your existing Mule investment to agentic use cases:
 
 == Implementation Steps
 
-Follow these steps to deploy MCP Bridge and make your APIs available to agents.
+Follow these steps to create MCP Bridge instances and make your APIs available to agents.
 
 === Step 1: Identify APIs for Agent Access
 
