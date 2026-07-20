@@ -15,7 +15,7 @@ Name, description, and ownership metadata so teams can identify the server in ca
 * *Connection and runtime details*
 +
 Endpoint and access settings Enhanced Experience uses at runtime to connect to underlying SaaS systems.
-* *Capability surface* 
+* *Capability surface*
 +
 The MCP tools and resources clients can discover and invoke.
 * *Validation and readiness*
@@ -27,13 +27,16 @@ Checks that confirm the server is reachable and that the declared MCP capabiliti
 Before getting started, make sure you have:
 
 * An Anypoint Platform account.
-* One of these permissions:
+* One of these Exchange permissions:
 +
 --
 ** Exchange: Exchange Contributor
 ** Exchange: Exchange Administrator
 ** Exchange: Exchange Creator
 --
+* This API Manager permission on at least one environment:
++
+** API Manager: Manage APIs Configuration
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
