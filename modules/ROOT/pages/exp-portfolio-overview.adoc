@@ -37,8 +37,8 @@ If you don't see an expected catalog or summary, confirm product access and perm
 
 * Coverage
 +
-Which service types your team has registered and which environments or instances they map to.
-* Health and cost signals
+Which service types your team has registered. Each portfolio tab shows only services registered for that type. For example, *Agents* shows all registered agents for that Business Group.
+* Performance
 +
 Summary metrics or badges if the experience exposes them at list level (for example, status or daily cost on cards).
 * Next actions
