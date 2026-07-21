@@ -271,15 +271,15 @@ Select the *Usage by Application* tab to view:
 [[cloudhub-vcore-usage]]
 ==== CloudHub vCore Usage
 
-The vCore usage is sampled every hour; the peak hourly value is used to calculate the daily and monthly maximum:
+MuleSoft samples vCore usage every hour and uses the peak hourly value to calculate the daily and monthly maximum:
 
 * *Hourly*: Peak vCore consumption captured each hour
 * *Daily*: Highest hourly peak within the day
 * *Monthly*: Highest hourly peak within the month
 
-For CloudHub 2.0 applications with HPA enabled, an application can scale beyond its guaranteed base allocation, so *vCore Peak* can exceed *vCore Min* during scaling events. Conversely, *vCore Min* can be higher than *vCore Peak* when the guaranteed base allocation exceeds actual consumption during the reporting period.
+For CloudHub 2.0 applications with HPA enabled, an application can scale beyond its guaranteed base allocation, so *vCore Peak* can exceed *vCore Min* during scaling events. Conversely, *vCore Min* can be higher than *vCore Peak* when the guaranteed base allocation exceeds actual consumption during the selected time period.
 
-HPA is available to customers who are opted into the new pricing and packaging model.
+HPA is available to customers on the new pricing and packaging model.
 
 === Mule Runtime Usage Cards
 
