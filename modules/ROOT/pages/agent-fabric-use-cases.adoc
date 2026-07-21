@@ -1,6 +1,6 @@
 = Agent Fabric Use Cases
 
-Use Agent Fabric to design and orchestrate a network of agents, brokers, and MCP servers. Manage agents across multiple platforms, enforce consistent policies, control costs, and build workflows.
+Agent Fabric addresses the most common challenges in enterprise AI agent management, from discovering and governing agents across platforms, to making existing APIs agent-ready without custom development, and keeping token costs under control. Each use case maps a specific business problem to a set of Agent Fabric capabilities so you can identify where to start and build incrementally. Use the quick-reference table to match your immediate goal to the right capability.
 
 == Find Your Use Case
 
@@ -9,66 +9,56 @@ Use Agent Fabric to design and orchestrate a network of agents, brokers, and MCP
 |If you want to... |Use case |Go to
 
 |Catalog and manage agents across multiple platforms
-|Registry and Visibility
+|Discover and register agents from a centralized catalog. Know what exists and where before you apply governance.
 |xref:use-case-registry.adoc[]
 
 |Make existing APIs agent-ready without modifying code
-|MCP Bridge
+|Select which API operations to expose as MCP tools, apply read-only filtering, and control agent access to your APIs.
 |xref:af-use-case-mcp-bridge.adoc[]
 
 |Apply consistent business rules and guardrails across all agents
-|Policy Enforcement
+|Enforce PII policies, rate limits, and compliance rules across all agents through a single gateway rather than reimplementing them per platform.
 |xref:use-case-policy-enforcement.adoc[Policy Enforcement]
 
 |Control token usage and optimize model selection
-|Cost Control and Semantic Routing
+|Monitor token usage across agents and applications, then route queries to cost-effective models based on complexity.
 |xref:use-case-cost-control.adoc[Cost Control]
 
 |Build complex, deterministic workflows with error handling
-|Workflow Orchestration
-|xref:use-case-orchestration.adoc[Workflow Orchestration]
+|Handle multi-step business logic, error scenarios, and unhappy paths that simple agent loops can't reliably address.
+|xref:use-case-orchestration.adoc[Agentic Orchestration]
 
 |===
 
-== Registry and Visibility
+== Discover and Govern Agents Across Your Organization
 
-If you have multiplatform agent deployments, use a centralized way to discover, catalog, and manage your agent estate. Know what exists and where before you apply governance.
+Use a centralized registry and automated scanners to discover, catalog, and manage agents across your organization. Know what exists and where before you apply governance. For example, a business process outsourcer managing agents across multiple client platforms, or an enterprise security team asked to audit every agent in production, can use Registry and Scanners to get a complete, current picture without manually tracking deployments.
 
-*Best for:* BPOs, holding companies, large system integrators, and enterprises with agents across multiple platforms.
+xref:use-case-registry.adoc[Centralizing Agent Discovery with Agent Registry and Scanners]
 
-xref:use-case-registry.adoc[Registry and Visibility]
+== Make APIs Agent-Ready with MCP Bridge
 
-== MCP Bridge
-
-Transform your existing API instances into agent-ready tools without modifying code. Select which operations to expose, apply read-only filtering where needed, and control agent access to your APIs.
-
-*Best for:* Organizations with existing API infrastructure (like Mule) that want to enable agentic access safely.
+Transform your existing API instances into agent-ready tools without modifying code. Select which operations to expose, apply read-only filtering where needed, and control agent access to your APIs. For example, an organization with hundreds of existing Mule APIs can make them callable by agents in minutes through configuration alone, without touching the underlying implementations.
 
 xref:af-use-case-mcp-bridge.adoc[]
 
-== Policy Enforcement
+== Enforce Consistent Policies Across Agent Platforms
 
-Consistently enforce business rules, PII policies, and guardrails across all agents regardless of platform. Apply policies one time through a gateway rather than reimplementing them for each platform.
-
-*Best for:* Enterprises that require uniform compliance, security, and governance across different agent environments.
+Consistently enforce business rules, PII policies, and guardrails across all agents regardless of platform. Apply policies one time through a gateway rather than reimplementing them for each platform. For example, a regulated industry deploying agents across Agentforce, Bedrock, and custom Mule implementations can enforce the same data privacy and rate limiting rules everywhere through a single Omni Gateway policy.
 
 xref:use-case-policy-enforcement.adoc[Policy Enforcement]
 
-== Cost Control and Semantic Routing
+== Monitor Costs and Optimizing Model Selection
 
-Monitor token usage across applications and agents, then optimize costs by routing simple queries to cost-effective models while reserving powerful models for complex tasks.
-
-*Best for:* Organizations that manage large-scale agent deployments with budget constraints and efficiency requirements.
+Monitor token usage across applications and agents, then optimize costs by routing simple queries to cost-effective models while reserving powerful models for complex tasks. For example, a team running hundreds of daily agent interactions can route routine lookups to a smaller, cheaper model and reserve a frontier model only for tasks that require complex reasoning.
 
 xref:use-case-cost-control.adoc[Cost Control]
 
-== Workflow Orchestration
+== Coordinate Multi-Agent Processes with Brokers
 
-Build multi-step workflows with deterministic outcomes. Handle complex business logic, error scenarios, and unhappy paths that simple agent loops cannot address.
+Use agent brokers and agent networks to coordinate task delegation across A2A-compliant agents with guided determinism. Define broker routing logic in Agent Script to handle complex business processes, error scenarios, and unhappy paths that require multiple specialized agents working in sequence. For example, an order management process that involves a research agent, a pricing agent, and an approval agent can be wired together in a single agent network with a broker that routes each step to the right specialist.
 
-*Best for:* Advanced use cases that require reliable, predictable multi-agent workflows.
-
-xref:use-case-orchestration.adoc[Workflow Orchestration]
+xref:use-case-orchestration.adoc[Agent Orchestration]
 
 
 
