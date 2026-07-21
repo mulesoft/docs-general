@@ -259,7 +259,7 @@ Select the *Usage by Application* tab to view:
 
 | vCore Peak | Highest hourly vCore consumption for the application within the selected time period.
 
-| vCore Min | Guaranteed base vCore allocation for the application, based on the minimum replica configuration. Applies to all CloudHub 2.0 applications regardless of whether HPA is enabled. For CloudHub (CH1) applications, *vCore Min* equals *vCore Peak*.
+| vCore Min | Guaranteed base vCore allocation for the application, based on the minimum replica configuration. For CloudHub (CH1) applications, vCore Min equals vCore Peak.
 
 | Mule Flows | Total number of flows in the Mule app, calculated by multiplying flows by the number of workers (CH1) or replicas (CH2 and RTF).
 
@@ -271,7 +271,7 @@ Select the *Usage by Application* tab to view:
 [[cloudhub-vcore-usage]]
 ==== CloudHub vCore Usage
 
-The *vCore Peak* and *vCore Min* columns display combined vCore consumption across CloudHub (CH1) and CloudHub 2.0 (CH2) applications. vCore usage is sampled every hour; the peak hourly value is used to calculate the daily and monthly maximum:
+The vCore usage is sampled every hour; the peak hourly value is used to calculate the daily and monthly maximum:
 
 * *Hourly*: Peak vCore consumption captured each hour
 * *Daily*: Highest hourly peak within the day
