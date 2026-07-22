@@ -4,21 +4,21 @@ Agent Fabric's MCP Bridge transforms your existing API instances into agent-read
 
 Key benefits of MCP Bridge include:
 
-* **Rapid enablement**: Gets agents connected to APIs quickly, without custom development.
-* **Security by default**: Exposes only the operations you explicitly map as tools.
-* **Consistency**: Gives all agents access to APIs through the same controlled interface.
-* **Leverage existing investments**: Works with APIs managed through Anypoint Platform.
-* **Centralized governance**: Provides a single point of control for agent API access.
+* Rapid enablement: Gets agents connected to APIs quickly, without custom development.
+* Security by default: Exposes only the operations you explicitly map as tools.
+* Consistency: Gives all agents access to APIs through the same controlled interface.
+* Leverage existing investments: Works with APIs managed through Anypoint Platform.
+* Centralized governance: Provides a single point of control for agent API access.
 
 == The Problem
 
 You have invested heavily in API infrastructure, but adapting these APIs for agentic use is challenging:
 
-* **API complexity**: Existing APIs weren't designed for agent consumption.
-* **Security concerns**: APIs often include write and delete operations that are too risky for agents.
-* **Integration overhead**: Building custom integrations for each agent platform is time-consuming.
-* **Inconsistent access**: Different agents access the same APIs in different ways.
-* **Governance gaps**: It's hard to track and control how agents use existing APIs.
+* API complexity: Existing APIs weren't designed for agent consumption.
+* Security concerns: APIs often include write and delete operations that are too risky for agents.
+* Integration overhead: Building custom integrations for each agent platform is time-consuming.
+* Inconsistent access: Different agents access the same APIs in different ways.
+* Governance gaps: It's hard to track and control how agents use existing APIs.
 
 Bridge your existing API infrastructure to agents safely and efficiently with MCP Bridge.
 
@@ -26,12 +26,12 @@ Bridge your existing API infrastructure to agents safely and efficiently with MC
 
 Agent Fabric's Model Context Protocol (MCP) Bridge enables safe, efficient API integration for agents:
 
-* **Rapid integration**: Connects existing API instances to agents through simple configuration, with no rewriting required.
-* **Selective exposure**: Exposes only the API operations you choose as discrete MCP tools that agents can discover and call.
-* **Selective operation mapping**: Map only the operations you choose as tools. Limit agent access to read-only operations when needed, without modifying the underlying API.
-* **Centralized management**: Provides a single point of control for API access, with governance policies applied from the same portfolio.
-* **Agent-facing abstraction**: Exposes existing REST API operations as MCP tools so agents can call them without needing API-specific details.
-* **Leverage existing assets**: Works with your existing MuleSoft API infrastructure without rebuilding assets.
+* Rapid integration: Connects existing API instances to agents through simple configuration, with no rewriting required.
+* Selective exposure: Exposes only the API operations you choose as discrete MCP tools that agents can discover and call.
+* Selective operation mapping: Map only the operations you choose as tools. Limit agent access to read-only operations when needed, without modifying the underlying API.
+* Centralized management: Provides a single point of control for API access, with governance policies applied from the same portfolio.
+* Agent-facing abstraction: Exposes existing REST API operations as MCP tools so agents can call them without needing API-specific details.
+* Leverage existing assets: Works with your existing MuleSoft API infrastructure without rebuilding assets.
 
 == How MCP Bridge Works
 
@@ -93,9 +93,9 @@ Without MCP Bridge, you would need to build separate custom integrations for eac
 With MCP Bridge you get fine-grained access control with safety guarantees:
 
 . In API Manager, create multiple MCP Bridge instances from your financial API, each with different operation mappings:
-   * **Basic server**: Map only GET operations for account balances.
-   * **Analytics server**: Map GET operations for transaction history and reports.
-   * **Approval server**: Map GET operations plus POST for creating approval requests.
+   * Basic server: Map only GET operations for account balances.
+   * Analytics server: Map GET operations for transaction history and reports.
+   * Approval server: Map GET operations plus POST for creating approval requests.
 . Connect each agent to the appropriate MCP server endpoint based on access requirements.
 . In API Manager, apply policies to each MCP server instance.
 

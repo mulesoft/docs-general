@@ -74,7 +74,7 @@ After you understand the basics, choose a use case to implement.
 
 * xref:use-case-cost-control.adoc[]
 * xref:use-case-identity.adoc[]
-* xref:use-case-mcp-bridge.adoc[]
+* xref:af-use-case-mcp-bridge.adoc[]
 * xref:use-case-orchestration.adoc[]
 * xref:use-case-policy-enforcement.adoc[]
 * xref:use-case-registry.adoc[]
