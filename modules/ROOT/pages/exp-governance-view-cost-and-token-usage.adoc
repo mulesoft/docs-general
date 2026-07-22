@@ -46,7 +46,7 @@ include::partial$exp-navigation-labels.adoc[tag=ExpNavigationLabels]
 
 == Budgets Tab
 
-The *budgets* tab shows financial summaries across your configured budgets:
+The *Budgets* tab shows financial summaries across your configured budgets:
 
 * *Total Managed Spend*: Total spend across all configured budgets.
 * *By Provider*: Spend breakdown by LLM provider.
@@ -54,7 +54,7 @@ The *budgets* tab shows financial summaries across your configured budgets:
 
 == Optimizations Tab
 
-The *optimizations* tab shows token cost analysis for MCP server instances:
+The *Optimizations* tab shows token cost analysis for MCP server instances:
 
 * *Cost saved*: Tokens saved on optimized instances. Treat this metric as directional, not exact.
 * *Potential savings*: Estimated tokens that could be saved by applying unapplied optimization opportunities.
