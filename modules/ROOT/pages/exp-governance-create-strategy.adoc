@@ -22,15 +22,17 @@ Also decide whether you need validation-only monitoring or active runtime enforc
 == Open the Strategy Workflow
 
 . Log in and go to *Governance* > *Governance Strategies*.
-. Select *Create Governance Strategy* to start the setup flow.
+. Select *Create governance strategy* to start the setup flow.
 
-The setup flow guides you through type, scope, rules or policies, and activation.
+The setup flow guides you through these steps: *Strategy Type*, *Scope*, *What to Apply*, *Name & Description*, and *Review*.
+
+For Controls strategies, the flow also includes a *Notifications* step between *What to Apply* and *Name & Description*. This step does not appear for Automated Policy strategies.
 
 == Select Strategy Type
 
 Select from these types:
 
-* *Controls* validate targeted services against control rules. Use controls to monitor compliance and, when supported, block noncompliant activity.
+* *Control* validates targeted services against control rules. Use controls to monitor compliance and, when supported, block noncompliant activity.
 * *Automated Policy* enforces runtime policy requirements across targeted services.
 
 Select the type that matches your governance objective, then proceed.
@@ -72,7 +74,7 @@ Depending on the strategy type, select the controls or policies the strategy enf
 
 Available options depend on your earlier selections and your organization's enabled products.
 
-== Name and Describe the Strategy
+== General Information
 
 Enter a clear *Strategy Name*, such as "PCI Compliance Rules". Add a *Description* that states what the strategy enforces and why.
 
@@ -80,7 +82,9 @@ Enter a clear *Strategy Name*, such as "PCI Compliance Rules". Add a *Descriptio
 
 Review your selections: strategy type, scope, rules or policies, and general information.
 
-Select *Create and Activate Strategy*.
+Select *Create and activate strategy*.
+
+For Controls strategies, you can also select *Save as draft* to save the strategy without activating it.
 
 Strategies are active by default. To disable a strategy, go to *Governance Strategies*.
 

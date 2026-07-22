@@ -36,33 +36,40 @@ include::partial$exp-navigation-labels.adoc[tag=ExpNavigationLabels]
 == Open Cost Management
 
 . Log in and go to *Governance* > *Cost Management*.
-. Adjust the time range and filters for the services or period you want to analyze.
+. Select a tab:
++
+--
+* The *budgets* tab (default): View total managed spend and budget breakdowns.
+* The *optimizations* tab: Analyze MCP server token usage and optimization opportunities.
+--
+. Adjust the time range and filters for the data you want to analyze.
 
-== Usage Metrics
+== Budgets Tab
 
-The experience organizes token and activity data into summary cards and detail views:
+The *budgets* tab shows financial summaries across your configured budgets:
 
-* *Total Tokens*: Number of tokens processed in the selected time range
-* *Saved Tokens (Est.)*: Estimated tokens saved by optimization policies
-* *Tool Calls*: Number of tool or function calls in the selected time range
+* *Total Managed Spend*: Total spend across all configured budgets.
+* *By Provider*: Spend breakdown by LLM provider.
+* *By Model Proxy Key*: Spend breakdown by model proxy client key.
+
+== Optimizations Tab
+
+The *optimizations* tab shows token cost analysis for MCP server instances:
+
+* *Cost saved*: Tokens saved on optimized instances. Treat this metric as directional, not exact.
+* *Potential savings*: Estimated tokens that could be saved by applying unapplied optimization opportunities.
 
 Each card also shows how many instances contributed to the metric.
 
 == Filter and Search
 
-Use controls at the top of the page to narrow the view:
+Use the controls at the top of the *optimizations* tab to narrow the view:
 
-* Search for service or instance names.
-* Use *Filters* to refine your search by service type, environment, or metadata.
-* Select a time range to search, such as 1 hour (1H), 6 hours (6H), 24 hours (24H), 7 days (7D), or 30 days (30D).
+* Search for MCP instance names.
+* Use *Filters* to refine the view by *Environment* or *Provider*.
+* Select a time range: *1H* (1 hour), *24H* (24 hours), *7D* (7 days), or *30D* (30 days). The default is *30D*.
 
-The counter updates to show the number of matching services.
-
-== Saved Token Estimates
-
-When optimization policies are active, the system estimates saved tokens compared to unoptimized traffic.
-
-Treat this metric as directional, not exact.
+The counter updates to show the number of matching instances.
 
 == Cost Data Use Cases
 
