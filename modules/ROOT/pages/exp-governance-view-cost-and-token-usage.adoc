@@ -63,7 +63,7 @@ Each card also shows how many instances contributed to the metric.
 
 == Filter and Search
 
-Use the controls at the top of the *optimizations* tab to narrow the view:
+Use the controls at the top of the *Optimizations* tab to narrow the view:
 
 * Search for MCP instance names.
 * Use *Filters* to refine the view by *Environment* or *Provider*.
