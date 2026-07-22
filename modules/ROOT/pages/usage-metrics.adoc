@@ -232,6 +232,7 @@ For Runtime Fabric, it's the environment the Runtime Fabric instance is associat
 | Cluster | Name of the cluster or Runtime Fabric instance containing the applications, workers, and nodes. 
 
 |Cluster Capacity (Millicores) | Allocatable CPU capacity of each node within the Runtime Fabric instance.
+|vCore Peak | Highest hourly vCore consumption for applications in the selected business group and time period.
 |===
 
 ==== Usage by Application
@@ -277,6 +278,8 @@ MuleSoft samples vCore usage every hour and uses the peak hourly value to calcul
 * *Daily*: Highest hourly peak within the day
 * *Monthly*: Highest hourly peak within the month
 
+MuleSoft calculates production and preproduction vCore usage separately by using this same peak-rollup model.
+
 For CloudHub 2.0 applications with HPA enabled, an application can scale beyond its guaranteed base allocation, so *vCore Peak* can exceed *vCore Min* during scaling events. Conversely, *vCore Min* can be higher than *vCore Peak* when the guaranteed base allocation exceeds actual consumption during the selected time period.
 
 HPA is available to customers on the new pricing and packaging model.
@@ -291,6 +294,8 @@ MuleSoft usage reports cards include:
 * <<max-cpu-preprod>>
 * <<max-cluster-prod>>
 * <<max-cluster-preprod>>
+* <<max-vcore-prod>>
+* <<max-vcore-preprod>>
 
 [[max-mule-flows]]
 === Maximum Mule Flows
@@ -409,7 +414,19 @@ When an event source within a flow of a Mule application is triggered, the event
 [[data-throughput]]
 === Total Data Throughput
 
-Data throughput is all of the network I/O bytes produced by the infrastructure for the Mule runtime server that runs a Mule application. This includes the data that the application produces to execute its business logic, as well as internal operational network traffic such as logs, health checks, and monitoring traffic. For example, data throughput includes inserting a record into a database and the network traffic associated with the app infrastructure, such as log forwarding, control plane connection, and monitoring metrics transfer.  
+Data throughput is all of the network I/O bytes produced by the infrastructure for the Mule runtime server that runs a Mule application. This includes the data that the application produces to execute its business logic, as well as internal operational network traffic such as logs, health checks, and monitoring traffic. For example, data throughput includes inserting a record into a database and the network traffic associated with the app infrastructure, such as log forwarding, control plane connection, and monitoring metrics transfer.
+
+[[max-vcore-prod]]
+=== Maximum CloudHub vCore Usage in Production
+
+This card shows the highest peak cloud vCore consumption across CloudHub (CH1) and CloudHub 2.0 (CH2) applications in production for the selected month.
+It includes the UTC date and time when the peak occurred, which reflects a true peak in consumption rather than an average.
+
+[[max-vcore-preprod]]
+=== Maximum CloudHub vCore Usage in Preproduction
+
+This card shows the highest peak cloud vCore consumption across CloudHub (CH1) and CloudHub 2.0 (CH2) applications in preproduction for the selected month.
+It includes the UTC date and time when the peak occurred, which helps you accurately track and attribute usage spikes.
 
 == Object Store Usage
 
