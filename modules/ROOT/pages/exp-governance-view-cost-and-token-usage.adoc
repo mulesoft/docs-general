@@ -68,7 +68,7 @@ The *Budgets* tab shows financial summaries across your configured budgets:
 --
 . Select *Create Budget*.
 
-When usage reaches the budget limit, the system blocks requests. Each model proxy key, provider, and model combination supports only one budget.
+When usage reaches the budget limit, the system blocks requests. Each model wallet, provider, and model combination supports only one budget.
 
 For information about model wallets and how they combine authentication credentials with budget limits, see xref:exp-model-wallets-manage.adoc[].
 
