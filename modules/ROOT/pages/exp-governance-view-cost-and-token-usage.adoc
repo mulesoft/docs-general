@@ -39,8 +39,8 @@ include::partial$exp-navigation-labels.adoc[tag=ExpNavigationLabels]
 . Select a tab:
 +
 --
-* The *budgets* tab (default): View total managed spend and budget breakdowns.
-* The *optimizations* tab: Analyze MCP server token usage and optimization opportunities.
+* The *Budgets* tab (default): View total managed spend and budget breakdowns.
+* The *Optimizations* tab: Analyze MCP server token usage and optimization opportunities.
 --
 . Adjust the time range and filters for the data you want to analyze.
 
