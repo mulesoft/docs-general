@@ -165,7 +165,8 @@ a|
 a|
 * Kong Gateway region
 * Personal access token (PAT)
-* Policy Apply write scope: Admin API write permission required to apply policy in target environments
+* Policy Apply read scope: Admin API read permission required to read policy in target environments
+// (for Write policy GA)* Policy Apply write scope: Admin API write permission required to apply policy in target environments
 
 
 | Amazon Bedrock AgentCore MCP
