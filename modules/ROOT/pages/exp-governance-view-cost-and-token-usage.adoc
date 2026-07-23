@@ -78,8 +78,8 @@ The *Optimizations* tab shows cost and token savings data across model proxies, 
 
 The summary cards show:
 
-* *Agents Potential Savings*: Estimated cost savings available by applying optimization policies to agents. Shows *Cost saved* as the amount already saved.
-* *MCP Servers Potential Savings*: Estimated token savings available by applying optimization policies to MCP servers. Shows *Tokens saved* as tokens already saved.
+* *Agents Potential Savings*: Estimated cost savings available by applying optimization policies to agents. It shows *Cost Saved* as the amount already saved.
+* *MCP Servers Potential Savings*: Estimated token savings available by applying optimization policies to MCP servers. It shows *Tokens Saved* as tokens already saved.
 
 Treat these metrics as directional, not exact.
 
