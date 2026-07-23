@@ -74,18 +74,23 @@ For information about model wallets and how they combine authentication credenti
 
 == Optimizations Tab
 
-The *Optimizations* tab shows token cost analysis for MCP server instances:
+The *Optimizations* tab shows cost and token savings data across model proxies, agents, and MCP servers.
 
-* *Cost saved*: Tokens saved on optimized instances. Treat this metric as directional, not exact.
-* *Potential savings*: Estimated tokens that could be saved by applying unapplied optimization opportunities.
+The summary cards show:
 
-Each card also shows how many instances contributed to the metric.
+* *Agents Potential Savings*: Estimated cost savings available by applying optimization policies to agents. Shows *Cost saved* as the amount already saved.
+* *MCP Servers Potential Savings*: Estimated token savings available by applying optimization policies to MCP servers. Shows *Tokens saved* as tokens already saved.
+
+Treat these metrics as directional, not exact.
+
+The *Top optimization opportunities* section highlights the instances with the highest potential savings and the specific optimization policy to apply.
 
 == Filter and Search
 
 Use the controls at the top of the *Optimizations* tab to narrow the view:
 
-* Search for MCP instance names.
+* Select a sub-tab to filter by instance type: *Model Proxies*, *Agents*, or *MCP Servers*.
+* Search for instance names.
 * Use *Filters* to refine the view by *Environment* or *Provider*.
 * Select a time range: *1H* (1 hour), *24H* (24 hours), *7D* (7 days), or *30D* (30 days). The default is *30D*.
 
