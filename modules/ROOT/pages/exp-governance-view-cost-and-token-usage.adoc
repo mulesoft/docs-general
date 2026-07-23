@@ -62,9 +62,9 @@ The *Budgets* tab shows financial summaries across your configured budgets:
 * *Provider* (optional): Select an LLM provider to narrow the budget to a specific provider.
 * *Model* (optional): Select a model. This field appears only after you select a provider.
 * *Period*: Select *Daily*, *Weekly*, or *Monthly*.
-* *Resets on*: Select the reset day. This field appears for weekly and monthly periods.
+* *Resets on Day of Month*: Select the reset day. This field appears for weekly and monthly periods.
 * *Metric*: Select *Spend* to set a dollar limit, or *Tokens* to set a token count limit.
-* *Spend limit (USD)* or *Token limit* (required): Enter the maximum allowed value.
+* *Spend Limit (USD)* or *Token limit* (required): Enter the maximum allowed value.
 --
 . Select *Create budget*.
 
