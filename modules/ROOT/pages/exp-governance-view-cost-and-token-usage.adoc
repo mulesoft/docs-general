@@ -54,8 +54,8 @@ The *Budgets* tab shows financial summaries across your configured budgets:
 
 === Add a Budget
 
-. In the *budgets* tab, select *New budget*.
-. In the *New budget* dialog, configure the budget:
+. In the *Budgets* tab, select *New budget*.
+. In the *New Budget* dialog, configure the budget:
 +
 --
 * *Model proxy key* (required): Select the client key to scope the budget.
