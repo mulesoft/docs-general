@@ -99,7 +99,7 @@ Cost and performance data inform multiple workflows:
 * Performance triage: Correlate latency or error spikes with deployments or policy changes.
 * Planning and alignment: Share trends with finance and platform teams for forecasting.
 
-To automatically cap usage, configure budgets in the *budgets* tab or through model wallets. Budgets block requests once the limit is reached. You can also apply governance strategies or rate-limiting policies.
+To automatically cap usage, configure budgets in the *Budgets* tab or through model wallets. Budgets block requests once the limit is reached. You can also apply governance strategies or rate-limiting policies.
 
 == Cost Data and Governance
 
