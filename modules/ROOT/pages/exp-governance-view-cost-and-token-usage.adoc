@@ -55,7 +55,7 @@ The *Budgets* tab shows financial summaries across your configured budgets:
 === Add a Budget
 
 . In the *Budgets* tab, select *New budget*.
-. In the *New Budget* dialog, configure the budget:
+. In the *New budget* dialog, configure the budget:
 +
 --
 * *Model proxy key* (required): Select the client key to scope the budget.
@@ -66,7 +66,7 @@ The *Budgets* tab shows financial summaries across your configured budgets:
 * *Metric*: Select *Spend* to set a dollar limit, or *Tokens* to set a token count limit.
 * *Spend limit (USD)* or *Token limit* (required): Enter the maximum allowed value.
 --
-. Select *Create Budget*.
+. Select *Create budget*.
 
 Once a budget limit is reached, requests are blocked. Each model proxy key, provider, and model combination can have only one budget.
 
@@ -99,7 +99,7 @@ Cost and performance data inform multiple workflows:
 * Performance triage: Correlate latency or error spikes with deployments or policy changes.
 * Planning and alignment: Share trends with finance and platform teams for forecasting.
 
-To automatically cap usage, configure budgets in the *Budgets* tab or through model wallets. Budgets block requests once the limit is reached. You can also apply governance strategies or rate-limiting policies.
+To automatically cap usage, configure budgets in the *Budgets* tab or through model wallets. Budgets block requests once the limit is reached. To limit consumption in other ways, apply governance strategies or rate-limiting policies.
 
 == Cost Data and Governance
 
