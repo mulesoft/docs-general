@@ -52,6 +52,26 @@ The *Budgets* tab shows financial summaries across your configured budgets:
 * *By Provider*: Spend breakdown by LLM provider.
 * *By Model Proxy Key*: Spend breakdown by model proxy client key.
 
+=== Add a Budget
+
+. In the *budgets* tab, select *New budget*.
+. In the *New budget* dialog, configure the budget:
++
+--
+* *Model proxy key* (required): Select the client key to scope the budget.
+* *Provider* (optional): Select an LLM provider to narrow the budget to a specific provider.
+* *Model* (optional): Select a model. This field appears only after you select a provider.
+* *Period*: Select *Daily*, *Weekly*, or *Monthly*.
+* *Resets on*: Select the reset day. This field appears for weekly and monthly periods.
+* *Metric*: Select *Spend* to set a dollar limit, or *Tokens* to set a token count limit.
+* *Spend limit (USD)* or *Token limit* (required): Enter the maximum allowed value.
+--
+. Select *Create budget*.
+
+Once a budget limit is reached, requests are blocked. Each model proxy key, provider, and model combination can have only one budget.
+
+For information about model wallets and how they combine authentication credentials with budget limits, see xref:exp-model-wallets-manage.adoc[].
+
 == Optimizations Tab
 
 The *Optimizations* tab shows token cost analysis for MCP server instances:
@@ -79,7 +99,7 @@ Cost and performance data inform multiple workflows:
 * Performance triage: Correlate latency or error spikes with deployments or policy changes.
 * Planning and alignment: Share trends with finance and platform teams for forecasting.
 
-This dashboard doesn't automatically cap usage. To limit consumption, apply governance strategies or rate-limiting policies.
+To automatically cap usage, configure budgets in the *budgets* tab or through model wallets. Budgets block requests once the limit is reached. You can also apply governance strategies or rate-limiting policies.
 
 == Cost Data and Governance
 
@@ -89,6 +109,7 @@ For runtime enforcement, attach cost-related controls or policies to a governanc
 
 == See Also
 
+* xref:exp-model-wallets-manage.adoc[]
 * xref:exp-governance-work-with-strategies.adoc[]
 * xref:exp-governance-create-strategy.adoc[]
 * xref:exp-governance-manage-strategies.adoc[]
