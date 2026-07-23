@@ -66,7 +66,7 @@ The *Budgets* tab shows financial summaries across your configured budgets:
 * *Metric*: Select *Spend* to set a dollar limit, or *Tokens* to set a token count limit.
 * *Spend limit (USD)* or *Token limit* (required): Enter the maximum allowed value.
 --
-. Select *Create budget*.
+. Select *Create Budget*.
 
 Once a budget limit is reached, requests are blocked. Each model proxy key, provider, and model combination can have only one budget.
 
