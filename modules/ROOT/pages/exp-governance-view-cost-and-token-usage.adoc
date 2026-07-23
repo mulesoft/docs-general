@@ -58,7 +58,7 @@ The *Budgets* tab shows financial summaries across your configured budgets:
 . In the *New Budget* dialog, configure the budget:
 +
 --
-* *Model proxy key* (required): Select the client key to scope the budget.
+* *Model wallet* (required): Select the model wallet to scope the budget.
 * *Provider* (optional): Select an LLM provider to narrow the budget to a specific provider.
 * *Model* (optional): Select a model. This field appears only after you select a provider.
 * *Period*: Select *Daily*, *Weekly*, or *Monthly*.
