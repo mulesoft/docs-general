@@ -8,7 +8,7 @@ After you configure scanners, you run them day to day. Most of that work happens
 * *Run Discovery Scan*
 +
 Start a manual scan when you want fresh metadata without waiting for the next scheduled window. Successful runs update or add services in the matching *Portfolio* catalogs according to your rules.
-* Review status and history.
+* *View Scanner*
 +
 Inspect connection health, the last completed run, and scan history to verify whether discovery is healthy, slow, or failing authentication.
 * *Pause Scheduled Runs*
@@ -17,10 +17,10 @@ Temporarily stop scheduled triggers when you need a quiet period—for example d
 * *Resume Scheduled Runs*
 +
 Re-enable scheduled scanning after a pause.
-* *Edit Settings*
+* *Scanner Settings*
 +
 Change names, descriptions, credentials, provider scope, or scan-related settings your product exposes, then save, so future runs use the new definition.
-* Delete a scanner.
+* *Delete Scanner*.
 +
 Remove the scanner from *Providers* when the provider link is no longer authorized or useful. Consider the impact on discovered services in *Portfolio* and on dependent teams before you delete the scanner.
 +
