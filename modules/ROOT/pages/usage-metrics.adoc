@@ -1,5 +1,5 @@
-= Usage and Pricing Metrics Reference
-:keywords: usage metrics, pricing metrics, anypoint mq usage, api experience hub, api governance, api manager
+= Usage-Based Pricing: Usage and Rates
+:keywords: usage metrics, pricing metrics, anypoint mq usage, api experience hub, api governance, api manager, mule credits, automation credits
 :page-aliases: pricing-metrics.adoc
 
 Anypoint Platform captures usage metrics across products, but not all metrics are billable or reflected in usage reports.
@@ -76,6 +76,20 @@ Anypoint MQ API requests are available via API and aggregated on usage reports.
 | Intelligent Document Processing (IDP)
 | Intelligent Document Processing (IDP) Document Pages: A single page processed by IDP
 | IDP document actions might process documents that have more than one page, with each page counting separately. When RPA executes document actions, it also counts towards document pages and additionally consumes the corresponding RPA Bot Minutes, accounting for the time the RPA process runs.
+|===
+
+== Anypoint Pricing Plans
+
+The available usage types depend on your Anypoint pricing plan.
+
+[%header%autowidth.spread]
+|===
+| Available Usage Types | Subscription Plan
+
+.3+|Mule Flows, Mule Messages, Data Throughput, API Calls for Flex Gateway, API Manager Pre-Production, API Manager Production, and APIs Under Governance	
+|*MuleSoft Integration Starter*
+|*MuleSoft Integration Advanced*
+|*API Management Solution*
 |===
 
 == Anypoint MQ Usage

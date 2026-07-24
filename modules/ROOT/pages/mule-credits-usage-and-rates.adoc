@@ -86,7 +86,20 @@ If your usage exceeds your contracted amount, MuleSoft sends a monthly overage i
 
 == Viewing Usage and Billing
 
-Mule Credits usage, monthly statements, and overage billing are centralized in Salesforce Digital Wallet. If you have an Anypoint Platform organization, you can also view your usage and entitlement details in Anypoint Usage Reports for cross-platform transparency.
+Mule Credits usage appears in both Anypoint Usage Reports and Salesforce Digital Wallet. Salesforce Digital Wallet is the source of truth for finalized Mule Credit totals, monthly statements, and overage billing. Anypoint Usage Reports provide granular usage visibility by usage type, business group, and application.
+
+Use Anypoint Usage Reports to investigate consumption spikes, understand which business groups and applications are driving usage, and support internal forecasting or cost allocation workflows.
+
+=== When to Use Each View
+
+* Use *Anypoint Usage Reports* to investigate what is driving consumption across usage types, business groups, and applications.
+* Use *Salesforce Digital Wallet* to review finalized monthly consumption and billing outcomes.
+
+=== Granular Visibility Coverage
+
+Granular visibility is currently available for select usage types, with additional usage types planned. MuleSoft introduces coverage in phases, and coverage can vary over time.
+
+For usage report access and operational drill-down context, see xref:usage-reports.adoc[].
 
 To view your Mule Credits consumption:
 
