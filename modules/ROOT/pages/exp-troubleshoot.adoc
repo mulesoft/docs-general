@@ -411,3 +411,4 @@ If these troubleshooting steps don't resolve your issue:
 * xref:exp-providers-manage.adoc[]
 * xref:exp-scanners-manage.adoc[]
 * xref:browser-support.adoc[]
+include::release-notes::partial$release-notes/rn-known-issues.adoc[tag=knownIssuesSeeAlsoLink]
