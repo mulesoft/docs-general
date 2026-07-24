@@ -18,6 +18,7 @@ MuleSoft Vibes is a purpose-built assistant for the development lifecycle, avail
 - xref:mulesoft-mcp-server::index.adoc[Review MuleSoft MCP Server]
 - xref:anypoint-code-builder::vibes-checkpoints.adoc[Track workspace changes with checkpoints]
 - xref:anypoint-code-builder::vibes-conversation-history.adoc#browse-conversation-history[Browse conversation history]
+- https://trailhead.salesforce.com/content/learn/modules/agentic-integration-with-mulesoft-vibes[Agentic Integration with MuleSoft Vibes]
 
 | image::reuse::lm_analyze_1.png[Get started with MuleSoft Vibes]
 
