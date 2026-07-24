@@ -29,7 +29,6 @@ The CPU limit configuration of each application is summarized at each environmen
 |API Manager	
 |API instances:  API instances in production, preproduction, and unclassified APIs (not associated with an environment) that are managed by API Manager after they are created using add, promote, or import options. 
 a|API instances remain under management until they are deleted. Instances of API Manager are aggregated using a Max Concurrent model with three separate metrics for production, preproduction, and unclassified (APIs that aren't associated with an environment). 
-+
 [NOTE]
 Data for API Manager is available starting in October 2024. 
 
