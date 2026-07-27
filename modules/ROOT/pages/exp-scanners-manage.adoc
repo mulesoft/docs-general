@@ -20,7 +20,7 @@ Re-enable scheduled scanning after a pause.
 * *Scanner Settings*
 +
 Change names, descriptions, credentials, provider scope, or scan-related settings your product exposes, then save, so future runs use the new definition.
-* *Delete Scanner*.
+* *Delete Scanner*
 +
 Remove the scanner from *Providers* when the provider link is no longer authorized or useful. Consider the impact on discovered services in *Portfolio* and on dependent teams before you delete the scanner.
 +

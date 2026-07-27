@@ -24,7 +24,7 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 . Sign in to the enhanced experience through your organization's entry point.
 . In the navigation, select *Platform* > *Providers*.
 
-The Providers page displays the provider list and scanner lists.
+The Providers page displays the provider list and scanner list.
 
 == Provider List
 
@@ -89,7 +89,7 @@ The enhanced experience supports connections to these providers:
 * GoDaddy
 * Google
 * Kong
-* Langchain
+* LangChain
 * Microsoft
 * Snowflake
 
