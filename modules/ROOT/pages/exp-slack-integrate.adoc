@@ -41,12 +41,27 @@ Slackbot can now access information from the MCP Platform Server.
 [[begin-using-agent]]
 == Begin Using the MuleSoft Agent
 
-[NOTE]
+[IMPORTANT]
 ====
-Manage your MuleSoft environment with MuleSoft Agent, an agentic experience available in the control plane. Use MuleSoft Agent to create scanners, apply policies, deploy instances, and perform other management tasks.
+MuleSoft Agent is available on request. To get access, contact your account executive.
+====
 
-To request access, contact your account executive.
-====
+Before getting started, make sure you have:
+
+* An Anypoint Platform account with access to the enhanced experience.
+* Agentforce enabled in your Anypoint Platform and Salesforce organizations by your administrator.
+* The *MuleSoft Omni Agent for Anypoint* permission assigned to your user.
++
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+
+To assign the *MuleSoft Omni Agent for Anypoint* permission across business groups:
+
+. Log in to Anypoint Platform and open *Access Management*.
+. Select the business group where you want to assign the permission.
+. Find the user and assign the *MuleSoft Omni Agent for Anypoint* permission.
+. Repeat for each business group that requires access.
+
+To start using the agent in Slack:
 
 . Open Slack in the workspace your company uses for MuleSoft or platform notifications.
 . Open the MuleSoft app your administrator added.
