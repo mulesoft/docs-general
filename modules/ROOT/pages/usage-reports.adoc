@@ -48,9 +48,9 @@ For more information about how the usage for these features is tracked and bille
 +
 For more information, see the https://help.salesforce.com/s/articleView?id=004811177&type=1[Salesforce Usage Alerts FAQ] knowledge article.
 
-* Runtime Manager vCore allocation information and other metrics appear in Access Management.
+* CloudHub vCore consumption data, including peak usage across CloudHub (CH1) and CloudHub 2.0 (CH2), is available in Usage Reports.
 +
-For more information, see xref:pricing-metrics.adoc#runtime-manager-metrics[Runtime Manager Metrics].
+For more information, see xref:usage-metrics.adoc#cloudhub-vcore-usage[CloudHub vCore Usage].
 
 Government Cloud and Anypoint Private Cloud Edition usages aren't available in usage reports.
 
@@ -64,6 +64,7 @@ The following products are available in usage reports:
 * API Experience Hub
 * API Governance
 * API Manager
+* xref:usage-metrics.adoc#cloudhub-vcore-usage[CloudHub vCore]
 * Omni Gateway
 * Omni Gateway LLM Proxy
 * Intelligent Document Processing (IDP)

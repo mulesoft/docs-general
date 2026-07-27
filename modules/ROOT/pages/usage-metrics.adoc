@@ -8,7 +8,7 @@ Anypoint Platform captures usage metrics across products, but not all metrics ar
 |===
 |Product |Metric Description |Usage Details
 
-.6+|Mule Runtime	
+.8+|Mule Runtime	
 |Mule flow: Flow within a deployed and running Mule app that contains a Mule event source or route APIKit request 
 |Flows are aggregated using a Max Concurrent model. The usage for a month is the highest number of flows that exist in a single given hour during a month.
 
@@ -16,6 +16,10 @@ Anypoint Platform captures usage metrics across products, but not all metrics ar
 |A Mule message counts as a single unit when an event source triggers it. Messages are aggregated using a total of all messages sent during a month.
 |Data throughput: Total amount of data transferred in and out of the infrastructure that runs Mule where the Mule app is deployed 
 |Data throughput counts when the deployed application transfers data to execute its business logic, including but not limited to internal operational network traffic for monitoring, logs, and health checks. Data throughput is aggregated as a sum of all bytes during a month. 
+|vCore Usage in Production: Virtual processing capacity allocated to run Mule applications and APIs in production environments
+|Calculated based on the peak allocated virtual cores assigned to active CloudHub (CH1) and CloudHub 2.0 (CH2) application workers in production environments.
+|vCore Usage in Preproduction: Virtual processing capacity allocated to run Mule applications and APIs in non-production environments, such as sandbox, QA, staging, and development
+|Calculated based on the peak allocated virtual cores assigned to active CloudHub (CH1) and CloudHub 2.0 (CH2) application workers in non-production environments.
 | Cluster capacity: A set of workers or nodes that act as a single deployment target for a given Runtime Fabric instance
 | Allocatable CPU capacity of each node within the Runtime Fabric instance.
 | CPU Limit (Millicores): Maximum amount of CPU resources a worker node in Runtime Fabric can use
@@ -214,9 +218,9 @@ For some customers in the US control plane, MuleSoft offers a pricing and packag
 
 The usage information shown in the usage report tables changes depending on your view.
 
-==== Business Group Details
+==== Usage by Business Group
 
-Select the *Business Group Details* tab to view:
+Select the *Usage by Business Group* tab to view:
 
 [%header%autowidth.spread]
 |===
@@ -232,11 +236,12 @@ For Runtime Fabric, it's the environment the Runtime Fabric instance is associat
 | Cluster | Name of the cluster or Runtime Fabric instance containing the applications, workers, and nodes. 
 
 |Cluster Capacity (Millicores) | Allocatable CPU capacity of each node within the Runtime Fabric instance.
+|vCore Peak | Highest hourly vCore consumption for applications in the selected business group and time period.
 |===
 
-==== Application Details
+==== Usage by Application
 
-Select the *Application Details* tab to view:
+Select the *Usage by Application* tab to view:
 
 [%header%autowidth.spread]
 |===
@@ -253,14 +258,35 @@ Select the *Application Details* tab to view:
 
 | CPU Limit (Millicores) | Maximum amount of CPU allocated by the user that the application can burst to within the shared cluster or Runtime Fabric instance
 
-| CPU Reserve (Millicores) | Amount of CPU allocated by the user to reserve for applications within the Runtime Fabric cluster or instance 
+| CPU Reserve (Millicores) | Amount of CPU allocated by the user to reserve for applications within the Runtime Fabric cluster or instance
 
-| Mule Flows | Total number of flows in the Mule app, calculated by multiplying flows by the number of workers (CloudHub) or replicas (CloudHub 2.0 and Runtime Fabric)
+| HPA Status | Indicates whether Horizontal Pod Autoscaling (HPA) is enabled for the application. Displays Enabled or N/A.
 
-| Mule Messages | Total number of inbound and outbound Mule messages in the Mule app  
+| vCore Peak | Highest hourly vCore consumption for the application within the selected time period.
 
-| Data Throughput (GB) | Total amount of inbound and outbound data in gigabytes (GB) transmitted by the Mule app  
+| vCore Min | Guaranteed base vCore allocation for the application, based on the minimum replica configuration. For CloudHub (CH1) applications, vCore Min equals vCore Peak.
+
+| Mule Flows | Total number of flows in the Mule app, calculated by multiplying flows by the number of workers (CH1) or replicas (CH2 and RTF).
+
+| Mule Messages | Total number of inbound and outbound Mule messages in the Mule app
+
+| Data Throughput (GB) | Total amount of inbound and outbound data in gigabytes (GB) transmitted by the Mule app
 |===
+
+[[cloudhub-vcore-usage]]
+==== CloudHub vCore Usage
+
+MuleSoft samples vCore usage every hour and uses the peak hourly value to calculate the daily and monthly maximum:
+
+* *Hourly*: Peak vCore consumption captured each hour
+* *Daily*: Highest hourly peak within the day
+* *Monthly*: Highest hourly peak within the month
+
+MuleSoft calculates production and preproduction vCore usage separately by using this same peak-rollup model.
+
+For CloudHub 2.0 applications with HPA enabled, an application can scale beyond its guaranteed base allocation, so *vCore Peak* can exceed *vCore Min* during scaling events. Conversely, *vCore Min* can be higher than *vCore Peak* when the guaranteed base allocation exceeds actual consumption during the selected time period.
+
+HPA is available to customers on the new pricing and packaging model.
 
 === Mule Runtime Usage Cards
 
@@ -272,6 +298,8 @@ MuleSoft usage reports cards include:
 * <<max-cpu-preprod>>
 * <<max-cluster-prod>>
 * <<max-cluster-preprod>>
+* <<max-vcore-prod>>
+* <<max-vcore-preprod>>
 
 [[max-mule-flows]]
 === Maximum Mule Flows
@@ -390,7 +418,19 @@ When an event source within a flow of a Mule application is triggered, the event
 [[data-throughput]]
 === Total Data Throughput
 
-Data throughput is all of the network I/O bytes produced by the infrastructure for the Mule runtime server that runs a Mule application. This includes the data that the application produces to execute its business logic, as well as internal operational network traffic such as logs, health checks, and monitoring traffic. For example, data throughput includes inserting a record into a database and the network traffic associated with the app infrastructure, such as log forwarding, control plane connection, and monitoring metrics transfer.  
+Data throughput is all of the network I/O bytes produced by the infrastructure for the Mule runtime server that runs a Mule application. This includes the data that the application produces to execute its business logic, as well as internal operational network traffic such as logs, health checks, and monitoring traffic. For example, data throughput includes inserting a record into a database and the network traffic associated with the app infrastructure, such as log forwarding, control plane connection, and monitoring metrics transfer.
+
+[[max-vcore-prod]]
+=== Maximum CloudHub vCore Usage in Production
+
+This card shows the highest peak cloud vCore consumption across CloudHub (CH1) and CloudHub 2.0 (CH2) applications in production for the selected month.
+It includes the UTC date and time when the peak occurred, which reflects a true peak in consumption rather than an average.
+
+[[max-vcore-preprod]]
+=== Maximum CloudHub vCore Usage in Preproduction
+
+This card shows the highest peak cloud vCore consumption across CloudHub (CH1) and CloudHub 2.0 (CH2) applications in preproduction for the selected month.
+It includes the UTC date and time when the peak occurred, which helps you accurately track and attribute usage spikes.
 
 == Object Store Usage
 
@@ -586,7 +626,6 @@ For nodes not intended to run Mule apps, exclude the nodes from your Runtime Fab
 
 [NOTE]
 Use a dedicated cluster for Runtime Fabric instances for accurate measurements
-
 
 == See Also
 
