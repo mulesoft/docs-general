@@ -1,7 +1,7 @@
-= Using Akamai API Security Scanner for Risk Correlation
+= Using Akamai for Risk Correlation
 :keywords: akamai api security scanner, akamai integration, security risk, vulnerability findings, incident correlation, portfolio catalogs
 
-Use Akamai API Security scanner to correlate security findings and risk signals with services that already exist in *Portfolio* catalogs. The scanner doesn't import or register third-party services. It applies Akamai security correlation so teams can review risk scores, findings, and incidents in one governance workflow for APIs and MCP services.
+Use Akamai to correlate security findings and risk signals with services that already exist in *Portfolio* catalogs. The scanner doesn't import or register third-party services. It applies Akamai security correlation so teams can review risk scores, findings, and incidents in one governance workflow for APIs and MCP services.
 
 == How Akamai Scanner Differs from Import Scanners
 
@@ -41,7 +41,7 @@ If some environments show that correlation policy isn't applied, you can apply m
 
 . Open *Platform* > *Providers* and select the configured Akamai scanner.
 . In *Overview*, check the *Akamai Correlation Policy* status.
-. If status shows missing environments, click *Retry N missing* to apply policy only to those environments.
+. If status shows missing environments, click *Check again* to apply policy only to those environments.
 . Wait for status to change to *Applied* and confirm all target environments are covered.
 
 If policy application fails, verify your Admin API write permissions and environment access, then retry.
@@ -67,6 +67,9 @@ Moderate risk. Prioritize remediation after high-risk issues.
 
 High::
 Elevated risk. Investigate and remediate first.
+
+Critical::
+Highest urgency risk. Remediate immediately.
 
 == Remediate Risks from the API Conformance Tab
 

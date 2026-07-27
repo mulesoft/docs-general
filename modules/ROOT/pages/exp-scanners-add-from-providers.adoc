@@ -53,40 +53,26 @@ Open the catalog that matches the service type you want (*Agents*, *APIs*, *MCP 
 
 include::_partials/exp-navigation-labels.adoc[tag=ExpNavigationLabels]
 
-[IMPORTANT]
-====
-The Akamai API Security scanner behaves differently from import-based scanners. It does not discover and import services from third-party providers into *Portfolio* catalogs.
-
-Instead, it scans third-party provider security policies and observed security data, correlates those results to existing services, and surfaces risk scores and vulnerability findings in related *Portfolio* catalogs.
-====
-
-For Akamai-specific setup and result interpretation, see xref:exp-akamai-api-security-scanner.adoc[].
-
-NOTE: *Akamai API Security* appears in the provider list only when your administrator has enabled the Akamai API Security feature for your organization.
 
 == Akamai API Security Scanner
 
-When you add an Akamai API Security scanner, the wizard includes a final step — *Apply Akamai Correlation Policy* — after the scanner is saved. This step is required for Akamai to attribute its security findings back to your MuleSoft APIs. The policy stamps two correlation headers on API responses, so Akamai can match its scan results to the right instances.
+The Akamai API Security scanner behaves differently from import-based scanners. It does not discover and import services from third-party providers into *Portfolio* catalogs. Instead, it scans third-party provider security policies and observed security data, correlates those results to existing services, and surfaces risk scores and vulnerability findings in related *Portfolio* catalogs. *Akamai API Security* appears in the provider list only when your administrator has enabled the Akamai API Security feature for your organization.
 
-In this step:
+When you save an Akamai API Security scanner, the system automatically starts *Akamai Correlation Policy* application. This policy is required for Akamai to attribute security findings to your MuleSoft APIs by stamping correlation headers on API responses.
 
-. Select the environments to apply the policy across. All environments are selected by default.
-. Review the policy artifacts fetched live from Exchange (policy definition, Flex Gateway implementation, and Mule 4 implementation). The policy is zero-config and applies in the response phase only.
-. Select *Apply policy & finish* to start the policy application, or *Skip — apply later* to proceed to the scanner detail page and apply from there.
-
-The time to apply varies by the number of API instances in the selected environments (typically one to six minutes for most organizations). API instances created after the policy is applied are automatically covered — no re-apply is needed.
+For setup details, policy behavior, and result interpretation, see xref:exp-akamai-risk-correlation.adoc[].
 
 === Monitor Correlation Policy Status
 
 After creating an Akamai scanner, the scanner detail page shows an *Akamai Correlation Policy* section with the live policy application status:
 
-* *Correlation policy not applied* — amber warning with an *Apply now* button.
+* *Correlation policy not applied* — amber warning with an *Apply policy now* button.
 * Partial — a progress indicator showing how many environments are covered while the apply workflow runs.
 * *Applied* — green badge confirming all environments are covered.
 
 When the policy is applied, the section shows a table with one row per (environment, runtime) combination. Columns: Environment, Runtime (Flex Gateway or Mule 4), Status (Applied or Disabled), APIM Policy ID, and Asset Version.
 
-If some environments show no policy binding, select *Retry N missing* to retry the policy application for those environments only. The operation is safe to repeat.
+If some environments show no policy binding, select *Check again* to retry the policy application for those environments only. The operation is safe to repeat.
 
 == Scanner Configuration Overview
 
@@ -101,7 +87,7 @@ For ongoing operations (pause, edit, or delete), see xref:exp-scanners-manage.ad
 == See Also
 
 * xref:exp-scanners-prerequisites-reference.adoc[]
-* xref:exp-akamai-api-security-scanner.adoc[]
+* xref:exp-akamai-risk-correlation.adoc[]
 * xref:exp-services-connect-providers-to-add.adoc[]
 * xref:exp-scanners-manage.adoc[]
 * xref:exp-services-add-to-portfolio.adoc[]

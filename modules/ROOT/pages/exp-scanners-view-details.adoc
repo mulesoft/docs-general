@@ -41,5 +41,5 @@ Shows correlation and governance enrichment activity for existing services, incl
 
 * xref:exp-providers-manage.adoc[]
 * xref:exp-scanners-add-from-providers.adoc[]
-* xref:exp-akamai-api-security-scanner.adoc[]
+* xref:exp-akamai-risk-correlation.adoc[]
 * xref:exp-scanners-manage.adoc[]

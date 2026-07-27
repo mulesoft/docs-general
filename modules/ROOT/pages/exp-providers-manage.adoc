@@ -15,7 +15,7 @@ Before getting started, make sure you have:
 ** Exchange: Exchange Contributor
 ** API Manager: API Creator
 ** API Manager: Manage Policies
--- 
+--
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
@@ -58,7 +58,7 @@ To see detailed information about a scanner, including scan history and configur
 For detailed tab behavior and scanner-type differences, see xref:exp-scanners-view-details.adoc[].
 
 For information about managing scanners, see xref:exp-scanners-manage.adoc[].
-For Akamai-specific setup and result interpretation, see xref:exp-akamai-api-security-scanner.adoc[].
+For Akamai-specific setup and result interpretation, see xref:exp-akamai-risk-correlation.adoc[].
 
 == Connect a New Provider
 
@@ -82,20 +82,20 @@ In list and card views, the numeric value shows Akamai correlation policy covera
 
 The enhanced experience supports connections to these providers:
 
-* Akamai API Security
+* Akamai
 * Amazon
 * Anthropic
 * Databricks
-* GoDaddy 
-* Google 
-* Kong 
+* GoDaddy
+* Google
+* Kong
 * Langchain
 * Microsoft
 * Snowflake
 
 [NOTE]
 ====
-When scanning Kong Konnect, the enhanced experience discovers gateway-level plugin information in addition to services.
+When scanning Kong, the enhanced experience discovers gateway-level plugin information in addition to services.
 
 *Akamai API Security* is available only when your administrator has enabled the feature for your organization. When enabled, it appears in the *Not Connected* section of the Providers sidebar.
 ====
@@ -105,7 +105,7 @@ The specific providers available depend on your organization's enabled products 
 == See Also
 
 * xref:exp-services-connect-providers-to-add.adoc[]
-* xref:exp-akamai-api-security-scanner.adoc[]
+* xref:exp-akamai-risk-correlation.adoc[]
 * xref:exp-scanners-view-details.adoc[]
 * xref:exp-scanners-add-from-providers.adoc[]
 * xref:exp-scanners-manage.adoc[]

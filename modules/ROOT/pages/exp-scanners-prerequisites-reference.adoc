@@ -12,31 +12,31 @@ Before adding any scanner, make sure you have:
 
 == Scanner Prerequisites Cross-Reference
 
-[cols="1,1,1,2",options="header"]
+[cols="1,1,2,2",options="header"]
 |===
 | Scanner
 | Scanner Type
-| Required Roles
-| Required Credentials and Permissions
+| Required Credentials, Roles, and Permissions
+| Required Scopes, Endpoints, and Other
 
 | Amazon Bedrock
 | Agent
-| Exchange Administrator
 a|
 * AWS region knowledge
 * Access key ID and secret access key
-* `bedrock:ListAgents`
-* `bedrock:GetAgent`
-* `bedrock:ListAgentAliases`
-* `bedrock:GetAgentAlias`
-* `bedrock:ListAgentVersions`
-* `bedrock:GetAgentVersion`
+* Amazon Bedrock permissions:
+** `bedrock:ListAgents`
+** `bedrock:GetAgent`
+** `bedrock:ListAgentAliases`
+** `bedrock:GetAgentAlias`
+** `bedrock:ListAgentVersions`
+** `bedrock:GetAgentVersion`
 * Optional for agent invocation workflows: `bedrock:InvokeModel`, `bedrock:InvokeAgent`, `bedrock:InvokeInlineAgent`
-* Agents must have an alias linked to a version and an invocable URL
+
+| Agents must have an alias linked to a version and an invocable URL
 
 | Amazon Bedrock AgentCore Runtime
 | Agent
-| Exchange Administrator
 a|
 * Active AWS account and AgentCore access
 * AWS region
@@ -48,90 +48,95 @@ a|
 * `bedrock-agentcore:ListAgentRuntimeVersions`
 * `bedrock:GetAgent`
 * `bedrock:ListAgents`
-* Agents must be published with an active endpoint/version
+
+| Agents must be published with an active endpoint/version
 
 | Anthropic Claude Managed Agents
 | Agent
-| Exchange Administrator
 a|
 * Paid Anthropic account
 * Claude API key
+| pass:[&#160;]
 
 | Databricks Agent Bricks
 | Agent
-| Exchange Administrator
 a|
 * Databricks workspace access
 * Workspace URL
 * Client ID and client secret
+
+a| 
 * Service principal `CAN_QUERY` on serving endpoints
 * `CAN_VIEW` or higher on endpoint metadata APIs
 * Discoverable agents must be custom Unity Catalog models in `READY` state
 
 | GoDaddy ANS
 | Agent
-| Exchange Administrator
 a|
 * API key
 * API secret
+| pass:[&#160;]
 
 | Google Gemini Agent Enterprise Platform
 | Agent
-| Exchange Administrator, Vertex AI Viewer
 a|
 * GCP project ID
 * Service account email
 * Private key
+* Vertex AI Viewer role
+| pass:[&#160;]
 
 | LangChain LangSmith
 | Agent
-| Exchange Administrator
 a|
 * LangSmith Plus plan (or higher) workspace
 * LangSmith API key
 * LangSmith workspace ID
-* Optional API host for region routing (for example, US or EU cloud host)
+
+| Optional API host for region routing (for example, US or EU cloud host)
 
 | Microsoft Azure Copilot
 | Agent
-| Exchange Administrator, Copilot Studio Scanner Role
 a|
 * Azure app registration
 * Tenant ID, client ID, client secret
 * App added as an Application User in Power Platform
-* Scope set to Dataverse environment URL
+
+* Copilot Studio Scanner role
+| Scope set to Dataverse environment URL
 
 | Microsoft Foundry
 | Agent
-| Exchange Administrator, Azure AI Developer
 a|
 * Active Azure subscription
 * Azure app registration
 * Tenant ID, client ID, client secret
-* Project endpoint URLs (discovery is project-specific)
+
+* Azure AI Developer role
+| Project endpoint URLs (discovery is project-specific)
 
 | Snowflake Cortex AI
 | Agent
-| Exchange Administrator, Snowflake ACCOUNTADMIN
 a|
 * Snowflake account with Cortex Agents enabled (Enterprise edition)
 * A user with `ACCOUNTADMIN` privileges for one-time setup only
 * At least one Cortex Agent created in a schema to be scanned
-* Scanner egress IP ranges from your Anypoint deployment team (`<SCANNER_EGRESS_CIDRS>`)
+
 * Snowflake account URL
 * Programmatic access token (PAT)
+* Snowflake ACCOUNTADMIN role
+| Scanner egress IP ranges from your Anypoint deployment team (`<SCANNER_EGRESS_CIDRS>`)
 
 | Amazon API Gateway
 | API
-| Exchange Administrator
 a|
 * IAM read-only policy for API Gateway (for example, `apigateway:GET`)
 * AWS region knowledge
 * AWS access key ID and secret access key
+| pass:[&#160;]
 
 | Azure API Management
 | API
-| Exchange Administrator, API Management Service Reader
 a|
 * Tenant ID
 * Client ID
@@ -139,25 +144,28 @@ a|
 * Subscription ID
 * Resource group
 * Service name
+* API Management Service Reader role
+| pass:[&#160;]
 
 | Google Apigee
 | API
-| Exchange Administrator, Apigee Read-only Admin
 a|
 * GCP project ID
 * Service account email
 * Private key
+* Apigee Read-only Admin role
+| pass:[&#160;]
 
 | Kong Gateway
 | API
-| Exchange Administrator, Kong Control Plane Viewer
 a|
 * Kong Gateway region
 * Personal access token (PAT)
+* Kong Control Plane Viewer role
+| pass:[&#160;]
 
 | Akamai Security
 | API Security
-| Exchange Administrator
 a|
 * Akamai Security base URL
 * Akamai Security client ID
@@ -165,23 +173,24 @@ a|
 * Access to create service accounts in Akamai Security
 * Access to apply Akamai correlation policy in target environments
 * Existing services in *Portfolio* catalogs for correlation targets
+| pass:[&#160;]
 
 | Amazon Bedrock AgentCore MCP
 | MCP
-| Exchange Administrator
 a|
 * Active AWS account
 * AWS region
 * Access key ID and secret access key
-* `bedrock-agentcore:ListAgentRuntimes`
-* `bedrock-agentcore:GetAgentRuntime`
-* `bedrock-agentcore:ListAgentRuntimeVersions`
-* `bedrock-agentcore:ListAgentRuntimeEndpoints`
-* `bedrock-agentcore:InvokeAgentRuntime`
+* An IAM user with an inline policy that allows these permissions:
+** `bedrock-agentcore:ListAgentRuntimes`
+** `bedrock-agentcore:GetAgentRuntime`
+** `bedrock-agentcore:ListAgentRuntimeVersions`
+** `bedrock-agentcore:ListAgentRuntimeEndpoints`
+** `bedrock-agentcore:InvokeAgentRuntime`
+| pass:[&#160;]
 
 | Azure API Management MCP Server
 | MCP
-| Exchange Administrator, API Management Service Reader
 a|
 * Tenant ID
 * Client ID
@@ -189,14 +198,17 @@ a|
 * Subscription ID
 * Resource group
 * Service name
+* API Management Service Reader role
+| pass:[&#160;]
 
 | Snowflake MCP Server
 | MCP
-| Exchange Administrator, Snowflake ACCOUNTADMIN
 a|
 * Snowflake Enterprise account with MCP servers enabled
 * Snowflake account URL
 * Programmatic access token (PAT)
+* Snowflake ACCOUNTADMIN role
+| pass:[&#160;]
 
 |===
 
