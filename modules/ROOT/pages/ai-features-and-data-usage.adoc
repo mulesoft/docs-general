@@ -27,7 +27,7 @@ Yes
 .2+| MuleSoft Vibes
 | Agent-Driven Development (flow generation, API specification generation, asset publishing, and more)
 a|
-This feature uses natural language prompts that you type and, with your permission, project files such as code, requirements, and configuration, along with context that you attach such as logs, terminal output, and URLs. It grounds responses with MuleSoft metadata, such as connector and component descriptions, API design documentation, and public Anypoint Exchange metadata.
+This feature uses natural language prompts that you type and, with your permission, project files and folders such as code, requirements, and configuration, along with context that you attach such as logs, terminal output, URLs, and images. It grounds responses with MuleSoft metadata, such as connector and component descriptions, API design documentation, and public Anypoint Exchange metadata.
 a|
 Yes
 
@@ -58,6 +58,33 @@ a|
 Yes
 
 Google Gemini 2.5 Flash
+
+| Connector Builder
+| AI-assisted connector generation
+a|
+This feature uses API specifications that you provide, such as OAS, along with prompt input, connector configuration metadata such as connections, operations, pagination, triggers, and value providers, and project context used during connector generation, testing, packaging, and release workflows.
+a|
+Yes
+
+Pending feature owner confirmation for provider and model wording.
+
+| Anypoint Partner Manager
+| View Message Summaries
+a|
+This feature uses source or target message payloads that you open from message details and summarize. The generated summary can include key message details, such as message type, sender, receiver, and business content contained in the message payload.
+a|
+Yes
+
+Einstein must be enabled in CloudHub 1.0, CloudHub 2.0, or Runtime Fabric deployment settings. Pending feature owner confirmation for provider and model wording.
+
+| Enhanced MuleSoft Experience
+| MuleSoft Agent
+a|
+This feature uses the prompts that you submit, current page context in the enhanced experience, and the portfolio, governance, monitoring, and cost metadata that your user is authorized to access through Access Management permissions, including organization and environment context.
+a|
+Yes
+
+Pending feature owner confirmation for provider and model wording.
 |===
 
 == See also
