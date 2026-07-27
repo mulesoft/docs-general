@@ -4,6 +4,22 @@
 
 Anypoint Platform captures usage metrics across products, but not all metrics are billable or reflected in usage reports.
 
+== Subscription Plan
+
+The available usage types depend on your Anypoint pricing plan.
+
+[%header%autowidth.spread]
+|===
+| Subscription Plan | Available Usage Types
+
+| Integration Starter, Integration Advanced, API Management
+| Mule Flows, Mule Messages, Data Throughput, API Calls for Omni/Flex Gateway, API Manager Pre-Production, API Manager Production, APIs Under Governance, Anypoint MQ API request, Object Store API request
+|===
+
+== Usage Type Description
+
+The following table defines usage metrics by product and explains how each metric is calculated for reporting.
+
 [cols=3*]
 |===
 |Product |Metric Description |Usage Details
@@ -50,14 +66,6 @@ a|If an API is governed, all versions of that API are considered one governed AP
 | Total tokens: Total number of tokens used in interactions between an LLM Proxy and a specific LLM Model
 | Some LLM Providers, such as Gemini, use thinking tokens. Total tokens are the sum of prompt tokens, completion tokens, and thinking tokens if applicable.
 
-|Composer	
-|Composer task: Any action executed on a Composer connector, including but not limited to read, create, update, and delete 
-|Composer tasks are aggregated as a total of all actions during a month.
-
-|RPA	
-|Robotic Process Automation (“RPA”) bot minutes: The number of minutes running process automations across all bot sessions 
-|A single bot can run multiple parallel sessions, with RPA bot minutes counting for each parallel session. You can configure multiple bots to run the same process, with RPA bot minutes counting for each of these separate bot sessions. Test runs or process runs in the test phase are also counted towards RPA bot minutes.
-
 |Anypoint MQ
 |Anypoint MQ API request: A request made to retrieve one or more messages from the Anypoint MQ APIs 
 |Anypoint MQ uses API requests to calculate billing.
@@ -72,28 +80,6 @@ Anypoint MQ API requests are available via API and aggregated on usage reports.
 |DataGraph orchestration: An API request made by Anypoint DataGraph to the source APIs to get data for the GraphQL API request made to Anypoint DataGraph 
 |Orchestrations are not currently aggregated on usage reports.
 
-| Intelligent Document Processing (IDP)
-| Intelligent Document Processing (IDP) Document Pages: A single page processed by IDP
-| IDP document actions might process documents that have more than one page, with each page counting separately. When RPA executes document actions, it also counts towards document pages and additionally consumes the corresponding RPA Bot Minutes, accounting for the time the RPA process runs.
-|===
-
-The following pricing models are available for Anypoint Platform. Use this summary to understand where to review usage and finalized billing information for each model.
-
-[%header%autowidth.spread]
-|===
-| Pricing Model | Usage Visibility
-
-| *vCore*
-| Review vCore usage in Anypoint Usage Reports. For detailed vCore metrics and behavior, see xref:usage-metrics.adoc#mule-runtime-usage[] and xref:usage-reports.adoc[].
-
-| *Usage-Based Pricing (UBP)*
-| Review UBP usage in Anypoint Usage Reports by product and metric. Use this page for product-specific metric definitions.
-
-| *Mule Credits*
-| Review granular operational usage in Anypoint Usage Reports. Use Salesforce Digital Wallet for finalized Mule Credit totals, statements, and billing outcomes. For details, see xref:mule-credits-usage-and-rates.adoc[].
-
-| *Automation*
-| Review granular automation usage and rates in xref:automation-credits-usage-and-rates.adoc[]. Use monthly statements as the source of truth for finalized billing outcomes.
 |===
 
 == Anypoint MQ Usage
