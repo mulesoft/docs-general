@@ -1,7 +1,7 @@
 = Using Akamai for Risk Correlation
 :keywords: akamai api security scanner, akamai integration, security risk, vulnerability findings, incident correlation, portfolio catalogs
 
-Use Akamai to correlate security findings and risk signals with services that already exist in *Portfolio* catalogs. The scanner doesn't import or register third-party services. It applies Akamai security correlation so teams can review risk scores, findings, and incidents in one governance workflow for APIs and MCP services.
+Use Akamai for risk correlation to map external security findings to the right services in *Portfolio*. Teams get one view to triage risk, track incidents, and remediate faster. To enable this correlation, configure an Akamai API Security scanner that connects your Akamai account, runs scheduled scans, and surfaces mapped findings on related services in *Portfolio*. The scanner does not import or register third-party services. It correlates risk scores, findings, and incidents for APIs and MCP services in one governance workflow.
 
 == How Akamai Scanner Differs from Import Scanners
 
@@ -19,6 +19,8 @@ Before setting up the Akamai scanner, make sure you have:
 For credential and role details, see xref:exp-scanners-prerequisites-reference.adoc[].
 
 == Set Up the Akamai Scanner
+
+Before you set up the scanner, review the prerequisites for Akamai scanners in xref:exp-scanners-prerequisites-reference.adoc[].
 
 . From *Platform* > *Providers*, select *Akamai*.
 . Enter connection values, and test the connection.
