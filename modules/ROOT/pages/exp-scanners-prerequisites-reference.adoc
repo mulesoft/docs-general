@@ -23,7 +23,20 @@ Before adding any scanner, make sure you have:
 a|
 *Credentials:* Access key ID and secret access key; AWS region
 
-*Permissions:* `bedrock:ListAgents`, `bedrock:GetAgent`, `bedrock:ListAgentAliases`, `bedrock:GetAgentAlias`, `bedrock:ListAgentVersions`, `bedrock:GetAgentVersion`; optional for agent invocation workflows: `bedrock:InvokeModel`, `bedrock:InvokeAgent`, `bedrock:InvokeInlineAgent`
+*Permissions:*
+
+* `bedrock:ListAgents`
+* `bedrock:GetAgent`
+* `bedrock:ListAgentAliases`
+* `bedrock:GetAgentAlias`
+* `bedrock:ListAgentVersions`
+* `bedrock:GetAgentVersion`
+
+*Optional (for agent invocation workflows):*
+
+* `bedrock:InvokeModel`
+* `bedrock:InvokeAgent`
+* `bedrock:InvokeInlineAgent`
 
 *Setup:* Agents must have an alias linked to a version and an invocable URL
 
@@ -34,7 +47,15 @@ a|
 
 *Account:* Active AWS account with AgentCore access
 
-*Permissions:* `bedrock-agentcore:ListAgentRuntimes`, `bedrock-agentcore:ListAgentRuntimeEndpoints`, `bedrock-agentcore:GetAgentCard`, `bedrock-agentcore:GetAgentRuntime`, `bedrock-agentcore:ListAgentRuntimeVersions`, `bedrock:GetAgent`, `bedrock:ListAgents`
+*Permissions:*
+
+* `bedrock-agentcore:ListAgentRuntimes`
+* `bedrock-agentcore:ListAgentRuntimeEndpoints`
+* `bedrock-agentcore:GetAgentCard`
+* `bedrock-agentcore:GetAgentRuntime`
+* `bedrock-agentcore:ListAgentRuntimeVersions`
+* `bedrock:GetAgent`
+* `bedrock:ListAgents`
 
 *Setup:* Agents must be published with an active endpoint/version
 
@@ -152,7 +173,13 @@ a|
 
 *Account:* Active AWS account
 
-*Permissions:* IAM user with an inline policy that allows `bedrock-agentcore:ListAgentRuntimes`, `bedrock-agentcore:GetAgentRuntime`, `bedrock-agentcore:ListAgentRuntimeVersions`, `bedrock-agentcore:ListAgentRuntimeEndpoints`, `bedrock-agentcore:InvokeAgentRuntime`
+*Permissions:* IAM user with an inline policy that allows:
+
+* `bedrock-agentcore:ListAgentRuntimes`
+* `bedrock-agentcore:GetAgentRuntime`
+* `bedrock-agentcore:ListAgentRuntimeVersions`
+* `bedrock-agentcore:ListAgentRuntimeEndpoints`
+* `bedrock-agentcore:InvokeAgentRuntime`
 
 | Azure API Management MCP Server
 | MCP
