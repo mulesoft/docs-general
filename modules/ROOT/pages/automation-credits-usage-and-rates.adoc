@@ -36,34 +36,6 @@ MuleSoft - Automation - Additional Credits (100) - (Gold, Platinum, Titanium)
 | xref:mulesoft-automation-credits-1-0.adoc[MuleSoft Automation Credits 1.0]
 |===
 
-== Usage Type Description
-
-The following table defines automation usage metrics by product and explains how each metric is calculated for reporting.
-
-[cols=3*]
-|===
-|Product |Metric Description |Usage Details
-
-|Composer
-|Composer task: Any discrete action executed on a Composer connector, including but not limited to read, create, update, and delete.
-|Calculated on a per-action basis and aggregated as the total number of tasks completed within a billing cycle.
-
-.2+|RPA (Robotic Process Automation)
-|RPA bot minutes: The total duration (in minutes) spent running process automations across all active bot sessions.
-|Calculated by tracking active execution time. Parallel bot sessions, multi-bot processes, and test-phase runs each count toward total bot minutes.
-
-|RPA API Calls: Programmatic HTTP or REST requests used to trigger, monitor, or manage RPA bot workflows from external applications.
-|Calculated on a per-request basis by summing all individual API calls made to the RPA Manager or RPA Bot API.
-
-|Intelligent Document Processing (IDP)
-|IDP Document Pages: A single physical or digital document page processed by IDP document actions.
-|Calculated per page processed (each page of multi-page documents counts separately). IDP actions executed by RPA consume document pages and corresponding RPA Bot Minutes.
-
-|MuleSoft for Flow: Integration
-|Integration Tasks: A discrete execution of integration capabilities within Salesforce Flow.
-|Calculated in real time per individual task execution, enabling immediate monitoring and aggregation of total consumption.
-|===
-
 == MuleSoft Automation Credits
 
 A quantity of Automation Credits is included with certain MuleSoft Services, with the specific entitlement indicated on the Usage Details table on the Order Form for such Services. Automation Credits are consumed as you create and execute automations based on the rates in the following table. While MuleSoft Automation Credits 1.0 uses a conversion-based model, MuleSoft Automation Credits 2.0 and 3.0 use multiplier rates. Credit usage rates differ by subscription plan. Refer to the column that corresponds to your credit system.
@@ -73,6 +45,11 @@ IMPORTANT: As of February 18, 2026, Flow Orchestration is included for customers
 [%header,cols="1,2,2,2"]
 |===
 | Usage Type | MuleSoft Automation Credits 3.0 | MuleSoft Automation Credits 2.0 | MuleSoft Automation Credits 1.0
+
+| *Visibility and Reporting*
+| *Digital Wallet:* Automation Credits 3.0 provides an instant visibility of credit consumption.
+| *Anypoint Reports (Monthly):* Usage aggregated and reported via Sequoia on a monthly cycle.
+| *Anypoint Reports (Monthly):* Legacy reporting via Sequoia based on monthly usage aggregates.
 
 | *Flow Orchestration Runs*
 | *As of February 18, 2026, for Enterprise and Higher Editions*: Included +
@@ -133,16 +110,19 @@ The method for viewing usage and handling billing varies based on the type of Au
 
 [%header%autowidth.spread]
 |===
-| Usage Type | Usage Visibility
+| Usage Type | Usage Visibility | Billing (monthly statements and overage)
 
 | MuleSoft Automation Credits 3.0
 | Digital Wallet (and optionally Anypoint Usage Reports if you have an Anypoint Platform org)
+| Digital Wallet
 
 | MuleSoft Automation Credits 2.0
 | Anypoint Usage Reports
+| Sequoia
 
 | MuleSoft Automation Credits 1.0
 | Anypoint Usage Reports
+| Sequoia
 |===
 
 == Monthly Account Summary Emails
