@@ -93,7 +93,7 @@ Use Anypoint Usage Reports to investigate consumption spikes, understand which b
 === When to Use Each View
 
 * Use *Anypoint Usage Reports* to investigate what is driving consumption across usage types, business groups, and applications.
-* Use *Salesforce Digital Wallet* to review finalized monthly consumption and billing outcomes.
+* Use *Salesforce Digital Wallet* to review finalized daily and monthly with usage type breakdown consumption and billing outcomes.
 
 === Granular Visibility Coverage
 
