@@ -1,7 +1,7 @@
 = Enhanced MuleSoft Experience and Anypoint Platform Comparison
 :keywords: enhanced mulesoft experience, anypoint platform comparison, task management, platform benefits, mulesoft migration, platform differences
 
-Both the enhanced MuleSoft experience and Anypoint Platform include robust capabilities, but they emphasize different strengths, especially if you manage AI services such as agents, LLM proxies, and MCP servers next to APIs and gateways.
+Both the enhanced MuleSoft experience and Anypoint Platform include robust capabilities, but they emphasize different strengths, especially if you manage AI services such as agents, Model proxies, and MCP servers next to APIs and gateways.
 
 Adopting the new experience gives you a fuller way to manage and optimize AI services, with the flexibility and governance modern AI-driven environments need. You configure AI policies and map relationships among services faster and more seamlessly in the new experience because the UI targets that portfolio. The enhanced experience is especially useful when AI is central to your strategy.
 
@@ -9,7 +9,7 @@ You still rely on Anypoint Platform for API and integration work, such as design
 
 == Benefits of Adopting the Experience
 
-Unified Relationships Across Entity Types:: *Overview* and graph-style context show how agents, MCP servers, LLM proxies, APIs, and gateways connect. You can reason about dependencies and impact more easily than when each silo lives only in its legacy console.
+Unified Relationships Across Entity Types:: *Overview* and graph-style context show how agents, MCP servers, Model proxies, APIs, and gateways connect. You can reason about dependencies and impact more easily than when each silo lives only in its legacy console.
 Governance Framed for AI as Well as APIs:: You apply and review governance across domains such as access and security, performance and cost, data privacy and integrity, and compliance and observability, aligned to the asset you're viewing. Policy and conformance work stays adjacent to the asset instead of only in a separate API-only mental model.
 Cost and Usage Signals for AI Operations:: The experience includes cost management tooling aimed at portfolio spend, including visibility into token usage and optimization strategies for MCP servers and related AI paths. Use it when you need instance-level usage context tied to the same catalog as the rest of the portfolio.
 Instance-Level Policy Control:: For instances backed by Omni Gateway where the product supports it, the experience elevates instance-level governance, including options to tune policy order and draw from a named policy catalog. Use the enhanced experience when you need fine-grained control in the portfolio UI, and use the deeper runtime-only workflows in Anypoint Platform when the experience links you there.

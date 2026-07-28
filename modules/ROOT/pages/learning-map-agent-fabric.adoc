@@ -47,11 +47,11 @@ Use Anypoint Exchange to discover agentic assets for reuse across your enterpris
 
 Build your agent network and coordinate brokers and agents using a declarative YAML approach. 
 
-- xref:anypoint-code-builder::af-get-started.adoc[Get Started with Agent Networks]
-- xref:anypoint-code-builder::af-create-agent-network.adoc[Build an Agent Network Project in Anypoint Code Builder]
-- xref:anypoint-code-builder::af-define-your-agent-network-specification.adoc[Define the Agent Network in a YAML File]
-- xref:anypoint-code-builder::af-publish-agent-network-assets.adoc[Publish the Agent Network Project to Exchange]
-- xref:anypoint-code-builder::af-deploy-agent-network-targets.adoc[Deploy the Agent Network Assets to Exchange]
+- xref:agent-network::af-get-started.adoc[Get Started with Agent Networks]
+- xref:agent-network::af-create-agent-network.adoc[Build an Agent Network Project in Anypoint Code Builder]
+- xref:agent-network::af-define-your-agent-network-specification.adoc[Define the Agent Network in a YAML File]
+- xref:agent-network::af-publish-agent-network-assets.adoc[Publish the Agent Network Project to Exchange]
+- xref:agent-network::af-deploy-agent-network-targets.adoc[Deploy the Agent Network Assets to Exchange]
 |===
 
 [.lm-table, cols="1a,1a", width="66%", grid="none"]
@@ -59,7 +59,7 @@ Build your agent network and coordinate brokers and agents using a declarative Y
 | image::lm_build_1.png[""]
 [.lm-bold]##Govern and Secure the Agent Network##
 
-Apply policies to your agents, brokers, LLM proxies, and MCP servers to help manage security and control traffic.
+Apply policies to your agents, brokers, Model proxies, and MCP servers to help manage security and control traffic.
 
 - xref:api-manager::create-instance-task-agent-tool.adoc[Add an Omni Gateway Agent or Tool Instance in API Manager]
 - https://videos.mulesoft.com/watch/2E2PkqzMnLEjoDhL5YkywT[Watch a Video to Learn About AI Gateway from MuleSoft]
