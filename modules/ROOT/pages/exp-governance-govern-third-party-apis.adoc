@@ -40,7 +40,7 @@ Follow these steps to govern APIs from third-party providers:
 
 == See Also
 
-* xref:exp-governance-setup-third-party-providers.adoc[Connect to Third-Party API Providers]
+* xref:exp-services-view-details.adoc[]
 * xref:exp-governance-create-strategy.adoc[Create Governance Strategies]
 // FLAG: Aug 13 release (policy write scope). Link to the Policy Library apply topic, which is commented out until the Aug 13 write release. Uncomment together with that topic.
 // * xref:exp-governance-policy-library-apply.adoc[Browse the Policy Library]
