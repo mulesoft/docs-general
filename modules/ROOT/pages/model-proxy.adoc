@@ -11,7 +11,7 @@ LLM Proxy is supported on Managed Omni Gateway and Self-Managed Omni Gateway run
 
 By creating a proxy, the user defines a singular LLM service that can receive requests for multiple providers. This simplifies the developer experience. You can add new models to the service seamlessly without changing the endpoint.
 
-image::llm-proxy.png["An LLM Proxy with a single endpoint routing requests to multiple LLM providers"]
+image::model-proxy.png["An LLM Proxy with a single endpoint routing requests to multiple LLM providers"]
 
 Depending on configuration, the proxy then sends the request to the model defined by the user or dynamically sends the request to the provider that best matches the request:
 
