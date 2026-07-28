@@ -36,15 +36,15 @@ The following table defines usage metrics by product and explains how each metri
 |Calculated based on the peak allocated virtual cores assigned to active CloudHub (CH1) and CloudHub 2.0 (CH2) application workers in production environments.
 |vCore Usage in Preproduction: Virtual processing capacity allocated to run Mule applications and APIs in non-production environments, such as sandbox, QA, staging, and development
 |Calculated based on the peak allocated virtual cores assigned to active CloudHub (CH1) and CloudHub 2.0 (CH2) application workers in non-production environments.
-| Cluster capacity: A set of workers or nodes that act as a single deployment target for a given Runtime Fabric instance
-| Allocatable CPU capacity of each node within the Runtime Fabric instance.
-| CPU Limit (Millicores): Maximum amount of CPU resources a worker node in Runtime Fabric can use
+|Cluster capacity: A set of workers or nodes that act as a single deployment target for a given Runtime Fabric instance
+|Allocatable CPU capacity of each node within the Runtime Fabric instance.
+|CPU Limit (Millicores): Maximum amount of CPU resources a worker node in Runtime Fabric can use
 a| The amount of CPU usage is aggregated over a specific period of time, such as an hour or a day.  
 
 The CPU limit configuration of each application is summarized at each environment ID, then at each business group, and then at the root organization ID for preproduction (sandbox) and production environment types separately.
 
-| CPU Reserve (Millicores): A guaranteed minimum amount of CPU resources allocated to a worker node in the Runtime Fabric instance 
-| CPU reserve is aggregated by calculating the total amount of CPU resources allocated by the user to reserve for applications within the cluster or Runtime Fabric instance. 
+|CPU Reserve (Millicores): A guaranteed minimum amount of CPU resources allocated to a worker node in the Runtime Fabric instance 
+|CPU reserve is aggregated by calculating the total amount of CPU resources allocated by the user to reserve for applications within the cluster or Runtime Fabric instance. 
 
 |API Manager	
 |API instances:  API instances in production, preproduction, and unclassified APIs (not associated with an environment) that are managed by API Manager after they are created using add, promote, or import options. 
@@ -61,14 +61,14 @@ a|If an API is governed, all versions of that API are considered one governed AP
 |Omni Gateway requests are aggregated as a total of all requests during a month.
 
 .3+|LLM Proxy	
-| Prompt tokens: Number of tokens an LLM Proxy in the prompts an LLM Proxy sends to a specific LLM Model
-| These tokens are the sum of all prompt tokens a specific LLM Proxy sends to a specific LLM Model during a month. A prompt sent to an LLM Proxy are considered an Omni Gateway API call and count towards the Omni Gateway API call metric.
+|Prompt tokens: Number of tokens an LLM Proxy in the prompts an LLM Proxy sends to a specific LLM Model
+|These tokens are the sum of all prompt tokens a specific LLM Proxy sends to a specific LLM Model during a month. A prompt sent to an LLM Proxy are considered an Omni Gateway API call and count towards the Omni Gateway API call metric.
 
-| Completion tokens: Number of tokens in the responses that an LLM Proxy receives from a specific LLM Model
+|Completion tokens: Number of tokens in the responses that an LLM Proxy receives from a specific LLM Model
 |These tokens are the sum of all response tokens a specific LLM Proxy receives from a specific LLM Model during a month.
 
-| Total tokens: Total number of tokens used in interactions between an LLM Proxy and a specific LLM Model
-| Some LLM Providers, such as Gemini, use thinking tokens. Total tokens are the sum of prompt tokens, completion tokens, and thinking tokens if applicable.
+|Total tokens: Total number of tokens used in interactions between an LLM Proxy and a specific LLM Model
+|Some LLM Providers, such as Gemini, use thinking tokens. Total tokens are the sum of prompt tokens, completion tokens, and thinking tokens if applicable.
 
 |Composer
 |Composer task: Any action executed on a Composer connector, including but not limited to read, create, update, and delete
