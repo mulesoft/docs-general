@@ -12,203 +12,163 @@ Before adding any scanner, make sure you have:
 
 == Scanner Prerequisites Cross-Reference
 
-[cols="1,1,2,2",options="header"]
+[cols="1,1,3",options="header"]
 |===
-| Scanner
+| Provider
 | Scanner Type
-| Required Credentials, Roles, and Permissions
-| Required Scopes, Endpoints, and Other
+| Required Credentials, Roles, and Setup
 
 | Amazon Bedrock
 | Agent
 a|
-* AWS region knowledge
-* Access key ID and secret access key
-* Amazon Bedrock permissions:
-** `bedrock:ListAgents`
-** `bedrock:GetAgent`
-** `bedrock:ListAgentAliases`
-** `bedrock:GetAgentAlias`
-** `bedrock:ListAgentVersions`
-** `bedrock:GetAgentVersion`
-* Optional for agent invocation workflows: `bedrock:InvokeModel`, `bedrock:InvokeAgent`, `bedrock:InvokeInlineAgent`
+*Credentials:* Access key ID and secret access key; AWS region
 
-| Agents must have an alias linked to a version and an invocable URL
+*Permissions:* `bedrock:ListAgents`, `bedrock:GetAgent`, `bedrock:ListAgentAliases`, `bedrock:GetAgentAlias`, `bedrock:ListAgentVersions`, `bedrock:GetAgentVersion`; optional for agent invocation workflows: `bedrock:InvokeModel`, `bedrock:InvokeAgent`, `bedrock:InvokeInlineAgent`
+
+*Setup:* Agents must have an alias linked to a version and an invocable URL
 
 | Amazon Bedrock AgentCore Runtime
 | Agent
 a|
-* Active AWS account and AgentCore access
-* AWS region
-* Access key ID and secret access key
-* `bedrock-agentcore:ListAgentRuntimes`
-* `bedrock-agentcore:ListAgentRuntimeEndpoints`
-* `bedrock-agentcore:GetAgentCard`
-* `bedrock-agentcore:GetAgentRuntime`
-* `bedrock-agentcore:ListAgentRuntimeVersions`
-* `bedrock:GetAgent`
-* `bedrock:ListAgents`
+*Credentials:* Access key ID and secret access key; AWS region
 
-| Agents must be published with an active endpoint/version
+*Account:* Active AWS account with AgentCore access
+
+*Permissions:* `bedrock-agentcore:ListAgentRuntimes`, `bedrock-agentcore:ListAgentRuntimeEndpoints`, `bedrock-agentcore:GetAgentCard`, `bedrock-agentcore:GetAgentRuntime`, `bedrock-agentcore:ListAgentRuntimeVersions`, `bedrock:GetAgent`, `bedrock:ListAgents`
+
+*Setup:* Agents must be published with an active endpoint/version
 
 | Anthropic Claude Managed Agents
 | Agent
 a|
-* Paid Anthropic account
-* Claude API key
-| pass:[&#160;]
+*Credentials:* Claude API key
+
+*Account:* Paid Anthropic account
 
 | Databricks Agent Bricks
 | Agent
 a|
-* Databricks workspace access
-* Workspace URL
-* Client ID and client secret
+*Credentials:* Workspace URL; client ID and client secret
 
-a|
-* Service principal `CAN_QUERY` on serving endpoints
-* `CAN_VIEW` or higher on endpoint metadata APIs
-* Discoverable agents must be custom Unity Catalog models in `READY` state
+*Account:* Databricks workspace access
+
+*Permissions:* Service principal `CAN_QUERY` on serving endpoints; `CAN_VIEW` or higher on endpoint metadata APIs
+
+*Setup:* Discoverable agents must be custom Unity Catalog models in `READY` state
 
 | GoDaddy ANS
 | Agent
 a|
-* API key
-* API secret
-| pass:[&#160;]
+*Credentials:* API key and API secret
 
 | Google Gemini Agent Enterprise Platform
 | Agent
 a|
-* GCP project ID
-* Service account email
-* Private key
-* Vertex AI Viewer role
-| pass:[&#160;]
+*Credentials:* GCP project ID; service account email; private key
+
+*Role:* Vertex AI Viewer
 
 | LangChain LangSmith
 | Agent
 a|
-* LangSmith Plus plan (or higher) workspace
-* LangSmith API key
-* LangSmith workspace ID
+*Credentials:* LangSmith API key; LangSmith workspace ID
 
-| Optional API host for region routing (for example, US or EU cloud host)
+*Account:* LangSmith Plus plan (or higher) workspace
+
+*Setup:* Optional API host for region routing (for example, US or EU cloud host)
 
 | Microsoft Azure Copilot
 | Agent
 a|
-* Azure app registration
-* Tenant ID, client ID, client secret
-* App added as an Application User in Power Platform
+*Credentials:* Azure app registration; tenant ID, client ID, client secret
 
-* Copilot Studio Scanner role
-| Scope set to Dataverse environment URL
+*Role:* Copilot Studio Scanner
+
+*Setup:* App added as an Application User in Power Platform; scope set to Dataverse environment URL
 
 | Microsoft Foundry
 | Agent
 a|
-* Active Azure subscription
-* Azure app registration
-* Tenant ID, client ID, client secret
+*Credentials:* Azure app registration; tenant ID, client ID, client secret
 
-* Azure AI Developer role
-| Project endpoint URLs (discovery is project-specific)
+*Account:* Active Azure subscription
+
+*Role:* Azure AI Developer
+
+*Setup:* Project endpoint URLs (discovery is project-specific)
 
 | Snowflake Cortex AI
 | Agent
 a|
-* Snowflake account with Cortex Agents enabled (Enterprise edition)
-* A user with `ACCOUNTADMIN` privileges for one-time setup only
-* At least one Cortex Agent created in a schema to be scanned
+*Credentials:* Snowflake account URL; programmatic access token (PAT)
 
-* Snowflake account URL
-* Programmatic access token (PAT)
-* Snowflake ACCOUNTADMIN role
-| Scanner egress IP ranges from your Anypoint deployment team (`<SCANNER_EGRESS_CIDRS>`)
+*Account:* Snowflake account with Cortex Agents enabled (Enterprise edition)
+
+*Role:* `ACCOUNTADMIN`, for one-time setup only
+
+*Setup:* At least one Cortex Agent created in a schema to be scanned; scanner egress IP ranges from your Anypoint deployment team (`<SCANNER_EGRESS_CIDRS>`)
 
 | Amazon API Gateway
 | API
 a|
-* IAM read-only policy for API Gateway (for example, `apigateway:GET`)
-* AWS region knowledge
-* AWS access key ID and secret access key
-| pass:[&#160;]
+*Credentials:* Access key ID and secret access key; AWS region
+
+*Permissions:* IAM read-only policy for API Gateway (for example, `apigateway:GET`)
 
 | Azure API Management
 | API
 a|
-* Tenant ID
-* Client ID
-* Client secret
-* Subscription ID
-* Resource group
-* Service name
-* API Management Service Reader role
-| pass:[&#160;]
+*Credentials:* Tenant ID; client ID; client secret; subscription ID; resource group; service name
+
+*Role:* API Management Service Reader
 
 | Google Apigee
 | API
 a|
-* GCP project ID
-* Service account email
-* Private key
-* Apigee Read-only Admin role
-| pass:[&#160;]
+*Credentials:* GCP project ID; service account email; private key
+
+*Role:* Apigee Read-only Admin
 
 | Kong Gateway
 | API
 a|
-* Kong Gateway region
-* Personal access token (PAT)
-* Kong Control Plane Viewer role
-| pass:[&#160;]
+*Credentials:* Personal access token (PAT); Kong Gateway region
+
+*Role:* Kong Control Plane Viewer
 
 | Akamai Security
 | API Security
 a|
-* Akamai Security base URL
-* Akamai Security client ID
-* Akamai Security client secret
-* Access to create service accounts in Akamai Security
-* Access to apply Akamai correlation policy in target environments
-* Existing services in *Portfolio* catalogs for correlation targets
-| pass:[&#160;]
+*Credentials:* Akamai Security base URL; client ID; client secret; organization ID
+
+*Permissions:* Access to create service accounts in Akamai Security; access to apply Akamai correlation policy in target environments
+
+*Setup:* Existing services in *Portfolio* catalogs for correlation targets; create a connected app in MuleSoft; configure Akamai-side sync with the MuleSoft connected app. For details, see xref:exp-akamai-risk-correlation.adoc[].
 
 | Amazon Bedrock AgentCore MCP
 | MCP
 a|
-* Active AWS account
-* AWS region
-* Access key ID and secret access key
-* An IAM user with an inline policy that allows these permissions:
-** `bedrock-agentcore:ListAgentRuntimes`
-** `bedrock-agentcore:GetAgentRuntime`
-** `bedrock-agentcore:ListAgentRuntimeVersions`
-** `bedrock-agentcore:ListAgentRuntimeEndpoints`
-** `bedrock-agentcore:InvokeAgentRuntime`
-| pass:[&#160;]
+*Credentials:* Access key ID and secret access key; AWS region
+
+*Account:* Active AWS account
+
+*Permissions:* IAM user with an inline policy that allows `bedrock-agentcore:ListAgentRuntimes`, `bedrock-agentcore:GetAgentRuntime`, `bedrock-agentcore:ListAgentRuntimeVersions`, `bedrock-agentcore:ListAgentRuntimeEndpoints`, `bedrock-agentcore:InvokeAgentRuntime`
 
 | Azure API Management MCP Server
 | MCP
 a|
-* Tenant ID
-* Client ID
-* Client secret
-* Subscription ID
-* Resource group
-* Service name
-* API Management Service Reader role
-| pass:[&#160;]
+*Credentials:* Tenant ID; client ID; client secret; subscription ID; resource group; service name
+
+*Role:* API Management Service Reader
 
 | Snowflake MCP Server
 | MCP
 a|
-* Snowflake Enterprise account with MCP servers enabled
-* Snowflake account URL
-* Programmatic access token (PAT)
-* Snowflake ACCOUNTADMIN role
-| pass:[&#160;]
+*Credentials:* Snowflake account URL; programmatic access token (PAT)
+
+*Account:* Snowflake Enterprise account with MCP servers enabled
+
+*Role:* `ACCOUNTADMIN`
 
 |===
 
@@ -217,3 +177,4 @@ a|
 * xref:exp-scanners-add-from-providers.adoc[]
 * xref:exp-providers-manage.adoc[]
 * xref:exp-scanners-manage.adoc[]
+* xref:exp-akamai-risk-correlation.adoc[]
