@@ -7,7 +7,7 @@ After creating governance strategies that target multiple gateway platforms or t
 
 Before monitoring cross-gateway conformance:
 
-* xref:exp-governance-setup-third-party-providers.adoc[Connect to one or more third-party providers] to enable cross-gateway governance.
+* xref:exp-services-view-details.adoc[Connect to one or more third-party providers] to enable cross-gateway governance.
 * xref:exp-governance-create-strategy.adoc[Create a governance strategy] that evaluates the APIs you want to monitor.
 * Verify that the strategy is active and has evaluated the targeted APIs.
 
