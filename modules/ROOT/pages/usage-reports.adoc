@@ -112,7 +112,7 @@ Anypoint Usage Reports provide operational drill-down visibility for Mule Credit
 Use Salesforce Digital Wallet for finalized, billing-relevant Mule Credits totals and statements.
 ====
 
-For detailed Mule Credits usage guidance, visibility coverage, and billing context, see xref:mule-credits-usage-and-rates.adoc[].
+For detailed Mule Credits usage guidance and billing context, see xref:mule-credits-usage-and-rates.adoc[].
 
 [[usage-reports-on-control-planes]]
 == Usage Reports on Control Planes

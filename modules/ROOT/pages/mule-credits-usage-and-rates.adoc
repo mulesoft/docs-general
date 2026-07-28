@@ -86,29 +86,16 @@ If your usage exceeds your contracted amount, MuleSoft sends a monthly overage i
 
 == Viewing Usage and Billing
 
-Mule Credits usage appears in both Anypoint Usage Reports and Salesforce Digital Wallet. Salesforce Digital Wallet is the source of truth for finalized Mule Credit totals, monthly statements, and overage billing. Anypoint Usage Reports provide granular usage visibility by usage type, business group, and application.
+Mule Credits usage is available in both Anypoint Usage Reports and Salesforce Digital Wallet. Salesforce Digital Wallet remains the billing source of truth for finalized Mule Credits totals, statements, and overage outcomes. Anypoint Usage Reports provide granular visibility into consumption by usage type, business group, and application.
 
-Use Anypoint Usage Reports to investigate consumption spikes, understand which business groups and applications are driving usage, and support internal forecasting or cost allocation workflows.
+Use both views together for a complete view of Mule Credits consumption. Digital Wallet shows finalized totals and trends. Anypoint Usage Reports show consumption details by usage type, business group, and application. Values can differ between these views.
+
+Use Anypoint Usage Reports to investigate consumption spikes, identify which business groups and applications are driving usage, and support internal forecasting or cost allocation workflows.
 
 === When to Use Each View
 
-* Use *Anypoint Usage Reports* to investigate what is driving consumption across usage types, business groups, and applications.
-* Use *Salesforce Digital Wallet* to review finalized daily and monthly with usage type breakdown consumption and billing outcomes.
-
-=== Granular Visibility Coverage
-
-Granular visibility is currently available for select usage types, with additional usage types planned. MuleSoft introduces coverage in phases, and coverage can vary over time.
-
-For usage report access and operational drill-down context, see xref:usage-reports.adoc[].
-
-For a summary of pricing models and where to review usage and billing context for each model, see xref:usage-metrics.adoc[].
-
-To view your Mule Credits consumption:
-
-. From the *App Launcher*, click *Digital Wallet*.
-. Locate the *Mule Credits* consumption card in the *Consumption Cards* tab.
-
-Digital Wallet is available in Lightning Experience in Enterprise and Unlimited editions, and requires the View Consumption user permission.
+* Use *Anypoint Usage Reports* to analyze what is driving consumption across usage types, business groups, and applications.
+* Use *Salesforce Digital Wallet* to review finalized daily and monthly consumption and billing outcomes.
 
 === Digital Wallet Features at a Glance
 
