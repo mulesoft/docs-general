@@ -49,10 +49,10 @@ Governance Strategy > Policies::
 Runtime rules that govern traffic passing through service instances. Policies control access, data handling, rate limits, and other runtime behaviors defined in a governance strategy.
 
 Instance::
-A deployed version of a service on a specific gateway or runtime. Instances receive traffic on the Instance URL and proxy requests to the Target URL. Supported service types include APIs, agents, MCP servers, and LLM proxies.
+A deployed version of a service on a specific gateway or runtime. Instances receive traffic on the Instance URL and proxy requests to the Target URL. Supported service types include APIs, agents, MCP servers, and Model proxies.
 
-LLM Proxy::
-A gateway-backed service that routes requests to a large language model. LLM proxies register in the LLM Proxies catalog and support instance management, policy application, and token usage monitoring.
+Model Proxy::
+A gateway-backed service that routes requests to a large language model. Model proxies register in the Model Proxies catalog and support instance management, policy application, and token usage monitoring.
 
 Managed instance::
 An instance backed by Anypoint Omni Gateway that enables full policy enforcement, authentication, and monitoring integration. Managed instances provide stronger governance and observability than unmanaged paths.
@@ -70,7 +70,7 @@ Platform MCP Server::
 The MCP server that exposes enhanced MuleSoft experience capabilities to MCP clients such as Claude Desktop. Use Platform MCP Server to access portfolio and governance features from supported development environments.
 
 Portfolio::
-The set of services registered or discovered within your org, organized into catalogs for agents, APIs, MCP servers, LLM proxies, and gateways. Each catalog provides governance, monitoring, and instance management for the services it contains.
+The set of services registered or discovered within your org, organized into catalogs for agents, APIs, MCP servers, Model proxies, and gateways. Each catalog provides governance, monitoring, and instance management for the services it contains.
 
 Providers::
 The external cloud platforms connected to the enhanced experience to enable automated service discovery and import. Configure providers under *Platform* > *Providers*.

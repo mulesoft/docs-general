@@ -1,0 +1,83 @@
+= Configuring a Semantic Service
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:imagesdir: ../assets/images
+:page-aliases: gateway::llm-proxy-semantic-service.adoc, gateway::flex-gateway-llm-proxy-semantic-service.adoc
+
+A semantic service compares incoming requests to the defined prompt topic utterances and sends the request to the route that best matches it. The semantic service also compares the request to the deny list topic utterances to block certain requests.
+
+Model Proxy supports two types of semantic services:
+
+* <<configure-an-advanced-scale-semantic-service, Advanced Scale>>: For complex semantic routing. Advanced scale semantic services use a vector database to store and compare prompt topic utterances. Advanced scale semantic services support unlimited prompt topics and 2000 utterances per prompt topic.
+* <<configure-a-basic-scale-semantic-service, Basic Scale>>: For simple semantic routing and blocking. Basic scale semantic services support up to 6 prompt topics and 10 utterances per prompt topic.
+
+[[configure-an-advanced-scale-semantic-service]]
+== Configure an Advanced Scale Semantic Service
+
+. From API Manager, click *Semantic Service Configuration*.
+. Click *+ Create a Semantic Service Configuration*.
+. Select *Advanced Scale*.
+. Configure the semantic service parameters:
+** *Service label*: Label to identify the new service.
+** *Embedding Service Provider*: The provider of the embedding model. *OpenAI* or *Hugging Face*.
+** *URL*: The URL of the embedding service.
+** *Model*: The embedding model to use.
+** *Auth key*: The API authentication key for the embedding service.
+. Click *Vector connection*.
+. Select a *Vector Database Provider* from these options:
+** *Quadrant*
+** *Pinecone*
+** *Azure AI Search*
+. Configure the parameters to connect your database.
+. Create prompt topics:
+.. Click *Create prompt topics*.
+.. Define a *Prompt topic name*.
+.. Define prompt utterances or click *Upload utterances* to upload a plain text file containing your prompt utterances.
+.. Create as many prompt topics as neccesary. You can also create new prompt topics later by editing the semantic service.
++
+NOTE: To deny users from asking about certain subjects, create prompt topics for the subjects and apply them as deny list topics when configuring your Model Proxy.
+. Click *Save & download script*.
+. Open the downloaded `.sh` script file in you database to populate it with your scaled vectors.
+
+[[configure-a-basic-scale-semantic-service]]
+== Configure a Basic Scale Semantic Service
+
+. From API Manager, click *Semantic Service Configuration*.
+. Click *+ Create a Semantic Service Configuration*.
+. Select *Basic Scale*.
+. Configure the semantic service parameters:
+** *Service label*: Label to identify the new service.
+** *Embedding Service Provider*: The provider of the embedding model. *OpenAI* or *Hugging Face*.
+** *URL*: The URL of the embedding service.
+** *Model*: The embedding model to use.
+** *Auth key*: The API authentication key for the embedding service.
+. Click *Deploy*.
+
+[[basic-scale-semantic-service-routing-limits]]
+=== Basic Scale Semantic Service Routing Limits
+
+[%header%autowidth.spread,cols="a,a"]
+|===
+| Limit | Value
+| Prompt topics (across all routes of a Model Proxy) | 6
+| Utterances per prompt topic | 10
+| Deny list topics | 6
+| Utterances per deny list topic | 10
+| Maximum characters per utterance | 500
+|===
+
+== Edit a Semantic Service
+
+To edit a semantic service:
+
+. From *Semantic Service Setup*, click the three-dots menu (image:three-dots-menu.png[3%,3%]) of the semantic service you want to edit.
+. Make the necessary edits.
+. Click *Redeploy*.
+
+== Redownload Vector Script
+
+If creating new prompt topics, it is necessary to redownload and run the vector script in your database again:
+
+. Download the script for the advanced scale semantic service by clicking the three-dots menu (image:three-dots-menu.png[3%,3%]) from *Semantic Service Configuration*.
+. Click *Download script*.
