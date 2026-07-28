@@ -21,7 +21,7 @@ The *Governed Services* tab displays:
 
 * A *Conformance* summary: the total number of governed services, broken down into *Conformant*, *Nonconformant*, and *Pending*.
 * An *Identified Issues* summary: counts of violations, warnings, and info-level findings.
-* A table of governed services with *Service*, *Type*, *Provider*, and *Conformance* columns. The *Provider* column shows which platform hosts each API, such as Anypoint Platform, Akamai, or other connected providers.
+* A table of governed services with *Service*, *Type*, *Provider*, and *Conformance* columns. The *Provider* column shows which platform hosts each API.
 // FLAG: Aug 13 release (policy write scope). "Policy Application Status" (Enabled/Read-Only enforcement state) reflects policy enforcement, which is Policy Write — GA Aug 13. Uncomment when the Aug 13 write release is documented.
 // * *Policy Application Status*: Indicates whether policies are *Enabled* (actively enforced) or *Read-Only* (monitoring mode only).
 
