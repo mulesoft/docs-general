@@ -60,7 +60,7 @@ NOTE: To deny users from asking about certain subjects, create prompt topics for
 [%header%autowidth.spread,cols="a,a"]
 |===
 | Limit | Value
-| Prompt topics (across all routes of an Model Proxy) | 6
+| Prompt topics (across all routes of a Model Proxy) | 6
 | Utterances per prompt topic | 10
 | Deny list topics | 6
 | Utterances per deny list topic | 10

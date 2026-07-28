@@ -12,12 +12,12 @@ Model Proxy supports both OpenAI and Gemini Responses and Chat Completions reque
 * https://developers.openai.com/api/reference/resources/chat[Chat Completions] API is designed for conversational multi-turn interactions rather than simple text continuation.
 * https://developers.openai.com/api/reference/resources/responses[Responses] API is recommended unified interface for building powerful agent-like applications.
 
-All requests in this guide are designed to work for both strategies. When sending a request to an Model Proxy with either routing strategy, you can specify a model in the request. You don't have to modify the request for different routing strategies. Each routing strategy handles the model selection differently:
+All requests in this guide are designed to work for both strategies. When sending a request to a Model Proxy with either routing strategy, you can specify a model in the request. You don't have to modify the request for different routing strategies. Each routing strategy handles the model selection differently:
 
 * *Model-Based Routing*: The user specifies a model in the request (`"model": "openai/gpt-5.2"`). The Model Proxy acts as a direct proxy. If no model is specified, the Model Proxy sends the request to the fallback route or returns an error if no fallback route is configured.
 * *Semantic Routing*: No model is specified in the request. The Model Proxy chooses which model to use based on the request content by matching it to prompt topics you define for each route. If a model is specified in the request, like in model routing examples, it is ignored.
 +
-NOTE: Adding a model to a request ensures deterministic routing to a preferred backend if the routing strategy of an Model Proxy changes.
+NOTE: Adding a model to a request ensures deterministic routing to a preferred backend if the routing strategy of a Model Proxy changes.
 
 [[retrieve-the-request-configuration-parameters]]
 == Retrieve the Endpoint Configuration Parameters for your Model Proxy

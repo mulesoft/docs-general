@@ -33,7 +33,7 @@ The API Manager LLM Summary page provides these metrics for your Model Proxy:
 * Total errors per hour
 * Average response time per hour
 
-To view the LLM Summary page for an Model Proxy:
+To view the LLM Summary page for a Model Proxy:
 
 . From API Manager, click *Model Proxies*.
 . Click the name of the Model Proxy you want to view.

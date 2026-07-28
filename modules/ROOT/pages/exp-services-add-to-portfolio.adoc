@@ -51,7 +51,7 @@ Register by uploading an agent card or connect an agent provider scanner for dis
 Register with an MCP URL or a schema file, or connect an MCP server provider.
 
 *Model Proxies*::
-Register manually by creating an Model proxy with a routing strategy that routes requests by provider or semantically.
+Register manually by creating a Model proxy with a routing strategy that routes requests by provider or semantically.
 
 *APIs*::
 Register with an API specification, or connect an API provider so scans import APIs into the *APIs* catalog.
