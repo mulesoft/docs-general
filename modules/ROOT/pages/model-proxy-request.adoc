@@ -1,4 +1,4 @@
-= LLM Proxy Requests
+= Model Proxy Requests
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
@@ -7,33 +7,33 @@ endif::[]
 
 NOTE: This guide only provides OpenAI formatted requests.
 
-LLM Proxy supports both OpenAI and Gemini Responses and Chat Completions requests. To learn more about the these OpenAI request types, see:
+Model Proxy supports both OpenAI and Gemini Responses and Chat Completions requests. To learn more about the these OpenAI request types, see:
 
 * https://developers.openai.com/api/reference/resources/chat[Chat Completions] API is designed for conversational multi-turn interactions rather than simple text continuation.
 * https://developers.openai.com/api/reference/resources/responses[Responses] API is recommended unified interface for building powerful agent-like applications.
 
-All requests in this guide are designed to work for both strategies. When sending a request to an LLM Proxy with either routing strategy, you can specify a model in the request. You don't have to modify the request for different routing strategies. Each routing strategy handles the model selection differently:
+All requests in this guide are designed to work for both strategies. When sending a request to an Model Proxy with either routing strategy, you can specify a model in the request. You don't have to modify the request for different routing strategies. Each routing strategy handles the model selection differently:
 
-* *Model-Based Routing*: The user specifies a model in the request (`"model": "openai/gpt-5.2"`). The LLM Proxy acts as a direct proxy. If no model is specified, the LLM Proxy sends the request to the fallback route or returns an error if no fallback route is configured.
-* *Semantic Routing*: No model is specified in the request. The LLM Proxy chooses which model to use based on the request content by matching it to prompt topics you define for each route. If a model is specified in the request, like in model routing examples, it is ignored.
+* *Model-Based Routing*: The user specifies a model in the request (`"model": "openai/gpt-5.2"`). The Model Proxy acts as a direct proxy. If no model is specified, the Model Proxy sends the request to the fallback route or returns an error if no fallback route is configured.
+* *Semantic Routing*: No model is specified in the request. The Model Proxy chooses which model to use based on the request content by matching it to prompt topics you define for each route. If a model is specified in the request, like in model routing examples, it is ignored.
 +
-NOTE: Adding a model to a request ensures deterministic routing to a preferred backend if the routing strategy of an LLM Proxy changes.
+NOTE: Adding a model to a request ensures deterministic routing to a preferred backend if the routing strategy of an Model Proxy changes.
 
 [[retrieve-the-request-configuration-parameters]]
-== Retrieve the Endpoint Configuration Parameters for your LLM Proxy
+== Retrieve the Endpoint Configuration Parameters for your Model Proxy
 
-To find your LLM Proxy endpoint configuration and client application credentials required to use the requests in this guide:
+To find your Model Proxy endpoint configuration and client application credentials required to use the requests in this guide:
 
 . Find your public endpoint:
 .. Navigate to *Runtime Manager* > *Omni Gateways* 
-.. Click the name of the Omni Gateway where your LLM Proxy is deployed.
+.. Click the name of the Omni Gateway where your Model Proxy is deployed.
 .. Copy the *Public Endpoint*.
 . Find your base path:
-.. From *API Manager* > *LLM Proxies*, click the name of the LLM Proxy whose base path you want to find.
+.. From *API Manager* > *Model Proxies*, click the name of the Model Proxy whose base path you want to find.
 .. Click *Configuration*.
 .. Copy the *Base path*.
 . Retrieve your client ID and client secret:
-.. From the *LLM Summary* page of your LLM Proxy, click *Actions* > *View LLM proxy in Exchange*.
+.. From the *LLM Summary* page of your Model Proxy, click *Actions* > *View Model proxy in Exchange*.
 .. Click *Request access*.
 .. Select the *API Instance* you want to request access to.
 .. Select the *Application* you want to request access to.
@@ -393,7 +393,7 @@ curl --location '<public-endpoint>/<base-path>/chat/completions' \
 
 === Tool Calling: Request with Tool Execution Response Example
 
-This request example sends the executed tool output back to the LLM Proxy to generate a final answer. The example provides the executed tool output (current time) back to the LLM Proxy so the model can generate a natural-language response for the user:
+This request example sends the executed tool output back to the Model Proxy to generate a final answer. The example provides the executed tool output (current time) back to the Model Proxy so the model can generate a natural-language response for the user:
 
 [tabs]
 ====

@@ -8,15 +8,15 @@ endif::[]
 [[view-token-usage-reports]]
 == View Token Usage Reports
 
-With Token Usage reports, you can view the amount of API tokens each LLM Proxy uses for individual models.
+With Token Usage reports, you can view the amount of API tokens each Model Proxy uses for individual models.
 
-NOTE: To limit token usage, apply the xref:gateway::policies-included-llm-token-rate-limit.adoc[LLM Token Based Rate Limit policy] to your LLM Proxy.
+NOTE: To limit token usage, apply the xref:gateway::policies-included-llm-token-rate-limit.adoc[LLM Token Based Rate Limit policy] to your Model Proxy.
 
 To view token usage reports:
 
 . Click you Anypoint Platform profile icon. This is icon of your initials.
 . Click *Usage Reports*.
-. Select *LLM Proxy* for *Product*.
+. Select *Model Proxy* for *Product*.
 . Filter between *Usage by Business Group* and *Usage by Application* to see how tokens are being consumed.
 
 To learn more about Usage Reports, see xref:general::usage-reports.adoc[].
@@ -26,16 +26,16 @@ NOTE: Gemini models use reasoning tokens. This number is included in *Total toke
 [[view-api-manager-insights]]
 == View API Manager Insights
 
-The API Manager LLM Summary page provides these metrics for your LLM Proxy:
+The API Manager LLM Summary page provides these metrics for your Model Proxy:
 
 * Total requests per hour
 * Total policy violations per hour
 * Total errors per hour
 * Average response time per hour
 
-To view the LLM Summary page for an LLM Proxy:
+To view the LLM Summary page for an Model Proxy:
 
-. From API Manager, click *LLM Proxies*.
-. Click the name of the LLM Proxy you want to view.
+. From API Manager, click *Model Proxies*.
+. Click the name of the Model Proxy you want to view.
 
 To view more detailed metrics and build custom dashboards, click *View more metrics in Anypoint Monitoring dashboard*.

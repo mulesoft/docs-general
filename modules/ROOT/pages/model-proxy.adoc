@@ -1,27 +1,27 @@
-= LLM Proxy Overview
+= Model Proxy Overview
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 :imagesdir: ../assets/images
 :page-aliases: gateway::llm-proxy.adoc, gateway::flex-gateway-llm-proxy.adoc
 
-LLM Proxy provides a unified access layer for multiple Large Language Model (LLM) providers. LLM Proxies are deployed to Omni Gateway to enable governance, intelligent routing, and cost management for AI applications. 
+Model Proxy provides a unified access layer for multiple Large Language Model (LLM) providers. Model Proxies are deployed to Omni Gateway to enable governance, intelligent routing, and cost management for AI applications. 
 
-LLM Proxy is supported on Managed Omni Gateway and Self-Managed Omni Gateway running in Connected Mode.
+Model Proxy is supported on Managed Omni Gateway and Self-Managed Omni Gateway running in Connected Mode.
 
 By creating a proxy, the user defines a singular LLM service that can receive requests for multiple providers. This simplifies the developer experience. You can add new models to the service seamlessly without changing the endpoint.
 
-image::model-proxy.png["An LLM Proxy with a single endpoint routing requests to multiple LLM providers"]
+image::model-proxy.png["An Model Proxy with a single endpoint routing requests to multiple LLM providers"]
 
 Depending on configuration, the proxy then sends the request to the model defined by the user or dynamically sends the request to the provider that best matches the request:
 
-* <<model-based-routing>>: Static routing. The user specifies what model the LLM Proxy should send the request to.
-* <<semantic-routing>>: Dynamic routing. The LLM Proxy chooses which model to send the request to based on the request content.
+* <<model-based-routing>>: Static routing. The user specifies what model the Model Proxy should send the request to.
+* <<semantic-routing>>: Dynamic routing. The Model Proxy chooses which model to send the request to based on the request content.
 
 [[supported-llm-providers]]
 == Supported LLM Providers
 
-LLM Proxy supports these LLM Providers and API endpoints:
+Model Proxy supports these LLM Providers and API endpoints:
 
 [%header%autowidth.spread,cols="a,a,a,a"]
 |===
@@ -63,13 +63,13 @@ LLM Proxy supports these LLM Providers and API endpoints:
 [[model-based-routing]]
 == Model-Based Routing
 
-Model-based routing is static routing. In the request, the user specifies what model the LLM Proxy should send the request to. By specifying a target model, LLM Proxy can override the model version provided by the user.
+Model-based routing is static routing. In the request, the user specifies what model the Model Proxy should send the request to. By specifying a target model, Model Proxy can override the model version provided by the user.
 
 [[semantic-routing]]
 == Semantic Routing
 
-Semantic routing is dynamic routing where the LLM Proxy chooses which model to send the request to. For Sematic Routing, the user creates prompt topics for each route. When a request is sent to the LLM Proxy, a semantic service compares the request to the define topic utterances and sends the request to the route that best matches it.
+Semantic routing is dynamic routing where the Model Proxy chooses which model to send the request to. For Sematic Routing, the user creates prompt topics for each route. When a request is sent to the Model Proxy, a semantic service compares the request to the define topic utterances and sends the request to the route that best matches it.
 
-== LLM Proxy Limits
+== Model Proxy Limits
 
-Up to 50 LLM Proxies are supported per Large Omni Gateway.
+Up to 50 Model Proxies are supported per Large Omni Gateway.

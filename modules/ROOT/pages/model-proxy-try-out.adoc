@@ -1,21 +1,21 @@
-= Trying Out Your LLM Proxy
+= Trying Out Your Model Proxy
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 :imagesdir: ../assets/images
 :page-aliases: gateway::llm-proxy-try-out.adoc, gateway::flex-gateway-llm-proxy-try-out.adoc
 
-LLM Proxy provides the try out functionality to test mock LLM prompts without creating API requests. Use the try out feature to test:
+Model Proxy provides the try out functionality to test mock LLM prompts without creating API requests. Use the try out feature to test:
 
-* What response message your LLM Proxy returns.
+* What response message your Model Proxy returns.
 * What response headers are returned.
 * What model services the response.
 * Why a request is sent to a specific route.
 
-== Try Out Your LLM Proxy
+== Try Out Your Model Proxy
 
-. From API Manager, click *LLM Proxies*.
-. Click the name of the LLM Proxy you want to try out.
+. From API Manager, click *Model Proxies*.
+. Click the name of the Model Proxy you want to try out.
 . Click *Try out*.
 . Configure any authentication or other headers your request requires.
 . Enter your test prompt.

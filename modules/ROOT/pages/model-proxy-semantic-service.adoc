@@ -7,7 +7,7 @@ endif::[]
 
 A semantic service compares incoming requests to the defined prompt topic utterances and sends the request to the route that best matches it. The semantic service also compares the request to the deny list topic utterances to block certain requests.
 
-LLM Proxy supports two types of semantic services:
+Model Proxy supports two types of semantic services:
 
 * <<configure-an-advanced-scale-semantic-service, Advanced Scale>>: For complex semantic routing. Advanced scale semantic services use a vector database to store and compare prompt topic utterances. Advanced scale semantic services support unlimited prompt topics and 2000 utterances per prompt topic.
 * <<configure-a-basic-scale-semantic-service, Basic Scale>>: For simple semantic routing and blocking. Basic scale semantic services support up to 6 prompt topics and 10 utterances per prompt topic.
@@ -36,7 +36,7 @@ LLM Proxy supports two types of semantic services:
 .. Define prompt utterances or click *Upload utterances* to upload a plain text file containing your prompt utterances.
 .. Create as many prompt topics as neccesary. You can also create new prompt topics later by editing the semantic service.
 +
-NOTE: To deny users from asking about certain subjects, create prompt topics for the subjects and apply them as deny list topics when configuring your LLM Proxy.
+NOTE: To deny users from asking about certain subjects, create prompt topics for the subjects and apply them as deny list topics when configuring your Model Proxy.
 . Click *Save & download script*.
 . Open the downloaded `.sh` script file in you database to populate it with your scaled vectors.
 
@@ -60,7 +60,7 @@ NOTE: To deny users from asking about certain subjects, create prompt topics for
 [%header%autowidth.spread,cols="a,a"]
 |===
 | Limit | Value
-| Prompt topics (across all routes of an LLM Proxy) | 6
+| Prompt topics (across all routes of an Model Proxy) | 6
 | Utterances per prompt topic | 10
 | Deny list topics | 6
 | Utterances per deny list topic | 10

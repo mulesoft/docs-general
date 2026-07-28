@@ -1,18 +1,18 @@
-= Creating an LLM Proxy
+= Creating an Model Proxy
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 :imagesdir: ../assets/images
 :page-aliases: gateway::llm-proxy-create-llm-proxy.adoc, gateway::flex-gateway-llm-proxy-create-llm-proxy.adoc
 
-You can configure the LLM Proxy to use different models and different routes.
+You can configure the Model Proxy to use different models and different routes.
 
-NOTE: A large Omni Gateway supports up to 50 LLM Proxies.
+NOTE: A large Omni Gateway supports up to 50 Model Proxies.
 
 [[before-you-begin]]
 == Before You Begin
 
-. Deploy an Omni Gateway version 1.11.4 or later where you want to deploy your LLM Proxy.
+. Deploy an Omni Gateway version 1.11.4 or later where you want to deploy your Model Proxy.
 +
 See xref:gateway::flex-gateway-managed-set-up.adoc[].
 . Ensure you have the API Manager *API Creator* permission.
@@ -20,12 +20,12 @@ See xref:gateway::flex-gateway-managed-set-up.adoc[].
 . xref:model-proxy-semantic-service.adoc[Configure a semantic service] if you want to use semantic routing.
 
 [[create-a-model-proxy]]
-== Create an LLM Proxy
+== Create an Model Proxy
 
-. From API Manager, click *LLM Proxies*.
-. Click *+ Add LLM Proxy*.
-. Configure the *Inbound Endpoint* of the LLM Proxy:
-.. Define a *LLM Proxy Name*.
+. From API Manager, click *Model Proxies*.
+. Click *+ Add Model Proxy*.
+. Configure the *Inbound Endpoint* of the Model Proxy:
+.. Define a *Model Proxy Name*.
 .. Select an endpoint *Format*:
 +
 ** OpenAI: Select the OpenAI API format to send requests to all supported LLM Providers (including Gemini).
@@ -64,7 +64,7 @@ To learn how to find the model ID, see xref:model-proxy-request.adoc#amazon-bedr
 .. Select a *Route* to fallback to.
 .. Select a target model for the fallback route to use.
 . If no fall back route is configured and a route fails, a error response is returned.
-. Return to <<create-a-model-proxy>> step 7 to finish configuring your LLM Proxy.
+. Return to <<create-a-model-proxy>> step 7 to finish configuring your Model Proxy.
 
 [[configure-semantic-routing]]
 == Configure Semantic Routing
@@ -100,21 +100,21 @@ To configure semantic routing:
 ... Create multiple prompt topics for each route as needed.
 +
 NOTE: Creating a semantic prompt guard automatically applies the Semantic Prompt Guard policy.
-. Return to <<create-a-model-proxy>> step 7 to finish configuring your LLM Proxy.
+. Return to <<create-a-model-proxy>> step 7 to finish configuring your Model Proxy.
 
-== Edit and Delete an LLM Proxy
+== Edit and Delete an Model Proxy
 
-To edit an LLM Proxy:
+To edit an Model Proxy:
 
-. From API Manager, click *LLM Proxies*.
-. Click the name of the LLM Proxy you want to edit.
+. From API Manager, click *Model Proxies*.
+. Click the name of the Model Proxy you want to edit.
 . Click *Configuration*.
 . Switch between the *Inbound*, *Gateway*, and *Outbound* configurations to make the necessary edits.
 . Click *Save & Deploy*.
 
-To delete an LLM Proxy:
+To delete an Model Proxy:
 
-. From API Manager, click *LLM Proxies*.
-. Click the three-dots menu (image:three-dots-menu.png[3%,3%]) of the LLM Proxy you want to delete.
-. Click *Delete LLM Proxy*.
+. From API Manager, click *Model Proxies*.
+. Click the three-dots menu (image:three-dots-menu.png[3%,3%]) of the Model Proxy you want to delete.
+. Click *Delete Model Proxy*.
 . Click *Yes, Delete*.

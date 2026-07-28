@@ -59,7 +59,7 @@ Build your agent network and coordinate brokers and agents using a declarative Y
 | image::lm_build_1.png[""]
 [.lm-bold]##Govern and Secure the Agent Network##
 
-Apply policies to your agents, brokers, LLM proxies, and MCP servers to help manage security and control traffic.
+Apply policies to your agents, brokers, Model proxies, and MCP servers to help manage security and control traffic.
 
 - xref:api-manager::create-instance-task-agent-tool.adoc[Add an Omni Gateway Agent or Tool Instance in API Manager]
 - https://videos.mulesoft.com/watch/2E2PkqzMnLEjoDhL5YkywT[Watch a Video to Learn About AI Gateway from MuleSoft]

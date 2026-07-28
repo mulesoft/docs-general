@@ -2,7 +2,7 @@
 :keywords: enhanced mulesoft experience, learning map, mulesoft training, getting started, mulesoft resources
 :page-article-style: learning-map
 
-The enhanced MuleSoft experience helps you manage, optimize, and govern a multi-agent ecosystem from one place. Work with agents, APIs, MCP servers, LLM proxies, and gateways as a single portfolio. View asset relationships, apply governance and cost discipline, and act on observability signals instead of working in separate silos. The experience pairs this portfolio view with an in-product assistant to connect integrations, tune configurations, and get answers in context.
+The enhanced MuleSoft experience helps you manage, optimize, and govern a multi-agent ecosystem from one place. Work with agents, APIs, MCP servers, Model proxies, and gateways as a single portfolio. View asset relationships, apply governance and cost discipline, and act on observability signals instead of working in separate silos. The experience pairs this portfolio view with an in-product assistant to connect integrations, tune configurations, and get answers in context.
 
 * Scan platforms and import discovered APIs and agents, then manage scanners in one place.
 * Register services manually, view services across providers, and create new MCP servers.
@@ -32,7 +32,7 @@ The experience helps you manage, optimize, and govern a multi-agent ecosystem fr
 | image::lm_explore_1.png[""]
 [.lm-bold]##Register##
 
-Register agents, APIs, and MCP servers from any provider or registry, and add LLM proxies and gateways.
+Register agents, APIs, and MCP servers from any provider or registry, and add Model proxies and gateways.
 
 - xref:exp-services-add-to-portfolio.adoc[]
 - xref:exp-services-connect-providers-to-add.adoc[]
