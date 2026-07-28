@@ -1,5 +1,5 @@
-= Usage-Based Pricing: Usage and Rates
-:keywords: usage metrics, pricing metrics, anypoint mq usage, api experience hub, api governance, api manager, mule credits, automation credits
+= Usage and Pricing Metrics Reference
+:keywords: usage metrics, pricing metrics, anypoint mq usage, api experience hub, api governance, api manager
 :page-aliases: pricing-metrics.adoc
 
 Anypoint Platform captures usage metrics across products, but not all metrics are billable or reflected in usage reports.
