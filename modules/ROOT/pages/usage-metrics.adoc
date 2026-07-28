@@ -4,18 +4,6 @@
 
 Anypoint Platform captures usage metrics across products, but not all metrics are billable or reflected in usage reports.
 
-== Subscription Plan
-
-The available usage types depend on your Anypoint pricing plan.
-
-[%header%autowidth.spread]
-|===
-| Subscription Plan | Available Usage Types
-
-| Integration Starter, Integration Advanced, API Management
-| Mule Flows, Mule Messages, Data Throughput, API Calls for Omni/Flex Gateway, API Manager Pre-Production, API Manager Production, APIs Under Governance, Anypoint MQ API request, Object Store API request
-|===
-
 == Usage Type Description
 
 The following table defines usage metrics by product and explains how each metric is calculated for reporting.
