@@ -7,7 +7,7 @@ The integration relies on a bidirectional sync between your MuleSoft and Akamai 
 
 == How Akamai Scanner Differs from Import Scanners
 
-Most provider scanners discover metadata in external platforms and import services into *Portfolio* catalogs. The Akamai API Security scanner works differently. It enriches existing services with security data from Akamai instead of creating new services.
+Most provider scanners discover metadata in external platforms and import services into *Portfolio* catalogs. The Akamai API Security scanner works differently: instead of creating new services, it enriches existing ones with Akamai security data.
 
 == Before You Begin
 
