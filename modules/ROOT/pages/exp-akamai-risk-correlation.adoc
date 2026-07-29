@@ -41,7 +41,7 @@ Complete these steps as an organization administrator:
 Before you set up the scanner, review the prerequisites for Akamai scanners in xref:exp-scanners-prerequisites-reference.adoc[].
 
 . From *Platform* > *Providers*, select *Akamai*.
-. Enter connection values, and test the connection.
+. Click *Add Scanner* and enter connection values, and test the connection.
 . Enter scanner metadata, such as scanner name, description, frequency, and time.
 . Apply the Akamai correlation policy to selected environments.
 . Save the scanner and run a discovery scan.
