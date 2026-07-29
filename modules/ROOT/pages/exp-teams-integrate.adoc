@@ -1,0 +1,104 @@
+= Integrate the Enhanced Experience with Microsoft Teams
+:keywords: microsoft teams integration, mulesoft agent, teams bot, mcp server, anypoint platform, enhanced experience
+
+Install the MuleSoft Agent for Teams app in your Microsoft Teams tenant to interact with Anypoint Platform directly from Teams using natural language. The Teams app enables you to:
+
+* <<connect-teams-tenant>>: Bind your Microsoft Teams tenant to your Anypoint organization so the bot can route messages.
+* <<begin-using-agent>>: Manage your MuleSoft environment with the MuleSoft Agent integrated with Teams. Use MuleSoft Agent to list APIs, view MCP servers, check governance, and perform other management tasks.
+* Configure alerts to deliver notifications to Teams channels. For instructions, see xref:exp-alerts-configure-notifications.adoc[].
+
+NOTE: This tool uses generative AI, which can produce inaccurate or harmful responses. Review for accuracy and safety before using.
+
+[[connect-teams-tenant]]
+== Connect Your Microsoft Teams Tenant to the MuleSoft Organization
+
+You must be a MuleSoft organization administrator and a Microsoft Teams administrator to connect the Teams integration.
+
+Each MuleSoft organization can connect to only one Microsoft Teams tenant, and each tenant can connect to only one MuleSoft organization.
+
+. Log in and go to *Notifications* > *Settings*.
+. In *Microsoft Teams Setup*, choose one of the following installation methods:
++
+* *Install Microsoft Teams app*: Publishes the Teams app to your AAD tenant's app catalog through Microsoft Graph. If the tenant hasn't yet consented to this app, you're redirected to Microsoft to grant admin consent. Use this method for most organizations.
+* *Bind a side-loaded Teams app*: Use only when a Teams administrator has already side-loaded `teams-app.zip` in Teams Admin Center because tenant policies block automated publish. This records the tenant-to-organization binding so the bot can resolve identity.
+. Select your Microsoft Teams admin account.
+. Review the permissions requested and click *Accept*.
++
+The app requests the following permissions:
++
+* Read and write to all app catalogs
+* Maintain access to data you have given it access to
+* View your basic profile
++
+. After the installation completes, the confirmation page displays *Microsoft Teams integration installed*. Click *Back to Settings*.
++
+In *Notifications* > *Settings*, the *Microsoft Teams Setup* section now shows *Installed* and displays the bound tenant ID.
+
+After installation, the MuleSoft Agent app appears in Microsoft Teams Admin Center under *Manage apps* as available to everyone and unblocked.
+
+To disconnect the integration, click *Disconnect* in the *Microsoft Teams Setup* section.
+
+[[begin-using-agent]]
+== Begin Using the MuleSoft Agent
+
+[IMPORTANT]
+====
+MuleSoft Agent is available on request. To get access, contact your account executive.
+====
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account with access to the enhanced experience.
+* Agentforce enabled in your Anypoint Platform and Salesforce organizations by your administrator.
+* The *MuleSoft Omni Agent for Anypoint* permission assigned to your user.
++
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+
+To assign the *MuleSoft Omni Agent for Anypoint* permission across business groups:
+
+. Log in to Anypoint Platform and open *Access Management*.
+. Select the business group where you want to assign the permission.
+. Find the user and assign the *MuleSoft Omni Agent for Anypoint* permission.
+. Repeat for each business group that requires access.
+
+To start using the agent in Teams:
+
+. Open Microsoft Teams and go to *Apps*.
+. Under *Built for your organisation*, find *MuleSoft Agent* and click *Add*.
+. Click *Open* or select a channel where you want to use the app.
+. The agent sends a welcome message. Select a prompt suggestion or type a message to start.
+. If it is your first time using the agent, the bot prompts you to connect your Anypoint account. Click *Connect to Anypoint* and sign in with your Anypoint Platform credentials. This is a one-time setup.
+
+After you authenticate, you can use the agent to list APIs, agents, MCP servers, view governance reports, and more.
+
+NOTE: After the first 24 hours, you must @mention the MuleSoft Agent in channels to send it a message. In direct messages, you can send messages to the agent at any time without @mentioning it.
+
+[[available-prompts]]
+== Available Prompt Suggestions
+
+When you open the MuleSoft Agent, the following prompt suggestions are available:
+
+* *Help*: Shows available commands.
+* *Agents*: Lists AI agents in your organization.
+* *Apis*: Lists APIs in your organization.
+* *Mcps*: Lists MCP servers in your organization.
+* *Governance*: Views a governance report.
+* *Signin*: Connects your Anypoint account.
+
+[[common-use-cases]]
+== Common Use Cases for the MuleSoft Agent
+
+You can use the MuleSoft Agent to perform these platform tasks in Teams:
+
+* *Receive alerts*: Receive alerts to channels or direct messages (DMs). For more information, see xref:exp-alerts-configure-notifications.adoc[].
+* *Find services by capability*: Use natural-language search to discover APIs, agents, LLMs, and MCP servers.
+* *Run governance, monitoring, and cost drill-ins*: Generate governance, monitoring, and cost reports on request.
+* *Take governance actions*: Apply policies and apply cost management recommendations.
+
+[[see-also]]
+== See Also
+
+* xref:exp-home-start.adoc[]
+* xref:exp-overview.adoc[]
+* xref:exp-slack-integrate.adoc[]
+* xref:exp-claude-desktop-connect.adoc[]
