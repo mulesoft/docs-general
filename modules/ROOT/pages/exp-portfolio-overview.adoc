@@ -33,17 +33,17 @@ Browse catalogs for *Agents*, *APIs*, *MCP Servers*, *LLM Proxies*, and *Gateway
 
 If you don't see an expected catalog or summary, confirm product access and permissions with your Anypoint Platform organization administrator. See xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions] for more information.
 
-== Overview
+== Portfolio Summary
 
 * Coverage
 +
-Which service types your team has registered and which environments or instances they map to.
-* Health and cost signals
+Shows which service types your team has registered. Each portfolio tab shows only services registered for that type. For example, *Agents* shows all registered agents for that Business Group.
+* Performance
 +
-Summary metrics or badges if the experience exposes them at list level (for example, status or daily cost on cards).
+Shows summary metrics or badges when the experience exposes them at list level, such as status or daily cost on cards.
 * Next actions
 +
-Workflows to add services, connect providers, or open governance and observability areas described in xref:exp-overview.adoc[].
+Shows workflows to add services, connect providers, or open governance and observability areas. For related workflows, see xref:exp-overview.adoc[].
 
 == See Also
 
