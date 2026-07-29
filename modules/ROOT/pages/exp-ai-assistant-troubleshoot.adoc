@@ -77,7 +77,7 @@ Check your permissions:
 Check your subscription tier:
 
 . Verify whether you have API Portfolio Access or Agent + API Portfolio Access.
-. Some features (like agents, MCP servers, LLM proxies) require Agent + API Portfolio Access.
+. Some features (like agents, MCP servers, Model proxies) require Agent + API Portfolio Access.
 . Contact your administrator or account team about upgrading your subscription if needed.
 
 Check service state:

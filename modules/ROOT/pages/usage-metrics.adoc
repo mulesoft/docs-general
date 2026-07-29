@@ -4,11 +4,15 @@
 
 Anypoint Platform captures usage metrics across products, but not all metrics are billable or reflected in usage reports.
 
+== Usage Type Description
+
+These table defines usage metrics by product and explains how each metric is calculated for reporting.
+
 [cols=3*]
 |===
 |Product |Metric Description |Usage Details
 
-.8+|Mule Runtime	
+.8+|Mule Runtime
 |Mule flow: Flow within a deployed and running Mule app that contains a Mule event source or route APIKit request 
 |Flows are aggregated using a Max Concurrent model. The usage for a month is the highest number of flows that exist in a single given hour during a month.
 
@@ -20,20 +24,19 @@ Anypoint Platform captures usage metrics across products, but not all metrics ar
 |Calculated based on the peak allocated virtual cores assigned to active CloudHub (CH1) and CloudHub 2.0 (CH2) application workers in production environments.
 |vCore Usage in Preproduction: Virtual processing capacity allocated to run Mule applications and APIs in non-production environments, such as sandbox, QA, staging, and development
 |Calculated based on the peak allocated virtual cores assigned to active CloudHub (CH1) and CloudHub 2.0 (CH2) application workers in non-production environments.
-| Cluster capacity: A set of workers or nodes that act as a single deployment target for a given Runtime Fabric instance
-| Allocatable CPU capacity of each node within the Runtime Fabric instance.
-| CPU Limit (Millicores): Maximum amount of CPU resources a worker node in Runtime Fabric can use
+|Cluster capacity: A set of workers or nodes that act as a single deployment target for a given Runtime Fabric instance
+|Allocatable CPU capacity of each node within the Runtime Fabric instance.
+|CPU Limit (Millicores): Maximum amount of CPU resources a worker node in Runtime Fabric can use
 a| The amount of CPU usage is aggregated over a specific period of time, such as an hour or a day.  
 
 The CPU limit configuration of each application is summarized at each environment ID, then at each business group, and then at the root organization ID for preproduction (sandbox) and production environment types separately.
 
-| CPU Reserve (Millicores): A guaranteed minimum amount of CPU resources allocated to a worker node in the Runtime Fabric instance 
-| CPU reserve is aggregated by calculating the total amount of CPU resources allocated by the user to reserve for applications within the cluster or Runtime Fabric instance. 
+|CPU Reserve (Millicores): A guaranteed minimum amount of CPU resources allocated to a worker node in the Runtime Fabric instance 
+|CPU reserve is aggregated by calculating the total amount of CPU resources allocated by the user to reserve for applications within the cluster or Runtime Fabric instance. 
 
 |API Manager	
 |API instances:  API instances in production, preproduction, and unclassified APIs (not associated with an environment) that are managed by API Manager after they are created using add, promote, or import options. 
 a|API instances remain under management until they are deleted. Instances of API Manager are aggregated using a Max Concurrent model with three separate metrics for production, preproduction, and unclassified (APIs that aren't associated with an environment). 
-+
 [NOTE]
 Data for API Manager is available starting in October 2024. 
 
@@ -45,22 +48,22 @@ a|If an API is governed, all versions of that API are considered one governed AP
 |Omni Gateway API call: Any access request received by Omni Gateway regardless of whether the response to the request is successful 
 |Omni Gateway requests are aggregated as a total of all requests during a month.
 
-.3+|LLM Proxy	
-| Prompt tokens: Number of tokens an LLM Proxy in the prompts an LLM Proxy sends to a specific LLM Model
-| These tokens are the sum of all prompt tokens a specific LLM Proxy sends to a specific LLM Model during a month. A prompt sent to an LLM Proxy are considered an Omni Gateway API call and count towards the Omni Gateway API call metric.
+.3+|Model Proxy	
+| Prompt tokens: Number of tokens a Model Proxy in the prompts a Model Proxy sends to a specific LLM Model
+| These tokens are the sum of all prompt tokens a specific Model Proxy sends to a specific LLM Model during a month. A prompt sent to a Model Proxy are considered an Omni Gateway API call and count towards the Omni Gateway API call metric.
 
-| Completion tokens: Number of tokens in the responses that an LLM Proxy receives from a specific LLM Model
-|These tokens are the sum of all response tokens a specific LLM Proxy receives from a specific LLM Model during a month.
+| Completion tokens: Number of tokens in the responses that a Model Proxy receives from a specific LLM Model
+|These tokens are the sum of all response tokens a specific Model Proxy receives from a specific LLM Model during a month.
 
-| Total tokens: Total number of tokens used in interactions between an LLM Proxy and a specific LLM Model
+| Total tokens: Total number of tokens used in interactions between a Model Proxy and a specific LLM Model
 | Some LLM Providers, such as Gemini, use thinking tokens. Total tokens are the sum of prompt tokens, completion tokens, and thinking tokens if applicable.
 
-|Composer	
-|Composer task: Any action executed on a Composer connector, including but not limited to read, create, update, and delete 
+|Composer
+|Composer task: Any action executed on a Composer connector, including but not limited to read, create, update, and delete
 |Composer tasks are aggregated as a total of all actions during a month.
 
-|RPA	
-|Robotic Process Automation (“RPA”) bot minutes: The number of minutes running process automations across all bot sessions 
+|RPA
+|Robotic Process Automation (RPA) bot minutes: The number of minutes running process automations across all bot sessions
 |A single bot can run multiple parallel sessions, with RPA bot minutes counting for each parallel session. You can configure multiple bots to run the same process, with RPA bot minutes counting for each of these separate bot sessions. Test runs or process runs in the test phase are also counted towards RPA bot minutes.
 
 |Anypoint MQ
@@ -77,9 +80,9 @@ Anypoint MQ API requests are available via API and aggregated on usage reports.
 |DataGraph orchestration: An API request made by Anypoint DataGraph to the source APIs to get data for the GraphQL API request made to Anypoint DataGraph 
 |Orchestrations are not currently aggregated on usage reports.
 
-| Intelligent Document Processing (IDP)
-| Intelligent Document Processing (IDP) Document Pages: A single page processed by IDP
-| IDP document actions might process documents that have more than one page, with each page counting separately. When RPA executes document actions, it also counts towards document pages and additionally consumes the corresponding RPA Bot Minutes, accounting for the time the RPA process runs.
+|Intelligent Document Processing (IDP)
+|Intelligent Document Processing (IDP) Document Pages: A single page processed by IDP
+|IDP document actions might process documents that have more than one page, with each page counting separately. When RPA executes document actions, it also counts towards document pages and additionally consumes the corresponding RPA Bot Minutes, accounting for the time the RPA process runs.
 |===
 
 == Anypoint MQ Usage
@@ -153,18 +156,18 @@ include::partial$flex-gateway-metrics.adoc[tag=table]
 
 include::partial$flex-gateway-metrics.adoc[tag=cards]
 
-== LLM Proxy Usage
+== Model Proxy Usage
 
-LLM Proxy usage reports show this information in tables and cards:
+Model Proxy usage reports show this information in tables and cards:
 
-LLM Proxy:: 
-Name of the LLM Proxy
+Model Proxy:: 
+Name of the Model Proxy
 
 Business Group:: 
-Business group where the LLM Proxy is deployed
+Business group where the Model Proxy is deployed
 
 Client app:: 
-The client application or integration that sent requests to the LLM Proxy
+The client application or integration that sent requests to the Model Proxy
 
 Provider:: 
 The external LLM provider used by the proxy
@@ -173,13 +176,13 @@ Model::
 The specific LLM models used by the proxy
 
 Prompt tokens:: 
-The sum of tokens in prompts the LLM Proxy sends to the model in the given time period
+The sum of tokens in prompts the Model Proxy sends to the model in the given time period
 
 Completion tokens:: 
-The sum of tokens in responses the LLM Proxy receives from the model in the given time period
+The sum of tokens in responses the Model Proxy receives from the model in the given time period
 
 Total tokens:: 
-Total tokens used in interactions between the LLM Proxy and the model in the given time period. This includes prompt tokens, completion tokens, and any provider-specific thinking tokens when applicable.
+Total tokens used in interactions between the Model Proxy and the model in the given time period. This includes prompt tokens, completion tokens, and any provider-specific thinking tokens when applicable.
 
 == Intelligent Document Processing (IDP)
 

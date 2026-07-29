@@ -28,13 +28,13 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 
 == Create a Semantic Service
 
-. In the navigation, under *Portfolio*, expand *LLM Proxies*, and select *Semantic Services*.
+. In the navigation, under *Portfolio*, expand *Model Proxies*, and select *Semantic Services*.
 . Select *Add Semantic Service*.
 . Select the scale model that matches your traffic profile and operational needs.
 +
 * *Basic scale*
 +
-Choose *Basic scale* for smaller topic sets (up to 6 topics and 10 utterances per topic). This scale is managed through an internal LLM proxy configuration.
+Choose *Basic scale* for smaller topic sets (up to 6 topics and 10 utterances per topic). This scale is managed through an internal Model proxy configuration.
 +
 * *Advanced scale*
 +
