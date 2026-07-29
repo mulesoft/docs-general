@@ -33,7 +33,7 @@ The page is organized into tabs. The following table lists each tab, what it sho
 |Yes |Yes |Yes |Yes |Yes
 
 |*Instances*
-|Deployed instances, environments (for example production or sandbox), and gateways when that catalog type supports instances.
+|Deployed instances, environments (for example production or sandbox), and gateways when that catalog type supports instances. When Akamai API Security is enabled and scan data is available for this service, the table also shows a *Security Risk* column with a color-coded risk level per instance (Low, Medium, High, or Critical). Risk levels are per-instance — the same API can show different risk levels across environments.
 |Yes |Yes |Yes |Each LLM Proxy is exactly one instance so there is no *Instances* tab. |No
 
 |*Policies*
@@ -45,7 +45,7 @@ The page is organized into tabs. The following table lists each tab, what it sho
 |Yes |Yes |Yes |Yes |No
 
 |*Conformance Report*
-|Compliance score and rule-level analysis for conformance reporting where that tab is available.
+|Compliance score and rule-level analysis for conformance reporting where that tab is available. When Akamai API Security is enabled, the tab includes an *Akamai* section with a risk score overview, a findings table (endpoint-level vulnerabilities with severity, OWASP API Top-10 tags, and compliance framework tags), and an incidents table (aggregated security incidents). Select a finding to view details and see recommended remediation policies you can apply directly from this page.
 |Yes |Yes |Yes |No |No
 
 |===
