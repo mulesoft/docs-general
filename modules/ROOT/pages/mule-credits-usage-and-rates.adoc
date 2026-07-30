@@ -5,7 +5,7 @@ A Mule Credit is a fungible currency that allows you to draw down from a single 
 
 Mule Credits apply to your entire Anypoint Platform organization and you can't manage them per business group. Use Mule Credits before the `Order End Date` set in the *Usage Details* table on your *Order Form* because rollovers are not permitted. To see which usage types your subscription includes, refer to your *Order Form*, *Subscription Plan*, or *Features and Entitlement Document*.
 
-== Mule Credits by Subscription Plan
+== Subscription Plan
 
 The usage types available to you depend on your subscription plan.
 
@@ -35,7 +35,6 @@ The usage types available to you depend on your subscription plan.
 NOTE: MuleSoft All-Access License supports pre-commit and unlimited usage models.
 
 == Usage Types
-
 
 Each usage type (also called a meter) tracks a specific dimension of platform consumption. Credit rates vary by monthly consumption volume and reset on the first day of each calendar month. You consume credits at the same rate across all environments, including production, pre-production, sandbox, and design. For the full tiered rate table, see <<rate-cards>>.
 
@@ -86,11 +85,9 @@ If your usage exceeds your contracted amount, MuleSoft sends a monthly overage i
 
 == Viewing Usage and Billing
 
-Mule Credits usage is available in both Anypoint Usage Reports and Salesforce Digital Wallet. Salesforce Digital Wallet remains the billing source of truth for finalized Mule Credits totals, statements, and overage outcomes. Anypoint Usage Reports provide granular visibility into consumption by usage type, business group, and application.
+Mule Credits usage is available in both Anypoint Usage Reports and Salesforce Digital Wallet. Salesforce Digital Wallet remains the billing source of truth for finalized Mule Credits totals, statements, and overage outcomes.
 
-Use both views together for a complete view of Mule Credits consumption. Digital Wallet shows finalized totals and trends. Anypoint Usage Reports show consumption details by usage type, business group, and application. Values can differ between these views.
-
-Use Anypoint Usage Reports to investigate consumption spikes, identify which business groups and applications are driving usage, and support internal forecasting or cost allocation workflows.
+Use both views together for a complete view of Mule Credits consumption. Digital Wallet shows finalized totals and trends, while Anypoint Usage Reports show consumption details by usage type, business group, and application. Values can differ between these views.
 
 === When to Use Each View
 
