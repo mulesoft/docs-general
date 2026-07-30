@@ -101,6 +101,19 @@ Use the Anypoint Usage API to programmatically access usage data. The API provid
 
 To use the API, see the API documentation for the https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a/usage-api/[Anypoint Usage API] for access and implementation details. Users must have Usage Viewer permission to access the Usage API.
 
+For a summary of pricing models and where to review usage and billing context for each model, see xref:usage-metrics.adoc[].
+
+[[granular-mule-credits-visibility]]
+== Granular Mule Credits Visibility
+
+Anypoint Usage Reports provide operational drill-down visibility for Mule Credits-related consumption.
+
+[NOTE]
+====
+Use Salesforce Digital Wallet for finalized, billing-relevant Mule Credits totals and statements.
+====
+
+For detailed Mule Credits usage guidance and billing context, see xref:mule-credits-usage-and-rates.adoc[].
 
 [[usage-reports-on-control-planes]]
 == Usage Reports on Control Planes
