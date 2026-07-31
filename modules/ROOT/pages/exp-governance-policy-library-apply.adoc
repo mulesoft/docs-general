@@ -1,4 +1,3 @@
-///
 = Browse the Policy Library
 :keywords: policy library, canonical policies, governance policies, policy catalog
 
@@ -29,7 +28,6 @@ Policies that apply to any service, including scanned and federated APIs, are ma
 * xref:exp-governance-create-strategy.adoc[Create Governance Strategies]
 * xref:exp-services-view-details.adoc[]
 * xref:exp-governance-govern-third-party-apis.adoc[Govern Third-Party Provider APIs]
-///
 
 // FLAG: Aug 13 release (policy write scope). Everything below documents applying policies to API instances (including third-party provider instances) through the Policy Library wizard, which is Policy Write — GA Aug 13. It is out of scope for the Jul 16 Policy Read GA. Uncomment when the Aug 13 write release is documented, and fold these sections into the topic above (add the apply use cases, permissions, and wizard steps). Note: for MuleSoft-native and Kong instances, policy application already ships, but cross-gateway apply as described here aligns with the Aug 13 milestone — confirm scope with the PM before publishing.
 ////
