@@ -13,7 +13,7 @@ Follow these steps to govern APIs from third-party providers:
 
 . Create control rules to track the policies that you want to enforce across providers. You create these rules using developer skills rather than the UI. For guidance on creating policy subcategory rules, review the https://dev-portal.mulesoft.com/skills/author-governance-ruleset.html[Author a Governance Ruleset] skill in the MuleSoft Developer Hub. For example, use a prompt such as `create a rule to track that each API has a JWT policy applied to it`.
 
-. Create a xref:exp-governance-create-strategy.adoc[governance strategy] and select the control rules or automated policies to apply. The strategy evaluates conformance for all in-scope APIs, including those discovered from third-party providers.
+. Create a xref:exp-governance-create-strategy.adoc#create-with-ide[governance strategy] and select the control rules or automated policies to apply. The strategy evaluates conformance for all in-scope APIs, including those discovered from third-party providers.
 
 . Track conformance status for provider-hosted APIs through the governance strategy dashboard. Use the *Any provider* filter in the *Governed Services* tab of your governance strategy to focus on a subset of your cross-gateway environment.
 
