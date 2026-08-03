@@ -16,8 +16,14 @@ Use *Overview* to check scanner summary information, such as:
 * Services and instances counts.
 * Scan history and run status.
 * Last scan time and scanner health indicators.
+* Activity Log with a real-time timeline of scan progress events.
 
 For Akamai API Security scanners, the overview represents correlation and security enrichment activity for existing services. Akamai scanners don't import new services.
+
+When you select a scan, the *Activity Log* appears between *Scan Details* and *Scan Results*. It's a real-time timeline of the events a scanner run emits, such as connecting to the provider, resolving credentials, processing pages, and completing the scan. Each entry shows a timestamp, a log level (`INFO` or `DEBUG`), and a message, and the log reports the total event count.
+
+* *Verbosity toggle:* By default, the log includes `DEBUG` entries. Select *Hide Debug* to show only `INFO` events, or show them again to include lower-level detail.
+* *Audit trail:* When you view scan history, the Activity Log shows which assets were added and which already existed (for example, `5 discovered, 5 added`).
 
 == Services Tab
 
