@@ -32,7 +32,7 @@ Setup involves credentials in both directions:
 Complete these steps as an organization administrator:
 
 . *Create a service account in Akamai API Security.* In your Akamai API Security tenant, create a service account and note its client ID and client secret.
-. *Configure the scanner in MuleSoft.* Add an Akamai scanner and enter the Akamai service account credentials (client ID and secret) and the Akamai base URL, along with a scan frequency. See <<Set Up the Akamai Scanner>>.
+. *Configure the scanner in MuleSoft.* Add an Akamai scanner and enter the Akamai service account credentials (client ID and clientsecret) and the Akamai base URL, along with a scan frequency. See <<Set Up the Akamai Scanner>>.
 . *Create a connected app in MuleSoft.* In Anypoint Platform, go to *Access Management* > *Connected Apps* and create an app that acts on its own behalf (client credentials). Add the *Exchange Viewer* or *Asset Viewer* scope so Akamai can read API instance and asset information, then save. Copy the client ID and client secret.
 . *Configure the Akamai-side sync.* In your Akamai API Security tenant, enter the MuleSoft connected app client ID and client secret so Akamai can pull API asset and instance information from MuleSoft.
 

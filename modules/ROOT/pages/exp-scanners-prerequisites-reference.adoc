@@ -105,7 +105,7 @@ a|
 
 *Role:* Copilot Studio Scanner
 
-*Setup:* App added as an Application User in Power Platform; scope set to Dataverse environment URL
+*Setup:* App added as an Application User in Power Platform; scope set to Dataverse environment URL, `\https://<org-Id>.crm.dynamics.com`
 
 | Microsoft Foundry
 | Agent
@@ -134,7 +134,15 @@ a|
 a|
 *Credentials:* Access key ID and secret access key; AWS region
 
-*Permissions:* IAM read-only policy for API Gateway (for example, `apigateway:GET`)
+*Permissions:* IAM read-only policy for API Gateway:
+
+* *Read permission:* `apigateway:GET`
+* *Read action group:* `apigateway:GET*` on REST and HTTP API resources
+* *Resource scope (REST APIs):* `arn:aws:apigateway:{region}::/restapis/*`
+* *Resource scope (HTTP APIs):* `arn:aws:apigateway:{region}::/apis/*`
+
+[NOTE]
+For web application firewall (WAF) policies, the scanner also uses `software.amazon.awssdk:wafv2` and `software.amazon.awssdk:route53`.
 
 | Azure API Management
 | API
@@ -143,12 +151,17 @@ a|
 
 *Role:* API Management Service Reader
 
+* *Read role scope:* API Management Service Reader at the API Management resource or resource group scope
+* *Read OAuth scope:* `https://management.azure.com/.default`
+
 | Google Apigee
 | API
 a|
 *Credentials:* GCP project ID; service account email; private key
 
 *Role:* Apigee Read-only Admin
+
+* *Read role:* Service account with the Viewer role, or an Apigee permission role with equivalent read access
 
 | Kong Gateway
 | API
@@ -157,10 +170,12 @@ a|
 
 *Role:* Kong Control Plane Viewer
 
+* *Apply read scope:* Admin API read permission required to read policy in target environments
+
 | Akamai Security
 | API Security
 a|
-*Credentials:* Akamai Security base URL; client ID; client secret; organization ID
+*Credentials:* Akamai Security base URL; client ID and client secret
 
 *Permissions:* Access to create service accounts in Akamai Security; access to apply Akamai correlation policy in target environments
 
@@ -180,6 +195,8 @@ a|
 * `bedrock-agentcore:ListAgentRuntimeVersions`
 * `bedrock-agentcore:ListAgentRuntimeEndpoints`
 * `bedrock-agentcore:InvokeAgentRuntime`
+
+*Policy read permissions:* Runtime read actions, including `bedrock-agentcore:ListAgentRuntimes` and `bedrock-agentcore:GetAgentRuntime`
 
 | Azure API Management MCP Server
 | MCP
