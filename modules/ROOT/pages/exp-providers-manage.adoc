@@ -24,7 +24,7 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 . Sign in to the enhanced experience through your organization's entry point.
 . In the navigation, select *Platform* > *Providers*.
 
-The Providers page displays the provider list and scanner list.
+The *Providers* page displays the provider list and scanner list.
 
 == Provider List
 
@@ -49,11 +49,11 @@ The scanner list shows:
 
 == Filter Scanners by Provider
 
-To view scanners for a specific provider, select the provider from the sidebar. The scanner list updates to show only scanners configured for that provider. The main panel displays the scanner list.
+To view scanners for a specific provider, select the provider from the sidebar. The scanner list updates to show only scanners configured for that provider.
 
 == View Scanner Details
 
-To see detailed information about a scanner, including scan history and configuration, select the scanner name in the scanner list. The scanner detail page includes *Overview*, *Services*, and *Settings* tabs.
+To see detailed information about a scanner, including scan history, activity log, and configuration, select the scanner name in the scanner list. The scanner detail page includes *Overview*, *Services*, and *Settings* tabs.
 
 For detailed tab behavior and scanner-type differences, see xref:exp-scanners-view-details.adoc[].
 

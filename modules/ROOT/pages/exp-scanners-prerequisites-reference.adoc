@@ -1,7 +1,7 @@
 = Scanner Prerequisites by Provider
 :keywords: scanner prerequisites, exchange scanners, provider scanners, required roles, required credentials, scanner setup
 
-Scanner prerequisites by provider help you confirm required roles, credentials, and permissions before creating a scanner. Use this reference to prevent connection test failures and incomplete discovery by validating provider-specific access in advance. Each scanner still requires Exchange Administrator permission and the correct business group context.
+Scanner prerequisites by provider help you confirm required roles, credentials, and permissions before creating a scanner. Use this reference to prevent connection test failures and incomplete discovery by validating provider-specific access in advance. Each scanner also requires Exchange Administrator permission and the correct business group context.
 
 == Before You Begin
 

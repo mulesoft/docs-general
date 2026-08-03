@@ -1,11 +1,11 @@
-= Using Akamai for Risk Correlation 
+= Using Akamai for Risk Correlation
 :keywords: akamai api security scanner, akamai integration, security risk, vulnerability findings, incident correlation, portfolio catalogs
 
-Use Akamai for risk correlation to map external security findings to the right services in *Portfolio*. Teams get one view to triage risk, track incidents, and remediate faster. To enable this correlation, configure an Akamai API Security scanner that connects your Akamai account, runs scheduled scans, and surfaces mapped findings on related services in *Portfolio*. The scanner does not import or register third-party services. It correlates risk scores, findings, and incidents for APIs and MCP services in one governance workflow.
+Use Akamai for risk correlation to map external security findings to the right services in *Portfolio*. Teams get one view to triage risk, track incidents, and remediate faster. To enable this correlation, configure an Akamai API Security scanner that connects your Akamai account, runs scheduled scans, and surfaces mapped findings on related services in *Portfolio*. The scanner doesn't import or register third-party services. It correlates risk scores, findings, and incidents for APIs and MCP services in one governance workflow.
 
-The integration relies on a bidirectional sync between your MuleSoft and Akamai API Security tenants: you connect the two tenants with credentials in each direction, Akamai reads your API assets and instances from MuleSoft so it can match its security observations to the correct APIs, and the scanner pulls the resulting findings and incidents back into *Portfolio*.
+The integration relies on a bidirectional sync between your MuleSoft and Akamai API Security tenants. You connect the two tenants with credentials in each direction: Akamai reads your API assets and instances from MuleSoft so it can match its security observations to the correct APIs, and the scanner pulls the resulting findings and incidents back into *Portfolio*.
 
-== How Akamai Scanner Differs from Import Scanners
+== How the Akamai Scanner Differs from Import Scanners
 
 Most provider scanners discover metadata in external platforms and import services into *Portfolio* catalogs. The Akamai API Security scanner works differently: instead of creating new services, it enriches existing ones with Akamai security data.
 
@@ -32,7 +32,7 @@ Setup involves credentials in both directions:
 Complete these steps as an organization administrator:
 
 . *Create a service account in Akamai API Security.* In your Akamai API Security tenant, create a service account and note its client ID and client secret.
-. *Configure the scanner in MuleSoft.* Add an Akamai scanner and enter the Akamai service account credentials (client ID and clientsecret) and the Akamai base URL, along with a scan frequency. See <<Set Up the Akamai Scanner>>.
+. *Configure the scanner in MuleSoft.* Add an Akamai scanner and enter the Akamai service account credentials (client ID and client secret) and the Akamai base URL, along with a scan frequency. See <<Set Up the Akamai Scanner>>.
 . *Create a connected app in MuleSoft.* In Anypoint Platform, go to *Access Management* > *Connected Apps* and create an app that acts on its own behalf (client credentials). Add the *Exchange Viewer* or *Asset Viewer* scope so Akamai can read API instance and asset information, then save. Copy the client ID and client secret.
 . *Configure the Akamai-side sync.* In your Akamai API Security tenant, enter the MuleSoft connected app client ID and client secret so Akamai can pull API asset and instance information from MuleSoft.
 
@@ -41,7 +41,8 @@ Complete these steps as an organization administrator:
 Before you set up the scanner, review the prerequisites for Akamai scanners in xref:exp-scanners-prerequisites-reference.adoc[].
 
 . From *Platform* > *Providers*, select *Akamai*.
-. Click *Add Scanner* and enter connection values, and test the connection.
+. Click *Add Scanner* and enter the connection values.
+. Test the connection.
 . Enter scanner metadata, such as scanner name, description, frequency, and time.
 . Apply the Akamai correlation policy to selected environments.
 . Save the scanner and run a discovery scan.
@@ -73,8 +74,8 @@ If some environments show that correlation policy isn't applied, you can apply m
 
 . Open *Platform* > *Providers* and select the configured Akamai scanner.
 . In *Overview*, check the *Akamai Correlation Policy* status.
-. If status shows missing environments, click *Check again* to apply policy only to those environments.
-. Wait for status to change to *Applied* and confirm all target environments are covered.
+. If the status shows missing environments, click *Check again* to apply policy only to those environments.
+. Wait for the status to change to *Applied* and confirm all target environments are covered.
 
 If policy application fails, verify your Admin API write permissions and environment access, then retry.
 
@@ -119,7 +120,7 @@ If no direct remediation policy is available for a finding, use the finding deta
 
 If a scan completes but results don't appear:
 
-* Verify correlation policy is applied in the same environment as the service instance.
+* Verify the correlation policy is applied in the same environment as the service instance.
 * Confirm the target service already exists in *Portfolio* catalogs.
 * Confirm scanner scope and business group match the service location.
 * Re-run the scanner after connection or policy changes.

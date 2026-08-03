@@ -1,7 +1,7 @@
 = Viewing Scanner Details
 :keywords: scanner detail tabs, scanner overview tab, scanner services tab, scanner settings tab, provider scanners
 
-View details about a scanner and its scan history by selecting a configured scanner from the provider list. Scanner details show information about the provider, when it was created, last completed scan, and scan history. After you select a configured scanner, use *Overview*, *Services*, and *Settings* tabs to review scanner state and configuration, noting that tab content varies by scanner type and provider capabilities.
+View details about a scanner and its scan history by selecting a configured scanner from the provider list. Scanner details show information about the provider, when it was created, last completed scan, and scan history. After you select a configured scanner, use the *Overview*, *Services*, and *Settings* tabs to review scanner state and configuration. Tab content varies by scanner type and provider capabilities.
 
 == Open Scanner Detail Tabs
 
@@ -20,9 +20,9 @@ Use *Overview* to check scanner summary information, such as:
 
 For Akamai API Security scanners, the overview represents correlation and security enrichment activity for existing services. Akamai scanners don't import new services.
 
-When you a scan starts, the *Activity Log* appears between *Scan Details* and *Scan Results*. It's a real-time timeline of the events a scanner run emits, such as connecting to the provider, resolving credentials, processing pages, and completing the scan. Each entry shows a timestamp, a log level (`INFO` or `DEBUG`), and a message, and the log reports the total event count.
+When a scan starts, the *Activity Log* appears between *Scan Details* and *Scan Results*. It's a real-time timeline of the events a scanner run emits, such as connecting to the provider, resolving credentials, processing pages, and completing the scan. Each entry shows a timestamp, a log level (`INFO` or `DEBUG`), and a message. The log also reports the total event count.
 
-* *Verbosity toggle:* By default, the log includes `DEBUG` entries. Select *Hide Debug* to show only `INFO` events, or show them again to include lower-level detail.
+* *Log detail:* By default, the log includes `DEBUG` entries. Select *Hide Debug* to show only `INFO` events; select it again to show `DEBUG` events.
 * *Audit trail:* When you view scan history, the Activity Log shows which assets were added and which already existed (for example, `5 discovered, 5 added`).
 
 == Services Tab
@@ -37,8 +37,8 @@ Use *Settings* to review and update scanner configuration values, such as provid
 
 == How Tab Content Varies by Scanner Type
 
-Import scanners::
-Show imported discovery activity in scanner tabs, including newly discovered services.
+Import scanner::
+Shows imported discovery activity in scanner tabs, including newly discovered services.
 
 Akamai API Security scanner::
 Shows correlation and governance enrichment activity for existing services, including risk and findings signals.
