@@ -72,6 +72,13 @@ Select a row in the *Security Findings* table to open the finding detail panel, 
 
 Select a row in the *Incidents* table to open the incident detail panel, which shows: *Detection Time*, *Type*, *Triggered On*, *Severity*, *Occurrences*, *Exposure*, OWASP tags, and Compliance Frameworks.
 
+=== Refresh Conformance Results
+
+After a scan runs, the API listing and API detail pages don't automatically reflect the updated conformance status. To see the latest results, manually refresh in one of these ways:
+
+* Refresh a single API: On the API detail page, open the *Conformance* tab and select *Refresh*.
+* Refresh all APIs: On the *Governance Strategies* page, select *Refresh Report*.
+
 == See Also
 
 * xref:exp-governance-create-strategy.adoc[]
