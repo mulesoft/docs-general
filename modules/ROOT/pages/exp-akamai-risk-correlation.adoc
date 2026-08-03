@@ -22,7 +22,7 @@ For credential and role details, see xref:exp-scanners-prerequisites-reference.a
 
 == Set Up Tenant Connectivity
 
-The integration uses a bidirectional sync between your MuleSoft tenant and your Akamai API Security tenant. You provision and configure both tenants. Each MuleSoft customer tenant (root organization) connects to one Akamai API Security tenant (for example, `mulesoft-partner.example.com`).
+The integration uses a bidirectional sync between your MuleSoft tenant and your Akamai API Security tenant. You provision and configure both tenants. Each MuleSoft customer tenant (root organization) connects to one Akamai API Security tenant (for example, `<tenant>.nonamesec.com`).
 
 Setup involves credentials in both directions:
 
@@ -31,8 +31,8 @@ Setup involves credentials in both directions:
 
 Complete these steps as an organization administrator:
 
-. *Create a service account in Akamai API Security.* In your Akamai API Security tenant, create a service account and note its client ID, client secret, and organization ID.
-. *Configure the scanner in MuleSoft.* Add an Akamai scanner and enter the Akamai service account credentials (client ID, client secret, and organization ID) and the Akamai base URL, along with a scan frequency. See <<Set Up the Akamai Scanner>>.
+. *Create a service account in Akamai API Security.* In your Akamai API Security tenant, create a service account and note its client ID and client secret.
+. *Configure the scanner in MuleSoft.* Add an Akamai scanner and enter the Akamai service account credentials (client ID and secret) and the Akamai base URL, along with a scan frequency. See <<Set Up the Akamai Scanner>>.
 . *Create a connected app in MuleSoft.* In Anypoint Platform, go to *Access Management* > *Connected Apps* and create an app that acts on its own behalf (client credentials). Add the *Exchange Viewer* or *Asset Viewer* scope so Akamai can read API instance and asset information, then save. Copy the client ID and client secret.
 . *Configure the Akamai-side sync.* In your Akamai API Security tenant, enter the MuleSoft connected app client ID and client secret so Akamai can pull API asset and instance information from MuleSoft.
 
@@ -56,7 +56,7 @@ Akamai periodically pulls API instance and asset information from MuleSoft (typi
 Akamai to MuleSoft::
 The scanner pulls security findings and incidents from Akamai on the schedule you set, then correlates and stores them so they appear on the related services in *Portfolio*.
 
-For Akamai to observe and correlate traffic, the Akamai correlation policy must be applied to your API instances. This out-of-the-box policy (for Flex Gateway and Mule gateways) stamps correlation headers on API responses so Akamai can match observed traffic to the correct MuleSoft API. Akamai observes north-south traffic only for domains you own and control; MuleSoft-owned domains such as `cloudhub.io` are excluded.
+For Akamai to observe and correlate traffic, the Akamai correlation policy must be applied to your API instances. This out-of-the-box policy (for Flex Gateway and Mule gateways) stamps correlation headers on API responses so Akamai can match observed traffic to the correct MuleSoft API. Akamai observes north-south traffic only for domains you own and control.
 
 == Review Scanner Detail Tabs
 
