@@ -3,7 +3,7 @@
 
 Instances represent how a service runs in a specific environment, such as production or sandbox, and how traffic reaches it through gateways or runtimes your organization manages.
 
-Services such as APIs, agents, MCP servers, and LLM proxies can include instances. In the enhanced experience, you manage instances from the service detail page through the *Instances* tab.
+Services such as APIs, agents, MCP servers, and Model proxies can include instances. In the enhanced experience, you manage instances from the service detail page through the *Instances* tab.
 
 Managed paths through Anypoint Omni Gateway can provide additional policy and monitoring integrations if your organization supports them. Unmanaged or external paths remain available when they align with your operating model.
 
@@ -24,7 +24,7 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 
 == Open the APIs Catalog
 
-. In *Portfolio*, open the catalog for the service type, such as *APIs*, *Agents*, *MCP Servers*, or *LLM Proxies*.
+. In *Portfolio*, open the catalog for the service type, such as *APIs*, *Agents*, *MCP Servers*, or *Model Proxies*.
 . Select a service to open its detail page.
 . Open the *Instances* tab.
 

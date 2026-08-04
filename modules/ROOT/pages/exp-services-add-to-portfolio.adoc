@@ -1,7 +1,7 @@
 = Adding Services to Your Portfolio
 :keywords: add services, portfolio, service registration, service types, workflow, anypoint platform
 
-Your *Portfolio* is organized into catalogs: *Agents*, *MCP Servers*, *LLM Proxies*, *APIs*, and *Gateways*. Each catalog holds the services (or gateway entries) your organization registered or imported for governance, monitoring, and deployment. Services enter a catalog through automated provider discovery or manual registration. For procedures, use the topics linked in each section.
+Your *Portfolio* is organized into catalogs: *Agents*, *MCP Servers*, *Model Proxies*, *APIs*, and *Gateways*. Each catalog holds the services (or gateway entries) your organization registered or imported for governance, monitoring, and deployment. Services enter a catalog through automated provider discovery or manual registration. For procedures, use the topics linked in each section.
 
 [cols="1,2",options="header"]
 |===
@@ -38,7 +38,7 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 Use *Add Services* to open provider connection or manual registration, then select the service type.
 * *Portfolio*
 +
-Open the *Agents*, *MCP Servers*, *LLM Proxies*, *APIs*, or *Gateways* catalog. Use the add control for that type (for example, *Add API* or *Add Agent*), then select the available flow. For gateways, *Add Gateway* opens gateway creation in Anypoint Platform.
+Open the *Agents*, *MCP Servers*, *Model Proxies*, *APIs*, or *Gateways* catalog. Use the add control for that type (for example, *Add API* or *Add Agent*), then select the available flow. For gateways, *Add Gateway* opens gateway creation in Anypoint Platform.
 
 include::_partials/exp-navigation-labels.adoc[tag=ExpNavigationLabels]
 
@@ -50,8 +50,8 @@ Register by uploading an agent card or connect an agent provider scanner for dis
 *MCP Servers*::
 Register with an MCP URL or a schema file, or connect an MCP server provider.
 
-*LLM Proxies*::
-Register manually by creating an LLM proxy with a routing strategy that routes requests by provider or semantically.
+*Model Proxies*::
+Register manually by creating a Model proxy with a routing strategy that routes requests by provider or semantically.
 
 *APIs*::
 Register with an API specification, or connect an API provider so scans import APIs into the *APIs* catalog.
