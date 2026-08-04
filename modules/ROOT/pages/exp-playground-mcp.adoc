@@ -1,17 +1,7 @@
-= Use the MCP Server Playground
-:keywords: mcp server playground, test mcp server, mcp inspector, llm integration, mcp tools, tool invocation, anypoint platform, enhanced experience
+= Exploring MCP Server Tools in the MCP Playground
+:keywords: mcp server playground, test mcp server, mcp tools, tool invocation, anypoint platform, enhanced experience
 
-The MCP server playground lets you understand what an MCP server does and how it behaves without connecting it to an external tool such as Postman, the MCP Inspector, or Claude Desktop. Instead of reading only the overview and documentation, you explore the server's tools and see what they return, directly on the service detail page.
-
-The playground offers two modes:
-
-Inspector mode::
-+
-Explore individual tools, configure and invoke them, and inspect what each one returns. Use this mode to understand each tool's function and response on its own.
-
-LLM Integration mode::
-+
-Connect a large language model and chat with it. The model calls the MCP server's tools as needed to answer your prompts, so you can see how an LLM works with the server.
+Use the MCP server playground to understand what an MCP server does and how it behaves without connecting it to an external tool such as Postman, the MCP Inspector, or Claude Desktop. Instead of reading only the overview and documentation, you explore the server's tools, invoke them, and see what they return, directly on the service detail page.
 
 //placeholder for image of MCP server playground
 
@@ -35,9 +25,9 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 . In *Portfolio*, open the *MCP Servers* catalog and select the MCP server you want to test.
 . On the service detail page, select the *Playground* tab.
 
-== Use Inspector Mode
+== Inspect and Invoke Tools
 
-Inspector mode lists the tools inside the MCP server so you can explore each tool's functionality and description.
+The playground lists the tools inside the MCP server so you can explore each tool's functionality and description.
 
 . In the tool list, select the tool you want to test.
 . If you aren't already authenticated to the MCP server, configure authentication. If you're already authenticated, you don't need to authenticate again.
@@ -47,19 +37,6 @@ Inspector mode lists the tools inside the MCP server so you can explore each too
 . Review the response, including the status code and the full JSON response body.
 
 If required parameters are missing or validation fails, the playground shows an error or an explanation of the failure.
-
-== Use LLM Integration Mode
-
-LLM Integration mode lets you see how a large language model calls the MCP server's tools in response to prompts.
-
-. Switch to *LLM Integration* mode.
-. Connect to an LLM proxy from your catalog.
-. Enter a prompt, or select a suggested prompt (for example, a prompt that queries a Salesforce object).
-. Send the request.
-
-The assistant shows which tool the prompt invokes and returns a response that integrates the result of the tool call. Continue the conversation to see how different prompts invoke different tools.
-
-Use this mode to understand how an LLM communicates with the MCP server and which tools different prompts invoke.
 
 == See Also
 

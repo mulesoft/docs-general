@@ -1,9 +1,7 @@
-= Use the API Playground
+= Testing APIs in the API Playground
 :keywords: api playground, test api, api endpoints, api authentication, request snippet, api response, anypoint platform, enhanced experience
 
-The API playground lets you explore an API's endpoints, configure and send requests, and inspect responses from the service detail page. Instead of copying paths into an external tool such as Postman, you exercise the API in the enhanced experience and see the results next to its documentation.
-
-//placeholder for image of API playground
+Use the API playground to explore an API's endpoints, configure and send requests, and inspect responses from the service detail page. Instead of copying paths into an external tool such as Postman, you exercise the API in the enhanced experience and see the results next to its documentation.
 
 == Before You Begin
 
@@ -22,7 +20,9 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 
 == Open the API Playground
 
-. In *Portfolio*, open the *APIs* catalog and select the API you want to test.
+The API playground is available only for REST APIs that have at least one instance deployed. To find a compatible API, filter the catalog by REST API or select a REST API you know.
+
+. In *Portfolio*, open the *APIs* catalog and select the REST API you want to test.
 . On the service detail page, select the *Playground* tab.
 
 The playground shows the endpoint list on the left. Each endpoint has its own required parameters and configuration.
