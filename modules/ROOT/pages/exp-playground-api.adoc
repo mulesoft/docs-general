@@ -1,0 +1,85 @@
+= Testing APIs in the API Playground
+:keywords: api playground, test api, api endpoints, api authentication, request snippet, api response, anypoint platform, enhanced experience
+
+Use the API playground to explore an API's endpoints, configure and send requests, and inspect responses from the service detail page. Instead of copying paths into an external tool such as Postman, you exercise the API in the enhanced experience and see the results next to its documentation.
+
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* One of these permissions:
++
+--
+** Exchange: Exchange Viewer
+** Exchange: Exchange Contributor
+** Exchange: Exchange Administrator
+--
++
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+
+== Open the API Playground
+
+The API playground is available only for REST APIs that have at least one instance deployed. To find a compatible API, filter the catalog by REST API or select a REST API you know.
+
+. In *Portfolio*, open the *APIs* catalog and select the REST API you want to test.
+. On the service detail page, select the *Playground* tab.
+
+The playground shows the endpoint list on the left. Each endpoint has its own required parameters and configuration.
+
+== Select an Endpoint and Environment
+
+. In the endpoint list, select the endpoint you want to test (for example, a *POST* endpoint that creates a new record).
+. Select the version and instance to choose the environment you want to test against.
+
+== Configure Authentication
+
+Before sending a request, authenticate to the API. The available methods depend on what the API owner enabled.
+
+. In the authentication section, select an authentication method. If the API owner enabled only one method (for example, API key), use that method.
+. Enter the required values, such as the API key.
+
+== Configure the Request
+
+After authenticating, configure the details of the request:
+
+Body::
++
+Configure the request body in the format the endpoint expects, such as JSON, XML, form, or multipart. Multipart supports file upload.
+
+Parameters::
++
+Add and configure request parameters.
+
+Headers::
++
+Add and configure request headers.
+
+=== Copy the Request Snippet
+
+The playground generates a request snippet that reflects your current configuration. As you change the authentication, body, parameters, or headers, the snippet updates to match.
+
+. Select the format you want for the snippet.
+. Copy the snippet to use it outside the playground.
+
+== Send the Request and Review the Response
+
+. After configuring the request, select *Send*.
+. Review the response:
++
+--
+* *Status code*, along with the response size and speed.
+* *Response body*.
+* *Response headers*, which you can copy.
+--
+
+== Review Request History
+
+After you test several requests or endpoints within an API, the playground keeps a history of your configurations. Open the history to review a previous request or return to an earlier configuration.
+
+== See Also
+
+* xref:exp-playground-overview.adoc[]
+* xref:exp-playground-mcp.adoc[]
+* xref:exp-services-view-details.adoc[]
+* xref:exp-instances-add.adoc[]
