@@ -80,7 +80,7 @@ Platform Configuration::
 
 Once enabled as described in <<before-you-begin>>, open the assistant from the panel available on any page in the enhanced experience.
 
-The MuleSoft Agent uses your Access Management permissions and can only perform actions you're authorized to do. Tasks like creating governance strategies or managing services require specific permissions. For more information, see xref:exp-home-start.adoc#permissions[].
+The MuleSoft Agent uses your Access Management permissions and can only perform actions you're authorized to do. Tasks like creating governance strategies or managing services require specific permissions. For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
 == Ask Questions
 
