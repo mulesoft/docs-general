@@ -11,7 +11,7 @@ Model Proxy supports these endpoint formats: OpenAI, Gemini, and Anthropic. The 
 * *Gemini format*: Native Gemini API format. Doesn't support multi-routing or fallback mechanisms.
 * *Anthropic format*: Native Anthropic API format. Doesn't support multi-routing or fallback mechanisms.
 
-NOTE: This guide currently provides OpenAI formatted request examples. Gemini and Anthropic format examples will be added in future updates.
+== OpenAI Format
 
 To learn more about the OpenAI request types, see:
 
@@ -31,7 +31,7 @@ NOTE: Adding a model to a request ensures deterministic routing to a preferred b
 To find your Model Proxy endpoint configuration and client application credentials required to use the requests in this guide:
 
 . Find your public endpoint:
-.. Navigate to *Runtime Manager* > *Omni Gateways* 
+.. Navigate to *Runtime Manager* > *Omni Gateways*
 .. Click the name of the Omni Gateway where your Model Proxy is deployed.
 .. Copy the *Public Endpoint*.
 . Find your base path:
@@ -46,6 +46,43 @@ To find your Model Proxy endpoint configuration and client application credentia
 .. Select the *SLA tier*.
 .. Click *Request access*.
 .. Copy the *Client ID* and *Client Secret*.
+
+== Gemini Format Request Example
+
+The following example shows a basic request using the Gemini API format:
+
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/models/gemini-2.5-flash:generateContent' \
+  --header 'Content-Type: application/json' \
+  --header 'client_id: <client-id>' \
+  --header 'client_secret: <client-secret>' \
+  --data '{
+    "contents": [
+      { "role": "user", "parts": [{ "text": "hello" }] }
+    ]
+  }'
+----
+
+== Anthropic Format Request Example
+
+The following example shows a basic request using the Anthropic API format:
+
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/v1/messages' \
+  --header 'Content-Type: application/json' \
+  --header 'anthropic-version: 2023-06-01' \
+  --header 'client_id: <client-id>' \
+  --header 'client_secret: <client-secret>' \
+  --data '{
+    "model": "claude-opus-4-1-20250805",
+    "max_tokens": 100,
+    "messages": [
+      { "role": "user", "content": "say hi in one word" }
+    ]
+  }'
+----
 
 [[amazon-bedrock-model-names]]
 == Amazon Bedrock Model Names
@@ -64,13 +101,13 @@ bedrockanthropic/<region>.anthropic.<model-rd>
 
 To find your region and model name for your Claude model, see https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-support.html[Supported Regions and models for inference profiles].
 
-== Chat Completions API Validation (/chat/completions) Request Examples
+=== Chat Completions API Validation (/chat/completions) Request Examples
 
 https://developers.openai.com/api/reference/resources/chat[Chat Completions] is the standard API for interacting with models. It is designed for conversational multi-turn interactions rather than simple text continuation. The endpoint requires a model and a messages list with roles (such as system, user, or assistant) to generate context-aware responses.
 
 These examples are designed to validate the basic functionality of the Chat Completions API.
 
-=== Basic Chat Completion Example
+==== Basic Chat Completion Example
 
 This request examples ensures the gateway correctly routes traffic to the specified LLM provider.
 
@@ -112,7 +149,7 @@ curl --location '<public-endpoint>/<base-path>/chat/completions' \
 ----
 ====
 
-=== Creative Content Generation (Temperature Control) Example
+==== Creative Content Generation (Temperature Control) Example
 
 This request example performs can preform brainstorming tasks, such as generating multiple unique marketing slogans. The example writes creative content using the temperature parameter (0 to 2 value, higher values are more creative) to control the randomness and creativity of the response:
 
@@ -152,7 +189,7 @@ curl --location '<public-endpoint>/<base-path>/chat/completions' \
 ----
 ====
 
-=== Multi-turn Context Management Example
+==== Multi-turn Context Management Example
 
 This request example maintains conversation context across developer persona, user query, and assistant history. The example passes the "memory" of a conversation to ensure the model knows that "it" refers to "MuleSoft" based on the previous message in the thread:
 
@@ -196,7 +233,7 @@ curl --location '<public-endpoint>/<base-path>/chat/completions' \
 ----
 ====
 
-=== Structured Data Validation (JSON Format) Example
+==== Structured Data Validation (JSON Format) Example
 
 This request example extracts patterns into structured JSON to transform a messy transcript into a clean JSON object for insertion into a database by using the `top_p` and `max_completion_tokens` parameters:
 
@@ -238,7 +275,7 @@ curl --location '<public-endpoint>/<base-path>/chat/completions' \
 ----
 ====
 
-=== Enterprise Strategy Testing Example
+==== Enterprise Strategy Testing Example
 
 This request example validates the gateway's ability to handle large-payload "Expert" prompts. The example asks an AI Solution Architect to design a migration strategy from legacy SAP systems to Salesforce using MuleSoft Anypoint Platform with an API-led connectivity approach.
 
@@ -282,7 +319,7 @@ curl --location '<public-endpoint>/<base-path>/chat/completions' \
 ----
 ====
 
-=== Streaming API Call Example
+==== Streaming API Call Example
 
 This example is designed for User-facing chatbot UIs where the text must appear word-by-word as it is generated, rather than waiting for the entire response to finish. This request example validates the gateway's ability to stream real-time non-buffered token delivery using the `--no-buffer` flag:
 
@@ -324,7 +361,7 @@ curl --location '<public-endpoint>/<base-path>/chat/completions' \
 ----
 ====
 
-=== Tool Calling: Initial Request with Tool Definition Example
+==== Tool Calling: Initial Request with Tool Definition Example
 
 This request example allows the model to request real-time information from the application by invoking a function. The example asks the model to invoke a `get_current_time` function to get the current time in San Francisco, The model recognizes it can't answer from memory and instead requests to invoke a `get_current_time` function from your local API.
 
@@ -397,7 +434,7 @@ curl --location '<public-endpoint>/<base-path>/chat/completions' \
 ----
 ====
 
-=== Tool Calling: Request with Tool Execution Response Example
+==== Tool Calling: Request with Tool Execution Response Example
 
 This request example sends the executed tool output back to the Model Proxy to generate a final answer. The example provides the executed tool output (current time) back to the Model Proxy so the model can generate a natural-language response for the user:
 
@@ -501,7 +538,7 @@ curl --location '<public-endpoint>/<base-path>/chat/completions' \
 ----
 ====
 
-=== Structured Output Validation (JSON Schema) Example
+==== Structured Output Validation (JSON Schema) Example
 
 This request example validates entity extraction into a strictly defined JSON Schema (CalendarEvent). The example asks the model to extract the event information from a plain text user query and return a formatted JSON object that adheres to the required schema. This prevents integration or parsing errors in downstream applications:
 
@@ -571,11 +608,11 @@ curl --location '<public-endpoint>/<base-path>/chat/completions' \
 ----
 ====
 
-== Responses API Validation (/responses)
+=== Responses API Validation (/responses)
 
 https://developers.openai.com/api/reference/resources/responses[OpenAI Responses API] is recommended unified interface for building powerful, agent-like applications, combining capabilities from previous APIs (like Chat Completions and Assistants) into a single, more efficient endpoint. It is designed to be stateful by default and offers built-in access to advanced tools.
 
-=== Responses Endpoint for MCP (Model Context Protocol)
+==== Responses Endpoint for MCP (Model Context Protocol)
 
 This request example integrates the gateway with an external MCP server for automated action execution. The example asks an AI agent to search a specific internal Knowledge Base or update a Jira ticket using standardized tools defined on a remote MCP server:
 
@@ -633,7 +670,7 @@ curl --location '<public-endpoint>/<base-path>/responses' \
 ----
 ====
 
-=== Stateful Response Persistence
+==== Stateful Response Persistence
 
 This request example validates persistent memory by creating a dependency between two requests using `previous_response_id`. The example removes the need for the client to send the entire previous chat history on every turn, reducing bandwidth and improving security by keeping the context on client side:
 
