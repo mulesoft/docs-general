@@ -1,0 +1,19 @@
+= Connecting Enhanced Experience with External Systems
+:keywords: external systems, slack integration, claude desktop, mcp, mulesoft enhanced experience, integrations
+
+Connect the enhanced experience to external tools so teams can act on governed services without leaving their preferred environment. You can integrate with collaboration tools like Slack and Microsoft Teams or AI assistants like Claude Desktop.
+
+== Integrations
+
+* xref:exp-slack-integrate.adoc[]
++
+Install the MuleSoft for Slack app to receive notifications, run shortcuts, and deep-link into the enhanced experience from your Slack workspace.
+
+xref:exp-claude-desktop-connect.adoc[]
++
+Connect Claude Desktop to the enhanced experience so developers can move between conversational AI workflows and governed catalogs.
+
+== See Also
+
+* xref:exp-slack-integrate.adoc[]
+* xref:exp-claude-desktop-connect.adoc[]
