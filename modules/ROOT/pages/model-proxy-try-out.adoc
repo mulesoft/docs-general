@@ -16,7 +16,7 @@ NOTE: The Try Out feature only supports Model Proxies configured with OpenAI inp
 
 == Try Out Your Model Proxy
 
-. From API Manager, click *Model Proxies*.
+. From API Manager in Anypoint Platform, click *Model Proxies*.
 . Click the name of the Model Proxy you want to try out.
 . Click *Try out*.
 . Configure any authentication or other headers your request requires.
