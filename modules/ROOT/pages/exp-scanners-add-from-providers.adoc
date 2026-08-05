@@ -1,7 +1,7 @@
 = Adding Scanners from Providers
 :keywords: scanners, providers, add scanner, scanner configuration, workflow, anypoint platform, security scanning
 
-A scanner is the configured link between the system and a supported cloud provider that lets discovery jobs find services—such as APIs, agents, and MCP servers—and register them in the right *Portfolio* catalogs. Scanners enable automated discovery so your catalogs stay current without manual registration. Configure a scanner once to turn on discovery for a provider, then extend it as your organization adds catalogs or enabled features.
+A scanner is the configured link between the system and a supported cloud provider that lets discovery jobs find services—such as APIs, agents, and MCP servers—and register them in the right *Portfolio* catalogs, and to discover and read policies from API configurations. Scanners enable automated discovery so your catalogs stay current without manual registration. Configure a scanner once to turn on discovery for a provider, then extend it as your organization adds catalogs or enabled features.
 
 For how provider connection and catalogs fit together, see xref:exp-services-connect-providers-to-add.adoc[] and xref:exp-services-add-to-portfolio.adoc[].
 
@@ -33,6 +33,10 @@ Discovered services appear in *Portfolio* where teams can govern, monitor, and d
 * Stay aligned with the provider
 +
 Scheduled or on-demand scans pick up releases and configuration drift according to the options your administrator allows.
+
+* Policy-visibility
++
+When a scanner is enabled, it can discover and read policies from API configurations. This allows the system to enforce policies on the discovered services. This is especially useful for API-based policies, such as web application firewall (WAF) policies.
 
 == Workflow Entry Points for Adding a Scanner
 
@@ -82,6 +86,8 @@ Regardless of entry point, adding a scanner establishes trust and scope. You spe
 
 When the scanner is active, it applies discovery results according to its settings and your organization's rules. You review outcomes on the *Providers* page and on scanner detail pages, and you manage discovered services from the relevant *Portfolio* catalogs.
 
+For API scanners, policy-read results are visible from each discovered API in *Portfolio* > *APIs* > *Policies*. This includes read policies from Amazon API Gateway, Google Apigee, Azure API Management, and Kong Gateway. Use this view to verify imported controls and confirm scanner coverage by provider.
+
 For ongoing operations (pause, edit, or delete), see xref:exp-scanners-manage.adoc[].
 
 == See Also
@@ -89,6 +95,7 @@ For ongoing operations (pause, edit, or delete), see xref:exp-scanners-manage.ad
 * xref:exp-scanners-prerequisites-reference.adoc[]
 * xref:exp-akamai-risk-correlation.adoc[]
 * xref:exp-services-connect-providers-to-add.adoc[]
+* xref:exp-scanners-prerequisites-reference.adoc[]
 * xref:exp-scanners-manage.adoc[]
 * xref:exp-services-add-to-portfolio.adoc[]
 * xref:exp-services-view-details.adoc[]
