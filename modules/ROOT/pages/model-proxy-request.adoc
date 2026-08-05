@@ -48,7 +48,7 @@ All requests are designed to work for both strategies. When sending a request to
 +
 NOTE: Adding a model to a request ensures deterministic routing to a preferred backend if the routing strategy of a Model Proxy changes.
 
-=== Chat Completions API Validation Request Examples
+=== Chat Completions API Validation /chat/completions Request Examples
 
 https://developers.openai.com/api/reference/resources/chat[Chat Completions] is the standard API for interacting with models. It is designed for conversational multi-turn interactions rather than simple text continuation. The endpoint requires a model and a messages list with roles (such as system, user, or assistant) to generate context-aware responses.
 
@@ -96,7 +96,7 @@ curl --location '<public-endpoint>/<base-path>/chat/completions' \
 ----
 ====
 
-==== Creative Content Generation Example
+==== Creative Content Generation Temperature Control Example
 
 This request example performs can preform brainstorming tasks, such as generating multiple unique marketing slogans. The example writes creative content using the temperature parameter (0 to 2 value, higher values are more creative) to control the randomness and creativity of the response:
 
@@ -180,7 +180,7 @@ curl --location '<public-endpoint>/<base-path>/chat/completions' \
 ----
 ====
 
-==== Structured Data Validation Example
+==== Structured Data Validation JSON Format Example
 
 This request example extracts patterns into structured JSON to transform a messy transcript into a clean JSON object for insertion into a database by using the `top_p` and `max_completion_tokens` parameters:
 
@@ -485,7 +485,7 @@ curl --location '<public-endpoint>/<base-path>/chat/completions' \
 ----
 ====
 
-==== Structured Output Validation Example
+==== Structured Output Validation JSON Schema Example
 
 This request example validates entity extraction into a strictly defined JSON Schema (CalendarEvent). The example asks the model to extract the event information from a plain text user query and return a formatted JSON object that adheres to the required schema. This prevents integration or parsing errors in downstream applications:
 
@@ -555,7 +555,7 @@ curl --location '<public-endpoint>/<base-path>/chat/completions' \
 ----
 ====
 
-=== Responses API Validation
+=== Responses API Validation /responses
 
 https://developers.openai.com/api/reference/resources/responses[OpenAI Responses API] is recommended unified interface for building powerful, agent-like applications, combining capabilities from previous APIs (like Chat Completions and Assistants) into a single, more efficient endpoint. It is designed to be stateful by default and offers built-in access to advanced tools.
 
