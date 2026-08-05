@@ -66,7 +66,7 @@ The following products are available in usage reports:
 * API Manager
 * xref:usage-metrics.adoc#cloudhub-vcore-usage[CloudHub vCore]
 * Omni Gateway
-* Omni Gateway LLM Proxy
+* Omni Gateway Model Proxy
 * Intelligent Document Processing (IDP)
 * Mule Runtime
 //* xref:object-store::osv2-usage.adoc[Object Store v2] (comment out until OS is released)

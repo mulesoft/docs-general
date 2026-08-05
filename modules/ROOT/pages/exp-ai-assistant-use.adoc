@@ -32,7 +32,7 @@ The AI assistant provides context-aware help based on where you are in the enhan
 
 Portfolio Management::
 +
-* Search for agents, APIs, MCP servers, LLM proxies, and gateways.
+* Search for agents, APIs, MCP servers, Model proxies, and gateways.
 * Get details about specific services.
 * Find services by capability or description.
 * Register new services with guided workflows.
@@ -166,7 +166,7 @@ Which agents are using the most tokens?
 
 [source,text]
 ----
-How can I reduce costs for my LLM proxies?
+How can I reduce costs for my Model proxies?
 ----
 
 [source,text]
