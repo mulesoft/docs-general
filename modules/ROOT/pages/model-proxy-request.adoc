@@ -22,10 +22,10 @@ To find your Model Proxy endpoint configuration and client application credentia
 .. Copy the *Public Endpoint*.
 . Find your base path:
 .. From the enhanced experience, select *Model Proxies*.
-. Click the name of the Model Proxy whose base path you want to find.
+.. Click the name of the Model Proxy whose base path you want to find.
 .. From *Configuration*, copy the *Base path*.
 . Retrieve your client ID and client secret:
-.. From the *Overview* page of your Model Proxy, click *Actions* > *View Model proxy in Exchange*.
+.. From the *Overview* page of your Model Proxy, click *Actions* > *View Model Proxy in Exchange*.
 .. Click *Request access*.
 .. Select the *API Instance* you want to request access to.
 .. Select the *Application* you want to request access to.
@@ -36,19 +36,19 @@ To find your Model Proxy endpoint configuration and client application credentia
 [[openai-format]]
 == OpenAI Format
 
-To learn more about the OpenAI request types:
+Learn more about the OpenAI request types:
 
 * https://developers.openai.com/api/reference/resources/chat[Chat Completions] API is designed for conversational multi-turn interactions rather than simple text continuation.
 * https://developers.openai.com/api/reference/resources/responses[Responses] API is recommended unified interface for building powerful agent-like applications.
 
-All requests in this guide are designed to work for both strategies. When sending a request to a Model Proxy with either routing strategy, you can specify a model in the request. You don't have to modify the request for different routing strategies. Each routing strategy handles the model selection differently:
+All requests are designed to work for both strategies. When sending a request to a Model Proxy with either routing strategy, you can specify a model in the request. You don't have to modify the request for different routing strategies. Each routing strategy handles the model selection differently:
 
 * *Model-Based Routing*: The user specifies a model in the request (`"model": "openai/gpt-5.2"`). The Model Proxy acts as a direct proxy. If no model is specified, the Model Proxy sends the request to the fallback route or returns an error if no fallback route is configured.
 * *Semantic Routing*: No model is specified in the request. The Model Proxy chooses which model to use based on the request content by matching it to prompt topics you define for each route. If a model is specified in the request, like in model routing examples, it is ignored.
 +
 NOTE: Adding a model to a request ensures deterministic routing to a preferred backend if the routing strategy of a Model Proxy changes.
 
-=== Chat Completions API Validation (/chat/completions) Request Examples
+=== Chat Completions API Validation Request Examples
 
 https://developers.openai.com/api/reference/resources/chat[Chat Completions] is the standard API for interacting with models. It is designed for conversational multi-turn interactions rather than simple text continuation. The endpoint requires a model and a messages list with roles (such as system, user, or assistant) to generate context-aware responses.
 
@@ -96,7 +96,7 @@ curl --location '<public-endpoint>/<base-path>/chat/completions' \
 ----
 ====
 
-==== Creative Content Generation (Temperature Control) Example
+==== Creative Content Generation Example
 
 This request example performs can preform brainstorming tasks, such as generating multiple unique marketing slogans. The example writes creative content using the temperature parameter (0 to 2 value, higher values are more creative) to control the randomness and creativity of the response:
 
@@ -180,7 +180,7 @@ curl --location '<public-endpoint>/<base-path>/chat/completions' \
 ----
 ====
 
-==== Structured Data Validation (JSON Format) Example
+==== Structured Data Validation Example
 
 This request example extracts patterns into structured JSON to transform a messy transcript into a clean JSON object for insertion into a database by using the `top_p` and `max_completion_tokens` parameters:
 
@@ -268,7 +268,7 @@ curl --location '<public-endpoint>/<base-path>/chat/completions' \
 
 ==== Streaming API Call Example
 
-This example is designed for User-facing chatbot UIs where the text must appear word-by-word as it is generated, rather than waiting for the entire response to finish. This request example validates the gateway's ability to stream real-time non-buffered token delivery using the `--no-buffer` flag:
+This example supports user-facing chatbot UIs where the text must appear word-by-word as it is generated, rather than waiting for the entire response to finish. This request example validates the gateway's ability to stream real-time non-buffered token delivery using the `--no-buffer` flag:
 
 [tabs]
 ====
@@ -485,7 +485,7 @@ curl --location '<public-endpoint>/<base-path>/chat/completions' \
 ----
 ====
 
-==== Structured Output Validation (JSON Schema) Example
+==== Structured Output Validation Example
 
 This request example validates entity extraction into a strictly defined JSON Schema (CalendarEvent). The example asks the model to extract the event information from a plain text user query and return a formatted JSON object that adheres to the required schema. This prevents integration or parsing errors in downstream applications:
 
@@ -555,11 +555,11 @@ curl --location '<public-endpoint>/<base-path>/chat/completions' \
 ----
 ====
 
-=== Responses API Validation (/responses)
+=== Responses API Validation
 
 https://developers.openai.com/api/reference/resources/responses[OpenAI Responses API] is recommended unified interface for building powerful, agent-like applications, combining capabilities from previous APIs (like Chat Completions and Assistants) into a single, more efficient endpoint. It is designed to be stateful by default and offers built-in access to advanced tools.
 
-==== Responses Endpoint for MCP (Model Context Protocol)
+==== Responses Endpoint for Model Context Protocol (MCP)
 
 This request example integrates the gateway with an external MCP server for automated action execution. The example asks an AI agent to search a specific internal Knowledge Base or update a Jira ticket using standardized tools defined on a remote MCP server:
 
@@ -720,7 +720,7 @@ curl --location '<public-endpoint>/<base-path>/models/gemini-2.5-flash:generateC
 
 === Streaming API Call Example
 
-This example is designed for user-facing chatbot UIs where the text must appear word-by-word as it is generated rather than waiting for the entire response to finish. This request example validates the gateway's ability to stream real-time, non-buffered token delivery:
+This example supports user-facing chatbot UIs where the text must appear word-by-word as it is generated rather than waiting for the entire response to finish. This request example validates the gateway's ability to stream real-time, non-buffered token delivery:
 
 [source,cli]
 ----
