@@ -34,6 +34,8 @@
   ** xref:exp-governance-work-with-strategies.adoc[]
    *** xref:exp-governance-create-strategy.adoc[]
    *** xref:exp-governance-manage-strategies.adoc[]
+   *** xref:exp-governance-govern-third-party-apis.adoc[]
+   *** xref:exp-governance-monitor-cross-gateway-conformance.adoc[]
   ** xref:exp-services-monitoring.adoc[]
    *** xref:exp-services-view-detailed-metrics.adoc[]
    *** xref:exp-alerts-configure-notifications.adoc[]
