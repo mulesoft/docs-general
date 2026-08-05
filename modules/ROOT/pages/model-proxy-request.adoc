@@ -21,11 +21,11 @@ To find your Model Proxy endpoint configuration and client application credentia
 .. Click the name of the Omni Gateway where your Model Proxy is deployed.
 .. Copy the *Public Endpoint*.
 . Find your base path:
-.. From *API Manager* > *Model Proxies*, click the name of the Model Proxy whose base path you want to find.
-.. Click *Configuration*.
-.. Copy the *Base path*.
+.. From the enhanced experience, select *Model Proxies*.
+. Click the name of the Model Proxy whose base path you want to find.
+.. Form *Configuration*, copy the *Base path*.
 . Retrieve your client ID and client secret:
-.. From the *LLM Summary* page of your Model Proxy, click *Actions* > *View Model proxy in Exchange*.
+.. From the *Overview* page of your Model Proxy, click *Actions* > *View Model proxy in Exchange*.
 .. Click *Request access*.
 .. Select the *API Instance* you want to request access to.
 .. Select the *Application* you want to request access to.
