@@ -11,6 +11,28 @@ Model Proxy supports these endpoint formats: OpenAI, Gemini, and Anthropic. The 
 * *<<gemini-format-request-example,Gemini format>>*: Native Gemini API format. Doesn't support multi-routing or fallback mechanisms.
 * *<<anthropic-format-request-example,Anthropic format>>*: Native Anthropic API format. Doesn't support multi-routing or fallback mechanisms.
 
+[[retrieve-the-request-configuration-parameters]]
+== Retrieve the Endpoint Configuration Parameters for your Model Proxy
+
+To find your Model Proxy endpoint configuration and client application credentials required to use the requests in this guide:
+
+. Find your public endpoint:
+.. Navigate to *Runtime Manager* > *Omni Gateways*
+.. Click the name of the Omni Gateway where your Model Proxy is deployed.
+.. Copy the *Public Endpoint*.
+. Find your base path:
+.. From *API Manager* > *Model Proxies*, click the name of the Model Proxy whose base path you want to find.
+.. Click *Configuration*.
+.. Copy the *Base path*.
+. Retrieve your client ID and client secret:
+.. From the *LLM Summary* page of your Model Proxy, click *Actions* > *View Model proxy in Exchange*.
+.. Click *Request access*.
+.. Select the *API Instance* you want to request access to.
+.. Select the *Application* you want to request access to.
+.. Select the *SLA tier*.
+.. Click *Request access*.
+.. Copy the *Client ID* and *Client Secret*.
+
 [[openai-format]]
 == OpenAI Format
 
@@ -673,28 +695,6 @@ curl --location '<public-endpoint>/<base-path>/responses' \
 }'
 ----
 ====
-
-[[retrieve-the-request-configuration-parameters]]
-== Retrieve the Endpoint Configuration Parameters for your Model Proxy
-
-To find your Model Proxy endpoint configuration and client application credentials required to use the requests in this guide:
-
-. Find your public endpoint:
-.. Navigate to *Runtime Manager* > *Omni Gateways*
-.. Click the name of the Omni Gateway where your Model Proxy is deployed.
-.. Copy the *Public Endpoint*.
-. Find your base path:
-.. From *API Manager* > *Model Proxies*, click the name of the Model Proxy whose base path you want to find.
-.. Click *Configuration*.
-.. Copy the *Base path*.
-. Retrieve your client ID and client secret:
-.. From the *LLM Summary* page of your Model Proxy, click *Actions* > *View Model proxy in Exchange*.
-.. Click *Request access*.
-.. Select the *API Instance* you want to request access to.
-.. Select the *Application* you want to request access to.
-.. Select the *SLA tier*.
-.. Click *Request access*.
-.. Copy the *Client ID* and *Client Secret*.
 
 [[gemini-format-request-example]]
 == Gemini Format Request Example
