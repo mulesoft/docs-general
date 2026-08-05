@@ -50,6 +50,33 @@ Yes
 
 OpenAI GPT-5
 
+| Connector Builder
+| AI-assisted connector generation
+a|
+This feature uses OAS and API specifications that you provide, along with your natural language prompts and connector configuration metadata such as connections, operations, pagination, triggers, and value providers. It uses this data during generation, testing, packaging, and release phases of your connector project.
+a|
+Yes
+
+User's configured model
+
+| Enhanced MuleSoft Experience
+| MuleSoft Agent
+a|
+This feature uses natural language prompts that you type, along with the current page context within the enhanced experience and metadata accessible under your Access Management permissions, such as portfolio, governance, monitoring, cost, organization, and environment information.
+a|
+Yes
+
+OpenAI GPT-5 mini
+
+| Partner Manager
+| View Message Summaries
+a|
+This feature uses the source or target payload that you open in Activity and summarize, including pre-translated and post-translated message content such as EDI and mapped JSON or XML. It also uses message context metadata, such as message type, sender, and receiver, along with extracted business data in the payload, such as order number, customer name, order details, and configured custom attributes like PO number or invoice number.
+a|
+Yes
+
+Einstein Generative AI
+
 | Runtime Manager
 | Diagnostics Agent
 a|
