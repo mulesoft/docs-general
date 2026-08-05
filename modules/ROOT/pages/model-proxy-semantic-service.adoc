@@ -32,7 +32,7 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 
 . In the navigation pane, select *Model Proxies*.
 . Select *Semantic Services*.
-. Click *+ Add Semantic Service* > *Semantic Routing Service*.
+. Click *Add Semantic Service* > *Semantic Routing Service*.
 . Select *Advanced Scale*.
 +
 Advanced scale supports large utterance sets per topic and requires a dedicated external vector database connection.
@@ -72,14 +72,14 @@ NOTE: To deny users from asking about certain subjects, create prompt topics for
 
 . In the navigation pane, click the *Model Proxies* dropdown arrow.
 . Select *Semantic Services*.
-. Click *+ Add Semantic Service* > *Semantic Routing Service*.
+. Click *Add Semantic Service* > *Semantic Routing Service*.
 . Select *Basic Scale*.
 +
-Basic scale supports up to 6 topics and 10 utterances per topic. Managed via internal Model Proxy configuration.
+Basic scale supports up to six topics and 10 utterances per topic. Managed via internal Model Proxy configuration.
 . Configure the embedding connection parameters:
 ** *Environment*: The environment to use for the semantic service.
 ** *Embedding service provider*: The provider of the embedding model: *OpenAI*, *Hugging Face*, or *Azure OpenAI*.
-** *Service label*: Label to identify the new service. Shown as the label in the Semantic Services catalog
+** *Service label*: Label to identify the new service. Shown as the label in the Semantic Services catalog.
 ** *URL*: The URL of the embedding service.
 ** *Model*: The embedding model to use.
 ** *Auth key*: The API authentication key for the embedding service.
@@ -93,4 +93,4 @@ To edit a semantic service:
 . Make the necessary edits.
 . Click either *Save* or *Save & Download Script* depending on your sematic service.
 +
-If creating new prompt topics for an advanced scale semantic service, it is necessary to redownload and run the vector script in your database again.
+If creating new prompt topics for an advanced scale semantic service, you must download and run the vector script in your database again.

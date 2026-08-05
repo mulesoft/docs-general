@@ -23,7 +23,7 @@ To find your Model Proxy endpoint configuration and client application credentia
 . Find your base path:
 .. From the enhanced experience, select *Model Proxies*.
 . Click the name of the Model Proxy whose base path you want to find.
-.. Form *Configuration*, copy the *Base path*.
+.. From *Configuration*, copy the *Base path*.
 . Retrieve your client ID and client secret:
 .. From the *Overview* page of your Model Proxy, click *Actions* > *View Model proxy in Exchange*.
 .. Click *Request access*.
@@ -36,7 +36,7 @@ To find your Model Proxy endpoint configuration and client application credentia
 [[openai-format]]
 == OpenAI Format
 
-To learn more about the OpenAI request types, see:
+To learn more about the OpenAI request types:
 
 * https://developers.openai.com/api/reference/resources/chat[Chat Completions] API is designed for conversational multi-turn interactions rather than simple text continuation.
 * https://developers.openai.com/api/reference/resources/responses[Responses] API is recommended unified interface for building powerful agent-like applications.
@@ -136,7 +136,7 @@ curl --location '<public-endpoint>/<base-path>/chat/completions' \
 ----
 ====
 
-==== Multi-turn Context Management Example
+==== Multi-Turn Context Management Example
 
 This request example maintains conversation context across developer persona, user query, and assistant history. The example passes the "memory" of a conversation to ensure the model knows that "it" refers to "MuleSoft" based on the previous message in the thread:
 
@@ -720,7 +720,7 @@ curl --location '<public-endpoint>/<base-path>/models/gemini-2.5-flash:generateC
 
 === Streaming API Call Example
 
-This example is designed for user-facing chatbot UIs where the text must appear word-by-word as it is generated, rather than waiting for the entire response to finish. This request example validates the gateway's ability to stream real-time non-buffered token delivery:
+This example is designed for user-facing chatbot UIs where the text must appear word-by-word as it is generated rather than waiting for the entire response to finish. This request example validates the gateway's ability to stream real-time, non-buffered token delivery:
 
 [source,cli]
 ----
@@ -764,7 +764,7 @@ curl --location '<public-endpoint>/<base-path>/v1/messages' \
 
 === Streaming API Call Example
 
-This example is designed for user-facing chatbot UIs where the text must appear word-by-word as it is generated, rather than waiting for the entire response to finish. This request example validates the gateway's ability to stream real-time non-buffered token delivery using the `--no-buffer` flag:
+This example supports user-facing chatbot UIs where the text must appear word-by-word as it is generated, rather than waiting for the entire response to finish. This request example validates the gateway's ability to stream real-time non-buffered token delivery using the `--no-buffer` flag:
 
 [source,cli]
 ----

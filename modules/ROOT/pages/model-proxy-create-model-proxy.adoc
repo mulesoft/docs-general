@@ -25,14 +25,14 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 * A deployed Omni Gateway version 1.11.4.
 +
 See xref:gateway::flex-gateway-managed-set-up.adoc[].
-. API keys to authenticate with your LLM Providers.
+* API keys to authenticate with your LLM Providers.
 . xref:model-proxy-semantic-service.adoc[Configured a semantic service] if you want to use semantic routing.
 
 [[create-a-model-proxy]]
 == Create a Model Proxy
 
 . In the navigation pane, select *Model Proxies*.
-. Click *+ Add Model Proxy*.
+. Click *Add Model Proxy*.
 . Configure the proxy parameters:
 .. *Proxy Name*: Define a name for the Model Proxy.
 .. *Description*: Provide a description of what this proxy does.
@@ -44,8 +44,8 @@ See xref:gateway::flex-gateway-managed-set-up.adoc[].
 *** *Gemini*: Select the Gemini API format for native Google Gemini model requests. Doesn't support multi-routing or fallback mechanisms. You can't change this format later.
 .. *Environment*: Select the environment for the Model Proxy.
 .. *Omni Gateway*: Select an Omni Gateway to deploy the Model Proxy to.
-.. *Consumer Endpoint*: The URL where the Model Proxy will be accessible.
-.. *Port*: The port number for the Model Proxy (for example: `8081`).
+.. *Consumer Endpoint*: Specify the URL where the Model Proxy will be accessible.
+.. *Port*: Enter the port number for the Model Proxy (for example: `8081`).
 . Click *Continue*.
 . Configure the routing strategy:
 .. *Routing strategy*: Select a routing strategy:
@@ -53,8 +53,8 @@ See xref:gateway::flex-gateway-managed-set-up.adoc[].
 *** *Model-based*: Route requests based on the model specified in the request payload.
 *** *Semantic*: Route requests based on semantic analysis of the prompt content. Requires a configured semantic service.
 . Configure at least one route:
-.. Provide a route name (for example: `Route A`).
-.. Optionally, click *+ Add headers* to add routing headers that filter requests by region, SLA, or custom rules. For example: `Region: US`.
+.. Provide a route name (for example, `Route A`).
+.. Optionally, click *Add headers* to add routing headers that filter requests by region, SLA, or custom rules. For example, `Region: US`.
 .. Configure the target:
 *** *Provider*: Select your LLM provider from these options:
 **** *OpenAI*
@@ -65,11 +65,11 @@ See xref:gateway::flex-gateway-managed-set-up.adoc[].
 **** *Anthropic*
 *** *Model*: Select a target model to override the model version specified in the payload. Selecting *Not Applicable* sends the request to the model specified in the request. A target model is required for semantic routing.
 .. Configure authentication:
-*** *Destination URL*: The URL for your provider endpoint. Ensure the URL is correct and edit if necessary.
+*** *Destination URL*: Specify the URL for your provider endpoint. Ensure the URL is correct and edit if necessary.
 *** *API Key*: Select either:
 **** *Static*: Enter a static API key for the provider endpoint.
-**** *Dynamic*: Define a DataWeave script to extract the API Key from the incoming request.
-. Click *+ Add Route* to add additional routes. Complete the previous steps to configure each new route.
+**** *Dynamic*: Define a DataWeave script to extract the API key from the incoming request.
+. Click *Add Route* to add additional routes. Complete the previous steps to configure each new route.
 . Click *Add Model Proxy*.
 
 -----------------------

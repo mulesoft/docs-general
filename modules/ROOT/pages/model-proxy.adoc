@@ -82,11 +82,11 @@ Semantic routing is dynamic routing where the Model Proxy chooses which model to
 [[connections-and-model-proxies]]
 == Connections and Model Proxies
 
-Model Proxy has these two types:
+Model Proxy includes these types:
 
-* *Proxy*: A proxy configuration that can route requests to one or multiple LLM providers by using model-based routing and semantic routing strategies. The Enhanced Experience manages proxy configurations.
+* *Proxy*: A proxy configuration that can route requests to one or multiple LLM providers by using model-based routing and semantic routing strategies. The enhanced experience manages proxy configurations.
 
-* *Connection*: A connection configuration that stores credentials and metadata for connecting to a specific LLM provider. The Enhanced Experience displays connections as a single-route proxy. Connection configurations are managed by external projects, such as an Agent Network projct.
+* *Connection*: A connection configuration that stores credentials and metadata for connecting to a specific LLM provider. The enhanced experience displays connections as a single-route proxy. Connection configurations are managed by external projects, such as an Agent Network project.
 
 [[model-proxy-limits]]
 == Model Proxy Limits
