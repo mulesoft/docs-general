@@ -1,0 +1,64 @@
+= Model Proxy Policies 
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:imagesdir: ../assets/images
+:page-aliases: gateway::llm-proxy-policies.adoc, gateway::flex-gateway-llm-proxy-policies.adoc
+
+By default, Model Proxy applies these policies:
+
+* Client ID Enforcement
+* Model Proxy Core Policy
+* Model Based Routing Policy or Semantic Routing Policy (policy name dependent on embedded service provider)
+
+You don't need to modify these policies.
+
+Model Proxy supports most xref:gateway::policies-included-directory.adoc[included policies], but doesn't support outbound policies.
+
+NOTE: Model Proxy doesn't support xref:gateway::policies-included-rate-limiting-sla.adoc[].
+
+These policies are specific and useful for Model Proxies:
+
+* xref:gateway::policies-included-bedrock-guardrails.adoc[]
+* xref:gateway::policies-included-azure-content-safety.adoc[]
+* xref:gateway::policies-included-llm-pii-detection.adoc[]
+* xref:gateway::policies-included-llm-token-rate-limit.adoc[]
+* xref:gateway::policies-included-regex-prompt-guard.adoc[]
+
+== Apply Policies to Model Proxies
+
+. From API Manager, click *Model Proxies*.
+. Click the name of the Model Proxy you want to apply a policy to.
+. Click *AI Policies*.
+. Click *+ Add inbound policy*.
+. Select the policy to apply.
+. Configure the required parameters.
++
+For policy configuration parameters, see xref:gateway::policies-included-directory.adoc[].
+. If necessary, configure *Advanced options*.
+. Click *Apply*.
+
+== Model Proxy Authentication Policy
+
+By default, the Model Proxy has the Client ID Enforcement policy applied. 
+This is required because the Client ID Enforcement populates the `Authentication.clientName` variable in the `Authentication` object that is used as a unique identifier for LLM Metrics.
+
+To remove the Client ID Enforcement policy, ensure that you either:
+
+* Apply a policy that populates `Authentication.clientName`:
++
+** xref:gateway::policies-included-client-id-enforcement.adoc[]
+** xref:gateway::policies-included-rate-limiting-sla.adoc[]
+** xref:gateway::policies-included-oauth-token-introspection.adoc[] (If Client ID enforcement is configured, `skipClientIdValidation=false`)
+** xref:gateway::policies-included-openid-token-enforcement.adoc[] (If Client ID enforcement is configured, `skipClientIdValidation=false`)
+** xref:gateway::policies-included-jwt-validation.adoc[] (If Client ID enforcement is configured, `skipClientIdValidation=false`)
+** A custom policy that populates `Authentication.clientName`
+
+* Edit the dataweave variable in Model Proxy Core to extract a different unique identifier, such as `clientid`, `userid`, or `departmentid`.
++
+NOTE: You can't filter by this unique identifier in Usage Reports.
+
+== See Also
+
+* xref:gateway::flex-gateway-secure-apis.adoc[]
+* xref:gateway::policies-included-directory.adoc[]
