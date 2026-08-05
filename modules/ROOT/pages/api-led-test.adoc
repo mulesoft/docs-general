@@ -173,7 +173,7 @@ Explore advanced testing capabilities:
 
 * xref:anypoint-code-builder::int-test-munit.adoc[Automated Testing with MUnit]
 * xref:mule-runtime::intro-error-handlers.adoc[Advanced Error Handling]
-* xref:anypoint-code-builder::troubleshoot-gen-ai.adoc[Troubleshooting with MuleSoft Vibes]
+* xref:anypoint-code-builder::troubleshoot-generative-ai.adoc[Troubleshooting AI Features in Anypoint Code Builder]
 * xref:dataweave::dataweave-testing-framework.adoc[DataWeave Testing Framework]
 
 == What's Next
