@@ -1,4 +1,4 @@
-= Creating and Managing Instances
+= Creating and Managing Instances of Services
 :keywords: api instances, apis catalog, create instance, manage instances, anypoint platform, api management, instance configuration
 
 Instances represent how a service runs in a specific environment, such as production or sandbox, and how traffic reaches it through gateways or runtimes your organization manages.
