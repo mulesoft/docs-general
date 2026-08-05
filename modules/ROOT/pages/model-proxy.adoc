@@ -50,7 +50,7 @@ Model Proxy supports these LLM Providers and API endpoints:
 |gemini-2.5-flash-preview-09-2025 | Yes | Yes
 |gemini-2.5-flash-lite | Yes | Yes
 
-.10+| Bedrock (Anthropic Claude models)
+.10+| Anthropic and Bedrock Anthropic
 | Claude Sonnet 4.6 | Yes | Yes
 | Claude Opus 4.6 | Yes | Yes
 | Claude Opus 4.5 | Yes | Yes
