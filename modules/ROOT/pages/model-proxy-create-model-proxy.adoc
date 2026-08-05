@@ -72,19 +72,12 @@ See xref:gateway::flex-gateway-managed-set-up.adoc[].
 . Click *Add Route* to add additional routes. Complete the previous steps to configure each new route
 . Click *Add Model Proxy*.
 
-== Edit and Delete a Model Proxy
+== Edit a Model Proxy
 
 To edit a Model Proxy:
 
-. From API Manager, click *Model Proxies*.
+. In the navigation pane, select *Model Proxies*.
 . Click the name of the Model Proxy you want to edit.
-. Click *Configuration*.
-. Switch between the *Inbound*, *Gateway*, and *Outbound* configurations to make the necessary edits.
-. Click *Save & Deploy*.
-
-To delete a Model Proxy:
-
-. From API Manager, click *Model Proxies*.
-. Click the three-dots menu (image:three-dots-menu.png[3%,3%]) of the Model Proxy you want to delete.
-. Click *Delete Model Proxy*.
-. Click *Yes, Delete*.
+. Click *Edit Configuration*.
+. Make the necessary edits.
+. Click *Save Changes*.

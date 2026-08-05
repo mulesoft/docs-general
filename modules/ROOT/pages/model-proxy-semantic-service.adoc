@@ -30,8 +30,7 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 [[configure-an-advanced-scale-semantic-service]]
 == Configure an Advanced Scale Semantic Service
 
-. In the navigation pane, select *Model Proxies*.
-. Select *Semantic Services*.
+. In the navigation pane, select *Model Proxies* > *Semantic Services*.
 . Click *Add Semantic Service* > *Semantic Routing Service*.
 . Select *Advanced Scale*.
 +
