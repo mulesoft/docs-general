@@ -78,6 +78,14 @@ Model-based routing is static routing. In the request, the user specifies what m
 
 Semantic routing is dynamic routing where the Model Proxy chooses which model to send the request to. For Sematic Routing, the user creates prompt topics for each route. When a request is sent to the Model Proxy, a semantic service compares the request to the define topic utterances and sends the request to the route that best matches it.
 
+== Connections and Model Proxies
+
+Model Proxy has these two types:
+
+* *Proxy*: A proxy configuration that can route requests to one or multiple LLM providers by using model-based routing and semantic routing strategies. The Enhanced Experience manages proxy configurations.
+
+* *Connection*: A connection configuration that stores credentials and metadata for connecting to a specific LLM provider. The Enhanced Experience displays connections as a single-route proxy. Connection configurations are managed by external projects, such as an Agent Network projct.
+
 == Model Proxy Limits
 
 Up to 50 Model Proxies are supported per Large Omni Gateway.
