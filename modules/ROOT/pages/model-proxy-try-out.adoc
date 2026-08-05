@@ -1,4 +1,4 @@
-= Testing Your Model Proxy
+= Test a Model Proxy
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
