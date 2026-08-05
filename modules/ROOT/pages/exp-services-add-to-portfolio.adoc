@@ -10,11 +10,14 @@ Your *Portfolio* is organized into catalogs: *Agents*, *MCP Servers*, *Model Pro
 |xref:exp-services-connect-providers-to-add.adoc[]
 |You add a provider scanner from *Home* or from a catalog in *Portfolio*. Scans discover services on supported cloud platforms and register them in the matching catalog.
 
+|xref:exp-akamai-risk-correlation.adoc[]
+|The Akamai API Security scanner doesn't import or register services. It correlates Akamai security data to existing services and surfaces risk scores, findings, and incidents in catalog views.
+
 |xref:exp-services-register-manually.adoc[]
 |You start an *Add …* workflow from *Home* or from the catalog for that service type. You supply metadata, specifications, endpoints, or cards to register the service without a provider scanner.
 |===
 
-Gateway creation starts in Anypoint Platform, which you can open from the Enhanced Experience.
+Gateway creation starts in Anypoint Platform, which you can open from the enhanced MuleSoft experience.
 
 == Before You Begin
 
@@ -51,18 +54,20 @@ Register by uploading an agent card or connect an agent provider scanner for dis
 Register with an MCP URL or a schema file, or connect an MCP server provider.
 
 *Model Proxies*::
-Register manually by creating a Model proxy with a routing strategy that routes requests by provider or semantically.
+Register manually by creating a model proxy with a routing strategy that routes requests by provider or semantic matching.
 
 *APIs*::
 Register with an API specification, or connect an API provider so scans import APIs into the *APIs* catalog.
 
 *Gateways*::
-Create gateways in Anypoint Platform. In Enhanced Experience, select *Add Gateway* to open the Anypoint gateway creation flow.
+Create gateways in Anypoint Platform. In the enhanced MuleSoft experience, select *Add Gateway* to open the Anypoint gateway creation flow.
 
 For more information about registering any of these types, see xref:exp-services-register-manually.adoc[] and xref:exp-services-connect-providers-to-add.adoc[].
 
 == See Also
 
+* xref:exp-scanners-prerequisites-reference.adoc[]
+* xref:exp-akamai-risk-correlation.adoc[]
 * xref:exp-services-connect-providers-to-add.adoc[]
 * xref:exp-services-register-manually.adoc[]
 * xref:exp-scanners-add-from-providers.adoc[]
