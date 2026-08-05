@@ -785,7 +785,7 @@ curl --location '<public-endpoint>/<base-path>/v1/messages' \
 ----
 
 [[amazon-bedrock-model-names]]
-== Amazon Bedrock Model Names
+== Specify Amazon Bedrock Model Names in Requests
 
 Amazon Bedrock Claude models must be specified in Amazon Resource Name (ARN) format, for example:
 
