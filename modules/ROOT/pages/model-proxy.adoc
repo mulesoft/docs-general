@@ -13,6 +13,7 @@ By creating a proxy, the user defines a singular LLM service that can receive re
 
 image::model-proxy.png["A Model Proxy with a single endpoint routing requests to multiple LLM providers"]
 
+[[supported-endpoint-formats]]
 == Supported Endpoint Formats
 
 Model Proxy supports these endpoint formats that are selected when creating a Model Proxy and can't be changed later:
@@ -78,6 +79,7 @@ Model-based routing is static routing. In the request, the user specifies what m
 
 Semantic routing is dynamic routing where the Model Proxy chooses which model to send the request to. For Sematic Routing, the user creates prompt topics for each route. When a request is sent to the Model Proxy, a semantic service compares the request to the define topic utterances and sends the request to the route that best matches it.
 
+[[connections-and-model-proxies]]
 == Connections and Model Proxies
 
 Model Proxy has these two types:
@@ -86,6 +88,7 @@ Model Proxy has these two types:
 
 * *Connection*: A connection configuration that stores credentials and metadata for connecting to a specific LLM provider. The Enhanced Experience displays connections as a single-route proxy. Connection configurations are managed by external projects, such as an Agent Network projct.
 
+[[model-proxy-limits]]
 == Model Proxy Limits
 
 Up to 50 Model Proxies are supported per Large Omni Gateway.
