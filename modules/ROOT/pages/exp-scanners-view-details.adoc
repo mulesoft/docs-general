@@ -1,0 +1,51 @@
+= Viewing Scanner Details
+:keywords: scanner detail tabs, scanner overview tab, scanner services tab, scanner settings tab, provider scanners
+
+View details about a scanner and its scan history by selecting a configured scanner from the provider list. Scanner details show information about the provider, when it was created, last completed scan, and scan history. After you select a configured scanner, use the *Overview*, *Services*, and *Settings* tabs to review scanner state and configuration. Tab content varies by scanner type and provider capabilities.
+
+== Open Scanner Detail Tabs
+
+. From *Platform* > *Providers*, open a connected provider.
+. Select a configured scanner from the scanner list.
+. Use the tabs to review scanner results and configuration.
+
+== Overview Tab
+
+Use *Overview* to check scanner summary information, such as:
+
+* Services and instances counts.
+* Scan history and run status.
+* Last scan time and scanner health indicators.
+* Activity Log with a real-time timeline of scan progress events.
+
+For Akamai API Security scanners, the overview represents correlation and security enrichment activity for existing services. Akamai scanners don't import new services.
+
+When a scan starts, the *Activity Log* appears between *Scan Details* and *Scan Results*. It's a real-time timeline of the events a scanner run emits, such as connecting to the provider, resolving credentials, processing pages, and completing the scan. Each entry shows a timestamp, a log level (`INFO` or `DEBUG`), and a message. The log also reports the total event count.
+
+* *Log detail:* By default, the log includes `DEBUG` entries. Select *Hide Debug* to show only `INFO` events; select it again to show `DEBUG` events.
+* *Audit trail:* When you view scan history, the Activity Log shows which assets were added and which already existed (for example, `5 discovered, 5 added`).
+
+== Services Tab
+
+Use *Services* to review services linked to the scanner and open service details for investigation. The tab reflects scanner-managed output for those services.
+
+For import scanners, this tab reflects discovered services imported by scan runs. For Akamai API Security scanners, it reflects existing services associated with correlated security data.
+
+== Settings Tab
+
+Use *Settings* to review and update scanner configuration values, such as provider connection details, run schedule, and scanner metadata. You can also delete the scanner from this tab.
+
+== How Tab Content Varies by Scanner Type
+
+Import scanner::
+Shows imported discovery activity in scanner tabs, including newly discovered services.
+
+Akamai API Security scanner::
+Shows correlation and governance enrichment activity for existing services, including risk and findings signals.
+
+== See Also
+
+* xref:exp-providers-manage.adoc[]
+* xref:exp-scanners-add-from-providers.adoc[]
+* xref:exp-akamai-risk-correlation.adoc[]
+* xref:exp-scanners-manage.adoc[]

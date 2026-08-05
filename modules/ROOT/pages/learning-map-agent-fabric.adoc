@@ -75,7 +75,7 @@ Visualize your agent network and monitor performance and behavior.
 - xref:agent-visualizer::index.adoc[Visualize Your Agent Network in Agent Visualizer]
 - xref:monitoring::anypoint-insights-agentic.adoc[View Agent Metrics in Anypoint Monitoring]
 - xref:exp-services-view-detailed-metrics.adoc[View Detailed Metrics for Your Services]
-- xref:monitoring::logs-us-eu.adoc#search-agentic[View Logs for Agentic Assets in Anypoint Monitoring]
+- xref:monitoring::logs-search-hf.adoc#search-agentic[Get Logs for Agentic Assets]
 - xref:monitoring::traces.adoc[View Traces in Anypoint Monitoring]
 
 

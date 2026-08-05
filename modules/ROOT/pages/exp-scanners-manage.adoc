@@ -23,6 +23,8 @@ Change names, descriptions, credentials, provider scope, or scan-related setting
 * *Delete Scanner*
 +
 Remove the scanner from *Providers* when the provider link is no longer authorized or useful. Consider the impact on discovered services in *Portfolio* and on dependent teams before you delete the scanner.
++
+NOTE: When you delete an Akamai API Security scanner, the system attempts to remove the Akamai correlation policy from the scanner's environments. If the removal fails, the correlation policy may remain applied; check *Automated Policies* to verify. Discovered services remain in your portfolio regardless.
 
 == How Scanners Run
 
