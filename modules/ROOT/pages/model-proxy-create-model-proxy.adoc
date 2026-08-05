@@ -9,112 +9,75 @@ You can configure the Model Proxy to use different models and different routes.
 
 NOTE: A large Omni Gateway supports up to 50 Model Proxies.
 
-[[before-you-begin]]
 == Before You Begin
 
-. Deploy an Omni Gateway version 1.11.4 or later where you want to deploy your Model Proxy.
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* These permissions:
++
+--
+** API Manager: API Creator
+--
++
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+
+* A deployed Omni Gateway version 1.11.4.
 +
 See xref:gateway::flex-gateway-managed-set-up.adoc[].
-. Ensure you have the API Manager *API Creator* permission.
-. Retrieve your API keys from your LLM Providers.
-. xref:model-proxy-semantic-service.adoc[Configure a semantic service] if you want to use semantic routing.
+* API keys to authenticate with your LLM Providers.
+* A xref:model-proxy-semantic-service.adoc[configured semantic service] if you want to use semantic routing.
 
 [[create-a-model-proxy]]
 == Create a Model Proxy
 
-. From API Manager, click *Model Proxies*.
-. Click *+ Add Model Proxy*.
-. Configure the *Inbound Endpoint* of the Model Proxy:
-.. Define a *Model Proxy Name*.
-.. Select an endpoint *Format*:
+. In the navigation pane, select *Model Proxies*.
+. Click *Add Model Proxy*
+. Configure the proxy parameters:
+.. *Proxy Name*: Define a name for the Model Proxy.
+.. *Description*: Provide a description of what this proxy does.
+.. *Base Path*: Define a base path for the proxy endpoint (for example: `/billing-ai`).
+.. *Format*: Select an endpoint format:
 +
-** OpenAI: Select the OpenAI API format to send requests to all supported LLM Providers (including Gemini).
-** Gemini: Select the Gemini API format to send requests to only Gemini.
-.. Define a *Base path*.
-.. Select *Advanced options* if necessary.
-.. Click *Next*.
-. Select an Omni Gateway to deploy the server instance to from *Select a gateway*.
-. Configure the routes that comprise the *Outbound Endpoint*:
-.. Select your *LLM Provider*.
-.. Ensure the *URL* for your provider is correct. Edit if necessary.
-.. Configure access details for the provider endpoint.
-.. Select a *Static* or *Dynamic* API Key. If selecting *Dynamic* API Key, define a DataWeave script to extract the API Key from the incoming request.
-.. Select a *Target Model* to override the model version specified in the payload. Selecting *Not Applicable* sends the request to the specified model. A *Target Model* is required for semantic routing.
+*** *OpenAI*: Select the OpenAI API format to send requests to all supported LLM providers (including Gemini and Anthropic). Supports multi-routing and fallback mechanisms. You can't change this format later.
+*** *Anthropic*: Select the Anthropic API format for native Anthropic Claude model requests. Doesn't support multi-routing or fallback mechanisms. You can't change this format later.
+*** *Gemini*: Select the Gemini API format for native Google Gemini model requests. Doesn't support multi-routing or fallback mechanisms. You can't change this format later.
+.. *Environment*: Select the environment for the Model Proxy.
+.. *Omni Gateway*: Select an Omni Gateway to deploy the Model Proxy to.
+.. *Consumer Endpoint*: Specify the URL where the Model Proxy will be accessible.
+.. *Port*: Enter the port number for the Model Proxy (for example, `8081`).
+. Click *Continue*.
+. Configure the routing strategy:
+.. *Routing strategy*: Select a routing strategy:
 +
-[NOTE]
-====
-To configure a target model for Amazon Bedrock Claude Modes, you must enter the provider and model ID formatted as `[provider_prefix]/[internal_model_id]`.
+*** *Model-based*: Route requests based on the model specified in the request payload.
+*** *Semantic*: Route requests based on semantic analysis of the prompt content. Requires a configured semantic service.
+. Configure at least one route:
+.. Provide a route name (for example, `Route A`)
+.. Optionally, click *Add headers* to add routing headers that filter requests by region, SLA, or custom rules. For example, `Region: US`
+.. Configure the target:
+*** *Provider*: Select your LLM provider from these options:
+**** *OpenAI*
+**** *Gemini*
+**** *Azure OpenAI*
+**** *Bedrock Anthropic*
+**** *NVIDIA Nemotron*
+**** *Anthropic*
+*** *Model*: Select a target model to override the model version specified in the payload. Selecting *Not Applicable* sends the request to the model specified in the request. A target model is required for semantic routing.
+.. Configure authentication:
+*** *Destination URL*: Specify the URL for your provider endpoint. Ensure the URL is correct and edit if necessary.
+*** *API Key*: Choose one of the following:
+**** *Static*: Enter a static API key for the provider endpoint
+**** *Dynamic*: Define a DataWeave script to extract the API key from the incoming request
+. Click *Add Route* to add additional routes. Complete the previous steps to configure each new route
+. Click *Add Model Proxy*.
 
-To learn how to find the model ID, see xref:model-proxy-request.adoc#amazon-bedrock-model-names[Amazon Bedrock Model Names].
-====
-
-.. Click *Add LLM Route* to add additional routes. Complete the previous steps to configure the new route. Each LLM Provider supports one route.
-. If adding multiple routes, select a *Routing strategy*. To configure your routing strategy, see:
-.. <<configure-model-based-routing>>
-.. <<configure-semantic-routing>>
-. 
-. Click *Save & Deploy*.
-
-[[configure-model-based-routing]]
-== Configure Model-Based Routing
-
-. Configure multiple routes. Click *Add LLM Route* to create new routes.
-. Select *Model-based* for *Routing strategy*.
-. Choose to enable a *Fallback route* for the request to be sent to if the provider or model is incorrectly sepcified. If enabling a fallback route:
-.. Select a *Route* to fallback to.
-.. Select a target model for the fallback route to use.
-. If no fall back route is configured and a route fails, a error response is returned.
-. Return to <<create-a-model-proxy>> step 7 to finish configuring your Model Proxy.
-
-[[configure-semantic-routing]]
-== Configure Semantic Routing
-
-To configure semantic routing:
-
-. Make sure you have already xref:model-proxy-semantic-service.adoc[Configured a semantic service].
-. Configure multiple routes and select a target model for each route. Click *Add LLM Route* to create new routes.
-. Select *Semantic* for *Routing strategy*.
-. Click *Select a service* and select a service.
-. Define or select a prompt topic for the routes:
-** Advanced scale semantic service:
-... Select prompt topics from your predefined prompt topics.
-** Basic scale semantic service:
-... Click the *Select prompt topics*.
-... Click *+ Create prompt topic*.
-... Define a *Prompt topic name*.
-... Define a *Prompt utterances* or click *Upload utterances* to upload a plain text file containing your prompt utterances.
-... Click *Create*.
-... Create multiple prompt topics for each route as needed.
-. Configure a *Fallback route* for the request to be sent to if it doesn't match a semantic route:
-.. Specify an accuracy threshold. When the accuracy of the semantic match is less than this threshold, traffic is sent to the fallback route.
-.. Select a *Route* to fallback to.
-.. Select a *Target model* for the fallback route to use.
-. Create a *Semantic prompt guard* to block users from asking the server about specific topics:
-** Advanced scale semantic service:
-... Select topics from your predefined prompt topics.
-** Basic scale semantic service:
-... Click *+ Create deny list*.
-... Define a *Prompt topic name*.
-... Define prompt utterances or click *Upload utterances* to upload a plain text file containing your prompt utterances.
-... Click *Create*.
-... Create multiple prompt topics for each route as needed.
-+
-NOTE: Creating a semantic prompt guard automatically applies the Semantic Prompt Guard policy.
-. Return to <<create-a-model-proxy>> step 7 to finish configuring your Model Proxy.
-
-== Edit and Delete a Model Proxy
+== Edit a Model Proxy
 
 To edit a Model Proxy:
 
-. From API Manager, click *Model Proxies*.
+. In the navigation pane, select *Model Proxies*.
 . Click the name of the Model Proxy you want to edit.
-. Click *Configuration*.
-. Switch between the *Inbound*, *Gateway*, and *Outbound* configurations to make the necessary edits.
-. Click *Save & Deploy*.
-
-To delete a Model Proxy:
-
-. From API Manager, click *Model Proxies*.
-. Click the three-dots menu (image:three-dots-menu.png[3%,3%]) of the Model Proxy you want to delete.
-. Click *Delete Model Proxy*.
-. Click *Yes, Delete*.
+. Click *Edit Configuration*.
+. Make the necessary edits.
+. Click *Save Changes*.
