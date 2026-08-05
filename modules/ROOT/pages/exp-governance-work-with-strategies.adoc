@@ -40,6 +40,45 @@ Work with your governance lead when strategy changes affect production or compli
 * Review conformance reporting for xref:exp-overview.adoc[supported catalog types].
 * Apply policies to services from *Portfolio*. See xref:exp-services-view-details.adoc[].
 
+== Akamai Security Findings in Conformance Reports
+
+When Akamai API Security is connected as a provider, the *Violations*, *Warnings*, and *Info* counts in the conformance report include Akamai security findings alongside governance rule results. A service can show a *Non-Conformant* status even when no governance rules are violated, if Akamai findings contribute violations.
+
+The Conformance tab includes a dedicated Akamai section with two tables:
+
+* *Security Findings*: Individual security issues detected by Akamai through live traffic inspection, broken down per instance and per endpoint.
+* *Incidents*: Recurring threats aggregated over time, with first- and last-seen timestamps and occurrence counts.
+
+Both tables have these sortable columns: *Finding*, *Instance*, *Endpoint*, and *Risk*.
+
+Akamai severity levels map to conformance tiers as follows:
+
+* Critical and High map to violations.
+* Medium maps to warnings.
+* Low and Info map to informational findings.
+
+The *Severity* filter at the top of the Conformance tab applies to both the governance rule results and the Akamai tables.
+
+=== Review a Finding
+
+Select a row in the *Security Findings* table to open the finding detail panel, which shows:
+
+* *Triggered On*: The endpoint path where the issue was detected.
+* *Risk*: The severity level.
+* *Exposure*: Whether the endpoint is internet-facing.
+* *Remediation Opportunities*: Curated recommended policies for this finding type. Select *Apply This Policy* to open the policy-apply flow with the policy pre-selected. Select *Browse in Policy Library* if no curated policy is listed. After a policy is applied, Akamai re-inspects live traffic and updates the finding status automatically.
+
+=== Review an Incident
+
+Select a row in the *Incidents* table to open the incident detail panel, which shows: *Detection Time*, *Type*, *Triggered On*, *Severity*, *Occurrences*, *Exposure*, OWASP tags, and Compliance Frameworks.
+
+=== Refresh Conformance Results
+
+After a scan runs, the API listing and API detail pages don't automatically reflect the updated conformance status. To see the latest results, manually refresh in one of these ways:
+
+* Refresh a single API: On the API detail page, open the *Conformance* tab and select *Refresh*.
+* Refresh all APIs: On the *Governance Strategies* page, select *Refresh Report*.
+
 == See Also
 
 * xref:exp-governance-create-strategy.adoc[]
