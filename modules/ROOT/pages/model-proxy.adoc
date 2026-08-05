@@ -5,13 +5,21 @@ endif::[]
 :imagesdir: ../assets/images
 :page-aliases: gateway::llm-proxy.adoc, gateway::flex-gateway-llm-proxy.adoc
 
-Model Proxy provides a unified access layer for multiple Large Language Model (LLM) providers. Model Proxies are deployed to Omni Gateway to enable governance, intelligent routing, and cost management for AI applications. 
+Model Proxy provides a unified access layer for multiple Large Language Model (LLM) providers. Model Proxies are deployed to Omni Gateway to enable governance, intelligent routing, and cost management for AI applications.
 
 Model Proxy is supported on Managed Omni Gateway and Self-Managed Omni Gateway running in Connected Mode.
 
-By creating a proxy, the user defines a singular LLM service that can receive requests for multiple providers. This simplifies the developer experience. You can add new models to the service seamlessly without changing the endpoint.
+By creating a proxy, the user defines a singular LLM service that can receive requests for multiple LLM providers. This simplifies the developer experience. You can seamlessly add new models to the service without changing the endpoint.
 
-image::model-proxy.png["An Model Proxy with a single endpoint routing requests to multiple LLM providers"]
+image::model-proxy.png["A Model Proxy with a single endpoint routing requests to multiple LLM providers"]
+
+== Supported Endpoint Formats
+
+Model Proxy supports these endpoint formats that are selected when creating a Model Proxy and can't be changed later:
+
+* *OpenAI*: The OpenAI API format works with all supported LLM providers and supports multi-routing and fallback mechanisms.
+* *Gemini*: The native Gemini API format for direct Google Gemini model requests. Doesn't support multi-routing or fallback mechanisms.
+* *Anthropic*: The native Anthropic API format for direct Anthropic Claude model requests. Doesn't support multi-routing or fallback mechanisms.
 
 Depending on configuration, the proxy then sends the request to the model defined by the user or dynamically sends the request to the provider that best matches the request:
 

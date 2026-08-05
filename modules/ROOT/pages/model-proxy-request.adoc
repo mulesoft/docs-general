@@ -5,9 +5,15 @@ endif::[]
 :imagesdir: ../assets/images
 :page-aliases: gateway::llm-proxy-request.adoc, gateway::flex-gateway-llm-proxy-request.adoc
 
-NOTE: This guide only provides OpenAI formatted requests.
+Model Proxy supports these endpoint formats: OpenAI, Gemini, and Anthropic. The format is selected when creating a Model Proxy and can't be changed later.
 
-Model Proxy supports both OpenAI and Gemini Responses and Chat Completions requests. To learn more about the these OpenAI request types, see:
+* *OpenAI format*: Supports all LLM providers with multi-routing and fallback mechanisms. Supports both Chat Completions (`/chat/completions`) and Responses (`/responses`) endpoints.
+* *Gemini format*: Native Gemini API format. Doesn't support multi-routing or fallback mechanisms.
+* *Anthropic format*: Native Anthropic API format. Doesn't support multi-routing or fallback mechanisms.
+
+NOTE: This guide currently provides OpenAI formatted request examples. Gemini and Anthropic format examples will be added in future updates.
+
+To learn more about the OpenAI request types, see:
 
 * https://developers.openai.com/api/reference/resources/chat[Chat Completions] API is designed for conversational multi-turn interactions rather than simple text continuation.
 * https://developers.openai.com/api/reference/resources/responses[Responses] API is recommended unified interface for building powerful agent-like applications.

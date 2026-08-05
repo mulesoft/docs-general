@@ -9,18 +9,71 @@ You can configure the Model Proxy to use different models and different routes.
 
 NOTE: A large Omni Gateway supports up to 50 Model Proxies.
 
-[[before-you-begin]]
 == Before You Begin
 
-. Deploy an Omni Gateway version 1.11.4 or later where you want to deploy your Model Proxy.
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* These permissions:
++
+--
+** API Manager: API Creator
+--
++
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+
+* A deployed Omni Gateway version 1.11.4.
 +
 See xref:gateway::flex-gateway-managed-set-up.adoc[].
-. Ensure you have the API Manager *API Creator* permission.
-. Retrieve your API keys from your LLM Providers.
-. xref:model-proxy-semantic-service.adoc[Configure a semantic service] if you want to use semantic routing.
+. API keys to authenticate with your LLM Providers.
+. xref:model-proxy-semantic-service.adoc[Configured a semantic service] if you want to use semantic routing.
 
 [[create-a-model-proxy]]
 == Create a Model Proxy
+
+. In the navigation pane, select *Model Proxies*.
+. Click *+ Add Model Proxy*.
+. Configure the proxy parameters:
+.. *Proxy Name*: Define a name for the Model Proxy.
+.. *Description*: Provide a description of what this proxy does.
+.. *Base Path*: Define a base path for the proxy endpoint (for example: `/billing-ai`).
+.. *Format*: Select an endpoint format:
++
+*** *OpenAI*: Select the OpenAI API format to send requests to all supported LLM providers (including Gemini and Anthropic). Supports multi-routing and fallback mechanisms. You can't change this format later.
+*** *Anthropic*: Select the Anthropic API format for native Anthropic Claude model requests. Doesn't support multi-routing or fallback mechanisms. You can't change this format later.
+*** *Gemini*: Select the Gemini API format for native Google Gemini model requests. Doesn't support multi-routing or fallback mechanisms. You can't change this format later.
+.. *Environment*: Select the environment for the Model Proxy.
+.. *Omni Gateway*: Select an Omni Gateway to deploy the Model Proxy to.
+.. *Consumer Endpoint*: The URL where the Model Proxy will be accessible.
+.. *Port*: The port number for the Model Proxy (for example: `8081`).
+. Click *Continue*.
+. Configure the routing strategy:
+.. *Routing strategy*: Select a routing strategy:
++
+*** *Model-based*: Route requests based on the model specified in the request payload.
+*** *Semantic*: Route requests based on semantic analysis of the prompt content. Requires a configured semantic service.
+. Configure at least one route:
+.. Provide a route name (for example: `Route A`).
+.. Optionally, click *+ Add headers* to add routing headers that filter requests by region, SLA, or custom rules. For example: `Region: US`.
+.. Configure the target:
+*** *Provider*: Select your LLM provider from these options:
+**** *OpenAI*
+**** *Gemini*
+**** *Azure OpenAI*
+**** *Bedrock Anthropic*
+**** *NVIDIA Nemotron*
+**** *Anthropic*
+*** *Model*: Select a target model to override the model version specified in the payload. Selecting *Not Applicable* sends the request to the model specified in the request. A target model is required for semantic routing.
+.. Configure authentication:
+*** *Destination URL*: The URL for your provider endpoint. Ensure the URL is correct and edit if necessary.
+*** *API Key*: Select either:
+**** *Static*: Enter a static API key for the provider endpoint.
+**** *Dynamic*: Define a DataWeave script to extract the API Key from the incoming request.
+. Click *+ Add Route* to add additional routes. Complete the previous steps to configure each new route.
+. Click *Add Model Proxy*.
+
+-----------------------
+
 
 . From API Manager, click *Model Proxies*.
 . Click *+ Add Model Proxy*.
@@ -28,8 +81,9 @@ See xref:gateway::flex-gateway-managed-set-up.adoc[].
 .. Define a *Model Proxy Name*.
 .. Select an endpoint *Format*:
 +
-** OpenAI: Select the OpenAI API format to send requests to all supported LLM Providers (including Gemini).
-** Gemini: Select the Gemini API format to send requests to only Gemini.
+** *OpenAI*: Select the OpenAI API format to send requests to all supported LLM Providers (including Gemini and Anthropic). Supports multi-routing and fallback mechanisms. You can't change this format later.
+** *Gemini*: Select the Gemini API format for native Google Gemini model requests. Doesn't support multi-routing or fallback mechanisms. You can't change this format later.
+** *Anthropic*: Select the Anthropic API format for native Anthropic Claude model requests. Doesn't support multi-routing or fallback mechanisms. You can't change this format later.
 .. Define a *Base path*.
 .. Select *Advanced options* if necessary.
 .. Click *Next*.
