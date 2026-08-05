@@ -5,19 +5,22 @@ endif::[]
 :imagesdir: ../assets/images
 :page-aliases: gateway::llm-proxy-token-reports.adoc, gateway::flex-gateway-llm-proxy-token-reports.adoc
 
+
+Token Usage reports and API Manager insights help you monitor how your model proxies consume resources and perform over time. Token Usage reports show the number of API tokens consumed per model, broken down by business group or application. The API Manager LLM Summary page provides hourly metrics including request volume, policy violations, errors, and average response time. For deeper analysis, you can build custom dashboards in Anypoint Monitoring.
+
 [[view-token-usage-reports]]
 == View Token Usage Reports
 
 With Token Usage reports, you can view the amount of API tokens each Model Proxy uses for individual models.
 
-NOTE: To limit token usage, apply the xref:gateway::policies-included-llm-token-rate-limit.adoc[LLM Token Based Rate Limit policy] to your Model Proxy.
+NOTE: To limit token usage, apply the xref:gateway::policies-included-llm-token-rate-limit.adoc[] to your Model Proxy.
 
 To view token usage reports:
 
-. Click you Anypoint Platform profile icon. This is icon of your initials.
+. In Anypoint Platform, click your Anypoint Platform profile icon (with your initials).
 . Click *Usage Reports*.
 . Select *Model Proxy* for *Product*.
-. Filter between *Usage by Business Group* and *Usage by Application* to see how tokens are being consumed.
+. Filter between *Usage by Business Group* and *Usage by Application* to see how tokens are consumed.
 
 To learn more about Usage Reports, see xref:general::usage-reports.adoc[].
 

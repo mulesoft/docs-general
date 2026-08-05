@@ -26,15 +26,23 @@ The integration uses a bidirectional sync between your MuleSoft tenant and your 
 
 Setup involves credentials in both directions:
 
-* A *service account* in Akamai, which you configure on the MuleSoft side so the scanner can read findings and incidents from Akamai.
-* A *connected app* in MuleSoft, which you configure on the Akamai side so Akamai can pull API asset and instance information from MuleSoft.
+* A service account in Akamai, which you configure on the MuleSoft side so the scanner can read findings and incidents from Akamai.
+* A connected app in MuleSoft, which you configure on the Akamai side so Akamai can pull API asset and instance information from MuleSoft.
 
 Complete these steps as an organization administrator:
 
-. *Create a service account in Akamai API Security.* In your Akamai API Security tenant, create a service account and note its client ID and client secret.
-. *Configure the scanner in MuleSoft.* Add an Akamai scanner and enter the Akamai service account credentials (client ID and client secret) and the Akamai base URL, along with a scan frequency. See <<Set Up the Akamai Scanner>>.
-. *Create a connected app in MuleSoft.* In Anypoint Platform, go to *Access Management* > *Connected Apps* and create an app that acts on its own behalf (client credentials). Add the *Exchange Viewer* or *Asset Viewer* scope so Akamai can read API instance and asset information, then save. Copy the client ID and client secret.
-. *Configure the Akamai-side sync.* In your Akamai API Security tenant, enter the MuleSoft connected app client ID and client secret so Akamai can pull API asset and instance information from MuleSoft.
+. Create a service account in Akamai API Security.
++
+In your Akamai API Security tenant, create a service account and note its client ID and client secret.
+. Configure the scanner in MuleSoft.
++
+Add an Akamai scanner and enter the Akamai service account credentials (client ID and client secret) and the Akamai base URL, along with a scan frequency. See <<Set Up the Akamai Scanner>>.
+. Create a connected app in MuleSoft.
++
+In Anypoint Platform, go to *Access Management* > *Connected Apps* and create an app that acts on its own behalf (client credentials). Add the *Exchange Viewer* or *Asset Viewer* scope so Akamai can read API instance and asset information, then save. Copy the client ID and client secret.
+. Configure the sync on the Akamai side.
++
+In your Akamai API Security tenant, enter the MuleSoft connected app client ID and client secret so Akamai can pull API asset and instance information from MuleSoft.
 
 == Set Up the Akamai Scanner
 
@@ -79,7 +87,7 @@ If some environments show that correlation policy isn't applied, you can apply m
 
 If policy application fails, verify your Admin API write permissions and environment access, then retry.
 
-== Where Security Results Appear
+== Reviewing Akamai Security Results in the Enhanced Experience
 
 After a successful run, Akamai results appear on existing services:
 

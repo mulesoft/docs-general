@@ -1,6 +1,7 @@
 = Managing Scanners
 :keywords: scanners, managing scanners, scanner actions, security scanning, mulesoft, vulnerability detection
 
+Scanners typically run on a schedule you or an administrator configured, or manually when you start a scan. After you configure scanners, you run them day to day. Most of that work happens under *Providers*, where you manage provider connections, scanners, and scan activity in one place.
 After you configure scanners, you run them day to day. Most of that work happens under *Providers*, where you manage provider connections, scanners, and scan activity in one place.
 
 == Available Scanner Actions
@@ -26,9 +27,6 @@ Remove the scanner from *Providers* when the provider link is no longer authoriz
 +
 NOTE: When you delete an Akamai API Security scanner, the system attempts to remove the Akamai correlation policy from the scanner's environments. If the removal fails, the correlation policy may remain applied; check *Automated Policies* to verify. Discovered services remain in your portfolio regardless.
 
-== How Scanners Run
-
-Scanners typically run on a schedule you or an administrator configured, or manually when you start a scan.
 
 == See Also
 

@@ -9,7 +9,7 @@ Connect the enhanced experience to external tools so teams can act on governed s
 +
 Install the MuleSoft for Slack app to receive notifications, run shortcuts, and deep-link into the enhanced experience from your Slack workspace.
 
-xref:exp-claude-desktop-connect.adoc[]
+* xref:exp-claude-desktop-connect.adoc[]
 +
 Connect Claude Desktop to the enhanced experience so developers can move between conversational AI workflows and governed catalogs.
 
