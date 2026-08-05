@@ -26,7 +26,7 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 
 The *Providers* page displays the provider list and scanner list.
 
-== Provider List
+=== Provider List
 
 The side panel shows providers organized into two groups:
 
@@ -36,7 +36,7 @@ Providers that have active scanner connections. Each connected provider card sho
 Not Connected::
 Providers available for connection but not yet configured. Select a not-connected provider to begin the scanner setup workflow. The workflow guides you through the process of connecting the provider and configuring the scanner.
 
-== View All Scanners
+=== Scanners List
 
 Select *All Providers* to view all scanners across all connected providers. The main panel displays the scanner list.
 

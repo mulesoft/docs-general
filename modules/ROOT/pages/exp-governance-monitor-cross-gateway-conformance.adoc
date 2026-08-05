@@ -1,4 +1,4 @@
-= Monitor Cross-Gateway Conformance
+= Monitoring Cross-Gateway Conformance
 :keywords: cross-gateway conformance, provider conformance, governance monitoring, compliance tracking, multi-gateway governance
 
 After creating governance strategies that target multiple gateway platforms or third-party providers, monitor conformance across your entire API ecosystem through a unified dashboard. The conformance summary shows conformance status for APIs hosted on Anypoint Platform gateways and connected third-party providers.
