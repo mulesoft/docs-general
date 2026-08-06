@@ -1,4 +1,4 @@
-= Viewing Scanner Details
+= Viewing Scanner History and Settings
 :keywords: scanner detail tabs, scanner overview tab, scanner services tab, scanner settings tab, provider scanners
 
 View details about a scanner and its scan history by selecting a configured scanner from the provider list. Scanner details show information about the provider, when it was created, last completed scan, and scan history. After you select a configured scanner, use the *Overview*, *Services*, and *Settings* tabs to review scanner state and configuration. Tab content varies by scanner type and provider capabilities.

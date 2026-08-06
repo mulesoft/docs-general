@@ -1,4 +1,4 @@
-= Viewing Providers
+= Viewing and Managing Provider Connections
 :keywords: providers, scanners, providers page, provider list, view providers, manage providers, anypoint platform
 
 The *Providers* page shows which cloud platforms and API management systems are connected to the enhanced experience. From *Platform* > *Providers*, you can view connected providers, filter scanners by provider, and connect new providers to begin discovering services.
