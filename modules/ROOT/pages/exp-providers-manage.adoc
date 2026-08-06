@@ -1,4 +1,4 @@
-= Viewing Providers
+= Viewing and Managing Provider Connections
 :keywords: providers, scanners, providers page, provider list, view providers, manage providers, anypoint platform
 
 The *Providers* page shows which cloud platforms and API management systems are connected to the enhanced experience. From *Platform* > *Providers*, you can view connected providers, filter scanners by provider, and connect new providers to begin discovering services.
@@ -15,7 +15,7 @@ Before getting started, make sure you have:
 ** Exchange: Exchange Contributor
 ** API Manager: API Creator
 ** API Manager: Manage Policies
--- 
+--
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
@@ -24,9 +24,9 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 . Sign in to the enhanced experience through your organization's entry point.
 . In the navigation, select *Platform* > *Providers*.
 
-The Providers page displays the provider list and scanner lists.
+The *Providers* page displays the provider list and scanner list.
 
-== Provider List
+=== Provider List
 
 The side panel shows providers organized into two groups:
 
@@ -36,7 +36,7 @@ Providers that have active scanner connections. Each connected provider card sho
 Not Connected::
 Providers available for connection but not yet configured. Select a not-connected provider to begin the scanner setup workflow. The workflow guides you through the process of connecting the provider and configuring the scanner.
 
-== View All Scanners
+=== Scanners List
 
 Select *All Providers* to view all scanners across all connected providers. The main panel displays the scanner list.
 
@@ -49,46 +49,55 @@ The scanner list shows:
 
 == Filter Scanners by Provider
 
-To view scanners for a specific provider, select the provider from the sidebar. The scanner list updates to show only scanners configured for that provider. The main panel displays the scanner list.
+To view scanners for a specific provider, select the provider from the sidebar. The scanner list updates to show only scanners configured for that provider.
 
 == View Scanner Details
 
-To see detailed information about a scanner, including scan history and settings, select the scanner name in the scanner list. The scanner detail page opens with two tabs:
+To see detailed information about a scanner, including scan history, activity log, and configuration, select the scanner name in the scanner list. The scanner detail page includes *Overview*, *Services*, and *Settings* tabs.
 
-Overview::
-Displays services count, instances count, and scan history. Each scan history entry shows status (Success, Failed), timestamp, and number of new services discovered.
-
-Settings::
-Shows scanner configuration including provider, created date, last scanned time, and services count. Use this tab to modify scanner settings or delete the scanner.
+For detailed tab behavior and scanner-type differences, see xref:exp-scanners-view-details.adoc[].
 
 For information about managing scanners, see xref:exp-scanners-manage.adoc[].
+For Akamai-specific setup and result interpretation, see xref:exp-akamai-risk-correlation.adoc[].
 
 == Connect a New Provider
 
 To add a provider connection:
 
 . From *Platform* > *Providers*, select a provider from the *Not Connected* section.
-. Follow the connection workflow to authenticate and configure scanner settings.
+. Follow the connection workflow to authenticate and configure scanner settings. The wizard walks through three steps: *Choose Provider*, *Connect to Provider*, and *Connection Setup*.
 
 For detailed scanner setup instructions, see xref:exp-scanners-add-from-providers.adoc[].
+
+== Akamai API Security Data in Portfolio
+
+When Akamai API Security is connected and scans have completed, security risk data appears on the detail pages of scanned APIs:
+
+* A *Security Risk* column in the *Instances* tab shows a color-coded risk level per instance: Low, Medium, High, or Critical.
+* An *Akamai* section in the *Conformance Report* tab shows full findings and incidents from the scan.
+
+In list and card views, the numeric value shows Akamai correlation policy coverage (applied policies compared to total required policies), while the color-coded *Security Risk* label (Low, Medium, High, or Critical) shows the severity level of correlated security findings.
 
 == Supported Providers
 
 The enhanced experience supports connections to these providers:
 
+* Akamai
 * Amazon
 * Anthropic
 * Databricks
-* GoDaddy ANS
-* Google Cloud
-* Kong Konnect
-* Langchain
+* GoDaddy
+* Google
+* Kong
+* LangChain
 * Microsoft
 * Snowflake
 
 [NOTE]
 ====
-When scanning Kong Konnect, the enhanced experience discovers gateway-level plugin information in addition to services.
+When scanning Kong, the enhanced experience discovers gateway-level plugin information in addition to services.
+
+*Akamai API Security* is available only when your administrator has enabled the feature for your organization. When enabled, it appears in the *Not Connected* section of the Providers sidebar.
 ====
 
 The specific providers available depend on your organization's enabled products and enhanced experience configuration.
@@ -96,6 +105,8 @@ The specific providers available depend on your organization's enabled products 
 == See Also
 
 * xref:exp-services-connect-providers-to-add.adoc[]
+* xref:exp-akamai-risk-correlation.adoc[]
+* xref:exp-scanners-view-details.adoc[]
 * xref:exp-scanners-add-from-providers.adoc[]
 * xref:exp-scanners-manage.adoc[]
 * xref:exp-services-add-to-portfolio.adoc[]

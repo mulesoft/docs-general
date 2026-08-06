@@ -1,7 +1,7 @@
 = Adding Scanners from Providers
 :keywords: scanners, providers, add scanner, scanner configuration, workflow, anypoint platform, security scanning
 
-A scanner is the configured link between the system and a supported cloud provider that lets discovery jobs find services—such as APIs, agents, and MCP servers—and register them in the right *Portfolio* catalogs. Scanners enable automated discovery so your catalogs stay current without manual registration. Configure a scanner once to turn on discovery for a provider, then extend it as your organization adds catalogs or enabled features.
+A scanner is the configured link between the system and a supported cloud provider that lets discovery jobs find services—such as APIs, agents, and MCP servers—and register them in the right *Portfolio* catalogs, and to discover and read policies from API configurations. Scanners enable automated discovery so your catalogs stay current without manual registration. Configure a scanner once to turn on discovery for a provider, then extend it as your organization adds catalogs or enabled features.
 
 For how provider connection and catalogs fit together, see xref:exp-services-connect-providers-to-add.adoc[] and xref:exp-services-add-to-portfolio.adoc[].
 
@@ -20,6 +20,7 @@ Before getting started, make sure you have:
 --
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+For provider-specific roles, credentials, and permission scopes, see xref:exp-scanners-prerequisites-reference.adoc[].
 
 == Benefits of Provider Scanners
 
@@ -33,6 +34,10 @@ Discovered services appear in *Portfolio* where teams can govern, monitor, and d
 +
 Scheduled or on-demand scans pick up releases and configuration drift according to the options your administrator allows.
 
+* Policy-visibility
++
+When a scanner is enabled, it can discover and read policies from API configurations. This allows the system to enforce policies on the discovered services. This is especially useful for API-based policies, such as web application firewall (WAF) policies.
+
 == Workflow Entry Points for Adding a Scanner
 
 The system exposes the same underlying connect-and-configure wizard from more than one place; the label depends on context:
@@ -43,11 +48,35 @@ Start from the general *Add Services* area and choose the path that connects a p
 * *Providers*
 +
 Use the area dedicated to provider and scanner management if your navigation includes it. Add or refine scanners alongside other provider work.
++
+The Akamai API Security scanner doesn't import services; it scans third-party provider security policies and surfaces vulnerability findings for related APIs, agents, and MCP services already in *Portfolio* catalogs.
 * *Portfolio*
 +
-Open the catalog that matches the service type you want (*Agents*, *APIs*, *MCP Servers*, and others your tenant supports). Use that catalog's add control—the label indicates the type (for example *Add API*)—then choose provider connection to scan and discover services to add to that catalog.
+Open the catalog that matches the service type you want (*Agents*, *APIs*, *MCP Servers*, and others your tenant supports). Use that catalog's add control—the label indicates the type (for example *Add API*)—then choose provider connection to scan and discover services to add to that catalog. Not all services have a catalog. If the service doesn't have a catalog, you can still add it to the system by using the *Add Service* button on the *Providers* page.
 
-include::partial$exp-navigation-labels.adoc[tag=ExpNavigationLabels]
+
+include::_partials/exp-navigation-labels.adoc[tag=ExpNavigationLabels]
+
+
+== Akamai API Security Scanner
+
+The Akamai API Security scanner behaves differently from import-based scanners. It doesn't discover and import services from third-party providers into *Portfolio* catalogs. Instead, it scans third-party provider security policies and observed security data, correlates those results to existing services, and surfaces risk scores and vulnerability findings in related *Portfolio* catalogs. *Akamai API Security* appears in the provider list only when your administrator has enabled the Akamai API Security feature for your organization.
+
+When you save an Akamai API Security scanner, the system automatically starts *Akamai Correlation Policy* application. This policy is required for Akamai to attribute security findings to your MuleSoft APIs by stamping correlation headers on API responses.
+
+For setup details, policy behavior, and result interpretation, see xref:exp-akamai-risk-correlation.adoc[].
+
+=== Monitor Correlation Policy Status
+
+After creating an Akamai scanner, the scanner detail page shows an *Akamai Correlation Policy* section with the live policy application status:
+
+* *Correlation policy not applied* — amber warning with an *Apply policy now* button.
+* *Partial* — a progress indicator showing how many environments are covered while the apply workflow runs.
+* *Applied* — green badge confirming all environments are covered.
+
+When the policy is applied, the section shows a table with one row per environment and runtime combination. The table includes columns for Environment, Runtime (Omni Gateway or Mule 4), Status (Applied or Disabled), APIM Policy ID, and Asset Version.
+
+If some environments show no policy binding, select *Check again* to retry the policy application for those environments only. The operation is safe to repeat.
 
 == Scanner Configuration Overview
 
@@ -57,11 +86,16 @@ Regardless of entry point, adding a scanner establishes trust and scope. You spe
 
 When the scanner is active, it applies discovery results according to its settings and your organization's rules. You review outcomes on the *Providers* page and on scanner detail pages, and you manage discovered services from the relevant *Portfolio* catalogs.
 
+For API scanners, policy-read results are visible from each discovered API in *Portfolio* > *APIs* > *Policies*. This includes read policies from Amazon API Gateway, Google Apigee, Azure API Management, and Kong Gateway. Use this view to verify imported controls and confirm scanner coverage by provider.
+
 For ongoing operations (pause, edit, or delete), see xref:exp-scanners-manage.adoc[].
 
 == See Also
 
+* xref:exp-scanners-prerequisites-reference.adoc[]
+* xref:exp-akamai-risk-correlation.adoc[]
 * xref:exp-services-connect-providers-to-add.adoc[]
+* xref:exp-scanners-prerequisites-reference.adoc[]
 * xref:exp-scanners-manage.adoc[]
 * xref:exp-services-add-to-portfolio.adoc[]
 * xref:exp-services-view-details.adoc[]

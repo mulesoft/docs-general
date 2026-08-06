@@ -12,6 +12,9 @@ An AI-powered service registered in the Agents catalog. Agents connect via A2A e
 Agent card::
 A metadata file that describes an agent's capabilities, endpoint, and connection details. Upload an agent card during manual registration, or point to an A2A endpoint to fetch one automatically.
 
+Akamai security findings::
+Security issues detected by Akamai API Security through live traffic inspection and surfaced in the *Conformance* tab of a governance strategy alongside governance rule results. Critical and High findings map to violations, Medium to warnings, and Low and Info to informational findings. Select a finding to view remediation opportunities and apply a policy directly from the detail panel.
+
 API::
 A service defined by a formal specification and managed in the APIs catalog. Supports REST (OAS, RAML), gRPC (Proto), and AsyncAPI formats. Register APIs manually with a spec file or import them via provider scanners.
 
@@ -20,6 +23,9 @@ The embedded agentic experience built into the enhanced MuleSoft experience UI. 
 
 Conformance Report::
 A view on the detail pages of agents, APIs, and MCP servers that shows compliance scores, rule violations, and warnings that applied governance strategies generate.
+
+Cross-gateway conformance::
+A unified view of compliance status across APIs hosted on Anypoint Platform gateways and connected third-party provider gateways. Access cross-gateway conformance from the *Governed Services* tab of an active governance strategy. Use the *Any provider* filter to compare conformance by platform or focus on a specific provider.
 
 Enhanced experience::
 The new MuleSoft UI for managing your AI portfolio, including governance, instance management, observability, and agentic experiences.
@@ -45,14 +51,14 @@ A bundled set of design-time and runtime rules that enforce a governance posture
 Governance Strategy > Controls::
 Design-time rules that validate services against selected rule sets and generate conformance reports. Apply controls as part of a governance strategy to optionally block noncompliant actions.
 
-Governance Strategy > Policies::
+Governance Strategy > Automated Policies::
 Runtime rules that govern traffic passing through service instances. Policies control access, data handling, rate limits, and other runtime behaviors defined in a governance strategy.
 
 Instance::
-A deployed version of a service on a specific gateway or runtime. Instances receive traffic on the Instance URL and proxy requests to the Target URL. Supported service types include APIs, agents, MCP servers, and LLM proxies.
+A deployed version of a service on a specific gateway or runtime. Instances receive traffic on the Instance URL and proxy requests to the Target URL. Supported service types include APIs, agents, MCP servers, and Model proxies.
 
-LLM Proxy::
-A gateway-backed service that routes requests to a large language model. LLM proxies register in the LLM Proxies catalog and support instance management, policy application, and token usage monitoring.
+Model Proxy::
+A gateway-backed service that routes requests to a large language model. Model proxies register in the Model Proxies catalog and support instance management, policy application, and token usage monitoring.
 
 Managed instance::
 An instance backed by Anypoint Omni Gateway that enables full policy enforcement, authentication, and monitoring integration. Managed instances provide stronger governance and observability than unmanaged paths.
@@ -70,13 +76,16 @@ Platform MCP Server::
 The MCP server that exposes enhanced MuleSoft experience capabilities to MCP clients such as Claude Desktop. Use Platform MCP Server to access portfolio and governance features from supported development environments.
 
 Portfolio::
-The set of services registered or discovered within your org, organized into catalogs for agents, APIs, MCP servers, LLM proxies, and gateways. Each catalog provides governance, monitoring, and instance management for the services it contains.
+The set of services registered or discovered within your org, organized into catalogs for agents, APIs, MCP servers, Model proxies, and gateways. Each catalog provides governance, monitoring, and instance management for the services it contains.
 
 Providers::
 The external cloud platforms connected to the enhanced experience to enable automated service discovery and import. Configure providers under *Platform* > *Providers*.
 
 Scanner::
 A configured connection between the enhanced experience and a supported cloud provider. When a scanner runs, it discovers services and registers them in the matching Portfolio catalog. Scanners run on a schedule or on demand.
+
+Slackbot::
+The native Slack assistant that connects to the MuleSoft Platform MCP Server to answer questions about the MuleSoft platform from within Slack. After installing the MuleSoft for Slack app, open Slackbot and connect it through *Integrations*. Slackbot is separate from the MuleSoft Agent, which handles management tasks and notifications.
 
 Semantic Service::
 A service that applies context-aware matching to route LLM-driven requests to the most relevant tools and pathways. It's available at Basic scale (managed internal configuration) or Advanced scale (external embedding API and vector database).

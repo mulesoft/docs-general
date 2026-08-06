@@ -5,7 +5,7 @@ Keep governance strategies aligned with your portfolio by adjusting scope, rules
 
 == Display Governance Strategies
 
-Go to *Governance* > *Governance Strategies* to view all strategies. Check the name, type, status, governed services, and last modified time.
+Go to *Governance* > *Governance Strategies* to view all strategies. Check the strategy name, type, environment, target, status, governed services count, and last modified time.
 
 == Available Strategy Actions
 
@@ -19,7 +19,7 @@ Go to *Governance* > *Governance Strategies* to view all strategies. Check the n
 
 Use the controls above the table to narrow the list:
 
-* Use the strategy type filter to select *All*, *Controls*, or *Automated Policies*.
+* Use the strategy type tabs to show *All*, *Controls*, or *Automated Policies*.
 * Use the status filter to select *Any Status*, *Active*, or *Disabled*.
 * Enter text in the search field to match strategy names.
 
@@ -35,7 +35,11 @@ Review the summary cards:
 
 Use these cards to spot governance gaps quickly.
 
-== When to Adjust a Strategy
+== Akamai-Generated Strategy
+
+When you connect Akamai API Security as a provider, the system automatically creates a pre-configured Akamai security strategy in the strategy list. This strategy attributes Akamai security findings to your MuleSoft APIs and MCP servers. Don't delete it unless you also remove the Akamai scanner. Deleting the strategy stops security findings from appearing in conformance reports.
+
+== Identify When to Edit or Disable a Strategy
 
 Edit or disable a strategy when:
 
