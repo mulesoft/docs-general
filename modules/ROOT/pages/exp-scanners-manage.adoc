@@ -1,9 +1,9 @@
-= Managing Scanner Runs and Activity
+= Running and Managing Scanners
 :keywords: scanners, managing scanners, scanner actions, security scanning, mulesoft, vulnerability detection
 
 Scanners typically run on a schedule you or an administrator configured, or manually when you start a scan. After you configure scanners, you run them day to day. Most of that work happens under *Providers*, where you manage provider connections, scanners, and scan activity in one place.
 
-== Available Scanner Actions
+== Scanner Actions
 
 * *Run Discovery Scan*
 +

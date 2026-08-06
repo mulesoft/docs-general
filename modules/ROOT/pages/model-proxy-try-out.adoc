@@ -16,10 +16,10 @@ With this feature, you can verify:
 
 NOTE: The Try Out feature only supports Model Proxies configured with OpenAI input format. For Model Proxies configured with Gemini or Anthropic native formats, use the request examples in xref:model-proxy-request.adoc[] to test your proxy.
 
-== Try Out Your Model Proxy
+To test your model proxy:
 
 . From API Manager in Anypoint Platform, click *Model Proxies*.
-. Click the name of the Model Proxy you want to try out.
+. Click the name of the model proxy you want to test.
 . Click *Try out*.
 . Configure any authentication or other headers your request requires.
 . Enter your test prompt.

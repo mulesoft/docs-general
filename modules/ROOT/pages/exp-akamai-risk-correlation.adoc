@@ -5,7 +5,7 @@ Use Akamai for risk correlation to map external security findings to the right s
 
 The integration relies on a bidirectional sync between your MuleSoft and Akamai API Security tenants. You connect the two tenants with credentials in each direction: Akamai reads your API assets and instances from MuleSoft so it can match its security observations to the correct APIs, and the scanner pulls the resulting findings and incidents back into *Portfolio*.
 
-== How the Akamai Scanner Differs from Import Scanners
+== Akamai Scanner vs. Import Scanners
 
 Most provider scanners discover metadata in external platforms and import services into *Portfolio* catalogs. The Akamai API Security scanner works differently: instead of creating new services, it enriches existing ones with Akamai security data.
 

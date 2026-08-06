@@ -71,7 +71,7 @@ To message the agent in DM, open the MuleSoft app in Slack and start a conversat
 . If it is your first time using the agent, follow the authentication flow when prompted to connect your Anypoint account to Slack.
 
 [[available-slash-commands]]
-== MuleSoft Agent Available Slash Commands
+== MuleSoft Agent Slash Commands
 
 * `/mule help`
 + 
