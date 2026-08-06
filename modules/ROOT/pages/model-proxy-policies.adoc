@@ -5,6 +5,8 @@ endif::[]
 :imagesdir: ../assets/images
 :page-aliases: gateway::llm-proxy-policies.adoc, gateway::flex-gateway-llm-proxy-policies.adoc
 
+Model Proxy enforces three policies by default to secure and route LLM traffic without additional configuration. Apply additional supported policies through API Manager to add content safety, PII detection, and token rate limiting controls. Outbound policies and the Rate Limiting SLA policy are not supported.
+
 By default, Model Proxy applies these policies:
 
 * Client ID Enforcement

@@ -5,7 +5,7 @@ endif::[]
 :imagesdir: ../assets/images
 :page-aliases: gateway::llm-proxy-semantic-service.adoc, gateway::flex-gateway-llm-proxy-semantic-service.adoc, exp-services-add-semantic.adoc
 
-Semantic services compare incoming requests to defined prompt topics to route the request to the model path that best matches it or block requests that match deny list topics.
+Semantic services compare incoming requests to defined prompt topics to route traffic to the best-matching model path or block requests that match denylist topics. Model Proxy supports Basic Scale semantic services for simple routing and Advanced Scale semantic services for complex routing backed by an external vector database. Configure a semantic service before creating a model proxy that uses semantic routing.
 
 Model Proxy supports two types of semantic services:
 
