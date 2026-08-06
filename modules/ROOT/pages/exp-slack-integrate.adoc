@@ -27,7 +27,7 @@ You may need Slack admin permissions to install this app in your organization's 
 . After the app is installed, select Slack as a notification delivery channel when you configure alerts and run shortcuts by using `@MuleSoft` in your Slack workspace.
 
 [[connect-slackbot-mcp]]
-== Connect Slackbot to the Mulesoft Platform MCP Server
+== Connect Slackbot to the MuleSoft Platform MCP Server
 
 After installing the Slack app app, connect Slackbot to the xref:mulesoft-mcp-server::getting-started-platform.adoc[] to answer questions about the MuleSoft platform.
 

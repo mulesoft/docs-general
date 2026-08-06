@@ -9,8 +9,12 @@ Semantic services compare incoming requests to defined prompt topics to route tr
 
 Model Proxy supports two types of semantic services:
 
-* <<configure-an-advanced-scale-semantic-service, Advanced Scale>>: For complex semantic routing. Advanced scale semantic services use a vector database to store and compare prompt topic utterances. Advanced scale semantic services support unlimited prompt topics and 2000 utterances per prompt topic.
-* <<configure-a-basic-scale-semantic-service, Basic Scale>>: For simple semantic routing and blocking. Basic scale semantic services support up to 6 prompt topics and 10 utterances per prompt topic.
+* <<configure-an-advanced-scale-semantic-service, Advanced Scale>>:
++
+For complex semantic routing. Advanced scale semantic services use a vector database to store and compare prompt topic utterances. Advanced scale semantic services support unlimited prompt topics and 2000 utterances per prompt topic.
+* <<configure-a-basic-scale-semantic-service, Basic Scale>>:
++
+For simple semantic routing and blocking. Basic scale semantic services support up to 6 prompt topics and 10 utterances per prompt topic.
 
 == Before You Begin
 
@@ -56,7 +60,8 @@ Advanced scale supports large utterance sets per topic and requires a dedicated 
 ** *Collection*: The collection name in your vector database.
 . Define prompt topics:
 +
-Scales up to 2000 utterances per topic.
+Supports up to 2000 utterances per topic.
++
 .. Click *Create Prompt Topic*.
 .. Define a *Prompt topic name*.
 .. Define prompt utterances or click *Upload utterances* to upload a plain text file containing your prompt utterances.

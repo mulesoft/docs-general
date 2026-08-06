@@ -55,8 +55,8 @@ Model proxy registration has two parts: associate the proxy with a gateway and d
 
 Add an API to the *APIs* catalog by registering it manually or by connecting to a provider.
 
-* *Register manually* – Upload a specification file to define a new API.
-* *Connect to provider* – Discover and import APIs from external platforms. See xref:exp-services-connect-providers-to-add.adoc[].
+* *Register manually*–Upload a specification file to define a new API.
+* *Connect to provider*–Discover and import APIs from external platforms. See xref:exp-services-connect-providers-to-add.adoc[].
 
 === Register an API Manually
 
@@ -78,9 +78,10 @@ The experience supports multiple API types and specification formats:
 
 == Gateways
 
-Manual gateway registration is not supported in Enhanced Experience.
+Manual gateway registration isn't supported in the enhanced experience.
 
 To set up a gateway, select *Add Gateway* to open gateway setup in Anypoint Platform.
+
 == See Also
 
 * xref:exp-services-add-to-portfolio.adoc[]

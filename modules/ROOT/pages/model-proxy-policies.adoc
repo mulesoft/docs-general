@@ -32,7 +32,7 @@ These policies are specific and useful for Model Proxies:
 . From API Manager, click *Model Proxies*.
 . Click the name of the Model Proxy you want to apply a policy to.
 . Click *AI Policies*.
-. Click *+ Add inbound policy*.
+. Click *Add inbound policy*.
 . Select the policy to apply.
 . Configure the required parameters.
 +
@@ -56,7 +56,7 @@ To remove the Client ID Enforcement policy, ensure that you either:
 ** xref:gateway::policies-included-jwt-validation.adoc[] (If Client ID enforcement is configured, `skipClientIdValidation=false`)
 ** A custom policy that populates `Authentication.clientName`
 
-* Edit the dataweave variable in Model Proxy Core to extract a different unique identifier, such as `clientid`, `userid`, or `departmentid`.
+* Edit the DataWeave variable in Model Proxy Core to extract a different unique identifier, such as `clientid`, `userid`, or `departmentid`.
 +
 NOTE: You can't filter by this unique identifier in Usage Reports.
 

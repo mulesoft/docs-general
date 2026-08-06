@@ -22,7 +22,7 @@ Before getting started, make sure you have:
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
-== Open the APIs Catalog
+== Open the Service Catalog
 
 . In *Portfolio*, open the catalog for the service type, such as *APIs*, *Agents*, *MCP Servers*, or *Model Proxies*.
 . Select a service to open its detail page.
@@ -50,7 +50,7 @@ Field names, required metadata, and available gateway or runtime options depend 
 . Under *Target*, enter the *Target URL* where the instance proxies requests.
 . Click *Create Instance*.
 
-== After You Create or Change an Instance
+== After Creating or Updating an Instance
 
 After creating or updating an instance, you can continue managing the service through related areas of the experience.
 
