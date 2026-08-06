@@ -1,4 +1,4 @@
-= Viewing Token Usage and LLM Metrics
+= Viewing Token Usage and Model Proxy Metrics
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
@@ -9,7 +9,7 @@ endif::[]
 Token Usage reports and API Manager insights help you monitor how your model proxies consume resources and perform over time. Token Usage reports show the number of API tokens consumed per model, broken down by business group or application. The API Manager LLM Summary page provides hourly metrics including request volume, policy violations, errors, and average response time. For deeper analysis, you can build custom dashboards in Anypoint Monitoring.
 
 [[view-token-usage-reports]]
-== View Token Usage Reports
+== View Token Usage Reports for Model Proxies
 
 With Token Usage reports, you can view the amount of API tokens each Model Proxy uses for individual models.
 
@@ -27,7 +27,7 @@ To learn more about Usage Reports, see xref:general::usage-reports.adoc[].
 NOTE: Gemini models use reasoning tokens. This number is included in *Total tokens* but isn't individually listed.
 
 [[view-api-manager-insights]]
-== View API Manager Insights
+== View Model Proxy Metrics in API Manager
 
 The API Manager LLM Summary page provides these metrics for your Model Proxy:
 

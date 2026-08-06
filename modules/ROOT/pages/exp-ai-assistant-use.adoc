@@ -1,4 +1,4 @@
-= Use the AI Assistant (MuleSoft Agent)
+= Using the MuleSoft Agent
 :keywords: mulesoft agent, ai assistant, anypoint platform, integration automation, ask questions, ai-powered assistant
 
 The enhanced experience includes an AI assistant called MuleSoft Agent that helps you navigate, search, and manage your portfolio through natural language conversations. Access the assistant from any page to get guidance, perform tasks, and discover features without navigating through menus.
@@ -26,7 +26,7 @@ To assign the *MuleSoft Omni Agent for Anypoint* permission across business grou
 . Find the user and assign the *MuleSoft Omni Agent for Anypoint* permission.
 . Repeat for each business group that requires access.
 
-== What MuleSoft Agent Can Do
+== MuleSoft Agent Capabilities
 
 The AI assistant provides context-aware help based on where you are in the enhanced experience:
 

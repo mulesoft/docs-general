@@ -5,7 +5,7 @@ endif::[]
 :imagesdir: ../assets/images
 :page-aliases: gateway::llm-proxy-create-llm-proxy.adoc, gateway::flex-gateway-llm-proxy-create-llm-proxy.adoc
 
-You can configure the Model Proxy to use different models and different routes.
+You can configure a model proxy to route LLM traffic across different models and providers using model-based or semantic routing strategies. When you create a model proxy, you define the endpoint format, routing strategy, and at least one route that maps requests to a supported LLM provider and model. After deployment to Omni Gateway, you can edit the proxy configuration at any time.
 
 NOTE: A large Omni Gateway supports up to 50 Model Proxies.
 
@@ -13,16 +13,12 @@ NOTE: A large Omni Gateway supports up to 50 Model Proxies.
 
 Before getting started, make sure you have:
 
-* An Anypoint Platform account.
-* These permissions:
-+
---
-** API Manager: API Creator
---
+* An Anypoint Platform account
+* API Manager: API Creator permission
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
-* A deployed Omni Gateway version 1.11.4.
+* A deployed Omni Gateway version 1.11.4
 +
 See xref:gateway::flex-gateway-managed-set-up.adoc[].
 * API keys to authenticate with your LLM Providers.
@@ -48,12 +44,12 @@ See xref:gateway::flex-gateway-managed-set-up.adoc[].
 .. *Port*: Enter the port number for the Model Proxy (for example, `8081`).
 . Click *Continue*.
 . Configure the routing strategy:
-.. *Routing strategy*: Select a routing strategy:
+.. Select a routing strategy:
 +
 *** *Model-based*: Route requests based on the model specified in the request payload.
 *** *Semantic*: Route requests based on semantic analysis of the prompt content. Requires a configured semantic service.
 . Configure at least one route:
-.. Provide a route name (for example, `Route A`)
+.. Provide a route name (for example, `Route A`).
 .. Optionally, click *Add headers* to add routing headers that filter requests by region, SLA, or custom rules. For example, `Region: US`
 .. Configure the target:
 *** *Provider*: Select your LLM provider from these options:

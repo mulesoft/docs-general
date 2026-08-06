@@ -94,7 +94,7 @@ To modify an existing alert:
 ** *Set Alert Delivery*: Change severity, alert name, or delivery channels (Email, Slack).
 . Save your changes.
 
-== How Alerts Appear in Slack
+== Slack Alert Notifications
 
 When an alert triggers, your team receives a notification directly in the configured Slack channel or DM:
 

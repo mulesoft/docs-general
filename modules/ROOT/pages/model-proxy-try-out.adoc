@@ -5,19 +5,21 @@ endif::[]
 :imagesdir: ../assets/images
 :page-aliases: gateway::llm-proxy-try-out.adoc, gateway::flex-gateway-llm-proxy-try-out.adoc
 
-Model Proxy provides the try out functionality to test mock LLM prompts without creating API requests. Use the try out feature to test:
+The try out feature lets you validate your model proxy configuration by testing mock LLM prompts without making external API requests. You can verify response messages, response headers, the routing path, and which model services each request. The feature is available only for model proxies configured with OpenAI input format.
 
-* What response message your Model Proxy returns.
+With this feature, you can verify:
+
+* What response message your model proxy returns.
 * What response headers are returned.
-* What model services the response.
+* What model services the response is routed to.
 * Why a request is sent to a specific route.
 
 NOTE: The Try Out feature only supports Model Proxies configured with OpenAI input format. For Model Proxies configured with Gemini or Anthropic native formats, use the request examples in xref:model-proxy-request.adoc[] to test your proxy.
 
-== Try Out Your Model Proxy
+To test your model proxy:
 
 . From API Manager in Anypoint Platform, click *Model Proxies*.
-. Click the name of the Model Proxy you want to try out.
+. Click the name of the model proxy you want to test.
 . Click *Try out*.
 . Configure any authentication or other headers your request requires.
 . Enter your test prompt.

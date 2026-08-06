@@ -12,7 +12,7 @@ Model Proxy supports these endpoint formats: OpenAI, Gemini, and Anthropic. The 
 * *<<anthropic-format-request-example,Anthropic format>>*: Native Anthropic API format. Doesn't support multi-routing or fallback mechanisms.
 
 [[retrieve-the-request-configuration-parameters]]
-== Retrieve the Endpoint Configuration Parameters for your Model Proxy
+== Retrieve the Endpoint Configuration Parameters for Your Model Proxy
 
 To find your Model Proxy endpoint configuration and client application credentials required to use the requests in this guide:
 
@@ -48,15 +48,15 @@ All requests are designed to work for both strategies. When sending a request to
 +
 NOTE: Adding a model to a request ensures deterministic routing to a preferred backend if the routing strategy of a Model Proxy changes.
 
-=== Chat Completions API Validation /chat/completions Request Examples
+=== Chat Completions API Validation Request Examples
 
-https://developers.openai.com/api/reference/resources/chat[Chat Completions] is the standard API for interacting with models. It is designed for conversational multi-turn interactions rather than simple text continuation. The endpoint requires a model and a messages list with roles (such as system, user, or assistant) to generate context-aware responses.
+https://developers.openai.com/api/reference/resources/chat[Chat Completions] (/chat/completions) is the standard API for interacting with models. It is designed for conversational multi-turn interactions rather than simple text continuation. The endpoint requires a model and a messages list with roles (such as system, user, or assistant) to generate context-aware responses.
 
-These examples are designed to validate the basic functionality of the Chat Completions API.
+These examples validate the basic functionality of the Chat Completions API.
 
 ==== Basic Chat Completion Example
 
-This request examples ensures the gateway correctly routes traffic to the specified LLM provider.
+This request example ensures the gateway correctly routes traffic to the specified LLM provider.
 
 In the example, the model-based routing request ensures the gateway routes traffic to a Gemini 2.0 model. For semantic routing, the gateway routes traffic to the most suitable provider based on the request content:
 
@@ -555,9 +555,9 @@ curl --location '<public-endpoint>/<base-path>/chat/completions' \
 ----
 ====
 
-=== Responses API Validation /responses
+=== Responses API Validation
 
-https://developers.openai.com/api/reference/resources/responses[OpenAI Responses API] is recommended unified interface for building powerful, agent-like applications, combining capabilities from previous APIs (like Chat Completions and Assistants) into a single, more efficient endpoint. It is designed to be stateful by default and offers built-in access to advanced tools.
+https://developers.openai.com/api/reference/resources/responses[OpenAI Responses API] (/responses)is recommended unified interface for building powerful, agent-like applications, combining capabilities from previous APIs (like Chat Completions and Assistants) into a single, more efficient endpoint. It is designed to be stateful by default and offers built-in access to advanced tools.
 
 ==== Responses Endpoint for Model Context Protocol (MCP)
 

@@ -1,4 +1,4 @@
-= Create an MCP Server
+= Create MCP Servers
 :keywords: mcp server, create mcp server, model context protocol, anypoint platform, mcp configuration, api integration
 
 Create MCP servers to define identity, runtime connectivity, and the tools and resources exposed to MCP clients.
@@ -40,16 +40,14 @@ Before getting started, make sure you have:
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
-== Steps to Create an MCP Server
+== Create an MCP Server
 
 . Open *MCP Servers* and select *Add MCP Server* > *Create MCP Server*.
 . In *Select Source, Instance & Tools*, select the APIs or SaaS systems you want to expose. Select the source instance or version, then select the tools to publish, including optional read-only filtering. Click *Next*.
 . In *SaaS Credentials*, provide the credentials required for the selected sources so the MCP server can call them securely. Click *Next*.
 . In *Review*, validate the selected sources, tools, and credential mappings, then complete creation.
 
-== After You Create an MCP Server
-
-After you click *Save*, the MCP server is automatically added to the *MCP Servers* catalog in *Portfolio*. No additional action is required.
+After saving, the MCP server is automatically added to the *MCP Servers* catalog in *Portfolio*. No additional action is required.
 
 == See Also
 
