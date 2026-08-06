@@ -77,7 +77,7 @@ Check your permissions:
 Check your subscription tier:
 
 . Verify whether you have API Portfolio Access or Agent + API Portfolio Access.
-. Some features (like agents, MCP servers, LLM proxies) require Agent + API Portfolio Access.
+. Some features (like agents, MCP servers, Model proxies) require Agent + API Portfolio Access.
 . Contact your administrator or account team about upgrading your subscription if needed.
 
 Check service state:
@@ -187,7 +187,7 @@ Be specific:
 . Use exact service names or IDs rather than relying on search.
 . For example: "Show me details for service ID 12345."
 
-== Getting Additional Help
+== Get Additional Help
 
 If these troubleshooting steps don't resolve your issue:
 
@@ -219,6 +219,7 @@ Reach out to your internal IT support or MuleSoft support with the diagnostic in
 == See Also
 
 * xref:exp-ai-assistant-use.adoc[]
+* xref:exp-troubleshoot.adoc[]
 * xref:exp-home-start.adoc[]
 * xref:exp-overview.adoc[]
 include::release-notes::partial$release-notes/rn-known-issues.adoc[tag=knownIssuesSeeAlsoLink]

@@ -27,9 +27,9 @@ You may need Slack admin permissions to install this app in your organization's 
 . After the app is installed, select Slack as a notification delivery channel when you configure alerts and run shortcuts by using `@MuleSoft` in your Slack workspace.
 
 [[connect-slackbot-mcp]]
-== Connect Slackbot to the Mulesoft Platform MCP Server
+== Connect Slackbot to the MuleSoft Platform MCP Server
 
-After installing the Slack app app, connect Slackbot to the xref:mulesoft-mcp-server::getting-started-platform.adoc[Mulesoft Platform MCP Server] to answer questions about the MuleSoft platform.
+After installing the Slack app app, connect Slackbot to the xref:mulesoft-mcp-server::getting-started-platform.adoc[] to answer questions about the MuleSoft platform.
 
 . Open Slackbot.
 . Click the Slackbot logo again.
@@ -71,7 +71,7 @@ To message the agent in DM, open the MuleSoft app in Slack and start a conversat
 . If it is your first time using the agent, follow the authentication flow when prompted to connect your Anypoint account to Slack.
 
 [[available-slash-commands]]
-== MuleSoft Agent Available Slash Commands
+== MuleSoft Agent Slash Commands
 
 * `/mule help`
 + 
@@ -90,10 +90,18 @@ Opens the authentication flow to connect your Anypoint account to Slack. If youâ
 
 You can use the MuleSoft Agent to perform these platform tasks in Slack:
 
-* *Receive alerts*: Receive alerts to channels or direct messages (DMs). You can configure notifications to be sent to Slack. For more information, see xref:exp-alerts-configure-notifications.adoc[].
-* *Find services by capability*: Use natural-language search to discover APIs, agents, LLMs, and MCP servers.
-* *Run governance, monitoring, and cost drill-ins*: Generate governance, monitoring, and cost reports on request.
-* *Take governance actions*: Apply policies and apply cost management recommendations.
+* Receive alerts:
++
+Receive alerts to channels or direct messages (DMs). You can configure notifications to be sent to Slack. For more information, see xref:exp-alerts-configure-notifications.adoc[].
+* Find services by capability:
++
+Use natural-language search to discover APIs, agents, LLMs, and MCP servers.
+* Run governance, monitoring, and cost drill-ins:
++
+Generate governance, monitoring, and cost reports on request.
+* Take governance actions:
++
+Apply policies and apply cost management recommendations.
 
 
 

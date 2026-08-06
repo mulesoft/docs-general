@@ -9,7 +9,7 @@ Your AI services stay audit-ready with clear visibility into cost and runtime he
 
 The enhanced MuleSoft experience supports the full lifecycle of AI-connected integration services:
 
-Entity Management:: Register and manage agents, REST and GraphQL APIs, MCP servers, LLM proxies, and gateways, including Anypoint Omni Gateway, external gateways, and unmanaged gateways. Each type has a dedicated catalog under *Portfolio*.
+Entity Management:: Register and manage agents, REST and GraphQL APIs, MCP servers, Model proxies, and gateways, including Anypoint Omni Gateway, external gateways, and unmanaged gateways. Each type has a dedicated catalog under *Portfolio*.
 
 Governance and Compliance:: Define and apply policies across domains such as access and security, performance and cost, data privacy and integrity, and compliance and observability. Conformance reporting summarizes rule violations and severity so you can close gaps systematically.
 
@@ -32,10 +32,10 @@ Sign in through your entry path and land on *Home*. Scan *Portfolio* catalogs, *
 For AI assistant usage, see xref:exp-ai-assistant-use.adoc[].
 . Register services in *Portfolio*.
 +
-Under *Portfolio*, open *Agents*, *MCP Servers*, *LLM Proxies*, *APIs*, or *Gateways*. Add services to work with. Register them manually or use connected providers under *Platform* > *Providers* if your organization enables discovery flows. For registration methods, see xref:exp-services-add-to-portfolio.adoc[].
+Under *Portfolio*, open *Agents*, *MCP Servers*, *Model Proxies*, *APIs*, or *Gateways*. Add services to work with. Register them manually or use connected providers under *Platform* > *Providers* if your organization enables discovery flows. For registration methods, see xref:exp-services-add-to-portfolio.adoc[].
 . Create and manage instances.
 +
-In *Portfolio*, open a service detail page from *Agents*, *MCP Servers*, *LLM Proxies*, or *APIs*, then open the *Instances* tab to create managed or unmanaged deployments that match your needs. Managed instances on Omni Gateway give stronger governance and monitoring when the new experience exposes them. *Gateways* don't include an *Instances* tab on their detail page. For instance workflows, see xref:exp-instances-add.adoc[].
+In *Portfolio*, open a service detail page from *Agents*, *MCP Servers*, *Model Proxies*, or *APIs*, then open the *Instances* tab to create managed or unmanaged deployments that match your needs. Managed instances on Omni Gateway give stronger governance and monitoring when the new experience exposes them. *Gateways* don't include an *Instances* tab on their detail page. For instance workflows, see xref:exp-instances-add.adoc[].
 . Configure policies.
 +
 On a service detail page in *Portfolio*, open the *Policies* tab for the service or one of its instances to apply governance policies that match access control, data privacy, performance, and compliance goals. Use top-level *Governance* for gateway-wide policy work, organization strategies, and cost tools. For governance policy workflows, see xref:exp-governance-work-with-strategies.adoc[].
@@ -44,13 +44,13 @@ On a service detail page in *Portfolio*, open the *Policies* tab for the service
 In *Portfolio*, open a service detail page from *Agents*, *APIs*, or *MCP Servers*, then open the *Conformance Report* tab to review scores, violations, and warnings and address the findings your governance team prioritizes. For gateways, use top-level *Governance* for the same compliance story at the scope the experience supports. For service-level tabs and conformance context, see xref:exp-services-view-details.adoc[].
 . Monitor runtime health.
 +
-On a service detail page in *Portfolio* (*Agents*, *APIs*, *MCP Servers*, or *LLM Proxies*), open the *Monitoring* tab to review live metrics such as latency, error rates, and request volume when the new experience surfaces Omni Gateway data for managed paths. Compare those service-level metrics with dashboards, reports, or notifications under top-level *Observability* when your administrator enabled those views for your team. For monitoring workflows, see xref:exp-services-monitoring.adoc[].
+On a service detail page in *Portfolio* (*Agents*, *APIs*, *MCP Servers*, or *Model Proxies*), open the *Monitoring* tab to review live metrics such as latency, error rates, and request volume when the new experience surfaces Omni Gateway data for managed paths. Compare those service-level metrics with dashboards, reports, or notifications under top-level *Observability* when your administrator enabled those views for your team. For monitoring workflows, see xref:exp-services-monitoring.adoc[].
 . Manage costs.
 +
 Under *Governance*, open *Cost Management* to study token usage and related spend signals. Apply the cost reduction strategies your organization adopted, such as tool mapping or tool sanitization, where the new experience supports them. For cost and token usage details, see xref:exp-governance-view-cost-and-token-usage.adoc[].
 . Operate and tune the portfolio.
 +
-Coordinate agents, APIs, gateways, MCP servers, and LLM proxies so traffic, policies, and integrations stay aligned. Open *Versions* when you need configuration history before you change instances or policies. Adjust policies, instances, or registrations when monitoring and governance insights show drift or new risk. For service detail workflows, see xref:exp-services-view-details.adoc[].
+Coordinate agents, APIs, gateways, MCP servers, and Model proxies so traffic, policies, and integrations stay aligned. Open *Versions* when you need configuration history before you change instances or policies. Adjust policies, instances, or registrations when monitoring and governance insights show drift or new risk. For service detail workflows, see xref:exp-services-view-details.adoc[].
 . Improve on each cycle.
 +
 Feed findings from monitoring and governance back into planning for the next change window. For strategy refinement workflows, see xref:exp-governance-work-with-strategies.adoc[].
