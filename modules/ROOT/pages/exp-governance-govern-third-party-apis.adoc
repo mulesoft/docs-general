@@ -43,8 +43,8 @@ Follow these steps to govern APIs from third-party providers:
 == See Also
 
 * xref:exp-services-view-details.adoc[]
-* xref:exp-governance-create-strategy.adoc[Create Governance Strategies]
+* xref:exp-governance-create-strategy.adoc[]
 * https://dev-portal.mulesoft.com/skills/author-governance-ruleset.html[Author a Governance Ruleset]
 // FLAG: Aug 13 release (policy write scope). Link to the Policy Library apply topic, which is commented out until the Aug 13 write release. Uncomment together with that topic.
 // * xref:exp-governance-policy-library-apply.adoc[Browse the Policy Library]
-* xref:exp-governance-monitor-cross-gateway-conformance.adoc[Monitor Cross-Gateway Conformance]
+* xref:exp-governance-monitor-cross-gateway-conformance.adoc[]
