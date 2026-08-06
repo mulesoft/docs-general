@@ -93,7 +93,7 @@ Basic scale supports up to six topics and 10 utterances per topic. Managed via i
 
 To edit a semantic service:
 
-. From *Semantic Service Setup*, click the three-dots menu (image:three-dots-menu.png[3%,3%]) of the semantic service you want to edit.
+. From *Semantic Service Setup*, click the three-dots menu (image:gateway::image$three-dots-menu.png[3%,3%]) of the semantic service you want to edit.
 . Make the necessary edits.
 . Click either *Save* or *Save & Download Script* depending on your sematic service.
 +
