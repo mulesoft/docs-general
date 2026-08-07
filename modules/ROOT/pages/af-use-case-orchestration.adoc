@@ -4,21 +4,21 @@ Agent brokers and agent networks coordinate task delegation across specialized a
 
 Key benefits of agent networks and brokers include:
 
-* *Guided determinism*: Graph-based routing makes sure that specific operations run in the correct order, with defined paths for both expected outcomes and error conditions.
-* *Specialized coordination*: Route each task to the agent best suited to handle it, rather than building one agent that tries to do everything.
-* *Reusable components*: Publish brokers and agent networks to your portfolio so other teams can discover and compose them into their own networks.
-* *End-to-end observability*: Monitor broker routing decisions, agent performance, and request flows with Agent Visualizer.
-* *Incremental composition*: Start with a simple agent network and add brokers as complexity grows. You don't need a broker to get started.
+* Guided determinism: Graph-based routing makes sure that specific operations run in the correct order, with defined paths for both expected outcomes and error conditions.
+* Specialized coordination: Route each task to the agent best suited to handle it, rather than building one agent that tries to do everything.
+* Reusable components: Publish brokers and agent networks to your portfolio so other teams can discover and compose them into their own networks.
+* End-to-end observability: Monitor broker routing decisions, agent performance, and request flows with Agent Visualizer.
+* Incremental composition: Start with a simple agent network and add brokers as complexity grows. You don't need a broker to get started.
 
 == The Problem
 
 A single agent can handle straightforward tasks, but complex business processes expose the limits of working with one agent in isolation:
 
-* *Specialization gaps*: One agent can't excel at research, financial analysis, regulatory review, and customer communication simultaneously.
-* *No intelligent routing*: Without a broker, there's no component to match an incoming request to the right specialist agent based on context.
-* *Process reliability*: Multi-step processes that involve multiple agents and systems are difficult to make reliable and predictable without explicit coordination.
-* *Opaque execution*: When something goes wrong in a multi-agent process, it's hard to know which agent failed, why, and what state the process was in.
-* *Duplication*: Teams that build similar multi-agent processes independently create inconsistent behavior and duplicated effort.
+* Specialization gaps: One agent can't excel at research, financial analysis, regulatory review, and customer communication simultaneously.
+* No intelligent routing: Without a broker, there's no component to match an incoming request to the right specialist agent based on context.
+* Process reliability: Multi-step processes that involve multiple agents and systems are difficult to make reliable and predictable without explicit coordination.
+* Opaque execution: When something goes wrong in a multi-agent process, it's hard to know which agent failed, why, and what state the process was in.
+* Duplication: Teams that build similar multi-agent processes independently create inconsistent behavior and duplicated effort.
 
 Making a single agent smarter doesn't solve these challenges. They require a coordination layer—an agent network with a broker.
 
@@ -26,11 +26,11 @@ Making a single agent smarter doesn't solve these challenges. They require a coo
 
 Agent Fabric's agent brokers and agent networks provide a coordination layer for multi-agent processes:
 
-* *Agent networks*: A YAML-configured composition of agents, brokers, LLMs, and MCP servers that defines the structure of your agentic solution.
-* *Agent brokers*: Intelligent routing services, defined in Agent Script, that delegate tasks to the right A2A-compliant agent based on context.
-* *Guided determinism*: Graph-based broker logic makes sure that tasks follow defined paths, handling both expected outcomes and error conditions.
-* *Portfolio integration*: Published agent networks and brokers appear in your portfolio for discovery and reuse across your organization.
-* *Integrated observability*: Agent Visualizer displays the network topology, real-time request flows, and performance metrics for the entire network.
+* Agent networks: A YAML-configured composition of agents, brokers, LLMs, and MCP servers that defines the structure of your agentic solution.
+* Agent brokers: Intelligent routing services, defined in Agent Script, that delegate tasks to the right A2A-compliant agent based on context.
+* Guided determinism: Graph-based broker logic makes sure that tasks follow defined paths, handling both expected outcomes and error conditions.
+* Anypoint Exchange integration: Published agent networks and brokers appear in Exchange for discovery and reuse across your organization.
+* Integrated observability: Agent Visualizer displays the network topology, real-time request flows, and performance metrics for the entire network.
 
 == How Agent Brokers Work
 
@@ -73,7 +73,7 @@ Agent brokers and agent networks provide reliable coordination with clear routin
 With an agent network, a broker decomposes the request and coordinates the specialists:
 
 . Define an agent network that registers market, competitive, technical, and financial analysis agents alongside a synthesis agent.
-. Define a broker in Agent Script that routes each sub-question to the appropriate specialist agent, then routes all results to the synthesis agent.
+. Define a broker in Agent Script that routes each research sub-task to the appropriate specialist agent, then routes all results to the synthesis agent.
 . The synthesis agent produces the final report from the aggregated specialist outputs.
 . Agent Visualizer shows the routing path, which agents were called, and where time was spent.
 
@@ -96,7 +96,7 @@ With a broker handling intelligent triage:
 . Define a broker in Agent Script that classifies the incoming request and routes it to the appropriate specialist: account agent, technical agent, or billing agent.
 . Each specialist agent calls the relevant MCP servers to retrieve customer data, account history, or billing records.
 . The broker consolidates the specialist's response and returns it to the caller.
-. Publish the agent network to your portfolio so other teams can reuse the triage broker.
+. Publish the agent network to Exchange so other teams can reuse the triage broker.
 
 == Implementation Steps
 
@@ -140,7 +140,7 @@ For more information, see xref:agent-visualizer::index.adoc[Agent Visualizer].
 
 === Step 6: Publish for Reuse
 
-. After validating the agent network, publish it to your portfolio.
+. After validating the agent network, publish it to Exchange.
 . Other teams can discover the published broker and reuse it as a component in their own agent networks.
 . Apply Omni Gateway policies to the broker endpoint to enforce authentication, rate limiting, and audit logging.
 
