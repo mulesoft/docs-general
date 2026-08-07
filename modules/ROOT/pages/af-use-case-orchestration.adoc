@@ -1,6 +1,6 @@
 = Orchestrate Multi-Agent Processes with Agent Broker
 
-Agent brokers and agent networks coordinate task delegation across specialized agents with guided determinism. This coordination produces reliable, predictable outcomes from complex business processes. You define broker routing logic in Agent Script and configure the network composition in agent-network.yaml. This file brings agents, LLMs, and MCP servers together in a single coordinated system. Use this approach hen a single agent can't handle the process and your business process requires multiple specialized agents working in sequence or in parallel.
+Agent brokers and agent networks coordinate task delegation across specialized agents with guided determinism. This coordination produces reliable, predictable outcomes from complex business processes. You define broker routing logic in Agent Script and configure the network composition in `agent-network.yaml`. This file brings agents, LLMs, and MCP servers together in a single coordinated system. Use this approach when a single agent can't handle the process and your business process requires multiple specialized agents working in sequence or in parallel.
 
 Key benefits of agent networks and brokers include:
 
@@ -57,7 +57,7 @@ Agent brokers and agent networks are for:
 
 === Scenario 1: Order Processing
 
-*Challenge:* Processing customer orders involves checking inventory, routing to fulfillment, handling payment, and sending confirmation — each step handled by a specialized agent. Without coordination, the process is fragile and hard to monitor.
+*Challenge:* Processing customer orders involves checking inventory, routing to fulfillment, handling payment, and sending confirmation. Each step is handled by a specialized agent. Without coordination, the process is fragile and hard to monitor.
 
 Agent brokers and agent networks provide reliable coordination with clear routing logic:
 
@@ -103,13 +103,13 @@ With a broker handling intelligent triage:
 === Step 1: Map the Process
 
 . List the steps in the process and identify which require specialized capabilities.
-. Document decision points — where the process branches based on outcomes or data.
+. Document decision points such as where the process branches based on outcomes or data.
 . Identify which steps can run in parallel and which must be sequential.
 . Determine what backend systems each agent needs to call, and whether MCP servers already expose those systems.
 
 === Step 2: Design the Agent Network
 
-. Decide which agents exist already and which need to be built.
+. Identify which agents exist and which to build.
 . Determine whether a broker is needed. If the process involves multiple specialists that are routed dynamically, add a broker.
 . Sketch the broker graph: nodes represent steps, edges represent routing logic between them.
 . Identify which LLMs agents use for reasoning and which MCP servers provide backend access.
@@ -191,6 +191,6 @@ When deploying agent networks and brokers in production:
 
 With agent networks and brokers coordinating your multi-agent processes, you're ready to:
 
-* xref:use-case-policy-enforcement.adoc[Enforce consistent policies across all agents in the network]
+* xref:af-use-case-policy-enforcement.adoc[Enforce consistent policies across all agents in the network]
 * xref:use-case-identity.adoc[Add user identity context to agent interactions]
 * xref:use-case-cost-control.adoc[Optimize LLM costs across the network with semantic routing]
