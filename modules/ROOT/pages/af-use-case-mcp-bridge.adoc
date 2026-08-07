@@ -306,15 +306,11 @@ MCP Bridge can work with existing identity infrastructure so that agent access t
 
 == Related Documentation
 
-// TODO: Update these links when Agent Fabric documentation is published.
-* link:https://docs.mulesoft.com/agent-fabric/mcp-bridge[MCP Bridge Documentation]
-* link:https://docs.mulesoft.com/agent-fabric/api-pruning[Selecting Operations to Expose as Tools]
-* link:https://docs.mulesoft.com/agent-fabric/mule-integration[Integrating with Mule]
+* xref:agent-fabric-use-cases.adoc[]
 
 == Next Steps
 
 With MCP Bridge providing safe API access, you're ready to:
 
-* xref:use-case-policy-enforcement.adoc[Add additional policy enforcement]
-* xref:use-case-identity.adoc[Implement user-scoped API access]
-* xref:use-case-orchestration.adoc[Build workflows using bridged APIs]
+* xref:af-use-case-policy-enforcement.adoc[Apply Omni Gateway policies to broker endpoints]
+* xref:af-use-case-orchestration.adoc[Build agent networks]
