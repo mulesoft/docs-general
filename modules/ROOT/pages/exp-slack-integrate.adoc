@@ -50,15 +50,15 @@ Before getting started, make sure you have:
 
 * An Anypoint Platform account with access to the enhanced experience.
 * Agentforce enabled in your Anypoint Platform and Salesforce organizations by your administrator.
-* The *MuleSoft Omni Agent for Anypoint* permission assigned to your user.
+* The *MuleSoft Agent AI User* permission assigned to your user.
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
-To assign the *MuleSoft Omni Agent for Anypoint* permission across business groups:
+To assign the *MuleSoft Agent AI User* permission across business groups:
 
 . Log in to Anypoint Platform and open *Access Management*.
 . Select the business group where you want to assign the permission.
-. Find the user and assign the *MuleSoft Omni Agent for Anypoint* permission.
+. Find the user and assign the *MuleSoft Agent AI User* permission.
 . Repeat for each business group that requires access.
 
 To start using the agent in Slack:
