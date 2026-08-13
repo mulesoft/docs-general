@@ -17,8 +17,8 @@ The end-to-end journey for MuleSoft agentic orchestration consists of various ta
 
 [.lm-table, cols="1a,1a", grid="none"]
 |===
-| image::lm_start.png[]
-| image::lm_analyze_1.png[]
+| image::reuse::lm_start.png[]
+| image::reuse::lm_analyze_1.png[]
 
 | [.lm-bold]##Learn About MuleSoft AI##
 | [.lm-bold]##Get Started##
@@ -41,9 +41,9 @@ The end-to-end journey for MuleSoft agentic orchestration consists of various ta
 
 [.lm-table, cols="1a,1a,1a", grid="none"]
 |===
-| image::lm_explore_1.png[]
-| image::lm_optimize_1.png[]
-| image::lm_audience_1.png[]
+| image::reuse::lm_explore_1.png[]
+| image::reuse::lm_optimize_1.png[]
+| image::reuse::lm_audience_1.png[]
 
 | [.lm-bold]##Design and Orchestrate Agents##
 | [.lm-bold]##Observe and Gain Actionable Insights##
@@ -75,8 +75,8 @@ The end-to-end journey for MuleSoft agentic orchestration consists of various ta
 
 [.lm-table, cols="1a,1a", grid="none"]
 |===
-| image::lm_build_1.png[]
-| image::lm_develop_end_1.png[]
+| image::reuse::lm_build_1.png[]
+| image::reuse::lm_develop_end_1.png[]
 
 | [.lm-bold]##Develop with AI-Powered Tools##
 | [.lm-bold]##Develop with MuleSoft AI Connectors##
