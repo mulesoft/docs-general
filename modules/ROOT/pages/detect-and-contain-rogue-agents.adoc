@@ -1,0 +1,130 @@
+= Detect and Contain Rogue Agents
+:keywords: quarantine agent, contain rogue agent, agent behavioral drift, tool-call abuse detection, token spend anomaly, flag history, reactivate quarantined agent, unauthorized agent actions, agent security monitoring, model proxy policies, mulesoft
+
+As AI agents take on more autonomous work across your organization, a single compromised, misconfigured, or malfunctioning agent can quickly leak sensitive data, take unauthorized actions, or run up costs before anyone notices. Monitor agent traffic from a single location in the enhanced MuleSoft experience to detect anomalous behavior and contain a rogue agent before it causes damage.
+
+Key benefits:
+
+* Detect anomalous or unauthorized behavior in real time, using built-in detectors and your own custom rules.
+* Get notified the moment the platform flags an agent, through email or Slack.
+* Review flagged activity before you act. Nothing quarantines automatically without your review.
+* Quarantine a rogue agent instantly to stop data leakage, harmful actions, or runaway costs. Quarantine is fully reversible, so you can undo a false positive in seconds.
+* Meet compliance requirements. The platform logs every action with full attribution.
+
+== Before You Begin
+
+Confirm these prerequisites are in place.
+
+* You need these API Manager permissions:
+** API Creator: Create instances
+** View APIs Configuration: View instances
+** Edit APIs Configuration: Edit and manage instances
+** View API Alerts: View API alerts in a specific environment
+** Manage API Alerts: Manage API alerts in a specific environment
+
+* Register each agent you want to monitor with a unique instance name and ID, and link it to its model proxies. This lets flags, logs, and containment actions target the correct agent.
+
+* Set up your agents as service identities in your enterprise IdP, and configure the IdP to include each agent's identifier and team claims in the tokens it issues.
+
+*Apply these policies to your agent tools and model proxy instances:
+** xref:gateway::policies-included-jwt-validation.adoc[JWT Token Policy]: validates the agent's identity.
+** xref:gateway::policies-outbound-oauth-obo.adoc[OBO (On-Behalf-Of) Token Validation Policy]: identifies both the agent and the end user it's acting for.
+
+== Enable Agent Monitoring for a Model Proxy
+
+Enable monitoring on each model proxy whose agent traffic you want to track.
+
+. Log in to the MuleSoft enhanced experience with an account that has the required permissions.
+. In *Portfolio*, select *Model Proxies*.
+. Select the model proxy you want to monitor.
+. Select the *Policies* tab and then select *+Apply Policy*.
+. Select the *Rogue Agent Detection* policy and click *Next*.
+. Configure the policy settings by selecting the criteria monitor:
++
+* *Token-spend anomaly*
++
+Flags when an LLM virtual key's token-spend rate over a rolling window is statistically anomalous against the baseline.
+* *Tool-call loop*
++
+Flags when an agent repeats near-identical tool calls inside a short window past the configured threshold.
+* *Behavioral drift*
++
+Flags when an agent's behavioral fingerprint (tool selection, response shape) drifts persistently from its baseline.
+* *Custom detection criteria*
++
+Flags activity that matches a rule you define in plain language, for example, `flag any agent that asks a user for a password`.
+. Select *Apply Policy*.
+
+Repeat these steps for each model proxy to protect.
+
+== Set Up Notifications for Flagged Agents
+
+Configure alerts so you're notified as soon as an agent is flagged.
+
+. Navigate to *Notifications* and select *New Notification*.
+. Under *Select Alert Target*, complete the fields:
+.. *Environment*
++
+Select the environment to monitor, for example, *Production* or *Sandbox*.
+.. *Service Type*
++ 
+Select *Model Proxy*.
+.. *Target Service*
++ 
+Search for and select the model proxy to receive alerts about.
+. Under *Specify Alert Configuration*, select the *Alert Metric* for quarantine activity _(label to be confirmed)_, then set the comparison operator, threshold value, and time window.
+.. *Alert Metric*
++
+Select *Policy Violation* and then select the policy.
+.. *Alert When*
++
+Select the operator to use in the alert condition, for example, the policy violation occurs greater than 10 times in 5 minutes.
+. Under *Set Alert Delivery*:
+.. For *Severity*, select *Critical*, *Warning*, or *Info*.
+.. In *Alert Name*, enter a descriptive name (four or more characters).
+.. In *Delivery Channels*, select *Email*, *Slack*, or both.
+. Select *Create Alert*.
+
+== Review and Quarantine a Flagged Agent
+
+When an agent is flagged, review its activity and quarantine it if needed. Quarantine stops the agent from acting.
+
+. Navigate to *Security*.
+. On the *Needs Review* tab, find the flagged agent.
++
+The *Security* page shows flagged and reviewed agents from the last 90 days.
+. Select *Review* to open the agent's flag history.
+. Review the timeline of detection events, then select an action:
++
+* *Quarantine agent*
++ Stops the agent from acting. Confirm at the prompt to complete this action.
+* *Clear flags*
++
+Dismisses the flags if the activity was legitimate.  Confirm at the prompt to complete this action.
+* *Cancel*
++
+Closes the view with no changes. The agent stays in the review queue.
+
+The audit log records the action with the agent instance ID, the user who performed it, and details such as the timestamp and environment.
+
+== Reactivate a Quarantined Agent
+
+After you confirm a quarantined agent is safe to return to service, reactivate it.
+
+. Navigate to *Security*.
+. On the *Reviewed* tab, find the quarantined agent.
+. Select *Review* to review the agent's details.
+. Select *Restore Model Access*.
+. In the confirmation prompt, select *Restore Model Access* to return the agent to service. 
+. Select *Close* to close the view with no changes.
++
+After reactivation the audit log records the action.
+
+== See Also
+
+* xref:exp-alerts-configure-notifications.adoc[]
+* xref:exp-instances-add.adoc[]
+* xref:exp-home-start.adoc[]
+* xref:exp-services-monitoring.adoc[]
+* xref:gateway::policies-included-jwt-validation.adoc[]
+* xref:gateway::policies-outbound-oauth-obo.adoc[]
