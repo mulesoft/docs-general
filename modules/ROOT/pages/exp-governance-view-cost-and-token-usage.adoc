@@ -50,7 +50,12 @@ The *Budgets* tab shows financial summaries across your configured budgets:
 
 * *Total Managed Spend*: Total spend across all configured budgets.
 * *By Provider*: Spend breakdown by LLM provider.
-* *By Model Proxy Key*: Spend breakdown by model proxy client key.
+* *By Model Wallet*: Spend breakdown by model wallet.
+
+Each budget row displays a status badge that reflects current usage against the budget limit:
+
+* *At Risk*: Usage has reached 75% or more of the budget limit.
+* *At Limit*: Usage has reached the budget limit. The system blocks further requests.
 
 === Add a Budget
 
