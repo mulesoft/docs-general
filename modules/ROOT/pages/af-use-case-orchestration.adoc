@@ -1,0 +1,196 @@
+= Orchestrate Multi-Agent Processes with Agent Broker
+
+Agent brokers and agent networks coordinate task delegation across specialized agents with guided determinism. This coordination produces reliable, predictable outcomes from complex business processes. You define broker routing logic in Agent Script and configure the network composition in `agent-network.yaml`. This file brings agents, LLMs, and MCP servers together in a single coordinated system. Use this approach when a single agent can't handle the process and your business process requires multiple specialized agents working in sequence or in parallel.
+
+Key benefits of agent networks and brokers include:
+
+* Guided determinism: Graph-based routing makes sure that specific operations run in the correct order, with defined paths for both expected outcomes and error conditions.
+* Specialized coordination: Route each task to the agent best suited to handle it, rather than building one agent that tries to do everything.
+* Reusable components: Publish brokers and agent networks to your portfolio so other teams can discover and compose them into their own networks.
+* End-to-end observability: Monitor broker routing decisions, agent performance, and request flows with Agent Visualizer.
+* Incremental composition: Start with a simple agent network and add brokers as complexity grows. You don't need a broker to get started.
+
+== The Problem
+
+A single agent can handle straightforward tasks, but complex business processes expose the limits of working with one agent in isolation:
+
+* Specialization gaps: One agent can't excel at research, financial analysis, regulatory review, and customer communication simultaneously.
+* No intelligent routing: Without a broker, there's no component to match an incoming request to the right specialist agent based on context.
+* Process reliability: Multi-step processes that involve multiple agents and systems are difficult to make reliable and predictable without explicit coordination.
+* Opaque execution: When something goes wrong in a multi-agent process, it's hard to know which agent failed, why, and what state the process was in.
+* Duplication: Teams that build similar multi-agent processes independently create inconsistent behavior and duplicated effort.
+
+Making a single agent smarter doesn't solve these challenges. They require a coordination layer—an agent network with a broker.
+
+== The Solution
+
+Agent Fabric's agent brokers and agent networks provide a coordination layer for multi-agent processes:
+
+* Agent networks: A YAML-configured composition of agents, brokers, LLMs, and MCP servers that defines the structure of your agentic solution.
+* Agent brokers: Intelligent routing services, defined in Agent Script, that delegate tasks to the right A2A-compliant agent based on context.
+* Guided determinism: Graph-based broker logic makes sure that tasks follow defined paths, handling both expected outcomes and error conditions.
+* Anypoint Exchange integration: Published agent networks and brokers appear in Exchange for discovery and reuse across your organization.
+* Integrated observability: Agent Visualizer displays the network topology, real-time request flows, and performance metrics for the entire network.
+
+== How Agent Brokers Work
+
+When a request arrives at a broker, it follows this path:
+
+. A request arrives at the broker, either from an external caller or from another broker higher in the network.
+. The broker evaluates the request against its routing logic, defined as a graph of nodes in Agent Script.
+. The broker generates a context ID and task ID to track state across the interaction.
+. The broker delegates the task to the A2A-compliant agent or sub-broker best suited to handle it.
+. The assigned agent processes the task, calling LLMs and MCP servers as needed.
+. Results return to the broker, which continues routing through the graph until the process is complete.
+. The broker returns the final result to the original caller.
+
+== Who This Is For
+
+Agent brokers and agent networks are for:
+
+* Teams building multi-agent solutions where tasks are routed across specialized agents based on context
+* Companies that need reliable, predictable outcomes from complex processes spanning multiple agents and systems
+* Architects designing reusable agentic components that other teams can discover and compose
+* Teams that need end-to-end visibility into how multi-agent processes execute and where failures occur
+
+== Example Scenarios
+
+=== Scenario 1: Order Processing
+
+*Challenge:* Processing customer orders involves checking inventory, routing to fulfillment, handling payment, and sending confirmation. Each step is handled by a specialized agent. Without coordination, the process is fragile and hard to monitor.
+
+Agent brokers and agent networks provide reliable coordination with clear routing logic:
+
+. Define an agent network in `agent-network.yaml` that registers a broker, an inventory agent, a payment agent, and a fulfillment agent.
+. Define the broker in Agent Script with nodes for each step and explicit routing logic for inventory shortfalls, payment failures, and partial fulfillment.
+. Deploy the agent network to CloudHub 2.0.
+. Monitor execution in Agent Visualizer to trace each step and identify where issues occur.
+
+=== Scenario 2: Multi-Discipline Research
+
+*Challenge:* Answering a strategic research question requires market analysis, competitive intelligence, technical feasibility assessment, and financial modeling — capabilities that belong in separate specialized agents.
+
+With an agent network, a broker decomposes the request and coordinates the specialists:
+
+. Define an agent network that registers market, competitive, technical, and financial analysis agents alongside a synthesis agent.
+. Define a broker in Agent Script that routes each research sub-task to the appropriate specialist agent, then routes all results to the synthesis agent.
+. The synthesis agent produces the final report from the aggregated specialist outputs.
+. Agent Visualizer shows the routing path, which agents were called, and where time was spent.
+
+=== Scenario 3: Document Processing Pipeline
+
+*Challenge:* Processing incoming documents requires classification, data extraction, quality validation, and routing for human review — in sequence, with defined rules for what happens when quality thresholds aren't met.
+
+With guided determinism in Agent Script:
+
+. Define an agent network that includes a classification agent, an extraction agent, and a review routing agent.
+. Define a broker with nodes for each processing stage and explicit paths for low-confidence extractions that require human review.
+. Deploy the network and monitor processing quality and throughput in Agent Visualizer.
+
+=== Scenario 4: Customer Support Triage
+
+*Challenge:* Incoming support requests range from simple account questions to complex technical issues and billing disputes. Each type requires a different specialized agent, and misrouting wastes time.
+
+With a broker handling intelligent triage:
+
+. Define a broker in Agent Script that classifies the incoming request and routes it to the appropriate specialist: account agent, technical agent, or billing agent.
+. Each specialist agent calls the relevant MCP servers to retrieve customer data, account history, or billing records.
+. The broker consolidates the specialist's response and returns it to the caller.
+. Publish the agent network to Exchange so other teams can reuse the triage broker.
+
+== Implementation Steps
+
+=== Step 1: Map the Process
+
+. List the steps in the process and identify which require specialized capabilities.
+. Document decision points such as where the process branches based on outcomes or data.
+. Identify which steps can run in parallel and which must be sequential.
+. Determine what backend systems each agent needs to call, and whether MCP servers already expose those systems.
+
+=== Step 2: Design the Agent Network
+
+. Identify which agents exist and which to build.
+. Determine whether a broker is needed. If the process involves multiple specialists that are routed dynamically, add a broker.
+. Sketch the broker graph: nodes represent steps, edges represent routing logic between them.
+. Identify which LLMs agents use for reasoning and which MCP servers provide backend access.
+
+=== Step 3: Configure agent-network.yaml
+
+. In Anypoint Code Builder, create a new agent network project.
+. Configure `agent-network.yaml` to declare the registry (agents and MCP servers), context (connections), and brokers.
+. For each broker, create an Agent Script file (`.agent`) that defines the routing graph and node behavior.
+
+For more information, see xref:agent-network::af-define-your-agent-network-specification.adoc[Define Your Agent Network Specification].
+
+=== Step 4: Deploy and Test
+
+. Deploy the agent network to CloudHub 2.0.
+. Send test requests that exercise each routing path in the broker graph.
+. Verify that each agent receives the tasks it is responsible for.
+. Test failure paths.
+
+=== Step 5: Monitor with Agent Visualizer
+
+. Open Agent Visualizer to view the network topology and confirm that agents, brokers, and MCP servers are connected as expected.
+. Send live requests and watch routing decisions in real time.
+. Use performance metrics to identify latency, error rates, and bottlenecks.
+. Review historical analysis to identify patterns and optimize routing logic.
+
+For more information, see xref:agent-visualizer::index.adoc[Agent Visualizer].
+
+=== Step 6: Publish for Reuse
+
+. After validating the agent network, publish it to Exchange.
+. Other teams can discover the published broker and reuse it as a component in their own agent networks.
+. Apply Omni Gateway policies to the broker endpoint to enforce authentication, rate limiting, and audit logging.
+
+See xref:use-case-policy-enforcement.adoc[Policy Enforcement] for implementation steps.
+
+== Broker Design Patterns
+
+These patterns represent common approaches to structuring broker routing logic in Agent Script.
+
+[cols="1,2,2"]
+|===
+| Pattern | Description | When to Use
+
+| Sequential Routing
+| Route a request through a fixed sequence of specialist agents, where each agent's output is the input for the next.
+| Steps must run in order and each step depends on the previous result.
+
+| Parallel Dispatch
+| Dispatch a request to multiple specialist agents simultaneously and aggregate the results.
+| Sub-tasks are independent and can run concurrently for faster completion.
+
+| Conditional Routing
+| Route a request to different agents based on the content or classification of the request.
+| The right specialist depends on context that isn't known until the request arrives.
+
+| Hierarchical Delegation
+| A broker delegates to another broker, which in turn delegates to specialist agents.
+| Complex processes can be decomposed into distinct sub-processes, each managed by its own broker.
+|===
+
+== Security Considerations
+
+When deploying agent networks and brokers in production:
+
+* Apply Omni Gateway policies to broker endpoints to enforce authentication, rate limiting, and audit logging. See xref:use-case-policy-enforcement.adoc[Policy Enforcement].
+* Make sure that each specialist agent's MCP server connections use appropriate authentication.
+* Review which agents have access to which backend systems and apply the principle of least privilege to MCP tool selection.
+* Use Agent Visualizer to monitor for unexpected routing paths or anomalous agent behavior.
+
+== Related Documentation
+
+* xref:agent-network::af-agent-networks.adoc[Building Agent Networks for Agent Fabric]
+* xref:agent-network::af-define-your-agent-network-specification.adoc[Define Your Agent Network Specification]
+* xref:agent-visualizer::index.adoc[Agent Visualizer]
+* xref:anypoint-code-builder::index.adoc[Anypoint Code Builder]
+
+== Next Steps
+
+With agent networks and brokers coordinating your multi-agent processes, you're ready to:
+
+* xref:af-use-case-policy-enforcement.adoc[Enforce consistent policies across all agents in the network]
+* xref:use-case-identity.adoc[Add user identity context to agent interactions]
+* xref:use-case-cost-control.adoc[Optimize LLM costs across the network with semantic routing]
