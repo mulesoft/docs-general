@@ -27,7 +27,7 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 Open *Add Services*, select the service type, then, if it is available, select manual registration .
 * *Portfolio*
 +
-Open the *Agents*, *MCP Servers*, *LLM Proxies*, or *APIs* catalog, use the add control for that type (for example *Add API*), and select *Register Manually*.
+Open the *Agents*, *MCP Servers*, *Model Proxies*, or *APIs* catalog, use the add control for that type (for example *Add API*), and select *Register Manually*.
 
 To set up a gateway, select *Add Gateway* to open gateway setup in Anypoint Platform.
 include::_partials/exp-navigation-labels.adoc[tag=ExpNavigationLabels]
@@ -47,16 +47,16 @@ For MCP servers, define how the system reaches the server and validates runtime 
 
 Successful registration stores the MCP server in the *MCP Servers* catalog.
 
-== LLM Proxies
+== Model Proxies
 
-LLM proxy registration has two parts: associate the proxy with a gateway and deployment context, then define routing (and any provider connections your flow requires). After setup is complete, the LLM proxy appears in the *LLM Proxies* catalog.
+Model proxy registration has two parts: associate the proxy with a gateway and deployment context, then define routing (and any provider connections your flow requires). After setup is complete, the Model proxy appears in the *Model Proxies* catalog.
 
 == APIs
 
 Add an API to the *APIs* catalog by registering it manually or by connecting to a provider.
 
-* *Register manually* – Upload a specification file to define a new API.
-* *Connect to provider* – Discover and import APIs from external platforms. See xref:exp-services-connect-providers-to-add.adoc[].
+* *Register manually*–Upload a specification file to define a new API.
+* *Connect to provider*–Discover and import APIs from external platforms. See xref:exp-services-connect-providers-to-add.adoc[].
 
 === Register an API Manually
 
@@ -78,9 +78,10 @@ The experience supports multiple API types and specification formats:
 
 == Gateways
 
-Manual gateway registration is not supported in Enhanced Experience.
+Manual gateway registration isn't supported in the enhanced experience.
 
 To set up a gateway, select *Add Gateway* to open gateway setup in Anypoint Platform.
+
 == See Also
 
 * xref:exp-services-add-to-portfolio.adoc[]

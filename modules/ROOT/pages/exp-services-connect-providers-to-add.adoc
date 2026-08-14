@@ -47,7 +47,7 @@ Across *Home* and *Portfolio* entry points, scanner creation includes the same d
 
 When the scanner runs successfully, the system registers discovered services in the catalog you started from (for example, APIs land in the *APIs* catalog).
 
-== What Changes by Catalog
+== How Catalog Selection Affects Registration
 
 Scanner setup decisions stay the same across catalogs. However, after successful runs, discovered results get registered in specific service catalogs. 
 
