@@ -101,11 +101,15 @@ a|
 | Microsoft Azure Copilot
 | Agent
 a|
-*Credentials:* Azure app registration; tenant ID, client ID, client secret
+*Credentials:* Azure app registration; Dataverse base URL, client ID, client secret
 
 *Role:* Copilot Studio Scanner
 
-*Setup:* App added as an Application User in Power Platform; scope set to Dataverse environment URL, `\https://<org-Id>.crm.dynamics.com`
+*Authorization:* OAuth 2.0 Authorization Code flow (interactive sign-in and consent in Microsoft popup)
+
+*Setup:* App added as an Application User in Power Platform; scope set to Dataverse environment URL, `https://<org-id>.crm.dynamics.com`
+
+For setup steps, see xref:exp-scanners-add-from-providers.adoc#microsoft-copilot-studio-scanner-oauth-authorization[].
 
 | Microsoft Foundry
 | Agent

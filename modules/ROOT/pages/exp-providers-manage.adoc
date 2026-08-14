@@ -67,6 +67,8 @@ To add a provider connection:
 . From *Platform* > *Providers*, select a provider from the *Not Connected* section.
 . Follow the connection workflow to authenticate and configure scanner settings. The wizard walks through three steps: *Choose Provider*, *Connect to Provider*, and *Connection Setup*.
 
+For Microsoft Copilot Studio scanners, select *OAuth (Authorization Code)* and complete authorization in the Microsoft sign-in popup before you continue. For details, see xref:exp-scanners-add-from-providers.adoc#microsoft-copilot-studio-scanner-oauth-authorization[].
+
 For detailed scanner setup instructions, see xref:exp-scanners-add-from-providers.adoc[].
 
 == Akamai API Security Data in Portfolio
