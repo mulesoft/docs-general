@@ -10,7 +10,7 @@ Agent Fabric addresses the most common challenges in enterprise AI agent managem
 
 |Catalog and manage agents across multiple platforms
 |Discover and register agents from a centralized catalog. Know what exists and where before you apply governance.
-|xref:af-use-case-registry.adoc[]
+|//xref:af-use-case-registry.adoc[]
 
 |Make existing APIs agent-ready without modifying code
 |Select which API operations to expose as MCP tools, apply read-only filtering, and control agent access to your APIs.
@@ -18,7 +18,7 @@ Agent Fabric addresses the most common challenges in enterprise AI agent managem
 
 |Apply consistent business rules and guardrails across all agents
 |Enforce PII policies, rate limits, and compliance rules across all agents through a single gateway rather than reimplementing them per platform.
-|xref:af-use-case-policy-enforcement.adoc[Policy Enforcement]
+|//xref:af-use-case-policy-enforcement.adoc[Policy Enforcement]
 
 |Control token usage and optimize model selection
 |Monitor token usage across agents and applications, then route queries to cost-effective models based on complexity.
@@ -34,7 +34,7 @@ Agent Fabric addresses the most common challenges in enterprise AI agent managem
 
 Use a centralized registry and automated scanners to discover, catalog, and manage agents across your organization. Know what exists and where before you apply governance. For example, a business process outsourcer managing agents across multiple client platforms, or an enterprise security team asked to audit every agent in production, can use Registry and Scanners to get a complete, current picture without manually tracking deployments.
 
-For more information, see xref:af-use-case-registry.adoc[].
+//For more information, see xref:af-use-case-registry.adoc[].
 
 == Make APIs Agent-Ready with MCP Bridge
 
@@ -46,7 +46,7 @@ For more information, see xref:af-use-case-mcp-bridge.adoc[].
 
 Consistently enforce business rules, PII policies, and guardrails across all agents regardless of platform. Apply policies one time through a gateway rather than reimplementing them for each platform. For example, a regulated industry deploying agents across Agentforce, Bedrock, and custom Mule implementations can enforce the same data privacy and rate limiting rules everywhere through a single Omni Gateway policy.
 
-For more information, see xref:af-use-case-policy-enforcement.adoc[].
+//For more information, see xref:af-use-case-policy-enforcement.adoc[].
 
 == Monitor Costs and Optimizing Model Selection
 
@@ -75,5 +75,5 @@ After you understand the basics, choose a use case to implement.
 * xref:af-use-case-cost-management.adoc[]
 * xref:af-use-case-mcp-bridge.adoc[]
 * xref:af-use-case-orchestration.adoc[]
-* xref:af-use-case-policy-enforcement.adoc[]
-* xref:af-use-case-registry.adoc[]
+* //xref:af-use-case-policy-enforcement.adoc[]
+* //xref:af-use-case-registry.adoc[]
