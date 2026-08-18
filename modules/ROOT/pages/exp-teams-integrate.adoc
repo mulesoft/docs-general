@@ -11,6 +11,53 @@ Install the MuleSoft for Teams app in your Microsoft Teams tenant to interact wi
 
 NOTE: This tool uses generative AI, which can produce inaccurate or harmful responses. Review for accuracy and safety before using.
 
+[[microsoft-graph-permissions]]
+== Microsoft Graph Permissions
+
+The MuleSoft for Microsoft Teams app requires the following Microsoft Graph permissions. Use this information when your security or IT team asks for justification before approving the app installation.
+
+[cols="2,1,3", options="header"]
+|===
+|Permission |Type |Purpose
+
+|`AppCatalog.Read.All`
+|Application
+|Verifies that the MuleSoft app is properly published in your Teams app catalog. Without this, the app cannot confirm its own availability, and users see silent failures instead of actionable setup errors.
+
+|`AppCatalog.ReadWrite.All`
+|Delegated
+|Required when a Teams admin publishes or updates the MuleSoft app package in your catalog. Only exercised during install or upgrade — not at runtime — and scoped to the consenting admin's session.
+
+|`AppCatalog.ReadWrite.All`
+|Application
+|Allows the MuleSoft app to receive updates, such as new Adaptive Card formats or capability additions, without requiring an admin to manually republish each time.
+
+|`Channel.ReadBasic.All`
+|Application
+|Delivers API alerts and deployment notifications to specific channels you configure. The app reads channel names and IDs to resolve routing rules. It reads channel metadata only — not message content.
+
+|`Team.ReadBasic.All`
+|Application
+|During setup, lets you map MuleSoft environments and business groups to specific teams without manually looking up team IDs. Read-only access to team names and descriptions — no access to members or content.
+
+|`TeamsAppInstallation.ReadWriteAndConsentForTeam.All`
+|Application
+|Lets a Teams admin roll the app out to all relevant teams in a single action with automatic RSC consent, rather than requiring each individual team owner to install it separately.
+
+|`TeamSettings.Read.All`
+|Application
+|Checks team policies before the app attempts to post. If a team has restricted messaging or moderation enabled, the app surfaces a clear configuration error rather than silently dropping critical API alerts. Read-only — it does not change settings through this permission.
+
+|`TeamSettings.ReadWrite.All`
+|Application
+|During initial provisioning only, the app may adjust channel settings to enable bot posting in moderated channels where incident alerts must be delivered. This is a one-time setup action, not ongoing runtime behavior.
+
+|`User.Read`
+|Delegated
+|Standard sign-in permission for the admin performing the initial consent. The app reads basic profile information (name, email) to log who authorized the connection between the Anypoint Platform organization and the Teams tenant.
+
+|===
+
 [[connect-teams-tenant]]
 == Connect Your Microsoft Teams Tenant to the MuleSoft Organization
 
@@ -32,10 +79,19 @@ The app requests the following permissions:
 . After the installation completes, the confirmation page displays *Microsoft Teams integration installed*. Click *Back to Settings*.
 +
 In *Notifications* > *Settings*, the *Microsoft Teams Setup* section now shows *Installed* and displays the bound tenant ID.
+. Click *Grant Access* to allow the app to browse your Teams directory for channel and team member access.
+. In Microsoft Teams, review the permissions requested and click *Accept*.
++
+After access is granted, configure notification channels in the *Notification Channels* section.
 
 After installation, the MuleSoft Agent app appears in Microsoft Teams Admin Center under *Manage apps* as available to everyone and unblocked.
 
-To disconnect the integration, click *Disconnect* in the *Microsoft Teams Setup* section.
+To disconnect the integration:
+
+. Click *Disconnect* in the *Microsoft Teams Setup* section.
+. Confirm the disconnection. This immediately revokes MuleSoft's access to your Teams tenant and stops all notifications.
++
+The MuleSoft app remains in the Microsoft Teams Admin Center. To fully remove it, a Teams administrator must uninstall it from the Admin Center, or right-click the app in Teams and select *Uninstall*.
 
 [[begin-using-agent]]
 == Begin Using the MuleSoft Agent
@@ -66,7 +122,8 @@ To start using the agent in Teams:
 . Under *Built for your organisation*, find *MuleSoft Agent* and click *Add*.
 . Click *Open* or select a channel where you want to use the app.
 . The agent sends a welcome message. Select a prompt suggestion or type a message to start.
-. If prompted, click *Connect to Anypoint* and sign in with your Anypoint Platform credentials.
+. If prompted, click *Connect to MuleSoft* and sign in with your Anypoint Platform credentials.
+. After authenticating, close the browser tab to complete account linking. Return to Teams to continue the conversation.
 
 After you authenticate, you can use the agent to list APIs, agents, MCP servers, view governance reports, and more.
 
