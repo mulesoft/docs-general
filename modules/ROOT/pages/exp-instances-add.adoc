@@ -54,7 +54,15 @@ Field names, required metadata, and available gateway or runtime options depend 
 
 After creating or updating an instance, you can continue managing the service through related areas of the experience.
 
-* Use the *Policies* tab to review or apply policies to the instance. If the instance uses a Kong gateway, applying a policy targets the gateway level and protects all services in that gateway.
+* Use the *Policies* tab to review or apply policies to the instance.
++
+--
+For a managed instance on an Omni Gateway, policies are enforced through the Omni Gateway.
+
+For an instance discovered on a third-party API gateway (Amazon API Gateway, Azure API Management, Google Apigee, or Kong Gateway), the *Policies* tab applies policies directly to the provider through policy write, with no Omni Gateway in the request path. This requires a scanner configured with write credentials for the provider. If the scanner has read-only credentials, the instance appears as *Read-Only* and policy actions are unavailable. For write scopes and requirements, see xref:exp-scanners-prerequisites-reference.adoc#_policy_write_prerequisites[Policy Write Prerequisites].
+
+If the instance uses a Kong gateway, applying a policy targets the gateway level and protects all services in that gateway.
+--
 * Use the *Monitoring* tab to review metrics and runtime performance when monitoring is available.
 * Coordinate with platform owners if DNS, certificates, or upstream routing changes must happen outside the product.
 

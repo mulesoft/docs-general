@@ -20,11 +20,15 @@ Re-enable scheduled scanning after a pause.
 * *Scanner Settings*
 +
 Change names, descriptions, credentials, provider scope, or scan-related settings your product exposes, then save, so future runs use the new definition.
++
+For API gateway providers that support policy write, adding write credentials to a read-only scanner enables policy write (apply, enable, disable, and delete) on the scanner's discovered APIs. Read and write credentials are configured separately. For provider-specific write scopes, see xref:exp-scanners-prerequisites-reference.adoc#_policy_write_prerequisites[Policy Write Prerequisites].
 * *Delete Scanner*
 +
 Remove the scanner from *Providers* when the provider link is no longer authorized or useful. Consider the impact on discovered services in *Portfolio* and on dependent teams before you delete the scanner.
 +
 NOTE: When you delete an Akamai API Security scanner, the system attempts to remove the Akamai correlation policy from the scanner's environments. If the removal fails, the correlation policy may remain applied; check *Automated Policies* to verify. Discovered services remain in your portfolio regardless.
++
+NOTE: Deleting a write-enabled API gateway scanner doesn't remove policies that were previously applied to the provider's APIs through policy write. Those policies remain active on the gateway. Anypoint stops tracking them, and you lose the ability to manage them from Anypoint until you reconnect a scanner with write credentials.
 
 
 == See Also

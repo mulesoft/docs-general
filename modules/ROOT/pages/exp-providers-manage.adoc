@@ -100,6 +100,8 @@ When scanning Kong, the enhanced experience discovers gateway-level plugin infor
 *Akamai API Security* is available only when your administrator has enabled the feature for your organization. When enabled, it appears in the *Not Connected* section of the Providers sidebar.
 ====
 
+Of these providers, the API gateway providers Amazon (API Gateway), Google (Apigee), Kong, and Microsoft (Azure API Management) support policy write. APIs discovered from a scanner that has only read credentials appear as *Read-Only*, and policy actions are unavailable until you add write credentials to the scanner. For provider-specific read and write scopes, see xref:exp-scanners-prerequisites-reference.adoc#_policy_write_prerequisites[Policy Write Prerequisites].
+
 The specific providers available depend on your organization's enabled products and enhanced experience configuration.
 
 == See Also
