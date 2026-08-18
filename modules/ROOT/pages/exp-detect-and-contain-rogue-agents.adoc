@@ -26,7 +26,7 @@ Confirm these prerequisites are in place.
 
 * Set up your agents as service identities in your enterprise IdP, and configure the IdP to include each agent's identifier and team claims in the tokens it issues.
 
-*Apply these policies to your agent tools and model proxy instances:
+* Apply these policies to your agent tools and model proxy instances:
 ** xref:gateway::policies-included-jwt-validation.adoc[JWT Token Policy]: validates the agent's identity.
 ** xref:gateway::policies-outbound-oauth-obo.adoc[OBO (On-Behalf-Of) Token Validation Policy]: identifies both the agent and the end user it's acting for.
 
