@@ -41,7 +41,7 @@ tab can differ by service type and release. For end-to-end portfolio tasks that 
 |Yes |Yes |Yes |Each Model Proxy is exactly one instance so there is no *Instances* tab. |No
 
 |*Policies*
-|Governance policies attached to the service or its instances (access, data, performance, compliance, and related domains your organization uses). For APIs discovered by scanners, this tab shows read policies from Amazon API Gateway, Google Apigee, Azure API Management, and Kong Gateway. If the instance uses a Kong gateway, the listed policies are gateway-level policies (plugins). Other service-level policies (plugins) can also apply.
+|Governance policies attached to the service or its instances (access, data, performance, compliance, and related domains your organization uses). For APIs discovered by scanners, this tab shows read policies from Amazon API Gateway, Google Apigee, Azure API Management, and Kong Gateway. If the instance uses a Kong gateway, the listed policies are gateway-level policies (plugins). Other service-level policies (plugins) can also apply. On supported gateways, you can also manage native policies from this tab. See xref:exp-governance-policy-library-apply.adoc[].
 |Yes |Yes |Yes |Yes |No
 
 |*Monitoring*
@@ -76,6 +76,12 @@ If a provider scanner has policy-read scopes configured, the *Policies* tab show
 . Use the policy list to confirm applied controls before governance reviews or conformance analysis.
 
 Policy visibility depends on the last successful scanner run, not on a live provider query. If required provider scopes or roles are missing, policy results can be incomplete or unavailable. Policy fields such as status, apply level, and detail can vary by provider. If expected policies are missing, check scanner run status and history in *Providers*.
+
+== Manage Native Policies
+
+On supported gateways, the *Policies* tab also lets you manage the native policies applied to an instance. Depending on the gateway and your permissions, you can edit, delete, or enable and disable a policy directly from this tab. Policies that are outside your instance's scope appear in a read-only state, without edit, delete, or enable/disable actions.
+
+For the full apply and management workflow, see xref:exp-governance-policy-library-apply.adoc[].
 
 == See Also
 

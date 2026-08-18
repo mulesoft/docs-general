@@ -1,126 +1,130 @@
-// = Browse the Policy Library
-// :keywords: policy library, canonical policies, governance policies, policy catalog
+= Apply and Manage Policies from the Policy Library
+:keywords: policy library, canonical policies, universal policies, governance policies, apply policy, edit policy, delete policy, policy catalog
 
-// // FLAG: Jul 16 publish condition. The read/browse description below (what the Policy Library is and what users can see) is written for the Jul 16 Policy Read GA. However, the Policy Library UI is gated behind a feature flag (W_23173868_CANONICAL_POLICIES_ENABLED, default off) and is not called out as a Jul 16 deliverable in the PRD. Confirm with the PM that the Policy Library is enabled in browse mode for Jul 16 before publishing this topic. The policy-application wizard is Policy Write (GA Aug 13) and is commented out at the end of this file.
+// DRAFT: Policy Write (MS2026-08-R2 / Dreamforce). Tracked in W-23907611.
+// This topic was previously a commented-out draft for the Policy Read GA. It has been
+// rewritten for the Policy Write scope. Sections contain TODO(W-23907611) markers where a
+// detail could not be grounded in code and must be confirmed with the PM before publishing.
+// Blockers to resolve before removing this DRAFT banner and publishing:
+//  1. Confirmed list of the universal policy templates and their per-gateway native mappings
+//     (APIM-owned; not enumerated in the Omni codebase).
+//  2. Which feature flags are ON for GA, per gateway
+//     (W_23173868_CANONICAL_POLICIES_ENABLED for Kong,
+//      W_23308031_NONKONG_POLICIES_VIA_APIM_ENABLED for Apigee/Azure).
+//  3. The enable/disable support matrix (which gateways expose the toggle at GA).
+//  4. Human-readable required permission/role names for policy write actions.
+//  5. Whether applying policies from the API Instance page is enabled at GA
+//     (listed as out of scope for MS2026-08-R2 in the program tracker).
 
-// The Policy Library is a catalog of predefined policies that you can browse from *Governance* > *Governance Strategies* > *Policy Library*. Use it to explore the policies available to your organization and understand what each one enforces before you govern your APIs.
+Use the Policy Library to apply a universal policy template to your API instances and to manage the resulting native policies. A universal template expresses a policy once and applies it as the correct vendor-native policy on each supported gateway, so you can enforce consistent controls across MuleSoft, Google Apigee, Kong Gateway, and Azure API Management without authoring a policy per gateway.
 
-// == Browse Policies by Category
+// TODO(W-23907611): AWS API Gateway is excluded from the policy write flow for this release
+// (deferred to a later release). Confirm the customer-facing framing of the AWS exclusion with the PM.
 
-// The Policy Library displays each available policy as a card that shows the policy name, its category, and a short description of what the policy does.
+== Before You Begin
 
-// To find a policy, you can:
+Before getting started, make sure you have:
 
-// * Search for a policy by name using the search box.
-// * Filter policies by category:
-// +
-// --
-// ** *Access and Security*: Authentication and authorization policies, including OAuth 2.0, JWT validation, IP filtering, and rate limiting.
-// ** *Performance and Cost*: Policies that manage API performance and cost, such as caching, spike arrest, and request throttling.
-// ** *Data Privacy and Integrity*: Policies that protect data privacy and ensure data integrity, such as PII masking, data encryption, and payload validation.
-// ** *Compliance and Observability*: Policies that enable compliance tracking and observability, such as audit logging, correlation ID injection, and OpenTelemetry tracing.
-// --
+* An Anypoint Platform account.
+* Any of these permissions:
++
+--
+** API Governance: Governance Administrator
+** API Manager: Manage Policies
+--
++
+// TODO(W-23907611): Confirm the exact permission/role names required for apply, edit, delete,
+// and enable/disable. The code enforces per-action permissions (create, update, enable,
+// disable, delete) fetched per instance, but exposes only permission keys, not role labels.
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
-// Policies that apply to any service, including scanned and federated APIs, are marked with a *Universal* badge.
+* API instances registered in the portfolio on a supported gateway.
 
-// == See Also
+[NOTE]
+====
+Policy write actions respect your permissions. If you don't have permission for an action, that action is unavailable and the experience explains that the action isn't permitted. If the platform can't verify your permissions for an instance, the actions remain available and the gateway enforces authorization when you submit the request.
+====
 
-// * xref:exp-governance-create-strategy.adoc[]
-// * xref:exp-services-view-details.adoc[]
-// * xref:exp-governance-govern-third-party-apis.adoc[]
+== Browse the Policy Library
 
-// // FLAG: Aug 13 release (policy write scope). Everything below documents applying policies to API instances (including third-party provider instances) through the Policy Library wizard, which is Policy Write — GA Aug 13. It is out of scope for the Jul 16 Policy Read GA. Uncomment when the Aug 13 write release is documented, and fold these sections into the topic above (add the apply use cases, permissions, and wizard steps). Note: for MuleSoft-native and Kong instances, policy application already ships, but cross-gateway apply as described here aligns with the Aug 13 milestone — confirm scope with the PM before publishing.
-// ////
-// == When to Use the Policy Library to Apply Policies
+The Policy Library is a catalog of predefined policies that you can browse from *Governance* > *Governance Strategies* > *Policy Library*. Each policy appears with its name, category, and a short description of what it enforces.
 
-// Use the Policy Library instead of governance strategies when you want to:
+You can filter policies by category:
 
-// * Apply a policy to a specific set of API instances without creating a governance strategy.
-// * Add supplemental policies to instances that are already governed by strategies.
-// * Apply policies to third-party provider services hosted on platforms such as Akamai.
-// * Test policy behavior on a limited scope before a broader rollout.
+* *Access & Security*
+* *Performance & Cost*
+* *Quality of Service*
+* *Data Privacy & Integrity*
+* *Compliance & Observability*
 
-// For comprehensive, scope-driven governance across multiple services, use xref:exp-governance-create-strategy.adoc[governance strategies] instead.
+// TODO(W-23907611): Confirm the shipping list of universal policy templates and the native
+// policy each maps to per gateway (for example, an API key template mapping to VerifyAPIKey
+// on Apigee and key-auth on Kong). This mapping is served at runtime by API Manager and is
+// not defined in the Omni codebase, so it must be confirmed with the PM / API Platform team
+// before it is documented as a table. Do not transcribe the mapping from the planning tracker.
 
-// == Before You Begin
+== Apply a Policy
 
-// Before getting started, make sure you have:
+. Log in and go to *Governance* > *Governance Strategies* > *Policy Library*.
+. Select the policy you want to apply.
+. Configure the policy parameters. Required and optional fields vary by policy type.
+. Select the API instances where you want to apply the policy.
+. Review the summary, then apply the policy.
 
-// * An Anypoint Platform account.
-// * Any of these permissions:
-// +
-// --
-// ** API Governance: Governance Administrator
-// ** API Manager: Manage Policies
-// --
-// +
-// For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+// TODO(W-23907611): Confirm the exact wizard step labels and the primary action button label
+// against the shipped UI before publishing (the apply flow is driven by the governance policy
+// wizard). Applying policies directly from an API Instance page is listed as out of scope for
+// MS2026-08-R2 — confirm whether that entry point is available at GA before documenting it.
 
-// * API instances registered in the portfolio. For third-party provider services, make sure that the xref:exp-governance-setup-third-party-providers.adoc[provider connection] is established.
+When you apply a policy, the platform validates it against your governance configuration and then creates the corresponding native policy on each selected instance's gateway.
 
-// == Open the Policy Library Wizard
+[NOTE]
+====
+While a policy operation is in progress on an instance, applying policies to that instance is paused and policy actions are unavailable until the operation completes or fails. This prevents conflicting changes while the vendor-native apply workflow runs.
+====
 
-// . Log in and go to *Governance* > *Governance Strategies* > *Policy Library*.
-// . Select *Apply Policy* to start the policy application wizard.
+== Manage Applied Policies
 
-// The wizard guides you through policy selection, configuration, instance selection, and review.
+Manage the native policies on an instance from the *Policies* tab of the instance detail page. The available actions depend on the gateway and on your permissions. For where to find this tab, see xref:exp-services-view-details.adoc[].
 
-// == Select Policy
+=== Edit a Policy
 
-// Browse the available policies and filter by category, then select the policy you want to apply and select *Next*.
+For Apigee and Azure API Management native policies that originate from a universal template, select *Edit Configuration* to change the policy's settings.
 
-// == Configure Policy
+Editing uses a two-tier experience:
 
-// Enter configuration parameters for your selected policy. Required and optional fields vary by policy type.
+* If the policy's configuration schema is available, the policy opens in an editable form.
+* If no schema is available, the policy opens in a read-only view of its current configuration.
 
-// Common configuration fields include:
+Your changes are saved back to the vendor gateway.
 
-// * *Policy Name*: A descriptive name for this policy application.
-// * *Enforcement Mode*: Whether to enforce the policy or monitor violations only (if supported).
-// * *Parameters*: Policy-specific settings such as rate limits, authentication providers, or transformation rules.
+[NOTE]
+====
+Editing Kong gateway-scope policies is not supported.
+====
 
-// Configure the policy parameters according to your requirements and select *Next*.
+=== Delete a Policy
 
-// == Select Instances
+To remove a native policy from an instance, select the remove action for the policy. A confirmation dialog appears before the policy is removed. Removing a policy detaches it from the instance, and traffic that the policy was filtering is no longer enforced. After you confirm, the policy no longer appears in the instance's policy list.
 
-// Choose the API instances where you want to apply the policy:
+// TODO(W-23907611): Confirm the exact remove action/menu label and confirmation button label
+// against the shipped UI before publishing.
 
-// . Review the list of available API instances. The list includes instances from Anypoint Platform and connected third-party providers.
-// . Use filters to narrow the list by:
-// +
-// --
-// ** *Provider*: Filter by specific providers (such as Akamai) or Anypoint Platform gateways.
-// ** *Service Type*: Filter by service type (such as REST API or GraphQL).
-// ** *Tags*: Filter by tags assigned to services.
-// --
+=== Enable or Disable a Policy
 
-// . Select one or more instances where you want to apply the policy.
-// . Select *Next*.
+On gateways that support it, you can enable or disable a policy without removing it. The state change is reflected in the policy list. On gateways that don't support enabling and disabling, the toggle is unavailable.
 
-// == Review and Apply
+// TODO(W-23907611): Confirm the enable/disable support matrix (which gateways expose the
+// toggle at GA) before publishing. Do not list specific gateways as supported or unsupported
+// until engineering confirms the shipping behavior.
 
-// Review the policy application summary:
+=== View Policies Outside Your Scope
 
-// * *Policy*: The selected policy and its configuration.
-// * *Instances*: The list of instances where the policy is applied.
-// * *Expected Outcome*: A summary of what happens when you apply the policy.
+Policies that are outside your instance's scope appear in a read-only state. For these policies, edit, delete, and enable/disable actions are not available.
 
-// *Read-Only Mode*: If any selected instances belong to a provider connection with read-only credentials, those instances receive the policy in monitoring mode only. To enable write access, xref:exp-governance-setup-third-party-providers.adoc#update-credentials[update provider credentials].
+== See Also
 
-// Select *Apply* to apply the policy to the selected instances.
-
-// == Verify Policy Application
-
-// After applying the policy:
-
-// . Go to *Portfolio* > *APIs* and open the affected API instance.
-// . Review the *Applied Policies* tab to verify the policy appears in the list.
-// . Check the *Policy Application Status*:
-// +
-// --
-// ** *Enabled*: The policy is actively enforced on the gateway.
-// ** *Read-Only*: The policy is applied in monitoring mode only (typically due to read-only provider credentials).
-// --
-
-// If the policy is in read-only mode and you want enforcement, xref:exp-governance-setup-third-party-providers.adoc#update-credentials[update provider credentials] to grant write access.
-// ////
+* xref:exp-governance-create-strategy.adoc[]
+* xref:exp-governance-work-with-strategies.adoc[]
+* xref:exp-services-view-details.adoc[]
+* xref:exp-governance-govern-third-party-apis.adoc[]
