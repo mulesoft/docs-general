@@ -4,11 +4,11 @@ Agent brokers and agent networks coordinate task delegation across specialized a
 
 Key benefits of agent networks and brokers include:
 
-* Guided determinism: Graph-based routing makes sure that specific operations run in the correct order, with defined paths for both expected outcomes and error conditions.
-* Specialized coordination: Route each task to the agent best suited to handle it, rather than building one agent that tries to do everything.
-* Reusable components: Publish brokers and agent networks to your portfolio so other teams can discover and compose them into their own networks.
-* End-to-end observability: Monitor broker routing decisions, agent performance, and request flows with Agent Visualizer.
-* Incremental composition: Start with a simple agent network and add brokers as complexity grows. You don't need a broker to get started.
+* Reliable outcomes from complex processes: Graph-based routing runs operations in the correct order with defined paths for both expected outcomes and error conditions, so multi-step processes behave predictably instead of drifting.
+* Better results by using the right specialist: Route each task to the agent best suited to handle it, instead of stretching one agent to do everything and accepting weaker output on every task.
+* Build once, reuse across teams: Publish brokers and agent networks to your portfolio so other teams compose them into their own networks rather than rebuilding the same process.
+* Know exactly where a process failed: Monitor broker routing decisions, agent performance, and request flows with Agent Visualizer, so a failure points to the agent and step that caused it.
+* Start small, scale when ready: Begin with a simple agent network and add brokers as complexity grows. You don't need a broker to get started, so there's no upfront coordination cost.
 
 == The Problem
 
@@ -66,6 +66,8 @@ Agent brokers and agent networks provide reliable coordination with clear routin
 . Deploy the agent network to CloudHub 2.0.
 . Monitor execution in Agent Visualizer to trace each step and identify where issues occur.
 
+*Result:* Orders move through inventory, payment, and fulfillment on defined paths, with explicit handling for shortfalls and payment failures instead of silent breakage. When a step fails, Agent Visualizer shows which agent and which state, so recovery is fast rather than a guessing game.
+
 === Scenario 2: Multi-Discipline Research
 
 *Challenge:* Answering a strategic research question requires market analysis, competitive intelligence, technical feasibility assessment, and financial modeling — capabilities that belong in separate specialized agents.
@@ -77,6 +79,8 @@ With an agent network, a broker decomposes the request and coordinates the speci
 . The synthesis agent produces the final report from the aggregated specialist outputs.
 . Agent Visualizer shows the routing path, which agents were called, and where time was spent.
 
+*Result:* A strategic question is answered by four specialists working in parallel and synthesized into one report. The report is faster and higher-quality than a single general-purpose agent, with a visible trail of which analysis contributed what.
+
 === Scenario 3: Document Processing Pipeline
 
 *Challenge:* Processing incoming documents requires classification, data extraction, quality validation, and routing for human review — in sequence, with defined rules for what happens when quality thresholds aren't met.
@@ -86,6 +90,8 @@ With guided determinism in Agent Script:
 . Define an agent network that includes a classification agent, an extraction agent, and a review routing agent.
 . Define a broker with nodes for each processing stage and explicit paths for low-confidence extractions that require human review.
 . Deploy the network and monitor processing quality and throughput in Agent Visualizer.
+
+*Result:* Documents flow through classification, extraction, and validation automatically, and only low-confidence cases route to a human. Staff review the exceptions instead of every document, and quality thresholds are enforced by the graph rather than left to chance.
 
 === Scenario 4: Customer Support Triage
 
@@ -97,6 +103,8 @@ With a broker handling intelligent triage:
 . Each specialist agent calls the relevant MCP servers to retrieve customer data, account history, or billing records.
 . The broker consolidates the specialist's response and returns it to the caller.
 . Publish the agent network to Exchange so other teams can reuse the triage broker.
+
+*Result:* Requests reach the right specialist on the first hop, so account, technical, and billing issues stop bouncing between the wrong agents. Publishing the triage broker to Exchange lets other teams adopt the same routing instead of rebuilding it.
 
 == Implementation Steps
 

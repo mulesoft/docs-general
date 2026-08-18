@@ -4,11 +4,11 @@ Agent Fabric gives you full visibility into token consumption and spend across e
 
 Key benefits include:
 
-* Full cost visibility: See token consumption and spend by application, agent, user, and model in one place.
-* Cost-optimized routing: Route each request to the right model at the right cost with semantic routing.
-* Enforced budgets: Cap token or spend usage with Model Wallets that block requests when a budget limit is reached.
-* Consistent governance: Apply the same policies, prompt protection, and automatic fallback across every provider.
-* Cost attribution: Trace every token and dollar to the team, application, or agent that drove them.
+* Stop budget overruns before they happen: Model Wallets block requests when a budget limit is reached, so an unattended agent can't run spend past the cap. The limit is enforced, not just flagged.
+* Cut cost without cutting quality: Semantic routing sends routine queries to a cheaper, faster model and reserves higher-cost models for complex work, lowering average cost per query while holding response quality.
+* Turn spend into decisions: See token consumption and cost by application, agent, user, and model in one place, so you can act on what's driving cost instead of guessing.
+* End cost surprises: Trace every token and dollar to the team, application, or agent that drove it, so overruns have an owner and a root cause.
+* Govern once, everywhere: Apply the same policies, prompt protection, and automatic fallback across every provider, so adding a model or team doesn't mean rebuilding controls. * Govern once, everywhere: Apply the same policies, prompt protection, and automatic fallback across every provider, so adding a model or team doesn't mean rebuilding controls.
 
 == The Problem
 
@@ -85,6 +85,8 @@ With Agent Fabric you get complete cost visibility:
 . Generate cost dashboards showing usage patterns.
 . Identify high-cost agents and opportunities for optimization.
 
+*Result:* Every dollar of LLM spend maps to the business unit, application, and agent that drove it. Leaders can see which deployments cost the most and target optimization where it pays off, instead of splitting an unattributed bill across teams.
+
 === Scenario 2: Semantic Routing for Customer Support
 
 *Challenge:* A customer support agent system uses expensive models for all queries, including simple lookups.
@@ -97,6 +99,8 @@ With semantic routing you cut cost without sacrificing quality:
 . The Model Proxy analyzes each request and routes it appropriately.
 . Monitor quality metrics to ensure the customer experience isn't impacted.
 
+*Result:* Routine lookups, which are often the majority of support traffic, move to a model that can cost roughly an order of magnitude less per query, while complex cases still reach a more advanced, higher-cost model. Average cost per query drops with no measurable change in resolution quality.
+
 === Scenario 3: Budget Controls for Development Teams
 
 *Challenge:* Development teams experimenting with agents have no spending limits, leading to budget surprises.
@@ -108,6 +112,8 @@ With Model Wallets you get budgets agents can't overrun:
 . Enable hard limits so requests are blocked when a budget is reached rather than allowed to overrun.
 . Give teams visibility into budget consumption through the Model Proxy dashboard.
 
+*Result:* A runaway experiment stops at its cap instead of surfacing as a month-end invoice. Finance gets predictable per-team spend, and teams keep the autonomy to experiment within a limit they can see.
+
 === Scenario 4: Multi-Model Optimization
 
 *Challenge:* An organization uses multiple LLM providers but doesn't know which models are most cost-effective for its use cases.
@@ -118,6 +124,8 @@ With Agent Fabric you get evidence-based model selection:
 . Agent Fabric tracks cost and quality metrics per model.
 . Analyze which models deliver the best cost/quality ratio for each use case.
 . Adjust routing rules based on the data.
+
+*Result:* Model selection becomes an evidence-based decision instead of a default. Each use case runs on the provider that delivers the best cost and quality ratio for it, and routing keeps pace as providers change pricing or release new models.
 
 == Implementation Steps
 

@@ -4,11 +4,11 @@ Agent Fabric MCP Bridge transforms your existing API instances into agent-ready 
 
 Key benefits of MCP Bridge include:
 
-* Rapid enablement: Gets agents connected to APIs quickly, without custom development.
-* Security by default: Exposes only the operations you explicitly map as tools.
-* Consistency: Gives all agents access to APIs through the same controlled interface.
-* Reuse existing investments: Works with APIs managed through Anypoint Platform.
-* Centralized governance: Provides a single point of control for agent API access.
+* Connect agents in minutes, not weeks: Turn an existing API into agent-ready tools through configuration alone, skipping the custom integration each agent platform would otherwise require.
+* Never expose an operation by accident: Agents can call only the operations you explicitly map as tools, so write and delete stay off-limits unless you choose to expose them.
+* One controlled interface for every agent: All agents reach your APIs the same way, eliminating the inconsistent, per-platform access that's hard to audit.
+* Get more from what you already built: Reuse APIs managed through Anypoint Platform without rebuilding them for agentic use.
+* Govern agent API access from one place: A single point of control means access, policy, and monitoring don't fragment as you add agents.
 
 == The Problem
 
@@ -70,6 +70,8 @@ With MCP Bridge, you get rapid deployment with built-in safety:
 . Deploy the instance (policies execute on Omni Gateway).
 . Connect all agent platforms to the MCP server endpoint.
 
+*Result:* Agents answer account and order questions with zero write access exposed, from a single configuration. There is no per-platform integration to build or maintain, and no path for an agent to modify customer data.
+
 === Scenario 2: Inventory Check Agent
 
 *Challenge:* Your inventory API includes operations to check stock levels, reserve items, adjust quantities, and process transfers. Sales agents, warehouse agents, and customer service agents all need to check current stock, but only warehouse systems should adjust it. 
@@ -82,6 +84,8 @@ With MCP Bridge, you give all agents read-only inventory access from a single co
 . Map only GET operations for stock queries to MCP tools.
 . Connect all agent types to the MCP server endpoint.
 . Monitor agent usage in the enhanced MuleSoft experience.
+
+*Result:* Sales, warehouse, and customer service agents all read live stock levels from one read-only tool surface, while stock adjustments stay restricted to warehouse systems, without building or maintaining a filtered endpoint per agent type.
 
 === Scenario 3: Financial Data Agent with Layered Tool Selection
 
@@ -98,6 +102,8 @@ With MCP Bridge, you get fine-grained access control with safety guarantees:
 . Connect each agent to the appropriate MCP server endpoint based on access requirements.
 . In API Manager, apply policies to each MCP server instance.
 
+*Result:* Each agent gets exactly the access its role requires. Agents balances only, analytics or approval requests from one financial API, with no duplicated integrations and no path for a high-privilege operation to reach the wrong agent.
+
 === Scenario 4: Mule Integration Platform
 
 *Challenge:* Your organization has extensive Mule infrastructure and wants to enable agentic access without rebuilding integrations. 
@@ -110,6 +116,8 @@ With MCP Bridge, you extend your existing Mule investment to agentic use cases:
 . Map the API operations you want to expose to MCP tools.
 . Deploy the instances (policies execute on your existing Omni Gateway infrastructure).
 . Monitor through the enhanced MuleSoft experience and apply policies in API Manager.
+
+*Result:* Existing Mule APIs become agent-callable without new adapters or duplicated logic, and agent traffic inherits the same Anypoint Platform governance already protecting those APIs.
 
 == Implementation Steps
 

@@ -1,6 +1,12 @@
 = Agent Fabric Use Cases
 
-Agent Fabric addresses the most common challenges in enterprise AI agent management, from discovering and governing agents across platforms, to making existing APIs agent-ready without custom development, and keeping token costs under control. Each use case maps a specific business problem to a set of Agent Fabric capabilities so you can identify where to start and build incrementally. Use the quick-reference table to match your immediate goal to the right capability.
+== Why Agent Fabric
+
+Enterprises don't struggle to build one agent. They struggle to run many — across Agentforce, Bedrock, custom Mule implementations, and vendor platforms — without losing control of cost, security, and consistency. The usual response is to solve each problem per platform: custom API adapters here, a spend dashboard there, guardrails reimplemented for every team. That work duplicates effort, drifts out of sync, and leaves gaps no one owns.
+
+Agent Fabric replaces that per-platform sprawl with one governed layer that every agent, API, model, and provider routes through. Expose APIs as agent tools without touching code, enforce the same policies and budgets everywhere, attribute every token to the team that spent it, and contain a rogue agent before it causes damage — all from a single point of control. The result is faster time-to-agent, predictable spend, and governance that holds as you scale from proof of concept to production.
+
+Each use case below maps a specific business problem to the Agent Fabric capabilities that solve it, so you can start where the pain is and build incrementally. Use the quick-reference table to match your immediate goal to the right capability.
 
 == Find Your Use Case
 
@@ -48,11 +54,11 @@ Consistently enforce business rules, PII policies, and guardrails across all age
 
 //For more information, see xref:af-use-case-policy-enforcement.adoc[].
 
-== Monitor Costs and Optimizing Model Selection
+== Monitor Costs and Optimize Model Selection
 
 Monitor token usage across applications and agents, then optimize costs by routing simple queries to cost-effective models while reserving powerful models for complex tasks. For example, a team running hundreds of daily agent interactions can route routine lookups to a smaller, cheaper model and reserve a frontier model only for tasks that require complex reasoning.
 
-xref:af-use-case-cost-management.adoc[].
+For more information, see xref:af-use-case-cost-management.adoc[].
 
 == Coordinate Multi-Agent Processes with Brokers
 
