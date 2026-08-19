@@ -40,7 +40,7 @@ When a scanner is enabled, it can discover and read policies from API configurat
 
 * Policy write
 +
-For API gateway providers that support policy write (Amazon API Gateway, Azure API Management, Google Apigee, and Kong Gateway), a scanner configured with write credentials lets you apply, enable, disable, and delete policies on discovered APIs directly from Anypoint. For write scopes and requirements, see xref:exp-scanners-prerequisites-reference.adoc#_policy_write_prerequisites[Policy Write Prerequisites].
+For API gateway providers that support policy write (Azure API Management, Google Apigee, and Kong Gateway), a scanner configured with write credentials lets you apply, enable, disable, and delete policies on discovered APIs directly from Anypoint. For write scopes and requirements, see xref:exp-scanners-prerequisites-reference.adoc#_policy_write_prerequisites[Policy Write Prerequisites].
 
 == Workflow Entry Points for Adding a Scanner
 

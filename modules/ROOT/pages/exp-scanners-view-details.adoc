@@ -50,7 +50,7 @@ Akamai API Security scanner::
 Shows correlation and governance enrichment activity for existing services, including risk and findings signals.
 
 API gateway scanner::
-For providers that support policy write (Amazon API Gateway, Azure API Management, Google Apigee, and Kong Gateway), the *Settings* tab additionally supports configuring separate write credentials to enable policy write on discovered APIs.
+For providers that support policy write (Azure API Management, Google Apigee, and Kong Gateway), the *Settings* tab additionally supports configuring separate write credentials to enable policy write on discovered APIs.
 
 == See Also
 

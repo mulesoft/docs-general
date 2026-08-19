@@ -143,11 +143,14 @@ a|
 * *Resource scope (REST APIs):* `arn:aws:apigateway:{region}::/restapis/*`
 * *Resource scope (HTTP APIs):* `arn:aws:apigateway:{region}::/apis/*`
 
+// TODO: Amazon API Gateway policy write is deferred to a later release. Restore the write scope below when AWS write support ships.
+////
 *Write scope (policy apply):* IAM write permissions for API Gateway, in addition to the read permissions:
 
 * `apigateway:PUT`
 * `apigateway:POST`
 * `apigateway:DELETE`
+////
 
 [NOTE]
 For web application firewall (WAF) policies, the scanner also uses `software.amazon.awssdk:wafv2` and `software.amazon.awssdk:route53`.
@@ -232,7 +235,7 @@ a|
 
 == Policy Write Prerequisites
 
-Policy write lets you apply, enable, disable, and delete policies on connected third-party gateway APIs directly from Anypoint, with no Anypoint gateway in the request path. Policy write is available for API gateway providers only: Amazon API Gateway, Azure API Management, Google Apigee, and Kong Gateway. Agent, API Security, and MCP scanners don't support policy write.
+Policy write lets you apply, enable, disable, and delete policies on connected third-party gateway APIs directly from Anypoint, with no Anypoint gateway in the request path. Policy write is available for API gateway providers only: Azure API Management, Google Apigee, and Kong Gateway. Agent, API Security, and MCP scanners don't support policy write.
 
 Before you can write policies, confirm these prerequisites in addition to the discovery prerequisites in the matrix:
 
@@ -248,9 +251,12 @@ The following table summarizes the read and write scopes for each API gateway pr
 | Read Scope
 | Write Scope
 
+// TODO: Amazon API Gateway policy write is deferred to a later release. Restore this row when AWS write support ships.
+////
 | Amazon API Gateway
 | `apigateway:GET`
 | `apigateway:PUT`, `apigateway:POST`, `apigateway:DELETE`
+////
 
 | Azure API Management
 | Reader role (ARM)

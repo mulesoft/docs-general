@@ -11,7 +11,7 @@ The enhanced MuleSoft experience supports the full lifecycle of AI-connected int
 
 Entity Management:: Register and manage agents, REST and GraphQL APIs, MCP servers, Model proxies, and gateways, including Anypoint Omni Gateway, external gateways, and unmanaged gateways. Each type has a dedicated catalog under *Portfolio*.
 
-Governance and Compliance:: Define and apply policies across domains such as access and security, performance and cost, data privacy and integrity, and compliance and observability. For connected third-party API gateways (Amazon API Gateway, Azure API Management, Google Apigee, and Kong Gateway), apply, enable, disable, and delete policies directly from Anypoint through policy write, with no Omni Gateway in the request path. Conformance reporting summarizes rule violations and severity so you can close gaps systematically.
+Governance and Compliance:: Define and apply policies across domains such as access and security, performance and cost, data privacy and integrity, and compliance and observability. For connected third-party API gateways (Azure API Management, Google Apigee, and Kong Gateway), apply, enable, disable, and delete policies directly from Anypoint through policy write, with no Omni Gateway in the request path. Conformance reporting summarizes rule violations and severity so you can close gaps systematically.
 
 Cost and Performance Optimization:: Monitor token usage, per-instance signals, and daily cost where the product exposes them. Apply governance strategies and related controls, such as tool mapping and tool sanitization, to reduce spend and risk where the experience supports them.
 
