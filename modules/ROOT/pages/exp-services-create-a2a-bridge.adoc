@@ -1,0 +1,141 @@
+= Create an A2A Bridge
+:keywords: a2a bridge, agent2agent, agentforce bridge, a2a compliant, agent fabric, non-a2a agent, omni gateway, source agent
+
+Create an A2A bridge to make a non-A2A agent A2A-compliant so that Agent Fabric can discover, govern, and orchestrate it alongside native A2A agents.
+
+Agent Fabric orchestrates agents using the Agent2Agent (A2A) protocol, but many enterprise agents—such as Salesforce Agentforce agents—aren't A2A-compliant on their own. An A2A bridge closes this gap. The bridge is a gateway policy that presents an A2A facade in front of a *source agent*, translating between A2A and the agent's native protocol so downstream consumers see a fully A2A-compliant agent. No changes to the source agent are required.
+
+When you create an A2A bridge, Agent Fabric derives an A2A agent card from the source agent, publishes it to your *Portfolio*, and deploys the first bridge instance—in a single wizard.
+
+During creation, you define:
+
+* *A2A card*
++
+The advertised name, description, and skills the bridge exposes to other agents for discovery and routing. Capabilities are set and validated by the platform.
+* *Deployment*
++
+The environment, Omni Gateway, base path, and consumer endpoint where the bridge instance runs.
+* *Inbound authentication*
++
+How A2A clients authenticate to the bridge.
+* *Upstream authentication*
++
+How the bridge authenticates to the source agent.
+
+[[how-it-works]]
+== How an A2A Bridge Works
+
+A source agent is an existing agent, built on a platform that isn't natively A2A-compliant, that you want to bring into your agent network. The bridge sits between A2A clients and the source agent and handles:
+
+* *Protocol translation* — Converts A2A requests into the source platform's native API calls and maps native responses back to A2A task states.
+* *Identity and task mapping* — Maps the source platform's session or conversation identifiers to A2A `contextId` and `taskId` values.
+* *Task lifecycle and state* — Tracks task state so A2A operations such as `GetTask`, `ListTasks`, and `CancelTask` return correct results.
+* *A2A card derivation* — Generates an A2A agent card that accurately reflects the capabilities the bridge can honor. The bridge card is derived from the source agent's card, plus any capabilities added by the bridge and any customizations you make.
+
+Because the bridge is always A2A-compliant, A2A clients consume a bridged agent with no custom logic. If the source platform later adds native A2A support, you can disable the bridge and clients continue to work without changes.
+
+[[supported-platforms]]
+== Supported Source Platforms
+
+[cols="1,1,2a", options="header"]
+|===
+| Source platform | Bridge availability | Notes
+
+| Salesforce Agentforce
+| Available
+| Bridge translates A2A to the Agentforce Einstein AI Agent v1 API. Supports streaming and human-in-the-loop.
+
+| Microsoft Copilot Studio
+| Planned
+| Roadmap. Copilot's activity-based Direct Line API requires heuristic task-lifecycle handling.
+
+| Amazon Bedrock AgentCore, Google Vertex AI
+| Not required
+| These platforms are natively A2A-compliant. Register them directly rather than bridging. See xref:exp-services-register-manually.adoc[].
+
+| Other platforms
+| Extensible
+| Build a custom bridge policy with the Policy Development Kit (PDK), or use xref:a2a-connector::index.adoc[A2A Connector].
+|===
+
+[[before-you-begin]]
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* A source agent registered in your *Portfolio* that isn't already A2A-compliant.
+* One of these Exchange permissions:
++
+--
+** Exchange: Exchange Contributor
+** Exchange: Exchange Administrator
+** Exchange: Exchange Creator
+--
+* This API Manager permission on the target environment:
++
+** API Manager: Manage APIs Configuration
++
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+* A managed Omni Gateway in the target environment. A2A bridge deployment is supported on managed instances only.
+* Credentials for the source agent's platform, such as the Salesforce org URL, OAuth token URL, client ID, and client secret for an Agentforce source agent.
+
+[[create-a2a-bridge]]
+== Create an A2A Bridge
+
+You create a bridge from the source agent's detail page.
+
+. In *Portfolio*, open the *Agents* catalog and select the source agent you want to bridge.
+. On the *Overview* tab, select *Configure A2A bridge & deploy first instance*.
+. In *Customize card*, review and edit the A2A card the bridge will publish:
++
+--
+** Set the *Advertised name* and *Advertised description* that other agents see when they discover this bridge.
+** Review the *Skills*. Skills describe what the agent can do so other agents can discover and route to it. Add custom skills or hide skills as needed. Each skill must have a unique ID.
+** *Capabilities* such as streaming, push notifications, and state transition history are set by the platform and locked. This prevents the bridge from advertising a capability it can't honor.
+--
++
+Click *Next*.
+. In *Deploy instance*, configure where and how the first bridge instance runs:
++
+--
+** *Environment* — Select the target environment.
+** *Omni Gateway* — Select the managed gateway that hosts the bridge.
+** *Base path* — Enter the path segment for the bridge's A2A endpoint. Agent Fabric checks for route conflicts against existing instances on the gateway.
+** *Consumer endpoint* — Optionally override the gateway ingress URL used to build the instance URL.
+--
+. Configure *Inbound authentication* to control how A2A clients authenticate to the bridge. Select a method such as *OAuth 2.0*, *Client ID Enforcement*, or *API key*, then provide the required values. Select *None* to leave the endpoint unauthenticated.
+. Configure *Upstream authentication* to control how the bridge authenticates to the source agent. For an Agentforce source agent, provide the *Salesforce Org URL*, *Token URL*, *Grant type*, *Client ID*, and *Client Secret*. Source-derived values such as the tenant endpoint are read-only.
+. Expand *Advanced* to review or adjust the generated policy configuration.
+. Complete the wizard. Finishing publishes the A2A card and deploys the bridge instance together.
+
+After the bridge is created, the derived A2A agent card is published to the *Agents* catalog in your *Portfolio*, where it can be discovered, governed, monitored, and orchestrated like any other A2A agent.
+
+[[known-limitations]]
+== Known Limitations
+
+A2A bridge behavior is constrained by what the source platform's API supports. Review the limitations for your source platform before you rely on a bridge in production.
+
+* *Deployment* — A2A bridge deployment is supported on managed instances only.
+* *Transport* — Bridges support the HTTP+JSON transport.
+* *Governance scope* — A bridge governs only traffic that flows through the Omni Gateway. Direct platform-to-platform traffic that bypasses the gateway isn't governed.
+
+Agentforce source agents have these additional limitations, which the derived agent card reflects:
+
+* *No asynchronous tasks* — Agentforce responds synchronously. Long-running tasks that exceed the gateway timeout fail. Use Agentforce agents for real-time, low-latency tasks, and orchestrate long-running work through a broker.
+* *No task subscription* — A2A resubscription isn't available. Streaming must be consumed on a single in-band connection.
+* *No push notifications* — The Agentforce API doesn't support push notifications.
+* *Session lifecycle* — The bridge creates and manages Agentforce sessions automatically. Sessions time out on the Agentforce side; you don't manage them directly.
+
+[[migration]]
+== Migrate to Native A2A
+
+The A2A bridge is designed to be superseded. When a source platform adds native A2A support, disable the bridge policy and point consumers at the platform's native A2A endpoint. Because clients already consume the agent through the A2A protocol, no client changes are required.
+
+== See Also
+
+* xref:agent-fabric-overview.adoc[Agent Fabric Overview]
+* xref:exp-services-create-mcp-server.adoc[Create MCP Servers]
+* xref:exp-services-register-manually.adoc[Register a Service Manually]
+* xref:exp-services-view-details.adoc[View Service Details]
+* xref:a2a-connector::index.adoc[A2A Connector]
