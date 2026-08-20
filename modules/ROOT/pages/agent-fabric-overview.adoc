@@ -78,6 +78,22 @@ Before agents can orchestrate across your enterprise, your existing systems need
 * When you need it: Use MCP Connector when you need to expose capabilities to agents that require custom logic, multi-system composition, orchestration with external MCP services, or transformation that configuration-based tools like MCP Bridge don’t cover.
 * Learn more: xref:mcp-connector::index.adoc[MCP Connector]
 
+=== A2A Bridge
+
+* What it is: An A2A bridge is a gateway policy that presents an A2A-compliant facade in front of an existing non-A2A agent (the source agent), translating between the A2A protocol and the agent's native protocol without modifying the source agent. Agent Fabric derives an A2A card from the source agent, publishes it to your Portfolio, and deploys the bridge instance from a single wizard.
+
+* Role in Agent Fabric: Agent Fabric can only orchestrate A2A-compliant agents, but many enterprise agents—such as Salesforce Agentforce agents—aren't A2A-compliant on their own. A2A Bridge closes the gap between what your scanners can discover and what Agent Fabric can orchestrate, making non-A2A agents first-class participants in your agent network through configuration alone.
+
+* What you can do:
+** Make a non-A2A source agent A2A-compliant without rebuilding it
+** Customize the advertised A2A card and skills before publishing
+** Deploy the bridge instance to a managed Omni Gateway with inbound and upstream authentication
+** Discover, govern, monitor, and orchestrate the bridged agent like any native A2A agent
+
+* When you need it: Use A2A Bridge when you have agents on platforms that aren't yet A2A-compliant (such as Agentforce) and you need Agent Fabric to orchestrate them now. Use A2A Connector instead when you need custom Mule application logic or want to bridge a platform that isn't natively supported.
+
+* Learn more: xref:exp-services-create-a2a-bridge.adoc[]
+
 === A2A Connector
 
 * What it is: Use Anypoint Connector for A2A (A2A Connector) to add A2A protocol support to Mule applications so they can act as both A2A servers and A2A clients. You can also use A2A Connector to make agents built on other platforms A2A-compliant.
