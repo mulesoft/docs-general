@@ -11,18 +11,34 @@ Each wallet has a system-generated client ID and required JWT claims that you de
 To manage model wallets, you need:
 
 * An Anypoint Platform account
-* A configured identity provider (IdP), with a JWT validation policy applied to the model proxies that the wallet authorizes
-* Any of these permissions:
+* At least one configured model proxy. See xref:model-proxy-create-model-proxy.adoc[].
+* A configured identity provider (IdP) that issues JWTs for callers
+* A xref:gateway::policies-included-jwt-validation.adoc[JWT Validation] policy applied to each model proxy that the wallet authorizes. Apply this policy on the model proxy in the enhanced experience. See <<apply-jwt-validation-to-a-model-proxy>>.
+* These permissions:
 +
 --
 ** API Manager: API Creator
 ** API Manager: View APIs Configuration
 ** API Manager: Edit APIs Configuration
+** API Manager: Manage Policies, to apply the JWT Validation policy
 --
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
 Organizations without an IdP configured can't use model wallets. Those organizations continue to use existing access methods.
+
+[[apply-jwt-validation-to-a-model-proxy]]
+== Apply a JWT Validation Policy to a Model Proxy
+
+A model wallet matches the client ID and JWT claims in a request. The JWT Validation policy on the model proxy validates the token from your IdP first. Apply the policy on each model proxy that callers reach through the wallet. You apply it from the model proxy, not from *Model Wallets*.
+
+. From *Portfolio* > *Model Proxies*, open the model proxy.
+. Select the *Policies* tab, then select *+Apply Policy*.
+. Select *JWT Validation* and select *Next*.
+. Configure the policy to validate tokens from your IdP, including the JWT origin and the JWKS URL or signing key. For configuration parameters, see xref:gateway::policies-included-jwt-validation.adoc[].
+. Select *Apply Policy*.
+
+Repeat these steps for each model proxy the wallet authorizes.
 
 [[create-a-model-wallet]]
 == Create a Model Wallet
@@ -41,7 +57,7 @@ This value is read-only. Callers send it as the `X-Client-Id` request header to 
 ** To add more claims, select *Add Claim* again.
 --
 +
-NOTE: Model wallets use the JWT validation policy configured across agent tools and instances.
+The required claims must match claims in the JWT after the JWT Validation policy on the model proxy validates the token.
 . (Optional) Add one or more budgets to cap spend or token usage. See <<add-a-budget-to-a-wallet>>.
 . Select *Create Model Wallet*.
 
@@ -95,5 +111,7 @@ Budgets are approximate rather than a real-time hard cutoff. The system tracks t
 
 == See Also
 
+* xref:model-proxy-create-model-proxy.adoc[]
+* xref:gateway::policies-included-jwt-validation.adoc[]
 * xref:exp-governance-view-cost-and-token-usage.adoc[]
 * xref:exp-services-register-manually.adoc[]
