@@ -64,7 +64,7 @@ Instance::
 A deployed version of a service on a specific gateway or runtime. Instances receive traffic on the Instance URL and proxy requests to the Target URL. Supported service types include APIs, agents, MCP servers, and Model proxies.
 
 Lineage::
-A graph of directed relationships that connects an agent to the data services it consumes, spanning agent, MCP server, API, and dataset. Context Catalog detects lineage edges from scanners, runtime configuration, and traffic traces, and records each edge with a confidence score and a detection type of observed, declared, or inferred. View lineage from the *Lineage* tab on an asset detail page. In the MVP release, lineage is available only for agents discovered from Amazon (AWS Bedrock).
+A graph of directed relationships that connects an agent to the data services it consumes, spanning agent, MCP server, API, and dataset. Context Catalog detects lineage edges from scanners, runtime configuration, and traffic traces, and records each edge with a confidence score and a detection type of observed, declared, or inferred. View lineage from the *Lineage* tab on an asset detail page. Lineage currently supports only agents discovered from Amazon (AWS Bedrock).
 
 Model Proxy::
 A gateway-backed service that routes requests to a large language model. Model proxies register in the Model Proxies catalog and support instance management, policy application, and token usage monitoring.
