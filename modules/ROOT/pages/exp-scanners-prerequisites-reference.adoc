@@ -214,6 +214,20 @@ a|
 
 *Role:* `ACCOUNTADMIN`
 
+| Informatica Cloud Data Governance and Catalog (CDGC)
+| Data
+a|
+*Credentials:* Informatica IDMC login URL (region/POD); username and password, or client ID and client secret
+
+*Account:* Informatica Intelligent Data Management Cloud (IDMC) organization with Cloud Data Governance and Catalog (CDGC) enabled
+
+*Permissions:* Metadata read access to the catalog—data assets, classifications, business glossary terms, and quality scores. A dedicated service account with read-only catalog access is recommended.
+
+*Setup:* At least one catalog source configured and cataloged in CDGC (for example, a Snowflake connection) so that datasets, classifications, glossary terms, and quality metrics are available to ingest.
+
+[NOTE]
+The Informatica CDGC scanner is part of the Context Catalog capability in Agent Fabric and is available only when your administrator has enabled the feature for your organization.
+
 |===
 
 == See Also
