@@ -78,6 +78,8 @@ You can filter policies by category:
 
 When you apply a policy, the platform validates it against your governance configuration and then creates the corresponding native policy on each selected instance's gateway.
 
+Applying a policy is an asynchronous, tracked operation, not a fire-and-forget action. A message confirms that the operation is running and directs you to the *Activity log* tab to check its status. When you apply a policy to more than one instance, each instance reports its own result, so you can see which instances succeeded and which failed. To review the outcome, see <<track-policy-changes,Track Policy Changes>>.
+
 [NOTE]
 ====
 While a policy operation is in progress on an instance, applying policies to that instance is paused and policy actions are unavailable until the operation completes or fails. This prevents conflicting changes while the vendor-native apply workflow runs.
@@ -121,6 +123,28 @@ On gateways that support it, you can enable or disable a policy without removing
 === View Policies Outside Your Scope
 
 Policies that are outside your instance's scope appear in a read-only state. For these policies, edit, delete, and enable/disable actions are not available.
+
+[#track-policy-changes]
+== Track Policy Changes
+
+Policy write actions run asynchronously and are tracked, so you can confirm whether a change landed on the gateway instead of assuming it did. Review recent policy operations for an instance on the *Activity log* tab of the instance detail page.
+
+The *Activity log* tab lists recent policy operations with these columns:
+
+* *Policy*: The policy the operation applied to.
+* *Action*: The operation performed — *Apply*, *Update*, *Toggle*, or *Remove*.
+* *Status*: The current state of the operation — *Running*, *Completed*, or *Failed*.
+
+The tab shows the most recent operations from the last 30 days. If no policy changes have been recorded for the instance in that window, the tab reports that no activity is available.
+
+Use the *Activity log* tab to confirm that an apply, edit, enable, disable, or delete completed, or to see which operations failed and need to be retried.
+
+// TODO(W-23907611): The Activity log tab is gated by a feature flag and, per the code,
+// currently appears only for external (non-MuleSoft) provider instances. Confirm the GA
+// availability (flag state and which provider instances show the tab) with engineering.
+// Also confirm the exact column headers and the empty-state wording against the shipped UI.
+// Note: the log records policy/action/status/time only — it does NOT record an actor
+// ("who"), so do not describe it as a full audit trail.
 
 == See Also
 

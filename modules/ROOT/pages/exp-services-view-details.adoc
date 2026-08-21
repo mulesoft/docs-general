@@ -81,6 +81,8 @@ Policy visibility depends on the last successful scanner run, not on a live prov
 
 On supported gateways, the *Policies* tab also lets you manage the native policies applied to an instance. Depending on the gateway and your permissions, you can edit, delete, or enable and disable a policy directly from this tab. Policies that are outside your instance's scope appear in a read-only state, without edit, delete, or enable/disable actions.
 
+Policy write actions are tracked. To confirm whether an apply, edit, enable, disable, or delete completed on the gateway, review the *Activity log* tab of the instance detail page. See xref:exp-governance-policy-library-apply.adoc#track-policy-changes[Track Policy Changes].
+
 For the full apply and management workflow, see xref:exp-governance-policy-library-apply.adoc[].
 
 == See Also
