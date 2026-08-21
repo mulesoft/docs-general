@@ -80,16 +80,16 @@ If some environments show no policy binding, select *Check again* to retry the p
 
 == Informatica Cloud Data Governance and Catalog (CDGC) Scanner
 
-The Informatica Cloud Data Governance and Catalog (CDGC) scanner behaves differently from service-import scanners. Instead of discovering agents, APIs, or MCP servers, it ingests *data asset* metadata from Informatica CDGC into the Agent Fabric registry so that Context Catalog can build agent-to-data lineage. *Informatica Cloud Data Governance and Catalog* appears in the provider list only when your administrator has enabled the Context Catalog feature for your organization.
+The Informatica Cloud Data Governance and Catalog (CDGC) scanner behaves differently from service-import scanners. Instead of discovering agents, APIs, or MCP servers, it ingests *data service* metadata from Informatica CDGC into the Agent Fabric registry so that Context Catalog can build agent-to-data lineage. *Informatica Cloud Data Governance and Catalog* appears in the provider list only when your administrator has enabled the Context Catalog feature for your organization.
 
-When the scanner runs, it ingests the following from CDGC and normalizes it into a data asset model:
+When the scanner runs, it ingests the following from CDGC and normalizes it into a data service model:
 
 * Dataset names, schemas, and owners
 * Classifications and regulatory tags, such as PII, PHI, confidential, GDPR, HIPAA, and PCI
 * Data quality scores and freshness metrics
 * Business glossary terms, classification rules, and asset-to-term associations, including the resulting field-level (column-level) PII tags
 
-The ingested data assets and their classifications are the foundation for lineage in the data asset catalog. The system then detects lineage edges—connections between assets, such as an API reading from a dataset—from scanners, runtime configuration, and traffic traces, and records a confidence score for each edge. For how to view and interpret lineage, see xref:exp-data-asset-lineage.adoc[].
+The ingested data services and their classifications appear in the *Data Services* catalog and are the foundation for lineage. The system then detects lineage edges—connections between assets, such as an API reading from a dataset—from scanners, runtime configuration, and traffic traces, and records a confidence score for each edge. For how to view and interpret lineage, see xref:exp-data-service-lineage.adoc[].
 
 For the required Informatica credentials, account, permissions, and setup, see xref:exp-scanners-prerequisites-reference.adoc[].
 
@@ -109,7 +109,7 @@ For ongoing operations (pause, edit, or delete), see xref:exp-scanners-manage.ad
 
 * xref:exp-scanners-prerequisites-reference.adoc[]
 * xref:exp-akamai-risk-correlation.adoc[]
-* xref:exp-data-asset-lineage.adoc[]
+* xref:exp-data-service-lineage.adoc[]
 * xref:exp-services-connect-providers-to-add.adoc[]
 * xref:exp-scanners-manage.adoc[]
 * xref:exp-services-add-to-portfolio.adoc[]

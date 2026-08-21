@@ -25,13 +25,13 @@ Conformance Report::
 A view on the detail pages of agents, APIs, and MCP servers that shows compliance scores, rule violations, and warnings that applied governance strategies generate.
 
 Context Catalog::
-A capability in Agent Fabric that connects AI agents to the enterprise data assets they consume, creating a navigable lineage graph from agent to MCP server to API to dataset. Context Catalog is built on the Informatica Cloud Data Governance and Catalog (CDGC) integration and gives Agent Fabric awareness of what data an agent touches, how it's classified, and what quality and policy constraints apply. Available only when your administrator enables the feature.
+A capability in Agent Fabric that connects AI agents to the enterprise data services they consume, creating a navigable lineage graph from agent to MCP server to API to dataset. Context Catalog is built on the Informatica Cloud Data Governance and Catalog (CDGC) integration and gives Agent Fabric awareness of what data an agent touches, how it's classified, and what quality and policy constraints apply. Available only when your administrator enables the feature.
 
 Cross-gateway conformance::
 A unified view of compliance status across APIs hosted on Anypoint Platform gateways and connected third-party provider gateways. Access cross-gateway conformance from the *Governed Services* tab of an active governance strategy. Use the *Any provider* filter to compare conformance by platform or focus on a specific provider.
 
-Data asset::
-A dataset and its metadata ingested from Informatica Cloud Data Governance and Catalog (CDGC) into the Agent Fabric registry, normalized into a model that includes name, type, source system, owner, classifications, quality score, and glossary terms. Data assets are the foundation for lineage in Context Catalog.
+Data service::
+A dataset and its metadata ingested from Informatica Cloud Data Governance and Catalog (CDGC) into the Agent Fabric registry, normalized into a model that includes name, type, source system, owner, classifications, quality score, and glossary terms. Data services appear in the *Data Services* catalog and are the foundation for lineage in Context Catalog.
 
 Enhanced experience::
 The new MuleSoft UI for managing your AI portfolio, including governance, instance management, observability, and agentic experiences.
@@ -64,7 +64,7 @@ Instance::
 A deployed version of a service on a specific gateway or runtime. Instances receive traffic on the Instance URL and proxy requests to the Target URL. Supported service types include APIs, agents, MCP servers, and Model proxies.
 
 Lineage::
-A graph of directed relationships that connects an agent to the data assets it consumes, spanning agent, MCP server, API, and dataset. Context Catalog detects lineage edges from scanners, runtime configuration, and traffic traces, and records each edge with a confidence score and a detection type of observed, declared, or inferred. View lineage from the *Lineage* tab on an asset detail page. In the MVP release, lineage is available only for agents discovered from Amazon (AWS Bedrock).
+A graph of directed relationships that connects an agent to the data services it consumes, spanning agent, MCP server, API, and dataset. Context Catalog detects lineage edges from scanners, runtime configuration, and traffic traces, and records each edge with a confidence score and a detection type of observed, declared, or inferred. View lineage from the *Lineage* tab on an asset detail page. In the MVP release, lineage is available only for agents discovered from Amazon (AWS Bedrock).
 
 Model Proxy::
 A gateway-backed service that routes requests to a large language model. Model proxies register in the Model Proxies catalog and support instance management, policy application, and token usage monitoring.

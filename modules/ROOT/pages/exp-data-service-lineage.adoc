@@ -1,13 +1,13 @@
-= Viewing Data Asset Lineage
-:keywords: lineage, data asset, context catalog, agent fabric, informatica, cdgc, data lineage, agent to data, impact analysis, provenance, confidence score
+= Viewing Data Service Lineage
+:keywords: lineage, data service, context catalog, agent fabric, informatica, cdgc, data lineage, agent to data, impact analysis, provenance, confidence score
 
-Data asset lineage connects your AI agents to the enterprise data assets they consume, creating a navigable graph from agent to MCP server to API to dataset. Lineage is part of the Context Catalog capability in Agent Fabric, which is built on the Informatica Cloud Data Governance and Catalog (CDGC) integration. With lineage, Agent Fabric gains semantic awareness of what data an agent touches, how that data is classified, and what quality and policy constraints apply.
+Data service lineage connects your AI agents to the enterprise data services they consume, creating a navigable graph from agent to MCP server to API to dataset. Lineage is part of the Context Catalog capability in Agent Fabric, which is built on the Informatica Cloud Data Governance and Catalog (CDGC) integration. With lineage, Agent Fabric gains semantic awareness of what data an agent touches, how that data is classified, and what quality and policy constraints apply.
 
 Use lineage to answer questions that Agent Fabric couldn't answer before, such as which datasets influence an agent's output, which agents depend on a dataset you're about to change, and whether an agent is reading data outside its declared scope.
 
 [NOTE]
 ====
-Data asset lineage is part of the Context Catalog capability and is available only when your administrator has enabled the feature for your organization.
+Data service lineage is part of the Context Catalog capability and is available only when your administrator has enabled the feature for your organization.
 
 In the MVP release, lineage is available only for agents discovered from Amazon (AWS Bedrock).
 ====
@@ -17,7 +17,7 @@ In the MVP release, lineage is available only for agents discovered from Amazon 
 Before you can view lineage, make sure that:
 
 * Your administrator has enabled the Context Catalog feature for your organization.
-* An Informatica Cloud Data Governance and Catalog (CDGC) scanner has run so that data assets, classifications, and glossary terms are ingested into the registry. See xref:exp-scanners-add-from-providers.adoc[] and xref:exp-scanners-prerequisites-reference.adoc[].
+* An Informatica Cloud Data Governance and Catalog (CDGC) scanner has run so that data services, classifications, and glossary terms are ingested into the registry. See xref:exp-scanners-add-from-providers.adoc[] and xref:exp-scanners-prerequisites-reference.adoc[].
 * The agents whose lineage you want to view were discovered from Amazon (AWS Bedrock). In the MVP release, lineage isn't available for agents from other providers.
 
 == How Lineage Is Detected
