@@ -3,6 +3,8 @@
 
 Your *Portfolio* is organized into catalogs: *Agents*, *MCP Servers*, *Model Proxies*, *APIs*, and *Gateways*. Each catalog holds the services (or gateway entries) your organization registered or imported for governance, monitoring, and deployment. Services enter a catalog through automated provider discovery or manual registration. For procedures, use the topics linked in each section.
 
+When your administrator enables the Context Catalog feature, a *Data Services* catalog (currently labeled *Data assets* in the UI) also appears. Unlike the other catalogs, you don't register data services manually—you populate them by creating an Informatica CDGC scanner. See xref:exp-scanners-add-from-providers.adoc[] and xref:exp-data-service-lineage.adoc[].
+
 [cols="1,2",options="header"]
 |===
 |Approach |What Happens

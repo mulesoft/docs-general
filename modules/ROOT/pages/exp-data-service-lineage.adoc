@@ -19,7 +19,7 @@ Lineage currently supports only agents discovered from Amazon (AWS Bedrock). Age
 Data services and their lineage come into Agent Fabric through the Informatica Cloud Data Governance and Catalog (CDGC) scanner:
 
 . You create an Informatica CDGC scanner to connect to your Informatica catalog. See xref:exp-scanners-add-from-providers.adoc[].
-. When the scanner runs, it brings in *data services*—datasets and their metadata, such as schemas, owners, classifications, quality scores, and glossary terms—from Informatica CDGC into the *Data Services* catalog.
+. When the scanner runs, it brings in *data services*—datasets and their metadata, such as schemas, owners, classifications, quality scores, and glossary terms—from Informatica CDGC into the *Data Services* catalog (currently labeled *Data assets* in the UI).
 . Context Catalog then detects lineage edges that connect those data services to the APIs, MCP servers, and agents that use them, building the agent-to-data lineage graph.
 
 Because lineage depends on the Informatica CDGC scanner, no lineage appears until at least one Informatica scanner has run successfully. Currently, the lineage graph is populated only for agents discovered from Amazon (AWS Bedrock).

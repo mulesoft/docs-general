@@ -85,7 +85,7 @@ Platform MCP Server::
 The MCP server that exposes enhanced MuleSoft experience capabilities to MCP clients such as Claude Desktop. Use Platform MCP Server to access portfolio and governance features from supported development environments.
 
 Portfolio::
-The set of services registered or discovered within your org, organized into catalogs for agents, APIs, MCP servers, Model proxies, and gateways. Each catalog provides governance, monitoring, and instance management for the services it contains.
+The set of services registered or discovered within your org, organized into catalogs for agents, APIs, MCP servers, Model proxies, and gateways. Each catalog provides governance, monitoring, and instance management for the services it contains. When the Context Catalog feature is enabled, Portfolio also includes a Data Services catalog (currently labeled *Data assets* in the UI) for data services imported from Informatica.
 
 Providers::
 The external cloud platforms connected to the enhanced experience to enable automated service discovery and import. Configure providers under *Platform* > *Providers*.

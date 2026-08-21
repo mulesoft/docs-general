@@ -75,7 +75,7 @@ Confirm your credentials and the permissions your administrator assigned, as des
 Sign in through your entry path and land on *Home*. Scan *Portfolio* catalogs, *Governance*, *Observability*, and *Platform* so you know where to register assets, apply policies, read health signals, and manage providers.
 . Register assets in Portfolio
 +
-Under *Portfolio*, open *Agents*, *MCP Servers*, *Model Proxies*, *APIs*, or *Gateways*. Add assets to work with. Register manually or use connected providers under *Platform* > *Providers* if your organization enables discovery flows.
+Under *Portfolio*, open *Agents*, *MCP Servers*, *Model Proxies*, *APIs*, or *Gateways*—or *Data Services* (currently labeled *Data assets* in the UI) when your administrator enables the Context Catalog feature. Add assets to work with. Register manually or use connected providers under *Platform* > *Providers* if your organization enables discovery flows.
 . Create and manage instances
 +
 On *Agents*, *MCP Servers*, *Model Proxies*, and *APIs*, open *Instances* to create managed or unmanaged deployments that match your needs. Managed instances on Omni Gateway give stronger governance and monitoring when the new experience exposes them. *Gateways* don't include an *Instances* tab.
