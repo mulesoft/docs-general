@@ -87,7 +87,7 @@ Before agents can orchestrate across your enterprise, your existing systems need
 * What you can do:
 ** Make a non-A2A source agent A2A-compliant without rebuilding it
 ** Customize the advertised A2A card and skills before publishing
-** Deploy the bridge instance to a managed Omni Gateway with inbound and upstream authentication
+** Deploy the bridge instance to a managed or self-managed Omni Gateway with inbound and upstream authentication
 ** Discover, govern, monitor, and orchestrate the bridged agent like any native A2A agent
 
 * When you need it: Use A2A Bridge when you have agents on platforms that aren't yet A2A-compliant (such as Agentforce) and you need Agent Fabric to orchestrate them now. Use A2A Connector instead when you need custom Mule application logic or want to bridge a platform that isn't natively supported.
