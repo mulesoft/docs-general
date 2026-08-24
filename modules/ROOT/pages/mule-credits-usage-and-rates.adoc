@@ -5,7 +5,7 @@ A Mule Credit is a fungible currency that allows you to draw down from a single 
 
 Mule Credits apply to your entire Anypoint Platform organization and you can't manage them per business group. Use Mule Credits before the `Order End Date` set in the *Usage Details* table on your *Order Form* because rollovers are not permitted. To see which usage types your subscription includes, refer to your *Order Form*, *Subscription Plan*, or *Features and Entitlement Document*.
 
-== Mule Credits by Subscription Plan
+== Subscription Plan
 
 The usage types available to you depend on your subscription plan.
 
@@ -35,7 +35,6 @@ The usage types available to you depend on your subscription plan.
 NOTE: MuleSoft All-Access License supports pre-commit and unlimited usage models.
 
 == Usage Types
-
 
 Each usage type (also called a meter) tracks a specific dimension of platform consumption. Credit rates vary by monthly consumption volume and reset on the first day of each calendar month. You consume credits at the same rate across all environments, including production, pre-production, sandbox, and design. For the full tiered rate table, see <<rate-cards>>.
 
@@ -86,14 +85,14 @@ If your usage exceeds your contracted amount, MuleSoft sends a monthly overage i
 
 == Viewing Usage and Billing
 
-Mule Credits usage, monthly statements, and overage billing are centralized in Salesforce Digital Wallet. If you have an Anypoint Platform organization, you can also view your usage and entitlement details in Anypoint Usage Reports for cross-platform transparency.
+Mule Credits usage is available in both Anypoint Usage Reports and Salesforce Digital Wallet. Salesforce Digital Wallet remains the billing source of truth for finalized Mule Credits totals, statements, and overage outcomes.
 
-To view your Mule Credits consumption:
+Use both views together for a complete view of Mule Credits consumption. Digital Wallet shows finalized totals and trends, while Anypoint Usage Reports show consumption details by usage type, business group, and application. Values can differ between these views.
 
-. From the *App Launcher*, click *Digital Wallet*.
-. Locate the *Mule Credits* consumption card in the *Consumption Cards* tab.
+=== When to Use Each View
 
-Digital Wallet is available in Lightning Experience in Enterprise and Unlimited editions, and requires the View Consumption user permission.
+* Use *Anypoint Usage Reports* to analyze what is driving consumption across usage types, business groups, and applications.
+* Use *Salesforce Digital Wallet* to review finalized daily and monthly consumption and billing outcomes.
 
 === Digital Wallet Features at a Glance
 

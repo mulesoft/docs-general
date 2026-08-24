@@ -1,0 +1,802 @@
+= Sending Requests to Model Proxies
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:imagesdir: ../assets/images
+:page-aliases: gateway::llm-proxy-request.adoc, gateway::flex-gateway-llm-proxy-request.adoc
+
+Model Proxy supports these endpoint formats: OpenAI, Gemini, and Anthropic. The format is selected when creating a Model Proxy and can't be changed later.
+
+* *<<openai-format,OpenAI format>>*: Supports all LLM providers with multi-routing and fallback mechanisms. Supports both Chat Completions (`/chat/completions`) and Responses (`/responses`) endpoints.
+* *<<gemini-format-request-example,Gemini format>>*: Native Gemini API format. Doesn't support multi-routing or fallback mechanisms.
+* *<<anthropic-format-request-example,Anthropic format>>*: Native Anthropic API format. Doesn't support multi-routing or fallback mechanisms.
+
+[[retrieve-the-request-configuration-parameters]]
+== Retrieve the Endpoint Configuration Parameters for Your Model Proxy
+
+To find your Model Proxy endpoint configuration and client application credentials required to use the requests in this guide:
+
+. Find your public endpoint:
+.. From Anypoint Platform, navigate to *Runtime Manager* > *Omni Gateways*.
+.. Click the name of the Omni Gateway where your Model Proxy is deployed.
+.. Copy the *Public Endpoint*.
+. Find your base path:
+.. From the enhanced experience, select *Model Proxies*.
+.. Click the name of the Model Proxy whose base path you want to find.
+.. From *Configuration*, copy the *Base path*.
+. Retrieve your client ID and client secret:
+.. From the *Overview* page of your Model Proxy, click *Actions* > *View Model Proxy in Exchange*.
+.. Click *Request access*.
+.. Select the *API Instance* you want to request access to.
+.. Select the *Application* you want to request access to.
+.. Select the *SLA tier*.
+.. Click *Request access*.
+.. Copy the *Client ID* and *Client Secret*.
+
+[[openai-format]]
+== OpenAI Format
+
+Learn more about the OpenAI request types:
+
+* https://developers.openai.com/api/reference/resources/chat[Chat Completions] API is designed for conversational multi-turn interactions rather than simple text continuation.
+* https://developers.openai.com/api/reference/resources/responses[Responses] API is recommended unified interface for building powerful agent-like applications.
+
+All requests are designed to work for both strategies. When sending a request to a Model Proxy with either routing strategy, you can specify a model in the request. You don't have to modify the request for different routing strategies. Each routing strategy handles the model selection differently:
+
+* *Model-Based Routing*: The user specifies a model in the request (`"model": "openai/gpt-5.2"`). The Model Proxy acts as a direct proxy. If no model is specified, the Model Proxy sends the request to the fallback route or returns an error if no fallback route is configured.
+* *Semantic Routing*: No model is specified in the request. The Model Proxy chooses which model to use based on the request content by matching it to prompt topics you define for each route. If a model is specified in the request, like in model routing examples, it is ignored.
++
+NOTE: Adding a model to a request ensures deterministic routing to a preferred backend if the routing strategy of a Model Proxy changes.
+
+=== Chat Completions API Validation Request Examples
+
+https://developers.openai.com/api/reference/resources/chat[Chat Completions] (/chat/completions) is the standard API for interacting with models. It is designed for conversational multi-turn interactions rather than simple text continuation. The endpoint requires a model and a messages list with roles (such as system, user, or assistant) to generate context-aware responses.
+
+These examples validate the basic functionality of the Chat Completions API.
+
+==== Basic Chat Completion Example
+
+This request example ensures the gateway correctly routes traffic to the specified LLM provider.
+
+In the example, the model-based routing request ensures the gateway routes traffic to a Gemini 2.0 model. For semantic routing, the gateway routes traffic to the most suitable provider based on the request content:
+
+[tabs]
+====
+Semantic Routing::
++
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/chat/completions' \
+--header 'Content-Type: application/json' \
+--header 'client_id: <client-id>' \
+--header 'client_secret: <client-secret>' \
+--data '{
+  "messages": [
+    { "role": "developer", "content": "You are a helpful assistant" },
+    { "role": "user", "content": "Hello, please introduce yourself" }
+  ]
+}'
+----
+
+Model-Based Routing::
++
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/chat/completions' \
+--header 'Content-Type: application/json' \
+--header 'client_id: <client-id>' \
+--header 'client_secret: <client-secret>' \
+--data '{
+  "model": "gemini/gemini-3-flash-preview",
+  "messages": [
+    { "role": "developer", "content": "You are a helpful assistant" },
+    { "role": "user", "content": "Hello, please introduce yourself" }
+  ]
+}'
+----
+====
+
+==== Creative Content Generation Temperature Control Example
+
+This request example performs can preform brainstorming tasks, such as generating multiple unique marketing slogans. The example writes creative content using the temperature parameter (0 to 2 value, higher values are more creative) to control the randomness and creativity of the response:
+
+[tabs]
+====
+Semantic Routing::
++
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/chat/completions' \
+--header 'Content-Type: application/json' \
+--header 'client_id: <client-id>' \
+--header 'client_secret: <client-secret>' \
+--data '{
+  "messages": [
+    { "role": "user", "content": "Write a creative story about AI" }
+  ],
+  "temperature": 1.5
+}'
+----
+
+Model-Based Routing::
++
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/chat/completions' \
+--header 'Content-Type: application/json' \
+--header 'client_id: <client-id>' \
+--header 'client_secret: <client-secret>' \
+--data '{
+  "model": "gemini/gemini-3-flash-preview",
+  "messages": [
+    { "role": "user", "content": "Write a creative story about AI" }
+  ],
+  "temperature": 1.5
+}'
+----
+====
+
+==== Multi-Turn Context Management Example
+
+This request example maintains conversation context across developer persona, user query, and assistant history. The example passes the "memory" of a conversation to ensure the model knows that "it" refers to "MuleSoft" based on the previous message in the thread:
+
+[tabs]
+====
+Semantic Routing::
++
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/chat/completions' \
+--header 'Content-Type: application/json' \
+--header 'client_id: <client-id>' \
+--header 'client_secret: <client-secret>' \
+--data '{
+  "messages": [
+    { "role": "developer", "content": "You are a MuleSoft technical expert." },
+    { "role": "user", "content": "What is MuleSoft?" },
+    { "role": "assistant", "content": "MuleSoft is an integration platform that helps organizations connect applications, data, and devices." },
+    { "role": "user", "content": "How does it help with API management?" }
+  ]
+}'
+----
+
+Model-Based Routing::
++
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/chat/completions' \
+--header 'Content-Type: application/json' \
+--header 'client_id: <client-id>' \
+--header 'client_secret: <client-secret>' \
+--data '{
+  "model": "gemini/gemini-3-flash-preview",
+  "messages": [
+    { "role": "developer", "content": "You are a MuleSoft technical expert." },
+    { "role": "user", "content": "What is MuleSoft?" },
+    { "role": "assistant", "content": "MuleSoft is an integration platform that helps organizations connect applications, data, and devices." },
+    { "role": "user", "content": "How does it help with API management?" }
+  ]
+}'
+----
+====
+
+==== Structured Data Validation JSON Format Example
+
+This request example extracts patterns into structured JSON to transform a messy transcript into a clean JSON object for insertion into a database by using the `top_p` and `max_completion_tokens` parameters:
+
+[tabs]
+====
+Semantic Routing::
++
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/chat/completions' \
+--header 'Content-Type: application/json' \
+--header 'client_id: <client-id>' \
+--header 'client_secret: <client-secret>' \
+--data '{
+  "messages": [
+    { "role": "user", "content": "Explain MuleSoft Integration patterns in JSON format" }
+  ],
+  "max_completion_tokens": 50000,
+  "top_p": 0.9
+}'
+----
+
+Model-Based Routing::
++
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/chat/completions' \
+--header 'Content-Type: application/json' \
+--header 'client_id: <client-id>' \
+--header 'client_secret: <client-secret>' \
+--data '{
+  "model": "gemini/gemini-3-flash-preview",
+  "messages": [
+    { "role": "user", "content": "Explain MuleSoft Integration patterns in JSON format" }
+  ],
+  "max_completion_tokens": 50000,
+  "top_p": 0.9
+}'
+----
+====
+
+==== Enterprise Strategy Testing Example
+
+This request example validates the gateway's ability to handle large-payload "Expert" prompts. The example asks an AI Solution Architect to design a migration strategy from legacy SAP systems to Salesforce using MuleSoft Anypoint Platform with an API-led connectivity approach.
+
+[tabs]
+====
+Semantic Routing::
++
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/chat/completions' \
+--header 'Content-Type: application/json' \
+--header 'client_id: <client-id>' \
+--header 'client_secret: <client-secret>' \
+--data '{
+  "messages": [
+    { "role": "developer", "content": "You are a MuleSoft solution architect helping with enterprise integrations." },
+    { "role": "user", "content": "Design a data integration strategy for a Fortune 500 company migrating from legacy systems to Salesforce using MuleSoft Anypoint Platform. Include API-led connectivity approach." }
+  ],
+  "temperature": 0.7,
+  "max_completion_tokens": 10000
+}'
+----
+
+Model-Based Routing::
++
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/chat/completions' \
+--header 'Content-Type: application/json' \
+--header 'client_id: <client-id>' \
+--header 'client_secret: <client-secret>' \
+--data '{
+  "model": "gemini/gemini-3-flash-preview",
+  "messages": [
+    { "role": "developer", "content": "You are a MuleSoft solution architect helping with enterprise integrations." },
+    { "role": "user", "content": "Design a data integration strategy for a Fortune 500 company migrating from legacy systems to Salesforce using MuleSoft Anypoint Platform. Include API-led connectivity approach." }
+  ],
+  "temperature": 0.7,
+  "max_completion_tokens": 10000
+}'
+----
+====
+
+==== Streaming API Call Example
+
+This example supports user-facing chatbot UIs where the text must appear word-by-word as it is generated, rather than waiting for the entire response to finish. This request example validates the gateway's ability to stream real-time non-buffered token delivery using the `--no-buffer` flag:
+
+[tabs]
+====
+Semantic Routing::
++
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/chat/completions' \
+--header 'Content-Type: application/json' \
+--header 'client_id: <client-id>' \
+--header 'client_secret: <client-secret>' \
+--data '{
+  "messages": [
+    { "role": "user", "content": "Explain step-by-step MuleSoft integration process" }
+  ],
+  "stream": true
+}' \
+--no-buffer
+----
+
+Model-Based Routing::
++
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/chat/completions' \
+--header 'Content-Type: application/json' \
+--header 'client_id: <client-id>' \
+--header 'client_secret: <client-secret>' \
+--data '{
+  "model": "gemini/gemini-3-flash-preview",
+  "messages": [
+    { "role": "user", "content": "Explain step-by-step MuleSoft integration process" }
+  ],
+  "stream": true
+}' \
+--no-buffer
+----
+====
+
+==== Tool Calling: Initial Request with Tool Definition Example
+
+This request example allows the model to request real-time information from the application by invoking a function. The example asks the model to invoke a `get_current_time` function to get the current time in San Francisco, The model recognizes it can't answer from memory and instead requests to invoke a `get_current_time` function from your local API.
+
+
+[tabs]
+====
+Semantic Routing::
++
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/chat/completions' \
+--header 'Content-Type: application/json' \
+--header 'client_id: <client-id>' \
+--header 'client_secret: <client-secret>' \
+--data '{
+  "tool_choice": "auto",
+  "messages": [
+    { "role": "user", "content": "What is the time in San Francisco?" }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "get_current_time",
+        "description": "When user asks for time tell me to invoke this Tool",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "timezone": { "type": "string", "description": "Timezone of the user asked location" }
+          },
+          "required": ["timezone"]
+        }
+      }
+    }
+  ]
+}'
+----
+
+Model-Based Routing::
++
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/chat/completions' \
+--header 'Content-Type: application/json' \
+--header 'client_id: <client-id>' \
+--header 'client_secret: <client-secret>' \
+--data '{
+  "model": "openai/gpt-5.2",
+  "tool_choice": "auto",
+  "messages": [
+    { "role": "user", "content": "What is the time in San Francisco?" }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "get_current_time",
+        "description": "When user asks for time tell me to invoke this Tool",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "timezone": { "type": "string", "description": "Timezone of the user asked location" }
+          },
+          "required": ["timezone"]
+        }
+      }
+    }
+  ]
+}'
+----
+====
+
+==== Tool Calling: Request with Tool Execution Response Example
+
+This request example sends the executed tool output back to the Model Proxy to generate a final answer. The example provides the executed tool output (current time) back to the Model Proxy so the model can generate a natural-language response for the user:
+
+[tabs]
+====
+Semantic Routing::
++
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/chat/completions' \
+--header 'Content-Type: application/json' \
+--header 'client_id: <client-id>' \
+--header 'client_secret: <client-secret>' \
+--data '{
+  "tool_choice": "auto",
+  "messages": [
+    { "role": "user", "content": "What is the time in San Francisco?" },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_KDrTKkRTGfylhkAO4A8s0pAO",
+          "type": "function",
+          "function": {
+            "name": "get_current_time",
+            "arguments": "{\"timezone\":\"America/Los_Angeles\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_KDrTKkRTGfylhkAO4A8s0pAO",
+      "content": "2026-02-20T05:02:05.873534-08:00"
+    }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "get_current_time",
+        "parameters": {
+          "type": "object",
+          "properties": { "timezone": { "type": "string" } },
+          "required": ["timezone"]
+        }
+      }
+    }
+  ]
+}'
+----
+
+Model-Based Routing::
++
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/chat/completions' \
+--header 'Content-Type: application/json' \
+--header 'client_id: <client-id>' \
+--header 'client_secret: <client-secret>' \
+--data '{
+  "model": "openai/gpt-5.2",
+  "tool_choice": "auto",
+  "messages": [
+    { "role": "user", "content": "What is the time in San Francisco?" },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_KDrTKkRTGfylhkAO4A8s0pAO",
+          "type": "function",
+          "function": {
+            "name": "get_current_time",
+            "arguments": "{\"timezone\":\"America/Los_Angeles\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_KDrTKkRTGfylhkAO4A8s0pAO",
+      "content": "2026-02-20T05:02:05.873534-08:00"
+    }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "get_current_time",
+        "parameters": {
+          "type": "object",
+          "properties": { "timezone": { "type": "string" } },
+          "required": ["timezone"]
+        }
+      }
+    }
+  ]
+}'
+----
+====
+
+==== Structured Output Validation JSON Schema Example
+
+This request example validates entity extraction into a strictly defined JSON Schema (CalendarEvent). The example asks the model to extract the event information from a plain text user query and return a formatted JSON object that adheres to the required schema. This prevents integration or parsing errors in downstream applications:
+
+[tabs]
+====
+Semantic Routing::
++
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/chat/completions' \
+--header 'Content-Type: application/json' \
+--header 'client_id: <client-id>' \
+--header 'client_secret: <client-secret>' \
+--data '{
+  "messages": [
+    { "role": "system", "content": "Extract the event information." },
+    { "role": "user", "content": "Madhu Dileep and Santosh A are going to a AI Summit on 19th Feb 2026." }
+  ],
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "CalendarEvent",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string", "description": "Name of the event" },
+          "date": { "type": "string", "description": "Date of the event, in MM-DD-YYYY format" },
+          "participants": { "type": "array", "items": { "type": "string" } }
+        },
+        "required": ["name", "date", "participants"]
+      }
+    }
+  }
+}'
+----
+
+Model-Based Routing::
++
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/chat/completions' \
+--header 'Content-Type: application/json' \
+--header 'client_id: <client-id>' \
+--header 'client_secret: <client-secret>' \
+--data '{
+  "model": "gemini/gemini-3-flash-preview",
+  "messages": [
+    { "role": "system", "content": "Extract the event information." },
+    { "role": "user", "content": "Madhu Dileep and Santosh A are going to a AI Summit on 19th Feb 2026." }
+  ],
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "CalendarEvent",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string", "description": "Name of the event" },
+          "date": { "type": "string", "description": "Date of the event, in MM-DD-YYYY format" },
+          "participants": { "type": "array", "items": { "type": "string" } }
+        },
+        "required": ["name", "date", "participants"]
+      }
+    }
+  }
+}'
+----
+====
+
+=== Responses API Validation
+
+https://developers.openai.com/api/reference/resources/responses[OpenAI Responses API] (/responses)is recommended unified interface for building powerful, agent-like applications, combining capabilities from previous APIs (like Chat Completions and Assistants) into a single, more efficient endpoint. It is designed to be stateful by default and offers built-in access to advanced tools.
+
+==== Responses Endpoint for Model Context Protocol (MCP)
+
+This request example integrates the gateway with an external MCP server for automated action execution. The example asks an AI agent to search a specific internal Knowledge Base or update a Jira ticket using standardized tools defined on a remote MCP server:
+
+[tabs]
+====
+Semantic Routing::
++
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/responses' \
+--header 'Content-Type: application/json' \
+--header 'client_id: <client-id>' \
+--header 'client_secret: <client-secret>' \
+--data '{
+  "input": [
+    { "role": "system", "content": "You are helpful Service Agent" },
+    { "role": "user", "content": "My Laptop screen is broken" }
+  ],
+  "tools": [
+    {
+      "type": "mcp",
+      "server_label": "service_mcp",
+      "require_approval": "never",
+      "server_description": "Server enabled to do Service related actions",
+      "server_url": "https://ask-service-mcp-dvaz3u.c87dy0.usa-e2.cloudhub.io/mcp"
+    }
+  ]
+}'
+----
+
+Model-Based Routing::
++
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/responses' \
+--header 'Content-Type: application/json' \
+--header 'client_id: <client-id>' \
+--header 'client_secret: <client-secret>' \
+--data '{
+  "model": "openai/gpt-5.2",
+  "input": [
+    { "role": "system", "content": "You are helpful Service Agent" },
+    { "role": "user", "content": "My Laptop screen is broken" }
+  ],
+  "tools": [
+    {
+      "type": "mcp",
+      "server_label": "service_mcp",
+      "require_approval": "never",
+      "server_description": "Server enabled to do Service related actions",
+      "server_url": "https://ask-service-mcp-dvaz3u.c87dy0.usa-e2.cloudhub.io/mcp"
+    }
+  ]
+}'
+----
+====
+
+==== Stateful Response Persistence
+
+This request example validates persistent memory by creating a dependency between two requests using `previous_response_id`. The example removes the need for the client to send the entire previous chat history on every turn, reducing bandwidth and improving security by keeping the context on client side:
+
+Request 1: Initial stored call::
+
+[tabs]
+====
+Semantic Routing::
++
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/responses' \
+--header 'Content-Type: application/json' \
+--header 'client_id: <client-id>' \
+--header 'client_secret: <client-secret>' \
+--data '{
+  "instructions": "You are helpful Service Knowledge Agent",
+  "input": [ { "role": "user", "content": "My Laptop screen is broken" } ],
+  "store": true
+}'
+----
+
+Model-Based Routing::
++
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/responses' \
+--header 'Content-Type: application/json' \
+--header 'client_id: <client-id>' \
+--header 'client_secret: <client-secret>' \
+--data '{
+  "model": "openai/gpt-5.2",
+  "instructions": "You are helpful Service Knowledge Agent",
+  "input": [ { "role": "user", "content": "My Laptop screen is broken" } ],
+  "store": true
+}'
+----
+
+====
+
+Request 2: Follow-up using `previous_response_id` from the response to request 1::
+
+[tabs]
+====
+Semantic Routing::
++
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/responses' \
+--header 'Content-Type: application/json' \
+--header 'client_id: <client-id>' \
+--header 'client_secret: <client-secret>' \
+--data '{
+  "instructions": "You are helpful Service Agent",
+  "previous_response_id": "<response-id-from-request-a>",
+  "input": [ { "role": "user", "content": "Thank you!" } ],
+  "store": true
+}'
+----
+
+Model-Based Routing::
++
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/responses' \
+--header 'Content-Type: application/json' \
+--header 'client_id: <client-id>' \
+--header 'client_secret: <client-secret>' \
+--data '{
+  "model": "openai/gpt-5.2",
+  "instructions": "You are helpful Service Agent",
+  "previous_response_id": "<response-id-from-request-a>",
+  "input": [ { "role": "user", "content": "Thank you!" } ],
+  "store": true
+}'
+----
+====
+
+[[gemini-format-request-example]]
+== Gemini Format
+
+The Gemini format uses the native Gemini API format. Note that this format doesn't support multi-routing or fallback mechanisms.
+
+=== Basic Chat Completion Example
+
+This request example ensures the gateway correctly routes traffic to the Gemini provider.
+
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/models/gemini-2.5-flash:generateContent' \
+  --header 'Content-Type: application/json' \
+  --header 'client_id: <client-id>' \
+  --header 'client_secret: <client-secret>' \
+  --data '{
+    "contents": [
+      { "role": "user", "parts": [{ "text": "Hello, please introduce yourself" }] }
+    ]
+  }'
+----
+
+=== Streaming API Call Example
+
+This example supports user-facing chatbot UIs where the text must appear word-by-word as it is generated rather than waiting for the entire response to finish. This request example validates the gateway's ability to stream real-time, non-buffered token delivery:
+
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/models/gemini-2.5-flash:streamGenerateContent?alt=sse' \
+  --header 'Content-Type: application/json' \
+  --header 'client_id: <client-id>' \
+  --header 'client_secret: <client-secret>' \
+  --data '{
+    "contents": [
+      { "role": "user", "parts": [{ "text": "Explain step-by-step MuleSoft integration process" }] }
+    ]
+  }' \
+  --no-buffer
+----
+
+[[anthropic-format-request-example]]
+== Anthropic Format
+
+The Anthropic format uses the native Anthropic API format. Note that this format doesn't support multi-routing or fallback mechanisms.
+
+=== Basic Chat Completion Example
+
+This request example ensures the gateway correctly routes traffic to the Anthropic provider.
+
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/v1/messages' \
+  --header 'Content-Type: application/json' \
+  --header 'anthropic-version: 2023-06-01' \
+  --header 'client_id: <client-id>' \
+  --header 'client_secret: <client-secret>' \
+  --data '{
+    "model": "claude-opus-4-1-20250805",
+    "max_tokens": 1024,
+    "system": "You are a helpful assistant",
+    "messages": [
+      { "role": "user", "content": "Hello, please introduce yourself" }
+    ]
+  }'
+----
+
+=== Streaming API Call Example
+
+This example supports user-facing chatbot UIs where the text must appear word-by-word as it is generated, rather than waiting for the entire response to finish. This request example validates the gateway's ability to stream real-time non-buffered token delivery using the `--no-buffer` flag:
+
+[source,cli]
+----
+curl --location '<public-endpoint>/<base-path>/v1/messages' \
+  --header 'Content-Type: application/json' \
+  --header 'anthropic-version: 2023-06-01' \
+  --header 'client_id: <client-id>' \
+  --header 'client_secret: <client-secret>' \
+  --data '{
+    "model": "claude-opus-4-1-20250805",
+    "max_tokens": 2048,
+    "stream": true,
+    "messages": [
+      { "role": "user", "content": "Explain step-by-step MuleSoft integration process" }
+    ]
+  }' \
+  --no-buffer
+----
+
+[[amazon-bedrock-model-names]]
+== Specify Amazon Bedrock Model Names in Requests
+
+Amazon Bedrock Claude models must be specified in Amazon Resource Name (ARN) format, for example:
+
+----
+bedrockanthropic/us.anthropic.claude-sonnet-4-5-20250929-v1:0
+----
+
+Formatted as:
+
+----
+bedrockanthropic/<region>.anthropic.<model-rd>
+----
+
+To find your region and model name for your Claude model, see https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-support.html[Supported Regions and models for inference profiles].

@@ -1,15 +1,38 @@
-= Use the AI Assistant (MuleSoft Agent)
+= Using the MuleSoft Agent
 :keywords: mulesoft agent, ai assistant, anypoint platform, integration automation, ask questions, ai-powered assistant
 
 The enhanced experience includes an AI assistant called MuleSoft Agent that helps you navigate, search, and manage your portfolio through natural language conversations. Access the assistant from any page to get guidance, perform tasks, and discover features without navigating through menus.
 
-== What MuleSoft Agent Can Do
+[[before-you-begin]]
+== Before You Begin
+
+[IMPORTANT]
+====
+The MuleSoft Agent is available on request. To get access, contact your account executive or MuleSoft representative to request enablement.
+====
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account with access to the enhanced experience.
+* Agentforce enabled in your Anypoint Platform and Salesforce organizations by your administrator.
+* The *MuleSoft Agent AI User* permission assigned to each user who needs to send prompts to the agent.
++
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+
+To assign the *MuleSoft Agent AI User* permission across business groups:
+
+. Log in to Anypoint Platform and open *Access Management*.
+. Select the business group where you want to assign the permission.
+. Find the user and assign the *MuleSoft Agent AI User* permission.
+. Repeat for each business group that requires access.
+
+== MuleSoft Agent Capabilities
 
 The AI assistant provides context-aware help based on where you are in the enhanced experience:
 
 Portfolio Management::
 +
-* Search for agents, APIs, MCP servers, LLM proxies, and gateways.
+* Search for agents, APIs, MCP servers, Model proxies, and gateways.
 * Get details about specific services.
 * Find services by capability or description.
 * Register new services with guided workflows.
@@ -55,16 +78,9 @@ Platform Configuration::
 
 == Access the AI Assistant
 
-[IMPORTANT]
-The MuleSoft Agent is available on request. To get access, contact your account executive or MuleSoft representative to request enablement.
+Once enabled as described in <<before-you-begin>>, open the assistant from the panel available on any page in the enhanced experience.
 
-Once enabled, make sure you have:
-
-* An Anypoint Platform account with access to the enhanced experience
-* Agentforce enabled in your Anypoint Platform and Salesforce organizations by your administrator
-* The *MuleSoft Omni Agent for Anypoint* role assigned to each user who needs to send prompts to the agent
-
-The MuleSoft Agent uses your Access Management permissions and can only perform actions you're authorized to do. Tasks like creating governance strategies or managing services require specific permissions. For more information, see xref:exp-home-start.adoc#permissions[].
+The MuleSoft Agent uses your Access Management permissions and can only perform actions you're authorized to do. Tasks like creating governance strategies or managing services require specific permissions. For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
 == Ask Questions
 
@@ -150,7 +166,7 @@ Which agents are using the most tokens?
 
 [source,text]
 ----
-How can I reduce costs for my LLM proxies?
+How can I reduce costs for my Model proxies?
 ----
 
 [source,text]

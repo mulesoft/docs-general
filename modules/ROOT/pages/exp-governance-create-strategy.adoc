@@ -97,6 +97,15 @@ Strategies are active by default. To disable a strategy, go to *Governance Strat
 
 Work with your governance lead if strategies affect production services or if rollout timing requires coordination.
 
+[#create-with-ide]
+== Create Governance Strategies with Your IDE
+
+You can also author governance strategies from your IDE by using locally installable developer skills. With skills, you define governance rulesets as code, which is useful for version control, reuse, and collaboration.
+
+Some rule types are available only through IDE skills. For example, you can't configure control rules that track third-party provider policy subcategories in the UI. To create these rules, use a prompt such as `create a rule to track that each API has a JWT policy applied to it`.
+
+For step-by-step guidance on authoring rulesets from your IDE, see the https://dev-portal.mulesoft.com/skills/author-governance-ruleset.html[Author a Governance Ruleset] skill in the MuleSoft Developer Hub. 
+
 == See Also
 
 * xref:exp-governance-work-with-strategies.adoc[]

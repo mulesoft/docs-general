@@ -1,9 +1,7 @@
-= View Service Details
+= Viewing Service Details in the Portfolio
 :keywords: view service details, service detail page, anypoint exchange, exchange services, service tabs, mulesoft exchange
 
-Open a catalog entry in *Portfolio* to see its service detail page: a single view of one service, such as an agent, MCP server, LLM proxy, API, or gateway. From this page, review status and cost, relationships to other services, deployments, policies, monitoring, conformance, and change history without switching contexts.
-
-//placeholder for image of service detail page
+View scanner read policies, deployments, monitoring, and conformance for a service from one detail page in *Portfolio*. Open any service, including an API, agent, MCP server, Model Proxy, or gateway, to review current status, cost, and relationships. Use this page to validate applied controls and track changes without switching contexts.
 
 == Before You Begin
 
@@ -22,38 +20,44 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 
 == Service Detail Tabs
 
-The page is organized into tabs. The following table lists each tab, what it shows, and whether that tab appears on the detail page for each catalog type. *Yes* means the tab is shown in typical configurations; *No* means it is omitted or you use another area of the experience for the same job (see the note after the table). Labels and fields inside a tab can differ by service type and release. For end-to-end portfolio tasks that reference these tabs, see xref:exp-overview.adoc[].
+The page is organized into tabs. The table lists tabs, what they show, and whether they appear on the detail page for each catalog type:
+
+* *Yes* means the tab appears in typical configurations.
+* *No* means the tab is omitted or you use another area of the experience for the same job (see the note after the table).
+
+Labels and fields inside a tab can differ by service type and release. For end-to-end portfolio tasks that reference these tabs, see xref:exp-overview.adoc[].
+tab can differ by service type and release. For end-to-end portfolio tasks that reference these tabs, see xref:exp-overview.adoc[].
 
 [cols="2,3,^.^,^.^,^.^,^.^,^.^",options="header"]
 |===
-|Tab |What You See |API |Agent |MCP Server |LLM Proxy |Gateway
+|Tab |What You See |API |Agent |MCP Server |Model Proxy |Gateway
 
 |*Overview*
 |Short summary of what the service does and its specification.
 |Yes |Yes |Yes |Yes |Yes
 
 |*Instances*
-|Deployed instances, environments (for example production or sandbox), and gateways when that catalog type supports instances.
-|Yes |Yes |Yes |Each LLM Proxy is exactly one instance so there is no *Instances* tab. |No
+|Deployed instances, environments (for example production or sandbox), and gateways when that catalog type supports instances. When Akamai API Security is enabled and scan data is available for this service, the table also shows a *Security Risk* column with a color-coded risk level per instance (Low, Medium, High, or Critical). Risk levels are per-instance — the same API can show different risk levels across environments.
+|Yes |Yes |Yes |Each Model Proxy is exactly one instance so there is no *Instances* tab. |No
 
 |*Policies*
-|Governance policies attached to the service or its instances (access, data, performance, compliance, and related domains your organization uses). If the instance uses a Kong gateway, the listed policies are gateway-level policies (plugins). Other service-level policies (plugins) can also apply.
+|Governance policies attached to the service or its instances (access, data, performance, compliance, and related domains your organization uses). For APIs discovered by scanners, this tab shows read policies from Amazon API Gateway, Google Apigee, Azure API Management, and Kong Gateway. If the instance uses a Kong gateway, the listed policies are gateway-level policies (plugins). Other service-level policies (plugins) can also apply.
 |Yes |Yes |Yes |Yes |No
 
 |*Monitoring*
 |Runtime metrics and analytics for health and usage when the system surfaces them for the service or gateway you are viewing.
 |Yes |Yes |Yes |Yes |No
 
-|*Conformance Report*
-|Compliance score and rule-level analysis for conformance reporting where that tab is available.
+|*Conformance*
+|Compliance score and rule-level analysis for conformance reporting where that tab is available. When Akamai API Security is enabled, the tab includes an *Akamai* section with a risk score overview, a findings table (endpoint-level vulnerabilities with severity, OWASP API Top-10 tags, and compliance framework tags), and an incidents table (aggregated security incidents). Select a finding to view details and see recommended remediation policies you can apply directly from this page.
 |Yes |Yes |Yes |No |No
 
 |===
 [NOTE]
 ====
-* *Instances* tab is available on *Agents*, *MCP Servers*, and *APIs*; *LLM Proxies* and *Gateways* do not include an *Instances* tab. See xref:exp-overview.adoc[].
+* *Instances* tab is available on *Agents*, *MCP Servers*, and *APIs*; *Model Proxies* and *Gateways* do not include an *Instances* tab. See xref:exp-overview.adoc[].
 
-* *Conformance Report* on the detail page aligns with *Agents*, *APIs*, and *MCP Servers*; for gateways, compliance work is framed through *Governance* and related flows at the scope the system supports. See xref:exp-overview.adoc[].
+* *Conformance* on the detail page aligns with *Agents*, *APIs*, and *MCP Servers*; for gateways, compliance work is framed through *Governance* and related flows at the scope the system supports. See xref:exp-overview.adoc[].
 ====
 
 == Open a Service Detail Page
@@ -61,6 +65,17 @@ The page is organized into tabs. The following table lists each tab, what it sho
 . In *Portfolio*, open the catalog for the service type (for example *APIs* or *Agents*).
 . Use the search box to find the service by name or description, or scan the list or grid.
 . Select the service card to open its detail page.
+
+== View Read Policies Discovered by Scanners
+
+If a provider scanner has policy-read scopes configured, the *Policies* tab shows discovered policy entries for that API instance. The tab lists policy names and mapped governance context, such as category and apply level, when the provider returns that metadata. For providers that expose policy status, the tab also shows whether a policy is enabled so teams can validate scanner coverage and conformance inputs from the latest scan snapshot.
+
+. In *Portfolio*, open *APIs* and select an API discovered by a provider scanner.
+. Open the *Policies* tab on the service detail page.
+. Review read policies imported from Amazon API Gateway, Google Apigee, Azure API Management, or Kong Gateway.
+. Use the policy list to confirm applied controls before governance reviews or conformance analysis.
+
+Policy visibility depends on the last successful scanner run, not on a live provider query. If required provider scopes or roles are missing, policy results can be incomplete or unavailable. Policy fields such as status, apply level, and detail can vary by provider. If expected policies are missing, check scanner run status and history in *Providers*.
 
 == See Also
 

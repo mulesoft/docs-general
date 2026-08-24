@@ -1,29 +1,31 @@
-= Managing Scanners
+= Running and Managing Scanners
 :keywords: scanners, managing scanners, scanner actions, security scanning, mulesoft, vulnerability detection
 
-After you configure scanners, you run them day to day. Most of that work happens under *Providers*, where you manage provider connections, scanners, and scan activity in one place.
+Scanners typically run on a schedule you or an administrator configured, or manually when you start a scan. After you configure scanners, you run them day to day. Most of that work happens under *Providers*, where you manage provider connections, scanners, and scan activity in one place.
 
-== Available Scanner Actions
+== Scanner Actions
 
-* Run discovery on demand.
+* *Run Discovery Scan*
 +
 Start a manual scan when you want fresh metadata without waiting for the next scheduled window. Successful runs update or add services in the matching *Portfolio* catalogs according to your rules.
-* Review status and history.
+* *View Scanner*
 +
 Inspect connection health, the last completed run, and scan history to verify whether discovery is healthy, slow, or failing authentication.
-* Pause scheduled scans.
+* *Pause Scheduled Runs*
 +
 Temporarily stop scheduled triggers when you need a quiet period—for example during maintenance or while you fix credentials—without deleting the scanner.
-* Edit configuration.
+* *Resume Scheduled Runs*
 +
-Change names, descriptions, credentials, provider scope, or scan-related settings your product exposes, then save so future runs use the new definition.
-* Delete a scanner.
+Re-enable scheduled scanning after a pause.
+* *Scanner Settings*
++
+Change names, descriptions, credentials, provider scope, or scan-related settings your product exposes, then save, so future runs use the new definition.
+* *Delete Scanner*
 +
 Remove the scanner from *Providers* when the provider link is no longer authorized or useful. Consider the impact on discovered services in *Portfolio* and on dependent teams before you delete the scanner.
++
+NOTE: When you delete an Akamai API Security scanner, the system attempts to remove the Akamai correlation policy from the scanner's environments. If the removal fails, the correlation policy may remain applied; check *Automated Policies* to verify. Discovered services remain in your portfolio regardless.
 
-== How Scanners Run
-
-Scanners typically run on a schedule you or an administrator configured, or manually when you start a scan.
 
 == See Also
 

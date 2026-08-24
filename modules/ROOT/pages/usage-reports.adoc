@@ -48,9 +48,9 @@ For more information about how the usage for these features is tracked and bille
 +
 For more information, see the https://help.salesforce.com/s/articleView?id=004811177&type=1[Salesforce Usage Alerts FAQ] knowledge article.
 
-* Runtime Manager vCore allocation information and other metrics appear in Access Management.
+* CloudHub vCore consumption data, including peak usage across CloudHub (CH1) and CloudHub 2.0 (CH2), is available in Usage Reports.
 +
-For more information, see xref:pricing-metrics.adoc#runtime-manager-metrics[Runtime Manager Metrics].
+For more information, see xref:usage-metrics.adoc#cloudhub-vcore-usage[CloudHub vCore Usage].
 
 Government Cloud and Anypoint Private Cloud Edition usages aren't available in usage reports.
 
@@ -64,8 +64,9 @@ The following products are available in usage reports:
 * API Experience Hub
 * API Governance
 * API Manager
+* xref:usage-metrics.adoc#cloudhub-vcore-usage[CloudHub vCore]
 * Omni Gateway
-* Omni Gateway LLM Proxy
+* Omni Gateway Model Proxy
 * Intelligent Document Processing (IDP)
 * Mule Runtime
 //* xref:object-store::osv2-usage.adoc[Object Store v2] (comment out until OS is released)
@@ -100,6 +101,19 @@ Use the Anypoint Usage API to programmatically access usage data. The API provid
 
 To use the API, see the API documentation for the https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a/usage-api/[Anypoint Usage API] for access and implementation details. Users must have Usage Viewer permission to access the Usage API.
 
+For a summary of pricing models and where to review usage and billing context for each model, see xref:usage-metrics.adoc[].
+
+[[granular-mule-credits-visibility]]
+== Granular Mule Credits Visibility
+
+Anypoint Usage Reports provide operational drill-down visibility for Mule Credits-related consumption.
+
+[NOTE]
+====
+Use Salesforce Digital Wallet for finalized, billing-relevant Mule Credits totals and statements.
+====
+
+For detailed Mule Credits usage guidance and billing context, see xref:mule-credits-usage-and-rates.adoc[].
 
 [[usage-reports-on-control-planes]]
 == Usage Reports on Control Planes

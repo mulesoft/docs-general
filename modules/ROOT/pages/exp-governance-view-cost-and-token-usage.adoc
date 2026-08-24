@@ -1,4 +1,4 @@
-= Viewing Cost and Token Usage
+= Managing Costs and Token Usage
 :keywords: cost management, token usage, ai governance, usage metrics, anypoint platform, cost tracking, ai services
 
 Use cost and token metrics to understand usage, control spend, and identify optimization opportunities.
@@ -16,7 +16,7 @@ Before getting started, make sure you have:
 ** API Manager: Manage Policies
 ** API Manager: View APIs Configuration
 ** API Manager: View Policies
-** Anypoint Code Builder: Mule Developer Generative AI User
+** Anypoint Code Builder: Mule Developer Generative AI User (Optional)
 ** Anypoint Monitoring: Monitoring Viewer
 ** Exchange: Exchange Viewer
 --
