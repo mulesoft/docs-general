@@ -42,7 +42,7 @@ include::partial$exp-navigation-labels.adoc[tag=ExpNavigationLabels]
 * The *Budgets* tab (default): View total managed spend and budget breakdowns.
 * The *Optimizations* tab: Analyze MCP server token usage and optimization opportunities.
 --
-. Adjust the time range and filters for the data you want to analyze.
+. Set the time range for the data you want to analyze. The time range selector (*1H*, *24H*, *7D*, or *30D*; default *30D*) sits next to the tabs and applies to both the *Budgets* and *Optimizations* tabs.
 
 == Budgets Tab
 
@@ -57,6 +57,8 @@ Each budget row displays a status badge that reflects current usage against the 
 * *At Risk*: Usage has reached 75% or more of the budget limit.
 * *At Limit*: Usage has reached the budget limit. The system blocks further requests.
 
+Use the search on the *Budgets* table to find specific budgets.
+
 === Add a Budget
 
 . In the *Budgets* tab, select *New Budget*.
@@ -64,10 +66,9 @@ Each budget row displays a status badge that reflects current usage against the 
 +
 --
 * *Model Wallet* (required): Select the model wallet to scope the budget.
-* *Provider* (optional): Select an LLM provider to narrow the budget to a specific provider.
-* *Model* (optional): Select a model. This field appears only after you select a provider.
+* *Provider* (required): Select an LLM provider.
+* *Model* (required): Select a model. This field appears after you select a provider.
 * *Period*: Select *Daily*, *Weekly*, or *Monthly*.
-* *Resets on Day of Month*: Select the reset day. This field appears for weekly and monthly periods.
 * *Metric*: Select *Spend* to set a dollar limit, or *Tokens* to set a token count limit.
 * *Spend Limit (USD)* or *Token Limit* (required): Enter the maximum allowed value.
 --
@@ -83,7 +84,9 @@ The *Optimizations* tab shows cost and token savings data across model proxies, 
 
 The summary cards show:
 
-* *Agents Potential Savings*: Estimated cost savings available by applying optimization policies to agents. It shows *Cost Saved* as the amount already saved.
+* *Total Managed Spend*: Total cost of all LLM traffic routed through managed proxies. This excludes usage that bypasses the proxy network.
+* *Agents Potential Savings*: Estimated cost savings available by applying optimization policies to agents. It shows *Amount Saved* as the amount already saved.
+* *LLM Proxies Potential Savings*: Estimated cost savings available by applying optimization policies to LLM proxies. It shows *Amount Saved* as the amount already saved.
 * *MCP Servers Potential Savings*: Estimated token savings available by applying optimization policies to MCP servers. It shows *Tokens Saved* as tokens already saved.
 
 Treat these metrics as directional, not exact.
@@ -97,7 +100,6 @@ Use the controls at the top of the *Optimizations* tab to narrow the view:
 * Select a sub-tab to filter by instance type: *Model Proxies*, *Agents*, or *MCP Servers*.
 * Search for instance names.
 * Use *Filters* to refine the view by *Environment* or *Provider*.
-* Select a time range: *1H* (1 hour), *24H* (24 hours), *7D* (7 days), or *30D* (30 days). The default is *30D*.
 
 The counter updates to show the number of matching instances.
 
