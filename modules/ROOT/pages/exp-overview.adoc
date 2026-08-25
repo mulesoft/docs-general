@@ -9,7 +9,7 @@ Your AI services stay audit-ready with clear visibility into cost and runtime he
 
 The enhanced MuleSoft experience supports the full lifecycle of AI-connected integration services:
 
-Entity Management:: Register and manage agents, REST and GraphQL APIs, MCP servers, Model proxies, and gateways, including Anypoint Omni Gateway, external gateways, and unmanaged gateways. Each type has a dedicated catalog under *Portfolio*. When your administrator enables the Context Catalog feature, a *Data Services* catalog (currently labeled *Data assets* in the UI) also appears, holding data services imported by an Informatica scanner.
+Entity Management:: Register and manage agents, REST and GraphQL APIs, MCP servers, Model proxies, and gateways, including Anypoint Omni Gateway, external gateways, and unmanaged gateways. Each type has a dedicated catalog under *Portfolio*. When your administrator enables the Context Catalog feature, a *Data Services* catalog also appears, holding data services imported by an Informatica scanner.
 
 Governance and Compliance:: Define and apply policies across domains such as access and security, performance and cost, data privacy and integrity, and compliance and observability. Conformance reporting summarizes rule violations and severity so you can close gaps systematically.
 

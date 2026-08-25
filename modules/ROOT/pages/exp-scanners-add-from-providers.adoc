@@ -80,7 +80,7 @@ If some environments show no policy binding, select *Check again* to retry the p
 
 == Informatica Cloud Data Governance and Catalog (CDGC) Scanner
 
-The Informatica Cloud Data Governance and Catalog (CDGC) scanner behaves differently from service-import scanners. Instead of discovering agents, APIs, or MCP servers, it brings *data services* into the *Data Services* catalog (currently labeled *Data assets* in the UI) and gives Context Catalog the metadata it needs to build agent-to-data lineage. Create an Informatica CDGC scanner to populate data services and enable lineage for your agents. *Informatica Cloud Data Governance and Catalog* appears in the provider list only when your administrator has enabled the Context Catalog feature for your organization.
+The Informatica Cloud Data Governance and Catalog (CDGC) scanner behaves differently from service-import scanners. Instead of discovering agents, APIs, or MCP servers, it brings *data services* into the *Data Services* catalog and gives Context Catalog the metadata it needs to build agent-to-data lineage. Create an Informatica CDGC scanner to populate data services and enable lineage for your agents. *Informatica Cloud Data Governance and Catalog* appears in the provider list only when your administrator has enabled the Context Catalog feature for your organization.
 
 When the scanner runs, it ingests the following from CDGC and normalizes it into a data service model:
 

@@ -28,7 +28,7 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 After you log in, *Home* shows an overview of services discovered, consumed, and governed, as well as a list of scanners and actions to add a service.
 * *Portfolio*
 +
-Browse catalogs for *Agents*, *APIs*, *MCP Servers*, *Model Proxies*, and *Gateways* in *Portfolio*. When your administrator enables the Context Catalog feature, a *Data Services* catalog (currently labeled *Data assets* in the UI) also appears; it holds the data services imported by an Informatica scanner. Each catalog lists the services that your team registered or imported. To find a specific service, use search and filters, and then select the service to view its details.
+Browse catalogs for *Agents*, *APIs*, *MCP Servers*, *Model Proxies*, and *Gateways* in *Portfolio*. When your administrator enables the Context Catalog feature, a *Data Services* catalog also appears; it holds the data services imported by an Informatica scanner. Each catalog lists the services that your team registered or imported. To find a specific service, use search and filters, and then select the service to view its details.
 
 If you don't see an expected catalog or summary, confirm product access and permissions with your Anypoint Platform organization administrator. See xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions] for more information.
 
