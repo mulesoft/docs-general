@@ -81,7 +81,7 @@ Use OAuth 2.0 Authorization Code for Microsoft Copilot Studio scanners to create
 . In *Connect to Provider*, under *Platform*, select *Microsoft Copilot Studio*.
 . Under *Authentication Method*, select *OAuth (Authorization Code)*.
 . Enter connection values:
-* *Base URL*: Dataverse environment URL, for example `https://<org-id>.api.crm.dynamics.com/`
+* *Tenant ID* (optional): Microsoft Entra tenant ID. If you don't provide one, the connection defaults to the home tenant ID after authorization.
 * *Client ID*: OAuth 2.0 client ID from your Azure app registration
 * *Client Secret*: OAuth 2.0 client secret from your Azure app registration
 . Click *Create & Authorize Connection*.

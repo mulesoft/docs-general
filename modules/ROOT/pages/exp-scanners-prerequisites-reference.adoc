@@ -101,11 +101,12 @@ a|
 | Microsoft Azure Copilot
 | Agent
 a|
-*Credentials:* Azure app registration; Dataverse base URL, client ID, client secret
+*Credentials:* Azure app registration; client ID and client secret. Two authentication schemes are supported:
+
+* *OAuth 2.0 Authorization Code:* Interactive sign-in and consent in a Microsoft popup. Tenant ID is optional; if you don't provide one, the connection defaults to the home tenant ID after authorization.
+* *Client Credentials:* Tenant ID is required.
 
 *Role:* Copilot Studio Scanner
-
-*Authorization:* OAuth 2.0 Authorization Code flow (interactive sign-in and consent in Microsoft popup)
 
 *Setup:* App added as an Application User in Power Platform; scope set to Dataverse environment URL, `https://<org-id>.crm.dynamics.com`
 
