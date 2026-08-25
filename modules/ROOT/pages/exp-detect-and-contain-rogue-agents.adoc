@@ -3,6 +3,13 @@
 
 As AI agents take on more autonomous work across your organization, a single compromised, misconfigured, or malfunctioning agent can quickly leak sensitive data, take unauthorized actions, or run up costs before anyone notices. Monitor agent traffic from a single location in the enhanced MuleSoft experience to detect anomalous behavior and contain a rogue agent before it causes damage.
 
+Detection and containment rely on two policies that work together. Apply both to each model proxy you want to protect:
+
+* The *Rogue Agent Detection* policy monitors agent traffic and flags risky behavior for your review.
+* The *Agent Kill Switch* policy blocks a flagged agent's access to the model proxy when you decide to contain it.
+
+Both policies identify an agent from the same JWT claims, so the identity that Rogue Agent Detection flags is the identity that Agent Kill Switch blocks. Set the *Agent Identity Selector* to the same value in both policies.
+
 Key benefits:
 
 * Detect anomalous or unauthorized behavior in real time, using built-in detectors and your own custom rules.
@@ -39,20 +46,36 @@ Enable monitoring on each model proxy whose agent traffic you want to track.
 . Select the model proxy you want to monitor.
 . Select the *Policies* tab and then select *+Apply Policy*.
 . Select the *Rogue Agent Detection* policy and click *Next*.
-. Configure the policy settings by selecting the criteria monitor:
+. Configure the policy settings:
 +
-* *Token-spend anomaly*
+.. In *Agent Identity Selector*, enter a CEL expression that identifies the calling agent from its validated JWT claims, for example, `claims.act.sub`. Use the same selector you configure on the Agent Kill Switch policy so the flagged identity is the one that gets blocked. This field is required.
+.. In *User Identifier*, enter a CEL expression that identifies the person the agent is acting for, for example, `claims.email`. This value is recorded for attribution only and does not affect detection. This field is required.
+.. Under *Anomalies to Detect*, add at least one rule. For each rule, select an *Anomaly Type* and, optionally, enter a *Detection Prompt*:
 +
-Flags when an LLM virtual key's token-spend rate over a rolling window is statistically anomalous against the baseline.
-* *Tool-call loop*
+* *PII Leak*, *Privilege Escalation*, and *Prompt Injection* are built-in types with a built-in definition, so a detection prompt is optional.
+* *Custom* has no built-in definition, so a Custom rule does nothing until you add a detection prompt.
 +
-Flags when an agent repeats near-identical tool calls inside a short window past the configured threshold.
-* *Behavioral drift*
+NOTE: If you add no rules, the policy forwards every request and detects nothing.
+.. In *Deduplication Window (seconds)*, set how long to wait before re-alerting on the same agent, anomaly type, and verdict. The minimum is 60 seconds and the default is 3600. This field is required.
+.. (Optional) Expand *Advanced Configuration* to customize the *System Evaluation Prompt*. Most deployments do not need to change this setting.
+.. (Optional) Expand *Policy Details* to set a *Policy Label*, *Policy Version*, and *Application Conditions*.
+. Select *Apply Policy*.
+
+Repeat these steps for each model proxy to protect.
+
+== Apply the Agent Kill Switch Policy
+
+The Agent Kill Switch policy enforces containment. When you quarantine a flagged agent, this policy blocks that agent's identity from accessing the model proxy. Apply it to every model proxy where you want to be able to contain an agent.
+
+. In *Portfolio*, select *Model Proxies*, then select the model proxy to protect.
+. Select the *Policies* tab and then select *+Apply Policy*.
+. Select the *Agent Kill Switch* policy and click *Next*.
+. Configure the policy settings:
 +
-Flags when an agent's behavioral fingerprint (tool selection, response shape) drifts persistently from its baseline.
-* *Custom detection criteria*
-+
-Flags activity that matches a rule you define in plain language, for example, `flag any agent that asks a user for a password`.
+.. In *Agent Identity Selector*, enter the same CEL expression you used on the Rogue Agent Detection policy, for example, `claims.act.sub`. The selectors must match so that the identity Rogue Agent Detection flags is the identity this policy blocks. This field is required.
+.. (Optional) In *Killed Agent IDs*, enter a comma-separated list of agent identifiers to block. Matching is an exact, character-for-character comparison against the value the Agent Identity Selector resolves. Leave this field empty in normal operation.
+// TODO: Confirm whether quarantining an agent from the Security page populates Killed Agent IDs automatically, or whether this list is maintained independently.
+.. (Optional) Expand *Policy Details* to set a *Policy Label*, *Policy Version*, and *Application Conditions*.
 . Select *Apply Policy*.
 
 Repeat these steps for each model proxy to protect.
@@ -60,6 +83,8 @@ Repeat these steps for each model proxy to protect.
 == Set Up Notifications for Flagged Agents
 
 Configure alerts so you're notified as soon as an agent is flagged.
+
+// TODO: This section's field labels (Select Alert Target, Specify Alert Configuration, Alert Metric, and so on) were not verified against the current UI. Confirm before publishing.
 
 . Navigate to *Notifications* and select *New Notification*.
 . Under *Select Alert Target*, complete the fields:
@@ -72,7 +97,7 @@ Select *Model Proxy*.
 .. *Target Service*
 + 
 Search for and select the model proxy to receive alerts about.
-. Under *Specify Alert Configuration*, select the *Alert Metric* for quarantine activity _(label to be confirmed)_, then set the comparison operator, threshold value, and time window.
+. Under *Specify Alert Configuration*, select the *Alert Metric*, then set the comparison operator, threshold value, and time window.
 .. *Alert Metric*
 +
 Select *Policy Violation* and then select the policy.
@@ -92,15 +117,18 @@ When an agent is flagged, review its activity and quarantine it if needed. Quara
 . Navigate to *Security*.
 . On the *Needs Review* tab, find the flagged agent.
 +
+// TODO: Confirm the 90-day retention window. It is not surfaced in the current UI text.
 The *Security* page shows flagged and reviewed agents from the last 90 days.
 . Select *Review* to open the agent's flag history.
 . Review the timeline of detection events, then select an action:
+// TODO: Confirm the action labels and the containment verb against the review window. The confirmation copy uses "block" and "restore access," so the button might read "Block" rather than "Quarantine agent."
 +
 * *Quarantine agent*
-+ Stops the agent from acting. Confirm at the prompt to complete this action.
++
+Stops the agent from acting and blocks its access to any model proxy that uses the Agent Kill Switch policy. Confirm in the window to complete this action.
 * *Clear flags*
 +
-Dismisses the flags if the activity was legitimate.  Confirm at the prompt to complete this action.
+Dismisses the flags if the activity was legitimate. Confirm in the window to complete this action.
 * *Cancel*
 +
 Closes the view with no changes. The agent stays in the review queue.
@@ -115,7 +143,7 @@ After you confirm a quarantined agent is safe to return to service, reactivate i
 . On the *Reviewed* tab, find the quarantined agent.
 . Select *Review* to review the agent's details.
 . Select *Restore Model Access*.
-. In the confirmation prompt, select *Restore Model Access* to return the agent to service. 
+. In the confirmation window, select *Restore Model Access* to return the agent to service.
 . Select *Close* to close the view with no changes.
 +
 After reactivation the audit log records the action.
