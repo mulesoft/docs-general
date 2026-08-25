@@ -38,6 +38,7 @@ Register agents, APIs, and MCP servers from any provider or registry, and add Mo
 - xref:exp-services-connect-providers-to-add.adoc[]
 - xref:exp-services-register-manually.adoc[]
 - xref:exp-services-create-mcp-server.adoc[]
+- xref:exp-services-create-a2a-bridge.adoc[]
 - xref:exp-services-add-semantic.adoc[]
 - xref:exp-services-view-details.adoc[]
 - xref:exp-scanners-add-from-providers.adoc[]
