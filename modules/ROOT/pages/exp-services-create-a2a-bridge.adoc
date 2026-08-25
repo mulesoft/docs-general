@@ -86,20 +86,20 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 You create a bridge from the source agent's detail page.
 
 . In *Portfolio*, open the *Agents* catalog and select the source agent you want to bridge.
-. On the *Overview* tab, select *Configure A2A bridge & deploy first instance*.
-. In *Customize card*, review and edit the *Skills* on the A2A card the bridge will publish. Skills describe what the agent can do so other agents can discover and route to it. 
+. On the *Overview* tab, select *Configure A2A Bridge & Deploy First Instance*.
+. In *Customize Card*, review and edit the *Skills* on the A2A card the bridge will publish. Skills describe what the agent can do so other agents can discover and route to it. 
 . Add custom skills or hide skills as needed. Each skill must have a unique ID. 
-. Click *Continue: Deploy instance*.
-. In *Deploy instance*, configure where and how the first bridge instance runs:
+. Click *Continue: Deploy Instance*.
+. In *Deploy Instance*, configure where and how the first bridge instance runs:
 +
 --
 ** *Environment* — Select the target environment.
 ** *Omni Gateway* — Select the managed or self-managed gateway that hosts the bridge.
 ** *Instance URL* — Enter the path segment for the bridge's A2A endpoint. Agent Fabric checks for route conflicts against existing instances on the gateway.
-** *Consumer endpoint* — Optionally override the gateway ingress URL used to build the instance URL.
+** *Consumer Endpoint* — Optionally override the gateway ingress URL used to build the instance URL.
 --
-. Configure *Inbound authentication* to control how A2A clients authenticate to the bridge. Select a method such as *JWT Validation*, *Basic Authentication*, or *Client ID Enforcement*, then provide the required values. Select *None* to leave the endpoint unauthenticated.
-. Configure *Upstream authentication* to control how the bridge authenticates to the source agent. For an Agentforce source agent, provide the *Salesforce Org URL*, *Token URL*, *Grant type*, *Client ID*, and *Client Secret*. Source-derived values such as the tenant endpoint are read-only.
+. Configure *Inbound Authentication* to control how A2A clients authenticate to the bridge. Select a method such as *JWT Validation*, *Basic Authentication*, or *Client ID Enforcement*, then provide the required values. Select *None* to leave the endpoint unauthenticated.
+. Configure *Upstream Authentication* to control how the bridge authenticates to the source agent. For an Agentforce source agent, provide the *Salesforce Org URL*, *Token URL*, *Grant type*, *Client ID*, and *Client Secret*. Source-derived values such as the tenant endpoint are read-only.
 . Expand *Advanced* to review or adjust the generated policy configuration.
 . Complete the wizard. Finishing publishes the A2A card and deploys the bridge instance together.
 
@@ -112,25 +112,25 @@ On the bridged agent's *Overview* tab, Agent Fabric shows two cards side by side
 
 To scale a bridge across environments or gateways, deploy additional instances from the *Instances* tab using *Create A2A Bridge Instance*.
 
-To change the advertised card content—skills, advertised name, and description—open the agent's *Overview* tab and select *Customize card*. Editing the card creates a new bridge version that instances can adopt.
+To change the advertised card content—skills, advertised name, and description—open the agent's *Overview* tab and click *Customize Card*. Editing the card creates a new bridge version that instances can adopt.
 
 [[update-instance]]
 == Update an A2A Bridge Instance
 
 Each bridge instance is pinned to a specific bridge version. The instance's *Overview* tab shows a *Deployment* section with:
 
-* *Serving A2A bridge version* — The bridge version this instance runs. The version fixes the instance's advertised card (skills, name, and description) along with its authentication and advanced settings. If a newer version exists, Agent Fabric shows that a newer A2A bridge version is available.
-* *Consumer endpoint* — The URL where the instance receives A2A requests.
+* *Serving A2A Bridge Version* — The bridge version this instance runs. The version fixes the instance's advertised card (skills, name, and description) along with its authentication and advanced settings. If a newer version exists, Agent Fabric shows that a newer A2A bridge version is available.
+* *Consumer Endpoint* — The URL where the instance receives A2A requests.
 * *Discovery URL* — The well-known A2A agent card endpoint (`.well-known/agent-card.json`) that callers fetch to discover the agent.
 
-To change an instance's configuration, select *Update instance* to open the *Update A2A instance* dialog, then adjust any of these:
+To change an instance's configuration, click *Update Instance* to open the *Update A2A Instance* dialog, then adjust any of these:
 
-* *Inbound authentication* — How other agents authenticate when they call this instance.
-* *Upstream authentication* — How the instance's bridge authenticates to the source agent. Leave a masked secret unchanged to keep the stored value, or enter a new value to rotate it.
+* *Inbound Authentication* — How other agents authenticate when they call this instance.
+* *Upstream Authentication* — How the instance's bridge authenticates to the source agent. Leave a masked secret unchanged to keep the stored value, or enter a new value to rotate it.
 * *Advanced* — The generated policy configuration, such as the request timeout.
 * *Version* — If a newer bridge version is available, adopt it to update the instance's advertised card and settings to that version.
 
-Select *Save changes* to redeploy the instance with the updated configuration. Updating an instance doesn't republish the bridge card; edit card content from the agent's *Overview* tab with *Customize card*.
+Click *Save Changes* to redeploy the instance with the updated configuration. Updating an instance doesn't republish the bridge card; edit card content from the agent's *Overview* tab with *Customize Card*.
 
 [[known-limitations]]
 == Known Limitations
