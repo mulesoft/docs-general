@@ -95,6 +95,7 @@ After a successful run, Akamai results appear on existing services:
 * API list views show values in the *Security Risk* column.
 * API detail pages show Akamai security data in *Conformance*.
 * Security sections display violation totals, findings, incidents, and endpoint context.
+* The *Akamai Security Findings* table lists each finding with columns for finding, instance, endpoint, API risk, scan status, and remediation progress.
 * Finding detail views show fields such as status, type, endpoint path, and mapped frameworks.
 
 == Interpret Risk Status Levels
@@ -112,6 +113,29 @@ Elevated risk. Investigate and remediate first.
 
 Critical::
 Highest urgency risk. Remediate immediately.
+
+== Track Remediation and Scan Status
+
+In the *Akamai Security Findings* table on the *Conformance* tab, two columns help you track remediation progress for each finding:
+
+Remediation::
+Shows how many of the suggested remediation policies are applied on the finding's instance, as an _applied/suggested_ count (for example, `1/3 remediations`). The suggested count reflects the remediation policies recommended for that finding type, and the applied count reflects how many of those policies are currently applied on the API instance. This count is tracked at the instance level, so two findings on different endpoints of the same instance that share a finding type show the same count.
+
+Scan Status::
+Indicates whether remediation is underway for the finding:
++
+--
+Open:::
+No remediation policy is applied yet for the finding.
+
+Rescan pending:::
+At least one remediation policy is applied on the instance, but the finding still appears in the latest results. Re-run the scanner to confirm whether the finding is resolved.
+--
+
+[NOTE]
+====
+The *Akamai Security Findings* table lists only findings that are currently active. When a finding is remediated and a rescan confirms the fix, the finding no longer appears in the table.
+====
 
 == Remediate Risks from the API Conformance Tab
 
