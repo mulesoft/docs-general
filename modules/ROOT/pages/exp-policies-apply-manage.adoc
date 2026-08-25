@@ -1,0 +1,74 @@
+= Applying and Managing Policies
+:keywords: apply policy, edit policy, remove policy, enable policy, disable policy, external gateways, api manager, anypoint platform
+
+Apply, edit, enable, disable, and remove policies on an API instance from the *Policies* tab in *Portfolio*. These actions work on Anypoint and Mule gateways and on external providers — Google Apigee, Azure API Management, and Kong Gateway — subject to per-provider support (see xref:exp-policies-provider-reference.adoc[]).
+
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* The API Manager: Manage Policies permission.
++
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+* For external providers, a connected scanner for that provider. Anypoint reuses the same connection and credentials you configured for scanning to authorize and perform policy changes — there's no second set of provider credentials to configure. The per-provider setup you must do on your side (for example, Apigee roles and permissions) is described in xref:exp-policies-provider-reference.adoc[].
+
+[NOTE]
+====
+Button state is a hint, not the final authorization. The *Policies* tab enables or disables actions based on what it believes you can do, but the real permission check happens when the background job talks to the provider. If you lack permission there, the operation fails and the failure appears in the *Activity log*. When Anypoint can't reliably determine your permissions, it leaves the actions available rather than blocking them — you might see the message "Actions remain available — if you're not authorized, the gateway will reject the request." For providers Anypoint can't check at all, actions can appear disabled.
+====
+
+== Apply a Policy
+
+. In *Portfolio*, open the API and select the instance.
+. Open the *Policies* tab and select *Apply Policy*.
+. Choose the policy and configure it.
+. Give the policy a name.
++
+On some providers — notably Apigee — the name is the policy's unique identity on the gateway, not just a label. Choose it deliberately: the name is required at creation and can't be changed later. See <<policy-naming-and-identity>>.
+. Apply the policy. Anypoint accepts the request and performs it in the background; confirm the outcome in the *Activity log* tab. See xref:exp-policies-activity-log.adoc[].
+
+To apply a universal policy across multiple providers at once, use the *Policy Library* instead. See xref:exp-policies-universal.adoc[].
+
+[[why-a-policy-cant-be-edited]]
+== Why a Policy Can't Be Edited
+
+Having permissions is necessary but not sufficient to edit a policy. Anypoint supports editing only the curated set of policies that back the universal use cases (see xref:exp-policies-universal.adoc[]); every other recognized policy is view-only. When *Edit Configuration* is unavailable, the UI explains why. Common reasons include:
+
+* *It's a universal policy.* "This is a universal policy and can't be changed here."
+* *It's not a supported template.* "Anypoint doesn't recognize this policy's template."
+* *Its schema isn't supported.* "Anypoint doesn't support managing policies with this schema yet."
+* *Its configuration doesn't match the expected shape (non-conformant).* "This policy's configuration doesn't match its expected schema."
+* *It's attached above the instance.* "This policy isn't scoped to the instance, so it can't be changed here."
+* *It has conditional rules.* "This policy has rules and can't be changed here."
+* *It has no provider reference.* "This policy has no provider reference, so it can't be changed here."
+* *The provider doesn't support the action.* "This provider doesn't support this action."
+* *Another operation is running.* "Another operation is in progress on this policy. Try again once it finishes."
+
+== Enable, Disable, and Remove
+
+Enabling, disabling, and removing are allowed more broadly than editing — they don't require a recognized configuration shape. It's normal to see a policy where *Edit Configuration* is unavailable while *Enable Policy*, *Disable Policy*, and *Remove Policy* remain available, as long as the provider supports that action.
+
+* *Enable Policy* / *Disable Policy* toggle a policy on or off. Apigee and Azure API Management have no native enable/disable state, so these actions aren't offered there. See xref:exp-policies-provider-reference.adoc#supported-actions-by-provider[Supported Actions by Provider].
+* *Remove Policy* detaches the policy from the instance. A confirmation dialog notes that traffic previously filtered by the policy will no longer be enforced.
+
+While an operation is in progress on an instance, applying policies can be paused for that instance — you might see "Applying policies is paused while a policy operation is in progress on this instance." Wait for the running operation to finish; you can track it in the *Activity log*. This is related to how providers lock during operations. See xref:exp-policies-provider-reference.adoc#instance-locking-during-operations[Instance Locking During Operations].
+
+[[policy-naming-and-identity]]
+== Policy Naming and Identity
+
+When you create an external policy, you assign it a name. On some providers, that name is the policy's unique identity on the gateway, not just a label:
+
+* The name is required at creation.
+* The name can't be changed afterward. On a later edit, the name field is fixed — editing changes the policy's configuration, never its name.
+* To change a name, remove the policy and create a new one.
+
+This is most visible on Apigee, where the name is the on-gateway identifier and an edit that tries to change it is rejected.
+
+== See Also
+
+* xref:exp-policies-overview.adoc[]
+* xref:exp-policies-universal.adoc[]
+* xref:exp-policies-activity-log.adoc[]
+* xref:exp-policies-provider-reference.adoc[]
+* xref:exp-services-view-details.adoc[]

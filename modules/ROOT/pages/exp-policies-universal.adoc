@@ -1,0 +1,67 @@
+= Universal Policies
+:keywords: universal policies, canonical policies, policy library, multi-provider policies, apigee, azure api management, kong, anypoint platform
+
+A universal policy is a provider-agnostic authoring experience. You configure one policy once, and Anypoint translates it into each provider's native policy and applies it across the instances you select — even a mix of Google Apigee, Azure API Management, Kong Gateway, and Anypoint instances at the same time. In the UI, universal policies carry a *Universal* badge, described as "Works across all gateways."
+
+You apply universal policies from the *Policy Library*, which walks you through four steps: *Select Policy*, *Configure Policy*, *Select Instances*, and *Review & Apply*.
+
+== Universal Use Cases
+
+At launch, there are five universal use cases. Each maps to a specific native policy per provider (see xref:exp-policies-provider-reference.adoc#supported-policies-and-native-equivalents[Supported Policies and Native Equivalents]):
+
+* API Key Enforcement
+* CORS (Cross-Origin Resource Sharing)
+* Header Manipulation
+* IP Allowlist
+* JWT Validation
+
+These are also exactly the policies you can create and edit on external providers. Every other recognized policy is view-only. See xref:exp-policies-apply-manage.adoc#why-a-policy-cant-be-edited[Why a Policy Can't Be Edited].
+
+== Universal Is a Creation Experience, Not a Managed Entity
+
+Use a universal policy to stand up a use case across several native gateways from one centralized starting point. At the end, what exists are ordinary *native* policies on each provider — there is no combined "universal" object with its own lifecycle to edit or remove afterward.
+
+Because the resulting native policies came from a universal template, they display as view-only. In the *Policies* tab, their *Edit Configuration* action is unavailable with the reason "This is a universal policy and can't be changed here." You can still remove or enable/disable them where the provider supports those actions.
+
+== Confirming What Happened
+
+Because universal is only a creation experience, there is no dedicated universal activity view. To see the outcome on each target, open that instance's *Activity log* tab. Universal applies appear there with the *Universal* action type. See xref:exp-policies-activity-log.adoc[].
+
+[NOTE]
+====
+When a universal policy targets Anypoint instances, there is currently no Activity log record for those targets, so there's no in-product way to confirm the outcome on Anypoint targets. This is a known limitation. For external providers (Apigee, Azure, and Kong), you can follow the outcome in each instance's *Activity log*.
+====
+
+== Universal vs. Automated vs. Governance
+
+These three are easy to confuse. Use this comparison to pick the right tool:
+
+[cols="1,2,2,2",options="header"]
+|===
+| | Universal | Automated Policies | Governance
+
+|*What it is*
+|A create-only authoring experience: configure once, applied as each provider's native policy across many instances, including external providers.
+|Policies that auto-attach to any API matching a set of criteria (runtime, technology, environment, and so on) — applied by rule, not to one hand-picked target.
+|Reporting and compliance only — conformance reports for an API or instance. Does not apply policies.
+
+|*Lifecycle*
+|None after creation. There's no universal object to edit or delete.
+|Fully managed — create, edit, delete, and coverage changes as APIs come in and out of scope.
+|Read-only reports.
+
+|*Scope*
+|Multi-provider, applied to the instances you select.
+|Anypoint and Mule native, applied automatically by matching rules.
+|Across APIs and instances.
+|===
+
+For automated policies and governance strategies, see xref:exp-governance-work-with-strategies.adoc[].
+
+== See Also
+
+* xref:exp-policies-overview.adoc[]
+* xref:exp-policies-apply-manage.adoc[]
+* xref:exp-policies-activity-log.adoc[]
+* xref:exp-policies-provider-reference.adoc[]
+* xref:exp-governance-work-with-strategies.adoc[]

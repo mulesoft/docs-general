@@ -30,8 +30,14 @@ A unified view of compliance status across APIs hosted on Anypoint Platform gate
 Enhanced experience::
 The new MuleSoft UI for managing your AI portfolio, including governance, instance management, observability, and agentic experiences.
 
+External gateway provider::
+A third-party API gateway connected through a provider scanner whose policies you can manage from Anypoint. Supported providers include Google Apigee, Azure API Management, and Kong Gateway, with partial support for Amazon API Gateway. Policy management reuses the scanner connection's credentials.
+
 Gateway::
 A runtime component that proxies traffic to backend services while enforcing policies. Supported types include Anypoint Omni Gateway (managed), external gateways, and unmanaged gateways.
+
+Injection point::
+Where a policy runs relative to the request and response (for example request or response on Apigee, or inbound, outbound, and backend on Azure API Management). Each policy template declares which injection points it allows.
 
 Governance > Cost Management::
 A section under Governance that surfaces token usage, daily spend signals, and cost optimization recommendations across your portfolio. Apply tool mapping, tool sanitization, and related strategies here where the experience supports them.
@@ -101,3 +107,9 @@ A governance control that filters or modifies tool inputs and outputs before the
 
 Unmanaged instance::
 A lighter-weight instance deployment that does not route traffic through Omni Gateway. Choose unmanaged instances when a full managed path does not match your operating model.
+
+Universal (canonical) policy::
+A provider-agnostic policy you configure once and apply across a mix of gateway providers. Anypoint translates a universal policy into each provider's native policy. Universal is a creation experience, not a managed entity: after you apply it, only native policies exist, and those native policies are view-only. In the UI, universal policies carry a *Universal* badge.
+
+View-only policy::
+A discovered policy that Anypoint displays but can't create or edit — for example any policy that isn't one of the supported universal-backed policies. Depending on the provider, a view-only policy can still be removed or enabled/disabled.
