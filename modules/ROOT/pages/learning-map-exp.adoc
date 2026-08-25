@@ -47,12 +47,13 @@ Register agents, APIs, and MCP servers from any provider or registry, and add Mo
 | image::lm_build_1.png[""]
 [.lm-bold]##Monitor##
 
-Monitor latency, cost, invocations, and failures in real time.
+Monitor latency, cost, invocations, and failures in real time, and trace the data services your agents consume.
 
 - xref:exp-services-monitoring.adoc[]
 - xref:exp-governance-view-cost-and-token-usage.adoc[]
 - xref:exp-services-view-detailed-metrics.adoc[]
 - xref:exp-alerts-configure-notifications.adoc[]
+- xref:exp-data-service-lineage.adoc[]
 
 |===
 
