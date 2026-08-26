@@ -22,6 +22,8 @@ The *Governed Services* tab displays:
 * A *Conformance* summary: the total number of governed services, broken down into *Conformant*, *Nonconformant*, and *Pending*.
 * An *Identified Issues* summary: counts of violations, warnings, and info-level findings.
 * A table of governed services with *Service*, *Type*, *Provider*, and *Conformance* columns. The *Provider* column shows which platform hosts each API.
+// FLAG: Aug 13 release (policy write scope). "Policy Application Status" (Enabled/Read-Only enforcement state) reflects policy enforcement, which is Policy Write — GA Aug 13. Uncomment when the Aug 13 write release is documented.
+// * *Policy Application Status*: Indicates whether policies are *Enabled* (actively enforced) or *Read-Only* (monitoring mode only).
 
 == Filter by Specific Provider
 
@@ -37,6 +39,17 @@ Use this filter to:
 * Compare conformance across providers.
 * Identify provider-specific conformance gaps.
 * Focus on a subset of your multi-gateway environment during reviews or audits.
+
+// FLAG: Aug 13 release (policy write scope). The entire "Understanding Read-Only Policy Status" section describes policy enforcement and credential-based write access, which is Policy Write — GA Aug 13. The Jul 16 Policy Read GA monitors conformance in read-only mode only. Uncomment when the Aug 13 write release is documented.
+// == Understanding Read-Only Policy Status
+//
+// If a policy shows *Read-Only* status in the conformance dashboard:
+//
+// * The provider connection uses credentials with read-only permissions.
+// * Policies are applied in monitoring mode only and don't enforce requirements on the provider gateway.
+// * The system can track conformance but can't automatically remediate violations.
+//
+// *How to Remediate*: xref:exp-governance-setup-third-party-providers.adoc#update-credentials[Update provider credentials] to grant write-enabled permissions. After updating credentials, policies transition from *Read-Only* to *Enabled* status and can enforce requirements on the provider gateway.
 
 == See Also
 

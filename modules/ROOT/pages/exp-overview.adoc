@@ -17,8 +17,6 @@ Cost and Performance Optimization:: Monitor token usage, per-instance signals, a
 
 Instance Management:: Create and review instances for supported asset types. Choose managed paths through Omni Gateway when you need deeper monitoring and policy enforcement, or choose lighter models when that matches your operating model.
 
-Credential and Secrets Management:: Connect an external vault (AWS Secrets Manager, Microsoft Azure Key Vault, or HashiCorp Vault) under *Platform* > *Providers* so credentials stay in your existing secrets manager. MuleSoft stores only secret metadata and resolves values from the vault when needed, and a model proxy can reference a vault secret instead of storing a key. See xref:exp-vaults-manage.adoc[].
-
 AI Assistant (MuleSoft Agent):: Get help navigating, searching, and managing your portfolio through natural language conversations. The AI assistant provides context-aware guidance, performs actions with your confirmation, and suggests next steps based on your current task. Available from every page in the enhanced experience.
 
 == Enhanced Experience High-Level Workflow

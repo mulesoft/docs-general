@@ -5,11 +5,6 @@ To create a scanner, connect to a provider. The system runs scanners against sup
 
 Start the flow from *Home* or from a specific catalog in *Portfolio*. To see how this flow relates to manual registration, see xref:exp-services-add-to-portfolio.adoc[]. To create and tune scanners, see xref:exp-scanners-add-from-providers.adoc[].
 
-[NOTE]
-====
-Amazon, Microsoft, and HashiCorp use this same *Connect to a Provider* flow to register an external vault (AWS Secrets Manager, Microsoft Azure Key Vault, or HashiCorp Vault). A vault syncs secret metadata rather than discovering services, so it doesn't create a scanner or register anything in a *Portfolio* catalog. For the vault registration flow, see xref:exp-vaults-manage.adoc[].
-====
-
 == Before You Begin
 
 Before getting started, make sure you have:
@@ -64,4 +59,3 @@ For example, when you start from *APIs*, discovered APIs are registered in the *
 * xref:exp-services-register-manually.adoc[]
 * xref:exp-scanners-add-from-providers.adoc[]
 * xref:exp-services-view-details.adoc[]
-* xref:exp-vaults-manage.adoc[]
