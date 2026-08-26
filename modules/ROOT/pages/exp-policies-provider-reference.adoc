@@ -71,7 +71,7 @@ If you're told an operation is already in progress, another operation is mid-fli
 [[apigee-required-permissions-and-roles]]
 == Apigee Required Permissions and Roles
 
-For Apigee, the connected Google service account must hold the following permissions for policy create, edit, and remove to work. They cover the read-import-deploy cycle every Apigee change performs:
+For Apigee, the connected Google service account requires these permissions for policy create, edit, and remove operations to work. They cover the read-import-deploy cycle every Apigee change performs:
 
 * `apigee.proxies.get`
 * `apigee.proxyrevisions.get`
@@ -89,7 +89,7 @@ Any custom role or higher-scope grant that includes the five permissions also wo
 [[supported-policies-and-native-equivalents]]
 == Supported Policies and Native Equivalents
 
-At launch, Anypoint supports five universal use cases. Each is applied as the following native policy on each provider. These native policies are exactly the ones you can create and edit; all other recognized policies are view-only.
+At launch, Anypoint supports five universal use cases. Each maps to a native policy on each provider, as shown here. These native policies are exactly the ones you can create and edit; all other recognized policies are view-only.
 
 [cols="1,1,1,1,1",options="header"]
 |===
@@ -132,7 +132,7 @@ At launch, Anypoint supports five universal use cases. Each is applied as the fo
 * Some use cases map to more than one native policy. For example, Header Manipulation applies separate request/response (or inbound/outbound) policies, and Anypoint's Header Manipulation is two policies (injection and removal).
 ====
 
-In addition to the universal use cases, Anypoint supports these previously supported native Kong policies: `acl`, `acme`, `basic-auth`, `header-cert-auth`, `ldap-auth`, `ldap-auth-advanced`, `mtls-auth`, `opa`, `tls-handshake-modifier`, and `tls-metadata-headers`.
+Beyond the universal use cases, Anypoint also supports these native Kong policies: `acl`, `acme`, `basic-auth`, `header-cert-auth`, `ldap-auth`, `ldap-auth-advanced`, `mtls-auth`, `opa`, `tls-handshake-modifier`, and `tls-metadata-headers`.
 
 == See Also
 

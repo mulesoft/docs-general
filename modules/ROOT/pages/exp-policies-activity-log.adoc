@@ -38,8 +38,8 @@ Open an entry to see when it started and finished.
 
 For a failed operation, open it to see why. The failure detail explains the error and, when applicable, whether the operation is safe to retry:
 
-* *Retry may help (transient).* The failure came from a temporary problem, such as an unreachable gateway or a scan error. The detail indicates "This can be retried." Try the operation again.
-* *Must fix first.* The failure came from something you need to correct — for example an invalid configuration, a conflict with the instance's current state, or a policy that can't be translated for the target gateway. Fix the underlying issue before retrying.
+* *Retry can help (transient).* The failure came from a temporary problem, such as an unreachable gateway or a scan error. The detail indicates "This can be retried." Try the operation again.
+* *Fix before retrying.* The failure came from your configuration or the instance's state — for example an invalid configuration, a conflict with the instance's current state, or a policy that can't be translated for the target gateway. Fix the underlying issue before retrying.
 
 == See Also
 

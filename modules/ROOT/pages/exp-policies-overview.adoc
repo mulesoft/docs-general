@@ -24,7 +24,7 @@ There are two distinct ways you interact with provider policies:
 
 Anypoint recognizes and displays every policy it discovers, but you can create and edit only a curated set, the policies that back the universal use cases. See xref:exp-policies-universal.adoc[]. Every other recognized policy is view-only.
 
-Removing and enabling and disabling are allowed more broadly than editing, so it's normal to see a policy where *Edit Configuration* is unavailable while *Remove Policy* and the enable/disable actions remain available — as long as the provider supports that action. See xref:exp-policies-apply-manage.adoc[] and xref:exp-policies-provider-reference.adoc[].
+You can remove, enable, and disable policies more broadly than you can edit them, so it's normal to see a policy where *Edit Configuration* is unavailable while *Remove Policy* and the enable and disable actions remain available, as long as the provider supports that action. See xref:exp-policies-apply-manage.adoc[] and xref:exp-policies-provider-reference.adoc[].
 
 == How Policy Operations Work
 
