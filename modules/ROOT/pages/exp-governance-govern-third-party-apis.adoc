@@ -15,9 +15,34 @@ Follow these steps to govern APIs from third-party providers:
 
 . Track conformance status for provider-hosted APIs through the governance strategy dashboard. Use the *Any provider* filter in the *Governed Services* tab of your governance strategy to focus on a subset of your cross-gateway environment.
 
+// FLAG: Aug 13 release (policy write scope). The "Apply Policies" workflow step applies policies directly to provider-hosted instances, which is Policy Write (GA Aug 13). The Jul 16 release governs third-party APIs in read/conformance mode only. Uncomment when the Aug 13 write release is documented.
+// . *Apply Policies*: For targeted or supplemental policy application, use xref:exp-governance-policy-library-apply.adoc[Policy Library] to select and apply policies directly to provider-hosted API instances.
+
+// FLAG: Aug 13 release (policy write scope). "Read-Only Policy Status" and the credential-update-to-enable-writes flow describe Policy Write (GA Aug 13). Uncomment when the Aug 13 write release is documented.
+// *Read-Only Policy Status*: If a policy shows *Read-Only* status, the provider connection uses read-only credentials. To enable policy writes, xref:exp-governance-setup-third-party-providers.adoc#update-credentials[update the credentials] with write-enabled permissions.
+
+// FLAG: Aug 13 release (policy write scope). The entire "Policy Library for Third-Party APIs" section applies policies to provider instances, which is Policy Write (GA Aug 13), not Jul 16 Policy Read. Uncomment when the Aug 13 write release is documented.
+// == Policy Library for Third-Party APIs
+//
+// The xref:exp-governance-policy-library-apply.adoc[Policy Library] provides a targeted way to apply individual policies to third-party provider services:
+//
+// . Go to *Governance* > *Governance Strategies* > *Policy Library*.
+// . Complete the four-step wizard:
+// +
+// --
+// ** *Select Policy*: Browse policies and filter by the Access and Security, Performance and Cost, Data Privacy and Integrity, or Compliance and Observability categories. Policies that apply to any service are marked with a *Universal* badge.
+// ** *Configure Policy*: Set policy parameters.
+// ** *Select Instances*: Choose API instances hosted on third-party providers.
+// ** *Review & Apply*: Confirm and apply the policy.
+// --
+//
+// Use the Policy Library when you need supplemental or one-off policy application outside governance strategies.
+
 == See Also
 
 * xref:exp-services-view-details.adoc[]
 * xref:exp-governance-create-strategy.adoc[]
 * https://dev-portal.mulesoft.com/skills/author-governance-ruleset.html[Author a Governance Ruleset]
+// FLAG: Aug 13 release (policy write scope). Link to the Policy Library apply topic, which is commented out until the Aug 13 write release. Uncomment together with that topic.
+// * xref:exp-governance-policy-library-apply.adoc[Browse the Policy Library]
 * xref:exp-governance-monitor-cross-gateway-conformance.adoc[]
