@@ -18,7 +18,7 @@ When you trigger a policy action, Anypoint accepts the request immediately and d
 
 == Reading the Activity Log
 
-The *Activity log* tab lists recent policy operations for the API instance. By default, it shows the last 10 activities from the last 30 days. Select *Refresh* to reload. If no operations have run, the tab shows "No policy changes have been recorded for this instance in the last 30 days."
+The *Activity log* tab lists recent policy operations for the API instance. By default, it shows the last 10 activities from the last 30 days. Select *Refresh* to reload. If no operations have run in that window, the tab indicates that there are no recorded policy changes.
 
 Each entry has these columns:
 
