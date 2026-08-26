@@ -36,7 +36,7 @@ Before getting started, make sure you have:
 [NOTE]
 ====
 * Apply and Edit are further limited to the supported (universal-backed) policies. A Yes in the Edit column means the provider supports editing, not that every policy is editable. See xref:exp-policies-apply-manage.adoc#why-a-policy-cant-be-edited[Why a Policy Can't Be Edited].
-* Apigee and Azure API Management have no native enabled/disabled state (a policy is either attached or not), so the enable/disable actions aren't offered there.
+* Apigee and Azure API Management have no native enabled/disabled state (a policy is either attached or not), so the enable/disable actions aren't available there.
 * Amazon API Gateway is not supported for policy write yet.
 ====
 
@@ -51,7 +51,7 @@ Because policy management reuses the scanner connection, the permissions you see
 
 == Injection Points
 
-An injection point is where a policy runs relative to the request and response. Each policy template declares which injection points it allows; choosing an unsupported one is rejected.
+An injection point is where a policy runs relative to the request and response. Each policy template declares the injection points that it allows. If you choose an unsupported injection point, the system rejects the choice.
 
 * Google Apigee: you can choose request or response. On the Apigee side, both map to the proxy-level `PreFlow` (request and response map to the corresponding `PreFlow` section).
 * Azure API Management: supports `inbound`, `outbound`, and `backend`. Azure's error-handling section is not editable through Anypoint.
@@ -63,10 +63,10 @@ An injection point is where a policy runs relative to the request and response. 
 To prevent conflicting concurrent changes, an in-progress operation takes a lock. The scope of that lock differs by provider:
 
 * Azure API Management and Google Apigee lock the entire API instance. While one policy operation is running, no other policy operation on that instance can start. Wait for the running one to finish. On Azure, an instance's policies live in a single document, so any change touches the whole thing. On Apigee, a change re-deploys the whole proxy, so it's inherently instance-wide.
-* Kong Gateway locks only the specific policy being changed. Other policies on the same instance can be operated on at the same time.
+* Kong Gateway locks only the specific policy that you modify. You can work with other policies on the same instance simultaneously.
 * Anypoint takes no such lock.
 
-If you're told an operation is already in progress, another operation is mid-flight on that instance (Azure or Apigee) or on that same policy (Kong). Wait for it to complete; you can track it in the *Activity log*. See xref:exp-policies-activity-log.adoc[].
+If an operation is already in progress, another operation is mid-flight on that instance (Azure or Apigee) or on that same policy (Kong). Wait for the operation to complete. You can track it in the *Activity log*. See xref:exp-policies-activity-log.adoc[].
 
 [[apigee-required-permissions-and-roles]]
 == Apigee Required Permissions and Roles
@@ -79,7 +79,7 @@ For Apigee, the connected Google service account requires these permissions for 
 * `apigee.deployments.list`
 * `apigee.deployments.create`
 
-These permissions are granted by either of these predefined Apigee roles:
+To get these permissions, use one of these predefined Apigee roles:
 
 * Apigee API Admin
 * Apigee Environment Admin
@@ -89,7 +89,7 @@ Any custom role or higher-scope grant that includes the five permissions also wo
 [[supported-policies-and-native-equivalents]]
 == Supported Policies and Native Equivalents
 
-At launch, Anypoint supports five universal use cases. Each maps to a native policy on each provider, as shown here. These native policies are exactly the ones you can create and edit; all other recognized policies are view-only.
+At launch, Anypoint supports five universal use cases. Each maps to a native policy on each provider. These native policies are exactly the ones you can create and edit. All other recognized policies are view-only.
 
 [cols="1,1,1,1,1",options="header"]
 |===
@@ -128,7 +128,7 @@ At launch, Anypoint supports five universal use cases. Each maps to a native pol
 
 [NOTE]
 ====
-* A dash (—) means the universal use case is not offered for that provider because no native equivalent is shipped.
+* A dash (—) means that the provider doesn't offer the use case because it lacks a native equivalent.
 * Some use cases map to more than one native policy. For example, Header Manipulation applies separate request/response (or inbound/outbound) policies, and Anypoint's Header Manipulation is two policies (injection and removal).
 ====
 
