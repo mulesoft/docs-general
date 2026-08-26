@@ -15,7 +15,7 @@ At launch, there are five universal use cases. Each maps to a specific native po
 * IP Allowlist
 * JWT Validation
 
-These are also exactly the policies you can create and edit on external providers. Every other recognized policy is view-only. See xref:exp-policies-apply-manage.adoc#why-a-policy-cant-be-edited[Why a Policy Can't Be Edited].
+These are also exactly the policies you can create and edit on external providers. Every other recognized policy is view-only. See xref:exp-policies-apply-manage.adoc#policy-edit-restrictions[Policy Edit Restrictions].
 
 == Universal Is a Creation Experience
 
