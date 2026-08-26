@@ -1,0 +1,46 @@
+= Managing Models and Model Costs
+:keywords: models, model costs, cost per token, input tokens, output tokens, spend tracking, budgets, model proxies, cost management, anypoint platform
+
+
+The *Models* page lists the AI models available in your organization. Set the cost per token for each model so that token usage translates into accurate spend and budget tracking across model proxies and wallet budgets.
+
+== Before You Begin
+
+To manage model costs, you need:
+
+* An Anypoint Platform account.
+* Any of these permissions:
++
+--
+** API Manager: API Creator to create instances
+** API Manager: View APIs Configuration to view instances
+** API Manager: Edit APIs Configuration to edit instances
+--
++
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+
+== View Models
+
+. From *Portfolio* > *Model Proxies* > *Model Wallets*, select *Models*.
+. Review the list of available models.
+. To see details for a model, select its name.
++
+The model detail page shows the model proxies that surface the model and its configured costs.
+
+[[edit-model-costs]]
+== Edit Model Costs
+
+Model costs drive spend and budget calculations. Configure them for each model you use.
+
+. On the *Models* page, select a model — for example, `Claude 3.5 Haiku`.
+. Select *Edit model costs*.
+. Enter the *Cost per 1K input tokens* — for example, `0.001`.
+. Enter the *Cost per 1K output tokens* — for example, `0.005`.
+. Select *Save changes*.
+
+Models without configured costs default to zero and don't factor into spend tracking or budget calculations. If a model's costs aren't configured, wallet budgets don't reflect actual usage for that model. See xref:exp-model-wallets-manage.adoc[].
+
+== See Also
+
+* xref:exp-model-wallets-manage.adoc[]
+* xref:exp-governance-view-cost-and-token-usage.adoc[]
