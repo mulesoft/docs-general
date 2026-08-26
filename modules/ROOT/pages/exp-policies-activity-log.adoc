@@ -14,23 +14,20 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 
 == Asynchronous Operations and Eventual Consistency
 
-When you trigger a policy action, Anypoint accepts the request immediately and does the real work in the background: it talks to the provider, refreshes its view of the provider's state, and records the outcome. As a result, the policy list is eventually consistent — right after an action it might not yet reflect the change. The UI shows an optimistic view until the background job finishes and the state is reconciled.
+When you trigger a policy action, Anypoint accepts the request immediately and does the real work in the background: it talks to the provider, refreshes its view of the provider's state, and records the outcome. As a result, the policy list is eventually consistent, it sometimes doesn't reflect the change right after an action. The UI shows an optimistic view until the background job finishes and the state is reconciled.
 
 == Reading the Activity Log
 
-The *Activity log* tab lists recent policy operations for the API instance. By default it shows the last 10 activities from the last 30 days; select *Refresh* to reload. If no operations have run, the tab shows "No policy changes have been recorded for this instance in the last 30 days."
+The *Activity log* tab lists recent policy operations for the API instance. By default, it shows the last 10 activities from the last 30 days. Select *Refresh* to reload. If no operations have run, the tab shows "No policy changes have been recorded for this instance in the last 30 days."
 
 Each entry has these columns:
 
-* *Action* — the kind of operation: *Apply*, *Update* (edit), *Toggle* (enable/disable), *Remove*, or *Universal* (a universal policy apply).
-* *Policy* — the policy the operation applies to.
-* *Status* — one of three states:
-+
---
-** *Running* — still in progress.
-** *Completed* — succeeded.
-** *Failed* — the operation did not succeed.
---
+* *Action*: the type of operation, such as *Apply*, *Update* (edit), *Toggle* (enable/disable), *Remove*, or *Universal* (a universal policy apply).
+* *Policy*: the policy the operation applies to.
+* *Status*: one of three states:
+** *Running*
+** *Completed*
+** *Failed*
 
 Open an entry to see when it started and finished.
 
@@ -38,8 +35,8 @@ Open an entry to see when it started and finished.
 
 For a failed operation, open it to see why. The failure detail explains the error and, when applicable, whether the operation is safe to retry:
 
-* *Retry can help (transient).* The failure came from a temporary problem, such as an unreachable gateway or a scan error. The detail indicates "This can be retried." Try the operation again.
-* *Fix before retrying.* The failure came from your configuration or the instance's state — for example an invalid configuration, a conflict with the instance's current state, or a policy that can't be translated for the target gateway. Fix the underlying issue before retrying.
+* Transient failures come from a temporary problem, such as an unreachable gateway or a scan error. Try the operation again.
+* Other failures come from your configuration or the instance's state. For example, an invalid configuration, a conflict with the instance's current state, or a policy that can't be translated for the target gateway. Fix the underlying issue before retrying.
 
 == See Also
 
