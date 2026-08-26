@@ -2,40 +2,9 @@
 :keywords: external vaults, secrets manager, AWS Secrets Manager, Azure Key Vault, HashiCorp Vault, authentication method, model proxy, anypoint platform
 
 
-An external vault connects your existing secrets manager to the enhanced experience so API keys and other credentials stay in AWS Secrets Manager, Azure Key Vault, or HashiCorp Vault. MuleSoft stores only metadata, such as secret names and paths, and reads the value from the vault when something needs it, such as a model proxy. Secret values are never stored, displayed, or logged.
+An external vault connects your third-party secrets manager to the enhanced experience. API keys and other credentials stay in that vault. MuleSoft stores only metadata, such as secret names and paths, and reads the value from the vault when a model proxy or other service needs the value. MuleSoft never stores, displays, or logs secret values.
 
 A vault isn't a scanner. Scanners discover services and add them to *Portfolio* catalogs. A vault only syncs secret metadata, so it doesn't add items to *Portfolio*.
-
-[[authentication-methods]]
-== Choose an Authentication Method
-
-When you register a vault, you select an *Authentication Method*. Pick the method your secrets manager already uses for applications. The method you select at registration is the one this connection uses.
-
-[[aws-secrets-manager-authentication]]
-=== AWS Secrets Manager
-
-*AWS Static*::
-MuleSoft authenticates with a long-lived *Access Key ID* and *Secret Access Key*. Choose this when that access key is allowed to read Secrets Manager directly.
-
-*AWS Assume Role*::
-MuleSoft authenticates with an *Access Key ID* and *Secret Access Key*, then uses a *Role ARN* so the connection runs as that role instead of as the access key's identity. Choose this when access to secrets must go through a role, such as a role in another AWS account or a role that has only Secrets Manager permissions. *External ID* is a value you set on the role so only this MuleSoft connection can use it.
-
-[[azure-key-vault-authentication]]
-=== Azure Key Vault
-
-Both Azure methods authenticate as a Microsoft Entra app registration (a service principal) that you create for MuleSoft. The difference is how that app proves its identity.
-
-*Microsoft Entra Service Principal Secret*::
-The app proves its identity with a *Client Secret* (a string, like a password). Choose this when your directory issues client secrets for apps.
-
-*Microsoft Entra Service Principal Certificate*::
-The app proves its identity with a *Client Certificate* and *Private Key* in PEM format, instead of a secret. Choose this when your organization requires certificate-based authentication for apps.
-
-[[hashicorp-vault-authentication]]
-=== HashiCorp Vault
-
-*HashiCorp AppRole*::
-The only method HashiCorp Vault supports here. AppRole is Vault's login for applications: *Role ID* identifies the role, and *Secret ID* is the credential. Provide a *TLS CA Certificate* in PEM format when Vault uses a certificate that MuleSoft wouldn't otherwise trust.
 
 == Before You Begin
 
@@ -56,20 +25,47 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 
 For a list of vault credentials and setup fields, see xref:exp-scanners-prerequisites-reference.adoc[].
 
-[[register-an-external-vault]]
-== Register an External Vault
+[[authentication-methods]]
+== Authentication Methods
 
-From *Platform* > *Providers*, select Amazon, Microsoft, or HashiCorp. If the provider offers more than one platform, select the vault (*AWS Secrets Manager* or *Azure Key Vault*). HashiCorp doesn't require a platform choice. Select the Anypoint *Environment* this connection belongs to, then complete the fields for your provider.
+When you register a vault, you select an *Authentication Method*. Select the method that your secrets manager already uses for applications. The method that you select at registration is the method that this connection uses.
 
-In *Name*, enter a name to identify this connection. You can't change this name after creation.
+[[aws-secrets-manager-authentication]]
+=== AWS Secrets Manager Authentication
+
+*AWS Static*::
+MuleSoft authenticates with a long-lived *Access Key ID* and *Secret Access Key*. Choose *AWS Static* when that access key is allowed to read Secrets Manager directly.
+
+*AWS Assume Role*::
+MuleSoft authenticates with an *Access Key ID* and *Secret Access Key*, then uses a *Role ARN* so the connection runs as that role instead of as the access key's identity. Choose *AWS Assume Role* when a role controls access to secrets, such as a role in another AWS account or a role that has only Secrets Manager permissions. *External ID* is a value that you set on the role so that only this MuleSoft connection can assume the role.
+
+[[azure-key-vault-authentication]]
+=== Azure Key Vault Authentication
+
+Both Azure methods authenticate as a Microsoft Entra app registration (a service principal) that you create for MuleSoft. The difference is how that app proves its identity.
+
+*Microsoft Entra Service Principal Secret*::
+The app proves its identity with a *Client Secret*, which is a string such as a password. Choose *Microsoft Entra Service Principal Secret* when your directory issues client secrets for apps.
+
+*Microsoft Entra Service Principal Certificate*::
+The app proves its identity with a *Client Certificate* and *Private Key* in PEM format, instead of a secret. Choose *Microsoft Entra Service Principal Certificate* when your company requires certificate-based authentication for apps.
+
+[[hashicorp-vault-authentication]]
+=== HashiCorp Vault Authentication
+
+*HashiCorp AppRole*::
+AppRole is the only authentication method that HashiCorp Vault supports. Applications log in to HashiCorp Vault with a *Role ID* that identifies the role and a *Secret ID* that is the credential. Provide a *TLS CA Certificate* in PEM format when your HashiCorp Vault server uses a certificate that MuleSoft doesn't trust by default.
+
 
 [[register-aws-secrets-manager]]
-=== Register AWS Secrets Manager
+== Register AWS Secrets Manager
 
+. From *Platform* > *Providers*, select Amazon.
+. In *Name*, enter a name to identify this connection. You can't change this name after creation.
 . Select *AWS Static* or *AWS Assume Role*.
 . Enter the *Secrets Manager URL*.
 . Under *Credentials*, enter *Access Key ID* and *Secret Access Key*.
-. Under *Connection Configuration*, set *Region* and, if you want MuleSoft to sync only secrets whose names start with a given string, *Secret Name Prefix*.
+. Under *Connection Configuration*, set *Region*. To sync only secrets whose names start with a given string, also set *Secret Name Prefix*.
 +
 For *AWS Assume Role*, also set *Role ARN* and *External ID*.
 . (Optional) Select *Test Connection* to verify the connection before you save it.
@@ -78,25 +74,29 @@ The test runs a live handshake between the MuleSoft control plane and your vault
 . Select *Connect*.
 
 [[register-azure-key-vault]]
-=== Register Azure Key Vault
+== Register Azure Key Vault
 
+. From *Platform* > *Providers*, select Microsoft.
+. In *Name*, enter a name to identify this connection. You can't change this name after creation.
 . Select *Microsoft Entra Service Principal Secret* or *Microsoft Entra Service Principal Certificate*.
 . Enter the *Vault URL*.
 . Under *Credentials*:
 +
 * For *Microsoft Entra Service Principal Secret*, enter *Client Secret*.
 * For *Microsoft Entra Service Principal Certificate*, enter *Client Certificate* and *Private Key*, both in PEM format.
-. Under *Connection Configuration*, set *Client ID* (the app registration) and *Tenant ID* (your Microsoft Entra directory).
+. Under *Connection Configuration*, set *Client ID*, which is the app registration, and *Tenant ID*, which is your Microsoft Entra directory.
 . (Optional) Select *Test Connection* to verify the connection before you save it.
 . Select *Connect*.
 
 [[register-hashicorp-vault]]
-=== Register HashiCorp Vault
+== Register HashiCorp Vault
 
+. From *Platform* > *Providers*, select HashiCorp.
+. In *Name*, enter a name to identify this connection. You can't change this name after creation.
 . Select *HashiCorp AppRole*.
 . Enter the *Vault URL*.
-. Under *Credentials*, enter *Role ID* and *Secret ID*. Optionally enter a *TLS CA Certificate* in PEM format.
-. Under *Connection Configuration*, set *KV Version*, *Engine Type*, *Mount*, and *Path* so MuleSoft knows where the secrets live in Vault. For Vault Enterprise, you can also set *Namespace*.
+. Under *Credentials*, enter *Role ID* and *Secret ID*. To trust a private CA, enter a *TLS CA Certificate* in PEM format.
+. Under *Connection Configuration*, set *KV Version*, *Engine Type*, *Mount*, and *Path* so that MuleSoft knows where the secrets live in HashiCorp Vault. For HashiCorp Vault Enterprise, set *Namespace* when your secrets are in a namespace.
 . (Optional) Select *Test Connection* to verify the connection before you save it.
 . Select *Connect*.
 
@@ -105,18 +105,18 @@ After you connect, the vault detail page opens.
 [[view-and-sync-a-vault]]
 == Review Secrets and Connection Health
 
-Open the vault from *Platform* > *Providers*. The header shows when the vault was created, when it was last scanned, and *Sync now*.
+Open the vault from *Platform* > *Providers*. The header shows the creation date and the last scan time.
 
-Use *Sync now* when secrets were added, removed, or renamed in the vault and you want MuleSoft to refresh the metadata. The sync runs in the background. Each run appears on *Overview* in *Sync Activity*.
+To refresh secret metadata after secrets are added, removed, or renamed in the vault, select *Sync now*. The sync runs in the background. Each run appears on *Overview* in *Sync Activity*.
 
 *Overview*::
-Connection checks and metadata syncs. A health check confirms MuleSoft can still reach the vault; those runs don't add, remove, or update secrets. A metadata sync records secrets added, removed, or updated.
+Shows connection checks and metadata syncs. A health check confirms that MuleSoft can still reach the vault. Those runs don't add, remove, or update secrets. A metadata sync records secrets that are added, removed, or updated.
 
 *Secrets*::
-MuleSoft lists the secret names and paths it discovered. It doesn't show the secret values. *Used By* shows which MuleSoft resources reference a secret. A dash means nothing in this experience is using it yet. Search by name when the list is long.
+MuleSoft lists the secret names and paths that it discovers. MuleSoft doesn't show the secret values. *Used By* shows which MuleSoft resources reference a secret. A dash means that no resource in the enhanced experience references the secret yet. Search by name when the list is long.
 
 *Settings*::
-The provider, Anypoint environment, and authentication method for this connection. *Test connection* checks that MuleSoft can still authenticate. *Edit settings* updates the connection or replaces a credential. On this tab, *Auth Method* shows an identifier for the method you selected, for example `azure_sp_certificate` for *Microsoft Entra Service Principal Certificate*.
+Shows the provider, Anypoint environment, and authentication method for this connection. *Test connection* checks that MuleSoft can still authenticate. *Edit settings* updates the connection or replaces a credential. On this tab, *Auth Method* shows an identifier for the method that you selected. For *Microsoft Entra Service Principal Certificate*, the identifier is `azure_sp_certificate`.
 
 [[edit-or-delete-a-vault]]
 == Edit or Delete a Vault
@@ -128,12 +128,12 @@ To remove the vault, in the *Danger Zone*, select *Delete integration* and confi
 [[use-vault-secrets-in-a-model-proxy]]
 == Use a Vault Secret in a Model Proxy
 
-When you configure authentication for a model proxy, you can point at a secret in your registered vault instead of pasting a key into MuleSoft. The proxy resolves the value from the vault at runtime.
+When you configure authentication for a model proxy, select a secret in your registered vault instead of pasting a key into MuleSoft. The proxy resolves the value from the vault at runtime.
 
 . From *Portfolio* > *Model Proxies*, select *New Model Proxy*.
 . In *Authentication*, select *From Vault*.
 . From *Credential from Vault*, select the secret.
-. Click *Save*.
+. Select *Save*.
 
 For model proxy setup, see xref:model-proxy.adoc[].
 
