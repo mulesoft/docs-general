@@ -44,6 +44,22 @@ include::partial$exp-navigation-labels.adoc[tag=ExpNavigationLabels]
 --
 . Set the time range for the data you want to analyze. The time range selector (*1H*, *24H*, *7D*, or *30D*; default *30D*) sits next to the tabs and applies to both the *Budgets* and *Optimizations* tabs.
 
+== Cost Data Use Cases
+
+Cost and performance data inform multiple workflows:
+
+* Cost optimization: Identify services with high usage and apply optimization controls.
+* Performance triage: Correlate latency or error spikes with deployments or policy changes.
+* Planning and alignment: Share trends with finance and platform teams for forecasting.
+
+To automatically cap usage, configure budgets in the *Budgets* tab or through model wallets. Budgets block requests once the limit is reached. To limit consumption in other ways, apply governance strategies or rate-limiting policies.
+
+== Cost Data and Governance
+
+Use *Cost Management* data to create or refine governance strategies.
+
+For runtime enforcement, attach cost-related controls or policies to a governance strategy and apply it to the relevant services.
+
 == Budgets Tab
 
 The *Budgets* tab shows financial summaries across your configured budgets:
@@ -84,7 +100,7 @@ The *Optimizations* tab shows cost and token savings data across model proxies, 
 
 The summary cards show:
 
-* *Total Managed Spend*: Total cost of all LLM traffic routed through managed proxies. This excludes usage that bypasses the proxy network.
+* *Total Managed Spend*: The total cost of all LLM traffic routed through managed proxies. This excludes any usage that bypasses the proxy network.
 * *Agents Potential Savings*: Estimated cost savings available by applying optimization policies to agents. It shows *Amount Saved* as the amount already saved.
 * *LLM Proxies Potential Savings*: Estimated cost savings available by applying optimization policies to LLM proxies. It shows *Amount Saved* as the amount already saved.
 * *MCP Servers Potential Savings*: Estimated token savings available by applying optimization policies to MCP servers. It shows *Tokens Saved* as tokens already saved.
@@ -93,31 +109,60 @@ Treat these metrics as directional, not exact.
 
 The *Top optimization opportunities* section highlights the instances with the highest potential savings and the specific optimization policy to apply.
 
-== Filter and Search
+=== Filter and Search
 
 Use the controls at the top of the *Optimizations* tab to narrow the view:
 
-* Select a sub-tab to filter by instance type: *Model Proxies*, *Agents*, or *MCP Servers*.
+* Select a sub-tab to filter by instance type:
++
+--
+** *Model Proxies*: Monitor cost data and savings for traffic explicitly routed through your managed proxy network.
+** *Agents*: Track proxy-attributed spend and policy savings for active agents governed by Omni Gateway.
+** *MCP Servers*: Observe token volumes processed through tool responses during active server calls.
+--
 * Search for instance names.
 * Use *Filters* to refine the view by *Environment* or *Provider*.
 
 The counter updates to show the number of matching instances.
 
-== Cost Data Use Cases
+== Apply Optimization Policies
 
-Cost and performance data inform multiple workflows:
+Optimization policies reduce token consumption and cost for a given instance without changing what the instance does. The available policies depend on the instance type.
 
-* Cost optimization: Identify services with high usage and apply optimization controls.
-* Performance triage: Correlate latency or error spikes with deployments or policy changes.
-* Planning and alignment: Share trends with finance and platform teams for forecasting.
+To apply an optimization policy:
 
-To automatically cap usage, configure budgets in the *Budgets* tab or through model wallets. Budgets block requests once the limit is reached. To limit consumption in other ways, apply governance strategies or rate-limiting policies.
+. In the *Optimizations* tab, select the sub-tab for the instance type: *Model Proxies*, *Agents*, or *MCP Servers*.
+. Locate the instance you want to optimize, and select *View optimizations*.
+. In the instance's optimizations view, locate the policy you want to apply.
+. Review the policy's *Potential savings*, and expand *Why this policy?* for details.
+. Select *Apply* to enable the policy.
 
-== Cost Data and Governance
+Treat the savings estimates as directional, and note that some policies may affect instance latency.
 
-Use *Cost Management* data to create or refine governance strategies.
+=== MCP Optimizations
 
-For runtime enforcement, attach cost-related controls or policies to a governance strategy and apply it to the relevant services.
+For MCP servers, you can apply these optimization policies. Each policy shows its *Potential savings* and a *Why this policy?* explanation, and you apply it by selecting *Apply*.
+
+* *MCP Tool Mapping*: Redefines tool names and descriptions to reduce prompt complexity and improve LLM comprehension.
+* *MCP Tools Progressive Disclosure*: Wraps the MCP server and surfaces two tools, `search_tools` and `invoke_tool`, to increase both accuracy and cost optimization.
+* *Clean Payloads*: Strips structural noise from tool responses, such as whitespace, nulls, and base64 blobs.
+* *Smart Response Trimming*: Trims oversized responses to match agent intent, dropping fields the agent never reads.
+* *Compress Repeated Structures*: Compresses repeated tabular structures into Token-Oriented Object Notation (TOON).
+
+=== Agent Optimizations
+
+For agents, you can apply these optimization policies to the agent's Model Proxy to reduce token costs. Each policy shows its *Potential savings* and a *Why this policy?* explanation, and you apply it by selecting *Apply*.
+
+* *Clean Responses*: Strips redundant fields and boilerplate from tool responses before they reach the model.
+* *Compress Repeated Structures*: Re-encodes repeated array or object structures in tool responses into a more compact form.
+
+=== Model Proxy Optimizations
+
+For model proxies, you can apply these optimization policies to reduce token costs. Each policy shows its *Potential savings*, and you apply it by selecting *Apply*. Applying policies may affect instance latency.
+
+* *Semantic Caching*: Caches LLM responses by semantic similarity so repeat or near-repeat prompts short-circuit an upstream call. This typically results in about 40% fewer tokens on chat-style traffic.
+
+
 
 == See Also
 
