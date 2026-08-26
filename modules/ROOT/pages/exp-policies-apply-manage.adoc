@@ -25,8 +25,8 @@ Button state is a hint, not the final authorization. The *Policies* tab enables 
 . Choose the policy and configure it.
 . Give the policy a name.
 +
-On some providers, notably Apigee, the name is the policy's unique identity on the gateway, not just a label. Choose it deliberately: the name is required at creation and can't be changed later. See <<policy-naming-and-identity>>.
-. Apply the policy. Anypoint accepts the request and performs it in the background; confirm the outcome in the *Activity log* tab. See xref:exp-policies-activity-log.adoc[].
+On some providers, notably Apigee, the name is the policy's unique identity on the gateway, not just a label. Choose it deliberately: the name is required at creation and you can't change it later. See <<policy-naming-and-identity>>.
+. Apply the policy. Anypoint accepts the request and performs it in the background. Confirm the outcome in the *Activity log* tab. See xref:exp-policies-activity-log.adoc[].
 
 To apply a universal policy across multiple providers at once, use the *Policy Library* instead. See xref:exp-policies-universal.adoc[].
 
@@ -48,10 +48,10 @@ Having permissions is necessary but not sufficient to edit a policy. Anypoint su
 
 You can enable, disable, and remove policies more broadly than you can edit them, because these actions don't require a recognized configuration shape. It's normal to see a policy where *Edit Configuration* is unavailable while *Enable Policy*, *Disable Policy*, and *Remove Policy* remain available, as long as the provider supports that action.
 
-* *Enable Policy* / *Disable Policy* toggle a policy on or off. Apigee and Azure API Management have no native enable/disable state, so these actions aren't offered there. See xref:exp-policies-provider-reference.adoc#supported-actions-by-provider[Supported Actions by Provider].
-* *Remove Policy* detaches the policy from the instance. A confirmation dialog notes that traffic previously filtered by the policy will no longer be enforced.
+* *Enable Policy* / *Disable Policy* toggle a policy on or off. Apigee and Azure API Management have no native enable/disable state, so these actions aren't available there. See xref:exp-policies-provider-reference.adoc#supported-actions-by-provider[Supported Actions by Provider].
+* *Remove Policy* detaches the policy from the instance. 
 
-While an operation is in progress on an instance, applying policies is paused for that instance until the running operation finishes. Wait for it to complete; you can track it in the *Activity log*. This is related to how providers lock during operations. See xref:exp-policies-provider-reference.adoc#instance-locking-during-operations[Instance Locking During Operations].
+While an operation is in progress on an instance, you can't apply other policies on that instance until the running operation finishes. Wait for it to complete. You can track progress in the *Activity log*. This is related to how providers lock during operations. See xref:exp-policies-provider-reference.adoc#instance-locking-during-operations[Instance Locking During Operations].
 
 [[policy-naming-and-identity]]
 == Policy Naming and Identity
