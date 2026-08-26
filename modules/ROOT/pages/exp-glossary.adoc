@@ -30,6 +30,9 @@ A unified view of compliance status across APIs hosted on Anypoint Platform gate
 Enhanced experience::
 The new MuleSoft UI for managing your AI portfolio, including governance, instance management, observability, and agentic experiences.
 
+External vault::
+A connection to your cloud secrets manager (AWS Secrets Manager, Microsoft Azure Key Vault, or HashiCorp Vault) configured under *Platform* > *Providers*. MuleSoft stores only secret metadata, such as names and paths, and resolves values from the vault when needed. Secret values are never stored, displayed, or logged. See xref:exp-vaults-manage.adoc[].
+
 Gateway::
 A runtime component that proxies traffic to backend services while enforcing policies. Supported types include Anypoint Omni Gateway (managed), external gateways, and unmanaged gateways.
 
@@ -79,10 +82,13 @@ Portfolio::
 The set of services registered or discovered within your org, organized into catalogs for agents, APIs, MCP servers, Model proxies, and gateways. Each catalog provides governance, monitoring, and instance management for the services it contains.
 
 Providers::
-The external cloud platforms connected to the enhanced experience to enable automated service discovery and import. Configure providers under *Platform* > *Providers*.
+The external cloud platforms connected to the enhanced experience to enable automated service discovery and import, or to connect an external vault. Configure providers under *Platform* > *Providers*.
 
 Scanner::
-A configured connection between the enhanced experience and a supported cloud provider. When a scanner runs, it discovers services and registers them in the matching Portfolio catalog. Scanners run on a schedule or on demand.
+A configured connection between the enhanced experience and a supported cloud provider. When a scanner runs, it discovers services and registers them in the matching Portfolio catalog. Scanners run on a schedule or on demand. A scanner is distinct from an external vault, which syncs secret metadata rather than discovering services.
+
+Secret::
+A credential stored in your external vault, such as an API key. The enhanced experience tracks secret metadata (name, path, usage, and last-rotated time) and can reference a secret from a model proxy's authentication configuration, so keys stay in your secrets manager. See xref:exp-vaults-manage.adoc[].
 
 Slackbot::
 The native Slack assistant that connects to the MuleSoft Platform MCP Server to answer questions about the MuleSoft platform from within Slack. After installing the MuleSoft for Slack app, open Slackbot and connect it through *Integrations*. Slackbot is separate from the MuleSoft Agent, which handles management tasks and notifications.

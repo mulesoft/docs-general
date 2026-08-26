@@ -12,6 +12,9 @@ Before adding any scanner, make sure you have:
 
 == Scanner Prerequisite Matrix
 
+// TODO: This matrix now includes external vault rows (AWS Secrets Manager, Azure Key Vault, HashiCorp Vault), but a vault isn't a scanner: it syncs secret metadata rather than discovering services. The rows follow the existing Akamai Security precedent of listing a non-discovering entry under "Scanner Type." Confirm with the writer or PM whether to keep the "Scanner Type" column heading or rename it (for example, "Connection Type") and adjust the page title and intro accordingly.
+// TODO: The vault permission set on exp-vaults-manage.adoc (Exchange Administrator, Exchange Contributor, API Creator, Manage Policies) is broader than this page's "Before You Begin" (Exchange Administrator only). Reconcile the two once the vault prerequisites are confirmed.
+
 [cols="1,1,3",options="header"]
 |===
 | Provider
@@ -213,6 +216,33 @@ a|
 *Account:* Snowflake Enterprise account with MCP servers enabled
 
 *Role:* `ACCOUNTADMIN`
+
+| Amazon (AWS Secrets Manager)
+| Vault
+a|
+*Credentials:* AWS Static (Access Key ID and Secret Access Key) or AWS Assume Role (base Access Key ID and Secret Access Key, plus Role ARN and External ID)
+
+*Setup:* Secrets Manager URL; AWS region; optional Secret Name Prefix
+
+// TODO: Confirm the AWS IAM read permissions required on Secrets Manager (for example, secretsmanager:ListSecrets and secretsmanager:DescribeSecret). Not documented in the UI text review; get the exact policy from engineering.
+
+| Microsoft (Azure Key Vault)
+| Vault
+a|
+*Credentials:* Microsoft Entra Service Principal Secret (Client Secret) or Microsoft Entra Service Principal Certificate (Client Certificate and Private Key, in PEM format)
+
+*Setup:* Vault URL; Client ID; Tenant ID
+
+// TODO: Confirm the Microsoft Entra app registration and Key Vault access-policy or RBAC roles required for read access. Not documented in the UI text review; get the exact roles from engineering.
+
+| HashiCorp (HashiCorp Vault)
+| Vault
+a|
+*Credentials:* HashiCorp AppRole (Role ID and Secret ID, plus an optional TLS CA Certificate in PEM format)
+
+*Setup:* Vault URL; KV Version; Engine Type; Mount; Path; optional Namespace for Vault Enterprise
+
+// TODO: Confirm the Vault policy and capabilities required on the target mount and path (for example, read and list on the KV path). Not documented in the UI text review; get the exact policy from engineering.
 
 |===
 
