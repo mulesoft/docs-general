@@ -33,17 +33,17 @@ To apply a universal policy across multiple providers at once, use the *Policy L
 [[why-a-policy-cant-be-edited]]
 == Why a Policy Can't Be Edited
 
-Having permissions is necessary but not sufficient to edit a policy. Anypoint supports editing only the curated set of policies that back the universal use cases (see xref:exp-policies-universal.adoc[]); every other recognized policy is view-only. When *Edit Configuration* is unavailable, the UI explains why. Common reasons include:
+Having permissions is necessary but not sufficient to edit a policy. Anypoint supports editing only the curated set of policies that back the universal use cases (see xref:exp-policies-universal.adoc[]); every other recognized policy is view-only. When *Edit Configuration* is unavailable, the UI explains why. Depending on the policy, the reason is one of the following:
 
-* *It's a universal policy.* "This is a universal policy and can't be changed here."
-* *It's not a supported template.* "Anypoint doesn't recognize this policy's template."
-* *Its schema isn't supported.* "Anypoint doesn't support managing policies with this schema yet."
-* *Its configuration doesn't match the expected shape (non-conformant).* "This policy's configuration doesn't match its expected schema."
-* *It's attached above the instance.* "This policy isn't scoped to the instance, so it can't be changed here."
-* *It has conditional rules.* "This policy has rules and can't be changed here."
-* *It has no provider reference.* "This policy has no provider reference, so it can't be changed here."
-* *The provider doesn't support the action.* "This provider doesn't support this action."
-* *Another operation is running.* "Another operation is in progress on this policy. Try again once it finishes."
+* This is a universal policy and can't be changed here.
+* Anypoint doesn't recognize this policy's template.
+* Anypoint doesn't support managing policies with this schema yet.
+* This policy's configuration doesn't match its expected schema.
+* This policy isn't scoped to the instance, so it can't be changed here.
+* This policy has rules and can't be changed here.
+* This policy has no provider reference, so it can't be changed here.
+* This provider doesn't support this action.
+* Another operation is in progress on this policy. Try again once it finishes.
 
 == Enable, Disable, and Remove
 
