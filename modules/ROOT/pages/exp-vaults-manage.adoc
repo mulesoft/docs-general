@@ -100,30 +100,37 @@ The test runs a live handshake between the MuleSoft control plane and your vault
 . (Optional) Select *Test Connection* to verify the connection before you save it.
 . Select *Connect*.
 
-After you connect, the vault detail page opens.
-
 [[view-and-sync-a-vault]]
 == Review Secrets and Connection Health
 
-Open the vault from *Platform* > *Providers*. The header shows the creation date and the last scan time.
+After you connect, the vault detail page opens. Confirm that MuleSoft can reach the vault and that secret metadata appeared.
 
-To refresh secret metadata after secrets are added, removed, or renamed in the vault, select *Sync now*. The sync runs in the background. Each run appears on *Overview* in *Sync Activity*.
+. From *Platform* > *Providers*, open the vault.
++
+The header shows the creation date and the last scan time.
+. On the *Overview* tab, review *Sync Activity*.
++
+A health check confirms that MuleSoft can still reach the vault. Those runs don't add, remove, or update secrets. A metadata sync records secrets that are added, removed, or updated.
+. To refresh secret metadata after secrets are added, removed, or renamed in the vault, select *Sync now*.
++
+The sync runs in the background. Each run appears in *Sync Activity*.
+. On the *Secrets* tab, review the secret names and paths that MuleSoft discovered.
++
+MuleSoft doesn't show the secret values. *Used By* shows which MuleSoft resources reference a secret. A dash means that no resource in the enhanced experience references the secret yet. Search by name when the list is long.
 
-*Overview*::
-Shows connection checks and metadata syncs. A health check confirms that MuleSoft can still reach the vault. Those runs don't add, remove, or update secrets. A metadata sync records secrets that are added, removed, or updated.
-
-*Secrets*::
-MuleSoft lists the secret names and paths that it discovers. MuleSoft doesn't show the secret values. *Used By* shows which MuleSoft resources reference a secret. A dash means that no resource in the enhanced experience references the secret yet. Search by name when the list is long.
-
-*Settings*::
-Shows the provider, Anypoint environment, and authentication method for this connection. *Test connection* checks that MuleSoft can still authenticate. *Edit settings* updates the connection or replaces a credential. On this tab, *Auth Method* shows an identifier for the method that you selected. For *Microsoft Entra Service Principal Certificate*, the identifier is `azure_sp_certificate`.
+To change credentials or delete the vault, use the *Settings* tab. See <<edit-or-delete-a-vault>>.
 
 [[edit-or-delete-a-vault]]
 == Edit or Delete a Vault
 
-To update connection details or rotate a credential, open the vault, select *Settings*, then *Edit settings*. (Optional) Select *Test connection* before you save.
+To update connection details or rotate a credential:
 
-To remove the vault, in the *Danger Zone*, select *Delete integration* and confirm. Deleting the integration removes its stored credentials and discovered secrets.
+. From *Platform* > *Providers*, open the vault and select *Settings*.
++
+The tab shows the provider, Anypoint environment, and authentication method.
+. Select *Edit settings*, make your changes, and select *Save*.
+. Optionally, select *Test connection* before you save.
+. To remove the vault, select *Delete integration* and confirm. Deleting the integration removes its stored credentials and discovered secrets.
 
 [[use-vault-secrets-in-a-model-proxy]]
 == Use a Vault Secret in a Model Proxy
