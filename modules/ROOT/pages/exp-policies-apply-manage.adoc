@@ -30,8 +30,8 @@ On some providers, notably Apigee, the name is the policy's unique identity on t
 
 To apply a universal policy across multiple providers at once, use the *Policy Library* instead. See xref:exp-policies-universal.adoc[].
 
-[[why-a-policy-cant-be-edited]]
-== Why a Policy Can't Be Edited
+[[policy-edit-restrictions]]
+== Policy Edit Restrictions
 
 Having permissions is necessary but not sufficient to edit a policy. Anypoint supports editing only the curated set of policies that back the universal use cases (see xref:exp-policies-universal.adoc[]); every other recognized policy is view-only. When *Edit Configuration* is unavailable, the UI explains why. Common reasons include:
 
