@@ -28,7 +28,7 @@ You can remove, enable, and disable policies more broadly than you can edit them
 
 == How Policy Operations Work
 
-Every policy change on an external provider — apply, edit, enable, disable, or remove — runs asynchronously. When you trigger an action, Anypoint accepts the request and performs the work on the provider in the background, then reconciles its view of the provider's state. "Accepted" is not the same as "applied": to confirm what actually happened, open the *Activity log* tab for the API instance. See xref:exp-policies-activity-log.adoc[].
+Every policy change on an external provider , such as apply, edit, enable, disable, or remove, runs asynchronously. When you trigger an action, Anypoint accepts the request and performs the work on the provider in the background, then reconciles its view of the provider's state. "Accepted" is not the same as "applied": to confirm what actually happened, open the *Activity log* tab for the API instance. See xref:exp-policies-activity-log.adoc[].
 
 == See Also
 
