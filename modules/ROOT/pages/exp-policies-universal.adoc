@@ -7,7 +7,7 @@ You apply universal policies from the *Policy Library*, which walks you through 
 
 == Universal Use Cases
 
-At launch, there are five universal use cases. Each maps to a specific native policy per provider (see xref:exp-policies-provider-reference.adoc#supported-policies-and-native-equivalents[Supported Policies and Native Equivalents]):
+At launch, there are five universal use cases. Each maps to a specific native policy per provider. See xref:exp-policies-provider-reference.adoc#supported-policies-and-native-equivalents[Supported Policies and Native Equivalents]:
 
 * API Key Enforcement
 * CORS (Cross-Origin Resource Sharing)
@@ -17,9 +17,9 @@ At launch, there are five universal use cases. Each maps to a specific native po
 
 These are also exactly the policies you can create and edit on external providers. Every other recognized policy is view-only. See xref:exp-policies-apply-manage.adoc#why-a-policy-cant-be-edited[Why a Policy Can't Be Edited].
 
-== Universal Is a Creation Experience, Not a Managed Entity
+== Universal Is a Creation Experience
 
-Use a universal policy to stand up a use case across several native gateways from one centralized starting point. At the end, what exists are ordinary native policies on each provider: there's no separate universal object with its own lifecycle to edit or remove afterward.
+Use a universal policy to implement a use case across multiple native gateways from a single starting point. Only native policies remain on each provider. No separate universal object exists, so you can't edit or remove it.
 
 Because the resulting native policies came from a universal template, they display as view-only. In the *Policies* tab, their *Edit Configuration* action is unavailable because the policy is universal. You can still remove, enable, or disable them where the provider supports those actions.
 
@@ -43,7 +43,7 @@ These three are easy to confuse. Use this comparison to choose the right tool:
 |What it is
 |A create-only authoring experience: configure once, applied as each provider's native policy across many instances, including external providers.
 |Policies that auto-attach to any API matching a set of criteria (runtime, technology, environment, and so on), applied by rule, not to one hand-picked target.
-|Reporting and compliance only: conformance reports for an API or instance. Does not apply policies.
+|Reporting and compliance only: conformance reports for an API or instance. Doesn't apply policies.
 
 |Lifecycle
 |None after creation. There's no universal object to edit or delete.
