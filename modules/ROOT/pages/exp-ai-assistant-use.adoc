@@ -85,7 +85,7 @@ Customer Support::
 
 Human Agent Escalation::
 +
-The assistant hands off to a human support agent when it can't answer your question, or when you ask directly—for example, "talk to support," "I need to speak to someone," or "escalate this." When a handoff happens, the assistant gives you a summary of your conversation to copy into a support case, along with a link to open one at https://help.salesforce.com[help.salesforce.com^]. The assistant doesn't create a support case for you automatically—you still submit it yourself.
+The assistant hands off to a human support agent when it can't answer your question, or when you ask directly—for example, "talk to support," "I need to speak to someone," or "escalate this." When a handoff happens, the assistant gives you a summary of your conversation to copy into a support case, along with a link to open one at https://help.salesforce.com[help.salesforce.com]. The assistant doesn't create a support case for you automatically—you still submit it yourself.
 +
 This capability is currently available only through the AI assistant panel in the enhanced experience.
 
