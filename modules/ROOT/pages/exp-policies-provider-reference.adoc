@@ -35,7 +35,7 @@ Before getting started, make sure you have:
 
 [NOTE]
 ====
-* Apply and Edit are further limited to the supported (universal-backed) policies. A Yes in the Edit column means the provider supports editing, not that every policy is editable. See xref:exp-policies-apply-manage.adoc#why-a-policy-cant-be-edited[Why a Policy Can't Be Edited].
+* Apply and Edit are further limited to the supported (universal-backed) policies. A Yes in the Edit column means the provider supports editing, not that every policy is editable. See xref:exp-policies-apply-manage.adoc#policy-edit-restrictions[Policy Edit Restrictions].
 * Apigee and Azure API Management have no native enabled/disabled state (a policy is either attached or not), so the enable/disable actions aren't available there.
 * Amazon API Gateway is not supported for policy write yet.
 ====
