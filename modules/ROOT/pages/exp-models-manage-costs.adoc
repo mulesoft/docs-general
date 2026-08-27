@@ -32,10 +32,10 @@ The model detail page shows the model proxies that surface the model and its con
 
 Model costs drive spend and budget calculations. Configure them for each model you use.
 
-. On the *Models* page, select a model — for example, `Claude 3.5 Haiku`.
+. On the *Models* page, select a model, for example, `Claude 3.5 Haiku`.
 . Select *Edit model costs*.
-. Enter the *Cost per 1K input tokens* — for example, `0.001`.
-. Enter the *Cost per 1K output tokens* — for example, `0.005`.
+. Enter the *Cost per 1K input tokens*, for example, `0.001`.
+. Enter the *Cost per 1K output tokens*, for example, `0.005`.
 . Select *Save changes*.
 
 Models without configured costs default to zero and don't factor into spend tracking or budget calculations. If a model's costs aren't configured, wallet budgets don't reflect actual usage for that model. See xref:exp-model-wallets-manage.adoc[].
