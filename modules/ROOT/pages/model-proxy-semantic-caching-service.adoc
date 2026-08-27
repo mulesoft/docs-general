@@ -26,10 +26,7 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 . In the navigation pane, select *Model Proxies* > *Semantic Services*.
 . Click *Add Semantic Service* > *Semantic Caching Service*.
 . Configure the *Embedding Service Connection* parameters for the embedding service that generates vector representations of queries:
-** *Embedding Service Provider*: The provider of the embedding model. Select from these options:
-*** *OpenAI*
-*** *Hugging Face*
-*** *Azure OpenAI*
+** *Embedding Service Provider*: The provider of the embedding model. Semantic caching supports *OpenAI* only.
 ** *Model*: The embedding model to use.
 ** *URL*: The URL of the embedding service.
 ** *Authentication key*: The API authentication key for the embedding service.
