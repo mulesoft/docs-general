@@ -99,7 +99,7 @@ You create a bridge from the source agent's detail page.
 ** *Consumer Endpoint* — Optionally override the gateway ingress URL used to build the instance URL.
 --
 . Configure *Inbound Authentication* to control how A2A clients authenticate to the bridge. Select a method such as *JWT Validation*, *Basic Authentication*, or *Client ID Enforcement*, then provide the required values. Select *None* to leave the endpoint unauthenticated.
-. Configure *Upstream Authentication* to control how the bridge authenticates to the source agent. For an Agentforce source agent, provide the *Salesforce Org URL*, *Token URL*, *Grant type*, *Client ID*, and *Client Secret*. Source-derived values such as the tenant endpoint are read-only.
+. Configure *Upstream Authentication* to control how the bridge authenticates to the source agent. For an Agentforce source agent, provide the *Salesforce Org URL*, *Token URL*, *Grant Type*, *Client ID*, and *Client Secret*. Source-derived values such as the tenant endpoint are read-only.
 . Expand *Advanced* to review or adjust the generated policy configuration.
 . Complete the wizard. Finishing publishes the A2A card and deploys the bridge instance together.
 
