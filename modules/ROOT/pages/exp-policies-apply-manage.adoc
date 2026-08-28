@@ -36,9 +36,7 @@ To apply a universal policy across multiple providers at once, use the *Policy L
 Having permissions is necessary but not sufficient to edit a policy. Anypoint supports editing the curated set of policies that back the universal use cases, plus several additional native Kong policies (see xref:exp-policies-universal.adoc[]); other recognized policies are view-only. Native policies created from a universal use case are editable like any other supported native policy. When *Edit Configuration* is unavailable, the UI explains why. Common reasons include:
 
 * Anypoint doesn't recognize the policy's template, or doesn't yet support managing policies with its schema.
-// TODO(W-23907611): SME (fedebrasburg) notes this case is an internal error the user can't act on;
-// confirm with PM/eng whether to document it here or direct users to open a support case instead.
-* The policy's configuration doesn't match its expected schema.
+* The policy's configuration doesn't match its expected schema. To resolve this issue, open a support case.
 * The policy is scoped above the instance rather than to it.
 * The policy has conditional rules.
 * The policy has no provider reference.
