@@ -26,8 +26,6 @@ Also decide whether you need validation-only monitoring or active runtime enforc
 
 The setup flow guides you through these steps: *Strategy Type*, *Scope*, *What to Apply*, *Name & Description*, and *Review*.
 
-For Controls strategies, the flow also includes a *Notifications* step between *What to Apply* and *Name & Description*. This step doesn't appear for Automated Policy strategies.
-
 == Select Strategy Type
 
 Select from these types:
