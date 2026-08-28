@@ -218,22 +218,22 @@ a|
 | Amazon (AWS Secrets Manager)
 | Vault
 a|
-*Credentials:* AWS Static (Access Key ID and Secret Access Key) or AWS Assume Role (base Access Key ID and Secret Access Key, plus Role ARN and External ID)
+*Credentials:* AWS Static (Access Key ID and Secret Access Key) or AWS Assume Role (Access Key ID and Secret Access Key, plus Role ARN and External ID)
 
-*Setup:* Secrets Manager URL; AWS region; optional Secret Name Prefix
+*Setup:* Vault URL; AWS region; optional Secret Name Prefix
 
 
 | Microsoft (Azure Key Vault)
 | Vault
 a|
-*Credentials:* Microsoft Entra Service Principal Secret (Client Secret) or Microsoft Entra Service Principal Certificate (Client Certificate and Private Key, in PEM format)
+*Credentials:* Azure Sp Secret (Client Secret) or Azure Sp Certificate (Client Certificate and Private Key, in PEM format)
 
 *Setup:* Vault URL; Client ID; Tenant ID
 
 | HashiCorp (HashiCorp Vault)
 | Vault
 a|
-*Credentials:* HashiCorp AppRole (Role ID and Secret ID, plus an optional TLS CA Certificate in PEM format)
+*Credentials:* HashiCorp Approle (Role ID and Secret ID, plus an optional TLS CA Certificate in PEM format)
 
 *Setup:* Vault URL; KV Version; Engine Type; Mount; Path; optional Namespace for Vault Enterprise
 

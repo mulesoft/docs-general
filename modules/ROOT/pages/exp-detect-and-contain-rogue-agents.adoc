@@ -5,10 +5,10 @@ As AI agents take on more autonomous work across your organization, a single com
 
 Detection and containment rely on two policies that work together. Apply both to each model proxy you want to protect:
 
-* The *Rogue Agent Detection* policy monitors agent traffic and flags risky behavior for your review.
-* The *Agent Kill Switch* policy blocks a flagged agent's access to the model proxy when you decide to contain it.
+* *Rogue Agent Detection* policy monitors agent traffic and flags risky behavior for your review.
+* *Agent Kill Switch* policy blocks a flagged agent's access to the model proxy when you decide to contain it.
 
-Both policies identify an agent from the same JWT claims, so the identity that Rogue Agent Detection flags is the identity that Agent Kill Switch blocks. Set the *Agent Identity Selector* to the same value in both policies.
+Both policies identify an agent from the same JSON Web Token (JWT) claims, so the identity that Rogue Agent Detection flags is the identity that Agent Kill Switch blocks. Set the *Agent Identity Selector* to the same value in both policies.
 
 Key benefits:
 
@@ -31,11 +31,9 @@ Confirm these prerequisites are in place.
 
 * Register each agent you want to monitor with a unique instance name and ID, and link it to its model proxies. This lets flags, logs, and containment actions target the correct agent.
 
-* Set up your agents as service identities in your enterprise IdP, and configure the IdP to include each agent's identifier and team claims in the tokens it issues.
+* Set up your agents as service identities in your enterprise IdP, and configure the IdP to include each agent's identifier and the identity of the person the agent is acting for in the tokens it issues.
 
-* Apply these policies to your agent tools and model proxy instances:
-** xref:gateway::policies-included-jwt-validation.adoc[JWT Token Policy]: validates the agent's identity.
-** xref:gateway::policies-outbound-oauth-obo.adoc[OBO (On-Behalf-Of) Token Validation Policy]: identifies both the agent and the end user it's acting for.
+* Apply the xref:gateway::policies-included-jwt-validation.adoc[JWT Validation] policy to each model proxy you want to protect. JWT Validation publishes the verified claims that Rogue Agent Detection and Agent Kill Switch use to identify the calling agent.
 
 == Enable Agent Monitoring for a Model Proxy
 
@@ -44,11 +42,11 @@ Enable monitoring on each model proxy whose agent traffic you want to track.
 . Log in to the MuleSoft enhanced experience with an account that has the required permissions.
 . In *Portfolio*, select *Model Proxies*.
 . Select the model proxy you want to monitor.
-. Select the *Policies* tab and then select *+Apply Policy*.
+. Select *Policies* and then select *+Apply Policy*.
 . Select the *Rogue Agent Detection* policy and click *Next*.
 . Configure the policy settings:
 +
-.. In *Agent Identity Selector*, enter a CEL expression that identifies the calling agent from its validated JWT claims, for example, `claims.act.sub`. Use the same selector you configure on the Agent Kill Switch policy so the flagged identity is the one that gets blocked. This field is required.
+.. In *Agent Identity Selector*, enter a Common Expression Language (CEL) expression that identifies the calling agent from its validated JWT claims, for example, `claims.act.sub`. Use the same selector you configure on the Agent Kill Switch policy so the flagged identity is the one that gets blocked. This field is required.
 .. In *User Identifier*, enter a CEL expression that identifies the person the agent is acting for, for example, `claims.email`. This value is recorded for attribution only and does not affect detection. This field is required.
 .. Under *Anomalies to Detect*, add at least one rule. For each rule, select an *Anomaly Type* and, optionally, enter a *Detection Prompt*:
 +
@@ -67,14 +65,14 @@ Repeat these steps for each model proxy to protect.
 
 The Agent Kill Switch policy enforces containment. When you quarantine a flagged agent, this policy blocks that agent's identity from accessing the model proxy. Apply it to every model proxy where you want to be able to contain an agent.
 
+. Log in to the MuleSoft enhanced experience with an account that has the required permissions.
 . In *Portfolio*, select *Model Proxies*, then select the model proxy to protect.
-. Select the *Policies* tab and then select *+Apply Policy*.
+. Select *Policies* and then select *+Apply Policy*.
 . Select the *Agent Kill Switch* policy and click *Next*.
 . Configure the policy settings:
 +
 .. In *Agent Identity Selector*, enter the same CEL expression you used on the Rogue Agent Detection policy, for example, `claims.act.sub`. The selectors must match so that the identity Rogue Agent Detection flags is the identity this policy blocks. This field is required.
 .. (Optional) In *Killed Agent IDs*, enter a comma-separated list of agent identifiers to block. Matching is an exact, character-for-character comparison against the value the Agent Identity Selector resolves. Leave this field empty in normal operation.
-// TODO: Confirm whether quarantining an agent from the Security page populates Killed Agent IDs automatically, or whether this list is maintained independently.
 .. (Optional) Expand *Policy Details* to set a *Policy Label*, *Policy Version*, and *Application Conditions*.
 . Select *Apply Policy*.
 
@@ -84,9 +82,8 @@ Repeat these steps for each model proxy to protect.
 
 Configure alerts so you're notified as soon as an agent is flagged.
 
-// TODO: This section's field labels (Select Alert Target, Specify Alert Configuration, Alert Metric, and so on) were not verified against the current UI. Confirm before publishing.
-
-. Navigate to *Notifications* and select *New Notification*.
+. Log in to the MuleSoft enhanced experience with an account that has the required permissions.
+. Navigate to *Observability* > *Notifications* and select *New Notification*.
 . Under *Select Alert Target*, complete the fields:
 .. *Environment*
 +
@@ -114,14 +111,13 @@ Select the operator to use in the alert condition, for example, the policy viola
 
 When an agent is flagged, review its activity and quarantine it if needed. Quarantine stops the agent from acting.
 
-. Navigate to *Security*.
-. On the *Needs Review* tab, find the flagged agent.
+. Log in to the MuleSoft enhanced experience with an account that has the required permissions.
+. Navigate to *Governance* > *Security*.
 +
-// TODO: Confirm the 90-day retention window. It is not surfaced in the current UI text.
 The *Security* page shows flagged and reviewed agents from the last 90 days.
+. Select *Needs Review*, then find the flagged agent.
 . Select *Review* to open the agent's flag history.
 . Review the timeline of detection events, then select an action:
-// TODO: Confirm the action labels and the containment verb against the review window. The confirmation copy uses "block" and "restore access," so the button might read "Block" rather than "Quarantine agent."
 +
 * *Quarantine agent*
 +
@@ -139,8 +135,9 @@ The audit log records the action with the agent instance ID, the user who perfor
 
 After you confirm a quarantined agent is safe to return to service, reactivate it.
 
-. Navigate to *Security*.
-. On the *Reviewed* tab, find the quarantined agent.
+. Log in to the MuleSoft enhanced experience with an account that has the required permissions.
+. Navigate to *Governance* > *Security*.
+. Select *Reviewed* and then find the quarantined agent.
 . Select *Review* to review the agent's details.
 . Select *Restore Model Access*.
 . In the confirmation window, select *Restore Model Access* to return the agent to service.
@@ -155,4 +152,3 @@ After reactivation the audit log records the action.
 * xref:exp-home-start.adoc[]
 * xref:exp-services-monitoring.adoc[]
 * xref:gateway::policies-included-jwt-validation.adoc[]
-* xref:gateway::policies-outbound-oauth-obo.adoc[]
