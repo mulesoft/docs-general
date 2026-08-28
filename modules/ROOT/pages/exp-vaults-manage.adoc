@@ -12,6 +12,7 @@ To register an external vault, you need:
 
 * An Anypoint Platform account.
 * Access to the external secrets manager you want to connect, including its endpoint URL and credentials.
+* You can't change a vault's name after you create it.
 * These Anypoint Platform permissions:
 +
 --
@@ -60,21 +61,18 @@ AppRole is the only authentication method that HashiCorp Vault supports. Applica
 [[register-aws-secrets-manager]]
 == Register AWS Secrets Manager
 
+Choose *AWS Static* or *AWS Assume Role* to match how your applications already reach Secrets Manager. See <<aws-secrets-manager-authentication>>.
+
 . Log in to the MuleSoft enhanced experience with an account that has the required permissions.
 . From *Platform* > *Providers*, select Amazon.
-. Select *Add Provider*.
-. From *Platform*, select *AWS Secrets Manager*.
-. In *Environment*, select the environment, for example, *Production*.
-. In *Authentication Method*, select *AWS Static* or *AWS Assume Role*.
-. In *Name*, enter a name to identify this connection. You can't change this name after creation.
-. Enter the *Vault URL*. This is the AWS Secrets Manager endpoint URL, for example, `\https://secretsmanager.us-east-1.amazonaws.com`.
-. Under *Credentials*, enter the access key ID and secret access key.
-. Under *Connection Configuration*:
+. Select *Add Provider*, then select *AWS Secrets Manager*.
+. Select the Anypoint environment whose services will use this vault.
+. Select the authentication method, then provide the identity that method uses:
 +
-* *AWS Static*: set the region.
-* *AWS Assume Role*: set the role ARN, the external ID, and the region.
-+
-To sync only secrets whose names start with a given string, also set the secret name prefix.
+* *AWS Static*: an access key ID and secret access key that can read Secrets Manager directly.
+* *AWS Assume Role*: an access key that can call STS AssumeRole, the ARN of the role that is allowed to read secrets, and the external ID that you set on that role so only this connection can assume it.
+. Enter the Secrets Manager endpoint as the *Vault URL*, for example `\https://secretsmanager.us-east-1.amazonaws.com`. Set the AWS region to match that endpoint.
+. To sync only secrets whose names start with a given string, set a secret name prefix. Leave it empty to discover every secret these credentials can read.
 . (Optional) Select *Test Connection* to verify the connection before you save it.
 +
 The test runs a live handshake between the MuleSoft control plane and your vault, so it can take a moment.
@@ -83,33 +81,39 @@ The test runs a live handshake between the MuleSoft control plane and your vault
 [[register-azure-key-vault]]
 == Register Azure Key Vault
 
+Both methods sign in as a Microsoft Entra app registration (a service principal). Choose *Azure Sp Secret* or *Azure Sp Certificate* for how that app proves its identity. See <<azure-key-vault-authentication>>.
+
 . Log in to the MuleSoft enhanced experience with an account that has the required permissions.
 . Select *Platform* > *Providers*, then select *Microsoft*.
-. Select *Add Provider*.
-. From *Platform*, select *Azure Key Vault*.
-. In *Environment*, select the environment, for example, *Production*.
-. In *Authentication Method*, select *Azure Sp Secret* or *Azure Sp Certificate*.
-. In *Name*, enter a name to identify this connection. You can't change this name after creation.
-. Enter the *Vault URL*. This is the Azure Key Vault URL, for example, `\https://my-vault.vault.azure.net`.
-. Under *Credentials*:
+. Select *Add Provider*, then select *Azure Key Vault*.
+. Select the Anypoint environment whose services will use this vault.
+. Select the authentication method, then provide the proof that method uses:
 +
-* *Azure Sp Secret*: enter the client secret.
-* *Azure Sp Certificate*: enter the client certificate and private key, both in PEM format.
-. Under *Connection Configuration*, set the client ID, which is the app registration, and the tenant ID, which is your Microsoft Entra directory.
+* *Azure Sp Secret*: the client secret issued for the app registration.
+* *Azure Sp Certificate*: the client certificate and private key, both in PEM format.
+. Enter the Key Vault URL, for example `\https://my-vault.vault.azure.net`. Identify the app with its client ID and your Microsoft Entra directory with the tenant ID.
 . (Optional) Select *Test Connection* to verify the connection before you save it.
 . Select *Connect*.
 
 [[register-hashicorp-vault]]
 == Register HashiCorp Vault
 
+HashiCorp Vault authenticates with AppRole only. The role ID identifies the role. The secret ID is the credential. See <<hashicorp-vault-authentication>>.
+
 . Log in to the MuleSoft enhanced experience with an account that has the required permissions.
 . From *Platform* > *Providers*, select HashiCorp.
-. In *Environment*, select the environment, for example, *Production*.
-. In *Authentication Method*, select *HashiCorp Approle*.
-. In *Name*, enter a name to identify this connection. You can't change this name after creation.
-. Enter the *Vault URL*. This is the HashiCorp Vault address, for example, `\https://vault.example.com:8200`.
-. Under *Credentials*, enter *Role ID* and *Secret ID*. To trust a private CA, enter a *TLS CA Certificate* in PEM format.
-. Under *Connection Configuration*, set *KV Version*, *Engine Type*, *Mount*, and *Path* so that MuleSoft knows where the secrets live in HashiCorp Vault. For HashiCorp Vault Enterprise, set *Namespace* when your secrets are in a namespace.
+. Select the Anypoint environment whose services will use this vault.
+. Select *HashiCorp AppRole*.
+. Enter the Vault address, for example `\https://vault.example.com:8200`.
+. Enter the role ID and secret ID. If your Vault server uses a certificate that MuleSoft doesn't trust by default, also provide a TLS CA certificate in PEM format.
+. Under *Connection Configuration*, set the values for:
++
+* *KV Version*: for a `kv` engine, which KV API that engine uses in Vault. Version 1 and version 2 list and read secrets on different paths, so copy the version that is enabled on the engine. The wrong version makes discovery fail. Version 2 also keeps secret history in Vault. MuleSoft still syncs names and reads the current value.
+* *Engine Type*: `kv` or `pki`. Use `kv` when this mount stores static secrets such as API keys. Use `pki` when this mount is Vault's certificate engine and the credentials you need are certificates.
+* *Mount*: the path where that engine is enabled in Vault, for example `secret` or `pki`. Ask your Vault admin for this value. Don't put folders that live under the engine here.
+* *Path*: the folder under the mount to discover, for example `prod/mulesoft`. Use this to limit what MuleSoft imports from that engine.
++
+For HashiCorp Vault Enterprise, set *Namespace* to the namespace that contains this engine. A namespace is a separate Vault environment on the same cluster. Open-source Vault has no namespaces, so leave this empty.
 . (Optional) Select *Test Connection* to verify the connection before you save it.
 . Select *Connect*.
 
