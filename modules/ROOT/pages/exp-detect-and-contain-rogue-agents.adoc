@@ -13,7 +13,7 @@ Both policies identify an agent from the same JSON Web Token (JWT) claims, so th
 Key benefits:
 
 * Detect anomalous or unauthorized behavior in real time, using built-in detectors and your own custom rules.
-* Get notified the moment the platform flags an agent, through email or Slack.
+* Get notified, through email or Slack, the moment the platform flags an agent.
 * Review flagged activity before you act. Nothing quarantines automatically without your review.
 * Quarantine a rogue agent instantly to stop data leakage, harmful actions, or runaway costs. Quarantine is fully reversible, so you can undo a false positive in seconds.
 * Meet compliance requirements. The platform logs every action with full attribution.
