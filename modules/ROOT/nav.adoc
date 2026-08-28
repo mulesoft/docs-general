@@ -23,6 +23,7 @@
     *** xref:model-proxy-policies.adoc[]
     *** xref:model-proxy-request.adoc[]
     *** xref:model-proxy-semantic-service.adoc[]
+    *** xref:model-proxy-semantic-caching-service.adoc[]
     *** xref:model-proxy-try-out.adoc[]
   ** xref:exp-scanners-add-from-providers.adoc[]
     *** xref:exp-scanners-prerequisites-reference.adoc[]

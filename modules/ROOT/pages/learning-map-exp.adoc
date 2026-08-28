@@ -5,9 +5,10 @@
 The enhanced MuleSoft experience helps you manage, optimize, and govern a multi-agent ecosystem from one place. Work with agents, APIs, MCP servers, Model proxies, and gateways as a single portfolio. View asset relationships, apply governance and cost discipline, and act on observability signals instead of working in separate silos. The experience pairs this portfolio view with an in-product assistant to connect integrations, tune configurations, and get answers in context.
 
 * Scan platforms and import discovered APIs and agents, then manage scanners in one place.
-* Register services manually, view services across providers, and create new MCP servers.
-* Govern services with runtime policies and governance strategies for design and runtime consistency.
-* Observe service health and monitor overview dashboards across services and environments.
+* Register services manually, view services across providers, and create MCP servers and model proxies.
+* Test APIs and MCP servers in playgrounds without leaving the portfolio.
+* Govern services with run-time policies, governance strategies, and Akamai risk correlation.
+* Observe service health and monitor cost, token usage, and dashboards across services and environments.
 
 image::enhanced-experience-pillars.png[""]
 
@@ -15,7 +16,7 @@ The end-to-end journey for the experience consists of these tasks, each with lin
 
 [.lm-table, cols="1a,1a,1a", grid="none"]
 |===
-| image::lm_start.png[""]
+| image::reuse::lm_start.png[""]
 [.lm-bold]##Learn About Enhanced MuleSoft Experience##
 
 The experience helps you manage, optimize, and govern a multi-agent ecosystem from one place.
@@ -23,16 +24,18 @@ The experience helps you manage, optimize, and govern a multi-agent ecosystem fr
 //- ToDo [Video]
 - xref:exp-overview.adoc[]
 - xref:exp-compare.adoc[]
+- xref:exp-glossary.adoc[]
 - xref:exp-home-start.adoc[]
-- xref:exp-slack-integrate.adoc[]
-- xref:exp-claude-desktop-connect.adoc[]
+- xref:exp-portfolio-overview.adoc[]
+- xref:exp-ai-assistant-use.adoc[]
 - https://trailhead.salesforce.com/content/learn/modules/enhanced-mulesoft-experience-quick-look[Get to Know the Enhanced MuleSoft Experience]
+// - placeholder for video
 
 
-| image::lm_explore_1.png[""]
-[.lm-bold]##Register##
+| image::reuse::lm_explore_1.png[""]
+[.lm-bold]##Populate Your Portfolio##
 
-Register agents, APIs, and MCP servers from any provider or registry, and add Model proxies and gateways.
+Register agents, MCP servers, and APIs from any provider or registry, add model proxies and gateways, and create MCP servers.
 
 - xref:exp-services-add-to-portfolio.adoc[]
 - xref:exp-services-connect-providers-to-add.adoc[]
@@ -40,40 +43,74 @@ Register agents, APIs, and MCP servers from any provider or registry, and add Mo
 - xref:exp-services-create-mcp-server.adoc[]
 - xref:exp-services-create-a2a-bridge.adoc[]
 - xref:exp-services-add-semantic.adoc[]
+- xref:exp-instances-add.adoc[]
 - xref:exp-services-view-details.adoc[]
 - xref:exp-scanners-add-from-providers.adoc[]
+- xref:exp-scanners-manage.adoc[]
+- xref:exp-providers-manage.adoc[]
 
 
+| image::reuse::lm_develop_1.png[""]
+[.lm-bold]##Create and Manage Model Proxies##
 
-| image::lm_build_1.png[""]
-[.lm-bold]##Monitor##
+Create model proxies to route, govern, and test LLM traffic from a single endpoint.
 
-Monitor latency, cost, invocations, and failures in real time.
+- xref:model-proxy.adoc[]
+- xref:model-proxy-create-model-proxy.adoc[]
+- xref:model-proxy-policies.adoc[]
+- xref:model-proxy-request.adoc[]
+- xref:model-proxy-semantic-service.adoc[]
+- xref:model-proxy-try-out.adoc[]
+
+|===
+
+[.lm-table, cols="1a,1a,1a", grid="none"]
+|===
+| image::reuse::lm_test_1.png[""]
+[.lm-bold]##Test Services in Playgrounds##
+
+Test APIs and MCP servers in playgrounds without leaving the portfolio.
+
+- xref:exp-playground-api.adoc[]
+- xref:exp-playground-mcp.adoc[]
+
+| image::reuse::lm_optimize_1.png[""]
+[.lm-bold]##Monitor Usage and Manage Costs##
+
+Monitor usage and performance, and apply optimization policies to manage costs.
 
 - xref:exp-services-monitoring.adoc[]
 - xref:exp-governance-view-cost-and-token-usage.adoc[]
+- xref:model-proxy-token-reports.adoc[]
 - xref:exp-services-view-detailed-metrics.adoc[]
 - xref:exp-alerts-configure-notifications.adoc[]
 
-|===
+| image::reuse::lm_build_1.png[""]
+[.lm-bold]##Apply Governance Rules and Policies##
 
-[.lm-table, cols="1a,1a", width="66%", grid="none"]
-|===
-| image::lm_build_1.png[""]
-[.lm-bold]##Secure##
+Monitor and enforce policies, block noncompliant activity, and connect your existing Akamai account to protect services.
 
-Secure instances with compatible policies across your entire registry.
-
-- xref:exp-instances-add.adoc[]
 - xref:exp-governance-work-with-strategies.adoc[]
+- xref:exp-governance-create-strategy.adoc[]
+- xref:exp-governance-manage-strategies.adoc[]
+- xref:exp-governance-govern-third-party-apis.adoc[]
+- xref:exp-governance-monitor-cross-gateway-conformance.adoc[]
+- xref:exp-akamai-risk-correlation.adoc[]
 
-| image::lm_analyze_1.png[""]
-[.lm-bold]##Transcode##
+|===
 
-Transcode existing REST APIs into MCP servers instantly.
 
-- xref:exp-services-create-mcp-server.adoc[]
+// Maybe combine with Monitor and Manage Costs section
 
+[.lm-table, cols="1a", width="33%", grid="none"]
+|===
+| image::reuse::lm_integrate_end_1.png[""]
+[.lm-bold]##Connect to External Systems##
+
+Connect the enhanced experience to Slack and Claude Desktop.
+
+- xref:exp-slack-integrate.adoc[]
+- xref:exp-claude-desktop-connect.adoc[]
 
 |===
 
@@ -82,3 +119,5 @@ Transcode existing REST APIs into MCP servers instantly.
 
 * xref:exp-home-start.adoc[]
 * xref:exp-compare.adoc[]
+* xref:exp-troubleshoot.adoc[]
+* xref:exp-ai-assistant-troubleshoot.adoc[]
