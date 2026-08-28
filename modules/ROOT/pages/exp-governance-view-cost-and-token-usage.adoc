@@ -43,6 +43,22 @@ include::partial$exp-navigation-labels.adoc[tag=ExpNavigationLabels]
 * The *Optimizations* tab: Analyze MCP server token usage and optimization opportunities.
 --
 . Set the time range for the data you want to analyze. The time range selector (*1H*, *24H*, *7D*, or *30D*; default *30D*) sits next to the tabs and applies to both the *Budgets* and *Optimizations* tabs.
+. Use the *Tokens*/*Cost* toggle to choose how metrics display. See <<view-metrics-in-tokens-or-cost>>.
+
+[[view-metrics-in-tokens-or-cost]]
+== View Metrics in Tokens or Cost
+
+The *Tokens*/*Cost* toggle next to the tabs controls whether *Cost Management* metrics display as token counts or as dollar amounts. The toggle defaults to *Tokens*.
+
+To view spend in dollars, set the toggle to *Cost*.
+
+Before dollar amounts appear, you must configure a cost rate for each model. Until you set model rates, the *Cost* view shows a prompt to configure your models, and metrics that depend on cost show zero. To set rates, select *Configure Costs*, or set a cost per token for each model on the *Models* page. See xref:exp-models-manage-costs.adoc[Setting Model Costs for Spend Tracking].
+
+=== When Cost Tracking Begins
+
+Cost metrics accrue only from the time you configure model rates. LLM usage before that time isn't priced and doesn't appear as cost, even for earlier periods within the selected time range.
+
+Token counts are unaffected. The *Tokens* view continues to reflect the complete spend from the time you enabled *Cost Management*, regardless of when you set model rates.
 
 == Cost Data Use Cases
 
@@ -67,6 +83,8 @@ The *Budgets* tab shows financial summaries across your configured budgets:
 * *Total Managed Spend*: Total spend across all configured budgets.
 * *By Provider*: Spend breakdown by LLM provider.
 * *By Model Wallet*: Spend breakdown by model wallet.
+
+These summaries display as token counts or dollar amounts based on the *Tokens*/*Cost* toggle. Dollar amounts appear only after you configure model rates. See <<view-metrics-in-tokens-or-cost>>.
 
 Each budget row displays a status badge that reflects current usage against the budget limit:
 
