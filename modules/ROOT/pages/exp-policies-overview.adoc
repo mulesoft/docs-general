@@ -1,0 +1,40 @@
+= Managing Policies on Gateway Providers
+:keywords: policies, gateway policies, external gateways, apigee, azure api management, kong, api manager, anypoint platform
+
+Manage policies not only on Anypoint and Mule gateways but on external gateway providers, such as Google Apigee, Azure API Management, and Kong Gateway. You work with these policies entirely through the Anypoint UI, from the *Policies* tab of an API instance in *Portfolio*.
+
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* The API Manager: Manage Policies permission to apply, edit, enable, disable, or remove policies.
++
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+* A provider scanner already connected for each external provider whose policies you want to manage. Policy management reuses the same connection you set up for scanning. See xref:exp-scanners-add-from-providers.adoc[].
+
+== Reading Policies vs. Writing Policies
+
+There are two distinct ways you interact with provider policies:
+
+* Read (discover and display): Provider scanners import the full catalog of policies attached on the provider so you can see them on the *Policies* tab. This is view-only. See xref:exp-services-view-details.adoc#view-read-policies-discovered-by-scanners[View Read Policies Discovered by Scanners].
+* Write (create, edit, enable, disable, remove): From the same *Policies* tab, you can manage a curated subset of policies directly on the provider. This is the feature described in this section.
+
+== The Editability Rule
+
+Anypoint recognizes and displays every policy it discovers, but you can create and edit only a curated set: the policies that back the universal use cases, plus several additional native Kong policies. See xref:exp-policies-universal.adoc[]. Other recognized policies are view-only.
+
+You can remove, enable, and disable policies more broadly than you can edit them, so it's normal to see a policy where *Edit Configuration* is unavailable while *Remove Policy* and the enable and disable actions remain available, as long as the provider supports that action. See xref:exp-policies-apply-manage.adoc[] and xref:exp-policies-provider-reference.adoc[].
+
+== How Policy Operations Work
+
+Every policy change on an external provider, such as apply, edit, enable, disable, or remove, runs asynchronously. When you trigger an action, Anypoint accepts the request and performs the work on the provider in the background, then reconciles its view of the provider's state. An accepted request isn't the same as an applied policy, so to confirm what actually happened, open the *Activity log* tab for the API instance. See xref:exp-policies-activity-log.adoc[].
+
+== See Also
+
+* xref:exp-policies-universal.adoc[]
+* xref:exp-policies-apply-manage.adoc[]
+* xref:exp-policies-activity-log.adoc[]
+* xref:exp-policies-provider-reference.adoc[]
+* xref:exp-services-view-details.adoc[]
+* xref:exp-scanners-add-from-providers.adoc[]

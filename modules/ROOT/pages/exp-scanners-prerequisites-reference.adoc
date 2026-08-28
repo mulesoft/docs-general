@@ -3,7 +3,7 @@
 
 Scanner prerequisites by provider help you confirm required roles, credentials, and permissions before creating a scanner. Use this reference to prevent connection test failures and incomplete discovery by validating provider-specific access in advance. Each scanner also requires Exchange Administrator permission and the correct business group context.
 
-For API gateway providers that support policy write, discovery credentials aren't enough to apply policies. Supply credentials with the write scope for the gateway, and review the additional write prerequisites in xref:_policy_write_prerequisites[]. Write scopes are noted in the matrix as *Write scope (policy apply)*.
+For API gateway providers that support policy write, discovery access alone isn't enough to apply policies. Policy write reuses the same scanner connection you configure here, so the connection's credentials must also carry the provider's write permissions (write scope). Review the additional write prerequisites in xref:_policy_write_prerequisites[]. Write scopes are noted in the matrix as *Write scope (policy apply)*.
 
 == Before You Begin
 
@@ -187,7 +187,7 @@ a|
 
 * *Apply read scope:* Admin API read permission required to read policy in target environments
 
-*Write scope (policy apply):* Admin API write permission required to apply, enable, disable, or delete policy in target environments
+*Write scope (policy apply):* Admin API write permission required to apply, enable, disable, or remove policy in target environments
 
 | Akamai Security
 | API Security
@@ -235,12 +235,19 @@ a|
 
 == Policy Write Prerequisites
 
-Policy write lets you apply, enable, disable, and delete policies on connected third-party gateway APIs directly from Anypoint, with no Anypoint gateway in the request path. Policy write is available for API gateway providers only: Azure API Management, Google Apigee, and Kong Gateway. Agent, API Security, and MCP scanners don't support policy write.
+Policy write lets you apply, enable, disable, and remove policies on connected third-party gateway APIs directly from Anypoint, with no Anypoint gateway in the request path. Policy write is available for API gateway providers only: Azure API Management, Google Apigee, and Kong Gateway. Agent, API Security, and MCP scanners don't support policy write.
 
-Before you can write policies, confirm these prerequisites in addition to the discovery prerequisites in the matrix:
+// TODO(W-23907611): Credential-model discrepancy to confirm with PM/eng. This section was
+// grounded in the Omni-app code (separate read vs. write credentials, an explicit Read-Only
+// state until write credentials are added). The External Policies Documentation Guide instead
+// describes policy write as reusing the SAME scanner connection, with write gated only by the
+// permissions granted to that connection's identity on the provider. The text below follows
+// the guide (single reused connection). Confirm which model ships before publishing.
 
-* *Write credentials:* Provide credentials that have the write scope for the target gateway. Configure read and write credentials separately in the scanner. Read-only credentials allow discovery only.
-* *Write scope:* The write scope covers enabling, disabling, and deleting existing vendor-native policies, and creating and editing universal (canonical) policies, at both the instance and service scope. Creating and editing native vendor policies isn't supported.
+Policy write reuses the same connection you configure for scanning; there's no separate policy-write connection. Before you can write policies, confirm these prerequisites in addition to the discovery prerequisites in the matrix:
+
+* *Write permissions on the connection:* The scanner connection's identity must have the provider's write scope, not just read access. A connection with read-only access to the provider can discover and read policies, but policy actions remain unavailable.
+* *Write scope:* The write scope covers enabling, disabling, and removing existing vendor-native policies, and creating and editing universal (canonical) policies, at both the instance and service scope. Creating and editing native vendor policies isn't supported.
 * *Provider write permissions:* Grant the provider-specific *Write scope (policy apply)* listed for each API gateway provider in the xref:_scanner_prerequisite_matrix[].
 
 The following table summarizes the read and write scopes for each API gateway provider that supports policy write.
@@ -273,11 +280,14 @@ The following table summarizes the read and write scopes for each API gateway pr
 
 === Read-Only APIs
 
-When a scanner has only read credentials for a gateway, its API instances appear as *Read-Only* and policy actions are unavailable. To enable policy write, update the scanner with write credentials by using the credential update link on the API instance.
+When a scanner connection has only read access to a gateway, its API instances appear as *Read-Only* and policy actions are unavailable. To enable policy write, grant the connection's identity the provider's write scope, then update the connection from the API instance.
 
-=== Tracked Applies and Audit Trail
+=== Tracked Applies
 
-Every policy write is tracked and records an applied or failed state alongside the scanner-read configuration. Anypoint also logs each write as compliance evidence, including who made the change, the policy, the target, the vendor, the timestamp, and the result.
+Every policy write is tracked and records an applied or failed state alongside the scanner-read configuration. Anypoint logs each write as compliance evidence, including the policy, the target, the vendor, the timestamp, and the result. To follow the outcome of a policy operation, use the *Activity log* tab on the API instance. See xref:exp-policies-activity-log.adoc[].
+
+// NOTE(W-23907611): The Activity log records action, policy, status, and time only — it does
+// not record an actor ("who"). Do not describe it as a full who-did-what audit trail.
 
 [NOTE]
 Anypoint doesn't manage vendor policy lifecycle, versioning, or CI/CD.
