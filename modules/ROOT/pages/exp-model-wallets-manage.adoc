@@ -3,7 +3,7 @@
 
 A model wallet identifies a caller of a model proxy and caps that caller's token or dollar spend against a provider over a set time window. Each wallet has a system-generated client ID and required JSON Web Token (JWT) claims that you define.
 
-When a caller sends a request, the proxy matches the client ID and claims to a wallet and counts the request against that wallet's budgets. Matching a wallet attributes usage. It does not grant or deny access to the proxy.
+When a caller sends a request, the proxy matches the client ID and claims to a wallet and counts the request against that wallet's budgets. After the wallet reaches its budget, the proxy blocks further requests to that provider's models. That block enforces a spend or token cap. A wallet doesn't grant or deny access to the proxy.
 
 [[before-you-begin]]
 == Before You Begin
