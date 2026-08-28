@@ -24,6 +24,7 @@ These policies are specific and useful for Model Proxies:
 * xref:gateway::policies-included-bedrock-guardrails.adoc[]
 * xref:gateway::policies-included-azure-content-safety.adoc[]
 * xref:gateway::policies-included-llm-pii-detection.adoc[]
+* xref:gateway::policies-included-llm-proxy-request-compression.adoc[]
 * xref:gateway::policies-included-llm-token-rate-limit.adoc[]
 * xref:gateway::policies-included-regex-prompt-guard.adoc[]
 

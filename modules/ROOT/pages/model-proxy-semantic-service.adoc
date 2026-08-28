@@ -1,20 +1,20 @@
-= Configuring Semantic Services
+= Configuring Semantic Routing Services
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 :imagesdir: ../assets/images
 :page-aliases: gateway::llm-proxy-semantic-service.adoc, gateway::flex-gateway-llm-proxy-semantic-service.adoc, exp-services-add-semantic.adoc
 
-Semantic services compare incoming requests to defined prompt topics to route traffic to the best-matching model path or block requests that match denylist topics. Model Proxy supports Basic Scale semantic services for simple routing and Advanced Scale semantic services for complex routing backed by an external vector database. Configure a semantic service before creating a model proxy that uses semantic routing.
+Semantic routing services compare incoming requests to defined prompt topics to route traffic to the best-matching model path or block requests that match denylist topics. Model Proxy supports Basic Scale semantic routing services for simple routing and Advanced Scale semantic routing services for complex routing backed by an external vector database. Configure a semantic routing service before creating a model proxy that uses semantic routing.
 
-Model Proxy supports two types of semantic services:
+Model Proxy supports two types of semantic routing services:
 
 * <<configure-an-advanced-scale-semantic-service, Advanced Scale>>:
 +
-For complex semantic routing. Advanced scale semantic services use a vector database to store and compare prompt topic utterances. Advanced scale semantic services support unlimited prompt topics and 2000 utterances per prompt topic.
+For complex semantic routing. Advanced scale semantic routing services use a vector database to store and compare prompt topic utterances. Advanced scale semantic routing services support unlimited prompt topics and 2000 utterances per prompt topic.
 * <<configure-a-basic-scale-semantic-service, Basic Scale>>:
 +
-For simple semantic routing and blocking. Basic scale semantic services support up to 6 prompt topics and 10 utterances per prompt topic.
+For simple semantic routing and blocking. Basic scale semantic routing services support up to 6 prompt topics and 10 utterances per prompt topic.
 
 == Before You Begin
 
@@ -32,7 +32,7 @@ Before getting started, make sure you have:
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
 [[configure-an-advanced-scale-semantic-service]]
-== Configure an Advanced Scale Semantic Service
+== Configure an Advanced Scale Semantic Routing Service
 
 . In the navigation pane, select *Model Proxies* > *Semantic Services*.
 . Click *Add Semantic Service* > *Semantic Routing Service*.
@@ -72,7 +72,7 @@ NOTE: To deny users from asking about certain subjects, create prompt topics for
 . Open the downloaded `.sh` script file in your database to populate it with your scaled vectors.
 
 [[configure-a-basic-scale-semantic-service]]
-== Configure a Basic Scale Semantic Service
+== Configure a Basic Scale Semantic Routing Service
 
 . In the navigation pane, click the *Model Proxies* dropdown arrow.
 . Select *Semantic Services*.
@@ -89,12 +89,12 @@ Basic scale supports up to six topics and 10 utterances per topic. Managed via i
 ** *Auth key*: The API authentication key for the embedding service.
 . Click *Save*.
 
-== Edit a Semantic Service
+== Edit a Semantic Routing Service
 
-To edit a semantic service:
+To edit a semantic routing service:
 
-. From *Semantic Service Setup*, click the three-dots menu (image:gateway::image$three-dots-menu.png[3%,3%]) of the semantic service you want to edit.
+. From *Semantic Service Setup*, click the three-dots menu (image:gateway::image$three-dots-menu.png[3%,3%]) of the semantic routing service you want to edit.
 . Make the necessary edits.
-. Click either *Save* or *Save & Download Script* depending on your sematic service.
+. Click either *Save* or *Save & Download Script* depending on your semantic routing service.
 +
 If creating new prompt topics for an advanced scale semantic service, you must download and run the vector script in your database again.
