@@ -82,7 +82,7 @@ Semantic routing is dynamic routing where the Model Proxy chooses which model to
 [[semantic-caching]]
 == Semantic Caching
 
-Semantic caching stores and reuses LLM responses based on semantic similarity. When an incoming request is semantically similar to a previous request, Model Proxy returns the cached response instead of calling the LLM provider again, which reduces latency and cost. To use semantic caching, configure a semantic caching service and enable it on the Model Proxy. For more information, see xref:model-proxy-semantic-caching-service.adoc[].
+Semantic caching stores and reuses LLM responses based on semantic similarity. When an incoming request is semantically similar to a previous request, Model Proxy returns the cached response instead of calling the LLM provider again, which reduces latency and cost. To use semantic caching, configure a semantic caching service and enable it on the Model Proxy. Semantic caching supports Azure AI Search as the vector database only. For more information, see xref:model-proxy-semantic-caching-service.adoc[].
 
 [[connections-and-model-proxies]]
 == Connections and Model Proxies

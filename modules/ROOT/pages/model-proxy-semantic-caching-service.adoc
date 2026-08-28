@@ -46,8 +46,6 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 . Configure the *Advanced Caching Configurations* to set the caching environment, behavior, and similarity settings:
 ** *Environment*: The environment to use for the semantic caching service.
 ** *Service label*: Label to identify the new service. Shown as the label in the Semantic Services catalog.
-+
-Under *Cache Configuration*, set the following:
 ** *TTL* and *Unit of time*: The length of time a cached response remains valid before it expires (for example, `7` `Days`).
 ** *Similarity Threshold*: A value from 0 to 1 that sets how similar an incoming request must be to a cached request for a cache hit. Higher values require more similarity.
 ** *LLM-determined response caching*: Enable this option to let the LLM decide whether a response is cacheable. When enabled, define an *LLM cache decision prompt* that specifies the acceptance criteria for caching incoming responses. This prompt is added to the user request.
