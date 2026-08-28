@@ -67,7 +67,7 @@ AppRole is the only authentication method that HashiCorp Vault supports. Applica
 . In *Environment*, select the environment, for example, *Production*.
 . In *Authentication Method*, select *AWS Static* or *AWS Assume Role*.
 . In *Name*, enter a name to identify this connection. You can't change this name after creation.
-. Enter the *Vault URL*. This is the AWS Secrets Manager endpoint URL, for example, `https://secretsmanager.us-east-1.amazonaws.com`.
+. Enter the *Vault URL*. This is the AWS Secrets Manager endpoint URL, for example, `\https://secretsmanager.us-east-1.amazonaws.com`.
 . Under *Credentials*, enter the access key ID and secret access key.
 . Under *Connection Configuration*:
 +
@@ -90,7 +90,7 @@ The test runs a live handshake between the MuleSoft control plane and your vault
 . In *Environment*, select the environment, for example, *Production*.
 . In *Authentication Method*, select *Azure Sp Secret* or *Azure Sp Certificate*.
 . In *Name*, enter a name to identify this connection. You can't change this name after creation.
-. Enter the *Vault URL*. This is the Azure Key Vault URL, for example, `https://my-vault.vault.azure.net`.
+. Enter the *Vault URL*. This is the Azure Key Vault URL, for example, `\https://my-vault.vault.azure.net`.
 . Under *Credentials*:
 +
 * *Azure Sp Secret*: enter the client secret.
@@ -107,7 +107,7 @@ The test runs a live handshake between the MuleSoft control plane and your vault
 . In *Environment*, select the environment, for example, *Production*.
 . In *Authentication Method*, select *HashiCorp Approle*.
 . In *Name*, enter a name to identify this connection. You can't change this name after creation.
-. Enter the *Vault URL*. This is the HashiCorp Vault address, for example, `https://vault.example.com:8200`.
+. Enter the *Vault URL*. This is the HashiCorp Vault address, for example, `\https://vault.example.com:8200`.
 . Under *Credentials*, enter *Role ID* and *Secret ID*. To trust a private CA, enter a *TLS CA Certificate* in PEM format.
 . Under *Connection Configuration*, set *KV Version*, *Engine Type*, *Mount*, and *Path* so that MuleSoft knows where the secrets live in HashiCorp Vault. For HashiCorp Vault Enterprise, set *Namespace* when your secrets are in a namespace.
 . (Optional) Select *Test Connection* to verify the connection before you save it.
