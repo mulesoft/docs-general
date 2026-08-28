@@ -15,7 +15,7 @@ Before adding any scanner, make sure you have:
 [cols="1,1,3",options="header"]
 |===
 | Provider
-| Scanner Type
+| Type
 | Required Credentials, Roles, and Setup
 
 | Amazon Bedrock
@@ -103,8 +103,8 @@ a|
 a|
 *Credentials:* Azure app registration; client ID and client secret. Two authentication schemes are supported:
 
-* *OAuth 2.0 Authorization Code:* Interactive sign-in and consent in a Microsoft popup. Tenant ID is optional; if you don't provide one, the connection defaults to the home tenant ID after authorization.
-* *Client Credentials:* Tenant ID is required.
+* *OAuth (Authorization Code):* Interactive sign-in and consent in a Microsoft popup. This scheme requires a pre-configured customer OAuth application. Configure the OAuth application in Azure to request the Dynamics CRM `user_impersonation` scope, and set the OAuth callback URL to `https://<your_anypoint_host>/secrets-manager/api/v1/connections/oauth/callback`. Tenant ID is optional; if you don't provide one, the connection defaults to the home tenant ID after authorization.
+* *OAuth:* Uses client credentials, with no interactive sign-in. Tenant ID is required.
 
 *Role:* Copilot Studio Scanner
 
