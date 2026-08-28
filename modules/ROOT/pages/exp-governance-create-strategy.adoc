@@ -24,13 +24,13 @@ Also decide whether you need validation-only monitoring or active runtime enforc
 . Log in and go to *Governance* > *Governance Strategies*.
 . Select *Create Governance Strategy* to start the setup flow.
 
-The setup flow guides you through type, scope, rules or policies, and activation.
+The setup flow guides you through these steps: *Strategy Type*, *Scope*, *What to Apply*, *Name & Description*, and *Review*.
 
 == Select Strategy Type
 
 Select from these types:
 
-* *Controls* validate targeted services against control rules. Use controls to monitor compliance and, when supported, block noncompliant activity.
+* *Control* validates targeted services against control rules. Use controls to monitor compliance and, when supported, block noncompliant activity.
 * *Automated Policy* enforces runtime policy requirements across targeted services.
 
 Select the type that matches your governance objective, then proceed.
@@ -72,9 +72,9 @@ Depending on the strategy type, select the controls or policies the strategy enf
 
 Available options depend on your earlier selections and your organization's enabled products.
 
-== Name and Describe the Strategy
+== General Information
 
-Enter a clear *Strategy Name*, such as "PCI Compliance Rules". Add a *Description* that states what the strategy enforces and why.
+Enter a clear *Strategy Name*, such as "PCI Compliance Rules." Add a *Description* that states what the strategy enforces and why.
 
 == Review and Activate
 
