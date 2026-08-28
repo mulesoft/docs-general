@@ -1,9 +1,9 @@
-= Creating an A2A Bridge
+= Make an Agent A2A-Compliant
 :keywords: a2a bridge, agent2agent, agentforce bridge, a2a compliant, agent fabric, non-a2a agent, omni gateway, source agent
 
 Create an A2A bridge to make a non-A2A agent A2A-compliant so that Agent Fabric can discover, govern, and orchestrate it alongside native A2A agents.
 
-Agent Fabric orchestrates agents using the Agent2Agent (A2A) protocol, but many enterprise agents—such as Salesforce Agentforce agents—aren't A2A-compliant on their own. An A2A bridge closes this gap. The bridge is a gateway policy that presents an A2A facade in front of a *source agent*, translating between A2A and the agent's native protocol so downstream consumers see a fully A2A-compliant agent. No changes to the source agent are required.
+Agent Fabric orchestrates agents using the Agent2Agent (A2A) protocol, but many enterprise agents—such as Salesforce Agentforce agents—aren't A2A-compliant on their own. An A2A bridge closes this gap. A bridge is a chain of policies—inbound authentication plus the bridge policies—that runs on an Omni Gateway instance and presents an A2A-compliant facade in front of a *source agent*. More than a protocol translator, the bridge is an A2A-compliant protocol server: it translates between A2A and the source agent's native protocol, manages the task lifecycle, and serves A2A task management methods so downstream consumers see a fully A2A-compliant agent. No changes to the source agent are required.
 
 When you create an A2A bridge, Agent Fabric derives an A2A agent card from the source agent, publishes it to your *Portfolio*, and deploys the first bridge instance—in a single wizard.
 
@@ -25,7 +25,7 @@ How the bridge authenticates to the source agent.
 [[how-it-works]]
 == How an A2A Bridge Works
 
-A source agent is an existing agent, built on a platform that isn't natively A2A-compliant, that you want to bring into your agent network. The bridge sits between A2A clients and the source agent and handles:
+A source agent is an existing agent, built on a platform that isn't natively A2A-compliant, that you want to bring into your agent network. The bridge sits between A2A clients and the source agent as an A2A-compliant protocol server and handles:
 
 * *Protocol translation* — Converts A2A requests into the source platform's native API calls and maps native responses back to A2A task states.
 * *Identity and task mapping* — Maps the source platform's session or conversation identifiers to A2A `contextId` and `taskId` values.
@@ -137,21 +137,21 @@ Click *Save Changes* to redeploy the instance with the updated configuration. Up
 
 A2A bridge behavior is constrained by what the source platform's API supports. Review the limitations for your source platform before you rely on a bridge in production.
 
-* *Deployment* — Deploy A2A bridges to managed or self-managed Omni Gateway instances.
 * *Transport* — Bridges expose a single A2A JSON-RPC interface. The derived card advertises this interface in its `supportedInterfaces`; other A2A transports aren't advertised.
-* *Governance scope* — A bridge governs only traffic that flows through the Omni Gateway. Direct platform-to-platform traffic that bypasses the gateway isn't governed.
+* *Task state durability* — Task lifecycle state is held in gateway memory and doesn't survive an Omni Gateway restart. After a restart, A2A operations such as `GetTask` and `ListTasks` can't return state for tasks created before the restart.
 
 Agentforce source agents have these additional limitations, which the derived agent card reflects:
 
 * *No asynchronous tasks* — Agentforce responds synchronously. Long-running tasks that exceed the gateway timeout fail. Use Agentforce agents for real-time, low-latency tasks, and orchestrate long-running work through a broker.
 * *No task subscription* — A2A resubscription isn't available. Streaming must be consumed on a single in-band connection.
 * *No push notifications* — The Agentforce API doesn't support push notifications.
+* *Limited input-required support* — Not all Agentforce agent types support the A2A `input-required` state, so some bridged agents can't pause a task to request additional input for human-in-the-loop interactions.
 * *Session lifecycle* — The bridge creates and manages Agentforce sessions automatically. Sessions time out on the Agentforce side; you don't manage them directly.
 
 [[migration]]
 == Migrate to Native A2A
 
-The A2A bridge is designed to be superseded. When a source platform adds native A2A support, disable the bridge policy and point consumers at the platform's native A2A endpoint. Because clients already consume the agent through the A2A protocol, no client changes are required.
+The A2A bridge is designed to be superseded. When a source platform adds native A2A support, disable the bridge and point consumers at the platform's native A2A endpoint. Because clients already consume the agent through the A2A protocol, no client changes are required.
 
 == See Also
 
