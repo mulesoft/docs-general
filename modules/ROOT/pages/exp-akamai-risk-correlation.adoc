@@ -128,7 +128,7 @@ Indicates whether remediation is underway for the finding:
 Open:::
 No remediation policy is applied yet for the finding.
 
-Rescan Confirmation::
+Rescan Confirmation:::
 At least one remediation policy is applied on the instance, but the finding still appears in the latest results. Re-run the scanner to confirm whether the finding is resolved.
 --
 
