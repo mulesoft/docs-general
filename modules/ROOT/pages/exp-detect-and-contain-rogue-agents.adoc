@@ -55,7 +55,7 @@ Enable monitoring on each model proxy whose agent traffic you want to track.
 +
 NOTE: If you add no rules, the policy forwards every request and detects nothing.
 .. In *Deduplication Window (seconds)*, set how long to wait before re-alerting on the same agent, anomaly type, and verdict. The minimum is 60 seconds and the default is 3600. This field is required.
-.. (Optional) Expand *Advanced Configuration* to customize the *System Evaluation Prompt*. Most deployments do not need to change this setting.
+.. (Optional) Expand *Advanced Configuration* to customize the *System Evaluation Prompt*. Most deployments don't need to change this setting.
 .. (Optional) Expand *Policy Details* to set a *Policy Label*, *Policy Version*, and *Application Conditions*.
 . Select *Apply Policy*.
 
