@@ -22,9 +22,9 @@ Also decide whether you need validation-only monitoring or active runtime enforc
 == Open the Strategy Workflow
 
 . Log in and go to *Governance* > *Governance Strategies*.
-. Select *Create Governance Strategy* to start the setup flow.
+. Select *Create governance strategy* to start the setup flow.
 
-The setup flow guides you through type, scope, rules or policies, and activation.
+The setup flow guides you through type, scope, *What to Apply*, notifications, name and description, and review.
 
 == Select Strategy Type
 
@@ -41,7 +41,7 @@ Configure scope criteria to identify the services that the strategy governs. All
 
 Set these filters:
 
-*Service Type*::
+*Service Types*::
 Select one or more service types to govern.
 
 *Tags*::
@@ -65,12 +65,24 @@ Use *Preview Governed Scope* to see which services currently match your criteria
 
 In the enhanced experience, your existing Anypoint profiles appear as controls. Controls offer expanded capabilities, such as governing new services and providing rules to control service and AI state behavior.
 
-Depending on the strategy type, select the controls or policies the strategy enforces:
+Depending on the strategy type, select the controls or policies the strategy enforces in the *What to Apply* step:
 
-* For *Controls*, select controls from the catalog available in your tenant.
+* For *Controls*, select controls available in your tenant.
 * For *Automated Policy*, define runtime details such as gateway runtime, endpoint type, and environment.
 
 Available options depend on your earlier selections and your organization's enabled products.
+
+== Configure Notifications
+
+Optionally configure automated conformance notifications for the strategy.
+
+Set *Enabled* or *Disabled* for nonconformance notifications. When enabled, configure:
+
+* *Recipients*: Select API Contact, API Publisher, or Others (specify email addresses).
+* *Condition*: The notification triggers when the latest version of an API becomes nonconformant.
+* *Channel*: Email.
+
+You can change notification settings after the strategy is created.
 
 == Name and Describe the Strategy
 
@@ -78,9 +90,9 @@ Enter a clear *Strategy Name*, such as "PCI Compliance Rules". Add a *Descriptio
 
 == Review and Activate
 
-Review your selections: strategy type, scope, rules or policies, and general information.
+Review your selections: strategy type, scope, rules or policies, notifications, and general information.
 
-Select *Create and Activate Strategy*.
+Select *Create Strategy*.
 
 Strategies are active by default. To disable a strategy, go to *Governance Strategies*.
 
