@@ -22,7 +22,7 @@ Also decide whether you need validation-only monitoring or active runtime enforc
 == Open the Strategy Workflow
 
 . Log in and go to *Governance* > *Governance Strategies*.
-. Select *Create Governance Strategy* to start the setup flow.
+. Select *Create governance strategy* to start the setup flow.
 
 The setup flow guides you through type, scope, rules or policies, and activation.
 
@@ -41,7 +41,7 @@ Configure scope criteria to identify the services that the strategy governs. All
 
 Set these filters:
 
-*Service Type*::
+*Service Types*::
 Select one or more service types to govern.
 
 *Tags*::
@@ -55,11 +55,10 @@ Filter by instance status:
 +
 --
 * *All APIs*: Include all matching services regardless of instance status.
-* *Include only APIs with instances*: Include only services that have at least one associated instance.
-* *Only APIs without instances*: Include only services with no associated instances.
+* *APIs without instances*: Include only services with no associated instances.
 --
 
-Use *Preview Governed Scope* to see which services currently match your criteria before you move forward.
+Use *Governed Scope Preview* to see which services currently match your criteria before you move forward.
 
 == Configure Controls or Policies
 
@@ -76,11 +75,19 @@ Available options depend on your earlier selections and your organization's enab
 
 Enter a clear *Strategy Name*, such as "PCI Compliance Rules". Add a *Description* that states what the strategy enforces and why.
 
-== Review and Activate
+== Configure Notifications
 
-Review your selections: strategy type, scope, rules or policies, and general information.
+Optionally configure automated email notifications for nonconformance events. You can skip this step and update it later.
 
-Select *Create and Activate Strategy*.
+Set a *Condition* (for example, when the latest version of an API becomes nonconformant) and select *Recipients*, such as the API contact or API publisher. Provide additional email addresses as needed.
+
+Notifications are enabled by default; select *Disabled* to turn them off.
+
+== Review and Save
+
+Review your governance strategy configuration before saving.
+
+Select *Create Strategy*.
 
 Strategies are active by default. To disable a strategy, go to *Governance Strategies*.
 
