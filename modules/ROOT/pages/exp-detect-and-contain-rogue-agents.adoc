@@ -13,7 +13,7 @@ Both policies identify an agent from the same JSON Web Token (JWT) claims, so th
 Key benefits:
 
 * Detect anomalous or unauthorized behavior in real time, using built-in detectors and your own custom rules.
-* Get notified, through email or Slack, the moment the platform flags an agent.
+//* Get notified, through email or Slack, the moment the platform flags an agent.
 * Review flagged activity before you act. Nothing quarantines automatically without your review.
 * Quarantine a rogue agent instantly to stop data leakage, harmful actions, or runaway costs. Quarantine is fully reversible, so you can undo a false positive in seconds.
 * Meet compliance requirements. The platform logs every action with full attribution.
@@ -78,6 +78,7 @@ The Agent Kill Switch policy enforces containment. When you quarantine a flagged
 
 Repeat these steps for each model proxy to protect.
 
+////
 == Set Up Notifications for Flagged Agents
 
 Configure alerts so you're notified as soon as an agent is flagged.
@@ -106,6 +107,7 @@ Select the operator to use in the alert condition, for example, the policy viola
 .. In *Alert Name*, enter a descriptive name (four or more characters).
 .. In *Delivery Channels*, select *Email*, *Slack*, or both.
 . Select *Create Alert*.
+////
 
 == Review and Quarantine a Flagged Agent
 
