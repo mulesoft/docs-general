@@ -64,6 +64,11 @@ For Microsoft Copilot Studio scanners, select *OAuth (Authorization Code)* and c
 
 For detailed scanner setup instructions, see xref:exp-scanners-add-from-providers.adoc[].
 
+[NOTE]
+====
+Amazon, Microsoft, and HashiCorp also support registering an external vault instead of a scanner. A vault syncs secret metadata rather than discovering services, so it doesn't populate a *Portfolio* catalog. For the vault registration flow, see xref:exp-vaults-manage.adoc[].
+====
+
 == Akamai API Security Data in Portfolio
 
 When Akamai API Security is connected and scans have completed, security risk data appears on the detail pages of scanned APIs:
@@ -83,6 +88,7 @@ The enhanced experience supports connections to these providers:
 * Databricks
 * GoDaddy
 * Google
+* HashiCorp
 * Kong
 * LangChain
 * Microsoft
@@ -106,3 +112,4 @@ The specific providers available depend on your organization's enabled products 
 * xref:exp-scanners-add-from-providers.adoc[]
 * xref:exp-scanners-manage.adoc[]
 * xref:exp-services-add-to-portfolio.adoc[]
+* xref:exp-vaults-manage.adoc[]
