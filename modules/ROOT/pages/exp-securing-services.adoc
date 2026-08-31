@@ -1,15 +1,24 @@
 = Securing Services in Your Portfolio
-:keywords: securing services, external vaults, secrets manager, credentials, portfolio, anypoint platform
+:keywords: securing services, external vaults, secrets manager, credentials, Akamai API Security, risk correlation, rogue agents, Azure Key Vault, HashiCorp Vault, portfolio, anypoint platform
 
+Authenticate model proxies with keys from an external vault, map Akamai findings onto APIs and MCP services in your enhanced MuleSoft experience portfolio, and contain rogue agents before they leak data or inflate costs. 
 
-Keep API keys and other credentials for portfolio services in your existing secrets manager. Register an external vault so MuleSoft stores only secret names and paths. Services such as model proxies resolve the value from the vault at runtime instead of storing the key in MuleSoft.
-
-* xref:exp-vaults-manage.adoc[]
+* xref:exp-akamai-risk-correlation.adoc[Correlate Risk Using Akamai API Security]
 +
-Connect AWS Secrets Manager, Azure Key Vault, or HashiCorp Vault, choose an authentication method, and sync secret metadata for use in the enhanced experience.
+Connect Akamai API Security to map risk scores, findings, and incidents onto existing APIs and MCP services in *Portfolio*.
+
+* xref:exp-vaults-manage.adoc[Use Credentials Stored in External Vaults]
++
+Use API keys stored in an external vault to authenticate model proxies without storing those keys in MuleSoft.
+
+* xref:exp-detect-and-contain-rogue-agents.adoc[Detect and Contain Rogue Agents]
++
+Apply Rogue Agent Detection and Agent Kill Switch policies on model proxies to flag anomalous agent behavior and quarantine rogue agents.
 
 == See Also
 
+* xref:exp-akamai-risk-correlation.adoc[]
 * xref:exp-vaults-manage.adoc[]
+* xref:exp-detect-and-contain-rogue-agents.adoc[]
 * xref:exp-providers-manage.adoc[]
 * xref:model-proxy.adoc[]

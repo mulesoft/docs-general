@@ -160,6 +160,7 @@ If a scan completes but results don't appear:
 
 == See Also
 
+* xref:exp-securing-services.adoc[]
 * xref:exp-scanners-add-from-providers.adoc[]
 * xref:exp-providers-manage.adoc[]
 * xref:exp-scanners-view-details.adoc[]
