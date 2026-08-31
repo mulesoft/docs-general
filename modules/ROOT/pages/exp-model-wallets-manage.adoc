@@ -13,32 +13,52 @@ To manage model wallets, you need:
 * An Anypoint Platform account.
 * At least one configured model proxy. See xref:model-proxy-create-model-proxy.adoc[].
 * A configured identity provider (IdP) that issues JWTs for callers.
-* A xref:gateway::policies-included-jwt-validation.adoc[JWT Validation] policy applied to each model proxy that callers reach through the wallet. Apply this policy on the model proxy in the enhanced experience. See <<apply-jwt-validation-to-a-model-proxy>>.
+* Policies configured on each model proxy that callers reach through the wallet. See <<configure-policies-on-a-model-proxy>>.
 * API Manager permissions:
 +
 --
 ** API Manager: API Creator
 ** API Manager: View APIs Configuration
 ** API Manager: Edit APIs Configuration
-** API Manager: Manage Policies, to apply the JWT Validation policy
+** API Manager: Manage Policies, to apply, disable, reorder, and edit policies
 --
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
-Organizations without an IdP configured can't use model wallets. Those organizations continue to use existing access methods.
+NOTE: Organizations without an IdP configured can't use model wallets. Those organizations continue to use existing access methods.
 
+[[configure-policies-on-a-model-proxy]]
 [[apply-jwt-validation-to-a-model-proxy]]
-== Apply a JWT Validation Policy to a Model Proxy
+== Configure Policies on a Model Proxy
 
-A model wallet matches the client ID and JWT claims in a request to the wallet's configuration. The JWT Validation policy on the model proxy validates the token from your IdP first. Apply the policy on each model proxy that callers reach through the wallet. Apply the policy from the model proxy, not from *Model Wallets*.
+A model wallet matches the client ID and JWT claims in a request to the wallet's configuration. Default model proxy policies include DataWeave Headers Transformation and Client ID Enforcement. For wallets, disable those policies and identify callers from the JWT.
+
+Apply these policy changes on each model proxy that callers reach through the wallet. Apply them from the model proxy, not from *Model Wallets*.
 
 . From *Portfolio* > *Model Proxies*, open the model proxy.
-. Select the *Policies* tab, and then select *+Apply Policy*.
+. Select the *Policies* tab.
+. From the actions menu for *DataWeave Headers Transformation*, select *Disable Policy*.
+. From the actions menu for *Client ID Enforcement*, select *Disable Policy*.
+. Select *Apply Policy*.
 . Select *JWT Validation*, and then select *Next*.
 . Configure the policy to validate tokens from your IdP, including the JWT origin and the JSON Web Key Set (JWKS) URL or signing key. For configuration parameters, see xref:gateway::policies-included-jwt-validation.adoc[JWT Validation policy].
 . Select *Apply Policy*.
+. Select *Reorder Instance Policies*.
+. Move *JWT Validation* to the second position.
++
+The xref:gateway::policies-included-cors.adoc[CORS] policy remains first. JWT Validation in the second position validates the token before later policies read the claims.
+. Select *Save Order*.
+. From the actions menu for *LLM Proxy Core Policy*, select *Edit Configuration*.
+. In *Client ID*, enter:
++
+----
+#[authentication.properties.claims.client_id]
+----
++
+This expression reads the `client_id` claim after JWT Validation publishes the verified claims.
+. Select *Save Changes*.
 
-Repeat the JWT Validation policy steps for each model proxy that callers reach through the wallet.
+Repeat these policy steps for each model proxy that callers reach through the wallet.
 
 [[create-a-model-wallet]]
 == Create a Model Wallet
@@ -115,6 +135,9 @@ Budgets are approximate rather than a real-time hard cutoff. The model proxy tra
 == See Also
 
 * xref:model-proxy-create-model-proxy.adoc[]
+* xref:model-proxy-policies.adoc[]
 * xref:gateway::policies-included-jwt-validation.adoc[]
+* xref:gateway::policies-included-client-id-enforcement.adoc[]
+* xref:gateway::policies-included-dataweave-headers-transformation.adoc[]
 * xref:exp-governance-view-cost-and-token-usage.adoc[]
 * xref:exp-services-register-manually.adoc[]
