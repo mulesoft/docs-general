@@ -28,7 +28,6 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 NOTE: Organizations without an IdP configured can't use model wallets. Those organizations continue to use existing access methods.
 
 [[configure-policies-on-a-model-proxy]]
-[[apply-jwt-validation-to-a-model-proxy]]
 == Configure Policies on a Model Proxy
 
 A model wallet matches the client ID and JWT claims in a request to the wallet's configuration. Default model proxy policies include DataWeave Headers Transformation and Client ID Enforcement. For wallets, disable those policies and identify callers from the JWT.
