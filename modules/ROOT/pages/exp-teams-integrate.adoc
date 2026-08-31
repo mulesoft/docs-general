@@ -1,8 +1,6 @@
 = Integrate the Enhanced Experience with Microsoft Teams
 :keywords: microsoft teams integration, mulesoft agent, teams bot, mcp server, anypoint platform, enhanced experience
 
-NOTE: This feature is in early access.
-
 Install the MuleSoft for Teams app in your Microsoft Teams tenant to interact with MuleSoft directly from Teams using natural language. The Teams app enables you to:
 
 * <<connect-teams-tenant>>: Bind your Microsoft Teams tenant to your Anypoint organization so the app can send alerts and notifications directly to channels and DMs.
