@@ -1,0 +1,162 @@
+= Make an Agent A2A-Compliant
+:keywords: a2a bridge, agent2agent, agentforce bridge, a2a compliant, agent fabric, non-a2a agent, omni gateway, source agent
+
+Create an A2A bridge to make a non-A2A agent A2A-compliant so that Agent Fabric can discover, govern, and orchestrate it alongside native A2A agents.
+
+Agent Fabric orchestrates agents using the Agent2Agent (A2A) protocol, but many enterprise agents—such as Salesforce Agentforce agents—aren't A2A-compliant on their own. An A2A bridge closes this gap. A bridge is a chain of policies—inbound authentication plus the bridge policies—that runs on an Omni Gateway instance and presents an A2A-compliant facade in front of a *source agent*. More than a protocol translator, the bridge is an A2A-compliant protocol server: it translates between A2A and the source agent's native protocol, manages the task lifecycle, and serves A2A task management methods so downstream consumers see a fully A2A-compliant agent. No changes to the source agent are required.
+
+When you create an A2A bridge, Agent Fabric derives an A2A agent card from the source agent, publishes it to your *Portfolio*, and deploys the first bridge instance—in a single wizard.
+
+During creation, you define:
+
+* *A2A card*
++
+The advertised name, description, and skills the bridge exposes to other agents for discovery and routing. Capabilities are set and validated by the platform.
+* *Deployment*
++
+The environment, Omni Gateway, base path, and consumer endpoint where the bridge instance runs.
+* *Inbound authentication*
++
+How A2A clients authenticate to the bridge.
+* *Upstream authentication*
++
+How the bridge authenticates to the source agent.
+
+[[how-it-works]]
+== How an A2A Bridge Works
+
+A source agent is an existing agent, built on a platform that isn't natively A2A-compliant, that you want to bring into your agent network. The bridge sits between A2A clients and the source agent as an A2A-compliant protocol server and handles:
+
+* *Protocol translation* — Converts A2A requests into the source platform's native API calls and maps native responses back to A2A task states.
+* *Identity and task mapping* — Maps the source platform's session or conversation identifiers to A2A `contextId` and `taskId` values.
+* *Task lifecycle and state* — Tracks task state so A2A operations such as `GetTask`, `ListTasks`, and `CancelTask` return correct results.
+* *A2A card derivation* — Generates an A2A v1 agent card that accurately reflects the capabilities the bridge can honor. The bridge card is derived from the source agent's card, plus any capabilities added by the bridge and any customizations you make. The card advertises the bridge's A2A endpoint as a JSON-RPC interface in its `supportedInterfaces` and locks platform-set capabilities such as streaming and the human-in-the-loop extension.
+
+Because the bridge is always A2A-compliant, A2A clients consume a bridged agent with no custom logic. If the source platform later adds native A2A support, you can disable the bridge and clients continue to work without changes.
+
+[[supported-platforms]]
+== Supported Source Platforms
+
+[cols="1,1,2a", options="header"]
+|===
+| Source platform | Bridge availability | Notes
+
+| Salesforce Agentforce
+| Available
+| Bridge translates A2A to the Agentforce Einstein AI Agent v1 API. Supports streaming and human-in-the-loop.
+
+| Microsoft Copilot Studio
+| Planned
+| Roadmap. Copilot's activity-based Direct Line API requires heuristic task-lifecycle handling.
+
+| Amazon Bedrock AgentCore, Google Vertex AI
+| Not required
+| These platforms are natively A2A-compliant. Register them directly rather than bridging. See xref:exp-services-register-manually.adoc[].
+
+| Other platforms
+| Extensible
+| Build a custom bridge policy with the Policy Development Kit (PDK), or use xref:a2a-connector::index.adoc[A2A Connector].
+|===
+
+[[before-you-begin]]
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* A source agent registered in your *Portfolio* that isn't already A2A-compliant.
+* One of these Exchange permissions:
++
+--
+** Exchange: Exchange Contributor
+** Exchange: Exchange Administrator
+** Exchange: Exchange Creator
+--
+* This API Manager permission on the target environment:
++
+** API Manager: Manage APIs Configuration
++
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+* A managed or self-managed Omni Gateway in the target environment.
+* Credentials for the source agent's platform, such as the Salesforce org URL, OAuth token URL, client ID, and client secret for an Agentforce source agent.
+
+[[create-a2a-bridge]]
+== Create an A2A Bridge
+
+You create a bridge from the source agent's detail page.
+
+. In *Portfolio*, open the *Agents* catalog and select the source agent you want to bridge.
+. On the *Overview* tab, select *Configure A2A Bridge & Deploy First Instance*.
+. In *Customize Card*, review and edit the *Skills* on the A2A card the bridge will publish. Skills describe what the agent can do so other agents can discover and route to it. 
+. Add custom skills or hide skills as needed. Each skill must have a unique ID. 
+. Click *Continue: Deploy Instance*.
+. In *Deploy Instance*, configure where and how the first bridge instance runs:
++
+--
+** *Environment* — Select the target environment.
+** *Omni Gateway* — Select the managed or self-managed gateway that hosts the bridge.
+** *Instance URL* — Enter the path segment for the bridge's A2A endpoint. Agent Fabric checks for route conflicts against existing instances on the gateway.
+** *Consumer Endpoint* — Optionally override the gateway ingress URL used to build the instance URL.
+--
+. Configure *Inbound Authentication* to control how A2A clients authenticate to the bridge. Select a method such as *JWT Validation*, *Basic Authentication*, or *Client ID Enforcement*, then provide the required values. Select *None* to leave the endpoint unauthenticated.
+. Configure *Upstream Authentication* to control how the bridge authenticates to the source agent. For an Agentforce source agent, provide the *Salesforce Org URL*, *Token URL*, *Grant Type*, *Client ID*, and *Client Secret*. Source-derived values such as the tenant endpoint are read-only.
+. Expand *Advanced* to review or adjust the generated policy configuration.
+. Complete the wizard. Finishing publishes the A2A card and deploys the bridge instance together.
+
+After the bridge is created, the derived A2A agent card is published to the *Agents* catalog in your *Portfolio*, where it can be discovered, governed, monitored, and orchestrated like any other A2A agent.
+
+On the bridged agent's *Overview* tab, Agent Fabric shows two cards side by side:
+
+* *A2A Bridge card* — The advertised name, description, version, protocol, capabilities, and skills the bridge publishes to other agents. Capabilities such as streaming, push notifications, state transition history, and extensions are set by the platform and locked to prevent the bridge from advertising a capability it can't honor. Skills are flagged as *Custom* when you added them or *Hidden* when you excluded them from discovery.
+* *Source card* — The name, description, and metadata of the underlying non-A2A source agent that the bridge card is derived from.
+
+To scale a bridge across environments or gateways, deploy additional instances from the *Instances* tab using *Create A2A Bridge Instance*.
+
+To change the advertised card content—skills, advertised name, and description—open the agent's *Overview* tab and click *Customize Card*. Editing the card creates a new bridge version that instances can adopt.
+
+[[update-instance]]
+== Update an A2A Bridge Instance
+
+Each bridge instance is pinned to a specific bridge version. The instance's *Overview* tab shows a *Deployment* section with:
+
+* *Serving A2A Bridge Version* — The bridge version this instance runs. The version fixes the instance's advertised card (skills, name, and description) along with its authentication and advanced settings. If a newer version exists, Agent Fabric shows that a newer A2A bridge version is available.
+* *Consumer Endpoint* — The URL where the instance receives A2A requests.
+* *Discovery URL* — The well-known A2A agent card endpoint (`.well-known/agent-card.json`) that callers fetch to discover the agent.
+
+To change an instance's configuration, click *Update Instance* to open the *Update A2A Instance* dialog, then adjust any of these:
+
+* *Inbound Authentication* — How other agents authenticate when they call this instance.
+* *Upstream Authentication* — How the instance's bridge authenticates to the source agent. Leave a masked secret unchanged to keep the stored value, or enter a new value to rotate it.
+* *Advanced* — The generated policy configuration, such as the request timeout.
+* *Version* — If a newer bridge version is available, adopt it to update the instance's advertised card and settings to that version.
+
+Click *Save Changes* to redeploy the instance with the updated configuration. Updating an instance doesn't republish the bridge card; edit card content from the agent's *Overview* tab with *Customize Card*.
+
+[[known-limitations]]
+== Known Limitations
+
+A2A bridge behavior is constrained by what the source platform's API supports. Review the limitations for your source platform before you rely on a bridge in production.
+
+* *Transport* — Bridges expose a single A2A JSON-RPC interface. The derived card advertises this interface in its `supportedInterfaces`; other A2A transports aren't advertised.
+* *Task state durability* — Task lifecycle state is held in gateway memory and doesn't survive an Omni Gateway restart. After a restart, A2A operations such as `GetTask` and `ListTasks` can't return state for tasks created before the restart.
+
+Agentforce source agents have these additional limitations, which the derived agent card reflects:
+
+* *No asynchronous tasks* — Agentforce responds synchronously. Long-running tasks that exceed the gateway timeout fail. Use Agentforce agents for real-time, low-latency tasks, and orchestrate long-running work through a broker.
+* *No task subscription* — A2A resubscription isn't available. Streaming must be consumed on a single in-band connection.
+* *No push notifications* — The Agentforce API doesn't support push notifications.
+* *Limited input-required support* — Not all Agentforce agent types support the A2A `input-required` state, so some bridged agents can't pause a task to request additional input for human-in-the-loop interactions.
+* *Session lifecycle* — The bridge creates and manages Agentforce sessions automatically. Sessions time out on the Agentforce side; you don't manage them directly.
+
+[[migration]]
+== Migrate to Native A2A
+
+The A2A bridge is designed to be superseded. When a source platform adds native A2A support, disable the bridge and point consumers at the platform's native A2A endpoint. Because clients already consume the agent through the A2A protocol, no client changes are required.
+
+== See Also
+
+* xref:agent-fabric-overview.adoc[]
+* xref:exp-services-create-mcp-server.adoc[]
+* xref:exp-services-register-manually.adoc[]
+* xref:exp-services-view-details.adoc[]
+* xref:a2a-connector::index.adoc[]

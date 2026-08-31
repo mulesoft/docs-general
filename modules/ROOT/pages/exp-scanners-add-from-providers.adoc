@@ -10,14 +10,9 @@ For how provider connection and catalogs fit together, see xref:exp-services-con
 Before getting started, make sure you have:
 
 * An Anypoint Platform account.
-* Any of these permissions:
-+
---
-** Exchange: Exchange Administrator
-** Exchange: Exchange Contributor
-** API Manager: API Creator
-** API Manager: Manage Policies
---
+* Exchange Administrator
+
+
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 For provider-specific roles, credentials, and permission scopes, see xref:exp-scanners-prerequisites-reference.adoc[].
@@ -81,6 +76,31 @@ After creating an Akamai scanner, the scanner detail page shows an *Akamai Corre
 When the policy is applied, the section shows a table with one row per environment and runtime combination. The table includes columns for Environment, Runtime (Omni Gateway or Mule 4), Status (Applied or Disabled), APIM Policy ID, and Asset Version.
 
 If some environments show no policy binding, select *Check again* to retry the policy application for those environments only. The operation is safe to repeat.
+
+== Microsoft Copilot Studio Scanner OAuth Authorization
+
+Microsoft Copilot Studio scanners support two authentication schemes. Create, authorize, and test the provider connection before you continue scanner setup.
+
+* *OAuth*: Uses client credentials. Tenant ID is required, and you validate the connection directly without an interactive sign-in.
+* *OAuth (Authorization Code)*: Uses an interactive Microsoft sign-in and consent. Tenant ID is optional; if you don't provide one, the connection defaults to the home tenant ID after authorization. This scheme requires a pre-configured customer OAuth application. Configure the OAuth application in Azure to request the Dynamics CRM `user_impersonation` scope, and set the OAuth callback URL to `https://<your_anypoint_host>/secrets-manager/api/v1/connections/oauth/callback`.
+
+. From *Platform* > *Providers*, select *Microsoft*.
+. In *Connect to Provider*, under *Platform*, select *Microsoft Copilot Studio*.
+. Under *Authentication*, select *OAuth* or *OAuth (Authorization Code)*.
+. Enter connection values:
+* *Tenant ID*: Microsoft Entra tenant ID. Required for *OAuth*; optional for *OAuth (Authorization Code)*.
+* *Client ID*: OAuth 2.0 client ID from your Azure app registration.
+* *Client Secret*: OAuth 2.0 client secret from your Azure app registration.
+* *Scope*: Dataverse environment URL, for example, `https://<your-environment>.api.crm.dynamics.com`. Required for *OAuth (Authorization Code)*; optional for *OAuth*.
+. Complete the connection:
+* For *OAuth*, click *Test Connection* and confirm the connection succeeds.
+* For *OAuth (Authorization Code)*, click *Create & Authorize Connection*. In the Microsoft popup window, sign in and grant consent, then wait for status to progress through *Connection created*, *Authorized*, and *Tested*.
+. Confirm the connection succeeds or the message *Connected to Microsoft* appears, then click *Continue*.
+
+[NOTE]
+====
+The OAuth (Authorization Code) flow opens a Microsoft sign-in popup. If your browser blocks popups, authorization can't complete and scanner setup stays in the authorizing state.
+====
 
 == Scanner Configuration Overview
 

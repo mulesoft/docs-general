@@ -12,8 +12,9 @@ Go to *Governance* > *Governance Strategies* to view all strategies. Check the s
 * View details: Open a strategy to review scope, rules or policies, and metadata.
 * Enable or disable: Pause a strategy without deleting it.
 * Edit configuration: Update scope, rules, name, or description, then save.
-* Reorder strategies: Change strategy order when multiple strategies govern the same services.
+* Reorder strategies: To change the order of Automated Policy strategies, set the type filter to *Automated Policies* and select *Reorder*.
 * Delete a strategy: Permanently remove a strategy that you no longer need.
+* Change to draft: For Control strategies, select *Change to Draft* to move the strategy back to a draft state without deleting it.
 
 == Filter and Search Strategies
 

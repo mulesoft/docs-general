@@ -40,6 +40,7 @@ Use Anypoint Exchange to discover agentic assets for reuse across your enterpris
 - xref:exchange::to-create-an-asset.adoc#create-agent[Create and Publish an Agent in Exchange]
 - xref:exp-services-create-mcp-server.adoc[Create an MCP Server]
 - https://videos.mulesoft.com/watch/Dn9QXJKDzTxSJPNgra9LoM[Watch a Video to Learn About MCP Bridge]
+- xref:exp-services-create-a2a-bridge.adoc[Make an Agent A2A-Compliant]
 - xref:exchange::to-create-an-asset.adoc#create-llm[Create and Publish an LLM in Exchange]
 
 | image::lm_build_1.png[""]
