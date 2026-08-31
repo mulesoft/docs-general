@@ -1,7 +1,9 @@
 = Viewing Data Service Lineage
 :keywords: lineage, data service, context catalog, agent fabric, informatica, cdgc, data lineage, agent to data, impact analysis, provenance, confidence score
 
-Data service lineage connects your AI agents to the enterprise data services they consume, creating a navigable graph from agent to MCP server to API to dataset. Lineage is part of the Context Catalog capability in Agent Fabric, which is built on the Informatica Cloud Data Governance and Catalog (CDGC) integration. With lineage, Agent Fabric gains semantic awareness of what data an agent touches, how that data is classified, and what quality and policy constraints apply.
+Context Catalog is the navigable dependency graph that Agent Fabric reads before it acts—a live map of how your AI agents connect through MCP servers and APIs to the enterprise data services and datasets they consume. Data service lineage, runtime tracing, and the Informatica Cloud Data Governance and Catalog (CDGC) integration are how Context Catalog builds that graph. With it, Agent Fabric gains semantic awareness of what data an agent touches, how that data is classified, and what quality and policy constraints apply.
+
+Context Catalog keeps the graph thin: it stores only the connections between assets. Details such as authentication, cost, data classification, and credentials stay with the systems that own them and resolve on demand, so the graph stays a fast, current map rather than a copy of everything it points to.
 
 You bring data services and their lineage into Agent Fabric by creating an Informatica CDGC scanner. The scanner imports the data services, and Context Catalog builds the lineage that links them to your agents.
 
@@ -94,14 +96,12 @@ The *Lineage* tab includes controls for working with larger graphs:
 
 == Use Cases
 
-Lineage supports governance and investigation across the full stack, from agent behavior down to the datasets and fields that drive it:
+Context Catalog is one graph that you read through four lenses. Each lens answers a different question about your agents and the data services they depend on:
 
-* *Answer explainability* — show which dataset, version, and path is influencing an agent's output, so responses are easier to trust and review.
-* *Root-cause analysis* — when an agent gives a bad answer, trace whether the issue came from the source data, a transformation, retrieval, or the agent's prompt or tooling path.
-* *Impact analysis* — before changing a dataset or schema, identify which agents, workflows, and downstream systems might break. For example, before deprecating a Snowflake table, see that a production Claims Processing Agent depends on it.
-* *Governance and policy enforcement* — propagate classifications such as PII, confidential, certified, or expired through lineage, and use them to inform policy recommendations for affected agents.
-* *Auditability and compliance* — keep a defensible record of what data an agent used, which is useful for regulated environments and audit reviews.
-* *Data quality monitoring* — tie agent failures or low-confidence outputs back to freshness, completeness, schema drift, or quality issues in the underlying dataset.
+* *Operational—"If I change this, what breaks?"* Before changing a dataset or schema, trace which agents, workflows, and downstream systems depend on it. For example, before deprecating a Snowflake table, see that a production Claims Processing Agent reads from it. The same paths explain an agent's output—which dataset, version, and route influenced a response—and support root-cause analysis when an agent gives a bad answer, including tracing failures back to freshness, completeness, or schema issues in the underlying data.
+* *Governance—"What sensitive data can this reach?"* Propagate classifications such as PII, confidential, certified, or expired along the graph to see which agents can reach sensitive data, and use that to inform policy recommendations. Because the graph is a defensible record of what data an agent used, it also supports audit and compliance reviews.
+* *Cost and efficiency—"Where are we wasting spend?"* Join the graph with usage to surface bloated tool sets, idle assets, and oversized models, so you can trim what isn't earning its cost.
+* *Deployment and hygiene—"Does config match reality?"* Compare declared connections against what's observed in runtime traffic to find drift, dead connections, and undeclared shadow dependencies, so the deployed system matches its intended configuration.
 
 == See Also
 
