@@ -3,7 +3,7 @@
 :page-aliases: agent-fabric::agent-fabric-get-started.adoc, agent-fabric::index.adoc
 :page-article-style: learning-map
 
-MuleSoft Agent Fabric helps you turn your agent sprawl into a governed and highly coordinated, intelligent network. 
+Agent Fabric helps you turn your agent sprawl into a governed and highly coordinated, intelligent network. 
 
 * Discover agents and MCP servers with Anypoint Exchange, a centralized catalog for all your AI assets.
 * Orchestrate agents across ecosystems with agent brokers, an intelligent routing agent that plans and delegates work based on context (request intent, policies, identity, and runtime state) of agents, MCP servers, and assets.
