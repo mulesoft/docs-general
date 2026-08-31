@@ -1,0 +1,45 @@
+= Monitoring Cross-Gateway Conformance
+:keywords: cross-gateway conformance, provider conformance, governance monitoring, compliance tracking, multi-gateway governance
+
+After creating governance strategies that target multiple gateway platforms or third-party providers, monitor conformance across your entire API ecosystem through a unified dashboard. The conformance summary shows conformance status for APIs hosted on Anypoint Platform gateways and connected third-party providers.
+
+== Before You Begin
+
+Before monitoring cross-gateway conformance:
+
+* xref:exp-services-view-details.adoc[Connect to one or more third-party providers] to enable cross-gateway governance.
+* xref:exp-governance-create-strategy.adoc[Create a governance strategy] that evaluates the APIs you want to monitor.
+* Verify that the strategy is active and has evaluated the targeted APIs.
+
+== View Cross-Gateway Conformance
+
+. Log in and go to *Governance* > *Governance Strategies*.
+. Select an active strategy. The strategy opens on the *Configuration* tab, which shows the scope and rules.
+. Select the *Governed Services* tab to view conformance results.
+
+The *Governed Services* tab displays:
+
+* A *Conformance* summary: the total number of governed services, broken down into *Conformant*, *Nonconformant*, and *Pending*.
+* An *Identified Issues* summary: counts of violations, warnings, and info-level findings.
+* A table of governed services with *Service*, *Type*, *Provider*, and *Conformance* columns. The *Provider* column shows which platform hosts each API.
+
+== Filter by Specific Provider
+
+To focus on conformance for a specific provider:
+
+. On the *Governed Services* tab, locate the *Any provider* filter.
+. Select a provider from the list.
+
+The list updates to show only APIs hosted on the selected provider.
+
+Use this filter to:
+
+* Compare conformance across providers.
+* Identify provider-specific conformance gaps.
+* Focus on a subset of your multi-gateway environment during reviews or audits.
+
+== See Also
+
+* xref:exp-governance-create-strategy.adoc[]
+* xref:exp-services-view-details.adoc[]
+* xref:exp-governance-govern-third-party-apis.adoc[]

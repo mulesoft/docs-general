@@ -1,0 +1,45 @@
+= Exploring MCP Server Tools in the MCP Playground
+:keywords: mcp server playground, test mcp server, mcp tools, tool invocation, anypoint platform, enhanced experience
+
+Use the MCP server playground to understand what an MCP server does and how it behaves without connecting it to an external tool such as Postman, the MCP Inspector, or Claude Desktop. Instead of reading only the overview and documentation, you explore the server's tools, invoke them, and see what they return, directly on the service detail page.
+
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* One of these permissions:
++
+--
+** Exchange: Exchange Viewer
+** Exchange: Exchange Contributor
+** Exchange: Exchange Administrator
+--
++
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+
+== Open the MCP Server Playground
+
+. In *Portfolio*, open the *MCP Servers* catalog and select the MCP server you want to test.
+. On the service detail page, select the *Playground* tab.
+
+== Inspect and Invoke Tools
+
+The playground lists the tools inside the MCP server so you can explore each tool's functionality and description.
+
+. In the tool list, select the tool you want to test.
+. If you aren't already authenticated to the MCP server, configure authentication. If you're already authenticated, you don't need to authenticate again.
+. Configure the tool's parameters in form or JSON format.
+. (Optional) Copy the request snippet, which reflects your configuration.
+. Select *Execute* to invoke the tool.
+. Review the response, including the status code and the full JSON response body.
+
+If required parameters are missing or validation fails, the playground shows an error or an explanation of the failure.
+
+== See Also
+
+* xref:exp-playground-overview.adoc[]
+* xref:exp-playground-api.adoc[]
+* xref:exp-services-create-mcp-server.adoc[]
+* xref:exp-services-view-details.adoc[]
+* xref:exp-claude-desktop-connect.adoc[]

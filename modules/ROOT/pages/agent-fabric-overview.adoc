@@ -76,7 +76,7 @@ Before agents can orchestrate across your enterprise, your existing systems need
 ** Define custom logic for how agent requests are handled
 ** Orchestrate workflows that incorporate AI agents and external MCP services
 * When you need it: Use MCP Connector when you need to expose capabilities to agents that require custom logic, multi-system composition, orchestration with external MCP services, or transformation that configuration-based tools like MCP Bridge don’t cover.
-* Learn more: xref:mcp-connector::index.adoc[]
+* Learn more: xref:mcp-connector::index.adoc[MCP Connector]
 
 === A2A Connector
 
@@ -91,11 +91,11 @@ Before agents can orchestrate across your enterprise, your existing systems need
 
 * When you need it: Use A2A Connector when you have existing Mule applications that need to participate in agent networks as A2A-compliant agents.
 
-* Learn more: xref:a2a-connector::index.adoc[]
+* Learn more: xref:a2a-connector::index.adoc[A2A Connector]
 
 === Other AI Connectors
 
-* What it is: AI Connectors provide pre-built integrations to LLMs and vector databases, making them directly accessible inside Mule-based agentic workflows
+* What it is: AI Connectors provide pre-built integrations to LLMs and vector databases, making them directly accessible inside Mule-based agentic workflows.
 
 * Role in Agent Fabric: AI Connectors ensure that the LLMs and knowledge stores your organization already uses are available to agents without custom integration work. They connect your agentic workflows to the models and data that power agent reasoning and context.
 
@@ -107,12 +107,13 @@ Before agents can orchestrate across your enterprise, your existing systems need
 * When you need it: Use AI Connectors when your agents need to reason with LLMs or retrieve context from vector databases your organization already operates.
 
 * Learn more:
-** xref:agentforce-connector::index.adoc[]
-** xref:amazon-bedrock-connector::index.adoc[]
-** xref:einstein-ai-connector::index.adoc[]
-** xref:mulesoft-ai-chain-connector::index.adoc[]
-** xref:mulesoft-inference-connector::index.adoc[]
-** xref:mulesoft-vectors-connector::index.adoc[]
+** xref:agentforce-connector::index.adoc[Agentforce Connector]
+** xref:amazon-bedrock-connector::index.adoc[Amazon Bedrock Connector]
+** xref:einstein-ai-connector::index.adoc[Einstein AI Connector]
+** xref:mulesoft-ai-chain-connector::index.adoc[MuleSoft AI Chain Connector]
+** xref:mulesoft-inference-connector::index.adoc[MuleSoft Inference Connector]
+** xref:mulesoft-vectors-connector::index.adoc[MuleSoft Vectors Connector]
+** xref:mulesoft-webcrawler-connector::index.adoc[MuleSoft WebCrawler Connector]
 
 
 === B2B (Partner Manager)
@@ -155,10 +156,10 @@ Agent Fabric provides a central registry and automated discovery tools that surf
 
 === Registry (Exchange)
 
-* What it is: The registry is the central catalog for all agentic assets across your organization. In the enhanced MuleSoft experience, your Portfolio serves as the registry, organized into catalogs for Agents, MCP Servers, LLM Proxies, APIs, and Gateways. Each catalog holds the services your organization has registered or discovered, so you can govern, monitor, and manage them from one place, regardless of which platform or provider built them. MuleSoft also provides access to a curated set of public MCP servers from the Official MCP Registry and Informatica, giving teams a starting point for common integrations without building from scratch.
+* What it is: The registry is the central catalog for all agentic assets across your organization. In the enhanced MuleSoft experience, your Portfolio serves as the registry, organized into catalogs for Agents, MCP Servers, Model Proxies, APIs, and Gateways. Each catalog holds the services your organization has registered or discovered, so you can govern, monitor, and manage them from one place, regardless of which platform or provider built them. MuleSoft also provides access to a curated set of public MCP servers from the Official MCP Registry and Informatica, giving teams a starting point for common integrations without building from scratch.
 * Role in Agent Fabric: The registry is where Agent Fabric makes every agent, tool, and model visible and reusable. The registry gives teams a trusted source of truth for all agentic assets, so they can reuse what already exists instead of duplicating work. The registry forms the foundation of discovery. 
 * What you can do:
-** Browse and search registered agents, MCP servers, LLM proxies, APIs, and gateways
+** Browse and search registered agents, MCP servers, Model proxies, APIs, and gateways
 ** View service details, conformance status, and instance health at a glance
 ** Manage lifecycle, governance, and monitoring for each asset from its catalog page
 ** Register assets manually or through automated provider discovery
@@ -202,7 +203,7 @@ Without governance, orchestration turns to chaos. Agent Fabric provides enterpri
 === Governance Strategies
 
 * What it is: Governance strategies bundle design-time rules and runtime policies into a coherent governance posture applied across targeted services. In the enhanced MuleSoft experience, governance strategies are managed under *Governance > Governance Strategies*.
-* Role in Agent Fabric: Governance strategies turn compliance intent into systematic enforcement across your portfolio. A governance strategy lets you define rules once, spanning access and security, data privacy, performance and cost, and compliance, and apply them consistently across every agent, MCP server, API, and LLM proxy in scope.
+* Role in Agent Fabric: Governance strategies turn compliance intent into systematic enforcement across your portfolio. A governance strategy lets you define rules once, spanning access and security, data privacy, performance and cost, and compliance, and apply them consistently across every agent, MCP server, API, and Model proxy in scope.
 * What you can do:
 ** Create strategies spanning access and security, data privacy, performance and cost, and compliance and observability domains
 ** Apply policies at the service or instance level so runtime traffic reflects the defined strategy
@@ -217,7 +218,7 @@ Without governance, orchestration turns to chaos. Agent Fabric provides enterpri
 * What it is: Cost Management surfaces token usage, daily spend signals, and cost optimization controls across your portfolio.
 * Role in Agent Fabric: As LLMs become central to agentic workflows, token consumption becomes a significant operational cost. Cost Management gives organizations the visibility and controls to keep that cost predictable. It connects governance directly to economics. The same governance strategy framework that enforces security and compliance can also reduce unnecessary token spend through tool mapping and tool sanitization controls.
 * What you can do:
-** Monitor token usage and spend trends across LLM proxies and agents
+** Monitor token usage and spend trends across Model proxies and agents
 ** Apply tool mapping to restrict which tools an LLM or agent can invoke, reducing unnecessary token consumption
 ** Apply tool sanitization to filter inputs and outputs before they reach a model
 ** Identify high-cost services and tune them through governance controls
@@ -297,7 +298,7 @@ Agent Visualizer provides a detailed visual graph of your agent network so you c
 
 === Monitor
 
-* What it is: In the enhanced MuleSoft experience, monitoring is available at both the service level and the organization level. At the service level, each agent, API, MCP server, LLM proxy, and gateway has a Monitoring tab showing runtime health signals and detailed time-series breakdowns, depending on your gateway, runtime path, and platform connections. At the organization level, observability aggregates dashboards, reports, and alerts when your administrator has connected the observability backend for your business group.
+* What it is: In the enhanced MuleSoft experience, monitoring is available at both the service level and the organization level. At the service level, each agent, API, MCP server, Model proxy, and gateway has a Monitoring tab showing runtime health signals and detailed time-series breakdowns, depending on your gateway, runtime path, and platform connections. At the organization level, observability aggregates dashboards, reports, and alerts when your administrator has connected the observability backend for your business group.
 * Role in Agent Fabric: Monitoring closes the loop between governance and operations. Governance strategies define what should happen; monitoring tells you whether it is happening. It surfaces latency, error rates, request volume, and other runtime signals so you can catch regressions early, triage incidents quickly, and make informed decisions about policy changes and capacity.
 * What you can do:
 ** View runtime health metrics such as latency, error rates, and request volume, including detailed time series and dimensions per service on its Monitoring tab

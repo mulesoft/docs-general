@@ -26,7 +26,7 @@ See xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions] for mo
 . Check subscription tier:
 .. Verify whether you have API Portfolio Access or Agent + API Portfolio Access.
 +
-Some features (such as agents, MCP servers, and LLM proxies) require Agent + API Portfolio Access.
+Some features (such as agents, MCP servers, and Model proxies) require Agent + API Portfolio Access.
 .. Contact your administrator or account team about upgrading your subscription if needed.
 ////
 
@@ -188,7 +188,7 @@ If a scanner ran successfully, but services aren't appearing:
 .. Check for any error messages in the scan history.
 
 . Review catalog filters:
-.. From *Portfolio*, check that you're viewing the correct catalog (APIs, Agents, MCP Servers, LLM Proxies, or Gateways).
+.. From *Portfolio*, check that you're viewing the correct catalog (APIs, Agents, MCP Servers, Model Proxies, or Gateways).
 .. Clear any filters that might be hiding the services.
 .. Try using the search function to find specific services by name.
 
@@ -247,7 +247,7 @@ If cost or token usage data isn't appearing:
 Historical data might not be available for newly registered services.
 
 . Verify service type:
-.. Cost and token usage tracking applies primarily to LLM proxies and agents.
+.. Cost and token usage tracking applies primarily to Model proxies and agents.
 +
 APIs and other service types might not generate cost data.
 .. Check the service type in *Portfolio* to confirm it supports cost tracking.
@@ -384,7 +384,7 @@ If you encounter certificate validation errors:
 Your organization might need to update certificate trust settings.
 .. Work with your administrator to resolve certificate trust issues.
 
-== Getting Additional Help
+== Get Additional Help
 
 If these troubleshooting steps don't resolve your issue:
 

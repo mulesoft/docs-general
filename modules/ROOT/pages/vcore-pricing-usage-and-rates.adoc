@@ -1,0 +1,108 @@
+= vCore Pricing Usage and Rates
+:keywords: vcore usage, cloudhub vcore, runtime fabric usage, usage reports, pricing rates
+
+vCore pricing tracks core-based consumption for Mule Runtime and related API capabilities.
+
+== Subscription Plan
+
+The available usage types depend on your Anypoint pricing plan.
+
+[%header%autowidth.spread]
+|===
+| Subscription Plan | Available Usage Types
+
+| Integration Gold Edition, Integration Platinum Edition, Integration Titanium Edition
+| Production Cores/vCores, Pre-production Cores/vCores, API Manager Pre-Production, API Manager Production, APIs Under Governance, API calls through Omni/Flex Gateway, Anypoint MQ API request, Object Store API request
+|===
+
+== Usage Types
+
+[%header%autowidth.spread]
+|===
+| Product | Metric Description | Usage Details
+
+.5+| Mule Runtime
+| vCore Usage in Production: Virtual processing capacity allocated to run Mule applications and APIs in Production environments.
+| Calculated based on the peak allocated virtual cores assigned to CH and CH2.0’s active application workers in Production.
+
+| vCore Usage in Pre-Production: Virtual processing capacity allocated to run Mule applications and APIs in non-production environments (for example, Sandbox, QA, Staging, and Development).
+| Calculated based on the peak allocated virtual cores assigned to CH and CH2.0’s active application workers in non-production environments.
+
+| Cluster capacity: A set of workers or nodes that act as a single deployment target for a given Runtime Fabric instance.
+| Allocatable CPU capacity of each node within the Runtime Fabric instance.
+
+| CPU Limit (Millicores): Maximum amount of CPU resources a worker node in Runtime Fabric can use.
+| The amount of CPU usage is aggregated over a specific period of time, such as an hour or a day. The CPU limit configuration of each application is summarized at each environment ID, then at each business group, and then at the root organization ID for preproduction (sandbox) and production environment types separately.
+
+| CPU Reserve (Millicores): A guaranteed minimum amount of CPU resources allocated to a worker node in the Runtime Fabric instance.
+| CPU reserve is aggregated by calculating the total amount of CPU resources allocated by the user to reserve for applications within the cluster or Runtime Fabric instance.
+
+| API Manager
+| API instances: API instances in production, preproduction, and unclassified APIs (not associated with an environment) that are managed by API Manager after they are created using add, promote, or import options.
+| API instances remain under management until they are deleted. Instances of API Manager are aggregated using a Max Concurrent model with three separate metrics for production, preproduction, and unclassified (APIs that aren't associated with an environment).
+
+| API Governance
+| API under Governance: APIs identified by the selection criteria of at least one of the governance profiles.
+| If an API is governed, all versions of that API are considered one governed API. Instances of API Governance are aggregated using a Max Concurrent model. The usage for a month is the highest number of APIs governed in a single given hour during a month.
+
+| Omni Gateway
+| Omni Gateway API call: Any access request received by Omni Gateway regardless of whether the response to the request is successful.
+| Omni Gateway requests are aggregated as a total of all requests during a month.
+
+.3+| LLM Proxy
+| Prompt tokens: Number of tokens an LLM Proxy in the prompts an LLM Proxy sends to a specific LLM Model.
+| These tokens are the sum of all prompt tokens a specific LLM Proxy sends to a specific LLM Model during a month. A prompt sent to an LLM Proxy are considered an Omni Gateway API call and count towards the Omni Gateway API call metric.
+
+| Completion tokens: Number of tokens in the responses that an LLM Proxy receives from a specific LLM Model.
+| These tokens are the sum of all response tokens a specific LLM Proxy receives from a specific LLM Model during a month.
+
+| Total tokens: Total number of tokens used in interactions between an LLM Proxy and a specific LLM Model.
+| Some LLM Providers, such as Gemini, use thinking tokens. Total tokens are the sum of prompt tokens, completion tokens, and thinking tokens if applicable.
+
+| Anypoint MQ
+| Anypoint MQ API request: A request made to retrieve one or more messages from the Anypoint MQ APIs.
+| Anypoint MQ uses API requests to calculate billing. Anypoint MQ API requests are calculated in the aggregate across all environments (including production, pre-production, sandbox, and design). Anypoint MQ API requests are available via API and aggregated on usage reports.
+
+| Object Store
+| Object Store API request: A request made to retrieve one or more messages from the Object Store APIs as further defined in the Object Store documentation.
+| Each Object Store API request includes up to 100 KB of data. Object Store API requests over 100 KB count as multiple requests with no fractional units. Object Store API requests are available via API and aggregated on usage reports.
+
+| DataGraph
+| DataGraph orchestration: An API request made by Anypoint DataGraph to the source APIs to get data for the GraphQL API request made to Anypoint DataGraph.
+| Orchestrations are not currently aggregated on usage reports.
+|===
+
+== CloudHub vCore Usage
+
+MuleSoft samples vCore usage every hour and uses the peak hourly value to calculate the daily and monthly maximum:
+
+* *Hourly*: Peak vCore consumption captured each hour
+* *Daily*: Highest hourly peak within the day
+* *Monthly*: Highest hourly peak within the month
+
+MuleSoft calculates production and preproduction vCore usage separately by using this same peak-rollup model.
+
+For CloudHub 2.0 applications with HPA enabled, an application can scale beyond its guaranteed base allocation, so *vCore Peak* can exceed *vCore Min* during scaling events. Conversely, *vCore Min* can be higher than *vCore Peak* when the guaranteed base allocation exceeds actual consumption during the selected time period.
+
+HPA is available to customers on the new pricing and packaging model.
+
+== Mule Runtime vCore Usage Cards
+
+These cards summarize peak CloudHub vCore usage in production and preproduction for the selected reporting period.
+
+[[max-vcore-prod]]
+=== Maximum CloudHub vCore Usage in Production
+
+This card shows the highest peak cloud vCore consumption across CloudHub (CH1) and CloudHub 2.0 (CH2) applications in production for the selected month.
+It includes the UTC date and time when the peak occurred, which reflects a true peak in consumption rather than an average.
+
+[[max-vcore-preprod]]
+=== Maximum CloudHub vCore Usage in Preproduction
+
+This card shows the highest peak cloud vCore consumption across CloudHub (CH1) and CloudHub 2.0 (CH2) applications in preproduction for the selected month.
+It includes the UTC date and time when the peak occurred, which helps you accurately track and attribute usage spikes.
+
+== See Also
+
+* xref:usage-reports.adoc[]
+* xref:usage-metrics.adoc[]
