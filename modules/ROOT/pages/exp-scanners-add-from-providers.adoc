@@ -33,6 +33,10 @@ Scheduled or on-demand scans pick up releases and configuration drift according 
 +
 When a scanner is enabled, it can discover and read policies from API configurations. This allows the system to enforce policies on the discovered services. This is especially useful for API-based policies, such as web application firewall (WAF) policies.
 
+* Policy write
++
+For API gateway providers that support policy write (Azure API Management, Google Apigee, and Kong Gateway), a scanner connection whose credentials carry the provider's write scope lets you apply, enable, disable, and remove policies on discovered APIs directly from Anypoint. For write scopes and requirements, see xref:exp-scanners-prerequisites-reference.adoc#_policy_write_prerequisites[Policy Write Prerequisites].
+
 == Workflow Entry Points for Adding a Scanner
 
 The system exposes the same underlying connect-and-configure wizard from more than one place; the label depends on context:
@@ -101,6 +105,8 @@ The OAuth (Authorization Code) flow opens a Microsoft sign-in popup. If your bro
 == Scanner Configuration Overview
 
 Regardless of entry point, adding a scanner establishes trust and scope. You specify which provider platform to reach, how the system authenticates, and how you validate connectivity. You also name and schedule the scanner—or configure another trigger—so discovery runs on the cadence your team expects. Saving the configuration activates the scanner for the catalogs and features your administrator enabled.
+
+For API gateway providers that support policy write, supply connection credentials that include the provider's write scope during setup. If the connection has only read access, the scanner discovers and reads policies, but the affected APIs appear as *Read-Only* and policy actions are unavailable until the connection's identity is granted the provider's write scope. For provider-specific read and write scopes, see xref:exp-scanners-prerequisites-reference.adoc[].
 
 == After the Scanner Runs
 

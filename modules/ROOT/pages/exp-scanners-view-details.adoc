@@ -39,6 +39,8 @@ For import scanners, this tab reflects discovered services imported by scan runs
 
 Use *Settings* to review and update scanner configuration values, such as provider connection details, run schedule, and scanner metadata. You can also delete the scanner from this tab.
 
+For API gateway providers that support policy write, the scanner uses a single connection, and what you can do depends on the permissions granted to that connection's identity on the provider. Read access enables discovery and policy read; the provider's write scope additionally enables policy write (apply, enable, disable, and remove). Use *Settings* to review and update the connection credentials—for example, after you grant the connection the provider's write scope. For provider-specific read and write scopes, see xref:exp-scanners-prerequisites-reference.adoc#_policy_write_prerequisites[Policy Write Prerequisites].
+
 == Tab Content by Scanner Type
 
 Import scanner::
@@ -46,6 +48,9 @@ Shows imported discovery activity in scanner tabs, including newly discovered se
 
 Akamai API Security scanner::
 Shows correlation and governance enrichment activity for existing services, including risk and findings signals.
+
+API gateway scanner::
+For providers that support policy write (Azure API Management, Google Apigee, and Kong Gateway), the *Settings* tab is where you review and update the connection credentials used for policy write on discovered APIs.
 
 == See Also
 

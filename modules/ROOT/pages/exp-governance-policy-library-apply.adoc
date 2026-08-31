@@ -1,0 +1,95 @@
+= Apply Universal Policies
+:keywords: policy library, universal policies, canonical policies, governance policies, apply policy, policy catalog
+
+// DRAFT: Policy Write (MS2026-08-R2 / Dreamforce). Tracked in W-23907611.
+// This is the Governance-side entry point into the Policies documentation set
+// (xref:exp-policies-overview.adoc[]). The detailed universal-policy model, apply and
+// management workflow, activity tracking, and per-provider support live in the exp-policies-*
+// topics; keep this topic thin and link out rather than duplicating that content.
+// Open items to confirm with the PM before removing this DRAFT banner:
+//  1. Entry points and wizard step labels verified against mulesoft-omni-app source
+//     (Governance Strategies > Add Strategy > Apply Policy, and the instance-level
+//     Apply Policy action that opens the Policy Library); confirm with PM.
+//  2. Category filter labels verified against source (Access and Security,
+//     Compliance and Observability, Data Privacy and Integrity, Performance and Cost,
+//     plus the All Domains and Custom filters); confirm with PM.
+//  3. Human-readable required permission/role names for policy write actions.
+
+Governance provides two entry points for applying *universal policies*: the *Apply Policy* flow on the Governance Strategies page, and the *Policy Library* on an individual API instance. A universal policy expresses a policy once and applies it as the correct vendor-native policy on each supported gateway, so you can enforce consistent controls across MuleSoft, Google Apigee, Kong Gateway, and Azure API Management without authoring a policy per gateway.
+
+This topic covers both entry points and the apply flow. For the full universal policy model, the apply and management workflow, activity tracking, and per-provider support, see xref:exp-policies-overview.adoc[] and xref:exp-policies-universal.adoc[].
+
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* Any of these permissions:
++
+--
+** API Governance: Governance Administrator
+** API Manager: Manage Policies
+--
++
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+
+* API instances registered in the portfolio on a supported gateway.
+
+[NOTE]
+====
+Policy write actions respect your permissions. If you don't have permission for an action, that action is unavailable and the experience explains that the action isn't permitted. If the platform can't verify your permissions for an instance, the actions remain available and the gateway enforces authorization when you submit the request. See xref:exp-policies-apply-manage.adoc[].
+====
+
+== Browse Universal Policies
+
+You can start applying a universal policy from two places:
+
+* On the Governance Strategies page, select *Add Strategy*, then *Apply Policy*.
+* On an API instance, select the *Apply Policy* action to open the Policy Library.
+
+Each policy appears with its name, category, and a short description of what it enforces. You can filter policies by category:
+
+* *Access and Security*
+* *Compliance and Observability*
+* *Data Privacy and Integrity*
+* *Performance and Cost*
+
+Select *All Domains* to see every policy, or *Custom* to see policies that don't fall into the preceding categories. Each filter shows the number of policies it contains.
+
+== Apply a Universal Policy
+
+The apply steps vary depending on where you start.
+
+=== From the Governance Strategies Page
+
+. On the Governance Strategies page, select *Add Strategy*, then *Apply Policy*.
+. On the *Select Policy* step, select the policy you want to apply.
+. On the *Configure Policy* step, set the policy parameters. Required and optional fields vary by policy type.
+. On the *Scope* step, choose whether to apply the policy globally or to specific API instances.
+. On the *Name & Description* step, name the policy. This step appears only when you apply the policy globally.
+. On the *Review* step, review the summary, then apply the policy.
+
+=== From an API Instance
+
+. On the API instance, select the *Apply Policy* action to open the Policy Library.
+. On the *Select Policy* step, select the policy you want to apply.
+. On the *Configure Policy* step, set the policy parameters. Required and optional fields vary by policy type.
+. On the *Select Instances* step, select the API instances where you want to apply the policy.
+. On the *Review & Apply* step, review the summary, then apply the policy.
+
+When you apply a policy, the platform validates it against your governance configuration and then creates the corresponding native policy on each selected instance's gateway.
+
+Applying a policy is an asynchronous, tracked operation, not a fire-and-forget action. When you apply a policy to more than one instance, each instance reports its own result, so you can see which instances succeeded and which failed. To confirm the outcome on each target, review the *Activity log* tab of the instance. See xref:exp-policies-activity-log.adoc[].
+
+For how universal policies map to each provider's native policy, and which policies you can then edit, enable, disable, or remove afterward, see xref:exp-policies-universal.adoc[] and xref:exp-policies-apply-manage.adoc[].
+
+== See Also
+
+* xref:exp-policies-overview.adoc[]
+* xref:exp-policies-universal.adoc[]
+* xref:exp-policies-apply-manage.adoc[]
+* xref:exp-policies-activity-log.adoc[]
+* xref:exp-policies-provider-reference.adoc[]
+* xref:exp-governance-create-strategy.adoc[]
+* xref:exp-governance-work-with-strategies.adoc[]
+* xref:exp-services-view-details.adoc[]
