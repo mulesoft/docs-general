@@ -2,10 +2,10 @@
 :keywords: mulesoft agent fabric, mcp bridge, mcp connector, enterprise actionability, ai agents, mulesoft integration, model context protocol
 
 
-MuleSoft Agent Fabric helps you turn agent sprawl into a governed, coordinated, intelligent network. Regardless of the platform where your AI agents were built or are running, Agent Fabric provides the infrastructure to discover, orchestrate, govern, and observe agents across your enterprise. Agent Fabric enables you to build intelligent agent networks where multiple agents work together, access enterprise systems securely, and operate under consistent governance and observability.
+Agent Fabric helps you turn agent sprawl into a governed, coordinated, intelligent network. Regardless of the platform where your AI agents were built or are running, Agent Fabric provides the infrastructure to discover, orchestrate, govern, and observe agents across your enterprise. Agent Fabric enables you to build intelligent agent networks where multiple agents work together, access enterprise systems securely, and operate under consistent governance and observability.
 
 [[how-agent-fabric-works]]
-== How MuleSoft Agent Fabric Works
+== How Agent Fabric Works
 
 Every organization has systems, agents, LLMs, and data sources scattered across platforms and teams. Left unmanaged, this creates agent sprawl: siloed agents that can't work together, inconsistent experiences, security gaps, and costs that are difficult to control. Agent Fabric solves this by providing a unified control plane for the agentic era.
 
@@ -357,6 +357,6 @@ Agent Visualizer provides a detailed visual graph of your agent network so you c
 
 * For a guided path through discovering assets, building your first agent network, and deploying it with governance and monitoring, get started with the xref:learning-map-agent-fabric.adoc[].
 
-* For a comprehensive guide to the technical foundations, capability pillars, and architectural best practices that power enterprise agentic transformation, explore the https://www.mulesoft.com/lp/ebook/mulesoft-agent-fabric-technical-overview[MuleSoft Agent Fabric Technical Overview].
+* For a comprehensive guide to the technical foundations, capability pillars, and architectural best practices that power enterprise agentic transformation, explore the https://www.mulesoft.com/lp/ebook/mulesoft-agent-fabric-technical-overview[Agent Fabric Technical Overview].
 
-* Learn about the technical foundations, capability pillars, and architectural details https://architect.salesforce.com/docs/architect/fundamentals/guide/mulesoft-agent-fabric-deep-dive.html#Agent_Orchestration_Design_Patterns[MuleSoft Agent Fabric Deep Dive].
+* Learn about the technical foundations, capability pillars, and architectural details https://architect.salesforce.com/docs/architect/fundamentals/guide/mulesoft-agent-fabric-deep-dive.html#Agent_Orchestration_Design_Patterns[Agent Fabric Deep Dive].
