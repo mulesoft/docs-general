@@ -36,33 +36,29 @@ include::partial$exp-navigation-labels.adoc[tag=ExpNavigationLabels]
 == Open Cost Management
 
 . Log in and go to *Governance* > *Cost Management*.
-. Adjust the time range and filters for the services or period you want to analyze.
+. Select a tab:
++
+--
+* The *Budgets* tab (default): View total managed spend and budget breakdowns.
+* The *Optimizations* tab: Analyze MCP server token usage and optimization opportunities.
+--
+. Set the time range for the data you want to analyze. The time range selector (*1H*, *24H*, *7D*, or *30D*; default *30D*) sits next to the tabs and applies to both the *Budgets* and *Optimizations* tabs.
+. Use the *Tokens*/*Cost* toggle to choose how metrics display. See <<view-metrics-in-tokens-or-cost>>.
 
-== Usage Metrics
+[[view-metrics-in-tokens-or-cost]]
+== View Metrics in Tokens or Cost
 
-The experience organizes token and activity data into summary cards and detail views:
+The *Tokens*/*Cost* toggle next to the tabs controls whether *Cost Management* metrics display as token counts or as dollar amounts. The toggle defaults to *Tokens*.
 
-* *Total Tokens*: Number of tokens processed in the selected time range
-* *Saved Tokens (Est.)*: Estimated tokens saved by optimization policies
-* *Tool Calls*: Number of tool or function calls in the selected time range
+To view spend in dollars, set the toggle to *Cost*.
 
-Each card also shows how many instances contributed to the metric.
+Before dollar amounts appear, you must configure a cost rate for each model. Until you set model rates, the *Cost* view shows a prompt to configure your models, and metrics that depend on cost show zero. To set rates, select *Configure Costs*, or set a cost per token for each model on the *Models* page. See xref:exp-models-manage-costs.adoc[Setting Model Costs for Spend Tracking].
 
-== Filter and Search
+=== When Cost Tracking Begins
 
-Use controls at the top of the page to narrow the view:
+Cost metrics accrue only from the time you configure model rates. LLM usage before that time isn't priced and doesn't appear as cost, even for earlier periods within the selected time range.
 
-* Search for service or instance names.
-* Use *Filters* to refine your search by service type, environment, or metadata.
-* Select a time range to search, such as 1 hour (1H), 6 hours (6H), 24 hours (24H), 7 days (7D), or 30 days (30D).
-
-The counter updates to show the number of matching services.
-
-== Saved Token Estimates
-
-When optimization policies are active, the system estimates saved tokens compared to unoptimized traffic.
-
-Treat this metric as directional, not exact.
+Token counts are unaffected. The *Tokens* view continues to reflect the complete spend from the time you enabled *Cost Management*, regardless of when you set model rates.
 
 == Cost Data Use Cases
 
@@ -72,7 +68,7 @@ Cost and performance data inform multiple workflows:
 * Performance triage: Correlate latency or error spikes with deployments or policy changes.
 * Planning and alignment: Share trends with finance and platform teams for forecasting.
 
-This dashboard doesn't automatically cap usage. To limit consumption, apply governance strategies or rate-limiting policies.
+To automatically cap usage, configure budgets in the *Budgets* tab or through model wallets. Budgets block requests once the limit is reached. To limit consumption in other ways, apply governance strategies or rate-limiting policies.
 
 == Cost Data and Governance
 
@@ -80,8 +76,115 @@ Use *Cost Management* data to create or refine governance strategies.
 
 For runtime enforcement, attach cost-related controls or policies to a governance strategy and apply it to the relevant services.
 
+== Budgets Tab
+
+The *Budgets* tab shows financial summaries across your configured budgets:
+
+* *Total Managed Spend*: Total spend across all configured budgets.
+* *By Provider*: Spend breakdown by LLM provider.
+* *By Model Wallet*: Spend breakdown by model wallet.
+
+These summaries display as token counts or dollar amounts based on the *Tokens*/*Cost* toggle. Dollar amounts appear only after you configure model rates. See <<view-metrics-in-tokens-or-cost>>.
+
+Each budget row displays a status badge that reflects current usage against the budget limit:
+
+* *At Risk*: Usage has reached 75% or more of the budget limit.
+* *At Limit*: Usage has reached the budget limit. The system blocks further requests.
+
+Use the search on the *Budgets* table to find specific budgets.
+
+=== Add a Budget
+
+. In the *Budgets* tab, select *New Budget*.
+. In the *New Budget* dialog, configure the budget:
++
+--
+* *Model Wallet* (required): Select the model wallet to scope the budget.
+* *Provider* (required): Select an LLM provider.
+* *Model* (required): Select a model. This field appears after you select a provider.
+* *Period*: Select *Daily*, *Weekly*, or *Monthly*.
+* *Metric*: Select *Spend* to set a dollar limit, or *Tokens* to set a token count limit.
+* *Spend Limit (USD)* or *Token Limit* (required): Enter the maximum allowed value.
+--
+. Select *Create Budget*.
+
+When usage reaches the budget limit, the system blocks requests. Each model wallet, provider, and model combination supports only one budget.
+
+For information about model wallets and how they combine authentication credentials with budget limits, see xref:exp-model-wallets-manage.adoc[].
+
+== Optimizations Tab
+
+The *Optimizations* tab shows cost and token savings data across model proxies, agents, and MCP servers.
+
+The summary cards show:
+
+* *Total Managed Spend*: The total cost of all LLM traffic routed through managed proxies. This excludes any usage that bypasses the proxy network.
+* *Agents Potential Savings*: Estimated cost savings available by applying optimization policies to agents. It shows *Amount Saved* as the amount already saved.
+* *LLM Proxies Potential Savings*: Estimated cost savings available by applying optimization policies to LLM proxies. It shows *Amount Saved* as the amount already saved.
+* *MCP Servers Potential Savings*: Estimated token savings available by applying optimization policies to MCP servers. It shows *Tokens Saved* as tokens already saved.
+
+Treat these metrics as directional, not exact.
+
+The *Top optimization opportunities* section highlights the instances with the highest potential savings and the specific optimization policy to apply.
+
+=== Filter and Search
+
+Use the controls at the top of the *Optimizations* tab to narrow the view:
+
+* Select a sub-tab to filter by instance type:
++
+--
+** *Model Proxies*: Monitor cost data and savings for traffic explicitly routed through your managed proxy network.
+** *Agents*: Track proxy-attributed spend and policy savings for active agents governed by Omni Gateway.
+** *MCP Servers*: Observe token volumes processed through tool responses during active server calls.
+--
+* Search for instance names.
+* Use *Filters* to refine the view by *Environment* or *Provider*.
+
+The counter updates to show the number of matching instances.
+
+== Apply Optimization Policies
+
+Optimization policies reduce token consumption and cost for a given instance without changing what the instance does. The available policies depend on the instance type.
+
+To apply an optimization policy:
+
+. In the *Optimizations* tab, select the sub-tab for the instance type: *Model Proxies*, *Agents*, or *MCP Servers*.
+. Locate the instance you want to optimize, and select *View optimizations*.
+. In the instance's optimizations view, locate the policy you want to apply.
+. Review the policy's *Potential savings*, and expand *Why this policy?* for details.
+. Select *Apply* to enable the policy.
+
+Treat the savings estimates as directional, and note that some policies may affect instance latency.
+
+=== MCP Optimizations
+
+For MCP servers, you can apply these optimization policies. Each policy shows its *Potential savings* and a *Why this policy?* explanation, and you apply it by selecting *Apply*.
+
+* *MCP Tool Mapping*: Redefines tool names and descriptions to reduce prompt complexity and improve LLM comprehension.
+* *MCP Tools Progressive Disclosure*: Wraps the MCP server and surfaces two tools, `search_tools` and `invoke_tool`, to increase both accuracy and cost optimization.
+* *Clean Payloads*: Strips structural noise from tool responses, such as whitespace, nulls, and base64 blobs.
+* *Smart Response Trimming*: Trims oversized responses to match agent intent, dropping fields the agent never reads.
+* *Compress Repeated Structures*: Compresses repeated tabular structures into Token-Oriented Object Notation (TOON).
+
+=== Agent Optimizations
+
+For agents, you can apply these optimization policies to the agent's Model Proxy to reduce token costs. Each policy shows its *Potential savings* and a *Why this policy?* explanation, and you apply it by selecting *Apply*.
+
+* *Clean Responses*: Strips redundant fields and boilerplate from tool responses before they reach the model.
+* *Compress Repeated Structures*: Re-encodes repeated array or object structures in tool responses into a more compact form.
+
+=== Model Proxy Optimizations
+
+For model proxies, you can apply these optimization policies to reduce token costs. Each policy shows its *Potential savings*, and you apply it by selecting *Apply*. Applying policies may affect instance latency.
+
+* *Semantic Caching*: Caches LLM responses by semantic similarity so repeat or near-repeat prompts short-circuit an upstream call. This typically results in about 40% fewer tokens on chat-style traffic.
+
+
+
 == See Also
 
+* xref:exp-model-wallets-manage.adoc[]
 * xref:exp-governance-work-with-strategies.adoc[]
 * xref:exp-governance-create-strategy.adoc[]
 * xref:exp-governance-manage-strategies.adoc[]

@@ -1,0 +1,71 @@
+= Configuring Semantic Caching Services
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:imagesdir: ../assets/images
+
+Semantic caching services store and retrieve LLM responses based on semantic similarity. When an incoming request is semantically similar to a previous request, Model Proxy returns the cached response instead of calling the LLM provider again, which reduces latency and cost. Configure a semantic caching service before creating a model proxy that uses semantic caching.
+
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account.
+* One of these permissions:
++
+--
+** Exchange: Exchange Contributor
+** Exchange: Exchange Administrator
+** Exchange: Exchange Creator
+--
++
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+
+== Configure a Semantic Caching Service
+
+. In the navigation pane, select *Model Proxies* > *Semantic Services*.
+. Click *Add Semantic Service* > *Semantic Caching Service*.
+. Configure the *Embedding Service Connection* parameters for the embedding service that generates vector representations of queries:
+** *Embedding Service Provider*: The provider of the embedding model. Semantic caching supports *OpenAI* only.
+** *Model*: The embedding model to use.
+** *URL*: The URL of the embedding service.
+** *Authentication key*: The API authentication key for the embedding service.
+. Click *Next*.
+. Configure the *Vector Database Connection* parameters for the vector database that stores cached embeddings:
+** *Vector database provider*: The provider of the vector database. Select *Azure AI Search*.
+** *Host*: The host URL of your vector database.
+** *API Key*: The API authentication key for the vector database.
+** *Index name*: The index name in your vector database (for example, `semantic-cache`).
+. Click *Next*.
+. Configure the *Object Store Connection* parameters for the object store that persists cached responses:
+** *Client ID*: The client ID for the object store.
+** *Client Secret*: The client secret for the object store.
+** *Object store URL*: The URL of the object store.
+** *Object store name*: The name of the object store (for example, `semantic-cache-store`).
+. Click *Next*.
+. Configure the *Advanced Caching Configurations* to set the caching environment, behavior, and similarity settings:
+** *Environment*: The environment to use for the semantic caching service.
+** *Service label*: Label to identify the new service. Shown as the label in the Semantic Services catalog.
+** *TTL* and *Unit of time*: The length of time a cached response remains valid before it expires (for example, `7` `Days`).
+** *Similarity Threshold*: A value from 0 to 1 that sets how similar an incoming request must be to a cached request for a cache hit. Higher values require more similarity.
+** *LLM-determined response caching*: Enable this option to let the LLM decide whether a response is cacheable. When enabled, define an *LLM cache decision prompt* that specifies the acceptance criteria for caching incoming responses. This prompt is added to the user request.
+** Optionally, expand *Advanced Settings* to select which fields to include when comparing queries for similarity under *Similarity Criteria*:
+*** *Include LLM provider*
+*** *Include user or agent ID*
+*** *Include client ID*
+*** *Include Model Proxy ID*
+. Click *Next*.
+. On the *Review Configuration* page, review your configurations. To change a section, click *Edit*.
+. Click *Save Config & Download Script*.
++
+Saving automatically downloads your vector database cache warmup scripts. Run them to preload the cache with your data and documents.
+
+== Edit a Semantic Caching Service
+
+To edit a semantic caching service:
+
+. From *Semantic Service Setup*, click the three-dots menu (image:gateway::image$three-dots-menu.png[3%,3%]) of the semantic caching service you want to edit.
+. Make the necessary edits.
+. Click *Save Config & Download Script*.
++
+If you edit the vector database connection, you must download and run the cache warmup scripts again.

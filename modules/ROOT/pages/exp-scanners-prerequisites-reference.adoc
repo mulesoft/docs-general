@@ -1,7 +1,9 @@
 = Scanner Prerequisites by Provider
-:keywords: scanner prerequisites, exchange scanners, provider scanners, required roles, required credentials, scanner setup
+:keywords: scanner prerequisites, exchange scanners, provider scanners, required roles, required credentials, scanner setup, vaults
 
 Scanner prerequisites by provider help you confirm required roles, credentials, and permissions before creating a scanner. Use this reference to prevent connection test failures and incomplete discovery by validating provider-specific access in advance. Each scanner also requires Exchange Administrator permission and the correct business group context.
+
+For API gateway providers that support policy write, discovery access alone isn't enough to apply policies. Policy write reuses the same scanner connection you configure here, so the connection's credentials must also carry the provider's write permissions (write scope). Review the additional write prerequisites in xref:_policy_write_prerequisites[]. Write scopes are noted in the matrix as *Write scope (policy apply)*.
 
 == Before You Begin
 
@@ -12,10 +14,11 @@ Before adding any scanner, make sure you have:
 
 == Scanner Prerequisite Matrix
 
+
 [cols="1,1,3",options="header"]
 |===
 | Provider
-| Scanner Type
+| Type
 | Required Credentials, Roles, and Setup
 
 | Amazon Bedrock
@@ -101,11 +104,16 @@ a|
 | Microsoft Azure Copilot
 | Agent
 a|
-*Credentials:* Azure app registration; tenant ID, client ID, client secret
+*Credentials:* Azure app registration; client ID and client secret. Two authentication schemes are supported:
+
+* *OAuth (Authorization Code):* Interactive sign-in and consent in a Microsoft popup. This scheme requires a pre-configured customer OAuth application. Configure the OAuth application in Azure to request the Dynamics CRM `user_impersonation` scope, and set the OAuth callback URL to `https://<your_anypoint_host>/secrets-manager/api/v1/connections/oauth/callback`. Tenant ID is optional; if you don't provide one, the connection defaults to the home tenant ID after authorization.
+* *OAuth:* Uses client credentials, with no interactive sign-in. Tenant ID is required.
 
 *Role:* Copilot Studio Scanner
 
-*Setup:* App added as an Application User in Power Platform; scope set to Dataverse environment URL, `\https://<org-Id>.crm.dynamics.com`
+*Setup:* App added as an Application User in Power Platform; scope set to Dataverse environment URL, `https://<org-id>.crm.dynamics.com`
+
+For setup steps, see xref:exp-scanners-add-from-providers.adoc#microsoft-copilot-studio-scanner-oauth-authorization[].
 
 | Microsoft Foundry
 | Agent
@@ -117,6 +125,15 @@ a|
 *Role:* Azure AI Developer
 
 *Setup:* Project endpoint URLs (discovery is project-specific)
+
+| Salesforce Agentforce
+| Agent
+a|
+*Connection:* xref:access-management::managing-connected-salesforce-orgs.adoc#enable-disable-connection[Enable the connection to a Salesforce organization] that has an established tenant relationship with your Anypoint Platform organization.
+
+*Setup:* xref:access-management::enabling-agentforce.adoc#enable-einstein-anypoint[Enable Agentforce in Anypoint Platform], accept the terms and conditions and set a default organization for Agentforce
+
+*Permissions:* Exchange Administrator permission
 
 | Snowflake Cortex AI
 | Agent
@@ -141,6 +158,15 @@ a|
 * *Resource scope (REST APIs):* `arn:aws:apigateway:{region}::/restapis/*`
 * *Resource scope (HTTP APIs):* `arn:aws:apigateway:{region}::/apis/*`
 
+// TODO: Amazon API Gateway policy write is deferred to a later release. Restore the write scope below when AWS write support ships.
+////
+*Write scope (policy apply):* IAM write permissions for API Gateway, in addition to the read permissions:
+
+* `apigateway:PUT`
+* `apigateway:POST`
+* `apigateway:DELETE`
+////
+
 [NOTE]
 For web application firewall (WAF) policies, the scanner also uses `software.amazon.awssdk:wafv2` and `software.amazon.awssdk:route53`.
 
@@ -154,6 +180,8 @@ a|
 * *Read role scope:* API Management Service Reader at the API Management resource or resource group scope
 * *Read OAuth scope:* `https://management.azure.com/.default`
 
+*Write scope (policy apply):* API Management Service Contributor role (ARM) at the API Management resource or resource group scope
+
 | Google Apigee
 | API
 a|
@@ -163,6 +191,8 @@ a|
 
 * *Read role:* Service account with the Viewer role, or an Apigee permission role with equivalent read access
 
+*Write scope (policy apply):* API Admin role (Management API), or an Apigee permission role with equivalent write access
+
 | Kong Gateway
 | API
 a|
@@ -171,6 +201,8 @@ a|
 *Role:* Kong Control Plane Viewer
 
 * *Apply read scope:* Admin API read permission required to read policy in target environments
+
+*Write scope (policy apply):* Admin API write permission required to apply, enable, disable, or remove policy in target environments
 
 | Akamai Security
 | API Security
@@ -214,7 +246,88 @@ a|
 
 *Role:* `ACCOUNTADMIN`
 
+| Amazon (AWS Secrets Manager)
+| Vault
+a|
+*Credentials:* AWS Static (Access Key ID and Secret Access Key) or AWS Assume Role (Access Key ID and Secret Access Key, plus Role ARN and External ID)
+
+*Setup:* Vault URL; AWS region; optional Secret Name Prefix
+
+
+| Microsoft (Azure Key Vault)
+| Vault
+a|
+*Credentials:* Azure Sp Secret (Client Secret) or Azure Sp Certificate (Client Certificate and Private Key, in PEM format)
+
+*Setup:* Vault URL; Client ID; Tenant ID
+
+| HashiCorp (HashiCorp Vault)
+| Vault
+a|
+*Credentials:* HashiCorp Approle (Role ID and Secret ID, plus an optional TLS CA Certificate in PEM format)
+
+*Setup:* Vault URL; KV Version; Engine Type; Mount; Path; optional Namespace for Vault Enterprise
+
 |===
+
+== Policy Write Prerequisites
+
+Policy write lets you apply, enable, disable, and remove policies on connected third-party gateway APIs directly from Anypoint, with no Anypoint gateway in the request path. Policy write is available for API gateway providers only: Azure API Management, Google Apigee, and Kong Gateway. Agent, API Security, and MCP scanners don't support policy write.
+
+// TODO(W-23907611): Credential-model discrepancy to confirm with PM/eng. This section was
+// grounded in the Omni-app code (separate read vs. write credentials, an explicit Read-Only
+// state until write credentials are added). The External Policies Documentation Guide instead
+// describes policy write as reusing the SAME scanner connection, with write gated only by the
+// permissions granted to that connection's identity on the provider. The text below follows
+// the guide (single reused connection). Confirm which model ships before publishing.
+
+Policy write reuses the same connection you configure for scanning; there's no separate policy-write connection. Before you can write policies, confirm these prerequisites in addition to the discovery prerequisites in the matrix:
+
+* *Write permissions on the connection:* The scanner connection's identity must have the provider's write scope, not just read access. A connection with read-only access to the provider can discover and read policies, but policy actions remain unavailable.
+* *Write scope:* The write scope covers enabling, disabling, and removing existing vendor-native policies, and creating and editing universal (canonical) policies, at both the instance and service scope. Creating and editing native vendor policies isn't supported.
+* *Provider write permissions:* Grant the provider-specific *Write scope (policy apply)* listed for each API gateway provider in the xref:_scanner_prerequisite_matrix[].
+
+The following table summarizes the read and write scopes for each API gateway provider that supports policy write.
+
+[cols="1,1,1",options="header"]
+|===
+| Provider
+| Read Scope
+| Write Scope
+
+// TODO: Amazon API Gateway policy write is deferred to a later release. Restore this row when AWS write support ships.
+////
+| Amazon API Gateway
+| `apigateway:GET`
+| `apigateway:PUT`, `apigateway:POST`, `apigateway:DELETE`
+////
+
+| Azure API Management
+| Reader role (ARM)
+| API Management Service Contributor role (ARM)
+
+| Google Apigee
+| Viewer role (Management API)
+| API Admin role (Management API)
+
+| Kong Gateway
+| Admin API read
+| Admin API write
+|===
+
+=== Read-Only APIs
+
+When a scanner connection has only read access to a gateway, its API instances appear as *Read-Only* and policy actions are unavailable. To enable policy write, grant the connection's identity the provider's write scope, then update the connection from the API instance.
+
+=== Tracked Applies
+
+Every policy write is tracked and records an applied or failed state alongside the scanner-read configuration. Anypoint logs each write as compliance evidence, including the policy, the target, the vendor, the timestamp, and the result. To follow the outcome of a policy operation, use the *Activity log* tab on the API instance. See xref:exp-policies-activity-log.adoc[].
+
+// NOTE(W-23907611): The Activity log records action, policy, status, and time only — it does
+// not record an actor ("who"). Do not describe it as a full who-did-what audit trail.
+
+[NOTE]
+Anypoint doesn't manage vendor policy lifecycle, versioning, or CI/CD.
 
 == See Also
 
