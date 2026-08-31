@@ -3,6 +3,12 @@
 
 The enhanced MuleSoft experience uses a consistent set of terms across governance, portfolio, instance management, and agentic experiences. Clear definitions help you apply the right concepts when registering assets, configuring strategies, and managing instances.
 
+A2A bridge::
+An A2A-compliant protocol server that presents an A2A facade in front of a non-A2A _source agent_. Implemented as a chain of policies running on an Omni Gateway instance, it translates between the A2A protocol and the agent's native protocol and manages the A2A task lifecycle. Create an A2A bridge to make agents built on platforms such as Salesforce Agentforce discoverable, governable, and orchestratable by Agent Fabric. See xref:exp-services-create-a2a-bridge.adoc[].
+
+A2A Bridge card::
+The A2A agent card that a bridge publishes. It's derived from the source agent's card plus any capabilities added by the bridge and any customizations you make. Bridge capabilities are set and locked by the platform so the card can't advertise a capability the bridge can't honor.
+
 A2A endpoint::
 An endpoint that exposes an agent's capabilities using the Agent-to-Agent (A2A) protocol. Point to an A2A endpoint during agent registration to fetch the agent card automatically.
 
@@ -95,6 +101,9 @@ The native Slack assistant that connects to the MuleSoft Platform MCP Server to 
 
 Semantic Service::
 A service that applies context-aware matching to route LLM-driven requests to the most relevant tools and pathways. It's available at Basic scale (managed internal configuration) or Advanced scale (external embedding API and vector database).
+
+Source agent::
+An existing agent, built on a platform that isn't natively A2A-compliant, that you make A2A-compliant by creating an _A2A bridge_ in front of it. The bridge derives its A2A card from the source agent without modifying the source agent.
 
 Target::
 The backend implementation that a gateway proxies traffic to after enforcing policies. Each instance defines a Target URL that points to the live service or runtime.

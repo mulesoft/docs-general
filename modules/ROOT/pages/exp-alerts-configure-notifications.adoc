@@ -1,7 +1,7 @@
 = Configuring Notifications for Alerts
 :keywords: alerts, notifications, configure alerts, alert target, manage alerts, anypoint platform, monitoring
 
-Send API Manager alerts from Anypoint Platform directly to Slack channels and email. Configure alerts in the enhanced experience so teams can see notifications where they work and jump directly into *Portfolio* or *Observability* to respond.
+Send API Manager alerts from Anypoint Platform directly to Slack channels, Microsoft Teams channels, and email. Configure alerts in the enhanced experience so teams can see notifications where they work and jump directly into *Portfolio* or *Observability* to respond.
 
 == Before You Begin
 
@@ -23,7 +23,7 @@ Before getting started, make sure you have:
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
-* The MuleSoft Slack app installed in your workspace (see xref:exp-slack-integrate.adoc[] for installation steps)
+* The MuleSoft Slack app installed in your workspace (see xref:exp-slack-integrate.adoc[] for installation steps), or the MuleSoft for Teams app installed in your Microsoft Teams tenant (see xref:exp-teams-integrate.adoc[] for installation steps)
 
 == View and Manage Alerts
 
@@ -34,7 +34,7 @@ The enhanced experience provides a unified view of all your alerts:
 . Filter alerts by:
 ** Alert type (request count, response time, response codes, and policy violation)
 ** Severity level (critical, warning, informational)
-** Delivery channel (Slack, email, both)
+** Delivery channel (Slack, Microsoft Teams, email)
 
 == Create an Alert
 
@@ -76,8 +76,12 @@ This name appears in the notification list and email subjects.
 . Configure *Delivery Channels*:
 ** Toggle *Email* on or off to send alerts to email addresses.
 ** Toggle *Slack* on or off to send alerts to Slack if enabled.
+** Toggle *Microsoft Teams* on or off to send alerts to Teams if enabled.
 . If *Slack* is enabled, select your delivery destination:
 ** Choose a Slack channel from your workspace.
+** Or select a direct message recipient.
+. If *Microsoft Teams* is enabled, select your delivery destination:
+** Choose a Teams channel from your tenant.
 ** Or select a direct message recipient.
 . Click *Create Alert* to save.
 
@@ -91,12 +95,12 @@ To modify an existing alert:
 . Update any section as needed:
 ** *Select Alert Target*: Change the environment, service type, target service, or API instance.
 ** *Specify Alert Configuration*: Modify the metric, condition, threshold, or time window.
-** *Set Alert Delivery*: Change severity, alert name, or delivery channels (Email, Slack).
+** *Set Alert Delivery*: Change severity, alert name, or delivery channels (Email, Slack, Microsoft Teams).
 . Save your changes.
 
-== Slack Alert Notifications
+== How Alerts Appear in Slack and Microsoft Teams
 
-When an alert triggers, your team receives a notification directly in the configured Slack channel or DM:
+When an alert triggers, your team receives a notification directly in the configured Slack or Microsoft Teams channel or DM:
 
 * Alerts display key information about the condition that triggered them
 * Teams can see and respond to alerts where they already collaborate
@@ -120,3 +124,5 @@ This routing strategy ensures teams see the most important signals first without
 * xref:exp-services-view-detailed-metrics.adoc[]
 * xref:exp-home-start.adoc[]
 * xref:exp-overview.adoc[]
+* xref:exp-teams-integrate.adoc[]
+* xref:exp-slack-integrate.adoc[]
