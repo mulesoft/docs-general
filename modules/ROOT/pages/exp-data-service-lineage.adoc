@@ -11,7 +11,7 @@ Use lineage to answer questions that Agent Fabric couldn't answer before, such a
 ====
 Data service lineage is part of the Context Catalog capability and is available only when your administrator has enabled the feature for your organization.
 
-Lineage currently supports only agents discovered from Amazon (AWS Bedrock). Agents from other providers don't yet show lineage.
+The Lineage tab is available for agents, APIs, and MCP servers when Context Catalog is enabled. Runtime lineage discovered by trace scanning is currently limited to assets from Amazon (AWS Bedrock).
 ====
 
 == How Data Services and Lineage Get Populated
@@ -22,7 +22,7 @@ Data services and their lineage come into Agent Fabric through the Informatica C
 . When the scanner runs, it brings in *data services*—datasets and their metadata, such as schemas, owners, classifications, quality scores, and glossary terms—from Informatica CDGC into the *Data Services* catalog.
 . Context Catalog then detects lineage edges that connect those data services to the APIs, MCP servers, and agents that use them, building the agent-to-data lineage graph.
 
-Because lineage depends on the Informatica CDGC scanner, no lineage appears until at least one Informatica scanner has run successfully. Currently, the lineage graph is populated only for agents discovered from Amazon (AWS Bedrock).
+Because lineage depends on the Informatica CDGC scanner, no lineage appears until at least one Informatica scanner has run successfully. Runtime lineage discovered by trace scanning is currently available only for assets from Amazon (AWS Bedrock).
 
 == Before You Begin
 
@@ -30,7 +30,7 @@ Before you can view lineage, make sure that:
 
 * Your administrator has enabled the Context Catalog feature for your organization.
 * An Informatica Cloud Data Governance and Catalog (CDGC) scanner has run so that data services, classifications, and glossary terms are ingested into the registry. See xref:exp-scanners-add-from-providers.adoc[] and xref:exp-scanners-prerequisites-reference.adoc[].
-* The agents whose lineage you want to view were discovered from Amazon (AWS Bedrock). Lineage currently isn't available for agents from other providers.
+* To view runtime lineage from trace scanning, the asset was discovered from Amazon (AWS Bedrock). Trace scanning currently isn't available for other providers.
 
 == How Lineage Is Detected
 
@@ -52,7 +52,7 @@ You view lineage from the detail page of an asset in a *Portfolio* catalog:
 . Select the *Lineage* tab.
 . Review the lineage graph. The current asset version is the *Root* node, and connected assets branch out from it.
 
-If no lineage has been detected yet, the tab shows *No lineage recorded for this asset version yet*.
+If no lineage has been detected yet, the tab shows *No lineage recorded for this service version yet*. When lineage is empty, the tab also shows a *Tip:* with a link to the recommended next step for building lineage—*Enable Trace Scanning*, *Expose as MCP Server*, or *Create Managed Instance*—depending on the asset and its provider.
 
 == Read the Lineage Graph
 
@@ -62,11 +62,11 @@ The lineage graph is a topology view rooted at the current asset version. Each n
 
 Nodes are grouped into lanes and labeled by type:
 
-* *Asset* — a registered asset, further identified by asset type: *Broker*, *Agent*, *MCP*, *LLM*, *API*, *Mule App*, or *Data set*.
-* *Instance* — a deployment instance of an asset.
-* *External* — an external data source that isn't registered in *Portfolio*.
+* *Service* — a registered service, further identified by type: *Broker*, *Agent*, *MCP*, *LLM*, *API*, *Mule App*, or *Data set*.
+* *Instance* — a deployment instance.
+* *Data source* — an external data source that isn't registered in *Portfolio*.
 
-The *Root* label marks the asset version you're viewing. Nodes that aren't registered in *Portfolio* are marked *Unregistered asset* or *Not in Portfolio*.
+The *Root* label marks the asset version you're viewing. Nodes that aren't registered in *Portfolio* are marked *Unregistered service*, *Not a registered service*, or *Not in Portfolio*.
 
 === Edges and Provenance
 
@@ -87,6 +87,7 @@ For any node, the graph summarizes how many upstream and downstream relationship
 The *Lineage* tab includes controls for working with larger graphs:
 
 * *Explore lineage* — opens the *Lineage explorer* in a fullscreen view.
+* *Scan for traces* — for supported providers, scans live traffic to add runtime (*Observed*) connections to the graph. A message confirms when scanning starts, and results can take a few minutes to appear.
 * *Zoom in*, *Zoom out*, and *Reset zoom* — adjust the graph scale.
 * Asset-type filters — narrow the graph to specific asset types.
 * Select a node to open its details, including its description, ID, and URL. When the asset is registered, select *View in Portfolio* to open its detail page. If details aren't available, the drawer shows *Details unavailable*.
