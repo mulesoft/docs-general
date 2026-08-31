@@ -1,20 +1,6 @@
 = Apply Universal Policies
 :keywords: policy library, universal policies, canonical policies, governance policies, apply policy, policy catalog
 
-// DRAFT: Policy Write (MS2026-08-R2 / Dreamforce). Tracked in W-23907611.
-// This is the Governance-side entry point into the Policies documentation set
-// (xref:exp-policies-overview.adoc[]). The detailed universal-policy model, apply and
-// management workflow, activity tracking, and per-provider support live in the exp-policies-*
-// topics; keep this topic thin and link out rather than duplicating that content.
-// Open items to confirm with the PM before removing this DRAFT banner:
-//  1. Entry points and wizard step labels verified against mulesoft-omni-app source
-//     (Governance Strategies > Add Strategy > Apply Policy, and the instance-level
-//     Apply Policy action that opens the Policy Library); confirm with PM.
-//  2. Category filter labels verified against source (Access and Security,
-//     Compliance and Observability, Data Privacy and Integrity, Performance and Cost,
-//     plus the All Domains and Custom filters); confirm with PM.
-//  3. Human-readable required permission/role names for policy write actions.
-
 Governance provides two entry points for applying *universal policies*: the *Apply Policy* flow on the Governance Strategies page, and the *Policy Library* on an individual API instance. A universal policy expresses a policy once and applies it as the correct vendor-native policy on each supported gateway, so you can enforce consistent controls across MuleSoft, Google Apigee, Kong Gateway, and Azure API Management without authoring a policy per gateway.
 
 This topic covers both entry points and the apply flow. For the full universal policy model, the apply and management workflow, activity tracking, and per-provider support, see xref:exp-policies-overview.adoc[] and xref:exp-policies-universal.adoc[].
