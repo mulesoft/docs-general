@@ -4,7 +4,7 @@
 Install the MuleSoft for Slack app in your Slack workspace to receive notifications, run shortcuts, and provide deep links for responders to jump directly into the enhanced experience. The Slack app enables you to:
 
 * <<connect-slackbot-mcp>>: Connect Slackbot to the Mulesoft Platform MCP Server to answer questions about the MuleSoft platform.
-* <<begin-using-agent>>: Manage your MuleSoft environment with the MuleSoft Agent integrated with Slack. Use MuleSoft Agent to create scanners, apply policies, deploy instances, and perform other management tasks.
+* <<begin-using-agent>>: Manage your MuleSoft environment with the MuleSoft Agent integrated with Slack. Use the MuleSoft Agent to create scanners, apply policies, deploy instances, and perform other management tasks.
 * Configure alerts to deliver notifications to Slack channels and DMs. For instructions, see xref:exp-alerts-configure-notifications.adoc[].
 
 Available commands, message templates, and workspaces depend on how your organization configured the Slack app. Internal runbooks list the slash commands or shortcuts approved for your workspace.
