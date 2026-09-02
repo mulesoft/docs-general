@@ -26,7 +26,7 @@ MuleSoft documentation offers several ways to feed content to AI depending on yo
 
 Every page of MuleSoft documentation includes a dropdown menu for AI consumption.
 
-image::ai-context-menu.png["Dropdown menu with options Copy as Markdown, View as Markdown, View on GitHub, View llms.txt, Use Docs MCP Server, and Open in ChatGPT, Claude, or Perplexity"] // CHANGE IMAGE
+image::ai-context-menu.png["Dropdown menu with options Copy page URL, Copy page content, and Download page content for AI use"]
 
 Use these options to quickly grab clean text or jump straight into your workflow:
 
