@@ -6,21 +6,6 @@ endif::[]
 
 MuleSoft documentation is optimized for AI. Whether you're a human pasting context into an LLM or an AI agent ingesting documentation autonomously, our content is structured to save tokens, stay grounded, and maximize technical accuracy.
 
-MuleSoft documentation offers several ways to feed content to AI depending on your workflow.
-
-[cols="1,2,2", options="header"]
-|===
-| Approach | Best for | When to use
-
-| <<page-options>>
-| Grabbing a single page by hand
-| You're reading a specific page and want to copy or send it to an LLM quickly, with no setup.
-
-| <<llms-txt>>
-| Bulk ingest into your own pipeline, or browsing the documentation structure
-| You're building a RAG pipeline or vector database and want to download and index the documentation on your own infrastructure, or you want a full, browsable index of a product's documentation.
-|===
-
 [[page-options]]
 == Page Options
 
