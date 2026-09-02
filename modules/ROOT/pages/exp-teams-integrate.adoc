@@ -4,7 +4,7 @@
 Install the MuleSoft for Teams app in your Microsoft Teams tenant to interact with MuleSoft directly from Teams using natural language. The Teams app enables you to:
 
 * <<connect-teams-tenant>>: Bind your Microsoft Teams tenant to your Anypoint organization so the app can send alerts and notifications directly to channels and DMs.
-* <<begin-using-agent>>: Manage your MuleSoft environment with the MuleSoft Agent integrated with Teams. Use MuleSoft Agent to list APIs, view MCP servers, check governance, and perform other management tasks.
+* <<begin-using-agent>>: Manage your MuleSoft environment with the MuleSoft Agent integrated with Teams. Use MuleSoft Agent, to list APIs, view MCP servers, check governance, and perform other management tasks.
 * Configure alerts to deliver notifications to Teams channels. For instructions, see xref:exp-alerts-configure-notifications.adoc[].
 
 NOTE: This tool uses generative AI, which can produce inaccurate or harmful responses. Review for accuracy and safety before using.
