@@ -107,6 +107,9 @@ s| Salesforce OMS  |
 | Design Center | |
   xref:design-center::index.adoc[Flow Designer Archive]
 
+| EU Control Plane | |
+  xref:eu-control-plane::index.adoc[Archive]
+
 | Flex Gateway | |
   xref:1.11@gateway::index.adoc[v1.11 Archive] +
   xref:1.10@gateway::index.adoc[v1.10 Archive] +
