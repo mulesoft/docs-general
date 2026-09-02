@@ -8,15 +8,8 @@ The *Providers* page shows which cloud platforms and API management systems are 
 Before getting started, make sure you have:
 
 * An Anypoint Platform account.
-* Any of these permissions:
-+
---
-** Exchange: Exchange Administrator
-** Exchange: Exchange Contributor
-** API Manager: API Creator
-** API Manager: Manage Policies
---
-+
+* Exchange Administrator permission.
+
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
 == Access the Providers Page
@@ -67,7 +60,14 @@ To add a provider connection:
 . From *Platform* > *Providers*, select a provider from the *Not Connected* section.
 . Follow the connection workflow to authenticate and configure scanner settings. The wizard walks through three steps: *Choose Provider*, *Connect to Provider*, and *Connection Setup*.
 
+For Microsoft Copilot Studio scanners, select *OAuth (Authorization Code)* and complete authorization in the Microsoft sign-in popup before you continue. For details, see xref:exp-scanners-add-from-providers.adoc#microsoft-copilot-studio-scanner-oauth-authorization[].
+
 For detailed scanner setup instructions, see xref:exp-scanners-add-from-providers.adoc[].
+
+[NOTE]
+====
+Amazon, Microsoft, and HashiCorp also support registering an external vault instead of a scanner. A vault syncs secret metadata rather than discovering services, so it doesn't populate a *Portfolio* catalog. For the vault registration flow, see xref:exp-vaults-manage.adoc[].
+====
 
 == Akamai API Security Data in Portfolio
 
@@ -88,9 +88,11 @@ The enhanced experience supports connections to these providers:
 * Databricks
 * GoDaddy
 * Google
+* HashiCorp
 * Kong
 * LangChain
 * Microsoft
+* Salesforce
 * Snowflake
 
 [NOTE]
@@ -99,6 +101,8 @@ When scanning Kong, the enhanced experience discovers gateway-level plugin infor
 
 *Akamai API Security* is available only when your administrator has enabled the feature for your organization. When enabled, it appears in the *Not Connected* section of the Providers sidebar.
 ====
+
+Of these providers, the API gateway providers Google (Apigee), Kong, and Microsoft (Azure API Management) support policy write. APIs discovered by a connection that has only read access to the provider appear as *Read-Only*, and policy actions are unavailable until the connection's identity is granted the provider's write scope. For provider-specific read and write scopes, see xref:exp-scanners-prerequisites-reference.adoc#_policy_write_prerequisites[Policy Write Prerequisites].
 
 The specific providers available depend on your organization's enabled products and enhanced experience configuration.
 
@@ -110,3 +114,4 @@ The specific providers available depend on your organization's enabled products 
 * xref:exp-scanners-add-from-providers.adoc[]
 * xref:exp-scanners-manage.adoc[]
 * xref:exp-services-add-to-portfolio.adoc[]
+* xref:exp-vaults-manage.adoc[]

@@ -1,0 +1,24 @@
+= Securing Services in Your Portfolio
+:keywords: securing services, external vaults, secrets manager, credentials, Akamai API Security, risk correlation, rogue agents, Azure Key Vault, HashiCorp Vault, portfolio, anypoint platform
+
+Secure the services you already run so leaked keys, open vulnerabilities, and compromised agents are harder to start and faster to stop. Those failures can expose data, take unauthorized actions, or generate unexpected cost. As you add APIs, MCP servers, and agents, security has to travel with each service, not live only in a disconnected tool.
+
+* xref:exp-akamai-risk-correlation.adoc[Correlate Risk Using Akamai API Security]
++
+See risk scores, findings, and incidents on the APIs and MCP services you already govern, so teams can triage and remediate from one place.
+
+* xref:exp-vaults-manage.adoc[Use Credentials Stored in External Vaults]
++
+Authenticate model proxies without storing API keys in MuleSoft. Credentials stay in your external vault.
+
+* xref:exp-detect-and-contain-rogue-agents.adoc[Detect and Contain Rogue Agents]
++
+Stop a compromised, misconfigured, or malfunctioning agent before it leaks data, takes unauthorized actions, or runs up costs.
+
+== See Also
+
+* xref:exp-akamai-risk-correlation.adoc[]
+* xref:exp-vaults-manage.adoc[]
+* xref:exp-detect-and-contain-rogue-agents.adoc[]
+* xref:exp-providers-manage.adoc[]
+* xref:model-proxy.adoc[]

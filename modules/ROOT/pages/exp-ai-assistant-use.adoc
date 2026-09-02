@@ -76,7 +76,20 @@ Platform Configuration::
 * Set up integrations (Slack, Claude Desktop).
 * Manage business group settings.
 
-== Access the AI Assistant
+Customer Support::
++
+* Search official MuleSoft documentation for product and configuration guidance.
+* Look up known issues, root causes, and available workarounds.
+* Find relevant Knowledge Articles for troubleshooting and error messages.
+* Get help from a human agent when the assistant can't answer your question or when you ask to escalate.
+
+Human Agent Escalation::
++
+The assistant hands off to a human support agent when it can't answer your question, or when you ask directly—for example, "talk to support," "I need to speak to someone," or "escalate this." When a handoff happens, the assistant gives you a summary of your conversation to copy into a support case, along with a link to open one at https://help.salesforce.com[help.salesforce.com]. The assistant doesn't create a support case for you automatically—you still submit it yourself.
++
+This capability is currently available only through the AI assistant panel in the enhanced experience.
+
+== Access the MuleSoft Agent
 
 Once enabled as described in <<before-you-begin>>, open the assistant from the panel available on any page in the enhanced experience.
 
@@ -194,6 +207,28 @@ Take me to monitoring for my agent
 [source,text]
 ----
 Where do I configure scanners?
+----
+
+=== Example Customer Support Questions
+
+[source,text]
+----
+How do I configure OAuth 2.0 in Mule 4?
+----
+
+[source,text]
+----
+Are there known issues with CloudHub 2.0 deployments?
+----
+
+[source,text]
+----
+What does a MULE:CONNECTIVITY error mean?
+----
+
+[source,text]
+----
+Can I talk to a support agent?
 ----
 
 == Use Suggestions

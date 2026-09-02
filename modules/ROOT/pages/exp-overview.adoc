@@ -11,13 +11,15 @@ The enhanced MuleSoft experience supports the full lifecycle of AI-connected int
 
 Entity Management:: Register and manage agents, REST and GraphQL APIs, MCP servers, Model proxies, and gateways, including Anypoint Omni Gateway, external gateways, and unmanaged gateways. Each type has a dedicated catalog under *Portfolio*. When your administrator enables the Context Catalog feature, a *Data Services* catalog also appears, holding data services imported by an Informatica scanner.
 
-Governance and Compliance:: Define and apply policies across domains such as access and security, performance and cost, data privacy and integrity, and compliance and observability. Conformance reporting summarizes rule violations and severity so you can close gaps systematically.
+Governance and Compliance:: Define and apply policies across domains such as access and security, performance and cost, data privacy and integrity, and compliance and observability. For connected third-party API gateways (Azure API Management, Google Apigee, and Kong Gateway), apply, enable, disable, and remove policies directly from Anypoint through policy write, with no Omni Gateway in the request path. Conformance reporting summarizes rule violations and severity so you can close gaps systematically.
 
 Cost and Performance Optimization:: Monitor token usage, per-instance signals, and daily cost where the product exposes them. Apply governance strategies and related controls, such as tool mapping and tool sanitization, to reduce spend and risk where the experience supports them.
 
 Instance Management:: Create and review instances for supported asset types. Choose managed paths through Omni Gateway when you need deeper monitoring and policy enforcement, or choose lighter models when that matches your operating model.
 
-AI Assistant (MuleSoft Agent):: Get help navigating, searching, and managing your portfolio through natural language conversations. The AI assistant provides context-aware guidance, performs actions with your confirmation, and suggests next steps based on your current task. Available from every page in the enhanced experience.
+Credential and Secrets Management:: Connect an external vault (AWS Secrets Manager, Microsoft Azure Key Vault, or HashiCorp Vault) under *Platform* > *Providers* so credentials stay in your existing secrets manager. MuleSoft stores only secret metadata and resolves values from the vault when needed, and a model proxy can reference a vault secret instead of storing a key. See xref:exp-vaults-manage.adoc[].
+
+MuleSoft Agent (AI assistant):: Get help navigating, searching, and managing your portfolio through natural language conversations. The AI assistant provides context-aware guidance, performs actions with your confirmation, and suggests next steps based on your current task. Available from every page in the enhanced experience.
 
 == Enhanced Experience High-Level Workflow
 
@@ -38,7 +40,7 @@ Under *Portfolio*, open *Agents*, *MCP Servers*, *Model Proxies*, *APIs*, or *Ga
 In *Portfolio*, open a service detail page from *Agents*, *MCP Servers*, *Model Proxies*, or *APIs*, then open the *Instances* tab to create managed or unmanaged deployments that match your needs. Managed instances on Omni Gateway give stronger governance and monitoring when the new experience exposes them. *Gateways* don't include an *Instances* tab on their detail page. For instance workflows, see xref:exp-instances-add.adoc[].
 . Configure policies.
 +
-On a service detail page in *Portfolio*, open the *Policies* tab for the service or one of its instances to apply governance policies that match access control, data privacy, performance, and compliance goals. Use top-level *Governance* for gateway-wide policy work, organization strategies, and cost tools. For governance policy workflows, see xref:exp-governance-work-with-strategies.adoc[].
+On a service detail page in *Portfolio*, open the *Policies* tab for the service or one of its instances to apply governance policies that match access control, data privacy, performance, and compliance goals. For APIs discovered from third-party gateways, applying policies requires a scanner connection whose credentials carry the provider's write scope; see xref:exp-scanners-prerequisites-reference.adoc#_policy_write_prerequisites[Policy Write Prerequisites]. Use top-level *Governance* for gateway-wide policy work, organization strategies, and cost tools. For governance policy workflows, see xref:exp-governance-work-with-strategies.adoc[].
 . Review compliance.
 +
 In *Portfolio*, open a service detail page from *Agents*, *APIs*, or *MCP Servers*, then open the *Conformance Report* tab to review scores, violations, and warnings and address the findings your governance team prioritizes. For gateways, use top-level *Governance* for the same compliance story at the scope the experience supports. For service-level tabs and conformance context, see xref:exp-services-view-details.adoc[].

@@ -2,10 +2,10 @@
 :keywords: mulesoft agent fabric, mcp bridge, mcp connector, enterprise actionability, ai agents, mulesoft integration, model context protocol
 
 
-MuleSoft Agent Fabric helps you turn agent sprawl into a governed, coordinated, intelligent network. Regardless of the platform where your AI agents were built or are running, Agent Fabric provides the infrastructure to discover, orchestrate, govern, and observe agents across your enterprise. Agent Fabric enables you to build intelligent agent networks where multiple agents work together, access enterprise systems securely, and operate under consistent governance and observability.
+Agent Fabric helps you turn agent sprawl into a governed, coordinated, intelligent network. Regardless of the platform where your AI agents were built or are running, Agent Fabric provides the infrastructure to discover, orchestrate, govern, and observe agents across your enterprise. Agent Fabric enables you to build intelligent agent networks where multiple agents work together, access enterprise systems securely, and operate under consistent governance and observability.
 
 [[how-agent-fabric-works]]
-== How MuleSoft Agent Fabric Works
+== How Agent Fabric Works
 
 Every organization has systems, agents, LLMs, and data sources scattered across platforms and teams. Left unmanaged, this creates agent sprawl: siloed agents that can't work together, inconsistent experiences, security gaps, and costs that are difficult to control. Agent Fabric solves this by providing a unified control plane for the agentic era.
 
@@ -77,6 +77,23 @@ Before agents can orchestrate across your enterprise, your existing systems need
 ** Orchestrate workflows that incorporate AI agents and external MCP services
 * When you need it: Use MCP Connector when you need to expose capabilities to agents that require custom logic, multi-system composition, orchestration with external MCP services, or transformation that configuration-based tools like MCP Bridge don’t cover.
 * Learn more: xref:mcp-connector::index.adoc[MCP Connector]
+
+=== A2A Bridge
+
+* What it is: An A2A bridge is an A2A-compliant protocol server that presents an A2A facade in front of an existing non-A2A agent (the source agent). Implemented as a chain of policies—inbound authentication plus the bridge policies—running on an Omni Gateway instance, it translates between the A2A protocol and the agent's native protocol, manages the task lifecycle, and serves A2A task management methods, all without modifying the source agent. Agent Fabric derives an A2A card from the source agent, publishes it to your Portfolio, and deploys the bridge instance from a single wizard.
+
+* Role in Agent Fabric: Agent Fabric can only orchestrate A2A-compliant agents, but many enterprise agents—such as Salesforce Agentforce agents—aren't A2A-compliant on their own. A2A Bridge closes the gap between what your scanners can discover and what Agent Fabric can orchestrate, making non-A2A agents first-class participants in your agent network through configuration alone.
+
+* What you can do:
+** Make a non-A2A source agent A2A-compliant without rebuilding it
+** Customize the advertised A2A card and skills before publishing
+** Deploy the bridge instance to a managed or self-managed Omni Gateway with inbound and upstream authentication
+** Manage the A2A task lifecycle so operations such as `GetTask`, `ListTasks`, and `CancelTask` return correct results
+** Discover, govern, monitor, and orchestrate the bridged agent like any native A2A agent
+
+* When you need it: Use A2A Bridge when you have agents on platforms that aren't yet A2A-compliant (such as Agentforce) and you need Agent Fabric to orchestrate them now. Use A2A Connector instead when you need custom Mule application logic or want to bridge a platform that isn't natively supported.
+
+* Learn more: xref:exp-services-create-a2a-bridge.adoc[]
 
 === A2A Connector
 
@@ -340,6 +357,6 @@ Agent Visualizer provides a detailed visual graph of your agent network so you c
 
 * For a guided path through discovering assets, building your first agent network, and deploying it with governance and monitoring, get started with the xref:learning-map-agent-fabric.adoc[].
 
-* For a comprehensive guide to the technical foundations, capability pillars, and architectural best practices that power enterprise agentic transformation, explore the https://www.mulesoft.com/lp/ebook/mulesoft-agent-fabric-technical-overview[MuleSoft Agent Fabric Technical Overview].
+* For a comprehensive guide to the technical foundations, capability pillars, and architectural best practices that power enterprise agentic transformation, explore the https://www.mulesoft.com/lp/ebook/mulesoft-agent-fabric-technical-overview[Agent Fabric Technical Overview].
 
-* Learn about the technical foundations, capability pillars, and architectural details https://architect.salesforce.com/docs/architect/fundamentals/guide/mulesoft-agent-fabric-deep-dive.html#Agent_Orchestration_Design_Patterns[MuleSoft Agent Fabric Deep Dive].
+* Learn about the technical foundations, capability pillars, and architectural details https://architect.salesforce.com/docs/architect/fundamentals/guide/mulesoft-agent-fabric-deep-dive.html#Agent_Orchestration_Design_Patterns[Agent Fabric Deep Dive].

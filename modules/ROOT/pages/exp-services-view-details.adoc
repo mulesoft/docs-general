@@ -41,7 +41,7 @@ tab can differ by service type and release. For end-to-end portfolio tasks that 
 |Yes |Yes |Yes |Each Model Proxy is exactly one instance so there is no *Instances* tab. |No
 
 |*Policies*
-|Governance policies attached to the service or its instances (access, data, performance, compliance, and related domains your organization uses). For APIs discovered by scanners, this tab shows read policies from Amazon API Gateway, Google Apigee, Azure API Management, and Kong Gateway. If the instance uses a Kong gateway, the listed policies are gateway-level policies (plugins). Other service-level policies (plugins) can also apply.
+|Governance policies attached to the service or its instances (access, data, performance, compliance, and related domains your organization uses). For APIs discovered by scanners, this tab shows read policies from Amazon API Gateway, Google Apigee, Azure API Management, and Kong Gateway. If the instance uses a Kong gateway, the listed policies are gateway-level policies (plugins). Other service-level policies (plugins) can also apply. On supported gateways, you can also manage native policies from this tab. See xref:exp-policies-apply-manage.adoc[].
 |Yes |Yes |Yes |Yes |No
 
 |*Monitoring*
@@ -66,6 +66,7 @@ tab can differ by service type and release. For end-to-end portfolio tasks that 
 . Use the search box to find the service by name or description, or scan the list or grid.
 . Select the service card to open its detail page.
 
+[[view-read-policies-discovered-by-scanners]]
 == View Read Policies Discovered by Scanners
 
 If a provider scanner has policy-read scopes configured, the *Policies* tab shows discovered policy entries for that API instance. The tab lists policy names and mapped governance context, such as category and apply level, when the provider returns that metadata. For providers that expose policy status, the tab also shows whether a policy is enabled so teams can validate scanner coverage and conformance inputs from the latest scan snapshot.
@@ -76,6 +77,16 @@ If a provider scanner has policy-read scopes configured, the *Policies* tab show
 . Use the policy list to confirm applied controls before governance reviews or conformance analysis.
 
 Policy visibility depends on the last successful scanner run, not on a live provider query. If required provider scopes or roles are missing, policy results can be incomplete or unavailable. Policy fields such as status, apply level, and detail can vary by provider. If expected policies are missing, check scanner run status and history in *Providers*.
+
+Reading policies is view-only. To create, edit, enable, disable, or remove policies on Anypoint and external gateway providers from this tab, see xref:exp-policies-apply-manage.adoc[] and xref:exp-policies-overview.adoc[].
+
+== Manage Native Policies
+
+On supported gateways, the *Policies* tab also lets you manage the native policies applied to an instance. Depending on the gateway and your permissions, you can edit, remove, or enable and disable a policy directly from this tab. Policies that are outside your instance's scope appear in a read-only (view-only) state, without edit, remove, or enable/disable actions.
+
+Policy write actions are tracked. To confirm whether an apply, edit, enable, disable, or remove completed on the gateway, review the *Activity log* tab of the instance detail page. See xref:exp-policies-activity-log.adoc[].
+
+For the full apply and management workflow, see xref:exp-policies-apply-manage.adoc[].
 
 == See Also
 

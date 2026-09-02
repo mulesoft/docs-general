@@ -1,0 +1,142 @@
+= Capping Spend for Callers of Model Proxies
+:keywords: model wallets, model wallet, budgets, token budget, spend limit, model proxies, jwt claims, cost management, anypoint platform
+
+A model wallet identifies a caller of a model proxy and caps that caller's token or dollar spend against a provider over a set time window. Each wallet has a system-generated client ID and required JSON Web Token (JWT) claims that you define.
+
+When a caller sends a request, the proxy matches the client ID and claims to a wallet and counts the request against that wallet's budgets. After the wallet reaches its budget, the proxy blocks further requests to that provider's models. That block enforces a spend or token cap. A wallet doesn't grant or deny access to the proxy.
+
+[[before-you-begin]]
+== Before You Begin
+
+To manage model wallets, you need:
+
+* An Anypoint Platform account.
+* At least one configured model proxy. See xref:model-proxy-create-model-proxy.adoc[].
+* A configured identity provider (IdP) that issues JWTs for callers.
+* Policies configured on each model proxy that callers reach through the wallet. See <<configure-policies-on-a-model-proxy>>.
+* API Manager permissions:
++
+--
+** API Manager: API Creator
+** API Manager: View APIs Configuration
+** API Manager: Edit APIs Configuration
+** API Manager: Manage Policies, to apply, disable, reorder, and edit policies
+--
++
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+
+NOTE: Organizations without an IdP configured can't use model wallets. Those organizations continue to use existing access methods.
+
+[[configure-policies-on-a-model-proxy]]
+== Configure Policies on a Model Proxy
+
+A model wallet matches the client ID and JWT claims in a request to the wallet's configuration. Default model proxy policies include DataWeave Headers Transformation and Client ID Enforcement. For wallets, disable those policies and identify callers from the JWT.
+
+Apply these policy changes on each model proxy that callers reach through the wallet. Apply them from the model proxy, not from *Model Wallets*.
+
+. From *Portfolio* > *Model Proxies*, open the model proxy.
+. Select the *Policies* tab.
+. From the actions menu for *DataWeave Headers Transformation*, select *Disable Policy*.
+. From the actions menu for *Client ID Enforcement*, select *Disable Policy*.
+. Select *Apply Policy*.
+. Select *JWT Validation*, and then select *Next*.
+. Configure the policy to validate tokens from your IdP, including the JWT origin and the JSON Web Key Set (JWKS) URL or signing key. For configuration parameters, see xref:gateway::policies-included-jwt-validation.adoc[JWT Validation policy].
+. Select *Apply Policy*.
+. Select *Reorder Instance Policies*.
+. Move *JWT Validation* to the second position.
++
+The xref:gateway::policies-included-cors.adoc[CORS] policy remains first. JWT Validation in the second position validates the token before later policies read the claims.
+. Select *Save Order*.
+. From the actions menu for *LLM Proxy Core Policy*, select *Edit Configuration*.
+. In *Client ID*, enter:
++
+----
+#[authentication.properties.claims.client_id]
+----
++
+This expression reads the `client_id` claim after JWT Validation publishes the verified claims.
+. Select *Save Changes*.
+
+Repeat these policy steps for each model proxy that callers reach through the wallet.
+
+[[create-a-model-wallet]]
+== Create a Model Wallet
+
+Create a model wallet to define the client ID, JWT claims, and optional budgets for a caller.
+
+. From *Portfolio* > *Model Proxies* > *Model Wallets*, select *New Model Wallet*.
+. In *Name*, enter a name for the wallet, for example, `Finance Analytics Bot`.
+. (Optional) Enter a *Description* of the wallet's purpose.
+. Under *Authentication*, copy the system-generated *Client ID*.
++
+The Client ID is read-only. Callers send the Client ID as the `X-Client-Id` request header to select the wallet.
+. Select *Add Claim* and enter at least one required claim:
++
+--
+** In *Required Claims*, enter one or more claim keys, for example, `group`.
+** Enter one or more comma-separated values.
+** To add more claims, select *Add Claim* again.
+--
++
+The required claims match claims in the JWT after the JWT Validation policy on the model proxy validates the token.
+. (Optional) To cap spend or token usage, add one or more budgets. See <<add-a-budget-to-a-wallet>>.
+. Select *Create Model Wallet*.
+
+[[view-model-wallets]]
+== View Model Wallets
+
+From *Portfolio* > *Model Proxies*, select *Model Wallets*. The wallet list shows:
+
+* *Name*: The wallet's display name.
+* *Description*: The wallet's purpose.
+* *Budgets*: The number of budgets on the wallet.
+* *Last Updated*: When the wallet was last changed.
+
+To find a specific wallet, use the search box to filter by name or description.
+
+[[edit-a-model-wallet]]
+== Edit a Model Wallet
+
+. From *Portfolio* > *Model Proxies* > *Model Wallets*, open the wallet and select *Edit*.
+. Change the *Name*, *Description*, or *Required Claims*.
++
+The *Client ID* is read-only.
+. Select *Save*.
+
+Manage budgets separately from the wallet name, description, and claims. See <<add-a-budget-to-a-wallet>>.
+
+[[add-a-budget-to-a-wallet]]
+== Add a Budget to a Wallet
+
+A budget caps usage for a wallet against a provider over a recurring period. Add a budget when you create or edit a model wallet, or add a budget from the budgets view in *Governance* > *Cost Management*.
+
+Add multiple budget limits to a wallet. Assign each model to only one budget limit.
+
+. Open the model wallet from *Portfolio* > *Model Proxies* > *Model Wallets*, or open the budgets view in *Governance* > *Cost Management*.
+. In the *Budgets* section, select *Add Budget*.
+. Enter the budget details:
++
+--
+** *Provider*: The provider the budget tracks.
+** *Period*: *Daily*, *Weekly*, or *Monthly*.
+** *Resets on Day of Month*: The day of each period when the usage counter returns to zero.
+** *Metric*: Whether the limit is measured in dollars (*Spend*) or *Tokens*.
+** *Spend Limit (USD)*: The limit amount for the selected metric.
+--
+. Select *Add Budget*.
+
+Spend-based budgets depend on model costs. To track dollar spend accurately, set a cost for each model on the *Models* page. Models without configured costs show zero spend. See xref:exp-models-manage-costs.adoc[Setting Model Costs for Spend Tracking].
+
+When a wallet reaches its budget, the model proxy blocks requests to that provider's models. If a fallback route exists, then the model proxy routes the request to the next model in the proxy's route.
+
+Budgets are approximate rather than a real-time hard cutoff. The model proxy tracks total token consumption across routes as a governance and cost-awareness tool. Usage can briefly exceed a limit before the model proxy blocks requests.
+
+== See Also
+
+* xref:model-proxy-create-model-proxy.adoc[]
+* xref:model-proxy-policies.adoc[]
+* xref:gateway::policies-included-jwt-validation.adoc[]
+* xref:gateway::policies-included-client-id-enforcement.adoc[]
+* xref:gateway::policies-included-dataweave-headers-transformation.adoc[]
+* xref:exp-governance-view-cost-and-token-usage.adoc[]
+* xref:exp-services-register-manually.adoc[]
