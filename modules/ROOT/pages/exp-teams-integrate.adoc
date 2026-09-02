@@ -14,7 +14,7 @@ NOTE: This tool uses generative AI, which can produce inaccurate or harmful resp
 
 Before setting up the Teams integration, verify that the following requirements are met:
 
-* *Agentforce Enabled*: Agentforce must be enabled within your Anypoint Platform organization.
+* *Generative AI enabled*: Generative AI must be enabled in your Anypoint Platform and Salesforce organizations. For more information, see xref:access-management::enabling-generative-ai.adoc[].
 * *Salesforce-Anypoint Connection*: Your Anypoint Platform organization must be fully connected to your Salesforce organization.
 * *Early Access Program*: The MuleSoft Agent feature must be enabled for your organization by the MuleSoft team as part of the Early Access Program. Contact your Customer Success Manager (CSM) or Account Executive (AE) to join the program.
 
@@ -64,7 +64,7 @@ MuleSoft Agent is available on request. To get access, contact your account exec
 Before getting started, make sure you have:
 
 * An Anypoint Platform account with access to the enhanced experience.
-* Agentforce enabled in your Anypoint Platform and Salesforce organizations by your administrator.
+* Generative AI enabled in your Anypoint Platform and Salesforce organizations by your administrator. For more information, see xref:access-management::enabling-generative-ai.adoc[].
 * The *MuleSoft Agent AI User* permission assigned to your user.
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
