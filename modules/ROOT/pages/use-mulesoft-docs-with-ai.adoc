@@ -33,12 +33,11 @@ Use these options to quickly grab clean text or jump straight into your workflow
 * *Copy as Markdown*: Copies the Markdown version of the page to your clipboard to streamline your prompt engineering. 
 * *View as Markdown*: Opens the Markdown version of the page in a new tab for sharing or inspecting. 
 * *View on GitHub*: Opens the page's source on GitHub to review, suggest changes, or log issues.
-* *Use Docs MCP Server*: Connects your AI assistant to MuleSoft documentation through the Salesforce Docs MCP Server. See <<docs-mcp-server>>.
 * *View llms.txt*: Opens the sitewide `llms.txt` index file. See <<llms-txt>>.
 * *Open in ChatGPT / Claude / Perplexity*: Opens a conversation with the current page as context so the LLM can answer your questions instantly.
 
 [[llms-txt]]
-== llms.txt and llms-full.txt
+== llms.txt and llms-full.txt 
 
 MuleSoft documentation publishes `llms.txt` and `llms-full.txt` index files, which are machine-readable Markdown catalogs that let AI tools and RAG pipelines cleanly discover, search, or bulk-ingest our documentation without crawling raw HTML.
 
