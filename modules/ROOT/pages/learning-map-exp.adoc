@@ -77,6 +77,7 @@ Test APIs and MCP servers in playgrounds without leaving the portfolio.
 | image::reuse::lm_optimize_1.png[""]
 [.lm-bold]##Monitor Usage and Manage Costs##
 
+Monitor latency, cost, invocations, and failures in real time, and trace the data services your agents consume.
 Monitor usage and performance, and apply optimization policies to manage costs.
 
 - xref:exp-services-monitoring.adoc[]
@@ -84,6 +85,7 @@ Monitor usage and performance, and apply optimization policies to manage costs.
 - xref:model-proxy-token-reports.adoc[]
 - xref:exp-services-view-detailed-metrics.adoc[]
 - xref:exp-alerts-configure-notifications.adoc[]
+- xref:exp-data-service-lineage.adoc[]
 
 | image::reuse::lm_build_1.png[""]
 [.lm-bold]##Apply Governance Rules and Policies##

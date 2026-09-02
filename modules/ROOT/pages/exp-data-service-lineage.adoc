@@ -1,0 +1,111 @@
+= Viewing Data Service Lineage
+:keywords: lineage, data service, context catalog, agent fabric, informatica, cdgc, data lineage, agent to data, impact analysis, provenance, confidence score
+
+Context Catalog is the navigable dependency graph that Agent Fabric reads before it acts—a live map of how your AI agents connect through MCP servers and APIs to the enterprise data services and datasets they consume. Data service lineage, runtime tracing, and the Informatica Cloud Data Governance and Catalog (CDGC) integration are how Context Catalog builds that graph. With it, Agent Fabric gains semantic awareness of what data an agent touches, how that data is classified, and what quality and policy constraints apply.
+
+Context Catalog keeps the graph thin: it stores only the connections between assets. Details such as authentication, cost, data classification, and credentials stay with the systems that own them and resolve on demand, so the graph stays a fast, current map rather than a copy of everything it points to.
+
+You bring data services and their lineage into Agent Fabric by creating an Informatica CDGC scanner. The scanner imports the data services, and Context Catalog builds the lineage that links them to your agents.
+
+Use lineage to answer questions that Agent Fabric couldn't answer before, such as which datasets influence an agent's output, which agents depend on a dataset you're about to change, and whether an agent is reading data outside its declared scope.
+
+[NOTE]
+====
+Data service lineage is part of the Context Catalog capability and is available only when your administrator has enabled the feature for your organization.
+
+The Lineage tab is available for agents, APIs, and MCP servers when Context Catalog is enabled. Runtime lineage discovered by trace scanning is currently limited to assets from Amazon (AWS Bedrock).
+====
+
+== How Data Services and Lineage Get Populated
+
+Data services and their lineage come into Agent Fabric through the Informatica Cloud Data Governance and Catalog (CDGC) scanner:
+
+. You create an Informatica CDGC scanner to connect to your Informatica catalog. See xref:exp-scanners-add-from-providers.adoc[].
+. When the scanner runs, it brings in *data services*—datasets and their metadata, such as schemas, owners, classifications, quality scores, and glossary terms—from Informatica CDGC into the *Data Services* catalog.
+. Context Catalog then detects lineage edges that connect those data services to the APIs, MCP servers, and agents that use them, building the agent-to-data lineage graph.
+
+Because lineage depends on the Informatica CDGC scanner, no lineage appears until at least one Informatica scanner has run successfully. Runtime lineage discovered by trace scanning is currently available only for assets from Amazon (AWS Bedrock).
+
+== Before You Begin
+
+Before you can view lineage, make sure that:
+
+* Your administrator has enabled the Context Catalog feature for your organization.
+* An Informatica Cloud Data Governance and Catalog (CDGC) scanner has run so that data services, classifications, and glossary terms are ingested into the registry. See xref:exp-scanners-add-from-providers.adoc[] and xref:exp-scanners-prerequisites-reference.adoc[].
+* To view runtime lineage from trace scanning, the asset was discovered from Amazon (AWS Bedrock). Trace scanning currently isn't available for other providers.
+
+== How Lineage Is Detected
+
+Context Catalog automatically detects lineage edges—connections between assets, such as an API reading from a dataset—by using scanners, runtime configuration, and traffic traces. Each detected edge carries a *confidence score* that shows how certain the system is that the connection is real, along with the source and method used to detect it.
+
+Lineage is classified by how it was detected:
+
+* *Observed* — the connection was seen in runtime configuration or traffic traces (for example, calls captured in Flex Gateway telemetry). Observed lineage carries the highest confidence.
+* *Declared* — the connection was read from registration or configuration metadata, such as an Anypoint MCP Bridge configuration that maps each MCP tool to its backend API operation.
+* *Inferred* — the connection was derived from partial metadata, such as mapping an agent's listed APIs or tools to the MCP servers that expose them.
+
+System-detected edges are a permanent record. The original detection—its confidence score, source, detection method, and timestamp—can't be edited or deleted. You can layer your own judgment on top of a detection, but the original evidence of what the system found, and why, always remains intact.
+
+== View Lineage for an Asset
+
+You view lineage from the detail page of an asset in a *Portfolio* catalog:
+
+. Open the catalog for the asset type you want (for example, *Agents*), then select the asset to open its detail page.
+. Select the *Lineage* tab.
+. Review the lineage graph. The current asset version is the *Root* node, and connected assets branch out from it.
+
+If no lineage has been detected yet, the tab shows *No lineage recorded for this service version yet*. When lineage is empty, the tab also shows a *Tip:* with a link to the recommended next step for building lineage—*Enable Trace Scanning*, *Expose as MCP Server*, or *Create Managed Instance*—depending on the asset and its provider.
+
+== Read the Lineage Graph
+
+The lineage graph is a topology view rooted at the current asset version. Each node represents an asset, a deployment instance, or an external data source, and each edge represents a directed relationship between two nodes.
+
+=== Node Types
+
+Nodes are grouped into lanes and labeled by type:
+
+* *Service* — a registered service, further identified by type: *Broker*, *Agent*, *MCP*, *LLM*, *API*, *Mule App*, or *Data set*.
+* *Instance* — a deployment instance.
+* *Data source* — an external data source that isn't registered in *Portfolio*.
+
+The *Root* label marks the asset version you're viewing. Nodes that aren't registered in *Portfolio* are marked *Unregistered service*, *Not a registered service*, or *Not in Portfolio*.
+
+=== Edges and Provenance
+
+Each edge shows the direction of the relationship and how it was detected. The graph legend distinguishes:
+
+* *Observed* — detected in runtime traffic or configuration.
+* *Inferred* — derived from partial or heuristic metadata.
+
+Edges are also labeled by when the relationship was established:
+
+* *Design-time (declared)* — declared in registration or configuration.
+* *Runtime (observed in traces)* — observed in runtime traffic.
+
+For any node, the graph summarizes how many upstream and downstream relationships it has and how many connected assets exist across how many types.
+
+== Explore Lineage in Detail
+
+The *Lineage* tab includes controls for working with larger graphs:
+
+* *Explore lineage* — opens the *Lineage explorer* in a fullscreen view.
+* *Scan for traces* — for supported providers, scans live traffic to add runtime (*Observed*) connections to the graph. A message confirms when scanning starts, and results can take a few minutes to appear.
+* *Zoom in*, *Zoom out*, and *Reset zoom* — adjust the graph scale.
+* Asset-type filters — narrow the graph to specific asset types.
+* Select a node to open its details, including its description, ID, and URL. When the asset is registered, select *View in Portfolio* to open its detail page. If details aren't available, the drawer shows *Details unavailable*.
+
+== Use Cases
+
+Context Catalog is one graph that you read through four lenses. Each lens answers a different question about your agents and the data services they depend on:
+
+* *Operational—"If I change this, what breaks?"* Before changing a dataset or schema, trace which agents, workflows, and downstream systems depend on it. For example, before deprecating a Snowflake table, see that a production Claims Processing Agent reads from it. The same paths explain an agent's output—which dataset, version, and route influenced a response—and support root-cause analysis when an agent gives a bad answer, including tracing failures back to freshness, completeness, or schema issues in the underlying data.
+* *Governance—"What sensitive data can this reach?"* Propagate classifications such as PII, confidential, certified, or expired along the graph to see which agents can reach sensitive data, and use that to inform policy recommendations. Because the graph is a defensible record of what data an agent used, it also supports audit and compliance reviews.
+* *Cost and efficiency—"Where are we wasting spend?"* Join the graph with usage to surface bloated tool sets, idle assets, and oversized models, so you can trim what isn't earning its cost.
+* *Deployment and hygiene—"Does config match reality?"* Compare declared connections against what's observed in runtime traffic to find drift, dead connections, and undeclared shadow dependencies, so the deployed system matches its intended configuration.
+
+== See Also
+
+* xref:exp-scanners-add-from-providers.adoc[]
+* xref:exp-scanners-prerequisites-reference.adoc[]
+* xref:exp-services-view-details.adoc[]
+* xref:agent-fabric-overview.adoc[]
