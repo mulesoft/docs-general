@@ -2,7 +2,7 @@
 :keywords: external vaults, secrets manager, AWS Secrets Manager, Azure Key Vault, HashiCorp Vault, authentication method, model proxy, anypoint platform
 
 
-An external vault connects your third-party secrets manager to the enhanced experience. API keys and other credentials stay in that vault. MuleSoft stores only metadata, such as secret names and paths, and reads the value from the vault when a model proxy or other service needs the value. MuleSoft never stores, displays, or logs secret values.
+An external vault connects your third-party secrets manager to the enhanced experience. API keys and other credentials stay in that vault. MuleSoft stores only metadata (zero-copy), such as secret names and paths, and reads the value from the vault when a model proxy or other service needs the value. MuleSoft never stores, displays, or logs secret values.
 
 A vault isn't a scanner. Scanners discover services and add them to Portfolio catalogs. A vault only syncs secret metadata, so it doesn't add items to Portfolio.
 
@@ -20,6 +20,8 @@ To register an external vault, you need:
 ** Exchange: Exchange Contributor
 ** API Manager: API Creator
 ** API Manager: Manage Policies
+** Secrets Manager: View Vault Integrations
+** Secrets Manager: Manage Vault Integrations
 --
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
