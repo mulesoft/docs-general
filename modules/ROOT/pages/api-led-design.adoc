@@ -60,7 +60,7 @@ After exploring Exchange to see the range of assets available, use Anypoint Code
 
 You have two options for creating your API spec. Choose the method that works best for your environment:
 
-* *Option A: Use MuleSoft Vibes (AI-Powered)*: Requires the Mule Developer Generative AI User permission and Agentforce enabled in Access Management
+* *Option A: Use MuleSoft Vibes (AI-Powered)*: Requires the Mule Developer Generative AI User permission and generative AI enabled in Access Management
 * *Option B: Create Manually*: Use this option if you don't have access to MuleSoft Vibes
 
 [tabs]
