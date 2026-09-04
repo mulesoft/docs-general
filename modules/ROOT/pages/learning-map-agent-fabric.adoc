@@ -3,36 +3,34 @@
 :page-aliases: agent-fabric::agent-fabric-get-started.adoc, agent-fabric::index.adoc
 :page-article-style: learning-map
 
-Agent Fabric helps you turn your agent sprawl into a governed and highly coordinated, intelligent network. 
+AI agents, MCP servers, and APIs are built across multiple platforms. That makes reuse, consistent security, and end-to-end LLM spend tracking difficult. Agent Fabric is the control plane for that landscape.
 
-* Discover agents and MCP servers with Anypoint Exchange, a centralized catalog for all your AI assets.
-* Orchestrate agents across ecosystems with agent brokers, an intelligent routing agent that plans and delegates work based on context (request intent, policies, identity, and runtime state) of agents, MCP servers, and assets.
-* Govern any agent with Omni Gateway support for Model Context Protocol (MCP) and Agent2Agent (A2A), a high-performance gateway for policies and controls.
-* Observe every agent interaction with Agent Visualizer, a visual map for your agent network.
-+
-View metrics, logs, and traces in Anypoint Monitoring.
+* Find every agent, MCP server, and API in the registry so you reuse what exists instead of rebuilding it.
+* Make the APIs, applications, and agents you already run available as tools, so agents can take action without a rebuild.
+* Put the same authentication, access, and security rules on live traffic, regardless of which platform built the agent.
+* See where token spend goes, cap it, and stop paying a frontier model for work a smaller model can do.
 
-The end-to-end journey for Agent Fabric consists of various tasks, each with links to relevant content to assist you in completing them.
+The end-to-end journey for Agent Fabric consists of these tasks, each with links to relevant content to assist you in completing them.
 
 [.lm-table, cols="1a,1a,1a", grid="none"]
 |===
-| image::lm_start.png[""]
+| image::reuse::lm_start.png[""]
 [.lm-bold]##Learn About Agent Fabric##
 
-Agent Fabric helps you design and orchestrate a network of agents, brokers, and MCP servers to achieve complex goals across your enterprise.
+Start with how the registry, agent actions, governance, and cost control fit together. Then pick a job.
 
+- xref:agent-fabric-overview.adoc[Agent Fabric Overview]
 - https://www.youtube.com/watch?v=GAqwPie16ic[Watch a Video to Learn About Agent Fabric]
 - https://www.mulesoft.com/lp/demo/agent-fabric-interactive-demo[Watch an Interactive Demo of Agent Fabric]
 
 | image::lm_explore_1.png[""]
 [.lm-bold]##Discover Agentic Assets##
 
-Use Anypoint Exchange to discover agentic assets for reuse across your enterprise.
+Catalog agents, MCP servers, and APIs so you reuse what exists. Keep that inventory current with scanners.
 
-- https://www.mulesoft.com/platform/exchange[Discover Assets in Anypoint Exchange]
-- xref:exp-portfolio-overview.adoc[View Your Portfolio]
-- xref:exp-services-add-to-portfolio.adoc[Add Services to Your Portfolio]
-- xref:exp-scanners-add-from-providers.adoc[Discover and Catalog External Agents With Scanners]
+- xref:exp-portfolio-overview.adoc[]
+- xref:exp-services-add-to-portfolio.adoc[]
+- xref:exp-scanners-add-from-providers.adoc[]
 - https://videos.mulesoft.com/watch/GJxX42uWd1gGComp3KQqEB[Watch a Video to Learn About Agent Fabric and GoDaddy ANS Integration]
 - https://blogs.mulesoft.com/news/agent-scanners/[Learn How to Catalog Agents Automatically With Scanners]
 - https://videos.mulesoft.com/watch/fqPcAHf5h7RYdfdSqhY9ju[Watch a Video to Learn About New Scanners for Agent Management]
@@ -43,45 +41,69 @@ Use Anypoint Exchange to discover agentic assets for reuse across your enterpris
 - xref:exp-services-create-a2a-bridge.adoc[Make an Agent A2A-Compliant]
 - xref:exchange::to-create-an-asset.adoc#create-llm[Create and Publish an LLM in Exchange]
 
-| image::lm_build_1.png[""]
-[.lm-bold]##Build and Orchestrate Agent Networks##
+| image::reuse::lm_build_1.png[""]
+[.lm-bold]##Enable Agent Actions##
 
-Build your agent network and coordinate brokers and agents using a declarative YAML approach. 
+Make the APIs, applications, and agents you already run available as tools. Start with MCP Bridge and A2A Bridge. Add a broker only when work spans specialized agents.
 
+- xref:exp-services-create-mcp-server.adoc[]
+- https://videos.mulesoft.com/watch/Dn9QXJKDzTxSJPNgra9LoM[Watch a Video to Learn About MCP Bridge]
+- xref:exp-services-create-a2a-bridge.adoc[]
+- xref:mcp-connector::index.adoc[MCP Connector]
+- xref:a2a-connector::index.adoc[A2A Connector]
 - xref:agent-network::af-get-started.adoc[Get Started with Agent Networks]
 - xref:agent-network::af-create-agent-network.adoc[Build an Agent Network Project in Anypoint Code Builder]
 - xref:agent-network::af-define-your-agent-network-specification.adoc[Define the Agent Network in a YAML File]
-- xref:agent-network::af-publish-agent-network-assets.adoc[Publish the Agent Network Project to Exchange]
-- xref:agent-network::af-deploy-agent-network-targets.adoc[Deploy the Agent Network Assets to Exchange]
+- xref:anypoint-code-builder::vibes-get-started.adoc[Generate Network Configurations with MuleSoft Vibes]
+- xref:agent-network::af-publish-agent-network-assets.adoc[Publish the Agent Network Project to Anypoint Exchange]
+- xref:agent-network::af-deploy-agent-network-targets.adoc[Deploy the Agent Network Assets]
 |===
 
-[.lm-table, cols="1a,1a", width="66%", grid="none"]
+[.lm-table, cols="1a,1a,1a", grid="none"]
 |===
-| image::lm_build_1.png[""]
-[.lm-bold]##Govern and Secure the Agent Network##
+| image::reuse::lm_build_1.png[""]
+[.lm-bold]##Apply Security and Governance##
 
-Apply policies to your agents, brokers, Model proxies, and MCP servers to help manage security and control traffic.
+Put Omni Gateway in the request path so authentication, monitoring, and policy run on live traffic. Define rules once, then apply them across agents, APIs, and MCP servers.
 
-- xref:api-manager::create-instance-task-agent-tool.adoc[Add an Omni Gateway Agent or Tool Instance in API Manager]
+- xref:exp-instances-add.adoc[]
+- xref:exp-policies-apply-manage.adoc[]
+- xref:exp-governance-work-with-strategies.adoc[]
+- xref:exp-policies-universal.adoc[]
+- xref:exp-governance-govern-third-party-apis.adoc[]
+- xref:exp-governance-monitor-cross-gateway-conformance.adoc[]
+- xref:exp-detect-and-contain-rogue-agents.adoc[]
+- xref:exp-vaults-manage.adoc[]
+- xref:exp-akamai-risk-correlation.adoc[]
+- xref:gateway::flex-gateway-managed-ingress-egress.adoc[Deploy Agent Fabric Ingress and Egress Managed Omni Gateways]
 - https://videos.mulesoft.com/watch/2E2PkqzMnLEjoDhL5YkywT[Watch a Video to Learn About AI Gateway from MuleSoft]
 - https://videos.mulesoft.com/watch/uQtoaAv9AUGmZQteNTTZF1[Watch a Video to Learn About Governing Headless 360 with Agent Fabric]
-- xref:gateway::flex-gateway-managed-ingress-egress.adoc[Deploy Agent Fabric Ingress and Egress Managed Omni Gateways]
-- xref:gateway::flex-gateway-secure-apis.adoc[Secure Omni Gateway Instances with Policies]
 
-| image::lm_analyze_1.png[""]
-[.lm-bold]##Observe and Gain Actionable Insights##
+| image::reuse::lm_optimize_1.png[""]
+[.lm-bold]##Control LLM Spend##
 
-Visualize your agent network and monitor performance and behavior.
+Give agents one governed endpoint for multiple LLM providers. Then cap token spend and reduce what each call consumes.
+
+- xref:model-proxy.adoc[]
+- xref:exp-governance-view-cost-and-token-usage.adoc[]
+- xref:exp-models-manage-costs.adoc[]
+- xref:exp-model-wallets-manage.adoc[]
+- xref:model-proxy-semantic-service.adoc[]
+- xref:model-proxy-semantic-caching-service.adoc[]
+
+| image::reuse::lm_analyze_1.png[""]
+[.lm-bold]##Observe Agent Traffic##
+
+See how agents, brokers, and MCP servers connect. Watch latency, errors, and volume in production.
 
 - xref:agent-visualizer::index.adoc[Visualize Your Agent Network in Agent Visualizer]
+- xref:exp-services-monitoring.adoc[]
+- xref:exp-services-view-detailed-metrics.adoc[]
+- xref:exp-alerts-configure-notifications.adoc[]
 - xref:monitoring::anypoint-insights-agentic.adoc[View Agent Metrics in Anypoint Monitoring]
-- xref:exp-services-view-detailed-metrics.adoc[View Detailed Metrics for Your Services]
 - xref:monitoring::logs-search-hf.adoc#search-agentic[Get Logs for Agentic Assets]
 - xref:monitoring::traces.adoc[View Traces in Anypoint Monitoring]
-
-
 |===
-
 
 [discrete]
 == See Also
@@ -91,5 +113,4 @@ Visualize your agent network and monitor performance and behavior.
 * xref:anypoint-code-builder::index.adoc[Anypoint Code Builder]
 * xref:exchange::index.adoc[Anypoint Exchange]
 * xref:monitoring::index.adoc[Anypoint Monitoring]
-* xref:api-manager::index.adoc[API Manager]
 * xref:agent-visualizer::index.adoc[Agent Visualizer]

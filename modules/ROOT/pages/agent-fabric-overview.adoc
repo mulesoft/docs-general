@@ -1,28 +1,26 @@
 = Agent Fabric Overview
 :keywords: mulesoft agent fabric, mcp bridge, mcp connector, enterprise actionability, ai agents, mulesoft integration, model context protocol
 
-Agents, APIs, and MCP servers end up on different platforms, with different security and no shared view of LLM cost. Agent Fabric is the control plane for that landscape: catalog what exists, call systems you already run, enforce shared policy at runtime, and see what those calls cost.
+AI agents, MCP servers and even APIs are built across multiple platforms. This makes it difficult to reuse across platforms, apply the same standardized security controls and track end-to-end LLM spend. Agent Fabric is the control plane for that landscape: catalog what exists, call systems you already run, enforce shared policy at runtime, and see what those calls cost.
 
 
 [[how-agent-fabric-works]]
 == How Agent Fabric Works
 
-Without a shared control plane, agents stay siloed, policy differs by platform, and LLM spend is hard to track. Use Agent Fabric when those assets span more than one platform. Use it to discover them, to call existing systems, and to run those calls under shared governance, security, and cost controls.
+You can't apply governance, security, or cost controls to agents you haven't found. After you have a complete inventory, choose the job you need to do.
 
 image::agent-fabric-pillars.png["Diagram of Agent Fabric: a visibility foundation that supports connecting agents to existing systems, governing production traffic, and controlling LLM cost"]
 
-You can't apply governance, security, or cost controls to agents you haven't found. After you have a complete inventory, choose the job you need to do:
-
-* <<agent-registry,Agent Registry>>
+* <<agent-registry,Agent registry>>
 +
 Find every agent, MCP server, and API so you reuse what exists instead of rebuilding it, and so later controls have something to apply to.
-* <<agent-operations,Enable Agents to Take Action>>
+* <<agent-operations,Enable agents to take action>>
 +
-Agents update records, call APIs, and hand work to other agents, using systems you already run, without a rebuild.
-* <<govern,AI Security and Governance>>
+Make the APIs, applications, and agents you already run available as tools, so agents can update records and hand work to other agents without a rebuild.
+* <<govern,AI security and governance>>
 +
 Put the same authentication, access, and security rules on every agent, MCP server, and LLM call, so production traffic doesn't depend on which platform built the agent.
-* <<cost-control,AI Cost Control>>
+* <<cost-control,AI cost control>>
 +
 See where token spend goes, cap it, and stop paying a frontier model for work a smaller model can do.
 
@@ -42,7 +40,7 @@ You can't govern, secure, or cost-manage agents you don't know about. The regist
 
 === Registry
 
-Teams rebuild agents and tools that already exist because nobody can find them. Portfolio is that catalog: Agents, MCP Servers, Model Proxies, APIs, and Gateways, plus a curated set of public MCP servers from the Official MCP Registry and Informatica.
+Teams rebuild agents and tools that already exist because nobody can find them. Portfolio is the catalog for agents, MCP servers, model proxies, APIs, and gateways, plus a curated set of public MCP servers from the Official MCP Registry and Informatica.
 
 * Find and reuse registered agents, MCP servers, model proxies, APIs, and gateways
 * See conformance status and instance health before you depend on an asset
@@ -343,7 +341,7 @@ Learn more: xref:anypoint-code-builder::vibes-get-started.adoc[] and xref:agent-
 
 == What's Next
 
-* For a guided path through discovering assets, building your first agent network, and deploying it with governance and monitoring, get started with the xref:learning-map-agent-fabric.adoc[].
+* For a guided path through the registry, agent actions, governance, and cost control, get started with the xref:learning-map-agent-fabric.adoc[].
 
 * For a comprehensive guide to the technical foundations, capability pillars, and architectural best practices that power enterprise agentic transformation, explore the https://www.mulesoft.com/lp/ebook/mulesoft-agent-fabric-technical-overview[Agent Fabric Technical Overview].
 
