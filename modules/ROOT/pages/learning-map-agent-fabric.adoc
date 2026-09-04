@@ -110,6 +110,9 @@ See how agents, brokers, and MCP servers connect. Watch latency, errors, and vol
 
 * xref:agent-fabric-overview.adoc[Agent Fabric Overview]
 * xref:exp-overview.adoc[]
+* xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions]
+* xref:access-management::connecting-salesforce-orgs.adoc[]
+* xref:access-management::enabling-generative-ai.adoc[]
 * xref:anypoint-code-builder::index.adoc[Anypoint Code Builder]
 * xref:exchange::index.adoc[Anypoint Exchange]
 * xref:monitoring::index.adoc[Anypoint Monitoring]
