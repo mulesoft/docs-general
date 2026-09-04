@@ -1,88 +1,92 @@
 = Agent Fabric Overview
 :keywords: mulesoft agent fabric, mcp bridge, mcp connector, enterprise actionability, ai agents, mulesoft integration, model context protocol
 
+AI agents, MCP servers and even APIs are built across multiple platforms. This makes it difficult to reuse across platforms, apply the same standardized security controls and track end-to-end LLM spend. Agent Fabric is the control plane for that landscape: catalog what exists, call systems you already run, enforce shared policy at runtime, and see what those calls cost.
 
-Agent Fabric helps you turn agent sprawl into a governed, coordinated, intelligent network. Regardless of the platform where your AI agents were built or are running, Agent Fabric provides the infrastructure to discover, orchestrate, govern, and observe agents across your enterprise. Agent Fabric enables you to build intelligent agent networks where multiple agents work together, access enterprise systems securely, and operate under consistent governance and observability.
 
 [[how-agent-fabric-works]]
 == How Agent Fabric Works
 
-Every organization has systems, agents, LLMs, and data sources scattered across platforms and teams. Left unmanaged, this creates agent sprawl: siloed agents that can't work together, inconsistent experiences, security gaps, and costs that are difficult to control. Agent Fabric solves this by providing a unified control plane for the agentic era.
+You can't apply governance, security, or cost controls to agents you haven't found. After you have a complete inventory, choose the job you need to do.
 
-Agent Fabric starts with enterprise actionability, bridging the gap between your existing enterprise stack and the agentic world. It makes every system, agent, LLM, and data source directly usable in agentic workflows without rebuilding them, giving the entire fabric a foundation to build on.
+image::agent-fabric-pillars.png["Diagram of Agent Fabric: a visibility foundation that supports connecting agents to existing systems, governing production traffic, and controlling LLM cost"]
 
-MuleSoft supports Agentforce and Agent Fabric, which can be used together for agentic enterprises. Each serves a distinct role in building and managing your organization's AI agent strategy:
+* <<agent-registry,Agent registry>>
++
+Find every agent, MCP server, and API so you reuse what exists instead of rebuilding it, and so later controls have something to apply to.
+* <<agent-operations,Enable agents to take action>>
++
+Make the APIs, applications, and agents you already run available as tools, so agents can update records and hand work to other agents without a rebuild.
+* <<govern,AI security and governance>>
++
+Put the same authentication, access, and security rules on every agent, MCP server, and LLM call, so production traffic doesn't depend on which platform built the agent.
+* <<cost-control,AI cost control>>
++
+See where token spend goes, cap it, and stop paying a frontier model for work a smaller model can do.
+
+MuleSoft supports Agentforce and Agent Fabric together. Each plays a distinct role:
 
 * Agentforce
 +
 Build and deploy Salesforce-native agents for use within the Salesforce ecosystem.
 * Agent Fabric
 +
-The agent control plane for managing and governing agents across any platform, including Salesforce Agentforce, Amazon Bedrock, Google Vertex AI, Microsoft Copilot Studio, and others. Use Agent Fabric when you need to discover, catalog, and govern agents built anywhere, orchestrate multi-vendor workflows where agents from different platforms must work together, or apply consistent security, compliance, and cost controls across your entire agent ecosystem.
+Govern, secure, and cost-manage agents across any platform, including Salesforce Agentforce, Amazon Bedrock, Google Vertex AI, Microsoft Copilot Studio, and others. Choose Agent Fabric when you need a single inventory of agents built anywhere, the same security and compliance rules everywhere, or cost control across the agent ecosystem.
 
-Agentforce and Agent Fabric are core components of Salesforce's Agentic Enterprise Architecture, a four-layer platform model designed for the era of AI agents and headless operations. This architecture separates the data foundation, business logic, orchestration, and experience layers. 
+[[agent-registry]]
+== Agent Registry
 
-Agent Fabric operates in the orchestration layer, providing the control plane for multi-vendor agent coordination.
+You can't govern, secure, or cost-manage agents you don't know about. The registry is the inventory of every agent, MCP server, and related service, regardless of platform, so reuse and control have a single source of truth.
 
-image::agent-fabric-pillars.png["Five colored pillars labeled Discovery, Governance, Security, Operations, and Runtime labeled as the foundation of Agent Fabric", discover, govern, orchestrate, and observe]
+=== Registry
 
-As the agent control plane for your enterprise, Agent Fabric delivers four core capabilities that work together, whether you're managing Agentforce agents, third-party agents, or both:
+Teams rebuild agents and tools that already exist because nobody can find them. Portfolio is the catalog for agents, MCP servers, model proxies, APIs, and gateways, plus a curated set of public MCP servers from the Official MCP Registry and Informatica.
 
-* <<discover,Discover>>
-+
-A central registry, supported with automated discovery, where every agent and MCP server — regardless of where it's built — can be cataloged, discovered, and reused. This eliminates duplication and makes it easy to compose solutions from existing assets.
-* <<govern,Govern>>
-+
-Enterprise-grade guardrails ensuring every agent, MCP server, and LLM interaction is secure, compliant, and cost-controlled, so teams can innovate with confidence.
-* <<orchestrate,Orchestrate>>
-+
-The coordination of agents and tools across ecosystems with guided determinism, so multi-step processes run smoothly and every agent works together to deliver reliable business outcomes.
-* <<observe,Observe>>
-+
-End-to-end visibility into how agents make decisions and perform, turning black-box AI into transparent, accountable systems.
+* Find and reuse registered agents, MCP servers, model proxies, APIs, and gateways
+* See conformance status and instance health before you depend on an asset
+* Govern, monitor, and manage lifecycle from the asset's catalog page
+* Publish agent networks and MCP servers so other teams can reuse them
 
-Together, these capabilities transform disconnected agents and MCP servers into a unified, trusted, high-performing digital workforce.
+Use the registry when you start a new agentic project and want existing assets first, or when you want to share what your team built.
 
-[[enterprise-actionability]]
-== Enterprise Actionability
+Learn more: xref:exp-portfolio-overview.adoc[]
 
-Before agents can orchestrate across your enterprise, your existing systems need to be accessible to them. Enterprise actionability bridges the gap between what you have today, including APIs, data sources, LLMs, and existing services, and the agentic world, without requiring you to rebuild anything. MuleSoft provides a set of tools to make any asset directly actionable inside agentic workflows.
+=== Scanners
+
+Agents appear on cloud platforms faster than teams can register them by hand. Scanners watch supported providers and add discovered agents, APIs, and MCP servers to the matching portfolio catalog so the inventory stays current.
+
+* Connect cloud providers as scanner sources
+* Discover and register agents, MCP servers, and APIs on a schedule or on demand
+* See last-run results and how many assets each scan found
+
+Use scanners when agents run on more than one platform and manual registration can't keep the registry current.
+
+Learn more: xref:exp-scanners-add-from-providers.adoc[]
+
+[[agent-operations]]
+== Enable Agents to Take Action
+
+An agent that can only describe a problem can't fix it. Agent Fabric exposes the APIs, applications, and agents you already run as tools that those agents can call, and coordinates multiple agents when one isn't enough, without rebuilding those systems.
+
+Start with MCP Bridge for existing APIs and A2A Bridge for agents that aren't A2A-compliant. Add a broker only when work spans specialized agents. Use connectors when agents need to call LLMs or other AI services directly.
 
 === MCP Bridge
 
-* What it is: MCP Bridge enables you to create MCP servers from your existing API instances, exposing their operations as MCP tools that agents can discover and call, without modifying the underlying API.
+Your APIs already do the work agents need, but agents can't call them as tools until you expose them. MCP Bridge converts an API instance into an MCP server through configuration. You pick the operations, keep the API unchanged, and apply the same governance you already use.
 
-* Role in Agent Fabric: MCP Bridge is one of the most important and accessible entry points into Agent Fabric. APIs your organization has already built and governed can become immediately available to any agent in your network through simple configuration, with no rewriting required.
+* Convert an existing API instance into an MCP server without custom code
+* Expose only the operations agents should call
+* Apply existing governance policies to the resulting MCP server
 
-* What you can do:
-** Convert any existing API instance into an agent-ready MCP server through simple configuration
-** Select which API operations to expose as discrete MCP tools
-** Apply governance policies to the resulting MCP server from the same portfolio
+Use MCP Bridge when agents must call APIs you already have, and you don't want a custom MCP server.
 
-* When you need it: Use MCP Bridge when you want agents to call your existing APIs without needing API-specific details, or when you want to make a large API surface agent-ready quickly without custom development.
-
-* Learn more: xref:exp-services-create-mcp-server.adoc[]
-
-=== MCP Connector
-
-* What it is: Anypoint Connector for MCP (MCP Connector) lets you build Mule applications that act as MCP servers and clients, giving you full programmatic control over what tools and resources you expose to agents and enabling Mule apps to connect to external MCP servers.
-
-* Role in Agent Fabric: MCP Bridge converts existing APIs automatically through configuration. MCP Connector is for teams that need to build custom MCP server logic, compose multiple systems, apply transformation, orchestrate interactions with external MCP services, or expose capabilities that don’t map directly to a single existing API.
-
-* What you can do:
-** Build Mule applications that expose tools and resources to MCP clients
-** Connect Mule applications to external MCP servers
-** Compose multiple backend systems into a single MCP server
-** Define custom logic for how agent requests are handled
-** Orchestrate workflows that incorporate AI agents and external MCP services
-* When you need it: Use MCP Connector when you need to expose capabilities to agents that require custom logic, multi-system composition, orchestration with external MCP services, or transformation that configuration-based tools like MCP Bridge don’t cover.
-* Learn more: xref:mcp-connector::index.adoc[MCP Connector]
+Learn more: xref:exp-services-create-mcp-server.adoc[]
 
 === A2A Bridge
 
-* What it is: An A2A bridge is an A2A-compliant protocol server that presents an A2A facade in front of an existing non-A2A agent (the source agent). Implemented as a chain of policies—inbound authentication plus the bridge policies—running on an Omni Gateway instance, it translates between the A2A protocol and the agent's native protocol, manages the task lifecycle, and serves A2A task management methods, all without modifying the source agent. Agent Fabric derives an A2A card from the source agent, publishes it to your Portfolio, and deploys the bridge instance from a single wizard.
+* What it is: An A2A bridge is an A2A-compliant protocol server that presents an A2A facade in front of an existing non-A2A agent (the source agent). The bridge is a chain of policies on an Omni Gateway instance: inbound authentication plus the bridge policies. It translates between A2A and the agent's native protocol, manages the task lifecycle, and serves A2A task management methods. The source agent doesn't change. Agent Fabric derives an A2A card from the source agent, publishes it to your Portfolio, and deploys the bridge instance from a single wizard.
 
-* Role in Agent Fabric: Agent Fabric can only orchestrate A2A-compliant agents, but many enterprise agents—such as Salesforce Agentforce agents—aren't A2A-compliant on their own. A2A Bridge closes the gap between what your scanners can discover and what Agent Fabric can orchestrate, making non-A2A agents first-class participants in your agent network through configuration alone.
+* Role in Agent Fabric: Agent Fabric orchestrates only A2A-compliant agents, but many enterprise agents—such as Salesforce Agentforce agents—aren't A2A-compliant on their own. A2A Bridge closes the gap between what your scanners can discover and what Agent Fabric can orchestrate. Non-A2A agents then participate in your agent network through configuration alone.
 
 * What you can do:
 ** Make a non-A2A source agent A2A-compliant without rebuilding it
@@ -93,156 +97,153 @@ Before agents can orchestrate across your enterprise, your existing systems need
 
 * When you need it: Use A2A Bridge when you have agents on platforms that aren't yet A2A-compliant (such as Agentforce) and you need Agent Fabric to orchestrate them now. Use A2A Connector instead when you need custom Mule application logic or want to bridge a platform that isn't natively supported.
 
-* Learn more: xref:exp-services-create-a2a-bridge.adoc[]
+Learn more: xref:exp-services-create-a2a-bridge.adoc[]
+
+[[agent-broker]]
+=== Agent Broker
+
+When several specialized agents must share a request, someone has to decide who does which step. The broker routes each task to the best-suited A2A-compliant agent or broker. After you publish the agent network, brokers appear as specialized agents in Anypoint Exchange and can be reused by other brokers.
+
+You define the broker and its nodes in Agent Script (`.agent` files), in a graph that mixes deterministic and non-deterministic steps.
+
+* Delegate tasks to specialized A2A-compliant agents or other brokers
+* Define routing in Agent Script
+* Deploy the agent network, including the broker, to a CloudHub 2.0 shared or private space
+* See connections and call volume in Agent Visualizer
+
+Use a broker when routing must span multiple specialized agents. Many solutions run with agents and MCP servers alone.
+
+Learn more: xref:agent-network::af-define-your-agent-network-specification.adoc[]
+
+=== MCP Connector
+
+MCP Connector uses the Model Context Protocol so AI clients can invoke APIs, connectors, and apps from a Mule application. The resulting MCP server or client runs in Mule. As a server, the app exposes API-led investments, legacy systems, and SaaS applications that don't natively support MCP. As a client, the app can call external MCP servers.
+
+* Expose Mule apps, connectors, and APIs as MCP tools and resources
+* Run an MCP server or MCP client inside Mule, without a separate hosting environment
+* Use Streamable HTTP (recommended) or SSE (deprecated) for transport
+
+Use MCP Connector when the tools agents need don't map to a single existing API and you need custom Mule logic.
+
+Learn more: xref:mcp-connector::index.adoc[MCP Connector]
 
 === A2A Connector
 
-* What it is: Use Anypoint Connector for A2A (A2A Connector) to add A2A protocol support to Mule applications so they can act as both A2A servers and A2A clients. You can also use A2A Connector to make agents built on other platforms A2A-compliant.
+A2A Connector implements the A2A protocol in a Mule application so that application can act as an A2A server, an A2A client, or both. Agents can discover capabilities, negotiate interaction, and delegate specialized tasks to other agents.
 
-* Role in Agent Fabric: A2A Connector brings existing Mule applications into the orchestrated agent world without rebuilding them as native agents. It standardizes agent communication so that any application can become a first-class participant in multi-agent workflows, capable of receiving tasks from a broker and delegating to other agents.
+* Add A2A server and client support to a Mule application
+* Enable agents to interact and delegate specialized tasks to other agents
 
-* What you can do:
-** Make any Mule applications A2A-compliant
-** Enable Mule applications to receive and delegate tasks within an agent network
-** Participate in broker-orchestrated workflows without rebuilding existing applications
+Use A2A Connector when existing Mule applications must participate as A2A-compliant agents.
 
-* When you need it: Use A2A Connector when you have existing Mule applications that need to participate in agent networks as A2A-compliant agents.
-
-* Learn more: xref:a2a-connector::index.adoc[A2A Connector]
+Learn more: xref:a2a-connector::index.adoc[A2A Connector]
 
 === Other AI Connectors
 
-* What it is: AI Connectors provide pre-built integrations to LLMs and vector databases, making them directly accessible inside Mule-based agentic workflows.
+Agents need the LLMs and knowledge stores you already operate. AI Connectors give agentic workflows pre-built access to those models and vector databases so you don't write a custom integration for each one.
 
-* Role in Agent Fabric: AI Connectors ensure that the LLMs and knowledge stores your organization already uses are available to agents without custom integration work. They connect your agentic workflows to the models and data that power agent reasoning and context.
+* Invoke Agentforce agents and Amazon Bedrock foundation models from Mule
+* Call LLMs through the Einstein Trust Layer or through inference APIs from multiple providers
+* Use vector stores for search and RAG, and compose LLM, vector, and tool operations in Mule
 
-* What you can do:
-** Connect LLMs and vector databases to agentic workflows without custom integration
-** Unlock existing AI infrastructure for use inside agent networks
-** Enrich agent reasoning with organizational knowledge stores
+Use these connectors when a Mule application must call those AI services directly.
 
-* When you need it: Use AI Connectors when your agents need to reason with LLMs or retrieve context from vector databases your organization already operates.
+Learn more:
 
-* Learn more:
-** xref:agentforce-connector::index.adoc[Agentforce Connector]
-** xref:amazon-bedrock-connector::index.adoc[Amazon Bedrock Connector]
-** xref:einstein-ai-connector::index.adoc[Einstein AI Connector]
-** xref:mulesoft-ai-chain-connector::index.adoc[MuleSoft AI Chain Connector]
-** xref:mulesoft-inference-connector::index.adoc[MuleSoft Inference Connector]
-** xref:mulesoft-vectors-connector::index.adoc[MuleSoft Vectors Connector]
-** xref:mulesoft-webcrawler-connector::index.adoc[MuleSoft WebCrawler Connector]
+* xref:agentforce-connector::index.adoc[Agentforce Connector]
+* xref:amazon-bedrock-connector::index.adoc[Amazon Bedrock Connector]
+* xref:einstein-ai-connector::index.adoc[Einstein AI Connector]
+* xref:mulesoft-ai-chain-connector::index.adoc[MuleSoft AI Chain Connector]
+* xref:mulesoft-inference-connector::index.adoc[MuleSoft Inference Connector]
+* xref:mulesoft-vectors-connector::index.adoc[MuleSoft Vectors Connector]
+* xref:mulesoft-webcrawler-connector::index.adoc[MuleSoft WebCrawler Connector]
 
 
-=== B2B (Partner Manager)
+=== Agent Visualizer
 
-* What it is: Anypoint Partner Manager enables bidirectional Business-to-Business message exchanges with external trading partner ecosystems through configuration-driven integration. Partner Manager handles technical partner onboarding, message flow orchestration, and transaction monitoring across multiple transport protocols (AS2, SFTP, HTTP/S, FTP) and message formats (X12, EDIFACT, CSV, JSON, XML).
+Multi-agent systems are hard to operate when you can't see how work moves. Agent Visualizer maps your agents, MCP servers, and LLMs, including agents from external platforms, to verify routing in development and find bottlenecks and failures in production.
 
-* Role in Agent Fabric: Partner Manager makes B2B trading partner networks directly actionable for agents without requiring them to understand complex EDI standards or protocol-specific integration patterns. Agents can initiate B2B transactions, query partner message flows, monitor transmission status, and respond to partner interactions as part of multi-step workflows, turning manual B2B operations into automated agent-driven processes.
-* What you can do:
-** Enable agents to send and receive B2B transactions with trading partners
-** Query message flow status, transmission tracking, and acknowledgment statuses
-** Access partner profile information and endpoint configurations
-** Monitor B2B transaction activity and custom message attributes
-** Integrate B2B workflows into broader agentic orchestration patterns
+* See how agents, brokers, and MCP servers connect
+* Watch live request flows and metrics such as latency, throughput, and error rates
+* Compare historical patterns when a failure isn't obvious in real time
 
-* When you need it: Use Partner Manager when agents need to participate in B2B ecosystems for use cases like order to cash, procure to pay, logistics planning, warehouse management, or transportation execution where automated B2B message exchange with external partners is required.
-* Learn more: xref:partner-manager::index.adoc[]
+Use Agent Visualizer during development to verify the network, at deployment to confirm routing, and in production to troubleshoot.
 
-=== IDP (Intelligent Document Processing)
+Learn more: xref:agent-visualizer::index.adoc[]
 
-* What it is: MuleSoft Intelligent Document Processing (IDP) uses multimodal large language models to extract structured data from unstructured or semi-structured documents like invoices, purchase orders, receipts, and custom document types. IDP creates document actions—configurable schemas with AI-powered extraction instructions—that are published as APIs for consumption by agents, RPA, and Mule applications.
+=== Monitor
 
-* Role in Agent Fabric: IDP makes document data directly actionable for agents by transforming locked information in PDFs, images, and paper documents into structured, queryable data that agents can reason over and act upon. Instead of requiring manual document review or rigid OCR templates, agents can process documents intelligently, extract key fields with confidence scoring, and route documents for human review when needed, seamlessly blending AI extraction with agent-driven workflows.
+Defined policy isn't the same as healthy traffic. Monitoring shows latency, error rates, and request volume to catch regressions and decide when to change policy or capacity.
 
-* What you can do:
-** Enable agents to extract structured data from invoices, purchase orders, and custom document types
-** Configure document actions with pre-built or custom schemas using natural language prompts
-** Leverage Einstein for complex document analysis that requires reasoning beyond simple field extraction
-** Apply confidence thresholds and human-in-the-loop review workflows for quality assurance
-** Integrate document processing results into agent workflows through published APIs
-   
-* When you need it: Use IDP when agents need to extract and act on data trapped in documents as part of procurement, accounts payable, order processing, or any workflow where unstructured document data must become structured, actionable information within your agent network.
+* View runtime health metrics for a service
+* Compare signals across instances or environments
+* Send alerts to Slack, Microsoft Teams, and email
+* Use organization-wide dashboards when observability is enabled
 
-* Learn more: xref:idp::index.adoc[]
+Use monitoring during development to validate performance, and in production to meet SLAs and catch issues before they affect users.
 
-
-[[discover]]
-== Discover
-
-Agent Fabric provides a central registry and automated discovery tools that surface every agent in your organization, regardless of platform. Before you can govern, orchestrate, or observe agents, you need a complete picture of what exists. Discovery gives you that foundation and enables coordinated control across your entire agent ecosystem.
-
-=== Registry (Exchange)
-
-* What it is: The registry is the central catalog for all agentic assets across your organization. In the enhanced MuleSoft experience, your Portfolio serves as the registry, organized into catalogs for Agents, MCP Servers, Model Proxies, APIs, and Gateways. Each catalog holds the services your organization has registered or discovered, so you can govern, monitor, and manage them from one place, regardless of which platform or provider built them. MuleSoft also provides access to a curated set of public MCP servers from the Official MCP Registry and Informatica, giving teams a starting point for common integrations without building from scratch.
-* Role in Agent Fabric: The registry is where Agent Fabric makes every agent, tool, and model visible and reusable. The registry gives teams a trusted source of truth for all agentic assets, so they can reuse what already exists instead of duplicating work. The registry forms the foundation of discovery. 
-* What you can do:
-** Browse and search registered agents, MCP servers, Model proxies, APIs, and gateways
-** View service details, conformance status, and instance health at a glance
-** Manage lifecycle, governance, and monitoring for each asset from its catalog page
-** Register assets manually or through automated provider discovery
-** Publish agent networks and MCP servers for organizational reuse
-
-* When you need it: Whenever you are starting a new agentic project and want to find existing assets before building from scratch, or when you want to share what your team built with the rest of the organization.
-* Learn more: xref:exp-portfolio-overview.adoc[]
-
-=== Scanners
-
-* What it is: A scanner connects the enhanced MuleSoft experience to a supported cloud provider. When a scanner runs, it discovers services on that platform, such as agents, APIs, and MCP servers, and registers them automatically in the matching portfolio catalog.
-* Role in Agent Fabric: Scanners enable continuous, automated discovery across a multi-provider landscape. Teams configure scanners once, and the scanners keep the registry current as services are added, changed, or retired on external platforms. A scanner monitors connected platforms for new and updated agents and pulls them automatically into the registry, providing a real-time, single source of truth for every agent across your enterprise.
-* What you can do:
-** Connect cloud providers as scanner sources
-** Automatically discover and register agents, MCP servers, and APIs across ecosystems
-** Schedule scans to run continuously or trigger them on demand
-** View scanner status, last-run results, and the number of assets discovered
-** Manage scanners from *Platform* > *Providers* in the enhanced MuleSoft experience
-
-* When you need it: When your organization has agents built across multiple platforms and you need a continuous, automated way to keep your registry current without manually registering every asset.
-* Learn more: xref:exp-scanners-add-from-providers.adoc[]
+Learn more: xref:exp-services-monitoring.adoc[] and xref:exp-alerts-configure-notifications.adoc[]
 
 [[govern]]
-== Govern
+== AI Security and Governance
 
-Without governance, orchestration turns to chaos. Agent Fabric provides enterprise-grade guardrails that ensure every agent, MCP server, and LLM interaction is secure, compliant, and cost-controlled, so teams can innovate with confidence.
+Agents that reach production without shared security, identity, and policy become a risk: different platforms enforce different rules, or none. These capabilities define one layer and enforce it on live traffic.
 
 === Omni Gateway
 
-* What it is: Omni Gateway is the runtime governance layer that sits between agents and the systems they call, applying security, compliance, and cost controls to every interaction across APIs, agents, MCP servers, and LLMs.
-* Role in Agent Fabric: Omni Gateway makes governance real at runtime. Defining policies in a governance strategy sets the intent. Omni Gateway enforces that intent on live traffic. It ensures that no agent interaction bypasses security controls, regardless of which platform the agent was built on or which system it is calling. Omni Gateway serves as the enterprise policy framework for your agent network, ensuring agents act responsibly, securely, and in alignment with business objectives.
-* What you can do:
-** Apply rate limiting, authentication, and authorization to all agent, API, and MCP server requests
-** Enforce runtime policies for data privacy, compliance, and cost
-** Control agent access to specific tools and APIs
-** Log and audit agent traffic for security and compliance purposes
+Omni Gateway is Agent Fabric's runtime enforcement point: a single gateway that sits in front of your agents, APIs, MCP servers, and LLM traffic, regardless of the platform that built them. Policies you define protect production only if they run on the request. A managed instance of an API, agent, or MCP server puts Omni Gateway in that path so authentication, monitoring, and policy enforcement apply.
 
-* When you need it: Use Omni Gateway for any production deployment where agents handle sensitive data, call external APIs, or need consistent security and compliance enforcement across your organization.
-* Learn more: xref:exp-governance-create-strategy.adoc[]
+* Require authentication and authorization on agent, API, and MCP server requests
+* Limit which tools and APIs an agent can call
+* Keep an audit trail of traffic for security and compliance
+
+Use a managed instance on Omni Gateway when agents or APIs handle sensitive data, call external systems, or must follow the same runtime rules in every environment. LLM traffic uses a model proxy, which you also deploy to Omni Gateway.
+
+Learn more: xref:exp-instances-add.adoc[] and xref:exp-policies-apply-manage.adoc[]
 
 === Governance Strategies
 
-* What it is: Governance strategies bundle design-time rules and runtime policies into a coherent governance posture applied across targeted services. In the enhanced MuleSoft experience, governance strategies are managed under *Governance > Governance Strategies*.
-* Role in Agent Fabric: Governance strategies turn compliance intent into systematic enforcement across your portfolio. A governance strategy lets you define rules once, spanning access and security, data privacy, performance and cost, and compliance, and apply them consistently across every agent, MCP server, API, and Model proxy in scope.
-* What you can do:
-** Create strategies spanning access and security, data privacy, performance and cost, and compliance and observability domains
-** Apply policies at the service or instance level so runtime traffic reflects the defined strategy
-** Review conformance scores, violations, and warnings via Conformance Reports on each service
-** Monitor governance coverage to identify which services lack active strategies
-** Block or flag non-compliant actions at design time or runtime
-* When you need it: Use governance strategies when your organization needs consistent, auditable enforcement of security, compliance, or cost rules across a portfolio of agents and services.
-* Learn more: xref:exp-governance-work-with-strategies.adoc[]
+Rewriting the same security, privacy, and cost rules for every agent and service doesn't scale. A governance strategy defines those rules once and applies them across the agents, APIs, and MCP servers in scope.
 
-=== Cost Management
+* Define rules once for access, data privacy, performance and cost, and compliance
+* Apply them at the service or instance so live traffic matches the strategy
+* See which services fail conformance
+* Block or flag noncompliant activity when that's supported
 
-* What it is: Cost Management surfaces token usage, daily spend signals, and cost optimization controls across your portfolio.
-* Role in Agent Fabric: As LLMs become central to agentic workflows, token consumption becomes a significant operational cost. Cost Management gives organizations the visibility and controls to keep that cost predictable. It connects governance directly to economics. The same governance strategy framework that enforces security and compliance can also reduce unnecessary token spend through tool mapping and tool sanitization controls.
-* What you can do:
-** Monitor token usage and spend trends across Model proxies and agents
-** Apply tool mapping to restrict which tools an LLM or agent can invoke, reducing unnecessary token consumption
-** Apply tool sanitization to filter inputs and outputs before they reach a model
-** Identify high-cost services and tune them through governance controls
-** Keep every agent action authenticated and attributable to the user who initiated it
-** Maintain a complete audit trail of agent actions tied to real user authorization
-* When you need it: Use Cost Management when LLM token consumption is a significant operational concern, or when you need to enforce spending limits and audit agent interactions across your organization.
-* Learn more: For more information, see xref:exp-governance-view-cost-and-token-usage.adoc[] and xref:exp-governance-create-strategy.adoc[]
+Use governance strategies when a portfolio of agents, APIs, and MCP servers must follow the same auditable rules.
+
+Learn more: xref:exp-governance-work-with-strategies.adoc[]
+
+=== Universal Policies
+
+On a multi-vendor gateway landscape, the same control is a different native policy on each platform, so gaps appear. Author the intent once with Universal Policies. MuleSoft translates it for each gateway.
+
+* Author a policy once and apply it across gateways from multiple vendors
+* Enforce common controls such as API key enforcement, CORS, header manipulation, IP allowlisting, and JWT validation
+* Keep the same governance as services move or scale across platforms
+
+Use Universal Policies when you run gateways from more than one vendor and need the same controls on all of them.
+
+Learn more: xref:exp-policies-universal.adoc[]
+
+=== Cross-Gateway and Third-Party API Governance
+
+Services that run on a third-party API gateway still have to meet your standards. Cross-gateway governance includes those APIs in the same conformance view so they don't escape oversight.
+
+* Govern third-party APIs alongside MuleSoft-hosted APIs
+* Monitor conformance across gateways from different vendors
+
+Use cross-gateway governance when APIs that matter to the business run on a connected third-party gateway and still need to meet your standards.
+
+Learn more: xref:exp-governance-govern-third-party-apis.adoc[] and xref:exp-governance-monitor-cross-gateway-conformance.adoc[]
+
+=== Security
+
+A compromised, misconfigured, or malicious agent can leak data, take unauthorized actions, or drive unexpected cost. These controls detect that behavior, keep credentials in the vault you already use, and surface known risk on services you've already discovered.
+
+* Detect and contain rogue agents: Apply Rogue Agent Detection and Agent Kill Switch policies to each model proxy you want to protect. Detection flags risky behavior for your review. The Kill Switch policy blocks that agent's access to the model proxy when you quarantine it. Quarantine always requires your review, and you reverse it if needed. Learn more: xref:exp-detect-and-contain-rogue-agents.adoc[]
+* External vaults: Register an external vault so credentials stay in AWS Secrets Manager, Azure Key Vault, or HashiCorp Vault. Only metadata is stored (zero-copy). Learn more: xref:exp-vaults-manage.adoc[]
+* Akamai risk correlation: Correlate security findings to APIs and MCP services you've already discovered, so you can triage risk before it becomes an incident. Learn more: xref:exp-akamai-risk-correlation.adoc[]
 
 ////
 === Trusted Agent Identity
@@ -255,108 +256,99 @@ Without governance, orchestration turns to chaos. Agent Fabric provides enterpri
 ** Maintain a complete audit trail of agent actions tied to real user authorization
 
 * When you need it: Use Trusted Agent Identity any time agents call APIs or services on behalf of users, or when compliance requires knowing not just that an agent made a call, but who authorized it.
-* Learn more: 
+* Learn more:
 ////
 
 
-[[orchestrate]]
-== Orchestrate
-Coordinate agents and tools across ecosystems with guided determinism, so multi-step processes run smoothly and every agent works together to deliver reliable business outcomes.
+[[cost-control]]
+== AI Cost Control
 
-=== Agent Broker
+LLM token spend grows when calls use an expensive model, repeat similar prompts, or send more payload than the model needs. Budget management shows that spend and caps it. Cost optimization reduces what each call consumes.
 
-* What it is: An intelligent routing service that coordinates task delegation across A2A-compliant agents in your agent network. You define a broker and its nodes in Agent Script. Nodes are connected in a graph that encapsulates all steps that describe the orchestration of agents, tools, and LLMs. A graph-based approach to agent brokers ensures that connected paths guarantee a specific order of operations and enable more complex orchestration that combines deterministic and non-deterministic elements. 
-* Role in Agent Fabric: The broker is the orchestration intelligence in your agent network. When a request arrives, the broker determines which agent or other broker is best suited to handle it and delegates accordingly, generating a contextId and taskId to track task state across the interaction. 
-* By dynamically matching tasks with other agents and enabling seamless collaboration across ecosystems, the broker transforms scattered agents into a coordinated workforce. Brokers appear in your portfolio and can be discovered and reused by other brokers across your organization.
-* What you can do:
-** Build hierarchical orchestration by delegating tasks to specialized A2A-compliant agents or other brokers
-** Publish brokers to your portfolio for discovery and reuse across your organization
-** Define brokers in Agent Script
-** Configure the broker's routing logic and orchestration patterns
-** Deploy the full agent network (including the broker) to CloudHub 2.0 
-** Monitor broker routing decisions and performance using Agent Visualizer
+=== Model Proxy
 
-* When you need it: when your agent network includes multiple agents with different specializations and you need a component to intelligently route work to the right agent based on context. Add a broker when routing logic needs to go beyond a single agent.
+Agents that call each LLM provider directly get a different endpoint, a different policy set, and a different bill. A model proxy, deployed to Omni Gateway, is one governed endpoint for multiple providers. Routing, caching, and policy run in front of every call. Token data from those calls feeds cost management.
 
-* Learn more: xref:agent-network::af-define-your-agent-network-specification.adoc[]
+* Give agents one governed endpoint for multiple model providers
+* Route by model or by meaning (semantic routing)
+* Reuse similar responses with semantic caching to cut latency and spend
+* Apply policies, including the security policies that detect and contain rogue agents
 
-=== Agent Network
+Use a model proxy when agents call LLMs and you need the same governance, routing, and cost visibility across providers.
 
-* What it is: An agent network is a coordinated group of agents, brokers, LLMs, and MCP servers that acts as a central hub for defining, validating, and running agentic processes across your enterprise. You configure an agent network in a human-readable YAML file that details the required structure and properties that define your project's assets, connections, and policies. If your network project uses brokers, you define them and their nodes in Agent Script. Agent Script enables you to build predictable, context-aware agent workflows between nodes.  
-* Role in Agent Fabric: The agent network is the configuration and infrastructure layer that brings all the components of your agentic solution together. It defines the composition of your network, specifying which agents are available, which brokers orchestrate them, which LLMs provide reasoning, and which MCP servers connect agents to backend systems. Without an agent network, agents operate in isolation. With one, they become a coordinated system capable of handling complex, multi-step workflows.
-* What you can do:
-** Define the composition of a multi-agent system in a single YAML configuration
-** Connect agents to backend systems and data sources via MCP servers
-** Use LLMs for reasoning and planning across the network
-** Deploy the full agent network, including agents, brokers, and MCP servers
-** After publishing, network assets are registered in your portfolio for discovery and reuse
+Learn more: xref:model-proxy.adoc[]
 
-* When you need it: Use an agent network any time you are building an agentic solution that involves multiple agents, LLMs, or MCP servers working together. Agent networks do not require a broker. You can start with just agents and MCP servers and add a broker when you need intelligent routing across specialized agents.
+=== Budget Management
 
-* Learn more: xref:agent-network::af-agent-networks.adoc[]
+Token usage and spend are visible, so you see where cost goes and cap it. Set model costs so token counts read as dollars. Set budgets to limit spend or tokens over time. Use model wallets to cap a caller's token or dollar spend against a provider.
 
-[[observe]]
-== Observe
+* Monitor token usage and spend across model proxies, agents, and MCP servers
+* See which providers and model wallets are at risk or at their limit
+* Set input and output token costs per model so reports read as dollars
+* Set daily, weekly, or monthly budgets by spend or by tokens
+* Cap a model-proxy caller's token or dollar spend against a provider. After the budget is reached, the proxy blocks further requests to that provider's models.
 
-Agent Visualizer provides a detailed visual graph of your agent network so you can see, understand, and interact with your enterprise’s evolving network of agents, Model Context Protocol (MCP) servers, and large language models (LLMs), including agents created in external platforms.
+Use budget management when you need visibility and limits on LLM spend. Model wallets require an identity provider. Budgets are approximate: Usage can briefly exceed a limit before the proxy blocks requests.
 
-=== Agent Visualizer
+Learn more:
 
-* What it is: Agent Visualizer is a visualization and monitoring tool that displays agent network structure, real-time request flows, and performance metrics.
-* Role in Agent Fabric: Agent Visualizer makes the agent network legible, both during development, where you need to verify that routing logic and agent connections are configured correctly, and in production, where you need to identify bottlenecks, trace failures, and optimize performance. It turns multi-agent interactions into clear, interactive maps so you can trace decisions, monitor real-time health, and detect issues before they impact outcomes. Without this visibility, multi-agent systems are opaque and difficult to operate with confidence.
-* Key capabilities:
-** Visual network topology showing agents, brokers, MCP servers, and their connections
-** Performance metrics including latency, throughput, and error rates
-** Historical analysis for identifying patterns over time
+* xref:exp-governance-view-cost-and-token-usage.adoc[]
+* xref:exp-model-wallets-manage.adoc[]
+* xref:exp-models-manage-costs.adoc[]
 
-* When you need it: Use Agent Visualizer during development to verify your network is wired correctly, at deployment to confirm traffic is routing as expected, and in production to troubleshoot.
+=== Cost Optimization
 
-* Learn more: xref:agent-visualizer::index.adoc[]
+A frontier model for a simple task, a repeated prompt, or a bloated payload all add cost without adding value. Optimization policies reduce token consumption without changing what the instance does.
 
-=== Monitor
+* Route by model or by meaning (semantic routing) instead of always using the most expensive model
+* Reuse results for similar requests with semantic caching
+* Trim unnecessary tools and payload with optimization policies
 
-* What it is: In the enhanced MuleSoft experience, monitoring is available at both the service level and the organization level. At the service level, each agent, API, MCP server, Model proxy, and gateway has a Monitoring tab showing runtime health signals and detailed time-series breakdowns, depending on your gateway, runtime path, and platform connections. At the organization level, observability aggregates dashboards, reports, and alerts when your administrator has connected the observability backend for your business group.
-* Role in Agent Fabric: Monitoring closes the loop between governance and operations. Governance strategies define what should happen; monitoring tells you whether it is happening. It surfaces latency, error rates, request volume, and other runtime signals so you can catch regressions early, triage incidents quickly, and make informed decisions about policy changes and capacity.
-* What you can do:
-** View runtime health metrics such as latency, error rates, and request volume, including detailed time series and dimensions per service on its Monitoring tab
-** Compare signals across instances or environments to attribute changes to deployments or policy updates, allowing you to baseline behavior after changes.
-** Configure alert notifications to route API and runtime alerts to Slack, email, or other channels your team monitors
-** Access organization-wide dashboards and reports through Observability, using filters to narrow your investigation down to a specific service, environment, or route.
+Use cost optimization when token consumption is a significant cost and you want to reduce spend.
 
-* When you need it: Use monitoring during development for performance validation, and continuously in production to ensure reliability, meet SLAs, and catch issues before they affect users.
+Learn more:
 
-* Learn more: xref:exp-services-monitoring.adoc[]
+* xref:model-proxy-semantic-service.adoc[]
+* xref:model-proxy-semantic-caching-service.adoc[]
+* xref:exp-governance-view-cost-and-token-usage.adoc[]
 
 [[supporting-tools]]
 == Supporting Tools
 
 === Anypoint Code Builder
 
-* What it is: Anypoint Code Builder is the development environment for building agent networks, configuring agent interactions, and developing custom MCP servers.
-* Role in Agent Fabric: Anypoint Code Builder is where agent networks come to life. It provides the visual canvas and tooling to define an agent network YAML and develop custom MCP servers, all before deploying to production.
-* Key capabilities:
-** Design and configure agent network structures with the visual canvas
-** Define routing logic and agent interactions in Agent Script
-** Build and test agent workflows locally before deploying
-** Develop custom MCP servers for specific integration needs
-** Use MuleSoft Vibes to generate and validate network configurations from natural language
-* Learn more: xref:anypoint-code-builder::index.adoc[]
+You need a place to design and test an agent network before it hits production. Anypoint Code Builder is that environment: You configure agent interactions, develop custom MCP servers, and validate routing locally.
+
+* Design and configure agent network structures with the visual canvas
+* Define routing logic and agent interactions in Agent Script
+* Build and test agent workflows locally before deploying
+* Develop custom MCP servers for specific integration needs
+* Use MuleSoft Vibes to generate and validate network configurations from natural language
+
+Learn more: xref:anypoint-code-builder::index.adoc[] and xref:agent-network::af-define-your-agent-network-specification.adoc[]
 
 === MuleSoft Vibes
 
-* What it is: MuleSoft Vibes is the AI assistant built into Anypoint Code Builder, trained on industry best practices for graph-based agent architecture.
-* Role in Agent Fabric: Vibes accelerates the process of building agent networks by letting you describe what you want in natural language and generating robust broker and network configurations from those descriptions. Vibes validates that the resulting architecture is sound and aligned with best practices before you deploy.
-* What you can do:
-** Describe your desired agent network in natural language and generate YAML configurations
-** Validate network structure and routing logic against architecture best practices
-** Accelerate development from initial design through testing and refinement
-* When you need it: Use MuleSoft Vibes throughout the development lifecycle, from initial network design through iterating on routing logic and agent configurations.
-* Learn more: xref:anypoint-code-builder::vibes-get-started.adoc[]
+Hand-authoring a sound broker and network configuration is slow, and mistakes show up at deploy time. MuleSoft Vibes, the AI assistant in Anypoint Code Builder, turns a description of the network you want into YAML and checks it against architecture best practices before you deploy.
+
+* Describe your desired agent network in natural language and generate YAML configurations
+* Validate network structure and routing logic against architecture best practices
+* Move faster from initial design through testing and refinement
+
+Use MuleSoft Vibes when you want to draft or change project files from a description instead of authoring every file by hand.
+
+Learn more: xref:anypoint-code-builder::vibes-get-started.adoc[] and xref:agent-network::af-define-your-agent-network-specification.adoc[]
 
 == What's Next
 
-* For a guided path through discovering assets, building your first agent network, and deploying it with governance and monitoring, get started with the xref:learning-map-agent-fabric.adoc[].
+* For a guided path through the registry, agent actions, governance, and cost control, get started with the xref:learning-map-agent-fabric.adoc[].
 
 * For a comprehensive guide to the technical foundations, capability pillars, and architectural best practices that power enterprise agentic transformation, explore the https://www.mulesoft.com/lp/ebook/mulesoft-agent-fabric-technical-overview[Agent Fabric Technical Overview].
 
-* Learn about the technical foundations, capability pillars, and architectural details https://architect.salesforce.com/docs/architect/fundamentals/guide/mulesoft-agent-fabric-deep-dive.html#Agent_Orchestration_Design_Patterns[Agent Fabric Deep Dive].
+* Learn about the technical foundations, capability pillars, and architectural details in the https://architect.salesforce.com/docs/architect/fundamentals/guide/mulesoft-agent-fabric-deep-dive.html#Agent_Orchestration_Design_Patterns[Agent Fabric Deep Dive].
+
+== See Also
+
+* xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions]
+* xref:access-management::connecting-salesforce-orgs.adoc[]
+* xref:access-management::enabling-generative-ai.adoc[]
