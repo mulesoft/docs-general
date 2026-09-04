@@ -346,3 +346,9 @@ Learn more: xref:anypoint-code-builder::vibes-get-started.adoc[] and xref:agent-
 * For a comprehensive guide to the technical foundations, capability pillars, and architectural best practices that power enterprise agentic transformation, explore the https://www.mulesoft.com/lp/ebook/mulesoft-agent-fabric-technical-overview[Agent Fabric Technical Overview].
 
 * Learn about the technical foundations, capability pillars, and architectural details in the https://architect.salesforce.com/docs/architect/fundamentals/guide/mulesoft-agent-fabric-deep-dive.html#Agent_Orchestration_Design_Patterns[Agent Fabric Deep Dive].
+
+== See Also
+
+* xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions]
+* xref:access-management::connecting-salesforce-orgs.adoc[]
+* xref:access-management::enabling-generative-ai.adoc[]
