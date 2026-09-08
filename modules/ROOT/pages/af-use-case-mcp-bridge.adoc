@@ -1,18 +1,10 @@
-= Make APIs Agent-Ready with MCP Bridge
+= Make Your APIs Agent-Ready
 
-Agent Fabric MCP Bridge transforms your existing API instances into agent-ready tools without touching code. Choose which operations to expose as tools, limit agents to read operations where needed, and make your Mule or API management investment immediately available to agents with the same governance policies you already use.
-
-Key benefits of MCP Bridge include:
-
-* Connect agents in minutes, not weeks: Turn an existing API into agent-ready tools through configuration alone, skipping the custom integration each agent platform would otherwise require.
-* Never expose an operation by accident: Agents can call only the operations you explicitly map as tools, so write and delete stay off-limits unless you choose to expose them.
-* One controlled interface for every agent: All agents reach your APIs the same way, eliminating the inconsistent, per-platform access that's hard to audit.
-* Get more from what you already built: Reuse APIs managed through Anypoint Platform without rebuilding them for agentic use.
-* Govern agent API access from one place: A single point of control means access, policy, and monitoring don't fragment as you add agents.
+You've invested heavily in API infrastructure, but those APIs weren't designed for agents to consume. Before agents can act on the systems behind those APIs, each operation becomes callable. Someone decides which operations are safe to expose and keeps access consistent across every agent platform. That work usually means a custom integration for each platform. Agent Fabric removes that work. You expose an existing API as a Model Context Protocol (MCP) server through configuration alone. You choose which operations become agent-ready tools and apply the same governance you use, without touching the underlying API.
 
 == The Problem
 
-You've invested heavily in API infrastructure, but adapting these APIs for agentic use is challenging:
+Adapting existing APIs for agentic use is challenging.
 
 * API complexity: Existing APIs aren't designed for agent consumption.
 * Security concerns: APIs often include write and delete operations that are too risky for agents.
@@ -20,104 +12,109 @@ You've invested heavily in API infrastructure, but adapting these APIs for agent
 * Inconsistent access: Different agents access the same APIs in different ways.
 * Governance gaps: It's hard to track and control how agents use existing APIs.
 
-Bridge your existing API infrastructure to agents safely and efficiently with MCP Bridge.
+You need a way to make this API infrastructure available to agents safely and efficiently, without rebuilding it.
 
 == The Solution
 
-Agent Fabric Model Context Protocol (MCP) Bridge enables safe, efficient API integration for agents:
+Agent Fabric exposes your existing APIs as MCP servers. Agents then get safe, efficient API access:
 
 * Rapid integration: Connects existing API instances to agents through simple configuration, with no rewriting required.
 * Selective exposure: Exposes only the API operations you choose as discrete MCP tools that agents can discover and call. Limit agent access to read-only operations when needed, without modifying the underlying API.
 * Centralized management: Provides a single point of control for API access, with governance policies applied from the same portfolio.
 * Agent-facing abstraction: Exposes existing REST API operations as MCP tools so agents can call them without needing API-specific details.
-* Reuse existing assets: Works with your existing MuleSoft API infrastructure without rebuilding assets.
+* Asset reuse: Works with your MuleSoft API infrastructure without rebuilding assets.
 
-== How MCP Bridge Works
+Key benefits include:
 
-MCP Bridge operates at the Omni Gateway layer as a set of automated policies. You configure it through API Manager, and it deploys to the same gateway infrastructure you already use to manage API traffic.
+* Connect agents in minutes, not weeks: Turn an existing API into agent-ready tools through configuration alone, and skip the custom integration that each agent platform otherwise requires.
+* Never expose an operation by accident: Agents can call only the operations you explicitly map as tools, so write and delete stay off-limits unless you choose to expose them.
+* Control every agent through one interface: All agents reach your APIs the same way. That consistency removes per-platform access that's hard to audit.
+* Get more from what you built: Reuse APIs you manage and govern without rebuilding them for agentic use.
+* Govern agent API access from one place: A single point of control means access, policy, and monitoring stay unified as you add agents.
+
+== How It Works
+
+Omni Gateway is the runtime enforcement point for Agent Fabric. This single gateway sits in front of your agents, APIs, and MCP servers so that authentication, monitoring, and policy enforcement apply to every request. When you expose an API as an MCP server, the server runs on Omni Gateway as a set of automated policies. You configure the server through API Manager, and the server deploys to the same gateway infrastructure you use to manage API traffic.
 
 Each agent request follows this path:
 
-. The AI agent makes a request using MCP.
-. The request flows through Omni Gateway, where MCP Bridge policies execute.
-. MCP Bridge maps the request to the underlying API operation.
+. The AI agent makes an MCP request.
+. The request flows through Omni Gateway, where the MCP server's policies execute.
+. The MCP server maps the request to the underlying API operation.
 . Only operations you expose as MCP tools are reachable.
 . The call reaches the backend API.
 . Responses flow back through the gateway to the agent.
 
 == Who This Is For
 
-MCP Bridge is ideal for:
+Exposing APIs as MCP servers is ideal for:
 
-* Organizations with existing API infrastructure
+* Companies with existing API infrastructure
 * Security teams concerned about agent access to sensitive operations
-* Integration teams looking to enable agents quickly without custom development
-* Architects who are designing safe agent access to enterprise systems
-* Teams who want to build on existing investments in API management and governance
+* Integration teams who enable agents quickly without custom development
+* Architects who design safe agent access to enterprise systems
+* Teams who want to build on investments in API management and governance
 
 == Example Scenarios
 
-These scenarios demonstrate how different organizations use MCP Bridge to solve specific agent access challenges.
+Different companies expose APIs as MCP servers to solve specific agent access challenges.
 
 === Scenario 1: Customer Service Agent with Read-Only Access
 
-*Challenge:* Customer service agents need to answer questions about customer accounts and orders but can't modify data. Without MCP Bridge, you build custom integrations for each agent platform. This approach risks exposing write operations and creates inconsistent behavior across platforms.
+*Challenge:* Customer service agents answer questions about customer accounts and orders but can't modify data. Without an MCP server in front of the API, you build custom integrations for each agent platform. This approach risks exposing write operations and creates inconsistent behavior across platforms.
 
-With MCP Bridge, you get rapid deployment with built-in safety:
+By exposing the API as an MCP server, you deploy rapidly with built-in safety:
 
-. In API Manager, create an MCP Bridge instance for your customer API.
+. In API Manager, create an MCP server from your customer API.
 . Map only GET operations to MCP tools.
-. Deploy the instance (policies execute on Omni Gateway).
+. Deploy the instance. Policies execute on Omni Gateway.
 . Connect all agent platforms to the MCP server endpoint.
 
-*Result:* Agents answer account and order questions with zero write access exposed, from a single configuration. There is no per-platform integration to build or maintain, and no path for an agent to modify customer data.
+*Result:* Agents answer account and order questions with no write access exposed, from a single configuration. You don't build or maintain a per-platform integration, and no path exists for an agent to modify customer data.
 
 === Scenario 2: Inventory Check Agent
 
-*Challenge:* Your inventory API includes operations to check stock levels, reserve items, adjust quantities, and process transfers. Sales agents, warehouse agents, and customer service agents all need to check current stock, but only warehouse systems should adjust it. 
+*Challenge:* Your inventory API includes operations to check stock levels, reserve items, adjust quantities, and process transfers. Sales agents, warehouse agents, and customer service agents all check current stock, but only warehouse systems adjust it.
 
-Without MCP Bridge, you either expose the full API (risking accidental adjustments) or build filtered endpoints for each agent type.
+Without an MCP server in front of the API, you either expose the full API (risking accidental adjustments) or build filtered endpoints for each agent type.
 
-With MCP Bridge, you give all agents read-only inventory access from a single configuration:
+By exposing the API as an MCP server, you give all agents read-only inventory access from a single configuration:
 
-. In API Manager, create an MCP Bridge instance from the inventory API.
+. In API Manager, create an MCP server from the inventory API.
 . Map only GET operations for stock queries to MCP tools.
 . Connect all agent types to the MCP server endpoint.
-. Monitor agent usage in the enhanced MuleSoft experience.
+. Monitor agent usage alongside your existing services.
 
-*Result:* Sales, warehouse, and customer service agents all read live stock levels from one read-only tool surface, while stock adjustments stay restricted to warehouse systems, without building or maintaining a filtered endpoint per agent type.
+*Result:* Sales, warehouse, and customer service agents all read live stock levels from one read-only tool surface. Stock adjustments stay restricted to warehouse systems, without a filtered endpoint for each agent type.
 
 === Scenario 3: Financial Data Agent with Layered Tool Selection
 
-*Challenge:* Different agents need different levels of access to financial APIs. 
+*Challenge:* Different agents need different levels of access to financial APIs.
 
-Without MCP Bridge, you build separate custom integrations for each agent access level. This duplication increases the risk that a high-privilege operation reaches the wrong agent.
+Without a controlled tool surface, you build separate custom integrations for each agent access level. This duplication increases the risk that a high-privilege operation reaches the wrong agent.
 
-With MCP Bridge, you get fine-grained access control with safety guarantees:
+By exposing the API as multiple MCP servers with layered tool selection, you get fine-grained access control with safety guarantees:
 
-. In API Manager, create multiple MCP Bridge instances from your financial API, each with different operation mappings:
-   * Basic server: Map only GET operations for account balances.
-   * Analytics server: Map GET operations for transaction history and reports.
-   * Approval server: Map GET operations plus POST for creating approval requests.
+. In API Manager, create multiple MCP servers from your financial API, each with different operation mappings. Map the Basic server to GET operations for account balances, the Analytics server to GET operations for transaction history and reports, and the Approval server to GET operations plus POST for creating approval requests.
 . Connect each agent to the appropriate MCP server endpoint based on access requirements.
 . In API Manager, apply policies to each MCP server instance.
 
-*Result:* Each agent gets exactly the access its role requires. Agents balances only, analytics or approval requests from one financial API, with no duplicated integrations and no path for a high-privilege operation to reach the wrong agent.
+*Result:* Each agent gets exactly the access its role requires. Agents access balances, analytics, or approval requests from one financial API, with no duplicated integrations and no path for a high-privilege operation to reach the wrong agent.
 
 === Scenario 4: Mule Integration Platform
 
-*Challenge:* Your organization has extensive Mule infrastructure and wants to enable agentic access without rebuilding integrations. 
+*Challenge:* Your company has extensive Mule infrastructure and wants agentic access without rebuilding integrations.
 
-Without MCP Bridge, you would need to build agent-specific adapters on top of each Mule API, duplicating logic and bypassing existing Anypoint Platform governance.
+Without a configuration-based approach, you build agent-specific adapters on top of each Mule API. Those adapters duplicate logic and bypass the governance that protects those APIs.
 
-With MCP Bridge, you extend your existing Mule investment to agentic use cases:
+By exposing your Mule APIs as MCP servers, you extend your existing Mule investment to agentic use cases:
 
-. In API Manager, create MCP Bridge instances for key Mule APIs.
+. In API Manager, create MCP servers from key Mule APIs.
 . Map the API operations you want to expose to MCP tools.
-. Deploy the instances (policies execute on your existing Omni Gateway infrastructure).
-. Monitor through the enhanced MuleSoft experience and apply policies in API Manager.
+. Deploy the instances. Policies execute on your existing Omni Gateway infrastructure.
+. Monitor usage and apply policies in API Manager, the same way you do for your existing APIs.
 
-*Result:* Existing Mule APIs become agent-callable without new adapters or duplicated logic, and agent traffic inherits the same Anypoint Platform governance already protecting those APIs.
+*Result:* Existing Mule APIs become agent-callable without new adapters or duplicated logic, and agent traffic inherits the same governance already protecting those APIs.
 
 == Implementation Steps
 
@@ -130,44 +127,44 @@ With MCP Bridge, you extend your existing Mule investment to agentic use cases:
 
 === Step 2: Plan Your Tool Selection
 
-For each API instance, decide:
+For each API instance:
 
-* Which operations can agents access?
-* Are read-only operations sufficient?
-* If agents require write access, which specific write operations do they use?
-* What Omni Gateway policies apply to the resulting MCP server?
+* Identify which operations agents can access.
+* Decide whether read-only operations are sufficient.
+* If agents require write access, identify which write operations they use.
+* Identify which Omni Gateway policies apply to the resulting MCP server.
 
-=== Step 3: Create and Deploy an MCP Bridge Instance
+=== Step 3: Create and Deploy an MCP Server
 
-. In API Manager, create an MCP Bridge instance for your target API.
+. In API Manager, create an MCP server from your target API.
 . Configure downstream settings (base path, protocol, port) and upstream settings (route label, upstream URL).
-. Map specific API operations to MCP tools by selecting the HTTP method and resource for each tool.
+. To map specific API operations to MCP tools, select the HTTP method and resource for each tool.
 . Define tool names, descriptions, and input schemas for each mapped operation.
 . Test the MCP server endpoint with sample requests.
 
-For more information, see xref:api-manager::create-instance-task-mcp-bridge.adoc[].
+The API Manager topic walks through instance creation, downstream and upstream settings, and operation-to-tool mapping. See xref:api-manager::create-instance-task-mcp-bridge.adoc[Create an MCP Server Instance in API Manager].
 
 === Step 4: Apply Omni Gateway Policies
 
-MCP Bridge controls which API operations are available as tools. Omni Gateway policies control how agents can use them at runtime. After deploying MCP Bridge, apply policies in API Manager to the MCP server instance to enforce authentication, rate limiting, audit logging, and alerting.
+The MCP server controls which API operations are available as tools. Omni Gateway policies control how agents can use those tools at runtime. After deploying the MCP server, apply policies in API Manager to the MCP server instance to enforce authentication, rate limiting, audit logging, and alerting.
 
 See xref:use-case-policy-enforcement.adoc[Policy Enforcement] for implementation steps.
 
 === Step 5: Connect Agents
 
-. Update agents to use MCP Bridge.
+. Update agents to use the MCP server.
 . Test with realistic scenarios.
-. Verify that tool selection works (agents can only call the operations you expose).
+. Verify that agents can call only the operations you expose.
 . Monitor initial usage.
 
 === Step 6: Monitor and Refine
 
-. In the enhanced MuleSoft experience, review latency, error rates, and request volume for your MCP server.
+. Review latency, error rates, and request volume for your MCP server.
 . Analyze which tools agents call and identify missing operations.
 . Check gateway logs for attempts to call unexposed operations.
-. To change tool mappings, create a new MCP Bridge instance with the updated configuration in API Manager. MCP Bridge instances are immutable after deployment.
+. To change tool mappings, create a new MCP server with the updated configuration in API Manager. MCP server instances are immutable after deployment.
 
-For information about monitoring MCP servers and other services, see xref:exp-services-monitoring.adoc[].
+To monitor MCP servers alongside other services in your portfolio, see xref:exp-services-monitoring.adoc[Monitoring Services in Your Portfolio].
 
 
 == Tool Selection Strategies
@@ -187,7 +184,7 @@ Customer API:
 - POST /customers/{id}/orders   (create)
 ----
 
-After you configure MCP Bridge to expose only read operations, agents see a reduced tool surface:
+After you configure the MCP server to expose only read operations, agents see a reduced tool surface:
 
 [source,text]
 ----
@@ -200,7 +197,7 @@ The agent can read customer and order data but can't create, modify, or delete a
 
 === Read-Only Operation Mapping
 
-Map only GET/read operations to tools first. Explicitly map write operations only when a use case requires them.
+Map only GET operations to tools first. Explicitly map write operations only when a use case requires them.
 
 === Operation Allowlisting
 
@@ -214,11 +211,11 @@ For runtime controls such as rate limiting and time-based access restrictions, s
 
 == Common Tool Selection Patterns
 
-These patterns represent typical approaches to selecting which operations to expose as tools based on your security requirements and use cases.
+Choose an approach based on your security requirements and use cases.
 
 === Read-Only Tool Surface
 
-Use this pattern when agents only retrieve data. Expose all GET/read operations as tools and exclude all write (POST, PUT, DELETE) operations.
+Use this pattern when agents only retrieve data. Expose all GET operations as tools and exclude all write (POST, PUT, DELETE) operations.
 
 [source,text]
 ----
@@ -255,7 +252,7 @@ Use this pattern when agents initiate a workflow (for example, submitting an app
 
 === Granular Tool Surface
 
-Use this pattern for fine-grained control, exposing specific safe operations and blocking others based on individual business risk assessments. For example, expose GET /orders/{id} so agents can view order details, but block PUT /orders/{id}/status to prevent agents from changing order status. This pattern gives agents access to the information they need while protecting sensitive operations.
+Use this pattern for fine-grained control. Expose specific safe operations and block others based on assessments of business risk. For example, expose `GET /orders/{id}` so agents can view order details, but block `PUT /orders/{id}/status` to prevent agents from changing order status. This pattern gives agents access to the information they need while protecting sensitive operations.
 
 [source,text]
 ----
@@ -267,13 +264,13 @@ Use this pattern for fine-grained control, exposing specific safe operations and
 
 == Security Considerations
 
-When deploying MCP Bridge, follow security best practices to minimize risk and maintain control over agent access to your APIs.
+When you expose APIs as MCP servers, follow these security practices to minimize risk and maintain control over agent access to your APIs.
 
 === Default Deny
 
-Start with no access and explicitly enable only what agents use.
+Start with no access and grant only the operations that agents use.
 
-Apply Omni Gateway policies to enable audit logging and monitor MCP server usage through Anypoint Monitoring. See xref:use-case-policy-enforcement.adoc[Policy Enforcement].
+Apply Omni Gateway policies to turn on audit logging and monitor MCP server usage. See xref:use-case-policy-enforcement.adoc[Policy Enforcement].
 
 === Regular Reviews
 
@@ -285,28 +282,28 @@ Periodically review:
 
 == Integration with Existing Tools
 
-MCP Bridge integrates with your existing MuleSoft infrastructure, identity systems, and gateway deployment to build on investments you've already made.
+MCP servers integrate with your MuleSoft infrastructure, identity systems, and gateway deployment to build on investments you've made.
 
 === Mule Integration
 
-MCP Bridge works directly with Mule APIs managed in Anypoint Platform, so you can expose existing Mule API instances as MCP servers without rebuilding them.
+Expose Mule API instances you manage as MCP servers without rebuilding them.
 
-* Use MCP Bridge with existing Mule APIs.
-* Use Anypoint Platform governance.
+* Expose existing Mule APIs as MCP servers.
+* Reuse your existing governance.
 * Extend Mule monitoring to agent access.
 * Reuse existing API policies.
 
 === Omni Gateway Integration
 
-MCP Bridge runs on Omni Gateway infrastructure. MCP server instances are managed through API Manager and protected by Omni Gateway policies, just like API instances.
+MCP servers run on Omni Gateway infrastructure. They're managed through API Manager and protected by Omni Gateway policies, like API instances.
 
-* Create and deploy MCP Bridge instances on the same Omni Gateway that manages your APIs.
+* Create and deploy MCP servers on the same Omni Gateway that manages your APIs.
 * Apply policies to MCP servers the same way you apply them to APIs.
 * Use unified monitoring and alerting across APIs and MCP servers.
 
 === Identity Systems
 
-MCP Bridge can work with existing identity infrastructure so that agent access to APIs respects the same authentication and authorization rules already in place.
+MCP servers work with existing identity infrastructure so that agent access to APIs respects the same authentication and authorization rules in place.
 
 * Integrate with existing authentication.
 * Use existing authorization rules where applicable.
@@ -318,7 +315,7 @@ MCP Bridge can work with existing identity infrastructure so that agent access t
 
 == Next Steps
 
-With MCP Bridge providing safe API access, you're ready to:
+With your APIs exposed as MCP servers providing safe API access, you're ready to:
 
 * xref:af-use-case-policy-enforcement.adoc[Apply Omni Gateway policies to broker endpoints]
 * xref:af-use-case-orchestration.adoc[Build agent networks]
