@@ -1,5 +1,5 @@
 = Agent Fabric Overview
-:keywords: mulesoft agent fabric, mcp bridge, mcp connector, enterprise actionability, ai agents, mulesoft integration, model context protocol
+:keywords: mulesoft agent fabric, mcp server, mcp connector, enterprise actionability, ai agents, mulesoft integration, model context protocol
 
 AI agents, MCP servers and even APIs are built across multiple platforms. This makes it difficult to reuse across platforms, apply the same standardized security controls and track end-to-end LLM spend. Agent Fabric is the control plane for that landscape: catalog what exists, call systems you already run, enforce shared policy at runtime, and see what those calls cost.
 
@@ -68,17 +68,17 @@ Learn more: xref:exp-scanners-add-from-providers.adoc[]
 
 An agent that can only describe a problem can't fix it. Agent Fabric exposes the APIs, applications, and agents you already run as tools that those agents can call, and coordinates multiple agents when one isn't enough, without rebuilding those systems.
 
-Start with MCP Bridge for existing APIs and A2A Bridge for agents that aren't A2A-compliant. Add a broker only when work spans specialized agents. Use connectors when agents need to call LLMs or other AI services directly.
+Start by exposing existing APIs as MCP servers, and use an A2A bridge for agents that aren't A2A-compliant. Add a broker only when work spans specialized agents. Use connectors when agents need to call LLMs or other AI services directly.
 
-=== MCP Bridge
+=== Expose APIs as MCP Servers
 
-Your APIs already do the work agents need, but agents can't call them as tools until you expose them. MCP Bridge converts an API instance into an MCP server through configuration. You pick the operations, keep the API unchanged, and apply the same governance you already use.
+Your APIs already do the work agents need, but agents can't call them as tools until you expose them. Turn an existing API or SaaS system into an MCP server through configuration: you pick the operations to expose, keep the underlying system unchanged, and apply the same governance you already use.
 
-* Convert an existing API instance into an MCP server without custom code
-* Expose only the operations agents should call
+* Expose an existing API or SaaS system as an MCP server without custom code
+* Publish only the operations agents should call
 * Apply existing governance policies to the resulting MCP server
 
-Use MCP Bridge when agents must call APIs you already have, and you don't want a custom MCP server.
+Do this when agents must call APIs you already have and you don't want to build a custom MCP server.
 
 Learn more: xref:exp-services-create-mcp-server.adoc[]
 

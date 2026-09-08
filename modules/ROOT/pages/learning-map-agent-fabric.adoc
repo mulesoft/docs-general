@@ -44,7 +44,7 @@ Catalog agents, MCP servers, and APIs so you reuse what exists. Keep that invent
 | image::reuse::lm_build_1.png[""]
 [.lm-bold]##Enable Agent Actions##
 
-Make the APIs, applications, and agents you already run available as tools. Start with MCP Bridge and A2A Bridge. Add a broker only when work spans specialized agents.
+Make the APIs, applications, and agents you already run available as tools. Start by exposing existing APIs as MCP servers, and use an A2A bridge for agents that aren't A2A-compliant. Add a broker only when work spans specialized agents.
 
 - xref:exp-services-create-mcp-server.adoc[]
 - https://videos.mulesoft.com/watch/Dn9QXJKDzTxSJPNgra9LoM[Watch a Video to Learn About MCP Bridge]
