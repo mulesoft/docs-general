@@ -1,64 +1,88 @@
 = Control LLM Costs in Agent Fabric
 
-Agent Fabric gives you full visibility into token consumption and spend across every model call, and the controls to enforce limits before usage compounds. Use Model Wallets to set hard limits in tokens or dollars that agents can't exceed, and attribute every token and dollar to the team, application, or agent that generated them.
-
-Key benefits include:
-
-* Stop budget overruns before they happen: Model Wallets block requests when a budget limit is reached, so an unattended agent can't run spend past the cap. The limit is enforced, not just flagged.
-* Cut cost without cutting quality: Semantic routing sends routine queries to a cheaper, faster model and reserves higher-cost models for complex work, lowering average cost per query while holding response quality.
-* Turn spend into decisions: See token consumption and cost by application, agent, user, and model in one place, so you can act on what's driving cost instead of guessing.
-* End cost surprises: Trace every token and dollar to the team, application, or agent that drove it, so overruns have an owner and a root cause.
-* Govern once, everywhere: Apply the same policies, prompt protection, and automatic fallback across every provider, so adding a model or team doesn't mean rebuilding controls. * Govern once, everywhere: Apply the same policies, prompt protection, and automatic fallback across every provider, so adding a model or team doesn't mean rebuilding controls.
+Agentic systems make model calls constantly, and every call costs tokens. As you add agents, teams, and providers, spend grows faster than anyone can track by hand, and a single unattended agent can run up a large bill before anyone notices. You need to see exactly what's driving cost, cut the spend you don't need, and cap the spend you can't afford, without slowing agents down or sacrificing response quality. Agent Fabric gives you that visibility and those controls at the point where every model call already passes through.
 
 == The Problem
 
-As agentic systems scale, LLM costs can quickly spiral out of control without proper visibility and enforcement:
+As agentic systems scale, LLM costs can spiral without visibility and enforcement:
 
 * Unpredictable costs: Token usage varies widely based on agent behavior and queries.
 * No visibility: Costs can't be attributed to specific applications, agents, or users.
 * Inefficient model usage: Expensive models handle simple queries that cheaper models could address.
 * Budget overruns: Nothing enforces the budget, so a number in the plan isn't a real limit.
+* Runaway agents: A compromised or malfunctioning agent can drive unexpected cost before anyone notices.
 * No optimization path: Without data on usage patterns, optimization is guesswork.
 
-Gain visibility into what's driving costs and the controls to optimize spending without sacrificing quality.
+You need visibility into what's driving cost and the controls to reduce and cap it without sacrificing quality.
 
 == The Solution
 
-Agent Fabric provides comprehensive cost management for agentic AI through the Model Proxy:
+Every governed model call in Agent Fabric flows through the Model Proxy, a single access point in front of your LLM providers. Because every request and response passes through it, the proxy is where you see spend, reduce it, cap it, and contain it:
 
-* Usage visibility: Tracks token consumption by application, agent, user, and model.
-* Semantic routing: Routes each query to the appropriate model based on complexity, automatically.
-* Budget enforcement: Caps token or spend usage with Model Wallets that block requests when a budget limit is reached.
-* Model optimization: Provides data-driven insight into which models are used for which tasks.
-* Cost attribution: Shows exactly what's driving your spend, down to the team, app, or agent.
+* Cost visibility and attribution: Track token consumption and spend by provider, model, application, and the agent or team that generated it.
+* Semantic routing: Send routine requests to a cheaper, faster model and reserve powerful models for complex work.
+* Semantic caching: Reuse a stored response when a new request closely matches an earlier one, skipping the model call entirely.
+* Budget enforcement: Cap token or dollar spend per caller with Model Wallets that block requests when a budget is reached.
+* Runaway-agent containment: Flag anomalous agent behavior for review and block a flagged agent's model access when you choose to contain it.
 
-== How Semantic Routing Works
+Key benefits include:
 
-Not all queries require the most powerful (and most expensive) AI models. Semantic routing analyzes query complexity and routes each request appropriately:
+* Turn spend into decisions: See token consumption and cost by application, agent, user, provider, and model in one place, so you act on what's driving cost instead of guessing.
+* End cost surprises: Trace every token and dollar to the team, application, or agent that drove it, so overruns have an owner and a root cause.
+* Cut cost without cutting quality: Route routine queries to a cheaper model and reuse responses to similar requests, lowering average cost per query while holding response quality.
+* Cap spend before it compounds: Model Wallets block requests when a budget is reached, so an unattended agent can't keep spending past the cap. The limit is enforced, not just flagged.
+* Contain runaway agents fast: When an agent behaves anomalously, block its model access in seconds, and reverse the block just as fast if it was a false positive.
+* Govern once, everywhere: Apply the same controls across every provider, so adding a model or team doesn't mean rebuilding them.
+
+== How It Works
+
+Omni Gateway is the runtime enforcement point for Agent Fabric. The Model Proxy runs on Omni Gateway and provides one governed access point for many LLM providers, so consumers reach every model through a single endpoint. Because all model traffic passes through the proxy, cost management works in stages: see spend, reduce it, cap it, and contain anomalies.
+
+=== See and Attribute Spend
+
+First, set a cost for each model so token usage translates into dollars. The Cost Management dashboard then shows token consumption and spend across every model call, broken down by provider, model, application, and the wallet or client that generated the traffic. You can view usage as raw tokens or as dollars, and filter by time period to spot trends.
+
+Token counts come from the traffic itself, but dollar figures depend on the per-model costs you set, and cost tracking starts from the time you set those costs rather than retroactively. Set model costs early so spend data reflects your full usage.
+
+=== Reduce Spend with Routing and Caching
+
+Not every request needs your most powerful, most expensive model. Two optimizations lower the cost curve without capping usage:
+
+* Semantic routing compares each request to prompt topics you define and routes it to the best-matching model path. Route routine intents, such as order status or account lookups, to a fast, cost-effective model, and reserve advanced models for complex work. You can also deny-list topics to block requests you don't want served at all.
+* Semantic caching stores model responses and reuses one when a new request is semantically similar to an earlier one, returning the cached response instead of calling the provider again. On chat-style traffic, this can cut token usage substantially while reducing latency.
+
+Semantic routing sends each request to the appropriate model automatically:
 
 [source,text]
 ----
 Simple query: "What's the status of order #12345?"
-→ Route to: Fast, cost-effective model
+→ Route to: fast, cost-effective model
 
 Complex query: "Analyze this quarter's sales trends, identify anomalies, and recommend strategic adjustments"
-→ Route to: Powerful, higher-cost model
+→ Route to: powerful, higher-cost model
 ----
 
-The Model Proxy makes these routing decisions automatically based on configurable rules, maintaining quality while minimizing cost.
+=== Cap Spend with Model Wallets
 
-== How Model Wallets Enforce Usage Limits
+A budget alert tells you when you've overrun a limit. It doesn't stop it. By the time an alert fires, an agent running unattended can push usage well past the limit before anyone reads the notification.
 
-Budget alerts tell you when you've overrun a limit. They don't stop it. By the time an alert fires at 90 percent of budget, an agent running unattended can push token or spend usage far past the limit before anyone reads the notification.
+A Model Wallet closes that gap. A wallet identifies a caller of the Model Proxy and caps that caller's token or dollar spend against a provider over a period you set:
 
-A Model Wallet closes that gap by turning a budget from a number in a plan into a financial control that agents can't overrun:
+* Enforced limits: When a wallet reaches its budget, the proxy blocks further requests to that provider's models instead of just flagging the overrun. If a fallback route exists, the proxy fails over to the next model in the route.
+* Periodic caps: Set a daily, weekly, or monthly limit that resets on a schedule, so spend stays bounded each period.
+* Flexible metrics: Set limits in dollars (USD) or tokens, whichever your team tracks.
+* Identity-scoped controls: A wallet ties usage to a caller's identity, so each application or agent has its own budget. Wallets rely on an identity provider that issues signed tokens to identify callers.
 
-* Hard limits: Set enforced token or spend limits per provider so that when a budget reaches its limit, requests are blocked rather than flagged.
-* Periodic caps: Set a daily, weekly, or monthly limit that resets automatically on a schedule, so token or spend usage stays bounded each period.
-* Flexible metrics: Set limits in dollars (USD) or tokens, so budgets reflect the metric that matters most to your team.
-* Identity-scoped controls: Tie usage controls to a Model Proxy's client identity so that each application or agent routes through its own governed access point with dedicated budget limits.
+Enforcement is approximate rather than a real-time hard cutoff: usage can briefly exceed a limit before the proxy blocks it. Even so, a wallet turns a budget from a number in a plan into a control that stops spend, not just an alert that reports it.
 
-Model Wallets build on the Model Proxy. The proxy provides one governed access point for every provider, making token consumption and spend visible; Model Wallets add the enforcement layer on top, so the usage you can see is also usage you can cap.
+=== Contain Runaway Agents
+
+Budgets stop normal usage at a planned cap. A compromised or malfunctioning agent is a different problem: it can drive unexpected cost through anomalous behavior that no single budget anticipates. Two controls address this:
+
+* Rogue Agent Detection monitors agent traffic and flags risky behavior, such as prompt injection or attempts to escalate privileges, for your review.
+* The Agent Kill Switch blocks a flagged agent's model access when you decide to contain it.
+
+Detection never acts on its own. You review flagged activity before taking action, and containment is fully reversible, so you can restore an agent's access in seconds if a flag turns out to be a false positive.
 
 == Who This Is For
 
@@ -87,32 +111,32 @@ With Agent Fabric you get complete cost visibility:
 
 *Result:* Every dollar of LLM spend maps to the business unit, application, and agent that drove it. Leaders can see which deployments cost the most and target optimization where it pays off, instead of splitting an unattributed bill across teams.
 
-=== Scenario 2: Semantic Routing for Customer Support
+=== Scenario 2: Semantic Routing and Caching for Customer Support
 
-*Challenge:* A customer support agent system uses expensive models for all queries, including simple lookups.
+*Challenge:* A customer support agent system uses expensive models for all queries, including simple lookups, and repeats similar calls for common questions.
 
-With semantic routing you cut cost without sacrificing quality:
+With semantic routing and caching you cut cost without sacrificing quality:
 
 . Configure semantic routing rules:
    * Simple queries (order status, account lookups) route to a cost-effective model.
    * Complex queries (troubleshooting, technical issues) route to an advanced model.
-. The Model Proxy analyzes each request and routes it appropriately.
+. Enable semantic caching so repeated, similar questions return a stored response instead of a new model call.
 . Monitor quality metrics to ensure the customer experience isn't impacted.
 
-*Result:* Routine lookups, which are often the majority of support traffic, move to a model that can cost roughly an order of magnitude less per query, while complex cases still reach a more advanced, higher-cost model. Average cost per query drops with no measurable change in resolution quality.
+*Result:* Routine lookups move to a model that can cost roughly an order of magnitude less per query, and repeated questions are served from cache without a provider call at all. Average cost per query drops with no measurable change in resolution quality.
 
 === Scenario 3: Budget Controls for Development Teams
 
 *Challenge:* Development teams experimenting with agents have no spending limits, leading to budget surprises.
 
-With Model Wallets you get budgets agents can't overrun:
+With Model Wallets you get budgets agents can't quietly overrun:
 
-. Create a separate Model Proxy for each team, with budget limits configured per provider.
-. Set a daily, weekly, or monthly limit in dollars (USD) or tokens depending on how the team tracks spend.
-. Enable hard limits so requests are blocked when a budget is reached rather than allowed to overrun.
-. Give teams visibility into budget consumption through the Model Proxy dashboard.
+. Create a wallet for each team, scoped to that team's callers.
+. Add a budget per provider, choosing a daily, weekly, or monthly period.
+. Set the limit in dollars (USD) or tokens, so requests are blocked when the limit is reached rather than allowed to overrun.
+. Give teams visibility into budget consumption through the Cost Management dashboard.
 
-*Result:* A runaway experiment stops at its cap instead of surfacing as a month-end invoice. Finance gets predictable per-team spend, and teams keep the autonomy to experiment within a limit they can see.
+*Result:* A runaway experiment stops near its cap instead of surfacing as a month-end invoice. Finance gets predictable per-team spend, and teams keep the autonomy to experiment within a limit they can see.
 
 === Scenario 4: Multi-Model Optimization
 
@@ -127,6 +151,19 @@ With Agent Fabric you get evidence-based model selection:
 
 *Result:* Model selection becomes an evidence-based decision instead of a default. Each use case runs on the provider that delivers the best cost and quality ratio for it, and routing keeps pace as providers change pricing or release new models.
 
+=== Scenario 5: Containing a Runaway Agent
+
+*Challenge:* An agent is compromised or misconfigured and begins making unusual, high-volume model calls that drive unexpected spend.
+
+With runaway-agent containment you stop the bleeding without taking down the whole system:
+
+. Rogue Agent Detection flags the agent's anomalous behavior for review.
+. Review the flagged activity in the Governance area.
+. Quarantine the agent with the Agent Kill Switch to block its model access immediately.
+. Restore the agent's access once you've corrected the underlying issue.
+
+*Result:* A single misbehaving agent is contained in seconds instead of running up cost until someone notices the invoice. Other agents keep working, and the block is fully reversible if the flag was a false positive.
+
 == Implementation Steps
 
 Follow these steps to set up cost management in Agent Fabric.
@@ -137,42 +174,51 @@ Follow these steps to set up cost management in Agent Fabric.
 . Configure integration with your LLM providers.
 . Route agent traffic through the Model Proxy.
 
-=== Step 2: Implement Usage Tracking
+=== Step 2: Set Model Costs
 
-. Tag all requests with relevant metadata:
-   * Business unit or cost center
-   * Application name
-   * Agent identifier
-   * User or session ID
-. Configure logging and metrics collection.
-. Set up dashboards for cost visibility.
+. Set the input and output token cost for each model your proxies use.
+. Do this early: dollar figures accrue only from the time costs are set, not retroactively.
+. Note that a model with no configured cost shows zero spend, though its token usage is still counted.
 
-=== Step 3: Establish Baseline Costs
+=== Step 3: Turn On Cost Visibility
+
+. Identify each caller (application, agent, or team) at the proxy so traffic attributes to the right owner.
+. Use the Cost Management dashboard to view token consumption and spend by provider, model, application, and wallet.
+. Toggle between token and dollar views, and set the time range to compare periods.
+
+=== Step 4: Establish Baseline Costs
 
 . Monitor usage patterns for one to two weeks without optimization.
 . Identify current cost drivers.
 . Categorize query types by complexity and frequency.
 . Calculate baseline cost metrics.
 
-=== Step 4: Configure Semantic Routing
+=== Step 5: Optimize with Semantic Routing and Caching
 
-. Define query complexity categories.
-. Assign an appropriate model to each category.
-. Create routing rules in the Model Proxy.
-. Test routing with sample queries to ensure quality.
+. Define query complexity categories as prompt topics, and assign an appropriate model to each.
+. Create routing rules so routine requests reach a cost-effective model and complex ones reach an advanced model.
+. Enable semantic caching so similar requests reuse a stored response instead of calling the provider again.
+. Test routing and caching with sample queries to confirm quality.
 
-=== Step 5: Set Budget Controls with Model Wallets
+=== Step 6: Set Budget Controls with Model Wallets
 
-. Create a Model Proxy per team, application, or agent to scope budget controls to a client identity.
-. Add a budget for each provider the Model Proxy routes to, choosing a daily, weekly, or monthly period.
-. Set the limit in dollars (USD) or tokens, and enable hard limits where overruns are unacceptable so requests are blocked when a limit is reached.
-. Share the Model Proxy dashboard with teams so they can track budget consumption per provider.
+. Create a wallet for each caller (team, application, or agent) you want to cap. Wallets require an identity provider that issues signed tokens to identify callers.
+. Add a budget for each provider the caller routes to, choosing a daily, weekly, or monthly period.
+. Set the limit in dollars (USD) or tokens, so requests are blocked when the limit is reached.
+. Share the Cost Management dashboard with teams so they can track budget consumption.
 
-=== Step 6: Monitor and Optimize
+=== Step 7: Add Runaway-Agent Containment
+
+. Apply Rogue Agent Detection to the proxies you want to protect, and define the anomalies to flag.
+. Register each agent with a unique identity so flags and actions attribute correctly.
+. Apply the Agent Kill Switch so you can block a flagged agent's model access when needed.
+. Review flagged activity in the Governance area before you quarantine, and restore access if a flag is a false positive.
+
+=== Step 8: Monitor and Optimize
 
 . Track cost trends after optimization.
 . Monitor quality metrics to ensure no degradation.
-. Refine routing rules based on results.
+. Refine routing rules and budgets based on results.
 . Share cost savings and optimization wins.
 
 == Metrics to Track
@@ -202,19 +248,26 @@ Track these metrics to measure and improve the impact of cost control.
 
 === Optimization Metrics
 
-* Cost savings from semantic routing
+* Cost savings from semantic routing and caching
 * Percentage of queries routed to cost-effective models
+* Cache hit rate on repeated queries
 * Budget adherence by team and application
 * ROI of optimization efforts
 
 == Related Documentation
 
 * xref:agent-fabric-use-cases.adoc[]
+* xref:model-proxy.adoc[]
+* xref:model-proxy-semantic-service.adoc[]
+* xref:model-proxy-semantic-caching-service.adoc[]
+* xref:exp-models-manage-costs.adoc[]
+* xref:exp-governance-view-cost-and-token-usage.adoc[]
+* xref:exp-model-wallets-manage.adoc[]
+* xref:model-proxy-token-reports.adoc[]
+* xref:exp-detect-and-contain-rogue-agents.adoc[]
 
 == Next Steps
 
 With cost controls in place, you're ready to:
 
 * xref:af-use-case-policy-enforcement.adoc[Add policy enforcement for governance]
-* xref:use-case-orchestration.adoc[Build complex workflows with cost awareness]
-* xref:use-case-identity.adoc[Move to production with identity and cost controls]
