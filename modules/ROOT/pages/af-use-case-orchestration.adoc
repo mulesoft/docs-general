@@ -1,4 +1,4 @@
-= Orchestrate Multi-Agent Processes with Agent Broker
+= Orchestrating Multi-Agent Processes with Agent Broker
 
 Agent brokers and agent networks coordinate task delegation across specialized agents with guided determinism. This coordination produces reliable, predictable outcomes from complex business processes. You define broker routing logic in Agent Script and configure the network composition in `agent-network.yaml`. This file brings agents, LLMs, and MCP servers together in a single coordinated system. Use this approach when a single agent can't handle the process and your business process requires multiple specialized agents working in sequence or in parallel.
 
