@@ -148,7 +148,7 @@ The API Manager topic walks through instance creation, downstream and upstream s
 
 The MCP server controls which API operations are available as tools. Omni Gateway policies control how agents can use those tools at runtime. After deploying the MCP server, apply policies in API Manager to the MCP server instance to enforce authentication, rate limiting, audit logging, and alerting.
 
-See xref:use-case-policy-enforcement.adoc[Policy Enforcement] for implementation steps.
+See xref:af-use-case-policy-enforcement.adoc[Policy Enforcement] for implementation steps.
 
 === Step 5: Connect Agents
 
@@ -207,7 +207,7 @@ Select specific operations to expose rather than trying to identify operations t
 
 Combine tool selection with data filters (for example, expose only operations that access certain data categories).
 
-For runtime controls such as rate limiting and time-based access restrictions, see xref:use-case-policy-enforcement.adoc[Policy Enforcement].
+For runtime controls such as rate limiting and time-based access restrictions, see xref:af-use-case-policy-enforcement.adoc[Policy Enforcement].
 
 == Common Tool Selection Patterns
 
@@ -270,7 +270,7 @@ When you expose APIs as MCP servers, follow these security practices to minimize
 
 Start with no access and grant only the operations that agents use.
 
-Apply Omni Gateway policies to turn on audit logging and monitor MCP server usage. See xref:use-case-policy-enforcement.adoc[Policy Enforcement].
+Apply Omni Gateway policies to turn on audit logging and monitor MCP server usage. See xref:af-use-case-policy-enforcement.adoc[Policy Enforcement].
 
 === Regular Reviews
 
