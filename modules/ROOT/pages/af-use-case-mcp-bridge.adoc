@@ -4,7 +4,7 @@ You've invested heavily in API infrastructure, but you didn't design your APIs f
 
 == The Problem
 
-Adapting existing APIs for agentic use is challenging.
+Adapting existing APIs for agentic workflows presents several challenges.
 
 * API complexity: Existing APIs aren't designed for agent consumption.
 * Security concerns: APIs often include write and delete operations that are too risky for agents.
