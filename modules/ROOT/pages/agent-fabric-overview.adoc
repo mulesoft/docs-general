@@ -104,7 +104,7 @@ Learn more: xref:exp-services-create-a2a-bridge.adoc[]
 
 When several specialized agents must share a request, someone has to decide who does which step. The broker routes each task to the best-suited A2A-compliant agent or broker. After you publish the agent network, brokers appear as specialized agents in Anypoint Exchange and can be reused by other brokers.
 
-You define the broker and its nodes in Agent Script (`.agent` files), in a graph that mixes deterministic and non-deterministic steps.
+You define the broker and its nodes in Agent Script (`.agent` files), a graph that mixes deterministic and non-deterministic actions.
 
 * Delegate tasks to specialized A2A-compliant agents or other brokers
 * Define routing in Agent Script
