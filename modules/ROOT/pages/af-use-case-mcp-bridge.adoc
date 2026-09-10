@@ -138,7 +138,9 @@ For each API instance:
 . Apply the required MCP support policy so the server is callable.
 . Test the MCP server endpoint with sample requests.
 
-For the steps to create an MCP server from an existing API, see xref:exp-services-create-mcp-server.adoc[Create an MCP Server]. For the steps to deploy and protect it on Omni Gateway, see xref:api-manager::create-instance-task-mcp.adoc[Add an MCP Server Instance in API Manager].
+For the steps to create an MCP server from an existing API, see xref:exp-services-create-mcp-server.adoc[Create an MCP Server]. 
+
+For the steps to deploy and protect it on Omni Gateway, see xref:api-manager::create-instance-task-mcp.adoc[Add an MCP Server Instance in API Manager].
 
 === Step 4: Apply Omni Gateway Policies
 
