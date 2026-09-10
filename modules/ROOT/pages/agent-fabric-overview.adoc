@@ -31,7 +31,7 @@ MuleSoft supports Agentforce and Agent Fabric together. Each plays a distinct ro
 Build and deploy Salesforce-native agents for use within the Salesforce ecosystem.
 * Agent Fabric
 +
-Govern, secure, and cost-manage agents across any platform, including Salesforce Agentforce, Amazon Bedrock, Google Vertex AI, Microsoft Copilot Studio, and others. Choose Agent Fabric when you need a single inventory of agents built anywhere, the same security and compliance rules everywhere, or cost control across the agent ecosystem.
+Govern, secure, and manage the costs of agents across any platform, including Salesforce Agentforce, Amazon Bedrock, Google Vertex AI, Microsoft Copilot Studio, and others. Choose Agent Fabric when you need a network of agents that use the same security, compliance, and cost management rules regardless of where you built them.
 
 [[agent-registry]]
 == Agent Registry
