@@ -173,7 +173,7 @@ Learn more: xref:agent-visualizer::index.adoc[]
 
 === Monitor
 
-Defined policy isn't the same as healthy traffic. Monitoring shows latency, error rates, and request volume to catch regressions and decide when to change policy or capacity.
+A defined policy isn't the same as healthy traffic. Monitoring shows latency, error rates, and request volume so that you can catch regressions and decide when to change policy or capacity.
 
 * View runtime health metrics for a service
 * Compare signals across instances or environments
