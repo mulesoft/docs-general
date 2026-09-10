@@ -84,7 +84,7 @@ Learn more: xref:exp-services-create-mcp-server.adoc[]
 
 === A2A Bridge
 
-* What it is: An A2A bridge is an A2A-compliant protocol server that presents an A2A facade in front of an existing non-A2A agent (the source agent). The bridge is a chain of policies on an Omni Gateway instance: inbound authentication plus the bridge policies. It translates between A2A and the agent's native protocol, manages the task lifecycle, and serves A2A task management methods. The source agent doesn't change. Agent Fabric derives an A2A card from the source agent, publishes it to your Portfolio, and deploys the bridge instance from a single wizard.
+* What it is: An A2A bridge is an A2A-compliant protocol server that presents an A2A facade in front of an existing non-A2A agent (the source agent). The bridge is a chain of policies on an Omni Gateway instance: inbound authentication plus the bridge policies. The bridge translates between A2A and the agent's native protocol, manages the task lifecycle, and serves A2A task management methods. The source agent doesn't change. Agent Fabric derives an A2A card from the source agent, publishes it to your Portfolio, and deploys the bridge instance from a single wizard.
 
 * Role in Agent Fabric: Agent Fabric orchestrates only A2A-compliant agents, but many enterprise agents—such as Salesforce Agentforce agents—aren't A2A-compliant on their own. A2A Bridge closes the gap between what your scanners can discover and what Agent Fabric can orchestrate. Non-A2A agents then participate in your agent network through configuration alone.
 
