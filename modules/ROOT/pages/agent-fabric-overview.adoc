@@ -22,7 +22,7 @@ Make the APIs, applications, and agents you already run available as tools, so a
 Put the same authentication, access, and security rules on every agent, MCP server, and LLM call, so production traffic is routed by your rules.
 * <<cost-control,AI cost control>>
 +
-See where token spend goes, cap it, and stop paying a frontier model for work a smaller model can do.
+See where token spend goes, cap it, and stop paying frontier models for work smaller models can do.
 
 MuleSoft supports Agentforce and Agent Fabric together. Each plays a distinct role:
 
