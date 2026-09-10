@@ -1,8 +1,5 @@
 .xref:index.adoc[Anypoint Platform]
 * xref:index.adoc[Documentation]
-* xref:agent-fabric-overview.adoc[Agent Fabric]
-  ** xref:learning-map-agent-fabric.adoc[Get Started with Agent Fabric]
-  ** xref:agent-fabric-release-notes.adoc[]
 * xref:learning-map-exp.adoc[]
   ** xref:exp-overview.adoc[Overview]
     *** xref:exp-compare.adoc[Comparison: Enhanced Experience and Anypoint Platform]
@@ -62,7 +59,6 @@
    *** xref:exp-ai-assistant-troubleshoot.adoc[]
 * xref:learning-map-mulesoft-ai.adoc[]
 * xref:learning-map-mulesoft-vibes.adoc[MuleSoft Vibes]
-
 * xref:usage-reports.adoc[Usage Reports]
   ** xref:usage-reports-release-notes.adoc[Release Notes]
   ** xref:automation-credits-usage-and-rates.adoc[]

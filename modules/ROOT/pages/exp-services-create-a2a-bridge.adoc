@@ -155,7 +155,7 @@ The A2A bridge is designed to be superseded. When a source platform adds native 
 
 == See Also
 
-* xref:agent-fabric-overview.adoc[]
+* xref:agent-fabric::index.adoc[]
 * xref:exp-services-create-mcp-server.adoc[]
 * xref:exp-services-register-manually.adoc[]
 * xref:exp-services-view-details.adoc[]
