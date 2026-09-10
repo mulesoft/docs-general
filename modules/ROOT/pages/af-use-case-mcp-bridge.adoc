@@ -301,7 +301,7 @@ MCP servers run on Omni Gateway infrastructure. They're managed through API Mana
 
 === Identity Systems
 
-MCP servers work with existing identity infrastructure so that agent access to APIs respects the same authentication and authorization rules in place.
+MCP servers work with existing identity infrastructure so that agent access to APIs respects the same authentication and authorization rules you already have in place.
 
 * Integrate with existing authentication.
 * Use existing authorization rules where applicable.
