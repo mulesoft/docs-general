@@ -180,7 +180,7 @@ Defined policy isn't the same as healthy traffic. Monitoring shows latency, erro
 * Send alerts to Slack, Microsoft Teams, and email
 * Use organization-wide dashboards when observability is enabled
 
-Use monitoring during development to validate performance, and in production to meet SLAs and catch issues before they affect users.
+Use monitoring during development to validate performance and in production to meet SLAs and catch issues before they affect users.
 
 Learn more: xref:exp-services-monitoring.adoc[] and xref:exp-alerts-configure-notifications.adoc[]
 
