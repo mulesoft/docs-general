@@ -101,7 +101,7 @@ Here's how you do it:
 
 *Challenge:* Your company has extensive Mule infrastructure and wants agentic access without rebuilding integrations.
 
-Without a configuration-based approach, you build agent-specific adapters on top of each Mule API. Those adapters duplicate logic and bypass the governance that protects those APIs.
+Without a configuration-based approach, you need to build agent-specific adapters on top of each Mule API. Those adapters duplicate logic and bypass the governance that protects those APIs.
 
 By exposing your Mule APIs as MCP servers, you extend your existing Mule investment to agentic use cases. 
 
