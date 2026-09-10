@@ -68,7 +68,7 @@ By exposing the API as an MCP server, you deploy rapidly with built-in safety.
 
 Without an MCP server in front of the API, you either expose the full API (risking accidental adjustments) or build filtered endpoints for each agent type.
 
-By exposing the API as an MCP server, you give all agents read-only inventory access from a single configuration:
+By exposing the API as an MCP server, you give all agents read-only inventory access from a single configuration.
 
 . Create an MCP server from the inventory API, publishing only the read (GET) operations for stock queries as tools.
 . Deploy the server on Omni Gateway.
