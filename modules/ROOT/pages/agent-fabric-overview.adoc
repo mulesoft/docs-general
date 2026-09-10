@@ -329,7 +329,7 @@ Learn more: xref:anypoint-code-builder::index.adoc[] and xref:agent-network::af-
 
 === MuleSoft Vibes
 
-Hand-authoring a sound broker and network configuration is slow, and mistakes show up at deploy time. MuleSoft Vibes, the AI assistant in Anypoint Code Builder, turns a description of the network you want into YAML and checks it against architecture best practices before you deploy.
+Hand-authoring a broker and agent network can be slow, and lead to mistakes at deploy time. MuleSoft Vibes, the AI assistant in Anypoint Code Builder, turns a description of the network you want into YAML  and Agent Script and checks it against architecture best practices before you deploy it.
 
 * Describe your desired agent network in natural language and generate YAML configurations
 * Validate network structure and routing logic against architecture best practices
