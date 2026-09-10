@@ -72,7 +72,7 @@ Start by exposing existing APIs as MCP servers, and use an A2A bridge for agents
 
 === Expose APIs as MCP Servers
 
-Your APIs already do the work agents need, but agents can't call them as tools until you expose them. Turn an existing API or SaaS system into an MCP server through configuration: you pick the operations to expose, keep the underlying system unchanged, and apply the same governance you already use.
+Your APIs already do the work agents need them to do, but agents can't call APIs as tools until you expose the APIs. Turn an existing API or SaaS system into an MCP server: configure the operations to expose, keep the underlying system unchanged, and apply the same governance you already use.
 
 * Expose an existing API or SaaS system as an MCP server without custom code
 * Publish only the operations agents should call
