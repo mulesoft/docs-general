@@ -16,7 +16,7 @@ image::agent-fabric-pillars.png["Diagram of Agent Fabric: a visibility foundatio
 Find every agent, MCP server, and API, and reuse what exists instead of rebuilding assets.
 * <<agent-operations,Enable agents to take action>>
 +
-Make the APIs, applications, and agents you already run available as tools, so agents can update records and hand work to other agents without a rebuild.
+Make the APIs, applications, and agents you already run available as tools, so agents can update records and hand work to other agents without rebuilding the agents.
 * <<govern,AI security and governance>>
 +
 Put the same authentication, access, and security rules on every agent, MCP server, and LLM call, so production traffic is routed by your rules.
