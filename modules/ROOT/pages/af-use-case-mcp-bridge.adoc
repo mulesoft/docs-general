@@ -83,7 +83,7 @@ By exposing the API as an MCP server, you give all agents read-only inventory ac
 
 Without a controlled tool surface, you build separate custom integrations for each agent access level. This duplication increases the risk that a high-privilege operation reaches the wrong agent.
 
-By exposing the API as multiple MCP servers with layered tool selection, you get fine-grained access control with safety guarantees:
+By exposing the API as multiple MCP servers with layered tool selection, you get fine-grained access control with safety guarantees.
 
 . Create multiple MCP servers from your financial API, each publishing a different set of tools: the Basic server with GET operations for account balances, the Analytics server with GET operations for transaction history and reports, and the Approval server with GET operations plus the POST operation for creating approval requests.
 . Deploy each server on Omni Gateway, and connect each agent to the appropriate endpoint based on access requirements.
