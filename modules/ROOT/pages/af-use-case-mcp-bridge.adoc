@@ -54,7 +54,7 @@ Different companies expose APIs as MCP servers to solve specific agent access ch
 
 *Challenge:* Customer service agents answer questions about customer accounts and orders but can't modify data. Without an MCP server in front of the API, you must build custom integrations for each agent platform. This approach risks exposing write operations and creates inconsistent behavior across platforms.
 
-By exposing the API as an MCP server, you deploy rapidly with built-in safety:
+By exposing the API as an MCP server, you deploy rapidly with built-in safety.
 
 . Create an MCP server from your customer API, publishing only its read (GET) operations as tools.
 . Deploy the server on Omni Gateway and apply the required MCP support policy.
