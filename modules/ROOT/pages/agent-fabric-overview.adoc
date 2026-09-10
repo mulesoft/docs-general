@@ -40,7 +40,7 @@ You can't govern, secure, or manage the costs of agents you don't know about. Th
 
 === Registry
 
-Teams rebuild agents and tools that already exist because nobody can find them. Portfolio is the catalog for agents, MCP servers, model proxies, APIs, and gateways, plus a curated set of public MCP servers from the Official MCP Registry and Informatica.
+Teams rebuild agents and tools that already exist when they can't find those assets. Your portfolio is a catalog of agents, MCP servers, model proxies, APIs, and gateways. The portfolio also contains a curated set of public MCP servers from the Official MCP Registry and Informatica.
 
 * Find and reuse registered agents, MCP servers, model proxies, APIs, and gateways
 * See conformance status and instance health before you use on an asset
