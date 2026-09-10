@@ -32,7 +32,7 @@ Each agent request follows this path:
 
 . The AI agent makes an MCP request.
 . The request flows through Omni Gateway, where the MCP server's policies execute.
-. The MCP server maps the request to the underlying API operation.
+. The MCP server maps the request to the underlying API operation that you've exposed as an MCP tool.
 . Only operations you expose as MCP tools are reachable.
 . The call reaches the backend API.
 . Responses flow back through the gateway to the agent.
