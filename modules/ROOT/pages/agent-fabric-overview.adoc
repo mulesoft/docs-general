@@ -108,7 +108,7 @@ You define the broker and its nodes in Agent Script (`.agent` files), in a graph
 
 * Delegate tasks to specialized A2A-compliant agents or other brokers
 * Define routing in Agent Script
-* Deploy the agent network, including the broker, to a CloudHub 2.0 shared or private space
+* Deploy the agent network, including the broker, to a CloudHub 2.0 shared or private space or to a Runtime Fabric target.
 * See connections and call volume in Agent Visualizer
 
 Use a broker when routing must span multiple specialized agents. Many solutions run with agents and MCP servers alone.
