@@ -161,7 +161,7 @@ Learn more:
 
 === Agent Visualizer
 
-Multi-agent systems are hard to operate when you can't see how work moves. Agent Visualizer maps your agents, MCP servers, and LLMs, including agents from external platforms, to verify routing in development and find bottlenecks and failures in production.
+Multi-agent systems are hard to operate when you can't see how work moves through them. Agent Visualizer maps your agents, MCP servers, and LLMs, including agents from external platforms, to verify routing in development and find bottlenecks and failures in production.
 
 * See how agents, brokers, and MCP servers connect
 * Watch live request flows and metrics such as latency, throughput, and error rates
