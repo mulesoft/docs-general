@@ -66,7 +66,7 @@ Learn more: xref:exp-scanners-add-from-providers.adoc[]
 [[agent-operations]]
 == Enable Agents to Take Action
 
-An agent that can only describe a problem can't fix it. Agent Fabric exposes the APIs, applications, and agents you already run as tools that those agents can call, and coordinates multiple agents when one isn't enough, without rebuilding those systems.
+An agent that can only describe a problem can't fix it. Agent Fabric exposes your APIs, applications, and agents as tools that those agents can call for help. If needed, agent Fabric can even coordinates multiple agents when one isn't enough.
 
 Start by exposing existing APIs as MCP servers, and use an A2A bridge for agents that aren't A2A-compliant. Add a broker only when work spans specialized agents. Use connectors when agents need to call LLMs or other AI services directly.
 
