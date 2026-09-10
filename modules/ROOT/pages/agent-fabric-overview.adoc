@@ -7,7 +7,7 @@ AI agents, MCP servers and even APIs are built across multiple platforms. This m
 [[how-agent-fabric-works]]
 == How Agent Fabric Works
 
-You can't apply governance, security, or cost controls to agents you haven't found. After you have a complete inventory, choose the job you need to do.
+You can't apply governance, security, or cost controls to agents you don't know about. After you capture an inventory of agents, choose the jobs you need those agents to do.
 
 image::agent-fabric-pillars.png["Diagram of Agent Fabric: a visibility foundation that supports connecting agents to existing systems, governing production traffic, and controlling LLM cost"]
 
