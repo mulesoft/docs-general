@@ -131,7 +131,7 @@ a|
 a|
 *Connection:* xref:access-management::managing-connected-salesforce-orgs.adoc#enable-disable-connection[Enable the connection to a Salesforce organization] that has an established tenant relationship with your Anypoint Platform organization.
 
-*Setup:* xref:access-management::enabling-agentforce.adoc#enable-einstein-anypoint[Enable Agentforce in Anypoint Platform], accept the terms and conditions and set a default organization for Agentforce
+*Setup:* xref:access-management::enabling-generative-ai.adoc#enable-einstein-anypoint[Enable generative AI in Anypoint Platform], accept the terms and conditions, and set a default Salesforce organization
 
 *Permissions:* Exchange Administrator permission
 

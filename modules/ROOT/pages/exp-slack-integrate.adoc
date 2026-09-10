@@ -49,7 +49,7 @@ MuleSoft Agent is available on request. To get access, contact your account exec
 Before getting started, make sure you have:
 
 * An Anypoint Platform account with access to the enhanced experience.
-* Agentforce enabled in your Anypoint Platform and Salesforce organizations by your administrator.
+* Generative AI enabled in your Anypoint Platform and Salesforce organizations by your administrator. For more information, see xref:access-management::enabling-generative-ai.adoc[].
 * The *MuleSoft Agent AI User* permission assigned to your user.
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
