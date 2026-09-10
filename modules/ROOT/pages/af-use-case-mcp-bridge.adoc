@@ -122,7 +122,7 @@ Here's how you do it:
 . Identify which operations are safe for agents.
 . Prioritize APIs by business value and risk.
 
-=== Step 2: Plan Your Tool Selection
+=== Step 2: Select Tools for Each API Instance
 
 For each API instance:
 
