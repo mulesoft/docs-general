@@ -1,7 +1,7 @@
 = Viewing Data Service Lineage
 :keywords: lineage, data service, context catalog, agent fabric, informatica, cdgc, data lineage, agent to data, impact analysis, provenance, confidence score
 
-Context Catalog is the navigable dependency graph that Agent Fabric reads before it acts—a live map of how your AI agents connect through MCP servers and APIs to the enterprise data services and datasets they consume. Data service lineage, runtime tracing, and the Informatica Cloud Data Governance and Catalog (CDGC) integration are how Context Catalog builds that graph. With it, Agent Fabric gains semantic awareness of what data an agent touches, how that data is classified, and what quality and policy constraints apply.
+Context Catalog is the navigable dependency graph that Agent Fabric reads before it acts. It's a live map of how your AI agents connect through MCP servers and APIs to the enterprise data services and datasets they consume. Data service lineage, runtime tracing, and the Informatica Cloud Data Governance and Catalog (CDGC) integration are how Context Catalog builds that graph. With it, Agent Fabric gains semantic awareness of what data an agent touches, how that data is classified, and what quality and policy constraints apply.
 
 Context Catalog keeps the graph thin: it stores only the connections between assets. Details such as authentication, cost, data classification, and credentials stay with the systems that own them and resolve on demand, so the graph stays a fast, current map rather than a copy of everything it points to.
 
