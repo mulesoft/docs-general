@@ -56,6 +56,8 @@ Different companies expose APIs as MCP servers to solve specific agent access ch
 
 By exposing the API as an MCP server, you deploy rapidly with built-in safety.
 
+Here's how you do it:
+
 . Create an MCP server from your customer API, publishing only its read (GET) operations as tools.
 . Deploy the server on Omni Gateway and apply the required MCP support policy.
 . Connect all agent platforms to the MCP server endpoint.
@@ -69,6 +71,8 @@ By exposing the API as an MCP server, you deploy rapidly with built-in safety.
 Without an MCP server in front of the API, you either expose the full API (risking accidental adjustments) or build filtered endpoints for each agent type.
 
 By exposing the API as an MCP server, you give all agents read-only inventory access from a single configuration.
+
+Here's how you do it:
 
 . Create an MCP server from the inventory API, publishing only the read (GET) operations for stock queries as tools.
 . Deploy the server on Omni Gateway.
@@ -85,6 +89,8 @@ Without a controlled tool surface, you build separate custom integrations for ea
 
 By exposing the API as multiple MCP servers with layered tool selection, you get fine-grained access control with safety guarantees.
 
+Here's how you do it:
+
 . Create multiple MCP servers from your financial API, each publishing a different set of tools: the Basic server with GET operations for account balances, the Analytics server with GET operations for transaction history and reports, and the Approval server with GET operations plus the POST operation for creating approval requests.
 . Deploy each server on Omni Gateway, and connect each agent to the appropriate endpoint based on access requirements.
 . Apply policies to each MCP server to govern runtime access.
@@ -97,7 +103,9 @@ By exposing the API as multiple MCP servers with layered tool selection, you get
 
 Without a configuration-based approach, you build agent-specific adapters on top of each Mule API. Those adapters duplicate logic and bypass the governance that protects those APIs.
 
-By exposing your Mule APIs as MCP servers, you extend your existing Mule investment to agentic use cases:
+By exposing your Mule APIs as MCP servers, you extend your existing Mule investment to agentic use cases. 
+
+Here's how you do it:
 
 . Create MCP servers from key Mule APIs, publishing the operations you want to expose as tools.
 . Deploy the servers on your existing Omni Gateway infrastructure.
