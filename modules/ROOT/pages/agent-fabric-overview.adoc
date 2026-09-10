@@ -208,7 +208,7 @@ Rewriting the same security, privacy, and cost rules for every agent and service
 * Define rules once for access, data privacy, performance and cost, and compliance
 * Apply them at the service or instance so live traffic matches the strategy
 * See which services fail conformance
-* Block or flag noncompliant activity when that's supported
+* Block or flag noncompliant activity 
 
 Use governance strategies when a portfolio of agents, APIs, and MCP servers must follow the same auditable rules.
 
