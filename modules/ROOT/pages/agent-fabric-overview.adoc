@@ -140,7 +140,7 @@ Learn more: xref:a2a-connector::index.adoc[A2A Connector]
 
 === Other AI Connectors
 
-Agents need the LLMs and knowledge stores you already operate. AI Connectors give agentic workflows pre-built access to those models and vector databases so you don't write a custom integration for each one.
+Agents need the LLMs and knowledge stores you already operate. AI connectors give agentic workflows pre-built access to those models and vector databases so that you don't need to write a custom integration for each one.
 
 * Invoke Agentforce agents and Amazon Bedrock foundation models from Mule
 * Call LLMs through the Einstein Trust Layer or through inference APIs from multiple providers
