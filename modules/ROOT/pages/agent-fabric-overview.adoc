@@ -1,7 +1,7 @@
 = Agent Fabric Overview
 :keywords: mulesoft agent fabric, mcp server, mcp connector, enterprise actionability, ai agents, mulesoft integration, model context protocol
 
-AI agents, MCP servers and even APIs are built across multiple platforms. This makes it difficult to reuse across platforms, apply the same standardized security controls and track end-to-end LLM spend. Agent Fabric is the control plane for that landscape: catalog what exists, call systems you already run, enforce shared policy at runtime, and see what those calls cost.
+Teams build AI agents, MCP servers, and APIs across multiple platforms. You can't easily reuse those assets, apply the same security controls, or track end-to-end LLM spend. Agent Fabric is the AI control plane for that landscape. With Agent Fabric, catalog what exists, call systems you already run, enforce shared policy at runtime, and see what those calls cost.
 
 
 [[how-agent-fabric-works]]
@@ -13,7 +13,7 @@ image::agent-fabric-pillars.png["Diagram of Agent Fabric: a visibility foundatio
 
 * <<agent-registry,Agent registry>>
 +
-Find every agent, MCP server, and API, and reuse what exists instead of rebuilding assets. 
+Find every agent, MCP server, and API, and reuse what exists instead of rebuilding assets.
 * <<agent-operations,Enable agents to take action>>
 +
 Make the APIs, applications, and agents you already run available as tools, so agents can update records and hand work to other agents without a rebuild.
@@ -42,10 +42,10 @@ You can't govern, secure, or manage the costs of agents you don't know about. Th
 
 Teams rebuild agents and tools that already exist when they can't find those assets. Your portfolio is a catalog of agents, MCP servers, model proxies, APIs, and gateways. The portfolio also contains a curated set of public MCP servers from the Official MCP Registry and Informatica.
 
-* Find and reuse registered agents, MCP servers, model proxies, APIs, and gateways
-* See conformance status and instance health before you use on an asset
-* Govern, monitor, and manage an asset's lifecycle from the catalog page
-* Publish agent networks and MCP servers so other teams can reuse them
+* Find and reuse registered agents, MCP servers, model proxies, APIs, and gateways.
+* See conformance status and instance health before you use on an asset.
+* Govern, monitor, and manage an asset's lifecycle from the catalog page.
+* Publish agent networks and MCP servers so other teams can reuse them.
 
 Use the registry when you start a new agentic project and want to use existing assets or when you want to share assets built by your team.
 
@@ -55,9 +55,9 @@ Learn more: xref:exp-portfolio-overview.adoc[]
 
 Agents appear on cloud platforms faster than teams can manually register them. Scanners watch supported platforms and automatically register any agents, APIs, and MCP servers they discover to the matching portfolio catalog.
 
-* Connect cloud providers as scanner sources
-* Discover and register agents, MCP servers, and APIs on a schedule or on demand
-* See last-run results and how many assets each scan found
+* Connect cloud providers as scanner sources.
+* Discover and register agents, MCP servers, and APIs on a schedule or on demand.
+* See last-run results and how many assets each scan found.
 
 Use scanners when agents run on more than one platform and manual registration can't keep the registry current.
 
@@ -74,9 +74,9 @@ Start by exposing existing APIs as MCP servers, and use an A2A bridge for agents
 
 Your APIs already do the work agents need them to do, but agents can't call APIs as tools until you expose the APIs. Turn an existing API or SaaS system into an MCP server: configure the operations to expose, keep the underlying system unchanged, and apply the same governance you already use.
 
-* Expose an existing API or SaaS system as an MCP server without custom code
-* Publish only the operations agents should call
-* Apply existing governance policies to the resulting MCP server
+* Expose an existing API or SaaS system as an MCP server without custom code.
+* Publish only the operations agents should call.
+* Apply existing governance policies to the resulting MCP server.
 
 Do this when agents must call APIs you already have and you don't want to build a custom MCP server.
 
@@ -89,11 +89,11 @@ Learn more: xref:exp-services-create-mcp-server.adoc[]
 * Role in Agent Fabric: Agent Fabric orchestrates only A2A-compliant agents, but many enterprise agents—such as Salesforce Agentforce agents—aren't A2A-compliant on their own. A2A Bridge closes the gap between what your scanners can discover and what Agent Fabric can orchestrate. Non-A2A agents then participate in your agent network through configuration alone.
 
 * What you can do:
-** Make a non-A2A source agent A2A-compliant without rebuilding it
-** Customize the advertised A2A card and skills before publishing
-** Deploy the bridge instance to a managed or self-managed Omni Gateway with inbound and upstream authentication
-** Manage the A2A task lifecycle so operations such as `GetTask`, `ListTasks`, and `CancelTask` return correct results
-** Discover, govern, monitor, and orchestrate the bridged agent like any native A2A agent
+** Make a non-A2A source agent A2A-compliant without rebuilding the agent.
+** Customize the advertised A2A card and skills before publishing.
+** Deploy the bridge instance to a managed or self-managed Omni Gateway with inbound and upstream authentication.
+** Manage the A2A task lifecycle so operations such as `GetTask`, `ListTasks`, and `CancelTask` return correct results.
+** Discover, govern, monitor, and orchestrate the bridged agent like any native A2A agent.
 
 * When you need it: Use A2A Bridge when you have agents on platforms that aren't yet A2A-compliant (such as Agentforce) and you need Agent Fabric to orchestrate them now. Use A2A Connector instead when you need custom Mule application logic or want to bridge a platform that isn't natively supported.
 
@@ -106,10 +106,10 @@ When several specialized agents must share a request, a broker decides which age
 
 You define the broker and its nodes in Agent Script (`.agent` files), a graph that mixes deterministic and non-deterministic actions.
 
-* Delegate tasks to specialized A2A-compliant agents or other brokers
-* Define routing in Agent Script
+* Delegate tasks to specialized A2A-compliant agents or other brokers.
+* Define routing in Agent Script.
 * Deploy the agent network, including the broker, to a CloudHub 2.0 shared or private space or to a Runtime Fabric target.
-* See connections and call volume in Agent Visualizer
+* See connections and call volume in Agent Visualizer.
 
 Use a broker when routing must span multiple specialized agents. Many solutions run with agents and MCP servers alone.
 
@@ -119,9 +119,9 @@ Learn more: xref:agent-network::af-define-your-agent-network-specification.adoc[
 
 MCP Connector uses the Model Context Protocol so AI clients can invoke APIs, connectors, and apps from a Mule application. The resulting MCP server or client runs in Mule. As a server, the app exposes API-led investments, legacy systems, and SaaS applications that don't natively support MCP. As a client, the app can call external MCP servers.
 
-* Expose Mule apps, connectors, and APIs as MCP tools and resources
-* Run an MCP server or MCP client inside Mule, without a separate hosting environment
-* Use Streamable HTTP (recommended) or SSE (deprecated) for transport
+* Expose Mule apps, connectors, and APIs as MCP tools and resources.
+* Run an MCP server or MCP client inside Mule, without a separate hosting environment.
+* Use Streamable HTTP (recommended) or SSE (deprecated) for transport.
 
 Use MCP Connector when the tools agents need don't map to a single existing API and you need custom Mule logic.
 
@@ -131,8 +131,8 @@ Learn more: xref:mcp-connector::index.adoc[MCP Connector]
 
 A2A Connector implements the A2A protocol in a Mule application so that application can act as an A2A server, an A2A client, or both. Agents can discover capabilities, negotiate interaction, and delegate specialized tasks to other agents.
 
-* Add A2A server and client support to a Mule application
-* Enable agents to interact and delegate specialized tasks to other agents
+* Add A2A server and client support to a Mule application.
+* Enable agents to interact and delegate specialized tasks to other agents.
 
 Use A2A Connector when existing Mule applications must participate as A2A-compliant agents.
 
@@ -142,9 +142,9 @@ Learn more: xref:a2a-connector::index.adoc[A2A Connector]
 
 Agents need the LLMs and knowledge stores you already operate. AI connectors give agentic workflows pre-built access to those models and vector databases so that you don't need to write a custom integration for each one.
 
-* Invoke Agentforce agents and Amazon Bedrock foundation models from Mule
-* Call LLMs through the Einstein Trust Layer or through inference APIs from multiple providers
-* Use vector stores for search and RAG, and compose LLM, vector, and tool operations in Mule
+* Invoke Agentforce agents and Amazon Bedrock foundation models from Mule.
+* Call LLMs through the Einstein Trust Layer or through inference APIs from multiple providers.
+* Use vector stores for search and RAG, and compose LLM, vector, and tool operations in Mule.
 
 Use these connectors when a Mule application must call those AI services directly.
 
@@ -163,9 +163,9 @@ Learn more:
 
 Multi-agent systems are hard to operate when you can't see how work moves through them. Agent Visualizer maps your agents, MCP servers, and LLMs, including agents from external platforms, to verify routing in development and find bottlenecks and failures in production.
 
-* See how agents, brokers, and MCP servers connect
-* Watch live request flows and metrics such as latency, throughput, and error rates
-* Compare historical patterns when a failure isn't obvious in real time
+* See how agents, brokers, and MCP servers connect.
+* Watch live request flows and metrics such as latency, throughput, and error rates.
+* Compare historical patterns when a failure isn't obvious in real time.
 
 Use Agent Visualizer during development to verify the network, at deployment to confirm routing, and in production to troubleshoot.
 
@@ -175,10 +175,10 @@ Learn more: xref:agent-visualizer::index.adoc[]
 
 A defined policy isn't the same as healthy traffic. Monitoring shows latency, error rates, and request volume so that you can catch regressions and decide when to change policy or capacity.
 
-* View runtime health metrics for a service
-* Compare signals across instances or environments
-* Send alerts to Slack, Microsoft Teams, and email
-* Use organization-wide dashboards when observability is enabled
+* View runtime health metrics for a service.
+* Compare signals across instances or environments.
+* Send alerts to Slack, Microsoft Teams, and email.
+* Use organization-wide dashboards when observability is enabled.
 
 Use monitoring during development to validate performance and in production to meet SLAs and catch issues before they affect users.
 
@@ -193,9 +193,9 @@ Agents that reach production without shared security, identity, and policy becom
 
 Omni Gateway is Agent Fabric's runtime enforcement point: a single gateway that sits in front of your agents, APIs, MCP servers, and LLM traffic, regardless of the platform that built them. Policies you define protect production only if they run on the request. A managed instance of an API, agent, or MCP server puts Omni Gateway in that path so authentication, monitoring, and policy enforcement apply.
 
-* Require authentication and authorization on agent, API, and MCP server requests
-* Limit which tools and APIs an agent can call
-* Keep an audit trail of traffic for security and compliance
+* Require authentication and authorization on agent, API, and MCP server requests.
+* Limit which tools and APIs an agent can call.
+* Keep an audit trail of traffic for security and compliance.
 
 Use a managed instance on Omni Gateway when agents or APIs handle sensitive data, call external systems, or must follow the same runtime rules in every environment. LLM traffic uses a model proxy, which you also deploy to Omni Gateway.
 
@@ -205,10 +205,10 @@ Learn more: xref:exp-instances-add.adoc[] and xref:exp-policies-apply-manage.ado
 
 Rewriting the same security, privacy, and cost rules for every agent and service doesn't scale. A governance strategy defines those rules once and applies them across the agents, APIs, and MCP servers in scope.
 
-* Define rules once for access, data privacy, performance and cost, and compliance
-* Apply them at the service or instance so live traffic matches the strategy
-* See which services fail conformance
-* Block or flag noncompliant activity 
+* Define rules once for access, data privacy, performance and cost, and compliance.
+* Apply them at the service or instance so live traffic matches the strategy.
+* See which services fail conformance.
+* Block or flag noncompliant activity. 
 
 Use governance strategies when a portfolio of agents, APIs, and MCP servers must follow the same auditable rules.
 
@@ -218,9 +218,9 @@ Learn more: xref:exp-governance-work-with-strategies.adoc[]
 
 On a multi-vendor gateway landscape, the same control is a different native policy on each platform, so gaps appear. Author the intent once with Universal Policies. MuleSoft translates it for each gateway.
 
-* Author a policy once and apply it across gateways from multiple vendors
-* Enforce common controls such as API key enforcement, CORS, header manipulation, IP allowlisting, and JWT validation
-* Keep the same governance as services move or scale across platforms
+* Author a policy once and apply it across gateways from multiple vendors.
+* Enforce common controls such as API key enforcement, CORS, header manipulation, IP allowlisting, and JWT validation.
+* Keep the same governance as services move or scale across platforms.
 
 Use Universal Policies when you run gateways from more than one vendor and need the same controls on all of them.
 
@@ -230,8 +230,8 @@ Learn more: xref:exp-policies-universal.adoc[]
 
 Services that run on a third-party API gateway still have to meet your standards. Cross-gateway governance includes those APIs in the same conformance view so they don't escape oversight.
 
-* Govern third-party APIs alongside MuleSoft-hosted APIs
-* Monitor conformance across gateways from different vendors
+* Govern third-party APIs alongside MuleSoft-hosted APIs.
+* Monitor conformance across gateways from different vendors.
 
 Use cross-gateway governance when APIs that matter to the business run on a connected third-party gateway and still need to meet your standards.
 
@@ -269,10 +269,10 @@ LLM token spend grows when calls use an expensive model, repeat similar prompts,
 
 Agents that call each LLM provider directly get a different endpoint, a different policy set, and a different bill. A model proxy, deployed to Omni Gateway, is one governed endpoint for multiple providers. Routing, caching, and policy run in front of every call. Token data from those calls feeds cost management.
 
-* Give agents one governed endpoint for multiple model providers
-* Route by model or by meaning (semantic routing)
-* Reuse similar responses with semantic caching to cut latency and spend
-* Apply policies, including the security policies that detect and contain rogue agents
+* Give agents one governed endpoint for multiple model providers.
+* Route by model or by meaning (semantic routing).
+* Reuse similar responses with semantic caching to cut latency and spend.
+* Apply policies, including the security policies that detect and contain rogue agents.
 
 Use a model proxy when agents call LLMs and you need the same governance, routing, and cost visibility across providers.
 
@@ -282,10 +282,10 @@ Learn more: xref:model-proxy.adoc[]
 
 Token usage and spend are visible, so you track and cap cost as needed. Set model costs so token counts read as dollars. Set budgets to limit spend or tokens over time. Use model wallets to cap a caller's token or dollar spend against a provider.
 
-* Monitor token usage and spend across model proxies, agents, and MCP servers
-* See which providers and model wallets are at risk or at their limit
-* Set input and output token costs per model so reports read as dollars
-* Set daily, weekly, or monthly budgets by spend or by tokens
+* Monitor token usage and spend across model proxies, agents, and MCP servers.
+* See which providers and model wallets are at risk or at their limit.
+* Set input and output token costs per model so reports read as dollars.
+* Set daily, weekly, or monthly budgets by spend or by tokens.
 * Cap a model-proxy caller's token or dollar spend against a provider. After the budget is reached, the proxy blocks further requests to that provider's models.
 
 Use budget management when you need visibility and limits on LLM spend. Model wallets require an identity provider. Budgets are approximate: Usage can briefly exceed a limit before the proxy blocks requests.
@@ -300,9 +300,9 @@ Learn more:
 
 A frontier model for a simple task, a repeated prompt, or a bloated payload all add cost without adding value. Optimization policies reduce token consumption without changing what the instance does.
 
-* Route by model or by meaning (semantic routing) instead of always using the most expensive model
-* Reuse results for similar requests with semantic caching
-* Trim unnecessary tools and payload with optimization policies
+* Route by model or by meaning (semantic routing) instead of always using the most expensive model.
+* Reuse results for similar requests with semantic caching.
+* Trim unnecessary tools and payload with optimization policies.
 
 Use cost optimization when token consumption is a significant cost and you want to reduce spend.
 
@@ -319,11 +319,11 @@ Learn more:
 
 You need a place to design and test an agent network before it hits production. Anypoint Code Builder is that environment: You configure agent interactions, develop custom MCP servers, and validate routing locally.
 
-* Design and configure agent network structures with the visual canvas
-* Define routing logic and agent interactions in Agent Script
-* Build and test agent workflows locally before deploying
-* Develop custom MCP servers for specific integration needs
-* Use MuleSoft Vibes to generate and validate network configurations from natural language
+* Design and configure agent network structures with the visual canvas.
+* Define routing logic and agent interactions in Agent Script.
+* Build and test agent workflows locally before deploying.
+* Develop custom MCP servers for specific integration needs.
+* Use MuleSoft Vibes to generate and validate network configurations from natural language.
 
 Learn more: xref:anypoint-code-builder::index.adoc[] and xref:agent-network::af-define-your-agent-network-specification.adoc[]
 
@@ -331,9 +331,9 @@ Learn more: xref:anypoint-code-builder::index.adoc[] and xref:agent-network::af-
 
 Hand-authoring a broker and agent network can be slow, and lead to mistakes at deploy time. MuleSoft Vibes, the AI assistant in Anypoint Code Builder, turns a description of the network you want into YAML  and Agent Script and checks it against architecture best practices before you deploy it.
 
-* Describe your desired agent network in natural language and generate YAML configurations
-* Validate network structure and routing logic against architecture best practices
-* Move faster from initial design through testing and refinement
+* Describe your desired agent network in natural language and generate YAML configurations.
+* Validate network structure and routing logic against architecture best practices.
+* Move faster from initial design through testing and refinement.
 
 Use MuleSoft Vibes when you want to draft or change project files from a description instead of authoring every file by hand.
 
