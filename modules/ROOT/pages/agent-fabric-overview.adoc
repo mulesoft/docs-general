@@ -187,7 +187,7 @@ Learn more: xref:exp-services-monitoring.adoc[] and xref:exp-alerts-configure-no
 [[govern]]
 == AI Security and Governance
 
-Agents that reach production without shared security, identity, and policy become a risk: different platforms enforce different rules, or none. These capabilities define one layer and enforce it on live traffic.
+Agents that reach production without shared security, identity, and policy become a risk, as different platforms enforce different rules, or even none at all. AI security and governance define one layer and enforce it on live traffic.
 
 === Omni Gateway
 
