@@ -26,7 +26,7 @@ Agent Fabric exposes your existing APIs as MCP servers. Agents then get safe, ef
 
 == How It Works
 
-Omni Gateway is the runtime enforcement point for Agent Fabric. This single gateway sits in front of your agents, APIs, and MCP servers so that authentication, monitoring, and policy enforcement apply to every request. When you expose an API as an MCP server, you create the server from the API—choosing which operations to publish as tools—and then deploy it on Omni Gateway. A required MCP support policy makes the server callable, and you apply additional policies to govern every request. The server runs on the same gateway infrastructure you use to manage API traffic.
+Omni Gateway is the runtime enforcement point for Agent Fabric. This single gateway sits in front of your agents, APIs, and MCP servers so that authentication, monitoring, and policy enforcement apply to every request. When you expose an API as an MCP server, you create the server from the API and choose which operations to publish as tools. You then deploy the MCP server on Omni Gateway. A required MCP support policy makes the server callable, and you apply additional policies to govern every request. The server runs on the same gateway infrastructure you use to manage your API traffic.
 
 Each agent request follows this path:
 
