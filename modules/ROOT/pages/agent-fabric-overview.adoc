@@ -53,7 +53,7 @@ Learn more: xref:exp-portfolio-overview.adoc[]
 
 === Scanners
 
-Agents appear on cloud platforms faster than teams can register them by hand. Scanners watch supported providers and add discovered agents, APIs, and MCP servers to the matching portfolio catalog so the inventory stays current.
+Agents appear on cloud platforms faster than teams can manually register them. Scanners watch supported platforms and automatically register any agents, APIs, and MCP servers they discover to the matching portfolio catalog.
 
 * Connect cloud providers as scanner sources
 * Discover and register agents, MCP servers, and APIs on a schedule or on demand
