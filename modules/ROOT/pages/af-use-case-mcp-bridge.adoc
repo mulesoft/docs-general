@@ -18,19 +18,11 @@ You need a way to make this API infrastructure available to agents safely and ef
 
 Agent Fabric exposes your existing APIs as MCP servers. Agents then get safe, efficient API access:
 
-* Rapid integration: Connects existing API instances to agents through simple configuration, with no rewriting required.
-* Selective exposure: Exposes only the API operations you choose as discrete MCP tools that agents can discover and call. Limit agent access to read-only operations when needed, without modifying the underlying API.
-* Centralized management: Provides a single point of control for API access, with governance policies applied from the same portfolio.
-* Agent-facing abstraction: Exposes existing REST API operations as MCP tools so agents can call them without needing API-specific details.
-* Asset reuse: Works with your MuleSoft API infrastructure without rebuilding assets.
-
-Key benefits include:
-
-* Connect agents in minutes, not weeks: Turn an existing API into agent-ready tools through configuration alone, and skip the custom integration that each agent platform otherwise requires.
-* Never expose an operation by accident: Agents can call only the operations you explicitly map as tools, so write and delete stay off-limits unless you choose to expose them.
-* Control every agent through one interface: All agents reach your APIs the same way. That consistency removes per-platform access that's hard to audit.
-* Get more from what you built: Reuse APIs you manage and govern without rebuilding them for agentic use.
-* Govern agent API access from one place: A single point of control means access, policy, and monitoring stay unified as you add agents.
+* Rapid integration: Connects existing API instances to agents through configuration alone, without rewriting the API or building a custom integration for each agent platform.
+* Selective exposure: Exposes only the operations you explicitly map as discrete MCP tools that agents can discover and call. Write and delete operations stay off-limits unless you choose to expose them, without modifying the underlying API.
+* Centralized management: Provides a single point of control so that all agents reach your APIs the same way. Access, policy, and monitoring stay unified as you add agents, with governance policies applied from the same portfolio.
+* Agent-facing abstraction: Presents existing REST API operations as MCP tools so that agents can call them without needing API-specific details.
+* Asset reuse: Works with your MuleSoft API infrastructure without rebuilding assets for agentic use.
 
 == How It Works
 
