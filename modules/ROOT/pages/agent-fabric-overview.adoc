@@ -280,7 +280,7 @@ Learn more: xref:model-proxy.adoc[]
 
 === Budget Management
 
-Token usage and spend are visible, so you see where cost goes and cap it. Set model costs so token counts read as dollars. Set budgets to limit spend or tokens over time. Use model wallets to cap a caller's token or dollar spend against a provider.
+Token usage and spend are visible, so you track and cap cost as needed. Set model costs so token counts read as dollars. Set budgets to limit spend or tokens over time. Use model wallets to cap a caller's token or dollar spend against a provider.
 
 * Monitor token usage and spend across model proxies, agents, and MCP servers
 * See which providers and model wallets are at risk or at their limit
