@@ -44,7 +44,7 @@ Teams rebuild agents and tools that already exist because nobody can find them. 
 
 * Find and reuse registered agents, MCP servers, model proxies, APIs, and gateways
 * See conformance status and instance health before you depend on an asset
-* Govern, monitor, and manage lifecycle from the asset's catalog page
+* Govern, monitor, and manage an asset's lifecycle from the catalog page
 * Publish agent networks and MCP servers so other teams can reuse them
 
 Use the registry when you start a new agentic project and want existing assets first, or when you want to share what your team built.
