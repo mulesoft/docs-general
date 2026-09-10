@@ -1,6 +1,7 @@
 .xref:index.adoc[Anypoint Platform]
 * xref:index.adoc[Documentation]
 * xref:agent-fabric-overview.adoc[Agent Fabric]
+  ** xref:af-get-started.adoc[]
   ** xref:learning-map-agent-fabric.adoc[Get Started with Agent Fabric]
   ** xref:agent-fabric-release-notes.adoc[]
 * xref:learning-map-exp.adoc[]
