@@ -4,7 +4,7 @@ Agentic systems make model calls constantly, and every call costs tokens. As you
 
 == The Problem
 
-As agentic systems scale, LLM costs can spiral without visibility and enforcement:
+Without visibility and enforcement, as agentic systems scale, your LLM costs can spiral. Consider these cost factors:
 
 * Unpredictable costs: Token usage varies widely based on agent behavior and queries.
 * No visibility: Costs can't be attributed to the providers, models, and callers that generated them.
