@@ -30,10 +30,6 @@ Each use case below maps a specific business problem to the Agent Fabric capabil
 |Monitor token usage across agents and applications, then route queries to cost-effective models based on complexity.
 |xref:af-use-case-cost-management.adoc[Cost Control]
 
-|Build complex, deterministic workflows with error handling
-|Handle multi-step business logic, error scenarios, and unhappy paths that simple agent loops can't reliably address.
-|xref:af-use-case-orchestration.adoc[Agentic Orchestration]
-
 |===
 
 == Discover and Govern Agents Across Your Organization
@@ -64,10 +60,6 @@ For more information, see xref:af-use-case-cost-management.adoc[].
 
 Use agent brokers and agent networks to coordinate task delegation across A2A-compliant agents with guided determinism. Define broker routing logic in Agent Script to handle complex business processes, error scenarios, and unhappy paths that require multiple specialized agents working in sequence. For example, an order management process that involves a research agent, a pricing agent, and an approval agent can be wired together in a single agent network with a broker that routes each step to the right specialist.
 
-For more information, see xref:af-use-case-orchestration.adoc[].
-
-
-
 == Get Started
 
 New to Agent Fabric? Start with the xref:agent-fabric-overview.adoc[Agent Fabric Overview] and xref:learning-map-agent-fabric.adoc[Agent Fabric learning map] to understand the fundamentals.
@@ -80,6 +72,5 @@ After you understand the basics, choose a use case to implement.
 * xref:learning-map-agent-fabric.adoc[]
 * xref:af-use-case-cost-management.adoc[]
 * xref:af-use-case-mcp-bridge.adoc[]
-* xref:af-use-case-orchestration.adoc[]
 * //xref:af-use-case-policy-enforcement.adoc[]
 * //xref:af-use-case-registry.adoc[]

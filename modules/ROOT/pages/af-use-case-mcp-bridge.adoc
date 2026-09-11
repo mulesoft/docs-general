@@ -316,4 +316,3 @@ MCP servers work with existing identity infrastructure so that agent access to A
 With your APIs exposed as MCP servers providing safe API access, you're ready to:
 
 * xref:af-use-case-policy-enforcement.adoc[Apply Omni Gateway policies to broker endpoints]
-* xref:af-use-case-orchestration.adoc[Build agent networks]
