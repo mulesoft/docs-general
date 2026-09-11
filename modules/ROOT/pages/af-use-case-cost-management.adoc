@@ -179,7 +179,7 @@ Follow these steps to set up cost management in Agent Fabric.
 
 === Step 3: Turn On Cost Visibility
 
-. Identify each caller at the proxy so traffic attributes to the right wallet.
+. Identify each caller at the proxy to allocate traffic costs to the right wallet.
 . Use Cost Management to view token consumption and spend by provider, model, and wallet.
 
 === Step 4: Establish Baseline Costs
