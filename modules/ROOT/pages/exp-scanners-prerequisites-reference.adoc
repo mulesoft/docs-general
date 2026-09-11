@@ -246,6 +246,25 @@ a|
 
 *Role:* `ACCOUNTADMIN`
 
+| Informatica Cloud Data Governance and Catalog (CDGC)
+| Data
+a|
+*Credentials:* Region; Informatica username and password. The scanner uses your Informatica Intelligent Cloud Services (IICS) username and password to authenticate against the selected region's pod and exchanges them for a session token.
+
+*Region options:*
+
+* North America (NA pod)
+* EMEA (EM pod)
+* United Kingdom (UK pod)
+* Asia Pacific & Japan (AP pod)
+* Canada (NA pod)
+
+*Account:* Informatica Intelligent Cloud Services (IICS) account with Cloud Data Governance and Catalog (CDGC) enabled, with access to the catalog sources you want to scan
+
+*Setup:* At least one CDGC catalog source registered (for example, a Snowflake connection) so that datasets, classifications, glossary terms, and quality metrics are available to ingest
+
+[NOTE]
+The Informatica CDGC scanner is part of the Context Catalog capability in Agent Fabric and is available only when your administrator has enabled the feature for your organization.
 | Amazon (AWS Secrets Manager)
 | Vault
 a|

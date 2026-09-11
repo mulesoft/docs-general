@@ -9,7 +9,7 @@ Your AI services stay audit-ready with clear visibility into cost and runtime he
 
 The enhanced MuleSoft experience supports the full lifecycle of AI-connected integration services:
 
-Entity Management:: Register and manage agents, REST and GraphQL APIs, MCP servers, Model proxies, and gateways, including Anypoint Omni Gateway, external gateways, and unmanaged gateways. Each type has a dedicated catalog under *Portfolio*.
+Entity Management:: Register and manage agents, REST and GraphQL APIs, MCP servers, Model proxies, and gateways, including Anypoint Omni Gateway, external gateways, and unmanaged gateways. Each type has a dedicated catalog under *Portfolio*. When your administrator enables the Context Catalog feature, a *Data Services* catalog also appears, holding data services imported by an Informatica scanner.
 
 Governance and Compliance:: Define and apply policies across domains such as access and security, performance and cost, data privacy and integrity, and compliance and observability. For connected third-party API gateways (Azure API Management, Google Apigee, and Kong Gateway), apply, enable, disable, and remove policies directly from Anypoint through policy write, with no Omni Gateway in the request path. Conformance reporting summarizes rule violations and severity so you can close gaps systematically.
 
@@ -34,7 +34,7 @@ Sign in through your entry path and land on *Home*. Scan *Portfolio* catalogs, *
 For AI assistant usage, see xref:exp-ai-assistant-use.adoc[].
 . Register services in *Portfolio*.
 +
-Under *Portfolio*, open *Agents*, *MCP Servers*, *Model Proxies*, *APIs*, or *Gateways*. Add services to work with. Register them manually or use connected providers under *Platform* > *Providers* if your organization enables discovery flows. For registration methods, see xref:exp-services-add-to-portfolio.adoc[].
+Under *Portfolio*, open *Agents*, *MCP Servers*, *Model Proxies*, *APIs*, or *Gateways*—or *Data Services* when Context Catalog is enabled. Add services to work with. Register them manually or use connected providers under *Platform* > *Providers* if your organization enables discovery flows. For registration methods, see xref:exp-services-add-to-portfolio.adoc[].
 . Create and manage instances.
 +
 In *Portfolio*, open a service detail page from *Agents*, *MCP Servers*, *Model Proxies*, or *APIs*, then open the *Instances* tab to create managed or unmanaged deployments that match your needs. Managed instances on Omni Gateway give stronger governance and monitoring when the new experience exposes them. *Gateways* don't include an *Instances* tab on their detail page. For instance workflows, see xref:exp-instances-add.adoc[].
