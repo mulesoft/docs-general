@@ -38,7 +38,7 @@ Key benefits include:
 
 Omni Gateway is the runtime enforcement point for Agent Fabric. The Model Proxy runs on Omni Gateway and provides one governed endpoint for many LLM providers. Because all model traffic that you route through the proxy passes through this endpoint, cost management works in stages: see spend, reduce it, cap it, and contain anomalies. Usage that never reaches the proxy isn't included.
 
-=== See and Attribute Spend
+=== Review and Attribute Spend
 
 First, set a cost for each model so token usage translates into dollars. The Cost Management dashboard shows token consumption and spend across governed model calls, broken down by provider, model, and wallet. You can view usage as tokens or as dollars.
 
@@ -183,9 +183,9 @@ Follow these steps to set up cost management in Agent Fabric.
 
 === Step 2: Set Model Costs
 
-. Set the input and output token cost for each model your proxies use.
-. Do this early: dollar figures accrue only from the time costs are set, not retroactively.
-. Note that a model with no configured cost shows zero spend, though its token usage is still counted.
+Set the input and output token cost for each model your proxies use so token usage translates into spend. Dollar figures accrue only from the time you set costs, not retroactively, so set them early. A model with no configured cost shows zero spend, though its token usage is still counted.
+
+For the steps to set model costs, see xref:exp-models-manage-costs.adoc[].
 
 === Step 3: Turn On Cost Visibility
 
