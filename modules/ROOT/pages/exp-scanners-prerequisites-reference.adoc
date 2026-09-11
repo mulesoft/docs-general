@@ -204,6 +204,8 @@ a|
 
 *Write scope (policy apply):* Admin API write permission required to apply, enable, disable, or remove policy in target environments
 
+*Setup:* To discover accurate, typed API definitions, link each Kong Gateway service to a Catalog API that has an attached OpenAPI Specification (OAS). For the required workflow and route-discovery limitations, see xref:exp-scanners-add-from-providers.adoc#kong-gateway-scanner-openapi-specifications[].
+
 | Akamai Security
 | API Security
 a|
@@ -285,7 +287,7 @@ Policy write reuses the same connection you configure for scanning; there's no s
 
 * *Write permissions on the connection:* The scanner connection's identity must have the provider's write scope, not just read access. A connection with read-only access to the provider can discover and read policies, but policy actions remain unavailable.
 * *Write scope:* The write scope covers enabling, disabling, and removing existing vendor-native policies, and creating and editing universal (canonical) policies, at both the instance and service scope. Creating and editing native vendor policies isn't supported.
-* *Provider write permissions:* Grant the provider-specific *Write scope (policy apply)* listed for each API gateway provider in the xref:_scanner_prerequisite_matrix[].
+* *Provider write permissions:* Grant the provider-specific *Write scope (policy apply)* listed for each API gateway provider in the Scanner Prerequisites Matrix.
 
 The following table summarizes the read and write scopes for each API gateway provider that supports policy write.
 
@@ -295,12 +297,11 @@ The following table summarizes the read and write scopes for each API gateway pr
 | Read Scope
 | Write Scope
 
-// TODO: Amazon API Gateway policy write is deferred to a later release. Restore this row when AWS write support ships.
-////
 | Amazon API Gateway
 | `apigateway:GET`
-| `apigateway:PUT`, `apigateway:POST`, `apigateway:DELETE`
-////
+| Not supported
+// TODO: Amazon API Gateway policy write is deferred to a later release. Restore the write scope below when AWS write support ships.
+// `apigateway:PUT`, `apigateway:POST`, `apigateway:DELETE`
 
 | Azure API Management
 | Reader role (ARM)
