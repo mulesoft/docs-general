@@ -1,14 +1,15 @@
 = Get Started with Agent Fabric
-:keywords: mulesoft agent fabric, get started, prerequisites, permissions, access management, anypoint platform, omni gateway, mcp server, model proxy
+:keywords: mulesoft agent fabric, get started, prerequisites, permissions, access management, anypoint platform, omni gateway, mcp server, model proxy, portfolio
 
-Agent Fabric is the AI control plane for agents, MCP servers, and APIs across platforms. Because Agent Fabric spans several products and features, the prerequisites and required permissions differ by the job you want to do. Use this guide to confirm access before you catalog assets, enable agent actions, apply governance, or control LLM cost.
+Agent Fabric is the AI control plane for agents, MCP servers, and APIs across platforms. Because Agent Fabric spans several products, what you need differs by the job you want to do.
 
-Start with <<access>> and the shared checks in <<before-you-begin>>, then complete the prerequisites and permissions for only the products you plan to use. For an end-to-end tour of what Agent Fabric does, see xref:agent-fabric-overview.adoc[] and the xref:learning-map-agent-fabric.adoc[].
+Use this checklist to confirm access, then complete each job you plan to use. Start with <<before-you-begin>>, then work through <<setup>>.
 
+////
 [[access]]
 == Access Agent Fabric
 
-Your organization determines how you reach the Agent Fabric experience. Common entry points include these environments.
+Your organization determines how you reach Agent Fabric. Common entry points include these environments.
 
 * Anypoint Platform
 +
@@ -25,49 +26,53 @@ Your organization can build access through another tool. Follow the internal acc
 
 [NOTE]
 Available access points depend on how your administrators configured the experience's integrations with other platforms.
+////
 
 [[before-you-begin]]
 == Before You Begin
 
-Complete these shared checks with your administrator before you rely on any Agent Fabric product in production. Requirements vary by entry point and by which products you use.
+Complete these checks with your administrator before you rely on Agent Fabric in production. Requirements vary by entry point and by which jobs you do.
 
 Access and Credentials::
 +
 * Confirm that you have an Anypoint Platform user account and valid credentials for your organization's entry path.
-* Confirm that you can reach Agent Fabric and integrated services from the networks and locations you use.
 
 Platform and Product Access::
 +
-* Confirm that your organization has the required product access for Agent Fabric and that an administrator enabled it for your Anypoint Platform business group or organization. If Agent Fabric isn't available, contact your Anypoint Platform organization administrator or MuleSoft account team.
-* Confirm that generative AI is enabled for your organization when you use AI-assisted features. See xref:access-management::enabling-generative-ai.adoc[].
+* Confirm that your organization has the required product access for Agent Fabric and that an administrator turned it on for your Anypoint Platform business group or organization. If Agent Fabric isn't available, contact your Anypoint Platform organization administrator or MuleSoft account team.
+* Confirm that generative AI is turned on for your organization when you use AI-assisted features. See xref:access-management::enabling-generative-ai.adoc[].
 * Confirm that any connected Salesforce orgs are linked. See xref:access-management::connecting-salesforce-orgs.adoc[].
 
 Permissions::
 +
 * Agent Fabric uses Anypoint Platform access management. Your administrator maps jobs to roles and permissions in Access Management, and exact permission names differ by organization.
-* Use the per-product permission tables in this guide together with your internal access guide. For the shared experience permissions table, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+* Use the permission tables in <<setup>> together with your internal access guide. For the enhanced experience permissions table, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 * If you can't complete an action or a page shows an authorization error, ask your organization administrator for the matching permission or role.
 
 [TIP]
 ====
-Several products share recurring platform prerequisites:
+These runtime pieces show up in more than one job:
 
 * *Omni Gateway* (managed or self-managed) puts authentication, monitoring, and policy in the request path. It's required for managed instances, A2A bridges, model proxies, and rogue-agent containment. Model Proxy requires an Omni Gateway running in Connected Mode.
-* An *identity provider (IdP)* that issues JWTs is required for model wallets and rogue-agent detection.
-* A connected *provider scanner* is required before you can apply policies to, or govern, third-party gateway APIs.
+* An identity provider (IdP) that issues JSON Web Tokens (JWTs) is required for model wallets and rogue-agent detection.
+* A connected provider scanner is required before you apply policies to, or govern, third-party gateway APIs.
 ====
 
-[[registry]]
-== Agent Registry
+[[setup]]
+== Set Up Agent Fabric
 
-Catalog every agent, MCP server, and API, and keep that inventory current with scanners.
+After you complete <<before-you-begin>>, work through this checklist. Add services to the portfolio first. Then complete the jobs you plan to do.
 
-=== Portfolio and Registration
+. [[registry]]Add your services to the portfolio to find and reuse agents, MCP servers, and APIs.
++
+--
+Catalog every agent, MCP server, and API, and keep that inventory current by using scanners.
 
-*Prerequisites*
+[discrete]
+=== Register Services
 
 * An Anypoint Platform account with the required product access for Agent Fabric (see <<before-you-begin>>).
-* Gateways are created in Anypoint Platform and opened from the Agent Fabric experience.
+* Gateways created in Anypoint Platform and opened from Agent Fabric.
 
 [cols="1,2a",options="header"]
 |===
@@ -78,14 +83,13 @@ Catalog every agent, MCP server, and API, and keep that inventory current with s
 
 Learn more: xref:exp-portfolio-overview.adoc[] and xref:exp-services-add-to-portfolio.adoc[].
 
-=== Scanners and Providers
-
-*Prerequisites*
+[discrete]
+=== Discover Services with Scanners
 
 * An Anypoint Platform account with the required product access for Agent Fabric (see <<before-you-begin>>).
 * A connected cloud provider under *Platform* > *Providers* for each source you scan.
-* Provider-specific credentials and permission scopes. For example, third-party gateway policy write requires connection credentials that carry the provider's write scope, and the Microsoft Copilot Studio scanner can require a pre-configured OAuth app. See xref:exp-scanners-prerequisites-reference.adoc[].
-* The Akamai API Security scanner appears only when your administrator enables that feature for your organization.
+* Provider-specific credentials and permission scopes. For example, writing policies to a third-party gateway requires connection credentials that carry the provider's write scope, and the Microsoft Copilot Studio scanner can require a pre-configured OAuth app. See xref:exp-scanners-prerequisites-reference.adoc[].
+* The Akamai API Security scanner, available only when your administrator turns on that feature for your organization.
 
 [cols="1,2a",options="header"]
 |===
@@ -94,15 +98,15 @@ Learn more: xref:exp-portfolio-overview.adoc[] and xref:exp-services-add-to-port
 |===
 
 Learn more: xref:exp-scanners-add-from-providers.adoc[] and xref:exp-providers-manage.adoc[].
+--
 
-[[enable-actions]]
-== Enable Agents to Take Action
+. [[enable-actions]]Make APIs and agents available as tools so agents can take action without a rebuild.
++
+--
+Start with existing APIs as MCP servers, and use an A2A bridge for agents that aren't A2A-compliant.
 
-Make the APIs, applications, and agents you already run available as tools. Start by exposing existing APIs as MCP servers, and use an A2A bridge for agents that aren't A2A-compliant.
-
+[discrete]
 === Expose APIs as MCP Servers
-
-*Prerequisites*
 
 * An Anypoint Platform account with the required product access for Agent Fabric (see <<before-you-begin>>).
 * An existing API or SaaS system to expose.
@@ -115,11 +119,10 @@ Make the APIs, applications, and agents you already run available as tools. Star
 
 Learn more: xref:exp-services-create-mcp-server.adoc[].
 
-=== A2A Bridge
+[discrete]
+=== Make Agents A2A-Compliant
 
-*Prerequisites*
-
-* A source agent already registered in Portfolio that isn't already A2A-compliant. Salesforce Agentforce is the supported source platform today. Amazon Bedrock AgentCore and Google Vertex AI are natively A2A-compliant, so you register them directly without a bridge.
+* A source agent that's registered in Portfolio and that isn't A2A-compliant. Salesforce Agentforce is the supported source platform. Amazon Bedrock AgentCore and Google Vertex AI are natively A2A-compliant, so you register them directly without a bridge.
 * A managed or self-managed Omni Gateway in the target environment.
 * Credentials for the source agent's platform, such as the Salesforce org URL, OAuth token URL, client ID, and client secret for Agentforce.
 
@@ -131,24 +134,23 @@ Learn more: xref:exp-services-create-mcp-server.adoc[].
 
 Learn more: xref:exp-services-create-a2a-bridge.adoc[].
 
-=== Connectors and Agent Networks
-
-*Prerequisites*
+[discrete]
+=== Build Connector Apps and Agent Networks (Optional)
 
 * Anypoint Code Builder or Anypoint Studio to build Mule applications that use MCP Connector, A2A Connector, or the AI connectors.
 * A deployment target such as a CloudHub 2.0 shared or private space, or a Runtime Fabric target, when you deploy an agent network.
-* Provider credentials for any AI services a connector calls, such as an LLM provider or vector store.
+* Provider credentials for any AI services that a connector calls, such as an LLM provider or vector store.
 
 Learn more: xref:mcp-connector::index.adoc[MCP Connector], xref:a2a-connector::index.adoc[A2A Connector], and xref:agent-network::af-get-started.adoc[Get Started with Agent Networks].
+--
 
-[[govern]]
-== AI Security and Governance
+. [[govern]]Put Omni Gateway in the request path and apply security and governance rules.
++
+--
+Define rules once and apply them across agents, APIs, and MCP servers.
 
-Put Omni Gateway in the request path, then define rules once and apply them across agents, APIs, and MCP servers.
-
-=== Omni Gateway Instances and Policies
-
-*Prerequisites*
+[discrete]
+=== Create Instances and Apply Policies
 
 * A managed instance requires an Omni Gateway.
 * Applying policies to third-party gateway APIs (Azure API Management, Google Apigee, or Kong Gateway) requires a connected provider scanner whose credentials carry the provider's write scope.
@@ -165,29 +167,41 @@ Put Omni Gateway in the request path, then define rules once and apply them acro
 
 Learn more: xref:exp-instances-add.adoc[], xref:exp-policies-apply-manage.adoc[], and xref:exp-policies-universal.adoc[].
 
-=== Governance Strategies and Cross-Gateway Governance
+[discrete]
+=== Create Governance Strategies (Optional)
 
-*Prerequisites*
-
-* A governance strategy in scope, and Governance available for your tenant.
+* A governance strategy in scope, and Governance that's available for your tenant.
 * For third-party API governance: a connected third-party gateway scanner and control rules authored as a governance ruleset.
 
 [cols="1,2a",options="header"]
 |===
 | To do this | You need
 | Create governance strategies | API Governance: Governance Administrator for Control types, or API Manager: Manage Policies for Automated Policy types
-| View governance reports | One of: API Governance: Governance Viewer or Governance Administrator (Exchange Viewer is also needed for the conformance badge)
+| View governance reports | One of: API Governance: Governance Viewer or Governance Administrator (You also need Exchange Viewer for the conformance badge)
 |===
 
 Learn more: xref:exp-governance-work-with-strategies.adoc[], xref:exp-governance-govern-third-party-apis.adoc[], and xref:exp-governance-monitor-cross-gateway-conformance.adoc[].
 
-=== Security: Rogue Agents, Vaults, and Akamai
+[discrete]
+=== Detect Rogue Agents, Connect Vaults, and Correlate Akamai Risk (Optional)
 
-*Prerequisites*
+Detect and contain rogue agents::
++
+* Omni Gateway 1.13.5 or later
+* Each monitored agent registered with a unique instance name and linked to its model proxies
+* Agents set up as service identities in your IdP
+* JWT Validation policy applied to each protected model proxy
 
-* *Detect and contain rogue agents*: Omni Gateway 1.13.5 or later; each monitored agent registered with a unique instance name and linked to its model proxies; agents set up as service identities in your IdP; and the JWT Validation policy applied to each protected model proxy.
-* *External vaults*: access to the external secrets manager (endpoint URL and credentials). Supported vaults are AWS Secrets Manager, Microsoft Azure Key Vault, and HashiCorp Vault.
-* *Akamai risk correlation*: Akamai Security base URL, client ID, and client secret; an Akamai service account and a MuleSoft connected app for the bidirectional tenant setup; and existing APIs and MCP services in Portfolio to correlate against.
+Connect an external vault::
++
+* Access to the external secrets manager (endpoint URL and credentials)
+* A supported vault: AWS Secrets Manager, Microsoft Azure Key Vault, or HashiCorp Vault
+
+Set up Akamai risk correlation::
++
+* Akamai Security base URL, client ID, and client secret
+* An Akamai service account and a MuleSoft connected app for the bidirectional tenant setup
+* Existing APIs and MCP services in Portfolio to correlate against
 
 [cols="1,2a",options="header"]
 |===
@@ -199,26 +213,27 @@ Learn more: xref:exp-governance-work-with-strategies.adoc[], xref:exp-governance
 |===
 
 Learn more: xref:exp-detect-and-contain-rogue-agents.adoc[], xref:exp-vaults-manage.adoc[], and xref:exp-akamai-risk-correlation.adoc[].
+--
 
-[[cost-control]]
-== AI Cost Control
+. [[cost-control]]Create a model proxy, cap spend, and reduce what each call consumes.
++
+--
+Give agents one governed endpoint for multiple LLM providers.
 
-Give agents one governed endpoint for multiple LLM providers, then cap spend and reduce what each call consumes.
+[discrete]
+=== Create a Model Proxy
 
-=== Model Proxy
-
-*Prerequisites*
-
-* A managed or self-managed Omni Gateway running in Connected Mode. Model Proxy is supported only on Omni Gateway.
-* Up to 50 model proxies per Large Omni Gateway.
+* A managed or self-managed Omni Gateway running in Connected Mode. Model Proxy runs only on Omni Gateway.
+* Up to 50 model proxies on each Large Omni Gateway.
 
 Learn more: xref:model-proxy.adoc[].
 
-=== Budget Management
+[discrete]
+=== Set Model Costs and Cap Spend with Wallets
 
-*Prerequisites*
-
-* *Model wallets*: at least one configured model proxy; a configured IdP that issues JWTs for callers (organizations without an IdP can't use model wallets); and the required policies on each model proxy (JWT Validation applied, with DataWeave Headers Transformation and Client ID Enforcement disabled).
+* At least one configured model proxy
+* A configured IdP that issues JWTs for callers. Organizations without an IdP can't use model wallets.
+* JWT Validation applied on each model proxy, with DataWeave Headers Transformation and Client ID Enforcement turned off
 
 [cols="1,2a",options="header"]
 |===
@@ -230,23 +245,19 @@ Learn more: xref:model-proxy.adoc[].
 
 Learn more: xref:exp-governance-view-cost-and-token-usage.adoc[], xref:exp-model-wallets-manage.adoc[], and xref:exp-models-manage-costs.adoc[].
 
-=== Cost Optimization
+[discrete]
+=== Route and Cache Model Calls (Optional)
 
-*Prerequisites*
-
-* A configured model proxy on Omni Gateway, which hosts the semantic routing and semantic caching services.
+* A configured model proxy on Omni Gateway. Omni Gateway hosts the semantic routing and semantic caching services.
 
 Learn more: xref:model-proxy-semantic-service.adoc[] and xref:model-proxy-semantic-caching-service.adoc[].
+--
 
-[[observe]]
-== Observe Agent Traffic
-
-See how agents, brokers, and MCP servers connect, and watch latency, errors, and volume in production.
-
-*Prerequisites*
-
-* Managed paths on Omni Gateway for the metrics the experience surfaces.
-* A connected and approved observability backend for organization-wide dashboards, when your tenant includes Observability.
+. [[observe]]Monitor how agents, brokers, and MCP servers connect, including latency, errors, and volume.
++
+--
+* Managed paths on Omni Gateway for the metrics that the experience surfaces.
+* A connected and approved observability backend for organization-wide dashboards when your tenant includes Observability.
 * For alert delivery: the MuleSoft Slack app installed in your workspace, or the MuleSoft for Teams app installed in your Microsoft Teams tenant.
 
 [cols="1,2a",options="header"]
@@ -258,16 +269,13 @@ See how agents, brokers, and MCP servers connect, and watch latency, errors, and
 |===
 
 Learn more: xref:agent-visualizer::index.adoc[Agent Visualizer], xref:exp-services-monitoring.adoc[], and xref:exp-alerts-configure-notifications.adoc[].
+--
 
-[[supporting-tools]]
-== Supporting Tools
-
-Design and test agent networks and MCP servers before they reach production.
-
-*Prerequisites*
-
+. [[supporting-tools]](Optional) Design and test agent networks and MCP servers in Anypoint Code Builder before they reach production.
++
+--
 * Anypoint Code Builder for the visual canvas, Agent Script authoring, and custom MCP server development.
-* Generative AI enabled for your organization to use MuleSoft Vibes and other AI-assisted features.
+* Generative AI turned on for your organization, required for MuleSoft Vibes and other AI-assisted features.
 
 [cols="1,2a",options="header"]
 |===
@@ -277,6 +285,7 @@ Design and test agent networks and MCP servers before they reach production.
 |===
 
 Learn more: xref:anypoint-code-builder::index.adoc[] and xref:anypoint-code-builder::vibes-get-started.adoc[].
+--
 
 == See Also
 
