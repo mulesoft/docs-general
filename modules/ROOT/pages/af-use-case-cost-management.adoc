@@ -40,7 +40,7 @@ Omni Gateway is the runtime enforcement point for Agent Fabric. The Model Proxy 
 
 === See and Attribute Spend
 
-First, set a cost for each model so token usage translates into dollars. The Cost Management dashboard then shows token consumption and spend across governed model calls, broken down by provider, model, and wallet. You can view usage as tokens or as dollars.
+First, set a cost for each model so token usage translates into dollars. The Cost Management dashboard shows token consumption and spend across governed model calls, broken down by provider, model, and wallet. You can view usage as tokens or as dollars.
 
 Token counts come from the traffic itself, but dollar figures depend on the per-model costs you set, and cost tracking starts from the time you set those costs rather than retroactively. Set model costs early so spend data reflects your full usage. A model with no configured cost shows zero spend, though its token usage is still counted.
 
