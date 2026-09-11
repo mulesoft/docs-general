@@ -160,7 +160,9 @@ Here's how it works:
 
 *Challenge:* An agent is compromised or misconfigured and begins making unusual, high-volume model calls that drive unexpected spend.
 
-With runaway-agent containment you stop the bleeding without taking down the whole system:
+With runaway-agent containment you stop the bleeding without taking down the whole system.
+
+Here's how it works:
 
 . Apply the Rogue Agent Detection and Agent Kill Switch policies to the model proxy.
 . Rogue Agent Detection flags the agent's anomalous behavior for review.
