@@ -102,7 +102,9 @@ These scenarios demonstrate how different organizations use Agent Fabric to brin
 
 *Challenge:* A large organization has agents deployed across multiple business units but no visibility into which callers and providers are driving LLM costs.
 
-With Agent Fabric you get cost visibility for traffic that goes through the Model Proxy:
+With Agent Fabric you get cost visibility for traffic that goes through the Model Proxy.
+
+Here's how it works:
 
 . Route LLM traffic through the Model Proxy.
 . Set a cost for each model so token usage translates into spend.
