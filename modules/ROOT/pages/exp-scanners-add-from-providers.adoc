@@ -113,7 +113,7 @@ To attach an OAS so the scanner can read it:
 
 . In the Kong *Catalog* section, create an API.
 . Attach the OAS spec to the Catalog API.
-. Link the Catalog API to a service in Kong Gateway.
+. Link the Catalog API to a gateway service in Kong Gateway.
 
 For more information, see the https://developer.konghq.com/api-catalog/[Kong API catalog documentation^].
 
