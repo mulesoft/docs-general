@@ -8,7 +8,7 @@ Without visibility and enforcement, as agentic systems scale, your LLM costs can
 
 * Unpredictable token use: Token usage varies widely based on agent behavior and queries.
 * No visibility: Costs can't be attributed to the providers, models, and callers that generated them.
-* Inefficient model usage: Expensive models handle simple queries that cheaper models could address.
+* Inefficient model usage: Teams use expensive models for simple queries when cheaper models could the work.
 * Budget overruns: Nothing enforces the budget, so a number in the plan isn't a real limit.
 * Runaway agents: A compromised or malfunctioning agent can drive unexpected cost.
 * No optimization path: Without data on usage patterns, optimization is guesswork.
