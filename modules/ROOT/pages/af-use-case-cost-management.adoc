@@ -64,7 +64,7 @@ Complex query: "Analyze this quarter's sales trends, identify anomalies, and rec
 
 === Cap Spend with Model Wallets
 
-A Model Wallet identifies a caller of the Model Proxy and caps that caller's token or dollar spend against a provider over a period you set:
+A Model Wallet identifies a caller of the Model Proxy and caps that caller's token or dollar spend against a provider over a period you set. Apply these cost control options:
 
 * Enforced limits: When a wallet reaches its budget, the proxy blocks further requests to that provider's models.
 * Periodic caps: Set a daily, weekly, or monthly limit that resets on a schedule, so spend stays bounded each period.
