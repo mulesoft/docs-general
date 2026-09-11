@@ -43,7 +43,7 @@ Because the bridge is always A2A-compliant, A2A clients consume a bridged agent 
 
 | Salesforce Agentforce
 | Available
-| Bridge translates A2A to the Agentforce Einstein AI Agent v1 API. Supports streaming and human-in-the-loop.
+| Bridge translates A2A to the Agentforce Agent API. Supports streaming and human-in-the-loop.
 
 | Microsoft Copilot Studio
 | Planned
