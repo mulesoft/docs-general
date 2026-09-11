@@ -42,10 +42,10 @@ You can't govern, secure, or manage the costs of agents you don't know about. Th
 
 === Registry
 
-Teams rebuild agents and tools that already exist when they can't find those assets. Your portfolio is a catalog of agents, MCP servers, model proxies, APIs, and gateways. The portfolio also contains a curated set of public MCP servers from the Official MCP Registry and Informatica.
+Teams rebuild agents and tools that already exist when they can't find those assets. The registry is a catalog of agents, MCP servers, model proxies, APIs, and gateways. The registry also contains a curated set of public MCP servers from the Official MCP Registry and Informatica.
 
 * Find and reuse registered agents, MCP servers, model proxies, APIs, and gateways.
-* See conformance status and instance health before you use on an asset.
+* See conformance status and instance health before you use an asset.
 * Govern, monitor, and manage an asset's lifecycle from the catalog page.
 * Publish agents, MCP servers, and APIs so other teams can reuse them.
 
@@ -55,7 +55,7 @@ Learn more: xref:exp-portfolio-overview.adoc[]
 
 === Scanners
 
-Agents appear on platforms faster than teams can manually register them. Scanners watch supported platforms and automatically register any agents, APIs, and MCP servers they discover to the matching portfolio catalog.
+Agents appear on platforms faster than teams can manually register them. Scanners watch supported platforms and automatically register any agents, APIs, and MCP servers they discover to the matching catalog in the registry.
 
 * Connect cloud providers as scanner sources.
 * Discover and register agents, MCP servers, and APIs on a schedule or on demand.
@@ -80,7 +80,7 @@ Your APIs already do the work agents need them to do, but agents can't call APIs
 * Publish only the operations agents should call.
 * Apply existing governance policies to the resulting MCP server.
 
-Do this when agents must call APIs you already have and you don't want to build a custom MCP server.
+Use MCP Bridge when agents must call APIs you already have and you don't want to build a custom MCP server.
 
 Learn more: xref:exp-services-create-mcp-server.adoc[]
 
@@ -130,7 +130,7 @@ You define the broker and its nodes in Agent Script (`.agent` files), a graph th
 * Deploy the agent network, including the broker, to a CloudHub 2.0 shared or private space or to a Runtime Fabric target.
 * See connections and call volume in Agent Visualizer.
 
-Use a broker when work spans multiple specialized agents. 
+Use a broker when work spans multiple specialized agents.
 
 Learn more: xref:agent-network::af-define-your-agent-network-specification.adoc[]
 
@@ -207,7 +207,7 @@ Rewriting the same security, privacy, and cost rules for every agent and service
 * See which services fail conformance.
 * Block or flag noncompliant activity. 
 
-Use governance strategies when a portfolio of agents, APIs, and MCP servers must follow the same auditable rules.
+Use governance strategies when agents, APIs, and MCP servers must follow the same auditable rules.
 
 Learn more: xref:exp-governance-work-with-strategies.adoc[]
 
@@ -322,11 +322,13 @@ You need a place to design and test an agent network before it hits production. 
 * Develop custom MCP servers for specific integration needs.
 * Use MuleSoft Vibes to generate and validate network configurations from natural language.
 
+Use Anypoint Code Builder when you need to design, test, or generate an agent network before you deploy it.
+
 Learn more: xref:anypoint-code-builder::index.adoc[] and xref:agent-network::af-define-your-agent-network-specification.adoc[]
 
 === MuleSoft Vibes
 
-Hand-authoring a broker and agent network can be slow, and lead to mistakes at deploy time. MuleSoft Vibes, the AI assistant in Anypoint Code Builder, turns a description of the network you want into YAML  and Agent Script and checks it against architecture best practices before you deploy it.
+Hand-authoring a broker and agent network can be slow, and lead to mistakes at deploy time. MuleSoft Vibes, the AI assistant in Anypoint Code Builder, turns a description of the network you want into YAML and Agent Script and checks it against architecture best practices before you deploy it.
 
 * Describe your desired agent network in natural language and generate YAML configurations.
 * Validate network structure and routing logic against architecture best practices.
@@ -338,7 +340,7 @@ Learn more: xref:anypoint-code-builder::vibes-get-started.adoc[] and xref:agent-
 
 == What's Next
 
-* For a guided path through the registry, agent actions, governance, and cost control, get started with the xref:learning-map-agent-fabric.adoc[].
+* For a guided path through the registry, agent actions, governance, and cost control, get started with the xref:learning-map-agent-fabric.adoc[Agent Fabric learning map].
 
 * For a comprehensive guide to the technical foundations, capability pillars, and architectural best practices that power enterprise agentic transformation, explore the https://www.mulesoft.com/lp/ebook/mulesoft-agent-fabric-technical-overview[Agent Fabric Technical Overview].
 
