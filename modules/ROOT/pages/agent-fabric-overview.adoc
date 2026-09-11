@@ -38,11 +38,11 @@ Govern, secure, and manage the costs of agents across any platform, including Sa
 [[agent-registry]]
 == Agent Registry
 
-You can't govern, secure, or manage the costs of agents you don't know about. The registry is the inventory of every agent, MCP server, and related service, regardless of platform, so reuse and control have a single source of truth.
+The registry is a single inventory of agents, MCP servers, APIs, and related services, regardless of which platform built them. Find what already exists, then keep the catalog current as new assets appear.
 
 === Registry
 
-Teams rebuild agents and tools that already exist when they can't find those assets. The registry is a catalog of agents, MCP servers, model proxies, APIs, and gateways. The registry also contains a curated set of public MCP servers from the Official MCP Registry and Informatica.
+Teams rebuild agents and tools that already exist when they can't find those assets. Besides your own agents, MCP servers, model proxies, APIs, and gateways, the catalog includes a curated set of public MCP servers from the Official MCP Registry and Informatica.
 
 * Find and reuse registered agents, MCP servers, model proxies, APIs, and gateways.
 * See conformance status and instance health before you use an asset.
@@ -74,9 +74,8 @@ Start by exposing existing APIs as MCP servers, and use an A2A bridge for agents
 
 === Expose APIs as MCP Servers
 
-Your APIs already do the work agents need them to do, but agents can't call APIs as tools until you expose the APIs as MCP servers. Turn an existing API or SaaS system into an MCP server with MCP Bridge: configure the operations to expose, keep the underlying system unchanged, and apply the same governance you already use.
+Your APIs already do the work agents need them to do, but agents can't call APIs as tools until you expose those APIs as MCP servers. MCP Bridge turns an existing API or SaaS system into an MCP server without custom code and without changing the underlying system.
 
-* Expose an existing API or SaaS system as an MCP server without custom code.
 * Publish only the operations agents should call.
 * Apply existing governance policies to the resulting MCP server.
 
@@ -103,16 +102,16 @@ Agent Fabric orchestrates only A2A-compliant agents, but many enterprise agents,
 * Make a non-A2A agent A2A-compliant without changing the source agent.
 * Govern, monitor, and orchestrate the bridged agent like any native A2A agent.
 
-Use A2A Bridge when you need Agent Fabric to orchestrate agents that aren't yet A2A-compliant. Use A2A Connector when you need custom Mule application logic.
+Use A2A Bridge for agents that aren't yet A2A-compliant. Use A2A Connector when you need custom Mule application logic.
 
 Learn more: xref:exp-services-create-a2a-bridge.adoc[]
 
 === A2A Connector
 
-A2A Connector implements the A2A protocol in a Mule application so that application can act as an A2A server, an A2A client, or both. Agents can discover capabilities, negotiate interaction, and delegate specialized tasks to other agents.
+A2A Connector implements the A2A protocol in a Mule application so that application can act as an A2A server, an A2A client, or both.
 
 * Add A2A server and client support to a Mule application.
-* Enable agents to interact and delegate specialized tasks to other agents.
+* Let agents discover capabilities and delegate specialized tasks to other agents.
 
 Use A2A Connector when existing Mule applications must participate as A2A-compliant agents.
 
@@ -125,8 +124,7 @@ A broker is an intelligent router that orchestrates work across specialized A2A-
 
 You define the broker and its nodes in Agent Script (`.agent` files), a graph that mixes deterministic and non-deterministic actions. After you publish an agent network, brokers appear as specialized agents in Agent Registry and can be reused by other brokers.
 
-* Orchestrate tasks across specialized A2A-compliant agents, MCP tools, or other brokers.
-* Define routing in Agent Script.
+* Include MCP tools and other brokers in the routing graph.
 * Deploy the agent network, including the broker, to a CloudHub 2.0 shared or private space or to a Runtime Fabric target.
 * See connections and call volume in Agent Visualizer.
 
@@ -260,20 +258,19 @@ A compromised, misconfigured, or malicious agent can leak data, take unauthorize
 [[cost-control]]
 == AI Cost Control
 
-LLM token spend grows when calls use an expensive model, repeat similar prompts, or send more payload than the model needs. Budget management shows that spend and caps it. Cost optimization reduces what each call consumes.
+LLM token spend grows without a single place to see it, cap it, or reduce it. Budget management shows that spend and caps it. Cost optimization reduces what each call consumes.
 
 === Model Proxy
 
 Agents that call each LLM provider directly get a different endpoint, a different policy set, and a different bill. A model proxy, deployed to Omni Gateway, is one governed endpoint for multiple providers. Routing, caching, and policy run in front of every call. Token data from those calls feeds cost management.
 
-* Give agents one governed endpoint for multiple model providers.
 * Route by model or by meaning (semantic routing).
 * Reuse similar responses with semantic caching to cut latency and spend.
 * Apply policies, including the security policies that detect and contain rogue agents.
 
 Use a model proxy when agents call LLMs and you need the same governance, routing, and cost visibility across providers.
 
-Learn more: xref:model-proxy.adoc[]
+Learn more: xref:model-proxy.adoc[], xref:model-proxy-semantic-service.adoc[], and xref:model-proxy-semantic-caching-service.adoc[]
 
 === Budget Management
 
@@ -303,11 +300,7 @@ A frontier model for a simple task, a repeated prompt, or a bloated payload all 
 
 Use cost optimization when token consumption is a significant cost and you want to reduce spend.
 
-Learn more:
-
-* xref:model-proxy-semantic-service.adoc[]
-* xref:model-proxy-semantic-caching-service.adoc[]
-* xref:exp-governance-view-cost-and-token-usage.adoc[]
+Learn more: xref:exp-governance-view-cost-and-token-usage.adoc[]
 
 [[supporting-tools]]
 == Supporting Tools
@@ -342,9 +335,9 @@ Learn more: xref:anypoint-code-builder::vibes-get-started.adoc[] and xref:agent-
 
 * For a guided path through the registry, agent actions, governance, and cost control, get started with the xref:learning-map-agent-fabric.adoc[Agent Fabric learning map].
 
-* For a comprehensive guide to the technical foundations, capability pillars, and architectural best practices that power enterprise agentic transformation, explore the https://www.mulesoft.com/lp/ebook/mulesoft-agent-fabric-technical-overview[Agent Fabric Technical Overview].
+* For the technical foundations and capability pillars, explore the https://www.mulesoft.com/lp/ebook/mulesoft-agent-fabric-technical-overview[Agent Fabric Technical Overview].
 
-* Learn about the technical foundations, capability pillars, and architectural details in the https://architect.salesforce.com/docs/architect/fundamentals/guide/mulesoft-agent-fabric-deep-dive.html#Agent_Orchestration_Design_Patterns[Agent Fabric Deep Dive].
+* For architecture and orchestration design patterns, see the https://architect.salesforce.com/docs/architect/fundamentals/guide/mulesoft-agent-fabric-deep-dive.html#Agent_Orchestration_Design_Patterns[Agent Fabric Deep Dive].
 
 == See Also
 
