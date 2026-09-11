@@ -79,7 +79,7 @@ The Cost Management dashboard shows usage against each cap. Budget rows show whe
 
 Budgets stop normal usage at a planned cap. A compromised or malfunctioning agent is a different problem: it can drive unexpected cost through anomalous behavior that no single budget anticipates. To address such concerns, apply these policies:
 
-* The Rogue Agent Detection policy monitors agent traffic and flags risky behavior, such as prompt injection or attempts to escalate privileges, for your review.
+* Rogue Agent Detection policy: Monitor agent traffic and flag risky behavior, such as prompt injection or attempts to escalate privileges.
 * The Agent Kill Switch policy blocks a flagged agent's model access when you decide to contain it.
 
 Detection never acts on its own. You review flagged activity before taking action, and containment is fully reversible, so you can restore an agent's access if a flag turns out to be a false positive.
