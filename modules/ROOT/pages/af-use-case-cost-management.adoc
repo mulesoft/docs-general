@@ -36,7 +36,7 @@ Key benefits include:
 
 == How It Works
 
-Omni Gateway is the runtime enforcement point for Agent Fabric. The Model Proxy runs on Omni Gateway and provides one governed access point for many LLM providers, so consumers reach models through a single endpoint. Because all model traffic that you route through the proxy passes through it, cost management works in stages: see spend, reduce it, cap it, and contain anomalies. Usage that never reaches the proxy isn't included.
+Omni Gateway is the runtime enforcement point for Agent Fabric. The Model Proxy runs on Omni Gateway and provides one governed endpoint for many LLM providers. Because all model traffic that you route through the proxy passes through this endpoint, cost management works in stages: see spend, reduce it, cap it, and contain anomalies. Usage that never reaches the proxy isn't included.
 
 === See and Attribute Spend
 
