@@ -116,7 +116,9 @@ Here's how it works:
 
 *Challenge:* A customer support agent system uses expensive models for all queries, including simple lookups, and repeats similar calls for common questions.
 
-With semantic routing and caching you cut cost on routine and repeated work:
+With semantic routing and caching you cut cost on routine and repeated work. 
+
+Here's how it works:
 
 . Configure semantic routing rules:
    * Simple queries (order status, account lookups) route to a cost-effective model.
