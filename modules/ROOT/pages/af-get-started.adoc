@@ -243,11 +243,11 @@ Learn more: xref:agent-network::af-get-started.adoc[Get Started with Agent Netwo
 
 Omni Gateway sits in front of your agents, APIs, MCP servers, and LLM traffic, regardless of the platform that built them.
 
-=== Create Instances and Apply Policies
+=== Create Instances of Services and Apply Policies
 
-A managed instance puts Omni Gateway in the request path so authentication, monitoring, and policy apply to live traffic.
+Instances represent how a service runs in a specific environment. APIs, agents, MCP servers, and model proxies can include instances. A managed instance of an API, agent, or MCP server puts Omni Gateway in the request path so authentication, monitoring, and policy apply to live traffic.
 
-Before you create instances or apply policies, confirm you have:
+Before you create instances of services or apply policies, confirm you have:
 
 * An Anypoint Platform account with the required product access for Agent Fabric. See <<before-you-begin>>.
 * An Omni Gateway for each managed instance.
