@@ -3,8 +3,6 @@
 
 Agent Fabric is the AI control plane for agents, MCP servers, and APIs across platforms. You can't apply governance, security, or cost controls to agents you don't know about. Catalog your assets first. Then complete only the jobs you need.
 
-Use this checklist to confirm access and to gather what each job requires. Start with <<before-you-begin>>, then work through <<setup>>. 
-
 ////
 [[access]]
 == Access Agent Fabric
@@ -45,7 +43,7 @@ Platform and Product Access::
 Permissions::
 +
 * Agent Fabric uses Anypoint Platform access management. Your administrator maps jobs to roles and permissions in Access Management, and exact permission names differ by organization.
-* Use the permission tables in <<setup>> together with your internal access guide. For the enhanced experience permissions table, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+* Use the permission tables in each job section together with your internal access guide. For the enhanced experience permissions table, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 * If you can't complete an action or a page shows an authorization error, ask your organization administrator for the matching permission or role.
 
 [TIP]
@@ -57,15 +55,11 @@ These apply to more than one job:
 * A connected provider scanner is required before you apply policies to, or govern, third-party gateway APIs.
 ====
 
-[[setup]]
-== Set Up Agent Fabric
+[[registry]]
+== Catalog Agents, MCP Servers, and APIs
 
-. [[registry]]Catalog agents, MCP servers, and APIs.
-+
---
 The registry is a single inventory of agents, MCP servers, APIs, and related services, regardless of which platform built them.
 
-[discrete]
 === Register Services
 
 Register assets so other teams can find and reuse them instead of rebuilding the same agents and tools.
@@ -82,7 +76,6 @@ Register assets so other teams can find and reuse them instead of rebuilding the
 
 Learn more: xref:exp-portfolio-overview.adoc[] and xref:exp-services-add-to-portfolio.adoc[].
 
-[discrete]
 === Discover Services with Scanners
 
 Use scanners when agents run on more than one platform and manual registration can't keep the registry current.
@@ -99,15 +92,13 @@ Use scanners when agents run on more than one platform and manual registration c
 |===
 
 Learn more: xref:exp-scanners-add-from-providers.adoc[] and xref:exp-providers-manage.adoc[].
---
 
-. [[enable-actions]]Expose existing APIs as MCP servers without changing the API implementation.
-+
---
+[[enable-actions]]
+== Expose Existing APIs as MCP Servers
+
 Agents can't call APIs as tools until you expose those APIs as MCP servers.
 
-[discrete]
-=== Expose APIs as MCP Servers
+=== Use MCP Bridge
 
 MCP Bridge turns an existing API or SaaS system into an MCP server without custom code.
 
@@ -122,7 +113,6 @@ MCP Bridge turns an existing API or SaaS system into an MCP server without custo
 
 Learn more: xref:exp-services-create-mcp-server.adoc[] and xref:af-use-case-mcp-bridge.adoc[].
 
-[discrete]
 === Build a Custom MCP Server in Mule
 
 Use MCP Connector when the tools don't map to a single existing API and you need custom Mule logic. The resulting MCP server or client runs in Mule.
@@ -131,14 +121,11 @@ Use MCP Connector when the tools don't map to a single existing API and you need
 * Provider credentials for any AI services that a connector calls, such as an LLM provider or vector store.
 
 Learn more: xref:mcp-connector::index.adoc[MCP Connector].
---
 
-. Present non-A2A agents as A2A-compliant without changing the source agent.
-+
---
+== Present Non-A2A Agents as A2A-Compliant
+
 Many enterprise agents, including Agentforce agents, aren't A2A-compliant on their own. Register Amazon Bedrock AgentCore and Google Vertex AI directly.
 
-[discrete]
 === Create an A2A Bridge
 
 An A2A bridge presents a non-A2A agent as A2A-compliant. Salesforce Agentforce is the supported source platform.
@@ -155,7 +142,6 @@ An A2A bridge presents a non-A2A agent as A2A-compliant. Salesforce Agentforce i
 
 Learn more: xref:exp-services-create-a2a-bridge.adoc[].
 
-[discrete]
 === Add A2A Support to a Mule Application
 
 Use A2A Connector when an existing Mule application must participate as an A2A-compliant agent.
@@ -164,11 +150,10 @@ Use A2A Connector when an existing Mule application must participate as an A2A-c
 * An existing Mule application that must act as an A2A server, an A2A client, or both
 
 Learn more: xref:a2a-connector::index.adoc[A2A Connector].
---
 
-. [[supporting-tools]]Coordinate work across specialized agents with a broker.
-+
---
+[[supporting-tools]]
+== Coordinate Work Across Specialized Agents
+
 A broker is an intelligent router that orchestrates work across specialized A2A-compliant agents. You define the broker and its nodes in Agent Script.
 
 * Anypoint Code Builder for the visual canvas, Agent Script authoring, and MuleSoft Vibes.
@@ -184,14 +169,12 @@ A broker is an intelligent router that orchestrates work across specialized A2A-
 |===
 
 Learn more: xref:agent-network::af-get-started.adoc[Get Started with Agent Networks], xref:agent-network::af-define-your-agent-network-specification.adoc[], xref:anypoint-code-builder::vibes-get-started.adoc[], and xref:agent-visualizer::index.adoc[Agent Visualizer].
---
 
-. [[govern]]Enforce the same policies on live traffic.
-+
---
+[[govern]]
+== Enforce the Same Policies on Live Traffic
+
 Omni Gateway sits in front of your agents, APIs, MCP servers, and LLM traffic, regardless of the platform that built them.
 
-[discrete]
 === Create Instances and Apply Policies
 
 A managed instance puts Omni Gateway in the request path so authentication, monitoring, and policy apply to live traffic.
@@ -211,7 +194,6 @@ A managed instance puts Omni Gateway in the request path so authentication, moni
 
 Learn more: xref:exp-instances-add.adoc[], xref:exp-policies-apply-manage.adoc[], and xref:exp-policies-universal.adoc[].
 
-[discrete]
 === Create Governance Strategies
 
 A governance strategy defines access, data privacy, performance, cost, and compliance rules once and applies them across the services in scope.
@@ -227,14 +209,12 @@ A governance strategy defines access, data privacy, performance, cost, and compl
 |===
 
 Learn more: xref:exp-governance-work-with-strategies.adoc[], xref:exp-governance-govern-third-party-apis.adoc[], and xref:exp-governance-monitor-cross-gateway-conformance.adoc[].
---
 
-. [[cost-control]]See LLM spend, cap it, and reduce token use.
-+
---
+[[cost-control]]
+== See LLM Spend, Cap It, and Reduce Token Use
+
 A model proxy, deployed to Omni Gateway, is one governed endpoint for multiple LLM providers.
 
-[discrete]
 === Create a Model Proxy
 
 Deploy the proxy to Omni Gateway so routing, caching, and policy run in front of every LLM call.
@@ -251,7 +231,6 @@ Deploy the proxy to Omni Gateway so routing, caching, and policy run in front of
 
 Learn more: xref:model-proxy.adoc[].
 
-[discrete]
 === Set Model Costs and Cap Spend with Wallets
 
 Set a cost for each model so token counts read as dollars. A model wallet caps a caller's token or dollar spend against a provider.
@@ -270,7 +249,6 @@ Set a cost for each model so token counts read as dollars. A model wallet caps a
 
 Learn more: xref:exp-governance-view-cost-and-token-usage.adoc[], xref:exp-model-wallets-manage.adoc[], xref:exp-models-manage-costs.adoc[], and xref:af-use-case-cost-management.adoc[].
 
-[discrete]
 === Route and Cache Model Calls
 
 Semantic routing sends each request to the best-matching model. Semantic caching reuses a response when a new request is similar to an earlier one.
@@ -285,11 +263,9 @@ Semantic routing sends each request to the best-matching model. Semantic caching
 |===
 
 Learn more: xref:model-proxy-semantic-service.adoc[] and xref:model-proxy-semantic-caching-service.adoc[].
---
 
-. Detect and contain rogue agents.
-+
---
+== Detect and Contain Rogue Agents
+
 A compromised or misconfigured agent can leak data, take unauthorized actions, or drive unexpected cost. Detection flags risky behavior for your review. The Kill Switch policy blocks that agent's access to the model proxy when you quarantine it.
 
 * Omni Gateway 1.13.5 or later
@@ -304,11 +280,9 @@ A compromised or misconfigured agent can leak data, take unauthorized actions, o
 |===
 
 Learn more: xref:exp-detect-and-contain-rogue-agents.adoc[].
---
 
-. Keep credentials in an external vault.
-+
---
+== Keep Credentials in an External Vault
+
 Register an external vault so credentials stay in AWS Secrets Manager, Azure Key Vault, or HashiCorp Vault. Only metadata is stored.
 
 * Access to the external secrets manager (endpoint URL and credentials)
@@ -322,11 +296,9 @@ Register an external vault so credentials stay in AWS Secrets Manager, Azure Key
 |===
 
 Learn more: xref:exp-vaults-manage.adoc[].
---
 
-. Correlate Akamai risk to services you've already discovered.
-+
---
+== Correlate Akamai Risk to Discovered Services
+
 Correlate security findings to APIs and MCP services in the portfolio so you can triage risk before it becomes an incident.
 
 * Akamai Security base URL, client ID, and client secret
@@ -340,11 +312,10 @@ Correlate security findings to APIs and MCP services in the portfolio so you can
 |===
 
 Learn more: xref:exp-akamai-risk-correlation.adoc[].
---
 
-. [[observe]]Monitor latency, errors, and volume in production.
-+
---
+[[observe]]
+== Monitor Latency, Errors, and Volume
+
 Monitoring shows latency, error rates, and request volume. Agent Visualizer maps how agents, brokers, and MCP servers connect.
 
 * Managed paths on Omni Gateway for the metrics that the experience surfaces.
@@ -360,7 +331,6 @@ Monitoring shows latency, error rates, and request volume. Agent Visualizer maps
 |===
 
 Learn more: xref:agent-visualizer::index.adoc[Agent Visualizer], xref:exp-services-monitoring.adoc[], and xref:exp-alerts-configure-notifications.adoc[].
---
 
 == See Also
 
