@@ -17,7 +17,7 @@ You need visibility into what's driving cost and the controls to reduce and cap 
 
 == The Solution
 
-Every governed model call in Agent Fabric flows through the Model Proxy, a single access point in front of your LLM providers. Because every request and response passes through it, the proxy is where you see spend, reduce it, cap it, and contain it:
+Every governed model call in Agent Fabric flows through the Model Proxy, a single access point in front of your LLM providers. Because every request and response passes through it, the proxy is where you see spend, reduce it, cap it, and contain it.
 
 * Cost visibility and attribution: Track token consumption and spend by provider, model, and the wallet that generated the traffic.
 * Semantic routing: Send routine requests to a cheaper, faster model and reserve powerful models for complex work. You can also block requests that match topics you don't want served.
