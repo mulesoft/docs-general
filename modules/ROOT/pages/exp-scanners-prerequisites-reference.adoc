@@ -3,7 +3,7 @@
 
 Scanner prerequisites by provider help you confirm required roles, credentials, and permissions before creating a scanner. Use this reference to prevent connection test failures and incomplete discovery by validating provider-specific access in advance. Each scanner also requires Exchange Administrator permission and the correct business group context.
 
-For API gateway providers that support policy write, discovery access alone isn't enough to apply policies. Policy write reuses the same scanner connection you configure here, so the connection's credentials must also carry the provider's write permissions (write scope). Review the additional write prerequisites in xref:_policy_write_prerequisites[]. Write scopes are noted in the matrix as *Write scope (policy apply)*.
+For API gateway providers that support policy write, discovery access alone isn't enough to apply policies. Policy write reuses the same scanner connection you configure here, so the connection's credentials must also carry the provider's write permissions (write scope). Review the additional write prerequisites in the Scanner Prerequisites Matrix. Write scopes are noted in the matrix as *Write scope (policy apply)*.
 
 == Before You Begin
 
