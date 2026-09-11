@@ -1,4 +1,4 @@
-= Create a Scanner for Provider Services
+= Create a Scanner to Add Provider Services
 :keywords: scanner, provider services, create scanner, entry points, experience services, mulesoft integration, service discovery
 
 To create a scanner, connect to a provider. The system runs scanners against supported cloud platforms, discovers services (such as agents, APIs, and MCP servers), and registers them in the matching catalog in *Portfolio*. You supply credentials and scanner metadata so the integration is repeatable and auditable.
@@ -52,11 +52,7 @@ Across *Home* and *Portfolio* entry points, scanner creation includes the same d
 
 When the scanner runs successfully, the system registers discovered services in the catalog you started from (for example, APIs land in the *APIs* catalog).
 
-== How Catalog Selection Affects Registration
-
-Scanner setup decisions stay the same across catalogs. However, after successful runs, discovered results get registered in specific service catalogs. 
-
-For example, when you start from *APIs*, discovered APIs are registered in the *APIs* catalog.
+Scanner setup decisions stay the same across catalogs. However, after successful runs, discovered results get registered in specific service catalogs. For example, when you start from *APIs*, discovered APIs are registered in the *APIs* catalog.
 
 == See Also
 

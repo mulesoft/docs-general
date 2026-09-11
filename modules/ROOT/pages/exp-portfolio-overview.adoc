@@ -1,4 +1,4 @@
-= View Your Portfolio Overview
+= View Your Portfolio 
 :keywords: portfolio overview, anypoint platform, api management, integration monitoring, portfolio dashboard, mulesoft
 
 Use portfolio-level views to see how your agents, APIs, MCP servers, Model proxies, and gateways fit together before you drill into a single service. These summaries help you spot gaps in registration, policy coverage, and health signals.
@@ -21,7 +21,7 @@ Before getting started, make sure you have:
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
-== Access Portfolio Overview
+== Portfolio Overview
 
 * *Home*
 +
