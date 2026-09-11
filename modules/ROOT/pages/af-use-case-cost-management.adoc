@@ -77,7 +77,7 @@ The Cost Management dashboard shows usage against each cap. Budget rows show whe
 
 === Contain Runaway Agents
 
-Budgets stop normal usage at a planned cap. A compromised or malfunctioning agent is a different problem: it can drive unexpected cost through anomalous behavior that no single budget anticipates. Two policies that you apply to the model proxy address this:
+Budgets stop normal usage at a planned cap. A compromised or malfunctioning agent is a different problem: it can drive unexpected cost through anomalous behavior that no single budget anticipates. To address such concerns, apply these policies:
 
 * The Rogue Agent Detection policy monitors agent traffic and flags risky behavior, such as prompt injection or attempts to escalate privileges, for your review.
 * The Agent Kill Switch policy blocks a flagged agent's model access when you decide to contain it.
