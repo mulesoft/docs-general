@@ -131,7 +131,9 @@ Here's how it works:
 
 *Challenge:* Development teams experimenting with agents have no spending limits, leading to budget surprises.
 
-With Model Wallets you get budgets agents can't quietly overrun:
+With Model Wallets you get budgets agents can't quietly overrun.
+
+Here's how it works:
 
 . Create a wallet for each team, scoped to that team's callers.
 . Add a budget per provider, choosing a daily, weekly, or monthly period.
