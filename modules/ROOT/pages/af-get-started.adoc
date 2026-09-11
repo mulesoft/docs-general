@@ -183,22 +183,39 @@ Learn more: xref:exp-instances-add.adoc[], xref:exp-policies-apply-manage.adoc[]
 Learn more: xref:exp-governance-work-with-strategies.adoc[], xref:exp-governance-govern-third-party-apis.adoc[], and xref:exp-governance-monitor-cross-gateway-conformance.adoc[].
 
 [discrete]
-=== Detect Rogue Agents, Connect Vaults, and Correlate Akamai Risk (Optional)
+=== Detect and Contain Rogue Agents (Optional)
 
-Detect and contain rogue agents::
-+
 * Omni Gateway 1.13.5 or later
 * Each monitored agent registered with a unique instance name and linked to its model proxies
 * Agents set up as service identities in your IdP
 * JWT Validation policy applied to each protected model proxy
 
-Connect an external vault::
-+
+[cols="1,2a",options="header"]
+|===
+| To do this | You need
+| Detect and contain rogue agents | API Manager: API Creator, View APIs Configuration, Edit APIs Configuration, View API Alerts, and Manage API Alerts
+|===
+
+Learn more: xref:exp-detect-and-contain-rogue-agents.adoc[].
+
+[discrete]
+=== Connect an External Vault (Optional)
+
 * Access to the external secrets manager (endpoint URL and credentials)
 * A supported vault: AWS Secrets Manager, Microsoft Azure Key Vault, or HashiCorp Vault
 
-Set up Akamai risk correlation::
-+
+[cols="1,2a",options="header"]
+|===
+| To do this | You need
+| View vaults | One of: Secrets Manager: View Vault Integrations or Manage Vault Integrations
+| Manage vaults | Secrets Manager: Manage Vault Integrations (also grants Exchange Administrator, Exchange Contributor, API Manager: API Creator, and API Manager: Manage Policies for the flow)
+|===
+
+Learn more: xref:exp-vaults-manage.adoc[].
+
+[discrete]
+=== Set Up Akamai Risk Correlation (Optional)
+
 * Akamai Security base URL, client ID, and client secret
 * An Akamai service account and a MuleSoft connected app for the bidirectional tenant setup
 * Existing APIs and MCP services in Portfolio to correlate against
@@ -206,13 +223,10 @@ Set up Akamai risk correlation::
 [cols="1,2a",options="header"]
 |===
 | To do this | You need
-| Detect and contain rogue agents | API Manager: API Creator, View APIs Configuration, Edit APIs Configuration, View API Alerts, and Manage API Alerts
-| View vaults | One of: Secrets Manager: View Vault Integrations or Manage Vault Integrations
-| Manage vaults | Secrets Manager: Manage Vault Integrations (also grants Exchange Administrator, Exchange Contributor, API Manager: API Creator, and API Manager: Manage Policies for the flow)
 | Set up Akamai risk correlation | Exchange Administrator in the target business group, plus write access to apply the correlation policy in the environments you scan
 |===
 
-Learn more: xref:exp-detect-and-contain-rogue-agents.adoc[], xref:exp-vaults-manage.adoc[], and xref:exp-akamai-risk-correlation.adoc[].
+Learn more: xref:exp-akamai-risk-correlation.adoc[].
 --
 
 . [[cost-control]]Create a model proxy, cap spend, and reduce what each call consumes.
