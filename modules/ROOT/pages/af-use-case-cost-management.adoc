@@ -146,7 +146,9 @@ Here's how it works:
 
 *Challenge:* An organization uses multiple LLM providers but doesn't know which models are most cost-effective for its use cases.
 
-With Agent Fabric you get evidence-based model selection:
+With Agent Fabric you get evidence-based model selection.
+
+Here's how it works:
 
 . Deploy agents with flexible model configuration.
 . Use Cost Management to compare spend by provider, model, and wallet.
