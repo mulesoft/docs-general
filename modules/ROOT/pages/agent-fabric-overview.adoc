@@ -1,5 +1,5 @@
 = Agent Fabric Overview
-:keywords: mulesoft agent fabric, mcp server, mcp connector, enterprise actionability, ai agents, mulesoft integration, model context protocol
+:keywords: mulesoft agent fabric, mcp server, mcp bridge, mcp connector, a2a bridge, a2a connector, agent broker, enterprise actionability, ai agents, mulesoft integration, model context protocol
 
 Teams build AI agents, MCP servers, and APIs across multiple platforms. As a result, it's challenging to easily reuse, apply consistent security controls, or track end-to-end cost. Agent Fabric is the AI control plane for that landscape. With Agent Fabric, gain visibility across every asset, let agents take action in your existing tech stack, enforce universal policies at runtime, and see and optimize what your AI investments are costing.
 
