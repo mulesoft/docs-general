@@ -33,13 +33,13 @@ Because open is only a creation experience, there is no dedicated open activity 
 When an open policy targets Anypoint instances, there is currently no Activity log record for those targets, so there's no in-product way to confirm the outcome on Anypoint targets. This is a known limitation. For external providers (Apigee, Azure, and Kong), you can follow the outcome in each instance's *Activity log*.
 ====
 
-== Open vs. Automated vs. Governance
+== Open Policies vs. Automated vs. Governance
 
 These three are easy to confuse. Use this comparison to choose the right tool:
 
 [cols="1,2,2,2",options="header"]
 |===
-| | Open | Automated Policies | Governance
+| | Open Policies | Automated Policies | Governance
 
 |What it is
 |A create-only authoring experience: configure once, applied as each provider's native policy across many instances, including external providers.
