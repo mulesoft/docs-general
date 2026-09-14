@@ -232,8 +232,4 @@ For the steps to set model costs, see xref:exp-models-manage-costs.adoc[].
 * xref:model-proxy-token-reports.adoc[]
 * xref:exp-detect-and-contain-rogue-agents.adoc[]
 
-== Next Steps
 
-With cost controls in place, you're ready to:
-
-* xref:af-use-case-policy-enforcement.adoc[Add policy enforcement for governance]
