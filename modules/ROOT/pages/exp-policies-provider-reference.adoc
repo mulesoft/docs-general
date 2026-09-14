@@ -35,7 +35,7 @@ Before getting started, make sure you have:
 
 [NOTE]
 ====
-* Apply and Edit are further limited to the supported (universal-backed) policies. A Yes in the Edit column means the provider supports editing, not that every policy is editable. See xref:exp-policies-apply-manage.adoc#policy-edit-restrictions[Policy Edit Restrictions].
+* Apply and Edit are further limited to the supported (open-backed) policies. A Yes in the Edit column means the provider supports editing, not that every policy is editable. See xref:exp-policies-apply-manage.adoc#policy-edit-restrictions[Policy Edit Restrictions].
 * Apigee and Azure API Management have no native enabled/disabled state (a policy is either attached or not), so the enable/disable actions aren't available there.
 * Amazon API Gateway is not supported for policy write yet.
 ====
@@ -89,11 +89,11 @@ Any custom role or higher-scope grant that includes the five permissions also wo
 [[supported-policies-and-native-equivalents]]
 == Supported Policies and Native Equivalents
 
-At launch, Anypoint supports five universal use cases. Each maps to a native policy on each provider. These native policies are the ones you can create and edit, along with the additional native Kong policies listed after this table. Other recognized policies are view-only.
+At launch, Anypoint supports five open use cases. Each maps to a native policy on each provider. These native policies are the ones you can create and edit, along with the additional native Kong policies listed after this table. Other recognized policies are view-only.
 
 [cols="1,1,1,1,1",options="header"]
 |===
-|Universal Use Case |Anypoint |Google Apigee |Azure API Management |Kong Gateway
+|Open Use Case |Anypoint |Google Apigee |Azure API Management |Kong Gateway
 
 |API Key Enforcement
 |Client ID Enforcement
@@ -132,12 +132,12 @@ At launch, Anypoint supports five universal use cases. Each maps to a native pol
 * Some use cases map to more than one native policy. For example, Header Manipulation applies separate request/response (or inbound/outbound) policies, and Anypoint's Header Manipulation is two policies (injection and removal).
 ====
 
-Beyond the universal use cases, Anypoint also supports these native Kong policies: `acl`, `acme`, `basic-auth`, `header-cert-auth`, `ldap-auth`, `ldap-auth-advanced`, `mtls-auth`, `opa`, `tls-handshake-modifier`, and `tls-metadata-headers`.
+Beyond the open use cases, Anypoint also supports these native Kong policies: `acl`, `acme`, `basic-auth`, `header-cert-auth`, `ldap-auth`, `ldap-auth-advanced`, `mtls-auth`, `opa`, `tls-handshake-modifier`, and `tls-metadata-headers`.
 
 == See Also
 
 * xref:exp-policies-overview.adoc[]
-* xref:exp-policies-universal.adoc[]
+* xref:exp-policies-open.adoc[]
 * xref:exp-policies-apply-manage.adoc[]
 * xref:exp-policies-activity-log.adoc[]
 * xref:exp-scanners-add-from-providers.adoc[]
