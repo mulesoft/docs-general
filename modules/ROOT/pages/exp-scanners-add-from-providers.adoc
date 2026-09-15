@@ -77,29 +77,53 @@ When the policy is applied, the section shows a table with one row per environme
 
 If some environments show no policy binding, select *Check again* to retry the policy application for those environments only. The operation is safe to repeat.
 
-== Microsoft Copilot Studio Scanner OAuth Authorization
+== Scanner OAuth Authorization
 
-Microsoft Copilot Studio scanners support two authentication schemes. Create, authorize, and test the provider connection before you continue scanner setup.
+Microsoft Copilot Studio and Google Vertex AI scanners authenticate through OAuth-based authentication. Create, authorize, and test the provider connection before you continue scanner setup.
 
-* *OAuth*: Uses client credentials. Tenant ID is required, and you validate the connection directly without an interactive sign-in.
-* *OAuth (Authorization Code)*: Uses an interactive Microsoft sign-in and consent. Tenant ID is optional; if you don't provide one, the connection defaults to the home tenant ID after authorization. This scheme requires a pre-configured customer OAuth application. Configure the OAuth application in Azure to request the Dynamics CRM `user_impersonation` scope, and set the OAuth callback URL to `https://<your_anypoint_host>/secrets-manager/api/v1/connections/oauth/callback`.
+Each scanner supports two authentication methods:
 
-. From *Platform* > *Providers*, select *Microsoft*.
-. In *Connect to Provider*, under *Platform*, select *Microsoft Copilot Studio*.
-. Under *Authentication*, select *OAuth* or *OAuth (Authorization Code)*.
+* *Microsoft Copilot Studio*
++
+** *OAuth*: Uses client credentials. Tenant ID is required, and you validate the connection directly without an interactive sign-in.
+** *OAuth (Authorization Code)*: Uses an interactive Microsoft sign-in and consent. Tenant ID is optional; if you don't provide one, the connection defaults to the home tenant ID after authorization. This scheme requires a pre-configured customer OAuth application. Configure the OAuth application in Azure to request the Dynamics CRM `user_impersonation` scope, and set the OAuth callback URL to `https://<your_anypoint_host>/secrets-manager/api/v1/connections/oauth/callback`.
+* *Google Vertex AI*
++
+** *Service Account Key*: Uses a Google Cloud service account key. You validate the connection directly without an interactive sign-in. The service account must have the *Vertex AI Viewer* role.
+** *OAuth (Authorization Code)*: Uses an interactive Google sign-in and consent. This scheme requires a pre-configured customer OAuth application. Configure the OAuth application in Google Cloud to grant access to the Vertex AI API, and set the OAuth callback URL to `https://<your_anypoint_host>/secrets-manager/api/v1/connections/oauth/callback`.
+
+To authorize the connection:
+
+. From *Platform* > *Providers*, select the provider:
++
+** For a Microsoft Copilot Studio scanner, select *Microsoft*.
+** For a Google Vertex AI scanner, select *Google*.
+. In *Connect to Provider*, under *Platform*, select the platform (*Microsoft Copilot Studio* or *Google Vertex AI*).
+. Under *Authentication*, select an authentication scheme.
 . Enter connection values:
-* *Tenant ID*: Microsoft Entra tenant ID. Required for *OAuth*; optional for *OAuth (Authorization Code)*.
-* *Client ID*: OAuth 2.0 client ID from your Azure app registration.
-* *Client Secret*: OAuth 2.0 client secret from your Azure app registration.
-* *Scope*: Dataverse environment URL, for example, `https://<your-environment>.api.crm.dynamics.com`. Required for *OAuth (Authorization Code)*; optional for *OAuth*.
++
+** For *Microsoft Copilot Studio*:
++
+*** *Tenant ID*: Microsoft Entra tenant ID. Required for *OAuth*; optional for *OAuth (Authorization Code)*.
+*** *Client ID*: OAuth 2.0 client ID from your Azure app registration.
+*** *Client Secret*: OAuth 2.0 client secret from your Azure app registration.
+*** *Scope*: Dataverse environment URL, for example, `https://<your-environment>.api.crm.dynamics.com`. Required for *OAuth (Authorization Code)*; optional for *OAuth*.
+** For *Google Vertex AI*:
++
+*** *GCP Project ID*: Google Cloud project ID that hosts the Vertex AI resources. Required for *Service Account Key*.
+*** *Service Account Email*: Email of the service account with the *Vertex AI Viewer* role. Required for *Service Account Key*.
+*** *Private Key*: Private key from the service account key file. Required for *Service Account Key*.
+*** *Client ID*: OAuth 2.0 client ID from your Google Cloud OAuth application. Required for *OAuth (Authorization Code)*.
+*** *Client Secret*: OAuth 2.0 client secret from your Google Cloud OAuth application. Required for *OAuth (Authorization Code)*.
 . Complete the connection:
-* For *OAuth*, click *Test Connection* and confirm the connection succeeds.
-* For *OAuth (Authorization Code)*, click *Create & Authorize Connection*. In the Microsoft popup window, sign in and grant consent, then wait for status to progress through *Connection created*, *Authorized*, and *Tested*.
-. Confirm the connection succeeds or the message *Connected to Microsoft* appears, then click *Continue*.
++
+** For a direct-validation scheme (*OAuth* or *Service Account Key*), click *Test Connection* and confirm the connection succeeds.
+** For *OAuth (Authorization Code)*, click *Create & Authorize Connection*. In the provider popup window, sign in and grant consent, then wait for status to progress through *Connection created*, *Authorized*, and *Tested*.
+. Confirm the connection succeeds or a *Connected to <provider>* message appears, then click *Continue*.
 
 [NOTE]
 ====
-The OAuth (Authorization Code) flow opens a Microsoft sign-in popup. If your browser blocks popups, authorization can't complete and scanner setup stays in the authorizing state.
+The OAuth (Authorization Code) flow opens a provider sign-in popup. If your browser blocks popups, authorization can't complete and scanner setup stays in the authorizing state.
 ====
 
 [[kong-gateway-scanner-openapi-specifications]]
