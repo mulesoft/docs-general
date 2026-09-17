@@ -144,6 +144,7 @@ For ongoing operations (pause, edit, or delete), see xref:exp-scanners-manage.ad
 
 == See Also
 
+* xref:exp-scanners-build-custom.adoc[]
 * xref:exp-scanners-prerequisites-reference.adoc[]
 * xref:exp-akamai-risk-correlation.adoc[]
 * xref:exp-services-connect-providers-to-add.adoc[]
