@@ -5,6 +5,12 @@ A scanner is the configured link between the system and a supported cloud provid
 
 For how provider connection and catalogs fit together, see xref:exp-services-connect-providers-to-add.adoc[] and xref:exp-services-add-to-portfolio.adoc[].
 
+Watch this video to see how to discover services with providers and scanners:
+
+++++
+include::_partials/exp-scanners-add-from-providers-video.html[]
+++++
+
 == Before You Begin
 
 Before getting started, make sure you have:

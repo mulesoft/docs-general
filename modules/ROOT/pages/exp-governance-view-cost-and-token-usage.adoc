@@ -5,6 +5,12 @@ Use cost and token metrics to understand usage, control spend, and identify opti
 
 Available metrics depend on your tenant configuration and role.
 
+Watch this video to see how to track cost and token usage:
+
+++++
+include::_partials/exp-governance-view-cost-and-token-usage-video.html[]
+++++
+
 == Before You Begin
 
 Before getting started, make sure you have:
