@@ -204,7 +204,7 @@ a|
 
 *Write scope (policy apply):* Admin API write permission required to apply, enable, disable, or remove policy in target environments
 
-*Setup:* To discover accurate, typed API definitions, link each Kong Gateway service to a Catalog API that has an attached OpenAPI Specification (OAS). For the required workflow and route-discovery limitations, see xref:exp-scanners-add-from-providers.adoc#kong-gateway-scanner-openapi-specifications[].
+*Setup:* To discover accurate, typed API definitions, link each Kong Gateway service to a Catalog API that has an attached OpenAPI Specification (OAS). For the required workflow and route-discovery limitations, see xref:exp-scanners-add-from-providers.adoc#kong-gateway-scanner[Kong Gateway Scanner].
 
 | Akamai Security
 | API Security
@@ -238,6 +238,17 @@ a|
 *Credentials:* Tenant ID; client ID; client secret; subscription ID; resource group; service name
 
 *Role:* API Management Service Reader
+
+| Kong Gateway MCP Server
+| MCP
+a|
+*Credentials:* Personal access token (PAT); Kong Gateway region
+
+*Role:* Kong Control Plane Viewer
+
+* *Read scope:* Admin API read permission required to discover MCP servers in target environments
+
+*Setup:* Link each Kong Gateway service to a Catalog API that has an attached OpenAPI Specification (OAS). A linked OAS produces higher-quality MCP servers bridged from discovered services. For the required workflow and route-discovery limitations, see xref:exp-scanners-add-from-providers.adoc#kong-gateway-scanner[Kong Gateway Scanner].
 
 | Snowflake MCP Server
 | MCP

@@ -108,8 +108,29 @@ Microsoft Copilot Studio scanners support two authentication schemes. Create, au
 The OAuth (Authorization Code) flow opens a Microsoft sign-in popup. If your browser blocks popups, authorization can't complete and scanner setup stays in the authorizing state.
 ====
 
-[[kong-gateway-scanner-openapi-specifications]]
-== Kong Gateway Scanner OpenAPI Specifications
+[[kong-gateway-scanner]]
+== Kong Gateway Scanner
+
+The Kong Gateway scanner connects to a Kong control plane and discovers services on one of two platforms that you select during setup:
+
+* *Kong Gateway (APIs)*: Discovers, imports, and syncs APIs from Kong Gateway into the *APIs* catalog.
+* *Kong Gateway (MCP)*: Discovers, imports, and syncs MCP servers from Kong Gateway into the *MCP Servers* catalog.
+
+Both platforms use the same connection credentials and setup steps. Only the platform you select differs.
+
+=== Add a Kong Gateway Scanner
+
+. From *Platform* > *Providers*, select *Kong*.
+. In *Connect to Provider*, under *Platform*, select the platform to scan:
+* *Kong Gateway (APIs)* to discover APIs.
+* *Kong Gateway (MCP)* to discover MCP servers.
+. Enter connection values:
+* *Kong Gateway Region*: Select the Kong Gateway region.
+* *Personal Access Token*: Enter the personal access token.
+. Click *Test Connection* and confirm the connection succeeds.
+. Click *Continue*, then name, schedule, and save the scanner to complete setup.
+
+=== OpenAPI Specifications
 
 To discover accurate, typed API definitions from Kong Gateway, link each Kong Gateway service to a Catalog API that has an attached OpenAPI Specification (OAS). The scanner reads the OAS from the linked Catalog API to build a complete, typed service definition.
 
@@ -127,6 +148,35 @@ For more information, see the https://developer.konghq.com/api-catalog/[Kong API
 ====
 If a Kong Gateway service isn't linked to a Catalog API with an attached OAS, only the first route per path is discovered. For example, if the `/items` path has both `GET` and `POST` routes, only one of those routes appears in the discovered definition. Link the service to a Catalog API with an attached OAS to discover all routes and methods for each path.
 ====
+
+=== Protocol to Asset Type Mapping
+
+When you scan with the *Kong Gateway (APIs)* platform, the scanner assigns an asset type to each discovered service based on the service's Kong protocol and plugins.
+
+[%header,cols="1,1,1"]
+|===
+|Protocol |Plugin |Asset type
+
+|`grpc` / `grpcs`
+|—
+|gRPC
+
+|`http` / `https`
+|`graphql-*`
+|GraphQL
+
+|`http` / `https`
+|No matching plugin
+|REST
+|===
+
+The scanner currently detects gRPC and GraphQL protocols only.
+
+NOTE: Services that use other protocols or plugins, such as WebSocket or Simple Object Access Protocol (SOAP), are registered as asset type REST for now. MuleSoft plans to support these protocols in a future release.
+
+=== Rescanning Behavior
+
+On the *Kong Gateway (APIs)* platform, the scanner assigns an asset type to a service the first time it discovers that service. Later scans don't update that asset type, even if the service's protocol changes in Kong Gateway. To change an asset's type, remove the asset, and let the scanner import it again.
 
 == Scanner Configuration Overview
 
