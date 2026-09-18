@@ -22,7 +22,7 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 
 Creating the scanner establishes the configuration and returns the configuration ID (`CONFIG_ID`) you use to push services. You can create the scanner in one of two ways:
 
-* *In the UI*: Use the *Providers* > *Self-managed* wizard. This is the recommended path for a one-time setup, and it's the only way that shows the push instructions inline.
+* *In the UI*: Use the *Providers* > *Self-Managed* wizard. This is the recommended path for a one-time setup, and it's the only way that shows the push instructions inline.
 * *With the API*: Call the scanner-configuration API directly. Use this path for fully headless setup—for example, provisioning scanners from a script or CI/CD job with no manual step.
 
 Both paths create the same kind of scanner and return the same `CONFIG_ID`. The rest of this topic (pushing services and sealing the workspace) is identical regardless of how you create the scanner.
@@ -34,7 +34,7 @@ The `CONFIG_ID` identifies the push configuration. It isn't an authorization cre
 
 === Create the Scanner in the UI
 
-. From *Platform* > *Providers*, select *Self-managed*.
+. From *Platform* > *Providers*, select *Self-Managed*.
 . Select *Add Scanner*.
 . Enter the scanner details:
 * *Name* (required): A name for the scanner, for example, `Orders push scanner`.
@@ -54,7 +54,7 @@ After the scanner is created, select *View Scanner* to open its detail page. The
 
 === Create the Scanner Without the UI
 
-To create the scanner without the wizard, call the scanner-configuration API. Unlike a provider scanner, a self-managed scanner has no external credentials to supply—you provide only the non-secret configuration: the service type, the review mode, and a display name.
+To create the scanner without the wizard, call the scanner-configuration API. Unlike a provider scanner, a self-managed scanner has no external credentials to supply. You provide only the non-secret configuration: the service type, the review mode, and a display name.
 
 [source,bash]
 ----
