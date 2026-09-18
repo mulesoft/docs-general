@@ -1,4 +1,4 @@
-= Building a Custom Scanner
+= Creating a Custom Scanner
 :keywords: scanners, custom scanner, self-managed scanner, build your own scanner, push assets, pipeline, discovery, mulesoft
 
 A custom scanner or a *self-managed* scanner lets you register services with the system from your own build pipeline instead of connecting to a supported third-party provider. You create the scanner once (in the UI or with the API), then push service definitions to it from a script, CI/CD job, or any client that can call a REST API. Use a custom scanner when the agents, MCP servers, or APIs you want to govern don't live in a provider the system scans directly, but you can produce their definitions yourself.
