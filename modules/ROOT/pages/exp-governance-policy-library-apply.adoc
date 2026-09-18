@@ -1,9 +1,9 @@
-= Apply Universal Policies
-:keywords: policy library, universal policies, canonical policies, governance policies, apply policy, policy catalog
+= Apply Open Policies
+:keywords: policy library, open policies, canonical policies, governance policies, apply policy, policy catalog
 
-Governance provides two entry points for applying *universal policies*: the *Apply Policy* flow on the Governance Strategies page, and the *Policy Library* on an individual API instance. A universal policy expresses a policy once and applies it as the correct vendor-native policy on each supported gateway, so you can enforce consistent controls across MuleSoft, Google Apigee, Kong Gateway, and Azure API Management without authoring a policy per gateway.
+Governance provides two entry points for applying *open policies*: the *Apply Policy* flow on the Governance Strategies page, and the *Policy Library* on an individual API instance. An open policy expresses a policy once and applies it as the correct vendor-native policy on each supported gateway, so you can enforce consistent controls across MuleSoft, Google Apigee, Kong Gateway, and Azure API Management without authoring a policy per gateway.
 
-This topic covers both entry points and the apply flow. For the full universal policy model, the apply and management workflow, activity tracking, and per-provider support, see xref:exp-policies-overview.adoc[] and xref:exp-policies-universal.adoc[].
+This topic covers both entry points and the apply flow. For the full open policy model, the apply and management workflow, activity tracking, and per-provider support, see xref:exp-policies-overview.adoc[] and xref:exp-policies-open.adoc[].
 
 == Before You Begin
 
@@ -26,9 +26,9 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 Policy write actions respect your permissions. If you don't have permission for an action, that action is unavailable and the experience explains that the action isn't permitted. If the platform can't verify your permissions for an instance, the actions remain available and the gateway enforces authorization when you submit the request. See xref:exp-policies-apply-manage.adoc[].
 ====
 
-== Browse Universal Policies
+== Browse Open Policies
 
-You can start applying a universal policy from two places:
+You can start applying an open policy from two places:
 
 * On the Governance Strategies page, select *Add Strategy*, then *Apply Policy*.
 * On an API instance, select the *Apply Policy* action to open the Policy Library.
@@ -42,7 +42,7 @@ Each policy appears with its name, category, and a short description of what it 
 
 Select *All Domains* to see every policy, or *Custom* to see policies that don't fall into the preceding categories. Each filter shows the number of policies it contains.
 
-== Apply a Universal Policy
+== Apply an Open Policy
 
 The apply steps vary depending on where you start.
 
@@ -67,12 +67,12 @@ When you apply a policy, the platform validates it against your governance confi
 
 Applying a policy is an asynchronous, tracked operation, not a fire-and-forget action. When you apply a policy to more than one instance, each instance reports its own result, so you can see which instances succeeded and which failed. To confirm the outcome on each target, review the *Activity log* tab of the instance. See xref:exp-policies-activity-log.adoc[].
 
-For how universal policies map to each provider's native policy, and which policies you can then edit, enable, disable, or remove afterward, see xref:exp-policies-universal.adoc[] and xref:exp-policies-apply-manage.adoc[].
+For how open policies map to each provider's native policy, and which policies you can then edit, enable, disable, or remove afterward, see xref:exp-policies-open.adoc[] and xref:exp-policies-apply-manage.adoc[].
 
 == See Also
 
 * xref:exp-policies-overview.adoc[]
-* xref:exp-policies-universal.adoc[]
+* xref:exp-policies-open.adoc[]
 * xref:exp-policies-apply-manage.adoc[]
 * xref:exp-policies-activity-log.adoc[]
 * xref:exp-policies-provider-reference.adoc[]
