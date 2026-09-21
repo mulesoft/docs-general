@@ -172,7 +172,7 @@ When you scan with the *Kong Gateway (APIs)* platform, the scanner assigns an se
 
 The scanner currently detects gRPC and GraphQL protocols only.
 
-NOTE: Services that use other protocols or plugins, such as WebSocket or Simple Object Access Protocol (SOAP), are registered as asset type REST for now. MuleSoft plans to support these protocols in a future release.
+NOTE: Services that use other protocols or plugins, such as WebSocket or Simple Object Access Protocol (SOAP), are registered as service type REST for now. 
 
 === Rescanning Behavior
 
