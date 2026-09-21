@@ -58,7 +58,7 @@ For setup and prerequisites, see xref:mulesoft-mcp-server::getting-started-platf
 
 MuleSoft Vibes is an AI assistant for the development lifecycle, built into Anypoint Code Builder. Using natural language and generative AI, build, deploy, and manage projects. Develop API specifications, create and configure applications, search for assets, deploy and manage instances, and secure applications. Vibes connects to your MuleSoft environment through the MuleSoft MCP Server and supports reusable skills.
 
-For prerequisites, see xref:anypoint-code-builder::mulesoft-vibes.adoc#before-you-begin-vibes[].
+For prerequisites, see xref:anypoint-code-builder::mulesoft-vibes.adoc#before-you-begin-vibes[MuleSoft Vibes Before You Begin].
 
 === MuleSoft Agent
 
@@ -66,7 +66,7 @@ The MuleSoft Agent is an AI assistant available throughout the platform UI and i
 
 The MuleSoft Agent is available on request. To get access, contact your account executive or MuleSoft representative to request enablement.
 
-For prerequisites, see xref:exp-ai-assistant-use.adoc#before-you-begin[].
+For prerequisites, see xref:exp-ai-assistant-use.adoc#before-you-begin[MuleSoft Agent Before You Begin].
 
 [NOTE]
 ====
