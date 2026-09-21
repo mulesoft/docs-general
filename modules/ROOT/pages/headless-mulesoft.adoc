@@ -1,0 +1,169 @@
+= Headless MuleSoft
+
+You can work with the MuleSoft platform programmatically using natural language from your AI-powered IDEs, AI assistants, and Slack, skipping the web UI altogether. Developers and AI agents can discover, build on, operate, and govern the platform from their preferred tools. Your access travels over APIs and MCP servers, and the same identity and permissions apply wherever you start a request.
+
+You programmatically access the platform through several capabilities:
+
+* Build and author integrations from your IDE with the MuleSoft DX MCP Server.
+* Operate, govern, and monitor the platform from any MCP-capable client with the MuleSoft Platform MCP Server.
+* Build in Anypoint Code Builder with an AI assistant using MuleSoft Vibes.
+* Manage your portfolio in plain language using the MuleSoft Agent, the UI, or Slack.
+* Register and monitor your services (agents, APIs, MCP servers, model proxies, and gateways) in centralized Portfolio catalogs, with governance, cost, and monitoring applied across the services.
+* Use Developer Hub, a catalog open to both humans and agents, to discover what you can build on.
+
+Because access is governed by Anypoint Platform Access Management, the permissions that apply on Anypoint Platform apply on every surface.
+
+== Roles and Surfaces
+
+[cols="1,2,2"]
+|===
+|Role |Tasks |Surfaces
+
+|Developers
+|Build, deploy, and operate services. Manage assets, configure gateways, and apply policies.
+|Claude Desktop, Claude Code, Cursor, Windsurf, VS Code, other supported IDEs, and Anypoint Code Builder with MuleSoft Vibes.
+
+|Platform and governance teams
+|Register services, apply governance strategies, and monitor health and costs.
+|The platform UI and Slack
+
+|Business and operations users
+|Get answers, receive alerts, and run common actions in plain language.
+|Slack
+
+|AI agents
+|Discover and operate platform capabilities within their user's permissions.
+|Any MCP-capable surface
+|===
+
+== The Surfaces
+
+=== MuleSoft MCP Servers
+
+Use the DX MCP Server to build and author in your IDE. Use the Platform MCP Server to operate, govern, and monitor the platform. Some IDEs can connect to both.
+
+==== MuleSoft DX MCP Server
+
+The MuleSoft DX MCP Server lets AI-powered development assistants in your IDE interact with Anypoint Platform, so you build and manage applications without leaving your coding environment. From natural-language prompts, generate Mule flows and API specs. Generate and modify MUnit tests, create MCP servers, manage API instances and policies, deploy and update Mule applications, and search assets.
+
+For setup and prerequisites, see xref:mulesoft-mcp-server::getting-started.adoc[].
+
+=== MuleSoft Platform MCP Server
+
+The MuleSoft Platform MCP Server gives AI tools governed access to your agentic landscape, including APIs, agents, MCP servers, and LLMs. Use it to scan, discover, govern, and monitor services in natural language. Tool categories include Exchange, API Manager, Anypoint Monitoring, Governance, Runtime Manager, and Cost Management.
+
+For setup and prerequisites, see xref:mulesoft-mcp-server::getting-started-platform.adoc[].
+
+=== MuleSoft Vibes
+
+MuleSoft Vibes is an AI assistant for the development lifecycle, built into Anypoint Code Builder. Using natural language and generative AI, build, deploy, and manage projects. Develop API specifications, create and configure applications, search for assets, deploy and manage instances, and secure applications. Vibes connects to your MuleSoft environment through the MuleSoft MCP Server and supports reusable skills.
+
+For prerequisites, see xref:anypoint-code-builder::mulesoft-vibes.adoc#before-you-begin-vibes[].
+
+=== MuleSoft Agent
+
+The MuleSoft Agent is an AI assistant available throughout the platform UI and in Slack. Use the MuleSoft Agent to navigate, search, and manage your portfolio through conversation. Capabilities include portfolio management, governance, monitoring and observability, cost management, navigation, and platform configuration. The agent respects your Access Management permissions, confirms actions before making changes, and logs every action.
+
+The MuleSoft Agent is available on request. To get access, contact your account executive or MuleSoft representative to request enablement.
+
+For prerequisites, see xref:exp-ai-assistant-use.adoc#before-you-begin[].
+
+[NOTE]
+====
+MuleSoft Vibes and the MuleSoft Agent are different assistants. Use MuleSoft Vibes to build integrations, APIs, and applications in Anypoint Code Builder. Use the MuleSoft Agent to operate and manage your portfolio, including governance, monitoring, and cost, from the platform UI or Slack.
+====
+
+=== Developer Hub
+
+The https://dev-portal.mulesoft.com[MuleSoft Developer Hub] is a portal for developers and AI agents to discover, interact, and build together. It catalogs platform APIs, skills (agent workflows), MCP servers, and Terraform resources. Browse, search, and filter the catalog in a web UI, and your agents consume machine-readable entry points (`AGENTS.md`, `registry.json`, and `llms.txt`) to discover and invoke capabilities.
+
+Skills cover tasks such as building a Mule integration, securing an API, agent, or MCP server, applying a policy to an API instance, and building or translating an agent network (agent broker) project.
+
+=== Slack
+
+The MuleSoft for Slack app connects a Slack workspace to a MuleSoft organization for notifications, shortcuts, and deep links. Slackbot can connect to the Platform MCP Server for Q&A, and the MuleSoft Agent can take governance and management actions from the channel.
+
+The MuleSoft Agent is available on request. To get access, contact your account executive or MuleSoft representative.
+
+For setup, see xref:exp-slack-integrate.adoc[].
+
+== User Journeys
+
+These journeys show how developers, platform teams, and agents use the surfaces to build, operate, and govern on the platform.
+
+=== Journey 1: Build in Your IDE
+
+Role: Developer
+
+. In a supported IDE such as Cursor, VS Code, or Claude Desktop, register the *MuleSoft DX MCP Server*.
+. Use natural-language prompts to generate a Mule flow or API spec, then generate MUnit tests to validate it.
+. Deploy the Mule application and manage its API instance and policies, all from your editor. Never switch to a separate console to finish the build.
+
+=== Journey 2: Build with MuleSoft Vibes in Anypoint Code Builder
+
+Role: Developer
+
+. In Anypoint Code Builder, chat in natural language with MuleSoft Vibes to develop an API specification and create and configure an application.
+. Vibes connects to the MuleSoft environment through the MuleSoft MCP Server, so you search for assets, deploy, and manage instances without leaving Code Builder.
+. Apply reusable skills to standardize repeated tasks across your workspace.
+
+=== Journey 3: Operate and Govern from Your IDE or Assistant
+
+Role: Developer or platform team
+
+. From an MCP client such as Claude Desktop, Cursor, or MuleSoft Vibes, connect to the MuleSoft Platform MCP Server and authenticate into your organization.
+. Use natural language to interact with the platform, for example:
++
+--
+* `Show me all payment-related APIs across my organization.`
+* `Help me set up a rate-limiting policy on my Stripe API.`
+* `Which LLMs consumed the most requests last week?`
+--
+. For a policy request, the agent fetches the applicable policies, presents configuration options, and applies the policy to the instance, all within your permissions.
+
+=== Journey 4: Operate the Platform in Plain Language
+
+Role: Platform or governance team
+
+. Working in the platform UI or in Slack, ask the MuleSoft Agent for what you need, for example:
++
+--
+* `Create a governance strategy that applies a PII detection policy to all customer-facing agents.`
+* `Show me the health of my customer-facing APIs.`
+--
+. The agent uses page and portfolio context, shows a confirmation before any change, and guides multi-step tasks.
+. Actions run within your Access Management permissions and are logged and auditable.
+
+=== Journey 5: Make Your Existing APIs Agent-Ready (API Owner and Platform Team)
+
+Role: API owner or platform team
+
+. An AI team needs managed APIs available to their agents, but those APIs include write and delete operations that are too risky to expose.
+. In API Manager, expose a target API as an MCP server and map only the safe operations (for example, GET-only) to MCP tools, with no changes to the underlying API.
+. The MCP server runs on MuleSoft Omni Gateway, where existing authentication, policies, and monitoring apply to every agent request.
+. Agents connect to the MCP server endpoint and can call only the operations that were explicitly exposed. Usage is monitored alongside the team's other services.
+
+=== Journey 6: Discover What You Can Build On (Developer or Agent)
+
+Role: Developer or agent
+
+. Open the Developer Hub, where you browse and filter APIs, skills, MCP servers, and Terraform resources, and agents read `AGENTS.md`, `registry.json`, and `llms.txt` to know which platform capabilities exist and how to call them.
+. Find the capability you need and build on it, from one catalog, instead of rebuilding what already exists.
+
+== Where to Start
+
+Pick the surface that matches your role, then follow the setup topic for that surface.
+
+. Developers: Connect the DX MCP Server in your IDE, or open MuleSoft Vibes in Anypoint Code Builder.
+. Platform and governance teams: Connect the Platform MCP Server, or ask the MuleSoft Agent in the UI or Slack.
+. Anyone discovering capabilities: Browse Developer Hub to get started.
+
+== Related Resources
+
+* xref:mulesoft-mcp-server::getting-started.adoc[]
+* xref:anypoint-code-builder::mulesoft-vibes.adoc[]
+* xref:mulesoft-mcp-server::getting-started-platform.adoc[]
+* xref:exp-ai-assistant-use.adoc[]
+* xref:exp-slack-integrate.adoc[]
+* xref:exp-claude-desktop-connect.adoc[]
+* https://dev-portal.mulesoft.com[MuleSoft Developer Hub]
