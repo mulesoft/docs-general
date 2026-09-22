@@ -248,7 +248,12 @@ a|
 
 * *Read scope:* Admin API read permission required to discover MCP servers in target environments
 
-*Setup:* Link each Kong Gateway service to a Catalog API that has an attached OpenAPI Specification (OAS). A linked OAS produces higher-quality MCP servers bridged from discovered services. For the required workflow and route-discovery limitations, see xref:exp-scanners-add-from-providers.adoc#kong-gateway-scanner[Kong Gateway Scanner].
+*Setup:* Create the MCP servers for the scanner to discover in one of two ways:
+
+* In the Kong control plane, add a gateway service and attach an MCP-related plugin to it.
+* In Kong Catalog, open *MCP Servers* and create a new MCP server.
+
+The MCP servers reflect only the routes present in the control plane gateway services. For route-discovery limitations, see xref:exp-scanners-add-from-providers.adoc#kong-gateway-scanner[Kong Gateway Scanner].
 
 | Snowflake MCP Server
 | MCP
