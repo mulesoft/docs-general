@@ -30,7 +30,7 @@ Allows deployment of applications to CloudHub 2.0
 
 * Optional permissions (for MuleSoft Vibes AI features):
 +
-*MuleSoft Vibes* requires Agentforce to be enabled in Access Management. See xref:access-management::enabling-agentforce.adoc[].
+*MuleSoft Vibes* requires generative AI to be enabled in Access Management. See xref:access-management::enabling-generative-ai.adoc[].
 
 ** *Mule Developer Generative AI User*
 +

@@ -5,6 +5,12 @@ A scanner is the configured link between the system and a supported cloud provid
 
 For how provider connection and catalogs fit together, see xref:exp-services-connect-providers-to-add.adoc[] and xref:exp-services-add-to-portfolio.adoc[].
 
+Watch this video to see how to discover services with providers and scanners:
+
+++++
+include::_partials/exp-scanners-add-from-providers-video.html[]
+++++
+
 == Before You Begin
 
 Before getting started, make sure you have:
@@ -100,6 +106,26 @@ Microsoft Copilot Studio scanners support two authentication schemes. Create, au
 [NOTE]
 ====
 The OAuth (Authorization Code) flow opens a Microsoft sign-in popup. If your browser blocks popups, authorization can't complete and scanner setup stays in the authorizing state.
+====
+
+[[kong-gateway-scanner-openapi-specifications]]
+== Kong Gateway Scanner OpenAPI Specifications
+
+To discover accurate, typed API definitions from Kong Gateway, link each Kong Gateway service to a Catalog API that has an attached OpenAPI Specification (OAS). The scanner reads the OAS from the linked Catalog API to build a complete, typed service definition.
+
+Uploading an OAS file directly to a Kong Gateway service only creates Kong routes—it doesn't store a spec or endpoint definition that the scanner can read. Without a Catalog-linked spec, Kong infers routes from the gateway configuration. Inferred routes are untyped and produce a lower-quality service definition and degraded MCP bridging.
+
+To attach an OAS so the scanner can read it:
+
+. In the Kong *Catalog* section, create an API.
+. Attach the OAS spec to the Catalog API.
+. Link the Catalog API to a gateway service in Kong Gateway.
+
+For more information, see the https://developer.konghq.com/api-catalog/[Kong API catalog documentation^].
+
+[NOTE]
+====
+If a Kong Gateway service isn't linked to a Catalog API with an attached OAS, only the first route per path is discovered. For example, if the `/items` path has both `GET` and `POST` routes, only one of those routes appears in the discovered definition. Link the service to a Catalog API with an attached OAS to discover all routes and methods for each path.
 ====
 
 == Scanner Configuration Overview

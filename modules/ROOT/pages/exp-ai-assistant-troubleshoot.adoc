@@ -1,9 +1,9 @@
-= Troubleshoot the AI Assistant
+= Troubleshoot the MuleSoft Agent
 :keywords: ai assistant troubleshooting, ai assistant errors, incorrect answers, search results, mulesoft ai assistant, anypoint platform
 
 If you experience issues using the MuleSoft Agent AI assistant, use this guide to identify and resolve common problems.
 
-== AI Assistant Doesn't Respond
+== MuleSoft Agent Doesn't Respond
 
 If the AI assistant doesn't respond to your messages:
 
@@ -27,7 +27,7 @@ Try a different browser or clear cache:
 
 If the problem persists, contact your administrator or support team.
 
-== AI Assistant Gives Incorrect or Incomplete Answers
+== MuleSoft Agent Gives Incorrect or Incomplete Answers
 
 If the assistant provides answers that don't match your expectations:
 
@@ -64,7 +64,7 @@ Verify the assistant has access to the data:
 . Verify that monitoring or governance data has been collected for the service.
 . Confirm that you have permissions to view the data you're asking about.
 
-== AI Assistant Suggests Actions I Can't Perform
+== MuleSoft Agent Suggests Actions I Can't Perform
 
 If the assistant suggests actions but you can't perform them:
 
@@ -105,7 +105,7 @@ Verify service metadata:
 . If a service doesn't appear, check whether its description includes the terms you're searching for.
 . Update service descriptions to improve future search results.
 
-== AI Assistant Is Slow to Respond
+== MuleSoft Agent Is Slow to Respond
 
 If the assistant takes a long time to respond:
 
@@ -124,7 +124,7 @@ Check your connection:
 . Slow network connections can delay streaming responses.
 . Try refreshing the page or reconnecting to your network.
 
-== AI Assistant Conversation History Is Lost
+== MuleSoft Agent Conversation History Is Lost
 
 If your conversation history disappears:
 
@@ -143,7 +143,7 @@ Intentional behavior:
 . For privacy and security, conversation history may not persist across sessions.
 . Sensitive information isn't stored long-term.
 
-== Actions Performed by AI Assistant Fail
+== Actions Performed by MuleSoft Agent Fail
 
 If the assistant confirms an action but the action fails:
 
@@ -168,7 +168,7 @@ Try manually:
 . Perform the action manually through the UI to see if the same error occurs.
 . This helps determine whether the issue is with the AI assistant or the underlying system.
 
-== AI Assistant Can't Access Recent Changes
+== MuleSoft Agent Can't Access Recent Changes
 
 If the assistant doesn't recognize recently registered services or configuration changes:
 

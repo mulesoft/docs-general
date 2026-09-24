@@ -26,7 +26,7 @@ Use these options to quickly grab clean text or jump straight into your workflow
 
 MuleSoft documentation publishes `llms.txt` and `llms-full.txt` index files, which are machine-readable Markdown catalogs that let AI tools and RAG pipelines cleanly discover, search, or bulk-ingest our documentation without crawling raw HTML.
 
-For example, you can point an AI coding assistant to the sitewide or product `llms.txt` URL for real-time integration context, or import the `llms-full.txt` file into an vector database to ground AI agents.
+For example, you can point an AI coding assistant to the sitewide or product `llms.txt` URL for real-time integration context, or import the `llms-full.txt` file into a vector database to ground AI agents.
 
 Depending on your data scope, you can target three types of endpoints:
 
