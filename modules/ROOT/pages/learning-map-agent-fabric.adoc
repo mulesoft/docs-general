@@ -69,7 +69,7 @@ Put Omni Gateway in the request path so authentication, monitoring, and policy r
 - xref:exp-instances-add.adoc[]
 - xref:exp-policies-apply-manage.adoc[]
 - xref:exp-governance-work-with-strategies.adoc[]
-- xref:exp-policies-universal.adoc[]
+- xref:exp-policies-open.adoc[]
 - xref:exp-governance-govern-third-party-apis.adoc[]
 - xref:exp-governance-monitor-cross-gateway-conformance.adoc[]
 - xref:exp-detect-and-contain-rogue-agents.adoc[]

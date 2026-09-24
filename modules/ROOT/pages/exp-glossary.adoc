@@ -122,8 +122,8 @@ A governance control that filters or modifies tool inputs and outputs before the
 Unmanaged instance::
 A lighter-weight instance deployment that does not route traffic through Omni Gateway. Choose unmanaged instances when a full managed path does not match your operating model.
 
-Universal (canonical) policy::
-A provider-agnostic policy you configure once and apply across a mix of gateway providers. Anypoint translates a universal policy into each provider's native policy. Universal is a creation experience, not a managed entity: after you apply it, only native policies exist. Those native policies behave like any other native policy on the provider. You can edit, remove, enable, or disable them where the provider supports those actions. In the UI, universal policies carry a *Universal* badge.
+Open (canonical) policy::
+A provider-agnostic policy you configure once and apply across a mix of gateway providers. Anypoint translates an open policy into each provider's native policy. Open is a creation experience, not a managed entity: after you apply it, only native policies exist. Those native policies behave like any other native policy on the provider. You can edit, remove, enable, or disable them where the provider supports those actions. In the UI, open policies carry an *Open* badge.
 
 View-only policy::
-A discovered policy that Anypoint displays but can't create or edit, such as any policy that isn't one of the supported universal-backed policies. Depending on the provider, a view-only policy can still be removed or enabled/disabled.
+A discovered policy that Anypoint displays but can't create or edit, such as any policy that isn't one of the supported open-backed policies. Depending on the provider, a view-only policy can still be removed or enabled/disabled.
