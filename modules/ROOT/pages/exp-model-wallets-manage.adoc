@@ -69,7 +69,7 @@ Create a model wallet to define the client ID, JWT claims, and optional budgets 
 . (Optional) Enter a *Description* of the wallet's purpose.
 . Under *Authentication*, copy the system-generated *Client ID*.
 +
-The Client ID is read-only. Callers send the Client ID as the `X-Client-Id` request header to select the wallet.
+The Client ID is read-only. Wallet selection is driven by matching the caller's JWT claims against each wallet's required claims, with the highest-priority matching wallet winning. The Client ID is used only as a tie-breaker: when a caller matches several wallets tied on the best priority, sending the Client ID as the optional `x-mw-client-id` request header selects the tied wallet whose Client ID equals that value. If the header is absent or matches none of the tied wallets, the tied wallet whose Client ID sorts first alphabetically is used.
 . Select *Add Claim* and enter at least one required claim:
 +
 --
