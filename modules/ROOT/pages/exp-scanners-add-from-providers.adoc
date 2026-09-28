@@ -138,14 +138,13 @@ When the Kong Gateway scanner discovers a service, it assigns an asset type base
 |Protocol |Plugin |Asset type
 
 |`grpc` / `grpcs`
-|—
+|No matching plugin
 |gRPC
 
-|`http` / `https`
+.2+|`http` / `https`
 |`graphql-*`
 |GraphQL
 
-|`http` / `https`
 |No matching plugin
 |REST
 |===
@@ -154,7 +153,7 @@ The scanner currently detects gRPC and GraphQL protocols only.
 
 [NOTE]
 ====
-Services that use other protocols or plugins, such as WebSocket or Simple Object Access Protocol (SOAP), are registered as asset type REST for now.
+Services that use other protocols are registered as service type REST for now. MuleSoft plans to support more protocols in a future release.
 ====
 
 [[kong-gateway-scanner-rescanning-behavior]]
