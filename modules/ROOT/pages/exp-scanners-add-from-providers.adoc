@@ -131,7 +131,7 @@ If a Kong Gateway service isn't linked to a Catalog API with an attached OAS, on
 [[kong-gateway-scanner-protocol-to-asset-type-mapping]]
 === Protocol to Service Type Mapping
 
-When the Kong Gateway scanner discovers a service, it assigns an asset type based on the service's Kong protocol and plugins.
+When the Kong Gateway scanner discovers a service, it assigns a service type based on the service's Kong protocol and plugins.
 
 [%header,cols="1,1,1"]
 |===
