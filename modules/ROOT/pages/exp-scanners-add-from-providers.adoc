@@ -159,7 +159,7 @@ Services that use other protocols are registered as service type REST for now. M
 [[kong-gateway-scanner-rescanning-behavior]]
 === Rescanning Behavior
 
-The Kong Gateway scanner assigns an asset type to a service the first time it discovers that service. Later scans don't update that asset type, even if the service's protocol changes in Kong Gateway. To change an asset's type, remove the asset, and let the scanner import it again.
+The Kong Gateway scanner assigns an service type to a service the first time it discovers that service. Later scans don't update that service type, even if the service's protocol changes in Kong Gateway. To change a service's type, remove the service, and let the scanner import it again.
 
 == Scanner Configuration Overview
 
