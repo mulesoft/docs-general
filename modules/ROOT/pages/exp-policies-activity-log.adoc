@@ -22,7 +22,7 @@ The *Activity log* tab lists recent policy operations for the API instance. By d
 
 Each entry has these columns:
 
-* *Action*: the type of operation, such as *Apply*, *Update* (edit), *Toggle* (enable/disable), *Remove*, or *Universal* (a universal policy apply).
+* *Action*: the type of operation, such as *Apply*, *Update* (edit), *Toggle* (enable/disable), *Remove*, or *Open* (an open policy apply).
 * *Policy*: the policy the operation applies to.
 * *Status*: one of three states:
 ** *Running*
