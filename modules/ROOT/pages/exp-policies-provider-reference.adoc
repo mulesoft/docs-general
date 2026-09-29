@@ -13,24 +13,24 @@ Before getting started, make sure you have:
 [[supported-actions-by-provider]]
 == Supported Actions by Provider
 
-[cols="2,^1,^1,^1,^1",options="header"]
+[cols="2,^1,^1,^1,^1,^1,^1",options="header"]
 |===
-|Provider |Apply |Edit |Remove |Enable/Disable
+|Provider |Apply |Edit |Remove |Enable/Disable |View |xref:exp-governance-create-strategy.adoc[Track/Govern]
 
-|Anypoint
-|Yes |Yes |Yes |Yes
+|Omni Gateway
+|Yes |Yes |Yes |Yes |Yes |Yes
 
 |Kong Gateway
-|Yes |Yes |Yes |Yes
+|Yes |Yes |Yes |Yes |Yes |Yes
 
 |Google Apigee
-|Yes |Yes |Yes |No (no native concept)
+|Yes |Yes |Yes |No (no native concept) |Yes |Yes
 
 |Azure API Management
-|Yes |Yes |Yes |No (no native concept)
+|Yes |Yes |Yes |No (no native concept) |Yes |Yes
 
 |Amazon API Gateway
-|No |No |No |No (not supported yet)
+|No |No |No |No (not supported yet) |Yes |Yes
 |===
 
 [NOTE]
@@ -38,6 +38,7 @@ Before getting started, make sure you have:
 * Apply and Edit are further limited to the supported (open-backed) policies. A Yes in the Edit column means the provider supports editing, not that every policy is editable. See xref:exp-policies-apply-manage.adoc#policy-edit-restrictions[Policy Edit Restrictions].
 * Apigee and Azure API Management have no native enabled/disabled state (a policy is either attached or not), so the enable/disable actions aren't available there.
 * Amazon API Gateway is not supported for policy write yet.
+* View and Track/Govern reflect read-only visibility and governance reporting, which every provider supports regardless of write access. See xref:exp-governance-create-strategy.adoc[Create Governance Strategies].
 ====
 
 == Per-Provider Permissions
@@ -47,7 +48,7 @@ Because policy management reuses the scanner connection, the permissions you see
 * Google Apigee: Anypoint checks the connected Google service account's actual permissions on Google Cloud. See <<apigee-required-permissions-and-roles>>.
 * Azure API Management: Anypoint checks the connected Azure principal's role-based permissions on the API resource, including permissions inherited from higher scopes.
 * Kong Gateway: access is based on your Kong Konnect roles and team memberships for the instance's control plane. Admin and power teams get full access; otherwise a matching role is required.
-* Anypoint: uses the same Anypoint Platform permissions as elsewhere in the product, with no separate provider-side check.
+* Omni Gateway: uses the same Anypoint Platform permissions as elsewhere in the product, with no separate provider-side check.
 
 == Injection Points
 
@@ -64,7 +65,7 @@ To prevent conflicting concurrent changes, an in-progress operation takes a lock
 
 * Azure API Management and Google Apigee lock the entire API instance. While one policy operation is running, no other policy operation on that instance can start. Wait for the running one to finish. On Azure, an instance's policies live in a single document, so any change touches the whole thing. On Apigee, a change re-deploys the whole proxy, so it's inherently instance-wide.
 * Kong Gateway locks only the specific policy that you modify. You can work with other policies on the same instance simultaneously.
-* Anypoint takes no such lock.
+* Omni Gateway takes no such lock.
 
 If an operation is already in progress, another operation is mid-flight on that instance (Azure or Apigee) or on that same policy (Kong). Wait for the operation to complete. You can track it in the *Activity log*. See xref:exp-policies-activity-log.adoc[].
 
@@ -93,7 +94,7 @@ At launch, Anypoint supports five open use cases. Each maps to a native policy o
 
 [cols="1,1,1,1,1",options="header"]
 |===
-|Open Use Case |Anypoint |Google Apigee |Azure API Management |Kong Gateway
+|Open Use Case |Omni Gateway |Google Apigee |Azure API Management |Kong Gateway
 
 |API Key Enforcement
 |Client ID Enforcement
@@ -129,7 +130,7 @@ At launch, Anypoint supports five open use cases. Each maps to a native policy o
 [NOTE]
 ====
 * A dash (—) means that the provider doesn't offer the use case because it lacks a native equivalent.
-* Some use cases map to more than one native policy. For example, Header Manipulation applies separate request/response (or inbound/outbound) policies, and Anypoint's Header Manipulation is two policies (injection and removal).
+* Some use cases map to more than one native policy. For example, Header Manipulation applies separate request/response (or inbound/outbound) policies, and Omni Gateway's Header Manipulation is two policies (injection and removal).
 ====
 
 Beyond the open use cases, Anypoint also supports these native Kong policies: `acl`, `acme`, `basic-auth`, `header-cert-auth`, `ldap-auth`, `ldap-auth-advanced`, `mtls-auth`, `opa`, `tls-handshake-modifier`, and `tls-metadata-headers`.
