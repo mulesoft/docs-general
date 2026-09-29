@@ -16,7 +16,7 @@ At launch, there are five open use cases. Each maps to a specific native policy 
 * IP Allowlist
 * JWT Validation
 
-These are the primary policies you can create and edit across providers. Anypoint also supports several additional native Kong policies. See xref:exp-policies-provider-reference.adoc#supported-policies-and-native-equivalents[Supported Policies and Native Equivalents]. Other recognized policies are view-only. See xref:exp-policies-apply-manage.adoc#policy-edit-restrictions[Policy Edit Restrictions].
+These are the primary policies you can create and edit across providers. Open policies also support several additional native Kong policies. See xref:exp-policies-provider-reference.adoc#supported-policies-and-native-equivalents[Supported Policies and Native Equivalents]. Other recognized policies are view-only. See xref:exp-policies-apply-manage.adoc#policy-edit-restrictions[Policy Edit Restrictions].
 
 == Open Is a Creation Experience
 
@@ -30,7 +30,7 @@ Because open is only a creation experience, there is no dedicated open activity 
 
 [NOTE]
 ====
-When an open policy targets Anypoint instances, there is currently no Activity log record for those targets, so there's no in-product way to confirm the outcome on Anypoint targets. This is a known limitation. For external providers (Apigee, Azure, and Kong), you can follow the outcome in each instance's *Activity log*.
+When an open policy targets Omni instances, there is currently no Activity log record for those targets, so there's no in-product way to confirm the outcome on Omni targets. This is a known limitation. For external providers (Apigee, Azure, and Kong), you can follow the outcome in each instance's *Activity log*.
 ====
 
 == Open Policies vs. Automated Policies vs. Controls
@@ -53,7 +53,7 @@ These three are easy to confuse. Use this comparison to choose the right tool:
 
 |Scope
 |Multi-provider, applied to the instances you select.
-|Anypoint native (Omni and Mule), applied automatically by matching rules.
+|Native to Omni and Mule, applied automatically by matching rules.
 |Across APIs and instances.
 |===
 

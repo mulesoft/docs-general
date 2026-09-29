@@ -45,8 +45,8 @@ Before getting started, make sure you have:
 
 Because policy management reuses the scanner connection, the permissions you see reflect what that connection's identity is allowed to do on the provider, not a separate login.
 
-* Google Apigee: Anypoint checks the connected Google service account's actual permissions on Google Cloud. See <<apigee-required-permissions-and-roles>>.
-* Azure API Management: Anypoint checks the connected Azure principal's role-based permissions on the API resource, including permissions inherited from higher scopes.
+* Google Apigee: The Enhanced Experience checks the connected Google service account's actual permissions on Google Cloud. See <<apigee-required-permissions-and-roles>>.
+* Azure API Management: The Enhanced Experience checks the connected Azure principal's role-based permissions on the API resource, including permissions inherited from higher scopes.
 * Kong Gateway: access is based on your Kong Konnect roles and team memberships for the instance's control plane. Admin and power teams get full access; otherwise a matching role is required.
 * Omni Gateway: uses the same Anypoint Platform permissions as elsewhere in the product, with no separate provider-side check.
 
@@ -55,7 +55,7 @@ Because policy management reuses the scanner connection, the permissions you see
 An injection point is where a policy runs relative to the request and response. Each policy template declares the injection points that it allows. If you choose an unsupported injection point, the system rejects the choice.
 
 * Google Apigee: you can choose request or response. On the Apigee side, both map to the proxy-level `PreFlow` (request and response map to the corresponding `PreFlow` section).
-* Azure API Management: supports `inbound`, `outbound`, and `backend`. Azure's error-handling section is not editable through Anypoint.
+* Azure API Management: supports `inbound`, `outbound`, and `backend`. Azure's error-handling section is not editable through the Enhanced Experience.
 * Kong Gateway: the injection point is informational only; Kong's plugin phase is fixed, so it doesn't change placement.
 
 [[instance-locking-during-operations]]
@@ -85,12 +85,12 @@ To get these permissions, you can use one of these predefined Apigee roles:
 * Apigee API Admin
 * Apigee Environment Admin
 
-Any custom role or higher-scope grant that includes the five permissions also works. Anypoint checks the account's effective permissions, not the role name.
+Any custom role or higher-scope grant that includes the five permissions also works. The Enhanced Experience checks the account's effective permissions, not the role name.
 
 [[supported-policies-and-native-equivalents]]
 == Supported Policies and Native Equivalents
 
-At launch, Anypoint supports five open use cases. Each maps to a native policy on each provider. These native policies are the ones you can create and edit, along with the additional native Kong policies listed after this table. Other recognized policies are view-only.
+At launch, open policies support five open use cases. Each maps to a native policy on each provider. These native policies are the ones you can create and edit, along with the additional native Kong policies listed after this table. Other recognized policies are view-only.
 
 [cols="1,1,1,1,1",options="header"]
 |===
@@ -133,7 +133,7 @@ At launch, Anypoint supports five open use cases. Each maps to a native policy o
 * Some use cases map to more than one native policy. For example, Header Manipulation applies separate request/response (or inbound/outbound) policies, and Omni Gateway's Header Manipulation is two policies (injection and removal).
 ====
 
-Beyond the open use cases, Anypoint also supports these native Kong policies: `acl`, `acme`, `basic-auth`, `header-cert-auth`, `ldap-auth`, `ldap-auth-advanced`, `mtls-auth`, `opa`, `tls-handshake-modifier`, and `tls-metadata-headers`.
+Beyond the open use cases, open policies also support these native Kong policies: `acl`, `acme`, `basic-auth`, `header-cert-auth`, `ldap-auth`, `ldap-auth-advanced`, `mtls-auth`, `opa`, `tls-handshake-modifier`, and `tls-metadata-headers`.
 
 == See Also
 
