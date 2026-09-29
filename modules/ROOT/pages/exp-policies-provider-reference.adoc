@@ -133,7 +133,7 @@ At launch, open policies support five open use cases. Each maps to a native poli
 * Some use cases map to more than one native policy. For example, Header Manipulation applies separate request/response (or inbound/outbound) policies, and Omni Gateway's Header Manipulation is two policies (injection and removal).
 ====
 
-Beyond the open use cases, open policies also support these native Kong policies: `acl`, `acme`, `basic-auth`, `header-cert-auth`, `ldap-auth`, `ldap-auth-advanced`, `mtls-auth`, `opa`, `tls-handshake-modifier`, and `tls-metadata-headers`.
+Open policies also support these native Kong policies: `acl`, `acme`, `basic-auth`, `header-cert-auth`, `ldap-auth`, `ldap-auth-advanced`, `mtls-auth`, `opa`, `tls-handshake-modifier`, and `tls-metadata-headers`.
 
 == See Also
 
