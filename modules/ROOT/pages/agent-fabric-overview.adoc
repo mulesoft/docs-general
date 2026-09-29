@@ -1,7 +1,7 @@
 = Agent Fabric Overview
 :keywords: mulesoft agent fabric, mcp server, mcp bridge, mcp connector, a2a bridge, a2a connector, agent broker, enterprise actionability, ai agents, mulesoft integration, model context protocol
 
-Teams build AI agents, MCP servers, and APIs across multiple platforms. As a result, it's challenging to easily reuse, apply consistent security controls, or track end-to-end cost. Agent Fabric is the AI control plane for that landscape. With Agent Fabric, gain visibility across every asset, let agents take action in your existing tech stack, enforce universal policies at runtime, and see and optimize what your AI investments are costing.
+Teams build AI agents, MCP servers, and APIs across multiple platforms. As a result, it's challenging to easily reuse, apply consistent security controls, or track end-to-end cost. Agent Fabric is the AI control plane for that landscape. With Agent Fabric, gain visibility across every asset, let agents take action in your existing tech stack, enforce open policies at runtime, and see and optimize what your AI investments are costing.
 
 
 [[how-agent-fabric-works]]
@@ -209,17 +209,17 @@ Use governance strategies when agents, APIs, and MCP servers must follow the sam
 
 Learn more: xref:exp-governance-work-with-strategies.adoc[]
 
-=== Universal Policies
+=== Open Policies
 
-On a multi-vendor gateway landscape, the same control is a different native policy on each platform, so gaps appear. Author the intent once with Universal Policies. MuleSoft translates it for each API gateway.
+On a multi-vendor gateway landscape, the same control is a different native policy on each platform, so gaps appear. Author the intent once with Open Policies. MuleSoft translates it for each API gateway.
 
 * Author a policy once and apply it across gateways from multiple vendors.
 * Enforce common controls such as API key enforcement, CORS, header manipulation, IP allowlisting, and JWT validation.
 * Keep the same governance as services move or scale across platforms.
 
-Use Universal Policies when you run gateways from more than one vendor and need the same controls on all of them.
+Use Open Policies when you run gateways from more than one vendor and need the same controls on all of them.
 
-Learn more: xref:exp-policies-universal.adoc[]
+Learn more: xref:exp-policies-open.adoc[]
 
 === Cross-Gateway and Third-Party API Governance
 

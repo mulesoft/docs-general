@@ -286,7 +286,7 @@ Policy write lets you apply, enable, disable, and remove policies on connected t
 Policy write reuses the same connection you configure for scanning; there's no separate policy-write connection. Before you can write policies, confirm these prerequisites in addition to the discovery prerequisites in the matrix:
 
 * *Write permissions on the connection:* The scanner connection's identity must have the provider's write scope, not just read access. A connection with read-only access to the provider can discover and read policies, but policy actions remain unavailable.
-* *Write scope:* The write scope covers enabling, disabling, and removing existing vendor-native policies, and creating and editing universal (canonical) policies, at both the instance and service scope. Creating and editing native vendor policies isn't supported.
+* *Write scope:* The write scope covers enabling, disabling, and removing existing vendor-native policies, and creating and editing open (canonical) policies, at both the instance and service scope. Creating and editing native vendor policies isn't supported.
 * *Provider write permissions:* Grant the provider-specific *Write scope (policy apply)* listed for each API gateway provider in the Scanner Prerequisites Matrix.
 
 The following table summarizes the read and write scopes for each API gateway provider that supports policy write.

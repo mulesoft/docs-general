@@ -265,7 +265,7 @@ You also need these permissions:
 | Apply, edit, enable, disable, or remove policies | API Manager: Manage Policies
 |===
 
-Learn more: xref:exp-instances-add.adoc[], xref:exp-policies-apply-manage.adoc[], and xref:exp-policies-universal.adoc[].
+Learn more: xref:exp-instances-add.adoc[], xref:exp-policies-apply-manage.adoc[], and xref:exp-policies-open.adoc[].
 
 === Create Governance Strategies
 

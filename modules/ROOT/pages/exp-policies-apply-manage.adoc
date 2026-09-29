@@ -28,12 +28,12 @@ Button state is a hint, not the final authorization. The *Policies* tab enables 
 Policy naming applies to Apigee only, where the name is the policy's unique identity on the gateway, not just a label. Choose it deliberately: the name is required at creation and you can't change it later. Other providers don't use policy names. See <<policy-naming-and-identity>>.
 . Apply the policy. Anypoint accepts the request and performs it in the background. Confirm the outcome in the *Activity log* tab. See xref:exp-policies-activity-log.adoc[].
 
-To apply a universal policy across multiple providers at once, use the *Policy Library* instead. See xref:exp-policies-universal.adoc[].
+To apply an open policy across multiple providers at once, use the *Policy Library* instead. See xref:exp-policies-open.adoc[].
 
 [[policy-edit-restrictions]]
 == Policy Edit Restrictions
 
-Having permissions is necessary but not sufficient to edit a policy. Anypoint supports editing the curated set of policies that back the universal use cases, plus several additional native Kong policies (see xref:exp-policies-universal.adoc[]); other recognized policies are view-only. Native policies created from a universal use case are editable like any other supported native policy. When *Edit Configuration* is unavailable, the UI explains why. Common reasons include:
+Having permissions is necessary but not sufficient to edit a policy. Anypoint supports editing the curated set of policies that back the open use cases, plus several additional native Kong policies (see xref:exp-policies-open.adoc[]); other recognized policies are view-only. Native policies created from an open use case are editable like any other supported native policy. When *Edit Configuration* is unavailable, the UI explains why. Common reasons include:
 
 * Anypoint doesn't recognize the policy's template, or doesn't yet support managing policies with its schema.
 * The policy's configuration doesn't match its expected schema. To resolve this issue, open a support case.
@@ -66,7 +66,7 @@ An Apigee edit that tries to change the name is rejected, because the name is th
 == See Also
 
 * xref:exp-policies-overview.adoc[]
-* xref:exp-policies-universal.adoc[]
+* xref:exp-policies-open.adoc[]
 * xref:exp-policies-activity-log.adoc[]
 * xref:exp-policies-provider-reference.adoc[]
 * xref:exp-services-view-details.adoc[]
