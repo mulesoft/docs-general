@@ -7,6 +7,12 @@ Services such as APIs, agents, MCP servers, and Model proxies can include instan
 
 Managed paths through Anypoint Omni Gateway can provide additional policy and monitoring integrations if your organization supports them. Unmanaged or external paths remain available when they align with your operating model.
 
+Watch this video to see how to create and manage instances:
+
+++++
+include::_partials/exp-instances-add-video.html[]
+++++
+
 == Before You Begin
 
 Before getting started, make sure you have:

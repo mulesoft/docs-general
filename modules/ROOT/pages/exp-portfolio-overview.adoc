@@ -6,6 +6,12 @@ Use portfolio-level views to see how your agents, APIs, MCP servers, Model proxi
 The exact layout depends on how your administrator configured your tenant and which catalogs they enabled.
 include::_partials/exp-navigation-labels.adoc[tag=ExpNavigationLabels]
 
+Watch this video to see how to navigate your portfolio:
+
+++++
+include::_partials/exp-portfolio-overview-video.html[]
+++++
+
 == Before You Begin
 
 Before getting started, make sure you have:

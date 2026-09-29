@@ -3,6 +3,12 @@
 
 Your *Portfolio* is organized into catalogs: *Agents*, *MCP Servers*, *Model Proxies*, *APIs*, and *Gateways*. Each catalog holds the services (or gateway entries) your organization registered or imported for governance, monitoring, and deployment. Services enter a catalog through automated provider discovery or manual registration. For procedures, use the topics linked in each section.
 
+Watch this video to see how to register services in your portfolio:
+
+++++
+include::_partials/exp-services-add-to-portfolio-video.html[]
+++++
+
 [cols="1,2",options="header"]
 |===
 |Approach |What Happens
