@@ -1,9 +1,9 @@
 = Make an Agent A2A-Compliant
-:keywords: a2a bridge, agent2agent, agentforce bridge, a2a compliant, agent fabric, non-a2a agent, omni gateway, source agent
+:keywords: a2a bridge, agent2agent, agentforce bridge, copilot bridge, a2a compliant, agent fabric, non-a2a agent, omni gateway, source agent
 
 Create an A2A bridge to make a non-A2A agent A2A-compliant so that Agent Fabric can discover, govern, and orchestrate it alongside native A2A agents.
 
-Agent Fabric orchestrates agents using the Agent2Agent (A2A) protocol, but many enterprise agents—such as Salesforce Agentforce agents—aren't A2A-compliant on their own. An A2A bridge closes this gap. A bridge is a chain of policies—inbound authentication plus the bridge policies—that runs on an Omni Gateway instance and presents an A2A-compliant facade in front of a *source agent*. More than a protocol translator, the bridge is an A2A-compliant protocol server: it translates between A2A and the source agent's native protocol, manages the task lifecycle, and serves A2A task management methods so downstream consumers see a fully A2A-compliant agent. No changes to the source agent are required.
+Agent Fabric orchestrates agents using the Agent2Agent (A2A) protocol, but many enterprise agents—such as Salesforce Agentforce agents and Microsoft Copilot Studio agents—aren't A2A-compliant on their own. An A2A bridge closes this gap. A bridge is a chain of policies—inbound authentication plus the bridge policies—that runs on an Omni Gateway instance and presents an A2A-compliant facade in front of a *source agent*. More than a protocol translator, the bridge is an A2A-compliant protocol server: it translates between A2A and the source agent's native protocol, manages the task lifecycle, and serves A2A task management methods so downstream consumers see a fully A2A-compliant agent. No changes to the source agent are required.
 
 When you create an A2A bridge, Agent Fabric derives an A2A agent card from the source agent, publishes it to your *Portfolio*, and deploys the first bridge instance—in a single wizard.
 
@@ -46,8 +46,8 @@ Because the bridge is always A2A-compliant, A2A clients consume a bridged agent 
 | Bridge translates A2A to the Agentforce Agent API. Supports streaming and human-in-the-loop.
 
 | Microsoft Copilot Studio
-| Planned
-| Roadmap. Copilot's activity-based Direct Line API requires heuristic task-lifecycle handling.
+| Available
+| Bridge translates A2A to the Copilot Direct Line API and authenticates upstream with a Direct Line API key. Copilot's activity-based Direct Line API requires heuristic task-lifecycle handling.
 
 | Amazon Bedrock AgentCore, Google Vertex AI
 | Not required
@@ -78,7 +78,12 @@ Before getting started, make sure you have:
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 * A managed or self-managed Omni Gateway in the target environment.
-* Credentials for the source agent's platform, such as the Salesforce org URL, OAuth token URL, client ID, and client secret for an Agentforce source agent.
+* Credentials for the source agent's platform:
++
+--
+** For an Agentforce source agent: the Salesforce org URL, OAuth token URL, grant type, client ID, and client secret.
+** For a Microsoft Copilot Studio source agent: the Direct Line API key used to authenticate to the Copilot agent, and the Direct Line endpoint URL (for example, `https://directline.botframework.com`).
+--
 
 [[create-a2a-bridge]]
 == Create an A2A Bridge
@@ -96,10 +101,27 @@ You create a bridge from the source agent's detail page.
 ** *Environment* — Select the target environment.
 ** *Omni Gateway* — Select the managed or self-managed gateway that hosts the bridge.
 ** *Instance URL* — Enter the path segment for the bridge's A2A endpoint. Agent Fabric checks for route conflicts against existing instances on the gateway.
+** *Port* — Select the gateway ingress port the instance listens on.
 ** *Consumer Endpoint* — Optionally override the gateway ingress URL used to build the instance URL.
 --
-. Configure *Inbound Authentication* to control how A2A clients authenticate to the bridge. Select a method such as *JWT Validation*, *Basic Authentication*, or *Client ID Enforcement*, then provide the required values. 
-. Configure *Upstream Authentication* to control how the bridge authenticates to the source agent. For an Agentforce source agent, provide the *Salesforce Org URL*, *Token URL*, *Grant Type*, *Client ID*, and *Client Secret*. Source-derived values such as the tenant endpoint are read-only.
+. For a Microsoft Copilot Studio source agent, configure the *Target*—the upstream Direct Line endpoint the bridge routes to:
++
+--
+** *URL* — The Direct Line API endpoint, such as `https://directline.botframework.com`.
+** *Label* — An optional name for the upstream target.
+** *Weight* — The traffic weight for the target, as a percentage.
+** *Secret group* — Optionally select a secret group that holds the target's credentials.
+** *TLS context* — Optionally select a TLS context for the connection to the target.
+--
++
+For an Agentforce source agent, the target is derived from the source agent and is read-only.
+. Configure *Inbound Authentication* to control how A2A clients authenticate to the bridge. Select a method such as *JWT Validation*, *Basic Authentication*, or *Client ID Enforcement*, then provide the required values.
+. Configure *Upstream Authentication* to control how the bridge authenticates to the source agent:
++
+--
+** For an Agentforce source agent, provide the *Salesforce Org URL*, *Token URL*, *Grant Type*, *Client ID*, and *Client Secret*. Source-derived values such as the tenant endpoint are read-only.
+** For a Microsoft Copilot Studio source agent, select *API Key* and enter the Direct Line *API Key* value to inject on requests to the Copilot agent.
+--
 . Expand *Advanced* to review or adjust the generated policy configuration.
 . Complete the wizard. Finishing publishes the A2A card and deploys the bridge instance together.
 
@@ -108,7 +130,9 @@ After the bridge is created, the derived A2A agent card is published to the *Age
 On the bridged agent's *Overview* tab, Agent Fabric shows two cards side by side:
 
 * *A2A Bridge card* — The advertised name, description, version, protocol, capabilities, and skills the bridge publishes to other agents. Capabilities such as streaming, push notifications, state transition history, and extensions are set by the platform and locked to prevent the bridge from advertising a capability it can't honor. Skills are flagged as *Custom* when you added them or *Hidden* when you excluded them from discovery.
-* *Source card* — The name, description, and metadata of the underlying non-A2A source agent that the bridge card is derived from.
+* *Source card* — The name, description, and metadata of the underlying non-A2A source agent that the bridge card is derived from. For a Microsoft Copilot Studio source agent, the source card also includes a *Documentation* section with platform metadata captured during scanning, such as the agent ID, resource name, organization, environment URL, environment region, and tenant ID.
+
+Before a bridge is configured, the *A2A Bridge card* shows a *No bridge configured for this agent* state with the *Configure A2A Bridge & Deploy First Instance* action.
 
 To scale a bridge across environments or gateways, deploy additional instances from the *Instances* tab using *Create A2A Bridge Instance*.
 
@@ -147,6 +171,12 @@ Agentforce source agents have these additional limitations, which the derived ag
 * *No push notifications* — The Agentforce API doesn't support push notifications.
 * *Limited input-required support* — Not all Agentforce agent types support the A2A `input-required` state, so some bridged agents can't pause a task to request additional input for human-in-the-loop interactions.
 * *Session lifecycle* — The bridge creates and manages Agentforce sessions automatically. Sessions time out on the Agentforce side; you don't manage them directly.
+
+Microsoft Copilot Studio source agents have these additional limitations, which the derived agent card reflects:
+
+* *Heuristic task lifecycle* — Copilot's Direct Line API is activity-based rather than task-based. The bridge infers A2A task state from Direct Line activities, so task completion and `input-required` transitions are best-effort.
+* *Conversation mapping* — The bridge maps Direct Line conversations to A2A `contextId` and `taskId` values. Conversations time out on the Copilot side; the bridge doesn't extend or manage them directly.
+* *No push notifications* — The Direct Line API doesn't support push notifications.
 
 [[migration]]
 == Migrate to Native A2A
