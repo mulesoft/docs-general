@@ -111,8 +111,6 @@ To authorize the connection:
 ** For *Google Vertex AI*:
 +
 *** *GCP Project ID*: Google Cloud project ID that hosts the Vertex AI resources. Required for *Service Account Key*.
-*** *Service Account Email*: Email of the service account with the *Vertex AI Viewer* role. Required for *Service Account Key*.
-*** *Private Key*: Private key from the service account key file. Required for *Service Account Key*.
 *** *Client ID*: OAuth 2.0 client ID from your Google Cloud OAuth application. Required for *OAuth (Authorization Code)*.
 *** *Client Secret*: OAuth 2.0 client secret from your Google Cloud OAuth application. Required for *OAuth (Authorization Code)*.
 . Complete the connection:
