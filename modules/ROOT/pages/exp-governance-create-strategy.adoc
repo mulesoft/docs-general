@@ -14,7 +14,6 @@ Before getting started, make sure you have:
 ** API Governance: Governance Administrator
 ** API Manager: Manage Policies
 --
-* The Organization Administrator role, required to load the policy catalog when you create an Automated Policy strategy. Without this role, the catalog is empty or you get a permission error, and you can't select a policy. Control strategies use rulesets, not the policy catalog, so they don't require this role.
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
