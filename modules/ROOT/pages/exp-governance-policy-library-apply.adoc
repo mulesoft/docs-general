@@ -16,6 +16,7 @@ Before getting started, make sure you have:
 ** API Governance: Governance Administrator
 ** API Manager: Manage Policies
 --
+* The Organization Administrator role, required to load the open policy catalog, open a policy configuration form, and apply an open policy. Without this role, the catalog is empty or those actions fail.
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
