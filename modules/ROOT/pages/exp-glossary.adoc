@@ -93,10 +93,13 @@ Portfolio::
 The set of services registered or discovered within your org, organized into catalogs for agents, APIs, MCP servers, Model proxies, and gateways. Each catalog provides governance, monitoring, and instance management for the services it contains.
 
 Providers::
-The external cloud platforms connected to the enhanced experience to enable automated service discovery and import, or to connect an external vault. Configure providers under *Platform* > *Providers*.
+The external cloud platforms connected to the enhanced experience to enable automated service discovery and import, or to connect an external vault. Configure providers under *Platform* > *Providers*. The *Self-managed* category lets you create a scanner that you push service definitions to instead of connecting to an external platform.
 
 Scanner::
-A configured connection between the enhanced experience and a supported cloud provider. When a scanner runs, it discovers services and registers them in the matching Portfolio catalog. Scanners run on a schedule or on demand. A scanner is distinct from an external vault, which syncs secret metadata rather than discovering services.
+A configured link that discovers services and registers them in the matching Portfolio catalog. A provider scanner connects to a supported cloud provider and pulls services in, running on a schedule or on demand. A self-managed scanner works in the opposite direction: your own pipeline pushes service definitions to it. A scanner is distinct from an external vault, which syncs secret metadata rather than discovering services.
+
+Self-managed scanner (custom scanner)::
+A scanner that registers services from your own build pipeline instead of connecting to a third-party provider. You create it once (in the UI under *Platform* > *Providers* > *Self-managed*, or with the scanner-configuration API), then push service definitions to it from a script, CI/CD job, or any REST client. Sealing the workspace runs a scan that reconciles the pushed services into the matching Portfolio catalog. See xref:exp-scanners-build-custom.adoc[].
 
 Secret::
 A credential stored in your external vault, such as an API key. The enhanced experience tracks secret metadata (name, path, usage, and last-rotated time) and can reference a secret from a model proxy's authentication configuration, so keys stay in your secrets manager. See xref:exp-vaults-manage.adoc[].

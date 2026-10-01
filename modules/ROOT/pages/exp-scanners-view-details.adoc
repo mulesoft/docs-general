@@ -5,7 +5,7 @@ View details about a scanner and its scan history by selecting a configured scan
 
 == Open Scanner Detail Tabs
 
-. From *Platform* > *Providers*, open a connected provider.
+. From *Platform* > *Providers*, open a connected provider. For a self-managed scanner, which has no external provider, select *Self-managed* instead.
 . Select a configured scanner from the scanner list.
 . Use the tabs to review scanner results and configuration.
 
@@ -52,9 +52,13 @@ Shows correlation and governance enrichment activity for existing services, incl
 API gateway scanner::
 For providers that support policy write (Azure API Management, Google Apigee, and Kong Gateway), the *Settings* tab is where you review and update the connection credentials used for policy write on discovered APIs.
 
+Self-managed scanner::
+Shows the scanner's `CONFIG_ID` and push instructions, along with scan history for each sealed workspace. Services appear after you push definitions from your pipeline and seal the workspace. See xref:exp-scanners-build-custom.adoc[].
+
 == See Also
 
 * xref:exp-providers-manage.adoc[]
 * xref:exp-scanners-add-from-providers.adoc[]
+* xref:exp-scanners-build-custom.adoc[]
 * xref:exp-akamai-risk-correlation.adoc[]
 * xref:exp-scanners-manage.adoc[]

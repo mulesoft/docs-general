@@ -30,6 +30,8 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 
 Use a scanner when your team maintains services in an external platform and wants those services to appear automatically in portfolio catalogs after authentication and discovery, instead of registering each service manually.
 
+If your services don't live in a provider the system scans, but you can produce their definitions, create a self-managed scanner instead. A self-managed scanner reverses the direction: your own pipeline pushes service definitions to it. See xref:exp-scanners-build-custom.adoc[].
+
 == Entry Points for Creating a Scanner
 
 * *Home*
@@ -63,5 +65,6 @@ For example, when you start from *APIs*, discovered APIs are registered in the *
 * xref:exp-services-add-to-portfolio.adoc[]
 * xref:exp-services-register-manually.adoc[]
 * xref:exp-scanners-add-from-providers.adoc[]
+* xref:exp-scanners-build-custom.adoc[]
 * xref:exp-services-view-details.adoc[]
 * xref:exp-vaults-manage.adoc[]

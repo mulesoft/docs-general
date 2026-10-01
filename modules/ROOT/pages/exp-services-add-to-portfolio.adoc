@@ -1,7 +1,7 @@
 = Adding Services to Your Portfolio
 :keywords: add services, portfolio, service registration, service types, workflow, anypoint platform
 
-Your *Portfolio* is organized into catalogs: *Agents*, *MCP Servers*, *Model Proxies*, *APIs*, and *Gateways*. Each catalog holds the services (or gateway entries) your organization registered or imported for governance, monitoring, and deployment. Services enter a catalog through automated provider discovery or manual registration. For procedures, use the topics linked in each section.
+Your *Portfolio* is organized into catalogs: *Agents*, *MCP Servers*, *Model Proxies*, *APIs*, and *Gateways*. Each catalog holds the services (or gateway entries) your organization registered or imported for governance, monitoring, and deployment. Services enter a catalog through automated provider discovery, a self-managed scanner that you push service definitions to, or manual registration. For procedures, use the topics linked in each section.
 
 Watch this video to see how to register services in your portfolio:
 
@@ -21,6 +21,9 @@ include::_partials/exp-services-add-to-portfolio-video.html[]
 
 |xref:exp-services-register-manually.adoc[]
 |You start an *Add …* workflow from *Home* or from the catalog for that service type. You supply metadata, specifications, endpoints, or cards to register the service without a provider scanner.
+
+|xref:exp-scanners-build-custom.adoc[]
+|You create a self-managed (custom) scanner, then push service definitions to it from your own build pipeline, a script, or `curl`. Sealing the workspace runs a scan that registers the pushed services in the matching catalog. Use this approach when your services don't live in a provider the system scans, but you can produce their definitions.
 |===
 
 Gateway creation starts in Anypoint Platform, which you can open from the enhanced MuleSoft experience.
@@ -45,6 +48,9 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 * *Home*
 +
 Use *Add Services* to open provider connection or manual registration, then select the service type.
+* *Providers*
++
+From *Platform* > *Providers*, select *Self-managed* to create a scanner that you push service definitions to from your own pipeline. See xref:exp-scanners-build-custom.adoc[].
 * *Portfolio*
 +
 Open the *Agents*, *MCP Servers*, *Model Proxies*, *APIs*, or *Gateways* catalog. Use the add control for that type (for example, *Add API* or *Add Agent*), then select the available flow. For gateways, *Add Gateway* opens gateway creation in Anypoint Platform.
@@ -77,4 +83,5 @@ For more information about registering any of these types, see xref:exp-services
 * xref:exp-services-connect-providers-to-add.adoc[]
 * xref:exp-services-register-manually.adoc[]
 * xref:exp-scanners-add-from-providers.adoc[]
+* xref:exp-scanners-build-custom.adoc[]
 * xref:exp-services-view-details.adoc[]
