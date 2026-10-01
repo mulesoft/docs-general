@@ -9,7 +9,7 @@ Before getting started, make sure you have:
 
 * An Anypoint Platform account.
 * The API Manager: Manage Policies permission to apply, edit, enable, disable, or remove policies.
-* The Organization Administrator role to apply or manage open policies or native policies on external gateways. Without this role, you can't load an open policy catalog, open a policy configuration form, or apply, edit, enable, disable, or remove those policies. Listing native policy templates on an external gateway still uses the View Policies permission.
+* The Organization Administrator role to apply open policies, or to apply, edit, enable, disable, or remove native policies on external gateways. Without this role, you can't load an open policy catalog, open a policy configuration form, apply an open policy, or apply, edit, enable, disable, or remove native policies on an external gateway. Listing native policy templates on an external gateway still uses the View Policies permission.
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 * A provider scanner already connected for each external provider whose policies you want to manage. Policy management reuses the same connection you set up for scanning. See xref:exp-scanners-add-from-providers.adoc[].
