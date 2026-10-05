@@ -36,8 +36,8 @@ Apply these policy changes on each model proxy that callers reach through the wa
 
 . From *Portfolio* > *Model Proxies*, open the model proxy.
 . Select the *Policies* tab.
-. From the actions menu for *DataWeave Headers Transformation*, select *Disable Policy*.
-. From the actions menu for *Client ID Enforcement*, select *Disable Policy*.
+. From the actions menu for *DataWeave Headers Transformation* inbound policy, select *Disable Policy*.
+. From the actions menu for the *Client ID Enforcement* inbound policy, select *Disable Policy*.
 . Select *Apply Policy*.
 . Select *JWT Validation*, and then select *Next*.
 . Configure the policy to validate tokens from your IdP, including the JWT origin and the JSON Web Key Set (JWKS) URL or signing key. For configuration parameters, see xref:gateway::policies-included-jwt-validation.adoc[JWT Validation policy].
@@ -45,7 +45,7 @@ Apply these policy changes on each model proxy that callers reach through the wa
 . Select *Reorder Instance Policies*.
 . Move *JWT Validation* to the second position.
 +
-The xref:gateway::policies-included-cors.adoc[CORS] policy remains first. JWT Validation in the second position validates the token before later policies read the claims.
+The xref:gateway::policies-included-cors.adoc[Cross-Origin Resource Sharing ] policy remains first. JWT Validation in the second position validates the token before later policies read the claims.
 . Select *Save Order*.
 . From the actions menu for *LLM Proxy Core Policy*, select *Edit Configuration*.
 . In *Client ID*, enter:
@@ -62,7 +62,14 @@ Repeat these policy steps for each model proxy that callers reach through the wa
 [[create-a-model-wallet]]
 == Create a Model Wallet
 
-Create a model wallet to define the client ID, JWT claims, and optional budgets for a caller.
+Create a model wallet to define the client ID, JWT claims, and budgets for a model.
+
+To create a model wallet, you need:
+
+* A model proxy.
+* A configured identity provider (IdP) that issues JWTs for callers.
+* Policies configured on each model proxy that callers reach through the wallet. See <<configure-policies-on-a-model-proxy>>.
+* Costs configured for the models that callers use through the wallet. For more information, see xref:exp-models-manage-costs.adoc[Setting Model Costs for Spend Tracking].
 
 . From *Portfolio* > *Model Proxies* > *Model Wallets*, select *New Model Wallet*.
 . In *Name*, enter a name for the wallet, for example, `Finance Analytics Bot`.
@@ -70,16 +77,16 @@ Create a model wallet to define the client ID, JWT claims, and optional budgets 
 . Under *Authentication*, copy the system-generated *Client ID*.
 +
 The Client ID is read-only. The service selects a wallet by matching the caller's JWT claims against each wallet's required claims. The matching wallet with the highest priority wins. Client ID is only a tie-breaker. When several wallets share the best matching priority, send the optional x-mw-client-id request header to select the tied wallet whose Client ID equals that value. If the header is absent or matches none of the tied wallets, the service uses the tied wallet whose Client ID sorts first alphabetically.
-. Select *Add Claim* and enter at least one required claim:
+. In *Required Claims*, enter at least one required claim:
 +
 --
-** In *Required Claims*, enter one or more claim keys, for example, `group`.
-** Enter one or more comma-separated values.
+** In *Claim key*, enter one or more claim keys, for example, `group`.
+** In *Claim values*, enter one or more comma-separated values.
 ** To add more claims, select *Add Claim* again.
 --
 +
 The required claims match claims in the JWT after the JWT Validation policy on the model proxy validates the token.
-. (Optional) To cap spend or token usage, add one or more budgets. See <<add-a-budget-to-a-wallet>>.
+. Click *+ Add Budget* to add one or more budgets for this model wallet to cap spend or token usage. See <<add-a-budget-to-a-wallet>>.
 . Select *Create Model Wallet*.
 
 [[view-model-wallets]]

@@ -22,22 +22,22 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 
 The *Models* page lists available models, the proxies that use them, and any costs you have set.
 
-. From *Portfolio* > *Model Proxies* > *Model Wallets*, select *Models*.
+. From *Portfolio* > *Model Proxies*, select *Models*.
 . Review the list of available models.
 . To see details for a model, select its name.
 +
-The model detail page shows the model proxies that use the model and the model's configured costs.
+The model detail page shows the model proxies that use the model and the model's configured costs if applicable.
 
 [[edit-model-costs]]
 == Edit Model Costs
 
 Model costs drive spend and budget calculations. Set a cost per token for each model that you use.
 
-. From *Portfolio* > *Model Proxies* > *Model Wallets*, select *Models*.
+. From *Portfolio* > *Model Proxies*, select *Models*.
 . Select a model, for example, `Claude 3.5 Haiku`.
-. Select *Edit model costs*.
-. Enter the *Cost per 1M input tokens*, for example, `0.001`.
-. Enter the *Cost per 1M output tokens*, for example, `0.005`.
+. Select *Edit* from the *Actions* menu.
+. Enter the *Cost per 1M Input Tokens*, for example, `0.01`.
+. Enter the *Cost per 1M Output Tokens*, for example, `0.05`.
 . Select *Save changes*.
 
 If a model has no configured cost, then spend tracking and spend-based wallet budgets treat that model's usage as zero. Token-based wallet budgets still count tokens. See xref:exp-model-wallets-manage.adoc[Capping Spend for Callers of Model Proxies].
