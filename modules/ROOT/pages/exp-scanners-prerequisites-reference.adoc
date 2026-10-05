@@ -251,7 +251,9 @@ a|
 *Setup:* Create the MCP servers for the scanner to discover in one of two ways:
 
 * In the Kong control plane, add a gateway service and attach an MCP-related plugin to it.
-* In Kong Catalog, open *MCP Servers* and create a new MCP server.
+* In Kong Catalog, open *MCP Servers* and create a new MCP server, then link a gateway service to it.
+
+Each MCP server must have a linked gateway service. The scanner doesn't discover MCP servers that have no linked gateway service.
 
 The MCP servers reflect only the routes present in the control plane gateway services. For route-discovery limitations, see xref:exp-scanners-add-from-providers.adoc#kong-gateway-scanner[Kong Gateway Scanner].
 
