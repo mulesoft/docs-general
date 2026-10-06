@@ -47,7 +47,7 @@ Because the bridge is always A2A-compliant, A2A clients consume a bridged agent 
 
 | Microsoft Copilot Studio
 | Available
-| Bridge translates A2A to the Copilot Direct Line API and authenticates upstream with a Direct Line API key. Copilot's activity-based Direct Line API requires heuristic task-lifecycle handling.
+| Bridge translates A2A to the Copilot Direct Line API and authenticates upstream with a Direct Line secret. Copilot's activity-based Direct Line API requires heuristic task-lifecycle handling.
 
 | Amazon Bedrock AgentCore, Google Vertex AI
 | Not required
@@ -82,7 +82,7 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 +
 --
 ** For an Agentforce source agent: the Salesforce org URL, OAuth token URL, grant type, client ID, and client secret.
-** For a Microsoft Copilot Studio source agent: the Direct Line API key used to authenticate to the Copilot agent, and the Direct Line endpoint URL (for example, `https://directline.botframework.com`).
+** For a Microsoft Copilot Studio source agent: the Direct Line secret used to authenticate to the Copilot agent, and the Direct Line endpoint URL (for example, `https://directline.botframework.com`).
 --
 
 [[create-a2a-bridge]]
@@ -120,7 +120,7 @@ For an Agentforce source agent, the target is derived from the source agent and 
 +
 --
 ** For an Agentforce source agent, provide the *Salesforce Org URL*, *Token URL*, *Grant Type*, *Client ID*, and *Client Secret*. Source-derived values such as the tenant endpoint are read-only.
-** For a Microsoft Copilot Studio source agent, select *API Key* and enter the Direct Line *API Key* value to inject on requests to the Copilot agent.
+** For a Microsoft Copilot Studio source agent, select *API Key* and enter the Direct Line secret to inject on requests to the Copilot agent.
 --
 . Expand *Advanced* to review or adjust the generated policy configuration.
 . Complete the wizard. Finishing publishes the A2A card and deploys the bridge instance together.
@@ -177,6 +177,7 @@ Microsoft Copilot Studio source agents have these additional limitations, which 
 * *Heuristic task lifecycle*: Copilot's Direct Line API is activity-based rather than task-based. The bridge infers A2A task state from Direct Line activities, so task completion and `input-required` transitions are best-effort.
 * *Conversation mapping*: The bridge maps Direct Line conversations to A2A `contextId` and `taskId` values. Conversations time out on the Copilot side; the bridge doesn't extend or manage them directly.
 * *No push notifications*: The Direct Line API doesn't support push notifications.
+* *No task cancellation*: Copilot Studio doesn't support task cancellation, so the A2A `CancelTask` operation isn't available for Copilot source agents.
 
 [[migration]]
 == Migrate to Native A2A
