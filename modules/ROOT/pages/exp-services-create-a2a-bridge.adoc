@@ -29,7 +29,7 @@ A source agent is an existing agent, built on a platform that isn't natively A2A
 
 * *Protocol translation*: Converts A2A requests into the source platform's native API calls and maps native responses back to A2A task states.
 * *Identity and task mapping*: Maps the source platform's session or conversation identifiers to A2A `contextId` and `taskId` values.
-* *Task lifecycle and state*: Tracks task state so A2A operations such as `GetTask`, `ListTasks`, and `CancelTask` return correct results.
+* *Task lifecycle and state*: Tracks task state so A2A operations such as `GetTask` and `ListTasks`, and `CancelTask` return correct results.
 * *A2A card derivation*: Generates an A2A v1 agent card that accurately reflects the capabilities the bridge can honor. The bridge card is derived from the source agent's card, plus any capabilities added by the bridge and any customizations you make. The card advertises the bridge's A2A endpoint as a JSON-RPC interface in its `supportedInterfaces` and locks platform-set capabilities such as streaming and the human-in-the-loop extension.
 
 Because the bridge is always A2A-compliant, A2A clients consume a bridged agent with no custom logic. If the source platform later adds native A2A support, you can disable the bridge and clients continue to work without changes.
@@ -177,7 +177,7 @@ Microsoft Copilot Studio source agents have these additional limitations, which 
 * *Heuristic task lifecycle*: Copilot's Direct Line API is activity-based rather than task-based. The bridge infers A2A task state from Direct Line activities, so task completion and `input-required` transitions are best-effort.
 * *Conversation mapping*: The bridge maps Direct Line conversations to A2A `contextId` and `taskId` values. Conversations time out on the Copilot side; the bridge doesn't extend or manage them directly.
 * *No push notifications*: The Direct Line API doesn't support push notifications.
-* *No task cancellation*: Copilot Studio doesn't support task cancellation, so the A2A `CancelTask` operation isn't available for Copilot source agents.
+
 
 [[migration]]
 == Migrate to Native A2A
