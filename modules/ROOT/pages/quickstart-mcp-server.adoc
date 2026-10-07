@@ -1,0 +1,533 @@
+= Quick Start: Your First MCP Server
+:keywords: mcp bridge, mcp server, tutorial, getting started, api integration, agent tools
+
+Expose an existing API as an MCP server in 15 minutes, making the API callable by AI agents through the Model Context Protocol.
+
+== What You'll Build
+
+In this quick start, you'll:
+
+* Take an existing REST API and use MCP Bridge to expose the REST API as an MCP server
+* Select which API operations to expose as MCP tools
+* Apply read-only filtering for security
+* Test the MCP server with an agent
+* See the agent call your API through MCP
+
+This is the fastest way to make your existing APIs agent-ready.
+
+== What You'll Learn
+
+* How MCP Bridge transforms REST APIs into MCP servers
+* How to select which API operations to expose as tools
+* How to apply read-only filtering
+* How agents discover and call MCP tools
+* How to monitor agent access to your APIs
+
+== Prerequisites
+
+Before you begin, make sure you have:
+
+* An existing REST API instance in Anypoint Platform
++
+If you don't have one, use the sample API instance in the tip in <<Step 1,Step 1>>.
+* xref:access-management::permissions-by-product.adoc[API Manager permissions]:
+** Manage APIs
+** Deploy API Proxies
+* Agent Fabric enabled for your Anypoint Platform organization
++
+Contact your Anypoint Platform organization administrator or MuleSoft account team if you're unsure.
+* An Omni Gateway provisioned in your organization
++
+If you don't have one, see xref:gateway::flex-gateway-managed-getting-started.adoc[]. MCP Bridge requires an Omni Gateway to deploy and manage the MCP server endpoint.
+* An AI agent to test with (the steps use the test console in *Portfolio* > *MCP Servers*)
+
+*Time to complete:* Approximately 15 minutes
+
+== What MCP Bridge Does
+
+Before you start, understand what's happening:
+
+[source,text]
+----
+Your REST API          MCP Bridge             AI Agent
+   |                      |                      |
+   | GET /channels/list   |                      |
+   | POST /messages/send  | Converts to →        | discovers:
+   | DELETE /messages     |                      | - list_channels (tool)
+   |                      | Exposes only         | - send_message (tool)
+   |                      | selected ops         | [DELETE: not exposed]
+----
+
+MCP Bridge creates an MCP server that exposes your API operations as tools that agents can discover and call. You select which operations to expose.
+
+== Step 1: Access Your API in API Manager
+
+. Log in to Anypoint Platform using your Anypoint Platform credentials.
+. Navigate to *API Manager*.
+. Find an API to expose to agents.
+
+[TIP]
+====
+Don't have an API ready? Use the sample Slack API for this tutorial:
+
+. In Anypoint Platform, look for the new experience banner or shortcut and choose *Go to the new experience*.
+. Select *Portfolio* > *APIs*.
+. Search for `American Flights API`, and then select it.
+. Click *Expose as MCP Server*.
+.
+====
+
+Result: Your API should now appear in the API Manager dashboard with status *Active*.
+
+
+== Step 2: Create an MCP Server from Your API
+
+Use MCP Bridge to convert this REST API into an MCP server.
+
+. In API Manager, select your API (for example, "slack-api-tutorial").
+. Navigate to the *Settings* tab.
+. Scroll to the *MCP Integration* section.
+. Click *Create MCP Server*.
+
+You'll see the MCP Bridge configuration screen with the:
+
+* API operations list (all GET, POST, PUT, DELETE methods)
+* Tool selection checkboxes
+* Read-only filter option
+* Preview of the resulting MCP tools
+
+[NOTE]
+====
+If you don't see "MCP Integration" in *Settings*, verify:
+
+* You have API Manager permissions
+* Agent Fabric is enabled for your organization
+* You're on the correct API details page
+====
+
+*Result:* You see the MCP Bridge configuration screen with a list of your API operations
+
+== Step 3: Select Operations to Expose as Tools
+
+Select which API operations agents can call. For this tutorial, expose read operations only.
+
+For the Slack API example, select only these operations:
+
+* `GET /conversations.list`
++
+Becomes the `list_conversations` tool 
+* `GET /conversations.history`
++
+Becomes the `get_conversation_history` tool 
+* `GET /users.list`
++
+Becomes the `list_users` tool 
++
+These operations aren't exposed as tools, so don't select them:
++
+** `POST /chat.postMessage` (write operation)
+** `DELETE /conversations.archive` (destructive operation)
+
+[TIP]
+====
+Start with read-only operations. You can always add write operations later after testing.
+====
+
+As you select operations, watch the *Tool Preview* panel. It shows:
+
+[source,yaml]
+----
+# MCP Tools Generated:
+tools:
+  - name: list_conversations
+    description: List all channels in the workspace
+    inputSchema:
+      type: object
+      properties:
+        limit:
+          type: integer
+          description: Maximum number of channels to return
+
+  - name: get_conversation_history
+    description: Fetch message history from a channel
+    inputSchema:
+      type: object
+      properties:
+        channel:
+          type: string
+          description: Channel ID
+        limit:
+          type: integer
+----
+
+The YAML is what agents see when they discover your MCP server.
+
+*Result:* The Tool Preview shows three tools corresponding to your selected operations.
+
+== Step 4: (Optional) Apply Read-Only Filtering
+
+Enable the *Read-Only Filter* to provide an extra layer of security:
+
+. Toggle *Apply Read-Only Filter* to ON.
+. Review the behavior:
++
+If this filter is enabled, any operation that modifies data (POST, PUT, PATCH, DELETE) is automatically blocked, even if it's accidentally exposed. Read operations (GET) pass through normally.
+
+[NOTE]
+.Read-Only Filter vs. Tool Selection
+====
+* Tool Selection controls which operations are visible as tools to agents
+* Read-Only Filter is the runtime safety net that blocks write operations even if exposed
+
+Using both tool selection and the read-only filter gives you a second line of defense if a write operation is accidentally exposed.
+====
+
+*Result:* Read-Only filtering is applied.
+
+== Step 5: Configure MCP Server Details
+
+. Provide MCP server information:
++
+* *Server Name*: `slack-reader-mcp`
+* *Description*: "Read-only access to Slack channels and messages"
+* *Version*: `1.0.0`
+
+. Click *Generate MCP Server*.
+
+MCP Bridge will:
+
+. Analyze your API specification
+. Generate MCP tool definitions for selected operations
+. Create the MCP server configuration
+. Deploy the MCP server endpoint
+. Register the MCP server in *Portfolio* > *MCP Servers* automatically.
+*Result:* You see `MCP Server Created Successfully` with a server URL.
+
+== Step 6: Copy the MCP Server URL
+
+After creation, you'll see:
+
+[source,text]
+----
+MCP Server URL: https://mcp.anypoint.mulesoft.com/orgs/{org-id}/servers/slack-reader-mcp
+----
+
+. Copy the URL.
+. Note the *Server ID* (you'll need it for testing).
+
+This URL is what agents use to connect to your MCP server.
+
+[IMPORTANT]
+====
+This URL requires authentication. Agents must authenticate with Anypoint Platform credentials to access the MCP server.
+====
+
+*Result:* You have the MCP server URL and server ID for testing your MCP server.
+
+== Step 7: View Your MCP Server in Portfolio
+
+Your MCP server is now registered in *Portfolio* > *MCP Servers*.
+
+. In *Portfolio*, select *MCP Servers*.
+. Find your MCP server: `slack-reader-mcp`.
+. Click `slack-reader-mcp` to see its details:
++
+* Available tools (list_conversations, get_conversation_history, list_users)
+* Source API
+* Tool selection configuration
+* Usage statistics (currently 0)
+
+*Result:* You see your MCP server in your portfolio with the correct tools listed.
+
+== Step 8: Test with an Agent
+
+Now test that an agent can discover and call your MCP server.
+
+=== Option A: Use the Test Console
+
+. With your MCP server selected, click *Test*.
+. The test console loads with your MCP server pre-configured
+. In the prompt field, type:
++
+----
+What Slack channels are available?
+----
+
+. Click *Run*
+
+Watch the execution:
+
+. Agent discovers the `slack-reader-mcp` server
+. Agent sees available tools: `list_conversations`, `get_conversation_history`, `list_users`
+. Agent decides to call `list_conversations`
+. MCP Bridge translates the call to `GET /conversations.list` on your API
+. Results return through MCP Bridge to the agent
+. Agent formats the response
+
+You should see:
+
+[source,text]
+----
+Here are the available Slack channels:
+- #general
+- #engineering
+- #marketing
+- #support
+(showing 4 of 12 channels)
+----
+
+*Result:* The agent successfully called your API through the MCP server
+
+=== Option B: Use Your Own Agent
+
+If you have an agent network or custom agent:
+
+. Add your MCP server to the agent's configuration:
++
+[source,yaml]
+----
+registry:
+  tools:
+    slackReader:
+      info:
+        label: Slack Reader MCP
+      metadata:
+        platform: MCP
+        interfaces:
+          mcp:
+            connection:
+              url: https://mcp.anypoint.mulesoft.com/orgs/{org-id}/servers/slack-reader-mcp
+            authentication:
+              type: oauth2
+              # OAuth config here
+----
+
+. Deploy your agent
+. Send a test request that requires Slack data
+. Monitor the agent's calls to your MCP server
+
+*Result:* Your agent can discover and call the MCP server tools
+
+== Step 9: Verify Security - Test Blocked Operations
+
+Verify that operations you didn't expose are not accessible.
+
+. In the test console, try a write operation:
++
+----
+Send a message to the #general channel saying "Hello"
+----
+
+You should see:
+
+[source,text]
+----
+I don't have the capability to send messages. I can only read channel
+information and message history. The following tools are available:
+- list_conversations
+- get_conversation_history
+- list_users
+----
+
+The agent cannot call `chat.postMessage` because you didn't expose it as a tool.
+
+. Try to force a call to a non-exposed operation (advanced test):
++
+If you manually construct an MCP tool call to `post_message` (not in the tool list), MCP Bridge returns:
++
+[source,json]
+----
+{
+  "error": "Tool not found",
+  "message": "post_message is not an available tool in this MCP server"
+}
+----
+
+*Result:* Non-exposed operations are not accessible, even when attempted
+
+== Step 10: Monitor Usage
+
+View how your MCP server is being used.
+
+. In *Portfolio* > *MCP Servers*, select `slack-reader-mcp`.
+. Click the *Monitoring* tab
+. See:
+  - *Total calls*: Number of tool invocations
+  - *Tools called*: Which tools are most used
+  - *Agents using this server*: Which agents are connected
+  - *Call timeline*: Usage over time
+  - *Error rate*: Failed vs successful calls
+
+After your test, you should see:
+
+* 1-2 calls to `list_conversations`
+* 0 calls to other tools
+* 1 agent connected (your test agent)
+
+*Result:* Monitoring dashboard shows your test calls
+
+== What You've Accomplished
+
+Congratulations! In 15 minutes, you've:
+
+* Created an MCP server from an existing REST API
+* Selected specific operations to expose as agent tools
+* Applied read-only filtering for security
+* Tested with an agent successfully calling your API through MCP
+* Verified that non-exposed operations are blocked
+* Monitored usage of your MCP server
+
+Your API is now *agent-ready* and can be discovered and used by any MCP-compatible agent.
+
+== Key Concepts You Learned
+
+=== MCP Server
+A Model Context Protocol server that exposes tools (operations) that agents can discover and call.
+
+=== Tool Selection
+Choosing which API operations to expose as MCP tools. Not all API operations need to be available to agents.
+
+=== Read-Only Filtering
+Runtime enforcement that blocks write operations (POST, PUT, DELETE) even if accidentally exposed, giving you a second line of protection beyond tool selection.
+
+=== Tool Discovery
+Agents query MCP servers to see what tools are available, then decide which ones to call based on user requests.
+
+=== Agent-Facing Abstraction
+Agents see MCP tools (`list_conversations`) rather than REST endpoints (`GET /conversations.list`), making APIs easier for agents to understand and use.
+
+== Common Issues and Solutions
+
+=== Issue: "MCP Integration not available"
+
+*Solution:* Verify:
+
+* Agent Fabric is enabled for your organization (Contact your Anypoint Platform admin)
+* You have API Manager permissions
+* Your API has a valid specification (RAML or OpenAPI Specification (OAS))
+
+=== Issue: "No operations available to expose"
+
+*Solution:* Your API needs a specification (RAML or OAS) that defines operations. Add one in API Manager → Settings → API Specification.
+
+=== Issue: "Agent can't discover MCP server"
+
+*Solution:* Check:
+
+* Agent has the correct MCP server URL
+* Agent authentication is configured (OAuth2 with Anypoint Platform)
+* MCP server status is "Active" in *Portfolio* > *MCP Servers*
+
+=== Issue: "Tool calls fail with authentication error"
+
+*Solution:*
+
+* Verify agent's OAuth credentials
+* Check that the agent has permission to access the MCP server
+* Review authentication logs in Monitoring
+
+=== Issue: "Agent sees tools but calls fail"
+
+*Solution:*
+
+* Check that the underlying API is accessible and returning 2xx responses
+* Verify API authentication is configured correctly
+* Review error logs in Monitoring → Error Details
+
+== Next Steps
+
+Now that you've created your first MCP server, enhance it:
+
+=== Add Multiple MCP Servers
+
+Create different MCP servers from the same API with different tool selections:
+
+* `slack-reader-mcp`
++ 
+Read-only (for general agents)
+* `slack-admin-mcp`
++
+Read and write (for privileged agents)
+
+Each MCP server has its own URL and tool surface.
+
+=== Apply Gateway Policies
+
+Add runtime governance through Omni Gateway:
+
+* Rate limiting (prevent abuse)
+* Authentication requirements
+* Audit logging
+* PII detection
+
+See xref:use-case-policy-enforcement.adoc[Policy Enforcement Use Case]
+
+=== Add User Context
+
+Make MCP server calls respect user permissions:
+
+. Configure OAuth with user token exchange
+. Agent calls include user identity
+. API checks user permissions
+. Data returned is scoped to what the user can see
+
+See xref:use-case-identity.adoc[Identity and Production Readiness Guide]
+
+=== Create More MCP Servers
+
+Expose other APIs as MCP servers:
+
+* Customer database API → `customer-data-mcp`
+* Inventory API → `inventory-mcp`
+* Order management API → `orders-mcp`
+
+Build a portfolio of agent-ready APIs.
+
+=== Use in Agent Networks
+
+To use your MCP server in an agent network, declare it under `registry.mcps` in your `agent-network.yaml` file and define a corresponding connection in the `context.connections` section.
+
+[source,yaml]
+----
+agentNetwork: "2.0"
+
+registry:
+  mcps:
+    slack_reader_mcp:
+      info:
+        label: Slack Reader MCP
+      metadata:
+        transport:
+          kind: streamableHttp
+          path: /mcp
+
+context:
+  connections:
+    slack_reader_mcp:
+      kind: mcp
+      ref:
+        name: slack_reader_mcp
+      url: https://mcp.anypoint.mulesoft.com/orgs/{org-id}/servers/slack-reader-mcp
+
+brokers:
+  customer_support:
+    kind: AgentScript
+    implementation: ./brokers/customer-support.agent
+    interfaces:
+      a2a:
+        card: ...
+----
+
+The broker behavior — including which MCP tools the broker calls and how the broker responds — is defined in `./brokers/customer-support.agent` using Agent Script.
+
+See xref:agent-network::af-agent-networks.adoc[Building Agent Networks for Agent Fabric] for the complete setup.
+
+== See Also
+
+* xref:use-case-mcp-bridge.adoc[MCP Bridge and Selective Tool Exposure]
+* xref:use-case-policy-enforcement.adoc[Policy Enforcement]
+* xref:use-case-identity.adoc[Identity and Production Readiness]
+* xref:agent-fabric-use-cases.adoc[Agent Fabric Use Cases Overview]
+* xref:exp-home-start.adoc[Get Started with Agent Fabric]
+* https://modelcontextprotocol.io[Model Context Protocol Specification]
+* xref:exp-services-create-mcp-server.adoc[Create MCP Servers]
