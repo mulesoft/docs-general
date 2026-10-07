@@ -18,7 +18,7 @@ Before building a custom scanner, make sure you have:
 * Access to, and active context in, the business group where you want to add the scanner.
 * An AI coding assistant, such as Claude Code, Cursor, or Copilot, to generate the push script.
 * A Connected App client ID and secret for Anypoint Platform. The generated script uses them to sign in.
-//engineering, are there any scopes or permissions required for the Connected App?
+//TODO: engineering, are there any scopes or permissions required for the Connected App?
 * Access to the provider APIs that list your services, and credentials for those APIs. The credentials stay on your machine.
 * A place to run the generated script, such as your laptop, a CI/CD job, or a scheduled job, with the runtime for the scripting language you choose.
 
