@@ -1,11 +1,11 @@
-= Creating a Custom Scanner
+= Creating a Self-Managed Scanner
 :keywords: scanners, custom scanner, self-managed scanner, push assets, pipeline, discovery, mulesoft
 
-A custom scanner, also called a *self-managed* scanner, lets you register services with the system from your own build pipeline instead of connecting to a supported third-party provider. You create the scanner once (in the UI or with the API), then push service definitions to it by running a script on your own infrastructure. Use a custom scanner when the agents, MCP servers, or APIs you want to govern don't live in a provider the system scans directly, but you can produce their definitions yourself.
+A self-managed scanner lets you register services with the system from your own build pipeline instead of connecting to a supported third-party provider. You create the scanner once (in the UI or with the API), then push service definitions to it by running a script on your own infrastructure. Use a self-managed scanner when the agents, MCP servers, or APIs you want to govern don't live in a provider the system scans directly, but you can produce their definitions yourself.
 
 You generate the push script yourself by downloading the `push-inventory-collector` skill file from the scanner's *How to push assets* page and pasting it into an AI coding assistant, such as Claude Code, Cursor, or Copilot. The assistant asks about your service type, the provider APIs that list and fetch your services, how to authenticate to those APIs, and your preferred scripting language, then writes a single script tailored to one service type and one scanner configuration. See <<generate-the-push-script>>.
 
-Provider scanners reach out to a cloud provider and pull services in. A custom scanner works in the opposite direction: your pipeline pushes services to the scanner, so discovery stays current on your release cadence, not a scan schedule. Discovered services appear in the matching *Portfolio* catalogs and on the service's Exchange page, where teams govern, monitor, and deploy them alongside everything else.
+Provider scanners reach out to a cloud provider and pull services in. A custom scanner works in the opposite direction: your pipeline pushes services to the scanner, so discovery stays current on your release cadence, not a scan schedule. Discovered services appear in the matching *Portfolio* catalogs and on the service's Exchange page in Anypoint Platform, where teams govern, monitor, and deploy them alongside everything else.
 
 For how provider connections and catalogs fit together, see xref:exp-services-connect-providers-to-add.adoc[] and xref:exp-services-add-to-portfolio.adoc[].
 
@@ -17,7 +17,10 @@ Before building a custom scanner, make sure you have:
 * Exchange Administrator permission.
 * Access to, and active context in, the business group where you want to add the scanner.
 * An AI coding assistant, such as Claude Code, Cursor, or Copilot, to generate the push script.
-* A way to produce a ZIP file for each service and call a REST API (for example, a CI/CD job, a script, or a terminal with `curl`).
+* A Connected App client ID and secret for Anypoint Platform. The generated script uses them to sign in.
+//engineering, are there any scopes or permissions required for the Connected App?
+* Access to the provider APIs that list your services, and credentials for those APIs. The credentials stay on your machine.
+* A place to run the generated script, such as your laptop, a CI/CD job, or a scheduled job, with the runtime for the scripting language you choose.
 
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
