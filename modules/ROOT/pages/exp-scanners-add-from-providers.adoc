@@ -97,7 +97,8 @@ Microsoft Copilot Studio scanners support two authentication schemes. Create, au
 * *Tenant ID*: Microsoft Entra tenant ID. Required for *OAuth*; optional for *OAuth (Authorization Code)*.
 * *Client ID*: OAuth 2.0 client ID from your Azure app registration.
 * *Client Secret*: OAuth 2.0 client secret from your Azure app registration.
-* *Scope*: Dataverse environment URL, for example, `https://<your-environment>.api.crm.dynamics.com`. Required for *OAuth (Authorization Code)*; optional for *OAuth*.
+* *Scope*: Dataverse environment URL, for example, `https://<your-environment>.api.crm.dynamics.com`. Required for *OAuth (Authorization Code)*; optional for *OAuth*. With *OAuth*, leave *Scope* empty to scan all the Power Platform environments the app can access. See xref:exp-scanners-scan-multiple-accounts.adoc#copilot-studio-multi-environment[].
+// TODO(W-24282719): Confirm that an empty Scope triggers multi-environment auto-discovery.
 . Complete the connection:
 * For *OAuth*, click *Test Connection* and confirm the connection succeeds.
 * For *OAuth (Authorization Code)*, click *Create & Authorize Connection*. In the Microsoft popup window, sign in and grant consent, then wait for status to progress through *Connection created*, *Authorized*, and *Tested*.
@@ -165,6 +166,11 @@ The Kong Gateway scanner assigns an service type to a service the first time it 
 
 Regardless of entry point, adding a scanner establishes trust and scope. You specify which provider platform to reach, how the system authenticates, and how you validate connectivity. You also name and schedule the scanner—or configure another trigger—so discovery runs on the cadence your team expects. Saving the configuration activates the scanner for the catalogs and features your administrator enabled.
 
+For Amazon Bedrock, Microsoft Copilot Studio, and Microsoft Foundry, a scanner can also cover more than one account, environment, or subscription. For Amazon providers, choose *Single account scan* or *Multi-account scan* under *Scan type*. For setup steps, see xref:exp-scanners-scan-multiple-accounts.adoc[].
+
+// TODO(W-24282719): Confirm which AWS platforms show Scan type, and whether Microsoft providers
+// get a Scan type choice too. Update the sentence above to match.
+
 For API gateway providers that support policy write, supply connection credentials that include the provider's write scope during setup. If the connection has only read access, the scanner discovers and reads policies, but the affected APIs appear as *Read-Only* and policy actions are unavailable until the connection's identity is granted the provider's write scope. For provider-specific read and write scopes, see xref:exp-scanners-prerequisites-reference.adoc[].
 
 == After the Scanner Runs
@@ -178,6 +184,7 @@ For ongoing operations (pause, edit, or delete), see xref:exp-scanners-manage.ad
 == See Also
 
 * xref:exp-scanners-prerequisites-reference.adoc[]
+* xref:exp-scanners-scan-multiple-accounts.adoc[]
 * xref:exp-akamai-risk-correlation.adoc[]
 * xref:exp-services-connect-providers-to-add.adoc[]
 * xref:exp-scanners-prerequisites-reference.adoc[]

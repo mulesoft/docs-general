@@ -1,0 +1,222 @@
+= Scanning Multiple Accounts and Environments
+:keywords: scanners, multi-account scan, cross-account scanning, auto-discovery, amazon bedrock, microsoft copilot studio, microsoft foundry, azure ai foundry, power platform environments, azure subscriptions
+
+// TODO(W-24282719): UI isn't final. UI labels in this topic come from the mulesoft-omni-app
+// branch provider/multi-account-scanning (en.json, Sep 2026). Recheck every bolded label
+// against the shipped UI before publishing.
+
+A single scanner can discover agents across more than one account in a provider instead of only the account, environment, or project its credential points to. Use a multi-account scan when your organization spreads agents across many AWS accounts, Power Platform environments, or Azure subscriptions and you want one scanner to keep the *Portfolio* catalogs current for all of them.
+
+What counts as an account depends on the provider:
+
+[cols="1,2",options="header"]
+|===
+| Provider
+| Scanned Unit
+
+| Amazon Bedrock
+| AWS accounts, in one or more AWS regions
+
+| Microsoft Copilot Studio
+| Power Platform environments
+
+| Microsoft Foundry
+| Azure subscriptions, and the Foundry projects in them
+|===
+
+// TODO(W-24282719): Confirm whether multi-account scanning applies to other AWS platforms.
+// In the omni-app branch, the Scan type choice appears for every platform in the Amazon (AWS)
+// provider group, which includes Amazon Bedrock AgentCore Runtime, Amazon Bedrock AgentCore MCP,
+// and Amazon API Gateway. Add them to the table if they're supported.
+
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* Exchange Administrator permission.
+* Access to, and active context in, the business group where you want to add the scanner.
+* Permission in the provider to create or update the roles, app registrations, or role assignments described for your provider in this topic.
+
+For the single-account prerequisites for each provider, see xref:exp-scanners-prerequisites-reference.adoc[].
+
+== How Multi-Account Scans Work
+
+You choose the scan scope when you add the scanner:
+
+* *Specific targets*
++
+You list the accounts, environments, or projects to scan. The scanner scans only those targets.
+* *Auto-discovery*
++
+You leave the target list empty. The scanner finds every account, environment, or subscription its credential can access, then tries to list agents in each one.
+
+Auto-discovery attempts every target that the credential can see, including targets where it isn't authorized to read agents. If your credential can see many targets but reads agents in only a few, scans take longer. To keep scans fast, list specific targets, or limit what the credential can see in the provider.
+
+// TODO(W-24282719): Confirm whether the scanner picks up new accounts, environments, or
+// subscriptions automatically on later scheduled runs when it uses auto-discovery.
+
+// TODO(W-24282719): Confirm whether you can change the scan type, accounts, or regions after you
+// create the scanner (Settings tab). If yes, document in exp-scanners-manage.adoc and
+// exp-scanners-view-details.adoc.
+
+=== Skipped Targets and Partial Scans
+
+If the scanner can't access a target, it skips that target and continues with the rest:
+
+* When some targets succeed and others fail, the scan completes as partial. Services discovered earlier in the skipped targets stay in *Portfolio*. The scanner doesn't remove services it couldn't confirm during the run.
+* When every target fails with a permission error, the scan fails.
+* The scanner retries targets that return rate-limiting errors. It doesn't retry targets that return permission errors, because those errors don't resolve until you fix the permissions in the provider.
+
+To find skipped targets, check the scan's *Activity Log*. For more information, see xref:exp-scanners-view-details.adoc[].
+
+// TODO(W-24282719): Confirm the user-facing status label for a partial scan (backend status is
+// PARTIALSUCCESS) and whether skipped targets appear anywhere other than the Activity Log.
+// The Microsoft engineering doc describes this behavior for Copilot Studio and Foundry. Confirm
+// that AWS multi-account scans behave the same way.
+
+[[aws-multi-account]]
+== Scan Multiple AWS Accounts for Amazon Bedrock
+
+A multi-account scan for Amazon Bedrock uses a hub-and-spoke model of AWS Identity and Access Management (IAM) roles:
+
+* The *hub role* lives in one AWS account. The scanner's credentials assume the hub role.
+* A *spoke role* with the same name lives in each AWS account you want to scan. The hub role assumes the spoke role in each account to read Bedrock agents.
+* An *external ID* on each spoke role's trust policy makes sure only your scanner can assume it.
+
+// TODO(W-24282719): Confirm the hub-and-spoke model and the credential chain with the AWS PRD or
+// engineering: does the access key on the scanner connection assume the hub role, and does the
+// hub role then assume the spoke role in each target account?
+
+=== Set Up IAM Roles in AWS
+
+. In the AWS account you use as the hub, create the hub role.
++
+Allow the hub role to assume the spoke role in each target account (`sts:AssumeRole` on `arn:aws:iam::<account-id>:role/<spoke-role-name>`).
++
+// TODO(W-24282719): Confirm the full hub role policy, including whether auto-discovery needs
+// organizations:ListAccounts and whether the hub account must be the AWS Organizations
+// management account or a delegated administrator.
+// TODO(W-24282719): Confirm the hub role trust policy: which principal (the IAM user for the
+// scanner's access key) must be trusted.
+. In each AWS account you want to scan, create the spoke role with the same role name.
++
+Grant the spoke role the Bedrock read permissions listed for Amazon Bedrock in xref:exp-scanners-prerequisites-reference.adoc[].
++
+// TODO(W-24282719): Confirm the spoke role permissions are the same as the single-account
+// Amazon Bedrock permissions. Confirm whether the PRD recommends deploying spoke roles with
+// AWS CloudFormation StackSets, and whether MuleSoft provides a template.
+. In each spoke role's trust policy, trust the hub role and require your external ID.
++
+// TODO(W-24282719): Verify this example trust policy with engineering before publishing.
+[source,json]
+----
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": { "AWS": "arn:aws:iam::<hub-account-id>:role/<hub-role-name>" },
+      "Action": "sts:AssumeRole",
+      "Condition": {
+        "StringEquals": { "sts:ExternalId": "<external-id>" }
+      }
+    }
+  ]
+}
+----
+
+=== Configure the Scanner
+
+. From *Platform* > *Providers*, select *Amazon*.
+. In *Connect to a Provider*, under *Platform*, select *Amazon Bedrock*.
+. Under *Scan type*, select *Multi-account scan*.
+. Under *Multi-account scan details*, enter the role details:
+* *HUB role ARN*: The Amazon Resource Name (ARN) of the hub role, for example, `arn:aws:iam::123456789012:role/HubRoleName`.
+* *Spoke role name*: The name of the spoke role you created in each target account.
+* *External ID*: The external ID you set in the spoke role trust policies.
+. Choose the accounts to scan in *Account IDs*:
+* To scan specific accounts, enter each 12-digit AWS account ID and press Enter.
+* To use auto-discovery, leave the field empty.
+. Choose the regions to scan in *Target regions*:
+* To scan specific regions, select one or more regions.
+* To scan only the region you selected in the *AWS Region* field, leave the field empty.
+. Enter the connection credentials, test the connection, and finish the scanner setup as you do for a single-account scanner.
+
+// TODO(W-24282719): Confirm the step order: whether credentials and Test Connection come before or
+// after the multi-account fields, and whether Test Connection validates the hub and spoke roles.
+// TODO(W-24282719): Confirm how auto-discovery finds accounts (for example, AWS Organizations) and
+// which accounts it includes.
+
+[[copilot-studio-multi-environment]]
+== Scan Multiple Power Platform Environments for Microsoft Copilot Studio
+
+A Copilot Studio scanner uses one app registration across all the environments it scans. It requests a separate token for each environment's Dataverse URL, so the app must be set up in every environment you want to scan.
+
+// TODO(W-24282719): Confirm whether Copilot Studio gets a Scan type choice like AWS, or whether
+// auto-discovery is triggered only by leaving Scope empty. The omni-app branch shows the
+// Scan type choice for AWS only.
+
+=== Set Up the App in Each Environment
+
+. Make sure the app registration can list Power Platform environments in your tenant.
++
+// TODO(W-24282719): Confirm the Entra ID directory role or Power Platform API permission the
+// app needs to call the Power Platform environment management API
+// (api.powerplatform.com/environmentmanagement/environments).
+. In each environment you want to scan, add the app as an Application User and assign it the Copilot Studio Scanner role.
++
+If the app isn't an Application User in an environment, the scanner skips that environment.
+
+=== Configure the Scanner
+
+. Create and authorize the connection by using the *OAuth* authentication scheme, as described in xref:exp-scanners-add-from-providers.adoc#microsoft-copilot-studio-scanner-oauth-authorization[Microsoft Copilot Studio Scanner OAuth Authorization].
+. Choose the environments to scan in *Scope*:
+* To scan one environment, enter its Dataverse environment URL.
+* To use auto-discovery, leave the field empty.
+
+// TODO(W-24282719): Confirm that auto-discovery works only with the OAuth (client credentials)
+// scheme. Scope is required for OAuth (Authorization Code), so that scheme seems to support a
+// single environment only.
+// TODO(W-24282719): Confirm whether Scope accepts more than one Dataverse URL.
+// TODO(W-24282719): The engineering doc mentions a multi-tenant mode. Confirm whether it ships
+// in this release and how to configure it.
+
+During auto-discovery, the scanner scans only environments that are enabled and that have a Dataverse database. In each environment, it discovers only published copilots and skips Microsoft system bots.
+
+[[foundry-multi-subscription]]
+== Scan Multiple Azure Subscriptions for Microsoft Foundry
+
+A Foundry scanner uses one service principal across all the subscriptions it scans. With auto-discovery, the scanner lists the subscriptions the service principal can access, the Azure AI Services and Azure OpenAI resources in each subscription, and the projects in each resource, then lists agents in each project.
+
+// TODO(W-24282719): Confirm whether Foundry gets a Scan type choice like AWS, or whether
+// auto-discovery is triggered only by leaving the project endpoint empty.
+
+=== Set Up Access in Azure
+
+. Assign the service principal the Reader role on each subscription you want to scan.
++
+The scanner discovers only subscriptions where the service principal has a role assignment. If it finds no enabled subscriptions, the scan reports a partial failure and asks you to check the Reader role.
+. Assign the service principal the Azure AI Developer role on each Foundry project you want to scan.
++
+// TODO(W-24282719): Confirm the data-plane role needed to list agents in auto-discovered
+// projects, and the scope it must be assigned at (project, resource, resource group, or
+// subscription).
+
+=== Configure the Scanner
+
+. Create the connection with your tenant ID, client ID, and client secret.
+. Choose the projects to scan in the project endpoint field:
+* To scan specific projects, enter their project endpoint URLs.
+* To use auto-discovery, leave the field empty.
+
+// TODO(W-24282719): Confirm the exact UI label for the project endpoint field and whether it
+// accepts more than one URL.
+
+During auto-discovery, the scanner scans only enabled subscriptions and only Azure AI Services and Azure OpenAI resources that have an endpoint.
+
+== See Also
+
+* xref:exp-scanners-add-from-providers.adoc[]
+* xref:exp-scanners-prerequisites-reference.adoc[]
+* xref:exp-scanners-view-details.adoc[]
+* xref:exp-scanners-manage.adoc[]
