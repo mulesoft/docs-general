@@ -47,7 +47,7 @@ Because the bridge is always A2A-compliant, A2A clients consume a bridged agent 
 
 | Microsoft Copilot Studio
 | Available
-| Bridge translates A2A to the Copilot Direct Line API and authenticates upstream with a Direct Line secret. Copilot's activity-based Direct Line API requires heuristic task-lifecycle handling.
+| Bridge translates A2A to the Copilot Direct Line API and authenticates upstream with a Direct Line secret. Copilot's activity-based Direct Line API requires heuristic task-lifecycle handling. Microsoft 365 Copilot agents aren't supported.
 
 | Amazon Bedrock AgentCore, Google Vertex AI
 | Not required
