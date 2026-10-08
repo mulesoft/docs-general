@@ -43,6 +43,12 @@ a|
 
 *Setup:* Agents must have an alias linked to a version and an invocable URL
 
+*Multi-account scan (optional):* A hub IAM role that the scanner's credentials can assume; a spoke IAM role with the same name and the permissions listed here in each account to scan; an external ID on each spoke role's trust policy. For details, see xref:exp-scanners-scan-multiple-accounts.adoc#aws-multi-account[].
+
+// TODO(W-24282719): Add the hub role permissions (sts:AssumeRole on the spoke roles, plus any
+// AWS Organizations permissions auto-discovery needs) after the AWS PRD confirms them. If
+// multi-account scanning applies to other AWS platforms, add this entry to their rows too.
+
 | Amazon Bedrock AgentCore Runtime
 | Agent
 a|
@@ -113,6 +119,11 @@ a|
 
 *Setup:* App added as an Application User in Power Platform; scope set to Dataverse environment URL, `https://<org-id>.crm.dynamics.com`
 
+*Multi-environment scan (optional):* Leave the scope empty to discover all enabled Power Platform environments the app can see. Add the app as an Application User with the Copilot Studio Scanner role in each environment to scan; the scanner skips environments where it isn't one. For details, see xref:exp-scanners-scan-multiple-accounts.adoc#copilot-studio-multi-environment[].
+
+// TODO(W-24282719): Add the Entra ID directory role or API permission the app needs to list
+// Power Platform environments for auto-discovery.
+
 For setup steps, see xref:exp-scanners-add-from-providers.adoc#microsoft-copilot-studio-scanner-oauth-authorization[].
 
 | Microsoft Foundry
@@ -125,6 +136,11 @@ a|
 *Role:* Azure AI Developer
 
 *Setup:* Project endpoint URLs (discovery is project-specific)
+
+*Multi-subscription scan (optional):* Leave the project endpoint URLs empty to discover projects across all enabled subscriptions the service principal can access. Requires the Reader role on each subscription to scan, plus the Azure AI Developer role on each project. For details, see xref:exp-scanners-scan-multiple-accounts.adoc#foundry-multi-subscription[].
+
+// TODO(W-24282719): Confirm the scope for the Azure AI Developer role assignment when projects
+// are auto-discovered, and update "discovery is project-specific" above if auto-discovery ships.
 
 | Salesforce Agentforce
 | Agent
