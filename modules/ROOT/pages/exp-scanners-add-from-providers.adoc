@@ -113,7 +113,7 @@ The OAuth (Authorization Code) flow opens a Microsoft sign-in popup. If your bro
 
 To discover accurate, typed API definitions from Kong Gateway, link each Kong Gateway service to a Catalog API that has an attached OpenAPI Specification (OAS). The scanner reads the OAS from the linked Catalog API to build a complete, typed service definition.
 
-Uploading an OAS file directly to a Kong Gateway service only creates Kong routes—it doesn't store a spec or endpoint definition that the scanner can read. Without a Catalog-linked spec, Kong infers routes from the gateway configuration. Inferred routes are untyped and produce a lower-quality service definition and degraded MCP bridging.
+Uploading an OAS file directly to a Kong Gateway service only creates Kong routes. It doesn't store a spec or endpoint definition that the scanner can read. Without a Catalog-linked spec, Kong infers routes from the gateway configuration. Inferred routes are untyped and produce a lower-quality service definition and degraded MCP bridging.
 
 To attach an OAS so the scanner can read it:
 
