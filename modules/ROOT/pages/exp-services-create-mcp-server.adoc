@@ -1,27 +1,35 @@
-= Create MCP Servers
-:keywords: mcp server, create mcp server, model context protocol, anypoint platform, mcp configuration, api integration
+= Create MCP Servers with MCP Bridge
+:keywords: mcp server, create mcp server, mcp bridge, model context protocol, mcp tools, saas, api integration
 
-Create MCP servers to define identity, runtime connectivity, and the tools and resources exposed to MCP clients.
+Use MCP Bridge to create MCP servers from your APIs and SaaS systems so that agents can discover and call their operations as MCP tools.
 
-Creating an MCP server defines a new MCP implementation—for example, by transcoding an existing REST API or creating a runtime deployment—and establishes the server identity, runtime connectivity, and the MCP capabilities (tools and resources) exposed to clients.
+MCP Bridge turns an existing API or SaaS system into an MCP server without custom code and without changing the underlying system. You select the sources to expose, choose which of their operations to publish as tools, and provide the credentials MCP Bridge uses to call the sources.
 
 When you create an MCP server in Enhanced Experience, the server is added to *Portfolio* automatically.
 
 During creation, you define:
 
-* *Service definition*
+* *Sources*
 +
-Name, description, and ownership metadata so teams can identify the server in catalogs and governance views.
-* *Connection and runtime details*
+The APIs and SaaS systems to expose as MCP tools.
+* *Tools*
 +
-Endpoint and access settings Enhanced Experience uses at runtime to connect to underlying SaaS systems.
-* *Capability surface*
+The operations from each source that agents can discover and call.
+* *Credentials*
 +
-The MCP tools and resources clients can discover and invoke.
-* *Validation and readiness*
-+
-Checks that confirm the server is reachable and that the declared MCP capabilities are usable.
+The credentials MCP Bridge uses to call the selected SaaS systems.
 
+[[how-it-works]]
+== How MCP Bridge Works
+
+Each operation you select from a source becomes an MCP tool. When an agent requests the list of available tools (`tools/list`), the MCP server responds with each tool's name, description, and input schema. When an agent calls a tool (`tools/call`), MCP Bridge maps the tool name and arguments to an HTTP request to the underlying API or SaaS system.
+
+MCP Bridge generates each tool's name and description from the source definition:
+
+* For SaaS systems, tool names use the format `<source>_<operation>`, for example `15five_getUsers`. You can't edit SaaS tools.
+* For APIs, tool names use a prefix that identifies the API, followed by the HTTP method and path, for example `cmdb-sync_get_admin_dlq`. You can edit API tools before you create the server.
+
+[[before-you-begin]]
 == Before You Begin
 
 Before getting started, make sure you have:
@@ -39,18 +47,105 @@ Before getting started, make sure you have:
 ** API Manager: Manage APIs Configuration
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+* Credentials for each SaaS system you plan to expose.
 
+[[create-mcp-server]]
 == Create an MCP Server
 
 . Open *MCP Servers* and select *Add MCP Server* > *Create MCP Server*.
-. In *Select Source, Instance & Tools*, select the APIs or SaaS systems you want to expose. Select the source instance or version, then select the tools to publish, including optional read-only filtering. Click *Next*.
-. In *SaaS Credentials*, provide the credentials required for the selected sources so the MCP server can call them securely. Click *Next*.
-. In *Review*, validate the selected sources, tools, and credential mappings, then complete creation.
+. In *Select APIs and SaaS systems*, select the sources to expose as MCP tools:
+.. To narrow the list, search by name or select *APIs* or *SaaS*.
+.. Select one or more sources. You can combine APIs and SaaS systems in the same MCP server. Each source shows the number of tools or operations it provides.
+.. For an API, select the API version from the version list. The latest version is selected by default.
+. In *Select Tools*, choose which tools to expose from the selected sources.
++
+Tools are grouped by source. For an API, the group shows the URL of the API instance that MCP Bridge calls. Each tool shows its HTTP method, description, path, and tool name. Hover over a description to see its full text.
++
+.. For an API, to use a different API instance or create an unmanaged instance, click *Change Instance*. See <<change-api-instance>>.
++
+Each API must have an instance before you can continue. If an API doesn't have an instance, click *Change Instance* and create an unmanaged instance.
+.. To narrow the list, click *Filter*, select the methods and paths to show, and click *Apply*.
++
+NOTE: Filtering changes only which tools are shown, not which tools are selected. Tools hidden by the filter remain selected and are exposed by the MCP server.
+.. Clear the checkbox for each tool that agents must not call.
++
+For example, to expose only read operations, filter to the *POST*, *PUT*, *PATCH*, and *DELETE* methods, clear the checkbox for each tool shown, and then reset the filter to confirm that only *GET* tools remain selected.
+.. For an API tool, to edit the tool's name, description, input schema, or HTTP mapping, click the *Actions* menu (*⋮*) for the tool. See <<edit-api-tool>>.
+.. To remove a source, click *X* in the source's group.
+.. Confirm the number of tools selected, and click *Next*.
+. In *SaaS Credentials*, provide the credentials MCP Bridge uses to call each selected SaaS system:
++
+The required credential fields depend on the SaaS system, for example *API Key* or *API Token*.
++
+.. If a warning icon appears next to a SaaS system, its upstream configuration is incomplete. Click *Configure*, enter a value for each variable, and click *Save*. You must complete the upstream configuration for each SaaS system before you can continue.
++
+Some SaaS systems use variables in their upstream and token URLs, such as `+https://{account}.api-us1.com+`. MCP Bridge substitutes the values you enter into the URLs before it calls the SaaS system.
+.. For each SaaS system, enter the required credentials. To show or hide a value, click the eye icon.
+.. Optionally, click *Test Credentials* to confirm that MCP Bridge can authenticate to the SaaS system. *Test Credentials* is available after you enter the required credentials. If the test fails, an error such as `Authentication failed (403)` appears. Testing isn't required to continue.
+.. Click *Next*.
+// TODO: Confirm whether this step appears when no SaaS systems are selected.
+. In *Review*, review the MCP server configuration:
+.. In *Advanced Server Configuration*, review the server details that MCP Bridge generates:
++
+--
+** *Server Name* and *Version* — The name and version of the MCP server.
+** *Path* — The base path of the MCP server on the gateway.
+** *Environment* and *Gateway* — Where the MCP server is deployed.
+** *Inbound TLS* and *Outbound TLS* — The TLS contexts for traffic from agents and to the sources.
+** *URL* — The endpoint that agents use to connect to the MCP server.
+--
+.. Optionally, in *Description*, describe the business purpose of the MCP server.
+.. In *Sources, Instances & Tools*, review each source, its API instance ID and URL, and the tools the MCP server exposes.
+.. To change the server configuration, click *Edit* in *Advanced Server Configuration*.
+.. To change the sources, instances, or tools, click *Edit* in *Sources, Instances & Tools*. This returns you to *Select Source, Instance & Tools*, and you complete the remaining steps again.
+.. Click *Create & Deploy*.
+// TODO: Document what Edit in Advanced Server Configuration lets you change.
 
-After saving, the MCP server is automatically added to the *MCP Servers* catalog in *Portfolio*. No additional action is required.
+After you click *Create & Deploy*, the MCP server is deployed to the gateway and added to the *MCP Servers* catalog in *Portfolio*. Agents connect to the MCP server at the URL shown in *Review*.
+
+[[change-api-instance]]
+== Change the Instance for an API
+
+For an API source, MCP Bridge calls the API through an API instance. You can select a different existing instance or create an unmanaged instance that points to an upstream URL.
+
+. In *Select Tools*, click *Change Instance* in the API's group.
+. In *Advanced settings*, select a source:
+** To use an existing instance, select *Select Instance*, then:
+... Select the instance from the list. Each instance shows its label or ID, type, environment, and upstream URL.
+... Optionally, edit the *Route label*. By default, the route label is the API name.
+** To create an unmanaged instance, select *Create new unmanaged instance*, then:
+... In *Name*, enter a name for the instance.
+... In *URL*, enter the upstream endpoint the instance points to, including the `http://` or `https://` scheme. For example, `\http://example.com/api/v1/`.
+... In *Visibility*, select *Private* or *Public*. The default is *Private*.
+. Click *Save*.
+
+[[edit-api-tool]]
+== Edit an API Tool
+
+MCP Bridge generates each API tool from the API specification. Before you create the MCP server, you can change how a tool is presented to agents and how its arguments map to the HTTP request.
+
+. In *Select Tools*, click the *Actions* menu (*⋮*) for the tool.
+. In *Tool definition*, review and edit the tool:
++
+--
+** *Method* and *Resource* — The HTTP method and API resource the tool calls.
+** *AI tool name* — The name agents use to call the tool. The prefix that identifies the API, such as `cmdb-sync_`, can't be changed.
+** *Description* — The description agents use to decide when to call the tool. Write a description that states what the tool does and what it returns.
+** *Schema (JSON)* — The tool's input schema, which defines the arguments the agent supplies when calling the tool. Editing the schema replaces the schema derived from the API specification.
+--
+. Optionally, in *HTTP mapping (optional)*, edit how the tool's arguments map to the HTTP request. These values are populated from the API specification.
++
+--
+** *Query Parameter(s)* — Click *Add query parameter* to map an argument to a query parameter.
+** *URI Parameter(s)* — The URI parameters in the resource path, if any.
+** *Headers* — Click *Add header* to map an argument to an HTTP header.
+** *Body* — A DataWeave expression that builds the request body. The default is `#[vars.params.body]`. To test the expression, click *Try the DataWeave expression in the playground*.
+--
+. Click *Save*.
 
 == See Also
 
+* xref:af-use-case-mcp-bridge.adoc[]
 * xref:exp-services-add-to-portfolio.adoc[]
 * xref:exp-services-register-manually.adoc[]
 * xref:exp-services-connect-providers-to-add.adoc[]
