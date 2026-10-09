@@ -33,7 +33,7 @@ See xref:gateway::flex-gateway-managed-set-up.adoc[].
 . Click *Add Model Proxy*
 . Configure the proxy parameters:
 .. *Proxy Name*: Define a name for the Model Proxy.
-.. *Description*: Provide a description of what this proxy does.
+.. Optionally, enter a *Description* of what this proxy does (up to 256 characters).
 .. *Base Path*: Define a base path for the proxy endpoint (for example: `/billing-ai`).
 .. *Format*: Select an endpoint format:
 +
@@ -42,8 +42,8 @@ See xref:gateway::flex-gateway-managed-set-up.adoc[].
 *** *Gemini*: Select the Gemini API format for native Google Gemini model requests. Doesn't support multi-routing or fallback mechanisms. You can't change this format later.
 .. *Environment*: Select the environment for the Model Proxy.
 .. *Omni Gateway*: Select an Omni Gateway to deploy the Model Proxy to.
-.. *Consumer Endpoint*: Specify the URL where the Model Proxy will be accessible.
-.. *Port*: Enter the port number for the Model Proxy (for example, `8081`).
+.. Optionally, enter a *Consumer Endpoint*: Specify the URL where the Model Proxy will be accessible (for example, `https://api.example.com`).
+.. *Port*: Enter the port number for the Model Proxy (for example, `8081`). This field is required.
 .. Optionally, configure *TLS Configuration* to secure the proxy endpoint:
 +
 *** *Secret Group*: Select the secret group that contains your TLS context. If you don't see your secret group, ensure that it is downloadable. For more information, see xref:gateway::conn-tls-config.adoc#add-a-tls-context[Add a TLS Context].
