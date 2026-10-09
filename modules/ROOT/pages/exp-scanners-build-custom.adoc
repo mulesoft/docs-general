@@ -1,0 +1,283 @@
+= Creating a Self-Managed Scanner
+:keywords: scanners, custom scanner, self-managed scanner, push assets, pipeline, discovery, mulesoft
+
+A self-managed scanner lets you register services with the system from your own build pipeline instead of connecting to a supported third-party provider. You create the scanner once (in the UI or with the API), then push service definitions to it by running a script on your own infrastructure. Use a self-managed scanner when the agents, MCP servers, or APIs you want to govern don't live in a provider the system scans directly, but you can produce their definitions yourself.
+
+You generate the push script yourself by downloading the `push-inventory-collector` skill file from [WHERE] and pasting it into an AI coding assistant, such as Claude Code, Cursor, or Copilot. The assistant asks about your service type, the provider APIs that list and fetch your services, how to authenticate to those APIs, and your preferred scripting language, then writes a single script tailored to one service type and one scanner configuration. See <<generate-the-push-script>>.
+
+Provider scanners reach out to a cloud provider and pull services in. A self-managed scanner works in the opposite direction: your pipeline pushes services to the scanner, so discovery stays current on your release cadence, not a scan schedule. Discovered services appear in the matching *Portfolio* catalogs and on the service's Exchange page in Anypoint Platform, where teams govern, monitor, and deploy them alongside everything else.
+
+For how provider connections and catalogs fit together, see xref:exp-services-connect-providers-to-add.adoc[] and xref:exp-services-add-to-portfolio.adoc[].
+
+== Before You Begin
+
+Before creating a self-managed scanner, make sure you have:
+
+* An Anypoint Platform account.
+* Exchange Administrator permission.
+* Access to, and active context in, the business group where you want to add the scanner.
+* An AI coding assistant, such as Claude Code, Cursor, or Copilot, to generate the push script.
+* A Connected App with the `manage:exchange` scope, and its client ID and secret. The generated script uses them to sign in.
+* Access to the provider APIs that list your services, and credentials for those APIs. The credentials stay on your machine.
+* A place to run the generated script, such as your laptop, a CI/CD job, or a scheduled job, with the runtime for the scripting language you choose.
+
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+
+== Configure the Scanner
+
+Creating the scanner establishes the configuration you push services to. You can create the scanner in one of two ways:
+
+* *In the UI*: Use the *Providers* > *Self-Managed* wizard. This is the recommended path for a one-time setup, and it's the only way that shows the push instructions inline.
+* *With the API*: Call the scanner-configuration API directly. Use this path for fully headless setup, such as provisioning scanners from a script or CI/CD job with no manual step.
+
+Both paths create the same kind of scanner. The rest of this topic (pushing services and committing the scan) is identical regardless of how you create the scanner.
+
+[NOTE]
+====
+The `CONFIG_ID` identifies the push configuration. It isn't an authorization credential. Requests are still scoped by your bearer token and to your organization, so a configuration in another organization isn't reachable even if you know its ID.
+====
+
+=== Create a Self-Managed Scanner 
+
+. From *Platform* > *Providers*, select *Self-Managed*.
+. Select *Add Scanner*.
+. Enter the scanner details:
+* *Name* (required): A name for the scanner, for example, `Orders push scanner`.
+* *Description* (optional): A short summary of what the scanner covers.
+* *Service Type* (required): The kind of service this scanner registers.
++
+[cols="1,2",options="header"]
+|===
+| Service Type | Definition You Push
+| Agent | An A2A agent configuration and agent card.
+| MCP Server | A tool server specification.
+| REST API | An OpenAPI specification (`oas.json` or `oas.yaml`).
+|===
+. Select *Create Scanner*.
+
+After the scanner is created, its detail page opens automatically. The UI doesn't show the configuration ID as a separate field. The curl commands under *How to push assets* already include your organization ID and configuration ID.
+
+
+=== Create a Self-Managed Scanner Without the UI
+
+To create the scanner without the wizard, call the scanner-configuration API. Unlike a provider scanner, a self-managed scanner has no external credentials to supply and no scan schedule to define. You provide only the non-secret configuration: a display name, the service type, and the settings that mark the scanner as self-managed.
+
+[source,bash]
+----
+curl --fail-with-body --silent --show-error \
+  --request POST \
+  --header "Authorization: Bearer ${ACCESS_TOKEN}" \
+  --header "Content-Type: application/json" \
+  --data '{
+    "name": "Orders push scanner",
+    "state": "STOPPED",
+    "importMode": "auto-resolve",
+    "connection": {
+      "targetSystemId": "f1a2b3c4-d5e6-4f70-8a91-b2c3d4e5f601",
+      "authScheme": "customer-upload"
+    }
+  }' \
+  "${BASE_URL}/organizations/${ORG_ID}/scanner-configurations"
+----
+
+Set `connection.targetSystemId` to the catalog ID of the push target system that matches the service type this scanner registers:
+
+//TODO: engineering, are these targetSystemId values the same in every environment? They come from seed changeset 53, which inserts them only if the row doesn't already exist. If they can differ, remove the ID column and explain how to look up the catalog ID.
+[cols="1,1,2",options="header"]
+|===
+| Service Type | Target System | `connection.targetSystemId`
+| Agent | `PUSH_AGENT` | `f1a2b3c4-d5e6-4f70-8a91-b2c3d4e5f601`
+| MCP Server | `PUSH_MCP` | `f1a2b3c4-d5e6-4f70-8a91-b2c3d4e5f602`
+| REST API | `PUSH_API` | `f1a2b3c4-d5e6-4f70-8a91-b2c3d4e5f603`
+|===
+
+The remaining fields are fixed for a self-managed scanner:
+
+* `state`: `STOPPED`. A self-managed scanner never runs on a schedule; it scans only when you commit a push.
+* `importMode`: `auto-resolve`. A self-managed scanner has no review mode, so the UI doesn't ask for one.
+* `connection.authScheme`: `customer-upload`. There are no provider credentials, so omit `authParameters`.
+
+Don't send a `schedule`, and don't post an empty `{}`; the request is rejected.
+
+The `200 OK` response is the scanner-configuration representation. Its top-level `id` is the `CONFIG_ID` you use in every push request:
+
+[source,json]
+----
+{
+  "id": "7b50d705-4ff6-49e9-a3f8-b52e2f5b1f82",
+  "name": "Orders push scanner"
+}
+----
+
+Headless automation obtains its bearer token through the platform's client credentials flow; token issuance and refresh aren't part of the scanner API. For the full request schema, see the scanner-configuration API reference.
+
+
+
+[[generate-the-push-script]]
+== Generate the Push Script
+
+You don't write the push script by hand, and there's no SDK to install. Instead, an AI coding assistant writes the script for you from a skill file that MuleSoft maintains.
+
+. Download the `push-inventory-collector` skill file from [WHERE] and paste it into an AI coding assistant, such as Claude Code, Cursor, or Copilot.
+. Answer the assistant's questions, one at a time:
+* *Service type*: `agent`, `mcp`, or `rest-api` (the one type this scanner configuration accepts).
+* *Provider inventory*: the provider APIs that list your services and fetch each service's definition, such as an OpenAPI or Postman description, or a redacted request and response.
+* *Authentication*: how the script authenticates to those provider APIs. Provider credentials stay on your machine and are never sent to MuleSoft.
+* *Language*: the scripting language and format you want, such as Python, Node, Bash, Java, or Go.
+. Review and confirm the field mapping the assistant proposes, which shows how each provider field becomes a field in the pushed service definition.
+
+The assistant then writes two files: the push script for that one service type and one scanner configuration, and an `inputs.env` file where you enter your Anypoint host, organization ID, configuration ID, and Connected App client ID. Running the script lists your services, packages each one, and uploads them. If the list finished and every upload succeeded, the script asks *Commit this scan? [y/N]*. The default is no. Answering yes commits with `"complete": true`. To answer yes without the prompt, such as in a CI pipeline, use `--commit` or set `PUSH_COMMIT=yes`. If the run is partial, because the list stopped early or an upload failed, the script commits with `"complete": false` without asking. `--commit` doesn't turn a partial run into `"complete": true`.
+
+Because the script is scoped to one service type and one configuration, generate a separate script for each self-managed scanner you create.
+
+== Push Services from Your Pipeline
+
+With the scanner created, push one or more services to it, then commit the scan. Each scan reconciles the services you pushed into the scanner's *Portfolio* catalog.
+
+The generated script performs these steps for you. This section describes the underlying REST calls, which are useful for troubleshooting or for building your own client.
+
+=== Set Your Variables
+
+Every request is scoped to both your organization and the scanner configuration. Set these values in your environment before you call the API:
+
+* `ACCESS_TOKEN`: A valid Anypoint Platform bearer token.
+* `BASE_URL`: The base URL for the scanner API in your Anypoint environment (your Anypoint host plus `/agent-scanner/api/v1`).
+* `ORG_ID`: Your organization ID.
+* `CONFIG_ID`: The scanner's configuration ID. It's already filled in to the curl commands under *How to push assets*. If you created the scanner with the API, it's the `id` in the create response.
+* `WORKSPACE_RUN_ID`: The `workspaceRunId` returned by your first upload.
+
+=== Upload Each Service
+
+The *How to push assets* steps on the scanner's details page show these same calls with your IDs filled in. If the scanner has no scans yet, the steps appear directly on the details page.
+
+Package each service as a ZIP file with one top-level directory named for the service's stable ID. Inside it, `specification/config.json` and the service's artifact sit next to each other:
+
+[source,text]
+----
+orders-agent/
+└── specification/
+    ├── config.json
+    └── a2a-card.json
+----
+
+`config.json` needs `name` (the display name) and `type`. The `type` is `agent`, `mcp`, or `rest-api`, and it must match the scanner's service type.
+
+[source,json]
+----
+{
+  "name": "Orders Agent",
+  "type": "agent"
+}
+----
+
+The artifact file depends on the service type:
+
+[cols="1,2",options="header"]
+|===
+| Service Type | Artifact File
+| `agent` | `a2a-card.json` (or `a2a-v1-card.json` for an A2A v1 card)
+| `mcp` | `mcp-metadata.json`
+| `rest-api` | `oas.json` or `oas.yaml`
+|===
+
+Upload each ZIP with a multipart `POST` to the `push` endpoint. The ZIP goes in a part named `file`.
+
+[source,bash]
+----
+curl --fail-with-body --silent --show-error \
+  --request POST \
+  --header "Authorization: Bearer ${ACCESS_TOKEN}" \
+  --form "file=@orders-agent.zip;type=application/zip" \
+  "${BASE_URL}/organizations/${ORG_ID}/scanner-configurations/${CONFIG_ID}/push"
+----
+
+The first upload returns `202 Accepted` with the workspace run ID. Every later upload before you commit returns the same `workspaceRunId`. Use it in the commit call:
+
+[source,json]
+----
+{ "assetId": "orders-agent", "action": "created", "workspaceRunId": "550e8400-e29b-41d4-a716-446655440000" }
+----
+
+=== Commit the Scan
+
+Committing the scan closes the set of staged services and starts a scan. Use the `workspaceRunId` returned by your uploads.
+
+[source,bash]
+----
+curl --fail-with-body --silent --show-error \
+  --request POST \
+  --header "Authorization: Bearer ${ACCESS_TOKEN}" \
+  --header "Content-Type: application/json" \
+  --data "{\"workspaceRunId\": \"${WORKSPACE_RUN_ID}\", \"complete\": true}" \
+  "${BASE_URL}/organizations/${ORG_ID}/scanner-configurations/${CONFIG_ID}/commit"
+----
+
+The `202 Accepted` response returns the scan run ID, which is the same as the `workspaceRunId`:
+
+[source,json]
+----
+{ "scanRunId": "550e8400-e29b-41d4-a716-446655440000" }
+----
+
+One run of the script uploads every service of its type and then commits the scan once. Committing the scan hands the services to the scanner workflow, which reconciles them and publishes them to Exchange. You don't publish the services yourself.
+
+Both `workspaceRunId` and `complete` are required. Set `"complete": true` only when the upload is your full inventory of that service type. The scanner can then remove services that weren't in the upload. Set `"complete": false` when the upload is partial. Only the uploaded services are added or updated, and none are removed.
+
+== Manage Staged Services
+
+Before you commit the scan, you can revise or drop services you've already staged. These steps are optional and apply only to the open workspace.
+
+=== Replace a Service
+
+To revise a service already staged in the workspace, upload an updated version to the same `push` endpoint. The ZIP directory name is the stable ID, so the new upload overwrites the current staged service.
+
+[source,bash]
+----
+curl --fail-with-body --silent --show-error \
+  --request POST \
+  --header "Authorization: Bearer ${ACCESS_TOKEN}" \
+  --form "file=@orders-agent.zip;type=application/zip" \
+  "${BASE_URL}/organizations/${ORG_ID}/scanner-configurations/${CONFIG_ID}/push"
+----
+
+The response reports the `replaced` action:
+
+[source,json]
+----
+{ "assetId": "orders-agent", "action": "replaced", "workspaceRunId": "550e8400-e29b-41d4-a716-446655440000" }
+----
+
+=== Unstage a Service
+
+To drop a staged service from the workspace before committing the scan, send a `DELETE` request to the `push` endpoint with the service's `assetId` (the ZIP directory name from the original push) at the end of the path.
+
+[source,bash]
+----
+curl --fail-with-body --silent --show-error \
+  --request DELETE \
+  --header "Authorization: Bearer ${ACCESS_TOKEN}" \
+  "${BASE_URL}/organizations/${ORG_ID}/scanner-configurations/${CONFIG_ID}/push/orders-agent"
+----
+
+The `200 OK` response returns the current `workspaceRunId`:
+
+[source,json]
+----
+{ "workspaceRunId": "550e8400-e29b-41d4-a716-446655440000" }
+----
+
+Leaving a service out of a later upload doesn't remove it from the workspace. It stays staged until you unstage it.
+
+== After the Scanner Runs
+
+When you commit the scan, the scanner starts and registers the pushed services in the matching *Portfolio* catalog. You review scan history and outcomes on the scanner detail page, and you manage discovered services from the relevant *Portfolio* catalog. To push a new set of services, upload again and commit a new scan.
+
+For ongoing operations, see xref:exp-scanners-manage.adoc[]. To review scanner health and scan history, see xref:exp-scanners-view-details.adoc[].
+
+== See Also
+
+* xref:exp-scanners-add-from-providers.adoc[]
+* xref:exp-scanners-view-details.adoc[]
+* xref:exp-scanners-manage.adoc[]
+* xref:exp-services-add-to-portfolio.adoc[]
+* xref:exp-services-view-details.adoc[]
