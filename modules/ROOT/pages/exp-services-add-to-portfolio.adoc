@@ -23,7 +23,7 @@ include::_partials/exp-services-add-to-portfolio-video.html[]
 |You start an *Add …* workflow from *Home* or from the catalog for that service type. You supply metadata, specifications, endpoints, or cards to register the service without a provider scanner.
 
 |xref:exp-scanners-build-custom.adoc[]
-|You create a self-managed (custom) scanner, then push service definitions to it from your own build pipeline, a script, or `curl`. Sealing the workspace runs a scan that registers the pushed services in the matching catalog. Use this approach when your services don't live in a provider the system scans, but you can produce their definitions.
+|You create a self-managed (custom) scanner, then push service definitions to it from your own build pipeline, a script, or `curl`. Committing the scan registers the pushed services in the matching catalog. Use this approach when your services don't live in a provider the system scans, but you can produce their definitions.
 |===
 
 Gateway creation starts in Anypoint Platform, which you can open from the enhanced MuleSoft experience.

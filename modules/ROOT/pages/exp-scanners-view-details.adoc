@@ -53,7 +53,7 @@ API gateway scanner::
 For providers that support policy write (Azure API Management, Google Apigee, and Kong Gateway), the *Settings* tab is where you review and update the connection credentials used for policy write on discovered APIs.
 
 Self-managed scanner::
-Shows the scanner's `CONFIG_ID` and push instructions, along with scan history for each sealed workspace. Services appear after you push definitions from your pipeline and seal the workspace. See xref:exp-scanners-build-custom.adoc[].
+Shows push instructions and scan history for each committed scan. Services appear after you push definitions from your pipeline and commit the scan. See xref:exp-scanners-build-custom.adoc[].
 
 == See Also
 

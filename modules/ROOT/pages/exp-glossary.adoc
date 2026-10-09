@@ -99,7 +99,7 @@ Scanner::
 A configured link that discovers services and registers them in the matching Portfolio catalog. A provider scanner connects to a supported cloud provider and pulls services in, running on a schedule or on demand. A self-managed scanner works in the opposite direction: your own pipeline pushes service definitions to it. A scanner is distinct from an external vault, which syncs secret metadata rather than discovering services.
 
 Self-managed scanner (custom scanner)::
-A scanner that registers services from your own build pipeline instead of connecting to a third-party provider. You create it once (in the UI under *Platform* > *Providers* > *Self-managed*, or with the scanner-configuration API), then push service definitions to it from a script, CI/CD job, or any REST client. Sealing the workspace runs a scan that reconciles the pushed services into the matching Portfolio catalog. See xref:exp-scanners-build-custom.adoc[].
+A scanner that registers services from your own build pipeline instead of connecting to a third-party provider. You create it once (in the UI under *Platform* > *Providers* > *Self-managed*, or with the scanner-configuration API), then push service definitions to it from a script, CI/CD job, or any REST client. Committing the scan reconciles the pushed services into the matching Portfolio catalog. See xref:exp-scanners-build-custom.adoc[].
 
 Secret::
 A credential stored in your external vault, such as an API key. The enhanced experience tracks secret metadata (name, path, usage, and last-rotated time) and can reference a secret from a model proxy's authentication configuration, so keys stay in your secrets manager. See xref:exp-vaults-manage.adoc[].
