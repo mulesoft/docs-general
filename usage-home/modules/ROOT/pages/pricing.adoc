@@ -1,5 +1,6 @@
 = Anypoint Platform Pricing
 :keywords: anypoint platform pricing, metrics definitions, global resource pool limits, cloudhub 2.0, application deployment, access management entitlements, mulesoft pricing
+:page-aliases: general::pricing.adoc
 
 The Usage Reports page supports pricing packages for https://www.mulesoft.com/anypoint-pricing[integration]. When your organization opts in to a usage-based pricing plan, such as the Anypoint Integration Advanced package, you must redeploy your apps. After redeploying your apps, your usage reports are shown. 
 
@@ -11,7 +12,7 @@ For Runtime Fabric, you must manually redeploy apps to remain in compliance with
 
 Usage-based pricing packages and their usage reports are based on your organization's use of allotted Mule components.
 
-To understand the technical aspects of metering and pricing concepts within Anypoint Platform, see xref:general::usage-metrics.adoc[] documentation.
+To understand the technical aspects of metering and pricing concepts within Anypoint Platform, see xref:usage-metrics.adoc[] documentation.
 
 == Global Resource Pool Limits
 
@@ -36,8 +37,8 @@ During the monthly patching cycle, your applications automatically migrate to an
 
 == Access Management Entitlements
 
-Accounts provisioned with a usage-based pricing package show flows, messages, and throughput entitlements in Access Management instead of vCores. These entitlements are available only at the root organization level. Because vCores are no longer the purchased entity, they can no longer be tracked or allocated among business groups. To view your monthly usage of flows, messages, and throughput, xref:general::usage-reports.adoc#access-usage-reports[access usage reports] in the Access Management UI. 
+Accounts provisioned with a usage-based pricing package show flows, messages, and throughput entitlements in Access Management instead of vCores. These entitlements are available only at the root organization level. Because vCores are no longer the purchased entity, they can no longer be tracked or allocated among business groups. To view your monthly usage of flows, messages, and throughput, xref:usage-reports.adoc#access-usage-reports[access usage reports] in the Access Management UI. 
 
 == See Also
 
-* xref:general::usage-reports.adoc[]
+* xref:usage-reports.adoc[]

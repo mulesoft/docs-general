@@ -1,0 +1,8 @@
+.xref:index.adoc[Anypoint Platform]
+* xref:index.adoc[Documentation]
+* xref:java-support.adoc[]
+** xref:partner-connector-upgrade.adoc[]
+** xref:customer-connector-upgrade.adoc[]
+** xref:upgrade-policies-proxies.adoc[]
+* xref:browser-support.adoc[Browser Support]
+* xref:glossary.adoc[Glossary]
