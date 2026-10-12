@@ -24,6 +24,10 @@ The credentials MCP Bridge uses to call the selected SaaS systems.
 
 Each operation you select from a source becomes an MCP tool. When an agent requests the list of available tools (`tools/list`), the MCP server responds with each tool's name, description, and input schema. When an agent calls a tool (`tools/call`), MCP Bridge maps the tool name and arguments to an HTTP request to the underlying API or SaaS system.
 
+This diagram shows the relationship of the upstream and downstream configurations to your upstream service and agent client:
+
+image::mcp-bridge-instance.png["The MCP Bridge instance is deployed on a gateway between the upstream APIs and the downstream configuration."]
+
 MCP Bridge generates each tool's name and description from the source definition:
 
 * For SaaS systems, tool names use the format `<source>_<operation>`, for example `15five_getUsers`. You can't edit SaaS tools.
