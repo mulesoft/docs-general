@@ -120,19 +120,6 @@ Some SaaS systems use variables in their upstream and token URLs, such as `+http
 
 After you click *Create & Deploy*, the MCP server is deployed to the gateway and added to the *MCP Servers* catalog in *Portfolio*. Agents connect to the MCP server at the URL shown in *Review*.
 
-[[edit-mcp-server]]
-== Edit an MCP Server
-
-After you create an MCP server, you can edit its sources, API versions, tools, credentials, and server configuration.
-
-// TODO: Verify these steps against the Enhanced Experience UI.
-. Open *MCP Servers* and select the MCP server you want to edit.
-. Click *Actions* > *Edit*.
-+
-The same steps you used to create the MCP server open with your current selections.
-. Update the settings as needed. For more information about each step, see <<create-mcp-server>>.
-. In *Review*, click *Save & Deploy*.
-
 [[change-api-instance]]
 == Change the Instance for an API
 
@@ -195,6 +182,19 @@ If a tool advertises an `outputSchema` in its `tools/list` response, MCP clients
 === Payload Size
 
 When the option is on, MCP Bridge returns the upstream response body twice, once as text and once as `structuredContent`. This roughly doubles the size of the response payload. Turn on the option only for tools that need it.
+
+[[edit-mcp-server]]
+== Edit an MCP Server
+
+After you create an MCP server, you can edit its sources, API versions, tools, credentials, and server configuration.
+
+// TODO: Verify these steps against the Enhanced Experience UI.
+. Open *MCP Servers* and select the MCP server you want to edit.
+. Click *Actions* > *Edit*.
++
+The same steps you used to create the MCP server open with your current selections.
+. Update the settings as needed. For more information about each step, see <<create-mcp-server>>.
+. In *Review*, click *Save & Deploy*.
 
 == See Also
 
