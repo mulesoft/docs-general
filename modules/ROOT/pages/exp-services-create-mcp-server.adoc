@@ -42,11 +42,16 @@ Before getting started, make sure you have:
 ** Exchange: Exchange Administrator
 ** Exchange: Exchange Creator
 --
-* This API Manager permission on at least one environment:
+* These permissions on the environment where you deploy the MCP server:
 +
+--
 ** API Manager: Manage APIs Configuration
+** API Manager: Manage Policies
+** API Manager: Deploy API Proxies
+** Runtime Manager: Read Servers
+--
 +
-For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+Your administrator can assign these permissions and the Exchange role directly to your user, or through a team or role group in Access Management. For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 * Credentials for each SaaS system you plan to expose.
 
 [[create-mcp-server]]
