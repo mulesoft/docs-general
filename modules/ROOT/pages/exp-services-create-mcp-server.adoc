@@ -120,6 +120,19 @@ Some SaaS systems use variables in their upstream and token URLs, such as `+http
 
 After you click *Create & Deploy*, the MCP server is deployed to the gateway and added to the *MCP Servers* catalog in *Portfolio*. Agents connect to the MCP server at the URL shown in *Review*.
 
+[[edit-mcp-server]]
+== Edit an MCP Server
+
+After you create an MCP server, you can edit its sources, API versions, tools, credentials, and server configuration.
+
+// TODO: Verify these steps against the Enhanced Experience UI.
+. Open *MCP Servers* and select the MCP server you want to edit.
+. Click *Actions* > *Edit*.
++
+The same steps you used to create the MCP server open with your current selections.
+. Update the settings as needed. For more information about each step, see <<create-mcp-server>>.
+. In *Review*, click *Save & Deploy*.
+
 [[change-api-instance]]
 == Change the Instance for an API
 
@@ -145,6 +158,7 @@ MCP Bridge generates each API tool from the API specification. Before you create
 . In *Tool definition*, review and edit the tool:
 +
 --
+** *Enable as tool* — Whether the MCP server exposes the tool to agents. This is the same setting as the tool's checkbox in *Select Tools*.
 ** *Method* and *Resource* — The HTTP method and API resource the tool calls.
 ** *AI tool name* — The name agents use to call the tool. The prefix that identifies the API, such as `cmdb-sync_`, can't be changed.
 ** *Description* — The description agents use to decide when to call the tool. Write a description that states what the tool does and what it returns.
@@ -159,6 +173,28 @@ MCP Bridge generates each API tool from the API specification. Before you create
 ** *Body* — A DataWeave expression that builds the request body. The default is `#[vars.params.body]`. To test the expression, click *Try the DataWeave expression in the playground*.
 --
 . Click *Save*.
+
+[[structured-content]]
+== Enable Output Schema (StructuredContent)
+
+The *Enable Output Schema (StructuredContent)* option controls whether MCP Bridge returns the upstream response body in the `structuredContent` field of the MCP tool result. In the MCP transcoding policy, this option is the *Include Structured Content* property.
+
+When the option is on, MCP Bridge mirrors the upstream response body into the `structuredContent` field of the tool result:
+
+* If the response body is a JSON object, MCP Bridge parses it and returns it as the `structuredContent` value.
+* Otherwise, MCP Bridge wraps the body as `{"text": ...}`.
+
+By default, the option is off, and the tool result carries only the text content block.
+
+[[structured-content-output-schema]]
+=== When to Turn On the Option
+
+If a tool advertises an `outputSchema` in its `tools/list` response, MCP clients expect `structuredContent` in every successful result for that tool. Turn on the option for that tool. If the option is off, clients reject the result and the tool call fails.
+
+[[structured-content-payload]]
+=== Payload Size
+
+When the option is on, MCP Bridge returns the upstream response body twice, once as text and once as `structuredContent`. This roughly doubles the size of the response payload. Turn on the option only for tools that need it.
 
 == See Also
 
