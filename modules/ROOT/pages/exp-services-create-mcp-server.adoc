@@ -73,7 +73,7 @@ For example, to expose only read operations, filter to the *POST*, *PUT*, *PATCH
 .. For an API tool, to edit the tool's name, description, input schema, or HTTP mapping, click the *Actions* menu (*⋮*) for the tool. See <<edit-api-tool>>.
 .. To remove a source, click *X* in the source's group.
 .. Confirm the number of tools selected, and click *Next*.
-. In *SaaS Credentials*, provide the credentials MCP Bridge uses to call each selected SaaS system:
+. In *SaaS Credentials*, provide the credentials MCP Bridge uses to call each selected SaaS system. If you selected only APIs, this step doesn't appear, and you go directly to *Review*.
 +
 The required credential fields depend on the SaaS system, for example *API Key* or *API Token*.
 +
@@ -83,7 +83,6 @@ Some SaaS systems use variables in their upstream and token URLs, such as `+http
 .. For each SaaS system, enter the required credentials. To show or hide a value, click the eye icon.
 .. Optionally, click *Test Credentials* to confirm that MCP Bridge can authenticate to the SaaS system. *Test Credentials* is available after you enter the required credentials. If the test fails, an error such as `Authentication failed (403)` appears. Testing isn't required to continue.
 .. Click *Next*.
-// TODO: Confirm whether this step appears when no SaaS systems are selected.
 . In *Review*, review the MCP server configuration:
 .. In *Advanced Server Configuration*, review the server details that MCP Bridge generates:
 +
@@ -94,12 +93,21 @@ Some SaaS systems use variables in their upstream and token URLs, such as `+http
 ** *Inbound TLS* and *Outbound TLS* — The TLS contexts for traffic from agents and to the sources.
 ** *URL* — The endpoint that agents use to connect to the MCP server.
 --
+.. To change the server configuration, click *Edit* in *Advanced Server Configuration*, and then update the settings:
++
+--
+** In *Server Configuration*, edit the following settings, and then click *Save*:
+*** *Server Name* — Identifies the MCP server and becomes the subdomain of the server's URL.
+*** *Version* — The semantic version of the MCP server, for example `1.0.0` or `v2.1.3`.
+*** *Path* — The base path on the gateway. By default, the path is derived from the server name.
+*** *Environment* — The environment where the MCP server is deployed.
+*** *Gateway* — The gateway that hosts the MCP server.
+** In *TLS Configuration*, optionally click *Add TLS Context* to encrypt communication from clients to the gateway (inbound) and from the gateway to your API instances (outbound).
+--
 .. Optionally, in *Description*, describe the business purpose of the MCP server.
 .. In *Sources, Instances & Tools*, review each source, its API instance ID and URL, and the tools the MCP server exposes.
-.. To change the server configuration, click *Edit* in *Advanced Server Configuration*.
-.. To change the sources, instances, or tools, click *Edit* in *Sources, Instances & Tools*. This returns you to *Select Source, Instance & Tools*, and you complete the remaining steps again.
+.. To change the sources, instances, or tools, click *Edit* in *Sources, Instances & Tools*. This returns you to *Select APIs and SaaS systems*, and you complete the remaining steps again.
 .. Click *Create & Deploy*.
-// TODO: Document what Edit in Advanced Server Configuration lets you change.
 
 After you click *Create & Deploy*, the MCP server is deployed to the gateway and added to the *MCP Servers* catalog in *Portfolio*. Agents connect to the MCP server at the URL shown in *Review*.
 
