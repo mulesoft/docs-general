@@ -62,9 +62,14 @@ See xref:gateway::flex-gateway-managed-set-up.adoc[].
 **** *OpenAI*
 **** *Gemini*
 **** *Azure OpenAI*
+**** *Bedrock OpenAI*
 **** *Bedrock Anthropic*
-**** *NVIDIA Nemotron*
+**** *NVIDIA*
 **** *Anthropic*
+**** *xAI*
+**** *Grok*
+**** *DeepSeek*
+**** *Mistral*
 **** Any custom provider published to Anypoint Exchange. For more information, see xref:model-proxy-publish-custom-llm-metadata.adoc[].
 *** *Request model override*: Select a target model to override the model version specified in the payload. Selecting *Use model from request* sends the request to the model specified in the request. A target model is required for semantic routing.
 *** *Destination URL*: Specify the URL for your provider endpoint. Ensure the URL is correct and edit if necessary.

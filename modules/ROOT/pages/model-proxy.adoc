@@ -30,44 +30,19 @@ Depending on configuration, the proxy then sends the request to the model define
 [[supported-llm-providers]]
 == Supported LLM Providers
 
-Model Proxy supports these LLM Providers and API endpoints:
+Model Proxy supports different models from these LLM providers:
 
-[%header%autowidth.spread,cols="a,a,a,a"]
-|===
-| LLM Provider | Model | `/chat/completions` | `/responses`
-.8+|OpenAI and Azure OpenAI
-|gpt-5.2 | Yes | Yes
-|gpt-5.2-pro | Yes | Yes
-|gpt-5-mini | Yes | Yes
-|gpt-5.2-codex | Yes | Yes
-|gpt-5-nano | Yes | Yes
-|gpt-5 | Yes | Yes
-|gpt-4.1 | Yes | Yes
-|gpt-4o-mini | Yes | Yes
-
-.4+|Gemini
-|gemini-3-flash-preview | Yes | Yes
-|gemini-2.5-flash | Yes | Yes
-|gemini-2.5-flash-preview-09-2025 | Yes | Yes
-|gemini-2.5-flash-lite | Yes | Yes
-
-.10+| Anthropic and Bedrock Anthropic
-| Claude Sonnet 4.6 | Yes | Yes
-| Claude Opus 4.6 | Yes | Yes
-| Claude Opus 4.5 | Yes | Yes
-| Claude Haiku 4.5 | Yes | Yes
-| Claude Sonnet 4.5 | Yes | Yes
-| Claude Opus 4 | Yes | Yes
-| Claude Sonnet 4 | Yes | Yes
-| Claude Sonnet 3.7 | Yes | Yes
-| Claude Sonnet 3.5 | Yes | Yes
-| Claude Haiku 3.5 | Yes | Yes
-
-.3+| NVIDIA Nemotron
-| Nemotron 3 Nano 30B A3B | Yes | Yes
-|Nemotron 3 Super 120B A12B | Yes | Yes
-|Llama Nemotron Ultra 253B | Yes | Yes
-|===
+* OpenAI
+* Azure OpenAI
+* Bedrock OpenAI
+* Gemini
+* Anthropic
+* Bedrock Anthropic
+* NVIDIA
+* xAI
+* Grok
+* DeepSeek
+* Mistral
 
 [[model-based-routing]]
 == Model-Based Routing
