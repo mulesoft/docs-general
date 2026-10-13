@@ -1,0 +1,341 @@
+= Publishing Custom LLM Providers to Anypoint Exchange
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:imagesdir: ../assets/images
+
+If your LLM provider or gateway isn't one of the built-in Model Proxy providers, create an `llm-metadata.json` classifier asset to publish the provider to Anypoint Exchange.
+
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* `curl` installed
++
+To install, see https://curl.se/download.html[Install curl^]. 
+
+* `jq` installed
++
+To install, see https://jqlang.org/download/[Install jq^].
+
+* An Anypoint xref:access-management::creating-connected-apps-dev.adoc[connected app] that:
+** Acts on its own behalf with the `client_credentials` grant type.
+** Has the *Exchange Contributor* or *Exchange Administrator* scope.
+** Has that scope assigned to the target business group.
+
+[[create-the-classifier]]
+== Create the llm-metadata.json Classifier
+
+The classifier is a JSON object. Only `platform` is required. Unknown properties aren't accepted, so use only the fields documented in this section.
+
+[%header,cols="2,1,1,6"]
+|===
+| Field | Type | Required | Description
+| `platform` | String | Yes | Provider or platform identifier, such as `Gemini`, `OpenAI`, or a custom name.
+| `name` | String | No | Human-readable platform name.
+| `inputFormat` | String | No | Wire format: `openai`, `anthropic`, or `gemini`.
+| `kind` | String | No | Platform type, for example `llm-gw`.
+| `authentication` | Array | No | Supported provider authentication methods.
+| `models` | Array | No | Model ID strings or detailed model objects.
+| `defaultUrl` | Array | No | Named provider URL entries. Each entry requires both `name` and `url`.
+| `capabilities` | Object | No | Platform-wide supported features.
+| `policyRef` | Object | No | Adapter policy coordinates. Requires `groupId` and `assetId`. `version` is optional.
+| `provenance` | Object | No | Origin information. Supports `id`, `createdAt`, `updatedAt`, `version`, `status`, and `url`. Use RFC 3339 date-time strings for timestamps.
+|===
+
+=== Authentication
+
+Each `authentication` entry requires `kind`. Supported values are:
+
+* `none`
+* `apiKey`
+* `amazonSigv4`
+
+Authentication entries can include non-secret defaults such as header names, token URLs, scopes, or timeouts. Never include actual API keys, passwords, client secrets, or tokens. If `kind` is `none`, it must be the only authentication entry.
+
+[%header,cols="2,6"]
+|===
+| Authentication Kind | Optional Configuration
+| `apiKey` | `headerName` (required when a configuration is present), `apiKeyPrefix`, `headersToRemove`, and `additionalHeaders`
+|===
+
+=== Models
+
+The `models` field is an array. Each item can be either of these forms:
+
+* A string containing only the provider's model identifier, such as `"gemini-2.5-flash"`.
+* A detailed object. The `id` field is required. All other fields are optional.
+
+[%header,cols="2,1,6"]
+|===
+| Model Field | Type | Description
+| `id` | String | Provider-specific model identifier.
+| `label` | String | Human-readable model name.
+| `description` | String | Summary of the model and its intended use.
+| `limits` | Object | Context, output, and prompt-caching limits.
+| `capabilities` | Object | Features supported by this specific model.
+| `pricing` | Object | Prices per million tokens.
+| `lifecycle` | Object | Release and retirement information.
+|===
+
+The nested objects support these fields:
+
+[%header,cols="1,2,1,5"]
+|===
+| Object | Field | Type | Description
+| `limits` | `maxInputTokens` | Integer | Maximum number of input tokens.
+| `limits` | `maxOutputTokens` | Integer | Maximum number of generated tokens.
+| `limits` | `supportsPromptCaching` | Boolean | Whether prompt caching is supported.
+| `limits` | `maxCachedTokens` | Integer | Maximum number of tokens that can be cached.
+| `pricing` | `inputPerMillion` | Number | Price per million input tokens.
+| `pricing` | `outputPerMillion` | Number | Price per million output tokens.
+| `pricing` | `cachedInputPerMillion` | Number | Price per million cached input tokens.
+| `pricing` | `reasoningPerMillion` | Number | Price per million reasoning tokens.
+| `lifecycle` | `status` | String | Provider-defined state, such as `active`, `deprecated`, or `sunset`.
+| `lifecycle` | `releasedAt` | String | Release date or timestamp.
+| `lifecycle` | `sunsetAt` | String or null | Known retirement date, or `null`.
+|===
+
+This example shows both model forms.
+
+[source,json]
+----
+{
+  "models": [
+    "gemini-2.5-flash",
+    {
+      "id": "gemini-2.5-pro",
+      "label": "Gemini 2.5 Pro",
+      "description": "A multimodal model for complex reasoning tasks.",
+      "limits": {
+        "maxInputTokens": 1000000,
+        "maxOutputTokens": 8192,
+        "supportsPromptCaching": true,
+        "maxCachedTokens": 500000
+      },
+      "capabilities": {
+        "toolCalling": true,
+        "structuredOutput": true,
+        "imageInput": true,
+        "reasoning": {
+          "supported": true,
+          "type": "adaptive",
+          "effortLevels": ["low", "medium", "high"]
+        }
+      },
+      "pricing": {
+        "inputPerMillion": 1.25,
+        "outputPerMillion": 5.0,
+        "cachedInputPerMillion": 0.3125,
+        "reasoningPerMillion": 5.0
+      },
+      "lifecycle": {
+        "status": "active",
+        "releasedAt": "2025-03-25T00:00:00Z",
+        "sunsetAt": null
+      }
+    }
+  ]
+}
+----
+
+=== Capabilities
+
+Declare capabilities at the platform level or within a detailed model. The boolean flags are:
+
+* `embeddings`
+* `toolCalling`
+* `structuredOutput`
+* `structuredOutputs`
+* `codeExecution`
+* `citations`
+* `batchProcessing`
+* `imageInput`
+* `pdfInput`
+
+Reasoning support isn't a boolean flag. Declare it with a nested `reasoning` object that describes whether the platform or model supports reasoning and how it's controlled:
+
+[%header,cols="2,1,1,6"]
+|===
+| Field | Type | Required | Description
+| `supported` | Boolean | Yes | Whether the platform or model supports reasoning.
+| `type` | String | No | The reasoning mode the provider uses, for example `adaptive`.
+| `effortLevels` | Array of strings | No | The reasoning effort levels that the provider accepts, for example `low`, `medium`, and `high`.
+|===
+
+In this example, the model supports reasoning and accepts three effort levels:
+
+[source,json]
+----
+"capabilities": {
+  "reasoning": {
+    "supported": true,
+    "type": "adaptive",
+    "effortLevels": ["low", "medium", "high"]
+  }
+}
+----
+
+If the platform or model doesn't support reasoning, omit the `reasoning` object or set `supported` to `false`.
+
+With the exception of a custom authentication method's provider-specific configuration, nested objects don't accept undocumented fields.
+
+=== Example LLM Provider Asset
+
+Create a file named `llm-metadata.json`:
+
+[source,json]
+----
+{
+  "platform": "Geminiano",
+  "name": "Geminiano",
+  "inputFormat": "gemini",
+  "kind": "llm-gw",
+  "authentication": [
+    {
+      "kind": "apiKey",
+      "defaultConfiguration": {
+        "headerName": "X-goog-api-key",
+        "headersToRemove": ["Authorization"]
+      }
+    }
+  ],
+  "models": ["gemini-2.5-flash"],
+  "defaultUrl": [
+    {
+      "name": "default",
+      "url": "https://generativelanguage.googleapis.com/v1beta/"
+    }
+  ],
+  "capabilities": {
+    "toolCalling": true,
+    "structuredOutput": true,
+    "imageInput": true,
+    "pdfInput": true,
+    "reasoning": {
+      "supported": true
+    }
+  }
+}
+----
+
+[[publish-the-llm-asset]]
+== Publish the LLM Asset with the Exchange API
+
+. Set the coordinates for the asset you want to publish:
++
+[source,bash]
+----
+export ORGANIZATION_ID="YOUR_ORGANIZATION_ID"
+export GROUP_ID="YOUR_GROUP_ID"
+export ASSET_ID="my-custom-llm"
+export ASSET_VERSION="1.0.0"
+export VERSION_GROUP="v1"
+export ASSET_NAME="My Custom LLM"
+----
++
+The organization ID identifies the business group that receives the asset. The group ID is the asset's Maven group ID and is commonly the same value. Use a lowercase, URL-safe asset ID.
++
+NOTE: Exchange versions are immutable. If a version already exists, publish a new semantic version.
+
+. Export your credentials in the current shell or retrieve them from a secret manager. Don't commit them to source control or paste them into documents.
++
+[source,bash]
+----
+read -r -p 'Anypoint client ID: ' ANYPOINT_CLIENT_ID
+read -r -s -p 'Anypoint client secret: ' ANYPOINT_CLIENT_SECRET
+echo
+export ANYPOINT_CLIENT_ID ANYPOINT_CLIENT_SECRET
+----
++
+WARNING: Shell history can expose values. Avoid commands such as `export ANYPOINT_CLIENT_SECRET=literal-secret`.
+
+. Obtain a bearer token. The steps use OAuth 2.0 client credentials and the production Anypoint host, `https://anypoint.mulesoft.com`.
++
+[source,bash]
+----
+TOKEN_RESPONSE=$(curl --fail-with-body --silent --show-error --location \
+  --request POST \
+  'https://anypoint.mulesoft.com/accounts/api/v2/oauth2/token' \
+  --header 'Content-Type: application/x-www-form-urlencoded' \
+  --data-urlencode "client_id=$ANYPOINT_CLIENT_ID" \
+  --data-urlencode "client_secret=$ANYPOINT_CLIENT_SECRET" \
+  --data-urlencode 'grant_type=client_credentials')
+
+ANYPOINT_TOKEN=$(printf '%s' "$TOKEN_RESPONSE" | jq -er '.access_token')
+export ANYPOINT_TOKEN
+----
++
+Don't print or log `TOKEN_RESPONSE` or `ANYPOINT_TOKEN`.
+
+. Confirm your new provider versions is available:
++
+[source,bash]
+----
+curl --silent --show-error \
+  --output /dev/null \
+  --write-out 'HTTP %{http_code}\n' \
+  --header "Authorization: Bearer $ANYPOINT_TOKEN" \
+  "https://anypoint.mulesoft.com/exchange/api/v2/assets/$GROUP_ID/$ASSET_ID/$ASSET_VERSION"
+----
++
+Ensure you receive a `404` error code.
++
+* `HTTP 404`: The version is available.
+* `HTTP 200`: The version already exists. Change `ASSET_VERSION` before publishing.
+* `HTTP 401` or `HTTP 403`: The request wasn't authorized. See <<troubleshooting>>.
+
+. From the directory that contains `llm-metadata.json`, publish the asset to Exchange. Update the json file name if necessary:
++
+[source,bash]
+----
+curl --fail-with-body --silent --show-error --location \
+  --request POST \
+  "https://anypoint.mulesoft.com/exchange/api/v2/organizations/$ORGANIZATION_ID/assets/$GROUP_ID/$ASSET_ID/$ASSET_VERSION" \
+  --header 'Accept: application/json' \
+  --header 'x-sync-publication: true' \
+  --header "Authorization: Bearer $ANYPOINT_TOKEN" \
+  --form 'files.llm-metadata.json=@llm-metadata.json;type=application/json' \
+  --form "properties.versionGroup=$VERSION_GROUP" \
+  --form 'type=llm' \
+  --form "name=$ASSET_NAME"
+----
++
+Don't set the multipart `Content-Type` header manually. `curl --form` generates the required boundary and header.
+
+. Verify the published asset:
++
+[source,bash]
+----
+curl --fail-with-body --silent --show-error \
+  --header 'Accept: application/json' \
+  --header "Authorization: Bearer $ANYPOINT_TOKEN" \
+  "https://anypoint.mulesoft.com/exchange/api/v2/assets/$GROUP_ID/$ASSET_ID/$ASSET_VERSION" \
+  | jq '{groupId, assetId, version, name, type, status}'
+----
+
+. Open the asset in Exchange and confirm that the published version is visible and that its `llm-metadata.json` classifier is downloadable.
+
+. After testing, unset the sensitive shell variables:
++
+[source,bash]
+----
+unset ANYPOINT_CLIENT_ID ANYPOINT_CLIENT_SECRET ANYPOINT_TOKEN TOKEN_RESPONSE
+unset ORGANIZATION_ID GROUP_ID ASSET_ID ASSET_VERSION VERSION_GROUP ASSET_NAME
+----
++
+Rotate any client secret that has been pasted into chat, logs, tickets, or shell history before using this process in automation.
+
+[[troubleshooting]]
+== Troubleshooting Error Codes
+
+`401 Unauthorized`:: Obtain a new token and verify the client ID and secret.
+`403 Forbidden`:: In *Access Management* > *Connected Apps*, add *Exchange Contributor* or *Exchange Administrator* for the target business group. Save the app, obtain a new token, and retry.
+`409 Conflict`:: The version already exists. Publish a new semantic version.
+`400 Bad Request`:: Check the JSON field names and types, `type=llm`, and `properties.versionGroup`.
+
+== See Also
+
+* xref:model-proxy-create-model-proxy.adoc[]
+* https://docs.mulesoft.com/access-management/connected-apps-overview[Connected Applications Overview^]
+* https://docs.mulesoft.com/exchange/to-publish-assets-maven[Publishing Assets Using Exchange API^]
