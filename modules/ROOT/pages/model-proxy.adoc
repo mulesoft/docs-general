@@ -19,8 +19,8 @@ image::model-proxy.png["A Model Proxy with a single endpoint routing requests to
 Model Proxy supports these endpoint formats that are selected when creating a Model Proxy and can't be changed later:
 
 * *OpenAI*: The OpenAI API format works with all supported LLM providers and supports multi-routing and fallback mechanisms.
-* *Gemini*: The native Gemini API format for direct Google Gemini model requests. Doesn't support multi-routing or fallback mechanisms.
-* *Anthropic*: The native Anthropic API format for direct Anthropic Claude model requests. Doesn't support multi-routing or fallback mechanisms.
+* *Gemini*: The native Gemini API format for direct Google Gemini model requests. Supports model-based routing only.
+* *Anthropic*: The native Anthropic API format for direct Anthropic Claude model requests. Supports model-based routing only.
 
 Depending on configuration, the proxy then sends the request to the model defined by the user or dynamically sends the request to the provider that best matches the request:
 

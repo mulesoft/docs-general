@@ -38,8 +38,8 @@ See xref:gateway::flex-gateway-managed-set-up.adoc[].
 .. *Format*: Select an endpoint format:
 +
 *** *OpenAI*: Select the OpenAI API format to send requests to all supported LLM providers (including Gemini and Anthropic). Supports multi-routing and fallback mechanisms. You can't change this format later.
-*** *Anthropic*: Select the Anthropic API format for native Anthropic Claude model requests. Doesn't support multi-routing or fallback mechanisms. You can't change this format later.
-*** *Gemini*: Select the Gemini API format for native Google Gemini model requests. Doesn't support multi-routing or fallback mechanisms. You can't change this format later.
+*** *Anthropic*: Select the Anthropic API format for native Anthropic Claude model requests. Supports model-based routing only. You can't change this format later.
+*** *Gemini*: Select the Gemini API format for native Google Gemini model requests. Supports model-based routing only. You can't change this format later.
 .. *Environment*: Select the environment for the Model Proxy.
 .. *Omni Gateway*: Select an Omni Gateway to deploy the Model Proxy to.
 .. Optionally, enter a *Consumer Endpoint*: Specify the URL where the Model Proxy will be accessible (for example, `https://api.example.com`).
@@ -53,7 +53,7 @@ See xref:gateway::flex-gateway-managed-set-up.adoc[].
 .. Select a routing strategy:
 +
 *** *Model-based*: Route requests based on the model specified in the request payload.
-*** *Semantic*: Route requests based on semantic analysis of the prompt content. Requires a configured semantic service.
+*** *Semantic*: Route requests based on semantic analysis of the prompt content. Requires a configured semantic service. Not supported for the Anthropic or Gemini endpoint formats.
 . Configure at least one route:
 .. Provide a route name (for example, `Route A`).
 .. Optionally, click *Add headers* to add routing headers that filter requests by region, SLA, or custom rules. For example, `Region: US`
