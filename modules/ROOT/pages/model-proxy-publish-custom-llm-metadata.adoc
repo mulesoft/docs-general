@@ -4,9 +4,7 @@ include::_attributes.adoc[]
 endif::[]
 :imagesdir: ../assets/images
 
-If your LLM provider or gateway isn't one of the built-in Model Proxy providers, create and publish an `llm-metadata.json` classifier asset that describes a custom LLM platform to Anypoint Exchange.
-
-The steps use OAuth 2.0 client credentials and the production Anypoint host, `https://anypoint.mulesoft.com`.
+If your LLM provider or gateway isn't one of the built-in Model Proxy providers, create an `llm-metadata.json` classifier asset to publish the provider to Anypoint Exchange.
 
 == Before You Begin
 
@@ -231,6 +229,8 @@ export ANYPOINT_CLIENT_ID ANYPOINT_CLIENT_SECRET
 WARNING: Shell history can expose values. Avoid commands such as `export ANYPOINT_CLIENT_SECRET=literal-secret`.
 
 == Obtain a Bearer Token
+
+The steps use OAuth 2.0 client credentials and the production Anypoint host, `https://anypoint.mulesoft.com`.
 
 [source,bash]
 ----
