@@ -145,7 +145,6 @@ Declare capabilities at the platform level or within a detailed model. The boole
 * `embeddings`
 * `toolCalling`
 * `structuredOutput`
-* `structuredOutputs`
 * `codeExecution`
 * `citations`
 * `batchProcessing`
