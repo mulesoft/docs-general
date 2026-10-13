@@ -291,6 +291,16 @@ curl --fail-with-body --silent --show-error \
 +
 Also open the asset in Exchange and confirm that the published version is visible and that its `llm-metadata.json` classifier is downloadable.
 
+. After testing, unset the sensitive shell variables:
++
+[source,bash]
+----
+unset ANYPOINT_CLIENT_ID ANYPOINT_CLIENT_SECRET ANYPOINT_TOKEN TOKEN_RESPONSE
+unset ORGANIZATION_ID GROUP_ID ASSET_ID ASSET_VERSION VERSION_GROUP ASSET_NAME
+----
++
+Rotate any client secret that has been pasted into chat, logs, tickets, or shell history before using this process in automation.
+
 [[troubleshooting]]
 == Troubleshooting
 
@@ -298,18 +308,6 @@ Also open the asset in Exchange and confirm that the published version is visibl
 `403 Forbidden`:: In *Access Management* > *Connected Apps*, add *Exchange Contributor* or *Exchange Administrator* for the target business group. Save the app, obtain a new token, and retry.
 `409 Conflict`:: The version already exists. Publish a new semantic version.
 `400 Bad Request`:: Check the JSON field names and types, `type=llm`, and `properties.versionGroup`.
-
-== Clean Up
-
-After testing, unset the sensitive shell variables:
-
-[source,bash]
-----
-unset ANYPOINT_CLIENT_ID ANYPOINT_CLIENT_SECRET ANYPOINT_TOKEN TOKEN_RESPONSE
-unset ORGANIZATION_ID GROUP_ID ASSET_ID ASSET_VERSION VERSION_GROUP ASSET_NAME
-----
-
-Rotate any client secret that has been pasted into chat, logs, tickets, or shell history before using this process in automation.
 
 == See Also
 
