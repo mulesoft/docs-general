@@ -4,7 +4,7 @@ include::_attributes.adoc[]
 endif::[]
 :imagesdir: ../assets/images
 
-If your LLM provider or gateway isn't one of the built-in Model Proxy providers, create an `llm-metadata.json` classifier asset to publish the provider to Anypoint Exchange.
+If your LLM provider or gateway is not one of the built-in xref:model-proxy.adoc#supported-llm-providers[Model Proxy providers], publish it to Anypoint Exchange as an llm-metadata.json classifier. Model Proxy can then route traffic to that provider. You create the classifier, confirm the asset version is free, and publish it with the Exchange API.
 
 == Before You Begin
 
@@ -284,7 +284,7 @@ Make sure you receive a `404` error code.
 * `HTTP 200`: The version already exists. Change `ASSET_VERSION` before publishing.
 * `HTTP 401` or `HTTP 403`: The request wasn't authorized. See <<troubleshooting>>.
 
-. From the directory that contains `llm-metadata.json`, publish the asset to Exchange. Update the json file name if necessary:
+. From the directory that contains `llm-metadata.json`, publish the asset to Exchange:
 +
 [source,bash]
 ----
@@ -301,6 +301,8 @@ curl --fail-with-body --silent --show-error --location \
 ----
 +
 Don't set the multipart `Content-Type` header manually. `curl --form` generates the required boundary and header.
++
+NOTE: If your file has a different name, replace `@llm-metadata.json` with `@<YOUR_FILE_NAME>`.
 
 . Verify the published asset:
 +
@@ -336,5 +338,5 @@ Rotate any client secret you pasted into chat, logs, tickets, or shell history b
 == See Also
 
 * xref:model-proxy-create-model-proxy.adoc[]
-* https://docs.mulesoft.com/access-management/connected-apps-overview[Connected Applications Overview^]
-* https://docs.mulesoft.com/exchange/to-publish-assets-maven[Publishing Assets Using Exchange API^]
+* xref:access-management::connected-apps-overview.adoc[]
+* xref:exchange::to-publish-assets-maven.adoc[]
