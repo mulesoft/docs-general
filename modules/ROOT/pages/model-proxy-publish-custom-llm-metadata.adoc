@@ -157,7 +157,7 @@ Reasoning support uses a nested `reasoning` object with `supported`, an optional
 
 With the exception of a custom authentication method's provider-specific configuration, nested objects don't accept undocumented fields.
 
-=== Example Classifier
+=== Example LLM Asset
 
 Create a file named `llm-metadata.json`:
 
@@ -302,7 +302,7 @@ unset ORGANIZATION_ID GROUP_ID ASSET_ID ASSET_VERSION VERSION_GROUP ASSET_NAME
 Rotate any client secret that has been pasted into chat, logs, tickets, or shell history before using this process in automation.
 
 [[troubleshooting]]
-== Troubleshooting
+== Troubleshooting Error Codes
 
 `401 Unauthorized`:: Obtain a new token and verify the client ID and secret.
 `403 Forbidden`:: In *Access Management* > *Connected Apps*, add *Exchange Contributor* or *Exchange Administrator* for the target business group. Save the app, obtain a new token, and retry.
