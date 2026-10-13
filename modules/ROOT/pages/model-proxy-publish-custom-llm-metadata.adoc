@@ -96,7 +96,7 @@ The nested objects support these fields:
 | `lifecycle` | `sunsetAt` | String or null | Known retirement date, or `null`.
 |===
 
-This example shows both model forms. The limits and pricing values are illustrative.
+This example shows both model forms.
 
 [source,json]
 ----
@@ -141,7 +141,7 @@ This example shows both model forms. The limits and pricing values are illustrat
 
 === Capabilities
 
-You can declare capabilities at the platform level or within a detailed model. The boolean flags are:
+Declare capabilities at the platform level or within a detailed model. The boolean flags are:
 
 * `embeddings`
 * `toolCalling`
@@ -153,11 +153,34 @@ You can declare capabilities at the platform level or within a detailed model. T
 * `imageInput`
 * `pdfInput`
 
-Reasoning support uses a nested `reasoning` object with `supported`, an optional `type`, and optional `effortLevels`.
+Reasoning support isn't a boolean flag. Declare it with a nested `reasoning` object that describes whether the platform or model supports reasoning and how it's controlled:
+
+[%header,cols="2,1,1,6"]
+|===
+| Field | Type | Required | Description
+| `supported` | Boolean | Yes | Whether the platform or model supports reasoning.
+| `type` | String | No | The reasoning mode the provider uses, for example `adaptive`.
+| `effortLevels` | Array of strings | No | The reasoning effort levels that the provider accepts, for example `low`, `medium`, and `high`.
+|===
+
+In this example, the model supports reasoning and accepts three effort levels:
+
+[source,json]
+----
+"capabilities": {
+  "reasoning": {
+    "supported": true,
+    "type": "adaptive",
+    "effortLevels": ["low", "medium", "high"]
+  }
+}
+----
+
+If the platform or model doesn't support reasoning, omit the `reasoning` object or set `supported` to `false`.
 
 With the exception of a custom authentication method's provider-specific configuration, nested objects don't accept undocumented fields.
 
-=== Example LLM Asset
+=== Example LLM Provider Asset
 
 Create a file named `llm-metadata.json`:
 
@@ -245,7 +268,7 @@ export ANYPOINT_TOKEN
 +
 Don't print or log `TOKEN_RESPONSE` or `ANYPOINT_TOKEN`.
 
-. Confirm the version is available:
+. Confirm your new provider versions is available:
 +
 [source,bash]
 ----
@@ -256,11 +279,13 @@ curl --silent --show-error \
   "https://anypoint.mulesoft.com/exchange/api/v2/assets/$GROUP_ID/$ASSET_ID/$ASSET_VERSION"
 ----
 +
-* `HTTP 404` means the version is available.
-* `HTTP 200` means the version already exists. Change `ASSET_VERSION` before publishing.
-* `HTTP 401` or `HTTP 403` means the request wasn't authorized. See <<troubleshooting>>.
+Ensure you receive a `404` error code.
++
+* `HTTP 404`: The version is available.
+* `HTTP 200`: The version already exists. Change `ASSET_VERSION` before publishing.
+* `HTTP 401` or `HTTP 403`: The request wasn't authorized. See <<troubleshooting>>.
 
-. From the directory that contains `llm-metadata.json`, publish the asset to Exchange:
+. From the directory that contains `llm-metadata.json`, publish the asset to Exchange. Update the json file name if necessary:
 +
 [source,bash]
 ----
@@ -288,8 +313,8 @@ curl --fail-with-body --silent --show-error \
   "https://anypoint.mulesoft.com/exchange/api/v2/assets/$GROUP_ID/$ASSET_ID/$ASSET_VERSION" \
   | jq '{groupId, assetId, version, name, type, status}'
 ----
-+
-Also open the asset in Exchange and confirm that the published version is visible and that its `llm-metadata.json` classifier is downloadable.
+
+. Open the asset in Exchange and confirm that the published version is visible and that its `llm-metadata.json` classifier is downloadable.
 
 . After testing, unset the sensitive shell variables:
 +
