@@ -18,7 +18,7 @@ To install, see https://curl.se/download.html[Install curl^].
 +
 To install, see https://jqlang.org/download/[Install jq^].
 
-* An Anypoint xref:access-management::connected-apps-developers.adoc#create-a-connected-app[connected app] that:
+* An Anypoint xref:access-management::creating-connected-apps-dev.adoc[connected app] that:
 ** Acts on its own behalf with the `client_credentials` grant type.
 ** Has the *Exchange Contributor* or *Exchange Administrator* scope.
 ** Has that scope assigned to the target business group.
@@ -196,10 +196,11 @@ Create a file named `llm-metadata.json`:
 }
 ----
 
-== Set the Asset Coordinates
+[[publish-the-llm-asset]]
+== Publish the LLM Asset with the Exchange API
 
-Set the coordinates for the asset you want to publish:
-
+. Set the coordinates for the asset you want to publish:
++
 [source,bash]
 ----
 export ORGANIZATION_ID="YOUR_ORGANIZATION_ID"
@@ -209,15 +210,13 @@ export ASSET_VERSION="1.0.0"
 export VERSION_GROUP="v1"
 export ASSET_NAME="My Custom LLM"
 ----
-
++
 The organization ID identifies the business group that receives the asset. The group ID is the asset's Maven group ID and is commonly the same value. Use a lowercase, URL-safe asset ID.
-
++
 NOTE: Exchange versions are immutable. If a version already exists, publish a new semantic version.
 
-== Store Your Credentials
-
-Export your credentials in the current shell or retrieve them from a secret manager. Don't commit them to source control or paste them into documents.
-
+. Export your credentials in the current shell or retrieve them from a secret manager. Don't commit them to source control or paste them into documents.
++
 [source,bash]
 ----
 read -r -p 'Anypoint client ID: ' ANYPOINT_CLIENT_ID
@@ -225,13 +224,11 @@ read -r -s -p 'Anypoint client secret: ' ANYPOINT_CLIENT_SECRET
 echo
 export ANYPOINT_CLIENT_ID ANYPOINT_CLIENT_SECRET
 ----
-
++
 WARNING: Shell history can expose values. Avoid commands such as `export ANYPOINT_CLIENT_SECRET=literal-secret`.
 
-== Obtain a Bearer Token
-
-The steps use OAuth 2.0 client credentials and the production Anypoint host, `https://anypoint.mulesoft.com`.
-
+. Obtain a bearer token. The steps use OAuth 2.0 client credentials and the production Anypoint host, `https://anypoint.mulesoft.com`.
++
 [source,bash]
 ----
 TOKEN_RESPONSE=$(curl --fail-with-body --silent --show-error --location \
@@ -245,11 +242,11 @@ TOKEN_RESPONSE=$(curl --fail-with-body --silent --show-error --location \
 ANYPOINT_TOKEN=$(printf '%s' "$TOKEN_RESPONSE" | jq -er '.access_token')
 export ANYPOINT_TOKEN
 ----
-
++
 Don't print or log `TOKEN_RESPONSE` or `ANYPOINT_TOKEN`.
 
-== Confirm the Version Is Available
-
+. Confirm the version is available:
++
 [source,bash]
 ----
 curl --silent --show-error \
@@ -258,15 +255,13 @@ curl --silent --show-error \
   --header "Authorization: Bearer $ANYPOINT_TOKEN" \
   "https://anypoint.mulesoft.com/exchange/api/v2/assets/$GROUP_ID/$ASSET_ID/$ASSET_VERSION"
 ----
-
++
 * `HTTP 404` means the version is available.
 * `HTTP 200` means the version already exists. Change `ASSET_VERSION` before publishing.
 * `HTTP 401` or `HTTP 403` means the request wasn't authorized. See <<troubleshooting>>.
 
-== Publish to Exchange
-
-Run this command from the directory that contains `llm-metadata.json`:
-
+. From the directory that contains `llm-metadata.json`, publish the asset to Exchange:
++
 [source,bash]
 ----
 curl --fail-with-body --silent --show-error --location \
@@ -280,11 +275,11 @@ curl --fail-with-body --silent --show-error --location \
   --form 'type=llm' \
   --form "name=$ASSET_NAME"
 ----
-
++
 Don't set the multipart `Content-Type` header manually. `curl --form` generates the required boundary and header.
 
-== Verify the Published Asset
-
+. Verify the published asset:
++
 [source,bash]
 ----
 curl --fail-with-body --silent --show-error \
@@ -293,7 +288,7 @@ curl --fail-with-body --silent --show-error \
   "https://anypoint.mulesoft.com/exchange/api/v2/assets/$GROUP_ID/$ASSET_ID/$ASSET_VERSION" \
   | jq '{groupId, assetId, version, name, type, status}'
 ----
-
++
 Also open the asset in Exchange and confirm that the published version is visible and that its `llm-metadata.json` classifier is downloadable.
 
 [[troubleshooting]]
