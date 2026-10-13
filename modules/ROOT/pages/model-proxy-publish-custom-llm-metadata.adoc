@@ -1,36 +1,29 @@
-= Publishing Custom LLM Metadata to Anypoint Exchange
+= Publishing Custom LLM Providers to Anypoint Exchange
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 :imagesdir: ../assets/images
 
-Create an `llm-metadata.json` classifier that describes a custom LLM platform, and publish it to Anypoint Exchange as an `llm` asset using Exchange API v2. The steps use OAuth 2.0 client credentials and the production Anypoint host, `https://anypoint.mulesoft.com`.
+If your LLM provider or gateway isn't one of the built-in Model Proxy providers, create and publish an `llm-metadata.json` classifier asset that describes a custom LLM platform to Anypoint Exchange.
+
+The steps use OAuth 2.0 client credentials and the production Anypoint host, `https://anypoint.mulesoft.com`.
 
 == Before You Begin
 
 Before getting started, make sure you have:
 
-* `curl` and `jq` installed.
+* `curl` installed
++
+To install, see https://curl.se/download.html[Install curl^]. 
+
+* `jq` installed
++
+To install, see https://jqlang.org/download/[Install jq^].
+
 * An Anypoint connected app that:
 ** Acts on its own behalf with the `client_credentials` grant type.
 ** Has the *Exchange Contributor* or *Exchange Administrator* scope.
 ** Has that scope assigned to the target business group.
-
-Set the coordinates for the asset you want to publish:
-
-[source,bash]
-----
-export ORGANIZATION_ID="YOUR_ORGANIZATION_ID"
-export GROUP_ID="YOUR_GROUP_ID"
-export ASSET_ID="my-custom-llm"
-export ASSET_VERSION="1.0.0"
-export VERSION_GROUP="v1"
-export ASSET_NAME="My Custom LLM"
-----
-
-The organization ID identifies the business group that receives the asset. The group ID is the asset's Maven group ID and is commonly the same value. Use a lowercase, URL-safe asset ID.
-
-NOTE: Exchange versions are immutable. If a version already exists, publish a new semantic version.
 
 [[create-the-classifier]]
 == Create the llm-metadata.json Classifier
@@ -204,6 +197,24 @@ Create a file named `llm-metadata.json`:
   }
 }
 ----
+
+== Set the Asset Coordinates
+
+Set the coordinates for the asset you want to publish:
+
+[source,bash]
+----
+export ORGANIZATION_ID="YOUR_ORGANIZATION_ID"
+export GROUP_ID="YOUR_GROUP_ID"
+export ASSET_ID="my-custom-llm"
+export ASSET_VERSION="1.0.0"
+export VERSION_GROUP="v1"
+export ASSET_NAME="My Custom LLM"
+----
+
+The organization ID identifies the business group that receives the asset. The group ID is the asset's Maven group ID and is commonly the same value. Use a lowercase, URL-safe asset ID.
+
+NOTE: Exchange versions are immutable. If a version already exists, publish a new semantic version.
 
 == Store Your Credentials
 
