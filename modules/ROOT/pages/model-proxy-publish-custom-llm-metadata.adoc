@@ -18,7 +18,7 @@ To install, see https://curl.se/download.html[Install curl^].
 +
 To install, see https://jqlang.org/download/[Install jq^].
 
-* An Anypoint connected app that:
+* An Anypoint xref:access-management::connected-apps-developers.adoc#create-a-connected-app[connected app] that:
 ** Acts on its own behalf with the `client_credentials` grant type.
 ** Has the *Exchange Contributor* or *Exchange Administrator* scope.
 ** Has that scope assigned to the target business group.
