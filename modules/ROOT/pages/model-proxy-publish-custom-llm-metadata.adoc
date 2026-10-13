@@ -12,21 +12,20 @@ Before getting started, make sure you have:
 
 * `curl` installed
 +
-To install, see https://curl.se/download.html[Install curl^]. 
+To install, see https://curl.se/download.html[Install curl]. 
 
 * `jq` installed
 +
-To install, see https://jqlang.org/download/[Install jq^].
+To install, see https://jqlang.org/download/[Install jq].
 
 * An Anypoint xref:access-management::creating-connected-apps-dev.adoc[connected app] that:
 ** Acts on its own behalf with the `client_credentials` grant type.
-** Has the *Exchange Contributor* or *Exchange Administrator* scope.
-** Has that scope assigned to the target business group.
+** Has the *Exchange Contributor* or *Exchange Administrator* scope assigned to the target business group.
 
 [[create-the-classifier]]
-== Create the llm-metadata.json Classifier
+== Create the Classifier
 
-The classifier is a JSON object. Only `platform` is required. Unknown properties aren't accepted, so use only the fields documented in this section.
+The `llm-metadata.json` classifier is a JSON object. Only `platform` is required. Unknown properties aren't accepted, so use only the documented fields.
 
 [%header,cols="2,1,1,6"]
 |===
@@ -279,7 +278,7 @@ curl --silent --show-error \
   "https://anypoint.mulesoft.com/exchange/api/v2/assets/$GROUP_ID/$ASSET_ID/$ASSET_VERSION"
 ----
 +
-Ensure you receive a `404` error code.
+Make sure you receive a `404` error code.
 +
 * `HTTP 404`: The version is available.
 * `HTTP 200`: The version already exists. Change `ASSET_VERSION` before publishing.
@@ -324,7 +323,7 @@ unset ANYPOINT_CLIENT_ID ANYPOINT_CLIENT_SECRET ANYPOINT_TOKEN TOKEN_RESPONSE
 unset ORGANIZATION_ID GROUP_ID ASSET_ID ASSET_VERSION VERSION_GROUP ASSET_NAME
 ----
 +
-Rotate any client secret that has been pasted into chat, logs, tickets, or shell history before using this process in automation.
+Rotate any client secret you pasted into chat, logs, tickets, or shell history before using this process in automation.
 
 [[troubleshooting]]
 == Troubleshooting Error Codes

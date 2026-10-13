@@ -42,7 +42,7 @@ See xref:gateway::flex-gateway-managed-set-up.adoc[].
 *** *Gemini*: Select the Gemini API format for native Google Gemini model requests. Supports model-based routing only. You can't change this format later.
 .. *Environment*: Select the environment for the Model Proxy.
 .. *Omni Gateway*: Select an Omni Gateway to deploy the Model Proxy to.
-.. Optionally, enter a *Consumer Endpoint*: Specify the URL where the Model Proxy will be accessible (for example, `https://api.example.com`).
+.. Enter a *Consumer Endpoint*: the URL where the Model Proxy is accessible (for example, `https://api.example.com`).
 .. *Port*: Enter the port number for the Model Proxy (for example, `8081`). This field is required.
 .. Optionally, configure *TLS Configuration* to secure the proxy endpoint:
 +
