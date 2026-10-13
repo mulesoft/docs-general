@@ -267,7 +267,7 @@ export ANYPOINT_TOKEN
 +
 Don't print or log `TOKEN_RESPONSE` or `ANYPOINT_TOKEN`.
 
-. Confirm your new provider versions is available:
+. Confirm your new provider version is available:
 +
 [source,bash]
 ----
