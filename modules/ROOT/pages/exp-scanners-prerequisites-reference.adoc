@@ -255,7 +255,7 @@ a|
 
 *Role:* Kong Control Plane Viewer
 
-* *Read scope:* Admin API read permission required to discover MCP servers in target environments
+*Read scope:* Admin API read permission required to discover MCP servers in target environments
 
 *Setup:* Create the MCP servers for the scanner to discover in one of two ways:
 
