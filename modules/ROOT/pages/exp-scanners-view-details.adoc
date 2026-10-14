@@ -18,6 +18,10 @@ Use *Overview* to check scanner summary information, such as:
 * Last scan time and scanner health indicators.
 * Activity Log with a real-time timeline of scan progress events.
 
+For scanners that cover multiple accounts, environments, or subscriptions, a run that can't access some targets completes as a partial scan. The scanner skips those targets and keeps the services it discovered in them earlier, so they stay in *Portfolio*. Check the *Activity Log* for the skipped targets. For more information, see xref:exp-scanners-scan-multiple-accounts.adoc#_skipped_targets_and_partial_scans[Skipped Targets and Partial Scans].
+
+// TODO(W-24282719): Confirm the run status label shown for a partial scan in scan history.
+
 For Akamai API Security scanners, the overview represents correlation and security enrichment activity for existing services. Akamai scanners don't import new services.
 
 When a scan starts, the *Activity Log* appears between *Scan Details* and *Scan Results*. It's a real-time timeline of the events a scanner run emits, such as connecting to the provider, resolving credentials, processing pages, and completing the scan. Each entry shows a timestamp, a log level (`INFO` or `DEBUG`), and a message. The log also reports the total event count.
