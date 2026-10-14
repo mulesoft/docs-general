@@ -149,13 +149,13 @@ For more information, see the https://developer.konghq.com/api-catalog/[Kong API
 If a Kong Gateway service isn't linked to a Catalog API with an attached OAS, only the first route per path is discovered. For example, if the `/items` path has both `GET` and `POST` routes, only one of those routes appears in the discovered definition. Link the service to a Catalog API with an attached OAS to discover all routes and methods for each path.
 ====
 
-=== Protocol to Asset Type Mapping
+=== Protocol to Service Type Mapping
 
-When the Kong Gateway scanner discovers a service, it assigns a service type based on the service’s Kong protocol and plugins.
+When you scan with the *Kong Gateway (APIs)* platform, the scanner assigns a service type to each discovered service based on the service's Kong protocol and plugins.
 
 [%header,cols="1,1,1"]
 |===
-|Protocol |Plugin |Asset type
+|Protocol |Plugin |Service type
 
 |`grpc` / `grpcs`
 |No matching plugin
@@ -179,7 +179,7 @@ Services that use other protocols are registered as service type REST for now. M
 [[kong-gateway-scanner-rescanning-behavior]]
 === Rescanning Behavior
 
-The Kong Gateway scanner assigns an service type to a service the first time it discovers that service. Later scans don't update that service type, even if the service's protocol changes in Kong Gateway. To change a service's type, remove the service, and let the scanner import it again.
+On the *Kong Gateway (APIs)* platform, the scanner assigns a service type to a service the first time it discovers that service. Later scans don't update that service type, even if the service's protocol changes in Kong Gateway. To change the service type, remove the service, and let the scanner import it again.
 
 == Scanner Configuration Overview
 
