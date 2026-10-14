@@ -33,18 +33,18 @@ See xref:gateway::flex-gateway-managed-set-up.adoc[].
 . Click *Add Model Proxy*
 . Configure the proxy parameters:
 .. *Proxy Name*: Define a name for the Model Proxy.
-.. *Description*: Provide a description of what this proxy does.
+.. Enter a *Description* of what this proxy does (up to 256 characters).
 .. *Base Path*: Define a base path for the proxy endpoint (for example: `/billing-ai`).
 .. *Format*: Select an endpoint format:
 +
 *** *OpenAI*: Select the OpenAI API format to send requests to all supported LLM providers (including Gemini and Anthropic). Supports multi-routing and fallback mechanisms. You can't change this format later.
-*** *Anthropic*: Select the Anthropic API format for native Anthropic Claude model requests. Doesn't support multi-routing or fallback mechanisms. You can't change this format later.
-*** *Gemini*: Select the Gemini API format for native Google Gemini model requests. Doesn't support multi-routing or fallback mechanisms. You can't change this format later.
+*** *Anthropic*: Select the Anthropic API format for native Anthropic Claude model requests. Supports model-based routing only. You can't change this format later.
+*** *Gemini*: Select the Gemini API format for native Google Gemini model requests. Supports model-based routing only. You can't change this format later.
 .. *Environment*: Select the environment for the Model Proxy.
 .. *Omni Gateway*: Select an Omni Gateway to deploy the Model Proxy to.
-.. *Consumer Endpoint*: Specify the URL where the Model Proxy will be accessible.
-.. *Port*: Enter the port number for the Model Proxy (for example, `8081`).
-.. Optionally, configure *TLS Configuration* to secure the proxy endpoint:
+.. Enter a *Consumer Endpoint*: the URL where the Model Proxy is accessible (for example, `https://api.example.com`).
+.. *Port*: Enter the port number for the Model Proxy (for example, `8081`). This field is required.
+.. Configure *TLS Configuration* to secure the proxy endpoint:
 +
 *** *Secret Group*: Select the secret group that contains your TLS context. If you don't see your secret group, ensure that it is downloadable. For more information, see xref:gateway::conn-tls-config.adoc#add-a-tls-context[Add a TLS Context].
 *** *TLS Context*: Select the TLS context to use. If you don't see your TLS context, click *Configure a new TLS Context* to create one.
@@ -53,28 +53,34 @@ See xref:gateway::flex-gateway-managed-set-up.adoc[].
 .. Select a routing strategy:
 +
 *** *Model-based*: Route requests based on the model specified in the request payload.
-*** *Semantic*: Route requests based on semantic analysis of the prompt content. Requires a configured semantic service.
+*** *Semantic*: Route requests based on semantic analysis of the prompt content. Requires a configured semantic service. Not supported for the Anthropic or Gemini endpoint formats.
 . Configure at least one route:
 .. Provide a route name (for example, `Route A`).
-.. Optionally, click *Add headers* to add routing headers that filter requests by region, SLA, or custom rules. For example, `Region: US`
+.. Click *Add headers* to add routing headers that filter requests by region, SLA, or custom rules. For example, `Region: US`
 .. Configure the target:
 *** *Provider*: Select your LLM provider from these options:
 **** *OpenAI*
 **** *Gemini*
 **** *Azure OpenAI*
+**** *Bedrock OpenAI*
 **** *Bedrock Anthropic*
-**** *NVIDIA Nemotron*
+**** *NVIDIA*
 **** *Anthropic*
+**** *xAI*
+**** *Grok*
+**** *DeepSeek*
+**** *Mistral*
+**** Any custom provider published to Anypoint Exchange. For more information, see xref:model-proxy-publish-custom-llm-metadata.adoc[].
 *** *Request model override*: Select a target model to override the model version specified in the payload. Selecting *Use model from request* sends the request to the model specified in the request. A target model is required for semantic routing.
 *** *Destination URL*: Specify the URL for your provider endpoint. Ensure the URL is correct and edit if necessary.
-.. Optionally, under *TLS Configuration*, click *Add TLS Context* to secure the connection to the provider endpoint with a TLS context.
+.. Under *TLS Configuration*, click *Add TLS Context* to secure the connection to the provider endpoint with a TLS context.
 .. Configure authentication:
 *** *API Key*: Choose one of the following:
 **** *Static*: Use your provider API key. Enter a static API key for the provider endpoint.
 **** *Dynamic*: Retrieve your key dynamically from the request. Define a DataWeave script to extract the API key from the incoming request.
 **** *From vault*: Use a secret stored in an external vault. Select a secret group, then select a secret from that group. For more information, see xref:exp-vaults-manage.adoc[].
 . Click *Add Route* to add additional routes. Complete the previous steps to configure each new route
-. Optionally, expand *Advanced Options* and enable *Enable semantic caching* to cache and reuse LLM responses based on semantic similarity. Select a configured semantic caching service from the list. For more information, see xref:model-proxy-semantic-caching-service.adoc[].
+. Expand *Advanced Options* and enable *Enable semantic caching* to cache and reuse LLM responses based on semantic similarity. Select a configured semantic caching service from the list. For more information, see xref:model-proxy-semantic-caching-service.adoc[].
 . Click *Add Model Proxy*.
 
 == Edit a Model Proxy
