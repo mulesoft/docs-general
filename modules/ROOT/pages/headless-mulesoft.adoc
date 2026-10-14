@@ -48,7 +48,7 @@ The MuleSoft DX MCP Server lets AI-powered development assistants in your IDE in
 
 For setup and prerequisites, see xref:mulesoft-mcp-server::getting-started.adoc[].
 
-=== MuleSoft Platform MCP Server
+==== MuleSoft Platform MCP Server
 
 The MuleSoft Platform MCP Server gives AI tools governed access to your agentic landscape, including APIs, agents, MCP servers, and LLMs. Use it to scan, discover, govern, and monitor services in natural language. Tool categories include Exchange, API Manager, Anypoint Monitoring, Governance, Runtime Manager, and Cost Management.
 

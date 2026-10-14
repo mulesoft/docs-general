@@ -66,6 +66,8 @@ Use this table with your internal access guide.
 
 include::access-management::partial$include-permissions-enhanced-exp.adoc[tag=experiencePermissionsTable]
 
+To apply open policies, or to apply, edit, enable, disable, or remove native policies on external gateways, you also need the Organization Administrator role. Without it, you can't load an open policy catalog, open a policy configuration form, apply an open policy, or apply, edit, enable, disable, or remove native policies on an external gateway. Listing native policy templates on an external gateway still uses the View Policies permission. Viewing policies already applied on Omni or Mule gateways still uses the View Policies or Manage Policies permission.
+
 If you can't complete an action or a page shows an authorization error, ask your Anypoint Platform organization administrator for the matching permission or role.
 
 ////
