@@ -161,28 +161,6 @@ MCP Bridge generates each API tool from the API specification. Before you create
 --
 . Click *Save*.
 
-[[structured-content]]
-== Enable Output Schema (StructuredContent)
-
-The *Enable Output Schema (StructuredContent)* option controls whether MCP Bridge returns the upstream response body in the `structuredContent` field of the MCP tool result. In the MCP transcoding policy, this option is the *Include Structured Content* property.
-
-When the option is on, MCP Bridge mirrors the upstream response body into the `structuredContent` field of the tool result:
-
-* If the response body is a JSON object, MCP Bridge parses it and returns it as the `structuredContent` value.
-* Otherwise, MCP Bridge wraps the body as `{"text": ...}`.
-
-By default, the option is off, and the tool result carries only the text content block.
-
-[[structured-content-output-schema]]
-=== When to Turn On the Option
-
-If a tool advertises an `outputSchema` in its `tools/list` response, MCP clients expect `structuredContent` in every successful result for that tool. Turn on the option for that tool. If the option is off, clients reject the result and the tool call fails.
-
-[[structured-content-payload]]
-=== Payload Size
-
-When the option is on, MCP Bridge returns the upstream response body twice, once as text and once as `structuredContent`. This roughly doubles the size of the response payload. Turn on the option only for tools that need it.
-
 [[edit-mcp-server]]
 == Edit an MCP Server
 
