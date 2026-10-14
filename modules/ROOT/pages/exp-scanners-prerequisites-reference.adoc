@@ -135,6 +135,15 @@ a|
 
 *Permissions:* Exchange Administrator permission
 
+| ServiceNow AI Agents
+| Agent
+a|
+*Credentials:* Instance URL; OAuth client ID and client secret
+
+*Permissions:* Table API integration user with read access to the `alm_ai_*` tables
+
+*Setup:* Application Registry entry in ServiceNow to generate the OAuth client ID and client secret; AI Asset Governance enabled and synced on the ServiceNow instance
+
 | Snowflake Cortex AI
 | Agent
 a|
