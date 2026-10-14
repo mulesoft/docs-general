@@ -135,6 +135,15 @@ a|
 
 *Permissions:* Exchange Administrator permission
 
+| ServiceNow AI Agents
+| Agent
+a|
+*Credentials:* Instance URL; OAuth client ID and client secret
+
+*Permissions:* Table API integration user with read access to the `alm_ai_*` tables
+
+*Setup:* Application Registry entry in ServiceNow to generate the OAuth client ID and client secret; AI Asset Governance enabled and synced on the ServiceNow instance
+
 | Snowflake Cortex AI
 | Agent
 a|
@@ -204,7 +213,7 @@ a|
 
 *Write scope (policy apply):* Admin API write permission required to apply, enable, disable, or remove policy in target environments
 
-*Setup:* To discover accurate, typed API definitions, link each Kong Gateway service to a Catalog API that has an attached OpenAPI Specification (OAS). For the required workflow and route-discovery limitations, see xref:exp-scanners-add-from-providers.adoc#kong-gateway-scanner-openapi-specifications[].
+*Setup:* To discover accurate, typed API definitions, link each Kong Gateway service to a Catalog API that has an attached OpenAPI Specification (OAS). For the required workflow and route-discovery limitations, see xref:exp-scanners-add-from-providers.adoc#kong-gateway-scanner[Kong Gateway Scanner].
 
 | Akamai Security
 | API Security
@@ -238,6 +247,24 @@ a|
 *Credentials:* Tenant ID; client ID; client secret; subscription ID; resource group; service name
 
 *Role:* API Management Service Reader
+
+| Kong Gateway MCP Server
+| MCP
+a|
+*Credentials:* Personal access token (PAT); Kong Gateway region
+
+*Role:* Kong Control Plane Viewer
+
+*Read scope:* Admin API read permission required to discover MCP servers in target environments
+
+*Setup:* Create the MCP servers for the scanner to discover in one of two ways:
+
+* In the Kong control plane, add a gateway service and attach an MCP-related plugin to it.
+* In Kong Catalog, open *MCP Servers* and create a new MCP server, then link a gateway service to it.
+
+Each MCP server must have a linked gateway service. The scanner doesn't discover MCP servers that have no linked gateway service.
+
+The MCP servers reflect only the routes present in the control plane gateway services. For route-discovery limitations, see xref:exp-scanners-add-from-providers.adoc#kong-gateway-scanner[Kong Gateway Scanner].
 
 | Snowflake MCP Server
 | MCP
