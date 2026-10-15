@@ -44,6 +44,8 @@ Make sure you have:
 === Apply the Policy
 
 . In Akamai API Security, create a MuleSoft traffic source integration for Omni Gateway, and then download the policy.
++
+For instructions, see https://docs.nonamesecurity.com/docs/mulesoft-omni-gateway-source-and-prevention-integration[MuleSoft Omni Gateway - Source and Prevention Integration^] in the Akamai documentation.
 . In Anypoint Platform, create a connected app with the *Exchange Contributor* scope, and then copy the client ID and client secret.
 +
 This connected app is separate from the one Akamai uses to read API assets from MuleSoft. For instructions, see xref:access-management::creating-connected-apps-dev.adoc[].
