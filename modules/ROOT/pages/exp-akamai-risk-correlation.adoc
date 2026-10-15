@@ -22,10 +22,14 @@ For credential and role details, see xref:exp-scanners-prerequisites-reference.a
 
 == Monitor Internal Traffic
 
+// REVIEW W-24427207 (remove before merge): Q1. Akamai's doc never mentions east-west or internal traffic; it says the policy captures all traffic through Omni Gateway. Is the north-south vs. east-west framing in this paragraph accurate?
+// REVIEW W-24427207 (remove before merge): Q3. Akamai lists this integration as public preview. Should this section say so, for example in a NOTE?
 By default, Akamai observes north-south traffic, which is traffic between external clients and your APIs on domains you own and control. To also have Akamai analyze east-west traffic, which is internal traffic between services, apply the *Akamai API Security (Omni Gateway)* policy to your API instances. The policy sends traffic that passes through Omni Gateway to Akamai API Security in asynchronous batches. If the Akamai engine is unavailable, your API traffic isn't affected.
 
+// REVIEW W-24427207 (remove before merge): Q2. Is this policy separate from the Akamai correlation policy the scanner applies? Do customers need both on an API instance for internal-traffic findings to appear in Portfolio?
 Akamai owns and maintains this policy, and it's separate from the Akamai correlation policy that the scanner applies. You create the policy in Akamai API Security, publish it to Anypoint Exchange, and apply it to your APIs in Anypoint API Manager.
 
+// REVIEW W-24427207 (remove before merge): Q5. Prevention (blocking) is on by default (PREVENTION_ENABLED=true). Is calling this out the right customer guidance?
 [IMPORTANT]
 ====
 By default, the policy blocks requests from attackers that Akamai API Security detects and returns a `403` response. To capture traffic without blocking requests, set `PREVENTION_ENABLED` to `false` when you apply the policy.
@@ -35,6 +39,8 @@ By default, the policy blocks requests from attackers that Akamai API Security d
 
 Make sure you have:
 
+// REVIEW W-24427207 (remove before merge): Q4. This section covers Omni Gateway only. Akamai also has a separate Mule runtime 4.6.x policy. Is that in scope, or keep this to Omni Gateway?
+// REVIEW W-24427207 (remove before merge): Q6. Confirm that xref:pdk::policies-pdk-prerequisites.adoc[] points to the correct PDK prerequisites page.
 * API instances that run on Omni Gateway.
 * Network access from Omni Gateway to your Akamai API Security engine over HTTPS.
 * The Admin role in Akamai API Security with the Traffic Source & Prevention permission.
@@ -43,6 +49,7 @@ Make sure you have:
 
 === Apply the Policy
 
+// REVIEW W-24427207 (remove before merge): Q7. Step 2 doesn't say which connected app type to create. Anypoint CLI client_id/client_secret config suggests an app that acts on its own behalf (client credentials). Should step 2 say so?
 . In Akamai API Security, create a MuleSoft traffic source integration for Omni Gateway, and then download the policy.
 +
 For instructions, see https://docs.nonamesecurity.com/docs/mulesoft-omni-gateway-source-and-prevention-integration[MuleSoft Omni Gateway - Source and Prevention Integration^] in the Akamai documentation.
