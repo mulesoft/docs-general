@@ -51,10 +51,13 @@ For instructions, see https://docs.nonamesecurity.com/docs/mulesoft-omni-gateway
 This connected app is separate from the one Akamai uses to read API assets from MuleSoft. For instructions, see xref:access-management::creating-connected-apps-dev.adoc[].
 . Configure Anypoint CLI with the connected app credentials, your business group ID, and your environment ID, and then run the installation script included in the policy download.
 +
-The script publishes the policy to Anypoint Exchange.
+The script publishes the policy to Anypoint Exchange. For the commands, see "Step 4: Deploy the Policy" in https://docs.nonamesecurity.com/docs/mulesoft-omni-gateway-source-and-prevention-integration[MuleSoft Omni Gateway - Source and Prevention Integration^] in the Akamai documentation.
 . In Anypoint API Manager, apply the *Akamai API Security (Omni Gateway)* policy in one of these ways:
 ** To apply the policy to all APIs in an environment, add it as an automated policy. In *Advanced Options*, set *Rule of application* to *Omni gateways only*. See xref:gateway::policies-automated-applying.adoc[].
 ** To apply the policy to specific APIs, add it as an inbound policy on each API.
+
++
+For instructions, see "Step 5: Apply the Policy" in https://docs.nonamesecurity.com/docs/mulesoft-omni-gateway-source-and-prevention-integration[MuleSoft Omni Gateway - Source and Prevention Integration^] in the Akamai documentation.
 . Move the policy to the top of the policy list.
 +
 Policies run in the order they're listed. A policy ahead of the Akamai policy can stop a request before Akamai captures it.
