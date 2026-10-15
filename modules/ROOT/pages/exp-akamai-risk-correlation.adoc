@@ -20,6 +20,45 @@ Before setting up the Akamai scanner, make sure you have:
 
 For credential and role details, see xref:exp-scanners-prerequisites-reference.adoc[].
 
+== Monitor Internal Traffic
+
+By default, Akamai observes north-south traffic, which is traffic between external clients and your APIs on domains you own and control. To also have Akamai analyze east-west traffic, which is internal traffic between services, apply the *Akamai API Security (Omni Gateway)* policy to your API instances. The policy sends traffic that passes through Omni Gateway to Akamai API Security in asynchronous batches. If the Akamai engine is unavailable, your API traffic isn't affected.
+
+Akamai owns and maintains this policy, and it's separate from the Akamai correlation policy that the scanner applies. You create the policy in Akamai API Security, publish it to Exchange, and apply it to your APIs in API Manager.
+
+[IMPORTANT]
+====
+By default, the policy blocks requests from attackers that Akamai API Security detects and returns a `403` response. To capture traffic without blocking requests, set `PREVENTION_ENABLED` to `false` when you apply the policy.
+====
+
+=== Before You Apply the Policy
+
+Make sure you have:
+
+* API instances that run on Omni Gateway.
+* Network access from Omni Gateway to your Akamai API Security engine over HTTPS.
+* The Admin role in Akamai API Security with the Traffic Source & Prevention permission.
+* Permission to publish assets to Exchange and apply policies in API Manager.
+* Anypoint CLI with the PDK plugin, Node.js, and Rust installed on the machine where you install the policy. See xref:pdk::policies-pdk-prerequisites.adoc[].
+
+=== Apply the Policy
+
+. In Akamai API Security, create a MuleSoft traffic source integration for Omni Gateway, and then download the policy.
+. In Anypoint Platform, create a connected app with the *Exchange Contributor* scope, and then copy the client ID and client secret.
++
+This connected app is separate from the one Akamai uses to read API assets from MuleSoft.
+. Configure Anypoint CLI with the connected app credentials, your business group ID, and your environment ID, and then run the installation script included in the policy download.
++
+The script publishes the policy to Exchange.
+. In API Manager, apply the *Akamai API Security (Omni Gateway)* policy in one of these ways:
+** To apply the policy to all APIs in an environment, add it as an automated policy. In *Advanced Options*, set *Rule of application* to *Omni gateways only*. See xref:gateway::policies-automated-applying.adoc[].
+** To apply the policy to specific APIs, add it as an inbound policy on each API.
+. Move the policy to the top of the policy list.
++
+Policies run in the order they're listed. A policy ahead of the Akamai policy can stop a request before Akamai captures it.
+
+For installation commands, policy parameters, and troubleshooting, see the https://docs.nonamesecurity.com/docs/mulesoft-omni-gateway-source-and-prevention-integration[Akamai documentation for the MuleSoft Omni Gateway integration^]. You need an Akamai account to view this documentation.
+
 == Set Up Tenant Connectivity
 
 The integration uses a bidirectional sync between your MuleSoft tenant and your Akamai API Security tenant. You provision and configure both tenants. Each MuleSoft customer tenant (root organization) connects to one Akamai API Security tenant (for example, `<tenant>.nonamesec.com`).
