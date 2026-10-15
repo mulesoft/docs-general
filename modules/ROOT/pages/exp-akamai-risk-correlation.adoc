@@ -62,7 +62,7 @@ For instructions, see "Step 5: Apply the Policy" in https://docs.nonamesecurity.
 +
 Policies run in the order they're listed. A policy ahead of the Akamai policy can stop a request before Akamai captures it.
 
-For installation commands, policy parameters, and troubleshooting, see the https://docs.nonamesecurity.com/docs/mulesoft-omni-gateway-source-and-prevention-integration[Akamai documentation for the MuleSoft Omni Gateway integration^]. You need an Akamai account to view this documentation.
+For policy parameters and troubleshooting, see the https://docs.nonamesecurity.com/docs/mulesoft-omni-gateway-source-and-prevention-integration[Akamai documentation for the MuleSoft Omni Gateway integration^]. You need an Akamai account to view this documentation.
 
 == Set Up Tenant Connectivity
 
