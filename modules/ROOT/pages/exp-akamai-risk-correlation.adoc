@@ -24,7 +24,7 @@ For credential and role details, see xref:exp-scanners-prerequisites-reference.a
 
 By default, Akamai observes north-south traffic, which is traffic between external clients and your APIs on domains you own and control. To also have Akamai analyze east-west traffic, which is internal traffic between services, apply the *Akamai API Security (Omni Gateway)* policy to your API instances. The policy sends traffic that passes through Omni Gateway to Akamai API Security in asynchronous batches. If the Akamai engine is unavailable, your API traffic isn't affected.
 
-Akamai owns and maintains this policy, and it's separate from the Akamai correlation policy that the scanner applies. You create the policy in Akamai API Security, publish it to Exchange, and apply it to your APIs in API Manager.
+Akamai owns and maintains this policy, and it's separate from the Akamai correlation policy that the scanner applies. You create the policy in Akamai API Security, publish it to Anypoint Exchange, and apply it to your APIs in Anypoint API Manager.
 
 [IMPORTANT]
 ====
@@ -38,7 +38,7 @@ Make sure you have:
 * API instances that run on Omni Gateway.
 * Network access from Omni Gateway to your Akamai API Security engine over HTTPS.
 * The Admin role in Akamai API Security with the Traffic Source & Prevention permission.
-* Permission to publish assets to Exchange and apply policies in API Manager.
+* Permission to publish assets to Anypoint Exchange and apply policies in Anypoint API Manager.
 * Anypoint CLI with the PDK plugin, Node.js, and Rust installed on the machine where you install the policy. See xref:pdk::policies-pdk-prerequisites.adoc[].
 
 === Apply the Policy
@@ -46,11 +46,11 @@ Make sure you have:
 . In Akamai API Security, create a MuleSoft traffic source integration for Omni Gateway, and then download the policy.
 . In Anypoint Platform, create a connected app with the *Exchange Contributor* scope, and then copy the client ID and client secret.
 +
-This connected app is separate from the one Akamai uses to read API assets from MuleSoft.
+This connected app is separate from the one Akamai uses to read API assets from MuleSoft. For instructions, see xref:access-management::creating-connected-apps-dev.adoc[].
 . Configure Anypoint CLI with the connected app credentials, your business group ID, and your environment ID, and then run the installation script included in the policy download.
 +
-The script publishes the policy to Exchange.
-. In API Manager, apply the *Akamai API Security (Omni Gateway)* policy in one of these ways:
+The script publishes the policy to Anypoint Exchange.
+. In Anypoint API Manager, apply the *Akamai API Security (Omni Gateway)* policy in one of these ways:
 ** To apply the policy to all APIs in an environment, add it as an automated policy. In *Advanced Options*, set *Rule of application* to *Omni gateways only*. See xref:gateway::policies-automated-applying.adoc[].
 ** To apply the policy to specific APIs, add it as an inbound policy on each API.
 . Move the policy to the top of the policy list.
@@ -78,7 +78,7 @@ In your Akamai API Security tenant, create a service account and note its client
 Add an Akamai scanner and enter the Akamai service account credentials (client ID and client secret) and the Akamai base URL, along with a scan frequency. See <<set-up-the-akamai-scanner>>.
 . Create a connected app in MuleSoft.
 +
-In Anypoint Platform, go to *Access Management* > *Connected Apps* and create an app that acts on its own behalf (client credentials). Add the *Exchange Viewer* or *Asset Viewer* scope so Akamai can read API instance and asset information, then save. Copy the client ID and client secret.
+In Anypoint Platform, go to *Access Management* > *Connected Apps* and create an app that acts on its own behalf (client credentials). Add the *Exchange Viewer* or *Asset Viewer* scope so Akamai can read API instance and asset information, then save. Copy the client ID and client secret. For instructions, see xref:access-management::creating-connected-apps-dev.adoc[].
 . Configure the sync on the Akamai side.
 +
 In your Akamai API Security tenant, enter the MuleSoft connected app client ID and client secret so Akamai can pull API asset and instance information from MuleSoft.
