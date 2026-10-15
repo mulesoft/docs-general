@@ -29,7 +29,7 @@ By default, Akamai observes north-south traffic, which is traffic between extern
 // TODO Eng and PM review (remove before merge): . Is this policy separate from the Akamai correlation policy the scanner applies? Do customers need both on an API instance for internal-traffic findings to appear in Portfolio?
 Akamai owns and maintains this policy, and it's separate from the Akamai correlation policy that the scanner applies. You create the policy in Akamai API Security, publish it to Anypoint Exchange, and apply it to your APIs in Anypoint API Manager.
 
-// TODO Eng and PM review (remove before merge): . Prevention (blocking) is on by default (PREVENTION_ENABLED=true). Is calling this out the right customer guidance?
+// TODO Eng and PM review (remove before merge):  Prevention (blocking) is on by default (PREVENTION_ENABLED=true). Is calling this out the right customer guidance?
 [IMPORTANT]
 ====
 By default, the policy blocks requests from attackers that Akamai API Security detects and returns a `403` response. To capture traffic without blocking requests, set `PREVENTION_ENABLED` to `false` when you apply the policy.
@@ -49,7 +49,7 @@ Make sure you have:
 
 === Apply the Policy
 
-// TODO Eng and PM review (remove before merge): Q7. Step 2 doesn't say which connected app type to create. Anypoint CLI client_id/client_secret config suggests an app that acts on its own behalf (client credentials). Should step 2 say so?
+// TODO Eng and PM review (remove before merge): Step 2 doesn't say which connected app type to create. Anypoint CLI client_id/client_secret config suggests an app that acts on its own behalf (client credentials). Should step 2 say so?
 . In Akamai API Security, create a MuleSoft traffic source integration for Omni Gateway, and then download the policy.
 +
 For instructions, see https://docs.nonamesecurity.com/docs/mulesoft-omni-gateway-source-and-prevention-integration[MuleSoft Omni Gateway - Source and Prevention Integration^] in the Akamai documentation.
