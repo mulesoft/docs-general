@@ -167,14 +167,19 @@ a|
 * *Resource scope (REST APIs):* `arn:aws:apigateway:{region}::/restapis/*`
 * *Resource scope (HTTP APIs):* `arn:aws:apigateway:{region}::/apis/*`
 
-// TODO: Amazon API Gateway policy write is deferred to a later release. Restore the write scope below when AWS write support ships.
-////
-*Write scope (policy apply):* IAM write permissions for API Gateway, in addition to the read permissions:
+*Write scope (policy apply):* IAM write permissions for API Gateway, in addition to the read permissions. The connected account must be able to read, change, and deploy the API:
 
 * `apigateway:PUT`
 * `apigateway:POST`
 * `apigateway:DELETE`
-////
+
+// TODO(PM): Confirm with engineering whether `apigateway:PATCH` belongs in the write scope.
+// The External Policies Documentation Guide doesn't list exact IAM actions. IP filtering
+// updates the REST API resource policy, and Header Mapping and CORS update method and
+// integration responses; AWS performs these updates with PATCH. Add `apigateway:PATCH`
+// here and in the Policy Write Prerequisites table if engineering confirms.
+
+Policy write supports REST APIs with a deployed stage only. HTTP APIs aren't supported. Policy write uses a single-account connection; cross-account connections that use a hub role aren't supported.
 
 [NOTE]
 For web application firewall (WAF) policies, the scanner also uses `software.amazon.awssdk:wafv2` and `software.amazon.awssdk:route53`.
@@ -200,7 +205,15 @@ a|
 
 * *Read role:* Service account with the Viewer role, or an Apigee permission role with equivalent read access
 
-*Write scope (policy apply):* API Admin role (Management API), or an Apigee permission role with equivalent write access
+*Write scope (policy apply):* Apigee API Admin or Apigee Environment Admin role, or a custom role that includes these permissions:
+
+* `apigee.proxies.get`
+* `apigee.proxyrevisions.get`
+* `apigee.proxies.create`
+* `apigee.deployments.list`
+* `apigee.deployments.create`
+
+Anypoint checks the service account's effective permissions, not the role name.
 
 | Kong Gateway
 | API
@@ -211,7 +224,7 @@ a|
 
 * *Apply read scope:* Admin API read permission required to read policy in target environments
 
-*Write scope (policy apply):* Admin API write permission required to apply, enable, disable, or remove policy in target environments
+*Write scope (policy apply):* Kong Konnect role or team membership that grants write access to the instance's control plane, required to apply, edit, enable, disable, or remove policy. Admin and power teams have full access; otherwise, a matching role is required.
 
 *Setup:* To discover accurate, typed API definitions, link each Kong Gateway service to a Catalog API that has an attached OpenAPI Specification (OAS). For the required workflow and route-discovery limitations, see xref:exp-scanners-add-from-providers.adoc#kong-gateway-scanner[Kong Gateway Scanner].
 
@@ -301,19 +314,20 @@ a|
 
 == Policy Write Prerequisites
 
-Policy write lets you apply, enable, disable, and remove policies on connected third-party gateway APIs directly from Anypoint, with no Anypoint gateway in the request path. Policy write is available for API gateway providers only: Azure API Management, Google Apigee, and Kong Gateway. Agent, API Security, and MCP scanners don't support policy write.
+Policy write lets you apply, edit, and remove policies on connected third-party gateway APIs directly from Anypoint, with no Anypoint gateway in the request path. Where the provider supports it, you can also enable and disable policies. Policy write is available for API gateway providers only: Amazon API Gateway, Azure API Management, Google Apigee, and Kong Gateway. Agent, API Security, and MCP scanners don't support policy write.
 
-// TODO(W-23907611): Credential-model discrepancy to confirm with PM/eng. This section was
-// grounded in the Omni-app code (separate read vs. write credentials, an explicit Read-Only
-// state until write credentials are added). The External Policies Documentation Guide instead
-// describes policy write as reusing the SAME scanner connection, with write gated only by the
-// permissions granted to that connection's identity on the provider. The text below follows
-// the guide (single reused connection). Confirm which model ships before publishing.
+// TODO(PM/Eng): Confirm which button behavior ships. The "Write permissions on the connection"
+// bullet below and the Read-Only APIs section say policy actions are unavailable when the
+// connection has read-only access. The External Policies Documentation Guide (section 2) says
+// button state is only a hint: when Anypoint can't determine the account's permissions on the
+// provider, it leaves policy actions enabled, and an unauthorized action fails and appears in
+// the Activity log. For providers where no check is possible, actions may appear disabled.
+// Update both places to match the shipped behavior.
 
 Policy write reuses the same connection you configure for scanning; there's no separate policy-write connection. Before you can write policies, confirm these prerequisites in addition to the discovery prerequisites in the matrix:
 
 * *Write permissions on the connection:* The scanner connection's identity must have the provider's write scope, not just read access. A connection with read-only access to the provider can discover and read policies, but policy actions remain unavailable.
-* *Write scope:* The write scope covers enabling, disabling, and removing existing vendor-native policies, and creating and editing open (canonical) policies, at both the instance and service scope. Creating and editing native vendor policies isn't supported.
+* *Write scope:* The write scope covers applying, editing, and removing supported policies. Only Kong Gateway supports enabling and disabling policies. Amazon API Gateway, Azure API Management, and Google Apigee have no native enable or disable concept, so you apply or remove policies instead.
 * *Provider write permissions:* Grant the provider-specific *Write scope (policy apply)* listed for each API gateway provider in the Scanner Prerequisites Matrix.
 
 The following table summarizes the read and write scopes for each API gateway provider that supports policy write.
@@ -326,21 +340,19 @@ The following table summarizes the read and write scopes for each API gateway pr
 
 | Amazon API Gateway
 | `apigateway:GET`
-| Not supported
-// TODO: Amazon API Gateway policy write is deferred to a later release. Restore the write scope below when AWS write support ships.
-// `apigateway:PUT`, `apigateway:POST`, `apigateway:DELETE`
+| `apigateway:PUT`, `apigateway:POST`, `apigateway:DELETE`
 
 | Azure API Management
-| Reader role (ARM)
+| API Management Service Reader role (ARM)
 | API Management Service Contributor role (ARM)
 
 | Google Apigee
 | Viewer role (Management API)
-| API Admin role (Management API)
+| Apigee API Admin or Apigee Environment Admin role
 
 | Kong Gateway
 | Admin API read
-| Admin API write
+| Konnect role or team with control plane write access
 |===
 
 === Read-Only APIs
