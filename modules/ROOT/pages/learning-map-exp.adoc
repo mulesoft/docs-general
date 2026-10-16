@@ -44,6 +44,7 @@ Register agents, MCP servers, and APIs from any provider or registry, add model 
 - xref:exp-instances-add.adoc[]
 - xref:exp-services-view-details.adoc[]
 - xref:exp-scanners-add-from-providers.adoc[]
+- xref:exp-scanners-build-custom.adoc[]
 - xref:exp-scanners-manage.adoc[]
 - xref:exp-providers-manage.adoc[]
 

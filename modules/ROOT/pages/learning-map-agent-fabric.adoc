@@ -31,6 +31,7 @@ Catalog agents, MCP servers, and APIs so you reuse what exists. Keep that invent
 - xref:exp-portfolio-overview.adoc[]
 - xref:exp-services-add-to-portfolio.adoc[]
 - xref:exp-scanners-add-from-providers.adoc[]
+- xref:exp-scanners-build-custom.adoc[]
 - https://videos.mulesoft.com/watch/GJxX42uWd1gGComp3KQqEB[Watch a Video to Learn About Agent Fabric and GoDaddy ANS Integration]
 - https://blogs.mulesoft.com/news/agent-scanners/[Learn How to Catalog Agents Automatically With Scanners]
 - https://videos.mulesoft.com/watch/fqPcAHf5h7RYdfdSqhY9ju[Watch a Video to Learn About New Scanners for Agent Management]
