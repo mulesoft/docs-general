@@ -176,11 +176,11 @@ When applying a policy, you can target different scopes:
 * *METHOD*: one HTTP method across paths, such as `GET`.
 * *OPERATION*: one method at one path, such as `GET /orders`.
 
-Supported scopes depend on the policy. To change a policy's target, remove it and apply it again with the new target.
+Supported scopes depend on the policy. To change a policy target, remove the policy and reapply it with the new target.
 
-The target picker uses paths and methods from the API specification. If a route is missing from the specification, update the specification to match your AWS API before applying the policy.
+The target picker uses paths and methods from the API specification. If a route is missing from the specification, update the specification to match your AWS API before you apply the policy.
 
-A policy can have a specific path or method and still be editable. It becomes read-only when the enhanced MuleSoft experience cannot safely manage its settings or target.
+A policy can have a specific path or method and still be editable. It becomes read-only when the enhanced MuleSoft experience can't safely manage its settings or target.
 
 === Deployment and Failures
 
