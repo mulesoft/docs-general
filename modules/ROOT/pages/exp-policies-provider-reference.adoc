@@ -159,11 +159,13 @@ Amazon API Gateway (REST APIs) policy write support includes policy apply, edit,
 
 === Setup and Prerequisites
 
-* Policy writes are supported for REST APIs only; HTTP APIs are not supported.
-* The API must have a deployed stage.
-* You must select the stage you want to change.
-* Single-account connections are supported; cross-account connections using a hub role are not supported for policy writes.
-* The connected AWS account must have permission to read, change, and deploy the API. A connection that can scan the API may still lack permission to change policies.
+Before writing policies for Amazon API Gateway, ensure that your configuration meets these requirements:
+
+* Use REST APIs, as HTTP APIs aren't supported for policy writes
+* Deploy the API stage that you want to change
+* Select the specific stage in your configuration
+* Use single-account connections, as cross-account connections with a hub role aren't supported
+* Grant the connected AWS account permissions to read, change, and deploy the API, because scanning permissions alone don't allow policy changes
 
 === Policy Scopes
 
