@@ -208,30 +208,30 @@ Rescan refreshes the enhanced MuleSoft experience view without deploying or undo
 
 === CORS Behavior
 
-* Open CORS applies to the currently deployed paths that have a method other than OPTIONS. Paths added later do not automatically receive the policy.
-* CORS adds or updates the OPTIONS method used for browser preflight requests. If an existing OPTIONS method has a custom configuration that the enhanced MuleSoft experience cannot manage, the operation is blocked.
-* AWS supports one allowed origin. Multiple origins are rejected, as is `*` when credentials are allowed.
-* For Lambda or HTTP proxy integrations, the backend must return CORS response headers. A successful preflight alone does not guarantee that the browser can read the response.
-* The optional CORS headers for default client (4xx) and server (5xx) errors are shared by the whole API. Setting them from another path can replace earlier values. Turning the option off or removing a path's CORS policy does not clear those shared headers.
-* Custom CORS configurations may be read-only. CORS and Header Mapping changes are blocked while the selected stage uses a canary deployment to prevent conflicts during the staged rollout.
+* Open CORS applies to currently deployed paths that have a method other than OPTIONS. Paths added later don't automatically receive the policy.
+* CORS adds or updates the OPTIONS method used for browser preflight requests. If an existing OPTIONS method has a custom configuration that the enhanced MuleSoft experience can't manage, the operation is blocked.
+* AWS supports one allowed origin. AWS rejects multiple origins, as well as `*` when credentials are allowed.
+* For Lambda or HTTP proxy integrations, the backend requires CORS response headers. A successful preflight alone doesn't guarantee that the browser can read the response.
+* The entire API shares optional CORS headers for default client (4xx) and server (5xx) errors. Setting them from another path can replace earlier values. Turning off the option or removing a path's CORS policy doesn't clear those shared headers.
+* Custom CORS configurations are sometimes read-only. CORS and Header Mapping changes are blocked while the selected stage uses a canary deployment to prevent conflicts during the staged rollout.
 
 === Header Injection Behavior
 
 * Open Header Injection maps to AWS Header Mapping and adds headers with fixed values to requests or responses.
-* The target method and integration must already exist. Lambda/HTTP proxy integrations are unsupported, as are ANY, OPTIONS, or CONNECT targets.
+* The target method and integration must already exist. Lambda or HTTP proxy integrations aren't supported, along with ANY, OPTIONS, or CONNECT targets.
 * If the same header is already configured, the operation fails instead of overwriting it.
-* Access-Control headers must be configured through CORS instead.
-* Header names must be valid and unique (ignoring case). Values cannot contain line breaks or single quotes.
-* For responses, the supported form uses the same header value across response codes. Custom or incomplete mappings may be read-only.
-* Sensitive values are hidden after scanning, and policies with hidden values are read-only. A hidden value does not mean the header is absent.
+* Configure Access-Control headers through CORS instead.
+* Header names must be valid and unique (ignoring case). Values can't contain line breaks or single quotes.
+* For responses, the supported form uses the same header value across response codes. Custom or incomplete mappings are sometimes read-only.
+* The platform hides sensitive values after scanning, and policies with hidden values are read-only. A hidden value doesn't mean the header is absent.
 
 === IP Filtering Behavior
 
-* Native IP filtering lets users allow or deny requests based on source IP address. An "allow" rule means matching requests are allowed; a "deny" rule means matching requests are blocked.
-* Open IP Allowlist adds an allow rule and keeps existing AWS rules. Existing allow and deny rules still affect access. Adding this policy alone does not guarantee that every unlisted address is blocked.
-* IPv4 and IPv6 addresses and ranges are supported. Private API endpoints are not supported because they require a different way to identify the caller's original IP address.
-* Paths with parameters, such as `/orders/{id}` or `/{proxy+}`, use AWS wildcard matching and may match more routes than intended. Check the resulting target after scanning.
-* Editing or removing a policy changes its scanned rule and keeps other rules. Reordering or deleting rules directly in AWS can change how the enhanced MuleSoft experience identifies the remaining rules. Rescan before editing another affected policy.
+* Native IP filtering lets you allow or deny requests based on source IP address. An allow rule permits matching requests, and a deny rule blocks matching requests.
+* Open IP Allowlist adds an allow rule and keeps existing AWS rules. Existing allow and deny rules still affect access. Adding this policy alone doesn't guarantee that every unlisted address is blocked.
+* IPv4 and IPv6 addresses and ranges are supported. Private API endpoints aren't supported because they require a different method to identify the caller's original IP address.
+* Paths with parameters, such as `/orders/{id}` or `/{proxy+}`, use AWS wildcard matching and sometimes match more routes than intended. Check the resulting target after scanning.
+* Editing or removing a policy changes its scanned rule and keeps other rules. Reordering or deleting rules directly in AWS can change how the enhanced MuleSoft experience identifies remaining rules. Rescan before you edit another affected policy.
 * The entire AWS resource policy has an 8,192-character limit. A small addition can fail if the policy is already close to that limit.
 
 == See Also
