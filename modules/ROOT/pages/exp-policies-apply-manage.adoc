@@ -66,7 +66,7 @@ Policy naming applies to Apigee only. Other providers don't require a user-suppl
 
 An Apigee edit that tries to change the name is rejected, because the name is the on-gateway identifier.
 
-For Amazon API Gateway, the platform identifies IP filtering rules from the scanned configuration rather than requiring a user-supplied name. Existing rule names are kept when editing. To change a policy's target, remove it and apply it again.
+For Amazon API Gateway, the platform identifies IP filtering rules from the scanned configuration instead of requiring a name. When you edit a rule, the platform keeps its existing name. To change a policy target, remove the policy and apply it again.
 
 == See Also
 
