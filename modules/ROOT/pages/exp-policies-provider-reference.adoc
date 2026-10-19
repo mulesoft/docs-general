@@ -184,13 +184,13 @@ A policy can have a specific path or method and still be editable. It becomes re
 
 === Deployment and Failures
 
-Applying, editing, or removing an AWS policy deploys the entire API configuration to the selected stage. This means:
+Applying, editing, or removing an AWS policy deploys the entire API configuration to the selected stage. Keep these impacts in mind:
 
-* Other pending changes in AWS can go live too, even when the policy targets only one path.
-* CORS and Header Mapping rebuild the API configuration from the selected stage's deployed version. This can overwrite undeployed changes and affect other settings, such as API keys or caching.
-* Review pending changes in AWS before applying a policy.
+* Other pending changes in AWS also deploy, even when the policy targets only one path.
+* CORS and Header Mapping rebuild the API configuration from the deployed version of the selected stage. This can overwrite undeployed changes and affect other settings such as API keys or caching.
+* Before you apply a policy, review pending changes in AWS.
 
-An operation can fail after changing the configuration in AWS Console but before deployment. The stage may keep running its previous version. Failed operations do not automatically undo every change made in AWS.
+If an operation fails after you change the configuration in the AWS Management Console but before deployment, the stage sometimes continues running its previous version. Failed operations don't automatically undo changes made in AWS.
 
 After a failure:
 
