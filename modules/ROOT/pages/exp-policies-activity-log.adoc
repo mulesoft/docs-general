@@ -38,6 +38,8 @@ For a failed operation, open it to see why. The failure detail explains the erro
 * Transient failures come from a temporary problem, such as an unreachable gateway or a scan error. Try the operation again.
 * Other failures come from your configuration or the instance's state. For example, an invalid configuration, a conflict with the instance's current state, or a policy that can't be translated for the target gateway. Fix the underlying issue before retrying.
 
+For Amazon API Gateway, an operation can fail after changing the configuration in the AWS Console but before deployment. The stage may keep running its previous version. Failed operations do not automatically undo every change made in AWS. After a failure, compare the AWS Console configuration with the version deployed to the selected stage, resolve any differences, rescan to refresh the view, and then retry. See xref:exp-policies-provider-reference.adoc#aws-specific-behavior[Amazon API Gateway Specific Behavior].
+
 == See Also
 
 * xref:exp-policies-overview.adoc[]

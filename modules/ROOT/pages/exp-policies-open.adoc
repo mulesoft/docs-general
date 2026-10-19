@@ -2,21 +2,22 @@
 :keywords: open policies, canonical policies, policy library, multi-provider policies, apigee, azure api management, kong, anypoint platform
 :page-aliases: exp-policies-universal.adoc
 
-An open policy is a provider-agnostic authoring experience. You configure one policy once, and MuleSoft translates it into each provider's native policy and applies it across the instances you select, even a mix of Google Apigee, Azure API Management, Kong Gateway, and Omni instances at the same time. In the UI, open policies carry an *Open* badge, indicating that they work across all gateways.
+An open policy is a provider-agnostic authoring experience. You configure one policy once, and MuleSoft translates it into each provider's native policy and applies it across the instances you select, even a mix of Google Apigee, Azure API Management, Kong Gateway, Amazon API Gateway, and Omni instances at the same time. In the UI, open policies carry an *Open* badge, indicating that they work across all gateways.
 
 You apply open policies from the *Policy Library*, which walks you through four steps: *Select Policy*, *Configure Policy*, *Select Instances*, and *Review & Apply*.
 
 == Open Use Cases
 
-At launch, there are five open use cases. Each maps to a specific native policy per provider. See xref:exp-policies-provider-reference.adoc#supported-policies-and-native-equivalents[Supported Policies and Native Equivalents]:
+There are six open use cases. Each maps to a specific native policy per provider. See xref:exp-policies-provider-reference.adoc#supported-policies-and-native-equivalents[Supported Policies and Native Equivalents]:
 
 * API Key Enforcement
 * CORS (Cross-Origin Resource Sharing)
-* Header Manipulation
+* Header Injection
+* Header Removal
 * IP Allowlist
 * JWT Validation
 
-These are the primary policies you can create and edit across providers. Open policies also support several additional native Kong policies. See xref:exp-policies-provider-reference.adoc#supported-policies-and-native-equivalents[Supported Policies and Native Equivalents]. Other recognized policies are view-only. See xref:exp-policies-apply-manage.adoc#policy-edit-restrictions[Policy Edit Restrictions].
+Header Manipulation is split into two separate policies: Header Injection and Header Removal. These are the primary policies you can create and edit across providers. Open policies also support several additional native Kong policies. See xref:exp-policies-provider-reference.adoc#supported-policies-and-native-equivalents[Supported Policies and Native Equivalents]. Other recognized policies are view-only. See xref:exp-policies-apply-manage.adoc#policy-edit-restrictions[Policy Edit Restrictions].
 
 == Open Is a Creation Experience
 
@@ -30,7 +31,7 @@ Because open is only a creation experience, there is no dedicated open activity 
 
 [NOTE]
 ====
-When an open policy targets Omni instances, there is currently no Activity log record for those targets, so there's no in-product way to confirm the outcome on Omni targets. This is a known limitation. For external providers (Apigee, Azure, and Kong), you can follow the outcome in each instance's *Activity log*.
+When an open policy targets Omni instances, there is currently no Activity log record for those targets, so there's no in-product way to confirm the outcome on Omni targets. This is a known limitation. For external providers (Apigee, Azure, Kong, and Amazon API Gateway), you can follow the outcome in each instance's *Activity log*.
 ====
 
 == Open Policies vs. Automated Policies vs. Controls
@@ -52,7 +53,7 @@ These three are easy to confuse. Use this comparison to choose the right tool:
 |Read-only reports.
 
 |Scope
-|Multi-provider, applied to the instances you select.
+|Multi-provider, applied to the instances you select, including external providers like Apigee, Azure, Kong, and Amazon API Gateway.
 |Native to Omni and Mule, applied automatically by matching rules.
 |Across APIs and instances.
 |===
