@@ -192,10 +192,10 @@ Applying, editing, or removing an AWS policy deploys the entire API configuratio
 
 If an operation fails after you change the configuration in the AWS Management Console but before deployment, the stage sometimes continues running its previous version. Failed operations don't automatically undo changes made in AWS.
 
-After a failure:
+To recover after a failed operation:
 
 . Check the *Activity log* tab for details.
-. Compare the AWS Console configuration with the version deployed to the stage.
+. Compare the AWS Console configuration with the version deployed to the selected stage.
 . Resolve any differences.
 . Rescan to refresh the enhanced MuleSoft experience view.
 . Retry the operation.
