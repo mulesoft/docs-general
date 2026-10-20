@@ -129,7 +129,7 @@ After the bridge is created, the derived A2A agent card is published to the *Age
 
 On the bridged agent's *Overview* tab, Agent Fabric shows two cards side by side:
 
-* *A2A Bridge card*: The advertised name, description, protocol, capabilities, and skills the bridge publishes to other agents. Capabilities such as streaming, push notifications, state transition history, and extensions are set by the platform and locked to prevent the bridge from advertising a capability it can't honor. Skills are flagged as *Custom* when you added them or *Hidden* when you excluded them from discovery.
+* *A2A Bridge card*: The advertised name, description, protocol, capabilities, and skills the bridge publishes to other agents. Capabilities such as streaming, push notifications, state transition history, and extensions are set by the platform and locked to prevent the bridge from advertising a capability it can't honor. Skills are flagged as *Custom* when you add them or *Hidden* when you exclude them from discovery.
 * *Source card*: The name, description, and version of the underlying non-A2A source agent that the bridge card is derived from.
 
 Before a bridge is configured, the *A2A Bridge card* shows a *No bridge configured for this agent* state with the *Configure A2A Bridge & Deploy First Instance* action.
