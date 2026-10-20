@@ -113,66 +113,15 @@ Example workflow:
 . Each route applies its own transformation policy
 . Unified error reporting shows status across all systems
 
-== Set Up Bridget Integration
-
-=== Step 1: Create a Bridget Form
-
-. In Bridget, create a new form with the fields required for your use case.
-. Define field types, validation rules, and required fields.
-. Export the form schema as JSON.
-
-=== Step 2: Configure Your Mule Application
-
-. Create a Mule application with an HTTP listener endpoint.
-. Add the form schema to your application as a configuration file.
-. Define transformation policies to convert Bridget input to your system format.
-
-Example configuration:
-
-[source,xml]
-----
-<http:listener-config name="bridgetListener">
-  <http:listener-connection host="0.0.0.0" port="8081" />
-</http:listener-config>
-
-<flow name="bridget-data-entry">
-  <http:listener path="/bridget/submit" config-ref="bridgetListener" />
-  <logger message="Received data: #[payload]" />
-  <!-- Add transformation policy here -->
-  <http:request method="POST" url="..." />
-</flow>
-----
-
-=== Step 3: Connect Bridget to Your Application
-
-. In Bridget, configure the webhook endpoint pointing to your Mule application.
-. Test the connection with sample data.
-. Configure error handling and retry policies.
-
-=== Step 4: Deploy and Test
-
-. Deploy your Mule application to Anypoint Platform.
-. In Bridget, submit test data through the form.
-. Verify data reaches the target system and is in the correct format.
-. Monitor logs for any errors or validation failures.
 
 == Access Bridget Through the Enhanced MuleSoft Experience
 
 From the enhanced MuleSoft experience, navigate to the *Bridget* tab and click *Open Bridget*.
 
-For more information, see [Bridget docs].
-
-
-== Monitor Bridget Integration
-
-Track integration health and data flow:
-
-Bridget Submissions:: View form submissions and their status (pending, processed, failed) in Bridget.
-Mule Logs:: Monitor Mule application logs for transformation and routing errors.
-API Analytics:: Use Anypoint Monitoring to track API calls and response times.
-Error Reports:: Generate reports on failed submissions grouped by error type.
+For more information, see the {docs link placeholder} [Bridget documentation].
 
 
 == See Also
 
 //* [link to Salesforce's bridget docs]
+* xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions]
