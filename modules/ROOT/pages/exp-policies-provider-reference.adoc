@@ -169,14 +169,21 @@ Before writing policies for Amazon API Gateway, ensure that your configuration m
 
 === Policy Scopes
 
-When applying a policy, you can target different scopes:
+Policy scopes define the breadth of traffic affected. Supported scopes differ by policy type and flow:
 
-* *INSTANCE*: all paths and methods in the selected stage.
-* *PATH*: all methods at one path, such as `/orders`.
-* *METHOD*: one HTTP method across paths, such as `GET`.
-* *OPERATION*: one method at one path, such as `GET /orders`.
+Open policy scopes:
 
-Supported scopes depend on the policy. To change a policy target, remove the policy and reapply it with the new target.
+* IP Allowlist: targets the entire instance (all paths and methods in the selected stage).
+* CORS: expands to all existing deployed paths with methods other than OPTIONS.
+* Header Injection: expands to eligible operations (existing targets with non-Lambda, non-HTTP-proxy integrations, and not ANY, OPTIONS, or CONNECT methods).
+
+Native policy scopes (when accessed outside the open flow):
+
+* IP Filter supports: INSTANCE, PATH, METHOD, and OPERATION.
+* CORS supports: PATH.
+* Header Mapping supports: OPERATION.
+
+To change a policy's target, remove the policy and reapply it with the new target.
 
 The target picker uses paths and methods from the API specification. If a route is missing from the specification, update the specification to match your AWS API before you apply the policy.
 
@@ -190,13 +197,16 @@ Applying, editing, or removing an AWS policy deploys the entire API configuratio
 * CORS and Header Mapping rebuild the API configuration from the deployed version of the selected stage. This can overwrite undeployed changes and affect other settings such as API keys or caching.
 * Before you apply a policy, review pending changes in AWS.
 
-If an operation fails after you change the configuration in the AWS Management Console but before deployment, the stage sometimes continues running its previous version. Failed operations don't automatically undo changes made in AWS.
+An operation can fail at two points, leaving different outcomes:
 
-To recover after a failed operation:
+* Failure before deployment: The platform modified the editable API definition to apply the policy but failed to deploy. The stage continues running its previous version. Pending changes remain in the editable configuration.
+* Failure after deployment starts: The platform deployed the change, but verification failed. The stage runs the new version even though the operation reports as failed.
 
-. Check the *Activity log* tab for details.
-. Compare the AWS Console configuration with the version deployed to the selected stage.
-. Resolve any differences.
+Failed operations don't automatically undo any changes made by the platform or by you. To recover after a failed operation:
+
+. Check the *Activity log* tab for details to determine which failure point occurred.
+. In the AWS Management Console, check both the editable configuration and the version deployed to the selected stage.
+. Resolve any differences between editable and deployed state, based on what you want the stage to run.
 . Rescan to refresh the enhanced MuleSoft experience view.
 . Retry the operation.
 
@@ -217,7 +227,13 @@ Rescan refreshes the enhanced MuleSoft experience view without deploying or undo
 
 === Header Injection Behavior
 
-* Open Header Injection maps to AWS Header Mapping and adds headers with fixed values to requests or responses.
+Open Header Injection and native Header Mapping differ in scope and targeting:
+
+* Open Header Injection: Maps to AWS Header Mapping and applies the same headers with fixed values across all eligible operations in the deployed API. Eligible means existing operations with non-Lambda, non-HTTP-proxy integrations, and not ANY, OPTIONS, or CONNECT methods. Newly added operations don't inherit these mappings automatically. To add the policy to new operations, remove and reapply it after updating the specification.
+* Native Header Mapping: Targets a single operation (one method at one path). Use native Header Mapping when you want headers on specific operations only.
+
+For both flows:
+
 * The target method and integration must already exist. Lambda or HTTP proxy integrations aren't supported, along with ANY, OPTIONS, or CONNECT targets.
 * If the same header is already configured, the operation fails instead of overwriting it.
 * Configure Access-Control headers through CORS instead.
