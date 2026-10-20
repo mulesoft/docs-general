@@ -3,6 +3,8 @@
 
 Scanners typically run on a schedule you or an administrator configured, or manually when you start a scan. After you configure scanners, you run them day to day. Most of that work happens under *Providers*, where you manage provider connections, scanners, and scan activity in one place.
 
+NOTE: Automate scanner management using the MuleSoft MCP Platform Server. For details, see xref:mulesoft-mcp-server::reference-mcp-tools-platform.adoc#list-scanner-providers[list_scanner_providers] and xref:mulesoft-mcp-server::reference-mcp-tools-platform.adoc#test-scanner-connection[test_scanner_connection] in the MuleSoft MCP Platform Server Tool Reference.
+
 == Scanner Actions
 
 * *Run Discovery Scan*

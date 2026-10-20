@@ -5,6 +5,8 @@ Detailed metrics go beyond high-level status to show time series, breakdowns, an
 
 Available metric time series depend on the gateway or runtime path, whether the deployment is managed through Omni Gateway, and what your organization connected under *Platform* and *Observability*.
 
+NOTE: Automate detailed metrics retrieval using the MuleSoft MCP Platform Server. For details, see xref:mulesoft-mcp-server::reference-mcp-tools-platform.adoc#fetch-monitoring-instance[fetch_monitoring_instance] in the MuleSoft MCP Platform Server Tool Reference.
+
 == Before You Begin
 
 Before getting started, make sure you have:

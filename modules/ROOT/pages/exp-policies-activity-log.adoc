@@ -3,6 +3,8 @@
 
 Every policy change on an external provider runs asynchronously, so a request that Anypoint accepts isn't the same as a policy that's applied on the gateway. Use the *Activity log* tab on an API instance to confirm what actually happened.
 
+NOTE: Automate policy operation status checks using the MuleSoft MCP Platform Server. For details, see xref:mulesoft-mcp-server::reference-mcp-tools-platform.adoc#get-policy-operation-status[get_policy_operation_status] in the MuleSoft MCP Platform Server Tool Reference.
+
 == Before You Begin
 
 Before getting started, make sure you have:

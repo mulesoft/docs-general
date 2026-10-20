@@ -3,6 +3,8 @@
 
 Governance strategies define which services the system evaluates or enforces policy against and under what conditions. A Control strategy monitors compliance and can block noncompliant activity. An Automated Policy strategy enforces requirements at the gateway or runtime layer. You can create strategies if your tenant includes *Governance* and you have the required administrator role.
 
+NOTE: Automate strategy creation using the MuleSoft MCP Platform Server. For details, see xref:mulesoft-mcp-server::reference-mcp-tools-platform.adoc#create-guardrail[create_guardrail] and xref:mulesoft-mcp-server::reference-mcp-tools-platform.adoc#create-automated-policy-strategy[create_automated_policy_strategy] in the MuleSoft MCP Platform Server Tool Reference.
+
 == Before You Begin
 
 Before getting started, make sure you have:

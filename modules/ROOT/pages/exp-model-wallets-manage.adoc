@@ -5,6 +5,8 @@ A model wallet identifies a caller of a model proxy and caps that caller's token
 
 When a caller sends a request, the proxy matches the client ID and claims to a wallet and counts the request against that wallet's budgets. After the wallet reaches its budget, the proxy blocks further requests to that provider's models. That block enforces a spend or token cap. A wallet doesn't grant or deny access to the proxy.
 
+NOTE: Automate model wallet management using the MuleSoft MCP Platform Server. For details, see xref:mulesoft-mcp-server::reference-mcp-tools-platform.adoc#fetch-model-wallets[fetch_model_wallets] and related tools in the MuleSoft MCP Platform Server Tool Reference.
+
 [[before-you-begin]]
 == Before You Begin
 

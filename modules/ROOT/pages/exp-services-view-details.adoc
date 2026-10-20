@@ -3,6 +3,8 @@
 
 View scanner read policies, deployments, monitoring, and conformance for a service from one detail page in *Portfolio*. Open any service, including an API, agent, MCP server, Model Proxy, or gateway, to review current status, cost, and relationships. Use this page to validate applied controls and track changes without switching contexts.
 
+NOTE: Automate service lookups using the MuleSoft MCP Platform Server. For details, see xref:mulesoft-mcp-server::reference-mcp-tools-platform.adoc#fetch-services[fetch_services] and related Search and Discovery tools in the MuleSoft MCP Platform Server Tool Reference.
+
 == Before You Begin
 
 Before getting started, make sure you have:

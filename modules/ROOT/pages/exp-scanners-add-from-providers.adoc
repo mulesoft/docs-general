@@ -5,6 +5,8 @@ A scanner is the configured link between the system and a supported cloud provid
 
 For how provider connection and catalogs fit together, see xref:exp-services-connect-providers-to-add.adoc[] and xref:exp-services-add-to-portfolio.adoc[].
 
+NOTE: Automate scanner creation using the MuleSoft MCP Platform Server. For details, see xref:mulesoft-mcp-server::reference-mcp-tools-platform.adoc#create-scanner[create_scanner] in the MuleSoft MCP Platform Server Tool Reference.
+
 Watch this video to see how to discover services with providers and scanners:
 
 ++++
