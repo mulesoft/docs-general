@@ -9,6 +9,7 @@ Before getting started, make sure you have:
 
 * An Anypoint Platform account.
 * The API Manager: Manage Policies permission.
+* The Organization Administrator role, required to load the open policy catalog, open a policy configuration form, and apply an open policy, or to apply, edit, enable, disable, or remove native policies on external gateways. Without this role, those actions fail or the catalog is empty. Listing native policy templates on an external gateway still uses the View Policies permission. Viewing policies already applied on Omni or Mule gateways still uses the View Policies or Manage Policies permission.
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 * For external providers, a connected scanner for that provider. Anypoint reuses the same connection and credentials you configured for scanning to authorize and perform policy changes. There's no second set of provider credentials to configure. The per-provider setup you must do on your side (for example, Apigee roles and permissions) is described in xref:exp-policies-provider-reference.adoc[].
