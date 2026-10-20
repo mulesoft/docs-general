@@ -33,7 +33,7 @@ Akamai owns and maintains this policy, and it's separate from the Akamai correla
 
 You create the policy in Akamai API Security, publish it to Anypoint Exchange, and apply it to your APIs in Anypoint API Manager.
 
-// TODO Eng (remove before merge): Confirm the default value of PREVENTION_ENABLED and the policy's timeout and failure behavior when prevention is enabled.
+
 [IMPORTANT]
 ====
 To monitor traffic, set `PREVENTION_ENABLED` to `false` when you apply the policy. In this capture-only configuration, the policy forwards traffic for analysis without blocking requests.
