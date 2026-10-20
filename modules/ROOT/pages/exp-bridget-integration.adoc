@@ -15,14 +15,6 @@ Before getting started, make sure you have:
 ** Bridget Manager: Bridget User access plus the manage API surface (/run, /manage). Enables workflow configuration and management.
 ** Bridget Admin: Bridget Manager access plus the admin API surface (/run, /manage, /admin). Provides full administrative control.
 --
-+
-* These additional permissions to integrate with Anypoint Platform:
-+
---
-** API Manager: Manage Policies
-** API Manager: View APIs Configuration
-** Anypoint Code Builder: Mule Developer (or equivalent)
-** Exchange: Exchange Viewer
 --
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
@@ -61,8 +53,6 @@ Dependencies:: Bridget requires active integration with Anypoint Platform servic
 Bridget integration is available in these regions:
 
 * North America (us-east-1, us-west-2)
-* Europe (eu-west-1, eu-central-1)
-* Asia-Pacific (ap-southeast-1, ap-northeast-1)
 
 For region-specific configuration, refer to your Anypoint Platform regional settings.
 
@@ -78,10 +68,10 @@ Use Bridget to streamline supplier data collection and validation:
 * Reject invalid submissions with clear feedback, reducing back-and-forth.
 
 Example workflow:
-. Supplier fills out onboarding form in Bridget
-. Mule application validates data (format, uniqueness, completeness)
+. Bridget automates the supplier's browser interactions to fill out the onboarding form with required information (company details, certifications, banking information)
+. Mule application validates the submitted data (format, uniqueness, completeness)
 . Valid submissions route to ERP system
-. Invalid submissions return to supplier with error messages
+. Invalid submissions return with error messages
 
 === Legacy Data Entry and Migration
 
@@ -93,8 +83,8 @@ Enable data entry for legacy systems without exposing complex interfaces:
 * Bulk migrate historical data through structured templates.
 
 Example workflow:
-. User enters data in Bridget's form interface
-. Mule transformation policy converts data to legacy format
+. Bridget automates the browser interactions to enter data into the legacy system's form interface, simulating the exact user actions on the screen
+. Mule transformation policy converts data to the legacy system's required format
 . Data writes to legacy system via API or database connection
 . Confirmation and audit record are logged
 
