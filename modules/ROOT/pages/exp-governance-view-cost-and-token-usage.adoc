@@ -5,6 +5,8 @@ Use cost and token metrics to understand usage, control spend, and identify opti
 
 Available metrics depend on your tenant configuration and role.
 
+NOTE: Automate cost and token usage reporting using the MuleSoft MCP Platform Server. For details, see xref:mulesoft-mcp-server::reference-mcp-tools-platform.adoc#fetch-cost-overview[fetch_cost_overview] and related Cost Management tools in the MuleSoft MCP Platform Server Tool Reference.
+
 Watch this video to see how to track cost and token usage:
 
 ++++

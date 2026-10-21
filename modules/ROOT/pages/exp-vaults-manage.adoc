@@ -6,6 +6,8 @@ An external vault connects your third-party secrets manager to the enhanced expe
 
 A vault isn't a scanner. Scanners discover services and add them to Portfolio catalogs. A vault only syncs secret metadata, so it doesn't add items to Portfolio.
 
+NOTE: Automate vault onboarding and management using the MuleSoft MCP Platform Server. For details, see xref:mulesoft-mcp-server::reference-mcp-tools-platform.adoc#onboard-vault[onboard_vault] and related Secrets Manager tools in the MuleSoft MCP Platform Server Tool Reference.
+
 == Before You Begin
 
 To register an external vault, you need:

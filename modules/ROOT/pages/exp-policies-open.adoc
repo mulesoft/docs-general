@@ -6,6 +6,8 @@ An open policy is a provider-agnostic authoring experience. You configure one po
 
 You apply open policies from the *Policy Library*, which walks you through four steps: *Select Policy*, *Configure Policy*, *Select Instances*, and *Review & Apply*.
 
+NOTE: Automate open policy application using the MuleSoft MCP Platform Server. For details, see xref:mulesoft-mcp-server::reference-mcp-tools-platform.adoc#apply-universal-policy[apply_universal_policy] in the MuleSoft MCP Platform Server Tool Reference.
+
 == Open Use Cases
 
 At launch, there are five open use cases. Each maps to a specific native policy per provider. See xref:exp-policies-provider-reference.adoc#supported-policies-and-native-equivalents[Supported Policies and Native Equivalents]:

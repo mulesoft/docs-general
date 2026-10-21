@@ -3,6 +3,8 @@
 
 Apply, edit, enable, disable, and remove policies on an API instance from the *Policies* tab in *Portfolio*. These actions work on Anypoint gateways (Omni and Mule), and on external providers such as Google Apigee, Azure API Management, and Kong Gateway, subject to per-provider support. See xref:exp-policies-provider-reference.adoc[].
 
+NOTE: Automate policy application and management using the MuleSoft MCP Platform Server. For details, see xref:mulesoft-mcp-server::reference-mcp-tools-platform.adoc#apply-policy-to-instance[apply_policy_to_instance] and related Policy Management tools in the MuleSoft MCP Platform Server Tool Reference.
+
 == Before You Begin
 
 Before getting started, make sure you have:

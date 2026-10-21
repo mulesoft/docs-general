@@ -9,6 +9,8 @@ You can configure a model proxy to route LLM traffic across different models and
 
 NOTE: A large Omni Gateway supports up to 50 Model Proxies.
 
+NOTE: Automate model proxy provisioning using the MuleSoft MCP Platform Server. For details, see xref:mulesoft-mcp-server::reference-mcp-tools-platform.adoc#provision-mcp-server[provision_mcp_server] in the MuleSoft MCP Platform Server Tool Reference.
+
 == Before You Begin
 
 Before getting started, make sure you have:
