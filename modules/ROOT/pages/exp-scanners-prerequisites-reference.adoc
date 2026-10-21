@@ -101,7 +101,20 @@ a|
 
 *Setup:* Optional API host for region routing (for example, US or EU cloud host)
 
-| Microsoft Azure Copilot
+| Microsoft 365 Copilot
+| Agent
+a|
+*Credentials:* Microsoft Entra app registration; tenant ID, client ID, client secret
+
+*Account:* Microsoft tenant with a Microsoft Agent 365 license
+
+*Permissions:* Admin consent for the `CopilotPackages.Read.All` Microsoft Graph scope
+
+*Authentication:* Client-credentials *OAuth* only. 
+
+*Setup:* Discovery reads declarative and custom engine agents from the Microsoft Graph Package Management API. Available in the Microsoft global cloud only.
+
+| Microsoft Copilot Studio
 | Agent
 a|
 *Credentials:* Azure app registration; client ID and client secret. Two authentication schemes are supported:
