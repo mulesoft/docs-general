@@ -15,10 +15,65 @@ Before setting up the Akamai scanner, make sure you have:
 
 * Exchange Administrator permission in the target business group.
 * Akamai Security base URL, client ID, and client secret.
-* Access to apply Akamai correlation policy in the environments you want to scan.
+* Access to apply the Akamai correlation policy in the environments you want to scan.
 * Existing APIs and MCP services in *Portfolio* catalogs for correlation targets.
 
 For credential and role details, see xref:exp-scanners-prerequisites-reference.adoc[].
+
+== Monitor Traffic Through Omni Gateway
+
+Akamai observes traffic at the Akamai edge, which is traffic between external clients and your APIs on domains you own and control. To also have Akamai analyze traffic that passes through Omni Gateway but isn't inspected at the Akamai edge, apply the *Akamai API Security (Omni Gateway)* policy to your API instances. This traffic includes:
+
+* Internal traffic between services (east-west traffic).
+* External traffic to endpoints you can't register at the Akamai edge, such as MuleSoft-managed CloudHub endpoints.
+
+The policy forwards this traffic to Akamai API Security in asynchronous batches. Forwarding doesn't block requests. If the Akamai engine is unavailable, forwarding fails open and your API traffic isn't affected.
+
+Akamai owns and maintains this policy, and it's separate from the Akamai correlation policy that the scanner applies. For findings from forwarded traffic to appear on the related API in *Portfolio*, apply both policies to the API instance. The correlation policy adds the correlation data that Akamai uses to match a finding to its API, and the Akamai API Security (Omni Gateway) policy forwards that data with the traffic it captures.
+
+You create the policy in Akamai API Security, publish it to Anypoint Exchange, and apply it to your APIs in Anypoint API Manager.
+
+
+[IMPORTANT]
+====
+To monitor traffic, set `PREVENTION_ENABLED` to `false` when you apply the policy. In this capture-only configuration, the policy forwards traffic for analysis without blocking requests.
+
+The policy can also block requests from attackers that Akamai API Security detects and return a `403` response. Blocking is an opt-in control that runs synchronously in the request path, so Akamai engine availability and the policy's timeout settings can affect your API traffic. Before you enable prevention, review the policy parameters in the Akamai documentation.
+====
+
+=== Before You Apply the Policy
+
+Make sure you have:
+
+* API instances that run on Omni Gateway.
+* The Akamai correlation policy applied to those API instances. See <<set-up-the-akamai-scanner>>.
+* Network access from Omni Gateway to your Akamai API Security engine over HTTPS.
+* The Admin role in Akamai API Security with the Traffic Source & Prevention permission.
+* Permission to publish assets to Anypoint Exchange and apply policies in Anypoint API Manager.
+* Anypoint CLI with the PDK plugin, Node.js, and Rust installed on the machine where you install the policy. See xref:pdk::policies-pdk-prerequisites.adoc[].
+
+=== Apply the Policy
+
+. In Akamai API Security, create a MuleSoft traffic source integration for Omni Gateway, and then download the policy.
++
+For instructions, see https://docs.nonamesecurity.com/docs/mulesoft-omni-gateway-source-and-prevention-integration[MuleSoft Omni Gateway - Source and Prevention Integration^] in the Akamai documentation.
+. In Anypoint Platform, create a connected app that acts on its own behalf (client credentials) with the *Exchange Contributor* scope, and then copy the client ID and client secret.
++
+This connected app is separate from the one Akamai uses to read API assets from MuleSoft. For instructions, see xref:access-management::creating-connected-apps-dev.adoc[].
+. Configure Anypoint CLI with the connected app credentials, your business group ID, and your environment ID, and then run the installation script included in the policy download.
++
+The script publishes the policy to Anypoint Exchange. For the commands, see "Step 4: Deploy the Policy" in https://docs.nonamesecurity.com/docs/mulesoft-omni-gateway-source-and-prevention-integration[MuleSoft Omni Gateway - Source and Prevention Integration^] in the Akamai documentation.
+. In Anypoint API Manager, apply the *Akamai API Security (Omni Gateway)* policy in one of these ways:
+** To apply the policy to all APIs in an environment, add it as an automated policy. In *Advanced Options*, set *Rule of application* to *Omni gateways only*. See xref:gateway::policies-automated-applying.adoc[].
+** To apply the policy to specific APIs, add it as an inbound policy on each API.
+
++
+To capture traffic without blocking requests, set `PREVENTION_ENABLED` to `false`. For instructions, see "Step 5: Apply the Policy" in https://docs.nonamesecurity.com/docs/mulesoft-omni-gateway-source-and-prevention-integration[MuleSoft Omni Gateway - Source and Prevention Integration^] in the Akamai documentation.
+. Move the *Akamai API Security (Omni Gateway)* policy to the top of the policy list, above the Akamai correlation policy.
++
+With this order, the correlation policy adds correlation data to the response before the Akamai API Security (Omni Gateway) policy captures it. If the order is reversed, Akamai receives the traffic without correlation data, so findings from that traffic don't appear on the related API in *Portfolio*. No error is reported.
+
+For policy parameters and troubleshooting, see the https://docs.nonamesecurity.com/docs/mulesoft-omni-gateway-source-and-prevention-integration[Akamai documentation for the MuleSoft Omni Gateway integration^]. You need an Akamai account to view this documentation.
 
 == Set Up Tenant Connectivity
 
@@ -39,7 +94,7 @@ In your Akamai API Security tenant, create a service account and note its client
 Add an Akamai scanner and enter the Akamai service account credentials (client ID and client secret) and the Akamai base URL, along with a scan frequency. See <<set-up-the-akamai-scanner>>.
 . Create a connected app in MuleSoft.
 +
-In Anypoint Platform, go to *Access Management* > *Connected Apps* and create an app that acts on its own behalf (client credentials). Add the *Exchange Viewer* or *Asset Viewer* scope so Akamai can read API instance and asset information, then save. Copy the client ID and client secret.
+In Anypoint Platform, go to *Access Management* > *Connected Apps* and create an app that acts on its own behalf (client credentials). Add the *Exchange Viewer* or *Asset Viewer* scope so Akamai can read API instance and asset information, then save. Copy the client ID and client secret. For instructions, see xref:access-management::creating-connected-apps-dev.adoc[].
 . Configure the sync on the Akamai side.
 +
 In your Akamai API Security tenant, enter the MuleSoft connected app client ID and client secret so Akamai can pull API asset and instance information from MuleSoft.
@@ -70,7 +125,7 @@ For Akamai to observe and correlate traffic, the Akamai correlation policy must 
 
 == Review Scanner Detail Tabs
 
-After you select a configured Akamai scanner from the provider list, use scanner detail tabs to monitor scanner status, related services, and configuration values.
+After you select a configured Akamai scanner from the provider list, use the scanner detail tabs to monitor scanner status, related services, and configuration values.
 
 For common tab behavior across scanners, see xref:exp-scanners-view-details.adoc[].
 For Akamai scanners, the *Overview* tab highlights correlation policy status and shows whether existing services are being updated with Akamai risk, findings, and incident data.
@@ -79,11 +134,11 @@ The *Settings* tab shows scanner configuration values, including schedule and pr
 
 == Apply Missing Correlation Policies
 
-If some environments show that correlation policy isn't applied, you can apply missing policies from the scanner detail page:
+If some environments show that the correlation policy isn't applied, you can apply missing policies from the scanner detail page:
 
 . Open *Platform* > *Providers* and select the configured Akamai scanner.
 . In *Overview*, check the *Akamai Correlation Policy* status.
-. If the status shows missing environments, click *Check again* to apply policy only to those environments.
+. If the status shows missing environments, click *Check again* to apply the policy only to those environments.
 . Wait for the status to change to *Applied* and confirm all target environments are covered.
 
 If policy application fails, verify your Admin API write permissions and environment access, then retry.
@@ -103,7 +158,7 @@ After a successful run, Akamai results appear on existing services:
 The *Security Risk* column shows the risk level assigned to correlated Akamai findings:
 
 Low::
-Lower urgency risk. Review and remediate in your normal security lifecycle.
+Lower-urgency risk. Review and remediate in your normal security lifecycle.
 
 Medium::
 Moderate risk. Prioritize remediation after high-risk issues.
@@ -112,7 +167,7 @@ High::
 Elevated risk. Investigate and remediate first.
 
 Critical::
-Highest urgency risk. Remediate immediately.
+Highest-urgency risk. Remediate immediately.
 
 == Track Remediation and Scan Status
 
@@ -156,6 +211,7 @@ If a scan completes but results don't appear:
 * Verify the correlation policy is applied in the same environment as the service instance.
 * Confirm the target service already exists in *Portfolio* catalogs.
 * Confirm scanner scope and business group match the service location.
+* For traffic forwarded by the Akamai API Security (Omni Gateway) policy, confirm the policy is above the Akamai correlation policy in the policy list.
 * Re-run the scanner after connection or policy changes.
 
 == See Also
