@@ -1,7 +1,9 @@
-= Testing APIs in the API Playground
+= Testing APIs in the API Playground (Beta)
 :keywords: api playground, test api, api endpoints, api authentication, request snippet, api response, anypoint platform, enhanced experience
 
 Use the API playground to explore an API's endpoints, configure and send requests, and inspect responses from the service detail page. Instead of copying paths into an external tool such as Postman, you exercise the API in the enhanced experience and see the results next to its documentation.
+
+NOTE: The API playground is a pilot or beta service that is subject to the Beta Services Terms at https://www.salesforce.com/company/legal/[Agreements - Salesforce.com] or a written Unified Pilot Agreement if executed by Customer, and applicable terms in the https://ptd.salesforce.com/?_ga=2.247987783.1372150065.1709219475-629000709.1639001992[Product Terms Directory]. Use of this pilot or beta service is at the Customer's sole discretion.
 
 == Before You Begin
 
