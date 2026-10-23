@@ -1,0 +1,177 @@
+= Java 25 Support
+:keywords: java 25, java 25 support, mule runtime, java upgrade, java version, mulesoft java compatibility
+
+// W-24620565: Placeholder structure. Content pending from the Java 25 planning team (#ms-java25-planning).
+// Do not publish customer-facing Java 25 claims until GA (currently planned with Mule runtime 4.14 LTS).
+
+Use this topic to plan your upgrade to Java 25. For the Java versions that each Mule runtime version supports, see the xref:java-support.adoc#mule-runtime-java-support[Mule runtime Java support].
+
+// Drafted by analogy to the Java 17 overview. Pending SME confirmation of both paragraphs.
+Upgrading to Java 25 has no immediate impact to Mule applications that are running on Mule versions that support Java 17. However, it is best to start your upgrade planning now. Java 25 upgrade planning includes evaluating integration apps, connectors (Anypoint connectors and custom connectors), Mule Gateway policies, and API proxies, as all of these components rely on Java.
+
+Existing Java 17 apps continue to run on Java 17 until the end of extended support for the Mule version they are running on is reached.
+
+== Steps for Upgrade
+
+// Drafted by analogy to the Java 17 upgrade steps. Pending SME confirmation: minimum versions for Studio, Mule Maven plugin, connectors, and policies, and any Java 25-specific steps.
+Follow these steps to upgrade to Java 25:
+
+* *Pre-Upgrade*
+. Review your current setup to identify what needs upgrading or removal, such as any Java features that are no longer supported or are marked as deprecated in Java 25.
+. Create a comprehensive upgrade plan, including testing, rollback strategies, and post-upgrade checks.
+. For on-premises deployments (as with any upgrade), schedule downtime and inform stakeholders to minimize business disruption.
+* *Upgrade*
+. Upgrade to <<mule-runtime, Mule runtime 4.14>> or later.
+. Upgrade all Anypoint Connectors and modules, and custom connectors, used within Mule apps and policies to versions that support Java 25. Connectors that contain custom Java code need additional modifications to ensure compatibility with Java 25.
+. Upgrade your policies. Policies that contain custom Java code need additional modifications to ensure compatibility with Java 25.
+. Upgrade your API proxies and Mule apps. Proxies that contain custom Java code need additional modifications to ensure compatibility with Java 25.
+. Upgrade Anypoint Studio to a version that supports Java 25, and change the target JVM at the Studio project level.
+. Test your apps in a controlled environment before going live.
+. If you use the Mule Maven plugin to deploy your apps, configure the deployment to use Java 25.
+* *Post-Upgrade*
+. Monitor your apps for any unexpected behavior.
+. Update any relevant documentation to reflect changes made during the upgrade.
+
+[IMPORTANT]
+To ensure your API proxies or Mule apps are protected when upgrading, upgrade your policies _before_ upgrading your API proxies or Mule apps.
+
+[[mule-runtime]]
+== Mule Runtime
+
+// Drafted by analogy to the Java 17 Mule Runtime section. Pending SME confirmation: supported Mule versions, Java 17 coexistence, and deployment target availability.
+To take advantage of Java 25, xref:release-notes::mule-runtime/updating-mule-4-versions.adoc[upgrade to Mule runtime 4.14 or later]. Mule runtime 4.14 supports both Java 17 and Java 25, so you can upgrade to 4.14 on Java 17 first, then move to Java 25.
+
+Follow these best practices:
+
+* Upgrade your standalone Mule instances.
+* Upgrade on-premises Mule instances that are managed through Runtime Manager.
+* Update the Mule version used to build your Mule applications.
+* xref:mule-runtime::deploying.adoc[Deploy your applications] to a target running on Mule 4.14 or later.
+
+[[mule-apps]]
+== Mule Apps
+
+// Source text provided with open [confirm] markers. Pending SME confirmation: (1) maximum supported Java version in 4.14 (25); (2) compile target for projects and dependencies (17 or lower); (3) Mule Maven plugin versions for supportedJavaVersions (sentence omitted until confirmed); (4) whether the policies-before-proxies order still applies.
+You can update, test, and redeploy most of your currently running Mule apps to use Java 25. However, any apps and connectors that are running custom Java code require additional work to certify those components. Before you upgrade your integration apps or Mule Gateway policies and proxies to Java 25, update all extensions, modules, and connectors used within those apps and policies to versions that support Java 25.
+
+[NOTE]
+====
+In Mule 4.14 and later, the maximum supported version for running your applications is Java 25. Mule 4.14 also supports Java 17. Mule projects and their dependencies must be compiled for Java 17 or lower. [Confirm]
+
+In Mule 4.13 and later, Mule determines Java compatibility from the `supportedJavaVersions` attribute in `mule-artifact.json`. If it is absent, Mule uses the `@JavaVersionSupport` annotation. If neither is present, Mule does not assume compatibility. Update your extensions to Mule Extension Plugin 1.9.0 or later and set this attribute. [Maven plugin versions – confirm]
+
+When selecting a dependency (for example, `mssql-jdbc`), configure the version compatible with your target Java version in the `pom.xml`.
+====
+
+[IMPORTANT]
+To ensure your API proxies or Mule apps are protected when upgrading, upgrade your policies _before_ upgrading your API proxies or Mule apps. [Confirm whether the policy-before-proxy order still applies.]
+
+[[anypoint-connectors-and-modules]]
+== Anypoint Connectors and Modules
+
+Before you run apps on Java 25, make sure every connector and module they use supports it. Connector Java compatibility is declared in the `supportedJavaVersions` attribute of the connector's `mule-artifact.json`. In Exchange, connectors that declare Java 25 support are tagged accordingly. [Confirm tag and filter availability.]
+
+To build or update a connector that supports Java 25, use Mule Extension Plugin 1.9.0 or later and declare Java 25 in `supportedJavaVersions`. Runtimes earlier than Mule 4.9.9 may fail to load extensions that declare Java 25. [Confirm wording.] [Add the list of certified connectors after Q4 validation.]
+
+[[custom-connectors]]
+== Custom Connectors
+
+Custom connectors (including custom configuration properties providers) are any connectors that are not developed and maintained by MuleSoft, including connectors that are built by MuleSoft partners or customers. If you are using a custom connector in your app, you must update it to support Java 25 and declare that support in its `supportedJavaVersions` attribute. Apps that use a connector declaring Java 25 support must run on Mule runtime [4.14 or later – confirm; 4.6.22+ / 4.9.9+ for earlier lines].
+
+If you are a MuleSoft partner:
+
+[Steps pending: Mule SDK, REST SDK, REST Connect, configuration properties providers, MTF testing, and deploy to Mule 4.14 or later.]
+
+If you are a MuleSoft customer:
+
+[Steps pending: Mule SDK, REST Connect, configuration properties providers, MUnit testing, and deploy to Mule 4.14 or later.]
+
+[[custom-code-in-connectors]]
+== Custom Code in Connectors
+
+If you have custom code in your connectors, or if you are using third-party libraries, you must update that custom code to be compatible with Java 25. Code that targets Mule 4.12 and later must work on both Java 17 and Java 25.
+
+* Reflection on Java classes
++
+Review and update any code that uses reflection to access Java classes or set parameter values. Avoid introspecting JDK internals and avoid `sun.misc.Unsafe`. Have a robust test suite that runs with Java 25. Pay special attention to `setAccessible(true)`. [Confirm Java 25 behavior.]
+
+* Java Platform Module System (JPMS)
++
+[Keep the Java 17 text on split packages and `ResourceBundle` loading if still accurate. Confirm with an SME.]
+
+* Third-party libraries
++
+Review changelogs for Java 25 compatibility. Libraries that read or write class files, such as bytecode tools, may need upgrades to handle Java 25 class files. [Confirm with SME.]
+
+* Unsupported directives
++
+[Keep as-is if the policy still holds. Confirm.]
+
+* JDK Migration Guide
++
+See the https://docs.oracle.com/en/java/javase/25/migrate/getting-started.html[Oracle JDK Migration Guide^] for changes from Java 17 to Java 25.
+
+[[anypoint-studio]]
+== Anypoint Studio
+
+Starting with Anypoint Studio [version – confirm], if your Mule app is running on Mule runtime 4.14 or later, you can change the target JVM at the Studio project level to Java 25 or Java 17.
+
+Studio [version] provides compatibility guidance: [Keep each bullet only if engineering confirms it.]
+
+* Real-time guidance when you package an app, alerting you to incompatible connector versions or project mismatches.
+* The supported JVM version for each connector or module version when you add it.
+* Suggested extension upgrades from Exchange when you upgrade a project to Java 25.
+* Runtime Manager detection of Java version mismatches when you deploy to CloudHub.
+
+For more information, see xref:studio::change-jdk-config-in-projects.adoc[] and xref:studio::update-modules.adoc[].
+
+[[policies]]
+== Policies
+
+[[api-proxies]]
+== API Proxies
+
+The MuleSoft-included API proxies are compatible with Java 25 beginning with Mule runtime [4.14 – confirm]. [Add the Java 17 support statement once the product team confirms it.]
+
+[IMPORTANT]
+To ensure your API proxies or Mule apps are protected when upgrading, upgrade your API policies _before_ upgrading your API proxies or Mule apps. [Confirm.]
+
+The steps to upgrade depend on your *Proxy type*:
+
+* Basic endpoint: [Confirm the Java 25 steps. The Java 17 text covers deploying the adapted application and connecting through autodiscovery.]
+* Proxy application: See xref:upgrade-policies-proxies.adoc#upgrading-api-proxies[Upgrading API Proxies]. [Confirm the page is updated for Java 25.]
+
+[[mule-maven-plugin]]
+== Mule Maven Plugin
+
+If you are using Mule Maven plugin [version – confirm] and later to deploy your apps, you can configure the deployment to use Java 25.
+
+When deploying to CloudHub, use the Java version property to explicitly deploy to a specified Java version. [Confirm accepted values, such as 17 and 25.]
+
+When deploying to Runtime Fabric and CloudHub 2.0, Mule Maven plugin accepts the entire tag of the build so you can use the correct semantic version (SemVer) in your deployment. [Confirm there is no Java 25 change.]
+
+For more information, see the following documentation: [Keep the three deployment links as-is. Check whether those pages need Java 25 updates.]
+
+* xref:mule-runtime::deploy-to-cloudhub.adoc[]
+* xref:mule-runtime::deploy-to-cloudhub-2.adoc[]
+* xref:mule-runtime::deploy-to-rtf.adoc[]
+
+[[dataweave]]
+== DataWeave
+
+DataWeave uses Java's reflection API to read and write Java objects. Java 25 continues to restrict encapsulation and reflective access for the Java Data Format and Mule objects, as in Java 17. [Confirm.]
+
+To ensure your applications continue to work as expected, follow these guidelines:
+
+* Verify that the objects your application uses are Plain Old Java Objects (POJOs) with a default constructor, getters for all properties, and setters for all properties. [Confirm the DataWeave version and whether Java 25 adds requirements.]
+* Verify that predefined variables are accessed through their proper API, for example `error.errorMessage` instead of `error.muleMessage` and `error.childErrors` instead of `error.errors`.
+
+For more information, see the following documentation:
+
+* xref:dataweave::dataweave-formats-java.adoc#java-support[Java Format]
+* xref:dataweave::dataweave-variables-context.adoc[Predefined Variables]
+
+== See Also
+
+* xref:java-support.adoc[]
+* xref:java-17-support.adoc[]

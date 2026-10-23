@@ -145,7 +145,7 @@ See the https://docs.oracle.com/en/java/javase/17/migrate/getting-started.html#G
 
 * Mule runtime engine
 +
-See xref:general::java-support.adoc#mule-runtime[Mule runtime] to learn more about the Java 17 changes made in Mule runtime engine. 
+See xref:general::java-17-support.adoc#mule-runtime[Mule runtime] to learn more about the Java 17 changes made in Mule runtime engine. 
 +
 ** Reflection on Java classes
 +
@@ -544,7 +544,7 @@ Mule runtime 4.6.0 and later supports Java 17. However, a connector can be compa
 
 == See Also
 
-* xref:java-support.adoc[]
+* xref:java-17-support.adoc[]
 
 // end::see-also[]
 
@@ -552,6 +552,6 @@ Mule runtime 4.6.0 and later supports Java 17. However, a connector can be compa
 
 == See Also
 
-* xref:general::java-support.adoc[]
+* xref:general::java-17-support.adoc[]
 
 // end::see-also-sdk[]
