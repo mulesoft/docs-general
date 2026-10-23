@@ -60,7 +60,7 @@ Up to 50 Model Proxies are supported per Large Omni Gateway.
 [[supported-models]]
 == Supported LLM Providers and Models
 
-Model Proxy supports these LLM providers and models. The models are the options in the *Request model override* list of a route target.
+Model Proxy supports these LLM providers and models:
 
 * OpenAI
 ** GPT 5.2
