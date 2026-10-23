@@ -171,13 +171,9 @@ a|
 
 * `apigateway:PUT`
 * `apigateway:POST`
+* `apigateway:PATCH`
 * `apigateway:DELETE`
-
-// TODO(PM): Confirm with engineering whether `apigateway:PATCH` belongs in the write scope.
-// The External Policies Documentation Guide doesn't list exact IAM actions. IP filtering
-// updates the REST API resource policy, and Header Mapping and CORS update method and
-// integration responses; AWS performs these updates with PATCH. Add `apigateway:PATCH`
-// here and in the Policy Write Prerequisites table if engineering confirms.
+* `apigateway:UpdateRestApiPolicy`
 
 Policy write supports REST APIs with a deployed stage only. HTTP APIs aren't supported. Policy write uses a single-account connection; cross-account connections that use a hub role aren't supported.
 
@@ -316,17 +312,9 @@ a|
 
 Policy write lets you apply, edit, and remove policies on connected third-party gateway APIs directly from Anypoint, with no Anypoint gateway in the request path. Where the provider supports it, you can also enable and disable policies. Policy write is available for API gateway providers only: Amazon API Gateway, Azure API Management, Google Apigee, and Kong Gateway. Agent, API Security, and MCP scanners don't support policy write.
 
-// TODO(PM/Eng): Confirm which button behavior ships. The "Write permissions on the connection"
-// bullet below and the Read-Only APIs section say policy actions are unavailable when the
-// connection has read-only access. The External Policies Documentation Guide (section 2) says
-// button state is only a hint: when Anypoint can't determine the account's permissions on the
-// provider, it leaves policy actions enabled, and an unauthorized action fails and appears in
-// the Activity log. For providers where no check is possible, actions may appear disabled.
-// Update both places to match the shipped behavior.
-
 Policy write reuses the same connection you configure for scanning; there's no separate policy-write connection. Before you can write policies, confirm these prerequisites in addition to the discovery prerequisites in the matrix:
 
-* *Write permissions on the connection:* The scanner connection's identity must have the provider's write scope, not just read access. A connection with read-only access to the provider can discover and read policies, but policy actions remain unavailable.
+* *Write permissions on the connection:* The scanner connection's identity must have the provider's write scope, not just read access. Read-only access is insufficient for policy writes, but the provider's own authorization may still deny operations even when permission checks appear to succeed.
 * *Write scope:* The write scope covers applying, editing, and removing supported policies. Only Kong Gateway supports enabling and disabling policies. Amazon API Gateway, Azure API Management, and Google Apigee have no native enable or disable concept, so you apply or remove policies instead.
 * *Provider write permissions:* Grant the provider-specific *Write scope (policy apply)* listed for each API gateway provider in the Scanner Prerequisites Matrix.
 
@@ -340,7 +328,7 @@ The following table summarizes the read and write scopes for each API gateway pr
 
 | Amazon API Gateway
 | `apigateway:GET`
-| `apigateway:PUT`, `apigateway:POST`, `apigateway:DELETE`
+| `apigateway:PUT`, `apigateway:POST`, `apigateway:PATCH`, `apigateway:DELETE`, `apigateway:UpdateRestApiPolicy`
 
 | Azure API Management
 | API Management Service Reader role (ARM)
@@ -357,7 +345,7 @@ The following table summarizes the read and write scopes for each API gateway pr
 
 === Read-Only APIs
 
-When a scanner connection has only read access to a gateway, its API instances appear as *Read-Only* and policy actions are unavailable. To enable policy write, grant the connection's identity the provider's write scope, then update the connection from the API instance.
+When a scanner connection has only read access to a gateway, its API instances appear as *Read-Only*. To enable policy write, grant the required provider permissions to the identity used by the existing scanner connection. If required, refresh the permission status from the UI to reflect the updated permissions.
 
 === Tracked Applies
 
