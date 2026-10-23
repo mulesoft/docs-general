@@ -1,5 +1,5 @@
 = Agent Fabric Overview
-:keywords: mulesoft agent fabric, mcp server, mcp bridge, mcp connector, a2a bridge, a2a connector, agent broker, enterprise actionability, ai agents, mulesoft integration, model context protocol
+:keywords: agent fabric, mcp server, mcp bridge, mcp connector, a2a bridge, a2a connector, agent broker, ai control plane, ai agents, model context protocol, registry, governance, security,cost control
 
 Teams build AI agents, MCP servers, and APIs across multiple platforms. As a result, it's challenging to easily reuse, apply consistent security controls, or track end-to-end cost. Agent Fabric is the AI control plane for that landscape. With Agent Fabric, gain visibility across every asset, let agents take action in your existing tech stack, enforce open policies at runtime, and see and optimize what your AI investments are costing.
 
@@ -194,7 +194,12 @@ Omni Gateway is Agent Fabric's runtime enforcement point: a single gateway that 
 
 Use a managed instance on Omni Gateway when agents or APIs handle sensitive data, call external systems, or must follow the same runtime rules in every environment. LLM traffic uses a model proxy, which you also deploy to Omni Gateway.
 
-Learn more: xref:exp-instances-add.adoc[] and xref:exp-policies-apply-manage.adoc[]
+Learn more: 
+
+* xref:gateway::index.adoc[] 
+* xref:gateway::gateway-getting-started-overview.adoc[]
+* xref:exp-instances-add.adoc[]
+* xref:exp-policies-apply-manage.adoc[]
 
 === Governance Strategies
 
@@ -270,7 +275,12 @@ Agents that call each LLM provider directly get a different endpoint, a differen
 
 Use a model proxy when agents call LLMs and you need the same governance, routing, and cost visibility across providers.
 
-Learn more: xref:model-proxy.adoc[], xref:model-proxy-semantic-service.adoc[], and xref:model-proxy-semantic-caching-service.adoc[]
+Learn more: 
+
+* xref:model-proxy.adoc[]
+* xref:model-proxy-semantic-service.adoc[]
+* xref:model-proxy-semantic-caching-service.adoc[]
+* xref:gateway::index.adoc[]
 
 === Budget Management
 
@@ -317,7 +327,10 @@ You need a place to design and test an agent network before it hits production. 
 
 Use Anypoint Code Builder when you need to design, test, or generate an agent network before you deploy it.
 
-Learn more: xref:anypoint-code-builder::index.adoc[] and xref:agent-network::af-define-your-agent-network-specification.adoc[]
+Learn more: 
+
+* xref:anypoint-code-builder::index.adoc[]
+* xref:agent-network::af-define-your-agent-network-specification.adoc[]
 
 === MuleSoft Vibes
 
@@ -329,7 +342,10 @@ Hand-authoring a broker and agent network can be slow, and lead to mistakes at d
 
 Use MuleSoft Vibes when you want to draft or change project files from a description instead of authoring every file by hand.
 
-Learn more: xref:anypoint-code-builder::vibes-get-started.adoc[] and xref:agent-network::af-define-your-agent-network-specification.adoc[]
+Learn more: 
+
+* xref:anypoint-code-builder::vibes-get-started.adoc[]
+* xref:agent-network::af-define-your-agent-network-specification.adoc[]
 
 == What's Next
 
