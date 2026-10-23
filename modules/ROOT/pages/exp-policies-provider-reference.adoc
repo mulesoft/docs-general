@@ -30,14 +30,14 @@ Before getting started, make sure you have:
 |Yes |Yes |Yes |No (no native concept) |Yes |Yes
 
 |Amazon API Gateway
-|No |No |No |No (not supported yet) |Yes |Yes
+|Yes |Yes |Yes |No (no native concept) |Yes |Yes
 |===
 
 [NOTE]
 ====
 * Apply and Edit are further limited to the supported (open-backed) policies. A Yes in the Edit column means the provider supports editing, not that every policy is editable. See xref:exp-policies-apply-manage.adoc#policy-edit-restrictions[Policy Edit Restrictions].
-* Apigee and Azure API Management have no native enabled/disabled state (a policy is either attached or not), so the enable/disable actions aren't available there.
-* Amazon API Gateway is not supported for policy write yet.
+* Apigee, Azure API Management, and Amazon API Gateway have no native enabled/disabled state (a policy is either attached or not), so the enable/disable actions aren't available there.
+* Amazon API Gateway policy write is supported for REST APIs only; HTTP APIs are not supported. See <<aws-specific-behavior>>.
 * View and Track/Govern reflect read-only visibility and governance reporting, which every provider supports regardless of write access. See xref:exp-governance-create-strategy.adoc[Create Governance Strategies].
 ====
 
@@ -49,6 +49,7 @@ Because policy management reuses the scanner connection, the permissions you see
 * Azure API Management: The enhanced MuleSoft experience checks the connected Azure principal's role-based permissions on the API resource, including permissions inherited from higher scopes.
 * Kong Gateway: access is based on your Kong Konnect roles and team memberships for the instance's control plane. Admin and power teams get full access; otherwise a matching role is required.
 * Omni Gateway: uses the same Anypoint Platform permissions as elsewhere in the product, with no separate provider-side check.
+* Amazon API Gateway: The enhanced MuleSoft experience reuses the scanner connection's AWS credentials. The connected AWS account must have permission to read, change, and deploy the API. A connection that can scan the API may still lack permission to change policies. Cross-account connections using a hub role are not supported for policy writes.
 
 == Injection Points
 
@@ -57,17 +58,18 @@ An injection point is where a policy runs relative to the request and response. 
 * Google Apigee: you can choose request or response. On the Apigee side, both map to the proxy-level `PreFlow` (request and response map to the corresponding `PreFlow` section).
 * Azure API Management: supports `inbound`, `outbound`, and `backend`. Azure's error-handling section is not editable through the enhanced MuleSoft experience.
 * Kong Gateway: the injection point is informational only; Kong's plugin phase is fixed, so it doesn't change placement.
+* Amazon API Gateway: placement answers "which part of the traffic does this policy affect?" For example, header mapping can add request or response headers to a selected operation. See <<aws-specific-behavior>>.
 
 [[instance-locking-during-operations]]
 == Instance Locking During Operations
 
 To prevent conflicting concurrent changes, an in-progress operation takes a lock. The scope of that lock differs by provider:
 
-* Azure API Management and Google Apigee lock the entire API instance. While one policy operation is running, no other policy operation on that instance can start. Wait for the running one to finish. On Azure, an instance's policies live in a single document, so any change touches the whole thing. On Apigee, a change re-deploys the whole proxy, so it's inherently instance-wide.
+* Azure API Management, Google Apigee, and Amazon API Gateway lock the entire API instance. While one policy operation is running, no other policy operation on that instance can start. Wait for the running one to finish. On Azure, an instance's policies live in a single document, so any change touches the whole thing. On Apigee, a change re-deploys the whole proxy, so it's inherently instance-wide. On Amazon API Gateway, a policy change deploys the entire API configuration to the selected stage, even when the policy targets only one path or method.
 * Kong Gateway locks only the specific policy that you modify. You can work with other policies on the same instance simultaneously.
 * Omni Gateway takes no such lock.
 
-If an operation is already in progress, another operation is mid-flight on that instance (Azure or Apigee) or on that same policy (Kong). Wait for the operation to complete. You can track it in the *Activity log*. See xref:exp-policies-activity-log.adoc[].
+If an operation is already in progress, another operation is mid-flight on that instance (Azure, Apigee, or Amazon API Gateway) or on that same policy (Kong). Wait for the operation to complete. You can track it in the *Activity log*. See xref:exp-policies-activity-log.adoc[].
 
 [[apigee-required-permissions-and-roles]]
 == Apigee Required Permissions and Roles
@@ -90,50 +92,163 @@ Any custom role or higher-scope grant that includes the five permissions also wo
 [[supported-policies-and-native-equivalents]]
 == Supported Policies and Native Equivalents
 
-At launch, open policies support five open use cases. Each maps to a native policy on each provider. These native policies are the ones you can create and edit, along with the additional native Kong policies listed after this table. Other recognized policies are view-only.
+At launch, open policies support six open use cases. Each maps to a native policy on each provider. These native policies are the ones you can create and edit, along with the additional native Kong policies listed after this table. Other recognized policies are view-only.
 
-[cols="1,1,1,1,1",options="header"]
+Header Manipulation is split into two separate open policies: Header Injection and Header Removal.
+
+[cols="1,1,1,1,1,1",options="header"]
 |===
-|Open Use Case |Omni Gateway |Google Apigee |Azure API Management |Kong Gateway
+|Open Use Case |Omni Gateway |Google Apigee |Azure API Management |Kong Gateway |Amazon API Gateway
 
 |API Key Enforcement
 |Client ID Enforcement
 |Verify API Key
 |— (not available)
 |Key Auth
+|— (not available)
 
 |CORS
 |CORS
 |CORS
 |CORS
 |CORS
+|CORS
 
-|Header Manipulation
-|Header Injection + Header Removal
+|Header Injection
+|Header Injection
 |Assign Message (request & response)
 |Set Header (inbound & outbound)
 |Request Transformer + Response Transformer
+|Header Mapping
+
+|Header Removal
+|Header Removal
+|Assign Message (request & response)
+|Set Header (inbound & outbound)
+|Request Transformer + Response Transformer
+|— (not available)
 
 |IP Allowlist
 |IP Allowlist
 |Access Control
 |IP Filter
 |IP Restriction
+|IP Filter
 
 |JWT Validation
 |JWT Validation (Mule 4 & Flex Gateway)
 |Verify JWT
 |— (not available)
 |JWT Signer
+|— (not available)
 |===
 
 [NOTE]
 ====
 * A dash (—) means that the provider doesn't offer the use case because it lacks a native equivalent.
-* Some use cases map to more than one native policy. For example, Header Manipulation applies separate request/response (or inbound/outbound) policies, and Omni Gateway's Header Manipulation is two policies (injection and removal).
+* Some use cases map to more than one native policy. For example, Header Injection and Header Removal apply as separate policies. On Omni Gateway, these are two separate policies; on other providers they may map to a single policy template used for both request and response operations.
+* For Amazon API Gateway, supported open policies cover CORS, IP Allowlist, and Header Injection. See <<aws-specific-behavior>>.
 ====
 
 Open policies also support these native Kong policies: `acl`, `acme`, `basic-auth`, `header-cert-auth`, `ldap-auth`, `ldap-auth-advanced`, `mtls-auth`, `opa`, `tls-handshake-modifier`, and `tls-metadata-headers`.
+
+[[aws-specific-behavior]]
+== Amazon API Gateway Specific Behavior
+
+Amazon API Gateway (REST APIs) policy write support includes policy apply, edit, and remove, with targets below the whole API instance.
+
+=== Setup and Prerequisites
+
+Before writing policies for Amazon API Gateway, ensure that your configuration meets these requirements:
+
+* Use REST APIs, as HTTP APIs aren't supported for policy writes
+* Deploy the API stage that you want to change
+* Select the specific stage in your configuration
+* Use single-account connections, as cross-account connections with a hub role aren't supported
+* Grant the connected AWS account permissions to read, change, and deploy the API, because scanning permissions alone don't allow policy changes
+
+=== Policy Scopes
+
+Policy scopes define the breadth of traffic affected. Supported scopes differ by policy type and flow:
+
+Open policy scopes:
+
+* IP Allowlist: targets the entire instance (all paths and methods in the selected stage).
+* CORS: expands to all existing deployed paths with methods other than OPTIONS.
+* Header Injection: expands to eligible operations (existing targets with non-Lambda, non-HTTP-proxy integrations, and not ANY, OPTIONS, or CONNECT methods).
+
+Native policy scopes (when accessed outside the open flow):
+
+* IP Filter supports: INSTANCE, PATH, METHOD, and OPERATION.
+* CORS supports: PATH.
+* Header Mapping supports: OPERATION.
+
+To change a policy's target, remove the policy and reapply it with the new target.
+
+The target picker uses paths and methods from the API specification. If a route is missing from the specification, update the specification to match your AWS API before you apply the policy.
+
+A policy can have a specific path or method and still be editable. It becomes read-only when the enhanced MuleSoft experience can't safely manage its settings or target.
+
+=== Deployment and Failures
+
+Applying, editing, or removing an AWS policy deploys the entire API configuration to the selected stage. Keep these impacts in mind:
+
+* Other pending changes in AWS also deploy, even when the policy targets only one path.
+* CORS and Header Mapping rebuild the API configuration from the deployed version of the selected stage. This can overwrite undeployed changes and affect other settings such as API keys or caching.
+* Before you apply a policy, review pending changes in AWS.
+
+An operation can fail at two points, leaving different outcomes:
+
+* Failure before deployment: The platform modified the editable API definition to apply the policy but failed to deploy. The stage continues running its previous version. Pending changes remain in the editable configuration.
+* Failure after deployment starts: The platform deployed the change, but verification failed. The stage runs the new version even though the operation reports as failed.
+
+Failed operations don't automatically undo any changes made by the platform or by you. To recover after a failed operation:
+
+. Check the *Activity log* tab for details to determine which failure point occurred.
+. In the AWS Management Console, check both the editable configuration and the version deployed to the selected stage.
+. Resolve any differences between editable and deployed state, based on what you want the stage to run.
+. Rescan to refresh the enhanced MuleSoft experience view.
+. Retry the operation.
+
+Rescan refreshes the enhanced MuleSoft experience view without deploying or undoing changes. Rescan also after:
+
+* Changing a managed policy or its target.
+* Deleting or reordering IP filtering rules in AWS.
+* Correcting a failed operation or when a successful change is missing from the enhanced MuleSoft experience.
+
+=== CORS Behavior
+
+* Open CORS applies to currently deployed paths that have a method other than OPTIONS. Paths added later don't automatically receive the policy.
+* CORS adds or updates the OPTIONS method used for browser preflight requests. If an existing OPTIONS method has a custom configuration that the enhanced MuleSoft experience can't manage, the operation is blocked.
+* AWS supports one allowed origin. AWS rejects multiple origins, as well as `*` when credentials are allowed.
+* For Lambda or HTTP proxy integrations, the backend requires CORS response headers. A successful preflight alone doesn't guarantee that the browser can read the response.
+* The entire API shares optional CORS headers for default client (4xx) and server (5xx) errors. Setting them from another path can replace earlier values. Turning off the option or removing a path's CORS policy doesn't clear those shared headers.
+* Custom CORS configurations are sometimes read-only. CORS and Header Mapping changes are blocked while the selected stage uses a canary deployment to prevent conflicts during the staged rollout.
+
+=== Header Injection Behavior
+
+Open Header Injection and native Header Mapping differ in scope and targeting:
+
+* Open Header Injection: Maps to AWS Header Mapping and applies the same headers with fixed values across all eligible operations in the deployed API. Eligible means existing operations with non-Lambda, non-HTTP-proxy integrations, and not ANY, OPTIONS, or CONNECT methods. Newly added operations don't inherit these mappings automatically. To add the policy to new operations, remove and reapply it after updating the specification.
+* Native Header Mapping: Targets a single operation (one method at one path). Use native Header Mapping when you want headers on specific operations only.
+
+For both flows:
+
+* The target method and integration must already exist. Lambda or HTTP proxy integrations aren't supported, along with ANY, OPTIONS, or CONNECT targets.
+* If the same header is already configured, the operation fails instead of overwriting it.
+* Configure Access-Control headers through CORS instead.
+* Header names must be valid and unique (ignoring case). Values can't contain line breaks or single quotes.
+* For responses, the supported form uses the same header value across response codes. Custom or incomplete mappings are sometimes read-only.
+* The platform hides sensitive values after scanning, and policies with hidden values are read-only. A hidden value doesn't mean the header is absent.
+
+=== IP Filtering Behavior
+
+* Native IP filtering lets you allow or deny requests based on source IP address. An allow rule permits matching requests, and a deny rule blocks matching requests.
+* Open IP Allowlist adds an allow rule and keeps existing AWS rules. Existing allow and deny rules still affect access. Adding this policy alone doesn't guarantee that every unlisted address is blocked.
+* IPv4 and IPv6 addresses and ranges are supported. Private API endpoints aren't supported because they require a different method to identify the caller's original IP address.
+* Paths with parameters, such as `/orders/{id}` or `/{proxy+}`, use AWS wildcard matching and sometimes match more routes than intended. Check the resulting target after scanning.
+* Editing or removing a policy changes its scanned rule and keeps other rules. Reordering or deleting rules directly in AWS can change how the enhanced MuleSoft experience identifies remaining rules. Rescan before you edit another affected policy.
+* The entire AWS resource policy has an 8,192-character limit. A small addition can fail if the policy is already close to that limit.
 
 == See Also
 
