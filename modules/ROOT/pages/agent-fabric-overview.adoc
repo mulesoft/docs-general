@@ -177,7 +177,10 @@ A defined policy isn't the same as healthy traffic. Monitoring shows latency, er
 
 Use monitoring during development to validate performance and in production to meet SLAs and catch issues before they affect users.
 
-Learn more: xref:exp-services-monitoring.adoc[] and xref:exp-alerts-configure-notifications.adoc[]
+Learn more: 
+
+* xref:exp-services-monitoring.adoc[]
+* xref:exp-alerts-configure-notifications.adoc[]
 
 [[govern]]
 == AI Security and Governance
@@ -235,15 +238,24 @@ Services that run on a third-party API gateway still must meet your standards. F
 
 Use cross-gateway governance when APIs that matter to the business run on a connected third-party gateway and still need to meet your standards.
 
-Learn more: xref:exp-governance-govern-third-party-apis.adoc[] and xref:exp-governance-monitor-cross-gateway-conformance.adoc[]
+Learn more: 
+
+* xref:exp-governance-govern-third-party-apis.adoc[]
+* xref:exp-governance-monitor-cross-gateway-conformance.adoc[]
 
 === Security
 
 A compromised, misconfigured, or malicious agent can leak data, take unauthorized actions, or drive unexpected cost. These controls detect that behavior, keep credentials in the vault you already use, and surface known risk on services you've already discovered.
 
-* Detect and contain rogue agents: Apply Rogue Agent Detection and Agent Kill Switch policies to each model proxy you want to protect. Detection flags risky behavior for your review. The Kill Switch policy blocks that agent's access to the model proxy when you quarantine it. Quarantine always requires your review, and you reverse it if needed. Learn more: xref:exp-detect-and-contain-rogue-agents.adoc[]
-* External vaults: Register an external vault so credentials stay in AWS Secrets Manager, Azure Key Vault, or HashiCorp Vault. Only metadata is stored (zero-copy). Learn more: xref:exp-vaults-manage.adoc[]
-* Akamai risk correlation: Correlate security findings to APIs and MCP services you've already discovered, so you can triage risk before it becomes an incident. Learn more: xref:exp-akamai-risk-correlation.adoc[]
+* Detect and contain rogue agents: Apply Rogue Agent Detection and Agent Kill Switch policies to each model proxy you want to protect. Detection flags risky behavior for your review. The Kill Switch policy blocks that agent's access to the model proxy when you quarantine it. Quarantine always requires your review, and you reverse it if needed. 
++
+Learn more: xref:exp-detect-and-contain-rogue-agents.adoc[]
+* External vaults: Register an external vault so credentials stay in AWS Secrets Manager, Azure Key Vault, or HashiCorp Vault. Only metadata is stored (zero-copy). 
++
+Learn more: xref:exp-vaults-manage.adoc[]
+* Akamai risk correlation: Correlate security findings to APIs and MCP services you've already discovered, so you can triage risk before it becomes an incident. 
++
+Learn more: xref:exp-akamai-risk-correlation.adoc[]
 
 ////
 === Trusted Agent Identity
