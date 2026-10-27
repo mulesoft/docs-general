@@ -118,7 +118,7 @@ Headless automation obtains its bearer token through the platform's client crede
 
 You don't write the push script by hand, and there's no SDK to install. Instead, an AI coding assistant writes the script for you from a skill file that MuleSoft maintains.
 
-. Download the xref:https://dev-portal.mulesoft.com/skills/push-inventory-collector.html[`push-inventory-collector` skill] file from the MuleSoft Developer Hub and paste it into an AI coding assistant, such as Claude Code, Cursor, or Copilot.
+. Get the https://dev-portal.mulesoft.com/skills/push-inventory-collector.html[`push-inventory-collector` skill^] from the MuleSoft Developer Hub and paste it into an AI coding assistant, such as Claude Code, Cursor, or Copilot.
 . Answer the assistant's questions, one at a time:
 * *Service type*: `agent`, `mcp`, or `rest-api` (the one type this scanner configuration accepts).
 * *Provider inventory*: the provider APIs that list your services and fetch each service's definition, such as an OpenAPI or Postman description, or a redacted request and response.
