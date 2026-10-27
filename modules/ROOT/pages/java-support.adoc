@@ -196,7 +196,7 @@ If a build or test error persists after several attempts, the skill asks you how
 
 ==== Changes the Skill Makes to Your Project
 
-After you approve the plan, the skill changes the following files:
+After you approve the plan, the skill changes these files:
 
 [%header,cols="1,3"]
 |===
