@@ -150,6 +150,7 @@ MCP Bridge generates each API tool from the API specification. Before you create
 ** *AI tool name* — The name agents use to call the tool. The prefix that identifies the API, such as `cmdb-sync_`, can't be changed.
 ** *Description* — The description agents use to decide when to call the tool. Write a description that states what the tool does and what it returns.
 ** *Schema (JSON)* — The tool's input schema, which defines the arguments the agent supplies when calling the tool. Editing the schema replaces the schema derived from the API specification.
+** *Enable structured content* — Whether the MCP server includes the upstream response body in the tool result's `structuredContent` field. When enabled, you can add or edit the output schema. This option is disabled by default. See <<structured-content>>.
 --
 . Optionally, in *HTTP mapping (optional)*, edit how the tool's arguments map to the HTTP request. These values are populated from the API specification.
 +
@@ -160,6 +161,15 @@ MCP Bridge generates each API tool from the API specification. Before you create
 ** *Body* — A DataWeave expression that builds the request body. The default is `#[vars.params.body]`. To test the expression, click *Try the DataWeave expression in the playground*.
 --
 . Click *Save*.
+
+[[structured-content]]
+== Structured Content
+
+When enabled, the tool result includes the upstream response body in two fields: the `text` content and the `structuredContent` field. If the response body is valid JSON, MCP Bridge returns it in `structuredContent` as a JSON object. Otherwise, MCP Bridge wraps the response body in a JSON object with a `text` field in `structuredContent`.
+
+The *Enable structured content* setting controls both the `structuredContent` field in the tool result and the tool's output schema. The two are always enabled or disabled together. MCP clients expect `structuredContent` in every successful result for a tool that advertises an output schema, so a tool with an output schema must have structured content enabled. If it doesn't, compliant MCP clients reject the result and the tool call fails.
+
+Structured content is disabled by default. When enabled, MCP Bridge returns the upstream response body both as text content and as structured content, which can roughly double the response payload size. Enable it only when a tool requires structured output.
 
 [[edit-mcp-server]]
 == Edit an MCP Server
