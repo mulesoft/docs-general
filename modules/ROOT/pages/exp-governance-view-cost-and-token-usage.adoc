@@ -1,5 +1,5 @@
 = Managing Costs and Token Usage
-:keywords: cost management, token usage, ai governance, usage metrics, anypoint platform, cost tracking, ai services
+:keywords: cost management, token usage, budgets, new budget, spend limit, token limit, model wallet budget, tokens cost toggle, optimizations, agent token savings, MCP server token savings, semantic caching, optimization policies
 
 Use cost and token metrics to understand usage, control spend, and identify optimization opportunities.
 
@@ -103,20 +103,22 @@ Use the search on the *Budgets* table to find specific budgets.
 
 === Add a Budget
 
+A budget caps usage for a model wallet against a provider and a model over a recurring period. Add a budget when you create or edit a model wallet, or add a budget from the budgets view in *Governance* > *Cost Management*.
+
 . In the *Budgets* tab, select *New Budget*.
 . In the *New Budget* dialog, configure the budget:
 +
 --
 * *Model Wallet* (required): Select the model wallet to scope the budget.
 * *Provider* (required): Select an LLM provider.
-* *Model* (required): Select a model. This field appears after you select a provider.
+* *Model* (required): Select the model to apply the budget to. This field stays unavailable until you select a provider.
 * *Period*: Select *Daily*, *Weekly*, or *Monthly*.
 * *Metric*: Select *Spend* to set a dollar limit, or *Tokens* to set a token count limit.
-* *Spend Limit (USD)* or *Token Limit* (required): Enter the maximum allowed value.
+* *Spend Limit (USD)* or *Token Limit* (required): Enter the maximum allowed value. The field label matches the metric.
 --
 . Select *Create Budget*.
 
-When usage reaches the budget limit, the system blocks requests. Each model wallet, provider, and model combination supports only one budget.
+When usage reaches the budget limit, the system blocks requests. A model wallet can have more than one budget. Each model wallet, provider, and model combination supports only one budget.
 
 For information about model wallets and how they combine authentication credentials with budget limits, see xref:exp-model-wallets-manage.adoc[].
 

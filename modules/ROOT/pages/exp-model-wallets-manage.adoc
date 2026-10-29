@@ -1,5 +1,5 @@
 = Capping Spend for Callers of Model Proxies
-:keywords: model wallets, model wallet, budgets, token budget, spend limit, model proxies, jwt claims, cost management, anypoint platform
+:keywords: model wallet, create model wallet, new model wallet, required claims, JWT claims, X-Client-Id, client ID, cap caller spend, token budget, spend limit, add budget, model proxy policies
 
 A model wallet identifies a caller of a model proxy and caps that caller's token or dollar spend against a provider over a set time window. Each wallet has a system-generated client ID and required JSON Web Token (JWT) claims that you define.
 
@@ -64,7 +64,7 @@ Repeat these policy steps for each model proxy that callers reach through the wa
 [[create-a-model-wallet]]
 == Create a Model Wallet
 
-Create a model wallet to define the client ID, JWT claims, and budgets for a model.
+Create a model wallet to name the wallet, select an environment, define the JWT claims that identify callers, and add at least one budget. A business group can have up to 50 model wallets.
 
 To create a model wallet, you need:
 
@@ -117,26 +117,27 @@ Manage budgets separately from the wallet name, description, and claims. See <<a
 [[add-a-budget-to-a-wallet]]
 == Add a Budget to a Wallet
 
-A budget caps usage for a wallet against a provider over a recurring period. Add a budget when you create or edit a model wallet, or add a budget from the budgets view in *Governance* > *Cost Management*.
-
-Add multiple budget limits to a wallet. Assign each model to only one budget limit.
+A budget caps usage for a wallet against a provider and a model over a recurring period. Add a budget when you create or edit a model wallet, or add a budget from the budgets view in *Governance* > *Cost Management*.
 
 . Open the model wallet from *Portfolio* > *Model Proxies* > *Model Wallets*, or open the budgets view in *Governance* > *Cost Management*.
 . In the *Budgets* section, select *Add Budget*.
 . Enter the budget details:
 +
 --
-** *Provider*: The provider the budget tracks.
-** *Period*: *Daily*, *Weekly*, or *Monthly*.
-** *Resets on Day of Month*: The day of each period when the usage counter returns to zero.
-** *Metric*: Whether the limit is measured in dollars (*Spend*) or *Tokens*.
-** *Spend Limit (USD)*: The limit amount for the selected metric.
+** *Model Wallet*: The wallet you're adding the budget to. This value is already set.
+** *Provider*: Select an LLM provider.
+** *Model*: Select the model to apply the budget to. This field stays unavailable until you select a provider.
+** *Period*: Select *Daily*, *Weekly*, or *Monthly*.
+** *Metric*: Select *Spend* to set a dollar limit, or *Tokens* to set a token count limit.
+** *Spend Limit (USD)* or *Token Limit*: Enter the maximum allowed value. The field label matches the metric.
 --
 . Select *Add Budget*.
 
+A model wallet can have more than one budget. Each model wallet, provider, and model combination supports only one budget. 
+
 Spend-based budgets depend on model costs. To track dollar spend accurately, set a cost for each model on the *Models* page. Models without configured costs show zero spend. See xref:exp-models-manage-costs.adoc[Setting Model Costs for Spend Tracking].
 
-When a wallet reaches its budget, the model proxy blocks requests to that provider's models. If a fallback route exists, then the model proxy routes the request to the next model in the proxy's route.
+When usage reaches the budget limit, the model proxy blocks requests for that provider and model. If a fallback route exists, then the model proxy routes the request to the next model in the proxy's route.
 
 Budgets are approximate rather than a real-time hard cutoff. The model proxy tracks total token consumption across routes as a governance and cost-awareness tool. Usage can briefly exceed a limit before the model proxy blocks requests.
 
