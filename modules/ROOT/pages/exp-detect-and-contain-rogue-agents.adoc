@@ -33,7 +33,7 @@ Confirm these prerequisites are in place.
 
 * Register each agent you want to monitor with a unique instance name and ID, and link it to its model proxies. This lets flags, logs, and containment actions target the correct agent.
 
-* Set up your agents as service identities in your enterprise identity provider (IdP). Configure the IdP to include each agent's identifier and the identity of the person the agent is acting for in the tokens it issues.
+* In your enterprise identity provider (IdP), give each agent its own non-human account. Issue tokens that include the agent's identifier and an identifier for the person the agent acts for. IdPs use their own names for these accounts, such as service principal or service app. 
 
 * Apply the xref:gateway::policies-included-jwt-validation.adoc[JWT Validation] policy to each model proxy you want to protect. JWT Validation publishes the verified claims that Rogue Agent Detection and Agent Kill Switch use to identify the calling agent.
 
