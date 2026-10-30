@@ -1,0 +1,261 @@
+= Deploy Agent Fabric on Runtime Fabric on Red Hat OpenShift
+:keywords: agent fabric, agent network, runtime fabric, openshift, omni gateway, managed omni gateway, broker, mcp server, deploy, install, prerequisites
+
+Deploy an agent network, with its broker, Managed Omni Gateways, and MCP servers, to Anypoint Runtime Fabric on Red Hat OpenShift Container Platform. This guide lists the prerequisites for the full stack, the order in which to install each component, and how to verify each component before you start the next one.
+
+Each step links to the product documentation that describes the component in detail.
+
+// ENG-REVIEW (W-24166749): Content is derived from field notes and published docs. Engineering sign-off is pending for: Before You Begin, Architecture, Steps 1-3, Step 8, and Step 9. Steps 4-7 were validated by Sebastian Blazquez on 2026-09-18 (confirm the spelling of the name).
+
+[[architecture]]
+== Architecture
+
+The agent network runs in the OpenShift cluster, behind two Managed Omni Gateways that the Runtime Fabric agent deploys:
+
+* The Runtime Fabric operator installs and reconciles the Runtime Fabric agent. The agent connects to the Anypoint Platform control plane and deploys the gateways, brokers, and MCP servers.
+* External clients and agents connect over HTTPS to an OpenShift route, which forwards traffic to the ingress Managed Omni Gateway.
+* The ingress gateway forwards traffic to the broker. The broker calls MCP servers in the cluster.
+* The broker reaches large language models (LLMs) and other external services only through the egress Managed Omni Gateway. The egress gateway has no public endpoint and no route.
+* If the cluster reaches the internet through a forward proxy, both the Runtime Fabric agent and the egress gateway connect through the proxy.
+
+// TODO(diagram): Export this Mermaid source to images/af-rtf-openshift-architecture.png and add
+// image::af-rtf-openshift-architecture.png["Agent network on Runtime Fabric on OpenShift: clients reach the ingress Omni Gateway through an OpenShift route; the broker calls MCP servers and reaches the LLM through the egress Omni Gateway and forward proxy"]
+//
+// flowchart TB
+//     CLIENT["External clients / agents"]
+//     subgraph OCP["OpenShift cluster"]
+//         OP["Runtime Fabric operator"] -->|installs & reconciles| AG["Runtime Fabric agent"]
+//         ROUTE["OpenShift route"]
+//         subgraph GWNS["Gateway namespace"]
+//             ING["Ingress Managed Omni Gateway"]
+//             EG["Egress Managed Omni Gateway"]
+//         end
+//         subgraph APPNS["Agent network namespace"]
+//             BR["Broker"]
+//             MCP["MCP servers"]
+//         end
+//         AG -->|deploys| ING & EG & BR & MCP
+//     end
+//     CLIENT -->|HTTPS| ROUTE -->|re-encrypt| ING --> BR --> MCP
+//     BR --> EG -->|TLS, trusts private CA| LLM["LLM"]
+//     AG -.->|via forward proxy| CP["Anypoint control plane"]
+//     EG -.->|via forward proxy| PROXY["Forward proxy"]
+//
+// ENG-REVIEW: Confirm whether any LLM endpoint requires a client certificate (mTLS). Step 7 covers server certificate trust only.
+
+[[before-you-begin]]
+== Before You Begin
+
+Complete these checks before you start Step 1.
+
+Agent Network Prerequisites::
+Review the xref:agent-network::af-get-started.adoc#before-you-begin[prerequisites for setting up agent network gateways and deployment targets], including the Anypoint Platform permissions. Agent network deployments are available on US Cloud and EU Cloud only.
+
+Cluster Version::
+Confirm that the Kubernetes version of your OpenShift cluster supports the Runtime Fabric operator version that you want to install. A newer operator version doesn't appear in OperatorHub if the cluster's Kubernetes version is below the operator's minimum. See xref:runtime-fabric::install-openshift.adoc#kubernetes-version-compatibility[Kubernetes Version Compatibility]. Managed Omni Gateway requires Runtime Fabric 2.11.0 or later.
+
+Access::
++
+Confirm that you have:
+
+* Privileged user permissions on the OpenShift cluster.
+* Permission to create a Runtime Fabric in Runtime Manager, in the business group that owns the fabric. That business group becomes the owner business group in usage reports.
+* Managed Omni Gateway resources in the business group where you deploy the gateways. See xref:gateway::gateway-managed-set-up.adoc#rtf[Deploy a Managed Omni Gateway: Runtime Fabric].
+* Access to `registry.connect.redhat.com` and to the Runtime Fabric image registry for your control plane, or a local registry. If you use a local registry, synchronize it from the agent manifest API, not from a `list-tags` request. See xref:runtime-fabric::configure-local-registry.adoc#synch-rtf[Synchronize Runtime Fabric Core Software Images].
+
+Mule License Key::
+Have your Mule license key encoded in Base64. See xref:runtime-fabric::install-openshift.adoc#encode-the-license-key[Encode the License Key].
+
+Security Context Constraints::
+Runtime Fabric and Managed Omni Gateway pods run under the `anyuid` security context constraint (SCC). If your cluster enforces a restricted SCC, such as `nonroot-v2`, request a security exception for `anyuid` before you start. Without the exception, OpenShift rejects the pods and they never start, so no application logs show an error. See xref:runtime-fabric::install-openshift.adoc#restricted-scc[Clusters That Enforce a Restricted Security Context Constraint].
+
+Network Access::
+Confirm that the cluster can reach the Anypoint Platform control plane hosts and ports. See xref:gateway::review-prerequisites.adoc[]. If the cluster connects through a forward proxy, confirm that the proxy doesn't inspect TLS traffic (SSL passthrough) to the control plane and other mTLS endpoints.
+
+Namespace Resource Quotas::
+Size the resource quotas for the Runtime Fabric, gateway, and agent network namespaces to fit the gateways, every broker, and every MCP server. If a quota is too low, Kubernetes can't create the pods and the deployment fails with a timeout. Anypoint Code Builder deploys brokers with default CPU and memory settings. To set broker resources, deploy with the Anypoint CLI. See xref:agent-network::af-deploy-agent-network-targets.adoc#configure-cpu-and-memory-resources-for-an-agent-broker[Configure CPU and Memory Resources for an Agent Broker].
++
+// ENG-REVIEW: Add sizing guidance for MCP servers and a recommended quota baseline (depends on docs-code-builder PR #794, W-24167246).
+
+TLS Certificates::
++
+Have these certificates ready, in PEM format:
+
+* The cluster wildcard certificate and private key, which the OpenShift route presents to external clients.
+* The CA certificate that signs the internal certificate of Managed Omni Gateway.
+* The complete CA chain of any private or corporate CA that signs the certificates of your LLM and other upstream services.
+
+[[step-1]]
+== Step 1: Create the Runtime Fabric and Prepare the Namespace
+
+. In Runtime Manager, create a Runtime Fabric for Red Hat OpenShift, select *Operator*, and copy the activation data. See xref:runtime-fabric::install-openshift.adoc#create-a-runtime-fabric-using-runtime-manager[Create a Runtime Fabric Using Runtime Manager].
+. Create the Runtime Fabric namespace and the Docker pull secret:
++
+[source,ssh]
+----
+oc create ns <rtf-namespace>
+oc create secret docker-registry <pull-secret> --namespace <rtf-namespace> \
+  --docker-server=<registry-url> --docker-username=<username> --docker-password=<password>
+----
+. If you deploy the gateways and the agent network to separate namespaces, configure authorized namespaces now. You must create the `authorized-namespaces` ConfigMap and the `anyuid` RoleBindings before you install the operator. See xref:runtime-fabric::install-openshift.adoc#configure-authorized-namespaces[Configure Authorized Namespaces].
+
+[[step-2]]
+== Step 2: Install and Configure the Runtime Fabric Operator
+
+. In the OpenShift console, install the Runtime Fabric operator (`rtf-agent-operator`) from OperatorHub. The installation requires manual approval. See xref:runtime-fabric::install-openshift.adoc#install-the-red-hat-openshift-runtime-fabric-operator[Install the Red Hat OpenShift Runtime Fabric Operator].
++
+If the operator version that you want doesn't appear, upgrade your cluster to a supported Kubernetes version.
+. Create the operator instance in `<rtf-namespace>` and set the xref:runtime-fabric::install-openshift.adoc#installation-parameters-reference[installation parameters]:
+** `activationData`: the activation data from Step 1.
+** `muleLicense`: your Base64-encoded Mule license key.
+** `global.image.rtfRegistry` and `global.image.pullSecretName`: your registry and pull secret.
+** `global.authorizedNamespaces`: `true`, if you configured authorized namespaces.
+** `proxy.http_proxy` and `proxy.http_no_proxy`: your forward proxy, if the cluster connects through one. These settings apply to the Runtime Fabric agent only. Managed Omni Gateway doesn't inherit them, so you configure its proxy in Step 6.
++
+Don't rename the instance.
++
+// ENG-REVIEW: gateway-managed-set-up.adoc enables the ManagedFlexGateway CRD with `helm upgrade ... --set global.crds.flex.enabled=true`. Confirm the equivalent for operator installs (instance parameter, or enabled by default).
+
+=== Verify the Operator
+
+[source,ssh]
+----
+oc get csv -n <rtf-namespace>
+oc get pods -n <rtf-namespace>
+----
+
+The operator's ClusterServiceVersion shows the version that you installed with the phase `Succeeded`, and the operator pod is `Running`.
+
+[[step-3]]
+== Step 3: Associate Environments and Verify the Runtime Fabric
+
+. In Runtime Manager, associate the Runtime Fabric with each environment where you deploy gateways and agent networks. You can't deploy to the Runtime Fabric from an environment that isn't associated with it. See xref:runtime-fabric::associate-environments.adoc[].
+
+=== Verify the Runtime Fabric
+
+[source,ssh]
+----
+oc get pods -n <rtf-namespace>
+oc get events -n <rtf-namespace> --sort-by='.lastTimestamp'
+----
+
+All Runtime Fabric pods are `Running` and ready. No `FailedCreate` events show the message `unable to validate against any security context constraint`. In Runtime Manager, the Runtime Fabric shows as connected and healthy, with your environments associated.
+
+[[step-4]]
+== Step 4: Deploy the Ingress and Egress Managed Omni Gateways
+
+. Deploy an ingress and an egress Managed Omni Gateway to the Runtime Fabric. Use Anypoint Code Builder or the Anypoint CLI, or deploy each gateway manually in Runtime Manager. See xref:gateway::gateway-managed-ingress-egress.adoc[].
+. For the ingress gateway, configure a *Public endpoint*. For the egress gateway, don't configure a public endpoint.
+. For both gateways, enable OpenTelemetry with a *Sampling percentage* of `100`. Agent Fabric deployments on Runtime Fabric require it.
+
+=== Verify the Gateways
+
+[source,ssh]
+----
+oc get pods -n <omni-gateway-namespace>
+----
+
+The ingress and egress gateway pods are `Running` and ready, and both gateways show as connected in Runtime Manager.
+
+[[step-5]]
+== Step 5: Configure Inbound TLS for the Ingress Gateway
+
+On OpenShift, terminate external TLS at an OpenShift route that presents the cluster wildcard certificate, and re-encrypt the traffic to the ingress gateway. You configure two resources together:
+
+. Create an `HTTPRouteTemplate` resource with `reencrypt` TLS termination. The Runtime Fabric agent renders the template into the OpenShift route for the ingress gateway's public endpoint. Don't create the `Route` resource directly.
+. Bind the `tls-inbound` policy to the gateway's APIs so that they serve HTTPS to the route.
+
+See xref:gateway::managed-inbound-tls-config.adoc#runtime-fabric-openshift[Configure Inbound TLS on Runtime Fabric on OpenShift].
+
+The OpenShift route has its own timeout, 30 seconds by default, which is shorter than many LLM responses. Set the `haproxy.router.openshift.io/timeout` annotation in the route template to a value higher than the gateway timeouts. See xref:gateway::managed-timeout.adoc#openshift-timeouts[Timeouts for Managed Omni Gateway on Runtime Fabric on OpenShift].
+
+=== Verify Inbound TLS
+
+[source,ssh]
+----
+oc get route -n <omni-gateway-namespace>
+curl -v https://<public-hostname>
+----
+
+A route exists for the ingress gateway and not for the egress gateway. Run `curl` from outside the cluster. The TLS handshake completes, and the response presents the cluster wildcard certificate, not the gateway's internal `*.svc.cluster.local` certificate.
+
+[[step-6]]
+== Step 6: Configure the Forward Proxy for the Egress Gateway
+
+Complete this step only if the cluster reaches the internet through a forward proxy.
+
+Managed Omni Gateway doesn't inherit the forward proxy settings of the cluster or of Runtime Fabric. Apply a `Configuration` resource to each gateway. See xref:gateway::managed-forward-proxy.adoc[].
+
+=== Verify the Forward Proxy
+
+From the egress gateway pod, check the connection to an external host whose certificate is signed by a public CA:
+
+[source,ssh]
+----
+oc exec -n <omni-gateway-namespace> <omni-egress-pod> -c app -- flexctl check http https://<public-host>
+----
+
+The check succeeds. Testing a publicly trusted host confirms that the proxy route works, separately from the private CA trust that you configure in Step 7.
+
+[[step-7]]
+== Step 7: Trust Upstreams Signed by a Private CA
+
+Complete this step if your LLM or other upstream services use certificates signed by a private or corporate CA.
+
+Managed Omni Gateway doesn't inherit the cluster CA bundle, such as the `trustedCA` bundle in the OpenShift cluster `Proxy` resource. Provide the CA in a `tls-outbound` policy binding on the egress gateway. See xref:gateway::managed-outbound-tls-config.adoc#private-ca-rtf[Trust Upstreams Signed by a Private CA on Runtime Fabric].
+
+The CA that you configure replaces the default CA bundle for the upstreams that the binding matches. Include the complete CA chain for every matched upstream.
+
+=== Verify Private CA Trust
+
+[source,ssh]
+----
+oc exec -n <omni-gateway-namespace> <omni-egress-pod> -c app -- flexctl check http https://<private-ca-host>
+oc exec -n <omni-gateway-namespace> <omni-egress-pod> -c app -- flexctl check http https://<public-host>
+----
+
+Both checks succeed without a certificate validation error. If the public host check now fails, the binding replaced the default CA bundle for that upstream. Narrow the binding's selector, or add the public CA chain to it.
+
+[[step-8]]
+== Step 8: Deploy the Agent Network
+
+. Confirm that the agent network namespace's resource quota has room for every broker. See <<before-you-begin>>.
+. If a broker connects to an internal LLM that uses OAuth, configure the `oauth2-client-credentials` authentication kind for the LLM connection. See xref:agent-network::af-agent-network-yaml-reference.adoc[]. The token request goes out through the egress gateway, so the token endpoint must also pass Steps 6 and 7.
+. Deploy the agent network to the Runtime Fabric target, and select the ingress and egress gateways from Step 4. Use Anypoint Code Builder (*Deploy Agent Network*) or, to set broker resources, the Anypoint CLI. See xref:agent-network::af-deploy-agent-network-targets.adoc[].
+
+=== Verify the Agent Network
+
+[source,ssh]
+----
+oc get pods -n <agent-network-namespace>
+oc get events -n <agent-network-namespace> --sort-by='.lastTimestamp'
+----
+
+The deployment completes in Anypoint Code Builder or the Anypoint CLI. The broker pods are `Running` and ready, and no events show `FailedScheduling` or `FailedCreate`.
+
+If the deployment fails with error `3018` (`commandTimeout`), check the namespace resource quota first. See xref:agent-network::af-troubleshoot-errors.adoc#deploy-errors[Deploy Errors]. If requests through the ingress gateway return `504 Gateway Timeout`, check the route timeout from Step 5.
+
+// ENG-REVIEW: 3018 is documented as an Anypoint CLI error code. Confirm how the same failure appears in Anypoint Code Builder.
+
+[[step-9]]
+== Step 9: Deploy MCP Servers
+
+. Confirm that the agent network namespace's resource quota has room for each MCP server.
+. Build each MCP server in Anypoint Code Builder with the MCP Connector, and deploy it with Runtime Fabric as the target. See xref:mcp-connector::mcp-connector-acb.adoc[].
+. If you expose an MCP server outside the cluster, make sure that its route presents the cluster wildcard certificate, as in Step 5, and not an internal certificate.
+
+=== Verify the MCP Servers
+
+[source,ssh]
+----
+oc get pods -n <agent-network-namespace>
+----
+
+The MCP server pods are `Running` and ready, and the broker reaches each MCP server. If you expose an MCP server outside the cluster, its route passes TLS validation.
+
+== See Also
+
+* xref:agent-fabric-overview.adoc[]
+* xref:agent-network::af-deploy-agent-network-targets.adoc[]
+* xref:runtime-fabric::install-openshift.adoc[]
+* xref:gateway::gateway-managed-set-up.adoc[]

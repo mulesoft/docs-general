@@ -7,6 +7,7 @@
   ** xref:agent-fabric-use-cases.adoc[]
    *** xref:af-use-case-cost-management.adoc[]
    *** xref:af-use-case-mcp-bridge.adoc[]
+  ** xref:af-deploy-runtime-fabric-openshift.adoc[]
 * xref:learning-map-exp.adoc[]
    ** xref:exp-overview.adoc[Overview]
      *** xref:exp-compare.adoc[Comparison: Enhanced Experience and Anypoint Platform]
