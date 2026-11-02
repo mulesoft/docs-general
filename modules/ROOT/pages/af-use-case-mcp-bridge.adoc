@@ -26,7 +26,7 @@ Agent Fabric exposes your existing APIs as MCP servers. Agents then get safe, ef
 
 == How It Works
 
-Omni Gateway is the runtime enforcement point for Agent Fabric. This single gateway sits in front of your agents, APIs, and MCP servers so that authentication, monitoring, and policy enforcement apply to every request. When you expose an API as an MCP server, you create the server from the API, choose which operations to publish as tools, and deploy the server on Omni Gateway in that same action. *Create & Deploy* places the server on the gateway and applies the policies that make it callable. You then apply additional policies to govern every request. The server runs on the same gateway infrastructure you use to manage your API traffic.
+Omni Gateway is the runtime enforcement point for Agent Fabric. This single gateway sits in front of your agents, APIs, and MCP servers so that authentication, monitoring, and policy enforcement apply to every request. When you expose an API as an MCP server, you create the server from the API, choose which operations to publish as tools, and deploy it on Omni Gateway. *Create & Deploy* places the server on the gateway and adds it to *Portfolio*. You then apply policies to govern every request. The server runs on the same gateway infrastructure you use to manage your API traffic.
 
 Each agent request follows this path:
 
@@ -130,14 +130,14 @@ For each API instance:
 
 === Step 3: Create and Deploy an MCP Server
 
-. Create and deploy an MCP server from your target API. Select which operations to publish as tools, and expose only the operations that are safe for agents. In *Review*, confirm the server name, path, environment, and gateway, and then click *Create & Deploy*. The server is deployed on Omni Gateway, and the policies required to make it callable are applied.
+. Create and deploy an MCP server from your target API. Select which operations to publish as tools, and expose only the operations that are safe for agents. In *Review*, click *Create & Deploy*. The MCP server is deployed to the gateway and added to the *MCP Servers* catalog in *Portfolio*.
 . Test the MCP server endpoint with sample requests.
 
 For the steps to create and deploy an MCP server from an existing API, see xref:exp-services-create-mcp-server.adoc[].
 
 === Step 4: Apply Omni Gateway Policies
 
-The MCP server controls which API operations are available as tools. Omni Gateway policies control how agents can use those tools at runtime. After *Create & Deploy*, apply additional policies to the MCP server to enforce authentication, rate limiting, logging, and alerting.
+The MCP server controls which API operations are available as tools. Omni Gateway policies control how agents can use those tools at runtime. After creating the MCP server, apply policies to the MCP server to enforce authentication, rate limiting, logging, and alerting.
 
 For the steps to apply policies, see xref:exp-policies-apply-manage.adoc[].
 
