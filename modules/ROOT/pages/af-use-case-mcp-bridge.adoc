@@ -26,7 +26,7 @@ Agent Fabric exposes your existing APIs as MCP servers. Agents then get safe, ef
 
 == How It Works
 
-Omni Gateway is the runtime enforcement point for Agent Fabric. This single gateway sits in front of your agents, APIs, and MCP servers so that authentication, monitoring, and policy enforcement apply to every request. When you expose an API as an MCP server, you create the server from the API and choose which operations to publish as tools. You then deploy the MCP server on Omni Gateway. A required MCP support policy makes the server callable, and you apply additional policies to govern every request. The server runs on the same gateway infrastructure you use to manage your API traffic.
+Omni Gateway is the runtime enforcement point for Agent Fabric. This single gateway sits in front of your agents, APIs, and MCP servers so that authentication, monitoring, and policy enforcement apply to every request. When you expose an API as an MCP server, you create the server from the API, choose which operations to publish as tools, and deploy the server on Omni Gateway in that same action. *Create & Deploy* places the server on the gateway and applies the policies that make it callable. You then apply additional policies to govern every request. The server runs on the same gateway infrastructure you use to manage your API traffic.
 
 Each agent request follows this path:
 
@@ -58,8 +58,7 @@ By exposing the API as an MCP server, you deploy rapidly with built-in safety.
 
 Here's how you do it:
 
-. Create an MCP server from your customer API, publishing only its read (GET) operations as tools.
-. Deploy the server on Omni Gateway and apply the required MCP support policy.
+. Create and deploy an MCP server from your customer API on Omni Gateway, publishing only its read (GET) operations as tools.
 . Connect all agent platforms to the MCP server endpoint.
 
 *Result:* Agents answer account and order questions with no write access exposed, from a single configuration. You don't build or maintain a per-platform integration, and no path exists for an agent to modify customer data.
@@ -74,8 +73,7 @@ By exposing the API as an MCP server, you give all agents read-only inventory ac
 
 Here's how you do it:
 
-. Create an MCP server from the inventory API, publishing only the read (GET) operations for stock queries as tools.
-. Deploy the server on Omni Gateway.
+. Create and deploy an MCP server from the inventory API on Omni Gateway, publishing only the read (GET) operations for stock queries as tools.
 . Connect all agent types to the MCP server endpoint.
 . Monitor agent usage alongside your existing services.
 
@@ -91,8 +89,8 @@ By exposing the API as multiple MCP servers with layered tool selection, you get
 
 Here's how you do it:
 
-. Create multiple MCP servers from your financial API, each publishing a different set of tools: the Basic server with GET operations for account balances, the Analytics server with GET operations for transaction history and reports, and the Approval server with GET operations plus the POST operation for creating approval requests.
-. Deploy each server on Omni Gateway, and connect each agent to the appropriate endpoint based on access requirements.
+. Create and deploy multiple MCP servers from your financial API on Omni Gateway, each publishing a different set of tools: the Basic server with GET operations for account balances, the Analytics server with GET operations for transaction history and reports, and the Approval server with GET operations plus the POST operation for creating approval requests.
+. Connect each agent to the appropriate endpoint based on access requirements.
 . Apply policies to each MCP server to govern runtime access.
 
 *Result:* Each agent gets exactly the access its role requires. Agents access balances, analytics, or approval requests from one financial API, with no duplicated integrations and no path for a high-privilege operation to reach the wrong agent.
@@ -107,8 +105,7 @@ By exposing your Mule APIs as MCP servers, you extend your existing Mule investm
 
 Here's how you do it:
 
-. Create MCP servers from key Mule APIs, publishing the operations you want to expose as tools.
-. Deploy the servers on your existing Omni Gateway infrastructure.
+. Create and deploy MCP servers from key Mule APIs on your existing Omni Gateway, publishing the operations you want to expose as tools.
 . Monitor usage and apply policies the same way you do for your existing APIs.
 
 *Result:* Existing Mule APIs become agent-callable without new adapters or duplicated logic, and agent traffic inherits the same governance already protecting those APIs.
@@ -133,18 +130,14 @@ For each API instance:
 
 === Step 3: Create and Deploy an MCP Server
 
-. Create an MCP server from your target API, and select which operations to publish as tools. Apply read-only filtering to expose only the operations that are safe for agents.
-. Deploy the server on Omni Gateway, configuring the server label, base path, protocol, and port, and the upstream connection.
-. Apply the required MCP support policy so the server is callable.
+. Create and deploy an MCP server from your target API. Select which operations to publish as tools, and expose only the operations that are safe for agents. In *Review*, confirm the server name, path, environment, and gateway, and then click *Create & Deploy*. The server is deployed on Omni Gateway, and the policies required to make it callable are applied.
 . Test the MCP server endpoint with sample requests.
 
-For the steps to create an MCP server from an existing API, see xref:exp-services-create-mcp-server.adoc[].
-
-For the steps to deploy it on Omni Gateway, see xref:exp-instances-add.adoc[].
+For the steps to create and deploy an MCP server from an existing API, see xref:exp-services-create-mcp-server.adoc[].
 
 === Step 4: Apply Omni Gateway Policies
 
-The MCP server controls which API operations are available as tools. Omni Gateway policies control how agents can use those tools at runtime. After deploying the MCP server, apply policies to the MCP server to enforce authentication, rate limiting, logging, and alerting.
+The MCP server controls which API operations are available as tools. Omni Gateway policies control how agents can use those tools at runtime. After *Create & Deploy*, apply additional policies to the MCP server to enforce authentication, rate limiting, logging, and alerting.
 
 For the steps to apply policies, see xref:exp-policies-apply-manage.adoc[].
 
@@ -305,6 +298,5 @@ MCP servers work with existing identity infrastructure so that agent access to A
 
 * xref:agent-fabric-use-cases.adoc[]
 * xref:exp-services-create-mcp-server.adoc[]
-* xref:exp-instances-add.adoc[]
 * xref:exp-policies-apply-manage.adoc[]
 * xref:exp-services-monitoring.adoc[]
