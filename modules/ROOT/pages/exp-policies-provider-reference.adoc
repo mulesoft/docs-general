@@ -210,7 +210,7 @@ Failed operations don't automatically undo any changes made by the platform or b
 . Rescan to refresh the enhanced MuleSoft experience view.
 . Retry the operation.
 
-Rescan refreshes the enhanced MuleSoft experience view without deploying or undoing changes. Rescan also after:
+Rescan refreshes the enhanced MuleSoft experience view without deploying or undoing changes. Also rescan after:
 
 * Changing a managed policy or its target.
 * Deleting or reordering IP filtering rules in AWS.
