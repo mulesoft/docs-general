@@ -57,6 +57,7 @@ Before getting started, make sure you have:
 +
 Your administrator can assign these permissions and the Exchange role directly to your user, or through a team or role group in Access Management. For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 * Credentials for each SaaS system you plan to expose.
+* A Managed Omni Gateway instance. For more information, see xref:gateway::gateway-managed-set-up.adoc[Deploy a Managed Omni Gateway].
 
 [[create-mcp-server]]
 == Create an MCP Server
