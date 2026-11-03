@@ -194,7 +194,7 @@ A policy can have a specific path or method and still be editable. It becomes re
 Applying, editing, or removing an AWS policy deploys the entire API configuration to the selected stage. Keep these impacts in mind:
 
 * Other pending changes in AWS also deploy, even when the policy targets only one path.
-* CORS and Header Mapping rebuild the API configuration from the deployed version of the selected stage. This can overwrite undeployed changes and affect other settings such as API keys or caching.
+* All AWS policies use the latest deployed version of the stage as a baseline. This can overwrite undeployed changes and affect other settings such as API keys or caching.
 * Before you apply a policy, review pending changes in AWS.
 
 An operation can fail at two points, leaving different outcomes:
