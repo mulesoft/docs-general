@@ -32,6 +32,8 @@ Open the *Agents*, *MCP Servers*, *Model Proxies*, or *APIs* catalog, use the ad
 To set up a gateway, select *Add Gateway* to open gateway setup in Anypoint Platform.
 include::_partials/exp-navigation-labels.adoc[tag=ExpNavigationLabels]
 
+To deploy the gateway, see xref:gateway::gateway-getting-started-overview.adoc[Getting Started with Omni Gateway].
+
 == Agents
 
 Register an agent by uploading an agent card file for an A2A or non-A2A agent.
@@ -81,6 +83,8 @@ The experience supports multiple API types and specification formats:
 Manual gateway registration isn't supported in the enhanced experience.
 
 To set up a gateway, select *Add Gateway* to open gateway setup in Anypoint Platform.
+
+To deploy the gateway, see xref:gateway::gateway-getting-started-overview.adoc[Getting Started with Omni Gateway].
 
 == See Also
 
