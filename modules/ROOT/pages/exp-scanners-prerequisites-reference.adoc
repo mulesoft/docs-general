@@ -101,7 +101,7 @@ a|
 
 *Setup:* Optional API host for region routing (for example, US or EU cloud host)
 
-| Microsoft Azure Copilot
+| Microsoft Copilot Studio
 | Agent
 a|
 *Credentials:* Azure app registration; client ID and client secret. Two authentication schemes are supported:
@@ -110,6 +110,14 @@ a|
 * *OAuth:* Uses client credentials, with no interactive sign-in. Tenant ID is required.
 
 *Role:* Copilot Studio Scanner
+
+*Permissions:* When you configure the scanner with a single Dataverse environment, the Dataverse security role must have `Read` permission on these tables:
+
+* `bot`
+* `botcomponent`
+* `systemuser`
+
+If the security role doesn't have `Read` permission on the `systemuser` table, the scanner fails with a `403 prvReadUser` error.
 
 *Setup:* App added as an Application User in Power Platform; scope set to Dataverse environment URL, `https://<org-id>.crm.dynamics.com`
 

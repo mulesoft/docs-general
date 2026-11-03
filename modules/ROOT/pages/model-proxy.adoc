@@ -27,23 +27,6 @@ Depending on configuration, the proxy then sends the request to the model define
 * <<model-based-routing>>: Static routing. The user specifies what model the Model Proxy should send the request to.
 * <<semantic-routing>>: Dynamic routing. The Model Proxy chooses which model to send the request to based on the request content.
 
-[[supported-llm-providers]]
-== Supported LLM Providers
-
-Model Proxy supports different models from these LLM providers:
-
-* OpenAI
-* Azure OpenAI
-* Bedrock OpenAI
-* Gemini
-* Anthropic
-* Bedrock Anthropic
-* NVIDIA
-* xAI
-* Grok
-* DeepSeek
-* Mistral
-
 [[model-based-routing]]
 == Model-Based Routing
 
@@ -72,3 +55,169 @@ Model Proxy includes these types:
 == Model Proxy Limits
 
 Up to 50 Model Proxies are supported per Large Omni Gateway.
+
+[[supported-llm-providers]]
+[[supported-models]]
+== Supported LLM Providers and Models
+
+Model Proxy supports these LLM providers and models:
+
+* OpenAI
+** GPT 5.2
+** GPT 5.2 Pro
+** GPT 5 Mini
+** GPT 5.2 Codex
+** GPT 5 Nano
+** GPT 5
+** GPT 4.1
+** GPT 4o Mini
+** Chat Latest
+** ChatGPT-4o
+** codex-mini-latest
+** computer-use-preview
+** Daybreak Blue
+** Daybreak Red
+** GPT-3.5 Turbo
+** GPT-4
+** GPT-4 Turbo
+** GPT-4 Turbo Preview
+** GPT-4.1 Mini
+** GPT-4.1 nano
+** GPT-4.5 Preview
+** GPT-4o
+** GPT-4o Search Preview
+** GPT-4o Mini Search Preview
+** GPT-5 Chat
+** GPT-5 Pro
+** GPT-5-Codex
+** GPT-5.1
+** GPT-5.1 Chat
+** GPT-5.1-Codex
+** GPT-5.1-Codex Mini
+** GPT-5.1-Codex-Max
+** GPT-5.2 Chat
+** GPT-5.3 Chat
+** GPT-5.3-Codex
+** GPT-5.4
+** GPT-5.4 Mini
+** GPT-5.4 nano
+** GPT-5.4 Pro
+** GPT-5.5
+** GPT-5.5 Pro
+** GPT-5.6 Cyber
+** GPT-5.6 Luna
+** GPT-5.6 Sol
+** GPT-5.6 Terra
+** GPT-6 Astra
+** GPT-6 Sol
+** GPT-6 Luna
+** gpt-oss-120b
+** gpt-oss-20b
+** o1
+** o1 Preview
+** o1-mini
+** o1-pro
+** o3
+** o3-deep-research
+** o3-mini
+** o3-pro
+** o4-mini
+** o4-mini-deep-research
+* Azure OpenAI
+** GPT-6 Astra
+** GPT-6 Sol
+** GPT-6 Luna
+** GPT-5.6 Sol
+** GPT-5.6 Terra
+** GPT-5.6 Luna
+** GPT-5.5
+** GPT-5.4
+** GPT-5.4 Mini
+** GPT-5.4 Nano
+** GPT-5.4 Pro
+** GPT-5.3-Codex
+** GPT 5.2
+** GPT 5.2 Pro
+** GPT 5 Mini
+** GPT 5.2 Codex
+** GPT 5 Nano
+** GPT 5
+** GPT 4.1
+** GPT 4o Mini
+* Bedrock OpenAI
+** GPT-6 Astra (Bedrock)
+** GPT-6 Sol (Bedrock)
+** GPT-6 Luna (Bedrock)
+** GPT-5.6 Sol (Bedrock)
+** GPT-5.6 Terra (Bedrock)
+** GPT-5.6 Cyber (Bedrock)
+** GPT-5.6 Luna (Bedrock)
+** GPT-5.5 (Bedrock)
+** GPT-5.4 (Bedrock)
+** GPT-OSS 120B (Bedrock)
+** GPT-OSS 20B (Bedrock)
+* Gemini
+** Gemini 3 Flash Preview
+** Gemini 2.5 Flash
+** Gemini 2.5 Flash Preview 09-2025
+** Gemini 2.5 Flash Lite
+** Gemini 3 Flash
+** Gemini 3.1 Pro
+** Gemini 3.5
+** Gemini 3.8 Flash
+** Gemma 4 26B A4B
+** Gemma 4 31B
+* Anthropic
+** Claude Opus 5.5
+** Claude Opus 5
+** Claude Sonnet 5
+** Claude Fable 5.1
+** Claude Opus 4.8
+** Claude Opus 4.7
+** Claude Opus 4.6
+** Claude Sonnet 4.6
+** Claude Haiku 4.5
+** Claude Fable 5
+* Bedrock Anthropic
+** Claude Opus 5.5 (Bedrock)
+** Claude Opus 5 (Bedrock)
+** Claude Opus 4.8 (Bedrock)
+** Claude Opus 4.7 (Bedrock)
+** Claude Opus 4.6 (Bedrock)
+** Claude Sonnet 5 (Bedrock)
+** Claude Sonnet 4.6 (Bedrock)
+** Claude Haiku 4.5 (Bedrock)
+** Claude Fable 5.1 (Bedrock)
+** Claude Fable 5 (Bedrock)
+** Claude Sonnet 4.5 (Bedrock)
+* NVIDIA
+** Nemotron 3 Nano 30B A3B
+** Nemotron 3 Super 120B A12B
+** Llama Nemotron Ultra 253B
+** Nemotron 3 Ultra 550B A55B
+** Nemotron 3.5 Lightning 30B A3B
+** Llama Nemotron Super 49B
+** Llama Nemotron Super 49B v1.5
+** Llama Nemotron Nano 8B v1
+** Nemotron Nano 9B v2
+** Llama Nemotron 70B Instruct
+* xAI
+** Grok 4.6
+** Grok 4.5
+** Grok 4.3
+** Grok 4.20 (Reasoning)
+** Grok 4.20 (Non-Reasoning)
+** Grok 4.20 Multi-Agent Beta
+** Grok Build 0.1
+* Mistral
+** Mistral Large 3
+** Mistral Medium 3.5
+** Mistral Small
+** Magistral Medium
+** Magistral Small
+** Ministral 8B
+** Ministral 3B
+** Codestral
+** Devstral Medium
+** Devstral Small
+** Pixtral Large

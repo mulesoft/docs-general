@@ -3,6 +3,8 @@
 
 Keep governance strategies aligned with your portfolio by adjusting scope, rules, or status as your services and compliance requirements evolve. Summary cards show active strategy counts, type breakdowns, and governance coverage at a glance.
 
+NOTE: Automate strategy management using the MuleSoft MCP Platform Server. For details, see xref:mulesoft-mcp-server::reference-mcp-tools-platform.adoc#list-governance-strategies[list_governance_strategies] and related tools in the MuleSoft MCP Platform Server Tool Reference.
+
 == Display Governance Strategies
 
 Go to *Governance* > *Governance Strategies* to view all strategies. Check the strategy name, type, environment, target, status, governed services count, and last modified time.

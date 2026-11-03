@@ -3,6 +3,8 @@
 
 Use governance strategies to apply conformance rules and policies across agents, APIs, and MCP servers. When your tenant includes *Governance* and your account has the required role, you can create, manage, and monitor these strategies to validate service design compliance, automate runtime enforcement, and maintain visibility as your portfolio grows.
 
+NOTE: Automate governance strategies using the MuleSoft MCP Platform Server. For details, see xref:mulesoft-mcp-server::reference-mcp-tools-platform.adoc[the Governance tools] in the MuleSoft MCP Platform Server Tool Reference.
+
 Watch this video to see how to govern your portfolio with strategies:
 
 ++++

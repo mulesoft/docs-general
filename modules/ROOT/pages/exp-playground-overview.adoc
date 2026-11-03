@@ -1,9 +1,11 @@
-= Testing Services with Playgrounds
+= Testing Services with Playgrounds (Beta)
 :keywords: playground, api playground, mcp server playground, test api, test mcp server, anypoint platform, enhanced experience
 
 Use the playground to try services in your portfolio directly in the enhanced experience—no external tools required. Explore endpoints and tools, configure and send requests, and inspect responses without leaving the service detail page.
 
 Before the playground, understanding a service meant reading its overview and documentation, then copying paths into an external tool such as Postman or the MCP Inspector to see how it behaved. The playground brings that testing loop into the enhanced experience so you can go from reading about a service to exercising it in the same view.
+
+NOTE: The playground is a pilot or beta service that is subject to the Beta Services Terms at https://www.salesforce.com/company/legal/[Agreements - Salesforce.com] or a written Unified Pilot Agreement if executed by Customer, and applicable terms in the https://ptd.salesforce.com/?_ga=2.247987783.1372150065.1709219475-629000709.1639001992[Product Terms Directory]. Use of this pilot or beta service is at the Customer's sole discretion.
 
 == Playground Types
 
@@ -48,4 +50,3 @@ The playground opens with the endpoints or tools available for the service you'r
 * xref:exp-services-view-details.adoc[]
 * xref:exp-services-add-to-portfolio.adoc[]
 * xref:exp-instances-add.adoc[]
-

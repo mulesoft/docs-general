@@ -155,6 +155,77 @@ To upgrade Anypoint Connectors that are provided by MuleSoft and being used out-
 
 If your connector includes custom code, go to <<custom-connectors>>.
 
+[[upgrade-with-mulesoft-vibes]]
+=== Upgrading Mule Apps and Connectors with MuleSoft Vibes
+
+MuleSoft Vibes provides the `upgrade-mule-app` skill, which upgrades a Mule app to a later Mule runtime version and Java version, including the Anypoint Connectors and modules that the app uses. The skill works with apps on Mule runtime 4.3 or later and Java 8 or later. For each connector, the skill finds the latest version that supports both the target Mule runtime version and the target Java version.
+
+By default, the skill recommends the highest minor version in your current support channel (LTS or Edge), the latest patch, and the latest Java version that isn't end of life. You can request a different Mule runtime version, but the skill doesn't downgrade an app or target end-of-life Java versions. If your target switches between LTS and Edge, the skill warns you and asks you to confirm.
+
+==== Before You Begin
+
+Before you use the skill, make sure you have:
+
+* Anypoint CLI v4
+* The `@salesforce/anypoint-cli-dx-mule-plugin` plugin version 1.3.0 or later
+* Apache Maven 3.9.x
+* A `pom.xml` file and a `mule-artifact.json` file in the root of your project
+* Any parent POM files that your `pom.xml` references, available locally
+
+When you use MuleSoft Vibes in Anypoint Code Builder, Anypoint Code Builder automatically installs or updates Anypoint CLI after you restart VS Code. If you use the skill with Claude Code or another agent, you must install Anypoint CLI manually. For details, see xref:anypoint-code-builder::vibes-skills.adoc[].
+
+==== Start an Upgrade with MuleSoft Vibes
+
+To start an upgrade, enter a prompt in the MuleSoft Vibes chat, such as `Upgrade my app to Java 17`, `Move the runtime to 4.9`, or `Modernize this Mule app`. MuleSoft Vibes activates the skill before it reads or edits any project files.
+
+The skill runs in two phases:
+
+. *Plan*: The skill analyzes your app and doesn't change any project files. It:
+.. Validates the prerequisites, and confirms the Mule runtime and Java versions it detects in your project with you.
+.. Builds the app on its current versions as a baseline. If the baseline build fails, the upgrade doesn't continue.
+.. Recommends an upgrade target, which you can accept or replace with another target.
+.. Checks that each connector is available on Exchange for the target Mule runtime and Java versions, and stops if a connector has no compatible version.
+.. Reviews your flows, custom Java code, DataWeave scripts, and MUnit tests for changes that the new versions require.
+.. Presents the complete upgrade plan in the chat, listing every change to your project. You choose to proceed, change the plan, or cancel.
+. *Execute*: After you approve the plan, the skill:
+.. Updates your project files.
+.. Builds the app and runs your MUnit tests, and fixes any errors that result from the upgrade.
+.. Reports the build and test results, and the versions before and after the upgrade.
+
+If a build or test error persists after several attempts, the skill asks you how to proceed.
+
+==== Changes the Skill Makes to Your Project
+
+After you approve the plan, the skill changes these files:
+
+[%header,cols="1,3"]
+|===
+| File | Changes
+| `pom.xml`
+a|
+* Updates the Mule runtime and Java version properties.
+* Updates the Maven compiler level to the target Java version.
+* Updates the Mule Maven plugin and MUnit versions to the latest versions.
+* Updates the connector dependency versions.
+
+| `mule-artifact.json`
+| Updates `minMuleVersion` and adds the target Java version to `javaSpecificationVersions`.
+
+| Mule flow files in `src/main/mule`
+| Updates connector operations, attributes, namespace bindings, `xsi:schemaLocation` values, and error types that changed in the new connector versions.
+
+| Java files in `src/main/java`
+| Replaces removed or restricted Java APIs, such as `javax.xml.bind` classes, with supported alternatives.
+
+| MUnit test files in `src/test/munit`
+| Updates mocks, payload shapes, assertions, and error types to match the new connector versions.
+
+| Parent POM files
+| Updates connector versions that a parent POM defines. After a successful build, the skill asks which semantic version increment (major, minor, or patch) to apply to the parent POM version, and updates the child project to use it.
+|===
+
+The skill doesn't upgrade custom libraries that aren't Anypoint Connectors, because it can't verify their compatibility. Before it runs the upgrade, it lists these libraries and asks you to confirm that they work with the target versions.
+
 [[custom-connectors]]
 == Custom Connectors
 

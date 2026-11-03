@@ -20,6 +20,7 @@ The end-to-end journey for Agent Fabric consists of these tasks, each with links
 Start with how the registry, agent actions, governance, and cost control fit together. Then pick a job.
 
 - xref:agent-fabric-overview.adoc[Agent Fabric Overview]
+- https://www.youtube.com/watch?v=zJ6lcyK9q_s&list=PLiONnRuKRuJAzT0HdrTkYvd6GmRnAHvsO&index=9[Watch a Video to Learn About How to Eliminate Agent Sprawl With Agent Fabric]
 - https://www.youtube.com/watch?v=GAqwPie16ic[Watch a Video to Learn About Agent Fabric]
 - https://www.mulesoft.com/lp/demo/agent-fabric-interactive-demo[Watch an Interactive Demo of Agent Fabric]
 
@@ -91,7 +92,7 @@ Give agents one governed endpoint for multiple LLM providers. Then cap token spe
 - xref:model-proxy-semantic-service.adoc[]
 - xref:model-proxy-semantic-caching-service.adoc[]
 
-| image::reuse::lm_analyze_1.png[""]
+| image::reuse::lm_integrate_end_1.png[""]
 [.lm-bold]##Observe Agent Traffic##
 
 See how agents, brokers, and MCP servers connect. Watch latency, errors, and volume in production.

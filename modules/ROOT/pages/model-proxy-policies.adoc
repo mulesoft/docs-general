@@ -15,6 +15,8 @@ By default, Model Proxy applies these policies:
 
 You don't need to modify these policies.
 
+NOTE: Automate model proxy policy management using the MuleSoft MCP Platform Server. For details, see xref:mulesoft-mcp-server::reference-mcp-tools-platform.adoc#apply-policy-to-instance[apply_policy_to_instance] and related Policy Management tools in the MuleSoft MCP Platform Server Tool Reference.
+
 Model Proxy supports most xref:gateway::policies-included-directory.adoc[included policies], but doesn't support outbound policies.
 
 NOTE: Model Proxy doesn't support xref:gateway::policies-included-rate-limiting-sla.adoc[].
