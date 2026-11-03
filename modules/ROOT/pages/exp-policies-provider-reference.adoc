@@ -49,7 +49,7 @@ Because policy management reuses the scanner connection, the permissions you see
 * Azure API Management: The enhanced MuleSoft experience checks the connected Azure principal's role-based permissions on the API resource, including permissions inherited from higher scopes.
 * Kong Gateway: access is based on your Kong Konnect roles and team memberships for the instance's control plane. Admin and power teams get full access; otherwise a matching role is required.
 * Omni Gateway: uses the same Anypoint Platform permissions as elsewhere in the product, with no separate provider-side check.
-* Amazon API Gateway: The enhanced MuleSoft experience reuses the scanner connection's AWS credentials. The connected AWS account must have permission to read, change, and deploy the API. A connection that can scan the API may still lack permission to change policies. Cross-account connections using a hub role are not supported for policy writes.
+* Amazon API Gateway: The enhanced MuleSoft experience reuses the scanner connection's AWS credentials. The connected AWS account must have permission to read, change, and deploy the API. A connection that can scan the API may still lack permission to change policies. Cross-account connections using a hub role aren't supported for policy writes.
 
 == Injection Points
 
