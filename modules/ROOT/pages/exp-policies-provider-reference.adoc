@@ -37,7 +37,7 @@ Before getting started, make sure you have:
 ====
 * Apply and Edit are further limited to the supported (open-backed) policies. A Yes in the Edit column means the provider supports editing, not that every policy is editable. See xref:exp-policies-apply-manage.adoc#policy-edit-restrictions[Policy Edit Restrictions].
 * Apigee, Azure API Management, and Amazon API Gateway have no native enabled/disabled state (a policy is either attached or not), so the enable/disable actions aren't available there.
-* Amazon API Gateway policy write is supported for REST APIs only; HTTP APIs are not supported. See <<aws-specific-behavior>>.
+* Amazon API Gateway policy write is supported for REST APIs only; HTTP APIs aren't supported. See <<aws-specific-behavior>>.
 * View and Track/Govern reflect read-only visibility and governance reporting, which every provider supports regardless of write access. See xref:exp-governance-create-strategy.adoc[Create Governance Strategies].
 ====
 
