@@ -19,7 +19,7 @@ Before getting started, make sure you have:
 ** Exchange: Exchange Creator
 --
 +
-API Manager permissions are environment-scoped and must be granted in each environment.
+API Manager permissions apply to individual environments. Grant permissions in each environment where you need them.
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
