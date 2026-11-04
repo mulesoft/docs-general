@@ -21,6 +21,7 @@ Before getting started, make sure you have:
 * These permissions:
 +
 --
+** API Manager: Manage APIs Configuration
 ** API Manager: Manage Policies
 ** API Manager: View APIs Configuration
 ** API Manager: View Policies
