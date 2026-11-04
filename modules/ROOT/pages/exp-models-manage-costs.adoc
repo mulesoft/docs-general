@@ -8,12 +8,11 @@ Set a cost for each model so usage translates into spend tracking. The *Models* 
 To set model costs, you need:
 
 * An Anypoint Platform account.
-* One of the API Manager permissions:
+* API Manager permissions:
 +
 --
-** API Manager: API Creator
-** API Manager: View APIs Configuration
-** API Manager: Edit APIs Configuration
+** To view model costs: API Manager: View APIs Configuration
+** To edit model costs: API Manager: Manage APIs Configuration
 --
 +
 API Manager permissions are environment-scoped and must be granted in each environment.
