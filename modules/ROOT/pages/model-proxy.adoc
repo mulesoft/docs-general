@@ -35,7 +35,7 @@ Model-based routing is static routing. In the request, the user specifies what m
 [[semantic-routing]]
 == Semantic Routing
 
-Semantic routing is dynamic routing where the Model Proxy chooses which model to send the request to. For Sematic Routing, the user creates prompt topics for each route. When a request is sent to the Model Proxy, a semantic service compares the request to the define topic utterances and sends the request to the route that best matches it.
+Semantic routing is dynamic routing where the Model Proxy chooses which model to send the request to. For semantic routing, the user creates prompt topics for each route. When a request is sent to the Model Proxy, a semantic service compares the request to the defined topic utterances and sends the request to the route that best matches it. To use semantic routing, configure a semantic routing service. For more information, see xref:model-proxy-semantic-service.adoc[].
 
 [[semantic-caching]]
 == Semantic Caching

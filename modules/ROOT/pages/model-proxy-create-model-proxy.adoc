@@ -55,7 +55,7 @@ See xref:gateway::flex-gateway-managed-set-up.adoc[].
 .. Select a routing strategy:
 +
 *** *Model-based*: Route requests based on the model specified in the request payload.
-*** *Semantic*: Route requests based on semantic analysis of the prompt content. Requires a configured semantic service. Not supported for the Anthropic or Gemini endpoint formats.
+*** *Semantic*: Route requests based on semantic analysis of the prompt content. Requires a configured semantic routing service. For more information, see xref:model-proxy-semantic-service.adoc[]. Not supported for the Anthropic or Gemini endpoint formats.
 . Configure at least one route:
 .. Provide a route name (for example, `Route A`).
 .. Click *Add headers* to add routing headers that filter requests by region, SLA, or custom rules. For example, `Region: US`
