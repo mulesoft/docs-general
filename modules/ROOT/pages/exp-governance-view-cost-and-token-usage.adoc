@@ -29,6 +29,8 @@ Before getting started, make sure you have:
 ** Exchange: Exchange Viewer
 --
 +
+API Manager permissions are environment-scoped and must be granted in each environment.
++
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
 == Cost and Token Data Locations

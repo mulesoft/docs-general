@@ -16,6 +16,8 @@ To set model costs, you need:
 ** API Manager: Edit APIs Configuration
 --
 +
+API Manager permissions are environment-scoped and must be granted in each environment.
++
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
 == View Models

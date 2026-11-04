@@ -30,6 +30,8 @@ Confirm these prerequisites are in place.
 ** Edit APIs Configuration: Edit and manage instances
 ** View API Alerts: View API alerts in a specific environment
 ** Manage API Alerts: Manage API alerts in a specific environment
++
+API Manager permissions are environment-scoped and must be granted in each environment.
 
 * Register each agent you want to monitor with a unique instance name and ID, and link it to its model proxies. This lets flags, logs, and containment actions target the correct agent.
 

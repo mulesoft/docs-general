@@ -23,8 +23,10 @@ Before getting started, make sure you have:
 --
 ** API Manager: API Creator to create instances.
 ** API Manager: View APIs Configuration to view instances.
-** API Manager: Edit APIs Configuration to edit instances.
+** API Manager: Manage APIs Configuration to edit instances.
 --
++
+API Manager permissions are environment-scoped and must be granted in each environment.
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
