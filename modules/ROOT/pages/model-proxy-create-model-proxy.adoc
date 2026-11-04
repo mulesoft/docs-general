@@ -23,7 +23,7 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 * A deployed Omni Gateway version 1.11.4
 +
 See xref:gateway::flex-gateway-managed-set-up.adoc[].
-* API keys to authenticate with your LLM Providers.
+* Credentials to authenticate with your LLM providers: an API key, OAuth 2.0 client credentials (Microsoft Foundry), or a service account for OAuth 2.0 JWT bearer authentication (Google Gemini Enterprise Agent Platform).
 * A xref:model-proxy-semantic-service.adoc[configured semantic routing service] if you want to use semantic routing.
 * A xref:model-proxy-semantic-caching-service.adoc[configured semantic caching service] if you want to enable semantic caching.
 * A connection to an external vault (AWS Secrets Manager, Microsoft Azure Key Vault, or HashiCorp Vault) configured under *Platform* > *Providers* if you want to authenticate a route with a secret from your vault. For more information, see xref:exp-vaults-manage.adoc[].
@@ -64,6 +64,11 @@ See xref:gateway::flex-gateway-managed-set-up.adoc[].
 **** *OpenAI*
 **** *Gemini*
 **** *Azure OpenAI*
+**** *MS Foundry OpenAI*
+**** *MS Foundry Anthropic*
+**** *Google Gemini Enterprise Agent Platform Gemini*
+**** *Google Gemini Enterprise Agent Platform Anthropic*
+**** *Google Gemini Enterprise Agent Platform OpenAI*
 **** *Bedrock OpenAI*
 **** *Bedrock Anthropic*
 **** *NVIDIA*
@@ -73,12 +78,28 @@ See xref:gateway::flex-gateway-managed-set-up.adoc[].
 **** Any custom provider published to Anypoint Exchange. For more information, see xref:model-proxy-publish-custom-llm-metadata.adoc[].
 *** *Request model override*: Select a target model to override the model version specified in the payload. Selecting *Use model from request* sends the request to the model specified in the request. A target model is required for semantic routing.
 *** *Destination URL*: Specify the URL for your provider endpoint. Ensure the URL is correct and edit if necessary.
++
+For Microsoft Foundry and Google Gemini Enterprise Agent Platform providers, replace the placeholders in the default URL with your values:
++
+**** MS Foundry: Replace `{resource}` with your Foundry resource name, for example, `+https://{resource}.services.ai.azure.com/openai/v1/+`.
+**** Google Gemini Enterprise Agent Platform: Replace `{region}` and `{project}` with your Google Cloud region and project ID, for example, `+https://{region}-aiplatform.googleapis.com/v1/projects/{project}/locations/...+`.
+// TODO: Confirm the full default Destination URL for Google Gemini Enterprise Agent Platform providers (truncated in the UI).
 .. Under *TLS Configuration*, click *Add TLS Context* to secure the connection to the provider endpoint with a TLS context.
 .. Configure authentication:
-*** *API Key*: Choose one of the following:
-**** *Static*: Use your provider API key. Enter a static API key for the provider endpoint.
-**** *Dynamic*: Retrieve your key dynamically from the request. Define a DataWeave script to extract the API key from the incoming request.
-**** *From vault*: Use a secret stored in an external vault. Select a secret group, then select a secret from that group. For more information, see xref:exp-vaults-manage.adoc[].
+*** For *Bedrock OpenAI* and *Bedrock Anthropic* providers, configure your AWS credentials:
+**** *Access Key ID*: Enter your AWS access key ID. Select *Static*, *Dynamic*, or *From vault*, the same options as for an API key.
+**** *Secret Access Key*: Enter your AWS secret access key.
+**** *Session Token (Optional)*: Enter an AWS session token. Required only for temporary AWS credentials. Leave blank for long-term credentials.
+**** *AWS Region*: Select the AWS region of your Bedrock endpoint, for example, *US East (N. Virginia)*.
+*** For all other providers, select an *Authentication type*. The available types depend on the provider:
+**** *API key*: Choose one of the following:
+***** *Static*: Use your provider API key. Enter a static API key for the provider endpoint.
+***** *Dynamic*: Retrieve your key dynamically from the request. Define a DataWeave script to extract the API key from the incoming request.
+***** *From vault*: Use a secret stored in an external vault. Select a secret group, then select a secret from that group. For more information, see xref:exp-vaults-manage.adoc[].
+**** *OAuth 2.0 client credentials*: Available for MS Foundry providers. Model Proxy obtains an access token from the provider's authorization server by using a client ID and client secret.
+// TODO: Document the OAuth 2.0 client credentials fields (for example, token URL, client ID, client secret, scope) and whether they support Static, Dynamic, and From vault.
+**** *OAuth 2.0 JWT bearer*: Available for Google Gemini Enterprise Agent Platform providers. Model Proxy signs a JWT with your service account credentials and exchanges it for an access token.
+// TODO: Document the OAuth 2.0 JWT bearer fields (for example, service account key, scopes, token URL) and whether they support Static, Dynamic, and From vault.
 . Click *Add Route* to add additional routes. Complete the previous steps to configure each new route
 . Expand *Advanced Options* and enable *Enable semantic caching* to cache and reuse LLM responses based on semantic similarity. Select a configured semantic caching service from the list. For more information, see xref:model-proxy-semantic-caching-service.adoc[].
 . Click *Add Model Proxy*.
