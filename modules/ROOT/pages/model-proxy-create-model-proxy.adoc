@@ -23,7 +23,7 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 * A deployed Omni Gateway version 1.11.4
 +
 See xref:gateway::flex-gateway-managed-set-up.adoc[].
-* Credentials to authenticate with your LLM providers: an API key, OAuth 2.0 client credentials (Microsoft Foundry), or a service account for OAuth 2.0 JWT bearer authentication (Google Gemini Enterprise Agent Platform).
+* Credentials to authenticate with your LLM providers: an API key, OAuth 2.0 client credentials (Microsoft Foundry), or an issuer and PEM private key for OAuth 2.0 JWT bearer (Google Gemini Enterprise Agent Platform).
 * A xref:model-proxy-semantic-service.adoc[configured semantic routing service] if you want to use semantic routing.
 * A xref:model-proxy-semantic-caching-service.adoc[configured semantic caching service] if you want to enable semantic caching.
 * A connection to an external vault (AWS Secrets Manager, Microsoft Azure Key Vault, or HashiCorp Vault) configured under *Platform* > *Providers* if you want to authenticate a route with a secret from your vault. For more information, see xref:exp-vaults-manage.adoc[].
@@ -82,8 +82,7 @@ See xref:gateway::flex-gateway-managed-set-up.adoc[].
 For Microsoft Foundry and Google Gemini Enterprise Agent Platform providers, replace the placeholders in the default URL with your values:
 +
 **** MS Foundry: Replace `{resource}` with your Foundry resource name, for example, `+https://{resource}.services.ai.azure.com/openai/v1/+`.
-**** Google Gemini Enterprise Agent Platform: Replace `{region}` and `{project}` with your Google Cloud region and project ID, for example, `+https://{region}-aiplatform.googleapis.com/v1/projects/{project}/locations/...+`.
-// TODO: Confirm the full default Destination URL for Google Gemini Enterprise Agent Platform providers (truncated in the UI).
+**** Google Gemini Enterprise Agent Platform: Replace `{region}` and `{project}` with your Google Cloud region and project ID, for example, `+https://{region}-aiplatform.googleapis.com/v1/projects/{project}/locations/{region}/endpoints/openapi/chat/completions+`.
 .. Under *TLS Configuration*, click *Add TLS Context* to secure the connection to the provider endpoint with a TLS context.
 .. Configure authentication:
 *** For *Bedrock OpenAI* and *Bedrock Anthropic* providers, configure your AWS credentials:
@@ -96,10 +95,14 @@ For Microsoft Foundry and Google Gemini Enterprise Agent Platform providers, rep
 ***** *Static*: Use your provider API key. Enter a static API key for the provider endpoint.
 ***** *Dynamic*: Retrieve your key dynamically from the request. Define a DataWeave script to extract the API key from the incoming request.
 ***** *From vault*: Use a secret stored in an external vault. Select a secret group, then select a secret from that group. For more information, see xref:exp-vaults-manage.adoc[].
-**** *OAuth 2.0 client credentials*: Available for MS Foundry providers. Model Proxy obtains an access token from the provider's authorization server by using a client ID and client secret.
-// TODO: Document the OAuth 2.0 client credentials fields (for example, token URL, client ID, client secret, scope) and whether they support Static, Dynamic, and From vault.
-**** *OAuth 2.0 JWT bearer*: Available for Google Gemini Enterprise Agent Platform providers. Model Proxy signs a JWT with your service account credentials and exchanges it for an access token.
-// TODO: Document the OAuth 2.0 JWT bearer fields (for example, service account key, scopes, token URL) and whether they support Static, Dynamic, and From vault.
+**** *OAuth 2.0 client credentials*: Available for MS Foundry providers. Model Proxy obtains an access token from the token URL by using a client ID and client secret. Configure these fields:
+***** *Client ID*: Enter your OAuth client ID.
+***** *Client Secret*: Enter your OAuth client secret. Select *Static* to enter the secret directly or *From vault* to use a secret stored in an external vault.
+***** *Token URL*: Replace `{tenant}` in the default token URL, `+https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token+`, with your Microsoft Entra tenant ID.
+***** *Scopes*: (Optional) Enter the scopes to request. The default is `+https://cognitiveservices.azure.com/.default+`. Separate multiple scopes with spaces.
+**** *OAuth 2.0 JWT bearer*: Available for Google Gemini Enterprise Agent Platform providers. Model Proxy signs a JWT with your private key and exchanges it for an access token. Configure these fields:
+***** *Issuer*: Enter the value of the JWT `iss` claim, for example, your Google Cloud service account email address.
+***** *Signing key*: Paste the PEM private key used to sign the JWT. Select *Static* to paste the key directly or *From vault* to use a secret stored in an external vault.
 . Click *Add Route* to add additional routes. Complete the previous steps to configure each new route
 . Expand *Advanced Options* and enable *Enable semantic caching* to cache and reuse LLM responses based on semantic similarity. Select a configured semantic caching service from the list. For more information, see xref:model-proxy-semantic-caching-service.adoc[].
 . Click *Add Model Proxy*.
