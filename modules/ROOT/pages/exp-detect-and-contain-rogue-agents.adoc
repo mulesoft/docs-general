@@ -32,7 +32,7 @@ Confirm these prerequisites are in place.
 ** Manage APIs Configuration: Quarantine, clear flags, and restore model access
 --
 +
-API Manager permissions are environment-scoped and must be granted in each environment.
+API Manager permissions apply to individual environments. Grant permissions in each environment where you need them.
 
 * Register each agent you want to monitor with a unique instance name and ID, and link it to its model proxies. This lets flags, logs, and containment actions target the correct agent.
 
