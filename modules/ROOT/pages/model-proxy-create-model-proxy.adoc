@@ -64,8 +64,8 @@ See xref:gateway::flex-gateway-managed-set-up.adoc[].
 **** *OpenAI*
 **** *Gemini*
 **** *Azure OpenAI*
-**** *MS Foundry OpenAI*
-**** *MS Foundry Anthropic*
+**** *Microsoft Foundry OpenAI*
+**** *Microsoft Foundry Anthropic*
 **** *Google Gemini Enterprise Agent Platform Gemini*
 **** *Google Gemini Enterprise Agent Platform Anthropic*
 **** *Google Gemini Enterprise Agent Platform OpenAI*
@@ -81,7 +81,7 @@ See xref:gateway::flex-gateway-managed-set-up.adoc[].
 +
 For Microsoft Foundry and Google Gemini Enterprise Agent Platform providers, replace the placeholders in the default URL with your values:
 +
-**** MS Foundry: Replace `{resource}` with your Foundry resource name, for example, `+https://{resource}.services.ai.azure.com/openai/v1/+`.
+**** Microsoft Foundry: Replace `{resource}` with your Foundry resource name, for example, `+https://{resource}.services.ai.azure.com/openai/v1/+`.
 **** Google Gemini Enterprise Agent Platform: Replace `{region}` and `{project}` with your Google Cloud region and project ID, for example, `+https://{region}-aiplatform.googleapis.com/v1/projects/{project}/locations/{region}/endpoints/openapi/chat/completions+`.
 .. Under *TLS Configuration*, click *Add TLS Context* to secure the connection to the provider endpoint with a TLS context.
 .. Configure authentication:
@@ -95,7 +95,7 @@ For Microsoft Foundry and Google Gemini Enterprise Agent Platform providers, rep
 ***** *Static*: Use your provider API key. Enter a static API key for the provider endpoint.
 ***** *Dynamic*: Retrieve your key dynamically from the request. Define a DataWeave script to extract the API key from the incoming request.
 ***** *From vault*: Use a secret stored in an external vault. Select a secret group, then select a secret from that group. For more information, see xref:exp-vaults-manage.adoc[].
-**** *OAuth 2.0 client credentials*: Available for MS Foundry providers. Model Proxy obtains an access token from the token URL by using a client ID and client secret. Configure these fields:
+**** *OAuth 2.0 client credentials*: Available for Microsoft Foundry providers. Model Proxy obtains an access token from the token URL by using a client ID and client secret. Configure these fields:
 ***** *Client ID*: Enter your OAuth client ID.
 ***** *Client Secret*: Enter your OAuth client secret. Select *Static* to enter the secret directly or *From vault* to use a secret stored in an external vault.
 ***** *Token URL*: Replace `{tenant}` in the default token URL, `+https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token+`, with your Microsoft Entra tenant ID.

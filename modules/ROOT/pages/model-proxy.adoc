@@ -144,30 +144,30 @@ Model Proxy supports these LLM providers and models:
 ** GPT 5
 ** GPT 4.1
 ** GPT 4o Mini
-* MS Foundry OpenAI
-** GPT-6 Astra (Foundry)
-** GPT-6 Sol (Foundry)
-** GPT-6 Luna (Foundry)
-** GPT-5.5 (Foundry)
-** GPT-5.4 (Foundry)
-** GPT-5.4 Pro (Foundry)
-** GPT-5.4 Mini (Foundry)
-** GPT-5.4 Nano (Foundry)
-** Codex Mini (Foundry)
-* MS Foundry Anthropic
-** Claude Opus 5.5 (Foundry)
-** Claude Opus 5 (Foundry)
-** Claude Sonnet 5 (Foundry)
-** Claude Haiku 4.5 (Foundry)
-** Claude Fable 5.1 (Foundry)
-** Claude Fable 5 (Foundry)
-** Claude Opus 4.8 (Foundry)
-** Claude Opus 4.7 (Foundry)
-** Claude Opus 4.6 (Foundry)
-** Claude Opus 4.5 (Foundry)
-** Claude Opus 4.1 (Foundry)
-** Claude Sonnet 4.6 (Foundry)
-** Claude Sonnet 4.5 (Foundry)
+* Microsoft Foundry OpenAI
+** GPT-6 Astra
+** GPT-6 Sol
+** GPT-6 Luna
+** GPT-5.5
+** GPT-5.4
+** GPT-5.4 Pro
+** GPT-5.4 Mini
+** GPT-5.4 Nano
+** Codex Mini
+* Microsoft Foundry Anthropic
+** Claude Opus 5.5
+** Claude Opus 5
+** Claude Sonnet 5
+** Claude Haiku 4.5
+** Claude Fable 5.1
+** Claude Fable 5
+** Claude Opus 4.8
+** Claude Opus 4.7
+** Claude Opus 4.6
+** Claude Opus 4.5
+** Claude Opus 4.1
+** Claude Sonnet 4.6
+** Claude Sonnet 4.5
 * Bedrock OpenAI
 ** GPT-6 Astra (Bedrock)
 ** GPT-6 Sol (Bedrock)
@@ -202,22 +202,22 @@ Model Proxy supports these LLM providers and models:
 ** Gemini 3.7 Flash
 ** Gemini 3.8 Flash
 * Google Gemini Enterprise Agent Platform Anthropic
-** Claude Opus 5.5 (Google Gemini Enterprise Agent Platform)
-** Claude Opus 5 (Google Gemini Enterprise Agent Platform)
-** Claude Sonnet 5 (Google Gemini Enterprise Agent Platform)
-** Claude Haiku 4.5 (Google Gemini Enterprise Agent Platform)
-** Claude Fable 5.1 (Google Gemini Enterprise Agent Platform)
-** Claude Fable 5 (Google Gemini Enterprise Agent Platform)
-** Claude Opus 4.8 (Google Gemini Enterprise Agent Platform)
-** Claude Opus 4.7 (Google Gemini Enterprise Agent Platform)
-** Claude Opus 4.6 (Google Gemini Enterprise Agent Platform)
-** Claude Opus 4.5 (Google Gemini Enterprise Agent Platform)
-** Claude Opus 4.1 (Google Gemini Enterprise Agent Platform)
-** Claude Sonnet 4.6 (Google Gemini Enterprise Agent Platform)
-** Claude Sonnet 4.5 (Google Gemini Enterprise Agent Platform)
+** Claude Opus 5.5
+** Claude Opus 5
+** Claude Sonnet 5
+** Claude Haiku 4.5
+** Claude Fable 5.1
+** Claude Fable 5
+** Claude Opus 4.8
+** Claude Opus 4.7
+** Claude Opus 4.6
+** Claude Opus 4.5
+** Claude Opus 4.1
+** Claude Sonnet 4.6
+** Claude Sonnet 4.5
 * Google Gemini Enterprise Agent Platform OpenAI
-** GPT-OSS 120B (Google Gemini Enterprise Agent Platform)
-** GPT-OSS 20B (Google Gemini Enterprise Agent Platform)
+** GPT-OSS 120B
+** GPT-OSS 20B
 * Anthropic
 ** Claude Opus 5.5
 ** Claude Opus 5
