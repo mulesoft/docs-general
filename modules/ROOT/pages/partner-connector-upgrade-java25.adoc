@@ -24,7 +24,7 @@ Before upgrading and testing your custom connector for Java 25, you must be fami
 
 * Target compilation level
 +
-Compile your custom connector using JDK 17. Set the `source` and `target` compilation levels to Java 8 or Java 17, depending on the `minMuleVersion` of your connector. Additional dependencies must also be compiled for Java 17 or lower.
+Compile your custom connector using JDK 17. Set the `source` and `target` compilation levels to Java 8 or Java 17, depending on the `minMuleVersion` of your connector. You must also compile additional dependencies for Java 17 or lower.
 
 * Declaring the minimum Mule version
 +
@@ -52,7 +52,7 @@ To decouple the minimum Mule version when running tests, add the `-Dmunit.jvm` p
 
 * Unsupported directives
 +
-Do not set `--add-opens`, `--add-exports`, or `--add-modules` directives. These directives are not allowed in CloudHub, Runtime Fabric, or on-premises. These directives also require managing them for each connector across all environments, and introduce a backward compatibility burden, complicating future Java upgrades and potentially enabling security vulnerabilities. If these directives are used, they are not covered under Support.
+Do not set `--add-opens`, `--add-exports`, or `--add-modules` directives. CloudHub, Runtime Fabric, and on-premises deployments do not allow these directives. These directives also require managing them for each connector across all environments, and introduce a backward compatibility burden, complicating future Java upgrades and potentially enabling security vulnerabilities. If these directives are used, they are not covered under Support.
 +
 Do not rely on the `--enable-native-access`, `--sun-misc-unsafe-memory-access`, and `-XX:+EnableDynamicAgentLoading` directives in your custom connector. MuleSoft does not allow these directives in its managed deployment models.
 
@@ -166,7 +166,7 @@ Java 25 enforces module rules more strictly than Java 17. Libraries that resolve
 
 Running on Java 25 does not add DataWeave requirements beyond those for Java 17. On Java 17 and later, DataWeave does not override Java access checks and accesses objects only through their public API. API objects therefore require setters so DataWeave can write their properties without using reflection.
 
-Constructors and setters are required if your class is instantiated by DataWeave, and getters are required if your class is read. If your class is returned and not instantiated, only getters are required. However, using both getters and setters simplifies the validation and certification process.
+Add constructors and setters if DataWeave instantiates your class, and getters if DataWeave reads it. If DataWeave returns your class without instantiating it, add only getters. However, using both getters and setters simplifies the validation and certification process.
 
 The minimum DataWeave version for Java 25 is 2.14, which is the version bundled with Mule runtime 4.14.0.
 
@@ -175,7 +175,7 @@ The minimum DataWeave version for Java 25 is 2.14, which is the version bundled 
 
 Upgrade your custom REST Connect connectors to Java 25.
 
-REST Connect connectors are generated from an API specification using REST Connect. A REST Connect connector is a composition of existing connectors, so its Java compatibility is the Java compatibility that its individual components have in common.
+REST Connect generates connectors from an API specification. A REST Connect connector is a composition of existing connectors, so its Java compatibility is the Java compatibility that its individual components have in common.
 
 REST Connect generates a new version of the connector that depends on Java 25-compatible connectors. To get a Java 25-compatible version, republish the API specification to Exchange. See xref:exchange::to-deploy-using-rest-connect.adoc[REST Connect Connector Generator].
 
@@ -285,7 +285,7 @@ Run your MTF tests to test compatibility of your custom connector against Java 2
 As mentioned previously, you can use a single build pipeline that runs against all supported Java versions. You can also set up another temporary build pipeline for Java 25 so your main build pipeline does not become unstable. After you upgrade to Java 25, discard the temporary build pipeline and converge on your main build pipeline.
 
 . Set the path to your JVM installation in the `MUNIT_JVM` variable (you must install it yourself). You must also set `JAVA_HOME` to your JDK 17 installation.
-. Ensure these MTF dependencies are set in your custom connector `pom.xml` file:
+. Ensure your custom connector `pom.xml` file includes these MTF dependencies:
 +
 * munit ##TBD (Q-T2)##
 * munit-extensions-maven-plugin ##TBD (Q-T2)##
