@@ -25,11 +25,14 @@ Key benefits:
 Confirm these prerequisites are in place.
 
 * You need these API Manager permissions:
-** API Creator: Create instances
-** View APIs Configuration: View instances
-** Edit APIs Configuration: Edit and manage instances
-** View API Alerts: View API alerts in a specific environment
-** Manage API Alerts: Manage API alerts in a specific environment
++
+--
+** API Creator: Reapply model access to a quarantined agent
+** View APIs Configuration: Review flagged agents
+** Manage APIs Configuration: Quarantine, clear flags, and restore model access
+--
++
+API Manager permissions apply to individual environments. Grant permissions in each environment where you need them.
 
 * Register each agent you want to monitor with a unique instance name and ID, and link it to its model proxies. This lets flags, logs, and containment actions target the correct agent.
 
