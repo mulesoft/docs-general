@@ -10,8 +10,6 @@
 
 IMPORTANT: This guide is a beta version for MuleSoft partners. Content, version numbers, and procedures can change before general availability.
 
-NOTE: This guide applies to MuleSoft partners only. If you are a MuleSoft customer, see ##TBD (Q-A2): customer Java 25 upgrade guide##.
-
 Upgrade, test, and release your custom connectors for Java 25 to ensure compatibility within the MuleSoft ecosystem. Ensuring this compatibility is crucial because running an incompatible connector can lead to runtime failures, decreased performance, and security vulnerabilities that can impact your app's stability.
 
 Mule runtime engine supports Java 25 in version 4.14 and later. Mule runtime 4.14 supports both Java 17 and Java 25.
