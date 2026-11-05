@@ -64,7 +64,7 @@ Upgrade your custom Mule SDK (Java SDK and XML SDK) connectors to Java 25.
 [[upgrade-third-party-libraries]]
 === Upgrade Third-Party Libraries
 
-Your custom connector likely relies on third-party libraries, so it is important to ensure they are compatible with Java 25 as well. Even if your custom connector passes tests, it is still important to deliver secure and reliable software. If a critical bug or vulnerability is found, you must upgrade to a fixed version. Using up-to-date libraries that explicitly support Java 25 makes this process easier and more reliable, as the vendor has already tested them on Java 25.
+Your custom connector likely relies on third-party libraries, so confirm that they are compatible with Java 25. Passing tests does not protect you from a critical bug or vulnerability in a library, which forces you to upgrade to a fixed version. Libraries that explicitly support Java 25 make that upgrade easier, because the vendor has already tested them on Java 25.
 
 MuleSoft does not maintain a list of third-party libraries that are incompatible with Java 25. The main known incompatibility across MuleSoft connectors is Caffeine 2.x. If your custom connector uses Caffeine 2.x, upgrade to Caffeine 3.3.1 or later. Check the changelogs of your other libraries for Java 25 compatibility.
 
@@ -149,7 +149,11 @@ Java 25 logs a warning when code loads native libraries or calls native methods 
 Upgrade your libraries to versions compatible with Java 25. Review the changelogs of your third-party libraries for Java 25 compatibility. Libraries that read or write class files, such as bytecode tools, might need upgrades to handle Java 25 class files. This includes updating Byte Buddy to version 1.18.16 and Jacoco to 0.8.16. For Caffeine, see <<upgrade-third-party-libraries>>. Verify that all dependencies are compatible with Java 25 to avoid runtime issues.
 ** Changes with running the test suite
 +
-Adapt your testing approach for Java 25. Java 25 warns when a library loads an agent dynamically into a running JVM. If you use Mockito, configure Mockito as a Java agent (`-javaagent`) in your test configuration instead of relying on dynamic attachment. For example, pass `-javaagent` to the Maven Surefire plugin in the `argLine` parameter. If Jacoco also sets `argLine`, start the value with `@{argLine}` so that both agents load. Update your tests to handle the changes in Java 25 and avoid deprecated methods.
+Adapt your testing approach for Java 25. Java 25 warns when a library loads an agent dynamically into a running JVM. If you use Mockito, configure it as a Java agent (`-javaagent`) in your test configuration instead of relying on dynamic attachment.
++
+For example, pass `-javaagent` to the Maven Surefire plugin in the `argLine` parameter. If Jacoco also sets `argLine`, start the value with `@{argLine}` so that both agents load.
++
+Update your tests to handle the changes in Java 25 and avoid deprecated methods.
 ** Java Platform Module System (JPMS)
 +
 Java 25 enforces module rules more strictly than Java 17. Libraries that resolved correctly on Java 17 can fail on Java 25 with errors such as `java.lang.module.FindException`. Review these areas:
