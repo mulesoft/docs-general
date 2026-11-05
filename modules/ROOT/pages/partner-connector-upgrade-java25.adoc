@@ -46,7 +46,7 @@ Verify that `minMuleVersion` in `META-INF/mule-artifact/mule-artifact.json` refl
 
 * Minimum Mule version for testing
 +
-If the `minMuleVersion` of your custom connector is compatible with Java 8, tests that extend the `MuleArtifactFunctionalTestCase` are not compatible with Java 17. To run these tests, you must either migrate them to the Mule Test Framework (MTF) or use the `surefire.jvm` parameter so that the unit tests run using Java 8.
+If the `minMuleVersion` of your custom connector is compatible with Java 8, tests that extend the `MuleArtifactFunctionalTestCase` are not compatible with Java 17. To run these tests, you must either migrate them to the Module Testing Framework (MTF) or use the `surefire.jvm` parameter so that the unit tests run using Java 8.
 +
 To decouple the minimum Mule version when running tests, add the `-Dmunit.jvm` parameter to use Java 25 as described in <<test-for-java-25-compatibility>>.
 
@@ -127,7 +127,7 @@ See the https://docs.oracle.com/en/java/javase/25/migrate/getting-started.html[O
 
 * Mule runtime engine
 +
-See xref:general::java-support.adoc#mule-runtime[Mule runtime] to learn more about the Java 25 changes made in Mule runtime engine. ##TBD (W-24620565): update the xref when the Java 25 Support page is published.##
+See xref:general::java-support.adoc#mule-runtime-java-support[Mule runtime] to learn more about the Java 25 changes made in Mule runtime engine. ##TBD (W-24620565): update the xref when the Java 25 Support page is published.##
 +
 ** Reflection on Java classes
 +
@@ -214,7 +214,7 @@ Run an initial test to test your custom connector for Java 25 compatibility. You
 [source,xml,linenums]
 ----
 <argLines>
-         <argLine>                      -javaagent:${settings.localRepository}/org/jacoco/org.jacoco.agent/${jacoco.version}/org.jacoco.agent-${jacoco.version}-runtime.jar=destfile=${session.executionRootDirectory}/target/jacoco-munit.exec</argLine>
+         <argLine>-javaagent:${settings.localRepository}/org/jacoco/org.jacoco.agent/${jacoco.version}/org.jacoco.agent-${jacoco.version}-runtime.jar=destfile=${session.executionRootDirectory}/target/jacoco-munit.exec</argLine>
 </argLines>
 ----
 . Run your MTF test to generate the coverage report. Use the `-Dtest=none` and `-DfailIfNoTests=false` flags when running the test to avoid including the JUnit tests in the coverage report.
@@ -294,7 +294,7 @@ To ensure your MTF tests do not validate against Mule runtime versions earlier t
 [source,xml,linenums]
 ----
 <configuration>
-	[...]
+    [...]
 <runtimeConfiguration>
     <discoverRuntimes>
         <minMuleVersion>${minVersion}</minMuleVersion>
@@ -326,7 +326,7 @@ mvn verify \
 
 If you use `mule-java-extension-parent` (recommended), the minimum Mule version is independent of the parent version and you control it directly in your project. For more information, see xref:mule-sdk::forward-compatibility-setup.adoc#upgrading-existing-modules[Upgrading Existing Modules].
 
-If you use the deprecated `mule-modules-parent`, the parent POM only sets the lower boundary for the minimum Mule version and is compatible with Mule 4.14. You don't need to change parent POMs to support Java 25.
+If you use the deprecated `mule-modules-parent`, the parent POM only sets the lower boundary for the minimum Mule version and is compatible with Mule 4.14. You do not need to change parent POMs to support Java 25.
 
 [[check-for-sun-misc-unsafe-failures]]
 ==== Check for `sun.misc.Unsafe` Failures
@@ -361,6 +361,7 @@ After you update your code and your tests pass, you are ready to release a new J
 Mule determines the Java versions that your custom connector supports from the `supportedJavaVersions` array in the connector's `META-INF/mule-artifact/mule-artifact.json` file. The `@JavaVersionSupport` annotation is deprecated. Do not use it to declare Java 25 support.
 
 IMPORTANT: Do not add the `JAVA_25` value to the `@JavaVersionSupport` annotation. Mule runtime versions that do not recognize this value fail when they load the connector. Starting with Mule Extensions Maven Plugin 1.9.23, the build fails at package time if the annotation uses `JAVA_25`.
+
 To communicate Java 25 compatibility:
 
 . In the `pom.xml` file of your custom connector, upgrade `mule-extensions-maven-plugin` to version 1.9.23 or later and set `supportedJavaVersions` in the plugin configuration. Do not include Java 21. For example:
@@ -396,9 +397,9 @@ mvn clean install
 
 The way Mule reads the Java compatibility of a connector depends on the Mule runtime version:
 
-* Mule runtime 4.13 and later check `supportedJavaVersions` first, and then the deprecated `@JavaVersionSupport` annotation. If the connector declares neither, Mule assumes that the connector supports only Java 8 and Java 11, which these runtimes don't support, and the connector fails.
+* Mule runtime 4.13 and later check `supportedJavaVersions` first, and then the deprecated `@JavaVersionSupport` annotation. If the connector declares neither, Mule assumes that the connector supports only Java 8 and Java 11, which these runtimes do not support, and the connector fails.
 * Mule runtime 4.6 up to, but not including, 4.13 rely on the `@JavaVersionSupport` annotation until the end of life of those versions.
-* Mule runtime versions earlier than 4.6 don't read Java compatibility.
+* Mule runtime versions earlier than 4.6 do not read Java compatibility.
 
 You can mark your custom connector as compatible with Java 25 only; however, you must ensure that no adoption or backward compatibility issues exist.
 

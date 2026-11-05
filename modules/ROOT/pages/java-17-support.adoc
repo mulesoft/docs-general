@@ -87,7 +87,7 @@ To enhance application performance, see:
 
 Java 17 manages memory differently than it did in earlier versions like Java 8. Java 17 reduces request latency and executes work more predictably. To achieve this, it adopts a different memory management approach. Although highly dependent on each application, in some cases, Java 17 preferentially commits to heap memory.
 
-When running Mule applications on Java 17, you might observe heap memory patterns that differ from Java 8. For example, heap usage can remain at a higher baseline or not decrease immediately after load. This behavior is expected and reflects how Java manages memory. For more information, see https://help.salesforce.com/s/articleView?id=005132434&type=1[Mule heap memory pattern differences between Java 17 and Java 8].
+When running Mule applications on Java 17, you might observe heap memory patterns that differ from Java 8. For example, heap usage can remain at a higher baseline or not decrease immediately after load. This behavior is expected and reflects how Java manages memory. For more information, see https://help.salesforce.com/s/articleView?id=005132434&type=1[Mule heap memory pattern differences between Java 17 and Java 8^].
 
 [NOTE]
 ====
@@ -106,7 +106,7 @@ If your apps are deployed on-premises:
 [[default-tls-cipher-selection]]
 === Default TLS Cipher Selection
 
-When using TLS in a server with Java 11 and later, the server determines the cipher preference. The client supported ciphers list is used to filter, not to determine priority. See https://bugs.openjdk.org/browse/JDK-8168261[Use server cipher suites preference by default (JDK-8168261)].
+When using TLS in a server with Java 11 and later, the server determines the cipher preference. The client supported ciphers list is used to filter, not to determine priority. See https://bugs.openjdk.org/browse/JDK-8168261[Use server cipher suites preference by default (JDK-8168261)^].
 
 Upgrading your server from Java 8 to Java 11 and later can cause cipher renegotiation (depending on the supported ciphers list of the client), which can affect the trade-off between security and performance.
 
@@ -186,7 +186,7 @@ Don't set `--add-opens`, `--add-exports`, or `--add-modules` directives. These d
 
 * JDK Migration Guide
 +
-See the https://docs.oracle.com/en/java/javase/17/migrate/getting-started.html#GUID-C25E2B1D-6C24-4403-8540-CFEA875B994A[Oracle JDK Migration Guide] for a full list of the changes made from Java 8 to Java 17. Use the guide to assess the impact to your code.
+See the https://docs.oracle.com/en/java/javase/17/migrate/getting-started.html#GUID-C25E2B1D-6C24-4403-8540-CFEA875B994A[Oracle JDK Migration Guide^] for a full list of the changes made from Java 8 to Java 17. Use the guide to assess the impact to your code.
 
 [[anypoint-studio]]
 == Anypoint Studio
