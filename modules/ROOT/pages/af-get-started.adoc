@@ -59,6 +59,27 @@ These apply to more than one job:
 * A connected provider scanner is required before you apply policies to, or govern, third-party gateway APIs.
 ====
 
+[[deployment-options]]
+== Choose a Gateway and Deployment Target
+
+Several Agent Fabric jobs need an Omni Gateway, and agent networks also need a deployment target. Choose a combination that supports the jobs you plan to do.
+
+Managed and Self-Managed describe who runs the gateway, not who owns the infrastructure:
+
+* Managed Omni Gateway: Anypoint Platform installs, monitors, patches, and upgrades the gateway. Deploy it to CloudHub 2.0, where MuleSoft also manages the infrastructure, or to Runtime Fabric, where you manage the Kubernetes infrastructure.
+* Self-Managed Omni Gateway in Connected Mode: You install, run, and upgrade the gateway on infrastructure you manage. The gateway connects to Anypoint Platform for policies and monitoring.
+
+[cols="2,1,1,1,1",options="header"]
+|===
+| Capability | CloudHub 2.0 | Runtime Fabric | Self-Managed Omni Gateway in Connected Mode | Anypoint Platform PCE
+| Agent networks | Supported (shared and private spaces) | Supported | Not supported | Not supported
+| Managed instances, model proxies, and policies | Supported (Managed Omni Gateway) | Supported (Managed Omni Gateway) | [Confirm with SME] | Not supported
+|===
+
+Deploy an agent network and the Omni Gateways that protect it to the same deployment target.
+
+To set up a gateway, see xref:gateway::gateway-getting-started-overview.adoc[].
+
 [[registry]]
 == Catalog Agents, MCP Servers, and APIs
 
@@ -276,7 +297,7 @@ You also need these permissions:
 | To do this | You need
 | Create instances | API Manager: API Creator
 | View instances | API Manager: View APIs Configuration
-| Edit instances | API Manager: Edit APIs Configuration
+| Edit instances | API Manager: Manage APIs Configuration
 | View policies | API Manager: View Policies
 | Apply, edit, enable, disable, or remove policies | API Manager: Manage Policies
 |===
@@ -360,8 +381,8 @@ You also need these permissions:
 [cols="1,2a",options="header"]
 |===
 | To do this | You need
-| Set model costs | One of: API Manager: API Creator, View APIs Configuration, or Edit APIs Configuration
-| Manage model wallets | API Manager: API Creator, View APIs Configuration, Edit APIs Configuration, and Manage Policies
+| Set model costs | One of: API Manager: API Creator, View APIs Configuration, or Manage APIs Configuration
+| Manage model wallets | API Manager: API Creator, View APIs Configuration, Manage APIs Configuration, and Manage Policies
 | Use the Cost Management experience | API Manager: Manage Policies, View APIs Configuration, and View Policies; Anypoint Monitoring: Monitoring Viewer; and Exchange: Exchange Viewer. Anypoint Code Builder: Mule Developer Generative AI User is optional and required only to enable AI features.
 |===
 
@@ -414,7 +435,7 @@ You also need these permissions:
 [cols="1,2a",options="header"]
 |===
 | To do this | You need
-| Detect and contain rogue agents | API Manager: API Creator, View APIs Configuration, Edit APIs Configuration, View API Alerts, and Manage API Alerts
+| Detect and contain rogue agents | API Manager: API Creator, View APIs Configuration, Manage APIs Configuration, View API Alerts, and Manage API Alerts
 |===
 
 Learn more: xref:exp-detect-and-contain-rogue-agents.adoc[]
