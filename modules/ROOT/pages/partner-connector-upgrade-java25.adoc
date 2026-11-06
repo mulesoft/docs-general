@@ -140,7 +140,7 @@ Upgrade your libraries to versions compatible with Java 25. Review the changelog
 +
 Adapt your testing approach for Java 25. Java 25 warns when a library loads an agent dynamically into a running JVM. If you use Mockito, configure it as a Java agent (`-javaagent`) in your test configuration instead of relying on dynamic attachment.
 +
-For example, pass `-javaagent` to the Maven Surefire plugin in the `argLine` parameter. If JaCoCo also sets `argLine`, start the value with `@{argLine}` so that both agents load.
+For example, pass `-javaagent` to the Maven Surefire plugin in the `argLine` parameter. If JaCoCo also sets `argLine`, start the value with `+@{argLine}+` so that both agents load.
 +
 Update your tests to handle the changes in Java 25 and avoid deprecated methods.
 ** Java Platform Module System (JPMS)
