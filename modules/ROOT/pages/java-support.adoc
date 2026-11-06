@@ -8,6 +8,7 @@ MuleSoft follows Java's long-term-support (LTS) release cadence. Mule runtime 4.
 Use this topic to find the Java versions that each Mule runtime version supports. Then, go to the topic for the Java version you want to use:
 
 * xref:java-17-support.adoc[]: Plan and complete your upgrade to Java 17.
+* xref:partner-connector-upgrade-java25.adoc[]: Upgrade your custom connectors to Java 25.
 
 [[mule-runtime-java-support]]
 == Mule Runtime Java Support
@@ -37,3 +38,4 @@ For more information about Mule release cadences, see xref:release-notes::mule-r
 == See Also
 
 * xref:java-17-support.adoc[]
+* xref:partner-connector-upgrade-java25.adoc[]
