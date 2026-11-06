@@ -5,7 +5,7 @@ IMPORTANT: This guide is a beta version for MuleSoft partners. Content, version 
 
 Upgrade, test, and release your custom connectors for Java 25 to ensure compatibility within the MuleSoft ecosystem. An incompatible connector can cause runtime failures, decreased performance, and security vulnerabilities that affect the stability of your Mule app.
 
-Mule runtime engine 4.14 and later supports Java 25. Mule runtime 4.14 supports both Java 17 and Java 25.
+Java 25 support is planned for Mule runtime 4.14 and later. Mule runtime 4.14 is planned to support both Java 17 and Java 25.
 
 MuleSoft certifies Java 8, Java 11, Java 17, and Java 25 for custom connectors. Mule does not support Java 21. Do not declare Java 21 compatibility for your custom connector.
 
@@ -116,14 +116,14 @@ To help you review your code, learn more about the different changes in Java 25:
 +
 See the https://docs.oracle.com/en/java/javase/25/migrate/getting-started.html[Oracle JDK 25 Migration Guide^] for a full list of the changes made from Java 17 to Java 25. Use the guide to assess the impact to your code.
 
-* Mule runtime engine
+* Mule runtime
 +
 ** Reflection on Java classes
 +
-Review and update any code that uses reflection to access Java classes or set parameter values. Java 25 keeps the strong encapsulation of JDK internals introduced in Java 17, so avoid introspecting JDK internals. Have a robust test suite that runs with Java 25. Pay special attention to the `setAccessible(true)` method.
+Review and update any code that uses reflection to access Java classes or set parameter values. Java 25 keeps the strong encapsulation of JDK internals introduced in Java 17, so avoid introspecting JDK internals. Maintain a test suite that runs on Java 25. Pay special attention to the `setAccessible(true)` method.
 ** Serialization
 +
-Update your serialization code to accommodate the restrictions of Java 25. Some serialization libraries, such as Gson, fall back to `sun.misc.Unsafe.allocateInstance()` to create objects of classes that do not have a no-argument constructor. Java 25 rejects this fallback. To resolve it, add a no-argument constructor to your serialized classes or switch to Data Transfer Objects (DTOs). For more information, refer to xref:mule-runtime::configure-custom-serializers.adoc[].
+Update your serialization code to accommodate the restrictions of Java 25. Some serialization libraries, such as Gson, fall back to `sun.misc.Unsafe.allocateInstance()` to create objects of classes that do not have a no-argument constructor. Java 25 rejects this fallback. To resolve this issue, add a no-argument constructor to your serialized classes or switch to Data Transfer Objects (DTOs). For more information, see xref:mule-runtime::configure-custom-serializers.adoc[].
 ** `sun.misc.Unsafe` memory access
 +
 The memory-access methods in `sun.misc.Unsafe` are deprecated for removal and log a warning in Java 25. Replace direct usages with the `VarHandle` or Foreign Function and Memory APIs, and upgrade libraries that use `sun.misc.Unsafe` internally, such as older versions of Caffeine and Byte Buddy.
@@ -155,7 +155,7 @@ Java 25 enforces module rules more strictly than Java 17. Libraries that resolve
 
 Running on Java 25 does not add DataWeave requirements beyond those for Java 17. On Java 17 and later, DataWeave does not override Java access checks and accesses objects only through their public API. API objects therefore require setters so DataWeave can write their properties without using reflection.
 
-Add constructors and setters if DataWeave instantiates your class, and getters if DataWeave reads it. If DataWeave returns your class without instantiating it, add only getters. However, using both getters and setters simplifies the validation and certification process.
+Add constructors and setters if DataWeave instantiates your class, and getters if DataWeave reads it. If DataWeave returns your class without instantiating it, add only getters. Using both getters and setters simplifies the validation and certification process.
 
 The minimum DataWeave version for Java 25 is 2.14, which is the version bundled with Mule runtime 4.14.0.
 
@@ -171,7 +171,7 @@ REST Connect generates a new version of the connector that depends on Java 25-co
 [[upgrade-your-custom-configuration-properties-providers]]
 == Upgrade Your Custom Configuration Properties Providers
 
-To upgrade your custom configuration properties provider to be compatible with Java 25, switch to using the xref:mule-sdk::getting-started.adoc[Java SDK] and declare Java 25 support in `supportedJavaVersions` as explained in <<release-your-custom-connector>>. You must also perform all the steps described in this guide, just like with any custom connector.
+To upgrade your custom configuration properties provider to be compatible with Java 25, switch to using the xref:mule-sdk::getting-started.adoc[Java SDK] and declare Java 25 support in `supportedJavaVersions` as explained in <<release-your-custom-connector>>. You must also perform all the steps described in this guide, as you would for any custom connector.
 
 You can use the example project in xref:mule-runtime::custom-configuration-properties-provider.adoc#example-mule-sdk-module[Example: Mule SDK Module] for Java 25.
 
@@ -200,7 +200,7 @@ Although the pipeline contains multiple tests, the pipeline has one compilation 
 
 === Run an Initial Test
 
-Run an initial test to test your custom connector for Java 25 compatibility. You can continue to run tests as you change the custom connector code:
+Run an initial test to check your custom connector for Java 25 compatibility. You can continue to run tests as you change the custom connector code:
 
 . In the `pom.xml` file of your custom connector, update the `munit-extensions-maven-plugin` configuration to include this configuration (the `jacoco.version` property must be 0.8.16 or later):
 +
@@ -227,7 +227,7 @@ The coverage percentage reflects how much of your connector is tested. Key issue
 
 === Add the JDeps Maven Plugin
 
-JDeps is a tool for static code analysis that detects the usage of JDK internal APIs that are no longer available or accessible. For more information, refer to the https://wiki.openjdk.org/spaces/JDK8/pages/17957128/Java+Dependency+Analysis+Tool[OpenJDK wiki^].
+JDeps is a tool for static code analysis that detects the usage of JDK internal APIs that are no longer available or accessible. For more information, see the https://wiki.openjdk.org/spaces/JDK8/pages/17957128/Java+Dependency+Analysis+Tool[OpenJDK wiki^].
 
 Add the JDeps Maven plugin to your custom connector's `pom.xml` file:
 
@@ -264,7 +264,7 @@ To run the JDeps Maven plugin without tests, use this command:
 mvn clean install -Dtest=none -DfailIfNoTests=false -DskipTests=true
 ----
 
-This helps focus on checking the offending libraries and internal access issues without dealing with potential test failures or long test runtimes.
+This command focuses the check on the offending libraries and internal access issues without dealing with potential test failures or long test runtimes.
 
 [[test-for-java-25-compatibility]]
 === Test for Java 25 Compatibility
@@ -374,7 +374,7 @@ To communicate Java 25 compatibility:
 ----
 . Build your custom connector:
 +
-[source,console]
+[source,bash]
 ----
 mvn clean install
 ----
@@ -388,7 +388,7 @@ mvn clean install
 The way Mule reads the Java compatibility of a connector depends on the Mule runtime version:
 
 * Mule runtime 4.13 and later check `supportedJavaVersions` first, and then the deprecated `@JavaVersionSupport` annotation. If the connector declares neither, Mule assumes that the connector supports only Java 8 and Java 11. Because these runtimes do not support Java 8 and Java 11, the connector fails.
-* Mule runtime 4.6 up to, but not including, 4.13 rely on the `@JavaVersionSupport` annotation until the end of life of those versions.
+* Mule runtime versions 4.6 up to, but not including, 4.13 rely on the `@JavaVersionSupport` annotation until the end of life of those versions.
 * Mule runtime versions earlier than 4.6 do not read Java compatibility.
 
 You can mark your custom connector as compatible with Java 25 only. However, you must ensure that no adoption or backward compatibility issues exist.
