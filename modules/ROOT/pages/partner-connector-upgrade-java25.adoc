@@ -415,7 +415,7 @@ For more information, see xref:mule-sdk::java-version-support.adoc[].
 
 Exchange reads Java compatibility from the `supportedJavaVersions` attribute in `mule-artifact.json` when you publish your custom connector. Publishing a new connector version that changes supported Java compatibility requires this metadata. If your connector has a `minMuleVersion` of 4.13 or later and `mule-artifact.json` has no Java compatibility metadata, Exchange fails to process the connector. For more information, see xref:mule-sdk::publishing-connectors-exchange.adoc[].
 
-In Exchange, connectors that declare Java 25 support are tagged accordingly. ##TBD (Q-X1): confirm the tag and filter availability, and any partner certification or review step.##
+In Exchange, connectors that declare Java 25 support are tagged accordingly.
 
 == See Also
 
