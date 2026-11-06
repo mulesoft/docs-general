@@ -182,7 +182,7 @@ REST Connect generates a new version of the connector that depends on Java 25-co
 
 To upgrade your custom configuration properties provider to be compatible with Java 25, switch to use xref:mule-sdk::getting-started.adoc[Java SDK] and declare Java 25 support in `supportedJavaVersions` as explained in <<release-your-custom-connector>>. You must also perform all the steps described in this guide, just like with any custom connector.
 
-The example custom configuration properties provider mentioned in xref:mule-runtime::custom-configuration-properties-provider.adoc#example-mule-sdk-module[Example: Mule SDK Module] ##TBD (Q-T6): confirm the example is updated for Java 25 and provide the changeset link.##
+You can use the same project from the example custom configuration properties provider in xref:mule-runtime::custom-configuration-properties-provider.adoc#example-mule-sdk-module[Example: Mule SDK Module] for Java 25.
 
 Alternatively, if switching to using xref:mule-sdk::getting-started.adoc[Java SDK] involves too many changes for you, add a declaration using `ExtensionDeclarer` inside `ExtensionLoadingDelegate` in your custom configuration properties provider. ##TBD (Q-T6): changeset link.##
 
