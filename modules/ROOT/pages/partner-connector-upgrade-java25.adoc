@@ -17,7 +17,7 @@ Before upgrading and testing your custom connector for Java 25, you must be fami
 
 * Target compilation level
 +
-Set the source and target compilation levels according to the minMuleVersion of your connector. If your connector supports Mule runtime versions earlier than 4.14, compile it for Java 8 or Java 17. If your connector requires Mule 4.14.0 or later, you can compile it for Java 25 or lower. You must also compile additional dependencies for the same Java level or lower.
+Set the `source` and `target` compilation levels according to the `minMuleVersion` of your connector. If your connector supports Mule runtime versions earlier than 4.14, compile it for Java 8 or Java 17. If your connector requires Mule 4.14.0 or later, you can compile it for Java 25 or lower. You must also compile additional dependencies for the same Java level or lower.
 
 * Declaring the minimum Mule version
 +
@@ -45,7 +45,7 @@ To decouple the minimum Mule version when running tests, add the `-Dmunit.jvm` p
 
 * Unsupported directives
 +
-Do not set `--add-opens`, `--add-exports`, or `--add-modules` directives. CloudHub, Runtime Fabric, and on-premises deployments do not allow these directives. These directives also require managing them for each connector across all environments, and introduce a backward compatibility burden, complicating future Java upgrades and potentially enabling security vulnerabilities. If these directives are used, they are not covered under Support.
+Do not set `--add-opens`, `--add-exports`, or `--add-modules` directives. CloudHub, Runtime Fabric, and on-premises deployments do not allow these directives. You must manage these directives for each connector in every environment. They also add a backward compatibility burden that complicates future Java upgrades, and they can introduce security vulnerabilities. Support does not cover connectors that use these directives.
 +
 Do not rely on the `--enable-native-access`, `--sun-misc-unsafe-memory-access`, and `-XX:+EnableDynamicAgentLoading` directives in your custom connector. MuleSoft does not allow these directives in its managed deployment models.
 
