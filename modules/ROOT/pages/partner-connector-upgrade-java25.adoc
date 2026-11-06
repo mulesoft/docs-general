@@ -2,11 +2,6 @@
 :keywords: java 25, java upgrade, custom connectors, partner connectors, connector upgrade, mulesoft partners, sdk upgrade
 
 // BETA DRAFT for MuleSoft partners.
-// Placeholders use the format ##TBD (Q-xx): ...## and render highlighted.
-// Q-xx IDs map to the open questions in J25-partner-connector-upgrade-plan.md.
-// Remove every placeholder before delivery. Search the file for "TBD".
-// Aligned with the Java 25 Support hub draft (W-24620565). Do not publish customer-facing
-// Java 25 claims until GA (planned with Mule runtime 4.14 LTS).
 
 IMPORTANT: This guide is a beta version for MuleSoft partners. Content, version numbers, and procedures can change before general availability.
 
@@ -22,7 +17,7 @@ Before upgrading and testing your custom connector for Java 25, you must be fami
 
 * Target compilation level
 +
-Compile your custom connector using JDK 17. Set the `source` and `target` compilation levels to Java 8 or Java 17, depending on the `minMuleVersion` of your connector. You must also compile additional dependencies for Java 17 or lower.
+Set the source and target compilation levels according to the minMuleVersion of your connector. If your connector supports Mule runtime versions earlier than 4.14, compile it for Java 8 or Java 17. If your connector requires Mule 4.14.0 or later, you can compile it for Java 25 or lower. You must also compile additional dependencies for the same Java level or lower.
 
 * Declaring the minimum Mule version
 +
@@ -44,7 +39,7 @@ Verify that `minMuleVersion` in `META-INF/mule-artifact/mule-artifact.json` refl
 
 * Minimum Mule version for testing
 +
-If the `minMuleVersion` of your custom connector is compatible with Java 8, tests that extend the `MuleArtifactFunctionalTestCase` are not compatible with Java 17. To run these tests, you must either migrate them to the Module Testing Framework (MTF) or use the `surefire.jvm` parameter so that the unit tests run using Java 8.
+If the `minMuleVersion` of your custom connector is compatible with Java 8, tests that extend the `MuleArtifactFunctionalTestCase` are not compatible with Java 25. To run these tests, you must either migrate them to the Module Testing Framework (MTF) or use the `surefire.jvm` parameter so that the unit tests run using Java 8.
 +
 To decouple the minimum Mule version when running tests, add the `-Dmunit.jvm` parameter to use Java 25 as described in <<test-for-java-25-compatibility>>.
 
@@ -124,8 +119,6 @@ To help you review your code, learn more about the different changes in Java 25:
 See the https://docs.oracle.com/en/java/javase/25/migrate/getting-started.html[Oracle JDK 25 Migration Guide^] for a full list of the changes made from Java 17 to Java 25. Use the guide to assess the impact to your code.
 
 * Mule runtime engine
-+
-See xref:general::java-support.adoc#mule-runtime-java-support[Mule runtime] to learn more about the Java 25 changes made in Mule runtime engine. ##TBD (W-24620565): update the xref when the Java 25 Support page is published.##
 +
 ** Reflection on Java classes
 +
