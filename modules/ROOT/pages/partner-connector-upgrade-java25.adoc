@@ -288,7 +288,6 @@ As mentioned previously, you can use a single build pipeline that runs against a
 * munit
 * munit-extensions-maven-plugin
 * mtf-tools
-* mule-maven-plugin 4.10.4
 * mule-extensions-maven-plugin 1.9.23 or later
 
 To ensure your MTF tests do not validate against Mule runtime versions earlier than your connector's minimum Mule version, add this configuration to the `munit-plugin` configuration in your custom connector `pom.xml` file:
