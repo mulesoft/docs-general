@@ -383,7 +383,7 @@ To communicate Java 25 compatibility:
 </plugin>
 ----
 +
-##TBD (Q-A1): confirm the exact `supportedJavaVersions` configuration syntax and when to also list Java 8 and Java 11.##
+##TBD (Q-A1): confirm when to also list Java 8 and Java 11 in `supportedJavaVersions`.##
 . Build your custom connector:
 +
 [source,console]
