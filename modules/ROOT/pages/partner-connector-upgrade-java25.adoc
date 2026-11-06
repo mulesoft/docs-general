@@ -1,8 +1,6 @@
 = Upgrading Custom Connectors to Java 25 (Partners)
 :keywords: java 25, java upgrade, custom connectors, partner connectors, connector upgrade, mulesoft partners, sdk upgrade
 
-// BETA DRAFT for MuleSoft partners.
-
 IMPORTANT: This guide is a beta version for MuleSoft partners. Content, version numbers, and procedures can change before general availability.
 
 Upgrade, test, and release your custom connectors for Java 25 to ensure compatibility within the MuleSoft ecosystem. Ensuring this compatibility is crucial because running an incompatible connector can lead to runtime failures, decreased performance, and security vulnerabilities that can impact your app's stability.
@@ -204,7 +202,7 @@ Although the pipeline contains multiple tests, the pipeline has one compilation 
 
 Run an initial test to test your custom connector for Java 25 compatibility. You can continue to run tests as you change the custom connector code:
 
-. In the `pom.xml` file of your custom connector, update the `munit-extensions-maven-plugin` configuration to include this configuration (the `jacoco.version` property must be 0.8.14 or later):
+. In the `pom.xml` file of your custom connector, update the `munit-extensions-maven-plugin` configuration to include this configuration (the `jacoco.version` property must be 0.8.16 or later):
 +
 [source,xml,linenums]
 ----
