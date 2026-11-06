@@ -3,8 +3,9 @@
 
 Install the MuleSoft for Teams app in your Microsoft Teams tenant to interact with MuleSoft directly from Teams using natural language. The Teams app enables you to:
 
-* <<connect-teams-tenant>>: Bind your Microsoft Teams tenant to your Anypoint organization so the app can send alerts and notifications directly to channels and DMs.
-* <<begin-using-agent>>: Manage your MuleSoft environment with the MuleSoft Agent integrated with Teams. Use MuleSoft Agent, to list APIs, view MCP servers, check governance, and perform other management tasks.
+* <<connect-teams-tenant>>: Submit the app for review, approve it in Microsoft Teams Admin Center, and bind your Microsoft Teams tenant to your Anypoint organization so the app can send alerts and notifications directly to channels and DMs.
+* <<configure-notification-channels>>: Choose the Teams channels that receive alerts.
+* <<begin-using-agent>>: Manage your MuleSoft environment with the MuleSoft Agent integrated with Teams. Use MuleSoft Agent to list APIs, view MCP servers, check governance, and perform other management tasks.
 * Configure alerts to deliver notifications to Teams channels. For instructions, see xref:exp-alerts-configure-notifications.adoc[].
 
 NOTE: This tool uses generative AI, which can produce inaccurate or harmful responses. Review for accuracy and safety before using.
@@ -21,37 +22,82 @@ Before setting up the Teams integration, verify that the following requirements 
 [[connect-teams-tenant]]
 == Connect Your Microsoft Teams Tenant to the MuleSoft Organization
 
-You must be a MuleSoft organization administrator and a Microsoft Teams administrator to connect the Teams integration. If you are not a Teams administrator, you can send a request to your Teams administrator to approve the app.
+Connecting the Teams integration is a three-step process:
+
+. A Microsoft Teams administrator grants admin consent and submits the app for review. This is a one-time step for your tenant.
+. A Microsoft Teams administrator approves and publishes the app in Microsoft Teams Admin Center.
+. Users add the app in Teams and link their MuleSoft accounts.
 
 Each MuleSoft organization can connect to only one Microsoft Teams tenant, and each tenant can connect to only one MuleSoft organization.
 
-. Log in and go to *Notifications* > *Settings*.
-. In *Microsoft Teams Setup*, click *Install Microsoft Teams app*. This publishes the Teams app to your AAD tenant's app catalog through Microsoft Graph. If the tenant hasn't yet consented to this app, you're redirected to Microsoft to grant admin consent.
-. Select your Microsoft Teams admin account.
-. Review the permissions requested and click *Accept*.
+[[grant-admin-consent]]
+=== Grant Admin Consent and Submit the App for Review
+
+A Microsoft Teams administrator must complete this procedure the first time the app is connected to your tenant. Admin consent registers the MuleSoft for Teams app in your tenant on behalf of your whole organization, so other users aren't prompted to review the permissions.
+
+After admin consent is granted, any user in your tenant can submit the app for review by clicking *Connect* and signing in with their Microsoft account. No permissions prompt appears for them.
+
+. Log in and go to *Notifications* > *Settings* > *Teams*.
+. In *Teams Setup*, click *Connect* in the *MuleSoft for Teams* card.
+. Select your Microsoft Teams administrator account.
+. On the *Permissions requested* page, review the permissions that the app requests:
 +
-The app requests the following permissions:
-+
-* Read and write to all app catalogs
+* Submit application packages to your organization's catalog and cancel pending submissions
+* Sign in and read your profile
 * Maintain access to data you have given it access to
-* View your basic profile
 +
-. After the installation completes, the confirmation page displays *Microsoft Teams integration installed*. Click *Back to Settings*.
+For details about each permission, see <<microsoft-graph-permissions>>.
+. Select *Consent on behalf of your organization*.
+. Click *Accept*.
 +
-In *Notifications* > *Settings*, the *Microsoft Teams Setup* section now shows *Installed* and displays the bound tenant ID.
-. Click *Grant Access* to allow the app to browse your Teams directory for channel and team member access.
-. In Microsoft Teams, review the permissions requested and click *Accept*.
+You return to *Notifications* > *Settings*. The *Teams Setup* section shows *Not Installed*, and the *MuleSoft for Teams* card shows *Submitted for review*. The integration remains inactive until a Teams administrator approves the app in Microsoft Teams Admin Center.
+
+[[approve-app]]
+=== Approve and Publish the App in Microsoft Teams Admin Center
+
+After the app is submitted for review, a Microsoft Teams administrator must publish it so users in your organization can add it.
+
+. Log in to Microsoft Teams Admin Center.
+. Go to *Teams apps* > *Manage apps*.
+. Search for the MuleSoft app by name and select it.
 +
-After access is granted, configure notification channels in the *Notification Channels* section.
+The app details page shows who submitted the app and a *Pending action* status.
++
+NOTE: The *Pending approval* count on the *Manage apps* page can take time to update. Search for the app by name instead of relying on this count.
+. Click *Publish*.
++
+Microsoft Teams Admin Center confirms that the app is published. It can take a few hours for the app status to update.
 
-After installation, the MuleSoft Agent app appears in Microsoft Teams Admin Center under *Manage apps* as available to everyone and unblocked.
+After the app is published and connected, *Notifications* > *Settings* > *Teams* shows *Installed*, and the *MuleSoft for Teams* card shows *Connected to _<organization-name>_*.
 
-To disconnect the integration:
+[[disconnect-teams]]
+=== Disconnect the Integration
 
-. Click *Disconnect* in the *Microsoft Teams Setup* section.
+. Go to *Notifications* > *Settings* > *Teams*.
+. Click *Disconnect* in the *MuleSoft for Teams* card.
 . Confirm the disconnection. This immediately revokes MuleSoft's access to your Teams tenant and stops all notifications.
 +
-The MuleSoft app remains in the Microsoft Teams Admin Center. To fully remove it, a Teams administrator must uninstall it from the Admin Center, or right-click the app in Teams and select *Uninstall*.
+The MuleSoft app remains in Microsoft Teams Admin Center. To fully remove it, a Teams administrator must uninstall it from the Admin Center, or right-click the app in Teams and select *Uninstall*.
+
+[[configure-notification-channels]]
+== Configure Notification Channels
+
+After the integration is installed, choose the Teams channels that receive notifications. To browse your teams and channels, sign in with your Microsoft Teams account. This sign-in is separate from the admin consent step and doesn't request additional permissions.
+
+You can add only standard channels.
+
+. Go to *Notifications* > *Settings* > *Teams*.
+. In *Notification Channels*, click *Connect Microsoft Teams*.
+. Select your Microsoft account.
++
+You return to *Notification Channels*, which now shows a search field.
+. In *Search teams or channels*, enter the name of a team or channel.
+. Select the channels that you want to receive notifications.
+. Click *Add* to add the selected channels.
++
+The channels appear under *Channels Enabled for Notifications*, grouped by team. To remove a channel, click the *X* next to it.
+
+To route specific alerts to these channels, see xref:exp-alerts-configure-notifications.adoc[].
 
 [[begin-using-agent]]
 == Begin Using the MuleSoft Agent
@@ -79,31 +125,29 @@ To assign the *MuleSoft Agent AI User* permission across business groups:
 To start using the agent in Teams:
 
 . Open Microsoft Teams and go to *Apps*.
-. Under *Built for your organisation*, find *MuleSoft Agent* and click *Add*.
+. Under *Built for your organization*, find *MuleSoft* and click *Add*.
 . Click *Open* or select a channel where you want to use the app.
-. The agent sends a welcome message. Select a prompt suggestion or type a message to start.
-. If prompted, click *Connect to MuleSoft* and sign in with your Anypoint Platform credentials.
-. After authenticating, close the browser tab to complete account linking. Return to Teams to continue the conversation.
+. The agent sends a welcome message. Type `signin`.
+. In the *Connect your MuleSoft account to continue* card, click *Connect to MuleSoft* and sign in with your Anypoint Platform credentials. This is a one-time setup.
+. When the *Connected to MuleSoft* page appears, close the browser tab. Return to Teams to continue the conversation.
 
 After you authenticate, you can use the agent to list APIs, agents, MCP servers, view governance reports, and more.
 
-NOTE: After the first 24 hours, you must @mention the MuleSoft Agent in channels to send it a message. In direct messages, you can send messages to the agent at any time without @mentioning it.
+NOTE: In channels, @mention the MuleSoft Agent to send it a message. In direct messages, you can send messages to the agent at any time without @mentioning it.
 
 [[available-prompts]]
 == Available Prompt Suggestions
 
 When you open the MuleSoft Agent, the following prompt suggestions are available:
 
-* *signin*: Connect your MuleSoft account.
-* *signout*: Disconnect your MuleSoft account.
 * *What business group am I in?*: Shows your current business group.
-* *List APIs in my business group*: Lists APIs in your current business group.
-* *Risks across my portfolio?*: Shows risks across your portfolio.
-* *Top MCP token spend this week*: Shows which MCP servers had the highest token spend this week.
+* *List APIs in my current business group*: Lists APIs in your current business group.
+* *What risks exist across my portfolio?*: Shows risks across your portfolio.
+* *Which MCP servers had the highest token spend this week?*: Shows which MCP servers had the highest token spend this week.
 * *Which agents have instances?*: Lists agents that have instances.
-* *Top API error rates (7 days)*: Shows APIs with the highest error rates over the past 7 days.
-* *feedback*: Send feedback to the MuleSoft Agent team.
-* *help*: Show available commands.
+* *What APIs have the highest error rates over the past 7 days?*: Shows APIs with the highest error rates over the past 7 days.
+
+To send feedback to the MuleSoft Agent team, type `/feedback` in a channel or react to an agent response with a thumbs up or thumbs down.
 
 [[common-use-cases]]
 == Common Use Cases for the MuleSoft Agent
@@ -118,19 +162,23 @@ You can use the MuleSoft Agent to perform these platform tasks in Teams:
 [[microsoft-graph-permissions]]
 == Microsoft Graph Permissions
 
-The MuleSoft for Microsoft Teams app requires the following Microsoft Graph permissions. Use this information when your security or IT team asks for justification before approving the app installation.
+The MuleSoft for Teams app requires the following Microsoft Graph permissions. A Teams administrator grants these permissions once, on behalf of the organization, during <<grant-admin-consent>>. Use this information when your security or IT team asks for justification before approving the app installation.
 
 [cols="2,1,3", options="header"]
 |===
 |Permission |Type |Purpose
 
+|`AppCatalog.Submit`
+|Delegated
+|Submits the MuleSoft app package to your organization's app catalog for review, and cancels pending submissions. A Teams administrator must approve and publish the submitted app in Microsoft Teams Admin Center before users can add it.
+
+|`offline_access`
+|Delegated
+|Allows the app to maintain its connection without requiring users to reauthenticate every time they open Teams. The app stores a refresh token to request new short-lived access tokens. This permission doesn't grant any data access beyond what was already authorized.
+
 |`AppCatalog.Read.All`
 |Application
 |Verifies that the MuleSoft app is properly published in your Teams app catalog. Without this, the app cannot confirm its own availability, and users see silent failures instead of actionable setup errors.
-
-|`AppCatalog.ReadWrite.All`
-|Delegated
-|Required when a Teams admin publishes or updates the MuleSoft app package in your catalog. Only exercised during install or upgrade — not at runtime — and scoped to the consenting admin's session.
 
 |`AppCatalog.ReadWrite.All`
 |Application
@@ -152,17 +200,9 @@ The MuleSoft for Microsoft Teams app requires the following Microsoft Graph perm
 |Application
 |Manages the app lifecycle across teams, including handling version upgrades and removing the app from teams where it is no longer needed.
 
-|`TeamSettings.Read.All`
-|Application
-|Checks team policies before the app attempts to post. If a team has restricted messaging or moderation enabled, the app surfaces a clear configuration error rather than silently dropping critical API alerts. Read-only — it does not change settings through this permission.
-
-|`TeamSettings.ReadWrite.All`
-|Application
-|During initial provisioning only, the app may adjust channel settings to enable bot posting in moderated channels where incident alerts must be delivered. This is a one-time setup action, not ongoing runtime behavior.
-
 |`User.Read`
 |Delegated
-|Standard sign-in permission for the admin performing the initial consent. The app reads basic profile information (name, email) to log who authorized the connection between the Anypoint Platform organization and the Teams tenant.
+|Standard sign-in permission. The app reads basic profile information, such as name, email, and company, to map the Teams user to the correct Anypoint Platform identity and enforce role-based access control. It doesn't access contacts, calendars, or other profile data.
 
 |===
 
