@@ -283,12 +283,12 @@ Run your MTF tests to test compatibility of your custom connector against Java 2
 As mentioned previously, you can use a single build pipeline that runs against all supported Java versions. You can also set up another temporary build pipeline for Java 25 so your main build pipeline does not become unstable. After you upgrade to Java 25, discard the temporary build pipeline and converge on your main build pipeline.
 
 . Set the path to your JVM installation in the `MUNIT_JVM` variable (you must install it yourself). You must also set `JAVA_HOME` to your JDK 17 installation.
-. Ensure your custom connector `pom.xml` file includes these MTF dependencies:
+. Ensure your custom connector `pom.xml` file includes these MTF dependencies. To test with Mule runtime 4.14, use versions of MUnit and MTF that depend on Mule runtime 4.14, so that MUnit uses the Mule embedded API 4.14:
 +
-* munit ##TBD (Q-T2)##
-* munit-extensions-maven-plugin ##TBD (Q-T2)##
-* mtf-tools ##TBD (Q-T2)##
-* mule-maven-plugin 4.10.4 ##TBD (Q-T2): confirm that connector projects need mule-maven-plugin in the MTF dependencies. The J17 guide lists it.##
+* munit
+* munit-extensions-maven-plugin
+* mtf-tools
+* mule-maven-plugin 4.10.4
 * mule-extensions-maven-plugin 1.9.23 or later
 
 To ensure your MTF tests do not validate against Mule runtime versions earlier than your connector's minimum Mule version, add this configuration to the `munit-plugin` configuration in your custom connector `pom.xml` file:
