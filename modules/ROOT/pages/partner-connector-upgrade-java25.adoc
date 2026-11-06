@@ -184,7 +184,7 @@ To upgrade your custom configuration properties provider to be compatible with J
 
 You can use the same project from the example custom configuration properties provider in xref:mule-runtime::custom-configuration-properties-provider.adoc#example-mule-sdk-module[Example: Mule SDK Module] for Java 25.
 
-Alternatively, if switching to using xref:mule-sdk::getting-started.adoc[Java SDK] involves too many changes for you, add a declaration using `ExtensionDeclarer` inside `ExtensionLoadingDelegate` in your custom configuration properties provider. ##TBD (Q-T6): changeset link.##
+Alternatively, if switching to using xref:mule-sdk::getting-started.adoc[Java SDK] involves too many changes for you, add a declaration using `ExtensionDeclarer` inside `ExtensionLoadingDelegate` in your custom configuration properties provider. For the configuration to declare Java 25 support, see <<release-your-custom-connector>>.
 
 [[test-your-custom-connector-with-mtf]]
 == Test Your Custom Connector with MTF
