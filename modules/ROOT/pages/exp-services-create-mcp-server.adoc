@@ -24,6 +24,8 @@ The credentials MCP Bridge uses to call the selected SaaS systems.
 
 Each operation you select from a source becomes an MCP tool. When an agent requests the list of available tools (`tools/list`), the MCP server responds with each tool's name, description, and input schema. When an agent calls a tool (`tools/call`), MCP Bridge maps the tool name and arguments to an HTTP request to the underlying API or SaaS system.
 
+NOTE: MCP Bridge limits the `tools/list` response to 1 MB. MCP Bridge returns the schemas for all exposed tools in this response. If the combined tool schemas exceed the limit, the MCP client receives a truncated response or the request times out. Limit the number of exposed tools and the size of their input schemas.
+
 This diagram shows the relationship of the upstream and downstream configurations to your upstream service and agent client:
 
 image::mcp-bridge-instance.png["The MCP Bridge instance is deployed on a gateway between the upstream APIs and the downstream configuration."]
