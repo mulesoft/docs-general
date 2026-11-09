@@ -51,6 +51,8 @@ Open the *Agents*, *MCP Servers*, *Model Proxies*, *APIs*, or *Gateways* catalog
 
 include::_partials/exp-navigation-labels.adoc[tag=ExpNavigationLabels]
 
+To deploy the gateway, see xref:gateway::gateway-getting-started-overview.adoc[Getting Started with Omni Gateway].
+
 == Service Type Registration Options
 
 *Agents*::
@@ -66,7 +68,7 @@ Register manually by creating a model proxy with a routing strategy that routes 
 Register with an API specification, or connect an API provider so scans import APIs into the *APIs* catalog.
 
 *Gateways*::
-Create gateways in Anypoint Platform. In the enhanced MuleSoft experience, select *Add Gateway* to open the Anypoint gateway creation flow.
+Omni Gateway routes traffic to your services and enforces policies on it. You need an Omni Gateway to create a managed instance or a model proxy. Select *Add Gateway* to open Omni Gateway setup in Anypoint Platform. To choose a gateway type and deploy it, see xref:gateway::gateway-getting-started-overview.adoc[Getting Started with Omni Gateway].
 
 For more information about registering any of these types, see xref:exp-services-register-manually.adoc[] and xref:exp-services-connect-providers-to-add.adoc[].
 

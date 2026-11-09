@@ -1,7 +1,9 @@
 = Applying and Managing Policies
 :keywords: apply policy, edit policy, remove policy, enable policy, disable policy, external gateways, api manager, anypoint platform
 
-Apply, edit, enable, disable, and remove policies on an API instance from the *Policies* tab in *Portfolio*. These actions work on Anypoint gateways (Omni and Mule), and on external providers such as Google Apigee, Azure API Management, and Kong Gateway, subject to per-provider support. See xref:exp-policies-provider-reference.adoc[].
+Apply, edit, enable, disable, and remove policies on an API instance from the *Policies* tab in *Portfolio*. These actions work on Anypoint gateways (Omni and Mule), and on external providers such as Google Apigee, Azure API Management, Kong Gateway, and Amazon API Gateway, subject to per-provider support. See xref:exp-policies-provider-reference.adoc[].
+
+NOTE: Automate policy application and management using the MuleSoft MCP Platform Server. For details, see xref:mulesoft-mcp-server::reference-mcp-tools-platform.adoc#apply-policy-to-instance[apply_policy_to_instance] and related Policy Management tools in the MuleSoft MCP Platform Server Tool Reference.
 
 == Before You Begin
 
@@ -9,6 +11,7 @@ Before getting started, make sure you have:
 
 * An Anypoint Platform account.
 * The API Manager: Manage Policies permission.
+* The Organization Administrator role, required to load the open policy catalog, open a policy configuration form, and apply an open policy, or to apply, edit, enable, disable, or remove native policies on external gateways. Without this role, those actions fail or the catalog is empty. Listing native policy templates on an external gateway still uses the View Policies permission. Viewing policies already applied on Omni or Mule gateways still uses the View Policies or Manage Policies permission.
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 * For external providers, a connected scanner for that provider. Anypoint reuses the same connection and credentials you configured for scanning to authorize and perform policy changes. There's no second set of provider credentials to configure. The per-provider setup you must do on your side (for example, Apigee roles and permissions) is described in xref:exp-policies-provider-reference.adoc[].
@@ -28,12 +31,12 @@ Button state is a hint, not the final authorization. The *Policies* tab enables 
 Policy naming applies to Apigee only, where the name is the policy's unique identity on the gateway, not just a label. Choose it deliberately: the name is required at creation and you can't change it later. Other providers don't use policy names. See <<policy-naming-and-identity>>.
 . Apply the policy. Anypoint accepts the request and performs it in the background. Confirm the outcome in the *Activity log* tab. See xref:exp-policies-activity-log.adoc[].
 
-To apply a universal policy across multiple providers at once, use the *Policy Library* instead. See xref:exp-policies-universal.adoc[].
+To apply an open policy across multiple providers at once, use the *Policy Library* instead. See xref:exp-policies-open.adoc[].
 
 [[policy-edit-restrictions]]
 == Policy Edit Restrictions
 
-Having permissions is necessary but not sufficient to edit a policy. Anypoint supports editing the curated set of policies that back the universal use cases, plus several additional native Kong policies (see xref:exp-policies-universal.adoc[]); other recognized policies are view-only. Native policies created from a universal use case are editable like any other supported native policy. When *Edit Configuration* is unavailable, the UI explains why. Common reasons include:
+Having permissions is necessary but not sufficient to edit a policy. Anypoint supports editing the curated set of policies that back the open use cases, plus several additional native Kong policies (see xref:exp-policies-open.adoc[]); other recognized policies are view-only. Native policies created from an open use case are editable like any other supported native policy. When *Edit Configuration* is unavailable, the UI explains why. Common reasons include:
 
 * Anypoint doesn't recognize the policy's template, or doesn't yet support managing policies with its schema.
 * The policy's configuration doesn't match its expected schema. To resolve this issue, open a support case.
@@ -43,19 +46,21 @@ Having permissions is necessary but not sufficient to edit a policy. Anypoint su
 * The provider doesn't support the action.
 * Another operation is already in progress on the policy.
 
+For Amazon API Gateway, also see xref:exp-policies-provider-reference.adoc#aws-specific-behavior[Amazon API Gateway Specific Behavior] for policy-specific edit restrictions.
+
 == Enable, Disable, and Remove
 
 You can enable, disable, and remove policies more broadly than you can edit them, because these actions don't require a recognized configuration shape. It's normal to see a policy where *Edit Configuration* is unavailable while *Enable Policy*, *Disable Policy*, and *Remove Policy* remain available, as long as the provider supports that action.
 
-* *Enable Policy* / *Disable Policy* toggle a policy on or off. Apigee and Azure API Management have no native enable/disable state, so these actions aren't available there. See xref:exp-policies-provider-reference.adoc#supported-actions-by-provider[Supported Actions by Provider].
-* *Remove Policy* detaches the policy from the instance. 
+* *Enable Policy* / *Disable Policy* toggle a policy on or off. Apigee, Azure API Management, and Amazon API Gateway have no native enable/disable state, so these actions aren't available there. See xref:exp-policies-provider-reference.adoc#supported-actions-by-provider[Supported Actions by Provider].
+* *Remove Policy* detaches the policy from the instance.
 
-While an operation is in progress, the provider locks further changes until it finishes. The scope of that lock differs by provider: Apigee and Azure API Management lock the entire instance, so no other policy operation on that instance can start until the current one completes; Kong Gateway locks only the policy being changed, so you can work with other policies on the same instance at the same time. You can track progress in the *Activity log*. See xref:exp-policies-provider-reference.adoc#instance-locking-during-operations[Instance Locking During Operations].
+While an operation is in progress, the provider locks further changes until it finishes. The scope of that lock differs by provider: Apigee, Azure API Management, and Amazon API Gateway lock the entire instance, so no other policy operation on that instance can start until the current one completes; Kong Gateway locks only the policy being changed, so you can work with other policies on the same instance at the same time. You can track progress in the *Activity log*. See xref:exp-policies-provider-reference.adoc#instance-locking-during-operations[Instance Locking During Operations].
 
 [[policy-naming-and-identity]]
 == Policy Naming and Identity
 
-Policy naming applies to Apigee only. Other providers don't use policy names, and you aren't required to enter one. On Apigee, the name is the policy's unique identity on the gateway, not just a label:
+Policy naming applies to Apigee only. Other providers don't require a user-supplied policy name, and you aren't required to enter one. On Apigee, the name is the policy's unique identity on the gateway, not just a label:
 
 * The name is required at creation.
 * The name can't be changed afterward. On a later edit, the name field is fixed: editing changes the policy's configuration, never its name.
@@ -63,10 +68,12 @@ Policy naming applies to Apigee only. Other providers don't use policy names, an
 
 An Apigee edit that tries to change the name is rejected, because the name is the on-gateway identifier.
 
+For Amazon API Gateway, the platform identifies IP filtering rules from the scanned configuration instead of requiring a name. When you edit a rule, the platform keeps its existing name. To change a policy target, remove the policy and apply it again.
+
 == See Also
 
 * xref:exp-policies-overview.adoc[]
-* xref:exp-policies-universal.adoc[]
+* xref:exp-policies-open.adoc[]
 * xref:exp-policies-activity-log.adoc[]
 * xref:exp-policies-provider-reference.adoc[]
 * xref:exp-services-view-details.adoc[]

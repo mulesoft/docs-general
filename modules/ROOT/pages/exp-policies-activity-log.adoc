@@ -3,6 +3,8 @@
 
 Every policy change on an external provider runs asynchronously, so a request that Anypoint accepts isn't the same as a policy that's applied on the gateway. Use the *Activity log* tab on an API instance to confirm what actually happened.
 
+NOTE: Automate policy operation status checks using the MuleSoft MCP Platform Server. For details, see xref:mulesoft-mcp-server::reference-mcp-tools-platform.adoc#get-policy-operation-status[get_policy_operation_status] in the MuleSoft MCP Platform Server Tool Reference.
+
 == Before You Begin
 
 Before getting started, make sure you have:
@@ -22,7 +24,7 @@ The *Activity log* tab lists recent policy operations for the API instance. By d
 
 Each entry has these columns:
 
-* *Action*: the type of operation, such as *Apply*, *Update* (edit), *Toggle* (enable/disable), *Remove*, or *Universal* (a universal policy apply).
+* *Action*: the type of operation, such as *Apply*, *Update* (edit), *Toggle* (enable/disable), *Remove*, or *Open* (an open policy apply).
 * *Policy*: the policy the operation applies to.
 * *Status*: one of three states:
 ** *Running*
@@ -38,9 +40,12 @@ For a failed operation, open it to see why. The failure detail explains the erro
 * Transient failures come from a temporary problem, such as an unreachable gateway or a scan error. Try the operation again.
 * Other failures come from your configuration or the instance's state. For example, an invalid configuration, a conflict with the instance's current state, or a policy that can't be translated for the target gateway. Fix the underlying issue before retrying.
 
+For Amazon API Gateway, an operation can fail at two points with different outcomes. If it fails before deployment, the stage continues running its previous version and pending changes remain in the editable configuration. If it fails after deployment starts, the stage runs the new version even though the operation reports as failed. Failed operations don't automatically undo changes made by the platform or by you. After a failure, check the AWS Management Console to see both the editable configuration and the deployed version, resolve any differences based on what you want the stage to run, rescan to refresh the view, and retry.
+See xref:exp-policies-provider-reference.adoc#aws-specific-behavior[Amazon API Gateway Specific Behavior].
+
 == See Also
 
 * xref:exp-policies-overview.adoc[]
 * xref:exp-policies-apply-manage.adoc[]
-* xref:exp-policies-universal.adoc[]
+* xref:exp-policies-open.adoc[]
 * xref:exp-policies-provider-reference.adoc[]
