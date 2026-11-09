@@ -18,29 +18,13 @@ The agent network runs in the OpenShift cluster, behind two Managed Omni Gateway
 * The broker reaches large language models (LLMs) and other external services only through the egress Managed Omni Gateway. The egress gateway has no public endpoint and no route.
 * If the cluster reaches the internet through a forward proxy, both the Runtime Fabric agent and the egress gateway connect through the proxy.
 
-// TODO(diagram): Export this Mermaid source to images/af-rtf-openshift-architecture.png and add
-// image::af-rtf-openshift-architecture.png["Agent network on Runtime Fabric on OpenShift: clients reach the ingress Omni Gateway through an OpenShift route; the broker calls MCP servers and reaches the LLM through the egress Omni Gateway and forward proxy"]
-//
-// flowchart TB
-//     CLIENT["External clients / agents"]
-//     subgraph OCP["OpenShift cluster"]
-//         OP["Runtime Fabric operator"] -->|installs & reconciles| AG["Runtime Fabric agent"]
-//         ROUTE["OpenShift route"]
-//         subgraph GWNS["Gateway namespace"]
-//             ING["Ingress Managed Omni Gateway"]
-//             EG["Egress Managed Omni Gateway"]
-//         end
-//         subgraph APPNS["Agent network namespace"]
-//             BR["Broker"]
-//             MCP["MCP servers"]
-//         end
-//         AG -->|deploys| ING & EG & BR & MCP
-//     end
-//     CLIENT -->|HTTPS| ROUTE -->|re-encrypt| ING --> BR --> MCP
-//     BR --> EG -->|TLS, trusts private CA| LLM["LLM"]
-//     AG -.->|via forward proxy| CP["Anypoint control plane"]
-//     EG -.->|via forward proxy| PROXY["Forward proxy"]
-//
+image::af-rtf-openshift-architecture.png["Agent network on Runtime Fabric on OpenShift: clients reach the ingress Managed Omni Gateway through an OpenShift route, the broker calls MCP servers and reaches the LLM through the egress Managed Omni Gateway and forward proxy, and the gateways and Runtime Fabric agent connect to the Anypoint Platform control plane through the proxy"]
+
+[calloutlist]
+. Clients and agents connect over HTTPS to the OpenShift route, which presents the cluster wildcard certificate. The `HTTPRouteTemplate` resource sets `reencrypt` TLS termination and the route timeout. See <<step-5>>.
+. The route re-encrypts traffic to the internal certificate of the ingress gateway, which the `tls-inbound` policy provides. See <<step-5>>.
+. The egress gateway connects to the LLM and other upstreams over TLS, through the forward proxy. The gateway's `Configuration` resource sets the proxy, and the `tls-outbound` policy provides the private CA that the gateway trusts. See <<step-6>> and <<step-7>>.
+
 // ENG-REVIEW: Confirm whether any LLM endpoint requires a client certificate (mTLS). Step 7 covers server certificate trust only.
 
 [[before-you-begin]]
