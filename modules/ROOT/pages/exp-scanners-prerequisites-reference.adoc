@@ -101,6 +101,19 @@ a|
 
 *Setup:* Optional API host for region routing (for example, US or EU cloud host)
 
+| Microsoft 365 Copilot
+| Agent
+a|
+*Credentials:* Microsoft Entra app registration; tenant ID, client ID, client secret
+
+*Account:* Microsoft tenant with a Microsoft Agent 365 license, in the Microsoft global cloud. Government, DoD, and China clouds are not supported.
+
+*Permissions:* Admin consent for the `CopilotPackages.Read.All` Microsoft Graph application permission
+
+*Authentication:* Client-credentials *OAuth* only. 
+
+*Setup:* The scanner reads declarative and custom engine agents from the Microsoft Graph Package Management API.
+
 | Microsoft Copilot Studio
 | Agent
 a|
