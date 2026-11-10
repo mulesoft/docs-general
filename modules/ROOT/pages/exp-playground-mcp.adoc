@@ -1,7 +1,9 @@
-= Exploring MCP Server Tools in the MCP Playground
+= Exploring MCP Server Tools in the MCP Playground (Beta)
 :keywords: mcp server playground, test mcp server, mcp tools, tool invocation, anypoint platform, enhanced experience
 
 Use the MCP server playground to understand what an MCP server does and how it behaves without connecting it to an external tool such as Postman, the MCP Inspector, or Claude Desktop. Instead of reading only the overview and documentation, you explore the server's tools, invoke them, and see what they return, directly on the service detail page.
+
+NOTE: The MCP server playground is a pilot or beta service that is subject to the Beta Services Terms at https://www.salesforce.com/company/legal/[Agreements - Salesforce.com] or a written Unified Pilot Agreement if executed by Customer, and applicable terms in the https://ptd.salesforce.com/?_ga=2.247987783.1372150065.1709219475-629000709.1639001992[Product Terms Directory]. Use of this pilot or beta service is at the Customer's sole discretion.
 
 == Before You Begin
 

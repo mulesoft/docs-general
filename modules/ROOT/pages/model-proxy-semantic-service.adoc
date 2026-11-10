@@ -21,13 +21,21 @@ For simple semantic routing and blocking. Basic scale semantic routing services 
 Before getting started, make sure you have:
 
 * An Anypoint Platform account.
-* One of these permissions:
+* API Manager permissions:
++
+--
+** To view semantic services: API Manager: View APIs Configuration
+** To create, edit, or delete semantic services: API Manager: Manage APIs Configuration
+--
+* One of these Exchange permissions:
 +
 --
 ** Exchange: Exchange Contributor
 ** Exchange: Exchange Administrator
 ** Exchange: Exchange Creator
 --
++
+API Manager permissions apply to individual environments. Grant permissions in each environment where you need them.
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
