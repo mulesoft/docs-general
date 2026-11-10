@@ -48,8 +48,8 @@ To upgrade custom automated policies to Java 17:
 
 . In API Manager, go to *Automated Policies*.
 . Upgrade the required extensions and connectors to Java 17.
- * If your custom policy has Anypoint Connectors, see xref:java-support.adoc#anypoint-connectors-and-modules[Upgrading Anypoint Connectors and Modules].
- * If your custom policy has custom connectors, see xref:java-support.adoc#custom-connectors[Upgrading Custom Connectors].
+ * If your custom policy has Anypoint Connectors, see xref:java-17-support.adoc#anypoint-connectors-and-modules[Upgrading Anypoint Connectors and Modules].
+ * If your custom policy has custom connectors, see xref:java-17-support.adoc#custom-connectors[Upgrading Custom Connectors].
 . xref:mule-gateway::policies-custom-java-version.adoc[Upgrade the custom policy].
 . xref:mule-gateway::policies-custom-package.adoc[Package the custom policy].
 +
@@ -84,8 +84,8 @@ To upgrade custom API-level policies to Java 17:
 
 . In API Manager, go to *API Administration* > *{API Name}* > *Policies* > *Add a policy* to xref:mule-gateway::policies-included-apply.adoc[apply policies] at the individual API level. 
 . Upgrade the required extensions and connectors to Java 17.
- * If your custom policy has Anypoint Connectors, see xref:java-support.adoc#anypoint-connectors-and-modules[Upgrading Anypoint Connectors and Modules].
- * If your custom policy has custom connectors, see xref:java-support.adoc#custom-connectors[Upgrading Custom Connectors].
+ * If your custom policy has Anypoint Connectors, see xref:java-17-support.adoc#anypoint-connectors-and-modules[Upgrading Anypoint Connectors and Modules].
+ * If your custom policy has custom connectors, see xref:java-17-support.adoc#custom-connectors[Upgrading Custom Connectors].
 . xref:mule-gateway::policies-custom-java-version.adoc[Upgrade the custom policy].
 . xref:mule-gateway::policies-custom-package.adoc[Package the custom policy].
 +
@@ -154,4 +154,4 @@ Before following these steps, ensure your policies are updated. For more informa
 
 == See Also
 
-* xref:java-support.adoc[]
+* xref:java-17-support.adoc[]

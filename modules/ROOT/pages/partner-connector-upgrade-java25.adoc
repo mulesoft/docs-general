@@ -1,0 +1,422 @@
+= Upgrading Custom Connectors to Java 25 (Partners)
+:keywords: java 25, java upgrade, custom connectors, partner connectors, connector upgrade, mulesoft partners, sdk upgrade
+
+IMPORTANT: This guide is a beta version for MuleSoft partners. Content, version numbers, and procedures can change before general availability.
+
+Upgrade, test, and release your custom connectors for Java 25 to ensure compatibility within the MuleSoft ecosystem. An incompatible connector can cause runtime failures, decreased performance, and security vulnerabilities that affect the stability of your Mule app.
+
+MuleSoft plans to support Java 25 in Mule runtime 4.14 and later. MuleSoft plans for Mule runtime 4.14 to support both Java 17 and Java 25.
+
+MuleSoft certifies Java 8, Java 11, Java 17, and Java 25 for custom connectors. Mule does not support Java 21. Do not declare Java 21 compatibility for your custom connector.
+
+== Before You Begin
+
+Before upgrading and testing your custom connector for Java 25, you must be familiar with these considerations:
+
+* Target compilation level
++
+Set the `source` and `target` compilation levels according to the `minMuleVersion` of your connector. If your connector supports Mule runtime versions earlier than 4.14, compile it for Java 8 or Java 17. If your connector requires Mule 4.14.0 or later, you can compile it for Java 25 or earlier. You must also compile additional dependencies for the same Java level or earlier.
+
+* Declaring the minimum Mule version
++
+Two parent POMs are available for building extensions. Each one handles the minimum Mule version declaration differently.
++
+** `mule-java-extension-parent` (recommended)
++
+This is the recommended parent POM for all new extensions and for existing extensions that can migrate. It supports forward compatibility and requires you to explicitly declare the minimum Mule version in your project, giving you full control over which Mule runtime versions your connector supports. The `mule-extensions-archetype-maven-plugin` uses this parent when generating new extension projects.
++
+For migration instructions, see xref:mule-sdk::forward-compatibility-setup.adoc#upgrading-existing-modules[Upgrading Existing Modules].
+
+** `mule-modules-parent` (deprecated)
++
+MuleSoft has deprecated this parent POM, but it remains available for existing connectors where switching to `mule-java-extension-parent` is not practical.
++
+The parent POM only sets the minimum Mule version. It is compatible with Mule 4.14, so Java 25 does not require you to switch to `mule-java-extension-parent`.
++
+Verify that `minMuleVersion` in `META-INF/mule-artifact/mule-artifact.json` reflects the correct version. See xref:mule-sdk::java-version-support.adoc#specify-java-compatibility[Specify Java Compatibility].
+
+* Minimum Mule version for testing
++
+If the `minMuleVersion` of your custom connector is compatible with Java 8, tests that extend the `MuleArtifactFunctionalTestCase` are not compatible with Java 25. To run these tests, you must either migrate them to the Module Testing Framework (MTF) or use the `surefire.jvm` parameter so that the unit tests run using Java 8.
++
+To decouple the minimum Mule version when running tests, add the `-Dmunit.jvm` parameter to use Java 25 as described in <<test-for-java-25-compatibility>>.
+
+* Unsupported directives
++
+Do not set `--add-opens`, `--add-exports`, or `--add-modules` directives. CloudHub, Runtime Fabric, and on-premises deployments do not allow these directives. You must manage these directives for each connector in every environment. They also add a backward compatibility burden that complicates future Java upgrades, and they can introduce security vulnerabilities. Support does not cover connectors that use these directives.
++
+Do not rely on the `--enable-native-access`, `--sun-misc-unsafe-memory-access`, and `-XX:+EnableDynamicAgentLoading` directives in your custom connector. MuleSoft does not allow these directives in its managed deployment models.
+
+[[upgrade-your-mule-sdk-connectors]]
+== Upgrade Your Custom Mule SDK Connectors
+
+Upgrade your custom Mule SDK (Java SDK and XML SDK) connectors to Java 25.
+
+[[upgrade-third-party-libraries]]
+=== Upgrade Third-Party Libraries
+
+Your custom connector likely relies on third-party libraries, so confirm that they are compatible with Java 25. Passing tests does not protect you from a critical bug or vulnerability in a library, which forces you to upgrade to a fixed version. Libraries that explicitly support Java 25 make that upgrade easier, because the vendor has already tested them on Java 25.
+
+MuleSoft does not maintain a list of third-party libraries that are incompatible with Java 25. The main known incompatibility across MuleSoft connectors is Caffeine 2.x. If your custom connector uses Caffeine 2.x, upgrade to Caffeine 3.3.1 or later. Check the changelogs of your other libraries for Java 25 compatibility.
+
+Upgrade the third-party libraries of your custom connector to be compatible with Java 25:
+
+* Java EE libraries
++
+Add the BOM dependency to your custom connector and, if applicable, exclude the provided conflicting library. You can also add the libraries in the BOM dependency separately.
++
+Use version 4.14.0 of `mule-javaee-runtime-bom` for Mule 4.14.0.
++
+[source,xml,linenums]
+----
+<properties>
+ <muleJavaEeBomVersion>4.14.0</muleJavaEeBomVersion>
+</properties>
+<dependencyManagement>
+ <dependencies>
+   <dependency>
+     <groupId>org.mule</groupId>
+     <artifactId>mule-javaee-runtime-bom</artifactId>
+     <version>${muleJavaEeBomVersion}</version>
+     <type>pom</type>
+     <scope>import</scope>
+   </dependency>
+ </dependencies>
+</dependencyManagement>
+----
++
+For more information, see xref:mule-sdk::java-ee-libraries.adoc[].
+
+* External libraries
++
+Upgrade external libraries, which are third-party libraries that are not bundled with your custom connector. Some examples include a JDBC driver, JMS broker client, or Groovy runtime. This example shows a JDBC driver external library configuration:
++
+[source,java,linenums]
+----
+@ExternalLib(name = "MySQL JDBC Driver",
+description = "A JDBC driver that supports connection to the MySQL Database",
+nameRegexpMatcher = "(.*)\\.jar",
+requiredClassName = "com.mysql.jdbc.Driver",
+coordinates = "mysql:mysql-connector-java:5.1.44")
+public class MySqlConnectionProvider implements ConnectionProvider<Connection> {
+  //
+}
+----
++
+You must update your external libraries to a version that is compatible with Java 25.
+
+[[review-your-code]]
+=== Review Your Code
+
+After you compile your custom connector, ensure you can run it with Java 25. Code that targets Mule 4.12 and later must work on both Java 17 and Java 25. Reviewing your code is important because some behavior that only logs warnings in Java 17 fails in Java 25. For example, Java 25 restricts access to `sun.misc.Unsafe` and disables the Security Manager permanently, so you must review your code and its dependencies for these usages.
+
+To help you review your code, learn more about the different changes in Java 25:
+
+* JDK Migration Guide
++
+See the https://docs.oracle.com/en/java/javase/25/migrate/getting-started.html[Oracle JDK 25 Migration Guide^] for a full list of the changes made from Java 17 to Java 25. Use the guide to assess the impact to your code.
+
+* Mule runtime
++
+** Reflection on Java classes
++
+Review and update any code that uses reflection to access Java classes or set parameter values. Java 25 keeps the strong encapsulation of JDK internals introduced in Java 17, so avoid introspecting JDK internals. Maintain a test suite that runs on Java 25. Pay special attention to the `setAccessible(true)` method.
+** Serialization
++
+Update your serialization code to accommodate the restrictions of Java 25. Some serialization libraries, such as Gson, fall back to `sun.misc.Unsafe.allocateInstance()` to create objects of classes that do not have a no-argument constructor. Java 25 rejects this fallback. To resolve this issue, add a no-argument constructor to your serialized classes or switch to Data Transfer Objects (DTOs). For more information, see xref:mule-runtime::configure-custom-serializers.adoc[].
+** `sun.misc.Unsafe` memory access
++
+Java 25 deprecates the memory-access methods in `sun.misc.Unsafe` for removal and logs a warning when you use them. Replace direct usages with the `VarHandle` or Foreign Function and Memory APIs, and upgrade libraries that use `sun.misc.Unsafe` internally, such as older versions of Caffeine and Byte Buddy.
+** Security Manager
++
+The Security Manager is permanently disabled in Java 25. Remove any code that calls `System.setSecurityManager()` or depends on a `SecurityManager` to enforce permissions. Mule runtime does not use the Security Manager, so this change has no impact on Mule itself.
+** Native access
++
+Java 25 logs a warning when code loads native libraries or calls native methods through JNI. If your custom connector or its libraries use native code, test your connector on Java 25 and review the warnings. For Mule, this is only a logged warning and has no actual impact on your connector.
+** Library upgrades
++
+Upgrade your libraries to versions compatible with Java 25. Review the changelogs of your third-party libraries for Java 25 compatibility. Libraries that read or write class files, such as bytecode tools, might need upgrades to handle Java 25 class files. This includes updating Byte Buddy to version 1.18.16 and JaCoCo to 0.8.16. For Caffeine, see <<upgrade-third-party-libraries>>.
+** Changes with running the test suite
++
+Adapt your testing approach for Java 25. Java 25 warns when a library loads an agent dynamically into a running JVM. If you use Mockito, configure it as a Java agent (`-javaagent`) in your test configuration instead of relying on dynamic attachment.
++
+For example, pass `-javaagent` to the Maven Surefire plugin in the `argLine` parameter. If JaCoCo also sets `argLine`, start the value with `+@{argLine}+` so that both agents load.
++
+Update your tests to handle the changes in Java 25 and avoid deprecated methods.
+** Java Platform Module System (JPMS)
++
+Java 25 enforces module rules more strictly than Java 17. Libraries that resolved correctly on Java 17 can fail on Java 25 with errors such as `java.lang.module.FindException`. Review these areas:
++
+*** Refactor split packages: Resolve issues with internal and API package splits by reorganizing and refactoring packages to conform with JPMS modularization standards.
+*** Address `ResourceBundle` loading: Implement solutions for issues related to resource bundle loading, such as using `ResourceBundleProvider` or alternative methods.
+*** Analyze the third-party libraries' changelogs to understand Java 25 compatibility and changes related to JPMS.
+
+=== Add Missing Code
+
+Running on Java 25 does not add DataWeave requirements beyond those for Java 17. On Java 17 and later, DataWeave does not override Java access checks and accesses objects only through their public API. API objects therefore require setters so DataWeave can write their properties without using reflection.
+
+Add constructors and setters if DataWeave instantiates your class, and getters if DataWeave reads it. If DataWeave returns your class without instantiating it, add only getters. Using both getters and setters simplifies the validation and certification process.
+
+The minimum DataWeave version for Java 25 is 2.14, which is the version bundled with Mule runtime 4.14.0.
+
+[[upgrade-your-rest-connect-connectors]]
+== Upgrade Your Custom REST Connect Connectors
+
+Upgrade your custom REST Connect connectors to Java 25.
+
+REST Connect generates connectors from an API specification. A REST Connect connector is a composition of existing connectors, so its Java compatibility is the Java compatibility that its individual components have in common.
+
+REST Connect generates a new version of the connector that depends on Java 25-compatible connectors. To get a Java 25-compatible version, republish the API specification to Exchange. See xref:exchange::to-deploy-using-rest-connect.adoc[REST Connect Connector Generator].
+
+[[upgrade-your-custom-configuration-properties-providers]]
+== Upgrade Your Custom Configuration Properties Providers
+
+To upgrade your custom configuration properties provider to be compatible with Java 25, switch to using the xref:mule-sdk::getting-started.adoc[Java SDK] and declare Java 25 support in `supportedJavaVersions` as explained in <<release-your-custom-connector>>. You must also perform all the steps described in this guide, as you would for any custom connector.
+
+You can use the example project in xref:mule-runtime::custom-configuration-properties-provider.adoc#example-mule-sdk-module[Example: Mule SDK Module] for Java 25.
+
+Alternatively, if switching to using xref:mule-sdk::getting-started.adoc[Java SDK] involves too many changes for you, add a declaration using `ExtensionDeclarer` inside `ExtensionLoadingDelegate` in your custom configuration properties provider. For the configuration to declare Java 25 support, see <<release-your-custom-connector>>.
+
+[[test-your-custom-connector-with-mtf]]
+== Test Your Custom Connector with MTF
+
+Test your custom connector with Module Testing Framework (MTF) to ensure Java 25 compatibility. For more information about MTF, see https://beta.docs.mulesoft.com/beta-mtf/mule-sdk/1.1/mtf[MTF^].
+
+=== Set Up Your Build
+
+Ensure your pipeline runs against all supported Java versions and the Mule runtime versions that go with them. A single build pipeline can run tests against all supported Java versions.
+
+[%header,cols="1,2"]
+|===
+|Java Version |Mule Runtime Versions
+|Java 8 |4.6 (LTS)
+|Java 17 |4.9 (LTS), 4.12, 4.13
+|Java 25 |4.14
+|===
+
+The pipeline runs all tests even if the previous tests fail. For example, the pipeline runs Java 25 tests even if the Java 17 tests fail.
+
+The pipeline contains multiple tests, one compilation phase, and one release phase. The release phase compiles with JDK 17 and targets Java 8 or Java 17, depending on your connector requirements.
+
+=== Run an Initial Test
+
+Run an initial test to check your custom connector for Java 25 compatibility. You can continue to run tests as you change the custom connector code:
+
+. In the `pom.xml` file of your custom connector, update the `munit-extensions-maven-plugin` configuration to include this configuration (the `jacoco.version` property must be 0.8.16 or later):
++
+[source,xml,linenums]
+----
+<argLines>
+         <argLine>-javaagent:${settings.localRepository}/org/jacoco/org.jacoco.agent/${jacoco.version}/org.jacoco.agent-${jacoco.version}-runtime.jar=destfile=${session.executionRootDirectory}/target/jacoco-munit.exec</argLine>
+</argLines>
+----
+. Run your MTF test to generate the coverage report. Use the `-Dtest=none` and `-DfailIfNoTests=false` flags when running the test to avoid including the JUnit tests in the coverage report.
++
+The coverage report is available in `target/jacoco-munit.exec`.
+
+=== View Your Coverage Report
+
+View your coverage report to see your custom connector coverage. You must have at least 80% coverage for a high certainty of Java 25 compatibility.
+
+. Open IntelliJ IDEA.
+. Go to *Run* > *Show Coverage Data*.
+. In *Choose Coverage Suite to Display*, add `jacoco-munit.exec` to the list if it is not there already.
+. Look at the coverage percentages to analyze your results.
+
+The coverage percentage reflects how much of your connector your tests cover. Key issues to avoid are illegal reflective access and unsupported `sun.misc.Unsafe` usage in your code. The only ways to detect these issues are to <<review-your-code,review your code>> or to run tests. Aiming for at least 80% coverage allows flexibility on simpler code, such as getters and setters, while ensuring thorough testing of all critical business logic.
+
+=== Add the JDeps Maven Plugin
+
+JDeps is a tool for static code analysis that detects the usage of JDK internal APIs that are no longer available or accessible. For more information, see the https://wiki.openjdk.org/spaces/JDK8/pages/17957128/Java+Dependency+Analysis+Tool[OpenJDK wiki^].
+
+Add the JDeps Maven plugin to your custom connector's `pom.xml` file:
+
+[source,xml,linenums]
+----
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-jdeps-plugin</artifactId>
+    <version>3.1.2</version>
+    <executions>
+        <execution>
+            <goals>
+               <goal>jdkinternals</goal> <!-- verify main classes -->
+               <goal>test-jdkinternals</goal> <!-- verify test classes -->
+            </goals>
+        </execution>
+    </executions>
+    <configuration>
+        <failOnWarning>true</failOnWarning>
+    </configuration>
+</plugin>
+----
+
+Use `maven-jdeps-plugin` version 3.1.2 or later to run the plugin on Java 25.
+
+If your custom connector uses a JDK internal API that is no longer available or accessible, the build fails. The error messages vary. For example, you might see `package sun.misc does not exist`.
+
+The JDeps Maven plugin relies on the JDeps tool bundled with the JDK. Run the JDeps analysis with both Java 17 and Java 25 by changing the `JAVA_HOME` value. Running the analysis with each Java version ensures extra confidence. Compile your custom connector using JDK 17 only.
+
+To run the JDeps Maven plugin without tests, use this command:
+
+[source,bash]
+----
+mvn clean install -Dtest=none -DfailIfNoTests=false -DskipTests=true
+----
+
+This command focuses the check on the offending libraries and internal access issues without dealing with potential test failures or long test runtimes.
+
+[[test-for-java-25-compatibility]]
+=== Test for Java 25 Compatibility
+
+Run your MTF tests to test compatibility of your custom connector against Java 25.
+
+As mentioned previously, you can use a single build pipeline that runs against all supported Java versions. You can also set up another temporary build pipeline for Java 25 so your main build pipeline does not become unstable. After you upgrade to Java 25, discard the temporary build pipeline and converge on your main build pipeline.
+
+. Set the path to your JVM installation in the `MUNIT_JVM` variable (you must install it yourself). You must also set `JAVA_HOME` to your JDK 17 installation.
+. Ensure your custom connector `pom.xml` file includes these MTF dependencies. To test with Mule runtime 4.14, use versions of MUnit and MTF that depend on Mule runtime 4.14, so that MUnit uses the Mule embedded API 4.14:
++
+* munit
+* munit-extensions-maven-plugin
+* mtf-tools
+* mule-extensions-maven-plugin 1.9.23 or later
+
+To ensure your MTF tests do not validate against Mule runtime versions earlier than your connector's minimum Mule version, add this configuration to the `munit-plugin` configuration in your custom connector `pom.xml` file:
+
+[source,xml,linenums]
+----
+<configuration>
+    [...]
+<runtimeConfiguration>
+    <discoverRuntimes>
+        <minMuleVersion>${minVersion}</minMuleVersion>
+        <includeSnapshots>false</includeSnapshots>
+        <product>EE</product>
+    </discoverRuntimes>
+</runtimeConfiguration>
+</configuration>
+----
+
+You can run MTF tests against Java 25 only with Mule runtime 4.14 and later. For earlier Mule runtime versions, you can run MTF tests only against Java 17 and earlier.
+
+Use this bash script to test your custom connector against Java 25:
+
+[source,bash]
+----
+#!/bin/bash
+RUNTIME_VERSION=4.14.0
+MUNIT_JVM=/Library/Java/JavaVirtualMachines/temurin-25.jdk/Contents/Home/bin/java
+mvn clean
+mkdir target
+mvn verify \
+   -DruntimeProduct=MULE_EE \
+   -DruntimeVersion=$RUNTIME_VERSION \
+   -Dmunit.jvm=$MUNIT_JVM \
+   -Dmule.module.tweaking.validation.skip=true \
+   -Dmule.jvm.version.extension.enforcement=LOOSE > ./target/test.log
+----
+
+If you use `mule-java-extension-parent` (recommended), the minimum Mule version is independent of the parent version and you control it directly in your project. For more information, see xref:mule-sdk::forward-compatibility-setup.adoc#upgrading-existing-modules[Upgrading Existing Modules].
+
+If you use the deprecated `mule-modules-parent`, the parent POM only sets the minimum Mule version and is compatible with Mule 4.14. Java 25 support requires no changes to parent POMs.
+
+[[check-for-sun-misc-unsafe-failures]]
+==== Check for `sun.misc.Unsafe` Failures
+
+If your custom connector or one of its libraries calls `sun.misc.Unsafe`, your MTF tests fail instead of only logging a warning. The failure is a `ClassNotFoundException` for `sun.misc.Unsafe`, for example:
+
+[source,text]
+----
+Caused by: org.mule.runtime.module.artifact.api.classloader.exception.CompositeClassNotFoundException: Cannot load class 'sun.misc.Unsafe'
+Caused by: java.lang.ClassNotFoundException: sun.misc.Unsafe
+----
+
+Turning these warnings into failures requires no JVM parameters. To resolve the failure, replace the direct usage with the `VarHandle` or Foreign Function and Memory APIs, or upgrade the library that uses `sun.misc.Unsafe`.
+
+=== Read Your Tests
+
+After you run your MTF tests, your build has either of these outcomes:
+
+* Test failures
++
+You probably must change your custom connector code to ensure Java 25 compatibility.
+
+* All tests pass
++
+Either your custom connector does not require any major changes or your test suite is not comprehensive enough. Review your test suite and double-check that your code coverage is good and that your test scenarios and assertions are not too simple.
+
+[[release-your-custom-connector]]
+== Release Your Custom Connector
+
+After you update your code and your tests pass, you are ready to release a new Java 25-compatible version of your custom connector.
+
+Mule determines the Java versions that your custom connector supports from the `supportedJavaVersions` array in the connector's `META-INF/mule-artifact/mule-artifact.json` file. Mule has deprecated the `@JavaVersionSupport` annotation.
+
+IMPORTANT: Do not add the `JAVA_25` value to the `@JavaVersionSupport` annotation. Mule runtime versions that do not recognize this value fail when they load the connector. Starting with Mule Extensions Maven Plugin 1.9.23, the build fails at package time if the annotation uses `JAVA_25`.
+
+To communicate Java 25 compatibility:
+
+. In the `pom.xml` file of your custom connector, upgrade `mule-extensions-maven-plugin` to version 1.9.23 or later and set `supportedJavaVersions` in the plugin configuration. For example:
++
+[source,xml,linenums]
+----
+<plugin>
+    <groupId>org.mule.runtime.plugins</groupId>
+    <artifactId>mule-extensions-maven-plugin</artifactId>
+    <version>1.9.23</version>
+    <configuration>
+        <supportedJavaVersions>
+            <javaVersion>17</javaVersion>
+            <javaVersion>25</javaVersion>
+        </supportedJavaVersions>
+    </configuration>
+</plugin>
+----
+. Build your custom connector:
++
+[source,bash]
+----
+mvn clean install
+----
+. In your connector JAR file, verify that `META-INF/mule-artifact/mule-artifact.json` includes the `supportedJavaVersions` attribute with the Java versions you declared, for example:
++
+[source,json]
+----
+"supportedJavaVersions": ["17", "25"]
+----
+
+The way Mule reads the Java compatibility of a connector depends on the Mule runtime version:
+
+* Mule runtime 4.13 and later check `supportedJavaVersions` first, and then the deprecated `@JavaVersionSupport` annotation. If the connector declares neither, Mule assumes that the connector supports only Java 8 and Java 11. Because these runtimes do not support Java 8 and Java 11, the connector fails.
+* Mule runtime versions 4.6 up to, but not including, 4.13 rely on the `@JavaVersionSupport` annotation until the end of life of those versions.
+* Mule runtime versions earlier than 4.6 do not read Java compatibility.
+
+You can mark your custom connector as compatible with Java 25 only. However, you must ensure that no adoption or backward compatibility issues exist.
+
+When you deploy a Mule app, Mule verifies that all modules in the Mule app are compatible with the Java version. If Mule finds an incompatibility, Mule throws an error and the application does not deploy.
+
+NOTE: If you receive an `UnsupportedJvmVersionException` error during deployment, your Mule app still contains some connectors that do not declare Java 25 compatibility. To resolve this error, upgrade all connectors in your Mule app to be compatible with Java 25, and declare Java 25 support in each one. Other incompatibilities cause different errors, and there is no single message for these failures.
+
+If your code is compatible with Java 25 but you do not declare Java 25 compatibility, your tests can pass, but Mule does not deploy apps that use the connector.
+
+To run a quick check on your custom connector or if all dependencies are not ready, pass this argument to skip hard checks on the Java support declaration:
+
+[source,bash]
+----
+-M-Dmule.jvm.version.extension.enforcement=LOOSE
+----
+
+For more information, see xref:mule-sdk::java-version-support.adoc[].
+
+[[publish-java-25-compatibility-in-exchange]]
+== Publish Java 25 Compatibility in Exchange
+
+Exchange reads Java compatibility from the `supportedJavaVersions` attribute in `mule-artifact.json` when you publish your custom connector. Publishing a new connector version that changes supported Java compatibility requires this metadata. If your connector has a `minMuleVersion` of 4.13 or later and `mule-artifact.json` has no Java compatibility metadata, Exchange fails to process the connector. For more information, see xref:mule-sdk::publishing-connectors-exchange.adoc[].
+
+Exchange tags connectors that declare Java 25 support.
+
+== See Also
+
+* xref:java-support.adoc[]
+* xref:mule-sdk::java-version-support.adoc[]
+* https://docs.oracle.com/en/java/javase/25/migrate/getting-started.html[Oracle JDK 25 Migration Guide^]
