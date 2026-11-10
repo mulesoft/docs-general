@@ -9,7 +9,7 @@ Send API Manager alerts from Anypoint Platform directly to Slack channels, Micro
 Before getting started, make sure you have:
 
 * An Anypoint Platform account
-* And Anypoint Integration Advanced or Titanium subscription to Anypoint Platform
+* An Anypoint Integration Advanced or Titanium subscription to Anypoint Platform
 * Access to the enhanced experience at omni.mulesoft.com
 * Any of these permissions to view alerts:
 +
