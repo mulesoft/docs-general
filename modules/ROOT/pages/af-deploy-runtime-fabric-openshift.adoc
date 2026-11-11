@@ -14,11 +14,11 @@ The agent network runs in the OpenShift cluster, behind two Managed Omni Gateway
 
 * The Runtime Fabric operator installs and reconciles the Runtime Fabric agent. The agent connects to the Anypoint Platform control plane and deploys the gateways, brokers, and MCP servers.
 * External clients and agents connect over HTTPS to an OpenShift route, which forwards traffic to the ingress Managed Omni Gateway.
-* The ingress gateway forwards traffic to the broker. The broker calls MCP servers in the cluster.
+* The ingress gateway forwards traffic to the broker. The broker calls MCP servers in the cluster. An MCP server can be a Mule application that uses the MCP Connector to expose its flows as MCP tools. The MCP Connector is what makes the Mule application an MCP server.
 * The broker reaches large language models (LLMs) and other external services only through the egress Managed Omni Gateway. The egress gateway has no public endpoint and no route.
 * If the cluster reaches the internet through a forward proxy, both the Runtime Fabric agent and the egress gateway connect through the proxy.
 
-image::af-rtf-openshift-architecture.png["Agent network on Runtime Fabric on OpenShift: clients reach the ingress Managed Omni Gateway through an OpenShift route, the broker calls MCP servers and reaches the LLM through the egress Managed Omni Gateway and forward proxy, and the gateways and Runtime Fabric agent connect to the Anypoint Platform control plane through the proxy"]
+image::af-rtf-openshift-architecture.png["Agent network on Runtime Fabric on OpenShift: clients reach the ingress Managed Omni Gateway through an OpenShift route, the broker calls MCP servers, which can be Mule applications that expose MCP tools with the MCP Connector, and reaches the LLM through the egress Managed Omni Gateway and forward proxy, and the gateways and Runtime Fabric agent connect to the Anypoint Platform control plane through the proxy"]
 
 [calloutlist]
 . Clients and agents connect over HTTPS to the OpenShift route, which presents the cluster wildcard certificate. The `HTTPRouteTemplate` resource sets `reencrypt` TLS termination and the route timeout. See <<step-3>>.
@@ -195,8 +195,10 @@ If the deployment fails with error `3018` (`commandTimeout`), check the namespac
 [[step-7]]
 == Step 7: Deploy MCP Servers
 
+An MCP server in the agent network namespace can be a Mule application. The MCP Connector is what exposes the Mule application as an MCP server.
+
 . Confirm that the agent network namespace's resource quota has room for each MCP server.
-. Build each MCP server in Anypoint Code Builder with the MCP Connector, and deploy it with Runtime Fabric as the target. See xref:mcp-connector::mcp-connector-acb.adoc[].
+. Build each Mule application that you expose as an MCP server in Anypoint Code Builder with the MCP Connector, and deploy it with Runtime Fabric as the target. See xref:mcp-connector::mcp-connector-acb.adoc[].
 . If you expose an MCP server outside the cluster, make sure that its route presents the cluster wildcard certificate, as in Step 3, and not an internal certificate.
 
 === Verify the MCP Servers
