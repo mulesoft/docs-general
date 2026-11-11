@@ -5,7 +5,7 @@ Deploy an agent network, with its broker, Managed Omni Gateways, and MCP servers
 
 Each step links to the product documentation that describes the component in detail.
 
-// ENG-REVIEW (W-24166749): Content is derived from field notes and published docs. Engineering sign-off is pending for: Before You Begin, Architecture, Steps 1-3, Step 8, and Step 9. Steps 4-7 were validated by Sebastian Blazquez on 2026-09-18 (confirm the spelling of the name).
+// ENG-REVIEW (W-24166749): Content is derived from field notes and published docs. Engineering sign-off is pending for: Before You Begin, Architecture, Step 1, Step 6, and Step 7. Steps 2-5 were validated by Sebastian Blazquez on 2026-09-18 (confirm the spelling of the name).
 
 [[architecture]]
 == Architecture
@@ -21,11 +21,11 @@ The agent network runs in the OpenShift cluster, behind two Managed Omni Gateway
 image::af-rtf-openshift-architecture.png["Agent network on Runtime Fabric on OpenShift: clients reach the ingress Managed Omni Gateway through an OpenShift route, the broker calls MCP servers and reaches the LLM through the egress Managed Omni Gateway and forward proxy, and the gateways and Runtime Fabric agent connect to the Anypoint Platform control plane through the proxy"]
 
 [calloutlist]
-. Clients and agents connect over HTTPS to the OpenShift route, which presents the cluster wildcard certificate. The `HTTPRouteTemplate` resource sets `reencrypt` TLS termination and the route timeout. See <<step-5>>.
-. The route re-encrypts traffic to the internal certificate of the ingress gateway, which the `tls-inbound` policy provides. See <<step-5>>.
-. The egress gateway connects to the LLM and other upstreams over TLS, through the forward proxy. The gateway's `Configuration` resource sets the proxy, and the `tls-outbound` policy provides the private CA that the gateway trusts. See <<step-6>> and <<step-7>>.
+. Clients and agents connect over HTTPS to the OpenShift route, which presents the cluster wildcard certificate. The `HTTPRouteTemplate` resource sets `reencrypt` TLS termination and the route timeout. See <<step-3>>.
+. The route re-encrypts traffic to the internal certificate of the ingress gateway, which the `tls-inbound` policy provides. See <<step-3>>.
+. The egress gateway connects to the LLM and other upstreams over TLS, through the forward proxy. The gateway's `Configuration` resource sets the proxy, and the `tls-outbound` policy provides the private CA that the gateway trusts. See <<step-4>> and <<step-5>>.
 
-// ENG-REVIEW: Confirm whether any LLM endpoint requires a client certificate (mTLS). Step 7 covers server certificate trust only.
+// ENG-REVIEW: Confirm whether any LLM endpoint requires a client certificate (mTLS). Step 5 covers server certificate trust only.
 
 [[before-you-begin]]
 == Before You Begin
@@ -70,63 +70,34 @@ Have these certificates ready, in PEM format:
 * The complete CA chain of any private or corporate CA that signs the certificates of your LLM and other upstream services.
 
 [[step-1]]
-== Step 1: Create the Runtime Fabric and Prepare the Namespace
+== Step 1: Install Runtime Fabric on OpenShift
 
-. In Runtime Manager, create a Runtime Fabric for Red Hat OpenShift, select *Operator*, and copy the activation data. See xref:runtime-fabric::install-openshift.adoc#create-a-runtime-fabric-using-runtime-manager[Create a Runtime Fabric Using Runtime Manager].
-. Create the Runtime Fabric namespace and the Docker pull secret:
-+
-[source,ssh]
-----
-oc create ns <rtf-namespace>
-oc create secret docker-registry <pull-secret> --namespace <rtf-namespace> \
-  --docker-server=<registry-url> --docker-username=<username> --docker-password=<password>
-----
-. If you deploy the gateways and the agent network to separate namespaces, configure authorized namespaces now. You must create the `authorized-namespaces` ConfigMap and the `anyuid` RoleBindings before you install the operator. See xref:runtime-fabric::install-openshift.adoc#configure-authorized-namespaces[Configure Authorized Namespaces].
+Follow xref:runtime-fabric::install-openshift.adoc[], and apply these Agent Fabric requirements:
 
-[[step-2]]
-== Step 2: Install and Configure the Runtime Fabric Operator
-
-. In the OpenShift console, install the Runtime Fabric operator (`rtf-agent-operator`) from OperatorHub. The installation requires manual approval. See xref:runtime-fabric::install-openshift.adoc#install-the-red-hat-openshift-runtime-fabric-operator[Install the Red Hat OpenShift Runtime Fabric Operator].
-+
-If the operator version that you want doesn't appear, upgrade your cluster to a supported Kubernetes version.
-. Create the operator instance in `<rtf-namespace>` and set the xref:runtime-fabric::install-openshift.adoc#installation-parameters-reference[installation parameters]:
-** `activationData`: the activation data from Step 1.
+. If you deploy the gateways and the agent network to separate namespaces, configure authorized namespaces. You must create the `authorized-namespaces` ConfigMap and the `anyuid` RoleBindings before you install the operator. See xref:runtime-fabric::install-openshift.adoc#configure-authorized-namespaces[Configure Authorized Namespaces].
+. When you configure the operator instance, don't rename it. Set these xref:runtime-fabric::install-openshift.adoc#installation-parameters-reference[installation parameters]:
+** `activationData`: the activation data from Runtime Manager.
 ** `muleLicense`: your Base64-encoded Mule license key.
 ** `global.image.rtfRegistry` and `global.image.pullSecretName`: your registry and pull secret.
 ** `global.authorizedNamespaces`: `true`, if you configured authorized namespaces.
-** `proxy.http_proxy` and `proxy.http_no_proxy`: your forward proxy, if the cluster connects through one. These settings apply to the Runtime Fabric agent only. Managed Omni Gateway doesn't inherit them, so you configure its proxy in Step 6.
-+
-Don't rename the instance.
-+
-// ENG-REVIEW: gateway-managed-set-up.adoc enables the ManagedFlexGateway CRD with `helm upgrade ... --set global.crds.flex.enabled=true`. Confirm the equivalent for operator installs (instance parameter, or enabled by default).
-
-=== Verify the Operator
-
-[source,ssh]
-----
-oc get csv -n <rtf-namespace>
-oc get pods -n <rtf-namespace>
-----
-
-The operator's ClusterServiceVersion shows the version that you installed with the phase `Succeeded`, and the operator pod is `Running`.
-
-[[step-3]]
-== Step 3: Associate Environments and Verify the Runtime Fabric
-
+** `proxy.http_proxy` and `proxy.http_no_proxy`: your forward proxy, if the cluster connects through one. These settings apply to the Runtime Fabric agent only. Managed Omni Gateway doesn't inherit them, so you configure its proxy in <<step-4>>.
 . In Runtime Manager, associate the Runtime Fabric with each environment where you deploy gateways and agent networks. You can't deploy to the Runtime Fabric from an environment that isn't associated with it. See xref:runtime-fabric::associate-environments.adoc[].
+
+// ENG-REVIEW: gateway-managed-set-up.adoc enables the ManagedFlexGateway CRD with `helm upgrade ... --set global.crds.flex.enabled=true`. Confirm the equivalent for operator installs (instance parameter, or enabled by default).
 
 === Verify the Runtime Fabric
 
 [source,ssh]
 ----
+oc get csv -n <rtf-namespace>
 oc get pods -n <rtf-namespace>
 oc get events -n <rtf-namespace> --sort-by='.lastTimestamp'
 ----
 
-All Runtime Fabric pods are `Running` and ready. No `FailedCreate` events show the message `unable to validate against any security context constraint`. In Runtime Manager, the Runtime Fabric shows as connected and healthy, with your environments associated.
+The operator's ClusterServiceVersion shows the version that you installed with the phase `Succeeded`, and all Runtime Fabric pods are `Running` and ready. No `FailedCreate` events show the message `unable to validate against any security context constraint`. In Runtime Manager, the Runtime Fabric shows as connected and healthy, with your environments associated.
 
-[[step-4]]
-== Step 4: Deploy the Ingress and Egress Managed Omni Gateways
+[[step-2]]
+== Step 2: Deploy the Ingress and Egress Managed Omni Gateways
 
 . Deploy an ingress and an egress Managed Omni Gateway to the Runtime Fabric. Use Anypoint Code Builder or the Anypoint CLI, or deploy each gateway manually in Runtime Manager. See xref:gateway::gateway-managed-ingress-egress.adoc[].
 . For the ingress gateway, configure a *Public endpoint*. For the egress gateway, don't configure a public endpoint.
@@ -141,8 +112,8 @@ oc get pods -n <omni-gateway-namespace>
 
 The ingress and egress gateway pods are `Running` and ready, and both gateways show as connected in Runtime Manager.
 
-[[step-5]]
-== Step 5: Configure Inbound TLS for the Ingress Gateway
+[[step-3]]
+== Step 3: Configure Inbound TLS for the Ingress Gateway
 
 On OpenShift, terminate external TLS at an OpenShift route that presents the cluster wildcard certificate, and re-encrypt the traffic to the ingress gateway. You configure two resources together:
 
@@ -163,8 +134,8 @@ curl -v https://<public-hostname>
 
 A route exists for the ingress gateway and not for the egress gateway. Run `curl` from outside the cluster. The TLS handshake completes, and the response presents the cluster wildcard certificate, not the gateway's internal `*.svc.cluster.local` certificate.
 
-[[step-6]]
-== Step 6: Configure the Forward Proxy for the Egress Gateway
+[[step-4]]
+== Step 4: Configure the Forward Proxy for the Egress Gateway
 
 Complete this step only if the cluster reaches the internet through a forward proxy.
 
@@ -179,10 +150,10 @@ From the egress gateway pod, check the connection to an external host whose cert
 oc exec -n <omni-gateway-namespace> <omni-egress-pod> -c app -- flexctl check http https://<public-host>
 ----
 
-The check succeeds. Testing a publicly trusted host confirms that the proxy route works, separately from the private CA trust that you configure in Step 7.
+The check succeeds. Testing a publicly trusted host confirms that the proxy route works, separately from the private CA trust that you configure in Step 5.
 
-[[step-7]]
-== Step 7: Trust Upstreams Signed by a Private CA
+[[step-5]]
+== Step 5: Trust Upstreams Signed by a Private CA
 
 Complete this step if your LLM or other upstream services use certificates signed by a private or corporate CA.
 
@@ -200,12 +171,12 @@ oc exec -n <omni-gateway-namespace> <omni-egress-pod> -c app -- flexctl check ht
 
 Both checks succeed without a certificate validation error. If the public host check now fails, the binding replaced the default CA bundle for that upstream. Narrow the binding's selector, or add the public CA chain to it.
 
-[[step-8]]
-== Step 8: Deploy the Agent Network
+[[step-6]]
+== Step 6: Deploy the Agent Network
 
 . Confirm that the agent network namespace's resource quota has room for every broker. See <<before-you-begin>>.
-. If a broker connects to an internal LLM that uses OAuth, configure the `oauth2-client-credentials` authentication kind for the LLM connection. See xref:agent-network::af-agent-network-yaml-reference.adoc[]. The token request goes out through the egress gateway, so the token endpoint must also pass Steps 6 and 7.
-. Deploy the agent network to the Runtime Fabric target, and select the ingress and egress gateways from Step 4. Use Anypoint Code Builder (*Deploy Agent Network*) or, to set broker resources, the Anypoint CLI. See xref:agent-network::af-deploy-agent-network-targets.adoc[].
+. If a broker connects to an internal LLM that uses OAuth, configure the `oauth2-client-credentials` authentication kind for the LLM connection. See xref:agent-network::af-agent-network-yaml-reference.adoc[]. The token request goes out through the egress gateway, so the token endpoint must also pass Steps 4 and 5.
+. Deploy the agent network to the Runtime Fabric target, and select the ingress and egress gateways from Step 2. Use Anypoint Code Builder (*Deploy Agent Network*) or, to set broker resources, the Anypoint CLI. See xref:agent-network::af-deploy-agent-network-targets.adoc[].
 
 === Verify the Agent Network
 
@@ -217,16 +188,16 @@ oc get events -n <agent-network-namespace> --sort-by='.lastTimestamp'
 
 The deployment completes in Anypoint Code Builder or the Anypoint CLI. The broker pods are `Running` and ready, and no events show `FailedScheduling` or `FailedCreate`.
 
-If the deployment fails with error `3018` (`commandTimeout`), check the namespace resource quota first. See xref:agent-network::af-troubleshoot-errors.adoc#deploy-errors[Deploy Errors]. If requests through the ingress gateway return `504 Gateway Timeout`, check the route timeout from Step 5.
+If the deployment fails with error `3018` (`commandTimeout`), check the namespace resource quota first. See xref:agent-network::af-troubleshoot-errors.adoc#deploy-errors[Deploy Errors]. If requests through the ingress gateway return `504 Gateway Timeout`, check the route timeout from Step 3.
 
 // ENG-REVIEW: 3018 is documented as an Anypoint CLI error code. Confirm how the same failure appears in Anypoint Code Builder.
 
-[[step-9]]
-== Step 9: Deploy MCP Servers
+[[step-7]]
+== Step 7: Deploy MCP Servers
 
 . Confirm that the agent network namespace's resource quota has room for each MCP server.
 . Build each MCP server in Anypoint Code Builder with the MCP Connector, and deploy it with Runtime Fabric as the target. See xref:mcp-connector::mcp-connector-acb.adoc[].
-. If you expose an MCP server outside the cluster, make sure that its route presents the cluster wildcard certificate, as in Step 5, and not an internal certificate.
+. If you expose an MCP server outside the cluster, make sure that its route presents the cluster wildcard certificate, as in Step 3, and not an internal certificate.
 
 === Verify the MCP Servers
 
