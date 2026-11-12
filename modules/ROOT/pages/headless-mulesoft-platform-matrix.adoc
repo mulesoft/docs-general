@@ -1,0 +1,76 @@
+= Anypoint Platform Interface and Tool Capability Matrix
+
+Use this reference to compare capabilities available in the Anypoint Platform UI, Platform APIs, and MuleSoft MCP tools. Use it to determine the appropriate interface for API management, runtime operations, AI governance, and asset discovery.
+
+[%header,cols="2,1,1,1,3"]
+|===
+|Functional domain or task |Anypoint Platform UI |Platform APIs |MuleSoft MCP tools |Key considerations and notes
+
+|API design and modeling
+|Full support
+|Full support
+|Partial support
+|Anypoint Code Builder and Design Center are the primary design tools. MCP tools draft RAML and OAS specifications with LLM assistance, but you must use Platform APIs or the UI to synchronize assets with Exchange.
+
+|Asset discovery and search
+|Full support
+|Full support
+|Full support
+|MCP tools perform semantic search, gather context, and query portfolio assets in Exchange for LLM workflows.
+
+|API and gateway governance
+|Full support
+|Full support
+|Read and audit
+|Use the UI or APIs to enforce policies and tune instances. MCP tools query compliance status, missing policies, and governance recommendations.
+
+|Deployment and lifecycle operations
+|Full support
+|Full support
+|Read and query
+|Platform APIs and Runtime Manager manage deployments, application states, and CI/CD pipelines. MCP tools provide status checks and operational summaries.
+
+|Cost, usage, and token monitoring
+|Full support
+|Full support
+|Query and inspect
+|The UI and APIs track overall spending and tokens. MCP tools retrieve token metrics and cost signals during interactive agent sessions.
+
+|Provider and vault integration
+|Full support
+|Full support
+|Not supported
+|Use the UI or Platform APIs to configure external providers, such as AWS Bedrock or Google Vertex AI, and secret vaults.
+
+|Multi-agent and model proxy setup
+|Full support
+|Full support
+|Not supported
+|Define model proxies and configure agent topologies in the UI or through direct control-plane APIs.
+|===
+
+== Interface Details
+
+=== Anypoint Platform UI
+
+Use the UI for visual administration, full-lifecycle design, and security management.
+
+* Design RAML and OAS specifications visually in Anypoint Code Builder and Design Center.
+* Apply policies interactively and map governance strategies.
+* Configure secret vaults, manage credentials, and set up providers.
+
+=== Platform APIs
+
+Use Platform APIs for programmatic control and automation.
+
+* Drive CI/CD deployment pipelines on CloudHub 2.0 and Runtime Fabric.
+* Apply policies and monitor compliance at scale.
+* Manage environments, organizations, and access control programmatically.
+
+=== MuleSoft MCP Tools
+
+Use MuleSoft MCP tools to enrich context for AI agents and LLMs.
+
+* Inspect assets and query metadata across Exchange without manual UI navigation.
+* Summarize compliance status, missing policies, and governance rules for LLMs.
+* Retrieve runtime status, operational health, and token usage in interactive agent workflows.
