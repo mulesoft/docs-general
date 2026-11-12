@@ -20,9 +20,9 @@ Before getting started, make sure you have:
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
-* A deployed Omni Gateway version 1.11.4
+* A deployed Omni Gateway version 1.11.4 or later
 +
-See xref:gateway::flex-gateway-managed-set-up.adoc[].
+See xref:gateway::gateway-managed-set-up.adoc[] or xref:gateway::gateway-set-up.adoc[]..
 * API keys to authenticate with your LLM Providers.
 * A xref:model-proxy-semantic-service.adoc[configured semantic routing service] if you want to use semantic routing.
 * A xref:model-proxy-semantic-caching-service.adoc[configured semantic caching service] if you want to enable semantic caching.
@@ -79,7 +79,7 @@ See xref:gateway::flex-gateway-managed-set-up.adoc[].
 **** *Static*: Use your provider API key. Enter a static API key for the provider endpoint.
 **** *Dynamic*: Retrieve your key dynamically from the request. Define a DataWeave script to extract the API key from the incoming request.
 **** *From vault*: Use a secret stored in an external vault. Select a secret group, then select a secret from that group. For more information, see xref:exp-vaults-manage.adoc[].
-. Click *Add Route* to add additional routes. Complete the previous steps to configure each new route
+. Click *Add Route* to add additional routes. Complete the previous steps to configure each new route.
 . Expand *Advanced Options* and enable *Enable semantic caching* to cache and reuse LLM responses based on semantic similarity. Select a configured semantic caching service from the list. For more information, see xref:model-proxy-semantic-caching-service.adoc[].
 . Click *Add Model Proxy*.
 
