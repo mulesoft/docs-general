@@ -3,8 +3,6 @@
 
 As AI agents take on more autonomous work across your organization, a single compromised, misconfigured, or malfunctioning agent can quickly leak sensitive data, take unauthorized actions, or run up costs before anyone notices. Monitor agent traffic from a single location in the enhanced MuleSoft experience to detect anomalous behavior and contain a rogue agent before it causes damage.
 
-NOTE: Detecting and containing rogue agents requires Omni Gateway 1.13.5 or later.
-
 Detection and containment rely on two policies that work together. Apply both to each model proxy you want to protect:
 
 * *Rogue Agent Detection* policy monitors agent traffic and flags risky behavior for your review.
@@ -33,6 +31,10 @@ Confirm these prerequisites are in place.
 --
 +
 API Manager permissions apply to individual environments. Grant permissions in each environment where you need them.
+
+* A deployed Omni Gateway version 1.13.5 or later
++
+See xref:gateway::gateway-managed-set-up.adoc[] or xref:gateway::gateway-set-up.adoc[].
 
 * Register each agent you want to monitor with a unique instance name and ID, and link it to its model proxies. This lets flags, logs, and containment actions target the correct agent.
 

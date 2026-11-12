@@ -7,7 +7,7 @@ endif::[]
 
 Model Proxy provides a unified access layer for multiple Large Language Model (LLM) providers. Model Proxies are deployed to Omni Gateway to enable governance, intelligent routing, and cost management for AI applications.
 
-Model Proxy is supported on Managed Omni Gateway and Self-Managed Omni Gateway running in Connected Mode.
+Model Proxy is supported on Managed Omni Gateway and Self-Managed Omni Gateway running in Connected Mode. For setup information, see xref:gateway::gateway-managed-set-up.adoc[] or xref:gateway::gateway-set-up.adoc[].
 
 By creating a proxy, the user defines a singular LLM service that can receive requests for multiple LLM providers. This simplifies the developer experience. You can seamlessly add new models to the service without changing the endpoint.
 
