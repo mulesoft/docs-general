@@ -1,0 +1,117 @@
+= Bridget Integration for Data Entry and Management
+:keywords: bridget, data entry, data management, supplier onboarding, legacy systems, integration, automation, enhanced experience
+
+Integrate Bridget with Anypoint Platform to streamline data entry, manage legacy system data, and automate multi-system workflows.
+
+== Before You Begin
+
+Before getting started, make sure you have:
+
+* An Anypoint Platform account with access to the enhanced MuleSoft experience.
+* One of these Bridget roles assigned by an Organization Administrator:
++
+--
+** Bridget User: Access to the Bridget run API surface (/run). Allows basic form submission and data entry workflows.
+** Bridget Manager: Bridget User access plus the manage API surface (/run, /manage). Enables workflow configuration and management.
+** Bridget Admin: Bridget Manager access plus the admin API surface (/run, /manage, /admin). Provides full administrative control.
+--
+--
++
+For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
+
+== What is Bridget Integration?
+
+Bridget is a Salesforce application that bridges data entry and legacy system management with Anypoint Platform. It provides a streamlined interface for handling structured data workflows without writing complex APIs or manually managing data transformations.
+
+With Bridget integration, you can:
+
+* Simplify data entry for non-technical users
+* Connect legacy systems to modern APIs through automated workflows
+* Reduce manual data management tasks
+* Enable cross-system data synchronization
+
+The integration connects Bridget data entry workflows directly to your Mule applications and APIs, enabling real-time data validation, transformation, and routing.
+
+== Key Benefits
+
+User-Friendly Data Entry:: Bridget provides an intuitive interface for data entry that doesn't require technical expertise, reducing errors and training costs.
+Legacy System Integration:: Connect older systems to modern APIs without expensive rewrites or manual intervention.
+Workflow Automation:: Automatically route and transform data across multiple systems based on configurable rules.
+Real-Time Validation:: Validate data at entry time before it reaches downstream systems.
+Reduced Development Effort:: Minimize custom code by using Bridget's pre-built data handling capabilities.
+Audit and Compliance:: Track all data entry and modifications for compliance reporting.
+
+== Limitations
+
+Structured Data Only:: Bridget is optimized for structured, tabular data. Complex hierarchical data structures may require additional transformation.
+Schema Validation:: Data schemas must be predefined in Bridget before entry. Dynamic schema changes require redeployment.
+Performance:: High-volume real-time streaming scenarios may require optimization or batching strategies.
+Dependencies:: Bridget requires active integration with Anypoint Platform services. Offline data entry isn't supported in the base configuration.
+
+== Supported Regions
+
+Bridget integration is available in these regions:
+
+* North America (us-east-1, us-west-2)
+
+For region-specific configuration, refer to your Anypoint Platform regional settings.
+
+== Use Cases
+
+=== Supplier Onboarding
+
+Use Bridget to streamline supplier data collection and validation:
+
+* Provide suppliers with a simplified interface to submit required information (company details, certifications, banking information).
+* Automatically validate submission data against your master data standards.
+* Route approved submissions to procurement systems.
+* Reject invalid submissions with clear feedback, reducing back-and-forth.
+
+Example workflow:
+. Bridget automates the supplier's browser interactions to fill out the onboarding form with required information (company details, certifications, banking information)
+. Mule application validates the submitted data (format, uniqueness, completeness)
+. Valid submissions route to ERP system
+. Invalid submissions return with error messages
+
+=== Legacy Data Entry and Migration
+
+Enable data entry for legacy systems without exposing complex interfaces:
+
+* Provide a modern entry interface for legacy application data.
+* Transform entries into legacy system formats automatically.
+* Maintain audit trails of all entries and modifications.
+* Bulk migrate historical data through structured templates.
+
+Example workflow:
+. Bridget automates the browser interactions to enter data into the legacy system's form interface, simulating the exact user actions on the screen
+. Mule transformation policy converts data to the legacy system's required format
+. Data writes to legacy system via API or database connection
+. Confirmation and audit record are logged
+
+=== Multi-System Workflows
+
+Coordinate data entry across multiple downstream systems:
+
+* Accept data once in Bridget.
+* Mule routing rules determine which systems receive the data.
+* Transform data per system requirements (format, field mapping).
+* Track delivery and error handling across all destinations.
+
+Example workflow:
+. Data entered once in Bridget
+. Mule conditionally routes to CRM, ERP, and Analytics systems
+. Each route applies its own transformation policy
+. Unified error reporting shows status across all systems
+
+
+== Access Bridget Through the Enhanced MuleSoft Experience
+
+From the enhanced MuleSoft experience, navigate to the *Bridget* tab and click *Open Bridget*.
+
+For more information, see the {docs link placeholder} [Bridget documentation].
+
+
+== See Also
+
+//* [link to Salesforce's bridget docs]
+* xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions]
