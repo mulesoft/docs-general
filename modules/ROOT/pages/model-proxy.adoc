@@ -60,6 +60,8 @@ Up to 50 Model Proxies are supported per Large Omni Gateway.
 [[supported-models]]
 == Supported LLM Providers and Models
 
+For the Anthropic and Bedrock Anthropic providers, to route requests to a model that isn't listed here, specify a custom model ID when you configure the route target. For more information, see xref:model-proxy-create-model-proxy.adoc[].
+
 Model Proxy supports these LLM providers and models:
 
 * OpenAI
@@ -154,20 +156,6 @@ Model Proxy supports these LLM providers and models:
 ** GPT-5.4 Mini
 ** GPT-5.4 Nano
 ** Codex Mini
-* Microsoft Foundry Anthropic
-** Claude Opus 5.5
-** Claude Opus 5
-** Claude Sonnet 5
-** Claude Haiku 4.5
-** Claude Fable 5.1
-** Claude Fable 5
-** Claude Opus 4.8
-** Claude Opus 4.7
-** Claude Opus 4.6
-** Claude Opus 4.5
-** Claude Opus 4.1
-** Claude Sonnet 4.6
-** Claude Sonnet 4.5
 * Bedrock OpenAI
 ** GPT-6 Astra (Bedrock)
 ** GPT-6 Sol (Bedrock)
@@ -201,20 +189,6 @@ Model Proxy supports these LLM providers and models:
 ** Gemini 3.6 Flash
 ** Gemini 3.7 Flash
 ** Gemini 3.8 Flash
-* Google Gemini Enterprise Agent Platform Anthropic
-** Claude Opus 5.5
-** Claude Opus 5
-** Claude Sonnet 5
-** Claude Haiku 4.5
-** Claude Fable 5.1
-** Claude Fable 5
-** Claude Opus 4.8
-** Claude Opus 4.7
-** Claude Opus 4.6
-** Claude Opus 4.5
-** Claude Opus 4.1
-** Claude Sonnet 4.6
-** Claude Sonnet 4.5
 * Google Gemini Enterprise Agent Platform OpenAI
 ** GPT-OSS 120B
 ** GPT-OSS 20B
@@ -272,3 +246,36 @@ Model Proxy supports these LLM providers and models:
 ** Devstral Medium
 ** Devstral Small
 ** Pixtral Large
+* Salesforce LLM
+** Claude Opus 5.5 (Salesforce)
+** Claude Opus 5 (Salesforce)
+** Claude Opus 4.8 (Salesforce)
+** Claude Opus 4.7 (Salesforce)
+** Claude Opus 4.6 (Salesforce)
+** Claude Opus 4.5 (Salesforce)
+** Claude Sonnet 5.5 (Salesforce)
+** Claude Sonnet 5 (Salesforce)
+** Claude Sonnet 4.6 (Salesforce)
+** Claude Sonnet 4.5 (Salesforce)
+** Claude Haiku 5.5 (Salesforce)
+** Claude Haiku 4.5 (Salesforce)
+** GPT-4o (Salesforce)
+** GPT-4o mini (Salesforce)
+** GPT-4.1 (Salesforce)
+** GPT-4.1 mini (Salesforce)
+** GPT-5 (Salesforce)
+** GPT-5 mini (Salesforce)
+** GPT-5.1 (Salesforce)
+** GPT-5.2 (Salesforce)
+** GPT-5.4 (Salesforce)
+** GPT-5.4 mini (Salesforce)
+** GPT-5.5 (Salesforce)
+** GPT-5.6 Luna (Salesforce)
+** GPT-5.6 Sol (Salesforce)
+** GPT-5.6 Terra (Salesforce)
+** GPT-6 Sol (Salesforce)
+** GPT-6 Luna (Salesforce)
+** GPT-6 Astra (Salesforce)
+** GPT-6.1 Sol (Salesforce)
+** o3 (Salesforce)
+** o4-mini (Salesforce)

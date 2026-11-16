@@ -44,7 +44,6 @@ Advanced scale supports large utterance sets per topic and requires a dedicated 
 ** *Embedding service provider*: The provider of the embedding model. Select from these options: 
 *** *OpenAI*
 *** *Hugging Face*
-*** *Azure OpenAI*.
 ** *Service label*: Label to identify the new service. Shown as the label in the Semantic Services catalog.
 ** *URL*: The URL of the embedding service.
 ** *Model*: The embedding model to use.

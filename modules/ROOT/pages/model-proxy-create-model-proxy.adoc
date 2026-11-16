@@ -65,7 +65,6 @@ See xref:gateway::flex-gateway-managed-set-up.adoc[].
 **** *Gemini*
 **** *Azure OpenAI*
 **** *Microsoft Foundry OpenAI*
-**** *Microsoft Foundry Anthropic*
 **** *Google Gemini Enterprise Agent Platform Gemini*
 **** *Google Gemini Enterprise Agent Platform Anthropic*
 **** *Google Gemini Enterprise Agent Platform OpenAI*
@@ -75,8 +74,9 @@ See xref:gateway::flex-gateway-managed-set-up.adoc[].
 **** *Anthropic*
 **** *xAI*
 **** *Mistral*
+**** *Salesforce LLM*
 **** Any custom provider published to Anypoint Exchange. For more information, see xref:model-proxy-publish-custom-llm-metadata.adoc[].
-*** *Request model override*: Select a target model to override the model version specified in the payload. Selecting *Use model from request* sends the request to the model specified in the request. A target model is required for semantic routing.
+*** *Request model override*: Select a target model to override the model version specified in the payload. Selecting *Use model from request* sends the request to the model specified in the request. For the *Anthropic* and *Bedrock Anthropic* providers, to use a model that isn't in the list, select *Use a custom model* and enter the provider's model ID, for example, `claude-opus-4-8`. A target model is required for semantic routing.
 *** *Destination URL*: Specify the URL for your provider endpoint. Ensure the URL is correct and edit if necessary.
 +
 For Microsoft Foundry and Google Gemini Enterprise Agent Platform providers, replace the placeholders in the default URL with your values:
@@ -95,11 +95,11 @@ For Microsoft Foundry and Google Gemini Enterprise Agent Platform providers, rep
 ***** *Static*: Use your provider API key. Enter a static API key for the provider endpoint.
 ***** *Dynamic*: Retrieve your key dynamically from the request. Define a DataWeave script to extract the API key from the incoming request.
 ***** *From vault*: Use a secret stored in an external vault. Select a secret group, then select a secret from that group. For more information, see xref:exp-vaults-manage.adoc[].
-**** *OAuth 2.0 client credentials*: Available for Microsoft Foundry providers. Model Proxy obtains an access token from the token URL by using a client ID and client secret. Configure these fields:
+**** *OAuth 2.0 client credentials*: Available for Microsoft Foundry OpenAI and Salesforce LLM providers. Model Proxy obtains an access token from the token URL by using a client ID and client secret. Configure these fields:
 ***** *Client ID*: Enter your OAuth client ID.
 ***** *Client Secret*: Enter your OAuth client secret. Select *Static* to enter the secret directly or *From vault* to use a secret stored in an external vault.
-***** *Token URL*: Replace `{tenant}` in the default token URL, `+https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token+`, with your Microsoft Entra tenant ID.
-***** *Scopes*: (Optional) Enter the scopes to request. The default is `+https://cognitiveservices.azure.com/.default+`. Separate multiple scopes with spaces.
+***** *Token URL*: Replace the placeholder in the default token URL with your value. For Microsoft Foundry, replace `{tenant}` in `+https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token+` with your Microsoft Entra tenant ID. For Salesforce LLM, replace `{org}` in `+https://{org}.my.salesforce.com/services/oauth2/token+` with your Salesforce org's My Domain name.
+***** *Scopes*: (Optional) Enter the scopes to request. Separate multiple scopes with spaces. For Microsoft Foundry, the default is `+https://cognitiveservices.azure.com/.default+`.
 **** *OAuth 2.0 JWT bearer*: Available for Google Gemini Enterprise Agent Platform providers. Model Proxy signs a JWT with your private key and exchanges it for an access token. Configure these fields:
 ***** *Issuer*: Enter the value of the JWT `iss` claim, for example, your Google Cloud service account email address.
 ***** *Signing key*: Paste the PEM private key used to sign the JWT. Select *Static* to paste the key directly or *From vault* to use a secret stored in an external vault.
