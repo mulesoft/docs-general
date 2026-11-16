@@ -41,9 +41,7 @@ For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experien
 Advanced scale supports large utterance sets per topic and requires a dedicated external vector database connection.
 . Configure the embedding connection parameters:
 ** *Environment*: The environment to use for the semantic service.
-** *Embedding service provider*: The provider of the embedding model. Select from these options: 
-*** *OpenAI*
-*** *Hugging Face*
+** *Embedding service provider*: The provider of the embedding model: *OpenAI* or *Hugging Face*.
 ** *Service label*: Label to identify the new service. Shown as the label in the Semantic Services catalog.
 ** *URL*: The URL of the embedding service.
 ** *Model*: The embedding model to use.
@@ -81,7 +79,7 @@ NOTE: To block users from asking about certain subjects, create prompt topics fo
 Basic scale supports up to six topics and 10 utterances per topic. Managed via internal Model Proxy configuration.
 . Configure the embedding connection parameters:
 ** *Environment*: The environment to use for the semantic service.
-** *Embedding service provider*: The provider of the embedding model: *OpenAI*, *Hugging Face*, or *Azure OpenAI*.
+** *Embedding service provider*: The provider of the embedding model: *OpenAI* or *Hugging Face*.
 ** *Service label*: Label to identify the new service. Shown as the label in the Semantic Services catalog.
 ** *URL*: The URL of the embedding service.
 ** *Model*: The embedding model to use.
