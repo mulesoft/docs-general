@@ -189,6 +189,8 @@ Data throughput is the total network I/O bytes produced by the infrastructure of
 
 To calculate usage, MuleSoft tracks usage and aggregates the total daily and monthly GBs.
 
+On Hybrid Standalone, usage is counted by deployed apps, Mule flows, and Mule messages. Data throughput isn't counted, because the app runs on your infrastructure and you pay for the network traffic. CloudHub, CloudHub 2.0, and Runtime Fabric count data throughput.
+
 For some customers in the US control plane, MuleSoft offers a pricing and packaging model for Anypoint Platform that allots a number of Mule flows, Mule messages, and data throughput (measured as network I/O bytes). Not all types of Mule flows and messages count toward the allotments in a package.
 
 === Mule Runtime Usage Tables
@@ -384,6 +386,8 @@ When an event source within a flow of a Mule application is triggered, the event
 === Total Data Throughput
 
 Data throughput is all of the network I/O bytes produced by the infrastructure for the Mule runtime server that runs a Mule application. This includes the data that the application produces to execute its business logic, as well as internal operational network traffic such as logs, health checks, and monitoring traffic. For example, data throughput includes inserting a record into a database and the network traffic associated with the app infrastructure, such as log forwarding, control plane connection, and monitoring metrics transfer.
+
+On Hybrid Standalone, data throughput isn't counted. CloudHub, CloudHub 2.0, and Runtime Fabric count data throughput.
 
 == Object Store Usage
 
