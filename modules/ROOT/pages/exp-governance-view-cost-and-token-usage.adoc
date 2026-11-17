@@ -21,6 +21,7 @@ Before getting started, make sure you have:
 * These permissions:
 +
 --
+** API Manager: Manage APIs Configuration
 ** API Manager: Manage Policies
 ** API Manager: View APIs Configuration
 ** API Manager: View Policies
@@ -28,6 +29,8 @@ Before getting started, make sure you have:
 ** Anypoint Monitoring: Monitoring Viewer
 ** Exchange: Exchange Viewer
 --
++
+API Manager permissions apply to individual environments. Grant permissions in each environment where you need them.
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 

@@ -86,7 +86,7 @@ Sign in through your entry path and land on *Home*. Scan *Portfolio* catalogs, *
 Under *Portfolio*, open *Agents*, *MCP Servers*, *Model Proxies*, *APIs*, or *Gateways*. Add assets to work with. Register manually or use connected providers under *Platform* > *Providers* if your organization enables discovery flows.
 . Create and manage instances
 +
-On *Agents*, *MCP Servers*, *Model Proxies*, and *APIs*, open *Instances* to create managed or unmanaged deployments that match your needs. Managed instances on Omni Gateway give stronger governance and monitoring when the new experience exposes them. *Gateways* don't include an *Instances* tab.
+On *Agents*, *MCP Servers*, and *APIs*, open *Instances* to create managed or unmanaged deployments that match your needs. Managed instances on Omni Gateway give stronger governance and monitoring when the new experience exposes them. *Gateways* and *Model Proxies* don't include an *Instances* tab.
 . Configure policies
 +
 On the *Policies* tab for a service or instance, apply governance policies that match access control, data privacy, performance, and compliance goals. Use *Governance* for gateway-wide policy work, organization strategies, and cost tools.

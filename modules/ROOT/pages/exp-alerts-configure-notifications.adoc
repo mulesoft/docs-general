@@ -1,4 +1,5 @@
 = Configuring Notifications for Alerts
+:page-info-pills: anypoint-pricing-titanium
 :keywords: alerts, notifications, configure alerts, alert target, manage alerts, anypoint platform, monitoring
 
 Send API Manager alerts from Anypoint Platform directly to Slack channels, Microsoft Teams channels, and email. Configure alerts in the enhanced experience so teams can see notifications where they work and jump directly into *Portfolio* or *Observability* to respond.
@@ -8,6 +9,7 @@ Send API Manager alerts from Anypoint Platform directly to Slack channels, Micro
 Before getting started, make sure you have:
 
 * An Anypoint Platform account
+* An Anypoint Integration Advanced or Titanium subscription to Anypoint Platform
 * Access to the enhanced experience at omni.mulesoft.com
 * Any of these permissions to view alerts:
 +

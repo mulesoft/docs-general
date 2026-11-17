@@ -20,7 +20,7 @@ Before getting started, make sure you have:
 +
 For more information, see xref:exp-home-start.adoc#permissions[Enhanced Experience Permissions].
 
-* A deployed Omni Gateway version 1.11.4
+* A deployed Omni Gateway version 1.11.4 or later
 +
 See xref:gateway::flex-gateway-managed-set-up.adoc[].
 * Credentials to authenticate with your LLM providers: an API key, OAuth 2.0 client credentials (Microsoft Foundry), or an issuer and PEM private key for OAuth 2.0 JWT bearer (Google Gemini Enterprise Agent Platform).
