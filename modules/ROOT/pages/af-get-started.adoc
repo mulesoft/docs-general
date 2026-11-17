@@ -380,7 +380,7 @@ Before you configure semantic routing or caching, confirm you have:
 
 * An Anypoint Platform account with the required product access for Agent Fabric. See <<before-you-begin>>.
 * A model proxy on Omni Gateway.
-* For semantic routing: credentials for an embedding service (OpenAI, Hugging Face, or Azure OpenAI). Advanced Scale also requires a dedicated external vector database (Qdrant, Pinecone, or Azure AI Search).
+* For semantic routing: credentials for an OpenAI or Hugging Face embedding service. Advanced Scale also requires a dedicated external vector database (Qdrant, Pinecone, or Azure AI Search).
 * For semantic caching: an OpenAI embedding service, an Azure AI Search vector database, and object store connection values (client ID, client secret, URL, and store name).
 
 You also need these permissions:
