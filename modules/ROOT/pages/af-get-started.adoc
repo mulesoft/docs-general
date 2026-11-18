@@ -227,7 +227,7 @@ Before you create an agent network, confirm you have:
 * Anypoint Code Builder, with the Anypoint Code Builder URLs allowlisted. See xref:anypoint-code-builder::urls-to-allow.adoc[Allow URLs for Anypoint Code Builder].
 * At least one Managed Omni Gateway in the target environment. A single gateway can handle both ingress and egress traffic.
 * A2A-compliant agents in the network. Create an A2A bridge first for agents that aren't A2A-compliant.
-* A deployment target such as a CloudHub 2.0 shared or private space, or a Runtime Fabric target. Every Anypoint Platform organization includes a CloudHub 2.0 shared space. A private space requires CloudHub Network Administrator to create and manage it, and you must associate that space with the business groups and environments where you deploy.
+* A deployment target such as a CloudHub 2.0 shared or private space, or a Runtime Fabric target. Every Anypoint Platform organization includes a CloudHub 2.0 shared space. A private space requires CloudHub Network Administrator to create and manage it, and you must associate that space with the business groups and environments where you deploy. To deploy to Runtime Fabric on Red Hat OpenShift, see xref:af-deploy-runtime-fabric-openshift.adoc[].
 * Generative AI turned on for your organization if you use MuleSoft Vibes. See xref:access-management::enabling-generative-ai.adoc[]. For Vibes, also install Node.js 20 LTS or later and the latest version of `jq`, and connect your Anypoint Platform organization to a Salesforce organization that has generative AI enabled.
 * For the Anypoint CLI (optional): Node 20 (v20.19.4) or later, Java 17 or later with `JAVA_HOME` set, and the Anypoint CLI Agent Fabric Plugin.
 

@@ -58,6 +58,7 @@ Make the APIs, applications, and agents you already run available as tools. Star
 - xref:anypoint-code-builder::vibes-get-started.adoc[Generate Network Configurations with MuleSoft Vibes]
 - xref:agent-network::af-publish-agent-network-assets.adoc[Publish the Agent Network Project to Anypoint Exchange]
 - xref:agent-network::af-deploy-agent-network-targets.adoc[Deploy the Agent Network Assets]
+- xref:af-deploy-runtime-fabric-openshift.adoc[Deploy Agent Fabric on Runtime Fabric on Red Hat OpenShift]
 |===
 
 [.lm-table, cols="1a,1a,1a", grid="none"]
