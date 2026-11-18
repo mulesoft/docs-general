@@ -44,12 +44,12 @@ Model costs drive spend and budget calculations. Set a cost per token for each m
 
 [NOTE]
 ====
-Models without a configured cost remain available and don't block traffic. Spend tracking and spend-based wallet budgets treat this usage as zero, so spend limits don't trigger for the model.
+You can set a wallet budget as a dollar amount or as a token count.
 
-Token-based wallet budgets still count tokens and block requests when usage reaches the token limit. To set a spend limit for a model in a wallet, first configure the cost per token for that model.
+A model without a configured cost is still blocked when a token-count budget limit is reached. The model proxy counts that model’s tokens and blocks further requests when usage reaches the token limit. That block is based on token usage, not dollar spend.
+
+Spend tracking and a dollar budget treat usage of a model with no configured cost as zero, so a dollar spend limit does not apply. To cap the model by dollar spend, set the cost per token for the model first. See xref:exp-model-wallets-manage.adoc[Capping Spend for Callers of Model Proxies].
 ====
-
-See xref:exp-model-wallets-manage.adoc[Capping Spend for Callers of Model Proxies].
 
 == See Also
 
