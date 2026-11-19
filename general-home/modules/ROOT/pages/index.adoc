@@ -1,0 +1,116 @@
+= [.brand]#MuleSoft# Documentation
+:keywords: mulesoft documentation, digital transformation, getting started, api design, integration, mulesoft platform, discover mulesoft
+:page-llms-exclude: true
+:page-layout: home
+:page-fragmentize:
+:!sectids:
+ifndef::env-site[:imagesdir: ../images]
+
+[[the-road]]
+== The Road to Digital Transformation
+
+image::getting-started.png[""]
+
+--
+[discrete]
+=== Getting Started
+
+Build the digital transformation your business needs.
+
+* xref:api-led-overview.adoc[Tutorial: Build an API from start to finish.]
+--
+
+image::discover.png[""]
+
+--
+[discrete]
+=== Discover
+
+Browse Exchange to find existing API specifications, templates, examples, and other assets that you can reuse for your projects.
+
+* https://www.anypoint.mulesoft.com/exchange/[Discover reusable assets.^]
+--
+
+image::design.png[""]
+
+--
+[discrete]
+=== Design
+
+Create and publish new API specifications from scratch.
+
+* xref:design-center::design-create-publish-api-specs.adoc[Create a reusable API specification.]
+* xref:access-management::index.adoc[Manage access to your Anypoint Platform account.]
+* xref:general::security.adoc[Build security into your application network.]
+--
+
+image::develop.png[""]
+
+--
+[discrete]
+=== Develop & Test
+
+Build and test APIs and integration apps.
+
+* xref:studio::index.adoc[Develop your API.]
+* xref:connectors::index.adoc[Connect your data, systems, and apps.]
+* xref:mule-runtime::mule-app-dev.adoc[Develop the Mule app that integrates systems, services, APIs, and devices.]
+* xref:dataweave::index.adoc[Access and transform data within the Mule app.]
+* xref:munit::index.adoc[Build automated tests for your APIs and integrations.]
+--
+
+image::deploy.png[""]
+
+--
+[discrete]
+=== Deploy
+
+Choose a deployment option, deploy APIs and apps, and secure them with policies.
+
+* xref:runtime-manager::deployment-strategies.adoc[Choose a deployment option.]
+* xref:api-manager::api-proxy-landing-page.adoc[Configure a proxy for your API.]
+* xref:api-manager::manage-policies-overview.adoc[Protect your APIs with policies.]
+--
+
+image::monitor.png[""]
+
+--
+[discrete]
+=== Monitor
+
+Monitor your APIs and integrations using dashboards, metrics, and visualization.
+
+* xref:monitoring::index.adoc[View metrics for integration apps and APIs.]
+* xref:api-functional-monitoring::index.adoc[Test the functional behavior and performance of your API.]
+* xref:runtime-manager::monitoring.adoc[Monitor your deployed apps.]
+--
+
+== Quick Links
+
+[[trending-topics]]
+== Featured Topics
+// You can update the H2 here, but please do not change the ID without contacting ms-docs-infra-requests
+////
+- Add your xref to the top of the list.
+- Include a comment on when you added your xref and if there's a reason it shouldn't be removed.
+- If your addition(s) cause the list to exceed ten, remove xref(s) from the bottom of the list.
+
+////
+
+// Updated 2026/06/17 - sathya
+* xref:general::use-mulesoft-docs-with-ai.adoc[]
+* xref:agent-fabric::learning-map-exp.adoc[]
+* xref:monitoring::integration-intelligence.adoc[]
+* xref:general::learning-map-mulesoft-ai.adoc[]
+* xref:agent-fabric::learning-map-agent-fabric.adoc[]
+* xref:agent-network::af-get-started.adoc[]
+* xref:exchange::importing-agentforce-agents.adoc[]
+// * xref:gateway::flex-gateway-managed-ingress-egress.adoc[]
+* xref:api-manager::create-instance-task-agent-tool.adoc[]
+* xref:agent-visualizer::index.adoc[]
+* xref:monitoring::anypoint-insights-agentic.adoc[]
+// * xref:mulesoft-mcp-server::index.adoc[]
+// * xref:mcp-connector::index.adoc[MCP Connector User Guide]
+// * xref:learning-map-api-management.adoc[]
+//* xref:cloudhub::app-migration.adoc[]
+//* xref:hyperforce::index.adoc[Salesforce Hyperforce]
