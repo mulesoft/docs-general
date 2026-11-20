@@ -107,7 +107,7 @@ Monitor your APIs and integrations using dashboards, metrics, and visualization.
 * xref:exchange::importing-agentforce-agents.adoc[]
 // * xref:gateway::flex-gateway-managed-ingress-egress.adoc[]
 * xref:api-manager::create-instance-task-agent-tool.adoc[]
-* xref:agent-fabric::agent-viz-overview.adoc.adoc[]
+* xref:agent-fabric::agent-viz-overview.adoc[]
 * xref:monitoring::anypoint-insights-agentic.adoc[]
 // * xref:mulesoft-mcp-server::index.adoc[]
 // * xref:mcp-connector::index.adoc[MCP Connector User Guide]
