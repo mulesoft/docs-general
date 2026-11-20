@@ -99,15 +99,15 @@ Monitor your APIs and integrations using dashboards, metrics, and visualization.
 
 // Updated 2026/06/17 - sathya
 * xref:general::use-mulesoft-docs-with-ai.adoc[]
-* xref:agent-fabric::learning-map-exp.adoc[]
+* xref:agent-fabric::learning-map-agent-fabric.adoc[]
 * xref:monitoring::integration-intelligence.adoc[]
 * xref:general::learning-map-mulesoft-ai.adoc[]
 * xref:agent-fabric::learning-map-agent-fabric.adoc[]
-* xref:agent-network::af-get-started.adoc[]
+* xref:agent-network::agent-network-get-started.adoc[]
 * xref:exchange::importing-agentforce-agents.adoc[]
 // * xref:gateway::flex-gateway-managed-ingress-egress.adoc[]
 * xref:api-manager::create-instance-task-agent-tool.adoc[]
-* xref:agent-visualizer::index.adoc[]
+* xref:agent-fabric::agent-viz-overview.adoc.adoc[]
 * xref:monitoring::anypoint-insights-agentic.adoc[]
 // * xref:mulesoft-mcp-server::index.adoc[]
 // * xref:mcp-connector::index.adoc[MCP Connector User Guide]
