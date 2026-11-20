@@ -77,7 +77,7 @@ Accelerate integration and agent development with AI using Anypoint Code Builder
 
 Visualize and monitor your agent network and agentic assets.
 
-- xref:agent-visualizer::index.adoc[Visualize and Explore Your Agent Network]
+- xref:agent-fabric::agent-viz-overview.adoc[Visualize and Explore Your Agent Network]
 - xref:monitoring::anypoint-insights-agentic.adoc[Monitor and Troubleshoot Your Agent Network]
 
 | image::reuse::lm_audience_end_1.png[]
