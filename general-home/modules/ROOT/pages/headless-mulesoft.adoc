@@ -66,7 +66,7 @@ The MuleSoft Agent is an AI assistant available throughout the platform UI and i
 
 The MuleSoft Agent is available on request. To get access, contact your account executive or MuleSoft representative to request enablement.
 
-For prerequisites, see xref:exp-ai-assistant-use.adoc#before-you-begin[MuleSoft Agent Before You Begin].
+For prerequisites, see xref:agent-fabric::ai-assistant-use.adoc#before-you-begin[MuleSoft Agent Before You Begin].
 
 [NOTE]
 ====
@@ -85,7 +85,7 @@ The MuleSoft for Slack app connects a Slack workspace to a MuleSoft organization
 
 The MuleSoft Agent is available on request. To get access, contact your account executive or MuleSoft representative.
 
-For setup, see xref:exp-slack-integrate.adoc[].
+For setup, see xref:agent-fabric::slack-integrate.adoc[].
 
 == User Journeys
 
@@ -163,7 +163,7 @@ Pick the surface that matches your role, then follow the setup topic for that su
 * xref:mulesoft-mcp-server::getting-started.adoc[]
 * xref:anypoint-code-builder::mulesoft-vibes.adoc[]
 * xref:mulesoft-mcp-server::getting-started-platform.adoc[]
-* xref:exp-ai-assistant-use.adoc[]
-* xref:exp-slack-integrate.adoc[]
-* xref:exp-claude-desktop-connect.adoc[]
+* xref:agent-fabric::ai-assistant-use.adoc[]
+* xref:agent-fabric::slack-integrate.adoc[]
+* xref:agent-fabric::claude-desktop-connect.adoc[]
 * https://dev-portal.mulesoft.com[MuleSoft Developer Hub]

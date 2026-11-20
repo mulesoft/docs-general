@@ -17,7 +17,7 @@ image::getting-started.png[""]
 
 Build the digital transformation your business needs.
 
-* xref:api-led-overview.adoc[Tutorial: Build an API from start to finish.]
+* xref:apim-home::api-led-overview.adoc[Tutorial: Build an API from start to finish.]
 --
 
 image::discover.png[""]
