@@ -95,7 +95,7 @@ Apply policies and secure agent network traffic.
 == See Also
 
 * xref:agent-fabric::learning-map-agent-fabric.adoc[Agent Fabric]
-* xref:agent-visualizer::index.adoc[]
+* xref:agent-fabric::agent-viz-overview.adoc[]
 * xref:anypoint-code-builder::index.adoc[]
 * xref:monitoring::index.adoc[]
 * xref:exchange::index.adoc[]
