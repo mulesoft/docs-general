@@ -1,0 +1,8 @@
+name: usage-home
+title: Usage Reports
+version: ~
+nav:
+- modules/ROOT/nav.adoc
+asciidoc:
+  attributes:
+    page-component-desc: View usage reports and learn how usage, credits, and pricing are metered across Anypoint Platform.

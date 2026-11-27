@@ -1,0 +1,44 @@
+= Anypoint Platform Pricing
+:keywords: anypoint platform pricing, metrics definitions, global resource pool limits, cloudhub 2.0, application deployment, access management entitlements, mulesoft pricing
+:page-aliases: general::pricing.adoc
+
+The Usage Reports page supports pricing packages for https://www.mulesoft.com/anypoint-pricing[integration]. When your organization opts in to a usage-based pricing plan, such as the Anypoint Integration Advanced package, you must redeploy your apps. After redeploying your apps, your usage reports are shown. 
+
+For CloudHub and CloudHub 2.0, apps are automatically redeployed during the monthly runtime patch update cycle. For more information, see xref:runtime-manager::cloudhub-app-runtime-version-updates.adoc[] and xref:cloudhub-2::ch2-patch-updates.adoc[].
+
+For Runtime Fabric, you must manually redeploy apps to remain in compliance with your Anypoint Platform contract.
+
+== Metrics Definitions
+
+Usage-based pricing packages and their usage reports are based on your organization's use of allotted Mule components.
+
+To understand the technical aspects of metering and pricing concepts within Anypoint Platform, see xref:usage-metrics.adoc[] documentation.
+
+== Global Resource Pool Limits
+
+Root organizations provisioned with usage-based pricing receive a shared global pool of CPU and memory resources for CloudHub and CloudHub 2.0 deployments across all business groups and environments in the organization. This pool of resources is large enough to consume all the purchased flows and messages without interruption. 
+
+If an organization runs out of resources, actions that consume more resources, such as deploying new applications or starting stopped applications are blocked until sufficient resources are available. You can free up resources by stopping or deleting unused applications, or reducing the replica size or resources that an existing application consumes. 
+
+When your organization approaches the resource limit on the Applications List UI, Application Deployment UI, and Manage Application UI, you receive a warning. To avoid reaching limits, allocate only the needed resources by using granular replica sizes in CloudHub and CloudHub 2.0. 
+
+Contact Support if you require an exception when you reach the resource limit. 
+
+[NOTE]
+This limit doesn't impact applications configured with xref:cloudhub-2::ch2-configure-horizontal-autoscaling.adoc[]. You can continue to deploy applications if Horizontal Pod Autoscaling is enabled even if you reach the global resource limits.
+
+== CloudHub 2.0 Application Deployment
+
+For organizations provisioned with a usage-based pricing package, CloudHub 2.0 uses replica sizing for application deployment. You can choose replica sizes based on the application profile or size and display the equivalent in terms of legacy vCores. Replica sizes with the suffix `.mem` are memory-intensive options with the same compute. 
+
+include::partial$pricing.adoc[tag=pricingTable]
+
+During the monthly patching cycle, your applications automatically migrate to an equivalent replica size. 
+
+== Access Management Entitlements
+
+Accounts provisioned with a usage-based pricing package show flows, messages, and throughput entitlements in Access Management instead of vCores. These entitlements are available only at the root organization level. Because vCores are no longer the purchased entity, they can no longer be tracked or allocated among business groups. To view your monthly usage of flows, messages, and throughput, xref:usage-reports.adoc#access-usage-reports[access usage reports] in the Access Management UI. 
+
+== See Also
+
+* xref:usage-reports.adoc[]
